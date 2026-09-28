@@ -40,13 +40,14 @@ test('sơ đồ đổi màu theo giao diện tối', async ({ page }) => {
   expect(mauToi).not.toBe(mauSang);
 });
 
-test('Chương 2: §2.1–§2.6 có trang dịch, mục lục đủ 9 mục, có PDF tải về', async ({ page }) => {
-  for (const muc of ['2-1', '2-2', '2-3', '2-4', '2-5', '2-6']) {
+test('Chương 2: §2.1–§2.7 có trang dịch, mục lục đủ 9 mục, có PDF tải về', async ({ page }) => {
+  for (const muc of ['2-1', '2-2', '2-3', '2-4', '2-5', '2-6', '2-7']) {
     await page.goto(`dai-so/chuong-2/sach/${muc}/`);
     await expect(page.locator('[data-ghi-cong]')).toContainText('CC BY-NC-SA');
     await expect(page.locator('.katex-error')).toHaveCount(0);
   }
   // §2.6: ba hình vẽ lại (sách dịch viết "từ hình vẽ ta thấy" nhưng không in hình)
+  await page.goto('dai-so/chuong-2/sach/2-6/');
   for (const hinh of ['binh-hanh', 'phep-quay', 'he-so-goc']) {
     await expect(page.locator(`[data-hinh-${hinh}] svg`)).toBeVisible();
   }
