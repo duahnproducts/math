@@ -1,0 +1,477 @@
+---
+mon: dai-so
+chuong: 2
+muc: "2.4"
+tieu_de: Ma trận nghịch đảo
+tieu_de_en: Matrix Inverses
+loai: dich-nguyen-van
+nguon: "Dịch từ W. Keith Nicholson, Linear Algebra with Applications, Version 2023 – Revision A, Vretta-Lyryx Inc. (https://lyryx.com/linear-algebra-applications/), Mục 2.4. Bản dịch phát hành theo giấy phép CC BY-NC-SA 4.0, giống bản gốc. Thay đổi: dịch sang tiếng Việt, thêm ghi chú cho người học."
+---
+
+Ba phép toán cơ bản trên ma trận — cộng, nhân và trừ — là tương tự của các phép toán cùng tên cho số. Trong mục này ta giới thiệu tương tự ma trận của phép *chia* số.
+
+Để bắt đầu, hãy xét cách giải phương trình số $ax = b$ khi $a$ và $b$ là các số đã biết. Nếu $a = 0$ thì không có nghiệm (trừ khi $b = 0$). Nhưng nếu $a \ne 0$, ta có thể nhân cả hai vế với nghịch đảo $a^{-1} = \frac{1}{a}$ để được nghiệm $x = a^{-1}b$. Tất nhiên nhân với $a^{-1}$ chính là chia cho $a$, và tính chất của $a^{-1}$ làm cho điều này hoạt động là $a^{-1}a = 1$. Hơn nữa, ta đã thấy ở <XemMuc muc="2.2" chu="Mục 2.2" /> rằng vai trò mà số 1 đóng trong số học được đóng trong đại số ma trận bởi ma trận đơn vị $I$. Điều này gợi ý định nghĩa sau.
+
+<DinhNghia so="2.11" ten="Ma trận nghịch đảo">
+Nếu $A$ là ma trận vuông, một ma trận $B$ được gọi là **nghịch đảo** (*inverse*) của $A$ khi và chỉ khi
+
+$$
+AB = I \qquad \text{và} \qquad BA = I
+$$
+
+Ma trận $A$ có nghịch đảo được gọi là ma trận **khả nghịch** (*invertible*).[^1]
+</DinhNghia>
+
+<ViDu so="2.4.1">
+Chứng tỏ rằng $B = \begin{bmatrix} -1 & 1 \\ 1 & 0 \end{bmatrix}$ là nghịch đảo của $A = \begin{bmatrix} 0 & 1 \\ 1 & 1 \end{bmatrix}$.
+
+**Lời giải.** Tính $AB$ và $BA$.
+
+$$
+AB = \begin{bmatrix} 0 & 1 \\ 1 & 1 \end{bmatrix} \begin{bmatrix} -1 & 1 \\ 1 & 0 \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \qquad BA = \begin{bmatrix} -1 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 0 & 1 \\ 1 & 1 \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}
+$$
+
+Do đó $AB = I = BA$, nên $B$ quả thực là nghịch đảo của $A$.
+</ViDu>
+
+<ViDu so="2.4.2">
+Chứng tỏ rằng $A = \begin{bmatrix} 0 & 0 \\ 1 & 3 \end{bmatrix}$ không có nghịch đảo.
+
+**Lời giải.** Cho $B = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$ là ma trận $2 \times 2$ tuỳ ý. Khi đó
+
+$$
+AB = \begin{bmatrix} 0 & 0 \\ 1 & 3 \end{bmatrix} \begin{bmatrix} a & b \\ c & d \end{bmatrix} = \begin{bmatrix} 0 & 0 \\ a + 3c & b + 3d \end{bmatrix}
+$$
+
+nên $AB$ có một hàng toàn số 0. Do đó $AB$ không thể bằng $I$ với bất kỳ $B$ nào.
+</ViDu>
+
+Lập luận trong Ví dụ 2.4.2 cho thấy không ma trận không nào có nghịch đảo. Nhưng Ví dụ 2.4.2 cũng cho thấy rằng, khác với số học, một ma trận *khác không* vẫn có thể không có nghịch đảo. Tuy nhiên, nếu một ma trận *có* nghịch đảo thì nó chỉ có *một* nghịch đảo.
+
+<DinhLy so="2.4.1">
+Nếu $B$ và $C$ đều là nghịch đảo của $A$ thì $B = C$.
+</DinhLy>
+
+**Chứng minh.** Vì $B$ và $C$ đều là nghịch đảo của $A$, ta có $CA = I = AB$. Do đó
+
+$$
+B = IB = (CA)B = C(AB) = CI = C \qquad ∎
+$$
+
+Nếu $A$ là ma trận khả nghịch, nghịch đảo (duy nhất) của $A$ được ký hiệu $A^{-1}$. Do đó $A^{-1}$ (khi nó tồn tại) là ma trận vuông cùng cỡ với $A$ có tính chất
+
+$$
+AA^{-1} = I \qquad \text{và} \qquad A^{-1}A = I
+$$
+
+Các đẳng thức này đặc trưng cho $A^{-1}$ theo nghĩa sau:
+
+<DinhLy id="dinh-ly-tieu-chuan-nghich-dao" ten="Tiêu chuẩn nghịch đảo (Inverse Criterion)">
+Nếu bằng cách nào đó tìm được một ma trận $B$ sao cho $AB = I$ và $BA = I$ thì $A$ khả nghịch và $B$ là nghịch đảo của $A$; viết bằng ký hiệu: $B = A^{-1}$.
+</DinhLy>
+
+Đây là một cách để kiểm chứng rằng nghịch đảo của một ma trận tồn tại. Ví dụ 2.4.3 và Ví dụ 2.4.4 minh hoạ điều đó.
+
+<ViDu so="2.4.3">
+Nếu $A = \begin{bmatrix} 0 & -1 \\ 1 & -1 \end{bmatrix}$, hãy chứng tỏ $A^3 = I$ và từ đó tìm $A^{-1}$.
+
+**Lời giải.** Ta có $A^2 = \begin{bmatrix} 0 & -1 \\ 1 & -1 \end{bmatrix} \begin{bmatrix} 0 & -1 \\ 1 & -1 \end{bmatrix} = \begin{bmatrix} -1 & 1 \\ -1 & 0 \end{bmatrix}$, và do đó
+
+$$
+A^3 = A^2A = \begin{bmatrix} -1 & 1 \\ -1 & 0 \end{bmatrix} \begin{bmatrix} 0 & -1 \\ 1 & -1 \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = I
+$$
+
+Do đó $A^3 = I$ như đã khẳng định. Điều này có thể viết là $A^2A = I = AA^2$, nên nó cho thấy $A^2$ là nghịch đảo của $A$. Tức là $A^{-1} = A^2 = \begin{bmatrix} -1 & 1 \\ -1 & 0 \end{bmatrix}$.
+</ViDu>
+
+Ví dụ tiếp theo trình bày một công thức hữu ích cho nghịch đảo của ma trận $2 \times 2$ $A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$ khi nó tồn tại. Để phát biểu công thức đó, ta định nghĩa **định thức** (*determinant*) $\det A$ và **ma trận phụ hợp** (*adjugate*) $\operatorname{adj} A$ của ma trận $A$ như sau:
+
+$$
+\det \begin{bmatrix} a & b \\ c & d \end{bmatrix} = ad - bc, \qquad \text{và} \qquad \operatorname{adj} \begin{bmatrix} a & b \\ c & d \end{bmatrix} = \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}
+$$
+
+<ViDu so="2.4.4">
+Nếu $A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$, hãy chứng tỏ rằng $A$ có nghịch đảo khi và chỉ khi $\det A \ne 0$, và trong trường hợp đó
+
+$$
+A^{-1} = \frac{1}{\det A} \operatorname{adj} A
+$$
+
+**Lời giải.** Cho tiện, viết $e = \det A = ad - bc$ và $B = \operatorname{adj} A = \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}$. Khi đó $AB = eI = BA$, bạn đọc có thể kiểm chứng. Vậy nếu $e \ne 0$, nhân với vô hướng $\frac{1}{e}$ cho
+
+$$
+A\left(\tfrac{1}{e}B\right) = I = \left(\tfrac{1}{e}B\right)A
+$$
+
+Do đó $A$ khả nghịch và $A^{-1} = \frac{1}{e}B$. Như vậy chỉ còn phải chứng tỏ rằng nếu $A^{-1}$ tồn tại thì $e \ne 0$. Ta chứng minh điều này bằng cách chỉ ra rằng giả thiết $e = 0$ dẫn đến mâu thuẫn. Thật vậy, nếu $e = 0$ thì $AB = eI = 0$, nên nhân bên trái với $A^{-1}$ cho $A^{-1}AB = A^{-1}0$; tức là $IB = 0$, nên $B = 0$. Nhưng điều này suy ra $a$, $b$, $c$, $d$ đều bằng 0, nên $A = 0$, trái với giả thiết $A^{-1}$ tồn tại.
+</ViDu>
+
+Để minh hoạ, nếu $A = \begin{bmatrix} 2 & 4 \\ -3 & 8 \end{bmatrix}$ thì $\det A = 2 \cdot 8 - 4 \cdot (-3) = 28 \ne 0$. Do đó $A$ khả nghịch và $A^{-1} = \frac{1}{\det A} \operatorname{adj} A = \frac{1}{28} \begin{bmatrix} 8 & -4 \\ 3 & 2 \end{bmatrix}$, mời bạn đọc tự kiểm chứng.
+
+Định thức và ma trận phụ hợp sẽ được định nghĩa ở Chương 3 cho ma trận vuông bất kỳ, và các kết luận trong Ví dụ 2.4.4 sẽ được chứng minh ở dạng hoàn toàn tổng quát.
+
+## Nghịch đảo và hệ tuyến tính
+
+Ma trận nghịch đảo có thể dùng để giải một số hệ phương trình tuyến tính. Nhắc lại rằng một hệ phương trình tuyến tính có thể viết thành một phương trình ma trận duy nhất
+
+$$
+A\mathbf{x} = \mathbf{b}
+$$
+
+trong đó $A$ và $\mathbf{b}$ đã biết còn $\mathbf{x}$ cần tìm. Nếu $A$ khả nghịch, ta nhân mỗi vế của phương trình *bên trái* với $A^{-1}$ để được
+
+$$
+\begin{aligned}
+A^{-1}A\mathbf{x} &= A^{-1}\mathbf{b} \\
+I\mathbf{x} &= A^{-1}\mathbf{b} \\
+\mathbf{x} &= A^{-1}\mathbf{b}
+\end{aligned}
+$$
+
+Điều này cho nghiệm của hệ phương trình (bạn đọc nên kiểm chứng rằng $\mathbf{x} = A^{-1}\mathbf{b}$ thực sự thoả mãn $A\mathbf{x} = \mathbf{b}$). Hơn nữa, lập luận cho thấy nếu $\mathbf{x}$ là một nghiệm bất kỳ thì nhất thiết $\mathbf{x} = A^{-1}\mathbf{b}$, nên nghiệm là duy nhất. Tất nhiên kỹ thuật này chỉ hoạt động khi ma trận hệ số $A$ có nghịch đảo. Điều này chứng minh Định lý 2.4.2.
+
+<DinhLy so="2.4.2">
+Giả sử một hệ gồm $n$ phương trình $n$ biến được viết ở dạng ma trận
+
+$$
+A\mathbf{x} = \mathbf{b}
+$$
+
+Nếu ma trận hệ số $A$ cỡ $n \times n$ là khả nghịch thì hệ có nghiệm duy nhất
+
+$$
+\mathbf{x} = A^{-1}\mathbf{b}
+$$
+
+</DinhLy>
+
+<GhiChu tieuDe="Ghi chú cho người học — đừng giải hệ bằng nghịch đảo!">
+Định lý 2.4.2 đẹp về mặt lý thuyết, nhưng trong *tính toán thực tế* thì gần như không bao giờ người ta giải $A\mathbf{x} = \mathbf{b}$ bằng cách tính $A^{-1}$ rồi nhân. Lý do:
+
+- Tính $A^{-1}$ tốn khoảng gấp 3 lần chi phí so với khử Gauss trực tiếp.
+- Sai số làm tròn (*round-off error*) tích luỹ nhiều hơn, kết quả kém ổn định về mặt số học.
+
+Trong NumPy, hãy dùng `numpy.linalg.solve(A, b)` chứ *đừng* dùng `numpy.linalg.inv(A) @ b`. Đây là một trong những lời khuyên thực hành quan trọng nhất khi bạn viết code tính toán số.
+</GhiChu>
+
+<ViDu so="2.4.5">
+Dùng Ví dụ 2.4.4 để giải hệ $\left\{\begin{aligned} 5x_1 - 3x_2 &= -4 \\ 7x_1 + 4x_2 &= 8 \end{aligned}\right.$.
+
+**Lời giải.** Ở dạng ma trận đây là $A\mathbf{x} = \mathbf{b}$ với $A = \begin{bmatrix} 5 & -3 \\ 7 & 4 \end{bmatrix}$, $\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}$, $\mathbf{b} = \begin{bmatrix} -4 \\ 8 \end{bmatrix}$. Khi đó $\det A = 5 \cdot 4 - (-3) \cdot 7 = 41$, nên $A$ khả nghịch và $A^{-1} = \frac{1}{41} \begin{bmatrix} 4 & 3 \\ -7 & 5 \end{bmatrix}$ theo Ví dụ 2.4.4. Do đó Định lý 2.4.2 cho
+
+$$
+\mathbf{x} = A^{-1}\mathbf{b} = \frac{1}{41} \begin{bmatrix} 4 & 3 \\ -7 & 5 \end{bmatrix} \begin{bmatrix} -4 \\ 8 \end{bmatrix} = \frac{1}{41} \begin{bmatrix} 8 \\ 68 \end{bmatrix}
+$$
+
+nên nghiệm là $x_1 = \frac{8}{41}$ và $x_2 = \frac{68}{41}$.
+</ViDu>
+
+## Một phương pháp tìm nghịch đảo
+
+Nếu ma trận $A$ cỡ $n \times n$ và khả nghịch, ta mong muốn có một kỹ thuật hiệu quả để tìm nghịch đảo. Quy trình sau sẽ được biện minh ở Mục 2.5.
+
+<DinhLy id="dinh-ly-thuat-toan-nghich-dao" ten="Thuật toán tìm ma trận nghịch đảo">
+Nếu $A$ là ma trận (vuông) khả nghịch thì tồn tại một dãy phép biến đổi sơ cấp theo hàng đưa $A$ về ma trận đơn vị $I$ cùng cỡ, viết là $A \to I$. *Chính dãy phép biến đổi hàng đó* đưa $I$ về $A^{-1}$; tức là $I \to A^{-1}$. Thuật toán có thể tóm tắt như sau:
+
+$$
+\begin{bmatrix} A & I \end{bmatrix} \to \begin{bmatrix} I & A^{-1} \end{bmatrix}
+$$
+
+trong đó các phép biến đổi hàng trên $A$ và trên $I$ được thực hiện *đồng thời*.
+</DinhLy>
+
+<ViDu so="2.4.6">
+Dùng thuật toán tìm nghịch đảo để tìm nghịch đảo của ma trận $A = \begin{bmatrix} 2 & 7 & 1 \\ 1 & 4 & -1 \\ 1 & 3 & 0 \end{bmatrix}$.
+
+**Lời giải.** Áp dụng các phép biến đổi sơ cấp theo hàng lên ma trận kép
+
+$$
+\begin{bmatrix} A & I \end{bmatrix} = \left[\begin{array}{rrr|rrr} 2 & 7 & 1 & 1 & 0 & 0 \\ 1 & 4 & -1 & 0 & 1 & 0 \\ 1 & 3 & 0 & 0 & 0 & 1 \end{array}\right]
+$$
+
+sao cho đưa $A$ về $I$. Trước hết đổi chỗ hàng 1 và hàng 2.
+
+$$
+\left[\begin{array}{rrr|rrr} 1 & 4 & -1 & 0 & 1 & 0 \\ 2 & 7 & 1 & 1 & 0 & 0 \\ 1 & 3 & 0 & 0 & 0 & 1 \end{array}\right]
+$$
+
+Tiếp theo lấy hàng 2 trừ 2 lần hàng 1, và lấy hàng 3 trừ hàng 1.
+
+$$
+\left[\begin{array}{rrr|rrr} 1 & 4 & -1 & 0 & 1 & 0 \\ 0 & -1 & 3 & 1 & -2 & 0 \\ 0 & -1 & 1 & 0 & -1 & 1 \end{array}\right]
+$$
+
+Tiếp tục đưa về dạng bậc thang rút gọn.
+
+$$
+\left[\begin{array}{rrr|rrr} 1 & 0 & 11 & 4 & -7 & 0 \\ 0 & 1 & -3 & -1 & 2 & 0 \\ 0 & 0 & -2 & -1 & 1 & 1 \end{array}\right] \to \left[\begin{array}{rrr|rrr} 1 & 0 & 0 & -\frac{3}{2} & -\frac{3}{2} & \frac{11}{2} \\ 0 & 1 & 0 & \frac{1}{2} & \frac{1}{2} & -\frac{3}{2} \\ 0 & 0 & 1 & \frac{1}{2} & -\frac{1}{2} & -\frac{1}{2} \end{array}\right]
+$$
+
+Do đó $A^{-1} = \frac{1}{2} \begin{bmatrix} -3 & -3 & 11 \\ 1 & 1 & -3 \\ 1 & -1 & -1 \end{bmatrix}$, dễ kiểm chứng.
+</ViDu>
+
+Cho ma trận $A$ cỡ $n \times n$ bất kỳ, Định lý 1.2.1 cho thấy $A$ có thể đưa được bằng các phép biến đổi sơ cấp theo hàng về một ma trận $R$ ở dạng bậc thang rút gọn. Nếu $R = I$ thì ma trận $A$ khả nghịch (điều này sẽ được chứng minh ở mục sau), nên thuật toán cho ra $A^{-1}$. Nếu $R \ne I$ thì $R$ có một hàng toàn số 0 (vì nó vuông), nên không hệ phương trình tuyến tính $A\mathbf{x} = \mathbf{b}$ nào có thể có nghiệm duy nhất. Nhưng khi đó $A$ không khả nghịch theo Định lý 2.4.2. Do đó thuật toán là hiệu quả theo nghĩa nêu trong Định lý 2.4.3.
+
+<DinhLy so="2.4.3">
+Nếu $A$ là ma trận $n \times n$ thì hoặc $A$ rút gọn được về $I$ bằng các phép biến đổi sơ cấp theo hàng, hoặc không. Trong trường hợp thứ nhất, thuật toán cho ra $A^{-1}$; trong trường hợp thứ hai, $A^{-1}$ không tồn tại.
+</DinhLy>
+
+## Tính chất của nghịch đảo
+
+Các tính chất sau của ma trận khả nghịch được dùng ở khắp nơi.
+
+<ViDu so="2.4.7" ten="Luật giản ước">
+Cho $A$ là ma trận khả nghịch. Chứng tỏ rằng:
+
+1. Nếu $AB = AC$ thì $B = C$.
+2. Nếu $BA = CA$ thì $B = C$.
+
+**Lời giải.** Cho đẳng thức $AB = AC$, nhân bên trái cả hai vế với $A^{-1}$ để được $A^{-1}AB = A^{-1}AC$. Như vậy $IB = IC$, tức là $B = C$. Điều này chứng minh (1), và chứng minh (2) dành cho bạn đọc.
+</ViDu>
+
+Các tính chất (1) và (2) trong Ví dụ 2.4.7 được mô tả bằng cách nói rằng một ma trận khả nghịch có thể “giản ước bên trái” và “giản ước bên phải” tương ứng. Tuy nhiên lưu ý rằng giản ước “hỗn hợp” nói chung *không* đúng: nếu $A$ khả nghịch và $AB = CA$ thì $B$ và $C$ có thể không bằng nhau, ngay cả khi cả hai đều là $2 \times 2$. Đây là một ví dụ cụ thể:
+
+$$
+A = \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}, \quad B = \begin{bmatrix} 0 & 0 \\ 1 & 2 \end{bmatrix}, \quad C = \begin{bmatrix} 1 & 1 \\ 1 & 1 \end{bmatrix}
+$$
+
+Đôi khi nghịch đảo của một ma trận được cho bởi một công thức. Ví dụ 2.4.4 là một minh hoạ; Ví dụ 2.4.8 và Ví dụ 2.4.9 cho thêm hai minh hoạ nữa. Ý tưởng chính là Tiêu chuẩn nghịch đảo: nếu tìm được ma trận $B$ sao cho $AB = I = BA$ thì $A$ khả nghịch và $A^{-1} = B$.
+
+<ViDu so="2.4.8">
+Nếu $A$ là ma trận khả nghịch, hãy chứng tỏ rằng chuyển vị $A^T$ cũng khả nghịch. Hơn nữa, chứng tỏ rằng nghịch đảo của $A^T$ chính là chuyển vị của $A^{-1}$; viết bằng ký hiệu: $(A^T)^{-1} = (A^{-1})^T$.
+
+**Lời giải.** $A^{-1}$ tồn tại (theo giả thiết). Chuyển vị $(A^{-1})^T$ của nó là ứng viên được đề xuất cho nghịch đảo của $A^T$. Dùng tiêu chuẩn nghịch đảo, ta kiểm tra như sau:
+
+$$
+\begin{aligned}
+A^T(A^{-1})^T &= (A^{-1}A)^T = I^T = I \\
+(A^{-1})^T A^T &= (AA^{-1})^T = I^T = I
+\end{aligned}
+$$
+
+Do đó $(A^{-1})^T$ quả thực là nghịch đảo của $A^T$; tức là $(A^T)^{-1} = (A^{-1})^T$.
+</ViDu>
+
+<ViDu so="2.4.9">
+Nếu $A$ và $B$ là các ma trận khả nghịch cỡ $n \times n$, hãy chứng tỏ rằng tích $AB$ của chúng cũng khả nghịch và $(AB)^{-1} = B^{-1}A^{-1}$.
+
+**Lời giải.** Ta có sẵn một ứng viên cho nghịch đảo của $AB$, đó là $B^{-1}A^{-1}$. Ta kiểm tra nó như sau:
+
+$$
+\begin{aligned}
+(B^{-1}A^{-1})(AB) &= B^{-1}(A^{-1}A)B = B^{-1}IB = B^{-1}B = I \\
+(AB)(B^{-1}A^{-1}) &= A(BB^{-1})A^{-1} = AIA^{-1} = AA^{-1} = I
+\end{aligned}
+$$
+
+Do đó $B^{-1}A^{-1}$ là nghịch đảo của $AB$; viết bằng ký hiệu: $(AB)^{-1} = B^{-1}A^{-1}$.
+</ViDu>
+
+<GhiChu tieuDe="Ghi chú cho người học — vì sao thứ tự bị đảo?">
+Công thức $(AB)^{-1} = B^{-1}A^{-1}$ (chú ý *thứ tự đảo ngược*) rất dễ nhớ nếu bạn nghĩ theo phép biến đổi: $AB$ nghĩa là “làm $B$ trước, rồi $A$”. Để *hoàn tác*, bạn phải hoàn tác cái làm sau cùng trước: hoàn tác $A$, rồi hoàn tác $B$ — tức là $B^{-1}A^{-1}$.
+
+Tương tự như khi mặc đồ: đi tất rồi đi giày. Muốn cởi thì phải cởi giày trước, rồi mới cởi tất.
+</GhiChu>
+
+Bây giờ ta tập hợp một số tính chất cơ bản của ma trận nghịch đảo để tham khảo.
+
+<DinhLy so="2.4.4">
+Tất cả các ma trận sau đều là ma trận vuông cùng cỡ.
+
+1. $I$ khả nghịch và $I^{-1} = I$.
+2. Nếu $A$ khả nghịch thì $A^{-1}$ cũng vậy, và $(A^{-1})^{-1} = A$.
+3. Nếu $A$ và $B$ khả nghịch thì $AB$ cũng vậy, và $(AB)^{-1} = B^{-1}A^{-1}$.
+4. Nếu $A_1, A_2, \ldots, A_k$ đều khả nghịch thì tích $A_1A_2 \cdots A_k$ của chúng cũng vậy, và $(A_1A_2 \cdots A_k)^{-1} = A_k^{-1} \cdots A_2^{-1}A_1^{-1}$.
+5. Nếu $A$ khả nghịch thì $A^k$ cũng vậy với mọi $k \ge 1$, và $(A^k)^{-1} = (A^{-1})^k$.
+6. Nếu $A$ khả nghịch và $a \ne 0$ là một số thì $aA$ khả nghịch và $(aA)^{-1} = \frac{1}{a}A^{-1}$.
+7. Nếu $A$ khả nghịch thì chuyển vị $A^T$ của nó cũng vậy, và $(A^T)^{-1} = (A^{-1})^T$.
+
+</DinhLy>
+
+**Chứng minh.** **(1)** Đây là hệ quả trực tiếp của việc $I^2 = I$. **(2)** Các đẳng thức $AA^{-1} = I = A^{-1}A$ cho thấy $A$ là nghịch đảo của $A^{-1}$; viết bằng ký hiệu, $(A^{-1})^{-1} = A$. **(3)** Đây là Ví dụ 2.4.9. **(4)** Dùng quy nạp theo $k$. Nếu $k = 1$ thì không có gì phải chứng minh, và nếu $k = 2$ thì kết quả là tính chất 3. Nếu $k > 2$, giả sử theo quy nạp rằng $(A_1A_2 \cdots A_{k-1})^{-1} = A_{k-1}^{-1} \cdots A_2^{-1}A_1^{-1}$. Ta áp dụng điều này cùng với tính chất 3 như sau:
+
+$$
+\begin{aligned}
+[A_1A_2 \cdots A_{k-1}A_k]^{-1} &= [(A_1A_2 \cdots A_{k-1})A_k]^{-1} \\
+&= A_k^{-1}(A_1A_2 \cdots A_{k-1})^{-1} \\
+&= A_k^{-1}\left(A_{k-1}^{-1} \cdots A_2^{-1}A_1^{-1}\right)
+\end{aligned}
+$$
+
+Vậy chứng minh bằng quy nạp hoàn tất. **(5)** Đây là tính chất 4 với $A_1 = A_2 = \cdots = A_k = A$. **(6)** Dành làm Bài tập 2.4.29. **(7)** Đây là Ví dụ 2.4.8. ∎
+
+Việc *đảo ngược thứ tự* các nghịch đảo trong các tính chất 3 và 4 của Định lý 2.4.4 là hệ quả của việc phép nhân ma trận không giao hoán. Một biểu hiện khác của điều này xuất hiện khi xử lý các phương trình ma trận. Nếu cho một phương trình ma trận $B = C$, ta có thể nhân bên trái với ma trận $A$ để được $AB = AC$. Tương tự, nhân bên phải cho $BA = CA$. Tuy nhiên ta *không thể trộn lẫn* hai điều đó: nếu $B = C$ thì không nhất thiết $AB = CA$ ngay cả khi $A$ khả nghịch, ví dụ $A = \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}$, $B = \begin{bmatrix} 0 & 0 \\ 1 & 0 \end{bmatrix} = C$.
+
+Phần 7 của Định lý 2.4.4 cùng với việc $(A^T)^T = A$ cho ta:
+
+<HeQua so="2.4.1">
+Một ma trận vuông $A$ khả nghịch khi và chỉ khi $A^T$ khả nghịch.
+</HeQua>
+
+<ViDu so="2.4.10">
+Tìm $A$ nếu $(A^T - 2I)^{-1} = \begin{bmatrix} 2 & 1 \\ -1 & 0 \end{bmatrix}$.
+
+**Lời giải.** Theo Định lý 2.4.4(2) và Ví dụ 2.4.4, ta có
+
+$$
+(A^T - 2I) = \left[\left(A^T - 2I\right)^{-1}\right]^{-1} = \begin{bmatrix} 2 & 1 \\ -1 & 0 \end{bmatrix}^{-1} = \begin{bmatrix} 0 & -1 \\ 1 & 2 \end{bmatrix}
+$$
+
+Do đó $A^T = 2I + \begin{bmatrix} 0 & -1 \\ 1 & 2 \end{bmatrix} = \begin{bmatrix} 2 & -1 \\ 1 & 4 \end{bmatrix}$, nên $A = \begin{bmatrix} 2 & 1 \\ -1 & 4 \end{bmatrix}$ theo Định lý 2.4.4(7).
+</ViDu>
+
+Định lý quan trọng sau tập hợp một số điều kiện đều *tương đương*[^2] với tính khả nghịch. Nó sẽ được nhắc đến thường xuyên ở phần dưới.
+
+<DinhLy so="2.4.5" ten="Định lý về nghịch đảo (Inverse Theorem)">
+Các điều kiện sau là tương đương đối với ma trận $A$ cỡ $n \times n$:
+
+1. $A$ khả nghịch.
+2. Hệ thuần nhất $A\mathbf{x} = \mathbf{0}$ chỉ có nghiệm tầm thường $\mathbf{x} = \mathbf{0}$.
+3. $A$ có thể đưa về ma trận đơn vị $I_n$ bằng các phép biến đổi sơ cấp theo hàng.
+4. Hệ $A\mathbf{x} = \mathbf{b}$ có ít nhất một nghiệm $\mathbf{x}$ với *mọi* lựa chọn cột $\mathbf{b}$.
+5. Tồn tại ma trận $C$ cỡ $n \times n$ sao cho $AC = I_n$.
+
+</DinhLy>
+
+**Chứng minh.** Ta chứng tỏ mỗi điều kiện kéo theo điều kiện tiếp theo, và (5) kéo theo (1).
+
+**(1) ⇒ (2).** Nếu $A^{-1}$ tồn tại thì $A\mathbf{x} = \mathbf{0}$ cho $\mathbf{x} = I_n\mathbf{x} = A^{-1}A\mathbf{x} = A^{-1}\mathbf{0} = \mathbf{0}$.
+
+**(2) ⇒ (3).** Giả sử (2) đúng. Chắc chắn $A \to R$ bằng các phép biến đổi hàng, với $R$ là ma trận bậc thang rút gọn. Chỉ cần chứng tỏ $R = I_n$. Giả sử không phải vậy. Khi đó $R$ có một hàng toàn số 0 (vì nó vuông). Bây giờ xét ma trận bổ sung $\begin{bmatrix} A & \mathbf{0} \end{bmatrix}$ của hệ $A\mathbf{x} = \mathbf{0}$. Khi đó $\begin{bmatrix} A & \mathbf{0} \end{bmatrix} \to \begin{bmatrix} R & \mathbf{0} \end{bmatrix}$ là dạng rút gọn, và $\begin{bmatrix} R & \mathbf{0} \end{bmatrix}$ cũng có một hàng toàn số 0. Vì $R$ vuông nên phải có ít nhất một biến không dẫn đầu, và do đó ít nhất một tham số. Vậy hệ $A\mathbf{x} = \mathbf{0}$ có vô số nghiệm, trái với (2). Vậy rốt cuộc $R = I_n$.
+
+**(3) ⇒ (4).** Xét ma trận bổ sung $\begin{bmatrix} A & \mathbf{b} \end{bmatrix}$ của hệ $A\mathbf{x} = \mathbf{b}$. Dùng (3), cho $A \to I_n$ bằng một dãy phép biến đổi hàng. Khi đó chính các phép biến đổi này đưa $\begin{bmatrix} A & \mathbf{b} \end{bmatrix} \to \begin{bmatrix} I_n & \mathbf{c} \end{bmatrix}$ với cột $\mathbf{c}$ nào đó. Do đó hệ $A\mathbf{x} = \mathbf{b}$ có nghiệm (thực ra là duy nhất) theo phép khử Gauss. Điều này chứng minh (4).
+
+**(4) ⇒ (5).** Viết $I_n = \begin{bmatrix} \mathbf{e}_1 & \mathbf{e}_2 & \cdots & \mathbf{e}_n \end{bmatrix}$ với $\mathbf{e}_1, \ldots, \mathbf{e}_n$ là các cột của $I_n$. Với mỗi $j = 1, 2, \ldots, n$, hệ $A\mathbf{x} = \mathbf{e}_j$ có một nghiệm $\mathbf{c}_j$ theo (4), nên $A\mathbf{c}_j = \mathbf{e}_j$. Bây giờ cho $C = \begin{bmatrix} \mathbf{c}_1 & \mathbf{c}_2 & \cdots & \mathbf{c}_n \end{bmatrix}$ là ma trận $n \times n$ có các $\mathbf{c}_j$ làm cột. Khi đó Định nghĩa 2.9 cho (5):
+
+$$
+AC = A \begin{bmatrix} \mathbf{c}_1 & \cdots & \mathbf{c}_n \end{bmatrix} = \begin{bmatrix} A\mathbf{c}_1 & \cdots & A\mathbf{c}_n \end{bmatrix} = \begin{bmatrix} \mathbf{e}_1 & \cdots & \mathbf{e}_n \end{bmatrix} = I_n
+$$
+
+**(5) ⇒ (1).** Giả sử (5) đúng, tức là $AC = I_n$ với ma trận $C$ nào đó. Khi đó $C\mathbf{x} = \mathbf{0}$ suy ra $\mathbf{x} = \mathbf{0}$ (vì $\mathbf{x} = I_n\mathbf{x} = AC\mathbf{x} = A\mathbf{0} = \mathbf{0}$). Như vậy điều kiện (2) đúng cho ma trận $C$ thay vì $A$. Do đó lập luận ở trên rằng (2) ⇒ (3) ⇒ (4) ⇒ (5) (với $A$ thay bằng $C$) cho thấy tồn tại ma trận $C'$ sao cho $CC' = I_n$. Nhưng khi đó
+
+$$
+A = AI_n = A(CC') = (AC)C' = I_nC' = C'
+$$
+
+Như vậy $CA = CC' = I_n$, cùng với $AC = I_n$, cho thấy $C$ là nghịch đảo của $A$. Điều này chứng minh (1). ∎
+
+Chứng minh (5) ⇒ (1) trong Định lý 2.4.5 cho thấy rằng nếu $AC = I$ với các ma trận vuông thì nhất thiết $CA = I$, và do đó $C$ và $A$ là nghịch đảo của nhau. Ta ghi lại sự kiện quan trọng này để tham khảo.
+
+<HeQua so="2.4.2">
+Nếu $A$ và $C$ là các ma trận *vuông* sao cho $AC = I$ thì cũng có $CA = I$. Nói riêng, cả $A$ và $C$ đều khả nghịch, $C = A^{-1}$, và $A = C^{-1}$.
+</HeQua>
+
+Đây là cách nhanh để nhớ Hệ quả 2.4.2. Nếu $A$ là ma trận vuông thì:
+
+1. Nếu $AC = I$ thì $C = A^{-1}$.
+2. Nếu $CA = I$ thì $C = A^{-1}$.
+
+Hãy để ý rằng Hệ quả 2.4.2 *sai* nếu $A$ và $C$ không phải ma trận vuông. Ví dụ, ta có
+
+$$
+\begin{bmatrix} 1 & 2 & 1 \\ 1 & 1 & 1 \end{bmatrix} \begin{bmatrix} -1 & 1 \\ 1 & -1 \\ 0 & 1 \end{bmatrix} = I_2 \quad \text{nhưng} \quad \begin{bmatrix} -1 & 1 \\ 1 & -1 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} 1 & 2 & 1 \\ 1 & 1 & 1 \end{bmatrix} \ne I_3
+$$
+
+Một ma trận $A$ cỡ $n \times n$ có hạng $n$ khi và chỉ khi (3) của Định lý 2.4.5 đúng. Do đó:
+
+<HeQua so="2.4.3">
+Ma trận $A$ cỡ $n \times n$ khả nghịch khi và chỉ khi $\operatorname{rank} A = n$.
+</HeQua>
+
+Sau đây là một sự kiện hữu ích về nghịch đảo của ma trận khối.
+
+<ViDu so="2.4.11">
+Cho $P = \begin{bmatrix} A & X \\ 0 & B \end{bmatrix}$ và $Q = \begin{bmatrix} A & 0 \\ Y & B \end{bmatrix}$ là các ma trận khối, trong đó $A$ là $m \times m$ và $B$ là $n \times n$ (có thể $m \ne n$).
+
+**a.** Chứng tỏ rằng $P$ khả nghịch khi và chỉ khi cả $A$ và $B$ đều khả nghịch. Trong trường hợp đó, chứng tỏ rằng $P^{-1} = \begin{bmatrix} A^{-1} & -A^{-1}XB^{-1} \\ 0 & B^{-1} \end{bmatrix}$.
+
+**b.** Chứng tỏ rằng $Q$ khả nghịch khi và chỉ khi cả $A$ và $B$ đều khả nghịch. Trong trường hợp đó, chứng tỏ rằng $Q^{-1} = \begin{bmatrix} A^{-1} & 0 \\ -B^{-1}YA^{-1} & B^{-1} \end{bmatrix}$.
+
+**Lời giải.** Ta làm (a.) và để (b.) cho bạn đọc.
+
+**a.** Nếu $A^{-1}$ và $B^{-1}$ đều tồn tại, viết $R = \begin{bmatrix} A^{-1} & -A^{-1}XB^{-1} \\ 0 & B^{-1} \end{bmatrix}$. Dùng phép nhân khối, ta kiểm chứng được $PR = I_{m+n} = RP$, nên $P$ khả nghịch và $P^{-1} = R$. Ngược lại, giả sử $P$ khả nghịch, và viết $P^{-1} = \begin{bmatrix} C & V \\ W & D \end{bmatrix}$ ở dạng khối, với $C$ là $m \times m$ và $D$ là $n \times n$. Khi đó phương trình $PP^{-1} = I_{n+m}$ trở thành
+
+$$
+\begin{bmatrix} A & X \\ 0 & B \end{bmatrix} \begin{bmatrix} C & V \\ W & D \end{bmatrix} = \begin{bmatrix} AC + XW & AV + XD \\ BW & BD \end{bmatrix} = I_{m+n} = \begin{bmatrix} I_m & 0 \\ 0 & I_n \end{bmatrix}
+$$
+
+theo ký hiệu khối. Cho các khối tương ứng bằng nhau, ta tìm được
+
+$$
+AC + XW = I_m, \qquad BW = 0, \qquad \text{và} \qquad BD = I_n
+$$
+
+Do đó $B$ khả nghịch vì $BD = I_n$ (theo Hệ quả 2.4.2), rồi $W = 0$ vì $BW = 0$, và cuối cùng $AC = I_m$ (nên $A$ khả nghịch, lại theo Hệ quả 2.4.2).
+</ViDu>
+
+## Nghịch đảo của phép biến đổi ma trận
+
+Cho $T = T_A : \mathbb{R}^n \to \mathbb{R}^n$ ký hiệu phép biến đổi ma trận cảm sinh bởi ma trận $A$ cỡ $n \times n$. Vì $A$ vuông nên nó rất có thể khả nghịch, và điều này dẫn đến câu hỏi:
+
+> *Việc $A$ khả nghịch có ý nghĩa hình học gì đối với $T$?*
+
+Để trả lời, cho $T' = T_{A^{-1}} : \mathbb{R}^n \to \mathbb{R}^n$ ký hiệu phép biến đổi cảm sinh bởi $A^{-1}$. Khi đó
+
+$$
+\left.\begin{aligned}
+T'[T(\mathbf{x})] &= A^{-1}[A\mathbf{x}] = I\mathbf{x} = \mathbf{x} \\
+T[T'(\mathbf{x})] &= A\left(A^{-1}\mathbf{x}\right) = I\mathbf{x} = \mathbf{x}
+\end{aligned}\right\} \quad \text{với mọi } \mathbf{x} \text{ trong } \mathbb{R}^n \tag{2.8}
+$$
+
+Đẳng thức thứ nhất khẳng định rằng nếu $T$ đưa $\mathbf{x}$ đến vector $T(\mathbf{x})$ thì $T'$ đưa $T(\mathbf{x})$ trở lại đúng $\mathbf{x}$; tức là $T'$ “đảo ngược” tác động của $T$. Tương tự, $T$ “đảo ngược” tác động của $T'$. Các điều kiện (2.8) có thể phát biểu gọn theo phép hợp thành:
+
+$$
+T' \circ T = 1_{\mathbb{R}^n} \qquad \text{và} \qquad T \circ T' = 1_{\mathbb{R}^n} \tag{2.9}
+$$
+
+Khi các điều kiện này đúng, ta nói phép biến đổi ma trận $T'$ là một **nghịch đảo** của $T$, và ta đã chứng tỏ rằng nếu ma trận $A$ của $T$ khả nghịch thì $T$ có nghịch đảo (cảm sinh bởi $A^{-1}$).
+
+Mệnh đề đảo cũng đúng: nếu $T$ có nghịch đảo thì ma trận $A$ của nó phải khả nghịch. Thật vậy, giả sử $S : \mathbb{R}^n \to \mathbb{R}^n$ là một nghịch đảo bất kỳ của $T$, sao cho $S \circ T = 1_{\mathbb{R}^n}$ và $T \circ S = 1_{\mathbb{R}^n}$. Có thể chứng minh được rằng $S$ cũng là một phép biến đổi ma trận. Nếu $B$ là ma trận của $S$, ta có
+
+$$
+BA\mathbf{x} = S[T(\mathbf{x})] = (S \circ T)(\mathbf{x}) = 1_{\mathbb{R}^n}(\mathbf{x}) = \mathbf{x} = I_n\mathbf{x} \quad \text{với mọi } \mathbf{x} \text{ trong } \mathbb{R}^n
+$$
+
+Từ đó theo Định lý 2.2.6 suy ra $BA = I_n$, và lập luận tương tự cho thấy $AB = I_n$. Do đó $A$ khả nghịch với $A^{-1} = B$. Hơn nữa, phép biến đổi nghịch đảo $S$ có ma trận $A^{-1}$, nên $S = T'$ theo ký hiệu ở trên. Điều này chứng minh định lý quan trọng sau.
+
+<DinhLy so="2.4.6">
+Cho $T : \mathbb{R}^n \to \mathbb{R}^n$ ký hiệu phép biến đổi ma trận cảm sinh bởi ma trận $A$ cỡ $n \times n$. Khi đó
+
+$$
+A \text{ khả nghịch khi và chỉ khi } T \text{ có nghịch đảo.}
+$$
+
+Trong trường hợp này, $T$ có *đúng một* nghịch đảo (ta ký hiệu là $T^{-1}$), và $T^{-1} : \mathbb{R}^n \to \mathbb{R}^n$ là phép biến đổi cảm sinh bởi ma trận $A^{-1}$. Nói cách khác
+
+$$
+(T_A)^{-1} = T_{A^{-1}}
+$$
+
+</DinhLy>
+
+Mối quan hệ hình học giữa $T$ và $T^{-1}$ được thể hiện trong các phương trình (2.8) ở trên:
+
+$$
+T^{-1}[T(\mathbf{x})] = \mathbf{x} \qquad \text{và} \qquad T\left[T^{-1}(\mathbf{x})\right] = \mathbf{x} \qquad \text{với mọi } \mathbf{x} \text{ trong } \mathbb{R}^n
+$$
+
+Các phương trình này được gọi là các **đồng nhất thức cơ bản** liên hệ $T$ và $T^{-1}$. Nói một cách nôm na, chúng khẳng định rằng mỗi phép $T$ và $T^{-1}$ “đảo ngược” hay “hoàn tác” tác động của phép kia.
+
+Cách nhìn hình học này về nghịch đảo của một phép biến đổi tuyến tính cho ta một cách mới để tìm nghịch đảo của ma trận $A$. Cụ thể hơn, nếu $A$ là ma trận khả nghịch, ta tiến hành như sau:
+
+1. Cho $T$ là phép biến đổi tuyến tính cảm sinh bởi $A$.
+2. Tìm phép biến đổi tuyến tính $T^{-1}$ “đảo ngược” tác động của $T$.
+3. Khi đó $A^{-1}$ là ma trận của $T^{-1}$.
+
+Đây là một ví dụ.
+
+<ViDu so="2.4.12">
+Tìm nghịch đảo của $A = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}$ bằng cách xem nó như một phép biến đổi tuyến tính $\mathbb{R}^2 \to \mathbb{R}^2$.
+
+**Lời giải.** Nếu $\mathbf{x} = \begin{bmatrix} x \\ y \end{bmatrix}$ thì vector $A\mathbf{x} = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} y \\ x \end{bmatrix}$ là kết quả của việc lấy đối xứng $\mathbf{x}$ qua đường thẳng $y = x$. Do đó, nếu $Q_1 : \mathbb{R}^2 \to \mathbb{R}^2$ ký hiệu phép đối xứng qua đường thẳng $y = x$ thì $A$ là ma trận của $Q_1$. Bây giờ hãy để ý rằng $Q_1$ tự đảo ngược chính nó, vì lấy đối xứng một vector $\mathbf{x}$ hai lần thì được lại $\mathbf{x}$. Do đó $Q_1^{-1} = Q_1$. Vì $A$ là ma trận của $Q_1$ và $A^{-1}$ là ma trận của $Q_1^{-1}$, suy ra $A^{-1} = A$. Tất nhiên kết luận này cũng thấy rõ bằng cách quan sát trực tiếp rằng $A^2 = I$, nhưng phương pháp hình học thường hoạt động được ở những chỗ mà các phương pháp khác kém trực tiếp hơn.
+</ViDu>
+
+[^1]: Chỉ ma trận vuông mới có nghịch đảo. Dù nghe có vẻ hợp lý rằng có thể tồn tại các ma trận không vuông $A$ và $B$ sao cho $AB = I_m$ và $BA = I_n$, với $A$ là $m \times n$ và $B$ là $n \times m$, ta khẳng định điều này buộc $n = m$. Thật vậy, nếu $m < n$ thì tồn tại cột khác không $\mathbf{x}$ sao cho $A\mathbf{x} = \mathbf{0}$ (theo Định lý 1.3.1), nên $\mathbf{x} = I_n\mathbf{x} = (BA)\mathbf{x} = B(A\mathbf{x}) = B(\mathbf{0}) = \mathbf{0}$, mâu thuẫn. Do đó $m \ge n$. Tương tự, điều kiện $AB = I_m$ suy ra $n \ge m$. Vậy $m = n$ nên $A$ vuông.
+
+[^2]: Nếu $p$ và $q$ là các mệnh đề, ta nói $p$ *kéo theo* $q$ (viết $p \Rightarrow q$) nếu $q$ đúng bất cứ khi nào $p$ đúng. Hai mệnh đề được gọi là *tương đương* nếu cả $p \Rightarrow q$ và $q \Rightarrow p$ (viết $p \Leftrightarrow q$, đọc là “$p$ khi và chỉ khi $q$”). Xem Phụ lục B.
