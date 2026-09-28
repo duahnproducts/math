@@ -876,6 +876,17 @@ figure.hinh figcaption {
   stroke: var(--warn);
   fill: var(--warn);
 }
+/* Hình lấy từ sách gốc (HinhSach): chữ kiểu sách, nét đậm theo màu chữ */
+.hinh .chu-sach {
+  fill: var(--text);
+  font-family: var(--font-serif);
+}
+.hinh .to-dam {
+  fill: var(--text);
+}
+.hinh-sach svg {
+  max-width: 100%;
+}
 
 /* Thuật ngữ trong bài: chạm để xem nghĩa */
 .thuat-ngu {

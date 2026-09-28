@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 139" width="220.8" role="img">
+<path d="M34.88 58.4L57.56 35.73" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M49.61 43.67C48.45 44.46 46.32 45.5 44.58 45.96L47.33 48.71C47.78 46.97 48.82 44.83 49.61 43.67" class="to-nhan"/>
+<path d="M57.56 35.73L80.24 103.76" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M68.89 69.73C68.7 68.34 68.73 65.96 69.1 64.2L65.41 65.43C66.76 66.62 68.21 68.5 68.89 69.73" class="to-nhan"/>
+<path d="M57.56 35.73L102.91 58.4" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M80.22 47.06C79.1 46.21 77.44 44.51 76.45 43L74.72 46.48C76.51 46.36 78.87 46.67 80.22 47.06" class="to-nhan"/>
+<path d="M34.88 58.4L80.24 103.76" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M57.52 81.05C56.73 79.88 55.69 77.75 55.23 76.01L52.48 78.76C54.22 79.22 56.36 80.25 57.52 81.05" class="to-nhan"/>
+<path d="M80.24 103.76L102.91 58.4" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M91.57 81.1C90.72 82.22 89.02 83.88 87.51 84.86L90.99 86.6C90.87 84.8 91.18 82.45 91.57 81.1" class="to-nhan"/>
+<path d="M23.54 58.4L34.88 58.4" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M29.21 58.4C27.83 58.15 25.58 57.37 24.03 56.46L24.03 60.35C25.58 59.44 27.83 58.66 29.21 58.4" class="to-nhan"/>
+<path d="M57.56 35.73L57.56 29.05" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M57.56 24.39C57.3 25.77 56.52 28.01 55.61 29.57L59.5 29.57C58.59 28.01 57.82 25.77 57.56 24.39" class="to-nhan"/>
+<path d="M102.91 58.4L109.59 58.4" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M114.25 58.4C112.87 58.15 110.63 57.37 109.07 56.46L109.07 60.35C110.63 59.44 112.87 58.66 114.25 58.4" class="to-nhan"/>
+<path d="M80.24 103.76L80.24 110.44" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M80.24 115.1C80.49 113.72 81.27 111.47 82.18 109.92L78.29 109.92C79.2 111.47 79.98 113.72 80.24 115.1" class="to-nhan"/>
+<path d="M36.47 58.4C36.47 57.52 35.76 56.81 34.88 56.81C34 56.81 33.29 57.52 33.29 58.4C33.29 59.29 34 60 34.88 60C35.76 60 36.47 59.29 36.47 58.4" class="to-dam"/>
+<path d="M59.15 35.73C59.15 34.85 58.44 34.13 57.56 34.13C56.68 34.13 55.96 34.85 55.96 35.73C55.96 36.61 56.68 37.32 57.56 37.32C58.44 37.32 59.15 36.61 59.15 35.73" class="to-dam"/>
+<path d="M104.51 58.4C104.51 57.52 103.79 56.81 102.91 56.81C102.03 56.81 101.32 57.52 101.32 58.4C101.32 59.29 102.03 60 102.91 60C103.79 60 104.51 59.29 104.51 58.4" class="to-dam"/>
+<path d="M81.83 103.76C81.83 102.88 81.12 102.17 80.24 102.17C79.36 102.17 78.64 102.88 78.64 103.76C78.64 104.64 79.36 105.35 80.24 105.35C81.12 105.35 81.83 104.64 81.83 103.76" class="to-dam"/>
+<text x="31.55" y="54.22" font-size="10.91" font-style="italic" class="chu-sach">A</text>
+<text x="61.74" y="31.54" font-size="10.91" font-style="italic" class="chu-sach">B</text>
+<text x="106.5" y="69.92" font-size="10.91" font-style="italic" class="chu-sach">C</text>
+<text x="84.42" y="107.3" font-size="10.91" font-style="italic" class="chu-sach">D</text>
+<text x="40.92" y="39.84" font-size="10.91" font-style="italic" class="chu-sach">f</text>
+<text x="44.16" y="41.52" font-size="7.97" class="chu-sach">1</text>
+<text x="74.96" y="72.27" font-size="10.91" font-style="italic" class="chu-sach">f</text>
+<text x="78.2" y="73.95" font-size="7.97" class="chu-sach">2</text>
+<text x="77.2" y="40.4" font-size="10.91" font-style="italic" class="chu-sach">f</text>
+<text x="80.44" y="42.08" font-size="7.97" class="chu-sach">3</text>
+<text x="45.43" y="83.61" font-size="10.91" font-style="italic" class="chu-sach">f</text>
+<text x="48.67" y="85.29" font-size="7.97" class="chu-sach">4</text>
+<text x="97.64" y="83.61" font-size="10.91" font-style="italic" class="chu-sach">f</text>
+<text x="100.88" y="85.29" font-size="7.97" class="chu-sach">5</text>
+<text x="13.92" y="53.85" font-size="10.91" class="chu-sach">55</text>
+<text x="42.27" y="25.51" font-size="10.91" class="chu-sach">20</text>
+<text x="103.13" y="53.85" font-size="10.91" class="chu-sach">15</text>
+<text x="84.62" y="121.11" font-size="10.91" class="chu-sach">20</text>
+</svg>

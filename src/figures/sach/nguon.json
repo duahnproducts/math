@@ -1,0 +1,18 @@
+{
+  "_ghi_chu": "Nguồn của từng hình trong thư mục này: file PDF gốc (không có trong repo), trang (đánh số của file PDF), vùng cắt [x0, y0, x1, y1] theo điểm (pt). Dựng lại: python scripts/pdf-hinh-svg.py <pdf> src/figures/sach ten:trang:x0,y0,x1,y1",
+  "hinh": {
+    "ds-bt-1-4-1a": { "sach": "nicholson-2023", "trang": 51, "hop": [352, 572, 514, 733] },
+    "ds-bt-1-4-1b": { "sach": "nicholson-2023", "trang": 52, "hop": [95, 76, 257, 214] },
+    "ds-bt-1-4-2": { "sach": "nicholson-2023", "trang": 52, "hop": [112, 262, 250, 401] },
+    "ds-bt-1-4-3": { "sach": "nicholson-2023", "trang": 52, "hop": [352, 195, 514, 338] },
+    "ds-vd-1-5-1": { "sach": "nicholson-2023", "trang": 53, "hop": [46, 165, 240, 349], "chu_toi_da": 10.5 },
+    "ds-bt-1-5-1": { "sach": "nicholson-2023", "trang": 54, "hop": [87, 118, 247, 268] },
+    "ds-bt-1-5-2": { "sach": "nicholson-2023", "trang": 54, "hop": [66, 255, 286, 416] },
+    "ds-bt-1-5-3": { "sach": "nicholson-2023", "trang": 54, "hop": [42, 420, 310, 570] },
+    "ds-bt-1-5-4": { "sach": "nicholson-2023", "trang": 54, "hop": [357, 123, 509, 272] },
+    "ds-bt-1-5-5": { "sach": "nicholson-2023", "trang": 54, "hop": [336, 316, 511, 450] }
+  },
+  "sach": {
+    "nicholson-2023": "W. Keith Nicholson, Linear Algebra with Applications, Version 2023 – Revision A (CC BY-NC-SA 4.0)"
+  }
+}

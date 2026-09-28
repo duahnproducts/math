@@ -1,0 +1,61 @@
+---
+mon: dai-so
+chuong: 1
+muc: "1.6"
+tieu_de: "Ứng dụng: phản ứng hoá học"
+tieu_de_en: An Application to Chemical Reactions
+loai: dich-nguyen-van
+nguon: "Dịch từ W. Keith Nicholson, Linear Algebra with Applications, Version 2023 – Revision A, Vretta-Lyryx Inc. (https://lyryx.com/linear-algebra-applications/), Mục 1.6. Bản dịch phát hành theo giấy phép CC BY-NC-SA 4.0, giống bản gốc. Thay đổi: dịch sang tiếng Việt, thêm ghi chú cho người học."
+---
+
+Khi một phản ứng hoá học xảy ra, một số phân tử kết hợp lại để tạo ra các phân tử mới. Do đó, khi các phân tử hydro $\mathrm{H_2}$ và oxy $\mathrm{O_2}$ kết hợp, kết quả là nước $\mathrm{H_2O}$. Ta biểu diễn điều này là
+
+$$
+\mathrm{H_2} + \mathrm{O_2} \to \mathrm{H_2O}
+$$
+
+Các nguyên tử riêng lẻ không được sinh ra cũng không bị mất đi, nên số nguyên tử hydro và oxy đi vào phản ứng phải bằng số đi ra (dưới dạng nước). Trong trường hợp đó phản ứng được gọi là **cân bằng** (*balanced*). Lưu ý rằng mỗi phân tử hydro $\mathrm{H_2}$ gồm hai nguyên tử, mỗi phân tử oxy $\mathrm{O_2}$ cũng vậy, trong khi một phân tử nước $\mathrm{H_2O}$ gồm hai nguyên tử hydro và một nguyên tử oxy. Trong phản ứng trên, điều này đòi hỏi số phân tử hydro đi vào phản ứng phải gấp đôi; ta biểu diễn như sau:
+
+$$
+2\mathrm{H_2} + \mathrm{O_2} \to 2\mathrm{H_2O}
+$$
+
+Bây giờ phản ứng đã cân bằng vì có 4 nguyên tử hydro và 2 nguyên tử oxy ở mỗi vế của phản ứng.
+
+<ViDu so="1.6.1">
+Cân bằng phản ứng đốt cháy octan $\mathrm{C_8H_{18}}$ trong oxy $\mathrm{O_2}$ sau:
+
+$$
+\mathrm{C_8H_{18}} + \mathrm{O_2} \to \mathrm{CO_2} + \mathrm{H_2O}
+$$
+
+trong đó $\mathrm{CO_2}$ là khí carbon dioxide. Ta phải tìm các số nguyên dương $x$, $y$, $z$, $w$ sao cho
+
+$$
+x\,\mathrm{C_8H_{18}} + y\,\mathrm{O_2} \to z\,\mathrm{CO_2} + w\,\mathrm{H_2O}
+$$
+
+Cho số nguyên tử carbon, hydro và oxy ở mỗi vế bằng nhau, ta lần lượt được $8x = z$, $18x = 2w$ và $2y = 2z + w$. Các đẳng thức này có thể viết thành một hệ tuyến tính thuần nhất
+
+$$
+\begin{aligned}
+8x \phantom{{}+ 2y} - z \phantom{{}- 2w} &= 0 \\
+18x \phantom{{}+ 2y - 2z} - 2w &= 0 \\
+2y - 2z - w &= 0
+\end{aligned}
+$$
+
+có thể giải bằng phép khử Gauss. Với các hệ lớn hơn thì điều đó là cần thiết, nhưng trong tình huống đơn giản thế này thì giải trực tiếp còn dễ hơn. Đặt $w = t$, khi đó $x = \frac19 t$, $z = \frac89 t$, $2y = \frac{16}{9}t + t = \frac{25}{9}t$. Nhưng $x$, $y$, $z$, $w$ phải là số nguyên dương, nên giá trị nhỏ nhất của $t$ khử được phân số là 18. Do đó $x = 2$, $y = 25$, $z = 16$, $w = 18$, và phản ứng cân bằng là
+
+$$
+2\,\mathrm{C_8H_{18}} + 25\,\mathrm{O_2} \to 16\,\mathrm{CO_2} + 18\,\mathrm{H_2O}
+$$
+
+Bạn đọc có thể tự kiểm chứng rằng phản ứng này quả thực đã cân bằng.
+</ViDu>
+
+Đáng lưu ý là bài toán này đưa vào lý thuyết phương trình tuyến tính một yếu tố mới: đòi hỏi nghiệm phải gồm các *số nguyên dương*.
+
+<GhiChu tieuDe="Ghi chú cho người học">
+Yếu tố “nghiệm phải là số nguyên dương” ở trên chính là cánh cửa dẫn sang một nhánh khác: **quy hoạch nguyên** (*integer programming*) và **phương trình Diophantine**. Đại số tuyến tính thông thường làm việc trên trường số thực $\mathbb{R}$; khi bạn ép nghiệm về số nguyên, bài toán trở nên khó hơn *rất* nhiều (nhiều bài thuộc lớp NP-hard). Đây cũng là nền của mật mã học dựa trên lattice — một hướng rất nóng trong cryptography hậu lượng tử.
+</GhiChu>

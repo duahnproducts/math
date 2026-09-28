@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 162 161" width="259.2" role="img">
+<path d="M80.96 35.44L80.96 28.77" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M80.96 24.11C80.7 25.49 79.92 27.73 79.02 29.29L82.9 29.29C82 27.73 81.22 25.49 80.96 24.11" class="to-nhan"/>
+<path d="M24.27 80.8L35.6 80.8" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M29.94 80.8C28.55 80.54 26.31 79.76 24.75 78.86L24.75 82.74C26.31 81.84 28.55 81.06 29.94 80.8" class="to-nhan"/>
+<path d="M137.65 80.8L126.32 80.8" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M131.98 80.8C133.37 81.06 135.61 81.84 137.17 82.74L137.17 78.86C135.61 79.76 133.37 80.54 131.98 80.8" class="to-nhan"/>
+<path d="M80.96 126.16L80.96 132.83" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M80.96 137.49C81.22 136.11 82 133.87 82.9 132.31L79.02 132.31C79.92 133.87 80.7 136.11 80.96 137.49" class="to-nhan"/>
+<path d="M35.6 80.8L80.96 35.44" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M58.25 58.16C57.08 58.95 54.95 59.99 53.21 60.45L55.96 63.2C56.42 61.46 57.45 59.32 58.25 58.16" class="to-nhan"/>
+<path d="M126.32 80.8L80.96 35.44" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M103.67 58.16C104.47 59.32 105.5 61.46 105.96 63.2L108.71 60.45C106.97 59.99 104.84 58.95 103.67 58.16" class="to-nhan"/>
+<path d="M126.32 80.8L35.6 80.8" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M80.96 80.8C82.34 81.06 84.59 81.84 86.14 82.74L86.14 78.86C84.59 79.76 82.34 80.54 80.96 80.8" class="to-nhan"/>
+<path d="M35.6 80.8L80.96 126.16" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M58.25 103.44C57.45 102.28 56.42 100.14 55.96 98.4L53.21 101.15C54.95 101.61 57.08 102.65 58.25 103.44" class="to-nhan"/>
+<path d="M126.32 80.8L80.96 126.16" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M103.67 103.44C104.84 102.65 106.97 101.61 108.71 101.15L105.96 98.4C105.5 100.14 104.47 102.28 103.67 103.44" class="to-nhan"/>
+<path d="M37.2 80.8C37.2 79.92 36.49 79.21 35.6 79.21C34.72 79.21 34.01 79.92 34.01 80.8C34.01 81.68 34.72 82.39 35.6 82.39C36.49 82.39 37.2 81.68 37.2 80.8" class="to-dam"/>
+<path d="M127.91 80.8C127.91 79.92 127.2 79.21 126.32 79.21C125.43 79.21 124.72 79.92 124.72 80.8C124.72 81.68 125.43 82.39 126.32 82.39C127.2 82.39 127.91 81.68 127.91 80.8" class="to-dam"/>
+<path d="M82.55 126.16C82.55 125.27 81.84 124.56 80.96 124.56C80.08 124.56 79.37 125.27 79.37 126.16C79.37 127.04 80.08 127.75 80.96 127.75C81.84 127.75 82.55 127.04 82.55 126.16" class="to-dam"/>
+<path d="M82.55 35.44C82.55 34.56 81.84 33.85 80.96 33.85C80.08 33.85 79.37 34.56 79.37 35.44C79.37 36.32 80.08 37.04 80.96 37.04C81.84 37.04 82.55 36.32 82.55 35.44" class="to-dam"/>
+<text x="85.14" y="31.09" font-size="10.91" class="chu-sach">50</text>
+<text x="18.81" y="92.28" font-size="10.91" class="chu-sach">40</text>
+<text x="132.2" y="76.45" font-size="10.91" class="chu-sach">60</text>
+<text x="85.14" y="137.79" font-size="10.91" class="chu-sach">50</text>
+<text x="46.15" y="51.46" font-size="10.91" font-style="italic" class="chu-sach">f</text>
+<text x="49.39" y="53.14" font-size="7.97" class="chu-sach">1</text>
+<text x="109.7" y="51.46" font-size="10.91" font-style="italic" class="chu-sach">f</text>
+<text x="112.94" y="53.14" font-size="7.97" class="chu-sach">2</text>
+<text x="77.93" y="74.14" font-size="10.91" font-style="italic" class="chu-sach">f</text>
+<text x="81.17" y="75.82" font-size="7.97" class="chu-sach">3</text>
+<text x="46.15" y="115.19" font-size="10.91" font-style="italic" class="chu-sach">f</text>
+<text x="49.39" y="116.87" font-size="7.97" class="chu-sach">4</text>
+<text x="109.7" y="115.19" font-size="10.91" font-style="italic" class="chu-sach">f</text>
+<text x="112.94" y="116.87" font-size="7.97" class="chu-sach">5</text>
+</svg>

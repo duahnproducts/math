@@ -1,0 +1,41 @@
+// Đại số tuyến tính (Phase 2 — đổ bản dịch có sẵn): trang dịch nguyên văn có hình
+// vẽ lại/lấy từ bản gốc, bài tập có đề và nhãn "Chưa có hướng dẫn".
+import { expect, test } from '@playwright/test';
+
+test('Chương 1 đủ §1.1–§1.6, mục ứng dụng có sơ đồ', async ({ page }) => {
+  for (let muc = 1; muc <= 6; muc++) {
+    await page.goto(`dai-so/chuong-1/sach/1-${muc}/`);
+    await expect(page.locator('[data-ghi-cong]')).toContainText('CC BY-NC-SA');
+    await expect(page.locator('.katex-error')).toHaveCount(0);
+  }
+
+  // §1.4: sơ đồ mạng vẽ lại từ phương trình của Ví dụ 1.4.1
+  await page.goto('dai-so/chuong-1/sach/1-4/');
+  await expect(page.locator('[data-hinh-mang] svg')).toBeVisible();
+  // §1.5: sơ đồ mạch lấy từ bản gốc, dùng lớp màu của web
+  await page.goto('dai-so/chuong-1/sach/1-5/');
+  const mach = page.locator('[data-hinh-sach="ds-vd-1-5-1"] svg');
+  await expect(mach).toBeVisible();
+  await expect(mach).toHaveAttribute('aria-label', /Mạch điện/);
+});
+
+test('bài tập Chương 1: đủ 66 bài, bài mạng điện có hình, chưa có hướng dẫn thì có nhãn', async ({ page }) => {
+  await page.goto('dai-so/chuong-1/bai-tap/');
+  await expect(page.locator('[data-the-bai-tap]')).toHaveCount(66);
+
+  await page.goto('dai-so/chuong-1/bai-tap/1-5-3/');
+  await expect(page.locator('[data-hinh-sach="ds-bt-1-5-3"] svg')).toBeVisible();
+  await expect(page.locator('.pill', { hasText: 'Chưa có hướng dẫn' })).toBeVisible();
+  // "Cần dùng" trỏ về ví dụ mạch điện ở §1.5
+  await expect(page.locator('.can-dung a').first()).toHaveAttribute('href', /sach\/1-5\/#vi-du-1\.5\.1$/);
+});
+
+test('sơ đồ đổi màu theo giao diện tối', async ({ page }) => {
+  await page.goto('dai-so/chuong-1/sach/1-5/');
+  const net = page.locator('[data-hinh-sach="ds-vd-1-5-1"] .nhan-manh').first();
+  const mauSang = await net.evaluate((el) => getComputedStyle(el).stroke);
+  await page.locator('[data-nut-giao-dien]').click();
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+  const mauToi = await net.evaluate((el) => getComputedStyle(el).stroke);
+  expect(mauToi).not.toBe(mauSang);
+});

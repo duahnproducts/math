@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 162 143" width="259.2" role="img">
+<path d="M35.6 62.76L80.96 108.12" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M58.24 85.41C57.45 84.24 56.41 82.11 55.95 80.37L53.2 83.12C54.94 83.58 57.08 84.61 58.24 85.41" class="to-nhan"/>
+<path d="M80.96 108.12L126.31 74.1" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M103.61 91.13C102.34 91.75 100.08 92.48 98.3 92.69L100.63 95.79C101.33 94.14 102.66 92.17 103.61 91.13" class="to-nhan"/>
+<path d="M126.31 74.1L103.63 40.09" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M114.98 57.11C115.53 58.4 116.13 60.7 116.24 62.5L119.47 60.34C117.86 59.55 115.96 58.12 114.98 57.11" class="to-nhan"/>
+<path d="M103.63 40.09L58.28 40.09" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M80.96 40.09C82.34 40.35 84.58 41.12 86.14 42.03L86.14 38.15C84.58 39.05 82.34 39.83 80.96 40.09" class="to-nhan"/>
+<path d="M58.28 40.09L35.6 62.76" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M46.94 51.42C48.1 50.63 50.24 49.59 51.98 49.13L49.23 46.38C48.77 48.12 47.74 50.26 46.94 51.42" class="to-nhan"/>
+<path d="M24.26 62.76L35.6 62.76" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M29.93 62.76C28.55 62.51 26.3 61.73 24.75 60.82L24.75 64.71C26.3 63.8 28.55 63.02 29.93 62.76" class="to-nhan"/>
+<path d="M80.96 108.12L80.96 114.8" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M80.96 119.46C81.21 118.08 81.99 115.83 82.9 114.28L79.01 114.28C79.92 115.83 80.7 118.08 80.96 119.46" class="to-nhan"/>
+<path d="M137.65 80.91L130.31 76.5" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M126.31 74.1C127.36 75.04 128.89 76.86 129.75 78.43L131.75 75.1C129.95 75.08 127.63 74.59 126.31 74.1" class="to-nhan"/>
+<path d="M103.63 40.09L112.26 28.01" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M114.97 24.21C113.96 25.19 112.02 26.56 110.38 27.3L113.54 29.56C113.71 27.77 114.38 25.49 114.97 24.21" class="to-nhan"/>
+<path d="M58.28 40.09L49.65 28.01" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M46.94 24.21C47.53 25.49 48.2 27.77 48.37 29.56L51.53 27.3C49.89 26.56 47.95 25.19 46.94 24.21" class="to-nhan"/>
+<path d="M37.19 62.76C37.19 61.88 36.48 61.17 35.6 61.17C34.72 61.17 34.01 61.88 34.01 62.76C34.01 63.65 34.72 64.36 35.6 64.36C36.48 64.36 37.19 63.65 37.19 62.76" class="to-dam"/>
+<path d="M82.55 108.12C82.55 107.24 81.84 106.53 80.96 106.53C80.07 106.53 79.36 107.24 79.36 108.12C79.36 109 80.07 109.71 80.96 109.71C81.84 109.71 82.55 109 82.55 108.12" class="to-dam"/>
+<path d="M127.9 74.1C127.9 73.22 127.19 72.51 126.31 72.51C125.43 72.51 124.72 73.22 124.72 74.1C124.72 74.98 125.43 75.7 126.31 75.7C127.19 75.7 127.9 74.98 127.9 74.1" class="to-dam"/>
+<path d="M105.23 40.09C105.23 39.21 104.51 38.49 103.63 38.49C102.75 38.49 102.04 39.21 102.04 40.09C102.04 40.97 102.75 41.68 103.63 41.68C104.51 41.68 105.23 40.97 105.23 40.09" class="to-dam"/>
+<path d="M59.87 40.09C59.87 39.21 59.16 38.49 58.28 38.49C57.4 38.49 56.68 39.21 56.68 40.09C56.68 40.97 57.4 41.68 58.28 41.68C59.16 41.68 59.87 40.97 59.87 40.09" class="to-dam"/>
+<text x="46.15" y="87.97" font-size="10.91" font-style="italic" class="chu-sach">f</text>
+<text x="49.39" y="89.65" font-size="7.97" class="chu-sach">1</text>
+<text x="109.7" y="93.64" font-size="10.91" font-style="italic" class="chu-sach">f</text>
+<text x="112.94" y="95.32" font-size="7.97" class="chu-sach">2</text>
+<text x="121.03" y="59.62" font-size="10.91" font-style="italic" class="chu-sach">f</text>
+<text x="124.27" y="61.3" font-size="7.97" class="chu-sach">3</text>
+<text x="77.92" y="33.42" font-size="10.91" font-style="italic" class="chu-sach">f</text>
+<text x="81.16" y="35.1" font-size="7.97" class="chu-sach">4</text>
+<text x="34.81" y="44.76" font-size="10.91" font-style="italic" class="chu-sach">f</text>
+<text x="38.05" y="46.44" font-size="7.97" class="chu-sach">5</text>
+<text x="24.48" y="58.21" font-size="10.91" class="chu-sach">50</text>
+<text x="85.34" y="117.35" font-size="10.91" class="chu-sach">30</text>
+<text x="126.53" y="89.19" font-size="10.91" class="chu-sach">40</text>
+<text x="113.69" y="35.79" font-size="10.91" class="chu-sach">25</text>
+<text x="56.99" y="35.79" font-size="10.91" class="chu-sach">35</text>
+<text x="42.05" y="66.43" font-size="10.91" font-style="italic" class="chu-sach">A</text>
+<text x="77.62" y="101.67" font-size="10.91" font-style="italic" class="chu-sach">B</text>
+<text x="112.29" y="77.68" font-size="10.91" font-style="italic" class="chu-sach">C</text>
+<text x="91.57" y="51.35" font-size="10.91" font-style="italic" class="chu-sach">D</text>
+<text x="62.46" y="51.35" font-size="10.91" font-style="italic" class="chu-sach">E</text>
+</svg>

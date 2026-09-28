@@ -130,6 +130,15 @@ thức, nên không dùng trực tiếp.
    lần. Đọc bằng hình nên không bị lỗi mất khoảng trắng.
 2. Viết thành file MDX theo mục 5. Công thức gõ lại bằng LaTeX. Hình vẽ lại bằng
    SVG.
+   - **Hình có sẵn trong sách gốc giấy phép mở** (Nicholson, OpenStax): không vẽ tay
+     mà cắt thẳng vùng hình vector từ PDF gốc bằng `scripts/pdf-hinh-svg.py`
+     (PyMuPDF). Script đổi màu cứng sang lớp CSS (`net`, `nhan-manh`, `to-nhan`,
+     `to-dam`, `chu-sach`) để hình đổi sáng/tối, rồi lưu vào `src/figures/sach/`.
+     Dùng trong MDX: `<HinhSach ten="…" moTa="…" />`. Nguồn từng hình (trang,
+     vùng cắt) ghi ở `src/figures/sach/nguon.json`; test kiểm tra hình không có
+     màu cứng và không có hình mồ côi.
+   - Hình mà bản gốc nhắc tới nhưng không in thì vẽ lại từ dữ liệu của ví dụ, kèm
+     test đối chiếu (ví dụ `src/lib/mang.ts` cho Ví dụ 1.4.1).
 3. Chạy build và test (mục 8).
 4. Người soát mở trang web cạnh PDF, đối chiếu một lượt.
 

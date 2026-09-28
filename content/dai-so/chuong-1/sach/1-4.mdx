@@ -1,0 +1,83 @@
+---
+mon: dai-so
+chuong: 1
+muc: "1.4"
+tieu_de: "Ứng dụng: dòng chảy trong mạng"
+tieu_de_en: An Application to Network Flow
+loai: dich-nguyen-van
+nguon: "Dịch từ W. Keith Nicholson, Linear Algebra with Applications, Version 2023 – Revision A, Vretta-Lyryx Inc. (https://lyryx.com/linear-algebra-applications/), Mục 1.4. Bản dịch phát hành theo giấy phép CC BY-NC-SA 4.0, giống bản gốc. Thay đổi: dịch sang tiếng Việt; sơ đồ của Ví dụ 1.4.1 được vẽ lại từ các phương trình của ví dụ (bản gốc 2023 không in hình này)."
+---
+
+Có nhiều loại bài toán liên quan đến một **mạng** (*network*) các đường dẫn, dọc theo đó người ta quan sát một dạng dòng chảy nào đó. Ví dụ gồm mạng lưới tưới tiêu và mạng lưới đường phố hay đường cao tốc. Thường có những điểm trong hệ thống mà tại đó một dòng chảy ròng đi vào hoặc đi ra khỏi hệ thống. Nguyên lý cơ bản đằng sau việc phân tích các hệ thống như vậy là *tổng dòng chảy vào hệ thống phải bằng tổng dòng chảy ra*. Thực tế, ta áp dụng nguyên lý này tại *mọi* nút giao trong hệ thống.
+
+<DinhLy ten="Quy tắc nút giao (Junction Rule)">
+Tại mỗi nút giao trong mạng, tổng dòng chảy đi vào nút đó phải bằng tổng dòng chảy đi ra.
+</DinhLy>
+
+Yêu cầu này cho ta một phương trình tuyến tính liên hệ các dòng chảy trong những đường dẫn xuất phát từ nút giao đó.
+
+<ViDu so="1.4.1">
+Một mạng đường một chiều được mô tả trong sơ đồ kèm theo. Lưu lượng xe đi vào giao lộ $A$ là 500 xe mỗi giờ, và 400 với 100 xe mỗi giờ đi ra tại $B$ và $C$ theo thứ tự. Tìm các dòng chảy khả dĩ trên mỗi đường phố.
+
+<HinhMang141 />
+
+**Lời giải.** Giả sử các dòng chảy dọc các đường phố là $f_1, f_2, f_3, f_4, f_5, f_6$ xe mỗi giờ theo các hướng đã chỉ ra. Khi đó, cho dòng vào bằng dòng ra tại mỗi giao lộ, ta được
+
+$$
+\begin{array}{ll}
+\text{Giao lộ } A & 500 = f_1 + f_2 + f_3 \\
+\text{Giao lộ } B & f_1 + f_4 + f_6 = 400 \\
+\text{Giao lộ } C & f_3 + f_5 = f_6 + 100 \\
+\text{Giao lộ } D & f_2 = f_4 + f_5
+\end{array}
+$$
+
+Các phương trình này cho ta bốn phương trình với sáu biến $f_1, f_2, \ldots, f_6$.
+
+$$
+\begin{aligned}
+f_1 + f_2 + f_3 \phantom{{}+ f_4 + f_5 - f_6} &= 500 \\
+f_1 \phantom{{}+ f_2 + f_3} + f_4 \phantom{{}+ f_5} + f_6 &= 400 \\
+f_3 \phantom{{}+ f_4} + f_5 - f_6 &= 100 \\
+f_2 - f_4 - f_5 \phantom{{}- f_6} &= 0
+\end{aligned}
+$$
+
+Quá trình rút gọn ma trận bổ sung là
+
+$$
+\left[\begin{array}{rrrrrr|r}
+1 & 1 & 1 & 0 & 0 & 0 & 500 \\
+1 & 0 & 0 & 1 & 0 & 1 & 400 \\
+0 & 0 & 1 & 0 & 1 & -1 & 100 \\
+0 & 1 & 0 & -1 & -1 & 0 & 0
+\end{array}\right]
+\to
+\left[\begin{array}{rrrrrr|r}
+1 & 0 & 0 & 1 & 0 & 1 & 400 \\
+0 & 1 & 0 & -1 & -1 & 0 & 0 \\
+0 & 0 & 1 & 0 & 1 & -1 & 100 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0
+\end{array}\right]
+$$
+
+Do đó, khi dùng $f_4$, $f_5$, $f_6$ làm tham số, nghiệm tổng quát là
+
+$$
+f_1 = 400 - f_4 - f_6 \qquad f_2 = f_4 + f_5 \qquad f_3 = 100 - f_5 + f_6
+$$
+
+Điều này cho tất cả nghiệm của hệ phương trình và do đó tất cả các dòng chảy khả dĩ.
+
+Tất nhiên, không phải mọi nghiệm trong số này đều chấp nhận được trong tình huống thực tế. Ví dụ, các dòng chảy $f_1, f_2, \ldots, f_6$ đều *dương* trong ngữ cảnh hiện tại (nếu một giá trị ra âm thì có nghĩa là xe chạy theo hướng ngược lại). Điều này áp đặt các ràng buộc lên các dòng chảy: $f_1 \ge 0$ và $f_3 \ge 0$ trở thành
+
+$$
+f_4 + f_6 \le 400 \qquad f_5 - f_6 \le 100
+$$
+
+Có thể áp đặt thêm các ràng buộc nữa bằng cách đòi hỏi giá trị lớn nhất cho dòng chảy trên mỗi đường phố.
+</ViDu>
+
+<GhiChu tieuDe="Ghi chú cho người học — kiểm tra nhanh">
+Cộng cả bốn phương trình nút lại, mọi $f_i$ đều triệt tiêu (mỗi dòng chảy vào đúng một nút và ra khỏi đúng một nút), còn lại $500 = 400 + 100$. Đó là lý do có một hàng toàn số 0 trong dạng rút gọn: một phương trình luôn là hệ quả của các phương trình kia. Với mạng bất kỳ, *tổng dòng vào từ ngoài phải bằng tổng dòng ra ngoài* — nếu không, hệ vô nghiệm.
+</GhiChu>

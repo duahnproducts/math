@@ -1,0 +1,24 @@
+---
+// Hình lấy từ sách gốc (giấy phép mở), đã chuyển thành SVG dùng lớp màu của web
+// để đổi được sáng/tối. File nằm ở src/figures/sach/<ten>.svg — sinh bằng
+// scripts/pdf-hinh-svg.py từ đúng vùng hình trong PDF gốc.
+// Dùng trong MDX: <HinhSach ten="ds-bt-1-4-2" moTa="Mạng kênh tưới tiêu A, B, C, D" />
+const cacHinh = import.meta.glob<string>('./sach/*.svg', { query: '?raw', import: 'default', eager: true });
+
+interface Props {
+  ten: string;
+  /** mô tả cho trình đọc màn hình */
+  moTa: string;
+  /** chú thích hiện dưới hình (tuỳ chọn) */
+  chuThich?: string;
+}
+const { ten, moTa, chuThich } = Astro.props;
+const svg = cacHinh[`./sach/${ten}.svg`];
+if (!svg) throw new Error(`Chưa có hình sách "${ten}" trong src/figures/sach/`);
+const coNhan = svg.replace('<svg ', `<svg aria-label="${moTa.replaceAll('"', '&quot;')}" `);
+---
+
+<figure class="hinh hinh-sach" data-hinh-sach={ten}>
+  <Fragment set:html={coNhan} />
+  {chuThich && <figcaption>{chuThich}</figcaption>}
+</figure>

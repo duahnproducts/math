@@ -1,0 +1,62 @@
+---
+// Đại số Ví dụ 1.4.1 — mạng đường một chiều. Sách gốc bản 2023 nhắc tới sơ đồ nhưng
+// không in hình, nên hình được vẽ lại từ chính các phương trình của ví dụ
+// (dữ liệu và test ở src/lib/mang.ts).
+import { MANG_VI_DU_1_4_1 as m, giuaCanh } from '@/lib/mang';
+
+const chiSo = (t: string) => t.replace(/\d/g, (c) => '₀₁₂₃₄₅₆₇₈₉'[Number(c)]);
+const canh = m.canh.map((c) => {
+  const a = m.nut[c.tu];
+  const b = m.nut[c.den];
+  const g = giuaCanh(a, b);
+  // nhãn lệch sang bên trái chiều đi của cạnh
+  const rad = (g.goc * Math.PI) / 180;
+  return { ...c, a, b, g, nx: g.x + Math.sin(rad) * 14, ny: g.y - Math.cos(rad) * 14 };
+});
+const ngoai = m.ngoai.map((d) => {
+  const n = m.nut[d.nut];
+  const xa = { x: n.x + d.huong[0] * 44, y: n.y + d.huong[1] * 44 };
+  const [tu, den] = d.vao ? [xa, n] : [n, xa];
+  return { ...d, tu, den, g: giuaCanh(tu, den), nhanX: xa.x + d.huong[0] * 16, nhanY: xa.y + 4 };
+});
+---
+
+<figure class="hinh" aria-labelledby="hinh-mang-141-cap" data-hinh-mang>
+  <svg viewBox="0 0 440 240" width="440" role="img" aria-label="Mạng bốn giao lộ A, B, C, D với sáu đường một chiều f1 đến f6">
+    {
+      canh.map((c) => (
+        <g>
+          <line x1={c.a.x} y1={c.a.y} x2={c.b.x} y2={c.b.y} class="nhan-manh" stroke-width="1.6" />
+          <path d="M-7 -4.5 L5 0 L-7 4.5 Z" class="to-nhan" transform={`translate(${c.g.x} ${c.g.y}) rotate(${c.g.goc})`} />
+          <text x={c.nx} y={c.ny + 4} text-anchor="middle" font-style="italic" class="chu-sach" font-size="14">
+            {chiSo(c.ten)}
+          </text>
+        </g>
+      ))
+    }
+    {
+      ngoai.map((d) => (
+        <g>
+          <line x1={d.tu.x} y1={d.tu.y} x2={d.den.x} y2={d.den.y} class="net" stroke-width="1.4" />
+          <path d="M-7 -4.5 L5 0 L-7 4.5 Z" class="to-dam" transform={`translate(${d.g.x} ${d.g.y}) rotate(${d.g.goc})`} />
+          <text x={d.nhanX} y={d.nhanY} text-anchor="middle" class="chu-sach" font-size="14">
+            {d.giaTri}
+          </text>
+        </g>
+      ))
+    }
+    {
+      Object.entries(m.nut).map(([ten, n]) => (
+        <g>
+          <circle cx={n.x} cy={n.y} r="4" class="to-dam" />
+          <text x={n.x + (ten === 'A' ? -4 : ten === 'D' ? 0 : 10)} y={n.y + (ten === 'D' ? 20 : ten === 'A' ? -10 : -6)} font-style="italic" class="chu-sach" font-size="14">
+            {ten}
+          </text>
+        </g>
+      ))
+    }
+  </svg>
+  <figcaption id="hinh-mang-141-cap">
+    Sơ đồ vẽ lại theo các phương trình của ví dụ: xe đi theo chiều mũi tên; 500 xe/giờ vào ở A, 400 và 100 xe/giờ ra ở B và C.
+  </figcaption>
+</figure>

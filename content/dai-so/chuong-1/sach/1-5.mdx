@@ -1,0 +1,65 @@
+---
+mon: dai-so
+chuong: 1
+muc: "1.5"
+tieu_de: "Ứng dụng: mạng điện"
+tieu_de_en: An Application to Electrical Networks
+loai: dich-nguyen-van
+nguon: "Dịch từ W. Keith Nicholson, Linear Algebra with Applications, Version 2023 – Revision A, Vretta-Lyryx Inc. (https://lyryx.com/linear-algebra-applications/), Mục 1.5. Bản dịch phát hành theo giấy phép CC BY-NC-SA 4.0, giống bản gốc. Thay đổi: dịch sang tiếng Việt; sơ đồ mạch lấy từ bản gốc, đổi màu để đọc được ở giao diện sáng và tối."
+---
+
+*(Mục này độc lập với Mục 1.4.)*
+
+Trong một mạng điện, thường cần tìm **cường độ dòng điện** tính bằng ampe (A) chạy trong các phần khác nhau của mạng. Các mạng này thường chứa **điện trở** (*resistors*) làm cản dòng điện. Điện trở được ký hiệu bằng một đường gấp khúc, và giá trị điện trở được đo bằng ohm ($\Omega$). Ngoài ra, dòng điện được tăng lên tại nhiều điểm nhờ các **nguồn điện áp** (*voltage sources*, ví dụ pin), ký hiệu bằng hai vạch song song. Điện áp của các nguồn này đo bằng volt (V). Ta giả sử các nguồn điện áp này không có điện trở. Dòng điện chạy theo các nguyên lý sau.
+
+<DinhLy ten="Định luật Ohm (Ohm’s Law)">
+Cường độ dòng điện $I$ và độ sụt áp $V$ qua một điện trở $R$ liên hệ với nhau bởi phương trình $V = RI$.
+</DinhLy>
+
+<DinhLy ten="Các định luật Kirchhoff (Kirchhoff’s Laws)">
+1. **(Quy tắc nút)** Dòng điện đi vào một nút bằng dòng điện đi ra khỏi nút đó.
+2. **(Quy tắc vòng)** Tổng đại số các độ sụt áp (do điện trở) quanh một vòng kín bất kỳ của mạng phải bằng tổng các độ tăng áp quanh vòng đó.
+</DinhLy>
+
+Khi áp dụng quy tắc 2, hãy chọn một chiều (cùng chiều kim đồng hồ hoặc ngược chiều kim đồng hồ) quanh vòng kín, rồi coi mọi điện áp và dòng điện là *dương* khi theo chiều này và *âm* khi ngược chiều. Đó là lý do dùng từ *tổng đại số* trong quy tắc 2. Sau đây là một ví dụ.
+
+<ViDu so="1.5.1">
+Tìm các dòng điện trong mạch đã cho.
+
+<HinhSach ten="ds-vd-1-5-1" moTa="Mạch điện với các nút A, B, C, D, nguồn 10 V, 5 V, 20 V, 10 V và các điện trở 20 Ω, 10 Ω, 5 Ω, 5 Ω; dòng I1 đến I6" />
+
+**Lời giải.** Trước hết áp dụng quy tắc nút tại các nút $A$, $B$, $C$, $D$ để được
+
+$$
+\begin{array}{ll}
+\text{Nút } A & I_1 = I_2 + I_3 \\
+\text{Nút } B & I_6 = I_1 + I_5 \\
+\text{Nút } C & I_2 + I_4 = I_6 \\
+\text{Nút } D & I_3 + I_5 = I_4
+\end{array}
+$$
+
+Lưu ý rằng các phương trình này không độc lập (thực ra phương trình thứ ba là hệ quả dễ thấy của ba phương trình kia).
+
+Tiếp theo, quy tắc vòng đòi hỏi tổng các độ tăng áp (do các nguồn) quanh một vòng kín phải bằng tổng các độ sụt áp (do điện trở). Theo định luật Ohm, độ sụt áp qua điện trở $R$ (theo chiều dòng điện $I$) là $RI$. Đi ngược chiều kim đồng hồ quanh ba vòng kín ta được
+
+$$
+\begin{array}{ll}
+\text{Vòng trên bên trái} & 10 + 5 = 20I_1 \\
+\text{Vòng trên bên phải} & -5 + 20 = 10I_3 + 5I_4 \\
+\text{Vòng dưới} & -10 = -5I_5 - 5I_4
+\end{array}
+$$
+
+Do đó, bỏ qua phương trình thừa thu được tại nút $C$, ta có sáu phương trình với sáu ẩn $I_1, \ldots, I_6$. Nghiệm là
+
+$$
+I_1 = \tfrac{15}{20}, \quad I_2 = -\tfrac{1}{20}, \quad I_3 = \tfrac{16}{20}, \quad I_4 = \tfrac{28}{20}, \quad I_5 = \tfrac{12}{20}, \quad I_6 = \tfrac{27}{20}
+$$
+
+Việc $I_2$ mang dấu âm tất nhiên có nghĩa là dòng điện này chạy theo chiều ngược lại, với độ lớn là $\frac{1}{20}$ ampe.
+</ViDu>
+
+<GhiChu tieuDe="Ghi chú cho người học — kiểm tra nghiệm">
+Thử lại vài phương trình: nút $A$: $\frac{15}{20} = -\frac{1}{20} + \frac{16}{20}$ ✓; vòng dưới: $-5 \cdot \frac{12}{20} - 5 \cdot \frac{28}{20} = -\frac{200}{20} = -10$ ✓. Thói quen thế nghiệm vào lại hệ ban đầu rẻ hơn nhiều so với việc tìm lỗi sau này.
+</GhiChu>

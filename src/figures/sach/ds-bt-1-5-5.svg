@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175 134" width="280" role="img">
+<path d="M29.52 93.92L50.14 93.92M48.24 107.53L63.96 107.53M62.05 93.92L109.25 93.92L135.82 93.92M135.82 30.14L135.83 56.07M149.44 54.17L149.44 69.89M135.83 67.98L135.82 93.92M135.82 30.14L125.13 30.14M93.37 30.14L82.67 30.14L82.67 30.21M82.67 61.96L82.67 62.03L82.67 72.02M96.29 70.11L96.29 85.83M82.67 83.93L82.67 93.92M82.67 30.14L56.1 30.14L29.52 30.14L29.52 46.15M29.52 77.9L29.52 93.92" class="nhan-manh" fill="none" stroke-width="0.4"/>
+<path d="M58.06 93.92L62.05 93.92M54.13 93.92L50.14 93.92" class="nhan-manh" fill="none" stroke-width="0.4"/>
+<path d="M58.06 87.97L58.06 99.87M54.13 82.01L54.13 105.83" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M59.74 107.53L59.74 109.52L63.96 107.53L59.74 105.55L59.74 107.53" class="nhan-manh to-nhan" stroke-width="0.4"/>
+<path d="M107.52 93.92L107.52 95.9L111.73 93.92L107.52 91.94L107.52 93.92" class="nhan-manh to-nhan" stroke-width="0.4"/>
+<path d="M135.82 63.99L135.82 67.98M135.82 60.07L135.82 56.08" class="nhan-manh" fill="none" stroke-width="0.4"/>
+<path d="M141.77 63.99L129.87 63.99M147.73 60.07L123.91 60.07" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M149.44 65.67L147.46 65.67L149.44 69.89L151.43 65.67L149.44 65.67" class="nhan-manh to-nhan" stroke-width="0.4"/>
+<path d="M125.52 30.14L122.44 36.09L117.08 24.19L111.72 36.09L106.37 24.19L101.01 36.09L95.65 24.19L92.97 30.14" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M82.67 29.81L88.62 32.89L76.72 38.25L88.62 43.61L76.72 48.96L88.62 54.32L76.72 59.68L82.67 62.36" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M82.67 79.94L82.67 83.93M82.67 76.01L82.67 72.02" class="nhan-manh" fill="none" stroke-width="0.4"/>
+<path d="M88.62 79.94L76.72 79.94M94.58 76.01L70.76 76.01" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M96.29 81.62L94.3 81.62L96.29 85.83L98.27 81.62L96.29 81.62" class="nhan-manh to-nhan" stroke-width="0.4"/>
+<path d="M82.68 65.29L80.69 65.29L82.68 69.5L84.66 65.29L82.68 65.29" class="nhan-manh to-nhan" stroke-width="0.4"/>
+<path d="M57.83 30.14L57.83 28.15L53.62 30.14L57.83 32.12L57.83 30.14" class="nhan-manh to-nhan" stroke-width="0.4"/>
+<path d="M29.52 45.76L35.47 48.83L23.57 54.19L35.47 59.55L23.57 64.91L35.47 70.27L23.57 75.62L29.52 78.3" class="nhan-manh" fill="none" stroke-width="0.8"/>
+<path d="M84.17 93.92C84.17 93.09 83.5 92.42 82.67 92.42C81.84 92.42 81.18 93.09 81.18 93.92C81.18 94.75 81.84 95.42 82.67 95.42C83.5 95.42 84.17 94.75 84.17 93.92" class="to-dam"/>
+<path d="M84.17 30.14C84.17 29.31 83.5 28.64 82.67 28.64C81.84 28.64 81.18 29.31 81.18 30.14C81.18 30.97 81.84 31.64 82.67 31.64C83.5 31.64 84.17 30.97 84.17 30.14" class="to-dam"/>
+<text x="48.7" y="118.59" font-size="10.91" font-style="italic" class="chu-sach">x V</text>
+<text x="105.33" y="105.18" font-size="10.91" font-style="italic" class="chu-sach">I</text>
+<text x="108.69" y="106.86" font-size="7.97" class="chu-sach">3</text>
+<text x="153.43" y="65.66" font-size="10.91" class="chu-sach">5</text>
+<text x="158.88" y="65.66" font-size="10.91" font-style="italic" class="chu-sach">V</text>
+<text x="102.34" y="19.55" font-size="10.91" class="chu-sach">2</text>
+<text x="107.74" y="19.55" font-size="10.91" class="chu-sach">Ω</text>
+<text x="91.91" y="48.77" font-size="10.91" class="chu-sach">1</text>
+<text x="97.31" y="48.77" font-size="10.91" class="chu-sach">Ω</text>
+<text x="100.27" y="81.53" font-size="10.91" class="chu-sach">2</text>
+<text x="105.72" y="81.53" font-size="10.91" font-style="italic" class="chu-sach">V</text>
+<text x="70.65" y="69.74" font-size="10.91" font-style="italic" class="chu-sach">I</text>
+<text x="74.01" y="71.42" font-size="7.97" class="chu-sach">2</text>
+<text x="52.18" y="41.4" font-size="10.91" font-style="italic" class="chu-sach">I</text>
+<text x="55.54" y="43.08" font-size="7.97" class="chu-sach">1</text>
+<text x="38.76" y="64.72" font-size="10.91" class="chu-sach">1</text>
+<text x="44.16" y="64.72" font-size="10.91" class="chu-sach">Ω</text>
+</svg>
