@@ -12,6 +12,9 @@ import {
   trichThuatNgu,
   type DuLieuChuong,
   type MucTrongChuong,
+  type ThongTinBaiGiang,
+  type ThongTinBaiTap,
+  type ThongTinMucSach,
 } from '../src/lib/noi-dung';
 
 const GOC = fileURLToPath(new URL('..', import.meta.url));
@@ -73,22 +76,36 @@ describe('thư mục môn học', () => {
 });
 
 // Dữ liệu từng chương có nội dung
-const cacChuong: (DuLieuChuong & { thuMuc: string })[] = [];
+type CoTep<T> = T & { tep: string; noiDung: string; ten: string };
+interface ChuongKiemTra extends DuLieuChuong {
+  thuMuc: string;
+  baiGiang: CoTep<ThongTinBaiGiang>[];
+  sach: CoTep<ThongTinMucSach>[];
+  baiTap: CoTep<ThongTinBaiTap>[];
+}
+
+function kemTep<T>(f: ReturnType<typeof docMdx>[number], du: T): CoTep<T> {
+  return { ...du, tep: f.tep, noiDung: f.noiDung, ten: f.ten };
+}
+
+const cacChuong: ChuongKiemTra[] = [];
 for (const mon of cacMon) {
   for (const c of monJson[mon].chuong) {
     const thuMuc = join(NOI_DUNG, mon, `chuong-${c.so}`);
     if (!existsSync(thuMuc)) continue;
-    const bg = docMdx(join(thuMuc, 'giang-day'));
-    const sa = docMdx(join(thuMuc, 'sach'));
-    const bt = docMdx(join(thuMuc, 'bai-tap'));
     cacChuong.push({
       thuMuc: `${mon}/chuong-${c.so}`,
       mon,
       chuong: c.so,
       cacMuc: c.muc ?? [],
-      baiGiang: bg.map((f) => ({ ...(f.du as never), tep: f.tep, noiDung: f.noiDung, ten: f.ten }) as never),
-      sach: sa.map((f) => ({ ...(f.du as never), tep: f.tep, noiDung: f.noiDung, ten: f.ten }) as never),
-      baiTap: bt.map((f) => ({ ...(f.du as never), tep: f.tep, noiDung: f.noiDung, ten: f.ten, can_dung: (f.du.can_dung as string[]) ?? [] }) as never),
+      baiGiang: docMdx(join(thuMuc, 'giang-day')).map((f) => kemTep(f, f.du as unknown as ThongTinBaiGiang)),
+      sach: docMdx(join(thuMuc, 'sach')).map((f) => kemTep(f, f.du as unknown as ThongTinMucSach)),
+      baiTap: docMdx(join(thuMuc, 'bai-tap')).map((f) =>
+        kemTep(f, {
+          ...(f.du as unknown as ThongTinBaiTap),
+          can_dung: (f.du.can_dung as string[] | undefined) ?? [],
+        }),
+      ),
     });
   }
 }
@@ -104,15 +121,9 @@ describe('nội dung các chương', () => {
     });
 
     it('tên file khớp số hiệu khai báo', () => {
-      for (const b of du.baiGiang as unknown as { ten: string; bai: number; tep: string }[]) {
-        expect(b.ten, b.tep).toBe(`bai-${b.bai}`);
-      }
-      for (const s of du.sach as unknown as { ten: string; muc: string; tep: string }[]) {
-        expect(s.ten, s.tep).toBe(soSangSlug(s.muc));
-      }
-      for (const b of du.baiTap as unknown as { ten: string; so: string; tep: string }[]) {
-        expect(b.ten, b.tep).toBe(soSangSlug(b.so));
-      }
+      for (const b of du.baiGiang) expect(b.ten, b.tep).toBe(`bai-${b.bai}`);
+      for (const s of du.sach) expect(s.ten, s.tep).toBe(soSangSlug(s.muc));
+      for (const b of du.baiTap) expect(b.ten, b.tep).toBe(soSangSlug(b.so));
     });
 
     it('bài giảng đánh số liền nhau từ 1', () => {

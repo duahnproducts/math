@@ -23,4 +23,15 @@ export default defineConfig({
   },
   integrations: [mdx(), react()],
   devToolbar: { enabled: false },
+  vite: {
+    build: {
+      rollupOptions: {
+        // Cảnh báo vô hại của Astro + Rolldown về chỉ thị "use astro:head-inject" trong MDX
+        onwarn(canhBao, macDinh) {
+          if (canhBao.code === 'MODULE_LEVEL_DIRECTIVE') return;
+          macDinh(canhBao);
+        },
+      },
+    },
+  },
 });

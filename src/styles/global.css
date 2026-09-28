@@ -278,6 +278,7 @@ kbd {
 .noi-dung {
   min-width: 0;
   padding: 28px 32px 64px;
+  overflow-x: clip;
 }
 .giay {
   background-image: linear-gradient(var(--grid) 1px, transparent 1px),
@@ -897,6 +898,8 @@ figure.hinh figcaption {
   color: var(--text-2);
 }
 .thuat-ngu .bong {
+  /* Ẩn hẳn khi đóng (không chỉ làm mờ) để không đẩy trang tràn ngang */
+  display: none;
   position: absolute;
   left: 0;
   top: calc(100% + 6px);
@@ -914,10 +917,6 @@ figure.hinh figcaption {
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
-  opacity: 0;
-  transform: translateY(-4px);
-  pointer-events: none;
-  transition: opacity var(--t-base) var(--ease-out), transform var(--t-base) var(--ease-out);
 }
 .thuat-ngu .bong b {
   display: block;
@@ -926,9 +925,14 @@ figure.hinh figcaption {
 .thuat-ngu:hover .bong,
 .thuat-ngu:focus-within .bong,
 .thuat-ngu.mo .bong {
-  opacity: 1;
-  transform: none;
-  pointer-events: auto;
+  display: block;
+  animation: hien-bong var(--t-base) var(--ease-out);
+}
+@keyframes hien-bong {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
 }
 
 /* ---------- Liên kết chéo ---------- */
@@ -1481,6 +1485,16 @@ dialog.hoi p {
   }
   .luoi {
     grid-template-columns: 1fr;
+  }
+  .thuat-ngu .bong {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    top: auto;
+    bottom: 72px;
+    width: auto;
+    max-width: none;
+    font-size: 14px;
   }
   .thanh-duoi {
     position: fixed;

@@ -27,7 +27,7 @@ describe('khung 8 mục', () => {
     expect(trichTieuDeCap2(vb)).toEqual(['Một', 'Hai']);
   });
   it('đủ 8 mục thì đạt, cho phép đuôi tiêu đề', () => {
-    const tieuDe = [...TAM_MUC];
+    const tieuDe: string[] = [...TAM_MUC];
     tieuDe[3] = 'Công thức — định nghĩa sup';
     expect(kiemTraTamMuc(tieuDe)).toEqual([]);
     expect(kiemTraTamMuc(trichTieuDeCap2(baiGiangDu))).toEqual([]);
@@ -37,7 +37,7 @@ describe('khung 8 mục', () => {
     expect(kiemTraTamMuc(tieuDe)).toEqual(['thiếu mục "Lỗi dễ mắc"']);
   });
   it('báo sai thứ tự', () => {
-    const tieuDe = [...TAM_MUC];
+    const tieuDe: string[] = [...TAM_MUC];
     [tieuDe[0], tieuDe[1]] = [tieuDe[1], tieuDe[0]];
     expect(kiemTraTamMuc(tieuDe)).toContain('mục "Hình dung trực quan" sai thứ tự');
   });
