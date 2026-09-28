@@ -72,3 +72,16 @@ test('Chương 2: đủ §2.1–§2.9 có trang dịch, mục lục đủ 9 mụ
   await expect(page.getByText('Phép biến đổi tuyến tính').first()).toBeVisible();
   await expect(page.locator('a[href$="tai-ve/dai-so-chuong-2-ban-dich.pdf"]')).toBeVisible();
 });
+
+test('bài tập Chương 2: 24 bài của §2.1, "Cần dùng" trỏ về §2.1, thuật ngữ mới có trong bảng', async ({ page }) => {
+  await page.goto('dai-so/chuong-2/bai-tap/');
+  await expect(page.locator('[data-the-bai-tap]')).toHaveCount(24);
+
+  await page.goto('dai-so/chuong-2/bai-tap/2-1-18/');
+  await expect(page.locator('.pill', { hasText: 'Chưa có hướng dẫn' })).toBeVisible();
+  await expect(page.locator('.can-dung a').first()).toHaveAttribute('href', /sach\/2-1\/#vi-du-2\.1\.12$/);
+  await expect(page.locator('.katex-error')).toHaveCount(0);
+
+  await page.goto('thuat-ngu/');
+  await expect(page.getByText('vector trạng thái dừng')).toBeVisible();
+});
