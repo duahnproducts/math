@@ -1,0 +1,39 @@
+---
+// Đại số §2.6 — luật hình bình hành với đúng các vector của sách: x = (2, 1),
+// y = (1, 3), x + y = (3, 4).
+import { DAU_MUI_TEN, muiTen } from './mui-ten';
+
+const O = { x: 40, y: 225 };
+const DV = 46;
+const diem = ([a, b]: number[]) => ({ x: O.x + a * DV, y: O.y - b * DV });
+const x = [2, 1];
+const y = [1, 3];
+const tong = [x[0] + y[0], x[1] + y[1]];
+const [px, py, pt] = [diem(x), diem(y), diem(tong)];
+const cacVector = [
+  { dich: px, lop: 'net', lopDau: 'to-dam' },
+  { dich: py, lop: 'net', lopDau: 'to-dam' },
+  { dich: pt, lop: 'nhan-manh', lopDau: 'to-nhan' },
+].map((v) => ({ ...v, ...muiTen(O.x, O.y, v.dich.x, v.dich.y) }));
+---
+
+<figure class="hinh" aria-labelledby="hinh-binh-hanh-cap" data-hinh-binh-hanh>
+  <svg viewBox="0 0 300 245" width="300" role="img" aria-label="Hình bình hành với các đỉnh 0, x, y và x cộng y">
+    <line x1="20" y1={O.y} x2="250" y2={O.y} class="net-mo" stroke-width="1" />
+    <line x1={O.x} y1="238" x2={O.x} y2="12" class="net-mo" stroke-width="1" />
+    <path d={`M${px.x} ${px.y} L${pt.x} ${pt.y} L${py.x} ${py.y}`} class="net-mo" stroke-width="1.2" stroke-dasharray="5 4" style="fill: none" />
+    {
+      cacVector.map((v) => (
+        <g>
+          <line x1={v.x1} y1={v.y1} x2={v.x2} y2={v.y2} class={v.lop} stroke-width="2" />
+          <path d={DAU_MUI_TEN} class={v.lopDau} transform={v.dau} />
+        </g>
+      ))
+    }
+    <text x={O.x - 6} y={O.y + 16} class="chu" text-anchor="end">0</text>
+    <text x={px.x + 8} y={px.y + 12} class="chu">x = (2, 1)</text>
+    <text x={py.x - 8} y={py.y - 4} class="chu" text-anchor="end">y = (1, 3)</text>
+    <text x={pt.x + 8} y={pt.y + 4} class="chu-nhan">x + y = (3, 4)</text>
+  </svg>
+  <figcaption id="hinh-binh-hanh-cap">Mũi tên của x + y là đường chéo của hình bình hành dựng trên x và y.</figcaption>
+</figure>

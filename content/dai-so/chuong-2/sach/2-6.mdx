@@ -1,0 +1,447 @@
+---
+mon: dai-so
+chuong: 2
+muc: "2.6"
+tieu_de: Phép biến đổi tuyến tính
+tieu_de_en: Linear Transformations
+loai: dich-nguyen-van
+nguon: "Dịch từ W. Keith Nicholson, Linear Algebra with Applications, Version 2023 – Revision A, Vretta-Lyryx Inc. (https://lyryx.com/linear-algebra-applications/), Mục 2.6. Bản dịch phát hành theo giấy phép CC BY-NC-SA 4.0, giống bản gốc. Thay đổi: dịch sang tiếng Việt, thêm ghi chú cho người học, vẽ lại các hình minh hoạ."
+---
+
+Nếu $A$ là ma trận $m \times n$, nhắc lại rằng phép biến đổi $T_A : \mathbb{R}^n \to \mathbb{R}^m$ xác định bởi
+
+$$
+T_A(\mathbf{x}) = A\mathbf{x} \quad \text{với mọi } \mathbf{x} \text{ trong } \mathbb{R}^n
+$$
+
+được gọi là **phép biến đổi ma trận cảm sinh** bởi $A$. Ở <XemMuc muc="2.2" chu="Mục 2.2" /> ta đã thấy nhiều phép biến đổi hình học quan trọng thực chất là phép biến đổi ma trận. Các phép biến đổi này có thể được đặc trưng theo một cách khác. Ý tưởng mới là khái niệm **phép biến đổi tuyến tính**, một trong những khái niệm cơ bản của đại số tuyến tính. Ta định nghĩa các phép biến đổi này trong mục này, và chứng tỏ rằng chúng thực ra chính là các phép biến đổi ma trận nhìn theo cách khác. Có hai cách nhìn hoá ra lại rất hữu ích, vì trong một tình huống cụ thể, cách nhìn này hay cách nhìn kia có thể tiện hơn.
+
+<DinhNghia so="2.13" ten="Phép biến đổi tuyến tính Rⁿ → Rᵐ">
+Một phép biến đổi $T : \mathbb{R}^n \to \mathbb{R}^m$ được gọi là **phép biến đổi tuyến tính** (*linear transformation*) nếu nó thoả mãn hai điều kiện sau với mọi vector $\mathbf{x}$, $\mathbf{y}$ trong $\mathbb{R}^n$ và mọi vô hướng $a$:
+
+- **T1** $\quad T(\mathbf{x} + \mathbf{y}) = T(\mathbf{x}) + T(\mathbf{y})$
+- **T2** $\quad T(a\mathbf{x}) = aT(\mathbf{x})$
+
+</DinhNghia>
+
+Tất nhiên, $\mathbf{x} + \mathbf{y}$ và $a\mathbf{x}$ ở đây được tính trong $\mathbb{R}^n$, còn $T(\mathbf{x}) + T(\mathbf{y})$ và $aT(\mathbf{x})$ nằm trong $\mathbb{R}^m$. Ta nói $T$ **bảo toàn phép cộng** nếu T1 đúng, và $T$ **bảo toàn phép nhân với vô hướng** nếu T2 đúng. Hơn nữa, lấy $a = 0$ và $a = -1$ trong T2 cho
+
+$$
+T(\mathbf{0}) = \mathbf{0} \qquad \text{và} \qquad T(-\mathbf{x}) = -T(\mathbf{x}) \quad \text{với mọi } \mathbf{x}
+$$
+
+Do đó $T$ bảo toàn vector không và vector đối. Thậm chí còn nhiều hơn thế.
+
+Nhắc lại rằng một vector $\mathbf{y}$ trong $\mathbb{R}^n$ được gọi là tổ hợp tuyến tính của các vector $\mathbf{x}_1, \mathbf{x}_2, \ldots, \mathbf{x}_k$ nếu $\mathbf{y}$ có dạng
+
+$$
+\mathbf{y} = a_1\mathbf{x}_1 + a_2\mathbf{x}_2 + \cdots + a_k\mathbf{x}_k
+$$
+
+với các vô hướng $a_1, a_2, \ldots, a_k$ nào đó. Các điều kiện T1 và T2 kết hợp lại cho thấy mọi phép biến đổi tuyến tính $T$ đều *bảo toàn tổ hợp tuyến tính* theo nghĩa của định lý sau. Kết quả này được dùng đi dùng lại trong đại số tuyến tính.
+
+<DinhLy so="2.6.1" ten="Định lý về tính tuyến tính">
+Nếu $T : \mathbb{R}^n \to \mathbb{R}^m$ là phép biến đổi tuyến tính thì với mỗi $k = 1, 2, \ldots$
+
+$$
+T(a_1\mathbf{x}_1 + a_2\mathbf{x}_2 + \cdots + a_k\mathbf{x}_k) = a_1T(\mathbf{x}_1) + a_2T(\mathbf{x}_2) + \cdots + a_kT(\mathbf{x}_k)
+$$
+
+với mọi vô hướng $a_i$ và mọi vector $\mathbf{x}_i$ trong $\mathbb{R}^n$.
+</DinhLy>
+
+**Chứng minh.** Nếu $k = 1$, nó đọc là $T(a_1\mathbf{x}_1) = a_1T(\mathbf{x}_1)$, chính là Điều kiện T2. Nếu $k = 2$, ta có
+
+$$
+\begin{aligned}
+T(a_1\mathbf{x}_1 + a_2\mathbf{x}_2) &= T(a_1\mathbf{x}_1) + T(a_2\mathbf{x}_2) && \text{theo Điều kiện T1} \\
+&= a_1T(\mathbf{x}_1) + a_2T(\mathbf{x}_2) && \text{theo Điều kiện T2}
+\end{aligned}
+$$
+
+Nếu $k = 3$, ta dùng trường hợp $k = 2$ để được
+
+$$
+\begin{aligned}
+T(a_1\mathbf{x}_1 + a_2\mathbf{x}_2 + a_3\mathbf{x}_3) &= T[(a_1\mathbf{x}_1 + a_2\mathbf{x}_2) + a_3\mathbf{x}_3] && \text{gom số hạng} \\
+&= T(a_1\mathbf{x}_1 + a_2\mathbf{x}_2) + T(a_3\mathbf{x}_3) && \text{theo Điều kiện T1} \\
+&= [a_1T(\mathbf{x}_1) + a_2T(\mathbf{x}_2)] + T(a_3\mathbf{x}_3) && \text{theo trường hợp } k = 2 \\
+&= [a_1T(\mathbf{x}_1) + a_2T(\mathbf{x}_2)] + a_3T(\mathbf{x}_3) && \text{theo Điều kiện T2}
+\end{aligned}
+$$
+
+Chứng minh cho $k$ bất kỳ là tương tự, dùng trường hợp trước đó $k - 1$ và các Điều kiện T1, T2. ∎
+
+Phương pháp chứng minh trong Định lý 2.6.1 được gọi là **quy nạp toán học** (*mathematical induction*) — xem Phụ lục C.
+
+Định lý 2.6.1 cho thấy rằng nếu $T$ là phép biến đổi tuyến tính và đã biết $T(\mathbf{x}_1), T(\mathbf{x}_2), \ldots, T(\mathbf{x}_k)$ thì $T(\mathbf{y})$ có thể tính dễ dàng với mọi tổ hợp tuyến tính $\mathbf{y}$ của $\mathbf{x}_1, \mathbf{x}_2, \ldots, \mathbf{x}_k$. Đây là một tính chất rất hữu ích của phép biến đổi tuyến tính, được minh hoạ trong hai ví dụ sau.
+
+<ViDu so="2.6.1">
+Nếu $T : \mathbb{R}^3 \to \mathbb{R}^2$ là phép biến đổi tuyến tính, $T\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} = \begin{bmatrix} 2 \\ -1 \end{bmatrix}$, $T\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 1 \\ -2 \end{bmatrix}$, $T\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} = \begin{bmatrix} -4 \\ 4 \end{bmatrix}$, hãy tìm $T\begin{bmatrix} 3 \\ -4 \\ 2 \end{bmatrix}$.
+
+**Lời giải.** Viết $\mathbf{w} = \begin{bmatrix} 3 \\ -4 \\ 2 \end{bmatrix}$, $\mathbf{e}_1 = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}$, $\mathbf{e}_2 = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}$, $\mathbf{e}_3 = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}$. Khi đó ta đã biết $T(\mathbf{e}_1)$, $T(\mathbf{e}_2)$, $T(\mathbf{e}_3)$ và muốn tìm $T(\mathbf{w})$, nên theo Định lý 2.6.1 chỉ cần biểu diễn $\mathbf{w}$ thành tổ hợp tuyến tính của $\mathbf{e}_1$, $\mathbf{e}_2$, $\mathbf{e}_3$. Nhưng rõ ràng $\mathbf{w} = 3\mathbf{e}_1 - 4\mathbf{e}_2 + 2\mathbf{e}_3$. Do đó Định lý 2.6.1 cho
+
+$$
+T(\mathbf{w}) = 3T(\mathbf{e}_1) - 4T(\mathbf{e}_2) + 2T(\mathbf{e}_3) = 3\begin{bmatrix} 2 \\ -1 \end{bmatrix} - 4\begin{bmatrix} 1 \\ -2 \end{bmatrix} + 2\begin{bmatrix} -4 \\ 4 \end{bmatrix} = \begin{bmatrix} -6 \\ 13 \end{bmatrix}
+$$
+
+</ViDu>
+
+Các vector $\{\mathbf{e}_1, \mathbf{e}_2, \mathbf{e}_3\}$ tạo thành cái được gọi là **cơ sở chính tắc** của $\mathbb{R}^3$ (xem Định nghĩa 2.14 bên dưới). Đây là một ví dụ có lẽ tinh tế hơn.
+
+<ViDu so="2.6.2">
+Nếu $T : \mathbb{R}^2 \to \mathbb{R}^2$ là phép biến đổi tuyến tính, $T\begin{bmatrix} 1 \\ 1 \end{bmatrix} = \begin{bmatrix} 2 \\ -3 \end{bmatrix}$ và $T\begin{bmatrix} 1 \\ -2 \end{bmatrix} = \begin{bmatrix} 5 \\ 1 \end{bmatrix}$, hãy tìm $T\begin{bmatrix} 4 \\ 3 \end{bmatrix}$.
+
+**Lời giải.** Cho tiện, viết $\mathbf{z} = \begin{bmatrix} 4 \\ 3 \end{bmatrix}$, $\mathbf{x} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$, $\mathbf{y} = \begin{bmatrix} 1 \\ -2 \end{bmatrix}$. Khi đó ta biết $T(\mathbf{x})$ và $T(\mathbf{y})$ và muốn tìm $T(\mathbf{z})$, nên theo Định lý 2.6.1 chỉ cần biểu diễn $\mathbf{z}$ thành tổ hợp tuyến tính của $\mathbf{x}$ và $\mathbf{y}$. Tức là ta muốn tìm các số $a$ và $b$ sao cho $\mathbf{z} = a\mathbf{x} + b\mathbf{y}$. Cho các phần tử bằng nhau ta được hai phương trình $4 = a + b$ và $3 = a - 2b$. Nghiệm là $a = \frac{11}{3}$ và $b = \frac{1}{3}$, nên $\mathbf{z} = \frac{11}{3}\mathbf{x} + \frac{1}{3}\mathbf{y}$. Do đó Định lý 2.6.1 cho
+
+$$
+T(\mathbf{z}) = \frac{11}{3}T(\mathbf{x}) + \frac{1}{3}T(\mathbf{y}) = \frac{11}{3}\begin{bmatrix} 2 \\ -3 \end{bmatrix} + \frac{1}{3}\begin{bmatrix} 5 \\ 1 \end{bmatrix} = \frac{1}{3}\begin{bmatrix} 27 \\ -32 \end{bmatrix}
+$$
+
+Đây là điều ta cần tìm.
+</ViDu>
+
+Bây giờ ta chứng tỏ rằng mọi phép biến đổi ma trận đều là phép biến đổi tuyến tính.
+
+<ViDu so="2.6.3">
+Nếu $A$ là $m \times n$ thì phép biến đổi ma trận $T_A : \mathbb{R}^n \to \mathbb{R}^m$ là một phép biến đổi tuyến tính.
+
+**Lời giải.** Ta có $T_A(\mathbf{x}) = A\mathbf{x}$ với mọi $\mathbf{x}$ trong $\mathbb{R}^n$, nên Định lý 2.2.2 cho
+
+$$
+T_A(\mathbf{x} + \mathbf{y}) = A(\mathbf{x} + \mathbf{y}) = A\mathbf{x} + A\mathbf{y} = T_A(\mathbf{x}) + T_A(\mathbf{y})
+$$
+
+và
+
+$$
+T_A(a\mathbf{x}) = A(a\mathbf{x}) = a(A\mathbf{x}) = aT_A(\mathbf{x})
+$$
+
+đúng với mọi $\mathbf{x}$, $\mathbf{y}$ trong $\mathbb{R}^n$ và mọi vô hướng $a$. Do đó $T_A$ thoả mãn T1 và T2, nên là tuyến tính.
+</ViDu>
+
+Điều đáng chú ý là mệnh đề đảo của Ví dụ 2.6.3 cũng đúng: *mọi* phép biến đổi tuyến tính $T : \mathbb{R}^n \to \mathbb{R}^m$ thực ra đều là một phép biến đổi ma trận. Để thấy vì sao, ta định nghĩa cơ sở chính tắc của $\mathbb{R}^n$.
+
+<DinhNghia so="2.14" ten="Cơ sở chính tắc của Rⁿ">
+**Cơ sở chính tắc** (*standard basis*) của $\mathbb{R}^n$ là tập các cột $\{\mathbf{e}_1, \mathbf{e}_2, \ldots, \mathbf{e}_n\}$ của ma trận đơn vị $I_n$. Tức là:
+
+$$
+\mathbf{e}_1 = \begin{bmatrix} 1 \\ 0 \\ 0 \\ \vdots \\ 0 \end{bmatrix}, \quad \mathbf{e}_2 = \begin{bmatrix} 0 \\ 1 \\ 0 \\ \vdots \\ 0 \end{bmatrix}, \quad \cdots, \quad \mathbf{e}_n = \begin{bmatrix} 0 \\ 0 \\ \vdots \\ 0 \\ 1 \end{bmatrix}.
+$$
+
+</DinhNghia>
+
+Khi đó mỗi $\mathbf{e}_i$ nằm trong $\mathbb{R}^n$ và mọi vector $\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix}$ trong $\mathbb{R}^n$ đều là tổ hợp tuyến tính của các $\mathbf{e}_i$. Thật vậy:
+
+$$
+\mathbf{x} = x_1\mathbf{e}_1 + x_2\mathbf{e}_2 + \cdots + x_n\mathbf{e}_n
+$$
+
+như bạn đọc có thể kiểm chứng. Do đó Định lý 2.6.1 cho thấy
+
+$$
+T(\mathbf{x}) = T(x_1\mathbf{e}_1 + \cdots + x_n\mathbf{e}_n) = x_1T(\mathbf{e}_1) + x_2T(\mathbf{e}_2) + \cdots + x_nT(\mathbf{e}_n)
+$$
+
+Bây giờ hãy để ý rằng mỗi $T(\mathbf{e}_i)$ là một cột trong $\mathbb{R}^m$, nên
+
+$$
+A = \begin{bmatrix} T(\mathbf{e}_1) & T(\mathbf{e}_2) & \cdots & T(\mathbf{e}_n) \end{bmatrix}
+$$
+
+là ma trận $m \times n$. Do đó ta có thể áp dụng Định nghĩa 2.5 để được
+
+$$
+T(\mathbf{x}) = x_1T(\mathbf{e}_1) + \cdots + x_nT(\mathbf{e}_n) = \begin{bmatrix} T(\mathbf{e}_1) & \cdots & T(\mathbf{e}_n) \end{bmatrix} \begin{bmatrix} x_1 \\ \vdots \\ x_n \end{bmatrix} = A\mathbf{x}
+$$
+
+Vì điều này đúng với mọi $\mathbf{x}$ trong $\mathbb{R}^n$, nó cho thấy $T$ là phép biến đổi ma trận cảm sinh bởi $A$, và do đó chứng minh phần lớn định lý sau.
+
+<DinhLy so="2.6.2">
+Cho $T : \mathbb{R}^n \to \mathbb{R}^m$ là một phép biến đổi.
+
+1. $T$ tuyến tính khi và chỉ khi nó là phép biến đổi ma trận.
+2. Trong trường hợp này $T = T_A$ là phép biến đổi ma trận cảm sinh bởi một ma trận $A$ cỡ $m \times n$ *duy nhất*, cho theo các cột bởi
+
+$$
+A = \begin{bmatrix} T(\mathbf{e}_1) & T(\mathbf{e}_2) & \cdots & T(\mathbf{e}_n) \end{bmatrix}
+$$
+
+trong đó $\{\mathbf{e}_1, \mathbf{e}_2, \ldots, \mathbf{e}_n\}$ là cơ sở chính tắc của $\mathbb{R}^n$.
+</DinhLy>
+
+**Chứng minh.** Chỉ còn phải kiểm chứng rằng ma trận $A$ là duy nhất. Giả sử $T$ được cảm sinh bởi một ma trận $B$ khác. Khi đó $T(\mathbf{x}) = B\mathbf{x}$ với mọi $\mathbf{x}$ trong $\mathbb{R}^n$. Nhưng $T(\mathbf{x}) = A\mathbf{x}$ với mỗi $\mathbf{x}$, nên $B\mathbf{x} = A\mathbf{x}$ với mọi $\mathbf{x}$. Do đó $A = B$ theo Định lý 2.2.6. ∎
+
+<GhiChu tieuDe="Ghi chú cho người học — ý tưởng lớn nhất của mục này">
+Định lý 2.6.2 là một trong những kết quả đẹp nhất của chương. Nó nói:
+
+$$
+\textit{phép biến đổi tuyến tính} \;\equiv\; \textit{ma trận}
+$$
+
+Hai khái niệm nghe rất khác nhau — một cái là “hàm số”, một cái là “bảng số” — hoá ra chỉ là hai cách nhìn cùng một thứ. Và công thức tìm ma trận cực kỳ thực dụng: *chỉ cần biết $T$ làm gì với các vector cơ sở $\mathbf{e}_1, \ldots, \mathbf{e}_n$*, rồi xếp các kết quả thành các cột.
+
+Đây là lý do trong đồ hoạ máy tính, để tìm ma trận của một phép quay, bạn chỉ cần hỏi: “trục $x$ đi đâu? trục $y$ đi đâu?” — rồi ghép hai câu trả lời thành hai cột. Không cần tính toán phức tạp.
+</GhiChu>
+
+Do đó ta có thể nói về *ma trận của một phép biến đổi tuyến tính*. Vì Định lý 2.6.2, ta có thể (và sẽ) dùng thay thế nhau hai cụm từ “phép biến đổi tuyến tính” và “phép biến đổi ma trận”.
+
+<ViDu so="2.6.4">
+Định nghĩa $T : \mathbb{R}^3 \to \mathbb{R}^2$ bởi $T\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}$ với mọi $\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}$ trong $\mathbb{R}^3$. Chứng tỏ rằng $T$ là phép biến đổi tuyến tính và dùng Định lý 2.6.2 để tìm ma trận của nó.
+
+**Lời giải.** Viết $\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}$ và $\mathbf{y} = \begin{bmatrix} y_1 \\ y_2 \\ y_3 \end{bmatrix}$, sao cho $\mathbf{x} + \mathbf{y} = \begin{bmatrix} x_1 + y_1 \\ x_2 + y_2 \\ x_3 + y_3 \end{bmatrix}$. Do đó
+
+$$
+T(\mathbf{x} + \mathbf{y}) = \begin{bmatrix} x_1 + y_1 \\ x_2 + y_2 \end{bmatrix} = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} + \begin{bmatrix} y_1 \\ y_2 \end{bmatrix} = T(\mathbf{x}) + T(\mathbf{y})
+$$
+
+Tương tự, bạn đọc có thể kiểm chứng $T(a\mathbf{x}) = aT(\mathbf{x})$ với mọi $a$ trong $\mathbb{R}$, nên $T$ là phép biến đổi tuyến tính. Bây giờ cơ sở chính tắc của $\mathbb{R}^3$ là $\mathbf{e}_1 = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}$, $\mathbf{e}_2 = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}$, $\mathbf{e}_3 = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}$, nên theo Định lý 2.6.2, ma trận của $T$ là
+
+$$
+A = \begin{bmatrix} T(\mathbf{e}_1) & T(\mathbf{e}_2) & T(\mathbf{e}_3) \end{bmatrix} = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}
+$$
+
+Tất nhiên, việc $T\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}$ đã cho thấy trực tiếp rằng $T$ là phép biến đổi ma trận (nên tuyến tính) và chỉ ra luôn ma trận.
+</ViDu>
+
+Để minh hoạ cách dùng Định lý 2.6.2, ta suy lại các ma trận của các phép biến đổi trong Ví dụ 2.2.13 và 2.2.15.
+
+<ViDu so="2.6.5">
+Cho $Q_0 : \mathbb{R}^2 \to \mathbb{R}^2$ ký hiệu phép đối xứng qua trục $x$ (như trong Ví dụ 2.2.13) và cho $R_{\pi/2} : \mathbb{R}^2 \to \mathbb{R}^2$ ký hiệu phép quay ngược chiều kim đồng hồ một góc $\frac{\pi}{2}$ quanh gốc toạ độ (như trong Ví dụ 2.2.15). Dùng Định lý 2.6.2 để tìm ma trận của $Q_0$ và $R_{\pi/2}$.
+
+**Lời giải.** Hãy để ý rằng $Q_0$ và $R_{\pi/2}$ là tuyến tính theo Ví dụ 2.6.3 (chúng là phép biến đổi ma trận), nên Định lý 2.6.2 áp dụng được cho chúng. Cơ sở chính tắc của $\mathbb{R}^2$ là $\{\mathbf{e}_1, \mathbf{e}_2\}$ với $\mathbf{e}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$ hướng theo chiều dương trục $x$, và $\mathbf{e}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$ hướng theo chiều dương trục $y$.
+
+Ảnh đối xứng của $\mathbf{e}_1$ qua trục $x$ chính là $\mathbf{e}_1$, vì $\mathbf{e}_1$ nằm dọc trục $x$; còn ảnh đối xứng của $\mathbf{e}_2$ qua trục $x$ là $-\mathbf{e}_2$, vì $\mathbf{e}_2$ vuông góc với trục $x$. Nói cách khác, $Q_0(\mathbf{e}_1) = \mathbf{e}_1$ và $Q_0(\mathbf{e}_2) = -\mathbf{e}_2$. Do đó Định lý 2.6.2 cho thấy ma trận của $Q_0$ là
+
+$$
+\begin{bmatrix} Q_0(\mathbf{e}_1) & Q_0(\mathbf{e}_2) \end{bmatrix} = \begin{bmatrix} \mathbf{e}_1 & -\mathbf{e}_2 \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}
+$$
+
+khớp với Ví dụ 2.2.13.
+
+Tương tự, quay $\mathbf{e}_1$ một góc $\frac{\pi}{2}$ ngược chiều kim đồng hồ quanh gốc toạ độ cho ra $\mathbf{e}_2$, và quay $\mathbf{e}_2$ một góc $\frac{\pi}{2}$ ngược chiều kim đồng hồ quanh gốc toạ độ cho $-\mathbf{e}_1$. Tức là $R_{\pi/2}(\mathbf{e}_1) = \mathbf{e}_2$ và $R_{\pi/2}(\mathbf{e}_2) = -\mathbf{e}_1$. Do đó, lại theo Định lý 2.6.2, ma trận của $R_{\pi/2}$ là
+
+$$
+\begin{bmatrix} R_{\pi/2}(\mathbf{e}_1) & R_{\pi/2}(\mathbf{e}_2) \end{bmatrix} = \begin{bmatrix} \mathbf{e}_2 & -\mathbf{e}_1 \end{bmatrix} = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}
+$$
+
+khớp với Ví dụ 2.2.15.
+</ViDu>
+
+<ViDu so="2.6.6">
+Cho $Q_1 : \mathbb{R}^2 \to \mathbb{R}^2$ ký hiệu phép đối xứng qua đường thẳng $y = x$. Chứng tỏ rằng $Q_1$ là phép biến đổi ma trận, tìm ma trận của nó, và dùng nó để minh hoạ Định lý 2.6.2.
+
+**Lời giải.** Ta có $Q_1\begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} y \\ x \end{bmatrix}$. Do đó $Q_1\begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}\begin{bmatrix} x \\ y \end{bmatrix}$, nên $Q_1$ là phép biến đổi ma trận cảm sinh bởi ma trận $A = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}$. Do đó $Q_1$ tuyến tính (theo Ví dụ 2.6.3) và Định lý 2.6.2 áp dụng được. Nếu $\mathbf{e}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$ và $\mathbf{e}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$ là cơ sở chính tắc của $\mathbb{R}^2$ thì rõ ràng về mặt hình học rằng $Q_1(\mathbf{e}_1) = \mathbf{e}_2$ và $Q_1(\mathbf{e}_2) = \mathbf{e}_1$. Như vậy (theo Định lý 2.6.2) ma trận của $Q_1$ là $\begin{bmatrix} Q_1(\mathbf{e}_1) & Q_1(\mathbf{e}_2) \end{bmatrix} = \begin{bmatrix} \mathbf{e}_2 & \mathbf{e}_1 \end{bmatrix} = A$ như trước.
+</ViDu>
+
+Nhắc lại rằng, cho hai phép biến đổi “nối” nhau $\mathbb{R}^k \xrightarrow{\ T\ } \mathbb{R}^n \xrightarrow{\ S\ } \mathbb{R}^m$, ta có thể áp dụng $T$ trước rồi áp dụng $S$, và thu được phép biến đổi mới $S \circ T : \mathbb{R}^k \to \mathbb{R}^m$ gọi là **hợp thành** của $S$ và $T$, xác định bởi $(S \circ T)(\mathbf{x}) = S[T(\mathbf{x})]$ với mọi $\mathbf{x}$ trong $\mathbb{R}^k$. Nếu $S$ và $T$ tuyến tính thì tác động của $S \circ T$ có thể tính bằng cách nhân các ma trận của chúng.
+
+<DinhLy so="2.6.3">
+Cho $\mathbb{R}^k \xrightarrow{\ T\ } \mathbb{R}^n \xrightarrow{\ S\ } \mathbb{R}^m$ là các phép biến đổi tuyến tính, và cho $A$, $B$ lần lượt là ma trận của $S$ và $T$. Khi đó $S \circ T$ là tuyến tính với ma trận $AB$.
+</DinhLy>
+
+**Chứng minh.** $(S \circ T)(\mathbf{x}) = S[T(\mathbf{x})] = A[B\mathbf{x}] = (AB)\mathbf{x}$ với mọi $\mathbf{x}$ trong $\mathbb{R}^k$. ∎
+
+Định lý 2.6.3 cho thấy tác động của hợp thành $S \circ T$ được xác định bởi ma trận của $S$ và $T$. Nhưng nó cũng cho một cách hiểu rất hữu ích về phép nhân ma trận: nếu $A$ và $B$ là các ma trận thì ma trận tích $AB$ cảm sinh phép biến đổi thu được bằng cách *trước hết áp dụng $B$, rồi áp dụng $A$*. Như vậy việc nghiên cứu ma trận có thể soi sáng các phép biến đổi hình học và ngược lại. Đây là một ví dụ.
+
+<ViDu so="2.6.7">
+Chứng tỏ rằng phép đối xứng qua trục $x$, tiếp theo là phép quay góc $\frac{\pi}{2}$, chính là phép đối xứng qua đường thẳng $y = x$.
+
+**Lời giải.** Hợp thành đang xét là $R_{\pi/2} \circ Q_0$, trong đó $Q_0$ là phép đối xứng qua trục $x$ và $R_{\pi/2}$ là phép quay góc $\frac{\pi}{2}$. Theo Ví dụ 2.6.5, $R_{\pi/2}$ có ma trận $A = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}$ và $Q_0$ có ma trận $B = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}$. Do đó Định lý 2.6.3 cho thấy ma trận của $R_{\pi/2} \circ Q_0$ là
+
+$$
+AB = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}
+$$
+
+chính là ma trận của phép đối xứng qua đường thẳng $y = x$ theo Ví dụ 2.6.6.
+</ViDu>
+
+## Một chút hình học
+
+Như ta đã thấy, thật tiện lợi khi xem một vector $\mathbf{x}$ trong $\mathbb{R}^2$ như một mũi tên từ gốc toạ độ đến điểm $\mathbf{x}$ (xem Mục 2.2). Điều này cho phép ta hình dung tổng và bội vô hướng có ý nghĩa gì về mặt hình học. Ví dụ, xét $\mathbf{x} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}$ trong $\mathbb{R}^2$. Khi đó $2\mathbf{x} = \begin{bmatrix} 2 \\ 4 \end{bmatrix}$, $\frac{1}{2}\mathbf{x} = \begin{bmatrix} \frac{1}{2} \\ 1 \end{bmatrix}$ và $-\frac{1}{2}\mathbf{x} = \begin{bmatrix} -\frac{1}{2} \\ -1 \end{bmatrix}$. Hãy để ý rằng mũi tên cho $2\mathbf{x}$ dài gấp đôi mũi tên cho $\mathbf{x}$ và cùng hướng, còn mũi tên cho $\frac{1}{2}\mathbf{x}$ cũng cùng hướng với $\mathbf{x}$ nhưng chỉ dài bằng một nửa. Mặt khác, mũi tên cho $-\frac{1}{2}\mathbf{x}$ dài bằng nửa mũi tên của $\mathbf{x}$ nhưng *ngược hướng*.
+
+<DinhLy id="dinh-ly-luat-boi-vo-huong" ten="Luật bội vô hướng (Scalar Multiple Law)">
+Cho $\mathbf{x}$ là một vector trong $\mathbb{R}^2$. Mũi tên cho $k\mathbf{x}$ dài gấp $|k|$ lần[^1] mũi tên cho $\mathbf{x}$, và cùng hướng với mũi tên cho $\mathbf{x}$ nếu $k > 0$, ngược hướng nếu $k < 0$.
+</DinhLy>
+
+Bây giờ xét hai vector $\mathbf{x} = \begin{bmatrix} 2 \\ 1 \end{bmatrix}$ và $\mathbf{y} = \begin{bmatrix} 1 \\ 3 \end{bmatrix}$ trong $\mathbb{R}^2$, cùng với tổng của chúng $\mathbf{x} + \mathbf{y} = \begin{bmatrix} 3 \\ 4 \end{bmatrix}$. Việc kiểm chứng rằng bốn điểm $\mathbf{0}$, $\mathbf{x}$, $\mathbf{y}$, $\mathbf{x} + \mathbf{y}$ tạo thành các đỉnh của một hình bình hành — tức là các cạnh đối song song và bằng nhau — là thường quy.
+
+<HinhHinhBinhHanh />
+
+Ta phát biểu điều này như sau:
+
+<DinhLy id="dinh-ly-luat-hinh-binh-hanh" ten="Luật hình bình hành (Parallelogram Law)">
+Xét các vector $\mathbf{x}$ và $\mathbf{y}$ trong $\mathbb{R}^2$. Nếu vẽ các mũi tên cho $\mathbf{x}$ và $\mathbf{y}$ thì mũi tên cho $\mathbf{x} + \mathbf{y}$ ứng với đỉnh thứ tư của hình bình hành xác định bởi các điểm $\mathbf{x}$, $\mathbf{y}$ và $\mathbf{0}$.
+</DinhLy>
+
+Trước khi tiếp tục, ta ôn lại ngắn gọn về góc và các hàm lượng giác. Nhắc lại rằng một góc $\theta$ được gọi là ở *vị trí chuẩn* nếu nó được đo ngược chiều kim đồng hồ từ chiều dương trục $x$. Khi đó $\theta$ xác định duy nhất một điểm $p$ trên **đường tròn đơn vị** (bán kính 1, tâm tại gốc toạ độ). **Số đo radian** của $\theta$ là độ dài cung trên đường tròn đơn vị từ chiều dương trục $x$ đến $p$. Như vậy $360^\circ = 2\pi$ radian, $180^\circ = \pi$, $90^\circ = \frac{\pi}{2}$, v.v.
+
+Điểm $p$ cũng liên hệ chặt chẽ với các hàm lượng giác **cosine** và **sine**, viết là $\cos\theta$ và $\sin\theta$. Thực ra các hàm này *được định nghĩa* là toạ độ $x$ và $y$ của $p$; tức là $p = \begin{bmatrix} \cos\theta \\ \sin\theta \end{bmatrix}$. Điều này định nghĩa $\cos\theta$ và $\sin\theta$ cho góc $\theta$ bất kỳ (có thể âm), và khớp với các giá trị thông thường khi $\theta$ là góc nhọn $0 \le \theta \le \frac{\pi}{2}$.
+
+## Phép quay
+
+Bây giờ ta có thể mô tả các phép quay trong mặt phẳng. Cho một góc $\theta$, đặt
+
+$$
+R_\theta : \mathbb{R}^2 \to \mathbb{R}^2
+$$
+
+ký hiệu phép quay ngược chiều kim đồng hồ của $\mathbb{R}^2$ quanh gốc toạ độ một góc $\theta$. Ta đã xét $R_{\pi/2}$ (trong Ví dụ 2.2.15) và thấy nó là phép biến đổi ma trận. Hoá ra $R_\theta$ là phép biến đổi ma trận với *mọi* góc $\theta$ (với một công thức đơn giản cho ma trận), nhưng không rõ làm sao tìm được ma trận đó. Cách tiếp cận của ta là trước hết thiết lập sự kiện (hơi bất ngờ) rằng $R_\theta$ là tuyến tính, rồi thu được ma trận từ Định lý 2.6.2.
+
+Cho $\mathbf{x}$ và $\mathbf{y}$ là hai vector trong $\mathbb{R}^2$. Khi đó $\mathbf{x} + \mathbf{y}$ là đường chéo của hình bình hành xác định bởi $\mathbf{x}$ và $\mathbf{y}$. Tác dụng của $R_\theta$ là quay toàn bộ hình bình hành để được hình bình hành mới xác định bởi $R_\theta(\mathbf{x})$ và $R_\theta(\mathbf{y})$, với đường chéo $R_\theta(\mathbf{x} + \mathbf{y})$. Nhưng đường chéo này là $R_\theta(\mathbf{x}) + R_\theta(\mathbf{y})$ theo luật hình bình hành (áp dụng cho hình bình hành mới). Từ đó suy ra
+
+$$
+R_\theta(\mathbf{x} + \mathbf{y}) = R_\theta(\mathbf{x}) + R_\theta(\mathbf{y})
+$$
+
+Lập luận tương tự cho thấy $R_\theta(a\mathbf{x}) = aR_\theta(\mathbf{x})$ với mọi vô hướng $a$, nên $R_\theta : \mathbb{R}^2 \to \mathbb{R}^2$ quả thực là phép biến đổi tuyến tính.
+
+Với tính tuyến tính đã được thiết lập, ta có thể tìm ma trận của $R_\theta$. Cho $\mathbf{e}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$ và $\mathbf{e}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$ là cơ sở chính tắc của $\mathbb{R}^2$. Từ hình vẽ ta thấy
+
+<HinhPhepQuay />
+
+$$
+R_\theta(\mathbf{e}_1) = \begin{bmatrix} \cos\theta \\ \sin\theta \end{bmatrix} \qquad \text{và} \qquad R_\theta(\mathbf{e}_2) = \begin{bmatrix} -\sin\theta \\ \cos\theta \end{bmatrix}
+$$
+
+Do đó Định lý 2.6.2 cho thấy $R_\theta$ được cảm sinh bởi ma trận
+
+$$
+\begin{bmatrix} R_\theta(\mathbf{e}_1) & R_\theta(\mathbf{e}_2) \end{bmatrix} = \begin{bmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{bmatrix}
+$$
+
+Ta ghi lại điều này:
+
+<DinhLy so="2.6.4">
+Phép quay $R_\theta : \mathbb{R}^2 \to \mathbb{R}^2$ là phép biến đổi tuyến tính với ma trận $\begin{bmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{bmatrix}$.
+</DinhLy>
+
+Ví dụ, $R_{\pi/2}$ và $R_\pi$ có ma trận lần lượt là $\begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}$ và $\begin{bmatrix} -1 & 0 \\ 0 & -1 \end{bmatrix}$ theo Định lý 2.6.4. Cái thứ nhất xác nhận kết quả ở Ví dụ 2.2.15. Cái thứ hai cho thấy quay vector $\mathbf{x} = \begin{bmatrix} x \\ y \end{bmatrix}$ một góc $\pi$ cho $R_\pi(\mathbf{x}) = \begin{bmatrix} -x \\ -y \end{bmatrix} = -\mathbf{x}$. Như vậy áp dụng $R_\pi$ cũng chính là lấy đối của $\mathbf{x}$, một sự kiện hiển nhiên mà không cần Định lý 2.6.4.
+
+<ViDu so="2.6.8">
+Cho $\theta$ và $\varphi$ là các góc. Bằng cách tìm ma trận của hợp thành $R_\theta \circ R_\varphi$, hãy thu được các biểu thức cho $\cos(\theta + \varphi)$ và $\sin(\theta + \varphi)$.
+
+**Lời giải.** Xét các phép biến đổi $\mathbb{R}^2 \xrightarrow{\ R_\varphi\ } \mathbb{R}^2 \xrightarrow{\ R_\theta\ } \mathbb{R}^2$. Hợp thành $R_\theta \circ R_\varphi$ của chúng là phép biến đổi trước hết quay mặt phẳng một góc $\varphi$ rồi quay tiếp một góc $\theta$, nên chính là phép quay góc $\theta + \varphi$. Nói cách khác
+
+$$
+R_{\theta + \varphi} = R_\theta \circ R_\varphi
+$$
+
+Định lý 2.6.3 cho thấy đẳng thức tương ứng đúng với ma trận của các phép biến đổi này, nên Định lý 2.6.4 cho:
+
+$$
+\begin{bmatrix} \cos(\theta + \varphi) & -\sin(\theta + \varphi) \\ \sin(\theta + \varphi) & \cos(\theta + \varphi) \end{bmatrix} = \begin{bmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{bmatrix} \begin{bmatrix} \cos\varphi & -\sin\varphi \\ \sin\varphi & \cos\varphi \end{bmatrix}
+$$
+
+Nếu ta thực hiện phép nhân ma trận ở vế phải rồi so sánh các phần tử của cột thứ nhất, ta được
+
+$$
+\begin{aligned}
+\cos(\theta + \varphi) &= \cos\theta\cos\varphi - \sin\theta\sin\varphi \\
+\sin(\theta + \varphi) &= \sin\theta\cos\varphi + \cos\theta\sin\varphi
+\end{aligned}
+$$
+
+Đây là hai đồng nhất thức cơ bản mà từ đó phần lớn lượng giác có thể suy ra.
+</ViDu>
+
+<GhiChu tieuDe="Ghi chú cho người học">
+Ví dụ 2.6.8 rất đáng suy ngẫm: hai công thức cộng góc trong lượng giác — thứ mà ở phổ thông bạn phải học thuộc — ở đây *rơi ra* một cách tự nhiên từ phép nhân hai ma trận quay. Đó là dấu hiệu của một góc nhìn tốt: nó biến thứ phải nhớ thành thứ có thể suy ra.
+</GhiChu>
+
+## Phép đối xứng
+
+Đường thẳng qua gốc toạ độ với hệ số góc $m$ có phương trình $y = mx$, và ta đặt $Q_m : \mathbb{R}^2 \to \mathbb{R}^2$ ký hiệu phép đối xứng qua đường thẳng $y = mx$. Nói nôm na, $Q_m(\mathbf{x})$ là “ảnh trong gương” của $\mathbf{x}$ qua đường thẳng $y = mx$. Nếu $m = 0$ thì $Q_0$ là phép đối xứng qua trục $x$, mà ta đã biết $Q_0$ tuyến tính. Tuy có thể chứng tỏ trực tiếp rằng $Q_m$ tuyến tính (bằng lập luận giống như với $R_\theta$), ta thích làm theo cách khác — vừa có tính giáo dục vừa suy ra trực tiếp ma trận của $Q_m$ mà không cần Định lý 2.6.2.
+
+Cho $\theta$ là góc giữa chiều dương trục $x$ và đường thẳng $y = mx$. Quan sát mấu chốt là phép biến đổi $Q_m$ có thể thực hiện qua ba bước: trước hết quay một góc $-\theta$ (để đường thẳng của ta trùng với trục $x$), rồi lấy đối xứng qua trục $x$, và cuối cùng quay ngược lại một góc $\theta$. Nói cách khác:
+
+$$
+Q_m = R_\theta \circ Q_0 \circ R_{-\theta}
+$$
+
+Vì $R_{-\theta}$, $Q_0$, $R_\theta$ đều tuyến tính, điều này (cùng Định lý 2.6.3) cho thấy $Q_m$ tuyến tính và ma trận của nó là tích các ma trận của $R_\theta$, $Q_0$, $R_{-\theta}$. Nếu ta viết $c = \cos\theta$ và $s = \sin\theta$ cho gọn thì ma trận của $R_\theta$, $R_{-\theta}$, $Q_0$ lần lượt là[^2]
+
+$$
+\begin{bmatrix} c & -s \\ s & c \end{bmatrix}, \quad \begin{bmatrix} c & s \\ -s & c \end{bmatrix}, \quad \text{và} \quad \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}
+$$
+
+Do đó, theo Định lý 2.6.3, ma trận của $Q_m = R_\theta \circ Q_0 \circ R_{-\theta}$ là
+
+$$
+\begin{bmatrix} c & -s \\ s & c \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} \begin{bmatrix} c & s \\ -s & c \end{bmatrix} = \begin{bmatrix} c^2 - s^2 & 2sc \\ 2sc & s^2 - c^2 \end{bmatrix}
+$$
+
+Ta có thể biểu diễn ma trận này chỉ theo $m$. Hình vẽ cho thấy
+
+<HinhHeSoGoc />
+
+$$
+\cos\theta = \frac{1}{\sqrt{1 + m^2}} \qquad \text{và} \qquad \sin\theta = \frac{m}{\sqrt{1 + m^2}}
+$$
+
+nên ma trận $\begin{bmatrix} c^2 - s^2 & 2sc \\ 2sc & s^2 - c^2 \end{bmatrix}$ của $Q_m$ trở thành $\dfrac{1}{1 + m^2}\begin{bmatrix} 1 - m^2 & 2m \\ 2m & m^2 - 1 \end{bmatrix}$.
+
+<DinhLy so="2.6.5">
+Cho $Q_m$ ký hiệu phép đối xứng qua đường thẳng $y = mx$. Khi đó $Q_m$ là phép biến đổi tuyến tính với ma trận $\dfrac{1}{1 + m^2}\begin{bmatrix} 1 - m^2 & 2m \\ 2m & m^2 - 1 \end{bmatrix}$.
+</DinhLy>
+
+Lưu ý rằng nếu $m = 0$ thì ma trận trong Định lý 2.6.5 trở thành $\begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}$, như mong đợi. Tất nhiên phân tích này thất bại với phép đối xứng qua trục $y$, vì đường thẳng đứng không có hệ số góc. Tuy nhiên dễ dàng kiểm chứng trực tiếp rằng phép đối xứng qua trục $y$ quả thực tuyến tính với ma trận $\begin{bmatrix} -1 & 0 \\ 0 & 1 \end{bmatrix}$.
+
+<ViDu so="2.6.9">
+Cho $T : \mathbb{R}^2 \to \mathbb{R}^2$ là phép quay góc $-\frac{\pi}{2}$ tiếp theo là phép đối xứng qua trục $y$. Chứng tỏ rằng $T$ là một phép đối xứng qua một đường thẳng đi qua gốc toạ độ và tìm đường thẳng đó.
+
+**Lời giải.** Ma trận của $R_{-\pi/2}$ là $\begin{bmatrix} \cos(-\frac{\pi}{2}) & -\sin(-\frac{\pi}{2}) \\ \sin(-\frac{\pi}{2}) & \cos(-\frac{\pi}{2}) \end{bmatrix} = \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix}$ và ma trận của phép đối xứng qua trục $y$ là $\begin{bmatrix} -1 & 0 \\ 0 & 1 \end{bmatrix}$. Do đó ma trận của $T$ là
+
+$$
+\begin{bmatrix} -1 & 0 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix} = \begin{bmatrix} 0 & -1 \\ -1 & 0 \end{bmatrix}
+$$
+
+và đây là phép đối xứng qua đường thẳng $y = -x$ (lấy $m = -1$ trong Định lý 2.6.5).
+</ViDu>
+
+## Phép chiếu
+
+Phương pháp trong chứng minh Định lý 2.6.5 hoạt động tổng quát hơn. Cho $P_m : \mathbb{R}^2 \to \mathbb{R}^2$ ký hiệu phép chiếu lên đường thẳng $y = mx$.
+
+Nếu $m = 0$ thì $P_0\begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} x \\ 0 \end{bmatrix}$ với mọi $\begin{bmatrix} x \\ y \end{bmatrix}$ trong $\mathbb{R}^2$, nên $P_0$ tuyến tính với ma trận $\begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix}$. Do đó lập luận ở trên cho $Q_m$ áp dụng được cho $P_m$. Trước hết hãy để ý rằng
+
+$$
+P_m = R_\theta \circ P_0 \circ R_{-\theta}
+$$
+
+như trước. Vậy $P_m$ tuyến tính với ma trận
+
+$$
+\begin{bmatrix} c & -s \\ s & c \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix} \begin{bmatrix} c & s \\ -s & c \end{bmatrix} = \begin{bmatrix} c^2 & sc \\ sc & s^2 \end{bmatrix}
+$$
+
+trong đó $c = \cos\theta = \frac{1}{\sqrt{1 + m^2}}$ và $s = \sin\theta = \frac{m}{\sqrt{1 + m^2}}$. Điều này cho:
+
+<DinhLy so="2.6.6">
+Cho $P_m : \mathbb{R}^2 \to \mathbb{R}^2$ là phép chiếu lên đường thẳng $y = mx$. Khi đó $P_m$ là phép biến đổi tuyến tính với ma trận $\dfrac{1}{1 + m^2}\begin{bmatrix} 1 & m \\ m & m^2 \end{bmatrix}$.
+</DinhLy>
+
+Một lần nữa, nếu $m = 0$ thì ma trận trong Định lý 2.6.6 rút về $\begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix}$ như mong đợi. Vì trục $y$ không có hệ số góc, phân tích thất bại với phép chiếu lên trục $y$, nhưng phép biến đổi này quả thực tuyến tính với ma trận $\begin{bmatrix} 0 & 0 \\ 0 & 1 \end{bmatrix}$, dễ kiểm chứng trực tiếp.
+
+Lưu ý rằng công thức cho ma trận của $Q_m$ trong Định lý 2.6.5 có thể suy ra từ công thức trên cho ma trận của $P_m$. Quan sát rằng $Q_m(\mathbf{x}) = \mathbf{x} + 2[P_m(\mathbf{x}) - \mathbf{x}]$ nên $Q_m(\mathbf{x}) = 2P_m(\mathbf{x}) - \mathbf{x}$. Thế các ma trận cho $P_m(\mathbf{x})$ và $1_{\mathbb{R}^2}(\mathbf{x})$ cho ta công thức mong muốn.
+
+<ViDu so="2.6.10">
+Cho $\mathbf{x}$ trong $\mathbb{R}^2$, viết $\mathbf{y} = P_m(\mathbf{x})$. Việc $\mathbf{y}$ nằm trên đường thẳng $y = mx$ nghĩa là $P_m(\mathbf{y}) = \mathbf{y}$. Nhưng khi đó
+
+$$
+(P_m \circ P_m)(\mathbf{x}) = P_m(\mathbf{y}) = \mathbf{y} = P_m(\mathbf{x}) \quad \text{với mọi } \mathbf{x} \text{ trong } \mathbb{R}^2, \quad \text{tức là } P_m \circ P_m = P_m.
+$$
+
+Nói riêng, nếu ta viết ma trận của $P_m$ là $A = \dfrac{1}{1 + m^2}\begin{bmatrix} 1 & m \\ m & m^2 \end{bmatrix}$ thì $A^2 = A$. Bạn đọc nên kiểm chứng trực tiếp điều này.
+</ViDu>
+
+<GhiChu tieuDe="Ghi chú cho người học — ma trận luỹ đẳng">
+Ma trận thoả $A^2 = A$ được gọi là **luỹ đẳng** (*idempotent*). Ý nghĩa hình học rất trực quan: chiếu một lần rồi chiếu lại lần nữa thì không thay đổi gì thêm — vì sau lần chiếu đầu, vector đã nằm sẵn trên đường thẳng rồi.
+
+Khái niệm luỹ đẳng còn xuất hiện ở nhiều nơi khác trong khoa học máy tính. Trong thiết kế API, một thao tác *idempotent* là thao tác gọi nhiều lần cũng cho cùng kết quả như gọi một lần (ví dụ HTTP `PUT` và `DELETE`). Đây là tính chất rất quan trọng khi xây dựng hệ thống chịu lỗi — nếu request bị timeout, client có thể gửi lại an toàn.
+</GhiChu>
+
+[^1]: Nếu $k$ là số thực, $|k|$ ký hiệu giá trị tuyệt đối của $k$; tức là $|k| = k$ nếu $k \ge 0$ và $|k| = -k$ nếu $k < 0$.
+
+[^2]: Ma trận của $R_{-\theta}$ có được từ ma trận của $R_\theta$ nhờ việc, với mọi góc $\theta$, $\cos(-\theta) = \cos\theta$ và $\sin(-\theta) = -\sin\theta$.

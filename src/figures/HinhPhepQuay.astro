@@ -1,0 +1,55 @@
+---
+// Đại số §2.6 — phép quay R_θ đưa e₁, e₂ tới đâu. Bản dịch viết "từ hình vẽ ta thấy"
+// nhưng không in hình; toạ độ các mũi tên lấy từ ma trận quay (src/lib/ma-tran.ts).
+import { maTranQuay, nhanVector } from '@/lib/ma-tran';
+import { DAU_MUI_TEN, cung, muiTen } from './mui-ten';
+
+const THETA = (35 * Math.PI) / 180;
+const O = { x: 150, y: 150 };
+const DV = 100; // pixel cho một đơn vị
+const diem = ([x, y]: number[]) => ({ x: O.x + x * DV, y: O.y - y * DV });
+
+const R = maTranQuay(THETA);
+const e1 = diem([1, 0]);
+const e2 = diem([0, 1]);
+const re1 = diem(nhanVector(R, [1, 0]));
+const re2 = diem(nhanVector(R, [0, 1]));
+const cacVector = [
+  { dich: e1, lop: 'net-mo', lopDau: 'diem-mo' },
+  { dich: e2, lop: 'net-mo', lopDau: 'diem-mo' },
+  { dich: re1, lop: 'nhan-manh', lopDau: 'to-nhan' },
+  { dich: re2, lop: 'nhan-manh', lopDau: 'to-nhan' },
+].map((v) => ({ ...v, ...muiTen(O.x, O.y, v.dich.x, v.dich.y) }));
+const nhanGoc = (goc: number) => ({ x: O.x + 42 * Math.cos(goc), y: O.y - 42 * Math.sin(goc) + 5 });
+---
+
+<figure class="hinh" aria-labelledby="hinh-phep-quay-cap" data-hinh-phep-quay>
+  <svg viewBox="0 0 300 270" width="300" role="img" aria-label="Phép quay góc theta đưa e1 tới (cos theta, sin theta) và e2 tới (âm sin theta, cos theta)">
+    <line x1="20" y1={O.y} x2="285" y2={O.y} class="net-mo" stroke-width="1" />
+    <line x1={O.x} y1="258" x2={O.x} y2="28" class="net-mo" stroke-width="1" />
+    <circle cx={O.x} cy={O.y} r={DV} class="net-mo" stroke-width="1" stroke-dasharray="3 4" style="fill: none" />
+    <line x1={re1.x} y1={re1.y} x2={re1.x} y2={O.y} class="net-mo" stroke-width="1" stroke-dasharray="4 3" />
+    <path d={cung(O.x, O.y, 30, 0, THETA)} class="nhan-manh" stroke-width="1.3" style="fill: none" />
+    <path d={cung(O.x, O.y, 30, Math.PI / 2, Math.PI / 2 + THETA)} class="nhan-manh" stroke-width="1.3" style="fill: none" />
+    {
+      cacVector.map((v) => (
+        <g>
+          <line x1={v.x1} y1={v.y1} x2={v.x2} y2={v.y2} class={v.lop} stroke-width="2" />
+          <path d={DAU_MUI_TEN} class={v.lopDau} transform={v.dau} />
+        </g>
+      ))
+    }
+    <text x={nhanGoc(THETA / 2).x} y={nhanGoc(THETA / 2).y} class="chu-nhan" text-anchor="middle">θ</text>
+    <text x={nhanGoc(Math.PI / 2 + THETA / 2).x} y={nhanGoc(Math.PI / 2 + THETA / 2).y} class="chu-nhan" text-anchor="middle">θ</text>
+    <text x={e1.x + 4} y={O.y + 18} class="chu">e₁</text>
+    <text x={O.x + 8} y={e2.y - 4} class="chu">e₂</text>
+    <text x={re1.x + 6} y={re1.y - 6} class="chu-nhan">R<tspan dy="4" font-size="10">θ</tspan><tspan dy="-4">(e₁)</tspan></text>
+    <text x={re2.x - 6} y={re2.y - 8} class="chu-nhan" text-anchor="end">R<tspan dy="4" font-size="10">θ</tspan><tspan dy="-4">(e₂)</tspan></text>
+    <text x={(O.x + re1.x) / 2 + 4} y={O.y + 18} class="chu-mo" text-anchor="middle">cos θ</text>
+    <text x={re1.x - 5} y={(re1.y + O.y) / 2 + 4} class="chu-mo" text-anchor="end">sin θ</text>
+  </svg>
+  <figcaption id="hinh-phep-quay-cap">
+    Quay một góc θ: e₁ tới điểm (cos θ, sin θ) trên đường tròn đơn vị, e₂ tới (−sin θ, cos θ). Hai ảnh này là hai cột của
+    ma trận quay.
+  </figcaption>
+</figure>
