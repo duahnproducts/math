@@ -40,13 +40,14 @@ test('sơ đồ đổi màu theo giao diện tối', async ({ page }) => {
   expect(mauToi).not.toBe(mauSang);
 });
 
-test('Chương 2: §2.1–§2.4 có trang dịch, mục lục đủ 9 mục, có PDF tải về', async ({ page }) => {
-  for (const muc of ['2-1', '2-2', '2-3', '2-4']) {
+test('Chương 2: §2.1–§2.5 có trang dịch, mục lục đủ 9 mục, có PDF tải về', async ({ page }) => {
+  for (const muc of ['2-1', '2-2', '2-3', '2-4', '2-5']) {
     await page.goto(`dai-so/chuong-2/sach/${muc}/`);
     await expect(page.locator('[data-ghi-cong]')).toContainText('CC BY-NC-SA');
     await expect(page.locator('.katex-error')).toHaveCount(0);
   }
   // §2.4: Định lý về nghịch đảo có neo để liên kết tới
+  await page.goto('dai-so/chuong-2/sach/2-4/');
   await expect(page.locator('#dinh-ly-2\\.4\\.5')).toContainText('Inverse Theorem');
   await page.goto('dai-so/chuong-2/sach/2-3/');
   // §2.3: đồ thị có hướng vẽ lại từ ma trận kề
