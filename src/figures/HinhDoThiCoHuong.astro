@@ -1,0 +1,83 @@
+---
+// Đại số §2.3 — đồ thị có hướng ba đỉnh. Bản dịch chỉ in ma trận kề, nên hình được
+// vẽ lại từ chính ma trận kề đó (dữ liệu và test ở src/lib/do-thi.ts).
+import { MA_TRAN_KE_2_3, cacCanh } from '@/lib/do-thi';
+
+const R = 17;
+const dinh = [
+  { x: 90, y: 110 },
+  { x: 262, y: 44 },
+  { x: 262, y: 176 },
+];
+const chiSo = '₁₂₃';
+// Hai chiều giữa cùng một cặp đỉnh thì cong ra hai phía; còn lại vẽ thẳng
+const coChieuNguoc = (tu: number, den: number) => MA_TRAN_KE_2_3[tu][den] === 1;
+
+const goc = (dx: number, dy: number) => (Math.atan2(dy, dx) * 180) / Math.PI;
+const donVi = (dx: number, dy: number) => {
+  const d = Math.hypot(dx, dy);
+  return [dx / d, dy / d];
+};
+
+const canh = cacCanh(MA_TRAN_KE_2_3)
+  .filter((c) => c.tu !== c.den)
+  .map(({ tu, den }) => {
+    const a = dinh[tu];
+    const b = dinh[den];
+    const [ux, uy] = donVi(b.x - a.x, b.y - a.y);
+    const cong = coChieuNguoc(tu, den) ? 24 : 0;
+    // điểm điều khiển lệch sang trái chiều đi
+    const c = { x: (a.x + b.x) / 2 + uy * cong, y: (a.y + b.y) / 2 - ux * cong };
+    const [sx, sy] = donVi(c.x - a.x, c.y - a.y);
+    const [ex, ey] = donVi(c.x - b.x, c.y - b.y);
+    const p0 = { x: a.x + sx * R, y: a.y + sy * R };
+    const p2 = { x: b.x + ex * (R + 2), y: b.y + ey * (R + 2) };
+    const giua = { x: (p0.x + 2 * c.x + p2.x) / 4, y: (p0.y + 2 * c.y + p2.y) / 4 };
+    return {
+      d: `M${p0.x.toFixed(1)} ${p0.y.toFixed(1)} Q${c.x.toFixed(1)} ${c.y.toFixed(1)} ${p2.x.toFixed(1)} ${p2.y.toFixed(1)}`,
+      giua,
+      goc: goc(p2.x - p0.x, p2.y - p0.y),
+    };
+  });
+const khuyen = cacCanh(MA_TRAN_KE_2_3)
+  .filter((c) => c.tu === c.den)
+  .map(({ tu }) => {
+    const { x, y } = dinh[tu];
+    return { d: `M${x - 12} ${y - 12} C${x - 72} ${y - 46} ${x - 72} ${y + 46} ${x - 12} ${y + 12}`, x: x - 57, y };
+  });
+---
+
+<figure class="hinh" aria-labelledby="hinh-do-thi-cap" data-hinh-do-thi>
+  <svg viewBox="0 0 310 220" width="310" role="img" aria-label="Đồ thị có hướng ba đỉnh v1, v2, v3 với năm cạnh">
+    {
+      khuyen.map((k) => (
+        <g>
+          <path d={k.d} class="nhan-manh" stroke-width="1.6" style="fill: none" />
+          <path d="M-7 -4.5 L5 0 L-7 4.5 Z" class="to-nhan" transform={`translate(${k.x} ${k.y}) rotate(90)`} />
+        </g>
+      ))
+    }
+    {
+      canh.map((c) => (
+        <g>
+          <path d={c.d} class="nhan-manh" stroke-width="1.6" style="fill: none" />
+          <path d="M-7 -4.5 L5 0 L-7 4.5 Z" class="to-nhan" transform={`translate(${c.giua.x.toFixed(1)} ${c.giua.y.toFixed(1)}) rotate(${c.goc.toFixed(1)})`} />
+        </g>
+      ))
+    }
+    {
+      dinh.map((n, i) => (
+        <g>
+          <circle cx={n.x} cy={n.y} r={R} class="net" stroke-width="1.4" style="fill: var(--paper)" />
+          <text x={n.x} y={n.y + 5} text-anchor="middle" font-style="italic" class="chu-sach" font-size="16">
+            v{chiSo[i]}
+          </text>
+        </g>
+      ))
+    }
+  </svg>
+  <figcaption id="hinh-do-thi-cap">
+    Vẽ lại từ ma trận kề <i>A</i> ở trên: có cạnh v<sub>j</sub> → v<sub>i</sub> khi và chỉ khi a<sub>ij</sub> = 1. Vòng ở v₁
+    là cạnh từ v₁ về chính nó.
+  </figcaption>
+</figure>

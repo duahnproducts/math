@@ -1,0 +1,523 @@
+---
+mon: dai-so
+chuong: 2
+muc: "2.3"
+tieu_de: Phép nhân ma trận
+tieu_de_en: Matrix Multiplication
+loai: dich-nguyen-van
+nguon: "Dịch từ W. Keith Nicholson, Linear Algebra with Applications, Version 2023 – Revision A, Vretta-Lyryx Inc. (https://lyryx.com/linear-algebra-applications/), Mục 2.3. Bản dịch phát hành theo giấy phép CC BY-NC-SA 4.0, giống bản gốc. Thay đổi: dịch sang tiếng Việt, thêm ghi chú cho người học."
+---
+
+Ở <XemMuc muc="2.2" chu="Mục 2.2" /> ta đã giới thiệu tích ma trận–vector. Nếu $A$ là ma trận $m \times n$, tích $A\mathbf{x}$ được định nghĩa với mọi cột $n$ phần tử $\mathbf{x}$ trong $\mathbb{R}^n$ như sau: nếu $A = \begin{bmatrix} \mathbf{a}_1 & \mathbf{a}_2 & \cdots & \mathbf{a}_n \end{bmatrix}$ trong đó các $\mathbf{a}_j$ là các cột của $A$, và nếu $\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix}$ thì Định nghĩa 2.5 đọc là
+
+$$
+A\mathbf{x} = x_1\mathbf{a}_1 + x_2\mathbf{a}_2 + \cdots + x_n\mathbf{a}_n \tag{2.5}
+$$
+
+Điều này được dẫn dắt như một cách mô tả hệ phương trình tuyến tính có ma trận hệ số $A$. Thật vậy, mọi hệ như thế đều có dạng $A\mathbf{x} = \mathbf{b}$ trong đó $\mathbf{b}$ là cột các số hạng tự do.
+
+Trong mục này ta mở rộng phép nhân ma trận–vector này thành một cách nhân *hai ma trận* nói chung, rồi khảo sát đại số ma trận vì chính bản thân nó. Tuy nó có chung một số tính chất với số học thông thường, sẽ sớm thấy rõ rằng số học ma trận khác biệt ở nhiều điểm.
+
+Phép nhân ma trận liên hệ chặt chẽ với phép hợp thành các phép biến đổi.
+
+## Hợp thành và phép nhân ma trận
+
+Đôi khi hai phép biến đổi “nối” với nhau như sau:
+
+$$
+\mathbb{R}^k \xrightarrow{\ T\ } \mathbb{R}^n \xrightarrow{\ S\ } \mathbb{R}^m
+$$
+
+Trong trường hợp này ta có thể áp dụng $T$ trước rồi áp dụng $S$, và kết quả là một phép biến đổi mới
+
+$$
+S \circ T : \mathbb{R}^k \to \mathbb{R}^m
+$$
+
+gọi là **hợp thành** (*composite*) của $S$ và $T$, định nghĩa bởi
+
+$$
+(S \circ T)(\mathbf{x}) = S[T(\mathbf{x})] \quad \text{với mọi } \mathbf{x} \text{ trong } \mathbb{R}^k
+$$
+
+Tác động của $S \circ T$ có thể mô tả là “*$T$ trước rồi $S$*” (chú ý thứ tự!)[^1]. Bạn đọc hẳn đã gặp phép hợp thành của các hàm thông thường: ví dụ, xét $\mathbb{R} \xrightarrow{\ g\ } \mathbb{R} \xrightarrow{\ f\ } \mathbb{R}$ với $f(x) = x^2$ và $g(x) = x + 1$ với mọi $x$ trong $\mathbb{R}$. Khi đó
+
+$$
+\begin{aligned}
+(f \circ g)(x) &= f[g(x)] = f(x + 1) = (x + 1)^2 \\
+(g \circ f)(x) &= g[f(x)] = g(x^2) = x^2 + 1
+\end{aligned}
+$$
+
+với mọi $x$ trong $\mathbb{R}$.
+
+Mối quan tâm của ta ở đây là các phép biến đổi ma trận. Giả sử $A$ là ma trận $m \times n$ và $B$ là ma trận $n \times k$, và cho $\mathbb{R}^k \xrightarrow{\ T_B\ } \mathbb{R}^n \xrightarrow{\ T_A\ } \mathbb{R}^m$ là các phép biến đổi ma trận cảm sinh bởi $B$ và $A$ tương ứng, tức là:
+
+$$
+T_B(\mathbf{x}) = B\mathbf{x} \text{ với mọi } \mathbf{x} \text{ trong } \mathbb{R}^k \quad \text{và} \quad T_A(\mathbf{y}) = A\mathbf{y} \text{ với mọi } \mathbf{y} \text{ trong } \mathbb{R}^n
+$$
+
+Viết $B = \begin{bmatrix} \mathbf{b}_1 & \mathbf{b}_2 & \cdots & \mathbf{b}_k \end{bmatrix}$, trong đó $\mathbf{b}_j$ là cột thứ $j$ của $B$ với mỗi $j$. Do đó mỗi $\mathbf{b}_j$ là một $n$-vector ($B$ là $n \times k$) nên ta có thể lập tích ma trận–vector $A\mathbf{b}_j$. Nói riêng, ta thu được ma trận $m \times k$
+
+$$
+\begin{bmatrix} A\mathbf{b}_1 & A\mathbf{b}_2 & \cdots & A\mathbf{b}_k \end{bmatrix}
+$$
+
+với các cột $A\mathbf{b}_1, A\mathbf{b}_2, \ldots, A\mathbf{b}_k$. Bây giờ tính $(T_A \circ T_B)(\mathbf{x})$ với $\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_k \end{bmatrix}$ bất kỳ trong $\mathbb{R}^k$:
+
+$$
+\begin{aligned}
+(T_A \circ T_B)(\mathbf{x}) &= T_A[T_B(\mathbf{x})] && \text{định nghĩa của } T_A \circ T_B \\
+&= A(B\mathbf{x}) && A \text{ và } B \text{ cảm sinh } T_A \text{ và } T_B \\
+&= A(x_1\mathbf{b}_1 + x_2\mathbf{b}_2 + \cdots + x_k\mathbf{b}_k) && \text{Phương trình (2.5)} \\
+&= A(x_1\mathbf{b}_1) + A(x_2\mathbf{b}_2) + \cdots + A(x_k\mathbf{b}_k) && \text{Định lý 2.2.2} \\
+&= x_1(A\mathbf{b}_1) + x_2(A\mathbf{b}_2) + \cdots + x_k(A\mathbf{b}_k) && \text{Định lý 2.2.2} \\
+&= \begin{bmatrix} A\mathbf{b}_1 & A\mathbf{b}_2 & \cdots & A\mathbf{b}_k \end{bmatrix} \mathbf{x} && \text{Phương trình (2.5)}
+\end{aligned}
+$$
+
+Vì $\mathbf{x}$ là vector tuỳ ý trong $\mathbb{R}^k$, điều này cho thấy $T_A \circ T_B$ là phép biến đổi ma trận cảm sinh bởi ma trận $\begin{bmatrix} A\mathbf{b}_1 & A\mathbf{b}_2 & \cdots & A\mathbf{b}_k \end{bmatrix}$. Điều này dẫn dắt định nghĩa sau.
+
+<DinhNghia so="2.9" ten="Phép nhân ma trận">
+Cho $A$ là ma trận $m \times n$, $B$ là ma trận $n \times k$, và viết $B = \begin{bmatrix} \mathbf{b}_1 & \mathbf{b}_2 & \cdots & \mathbf{b}_k \end{bmatrix}$ trong đó $\mathbf{b}_j$ là cột thứ $j$ của $B$ với mỗi $j$. **Ma trận tích** $AB$ là ma trận $m \times k$ được định nghĩa như sau:
+
+$$
+AB = A \begin{bmatrix} \mathbf{b}_1 & \mathbf{b}_2 & \cdots & \mathbf{b}_k \end{bmatrix} = \begin{bmatrix} A\mathbf{b}_1 & A\mathbf{b}_2 & \cdots & A\mathbf{b}_k \end{bmatrix}
+$$
+
+</DinhNghia>
+
+Như vậy ma trận tích $AB$ được cho theo các cột $A\mathbf{b}_1, A\mathbf{b}_2, \ldots, A\mathbf{b}_k$ của nó: *cột thứ $j$ của $AB$ là tích ma trận–vector $A\mathbf{b}_j$ của $A$ với cột tương ứng $\mathbf{b}_j$ của $B$*. Lưu ý rằng mỗi tích $A\mathbf{b}_j$ như vậy đều có nghĩa theo Định nghĩa 2.5, vì $A$ là $m \times n$ và mỗi $\mathbf{b}_j$ nằm trong $\mathbb{R}^n$ (vì $B$ có $n$ hàng). Cũng lưu ý rằng nếu $B$ là ma trận cột thì định nghĩa này thu về Định nghĩa 2.5 cho phép nhân ma trận với vector.
+
+Cho các ma trận $A$ và $B$, Định nghĩa 2.9 và phép tính ở trên cho
+
+$$
+A(B\mathbf{x}) = \begin{bmatrix} A\mathbf{b}_1 & A\mathbf{b}_2 & \cdots & A\mathbf{b}_k \end{bmatrix} \mathbf{x} = (AB)\mathbf{x}
+$$
+
+với mọi $\mathbf{x}$ trong $\mathbb{R}^k$. Ta ghi lại điều này để tham khảo.
+
+<DinhLy so="2.3.1">
+Cho $A$ là ma trận $m \times n$ và $B$ là ma trận $n \times k$. Khi đó ma trận tích $AB$ có cỡ $m \times k$ và thoả mãn
+
+$$
+A(B\mathbf{x}) = (AB)\mathbf{x} \quad \text{với mọi } \mathbf{x} \text{ trong } \mathbb{R}^k
+$$
+
+</DinhLy>
+
+<GhiChu tieuDe="Ghi chú cho người học — vì sao lại định nghĩa nhân ma trận “kỳ lạ” như vậy?">
+Người mới học hay thắc mắc: tại sao không định nghĩa $AB$ đơn giản là “nhân từng phần tử tương ứng” như phép cộng? Câu trả lời nằm ngay ở đoạn dẫn dắt trên: *phép nhân ma trận được định nghĩa đúng như vậy để nó tương ứng với phép hợp thành các phép biến đổi*. Tức là $AB$ là ma trận của phép biến đổi “làm $B$ trước, rồi làm $A$”.
+
+Đây cũng là lý do $AB \ne BA$ nói chung: “mặc áo rồi mặc khoác” khác “mặc khoác rồi mặc áo”. Nếu bạn nhớ ý này, mọi tính chất kỳ lạ của phép nhân ma trận sẽ trở nên tự nhiên.
+</GhiChu>
+
+Sau đây là ví dụ về cách tính tích $AB$ của hai ma trận dùng Định nghĩa 2.9.
+
+<ViDu so="2.3.1">
+Tính $AB$ nếu $A = \begin{bmatrix} 2 & 3 & 5 \\ 1 & 4 & 7 \\ 0 & 1 & 8 \end{bmatrix}$ và $B = \begin{bmatrix} 8 & 9 \\ 7 & 2 \\ 6 & 1 \end{bmatrix}$.
+
+**Lời giải.** Các cột của $B$ là $\mathbf{b}_1 = \begin{bmatrix} 8 \\ 7 \\ 6 \end{bmatrix}$ và $\mathbf{b}_2 = \begin{bmatrix} 9 \\ 2 \\ 1 \end{bmatrix}$, nên Định nghĩa 2.5 cho
+
+$$
+A\mathbf{b}_1 = \begin{bmatrix} 2 & 3 & 5 \\ 1 & 4 & 7 \\ 0 & 1 & 8 \end{bmatrix} \begin{bmatrix} 8 \\ 7 \\ 6 \end{bmatrix} = \begin{bmatrix} 67 \\ 78 \\ 55 \end{bmatrix} \quad \text{và} \quad A\mathbf{b}_2 = \begin{bmatrix} 2 & 3 & 5 \\ 1 & 4 & 7 \\ 0 & 1 & 8 \end{bmatrix} \begin{bmatrix} 9 \\ 2 \\ 1 \end{bmatrix} = \begin{bmatrix} 29 \\ 24 \\ 10 \end{bmatrix}
+$$
+
+Do đó Định nghĩa 2.9 cho $AB = \begin{bmatrix} A\mathbf{b}_1 & A\mathbf{b}_2 \end{bmatrix} = \begin{bmatrix} 67 & 29 \\ 78 & 24 \\ 55 & 10 \end{bmatrix}$.
+</ViDu>
+
+<ViDu so="2.3.2">
+Nếu $A$ là $m \times n$ và $B$ là $n \times k$, Định lý 2.3.1 cho một công thức đơn giản cho hợp thành của các phép biến đổi ma trận $T_A$ và $T_B$:
+
+$$
+T_A \circ T_B = T_{AB}
+$$
+
+**Lời giải.** Với mọi $\mathbf{x}$ trong $\mathbb{R}^k$,
+
+$$
+(T_A \circ T_B)(\mathbf{x}) = T_A[T_B(\mathbf{x})] = A[B\mathbf{x}] = (AB)\mathbf{x} = T_{AB}(\mathbf{x})
+$$
+
+</ViDu>
+
+Tuy Định nghĩa 2.9 là quan trọng, có một cách khác để tính tích ma trận $AB$, cách này cho ta cách tính *từng phần tử riêng lẻ*. Ở Mục 2.2 ta đã định nghĩa tích vô hướng của hai bộ $n$ là tổng các tích của các phần tử tương ứng. Ta đã chứng tỏ (Định lý 2.2.5) rằng nếu $A$ là ma trận $m \times n$ và $\mathbf{x}$ là $n$-vector thì phần tử thứ $j$ của tích $A\mathbf{x}$ là tích vô hướng của hàng $j$ của $A$ với $\mathbf{x}$. Nhận xét này được gọi là “quy tắc tích vô hướng” cho phép nhân ma trận với vector, và định lý sau cho thấy nó mở rộng cho phép nhân ma trận nói chung.
+
+<DinhLy so="2.3.2" ten="Quy tắc tích vô hướng">
+Cho $A$ và $B$ là các ma trận cỡ $m \times n$ và $n \times k$ tương ứng. Khi đó phần tử $(i, j)$ của $AB$ là tích vô hướng của *hàng $i$ của $A$* với *cột $j$ của $B$*.
+</DinhLy>
+
+**Chứng minh.** Viết $B = \begin{bmatrix} \mathbf{b}_1 & \mathbf{b}_2 & \cdots & \mathbf{b}_k \end{bmatrix}$ theo các cột của nó. Khi đó $A\mathbf{b}_j$ là cột thứ $j$ của $AB$ với mỗi $j$. Do đó phần tử $(i, j)$ của $AB$ là phần tử thứ $i$ của $A\mathbf{b}_j$, mà đó chính là tích vô hướng của hàng $i$ của $A$ với $\mathbf{b}_j$. Định lý được chứng minh. ∎
+
+Như vậy, để tính phần tử $(i, j)$ của $AB$, ta làm như sau:
+
+> Đi ngang qua hàng $i$ của $A$, và đi dọc xuống cột $j$ của $B$, nhân các phần tử tương ứng, rồi cộng các kết quả.
+
+Lưu ý rằng điều này đòi hỏi các hàng của $A$ phải có cùng độ dài với các cột của $B$. Quy tắc sau rất hữu ích để nhớ điều này và để xác định cỡ của ma trận tích $AB$.
+
+<DinhNghia id="quy-tac-tuong-thich" ten="Quy tắc tương thích (Compatibility Rule)">
+Cho $A$ và $B$ là các ma trận. Nếu $A$ là $m \times n$ và $B$ là $n' \times k$ thì tích $AB$ lập được khi và chỉ khi $n = n'$. Trong trường hợp đó, cỡ của ma trận tích $AB$ là $m \times k$, và ta nói $AB$ **xác định** (*defined*), hay $A$ và $B$ **tương thích** (*compatible*) cho phép nhân.
+
+$$
+\underbrace{A}_{m \times n} \; \underbrace{B}_{n' \times k} \qquad \Longrightarrow \qquad AB \text{ có cỡ } m \times k
+$$
+
+</DinhNghia>
+
+**Quy ước:** Mỗi khi viết một tích các ma trận, ta ngầm giả định rằng cỡ của các thừa số là sao cho tích đó xác định.
+
+Để minh hoạ quy tắc tích vô hướng, ta tính lại tích ma trận trong Ví dụ 2.3.1.
+
+<ViDu so="2.3.3">
+Tính $AB$ nếu $A = \begin{bmatrix} 2 & 3 & 5 \\ 1 & 4 & 7 \\ 0 & 1 & 8 \end{bmatrix}$ và $B = \begin{bmatrix} 8 & 9 \\ 7 & 2 \\ 6 & 1 \end{bmatrix}$.
+
+**Lời giải.** Ở đây $A$ là $3 \times 3$ và $B$ là $3 \times 2$, nên ma trận tích $AB$ xác định và sẽ có cỡ $3 \times 2$. Định lý 2.3.2 cho mỗi phần tử của $AB$ là tích vô hướng của hàng tương ứng của $A$ với cột tương ứng của $B$, tức là
+
+$$
+AB = \begin{bmatrix} 2 \cdot 8 + 3 \cdot 7 + 5 \cdot 6 & 2 \cdot 9 + 3 \cdot 2 + 5 \cdot 1 \\ 1 \cdot 8 + 4 \cdot 7 + 7 \cdot 6 & 1 \cdot 9 + 4 \cdot 2 + 7 \cdot 1 \\ 0 \cdot 8 + 1 \cdot 7 + 8 \cdot 6 & 0 \cdot 9 + 1 \cdot 2 + 8 \cdot 1 \end{bmatrix} = \begin{bmatrix} 67 & 29 \\ 78 & 24 \\ 55 & 10 \end{bmatrix}
+$$
+
+Tất nhiên kết quả này khớp với Ví dụ 2.3.1.
+</ViDu>
+
+<ViDu so="2.3.4">
+Tính phần tử $(1, 3)$ và $(2, 4)$ của $AB$, trong đó $A = \begin{bmatrix} 3 & -1 & 2 \\ 0 & 1 & 4 \end{bmatrix}$ và $B = \begin{bmatrix} 2 & 1 & 6 & 0 \\ 0 & 2 & 3 & 4 \\ -1 & 0 & 5 & 8 \end{bmatrix}$. Sau đó tính $AB$.
+
+**Lời giải.** Phần tử $(1, 3)$ của $AB$ là tích vô hướng của hàng 1 của $A$ và cột 3 của $B$:
+
+$$
+\text{phần tử } (1, 3) = 3 \cdot 6 + (-1) \cdot 3 + 2 \cdot 5 = 25
+$$
+
+Tương tự, phần tử $(2, 4)$ của $AB$ liên quan đến hàng 2 của $A$ và cột 4 của $B$:
+
+$$
+\text{phần tử } (2, 4) = 0 \cdot 0 + 1 \cdot 4 + 4 \cdot 8 = 36
+$$
+
+Vì $A$ là $2 \times 3$ và $B$ là $3 \times 4$, tích là $2 \times 4$.
+
+$$
+AB = \begin{bmatrix} 3 & -1 & 2 \\ 0 & 1 & 4 \end{bmatrix} \begin{bmatrix} 2 & 1 & 6 & 0 \\ 0 & 2 & 3 & 4 \\ -1 & 0 & 5 & 8 \end{bmatrix} = \begin{bmatrix} 4 & 1 & 25 & 12 \\ -4 & 2 & 23 & 36 \end{bmatrix}
+$$
+
+</ViDu>
+
+<ViDu so="2.3.5">
+Nếu $A = \begin{bmatrix} 1 & 3 & 2 \end{bmatrix}$ và $B = \begin{bmatrix} 5 \\ 6 \\ 4 \end{bmatrix}$, hãy tính $A^2$, $AB$, $BA$ và $B^2$ khi chúng xác định.[^2]
+
+**Lời giải.** Ở đây $A$ là ma trận $1 \times 3$ và $B$ là ma trận $3 \times 1$, nên $A^2$ và $B^2$ không xác định. Tuy nhiên, quy tắc tương thích đọc là
+
+$$
+\underbrace{A}_{1 \times 3} \; \underbrace{B}_{3 \times 1} \qquad \text{và} \qquad \underbrace{B}_{3 \times 1} \; \underbrace{A}_{1 \times 3}
+$$
+
+nên cả $AB$ và $BA$ đều lập được, và chúng lần lượt là ma trận $1 \times 1$ và $3 \times 3$.
+
+$$
+\begin{aligned}
+AB &= \begin{bmatrix} 1 & 3 & 2 \end{bmatrix} \begin{bmatrix} 5 \\ 6 \\ 4 \end{bmatrix} = \begin{bmatrix} 1 \cdot 5 + 3 \cdot 6 + 2 \cdot 4 \end{bmatrix} = \begin{bmatrix} 31 \end{bmatrix} \\
+BA &= \begin{bmatrix} 5 \\ 6 \\ 4 \end{bmatrix} \begin{bmatrix} 1 & 3 & 2 \end{bmatrix} = \begin{bmatrix} 5 & 15 & 10 \\ 6 & 18 & 12 \\ 4 & 12 & 8 \end{bmatrix}
+\end{aligned}
+$$
+
+</ViDu>
+
+Khác với phép nhân số, các tích ma trận $AB$ và $BA$ *không nhất thiết bằng nhau*. Thực tế chúng thậm chí không nhất thiết cùng cỡ, như Ví dụ 2.3.5 cho thấy. Hoá ra trường hợp $AB = BA$ là hiếm (tuy hoàn toàn không phải là không thể), và khi đó $A$ và $B$ được gọi là **giao hoán** (*commute*).
+
+<ViDu so="2.3.6">
+Cho $A = \begin{bmatrix} 6 & 9 \\ -4 & -6 \end{bmatrix}$ và $B = \begin{bmatrix} 1 & 2 \\ -1 & 0 \end{bmatrix}$. Tính $A^2$, $AB$, $BA$.
+
+**Lời giải.** $A^2 = \begin{bmatrix} 6 & 9 \\ -4 & -6 \end{bmatrix} \begin{bmatrix} 6 & 9 \\ -4 & -6 \end{bmatrix} = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}$, nên $A^2 = 0$ *có thể* xảy ra ngay cả khi $A \ne 0$. Tiếp theo,
+
+$$
+\begin{aligned}
+AB &= \begin{bmatrix} 6 & 9 \\ -4 & -6 \end{bmatrix} \begin{bmatrix} 1 & 2 \\ -1 & 0 \end{bmatrix} = \begin{bmatrix} -3 & 12 \\ 2 & -8 \end{bmatrix} \\
+BA &= \begin{bmatrix} 1 & 2 \\ -1 & 0 \end{bmatrix} \begin{bmatrix} 6 & 9 \\ -4 & -6 \end{bmatrix} = \begin{bmatrix} -2 & -3 \\ -6 & -9 \end{bmatrix}
+\end{aligned}
+$$
+
+Do đó $AB \ne BA$, mặc dù $AB$ và $BA$ cùng cỡ.
+</ViDu>
+
+<GhiChu tieuDe="Ghi chú cho người học — hai “bẫy” lớn nhất">
+Ví dụ 2.3.6 chỉ ra hai điều mà số học thông thường *có* nhưng đại số ma trận *không có*:
+
+1. **Không giao hoán:** $AB \ne BA$ nói chung. Nên khi biến đổi biểu thức ma trận, bạn *không* được tự ý đổi chỗ hai thừa số.
+2. **Có ước của không:** $A^2 = 0$ mà $A \ne 0$. Với số thực, $a^2 = 0 \Rightarrow a = 0$. Với ma trận thì không. Tương tự, $AB = 0$ *không* kéo theo $A = 0$ hoặc $B = 0$.
+
+Hai bẫy này là nguồn gốc của phần lớn lỗi sai khi mới học. Mỗi khi bạn định “rút gọn” một biểu thức ma trận, hãy tự hỏi: mình có đang vô tình dùng tính giao hoán không?
+</GhiChu>
+
+<ViDu so="2.3.7">
+Nếu $A$ là ma trận bất kỳ thì $IA = A$ và $AI = A$, trong đó $I$ ký hiệu ma trận đơn vị có cỡ sao cho các phép nhân xác định.
+
+**Lời giải.** Cả hai đều suy ra từ quy tắc tích vô hướng, bạn đọc nên kiểm chứng. Để chứng minh chính thức hơn, viết $A = \begin{bmatrix} \mathbf{a}_1 & \mathbf{a}_2 & \cdots & \mathbf{a}_n \end{bmatrix}$ trong đó $\mathbf{a}_j$ là cột thứ $j$ của $A$. Khi đó Định nghĩa 2.9 và Ví dụ 2.2.11 cho
+
+$$
+IA = \begin{bmatrix} I\mathbf{a}_1 & I\mathbf{a}_2 & \cdots & I\mathbf{a}_n \end{bmatrix} = \begin{bmatrix} \mathbf{a}_1 & \mathbf{a}_2 & \cdots & \mathbf{a}_n \end{bmatrix} = A
+$$
+
+Nếu $\mathbf{e}_j$ ký hiệu cột thứ $j$ của $I$ thì $A\mathbf{e}_j = \mathbf{a}_j$ với mỗi $j$ theo Ví dụ 2.2.12. Do đó Định nghĩa 2.9 cho $AI = A$ tương tự.
+</ViDu>
+
+Định lý sau tập hợp nhiều kết quả về phép nhân ma trận được dùng ở khắp nơi trong đại số tuyến tính.
+
+<DinhLy so="2.3.3">
+Giả sử $a$ là một vô hướng bất kỳ, và $A$, $B$, $C$ là các ma trận có cỡ sao cho các tích ma trận được chỉ ra đều xác định. Khi đó:
+
+1. $IA = A$ và $AI = A$, trong đó $I$ ký hiệu ma trận đơn vị.
+2. $A(BC) = (AB)C$.
+3. $A(B + C) = AB + AC$.
+4. $(B + C)A = BA + CA$.
+5. $a(AB) = (aA)B = A(aB)$.
+6. $(AB)^T = B^T A^T$.
+
+</DinhLy>
+
+**Chứng minh.** Điều kiện (1) là Ví dụ 2.3.7; ta chứng minh (2), (4), (6) và để (3), (5) làm bài tập.
+
+**(2)** Nếu $C = \begin{bmatrix} \mathbf{c}_1 & \mathbf{c}_2 & \cdots & \mathbf{c}_k \end{bmatrix}$ theo các cột của nó thì $BC = \begin{bmatrix} B\mathbf{c}_1 & B\mathbf{c}_2 & \cdots & B\mathbf{c}_k \end{bmatrix}$ theo Định nghĩa 2.9, nên
+
+$$
+\begin{aligned}
+A(BC) &= \begin{bmatrix} A(B\mathbf{c}_1) & A(B\mathbf{c}_2) & \cdots & A(B\mathbf{c}_k) \end{bmatrix} && \text{Định nghĩa 2.9} \\
+&= \begin{bmatrix} (AB)\mathbf{c}_1 & (AB)\mathbf{c}_2 & \cdots & (AB)\mathbf{c}_k \end{bmatrix} && \text{Định lý 2.3.1} \\
+&= (AB)C && \text{Định nghĩa 2.9}
+\end{aligned}
+$$
+
+**(4)** Ta biết (Định lý 2.2.2) rằng $(B + C)\mathbf{x} = B\mathbf{x} + C\mathbf{x}$ đúng với mọi cột $\mathbf{x}$. Nếu ta viết $A = \begin{bmatrix} \mathbf{a}_1 & \mathbf{a}_2 & \cdots & \mathbf{a}_n \end{bmatrix}$ theo các cột của nó, ta được
+
+$$
+\begin{aligned}
+(B + C)A &= \begin{bmatrix} (B + C)\mathbf{a}_1 & \cdots & (B + C)\mathbf{a}_n \end{bmatrix} && \text{Định nghĩa 2.9} \\
+&= \begin{bmatrix} B\mathbf{a}_1 + C\mathbf{a}_1 & \cdots & B\mathbf{a}_n + C\mathbf{a}_n \end{bmatrix} && \text{Định lý 2.2.2} \\
+&= \begin{bmatrix} B\mathbf{a}_1 & \cdots & B\mathbf{a}_n \end{bmatrix} + \begin{bmatrix} C\mathbf{a}_1 & \cdots & C\mathbf{a}_n \end{bmatrix} && \text{cộng theo cột} \\
+&= BA + CA && \text{Định nghĩa 2.9}
+\end{aligned}
+$$
+
+**(6)** Như ở Mục 2.1, viết $A = [a_{ij}]$ và $B = [b_{ij}]$, sao cho $A^T = [a'_{ij}]$ và $B^T = [b'_{ij}]$ với $a'_{ij} = a_{ji}$ và $b'_{ij} = b_{ji}$ với mọi $i$, $j$. Nếu $c_{ij}$ ký hiệu phần tử $(i, j)$ của $B^T A^T$ thì $c_{ij}$ là tích vô hướng của hàng $i$ của $B^T$ với cột $j$ của $A^T$. Do đó
+
+$$
+\begin{aligned}
+c_{ij} &= b'_{i1}a'_{1j} + b'_{i2}a'_{2j} + \cdots + b'_{im}a'_{mj} = b_{1i}a_{j1} + b_{2i}a_{j2} + \cdots + b_{mi}a_{jm} \\
+&= a_{j1}b_{1i} + a_{j2}b_{2i} + \cdots + a_{jm}b_{mi}
+\end{aligned}
+$$
+
+Nhưng đây là tích vô hướng của hàng $j$ của $A$ với cột $i$ của $B$; tức là phần tử $(j, i)$ của $AB$; tức là phần tử $(i, j)$ của $(AB)^T$. Điều này chứng minh (6). ∎
+
+Tính chất 2 trong Định lý 2.3.3 được gọi là **luật kết hợp** của phép nhân ma trận. Nó khẳng định rằng đẳng thức $A(BC) = (AB)C$ đúng với mọi ma trận (nếu các tích xác định). Do đó tích này là như nhau dù được lập theo cách nào, nên được viết đơn giản là $ABC$. Điều này mở rộng: tích $ABCD$ của bốn ma trận có thể lập theo nhiều cách — ví dụ $(AB)(CD)$, $[A(BC)]D$, $A[B(CD)]$ — nhưng luật kết hợp suy ra rằng chúng đều bằng nhau nên được viết là $ABCD$. Nhận xét tương tự áp dụng trong trường hợp tổng quát: tích các ma trận có thể viết không nhập nhằng mà không cần dấu ngoặc.
+
+Tuy nhiên, phải hết sức lưu ý một điều về phép nhân ma trận: việc $AB$ và $BA$ không nhất thiết bằng nhau có nghĩa là *thứ tự các thừa số là quan trọng* trong một tích các ma trận. Ví dụ $ABCD$ và $ADCB$ có thể không bằng nhau.
+
+<Loi tieuDe="CẢNH BÁO">
+Nếu thay đổi thứ tự các thừa số trong một tích các ma trận thì ma trận tích có thể thay đổi (hoặc có thể không còn xác định). Bỏ qua cảnh báo này là nguồn gốc của rất nhiều lỗi sai của sinh viên học đại số tuyến tính!
+</Loi>
+
+Các tính chất 3 và 4 trong Định lý 2.3.3 được gọi là các **luật phân phối**. Chúng khẳng định rằng $A(B + C) = AB + AC$ và $(B + C)A = BA + CA$ đúng bất cứ khi nào các tổng và tích xác định. Các quy tắc này mở rộng cho nhiều hơn hai số hạng và, cùng với tính chất 5, bảo đảm rằng nhiều thao tác quen thuộc từ đại số thông thường mở rộng được cho ma trận. Ví dụ
+
+$$
+\begin{aligned}
+A(2B - 3C + D - 5E) &= 2AB - 3AC + AD - 5AE \\
+(A + 3C - 2D)B &= AB + 3CB - 2DB
+\end{aligned}
+$$
+
+Lưu ý một lần nữa rằng cảnh báo vẫn có hiệu lực: ví dụ $A(B - C)$ không nhất thiết bằng $AB - CA$. Các quy tắc này cho phép rút gọn rất nhiều biểu thức ma trận.
+
+<ViDu so="2.3.8">
+Rút gọn biểu thức $A(BC - CD) + A(C - B)D - AB(C - D)$.
+
+**Lời giải.**
+
+$$
+\begin{aligned}
+& A(BC - CD) + A(C - B)D - AB(C - D) \\
+&= A(BC) - A(CD) + (AC - AB)D - (AB)C + (AB)D \\
+&= ABC - ACD + ACD - ABD - ABC + ABD \\
+&= 0
+\end{aligned}
+$$
+
+</ViDu>
+
+Ví dụ 2.3.9 và Ví dụ 2.3.10 dưới đây cho thấy ta có thể dùng các tính chất trong Định lý 2.3.3 để suy ra những sự kiện khác về phép nhân ma trận. Hai ma trận $A$ và $B$ được gọi là **giao hoán** (*commute*) nếu $AB = BA$.
+
+<ViDu so="2.3.9">
+Giả sử $A$, $B$, $C$ là các ma trận $n \times n$ và cả $A$ lẫn $B$ đều giao hoán với $C$; tức là $AC = CA$ và $BC = CB$. Chứng tỏ rằng $AB$ giao hoán với $C$.
+
+**Lời giải.** Chứng tỏ $AB$ giao hoán với $C$ nghĩa là kiểm chứng $(AB)C = C(AB)$. Phép tính dùng luật kết hợp nhiều lần, cùng với các giả thiết $AC = CA$ và $BC = CB$.
+
+$$
+(AB)C = A(BC) = A(CB) = (AC)B = (CA)B = C(AB)
+$$
+
+</ViDu>
+
+<ViDu so="2.3.10">
+Chứng tỏ rằng $AB = BA$ khi và chỉ khi $(A - B)(A + B) = A^2 - B^2$.
+
+**Lời giải.** Đẳng thức sau luôn đúng:
+
+$$
+(A - B)(A + B) = A(A + B) - B(A + B) = A^2 + AB - BA - B^2 \tag{2.6}
+$$
+
+Do đó nếu $AB = BA$ thì $(A - B)(A + B) = A^2 - B^2$ suy ra ngay. Ngược lại, nếu đẳng thức cuối này đúng thì phương trình (2.6) trở thành
+
+$$
+A^2 - B^2 = A^2 + AB - BA - B^2
+$$
+
+Điều này cho $0 = AB - BA$, và $AB = BA$ suy ra.
+</ViDu>
+
+<GhiChu tieuDe="Ghi chú cho người học">
+Ví dụ 2.3.10 rất đáng nhớ: hằng đẳng thức quen thuộc $(a - b)(a + b) = a^2 - b^2$ *chỉ* đúng cho ma trận khi hai ma trận giao hoán. Tương tự, $(A + B)^2 = A^2 + 2AB + B^2$ cũng chỉ đúng khi $AB = BA$; nói chung ta chỉ có $(A + B)^2 = A^2 + AB + BA + B^2$. Đây là bài kiểm tra tốt để xem bạn đã thực sự bỏ được thói quen “coi ma trận như số” chưa.
+</GhiChu>
+
+Ở Mục 2.2 ta đã thấy (trong Định lý 2.2.1) rằng mọi hệ phương trình tuyến tính đều có dạng
+
+$$
+A\mathbf{x} = \mathbf{b}
+$$
+
+trong đó $A$ là ma trận hệ số, $\mathbf{x}$ là cột các biến, và $\mathbf{b}$ là ma trận cột tự do. Như vậy hệ phương trình tuyến tính trở thành một phương trình ma trận duy nhất. Phép nhân ma trận có thể cho ta thông tin về một hệ như vậy.
+
+<ViDu so="2.3.11">
+Xét hệ $A\mathbf{x} = \mathbf{b}$ các phương trình tuyến tính, trong đó $A$ là ma trận $m \times n$. Giả sử tồn tại một ma trận $C$ sao cho $CA = I_n$. Nếu hệ $A\mathbf{x} = \mathbf{b}$ có nghiệm, hãy chứng tỏ rằng nghiệm đó phải là $C\mathbf{b}$. Hãy cho một điều kiện bảo đảm rằng $C\mathbf{b}$ thực sự là một nghiệm.
+
+**Lời giải.** Giả sử $\mathbf{x}$ là một nghiệm bất kỳ của hệ, tức là $A\mathbf{x} = \mathbf{b}$. Nhân cả hai vế của phương trình ma trận này với $C$ ta được lần lượt
+
+$$
+C(A\mathbf{x}) = C\mathbf{b}, \quad (CA)\mathbf{x} = C\mathbf{b}, \quad I_n\mathbf{x} = C\mathbf{b}, \quad \mathbf{x} = C\mathbf{b}
+$$
+
+Điều này cho thấy nếu hệ có nghiệm $\mathbf{x}$ thì nghiệm đó phải là $\mathbf{x} = C\mathbf{b}$, như yêu cầu. Nhưng nó *không* bảo đảm rằng hệ có nghiệm. Tuy nhiên, nếu ta viết $\mathbf{x}_1 = C\mathbf{b}$ thì
+
+$$
+A\mathbf{x}_1 = A(C\mathbf{b}) = (AC)\mathbf{b}
+$$
+
+Như vậy $\mathbf{x}_1 = C\mathbf{b}$ sẽ là một nghiệm nếu điều kiện $AC = I_m$ được thoả mãn.
+</ViDu>
+
+Các ý tưởng trong Ví dụ 2.3.11 dẫn đến thông tin quan trọng về ma trận; điều này sẽ được theo đuổi ở mục sau.
+
+## Phép nhân theo khối
+
+<DinhNghia so="2.10" ten="Phân hoạch khối của ma trận">
+Thường hữu ích khi xét những ma trận mà các phần tử của nó lại chính là ma trận (gọi là **khối** — *blocks*). Một ma trận được nhìn theo cách này gọi là được **phân hoạch thành các khối** (*partitioned into blocks*).
+</DinhNghia>
+
+Ví dụ, viết ma trận $B$ ở dạng $B = \begin{bmatrix} \mathbf{b}_1 & \mathbf{b}_2 & \cdots & \mathbf{b}_k \end{bmatrix}$ trong đó các $\mathbf{b}_j$ là các cột của $B$, chính là một phân hoạch khối của $B$. Đây là một ví dụ khác. Xét các ma trận
+
+$$
+A = \left[\begin{array}{rr|rrr} 1 & 0 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 & 0 \\ \hline 2 & -1 & 4 & 2 & 1 \\ 3 & 1 & -1 & 7 & 5 \end{array}\right] = \begin{bmatrix} I_2 & 0_{23} \\ P & Q \end{bmatrix} \qquad \text{và} \qquad B = \left[\begin{array}{rr} 4 & -2 \\ 5 & 6 \\ \hline 7 & 3 \\ -1 & 0 \\ 1 & 6 \end{array}\right] = \begin{bmatrix} X \\ Y \end{bmatrix}
+$$
+
+trong đó các khối được đặt tên như đã chỉ ra. Đây là cách phân hoạch $A$ thành khối rất tự nhiên, xét đến các khối $I_2$ và $0_{23}$ xuất hiện trong đó. Ký hiệu này đặc biệt hữu ích khi ta nhân hai ma trận $A$ và $B$, vì tích $AB$ có thể tính ở dạng khối như sau:
+
+$$
+AB = \begin{bmatrix} I & 0 \\ P & Q \end{bmatrix} \begin{bmatrix} X \\ Y \end{bmatrix} = \begin{bmatrix} IX + 0Y \\ PX + QY \end{bmatrix} = \begin{bmatrix} X \\ PX + QY \end{bmatrix} = \begin{bmatrix} 4 & -2 \\ 5 & 6 \\ 30 & 8 \\ 8 & 27 \end{bmatrix}
+$$
+
+Dễ kiểm tra rằng đây đúng là tích $AB$ tính theo cách thông thường.
+
+Nói cách khác, ta có thể tính tích $AB$ bằng phép nhân ma trận thông thường, coi các khối như các phần tử. Yêu cầu duy nhất là các khối phải *tương thích*. Tức là, cỡ của các khối phải sao cho mọi tích (ma trận) của các khối xuất hiện đều có nghĩa. Điều này có nghĩa là số cột trong mỗi khối của $A$ phải bằng số hàng trong khối tương ứng của $B$.
+
+<DinhLy so="2.3.4" ten="Phép nhân theo khối">
+Nếu các ma trận $A$ và $B$ được phân hoạch tương thích thành các khối thì tích $AB$ có thể tính bằng phép nhân ma trận dùng các khối làm phần tử.
+</DinhLy>
+
+Ta bỏ qua chứng minh.
+
+Ta đã và đang dùng hai trường hợp của phép nhân theo khối. Nếu $B = \begin{bmatrix} \mathbf{b}_1 & \mathbf{b}_2 & \cdots & \mathbf{b}_k \end{bmatrix}$ là ma trận mà các $\mathbf{b}_j$ là các cột của $B$, và nếu tích $AB$ xác định thì ta có
+
+$$
+AB = A \begin{bmatrix} \mathbf{b}_1 & \cdots & \mathbf{b}_k \end{bmatrix} = \begin{bmatrix} A\mathbf{b}_1 & \cdots & A\mathbf{b}_k \end{bmatrix}
+$$
+
+Đây là Định nghĩa 2.9 và là một phép nhân khối trong đó $A = [A]$ chỉ có một khối. Một minh hoạ khác,
+
+$$
+B\mathbf{x} = \begin{bmatrix} \mathbf{b}_1 & \cdots & \mathbf{b}_k \end{bmatrix} \begin{bmatrix} x_1 \\ \vdots \\ x_k \end{bmatrix} = x_1\mathbf{b}_1 + x_2\mathbf{b}_2 + \cdots + x_k\mathbf{b}_k
+$$
+
+trong đó $\mathbf{x}$ là ma trận cột $k \times 1$ bất kỳ (đây là Định nghĩa 2.5).
+
+Ta không có ý định đi sâu vào phép nhân khối ở đây. Tuy nhiên, ta đưa thêm một ví dụ nữa vì nó sẽ được dùng ở phần dưới.
+
+<DinhLy so="2.3.5">
+Giả sử các ma trận $A = \begin{bmatrix} B & X \\ 0 & C \end{bmatrix}$ và $A_1 = \begin{bmatrix} B_1 & X_1 \\ 0 & C_1 \end{bmatrix}$ được phân hoạch như đã chỉ ra, trong đó $B$ và $B_1$ là các ma trận vuông cùng cỡ, và $C$, $C_1$ cũng vuông cùng cỡ. Đây là các phân hoạch tương thích và phép nhân khối cho
+
+$$
+AA_1 = \begin{bmatrix} B & X \\ 0 & C \end{bmatrix} \begin{bmatrix} B_1 & X_1 \\ 0 & C_1 \end{bmatrix} = \begin{bmatrix} BB_1 & BX_1 + XC_1 \\ 0 & CC_1 \end{bmatrix}
+$$
+
+</DinhLy>
+
+<ViDu so="2.3.12">
+Tìm công thức cho $A^k$, trong đó $A = \begin{bmatrix} I & X \\ 0 & 0 \end{bmatrix}$ là ma trận vuông và $I$ là ma trận đơn vị.
+
+**Lời giải.** Ta có $A^2 = \begin{bmatrix} I & X \\ 0 & 0 \end{bmatrix}^2 = \begin{bmatrix} I & IX + X \cdot 0 \\ 0 & 0^2 \end{bmatrix} = \begin{bmatrix} I & X \\ 0 & 0 \end{bmatrix} = A$. Do đó $A^3 = AA^2 = AA = A^2 = A$. Tiếp tục như vậy, ta thấy $A^k = A$ với mọi $k \ge 1$.
+</ViDu>
+
+Phép nhân khối có những ứng dụng lý thuyết như ta sẽ thấy. Tuy nhiên, nó cũng hữu ích khi tính tích các ma trận trên máy tính có dung lượng bộ nhớ hạn chế. Các ma trận được phân hoạch thành khối sao cho mỗi tích của các khối có thể xử lý được. Sau đó các khối được lưu trong bộ nhớ phụ và tích của chúng được tính lần lượt từng cái một.
+
+<GhiChu tieuDe="Ghi chú cho người học — liên hệ với lập trình">
+Đoạn trên chính là mô tả của kỹ thuật **blocked / tiled matrix multiplication** — một trong những tối ưu hoá quan trọng nhất trong tính toán hiệu năng cao. Ý tưởng: thay vì nhân toàn bộ ma trận (làm cache liên tục bị miss), ta chia thành các khối vừa đủ nhỏ để lọt vào cache CPU. Cùng một số phép tính, nhưng nhanh hơn nhiều lần. Đây là ví dụ kinh điển cho thấy *độ phức tạp thuật toán không phải là tất cả* — kiến trúc bộ nhớ cũng quyết định tốc độ thực tế.
+</GhiChu>
+
+## Đồ thị có hướng
+
+Việc nghiên cứu đồ thị có hướng minh hoạ cách phép nhân ma trận xuất hiện theo những cách khác với việc nghiên cứu phương trình tuyến tính hay phép biến đổi ma trận.
+
+Một **đồ thị có hướng** (*directed graph*) gồm một tập các điểm (gọi là **đỉnh** — *vertices*) nối với nhau bởi các mũi tên (gọi là **cạnh** — *edges*). Ví dụ, các đỉnh có thể biểu diễn các thành phố và các cạnh là các chuyến bay hiện có. Nếu đồ thị có $n$ đỉnh $v_1, v_2, \ldots, v_n$ thì **ma trận kề** (*adjacency matrix*) $A = [a_{ij}]$ là ma trận $n \times n$ có phần tử $(i, j)$ là $a_{ij} = 1$ nếu có một cạnh đi từ $v_j$ đến $v_i$ (chú ý thứ tự), và bằng 0 nếu ngược lại. Ví dụ, ma trận kề của đồ thị có hướng vẽ dưới đây là $A = \begin{bmatrix} 1 & 1 & 0 \\ 1 & 0 & 1 \\ 1 & 0 & 0 \end{bmatrix}$.
+
+<HinhDoThiCoHuong />
+
+Một **đường đi độ dài $r$** (hay **$r$-đường**) từ đỉnh $j$ đến đỉnh $i$ là một dãy $r$ cạnh dẫn từ $v_j$ đến $v_i$. Như vậy $v_1 \to v_2 \to v_1 \to v_1 \to v_3$ là một 4-đường từ $v_1$ đến $v_3$ trong đồ thị đã cho. Các cạnh chính là các đường đi độ dài 1, nên phần tử $(i, j)$ là $a_{ij}$ của ma trận kề $A$ là *số* các 1-đường từ $v_j$ đến $v_i$. Nhận xét này có một mở rộng quan trọng:
+
+<DinhLy so="2.3.6">
+Nếu $A$ là ma trận kề của một đồ thị có hướng với $n$ đỉnh thì phần tử $(i, j)$ của $A^r$ là số các $r$-đường $v_j \to v_i$.
+</DinhLy>
+
+Để minh hoạ, xét ma trận kề $A$ ở trên. Khi đó
+
+$$
+A = \begin{bmatrix} 1 & 1 & 0 \\ 1 & 0 & 1 \\ 1 & 0 & 0 \end{bmatrix}, \quad A^2 = \begin{bmatrix} 2 & 1 & 1 \\ 2 & 1 & 0 \\ 1 & 1 & 0 \end{bmatrix}, \quad A^3 = \begin{bmatrix} 4 & 2 & 1 \\ 3 & 2 & 1 \\ 2 & 1 & 1 \end{bmatrix}
+$$
+
+Do đó, vì phần tử $(2, 1)$ của $A^2$ bằng 2, có hai 2-đường $v_1 \to v_2$ (thực ra chúng là $v_1 \to v_1 \to v_2$ và $v_1 \to v_3 \to v_2$). Tương tự, phần tử $(2, 3)$ của $A^2$ bằng 0, nên không có 2-đường $v_3 \to v_2$ nào, bạn đọc có thể tự kiểm chứng. Việc không có phần tử nào của $A^3$ bằng 0 cho thấy có thể đi từ đỉnh bất kỳ đến đỉnh bất kỳ khác trong đúng ba bước.
+
+Để thấy vì sao Định lý 2.3.6 đúng, hãy để ý rằng nó khẳng định
+
+$$
+\text{phần tử } (i, j) \text{ của } A^r \text{ bằng số các } r\text{-đường } v_j \to v_i \tag{2.7}
+$$
+
+đúng với mỗi $r \ge 1$. Ta tiến hành bằng **quy nạp** theo $r$ (xem Phụ lục C). Trường hợp $r = 1$ chính là định nghĩa của ma trận kề. Vậy giả sử theo quy nạp rằng (2.7) đúng với $r \ge 1$ nào đó; ta phải chứng minh (2.7) cũng đúng với $r + 1$. Nhưng mọi $(r + 1)$-đường $v_j \to v_i$ đều là kết quả của một $r$-đường $v_j \to v_k$ với $k$ nào đó, tiếp theo là một 1-đường $v_k \to v_i$. Viết $A = [a_{ij}]$ và $A^r = [b_{ij}]$, có $b_{kj}$ đường loại thứ nhất (theo quy nạp) và $a_{ik}$ đường loại thứ hai, nên tổng cộng có $a_{ik}b_{kj}$ đường như vậy. Lấy tổng theo $k$, điều này cho thấy có
+
+$$
+a_{i1}b_{1j} + a_{i2}b_{2j} + \cdots + a_{in}b_{nj} \quad \text{các } (r + 1)\text{-đường } v_j \to v_i
+$$
+
+Nhưng tổng này là tích vô hướng của hàng thứ $i$ $\begin{bmatrix} a_{i1} & a_{i2} & \cdots & a_{in} \end{bmatrix}$ của $A$ với cột thứ $j$ $\begin{bmatrix} b_{1j} & b_{2j} & \cdots & b_{nj} \end{bmatrix}^T$ của $A^r$. Như vậy, nó là phần tử $(i, j)$ của ma trận tích $A^r A = A^{r+1}$. Điều này cho thấy (2.7) đúng với $r + 1$, như yêu cầu.
+
+<GhiChu tieuDe="Ghi chú cho người học — ứng dụng trong khoa học máy tính">
+Định lý 2.3.6 là cầu nối trực tiếp giữa đại số tuyến tính và **lý thuyết đồ thị** trong DSA. Một vài hệ quả thực tế:
+
+- Kiểm tra đồ thị có *liên thông mạnh* hay không bằng cách xét $A + A^2 + \cdots + A^{n-1}$.
+- Tính số đường đi độ dài $k$ mà không cần duyệt — hữu ích trong đếm tổ hợp.
+- Thuật toán PageRank của Google về bản chất là bài toán tìm vector riêng của một ma trận kề đã chuẩn hoá (bạn sẽ gặp lại ở Mục 2.9 với xích Markov).
+
+Nếu bạn thích lập trình, hãy thử cài đặt: đọc ma trận kề, tính $A^r$ bằng NumPy, rồi so sánh với kết quả duyệt BFS/DFS đếm đường đi. Đó là cách tốt nhất để *thấy* định lý này đúng.
+</GhiChu>
+
+[^1]: Khi đọc ký hiệu $S \circ T$, ta đọc $S$ trước rồi $T$, mặc dù tác động là “$T$ trước rồi $S$”. Tình trạng khó chịu này nảy sinh vì ta viết $T(\mathbf{x})$ cho tác dụng của phép biến đổi $T$ lên $\mathbf{x}$, với $T$ ở bên trái. Nếu thay vào đó ta viết $(\mathbf{x})T$ thì sẽ không có sự nhầm lẫn. Tuy nhiên ký hiệu $T(\mathbf{x})$ đã quá phổ biến.
+
+[^2]: Cũng như với số, ta viết $A^2 = A \cdot A$, $A^3 = A \cdot A \cdot A$, v.v. Lưu ý rằng $A^2$ xác định khi và chỉ khi $A$ có cỡ $n \times n$ với $n$ nào đó.

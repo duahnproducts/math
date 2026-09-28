@@ -40,12 +40,15 @@ test('sơ đồ đổi màu theo giao diện tối', async ({ page }) => {
   expect(mauToi).not.toBe(mauSang);
 });
 
-test('Chương 2: §2.1–§2.2 có trang dịch, mục lục đủ 9 mục, có PDF tải về', async ({ page }) => {
-  for (const muc of ['2-1', '2-2']) {
+test('Chương 2: §2.1–§2.3 có trang dịch, mục lục đủ 9 mục, có PDF tải về', async ({ page }) => {
+  for (const muc of ['2-1', '2-2', '2-3']) {
     await page.goto(`dai-so/chuong-2/sach/${muc}/`);
     await expect(page.locator('[data-ghi-cong]')).toContainText('CC BY-NC-SA');
     await expect(page.locator('.katex-error')).toHaveCount(0);
   }
+  // §2.3: đồ thị có hướng vẽ lại từ ma trận kề
+  await expect(page.locator('[data-hinh-do-thi] svg')).toBeVisible();
+  await page.goto('dai-so/chuong-2/sach/2-2/');
   await expect(page.locator('#dinh-ly-2\\.2\\.1')).toBeVisible();
 
   await page.goto('dai-so/chuong-2/');
