@@ -1,0 +1,33 @@
+---
+mon: giai-tich
+chuong: 2
+muc: "2.9"
+tieu_de: "Kết luận: chuỗi hội tụ có điều kiện"
+tieu_de_en: Epilogue
+loai: theo-sach
+nguon: "Theo cấu trúc §2.9 của Stephen Abbott, Understanding Analysis, 2nd ed., Springer, 2015. Nội dung được tóm lược và bình luận bằng lời người biên soạn — không phải bản dịch nguyên văn."
+---
+
+Định lý 2.7.10 và 2.8.1 cho thấy hội tụ tuyệt đối là phẩm chất rất đáng có khi thao tác với chuỗi. Còn chuỗi hội tụ **có điều kiện** thì kỳ quặc đến mức thú vị.
+
+## Sắp xếp lại để được bất kỳ tổng nào
+
+Không chỉ là sắp xếp lại có thể đổi tổng: nếu $\sum a_n$ hội tụ có điều kiện thì với **mọi** số thực $r$, có một cách sắp xếp lại hội tụ về đúng $r$. Kết quả này mang tên **Định lý Riemann**.
+
+**Vì sao làm được — nhìn qua chuỗi điều hòa đan dấu** $1 - \frac12 + \frac13 - \frac14 + \cdots$
+
+1. *Các số hạng âm* đứng riêng tạo thành $\sum -\frac{1}{2n}$, có tổng riêng bằng $-\frac12$ lần tổng riêng của chuỗi điều hòa — nên trôi về $-\infty$ (với nửa tốc độ). Tương tự, *các số hạng dương* $\sum \frac{1}{2n - 1}$ trôi về $+\infty$. Điều này luôn đúng với chuỗi hội tụ có điều kiện: cả phần dương lẫn phần âm đều là “kho vô tận”.
+2. Chọn đích $r$ (giả sử $r > 0$). Lấy các số hạng dương cho đến khi tổng riêng *vừa vượt* $r$; rồi lấy các số hạng âm cho đến khi tổng riêng *vừa tụt* dưới $r$; rồi quay lại số hạng dương; cứ thế mãi.
+3. Vì hai kho đều vô tận, quy trình không bao giờ kẹt. Vì bản thân các số hạng tiến về $0$ (Định lý 2.7.3), mỗi lần vượt qua $r$ chỉ vượt một lượng ngày càng nhỏ — nên các tổng riêng dao động quanh $r$ với biên độ co về $0$, tức hội tụ về $r$.
+
+Cũng bằng cách đó có thể sắp xếp lại để chuỗi phân kỳ về $+\infty$ hoặc $-\infty$.
+
+## Tích của chuỗi hội tụ có điều kiện
+
+- Nếu $\sum a_n = A$ hội tụ *tuyệt đối* và $\sum b_n = B$ chỉ cần hội tụ (có thể có điều kiện), thì tích Cauchy vẫn hội tụ về $AB$ (<XemMuc muc="2.8" />).
+- Nếu *cả hai* chỉ hội tụ có điều kiện, tích Cauchy có thể phân kỳ — bình phương chuỗi $\sum \frac{(-1)^n}{\sqrt n}$ là một ví dụ.
+- Nhưng nếu tích Cauchy của hai chuỗi hội tụ có điều kiện *có* hội tụ, thì nó hội tụ về đúng $AB$. Chứng minh điều này phải chờ đến chuỗi lũy thừa ở Chương 6.
+
+<TomTat tieuDe="Nếu chỉ được nhớ một điều từ cả chương">
+Tổng vô hạn là **giới hạn của một dãy** — không phải một phép cộng khổng lồ. Vì vậy mọi thói quen của phép cộng hữu hạn (đổi chỗ, nhóm lại, đổi thứ tự, nhân phân phối) đều phải được chứng minh lại, và điều kiện để chúng đúng gần như luôn là **hội tụ tuyệt đối**. Ba công cụ chứng minh hội tụ mà không cần biết giới hạn — Định lý Hội tụ Đơn điệu, Bolzano–Weierstrass, Tiêu chuẩn Cauchy — đều là tính đầy đủ của $\mathbf{R}$ khoác áo khác (<XemMuc muc="2.6" />).
+</TomTat>

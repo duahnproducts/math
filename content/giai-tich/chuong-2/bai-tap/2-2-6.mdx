@@ -1,0 +1,43 @@
+---
+so: "2.2.6"
+muc: "2.2"
+do_kho: vua
+nen_lam: true
+tieu_de: "Giới hạn là duy nhất"
+can_dung: ["dinh-ly-2.2.7", "dinh-ly-1.2.6", "vi-du-1.2.5"]
+---
+
+<De>
+Chứng minh Định lý 2.2.7: nếu $(a_n) \to a$ và $(a_n) \to b$ thì $a = b$.
+</De>
+
+<GoiY so={1}>
+Muốn chứng minh $a = b$, cách chuẩn ở Chương 1 là: chứng minh $|a - b| < \varepsilon$ với *mọi* $\varepsilon > 0$ (Định lý 1.2.6). Vậy cho $\varepsilon > 0$ và tìm cách chặn $|a - b|$.
+</GoiY>
+
+<GoiY so={2}>
+Chèn $a_n$ vào giữa: $|a - b| \le |a - a_n| + |a_n - b|$. Làm mỗi mảnh nhỏ hơn $\frac\varepsilon2$ — nhưng mỗi mảnh cần một $N$ riêng. Chọn $n$ lớn hơn cả hai.
+</GoiY>
+
+<LoiGiai>
+Cho $\varepsilon > 0$ tuỳ ý.
+
+- Vì $(a_n) \to a$, có $N_1$ sao cho $n \ge N_1$ kéo theo $|a_n - a| < \frac\varepsilon2$.
+- Vì $(a_n) \to b$, có $N_2$ sao cho $n \ge N_2$ kéo theo $|a_n - b| < \frac\varepsilon2$.
+
+Lấy một $n \ge \max\{N_1, N_2\}$ (chẳng hạn chính $n = \max\{N_1, N_2\}$). Cả hai bất đẳng thức cùng đúng với $n$ này, nên theo bất đẳng thức tam giác
+
+$$
+|a - b| = |(a - a_n) + (a_n - b)| \le |a - a_n| + |a_n - b| < \frac\varepsilon2 + \frac\varepsilon2 = \varepsilon.
+$$
+
+Vì $|a - b| < \varepsilon$ với mọi $\varepsilon > 0$, Định lý 1.2.6 cho $a = b$. ∎
+
+<TomTat tieuDe="Hai kỹ thuật dùng suốt sách">
+**Chèn điểm trung gian** ($a_n$) để nối hai đại lượng không so trực tiếp được, và **chia $\varepsilon$ làm đôi** kèm $N = \max\{N_1, N_2\}$.
+</TomTat>
+</LoiGiai>
+
+<LoiHayMac>
+Dùng chung một $N$ cho cả hai giới hạn ngay từ đầu (“chọn $N$ sao cho $|a_n - a| < \frac\varepsilon2$ và $|a_n - b| < \frac\varepsilon2$”) mà không giải thích vì sao có $N$ như thế. Hai điều kiện đến từ hai giả thiết khác nhau nên cho hai mốc khác nhau; phải lấy max của chúng.
+</LoiHayMac>

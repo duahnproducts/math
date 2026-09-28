@@ -1,0 +1,44 @@
+---
+so: "2.4.2"
+muc: "2.4"
+do_kho: de
+nen_lam: true
+tieu_de: "Cái bẫy lấy giới hạn hai vế"
+can_dung: ["dinh-ly-2.4.2", "dinh-ly-quy-nap"]
+---
+
+<De>
+(a) Xét $y_1 = 1$, $y_{n+1} = 3 - y_n$. Một bạn lập luận: đặt $y = \lim y_n$; vì $(y_n)$ và $(y_{n+1})$ có cùng giới hạn, lấy giới hạn hai vế được $y = 3 - y$, nên $\lim y_n = \frac32$. Lập luận sai ở đâu?
+
+(b) Lần này đặt $y_1 = 1$ và $y_{n+1} = 3 - \dfrac{1}{y_n}$. Chiến lược ở (a) có dùng được để tính giới hạn không?
+</De>
+
+<GoiY so={1}>
+(a) Viết ra năm số hạng đầu. Câu “đặt $y = \lim y_n$” đang ngầm giả sử điều gì?
+</GoiY>
+
+<GoiY so={2}>
+(b) Tính $y_2 = 2$, $y_3 = 2{,}5$, $y_4 = 2{,}6, \ldots$ — có vẻ tăng và nằm dưới $3$. Chứng minh điều đó bằng quy nạp trước; chỉ khi đó mới được lấy giới hạn hai vế.
+</GoiY>
+
+<LoiGiai>
+**(a)** Dãy là $1, 2, 1, 2, 1, \ldots$ — nó **không hội tụ** (có hai dãy con tiến về $1$ và $2$). Câu “đặt $y = \lim y_n$” đã *giả sử* giới hạn tồn tại, và mọi bước sau đều dựa trên giả sử sai đó. Lấy giới hạn hai vế chỉ cho biết: *nếu* dãy hội tụ thì giới hạn phải là $\frac32$. Nó không chứng minh dãy hội tụ.
+
+**(b)** Chiến lược dùng được — sau khi chứng minh dãy hội tụ.
+
+*Bị chặn:* khẳng định $1 \le y_n < 3$ với mọi $n$. Đúng với $n = 1$. Nếu $1 \le y_n < 3$ thì $0 < \frac{1}{y_n} \le 1$, nên $2 \le y_{n+1} < 3$. Theo quy nạp, khẳng định đúng.
+
+*Tăng:* $y_2 = 2 \ge 1 = y_1$. Giả sử $y_{n+1} \ge y_n$ (cả hai dương). Khi đó $\frac{1}{y_{n+1}} \le \frac{1}{y_n}$, nên $y_{n+2} = 3 - \frac{1}{y_{n+1}} \ge 3 - \frac{1}{y_n} = y_{n+1}$. Theo quy nạp, dãy tăng.
+
+Theo Định lý Hội tụ Đơn điệu, $L = \lim y_n$ tồn tại, và $L \ge y_2 = 2$ (dãy tăng). Vì $L \ne 0$, lấy giới hạn hai vế:
+
+$$
+L = 3 - \frac1L \iff L^2 - 3L + 1 = 0 \iff L = \frac{3 \pm \sqrt5}{2}.
+$$
+
+Vì $L \ge 2$, ta có $L = \frac{3 + \sqrt5}{2} \approx 2{,}618$. ∎
+</LoiGiai>
+
+<LoiHayMac>
+Nghĩ rằng “giải được phương trình giới hạn” nghĩa là “dãy hội tụ”. Ở (a), phương trình $y = 3 - y$ có nghiệm đẹp $\frac32$ mà dãy vẫn phân kỳ. Quy trình đúng luôn là: **bị chặn → đơn điệu → rồi mới giải $L$**.
+</LoiHayMac>

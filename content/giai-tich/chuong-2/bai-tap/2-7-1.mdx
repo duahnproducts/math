@@ -1,0 +1,58 @@
+---
+so: "2.7.1"
+muc: "2.7"
+do_kho: kho
+nen_lam: false
+tieu_de: "Ba cách chứng minh tiêu chuẩn chuỗi đan dấu"
+can_dung: ["dinh-ly-2.7.7", "dinh-ly-2.7.2", "dinh-ly-2.4.2", "dinh-ly-1.4.1"]
+---
+
+<De>
+Chứng minh Tiêu chuẩn chuỗi đan dấu (Định lý 2.7.7) nghĩa là chứng minh dãy tổng riêng $s_n = a_1 - a_2 + a_3 - \cdots \pm a_n$ hội tụ, với $a_1 \ge a_2 \ge \cdots \ge 0$ và $(a_n) \to 0$. Mỗi cách phát biểu tính đầy đủ cho một cách chứng minh:
+
+(a) Chứng minh $(s_n)$ là dãy Cauchy.
+
+(b) Chứng minh bằng Tính chất đoạn lồng nhau (Định lý 1.4.1).
+
+(c) Xét hai dãy con $(s_{2n})$ và $(s_{2n+1})$, dùng Định lý Hội tụ Đơn điệu.
+</De>
+
+<GoiY so={1}>
+Vẽ các tổng riêng trên trục số (như mô tả ở đầu <XemMuc muc="2.1" chu="§2.1" />): $s_2 \le s_4 \le s_6 \le \cdots \le s_5 \le s_3 \le s_1$. Tổng riêng chẵn đi lên, tổng riêng lẻ đi xuống, và khoảng cách giữa $s_{2n}$ và $s_{2n\pm1}$ chính là một số hạng $a_k$ — tiến về $0$.
+</GoiY>
+
+<GoiY so={2}>
+(a) Bất đẳng thức then chốt: với $n > m$,
+
+$$
+0 \le a_{m+1} - a_{m+2} + a_{m+3} - \cdots \pm a_n \le a_{m+1}.
+$$
+
+Chứng minh bằng cách nhóm từng cặp theo hai kiểu. (b) Dùng các đoạn $I_n = [s_{2n}, s_{2n-1}]$. (c) Hai dãy con đơn điệu, bị chặn bởi $s_1$ và $s_2$; hiệu của chúng là $a_{2n+1} \to 0$.
+</GoiY>
+
+<LoiGiai>
+Từ hai điều kiện suy ra $a_n \ge 0$ với mọi $n$.
+
+**Bổ trợ.** Với $n > m$, đặt $T = a_{m+1} - a_{m+2} + a_{m+3} - \cdots \pm a_n$ (số hạng cuối mang dấu $+$ hay $-$ tuỳ số số hạng). Nhóm từ đầu theo cặp: $T = (a_{m+1} - a_{m+2}) + (a_{m+3} - a_{m+4}) + \cdots$, mỗi cặp $\ge 0$ (dãy giảm), và nếu thừa số hạng cuối thì nó là $+a_n \ge 0$. Vậy $T \ge 0$. Nhóm lệch một: $T = a_{m+1} - (a_{m+2} - a_{m+3}) - \cdots$, mỗi ngoặc $\ge 0$, số hạng thừa (nếu có) là $-a_n \le 0$. Vậy $T \le a_{m+1}$.
+
+Nói riêng $|s_n - s_m| = |T| \le a_{m+1}$ với mọi $n > m$.
+
+**(a) Cauchy.** Cho $\varepsilon > 0$. Vì $(a_n) \to 0$, có $N$ với $a_k < \varepsilon$ khi $k \ge N$. Với $n > m \ge N$: $|s_n - s_m| \le a_{m+1} < \varepsilon$. Vậy $(s_n)$ Cauchy, nên hội tụ theo Tiêu chuẩn Cauchy. ∎
+
+**(b) Đoạn lồng nhau.** Đặt $I_n = [s_{2n}, s_{2n-1}]$. Ta có $s_{2n-1} - s_{2n} = a_{2n} \ge 0$ nên $I_n$ là một đoạn. Lại có $s_{2n+2} = s_{2n} + (a_{2n+1} - a_{2n+2}) \ge s_{2n}$ và $s_{2n+1} = s_{2n-1} - (a_{2n} - a_{2n+1}) \le s_{2n-1}$, nên $I_{n+1} \subseteq I_n$. Theo Định lý 1.4.1 có $S$ thuộc mọi $I_n$.
+
+Mọi $s_k$ với $k \ge 2n - 1$ cũng nằm trong $I_n$ (vì $s_{2j}, s_{2j-1} \in I_j \subseteq I_n$ với $j \ge n$). Cho $\varepsilon > 0$, chọn $n$ với độ dài $a_{2n} < \varepsilon$; với mọi $k \ge 2n - 1$, cả $s_k$ và $S$ nằm trong $I_n$, nên $|s_k - S| \le a_{2n} < \varepsilon$. Vậy $(s_k) \to S$. ∎
+
+**(c) Hội tụ đơn điệu.** Như trong (b), $(s_{2n})$ tăng và $(s_{2n+1})$ giảm. Hơn nữa $s_2 \le s_{2n} \le s_{2n+1} \le s_1$ với mọi $n$, nên cả hai dãy đều bị chặn. Theo Định lý Hội tụ Đơn điệu, $s_{2n} \to L_1$ và $s_{2n+1} \to L_2$. Vì $s_{2n+1} - s_{2n} = a_{2n+1} \to 0$, Định lý Giới hạn Đại số cho $L_2 - L_1 = 0$; đặt $S = L_1 = L_2$.
+
+Cho $\varepsilon > 0$: có $N_1$ với $|s_{2n} - S| < \varepsilon$ khi $n \ge N_1$, và $N_2$ với $|s_{2n+1} - S| < \varepsilon$ khi $n \ge N_2$. Với $k \ge 2\max\{N_1, N_2\} + 1$, $s_k$ là $s_{2n}$ hoặc $s_{2n+1}$ với $n \ge \max\{N_1, N_2\}$, nên $|s_k - S| < \varepsilon$. ∎
+
+<TomTat tieuDe="Ba chứng minh, một sự thật">
+Cauchy, đoạn lồng nhau và hội tụ đơn điệu là ba biểu hiện của cùng một tính đầy đủ (<XemMuc muc="2.6" />). Chứng minh (c) cho hình ảnh rõ nhất: hai dãy con kẹp lấy nhau từ hai phía.
+</TomTat>
+</LoiGiai>
+
+<LoiHayMac>
+Ở (c), chỉ chứng minh hai dãy con hội tụ về cùng $S$ rồi kết luận ngay “vậy $(s_n) \to S$”. Cần thêm một bước: mọi chỉ số $k$ đều chẵn hoặc lẻ, nên từ một mốc nào đó mọi $s_k$ đều gần $S$. (Với hai dãy con tuỳ ý thì bước này sai; nó đúng vì hai dãy con chẵn–lẻ *phủ kín* mọi chỉ số.)
+</LoiHayMac>

@@ -1,0 +1,177 @@
+---
+mon: giai-tich
+chuong: 2
+bai: 3
+tieu_de: Dãy tăng mà bị chặn thì hội tụ
+y_tuong: Dãy luôn đi lên nhưng có trần thì buộc phải dừng lại ở đâu đó — dù ta không biết chỗ nào.
+phu_muc: ["2.4"]
+---
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+Nếu dãy **luôn đi lên** nhưng **có trần**, thì nó *buộc phải* dừng lại ở đâu đó — dù ta không biết chỗ nào.
+</YTuong>
+
+## Hình dung trực quan — leo cầu thang dưới trần nhà
+
+Bạn leo cầu thang trong một căn phòng *có trần nhà*:
+
+- Mỗi bước bạn *chỉ đi lên*, không bao giờ xuống.
+- Nhưng trần nhà ở độ cao 3 mét — bạn không vượt qua được.
+
+**Chuyện gì phải xảy ra?** Độ cao của bạn phải *ổn định lại* ở một mức nào đó. Nó không thể tăng mãi (vướng trần), cũng không thể dao động (chỉ đi lên).
+
+<HinhCauThang />
+
+<TomTat tieuDe="Điều đặc biệt">
+Bạn kết luận được “có một độ cao giới hạn” mà **không cần biết độ cao đó bằng bao nhiêu**. Đây chính là giá trị lớn nhất của định lý — và là lý do nó hữu dụng nhất cả chương.
+</TomTat>
+
+## Kiến thức cần biết
+
+### a) Dãy đơn điệu
+
+- $(a_n)$ **tăng** nếu $a_n \le a_{n+1}$ với mọi $n$.
+- $(a_n)$ **giảm** nếu $a_n \ge a_{n+1}$ với mọi $n$.
+- <ThuatNgu id="monotone">Đơn điệu</ThuatNgu> = tăng hoặc giảm.
+
+### b) Supremum (Chương 1)
+
+$\sup A$ = chặn trên *nhỏ nhất*, thoả hai điều kiện: (i) là một chặn trên; (ii) mọi chặn trên khác đều lớn hơn hoặc bằng nó (<XemMuc chuong={1} bai={2} />).
+
+### c) Mẹo ε cho sup (Chương 1)
+
+Nếu $s = \sup A$ thì với mọi $\varepsilon > 0$ có $a \in A$ với $a > s - \varepsilon$ (<XemMuc muc="1.3" />). *Nói nôm na:* hạ trần xuống một tí là có người đụng đầu.
+
+## Công thức — Định lý Hội tụ Đơn điệu
+
+<DinhLy ten="Định lý Hội tụ Đơn điệu">
+Dãy **đơn điệu** và **bị chặn** thì **hội tụ**.
+</DinhLy>
+
+**Từng thành phần:** “đơn điệu” — chỉ đi một chiều; “bị chặn” — có trần (với dãy tăng) hoặc có sàn (với dãy giảm); “hội tụ” — có đích. Định lý không cho biết đích bằng bao nhiêu, chỉ bảo đảm đích **tồn tại**.
+
+**Khi nào dùng:** khi cần chứng minh một dãy hội tụ mà không đoán được giới hạn — đặc biệt với dãy cho bằng đệ quy và với chuỗi số dương (<XemMuc bai={6} />). Tên tiếng Anh: <ThuatNgu id="monotone-convergence-theorem" en={false}>Monotone Convergence Theorem</ThuatNgu> (MCT).
+
+## Ví dụ mẫu — chứng minh định lý
+
+#### Bước 1 — Cho gì?
+
+$(a_n)$ tăng và bị chặn trên. (Trường hợp giảm làm tương tự.)
+
+#### Bước 2 — Hỏi gì?
+
+Chứng minh $(a_n)$ hội tụ.
+
+#### Bước 3 — Dùng gì?
+
+**Vấn đề cốt lõi:** định nghĩa hội tụ đòi một *ứng viên* cho giới hạn — nhưng ta chẳng biết nó là số nào!
+
+**Giải pháp:** dùng *supremum* để **sản xuất** ứng viên. Đây đúng là cách dùng Tiên đề đầy đủ: *mỗi khi cần một số mà không biết nó là gì, dựng một tập rồi lấy sup.*
+
+#### Bước 4 — Giải
+
+Xét *tập hợp* các giá trị của dãy: $A = \{a_n : n \in \mathbf{N}\}$. Tập $A$ khác rỗng và bị chặn trên, nên theo Tiên đề đầy đủ tồn tại $s = \sup A$. Ta khẳng định $\lim a_n = s$.
+
+Cho $\varepsilon > 0$.
+
+**(a)** Vì $s$ là chặn trên *nhỏ nhất*, số $s - \varepsilon$ *không* phải chặn trên. Nên có một số hạng $a_N$ với $a_N > s - \varepsilon$.
+
+**(b)** Vì dãy **tăng**, mọi $n \ge N$ đều có $a_n \ge a_N > s - \varepsilon$. *Đây là chỗ duy nhất dùng giả thiết đơn điệu.*
+
+**(c)** Vì $s$ là chặn trên, $a_n \le s < s + \varepsilon$.
+
+**(d)** Kết hợp (b) và (c): với mọi $n \ge N$,
+
+$$
+s - \varepsilon < a_n < s + \varepsilon \iff |a_n - s| < \varepsilon.
+$$
+
+Vậy $\lim a_n = s$. ∎
+
+#### Bước 5 — Kiểm tra: có cần cả hai giả thiết không?
+
+- Bỏ *bị chặn*: $a_n = n$ tăng mãi, phân kỳ.
+- Bỏ *đơn điệu*: $a_n = (-1)^n$ bị chặn, phân kỳ.
+
+Cả hai đều cần ✓.
+
+#### Bước 6 — Cách làm bài dãy đệ quy
+
+<TomTat tieuDe="Quy trình ba bước — dùng cho mọi bài dạng xₙ₊₁ = f(xₙ)">
+1. **Quy nạp** chứng minh dãy *bị chặn*.
+2. **Quy nạp** chứng minh dãy *đơn điệu*.
+3. Định lý Hội tụ Đơn điệu cho biết $L = \lim x_n$ **tồn tại**. Bây giờ *mới* được lấy giới hạn hai vế của hệ thức đệ quy để giải ra $L$.
+</TomTat>
+
+**Áp dụng ngay:** $y_1 = 1$, $y_{n+1} = \frac{y_n + 2}{2}$ (các bậc thang ở hình trên).
+
+1. *Bị chặn:* $y_1 = 1 < 2$; nếu $y_n < 2$ thì $y_{n+1} = \frac{y_n + 2}{2} < \frac{2 + 2}{2} = 2$. Theo quy nạp, $y_n < 2$ với mọi $n$.
+2. *Tăng:* $y_{n+1} - y_n = \frac{2 - y_n}{2} > 0$ vì $y_n < 2$.
+3. *Tính $L$:* dãy tăng, bị chặn nên có $L = \lim y_n$. Dãy $(y_{n+1})$ cũng tiến về $L$, nên lấy giới hạn hai vế: $L = \frac{L + 2}{2}$, suy ra $L = 2$.
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Lỗi 1 — cái bẫy kinh điển: lấy giới hạn hai vế TRƯỚC khi chứng minh giới hạn tồn tại">
+Xét $y_1 = 1$ và $y_{n+1} = 3 - y_n$.
+
+*Cách làm sai:* “Đặt $y = \lim y_n$. Lấy giới hạn hai vế: $y = 3 - y$, suy ra $y = \frac32$.”
+
+**Sai hoàn toàn.** Viết vài số hạng ra: $1, 2, 1, 2, 1, 2, \ldots$ Dãy này *phân kỳ* — nó không có giới hạn nào cả.
+
+**Bài học:** bước “lấy giới hạn hai vế” chỉ hợp lệ *sau khi* đã chứng minh giới hạn tồn tại. Đó là lý do bước 1 và 2 trong quy trình là bắt buộc (<XemMuc bai-tap="2.4.2" chu="Bài tập 2.4.2" />).
+</Loi>
+
+<Loi tieuDe="Lỗi 2: Nghĩ giới hạn phải là một số hạng của dãy">
+Không. Dãy $\left(1 - \frac1n\right)$ tăng, bị chặn, hội tụ về $1$ — nhưng không số hạng nào *bằng* $1$. Giới hạn là sup, mà sup không nhất thiết thuộc tập.
+</Loi>
+
+<Loi tieuDe="Lỗi 3: Quên rằng “đơn điệu” chỉ cần đúng từ một lúc nào đó">
+Vài số hạng đầu có thể lộn xộn. Giới hạn không phụ thuộc hữu hạn số hạng đầu, nên chỉ cần dãy đơn điệu *cuối cùng* là đủ.
+</Loi>
+
+## Tóm tắt 30 giây
+
+- **Đơn điệu + bị chặn ⇒ hội tụ.** Cả hai giả thiết đều cần.
+- Sức mạnh: khẳng định giới hạn *tồn tại* mà *không cần biết* nó là gì.
+- Chứng minh: lấy $s = \sup\{a_n\}$ làm ứng viên — Tiên đề đầy đủ sản xuất nó ra.
+- Bài đệ quy: **(1) bị chặn → (2) đơn điệu → (3) mới giải $L$**.
+- **Bẫy:** $y_{n+1} = 3 - y_n$ cho $1, 2, 1, 2, \ldots$ — phân kỳ, dù “giải” ra được $\frac32$.
+
+<BaGoc>
+  <Goc ten="Hiểu">Đi một chiều mà có trần thì phải dồn về một chỗ; chỗ đó là sup.</Goc>
+  <Goc ten="Nhớ">MCT: đơn điệu + bị chặn ⇒ hội tụ. Chỗ dùng “tăng” duy nhất: $a_n \ge a_N$ khi $n \ge N$.</Goc>
+  <Goc ten="Làm">Dãy đệ quy: quy nạp chặn → quy nạp đơn điệu → rồi mới giải phương trình giới hạn.</Goc>
+</BaGoc>
+
+## Bài tập
+
+<BaiLuyen do_kho="de" so="3.1">
+Cho $x_1 = 3$ và $x_{n+1} = \dfrac{1}{4 - x_n}$.
+
+(a) Tính $x_2, x_3, x_4$ (dạng phân số). (b) Dãy có vẻ tăng hay giảm? (c) Đoán giới hạn bằng cách giải $L = \dfrac{1}{4 - L}$.
+
+(Bài này chỉ để quan sát — chưa cần chứng minh.)
+
+<GoiYNho>Phương trình ở (c) có hai nghiệm; dãy bắt đầu từ $3$ và đi theo chiều bạn thấy ở (b) sẽ dừng ở nghiệm nào? Bản đầy đủ có chứng minh: <XemMuc bai-tap="2.4.1" chu="Bài 2.4.1" />.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="3.2">
+Cho $y_1 = 1$ và $y_{n+1} = \dfrac{y_n + 2}{2}$.
+
+(a) Quy nạp chứng minh $y_n < 2$ với mọi $n$. (b) Quy nạp chứng minh dãy *tăng*. (c) Kết luận giới hạn tồn tại, rồi tính nó.
+
+<GoiYNho>Làm đủ ba bước theo đúng thứ tự — đây là bài mẫu của cả bài học. Đối chiếu với phần “Áp dụng ngay” ở trên sau khi tự làm xong.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="3.3">
+**Thuật toán tính $\sqrt2$.** Cho $x_1 = 2$ và $x_{n+1} = \dfrac12\left(x_n + \dfrac{2}{x_n}\right)$.
+
+(a) Tính $x_2, x_3, x_4$ bằng máy tính (6 chữ số thập phân). Bạn thấy gì?
+(b) Chứng minh $x_n \ge \sqrt2$ với mọi $n$.
+(c) Dùng (b) chứng minh dãy *giảm*.
+(d) Kết luận giới hạn tồn tại và bằng $\sqrt2$.
+
+<GoiYNho>Ở (b), xét $x_{n+1}^2 - 2$ và viết nó thành một bình phương chia cho số dương. Đây là phương pháp Newton dạng sơ cấp — máy tính bỏ túi dùng đúng thuật toán này. Lời giải có ở <XemMuc bai-tap="2.4.5" chu="Bài 2.4.5" />.</GoiYNho>
+</BaiLuyen>

@@ -1,0 +1,118 @@
+---
+mon: giai-tich
+chuong: 2
+muc: "2.7"
+tieu_de: Tính chất của chuỗi vô hạn
+tieu_de_en: Properties of Infinite Series
+loai: theo-sach
+nguon: "Theo cấu trúc §2.7 của Stephen Abbott, Understanding Analysis, 2nd ed., Springer, 2015. Phát biểu được diễn đạt lại bằng tiếng Việt, dàn ý và bình luận tự viết — không phải bản dịch nguyên văn."
+---
+
+## Chuyển kết quả từ dãy sang chuỗi
+
+Vì sự hội tụ của chuỗi được *định nghĩa* qua sự hội tụ của dãy tổng riêng (Định nghĩa 2.4.3), mọi định lý về dãy đều dịch được sang chuỗi.
+
+<DinhLy so="2.7.1" ten="Định lý Giới hạn Đại số cho chuỗi">
+Nếu $\sum_{k=1}^{\infty} a_k = A$ và $\sum_{k=1}^{\infty} b_k = B$ thì
+
+(i) $\sum_{k=1}^{\infty} c\,a_k = cA$ với mọi $c \in \mathbf{R}$;
+
+(ii) $\sum_{k=1}^{\infty} (a_k + b_k) = A + B$.
+</DinhLy>
+
+**Dàn ý.** Tổng riêng của $\sum c\,a_k$ bằng $c$ nhân tổng riêng của $\sum a_k$; tổng riêng của $\sum(a_k + b_k)$ bằng tổng hai tổng riêng. Áp dụng Định lý 2.3.3. Chú ý: *không có* phát biểu nào về **tích** hai chuỗi — đó là vấn đề tinh tế hơn nhiều, để dành cho §2.8.
+
+<DinhLy so="2.7.2" ten="Tiêu chuẩn Cauchy cho chuỗi">
+Chuỗi $\sum_{k=1}^{\infty} a_k$ hội tụ khi và chỉ khi: với mọi $\varepsilon > 0$ có $N \in \mathbf{N}$ sao cho hễ $n > m \ge N$ thì
+
+$$
+|a_{m+1} + a_{m+2} + \cdots + a_n| < \varepsilon.
+$$
+
+</DinhLy>
+
+**Dàn ý.** $|s_n - s_m| = |a_{m+1} + \cdots + a_n|$; áp dụng Tiêu chuẩn Cauchy cho dãy tổng riêng (<XemMuc muc="2.6" />).
+
+<DinhLy so="2.7.3" ten="Điều kiện cần">
+Nếu chuỗi $\sum_{k=1}^{\infty} a_k$ hội tụ thì $(a_k) \to 0$.
+</DinhLy>
+
+**Dàn ý.** Lấy trường hợp riêng $n = m + 1$ trong Định lý 2.7.2: $|a_{m+1}| < \varepsilon$ khi $m \ge N$.
+
+<Loi tieuDe="Lỗi phổ biến nhất trong toàn bộ giải tích">
+Định lý 2.7.3 là điều kiện **cần**, không phải điều kiện **đủ**. Mỗi lần nhắc tới nó, hãy nhớ chuỗi điều hòa (Ví dụ 2.4.5): $\frac1n \to 0$ nhưng $\sum \frac1n$ phân kỳ.
+
+Dùng đúng: nếu $(a_k) \not\to 0$ thì chuỗi *chắc chắn* phân kỳ. Dùng sai: “$a_k \to 0$ nên chuỗi hội tụ”.
+</Loi>
+
+## Các tiêu chuẩn hội tụ
+
+<DinhLy so="2.7.4" ten="Tiêu chuẩn so sánh">
+Giả sử $(a_k)$, $(b_k)$ thoả $0 \le a_k \le b_k$ với mọi $k \in \mathbf{N}$.
+
+(i) Nếu $\sum b_k$ hội tụ thì $\sum a_k$ hội tụ.
+
+(ii) Nếu $\sum a_k$ phân kỳ thì $\sum b_k$ phân kỳ.
+</DinhLy>
+
+**Dàn ý.** Cả hai suy ra ngay từ Định lý 2.7.2 và bất đẳng thức $|a_{m+1} + \cdots + a_n| \le |b_{m+1} + \cdots + b_n|$. (Cũng chứng minh được bằng Định lý Hội tụ Đơn điệu.) Như mọi khi, giả thiết $0 \le a_k \le b_k$ chỉ cần đúng *cuối cùng*.
+
+<ViDu so="2.7.5" ten="Chuỗi hình học">
+Chuỗi **hình học** có dạng $\sum_{k=0}^{\infty} a r^k = a + ar + ar^2 + \cdots$ Nếu $r = 1$ và $a \ne 0$ thì chuỗi hiển nhiên phân kỳ. Với $r \ne 1$, đẳng thức
+
+$$
+(1 - r)(1 + r + r^2 + \cdots + r^{m-1}) = 1 - r^m
+$$
+
+cho tổng riêng $s_m = \dfrac{a(1 - r^m)}{1 - r}$. Kết hợp với $(r^m) \to 0 \iff |r| < 1$ (Ví dụ 2.5.3 và Bài tập 2.5.7), ta được: chuỗi hình học hội tụ **khi và chỉ khi** $|r| < 1$, và khi đó
+
+$$
+\sum_{k=0}^{\infty} a r^k = \frac{a}{1 - r}.
+$$
+
+</ViDu>
+
+Tiêu chuẩn so sánh chỉ dùng được cho chuỗi số hạng *không âm*. Với chuỗi có cả số hạng âm, công cụ đầu tiên là:
+
+<DinhLy so="2.7.6" ten="Tiêu chuẩn hội tụ tuyệt đối">
+Nếu chuỗi $\sum_{n=1}^{\infty} |a_n|$ hội tụ thì $\sum_{n=1}^{\infty} a_n$ cũng hội tụ.
+</DinhLy>
+
+**Dàn ý.** Dùng Tiêu chuẩn Cauchy cho chuỗi theo *cả hai chiều*: vì $\sum |a_n|$ hội tụ, có $N$ để $|a_{m+1}| + \cdots + |a_n| < \varepsilon$ khi $n > m \ge N$; bất đẳng thức tam giác cho $|a_{m+1} + \cdots + a_n| \le |a_{m+1}| + \cdots + |a_n| < \varepsilon$; chiều ngược của Định lý 2.7.2 kết luận $\sum a_n$ hội tụ. ∎
+
+Chiều ngược lại sai: $\sum \frac{(-1)^{n+1}}{n}$ hội tụ nhưng $\sum \frac1n$ thì không. Để thấy chuỗi đầu hội tụ cần:
+
+<DinhLy so="2.7.7" ten="Tiêu chuẩn chuỗi đan dấu">
+Giả sử $(a_n)$ thoả (i) $a_1 \ge a_2 \ge a_3 \ge \cdots \ge a_n \ge a_{n+1} \ge \cdots$ và (ii) $(a_n) \to 0$. Khi đó chuỗi đan dấu $\sum_{n=1}^{\infty} (-1)^{n+1} a_n$ hội tụ.
+</DinhLy>
+
+**Dàn ý.** Hai điều kiện kéo theo $a_n \ge 0$. Có ít nhất ba cách chứng minh — bằng Tiêu chuẩn Cauchy, bằng NIP, hoặc bằng Định lý Hội tụ Đơn điệu cho hai dãy con $(s_{2n})$ tăng và $(s_{2n+1})$ giảm kẹp lấy nhau. Làm cả ba ở <XemMuc bai-tap="2.7.1" chu="Bài tập 2.7.1" /> để thấy ba biểu hiện của cùng một tính đầy đủ.
+
+<DinhNghia so="2.7.8" ten="Hội tụ tuyệt đối, hội tụ có điều kiện">
+Nếu $\sum_{n=1}^{\infty} |a_n|$ hội tụ, ta nói $\sum a_n$ **hội tụ tuyệt đối**. Nếu $\sum a_n$ hội tụ nhưng $\sum |a_n|$ không hội tụ, ta nói $\sum a_n$ **hội tụ có điều kiện**.
+</DinhNghia>
+
+**Ví dụ chuẩn để ghi nhớ:** $\sum \frac{(-1)^{n+1}}{n}$ hội tụ có điều kiện; $\sum \frac{(-1)^{n+1}}{n^2}$ hội tụ tuyệt đối. Sự phân biệt này quyết định chuỗi có được phép sắp xếp lại hay không.
+
+## Sắp xếp lại — lời giải cho nghịch lý ở §2.1
+
+<DinhNghia so="2.7.9" ten="Sắp xếp lại">
+Chuỗi $\sum_{k=1}^{\infty} b_k$ là một **sắp xếp lại** của $\sum_{k=1}^{\infty} a_k$ nếu có một song ánh $f : \mathbf{N} \to \mathbf{N}$ sao cho $b_{f(k)} = a_k$ với mọi $k \in \mathbf{N}$.
+</DinhNghia>
+
+<DinhLy so="2.7.10" ten="Sắp xếp lại chuỗi hội tụ tuyệt đối">
+Nếu một chuỗi hội tụ tuyệt đối thì mọi sắp xếp lại của nó hội tụ về cùng giới hạn.
+</DinhLy>
+
+**Dàn ý.** Gọi $s_n$ là tổng riêng của chuỗi gốc (hội tụ về $A$) và $t_m$ là tổng riêng của chuỗi sắp xếp lại. Cho $\varepsilon > 0$.
+
+1. Chọn $N_1$ với $|s_n - A| < \frac\varepsilon2$ khi $n \ge N_1$.
+2. *Dùng hội tụ tuyệt đối:* chọn $N_2$ sao cho $\sum_{k=m+1}^{n} |a_k| < \frac\varepsilon2$ với mọi $n > m \ge N_2$.
+3. Đặt $N = \max\{N_1, N_2\}$. Các số hạng $a_1, \ldots, a_N$ đều xuất hiện đâu đó trong chuỗi sắp xếp lại; chọn $M$ đủ lớn để tổng riêng $t_M$ đã “bắt” được hết chúng.
+4. Với $m \ge M$, hiệu $t_m - s_N$ chỉ gồm các số hạng $a_k$ với $k > N$, nên $|t_m - s_N| < \frac\varepsilon2$ theo bước 2. Kết hợp: $|t_m - A| \le |t_m - s_N| + |s_N - A| < \varepsilon$. ∎
+
+<TomTat tieuDe="Câu trả lời cho nghịch lý mở đầu chương">
+Chuỗi điều hòa đan dấu hội tụ *có điều kiện*, nên Định lý 2.7.10 không áp dụng — và đúng như vậy, sắp xếp lại nó cho ra giá trị khác (<XemMuc muc="2.1" />). Bước 2 là chỗ duy nhất dùng hội tụ tuyệt đối, và đó đúng là chỗ chứng minh sụp đổ với chuỗi hội tụ có điều kiện. Còn tệ hơn thế nữa — xem <XemMuc muc="2.9" />.
+</TomTat>
+
+Học dễ hiểu hơn ở <XemMuc bai={6} />. Bài tập: <XemMuc bai-tap="2.7.2" chu="2.7.2" /> (năm chuỗi), <XemMuc bai-tap="2.7.9" chu="2.7.9" /> (tiêu chuẩn tỉ số).

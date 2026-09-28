@@ -1,0 +1,84 @@
+---
+mon: giai-tich
+chuong: 2
+muc: "2.6"
+tieu_de: Tiêu chuẩn Cauchy
+tieu_de_en: The Cauchy Criterion
+loai: theo-sach
+nguon: "Theo cấu trúc §2.6 của Stephen Abbott, Understanding Analysis, 2nd ed., Springer, 2015. Phát biểu được diễn đạt lại bằng tiếng Việt, dàn ý và bình luận tự viết — không phải bản dịch nguyên văn."
+---
+
+## Dãy Cauchy
+
+<DinhNghia so="2.6.1" ten="Dãy Cauchy">
+Dãy $(a_n)$ là **dãy Cauchy** nếu với mọi $\varepsilon > 0$, tồn tại $N \in \mathbf{N}$ sao cho hễ $m, n \ge N$ thì $|a_n - a_m| < \varepsilon$.
+</DinhNghia>
+
+<TomTat tieuDe="So sánh với định nghĩa hội tụ (2.2.3)">
+- **Hội tụ:** các số hạng cuối cùng đều gần **giới hạn** $a$ — $|a_n - a| < \varepsilon$.
+- **Cauchy:** các số hạng cuối cùng đều gần **nhau** — $|a_n - a_m| < \varepsilon$.
+
+Khác biệt then chốt: định nghĩa Cauchy *không nhắc đến giới hạn*. Đó chính là giá trị của nó — ta kiểm tra được sự hội tụ chỉ bằng cách nhìn các số hạng, không cần đoán trước đích đến.
+</TomTat>
+
+<DinhLy so="2.6.2" ten="Hội tụ thì Cauchy">
+Mọi dãy hội tụ đều là dãy Cauchy.
+</DinhLy>
+
+**Dàn ý.** Nếu $(x_n) \to x$, chọn $N$ với $|x_n - x| < \frac\varepsilon2$ khi $n \ge N$, rồi chèn $x$ vào giữa: với $m, n \ge N$,
+
+$$
+|x_n - x_m| \le |x_n - x| + |x - x_m| < \frac\varepsilon2 + \frac\varepsilon2 = \varepsilon. \qquad ∎
+$$
+
+Chiều ngược lại khó hơn, vì muốn chứng minh hội tụ ta lại cần một *ứng viên* cho giới hạn. Lần trước (Định lý Hội tụ Đơn điệu) ứng viên là một supremum; lần này nó đến từ Bolzano–Weierstrass. Trước hết cần một bổ đề.
+
+<BoDe so="2.6.3" ten="Dãy Cauchy thì bị chặn">
+Mọi dãy Cauchy đều bị chặn.
+</BoDe>
+
+**Dàn ý.** Với $\varepsilon = 1$, có $N$ sao cho $|x_m - x_n| < 1$ với mọi $m, n \ge N$. Nói riêng $|x_n| < |x_N| + 1$ khi $n \ge N$. Vậy
+
+$$
+M = \max\{|x_1|, |x_2|, \ldots, |x_{N-1}|,\ |x_N| + 1\}
+$$
+
+là một chặn của dãy — đúng khuôn mẫu “đuôi + đầu hữu hạn” của Định lý 2.3.2 (<XemMuc muc="2.3" />). ∎
+
+<DinhLy so="2.6.4" ten="Tiêu chuẩn Cauchy">
+Một dãy hội tụ khi và chỉ khi nó là dãy Cauchy.
+</DinhLy>
+
+**Dàn ý.** (⇒) là Định lý 2.6.2.
+
+(⇐) Cho $(x_n)$ là dãy Cauchy. Bổ đề 2.6.3 cho $(x_n)$ bị chặn, nên Bolzano–Weierstrass (<XemMuc muc="2.5" />) cho một dãy con hội tụ $(x_{n_k})$; đặt $x = \lim x_{n_k}$. Ta chứng minh *cả dãy* hội tụ về $x$.
+
+Cho $\varepsilon > 0$. Vì $(x_n)$ Cauchy, có $N$ với $|x_n - x_m| < \frac\varepsilon2$ khi $m, n \ge N$. Vì $(x_{n_k}) \to x$, chọn một số hạng $x_{n_K}$ của dãy con với $n_K \ge N$ và $|x_{n_K} - x| < \frac\varepsilon2$. Khi đó với mọi $n \ge N$:
+
+$$
+|x_n - x| \le |x_n - x_{n_K}| + |x_{n_K} - x| < \frac\varepsilon2 + \frac\varepsilon2 = \varepsilon. \qquad ∎
+$$
+
+<GhiChu tieuDe="Ý tưởng đáng học nhất">
+Một dãy Cauchy có **một** dãy con hội tụ thì **cả dãy** hội tụ — tính Cauchy “kéo” mọi số hạng còn lại đi theo dãy con. Dãy con tìm ra đích; tính Cauchy bảo đảm không ai bị bỏ lại.
+</GhiChu>
+
+## Nhìn lại tính đầy đủ
+
+Đây là phần quan trọng nhất của chương, thường ra thi dưới dạng câu hỏi lý thuyết. Chuỗi suy diễn của hai chương đầu:
+
+$$
+\text{AoC} \;\Rightarrow\; \begin{cases} \text{NIP} \\ \text{MCT} \end{cases} \;\Rightarrow\; \text{BW} \;\Rightarrow\; \text{CC}
+$$
+
+với AoC = Tiên đề Đầy đủ (<XemMuc muc="1.3" chu="§1.3" />), NIP = Tính chất đoạn lồng nhau (<XemMuc muc="1.4" chu="§1.4" />), MCT = Định lý Hội tụ Đơn điệu (<XemMuc muc="2.4" chu="§2.4" />), BW = Bolzano–Weierstrass (<XemMuc muc="2.5" chu="§2.5" />), CC = Tiêu chuẩn Cauchy.
+
+<TomTat tieuDe="Không phải đường một chiều">
+Nếu thêm giả thiết là **tính chất Archimedes**, cả năm mệnh đề là **tương đương**: nhận bất kỳ mệnh đề nào làm tiên đề, bốn mệnh đề còn lại đều chứng minh được. Chọn cái nào làm tiên đề là vấn đề sở thích và bối cảnh. Điều thực sự quan trọng: cả năm đều nói cùng một sự thật — $\mathbf{R}$ **không có lỗ hổng**.
+</TomTat>
+
+<GhiChu tieuDe="Một chi tiết tinh tế">
+AoC và MCT tự suy ra được tính chất Archimedes; NIP và CC thì **không**. Nên nếu lấy NIP hay CC làm tiên đề, phải thêm Archimedes như một giả định thứ hai. Bài tập 2.4.4, 2.5.4 và 2.6.7 của sách dựng lại toàn bộ các mũi tên ngược — đáng làm nếu bạn muốn hiểu thật sự cấu trúc logic của lý thuyết. Câu hỏi cuối của 2.6.7 rất đáng nghĩ: vì sao *không thể* chứng minh AoC chỉ từ tính chất Archimedes? (Gợi ý: $\mathbf{Q}$ có tính chất Archimedes.)
+</GhiChu>
+
+Học dễ hiểu hơn ở <XemMuc bai={5} />. Bài tập: <XemMuc bai-tap="2.6.2" chu="2.6.2" />, <XemMuc bai-tap="2.6.3" chu="2.6.3" />, <XemMuc bai-tap="2.6.5" chu="2.6.5" />.

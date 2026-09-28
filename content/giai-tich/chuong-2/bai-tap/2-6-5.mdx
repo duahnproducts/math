@@ -1,0 +1,52 @@
+---
+so: "2.6.5"
+muc: "2.6"
+do_kho: vua
+nen_lam: false
+tieu_de: "Dãy “giả-Cauchy”: chỉ xét số hạng liền kề"
+can_dung: ["dinh-nghia-2.6.1"]
+---
+
+<De>
+Định nghĩa tự đặt: dãy $(s_n)$ là **giả-Cauchy** nếu với mọi $\varepsilon > 0$ có $N$ sao cho hễ $n \ge N$ thì $|s_{n+1} - s_n| < \varepsilon$.
+
+Đúng một trong hai mệnh đề sau là đúng. Chứng minh mệnh đề đúng, cho phản ví dụ với mệnh đề sai.
+
+(i) Dãy giả-Cauchy thì bị chặn.
+
+(ii) Nếu $(x_n)$ và $(y_n)$ giả-Cauchy thì $(x_n + y_n)$ cũng giả-Cauchy.
+</De>
+
+<GoiY so={1}>
+So với định nghĩa Cauchy: giả-Cauchy chỉ đòi các số hạng **liền kề** sát nhau. Hãy tìm một dãy mà bước nhảy $s_{n+1} - s_n$ nhỏ dần về $0$ nhưng dãy vẫn đi mãi ra vô cùng.
+</GoiY>
+
+<GoiY so={2}>
+Thử $s_n = \sqrt n$, hoặc tổng riêng của chuỗi điều hòa $s_n = 1 + \frac12 + \cdots + \frac1n$. Với (ii), dùng bất đẳng thức tam giác như khi chứng minh tổng hai dãy Cauchy là Cauchy.
+</GoiY>
+
+<LoiGiai>
+**(i) Sai.** Lấy $s_n = \sqrt n$. Khi đó
+
+$$
+|s_{n+1} - s_n| = \sqrt{n+1} - \sqrt n = \frac{1}{\sqrt{n+1} + \sqrt n} < \frac{1}{\sqrt n}.
+$$
+
+Cho $\varepsilon > 0$, chọn $N > \frac{1}{\varepsilon^2}$; với $n \ge N$ thì $|s_{n+1} - s_n| < \frac{1}{\sqrt n} < \varepsilon$. Vậy $(\sqrt n)$ giả-Cauchy, nhưng không bị chặn (với mọi $M$, lấy $n > M^2$ được $\sqrt n > M$).
+
+Tổng riêng của chuỗi điều hòa cũng là phản ví dụ: bước nhảy $\frac{1}{n+1} \to 0$ nhưng tổng riêng không bị chặn (Ví dụ 2.4.5).
+
+**(ii) Đúng.** Cho $\varepsilon > 0$, chọn $N_1$, $N_2$ sao cho $|x_{n+1} - x_n| < \frac\varepsilon2$ khi $n \ge N_1$ và $|y_{n+1} - y_n| < \frac\varepsilon2$ khi $n \ge N_2$. Với $n \ge \max\{N_1, N_2\}$:
+
+$$
+|(x_{n+1} + y_{n+1}) - (x_n + y_n)| \le |x_{n+1} - x_n| + |y_{n+1} - y_n| < \varepsilon. \qquad ∎
+$$
+
+<GhiChu tieuDe="Bài học">
+“Các số hạng liền kề sát nhau” yếu hơn hẳn “mọi cặp số hạng sau mốc $N$ sát nhau”. Các bước nhảy nhỏ có thể cộng dồn thành một quãng đường vô hạn — đúng như chuỗi điều hòa.
+</GhiChu>
+</LoiGiai>
+
+<LoiHayMac>
+Nhầm giả-Cauchy với Cauchy rồi kết luận (i) đúng “vì dãy Cauchy thì bị chặn”. Định nghĩa đã đổi thì định lý cũ không còn dùng được — phải kiểm tra từ đầu.
+</LoiHayMac>

@@ -1,0 +1,56 @@
+---
+so: "2.7.2"
+muc: "2.7"
+do_kho: vua
+nen_lam: true
+tieu_de: "Năm chuỗi — chọn đúng tiêu chuẩn"
+can_dung: ["dinh-ly-2.7.3", "dinh-ly-2.7.4", "vi-du-2.7.5", "he-qua-2.4.7", "dinh-ly-2.7.6"]
+---
+
+<De>
+Mỗi chuỗi sau hội tụ hay phân kỳ?
+
+(a) $\displaystyle\sum_{n=1}^{\infty} \frac{1}{2^n + n}$
+
+(b) $\displaystyle\sum_{n=1}^{\infty} \frac{\sin n}{n^2}$
+
+(c) $1 - \frac34 + \frac46 - \frac58 + \frac{6}{10} - \frac{7}{12} + \cdots$
+
+(d) $1 + \frac12 - \frac13 + \frac14 + \frac15 - \frac16 + \frac17 + \frac18 - \frac19 + \cdots$
+
+(e) $1 - \frac{1}{2^2} + \frac13 - \frac{1}{4^2} + \frac15 - \frac{1}{6^2} + \frac17 - \frac{1}{8^2} + \cdots$
+</De>
+
+<GoiY so={1}>
+Thứ tự kiểm tra nên thành phản xạ: (1) số hạng có tiến về $0$ không? Không thì phân kỳ ngay. (2) Chuỗi dương: so sánh với chuỗi hình học hoặc chuỗi $p$. (3) Chuỗi có dấu: thử hội tụ tuyệt đối; nếu đan dấu đều, thử tiêu chuẩn đan dấu.
+</GoiY>
+
+<GoiY so={2}>
+(a) $\frac{1}{2^n + n} \le \frac{1}{2^n}$. (b) $\left|\frac{\sin n}{n^2}\right| \le \frac{1}{n^2}$. (c) số hạng thứ $n$ có trị tuyệt đối $\frac{n+1}{2n}$. (d) và (e) không đan dấu đều — nhóm các số hạng và so với chuỗi điều hòa.
+</GoiY>
+
+<LoiGiai>
+**(a) Hội tụ.** $0 < \frac{1}{2^n + n} \le \frac{1}{2^n}$, và $\sum \frac{1}{2^n}$ là chuỗi hình học với $r = \frac12$. Theo tiêu chuẩn so sánh, chuỗi hội tụ.
+
+**(b) Hội tụ (tuyệt đối).** $\left|\frac{\sin n}{n^2}\right| \le \frac{1}{n^2}$, và $\sum \frac{1}{n^2}$ hội tụ (chuỗi $p$ với $p = 2$). Theo so sánh, $\sum \left|\frac{\sin n}{n^2}\right|$ hội tụ; theo Tiêu chuẩn hội tụ tuyệt đối, chuỗi hội tụ.
+
+**(c) Phân kỳ.** Số hạng thứ $n$ là $(-1)^{n+1}\frac{n+1}{2n}$ (kiểm tra: $n = 1$ cho $1$, $n = 2$ cho $-\frac34$). Vì $\frac{n+1}{2n} \to \frac12 \ne 0$, số hạng không tiến về $0$, nên chuỗi phân kỳ (Định lý 2.7.3).
+
+**(d) Phân kỳ.** Nhóm từng bộ ba: tổng riêng $s_{3k} = \sum_{j=1}^{k} \left(\frac{1}{3j-2} + \frac{1}{3j-1} - \frac{1}{3j}\right)$. Vì $\frac{1}{3j-1} - \frac{1}{3j} > 0$,
+
+$$
+s_{3k} \ge \sum_{j=1}^{k} \frac{1}{3j-2} \ge \sum_{j=1}^{k} \frac{1}{3j} = \frac13\left(1 + \frac12 + \cdots + \frac1k\right).
+$$
+
+Vế phải không bị chặn (chuỗi điều hòa phân kỳ, Ví dụ 2.4.5), nên $(s_m)$ không bị chặn, do đó phân kỳ.
+
+**(e) Phân kỳ.** Tổng riêng $s_{2k} = \sum_{j=1}^{k} \frac{1}{2j-1} - \sum_{j=1}^{k} \frac{1}{(2j)^2}$. Tổng thứ hai bị chặn (nhỏ hơn $\sum \frac{1}{n^2} < 2$). Tổng thứ nhất $\ge \sum_{j=1}^k \frac{1}{2j} = \frac12\left(1 + \cdots + \frac1k\right)$, không bị chặn. Vậy $(s_{2k})$ không bị chặn và chuỗi phân kỳ.
+
+<GhiChu tieuDe="Vì sao (e) không dùng được tiêu chuẩn đan dấu">
+Dấu có đan xen, nhưng giá trị tuyệt đối $1, \frac14, \frac13, \frac{1}{16}, \frac15, \ldots$ **không giảm**. Tiêu chuẩn chuỗi đan dấu đòi cả hai điều kiện; thiếu tính giảm thì chuỗi có thể phân kỳ, như ở đây.
+</GhiChu>
+</LoiGiai>
+
+<LoiHayMac>
+Ở (c), nhìn thấy dấu đan xen liền áp dụng tiêu chuẩn chuỗi đan dấu và kết luận hội tụ — quên kiểm tra điều kiện $a_n \to 0$. Luôn kiểm tra số hạng tiến về $0$ *trước tiên*: đó là phép thử rẻ nhất.
+</LoiHayMac>

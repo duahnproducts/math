@@ -1,0 +1,52 @@
+---
+so: "2.4.7"
+muc: "2.4"
+do_kho: kho
+nen_lam: true
+tieu_de: "Giới hạn trên (lim sup) và giới hạn dưới"
+can_dung: ["dinh-ly-2.4.2", "dinh-ly-2.3.4"]
+---
+
+<De>
+Cho $(a_n)$ là dãy bị chặn.
+
+(a) Chứng minh dãy $y_n = \sup\{a_k : k \ge n\}$ hội tụ.
+
+(b) **Giới hạn trên** của $(a_n)$ được định nghĩa là $\limsup a_n = \lim y_n$. Hãy đề xuất một định nghĩa hợp lý cho $\liminf a_n$ và giải thích vì sao nó luôn tồn tại với mọi dãy bị chặn.
+
+(c) Chứng minh $\liminf a_n \le \limsup a_n$ với mọi dãy bị chặn, và cho ví dụ dấu bất đẳng thức là nghiêm ngặt.
+
+(d) Chứng minh $\liminf a_n = \limsup a_n$ khi và chỉ khi $\lim a_n$ tồn tại; khi đó cả ba bằng nhau.
+</De>
+
+<GoiY so={1}>
+(a) $y_n$ là sup của phần đuôi từ chỉ số $n$. Khi $n$ tăng, phần đuôi *nhỏ lại* (là tập con của phần đuôi cũ) — sup của tập nhỏ hơn thì lớn hơn hay nhỏ hơn? Kết hợp với tính bị chặn, dùng Định lý Hội tụ Đơn điệu.
+</GoiY>
+
+<GoiY so={2}>
+(b) Đặt $z_n = \inf\{a_k : k \ge n\}$. (c) Mỗi $n$ có $z_n \le a_n \le y_n$. (d) Chiều “⇐”: định lý kẹp. Chiều “⇒”: nếu $a - \varepsilon < a_k < a + \varepsilon$ với mọi $k \ge N$ thì sup và inf của phần đuôi nằm ở đâu?
+</GoiY>
+
+<LoiGiai>
+Giả sử $|a_n| \le M$ với mọi $n$. Mọi tập $\{a_k : k \ge n\}$ khác rỗng và bị chặn, nên sup và inf của nó tồn tại (Tiên đề Đầy đủ) và nằm trong $[-M, M]$.
+
+**(a)** Vì $\{a_k : k \ge n+1\} \subseteq \{a_k : k \ge n\}$, mọi chặn trên của tập lớn cũng là chặn trên của tập nhỏ, nên $y_{n+1} \le y_n$: dãy $(y_n)$ **giảm**. Nó bị chặn dưới bởi $-M$. Theo Định lý Hội tụ Đơn điệu, $(y_n)$ hội tụ. ∎
+
+**(b)** Định nghĩa $\liminf a_n = \lim z_n$ với $z_n = \inf\{a_k : k \ge n\}$. Lý luận đối xứng: tập nhỏ lại thì inf lớn lên, nên $(z_n)$ **tăng**, bị chặn trên bởi $M$, do đó hội tụ.
+
+**(c)** Với mọi $n$: $z_n \le a_n \le y_n$, nói riêng $z_n \le y_n$. Theo Định lý Giới hạn Thứ tự, $\lim z_n \le \lim y_n$, tức $\liminf a_n \le \limsup a_n$.
+
+*Ví dụ nghiêm ngặt:* $a_n = (-1)^n$. Mọi phần đuôi chứa cả $1$ và $-1$, nên $y_n = 1$, $z_n = -1$ với mọi $n$: $\liminf a_n = -1 < 1 = \limsup a_n$.
+
+**(d)** *(⇐)* Giả sử $\lim a_n = a$. Cho $\varepsilon > 0$, có $N$ với $a - \varepsilon < a_k < a + \varepsilon$ khi $k \ge N$. Với $n \ge N$, $a + \varepsilon$ là một chặn trên và $a - \varepsilon$ là một chặn dưới của $\{a_k : k \ge n\}$, nên $a - \varepsilon \le z_n \le y_n \le a + \varepsilon$. Suy ra $|y_n - a| \le \varepsilon$ và $|z_n - a| \le \varepsilon$ khi $n \ge N$. Vì $\varepsilon$ tuỳ ý, $\lim y_n = \lim z_n = a$. (Dùng $\le \varepsilon$ thay cho $< \varepsilon$ không sao: áp dụng lập luận với $\frac\varepsilon2$.)
+
+*(⇒)* Giả sử $\liminf a_n = \limsup a_n = L$. Vì $z_n \le a_n \le y_n$ và $(z_n)$, $(y_n)$ cùng tiến về $L$, Định lý kẹp (<XemMuc bai-tap="2.3.3" chu="Bài tập 2.3.3" />) cho $\lim a_n = L$. ∎
+
+<GhiChu tieuDe="Vì sao khái niệm này quan trọng">
+$\lim a_n$ có thể không tồn tại, nhưng $\limsup$ và $\liminf$ **luôn** tồn tại với dãy bị chặn. Chúng đo “trần” và “sàn” của phần đuôi, và là công cụ chính khi làm việc với dãy không hội tụ ở các chương sau (ví dụ bán kính hội tụ của chuỗi lũy thừa).
+</GhiChu>
+</LoiGiai>
+
+<LoiHayMac>
+Nghĩ $y_n = \sup\{a_k : k \ge n\}$ tăng theo $n$ “vì $n$ tăng”. Ngược lại: bỏ bớt số hạng khỏi một tập thì sup chỉ có thể *giảm* (hoặc giữ nguyên). Vẽ vài số hạng của $(-1)^n \left(1 + \frac1n\right)$ và các giá trị $y_n$ để thấy.
+</LoiHayMac>

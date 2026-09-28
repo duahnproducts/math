@@ -1,0 +1,37 @@
+---
+// Chương 2, Bài 6 — Tổng riêng của 50 + 25 + 12,5 + … tiến về 100.
+// Cột cao = tổng riêng sₘ; phần đậm ở đỉnh = số hạng bₘ vừa cộng thêm.
+const soHang = Array.from({ length: 8 }, (_, i) => 100 / 2 ** (i + 1));
+const tongRieng = soHang.map((_, i) => soHang.slice(0, i + 1).reduce((s, b) => s + b, 0));
+const y = (v: number) => 200 - v * 1.7;
+const x = (i: number) => 62 + i * 46;
+const soVN = (v: number) => (Math.round(v * 100) / 100).toString().replace('.', ',');
+---
+
+<figure class="hinh" aria-labelledby="hinh-tong-rieng-cap">
+  <svg viewBox="0 0 480 236" width="480" role="img" aria-label="Tám cột tổng riêng cao dần tiến sát vạch 100">
+    <line x1="40" y1={y(100)} x2="440" y2={y(100)} class="nhan-manh" stroke-width="2" stroke-dasharray="6 4"></line>
+    <text x="436" y={y(100) - 8} text-anchor="end" class="chu-nhan">nhà: 100 m</text>
+    {
+      tongRieng.map((s, i) => (
+        <g>
+          <rect x={x(i)} y={y(s)} width="30" height={y(0) - y(s)} rx="3" class="to-nhan-nhat" />
+          <rect x={x(i)} y={y(s)} width="30" height={y(s - soHang[i]) - y(s)} rx="3" class="to-nhan" />
+          <text x={x(i) + 15} y={y(0) + 16} text-anchor="middle" class="chu-mo">
+            s{'₁₂₃₄₅₆₇₈'[i]}
+          </text>
+          {i < 3 && (
+            <text x={x(i) + 15} y={y(s) - 6} text-anchor="middle" class="chu">
+              {soVN(s)}
+            </text>
+          )}
+        </g>
+      ))
+    }
+    <line x1="40" y1={y(0)} x2="440" y2={y(0)} class="net" stroke-width="1.5"></line>
+  </svg>
+  <figcaption id="hinh-tong-rieng-cap">
+    Cột cao là <b>tổng riêng</b> sₘ = quãng đường đã đi sau m bước; phần tô đậm ở đỉnh cột là <b>số hạng</b> bₘ vừa cộng
+    thêm. Số hạng nhỏ dần về 0, còn tổng riêng tiến sát 100 — nên chuỗi hội tụ về 100.
+  </figcaption>
+</figure>

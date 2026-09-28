@@ -1,0 +1,42 @@
+---
+so: "2.6.2"
+muc: "2.6"
+do_kho: vua
+nen_lam: true
+tieu_de: "Cauchy, đơn điệu, bị chặn — cái nào kéo theo cái nào"
+can_dung: ["dinh-nghia-2.6.1", "bo-de-2.6.3", "dinh-ly-2.6.4", "dinh-ly-2.4.2"]
+---
+
+<De>
+Cho ví dụ, hoặc lập luận vì sao không thể:
+
+(a) Một dãy Cauchy không đơn điệu.
+
+(b) Một dãy Cauchy có một dãy con không bị chặn.
+
+(c) Một dãy đơn điệu phân kỳ có một dãy con là dãy Cauchy.
+
+(d) Một dãy không bị chặn có một dãy con là dãy Cauchy.
+</De>
+
+<GoiY so={1}>
+Trong $\mathbf{R}$, “Cauchy” và “hội tụ” là một (Định lý 2.6.4). Dịch mỗi câu sang ngôn ngữ hội tụ. Nhớ thêm: dãy Cauchy thì bị chặn (Bổ đề 2.6.3).
+</GoiY>
+
+<GoiY so={2}>
+(c) Một dãy tăng có dãy con hội tụ về $L$ — mọi số hạng của dãy gốc có vượt $L$ được không? (d) Một dãy có thể “chạy ra vô cùng” ở vị trí lẻ và đứng yên ở vị trí chẵn.
+</GoiY>
+
+<LoiGiai>
+**(a) Có thể.** $a_n = \frac{(-1)^n}{n}$: hội tụ về $0$ nên là dãy Cauchy (Định lý 2.6.2), nhưng dấu đổi liên tục nên không đơn điệu.
+
+**(b) Không thể.** Dãy Cauchy bị chặn (Bổ đề 2.6.3): $|a_n| \le M$ với mọi $n$. Mọi dãy con chỉ gồm các số hạng của dãy gốc, nên cũng bị chặn bởi $M$.
+
+**(c) Không thể.** Giả sử $(a_n)$ tăng và có dãy con $(a_{n_k})$ Cauchy, tức hội tụ về $L$. Dãy con của dãy tăng cũng tăng, nên $a_{n_k} \le L$ với mọi $k$ (giới hạn của dãy tăng là sup của nó). Với $n$ bất kỳ, chọn $k$ với $n_k \ge n$: $a_n \le a_{n_k} \le L$. Vậy $(a_n)$ tăng và bị chặn trên, nên hội tụ theo Định lý Hội tụ Đơn điệu — mâu thuẫn với “phân kỳ”. (Trường hợp dãy giảm tương tự.)
+
+**(d) Có thể.** $(1, 1, 2, 1, 3, 1, 4, 1, \ldots)$, tức $a_{2k-1} = k$, $a_{2k} = 1$. Dãy không bị chặn, nhưng dãy con các vị trí chẵn là dãy hằng $(1, 1, 1, \ldots)$ — hội tụ, nên là dãy Cauchy.
+</LoiGiai>
+
+<LoiHayMac>
+Ở (c), lý luận “dãy đơn điệu có dãy con hội tụ nên chính nó hội tụ” mà không chứng minh. Bước then chốt là: dãy con hội tụ cho một **chặn** của cả dãy gốc — nhờ tính đơn điệu. Không có đơn điệu thì bước này sai: $(-1)^n$ có dãy con hội tụ nhưng phân kỳ.
+</LoiHayMac>

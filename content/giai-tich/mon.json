@@ -42,7 +42,29 @@
       "so": 2,
       "ten": "Dãy số và chuỗi số",
       "ten_en": "Sequences and Series",
-      "ghi_chu": "Đã có 6 bài giảng và hướng dẫn học tập dạng PDF, chưa chuyển lên web."
+      "muc": [
+        { "so": "2.1", "ten": "Thảo luận: sắp xếp lại chuỗi vô hạn" },
+        { "so": "2.2", "ten": "Giới hạn của dãy số" },
+        { "so": "2.3", "ten": "Định lý Giới hạn Đại số và Thứ tự" },
+        { "so": "2.4", "ten": "Định lý Hội tụ Đơn điệu và chuỗi vô hạn" },
+        { "so": "2.5", "ten": "Dãy con và Định lý Bolzano–Weierstrass" },
+        { "so": "2.6", "ten": "Tiêu chuẩn Cauchy" },
+        { "so": "2.7", "ten": "Tính chất của chuỗi vô hạn" },
+        { "so": "2.8", "ten": "Tổng kép và tích của chuỗi" },
+        { "so": "2.9", "ten": "Kết luận: chuỗi hội tụ có điều kiện" }
+      ],
+      "tai_ve": [
+        {
+          "ten": "Trọn bộ 6 bài giảng Chương 2",
+          "tep": "giai-tich-chuong-2-bai-giang.pdf",
+          "mo_ta": "Bản PDF của phần Giảng dạy, để in ra học với giấy bút."
+        },
+        {
+          "ten": "Hướng dẫn học tập Chương 2 (Đọc sâu)",
+          "tep": "giai-tich-chuong-2-huong-dan-hoc-tap.pdf",
+          "mo_ta": "Đi theo từng mục § của sách, dày hơn bài giảng — dành cho người đã quen."
+        }
+      ]
     },
     {
       "so": 3,

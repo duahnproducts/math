@@ -1,0 +1,46 @@
+---
+so: "2.2.1"
+muc: "2.2"
+do_kho: vua
+nen_lam: true
+tieu_de: "Đảo thứ tự lượng từ: dãy “verconge”"
+can_dung: ["dinh-nghia-2.2.3"]
+---
+
+<De>
+Đảo thứ tự lượng từ trong Định nghĩa 2.2.3 để được một định nghĩa mới: dãy $(x_n)$ **verconge** về $x$ nếu *tồn tại* $\varepsilon > 0$ sao cho *với mọi* $N \in \mathbf{N}$, hễ $n \ge N$ thì $|x_n - x| < \varepsilon$.
+
+Cho một ví dụ dãy verconge. Có dãy nào verconge mà lại phân kỳ không? Một dãy có thể verconge về hai số khác nhau không? Định nghĩa lạ này thực ra mô tả điều gì?
+</De>
+
+<GoiY so={1}>
+Trong định nghĩa mới, $\varepsilon$ được chọn *một lần* và *bạn* được chọn nó. Còn “với mọi $N$” thì có cả $N = 1$ — điều kiện với $N = 1$ đòi gì?
+</GoiY>
+
+<GoiY so={2}>
+Với $N = 1$, điều kiện đòi $|x_n - x| < \varepsilon$ cho **mọi** $n$: cả dãy nằm trong khoảng $(x - \varepsilon, x + \varepsilon)$. Vậy verconge về $x$ tương đương với điều gì quen thuộc? Thử với $(-1)^n$ và $x = 0$, rồi với $x = 100$.
+</GoiY>
+
+<LoiGiai>
+**Định nghĩa tương đương với gì.** Nếu điều kiện đúng với $N = 1$ thì nó đúng với mọi $N$ (vì $n \ge N$ kéo theo $n \ge 1$). Nên $(x_n)$ verconge về $x$ khi và chỉ khi có $\varepsilon > 0$ với $|x_n - x| < \varepsilon$ cho **mọi** $n$.
+
+Điều này tương đương với việc $(x_n)$ **bị chặn**:
+
+- Nếu $|x_n - x| < \varepsilon$ với mọi $n$ thì $|x_n| < |x| + \varepsilon$ — bị chặn.
+- Ngược lại, nếu $|x_n| \le M$ với mọi $n$, thì với *bất kỳ* $x \in \mathbf{R}$, chọn $\varepsilon = M + |x| + 1$: ta có $|x_n - x| \le |x_n| + |x| \le M + |x| < \varepsilon$.
+
+**Trả lời các câu hỏi.**
+
+- *Ví dụ:* mọi dãy bị chặn, chẳng hạn $\left(\frac1n\right)$ verconge về $0$ (chọn $\varepsilon = 2$).
+- *Verconge mà phân kỳ:* có — $\left((-1)^n\right)$ verconge về $0$ với $\varepsilon = 2$, nhưng phân kỳ.
+- *Verconge về hai số khác nhau:* có — theo lập luận trên, một dãy bị chặn verconge về **mọi** số thực $x$. Ví dụ $\left((-1)^n\right)$ verconge cả về $0$ lẫn về $100$ (với $\varepsilon = 102$).
+- *Định nghĩa mô tả gì:* đúng tính **bị chặn** của dãy, và hoàn toàn không liên quan tới $x$.
+
+<GhiChu tieuDe="Bài học">
+Định nghĩa hội tụ sở dĩ có sức mạnh là vì $\varepsilon$ do *đối thủ* chọn và phải chịu được mọi $\varepsilon$ nhỏ tuỳ ý. Đảo lượng từ để *mình* chọn $\varepsilon$ thì điều kiện trở nên rất yếu. (Đảo theo kiểu khác — “tồn tại $N$, với mọi $\varepsilon$” — lại cho một điều kiện quá mạnh: dãy cuối cùng là hằng số; xem Bài tập 1.2 ở <XemMuc bai={1} />.)
+</GhiChu>
+</LoiGiai>
+
+<LoiHayMac>
+Trả lời “không thể verconge về hai số” theo phản xạ, vì nhớ rằng giới hạn là duy nhất. Tính duy nhất (Định lý 2.2.7) là của khái niệm *hội tụ*; khái niệm đã đổi thì mọi tính chất phải kiểm tra lại từ đầu.
+</LoiHayMac>

@@ -1,0 +1,242 @@
+---
+mon: giai-tich
+chuong: 2
+bai: 1
+tieu_de: Giới hạn của dãy số là gì?
+y_tuong: Dãy hội tụ về a nghĩa là muốn gần a bao nhiêu cũng được, chỉ cần đi đủ xa trong dãy.
+phu_muc: ["2.2"]
+---
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+Dãy <ThuatNgu id="converge">hội tụ</ThuatNgu> về $a$ nghĩa là: *muốn gần $a$ bao nhiêu cũng được*, chỉ cần đi **đủ xa** trong dãy.
+</YTuong>
+
+<GhiChu tieuDe="Chương này khác Chương 1 ở đâu?">
+Chương 1 chủ yếu là khái niệm — đọc thấy hay, hiểu được. Chương 2 bắt bạn **tự viết chứng minh**. Đó là kỹ năng giống tập bơi: không học thuộc được, chỉ luyện mới có. Vì vậy bài tập ở chương này là bắt buộc.
+
+Chương 2 dùng lại từ Chương 1: Tiên đề đầy đủ, tính chất Archimedes, bất đẳng thức tam giác, và “định lý ε” (hai số gần nhau tuỳ ý thì bằng nhau). Quên mục nào thì quay lại <XemMuc chuong={1} bai={4} /> trước.
+</GhiChu>
+
+## Hình dung trực quan — đi bộ về nhà
+
+Bạn đứng cách nhà 100 mét. Mỗi bước, bạn đi được **nửa quãng đường còn lại**.
+
+| Sau bước | 1 | 2 | 3 | 10 | 20 |
+| --- | --- | --- | --- | --- | --- |
+| Còn cách nhà | 50 m | 25 m | 12,5 m | 0,098 m | 0,0001 m |
+
+**Bạn có bao giờ *chạm* vào nhà không?** Không — lúc nào cũng còn một khoảng dương.
+
+**Nhưng bạn có *tiến về* nhà không?** Rõ ràng là có.
+
+Toán học cần một cách nói chính xác cho chữ “tiến về”. Cách nói ấy là:
+
+> “Bạn đặt ra một khoảng cách bất kỳ — 1 mét, 1 xăng-ti-mét, 1 micro-mét. Tôi sẽ chỉ ra một bước, mà **từ đó trở đi** tôi *luôn* ở gần nhà hơn khoảng cách bạn đặt.”
+
+### Trò chơi hai người
+
+Hãy nghĩ định nghĩa giới hạn như một trò chơi:
+
+| Lượt | Việc |
+| --- | --- |
+| **Đối thủ ra đòn** | Đưa ra một sai số $\varepsilon > 0$ — càng nhỏ càng khó. |
+| **Bạn đáp trả** | Đưa ra một mốc $N$. |
+| **Bạn thắng nếu** | Từ số hạng thứ $N$ trở đi, *mọi* số hạng đều cách đích dưới $\varepsilon$. |
+| **Dãy hội tụ nếu** | Bạn thắng với *mọi* $\varepsilon$ đối thủ đưa ra. |
+
+Kéo thanh trượt để làm đối thủ: dãy ở đây là $a_n = \frac{1}{\sqrt{n}}$, đích là $0$.
+
+<HinhEpsilonN />
+
+<TomTat tieuDe="Điểm mấu chốt">
+Bạn được biết $\varepsilon$ **trước** khi chọn $N$. Nên $N$ *được phép* phụ thuộc $\varepsilon$ — $\varepsilon$ càng nhỏ thì $N$ thường càng lớn.
+</TomTat>
+
+## Kiến thức cần biết
+
+### a) Dãy số là gì?
+
+Một <ThuatNgu id="sequence">dãy số</ThuatNgu> là một danh sách vô hạn các số, có đánh số thứ tự: $a_1, a_2, a_3, a_4, \ldots$ Ký hiệu gọn: $(a_n)$.
+
+Ba cách cho một dãy:
+
+- **Liệt kê:** $\left(1, \frac12, \frac13, \frac14, \ldots\right)$
+- **Công thức:** $a_n = \frac{1}{n}$
+- **Đệ quy:** $x_1 = 2$ và $x_{n+1} = \frac{x_n + 1}{2}$ — cho số hạng đầu, và cách tính số hạng sau từ số hạng trước.
+
+### b) $|x - y|$ chính là khoảng cách
+
+Đây là cách đọc quan trọng nhất của cả chương:
+
+$$
+|a_n - a| = \text{khoảng cách từ số hạng } a_n \text{ tới đích } a.
+$$
+
+Nên $|a_n - a| < \varepsilon$ đọc là: “$a_n$ cách đích dưới $\varepsilon$”.
+
+### c) Tính chất Archimedes (Chương 1)
+
+Với mọi $\varepsilon > 0$, luôn tìm được số tự nhiên $N$ với $\frac{1}{N} < \varepsilon$ (<XemMuc muc="1.4" />).
+
+Đây là công cụ ta dùng để **chọn $N$** trong gần như mọi bài. Không có Tiên đề đầy đủ thì không có tính chất này, và cả Chương 2 sụp đổ.
+
+## Công thức — định nghĩa hội tụ
+
+**Công thức này dùng để làm gì?** Để biến chữ “tiến về” mơ hồ thành một điều kiện kiểm tra được bằng bất đẳng thức.
+
+<DinhNghia ten="Hội tụ">
+Dãy $(a_n)$ **hội tụ** về số thực $a$ nếu: **với mọi** số $\varepsilon > 0$, **tồn tại** $N \in \mathbf{N}$ sao cho **hễ** $n \ge N$ **thì**
+
+$$
+|a_n - a| < \varepsilon.
+$$
+
+Ký hiệu: $\lim a_n = a$, hoặc $(a_n) \to a$.
+</DinhNghia>
+
+**Giải thích từng ký hiệu:**
+
+| Ký hiệu | Nghĩa |
+| --- | --- |
+| $a_n$ | số hạng thứ $n$ của dãy |
+| $a$ | **đích** — con số mà dãy tiến về |
+| $\varepsilon$ | sai số cho phép, do “đối thủ” đặt ra. Luôn *dương* |
+| $N$ | **mốc** — từ số hạng thứ $N$ trở đi thì mọi thứ đã đủ gần |
+| $n \ge N$ | *mọi* số hạng từ $N$ trở đi, không phải chỉ một số hạng |
+
+<TomTat tieuDe="Cách đọc bằng hình ảnh">
+Vẽ khoảng $(a - \varepsilon, a + \varepsilon)$ — gọi là <ThuatNgu id="epsilon-neighborhood">lân cận ε</ThuatNgu> của $a$. Định nghĩa nói: *mọi lân cận của $a$, dù hẹp đến đâu, đều chứa **tất cả** các số hạng của dãy trừ hữu hạn số hạng đầu.*
+</TomTat>
+
+## Ví dụ mẫu — khuôn mẫu bốn bước
+
+<TomTat tieuDe="Khuôn mẫu bốn bước — dùng cho MỌI bài chứng minh hội tụ">
+1. Viết: “Cho $\varepsilon > 0$.”
+2. Chỉ ra cách chọn $N$. **(Phần này làm ở nháp trước.)**
+3. Viết: “Giả sử $n \ge N$.”
+4. Biến đổi để ra $|a_n - a| < \varepsilon$.
+</TomTat>
+
+**Cách làm nháp:** viết bất đẳng thức đích $|a_n - a| < \varepsilon$, rút gọn, rồi *giải ngược* để tìm điều kiện trên $n$. Điều kiện đó cho bạn $N$.
+
+### Ví dụ A — chứng minh $\lim \frac{1}{\sqrt{n}} = 0$
+
+#### Bước 1 — Đề cho gì?
+
+Dãy $a_n = \frac{1}{\sqrt{n}}$.
+
+#### Bước 2 — Đề hỏi gì?
+
+Chứng minh $\lim a_n = 0$, tức đích là $a = 0$.
+
+#### Bước 3 — Dùng gì?
+
+Định nghĩa hội tụ, cộng Archimedes để chọn $N$.
+
+#### Bước 4 — Giải
+
+*Nháp (không nộp):* muốn
+
+$$
+\left|\frac{1}{\sqrt{n}} - 0\right| = \frac{1}{\sqrt{n}} < \varepsilon.
+$$
+
+Nghịch đảo hai vế: $\sqrt{n} > \frac{1}{\varepsilon}$. Bình phương: $n > \frac{1}{\varepsilon^2}$. Vậy chỉ cần chọn $N > \frac{1}{\varepsilon^2}$.
+
+*Bài làm chính thức:*
+
+Cho $\varepsilon > 0$. Theo tính chất Archimedes, chọn $N \in \mathbf{N}$ với $N > \frac{1}{\varepsilon^2}$. Giả sử $n \ge N$. Khi đó $n > \frac{1}{\varepsilon^2}$, suy ra $\sqrt{n} > \frac{1}{\varepsilon}$, do đó
+
+$$
+\left|\frac{1}{\sqrt{n}} - 0\right| = \frac{1}{\sqrt{n}} < \varepsilon.
+$$
+
+Vậy $\lim \frac{1}{\sqrt{n}} = 0$. ∎
+
+#### Bước 5 — Kiểm tra
+
+Thử số: với $\varepsilon = 0{,}25$ thì cần $N > 16$, chọn $N = 17$. Kiểm tra $a_{17} = \frac{1}{\sqrt{17}} \approx 0{,}243 < 0{,}25$ ✓, còn $a_{16} = 0{,}25$ thì *chưa* nhỏ hơn. Khớp với hình ở trên khi kéo $\varepsilon$ về $0{,}25$.
+
+### Ví dụ B — chứng minh $\lim \frac{n+1}{n} = 1$
+
+*Nháp:*
+
+$$
+\left|\frac{n+1}{n} - 1\right| = \left|\frac{n + 1 - n}{n}\right| = \frac{1}{n}.
+$$
+
+Muốn $\frac{1}{n} < \varepsilon$ thì cần $n > \frac{1}{\varepsilon}$.
+
+*Bài làm:* Cho $\varepsilon > 0$. Chọn $N \in \mathbf{N}$ với $N > \frac{1}{\varepsilon}$. Giả sử $n \ge N$. Khi đó
+
+$$
+\left|\frac{n+1}{n} - 1\right| = \frac{1}{n} \le \frac{1}{N} < \varepsilon. \qquad ∎
+$$
+
+*Kiểm tra:* với $\varepsilon = 0{,}01$ thì $N = 101$; $a_{101} = \frac{102}{101} \approx 1{,}0099$ — đúng là cách $1$ dưới $0{,}01$ ✓.
+
+#### Bước 6 — Tóm tắt cách làm
+
+<TomTat>
+Rút gọn $|a_n - a|$ cho thật đơn giản → giải bất phương trình theo $n$ → lấy $N$ lớn hơn kết quả → viết lại **xuôi chiều** theo bốn bước.
+</TomTat>
+
+Phiên bản đầy đủ theo sách, kèm cách chứng minh một dãy *không* hội tụ, ở <XemMuc muc="2.2" />.
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Lỗi 1: Cho N phụ thuộc vào n">
+$N$ chỉ được phụ thuộc $\varepsilon$. Nếu trong biểu thức của $N$ còn chữ $n$, chứng minh sai hoàn toàn — vì $n$ là thứ ta *đang xét*, không phải thứ biết trước.
+</Loi>
+
+<Loi tieuDe="Lỗi 2: Viết ngược thứ tự lượng từ">
+Phải là “với mọi $\varepsilon$, tồn tại $N$”. Nếu viết “tồn tại $N$, với mọi $\varepsilon$” thì thành khái niệm khác hẳn — và vô dụng: chỉ dãy *hằng* (từ một lúc nào đó) mới thoả, vì cùng một $N$ phải chịu được cả những $\varepsilon$ nhỏ tuỳ ý.
+</Loi>
+
+<Loi tieuDe="Lỗi 3: Bắt đầu bài làm từ kết luận">
+Viết “$|a_n - a| < \varepsilon$ nên $n > \ldots$” rồi coi là xong — đó là **nháp**, không phải chứng minh. Bài làm chính thức phải đi **xuôi**: từ $n \ge N$ suy ra $|a_n - a| < \varepsilon$. Người chấm đọc theo chiều đó.
+</Loi>
+
+## Tóm tắt 30 giây
+
+- $(a_n) \to a$ nghĩa là: *với mọi* $\varepsilon > 0$, *tồn tại* $N$, sao cho $n \ge N$ kéo theo $|a_n - a| < \varepsilon$.
+- Đọc $|a_n - a|$ là **khoảng cách tới đích**.
+- Trò chơi: đối thủ ra $\varepsilon$, bạn đáp $N$. Thắng với mọi $\varepsilon$ thì dãy hội tụ.
+- Khuôn mẫu 4 bước: cho $\varepsilon$ → chọn $N$ → giả sử $n \ge N$ → suy ra bất đẳng thức.
+- Công cụ chọn $N$: **tính chất Archimedes**.
+
+<BaGoc>
+  <Goc ten="Hiểu">Hội tụ = muốn gần bao nhiêu cũng được, chỉ cần đi đủ xa.</Goc>
+  <Goc ten="Nhớ">Thứ tự: $\forall \varepsilon \to \exists N \to \forall n \ge N$.</Goc>
+  <Goc ten="Làm">Nháp giải ngược tìm $N$, rồi viết lại xuôi theo 4 bước.</Goc>
+</BaGoc>
+
+## Bài tập
+
+<BaiLuyen do_kho="de" so="1.1">
+Dùng định nghĩa, chứng minh các giới hạn sau. Với mỗi câu, viết rõ phần *nháp* và phần *bài làm*.
+
+(a) $\displaystyle\lim \frac{2n+1}{5n+4} = \frac25$
+
+(b) $\displaystyle\lim \frac{2n^2}{n^3+3} = 0$
+
+(c) $\displaystyle\lim \frac{\sin(n^2)}{\sqrt[3]{n}} = 0$
+
+<GoiYNho>Ở (c) dùng $|\sin x| \le 1$ để bỏ phần khó đi. Đây chính là <XemMuc bai-tap="2.2.2" chu="Bài 2.2.2 trong sách" /> — có gợi ý theo tầng và lời giải.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="1.2">
+Một bạn đề nghị định nghĩa mới: “$(a_n)$ *tiến-tới* $a$ nếu **tồn tại** $N$ sao cho **với mọi** $\varepsilon > 0$ và mọi $n \ge N$ ta có $|a_n - a| < \varepsilon$.”
+
+(a) Định nghĩa này khác định nghĩa đúng ở chỗ nào? (b) Dãy $\left(\frac1n\right)$ có “tiến-tới” $0$ theo nghĩa mới không? (c) Chứng minh: $(a_n)$ “tiến-tới” $a$ khi và chỉ khi dãy *cuối cùng bằng hằng số* $a$.
+
+<GoiYNho>Ở (c): nếu $|a_n - a| < \varepsilon$ với *mọi* $\varepsilon > 0$ thì $|a_n - a|$ là số không âm nhỏ hơn mọi số dương — nó bằng bao nhiêu? Sách có một cách đảo lượng từ khác (“tồn tại $\varepsilon$, với mọi $N$”) ở <XemMuc bai-tap="2.2.1" chu="Bài 2.2.1" /> — làm luôn để thấy mỗi cách đảo cho một khái niệm khác.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="1.3">
+Chứng minh **giới hạn của một dãy là duy nhất**: nếu $(a_n) \to a$ và $(a_n) \to b$ thì $a = b$.
+
+<GoiYNho>Cho $\varepsilon > 0$. Chọn $N_1$ cho $|a_n - a| < \frac{\varepsilon}{2}$, chọn $N_2$ cho $|a_n - b| < \frac{\varepsilon}{2}$, lấy $n \ge \max\{N_1, N_2\}$. Chèn $a_n$ vào giữa: $|a - b| \le |a - a_n| + |a_n - b|$. Cuối cùng dùng định lý ε của Chương 1. Bài này giới thiệu hai kỹ thuật dùng suốt sách: **chèn điểm trung gian** và **chia ε làm đôi**. Đối chiếu <XemMuc bai-tap="2.2.6" chu="Bài 2.2.6 trong sách" />.</GoiYNho>
+</BaiLuyen>

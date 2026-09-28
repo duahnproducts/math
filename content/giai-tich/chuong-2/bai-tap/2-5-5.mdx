@@ -1,0 +1,38 @@
+---
+so: "2.5.5"
+muc: "2.5"
+do_kho: kho
+nen_lam: false
+tieu_de: "Mọi dãy con hội tụ về cùng một số"
+can_dung: ["dinh-ly-2.5.5", "dinh-ly-2.5.2"]
+---
+
+<De>
+Cho $(a_n)$ là dãy bị chặn, và mọi dãy con hội tụ của $(a_n)$ đều hội tụ về cùng một số $a \in \mathbf{R}$. Chứng minh $(a_n) \to a$.
+</De>
+
+<GoiY so={1}>
+Phản chứng. Viết phủ định của “$(a_n) \to a$” thật cẩn thận: tồn tại $\varepsilon_0 > 0$ sao cho với **mọi** $N$ có $n \ge N$ với $|a_n - a| \ge \varepsilon_0$. Điều đó cho **vô hạn** chỉ số “xấu”.
+</GoiY>
+
+<GoiY so={2}>
+Các số hạng tại chỉ số xấu tạo thành một dãy con, vẫn bị chặn. Áp dụng Bolzano–Weierstrass cho *dãy con này* để được một dãy con của nó hội tụ về $b$. Theo giả thiết $b = a$ — nhưng mọi số hạng của nó cách $a$ ít nhất $\varepsilon_0$.
+</GoiY>
+
+<LoiGiai>
+Giả sử ngược lại $(a_n) \not\to a$. Phủ định định nghĩa hội tụ: có $\varepsilon_0 > 0$ sao cho với mọi $N \in \mathbf{N}$ đều có $n \ge N$ với $|a_n - a| \ge \varepsilon_0$.
+
+**Dựng dãy con xấu.** Chọn $n_1$ với $|a_{n_1} - a| \ge \varepsilon_0$. Đã có $n_{k-1}$, áp dụng điều trên với $N = n_{k-1} + 1$ để được $n_k > n_{k-1}$ với $|a_{n_k} - a| \ge \varepsilon_0$. Ta có dãy con $(a_{n_k})$ mà *mọi* số hạng cách $a$ ít nhất $\varepsilon_0$.
+
+**Áp dụng Bolzano–Weierstrass.** $(a_{n_k})$ bị chặn (vì $(a_n)$ bị chặn), nên nó có một dãy con hội tụ, về $b$ chẳng hạn. Dãy con này cũng là một dãy con của $(a_n)$, nên theo giả thiết $b = a$.
+
+**Mâu thuẫn.** Mọi số hạng của dãy con này thoả $|x - a| \ge \varepsilon_0$, tức nằm ngoài $(a - \varepsilon_0, a + \varepsilon_0)$. Một dãy hội tụ về $a$ thì phải có số hạng nằm trong khoảng đó (định nghĩa với $\varepsilon = \varepsilon_0$). Mâu thuẫn. Vậy $(a_n) \to a$. ∎
+
+<GhiChu tieuDe="Giả thiết bị chặn là cần">
+Dãy $(1, 1, 2, 1, 3, 1, 4, \ldots)$ không bị chặn; dãy con hội tụ duy nhất (theo nghĩa giới hạn) là về $1$, nhưng bản thân dãy không hội tụ. Không bị chặn thì dãy con xấu có thể “chạy ra vô cùng” và Bolzano–Weierstrass không áp dụng được.
+</GhiChu>
+</LoiGiai>
+
+<LoiHayMac>
+Chọn các chỉ số xấu mà không bảo đảm chúng **tăng ngặt** — khi đó chưa có dãy con. Mỗi lần chọn phải dùng phủ định với $N$ lớn hơn chỉ số vừa chọn; đây là lý do phủ định có chữ “với mọi $N$”.
+</LoiHayMac>

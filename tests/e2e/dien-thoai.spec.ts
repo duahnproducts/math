@@ -26,6 +26,10 @@ test('không tràn ngang trên điện thoại', async ({ page }) => {
     'giai-tich/chuong-1/',
     'giai-tich/chuong-1/giang-day/bai-5/',
     'giai-tich/chuong-1/bai-tap/1-5-4/',
+    'giai-tich/chuong-2/giang-day/bai-1/',
+    'giai-tich/chuong-2/giang-day/bai-5/',
+    'giai-tich/chuong-2/sach/2-1/',
+    'giai-tich/chuong-2/bai-tap/2-7-2/',
     'dai-so/chuong-1/sach/1-3/',
     'thuat-ngu/',
   ]) {

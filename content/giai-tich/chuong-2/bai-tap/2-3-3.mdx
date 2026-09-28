@@ -1,0 +1,43 @@
+---
+so: "2.3.3"
+muc: "2.3"
+do_kho: de
+nen_lam: true
+tieu_de: "Định lý kẹp"
+can_dung: ["dinh-nghia-2.2.3"]
+---
+
+<De>
+**Định lý kẹp.** Chứng minh: nếu $x_n \le y_n \le z_n$ với mọi $n \in \mathbf{N}$, và $\lim x_n = \lim z_n = l$, thì $\lim y_n = l$.
+</De>
+
+<GoiY so={1}>
+Không dùng được Định lý Giới hạn Thứ tự ngay, vì ta chưa biết $(y_n)$ có giới hạn hay không. Quay về định nghĩa: cho $\varepsilon > 0$, cần $N$ để $|y_n - l| < \varepsilon$, tức $l - \varepsilon < y_n < l + \varepsilon$.
+</GoiY>
+
+<GoiY so={2}>
+Chặn *dưới* $y_n$ nhờ $x_n$ (nằm trong $(l - \varepsilon, l + \varepsilon)$ từ mốc $N_1$), chặn *trên* $y_n$ nhờ $z_n$ (từ mốc $N_2$). Lấy $N = \max\{N_1, N_2\}$.
+</GoiY>
+
+<LoiGiai>
+Cho $\varepsilon > 0$.
+
+- Vì $(x_n) \to l$, có $N_1$ sao cho $n \ge N_1$ kéo theo $|x_n - l| < \varepsilon$, nói riêng $l - \varepsilon < x_n$.
+- Vì $(z_n) \to l$, có $N_2$ sao cho $n \ge N_2$ kéo theo $|z_n - l| < \varepsilon$, nói riêng $z_n < l + \varepsilon$.
+
+Đặt $N = \max\{N_1, N_2\}$. Với $n \ge N$:
+
+$$
+l - \varepsilon < x_n \le y_n \le z_n < l + \varepsilon,
+$$
+
+tức $|y_n - l| < \varepsilon$. Vậy $\lim y_n = l$. ∎
+
+<GhiChu tieuDe="Vì sao ngắn mà dùng suốt đời">
+Định lý kẹp vừa chứng minh $(y_n)$ **có** giới hạn, vừa cho biết giới hạn **bằng** bao nhiêu — điều mà Định lý Giới hạn Thứ tự không làm được. Ví dụ: $0 \le \left|\frac{\sin n}{n}\right| \le \frac1n$ nên $\frac{\sin n}{n} \to 0$.
+</GhiChu>
+</LoiGiai>
+
+<LoiHayMac>
+Viết “theo Định lý Giới hạn Thứ tự, $l = \lim x_n \le \lim y_n \le \lim z_n = l$, nên $\lim y_n = l$”. Lập luận này **giả sử** $\lim y_n$ tồn tại — chính điều cần chứng minh. Định lý Giới hạn Thứ tự chỉ áp dụng khi mọi giới hạn đã tồn tại.
+</LoiHayMac>

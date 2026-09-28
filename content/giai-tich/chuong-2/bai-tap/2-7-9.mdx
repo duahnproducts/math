@@ -1,0 +1,50 @@
+---
+so: "2.7.9"
+muc: "2.7"
+do_kho: kho
+nen_lam: true
+tieu_de: "Chứng minh tiêu chuẩn tỉ số"
+can_dung: ["dinh-ly-2.7.4", "vi-du-2.7.5", "dinh-ly-2.7.6"]
+---
+
+<De>
+**Tiêu chuẩn tỉ số.** Cho chuỗi $\sum_{n=1}^{\infty} a_n$ với $a_n \ne 0$. Nếu
+
+$$
+\lim \left|\frac{a_{n+1}}{a_n}\right| = r < 1
+$$
+
+thì chuỗi hội tụ tuyệt đối.
+
+(a) Lấy $r'$ với $r < r' < 1$. Giải thích vì sao có $N$ sao cho $n \ge N$ kéo theo $|a_{n+1}| \le |a_n|\, r'$.
+
+(b) Vì sao chuỗi $|a_N| \sum (r')^n$ hội tụ?
+
+(c) Chứng minh $\sum |a_n|$ hội tụ, và kết luận $\sum a_n$ hội tụ.
+</De>
+
+<GoiY so={1}>
+(a) Áp dụng định nghĩa giới hạn cho dãy $\left|\frac{a_{n+1}}{a_n}\right|$ với sai số $\varepsilon = r' - r > 0$. (b) Chuỗi hình học — tỉ số bằng bao nhiêu? Nhớ $r \ge 0$ vì là giới hạn của các số không âm.
+</GoiY>
+
+<GoiY so={2}>
+(c) Lặp bất đẳng thức ở (a): $|a_{N+1}| \le |a_N| r'$, $|a_{N+2}| \le |a_N| (r')^2$, … — quy nạp ra $|a_{N+k}| \le |a_N| (r')^k$. So sánh phần đuôi với chuỗi hình học; hữu hạn số hạng đầu không ảnh hưởng sự hội tụ.
+</GoiY>
+
+<LoiGiai>
+**(a)** Đặt $\varepsilon = r' - r > 0$. Vì $\left|\frac{a_{n+1}}{a_n}\right| \to r$, có $N$ sao cho $n \ge N$ kéo theo $\left|\frac{a_{n+1}}{a_n}\right| < r + \varepsilon = r'$, tức $|a_{n+1}| < |a_n|\, r'$ (nhân hai vế với $|a_n| > 0$).
+
+**(b)** Vì $\left|\frac{a_{n+1}}{a_n}\right| \ge 0$, Định lý Giới hạn Thứ tự cho $r \ge 0$, nên $0 < r' < 1$. Chuỗi $\sum (r')^n$ là chuỗi hình học với tỉ số $|r'| < 1$, nên hội tụ (Ví dụ 2.7.5); nhân với hằng số $|a_N|$ vẫn hội tụ (Định lý 2.7.1).
+
+**(c)** Quy nạp theo $k$: $|a_{N+k}| \le |a_N| (r')^k$. Đúng với $k = 0$; nếu đúng với $k$ thì theo (a), $|a_{N+k+1}| \le |a_{N+k}|\, r' \le |a_N| (r')^{k+1}$.
+
+Theo tiêu chuẩn so sánh (với $0 \le |a_{N+k}| \le |a_N|(r')^k$) và (b), chuỗi đuôi $\sum_{k=0}^{\infty} |a_{N+k}|$ hội tụ. Tổng riêng của $\sum_{n=1}^{\infty} |a_n|$ chỉ khác tổng riêng của chuỗi đuôi một hằng số $|a_1| + \cdots + |a_{N-1}|$, nên $\sum |a_n|$ hội tụ. Theo Tiêu chuẩn hội tụ tuyệt đối (Định lý 2.7.6), $\sum a_n$ hội tụ. ∎
+
+<GhiChu tieuDe="Vì sao cần r′ chứ không dùng thẳng r">
+Ta chỉ biết tỉ số *tiến về* $r$; các tỉ số có thể lớn hơn $r$ một chút mãi mãi (ví dụ $r + \frac1n$). Chọn $r'$ nằm giữa $r$ và $1$ tạo một “vùng đệm”: từ mốc $N$, mọi tỉ số đều dưới $r'$, và $r'$ vẫn nhỏ hơn $1$ nên chuỗi hình học so sánh vẫn hội tụ.
+</GhiChu>
+</LoiGiai>
+
+<LoiHayMac>
+So sánh trực tiếp với $\sum r^n$: “$|a_{n+1}| \le r|a_n|$”. Điều này không suy ra được từ $\left|\frac{a_{n+1}}{a_n}\right| \to r$ — giới hạn bằng $r$ không có nghĩa các tỉ số đều $\le r$. Ngoài ra khi $r = 1$ tiêu chuẩn không kết luận được gì: cả $\sum \frac1n$ (phân kỳ) lẫn $\sum \frac{1}{n^2}$ (hội tụ) đều có tỉ số tiến về $1$.
+</LoiHayMac>

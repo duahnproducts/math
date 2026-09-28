@@ -1,0 +1,67 @@
+---
+so: "2.5.1"
+muc: "2.5"
+do_kho: vua
+nen_lam: true
+tieu_de: "Ví dụ và phản ví dụ về dãy con"
+can_dung: ["dinh-nghia-2.5.1", "dinh-ly-2.5.5"]
+---
+
+<De>
+Cho ví dụ, hoặc lập luận vì sao không thể:
+
+(a) Một dãy có một dãy con bị chặn nhưng không có dãy con nào hội tụ.
+
+(b) Một dãy không có số hạng nào bằng $0$ hay $1$, nhưng có dãy con hội tụ về $0$ và dãy con hội tụ về $1$.
+
+(c) Một dãy có dãy con hội tụ về *mọi* điểm của tập vô hạn $\left\{1, \frac12, \frac13, \frac14, \ldots\right\}$.
+
+(d) Một dãy như ở (c), và thêm điều kiện: *không* có dãy con nào hội tụ về điểm nằm ngoài tập đó.
+</De>
+
+<GoiY so={1}>
+(a) Dãy con của một dãy con vẫn là dãy con của dãy gốc. Áp dụng Bolzano–Weierstrass cho dãy con bị chặn.
+
+(b) Xen kẽ hai dãy: một dãy tiến về $0$, một dãy tiến về $1$.
+</GoiY>
+
+<GoiY so={2}>
+(c) Liệt kê theo từng “đợt”: đợt thứ $k$ gồm $1, \frac12, \ldots, \frac1k$. Mỗi giá trị $\frac1m$ xuất hiện ở vô số đợt.
+
+(d) Nếu có dãy con tiến về $\frac1k$ với mọi $k$, hãy chọn từ mỗi dãy con đó một số hạng rất gần $\frac1k$ (và có chỉ số tăng dần). Dãy con mới này tiến về đâu?
+</GoiY>
+
+<LoiGiai>
+**(a) Không thể.** Giả sử $(a_{n_k})$ là một dãy con bị chặn. Theo Bolzano–Weierstrass, nó có một dãy con hội tụ. Dãy con này có chỉ số tăng ngặt nằm trong $\{n_k\}$, nên nó cũng là một dãy con của $(a_n)$. Vậy $(a_n)$ có dãy con hội tụ — mâu thuẫn với yêu cầu.
+
+**(b) Có thể.** Xen kẽ $\frac{1}{k+1}$ và $1 - \frac{1}{k+1}$:
+
+$$
+\left(\frac12,\ \frac12,\ \frac13,\ \frac23,\ \frac14,\ \frac34,\ \frac15,\ \frac45,\ \ldots\right).
+$$
+
+Không số hạng nào bằng $0$ hay $1$; các số hạng vị trí lẻ tiến về $0$, vị trí chẵn tiến về $1$.
+
+**(c) Có thể.** Lấy dãy
+
+$$
+\left(1,\quad 1, \tfrac12,\quad 1, \tfrac12, \tfrac13,\quad 1, \tfrac12, \tfrac13, \tfrac14,\quad \ldots\right).
+$$
+
+Mỗi giá trị $\frac1m$ xuất hiện trong mọi đợt thứ $k \ge m$, tức vô hạn lần; chọn các lần xuất hiện đó (chỉ số tăng dần) được dãy con hằng $\left(\frac1m, \frac1m, \ldots\right) \to \frac1m$.
+
+**(d) Không thể.** Giả sử với mỗi $k$ có dãy con hội tụ về $\frac1k$. Ta dựng một dãy con hội tụ về $0 \notin \left\{\frac1k\right\}$:
+
+- Chọn chỉ số $n_1$ với $\left|a_{n_1} - 1\right| < 1$.
+- Đã chọn $n_{k-1}$, xét dãy con hội tụ về $\frac1k$: từ một lúc nào đó các số hạng của nó cách $\frac1k$ dưới $\frac1k$, và có vô hạn số hạng như vậy, nên chọn được $n_k > n_{k-1}$ với $\left|a_{n_k} - \frac1k\right| < \frac1k$.
+
+Khi đó $0 < a_{n_k} < \frac2k$, nên $(a_{n_k}) \to 0$ theo định lý kẹp. Đây là dãy con hội tụ về điểm nằm ngoài tập — mâu thuẫn. ∎
+
+<GhiChu tieuDe="Góc nhìn Chương 3">
+Tập các giới hạn của dãy con luôn “đóng”: nếu nó chứa các điểm tiến về $0$ thì nó phải chứa cả $0$. Đây là mầm mống của khái niệm *tập đóng* và *điểm giới hạn* ở Chương 3.
+</GhiChu>
+</LoiGiai>
+
+<LoiHayMac>
+Ở (a), trả lời “có thể” với ví dụ kiểu $(1, 2, 1, 3, 1, 4, \ldots)$: dãy con các số $1$ là bị chặn — nhưng nó cũng **hội tụ** (dãy hằng). Mọi dãy con bị chặn đều chứa dãy con hội tụ; đó chính là Bolzano–Weierstrass.
+</LoiHayMac>

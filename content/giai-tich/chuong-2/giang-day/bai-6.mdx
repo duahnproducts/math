@@ -1,0 +1,231 @@
+---
+mon: giai-tich
+chuong: 2
+bai: 6
+tieu_de: Chuỗi số
+y_tuong: Cộng vô hạn số hạng — và câu hỏi “tổng bằng bao nhiêu” thực ra là câu hỏi về một dãy.
+phu_muc: ["2.1", "2.4", "2.7", "2.9"]
+---
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+Cộng **vô hạn** số hạng — và câu hỏi “tổng bằng bao nhiêu” thực ra là câu hỏi về một **dãy**.
+</YTuong>
+
+## Hình dung trực quan — lại đi bộ về nhà
+
+Quay lại chuyện đi bộ về nhà ở <XemMuc bai={1} />. Mỗi bước đi nửa quãng đường còn lại:
+
+$$
+50 + 25 + 12{,}5 + 6{,}25 + \cdots
+$$
+
+Cộng vô hạn số hạng — mà tổng vẫn *hữu hạn*, bằng đúng 100 mét.
+
+**Cách làm cho câu “cộng vô hạn” có nghĩa:** đừng cộng hết một lúc. Hãy *cộng dần* và xem kết quả tiến về đâu:
+
+$$
+50,\quad 75,\quad 87{,}5,\quad 93{,}75,\quad 96{,}875,\quad \ldots \longrightarrow 100.
+$$
+
+<HinhTongRieng />
+
+Dãy cộng dồn này gọi là dãy <ThuatNgu id="partial-sum">tổng riêng</ThuatNgu>. *Chuỗi hội tụ* nghĩa là *dãy tổng riêng hội tụ*.
+
+## Kiến thức cần biết
+
+Toàn bộ Bài 1–5! <ThuatNgu id="series">Chuỗi</ThuatNgu> không phải khái niệm mới — nó là **dãy**, nhìn từ góc khác.
+
+<TomTat tieuDe="Phân biệt hai dãy — nguồn gốc của hầu hết lỗi sai">
+| | Các số | Nghĩa |
+| --- | --- | --- |
+| **Dãy số hạng** | $b_1, b_2, b_3, \ldots$ | các số *được cộng* |
+| **Dãy tổng riêng** | $s_1, s_2, s_3, \ldots$ | kết quả *cộng dồn* |
+
+Mọi câu hỏi về chuỗi là câu hỏi về dãy **thứ hai**.
+</TomTat>
+
+## Công thức — định nghĩa và các tiêu chuẩn
+
+<DinhNghia ten="Chuỗi hội tụ">
+Cho dãy $(b_n)$. Đặt $s_m = b_1 + b_2 + \cdots + b_m$ (tổng riêng thứ $m$). Chuỗi $\displaystyle\sum_{n=1}^{\infty} b_n$ **hội tụ về $B$** nếu dãy $(s_m)$ hội tụ về $B$.
+</DinhNghia>
+
+**Từng ký hiệu:** $b_n$ — số hạng thứ $n$ (bước thứ $n$); $s_m$ — đã đi được bao xa sau $m$ bước; $B$ — nơi dãy $(s_m)$ tiến về, gọi là *tổng* của chuỗi.
+
+### Điều kiện cần
+
+<DinhLy ten="Điều kiện cần">
+Nếu $\sum b_n$ hội tụ thì $(b_n) \to 0$.
+</DinhLy>
+
+<Loi tieuDe="Đây là lỗi phổ biến nhất trong toàn bộ giải tích">
+Định lý trên là điều kiện **CẦN**, không phải điều kiện **ĐỦ**.
+
+**Phản ví dụ:** <ThuatNgu id="harmonic-series">chuỗi điều hòa</ThuatNgu> $\sum \frac1n$ có $\frac1n \to 0$ nhưng *phân kỳ*.
+
+- **Dùng đúng:** nếu $(b_n) \not\to 0$ thì chuỗi *chắc chắn* phân kỳ.
+- **Dùng sai:** “$b_n \to 0$ nên chuỗi hội tụ.”
+</Loi>
+
+### Bốn công cụ
+
+<DinhLy ten="(1) Tiêu chuẩn so sánh">
+Nếu $0 \le a_k \le b_k$ với mọi $k$ thì: $\sum b_k$ hội tụ ⇒ $\sum a_k$ hội tụ; $\sum a_k$ phân kỳ ⇒ $\sum b_k$ phân kỳ.
+</DinhLy>
+
+<DinhLy ten="(2) Chuỗi hình học">
+$\displaystyle\sum_{k=0}^{\infty} a r^k$ (với $a \ne 0$) hội tụ $\iff |r| < 1$, và khi đó tổng bằng $\dfrac{a}{1 - r}$.
+</DinhLy>
+
+<DinhLy ten="(3) Chuỗi p">
+$\displaystyle\sum_{n=1}^{\infty} \frac{1}{n^p}$ hội tụ $\iff p > 1$.
+</DinhLy>
+
+<DinhLy ten="(4) Tiêu chuẩn chuỗi đan dấu">
+Nếu $a_1 \ge a_2 \ge \cdots \ge 0$ và $(a_n) \to 0$ thì $\sum (-1)^{n+1} a_n$ hội tụ.
+</DinhLy>
+
+<TomTat tieuDe="Chuỗi p là “thước đo” của bạn">
+Hầu hết bài tập đều giải bằng cách *so sánh* với một <ThuatNgu id="p-series">chuỗi p</ThuatNgu> hoặc một <ThuatNgu id="geometric-series">chuỗi hình học</ThuatNgu>. Phải thuộc: $\sum \frac1n$ **phân kỳ**; $\sum \frac{1}{n^2}$ **hội tụ**; $\sum \frac{1}{n^{1{,}001}}$ **hội tụ**.
+</TomTat>
+
+## Ví dụ mẫu — hai chuỗi nền tảng
+
+### Ví dụ A: $\sum \frac{1}{n^2}$ hội tụ
+
+#### Bước 1 — Cho gì?
+
+Chuỗi $\sum_{n \ge 1} \frac{1}{n^2}$, số hạng dương.
+
+#### Bước 2 — Hỏi gì?
+
+Dãy tổng riêng $s_m = 1 + \frac14 + \cdots + \frac{1}{m^2}$ có hội tụ không?
+
+#### Bước 3 — Dùng gì, vì sao?
+
+Số hạng dương nên $(s_m)$ **tăng**. Theo Định lý Hội tụ Đơn điệu (<XemMuc bai={3} />), chỉ cần chứng minh $(s_m)$ **bị chặn trên** — không cần biết tổng bằng bao nhiêu.
+
+#### Bước 4 — Giải
+
+**Mẹo:** với $k \ge 2$,
+
+$$
+\frac{1}{k^2} < \frac{1}{k(k-1)} = \frac{1}{k-1} - \frac{1}{k}.
+$$
+
+Cộng lại — <ThuatNgu id="telescoping-sum">tổng lồng nhau</ThuatNgu>, mọi thứ ở giữa triệt tiêu:
+
+$$
+s_m < 1 + \left(1 - \frac12\right) + \left(\frac12 - \frac13\right) + \cdots + \left(\frac{1}{m-1} - \frac1m\right) = 2 - \frac1m < 2.
+$$
+
+Dãy tăng, bị chặn trên bởi $2$ ⇒ hội tụ. ∎
+
+#### Bước 5 — Kiểm tra
+
+$s_1 = 1$, $s_2 = 1{,}25$, $s_3 \approx 1{,}361$, $s_{10} \approx 1{,}550$ — tăng và nằm dưới $2$ ✓. (Giá trị chính xác là $\frac{\pi^2}{6} \approx 1{,}6449$, nhưng chứng minh điều đó phải chờ các chương sau. Ở đây chỉ cần biết nó *hội tụ*.)
+
+### Ví dụ B: chuỗi điều hòa $\sum \frac1n$ phân kỳ
+
+**Mẹo:** nhóm các số hạng theo lũy thừa của $2$:
+
+$$
+1 + \frac12 + \underbrace{\left(\frac13 + \frac14\right)}_{\ge\, 2 \cdot \frac14 \,=\, \frac12} + \underbrace{\left(\frac15 + \frac16 + \frac17 + \frac18\right)}_{\ge\, 4 \cdot \frac18 \,=\, \frac12} + \cdots
+$$
+
+Mỗi nhóm có tổng *ít nhất* $\frac12$. Nên
+
+$$
+s_{2^k} \ge 1 + k \cdot \frac12.
+$$
+
+Vế phải tăng ra vô hạn ⇒ $(s_m)$ không bị chặn ⇒ phân kỳ (vì dãy hội tụ thì bị chặn — <XemMuc bai={2} />). ∎
+
+#### Bước 6 — Tóm tắt cách làm
+
+<TomTat tieuDe="Hai ví dụ này phải nhớ suốt đời">
+Cả $\frac1n$ và $\frac{1}{n^2}$ đều có số hạng tiến về $0$ — nhưng chỉ một chuỗi hội tụ. **Tốc độ** tiến về $0$ mới là điều quyết định.
+
+Chuỗi số hạng dương: tổng riêng tự động *tăng* → chỉ cần hỏi “có bị chặn không?” → chặn được thì hội tụ (MCT), chứng minh không bị chặn thì phân kỳ.
+</TomTat>
+
+### Hội tụ tuyệt đối — và lời giải cho một nghịch lý
+
+<DinhNghia ten="Hội tụ tuyệt đối, hội tụ có điều kiện">
+- $\sum a_n$ **hội tụ tuyệt đối** nếu $\sum |a_n|$ hội tụ.
+- $\sum a_n$ **hội tụ có điều kiện** nếu $\sum a_n$ hội tụ nhưng $\sum |a_n|$ phân kỳ.
+</DinhNghia>
+
+**Ví dụ chuẩn:** $\sum \frac{(-1)^{n+1}}{n}$ hội tụ *có điều kiện*; $\sum \frac{(-1)^{n+1}}{n^2}$ hội tụ *tuyệt đối*.
+
+<TomTat tieuDe="Vì sao phân biệt này quan trọng?">
+Sách mở đầu chương bằng một nghịch lý: chuỗi điều hòa đan dấu $1 - \frac12 + \frac13 - \frac14 + \cdots$, nếu *sắp xếp lại* các số hạng (hai dương, một âm), cho ra một tổng *khác* (<XemMuc muc="2.1" />).
+
+**Định lý:** chuỗi hội tụ *tuyệt đối* thì mọi cách sắp xếp lại đều cho *cùng* một tổng. Chuỗi hội tụ *có điều kiện* thì không — thực tế (Định lý Riemann) nó có thể được sắp xếp lại để hội tụ về *bất kỳ* số nào bạn muốn, hoặc để phân kỳ (<XemMuc muc="2.9" />).
+
+Vì vậy chuỗi điều hòa đan dấu *không được phép* sắp xếp lại tuỳ ý — và nghịch lý được giải quyết.
+</TomTat>
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Lỗi 1: “aₖ → 0 nên chuỗi hội tụ”">
+Sai — nhớ chuỗi điều hòa. Đây là lỗi số một.
+</Loi>
+
+<Loi tieuDe="Lỗi 2: Nhầm dãy số hạng với dãy tổng riêng">
+Khi đề hỏi “*chuỗi* có hội tụ không”, bạn phải xét $(s_m)$, không phải $(b_n)$.
+</Loi>
+
+<Loi tieuDe="Lỗi 3: Sắp xếp lại hoặc nhóm lại chuỗi tuỳ ý">
+Sắp xếp lại chỉ an toàn khi chuỗi hội tụ *tuyệt đối*. Nhóm lại chỉ an toàn khi chuỗi *đã hội tụ* — với $\sum (-1)^n$ phân kỳ, hai cách nhóm cho $0$ và $-1$. Bài học này sẽ lặp lại ở Chương 6 và 8.
+</Loi>
+
+## Tóm tắt 30 giây
+
+- **Chuỗi hội tụ = dãy tổng riêng hội tụ.** Không có khái niệm mới nào cả.
+- $\sum b_n$ hội tụ ⇒ $b_n \to 0$. **Chiều ngược lại SAI.**
+- Công cụ: so sánh · hình học ($|r| < 1$) · chuỗi $p$ ($p > 1$) · đan dấu.
+- $\sum \frac1n$ **phân kỳ** (nhóm lũy thừa 2); $\sum \frac{1}{n^2}$ **hội tụ** (tổng lồng nhau).
+- **Hội tụ tuyệt đối** cho phép sắp xếp lại. Hội tụ có điều kiện thì không.
+
+<BaGoc>
+  <Goc ten="Hiểu">Cộng vô hạn = giới hạn của cộng dồn. Số hạng về 0 chưa đủ; phải về 0 đủ nhanh.</Goc>
+  <Goc ten="Nhớ">$\sum \frac1n$ phân kỳ, $\sum \frac1{n^2}$ hội tụ; $\sum ar^k$ hội tụ khi $|r| < 1$.</Goc>
+  <Goc ten="Làm">Chuỗi dương: so sánh với chuỗi p hoặc chuỗi hình học; chuỗi có dấu: thử hội tụ tuyệt đối trước.</Goc>
+</BaGoc>
+
+## Bài tập
+
+<BaiLuyen do_kho="de" so="6.1">
+Xét sự hội tụ, nói rõ dùng tiêu chuẩn nào:
+
+(a) $\displaystyle\sum_{n=1}^{\infty} \frac{1}{\sqrt n}$
+
+(b) $\displaystyle\sum_{n=1}^{\infty} \frac{1}{n^3}$
+
+(c) $\displaystyle\sum_{n=0}^{\infty} \frac{3}{2^n}$
+
+(d) $\displaystyle\sum_{n=1}^{\infty} \frac{n}{n+1}$
+
+<GoiYNho>Ba câu đầu: chuỗi p hoặc chuỗi hình học. Câu (d): nhìn số hạng trước khi tính gì cả. Luyện thêm: <XemMuc bai-tap="2.7.2" chu="Bài 2.7.2" />.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="6.2">
+Chứng minh **tiêu chuẩn hội tụ tuyệt đối**: nếu $\sum |a_n|$ hội tụ thì $\sum a_n$ hội tụ.
+
+<GoiYNho>Áp dụng Tiêu chuẩn Cauchy (<XemMuc bai={5} />) cho dãy tổng riêng. Với $n > m$: $|s_n - s_m| = |a_{m+1} + \cdots + a_n| \le |a_{m+1}| + \cdots + |a_n|$. Phiên bản theo sách: Định lý 2.7.6 ở <XemMuc muc="2.7" />.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="6.3">
+**Tiêu chuẩn cô đặc Cauchy.** Cho $(b_n)$ giảm và $b_n \ge 0$. Chứng minh
+
+$$
+\sum_{n=1}^{\infty} b_n \text{ hội tụ} \iff \sum_{n=0}^{\infty} 2^n b_{2^n} = b_1 + 2b_2 + 4b_4 + 8b_8 + \cdots \text{ hội tụ}.
+$$
+
+(a) Dùng kỹ thuật nhóm ở Ví dụ B để chứng minh. (b) Áp dụng cho $b_n = \frac{1}{n^p}$ và suy ra kết quả về chuỗi $p$. (c) Áp dụng cho $b_n = \frac{1}{n \ln n}$ (với $n \ge 2$): chuỗi này hội tụ hay phân kỳ?
+
+<GoiYNho>Vì $(b_n)$ giảm, mỗi khối $b_{2^k} + \cdots + b_{2^{k+1}-1}$ (gồm $2^k$ số hạng) bị kẹp giữa $2^k b_{2^{k+1}}$ và $2^k b_{2^k}$. Một chiều của tiêu chuẩn có lời giải ở <XemMuc bai-tap="2.4.9" chu="Bài 2.4.9" />.</GoiYNho>
+</BaiLuyen>

@@ -1,0 +1,199 @@
+---
+mon: giai-tich
+chuong: 2
+bai: 5
+tieu_de: Dãy Cauchy
+y_tuong: Biết dãy hội tụ mà không cần biết đích — chỉ cần nhìn xem các số hạng có xích lại gần nhau hay không.
+phu_muc: ["2.6"]
+---
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+Biết dãy hội tụ **mà không cần biết đích** — chỉ cần nhìn xem các số hạng có xích lại gần *nhau* hay không.
+</YTuong>
+
+## Hình dung trực quan — đi trong sương mù
+
+Một nhóm người đi trong sương mù dày. Không ai nhìn thấy điểm hẹn.
+
+- **Cách nghĩ “hội tụ”:** “Mọi người đang tiến gần điểm hẹn.” — muốn nói câu này, phải *biết điểm hẹn ở đâu*.
+- **Cách nghĩ “Cauchy”:** “Mọi người đang xích lại gần nhau.” — câu này nói được mà *không cần biết* điểm hẹn.
+
+<HinhHaiDinhNghia />
+
+**Câu hỏi của bài:** nếu mọi người xích lại gần nhau, có chắc họ đang tụ về *một điểm* không?
+
+- Trong $\mathbf{R}$: **CÓ**. Và đó chính là tính đầy đủ.
+- Trong $\mathbf{Q}$: **KHÔNG** — dãy $1;\ 1{,}4;\ 1{,}41;\ 1{,}414;\ \ldots$ xích lại gần nhau, nhưng điểm tụ là $\sqrt2$, *không nằm trong* $\mathbf{Q}$ (nhớ lại cái lỗ hổng ở <XemMuc chuong={1} bai={3} />).
+
+## Kiến thức cần biết
+
+### a) Khuôn mẫu “đuôi + đầu hữu hạn” (Bài 2)
+
+Dùng định nghĩa xử lý **đuôi vô hạn**, lấy **max** cho phần đầu hữu hạn (<XemMuc bai={2} />).
+
+### b) Bolzano–Weierstrass (Bài 4)
+
+Dãy bị chặn có dãy con hội tụ. Đây là công cụ *sản xuất ứng viên* cho giới hạn (<XemMuc bai={4} />).
+
+## Công thức — định nghĩa và định lý
+
+<DinhNghia ten="Dãy Cauchy">
+Dãy $(a_n)$ là <ThuatNgu id="cauchy-sequence" en={false}>dãy Cauchy</ThuatNgu> nếu: với mọi $\varepsilon > 0$, tồn tại $N \in \mathbf{N}$ sao cho hễ $m, n \ge N$ thì
+
+$$
+|a_n - a_m| < \varepsilon.
+$$
+
+</DinhNghia>
+
+**So sánh hai định nghĩa — khác đúng một chỗ:**
+
+| | Điều kiện | So với |
+| --- | --- | --- |
+| **Hội tụ** | $\lvert a_n - a \rvert < \varepsilon$ | giới hạn $a$ |
+| **Cauchy** | $\lvert a_n - a_m \rvert < \varepsilon$ | *nhau* — hai số hạng bất kỳ sau mốc $N$ |
+
+Định nghĩa Cauchy *không nhắc đến giới hạn*. Đó là toàn bộ giá trị của nó.
+
+<DinhLy ten="Tiêu chuẩn Cauchy">
+Một dãy số thực **hội tụ khi và chỉ khi** nó là dãy Cauchy.
+</DinhLy>
+
+**Khi nào dùng:** khi muốn chứng minh hội tụ mà không đoán được giới hạn, và dãy lại không đơn điệu (nên không dùng được <XemMuc bai={3} />). Ứng dụng lớn nhất là cho chuỗi (<XemMuc bai={6} />).
+
+## Ví dụ mẫu — chứng minh Tiêu chuẩn Cauchy
+
+#### Bước 1 — Cho gì?
+
+Một dãy $(x_n)$ số thực.
+
+#### Bước 2 — Hỏi gì?
+
+Hai chiều: hội tụ ⇒ Cauchy, và Cauchy ⇒ hội tụ.
+
+#### Bước 3 — Dùng gì?
+
+Chiều dễ: chèn điểm trung gian (chính là giới hạn). Chiều khó: cần *ứng viên* cho giới hạn — lấy từ Bolzano–Weierstrass.
+
+#### Bước 4 — Giải
+
+**Chiều dễ: hội tụ ⇒ Cauchy.** Giả sử $(x_n) \to x$. Cho $\varepsilon > 0$, chọn $N$ với $|x_n - x| < \frac{\varepsilon}{2}$ khi $n \ge N$. Với $m, n \ge N$, chèn $x$ vào giữa:
+
+$$
+|x_n - x_m| \le |x_n - x| + |x - x_m| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
+$$
+
+**Chiều khó: Cauchy ⇒ hội tụ.**
+
+*Bước A — dãy Cauchy thì bị chặn.* Lấy $\varepsilon = 1$: có $N$ với $|x_n - x_N| < 1$ khi $n \ge N$, nên $|x_n| < |x_N| + 1$. Đuôi đã bị chặn; cộng thêm $N - 1$ số hạng đầu (hữu hạn) và lấy max. Đúng khuôn mẫu “đuôi + đầu hữu hạn”.
+
+*Bước B — dùng Bolzano–Weierstrass.* Dãy bị chặn nên có dãy con $(x_{n_k}) \to x$. **Đây là ứng viên cần tìm.**
+
+*Bước C — nâng từ dãy con lên cả dãy.* Cho $\varepsilon > 0$.
+
+- Vì $(x_n)$ Cauchy: chọn $N$ với $|x_n - x_m| < \frac{\varepsilon}{2}$ khi $m, n \ge N$.
+- Vì $(x_{n_k}) \to x$: chọn một số hạng $x_{n_K}$ của dãy con với $n_K \ge N$ và $|x_{n_K} - x| < \frac{\varepsilon}{2}$.
+
+Khi đó với mọi $n \ge N$:
+
+$$
+|x_n - x| \le |x_n - x_{n_K}| + |x_{n_K} - x| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon. \qquad ∎
+$$
+
+#### Bước 5 — Kiểm tra
+
+Chỗ nào dùng tính đầy đủ của $\mathbf{R}$? Ở Bước B — Bolzano–Weierstrass dựa trên đoạn lồng nhau, mà đoạn lồng nhau dựa trên Tiên đề đầy đủ. Trong $\mathbf{Q}$ bước này gãy, và định lý sai — khớp với ví dụ $1;\ 1{,}4;\ 1{,}41;\ \ldots$ ở trên ✓.
+
+#### Bước 6 — Tóm tắt cách làm
+
+<TomTat tieuDe="Bước C là ý tưởng đẹp nhất của bài">
+Một dãy Cauchy chỉ cần **một** dãy con hội tụ là **cả dãy** hội tụ — vì tính Cauchy “kéo” mọi số hạng còn lại đi theo. *Nói hình ảnh:* dãy con tìm ra đích; tính Cauchy bảo đảm không ai bị bỏ lại phía sau.
+</TomTat>
+
+### Nhìn lại tính đầy đủ — phần quan trọng nhất chương
+
+Chuỗi suy diễn của hai chương đầu:
+
+$$
+\text{AoC} \;\Rightarrow\; \begin{cases} \text{NIP} \\ \text{MCT} \end{cases} \;\Rightarrow\; \text{BW} \;\Rightarrow\; \text{CC}
+$$
+
+| Viết tắt | Tên | Ở đâu |
+| --- | --- | --- |
+| AoC | Tiên đề đầy đủ | <XemMuc muc="1.3" chu="§1.3" /> |
+| NIP | Tính chất đoạn lồng nhau | <XemMuc muc="1.4" chu="§1.4" /> |
+| MCT | Định lý Hội tụ Đơn điệu | <XemMuc bai={3} chu="Bài 3" /> |
+| BW | Bolzano–Weierstrass | <XemMuc bai={4} chu="Bài 4" /> |
+| CC | Tiêu chuẩn Cauchy | bài này |
+
+<TomTat tieuDe="Nhưng đây KHÔNG phải đường một chiều">
+Với giả thiết bổ sung là *tính chất Archimedes*, cả **năm** mệnh đề là **tương đương**: nhận bất kỳ cái nào làm tiên đề, bốn cái còn lại chứng minh được. Chọn cái nào làm tiên đề là chuyện *sở thích*, không phải chuyện toán học.
+
+**Điều thực sự quan trọng:** cả năm là những cách nói khác nhau của *cùng một sự thật* — <ThuatNgu id="completeness">R không có lỗ hổng</ThuatNgu>. Chi tiết ở <XemMuc muc="2.6" />.
+</TomTat>
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Lỗi 1: Chỉ kiểm tra các số hạng LIỀN KỀ">
+Điều kiện $|a_{n+1} - a_n| \to 0$ **không đủ** để dãy là Cauchy.
+
+**Phản ví dụ:** $a_n = \sqrt n$. Ta có $|a_{n+1} - a_n| = \sqrt{n+1} - \sqrt n = \frac{1}{\sqrt{n+1} + \sqrt n} \to 0$, nhưng $(\sqrt n)$ không bị chặn nên phân kỳ.
+
+Định nghĩa đòi $|a_n - a_m| < \varepsilon$ với **mọi** cặp $m, n \ge N$, không phải chỉ cặp liền kề (<XemMuc bai-tap="2.6.5" chu="Bài tập 2.6.5" />).
+</Loi>
+
+<Loi tieuDe="Lỗi 2: Nghĩ Tiêu chuẩn Cauchy đúng trong mọi hệ thống số">
+Sai. Trong $\mathbf{Q}$ nó không đúng. Tiêu chuẩn Cauchy là một cách phát biểu tính đầy đủ — nó là đặc quyền của $\mathbf{R}$.
+</Loi>
+
+<Loi tieuDe="Lỗi 3: Dùng Bolzano–Weierstrass mà quên chứng minh dãy bị chặn trước">
+Bước A của chứng minh không phải thủ tục thừa. Không có nó thì không áp dụng được BW.
+</Loi>
+
+## Tóm tắt 30 giây
+
+- **Cauchy:** các số hạng cuối cùng sát *nhau*. Không nhắc đến giới hạn.
+- **Tiêu chuẩn Cauchy:** trong $\mathbf{R}$, hội tụ $\iff$ Cauchy.
+- Chứng minh chiều khó: bị chặn → BW cho dãy con → tính Cauchy kéo cả dãy theo.
+- **Không đủ:** $|a_{n+1} - a_n| \to 0$. Phản ví dụ $\sqrt n$.
+- **Năm mệnh đề tương đương:** AoC, NIP, MCT, BW, CC — cùng một sự thật về $\mathbf{R}$.
+
+<BaGoc>
+  <Goc ten="Hiểu">Cauchy nhìn các số hạng với nhau, không cần đích; trong R thì “xích lại gần nhau” đủ để có đích.</Goc>
+  <Goc ten="Nhớ">$\forall \varepsilon\ \exists N\ \forall m, n \ge N: |a_n - a_m| < \varepsilon$ — mọi cặp, không chỉ cặp liền kề.</Goc>
+  <Goc ten="Làm">Muốn chứng minh Cauchy: chèn điểm trung gian rồi chia ε, giống hệt chứng minh hội tụ.</Goc>
+</BaGoc>
+
+## Bài tập
+
+<BaiLuyen do_kho="de" so="5.1">
+Với mỗi dãy, cho biết nó có phải dãy Cauchy không (giải thích ngắn):
+
+(a) $a_n = \frac1n$
+
+(b) $a_n = (-1)^n$
+
+(c) $a_n = n$
+
+(d) $a_n = \frac{(-1)^n}{n}$
+
+<GoiYNho>Dùng Tiêu chuẩn Cauchy: trong $\mathbf{R}$, “Cauchy” và “hội tụ” là một. Vậy chỉ cần biết dãy nào hội tụ.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="5.2">
+Với mỗi yêu cầu, cho ví dụ hoặc giải thích vì sao không thể:
+
+(a) Dãy Cauchy không đơn điệu. (b) Dãy Cauchy không bị chặn. (c) Dãy bị chặn không Cauchy. (d) Dãy đơn điệu không Cauchy.
+
+<GoiYNho>Nhớ Bước A: dãy Cauchy luôn bị chặn. Bài cùng kiểu trong sách: <XemMuc bai-tap="2.6.2" chu="Bài 2.6.2" />.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="5.3">
+(a) Chứng minh: nếu $(x_n)$ và $(y_n)$ đều Cauchy thì $(x_n + y_n)$ Cauchy — *không dùng* Tiêu chuẩn Cauchy, chỉ dùng định nghĩa.
+
+(b) Chứng minh tương tự cho $(x_n y_n)$.
+
+<GoiYNho>Ở (b), cần biết dãy Cauchy thì bị chặn (Bước A), rồi dùng thủ thuật cộng thêm – trừ đi ở <XemMuc bai={2} />. Lời giải có ở <XemMuc bai-tap="2.6.3" chu="Bài 2.6.3" />.</GoiYNho>
+</BaiLuyen>

@@ -1,0 +1,50 @@
+---
+so: "2.3.10"
+muc: "2.3"
+do_kho: vua
+nen_lam: true
+tieu_de: "Bốn phỏng đoán về giới hạn"
+can_dung: ["dinh-ly-2.3.3", "dinh-nghia-2.2.3"]
+---
+
+<De>
+Phỏng đoán nào đúng thì chứng minh ngắn gọn, sai thì cho phản ví dụ.
+
+(a) Nếu $\lim(a_n - b_n) = 0$ thì $\lim a_n = \lim b_n$.
+
+(b) Nếu $(b_n) \to b$ thì $|b_n| \to |b|$.
+
+(c) Nếu $(a_n) \to a$ và $(b_n - a_n) \to 0$ thì $(b_n) \to a$.
+
+(d) Nếu $(a_n) \to 0$ và $|b_n - b| \le a_n$ với mọi $n \in \mathbf{N}$ thì $(b_n) \to b$.
+</De>
+
+<GoiY so={1}>
+Với mỗi câu, hỏi trước: giả thiết có bảo đảm các giới hạn *được nhắc tới* tồn tại không? Câu nào kết luận về một giới hạn mà giả thiết không nói nó tồn tại — đó là ứng viên cho phản ví dụ.
+</GoiY>
+
+<GoiY so={2}>
+(a) thử $a_n = b_n = n$. (b) bất đẳng thức tam giác ngược $\big||x| - |y|\big| \le |x - y|$. (c) viết $b_n = a_n + (b_n - a_n)$. (d) chỉ cần định nghĩa: $|b_n - b|$ bị kẹp bởi $a_n$.
+</GoiY>
+
+<LoiGiai>
+**(a) Sai.** $a_n = b_n = n$: $\lim(a_n - b_n) = \lim 0 = 0$, nhưng $\lim a_n$, $\lim b_n$ không tồn tại, nên “$\lim a_n = \lim b_n$” không có nghĩa. (Nếu thêm giả thiết một trong hai dãy hội tụ thì mệnh đề đúng — đó chính là câu (c).)
+
+**(b) Đúng.** Cho $\varepsilon > 0$, chọn $N$ với $|b_n - b| < \varepsilon$ khi $n \ge N$. Bất đẳng thức tam giác ngược cho
+
+$$
+\big||b_n| - |b|\big| \le |b_n - b| < \varepsilon \quad \text{khi } n \ge N. \qquad ∎
+$$
+
+**(c) Đúng.** $b_n = a_n + (b_n - a_n)$ là tổng của hai dãy hội tụ, nên theo Định lý Giới hạn Đại số, $\lim b_n = a + 0 = a$. ∎
+
+**(d) Đúng.** Cho $\varepsilon > 0$, chọn $N$ với $|a_n - 0| < \varepsilon$ khi $n \ge N$. Khi đó $|b_n - b| \le a_n = |a_n| < \varepsilon$ (chú ý $a_n \ge |b_n - b| \ge 0$). ∎
+
+<GhiChu tieuDe="Câu (d) là một công cụ">
+Muốn chứng minh $(b_n) \to b$, chỉ cần chặn $|b_n - b|$ bởi một dãy đã biết tiến về $0$. Rất nhiều bài về sau làm đúng như vậy thay vì dựng $N$ từ đầu.
+</GhiChu>
+</LoiGiai>
+
+<LoiHayMac>
+Ở (a), “chứng minh” bằng Định lý Giới hạn Đại số: $\lim a_n - \lim b_n = \lim(a_n - b_n) = 0$. Định lý chỉ đi theo chiều: *các* giới hạn tồn tại ⇒ giới hạn của hiệu bằng hiệu các giới hạn. Nó không cho phép tách $\lim(a_n - b_n)$ khi chưa biết $\lim a_n$, $\lim b_n$ tồn tại.
+</LoiHayMac>

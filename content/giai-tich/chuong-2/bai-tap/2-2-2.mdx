@@ -1,0 +1,64 @@
+---
+so: "2.2.2"
+muc: "2.2"
+do_kho: de
+nen_lam: true
+tieu_de: "Ba chứng minh ε–N cơ bản"
+can_dung: ["dinh-nghia-2.2.3", "dinh-ly-1.4.2"]
+---
+
+<De>
+Dùng định nghĩa hội tụ, chứng minh:
+
+(a) $\displaystyle\lim \frac{2n+1}{5n+4} = \frac25$
+
+(b) $\displaystyle\lim \frac{2n^2}{n^3+3} = 0$
+
+(c) $\displaystyle\lim \frac{\sin(n^2)}{\sqrt[3]{n}} = 0$
+</De>
+
+<GoiY so={1}>
+Theo khuôn mẫu bốn bước. Ở nháp: rút gọn $|a_n - a|$ về một phân số đơn giản, rồi **làm lớn** nó thành một biểu thức dễ giải hơn, kiểu $\frac{C}{n}$. Không cần tìm $N$ nhỏ nhất — chỉ cần một $N$ dùng được.
+</GoiY>
+
+<GoiY so={2}>
+(a) $\left|\frac{2n+1}{5n+4} - \frac25\right| = \frac{3}{5(5n+4)} < \frac{3}{25n}$.
+(b) Bỏ số $3$ ở mẫu làm phân số lớn lên: $\frac{2n^2}{n^3+3} < \frac{2n^2}{n^3} = \frac2n$.
+(c) $|\sin(n^2)| \le 1$ nên $\left|\frac{\sin(n^2)}{\sqrt[3]{n}}\right| \le \frac{1}{\sqrt[3]{n}}$.
+</GoiY>
+
+<LoiGiai>
+**(a)** *Nháp:*
+
+$$
+\left|\frac{2n+1}{5n+4} - \frac25\right| = \left|\frac{5(2n+1) - 2(5n+4)}{5(5n+4)}\right| = \frac{3}{25n + 20} < \frac{3}{25n}.
+$$
+
+Muốn $\frac{3}{25n} < \varepsilon$ thì cần $n > \frac{3}{25\varepsilon}$.
+
+*Chứng minh:* Cho $\varepsilon > 0$. Theo tính chất Archimedes chọn $N \in \mathbf{N}$ với $N > \frac{3}{25\varepsilon}$. Với $n \ge N$:
+
+$$
+\left|\frac{2n+1}{5n+4} - \frac25\right| = \frac{3}{25n+20} < \frac{3}{25n} \le \frac{3}{25N} < \varepsilon.
+$$
+
+**(b)** *Nháp:* $\left|\frac{2n^2}{n^3+3} - 0\right| = \frac{2n^2}{n^3+3} < \frac{2n^2}{n^3} = \frac2n$, nên cần $n > \frac2\varepsilon$.
+
+*Chứng minh:* Cho $\varepsilon > 0$, chọn $N > \frac2\varepsilon$. Với $n \ge N$: $\frac{2n^2}{n^3 + 3} < \frac2n \le \frac2N < \varepsilon$.
+
+**(c)** *Nháp:* $\left|\frac{\sin(n^2)}{\sqrt[3]{n}}\right| \le \frac{1}{\sqrt[3]{n}}$, và $\frac{1}{\sqrt[3]{n}} < \varepsilon \iff n > \frac{1}{\varepsilon^3}$.
+
+*Chứng minh:* Cho $\varepsilon > 0$, chọn $N > \frac{1}{\varepsilon^3}$. Với $n \ge N$: $\sqrt[3]{n} > \frac1\varepsilon$, nên
+
+$$
+\left|\frac{\sin(n^2)}{\sqrt[3]{n}} - 0\right| \le \frac{1}{\sqrt[3]{n}} < \varepsilon. \qquad ∎
+$$
+
+<GhiChu tieuDe="Kiểm tra bằng số">
+Ở (a) với $\varepsilon = 0{,}01$: $N > 12$, lấy $N = 13$. $a_{13} = \frac{27}{69} \approx 0{,}3913$, cách $0{,}4$ khoảng $0{,}0087 < 0{,}01$ ✓.
+</GhiChu>
+</LoiGiai>
+
+<LoiHayMac>
+Cố tìm $N$ *chính xác* bằng cách giải $\frac{3}{25n + 20} < \varepsilon$ đến cùng, rồi viết $N = \frac{3 - 20\varepsilon}{25\varepsilon}$ — biểu thức này có thể âm hoặc không phải số tự nhiên. Làm lớn phân số trước ($\frac{3}{25n+20} < \frac{3}{25n}$) cho một $N$ gọn và luôn đúng; định nghĩa chỉ đòi *tồn tại* $N$, không đòi $N$ nhỏ nhất.
+</LoiHayMac>

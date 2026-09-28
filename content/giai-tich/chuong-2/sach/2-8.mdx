@@ -1,0 +1,47 @@
+---
+mon: giai-tich
+chuong: 2
+muc: "2.8"
+tieu_de: Tổng kép và tích của chuỗi
+tieu_de_en: Double Summations and Products of Infinite Series
+loai: theo-sach
+nguon: "Theo cấu trúc §2.8 của Stephen Abbott, Understanding Analysis, 2nd ed., Springer, 2015. Phát biểu được diễn đạt lại bằng tiếng Việt, dàn ý và bình luận tự viết — không phải bản dịch nguyên văn."
+---
+
+Mục này **đọc hiểu là đủ**. Nó trả lời nghịch lý thứ hai ở <XemMuc muc="2.1" />: cộng một bảng số vô hạn theo hàng hay theo cột cho hai kết quả khác nhau.
+
+## Ba cách hiểu một tổng kép
+
+Cho bảng số $\{a_{ij} : i, j \in \mathbf{N}\}$. Có ít nhất ba cách hợp lý để định nghĩa $\sum_{i,j} a_{ij}$:
+
+1. **Cộng theo hàng trước:** $\displaystyle\sum_{i=1}^{\infty} \sum_{j=1}^{\infty} a_{ij}$ — với mỗi $i$ cố định, cộng hết hàng $i$, rồi cộng các kết quả.
+2. **Cộng theo cột trước:** $\displaystyle\sum_{j=1}^{\infty} \sum_{i=1}^{\infty} a_{ij}$.
+3. **Cộng theo hình vuông:** đặt $s_{mn} = \sum_{i=1}^{m} \sum_{j=1}^{n} a_{ij}$ (tổng hữu hạn nên thứ tự không quan trọng), rồi lấy giới hạn của dãy $s_{nn}$ — tổng trên các hình vuông $n \times n$ ngày càng lớn.
+
+Hai cách đầu gọi là **tổng lặp**. Với bảng số ở §2.1, cách 1 cho $0$ còn cách 2 cho $-2$ (cách 3 cho gì? — sách để bạn tự tính ở Bài tập 2.8.1).
+
+## Hội tụ tuyệt đối lại là lời giải
+
+Vấn đề tổng kép giống hệt vấn đề sắp xếp lại ở §2.7: cả hai đều hỏi phép cộng vô hạn có *giao hoán* không. Và lời giải cũng như nhau.
+
+<DinhLy so="2.8.1" ten="Đổi thứ tự lấy tổng">
+Cho bảng số thực $\{a_{ij} : i, j \in \mathbf{N}\}$. Nếu
+
+$$
+\sum_{i=1}^{\infty} \sum_{j=1}^{\infty} |a_{ij}|
+$$
+
+hội tụ, thì cả hai tổng lặp $\sum_i \sum_j a_{ij}$ và $\sum_j \sum_i a_{ij}$ đều hội tụ, và bằng nhau. Hơn nữa, dãy $(s_{nn})$ cũng hội tụ về đúng giá trị đó.
+</DinhLy>
+
+**Ý tưởng.** Giả thiết hội tụ tuyệt đối cho phép chặn mọi “phần đuôi” của bảng — những số hạng nằm ngoài một hình vuông đủ lớn có tổng giá trị tuyệt đối nhỏ tuỳ ý. Vì vậy mọi cách cộng đều bị ép về cùng một giới hạn là $\lim s_{nn}$. Sách chia chứng minh thành chuỗi bài tập 2.8.2–2.8.5.
+
+## Tích của hai chuỗi
+
+Định lý Giới hạn Đại số cho chuỗi (Định lý 2.7.1, <XemMuc muc="2.7" />) không nói gì về **tích**. Muốn nhân $\left(\sum a_i\right)\left(\sum b_j\right)$, tự nhiên ta viết thành tổng kép $\sum_{i,j} a_i b_j$ — và lại gặp câu hỏi “cộng theo thứ tự nào”.
+
+Một cách cộng đặc biệt hữu ích là gom các tích có **cùng tổng chỉ số**: $d_k = a_1 b_{k-1} + a_2 b_{k-2} + \cdots + a_{k-1} b_1$. Chuỗi $\sum d_k$ gọi là <ThuatNgu id="cauchy-product">tích Cauchy</ThuatNgu> của hai chuỗi. Đây chính là cách nhân hai đa thức rồi gom các số hạng cùng bậc — nên nó sẽ quay lại khi nhân hai chuỗi lũy thừa ở Chương 6.
+
+<TomTat tieuDe="Cùng một bài học, lần thứ ba">
+**Hội tụ tuyệt đối** là điều kiện cho phép thao tác với tổng vô hạn như với tổng hữu hạn — đổi chỗ (sắp xếp lại), nhóm lại, đổi thứ tự lấy tổng (tổng kép), nhân hai chuỗi. Nếu $\sum a_i = A$ và $\sum b_j = B$ đều hội tụ tuyệt đối thì tích Cauchy hội tụ về $AB$ (Bài tập 2.8.7). Không có hội tụ tuyệt đối, mọi phép ấy đều có thể sai.
+</TomTat>

@@ -1,0 +1,54 @@
+---
+so: "2.4.5"
+muc: "2.4"
+do_kho: vua
+nen_lam: true
+tieu_de: "Tính căn bậc hai (phương pháp Newton)"
+can_dung: ["dinh-ly-2.4.2", "dinh-ly-2.3.4"]
+---
+
+<De>
+Cho $x_1 = 2$ và $x_{n+1} = \dfrac12\left(x_n + \dfrac{2}{x_n}\right)$.
+
+(a) Chứng minh $x_n^2 \ge 2$ với mọi $n$, rồi dùng điều đó chứng minh $x_n - x_{n+1} \ge 0$. Kết luận $\lim x_n = \sqrt2$.
+
+(b) Sửa dãy $(x_n)$ để nó hội tụ về $\sqrt c$ (với $c > 0$).
+</De>
+
+<GoiY so={1}>
+Tính thử $x_2 = 1{,}5$, $x_3 \approx 1{,}416667$, $x_4 \approx 1{,}414216$ — hội tụ rất nhanh về $\sqrt2 \approx 1{,}414214$. Để chứng minh $x_{n+1}^2 \ge 2$, khai triển $x_{n+1}^2 - 2$ và cố viết nó thành một **bình phương**.
+</GoiY>
+
+<GoiY so={2}>
+$x_{n+1}^2 - 2 = \left(\frac{x_n}{2} + \frac{1}{x_n}\right)^2 - 2 = \left(\frac{x_n}{2} - \frac{1}{x_n}\right)^2$. Còn $x_n - x_{n+1} = \frac{x_n}{2} - \frac{1}{x_n} = \frac{x_n^2 - 2}{2x_n}$. Nhớ kiểm tra $x_n > 0$ để các phép chia có nghĩa.
+</GoiY>
+
+<LoiGiai>
+**(a) Dương.** $x_1 = 2 > 0$, và nếu $x_n > 0$ thì $x_{n+1} = \frac12\left(x_n + \frac{2}{x_n}\right) > 0$. Vậy $x_n > 0$ với mọi $n$.
+
+**$x_n^2 \ge 2$.** Với $n = 1$: $4 \ge 2$. Với $n \ge 1$,
+
+$$
+x_{n+1}^2 - 2 = \frac{x_n^2}{4} + 1 + \frac{1}{x_n^2} - 2 = \left(\frac{x_n}{2} - \frac{1}{x_n}\right)^2 \ge 0.
+$$
+
+**Giảm.** $x_n - x_{n+1} = x_n - \frac{x_n}{2} - \frac{1}{x_n} = \frac{x_n^2 - 2}{2x_n} \ge 0$, vì tử $\ge 0$ và mẫu $> 0$.
+
+**Giới hạn.** Dãy giảm và bị chặn dưới (bởi $0$), nên theo Định lý Hội tụ Đơn điệu có $L = \lim x_n$. Từ $x_n^2 \ge 2$ và $x_n > 0$, Định lý Giới hạn Thứ tự (cùng Định lý Giới hạn Đại số cho $x_n^2 \to L^2$) cho $L^2 \ge 2$ và $L \ge 0$, nên $L \ge \sqrt2 > 0$. Lấy giới hạn hai vế (hợp lệ vì $L \ne 0$):
+
+$$
+L = \frac12\left(L + \frac2L\right) \iff 2L^2 = L^2 + 2 \iff L^2 = 2.
+$$
+
+Vì $L > 0$, $\lim x_n = \sqrt2$. ∎
+
+**(b)** Đặt $x_1 > 0$ tuỳ ý (chẳng hạn $x_1 = c + 1$) và $x_{n+1} = \frac12\left(x_n + \frac{c}{x_n}\right)$. Lập luận y hệt: $x_{n+1}^2 - c = \left(\frac{x_n}{2} - \frac{c}{2x_n}\right)^2 \ge 0$, nên từ $n \ge 2$ dãy giảm, bị chặn dưới bởi $0$, và giới hạn thoả $L^2 = c$, tức $L = \sqrt c$.
+
+<GhiChu tieuDe="Vì sao hội tụ nhanh đến thế">
+Đây là phương pháp Newton cho phương trình $x^2 = c$. Mỗi bước, số chữ số đúng gần như tăng gấp đôi — máy tính bỏ túi tính căn bậc hai theo đúng cách này.
+</GhiChu>
+</LoiGiai>
+
+<LoiHayMac>
+Kết luận “$L^2 = 2$ nên $L = \sqrt2$” mà không loại $L = -\sqrt2$. Phải dùng $x_n > 0$ (và Định lý Giới hạn Thứ tự) để biết $L \ge 0$. Cũng cần $L \ne 0$ trước khi lấy giới hạn của $\frac{2}{x_n}$.
+</LoiHayMac>

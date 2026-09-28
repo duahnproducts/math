@@ -1,0 +1,33 @@
+---
+// Chương 2, Bài 3 — Dãy tăng dưới trần nhà: y₁ = 1, yₙ₊₁ = (yₙ + 2)/2 → 2.
+// Leo mãi mà không vượt trần thì phải dừng ở một độ cao — chính là sup.
+const bac: number[] = [1];
+while (bac.length < 8) bac.push((bac[bac.length - 1] + 2) / 2);
+const y = (v: number) => 196 - v * 56;
+const x = (i: number) => 64 + i * 44;
+---
+
+<figure class="hinh" aria-labelledby="hinh-cau-thang-cap">
+  <svg viewBox="0 0 480 230" width="480" role="img" aria-label="Tám bậc thang cao dần, tiến sát vạch 2 nằm dưới trần nhà 3">
+    <line x1="40" y1={y(3)} x2="420" y2={y(3)} class="net-mo" stroke-width="1.5" stroke-dasharray="5 4"></line>
+    <text x="428" y={y(3) + 4} class="chu-mo">trần 3</text>
+    <line x1="40" y1={y(2)} x2="420" y2={y(2)} class="nhan-manh" stroke-width="2"></line>
+    <text x="428" y={y(2) + 4} class="chu-nhan">sup = 2</text>
+    {
+      bac.map((v, i) => (
+        <g>
+          <rect x={x(i)} y={y(v)} width="28" height={y(0) - y(v)} rx="3" class="to-nhan-nhat" />
+          <rect x={x(i)} y={y(v)} width="28" height="5" rx="2" class="to-nhan" />
+          <text x={x(i) + 14} y={y(0) + 18} text-anchor="middle" class="chu-mo">
+            y{'₁₂₃₄₅₆₇₈'[i]}
+          </text>
+        </g>
+      ))
+    }
+    <line x1="40" y1={y(0)} x2="420" y2={y(0)} class="net" stroke-width="1.5"></line>
+  </svg>
+  <figcaption id="hinh-cau-thang-cap">
+    Mỗi bậc cao hơn bậc trước (dãy tăng) và không bậc nào chạm trần 3 (bị chặn). Các bậc buộc phải dồn về một độ cao —
+    đó là sup của chúng, ở đây bằng 2, thấp hơn cả cái trần ta biết lúc đầu.
+  </figcaption>
+</figure>

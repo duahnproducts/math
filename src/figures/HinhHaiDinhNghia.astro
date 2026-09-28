@@ -1,0 +1,40 @@
+---
+// Chương 2, Bài 5 — Hội tụ so với đích; Cauchy so các số hạng với nhau.
+// Dãy xₙ = 1 + (−1)ⁿ·0,8/n, mốc N = 6.
+const cacN = Array.from({ length: 16 }, (_, i) => i + 1);
+const xn = (n: number) => 1 + ((n % 2 === 0 ? 1 : -1) * 0.8) / n;
+const N = 6;
+const sau = cacN.filter((n) => n >= N).map(xn);
+const thapNhat = Math.min(...sau);
+const caoNhat = Math.max(...sau);
+const y = (v: number) => 190 - (v - 0.15) * 110;
+const cot = (goc: number, n: number) => goc + 18 + (n - 1) * 12.6;
+const epsilon = 0.15;
+---
+
+<figure class="hinh" aria-labelledby="hinh-hai-dinh-nghia-cap">
+  <svg viewBox="0 0 520 240" width="520" role="img" aria-label="Hai khung: bên trái dải quanh đích 1, bên phải dải bao các số hạng mà không vẽ đích">
+    <text x="130" y="18" text-anchor="middle" class="chu-nhan">Hội tụ: so với đích a</text>
+    <text x="390" y="18" text-anchor="middle" class="chu-nhan">Cauchy: so với nhau</text>
+    <rect x="10" y="28" width="240" height="190" rx="8" fill="none" class="net-mo" stroke-width="1"></rect>
+    <rect x="270" y="28" width="240" height="190" rx="8" fill="none" class="net-mo" stroke-width="1"></rect>
+
+    <rect x={cot(10, N) - 7} y={y(1 + epsilon)} width={cot(10, 16) - cot(10, N) + 14} height={y(1 - epsilon) - y(1 + epsilon)} class="to-nhan-nhat"></rect>
+    <line x1="18" y1={y(1)} x2="244" y2={y(1)} class="nhan-manh" stroke-width="1.5"></line>
+    <text x="22" y={y(1) - 6} class="chu-nhan">a = 1</text>
+    {cacN.map((n) => <circle cx={cot(10, n)} cy={y(xn(n))} r="3" class={n >= N ? 'ok' : 'diem-mo'} />)}
+
+    <rect x={cot(270, N) - 7} y={y(caoNhat) - 4} width={cot(270, 16) - cot(270, N) + 14} height={y(thapNhat) - y(caoNhat) + 8} class="to-nhan-nhat"></rect>
+    {cacN.map((n) => <circle cx={cot(270, n)} cy={y(xn(n))} r="3" class={n >= N ? 'ok' : 'diem-mo'} />)}
+    <line x1={cot(270, 7)} y1={y(xn(7))} x2={cot(270, 12)} y2={y(xn(12))} class="cam" stroke-width="1.5" stroke-dasharray="3 3"></line>
+    <line x1={cot(270, 9)} y1={y(xn(9))} x2={cot(270, 14)} y2={y(xn(14))} class="cam" stroke-width="1.5" stroke-dasharray="3 3"></line>
+    <text x="390" y="208" text-anchor="middle" class="chu-mo">không cần biết đích ở đâu</text>
+
+    <text x={cot(10, N)} y="232" text-anchor="middle" class="chu-mo">N</text>
+    <text x={cot(270, N)} y="232" text-anchor="middle" class="chu-mo">N</text>
+  </svg>
+  <figcaption id="hinh-hai-dinh-nghia-cap">
+    Bên trái: từ mốc N, mọi số hạng cách <b>đích a</b> dưới ε. Bên phải: từ mốc N, <b>hai số hạng bất kỳ</b> cách nhau dưới
+    ε (các nét cam) — định nghĩa này không nhắc đến đích.
+  </figcaption>
+</figure>

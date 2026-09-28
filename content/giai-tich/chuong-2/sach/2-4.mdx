@@ -1,0 +1,107 @@
+---
+mon: giai-tich
+chuong: 2
+muc: "2.4"
+tieu_de: Định lý Hội tụ Đơn điệu và chuỗi vô hạn
+tieu_de_en: The Monotone Convergence Theorem and a First Look at Infinite Series
+loai: theo-sach
+nguon: "Theo cấu trúc §2.4 của Stephen Abbott, Understanding Analysis, 2nd ed., Springer, 2015. Phát biểu được diễn đạt lại bằng tiếng Việt, dàn ý và bình luận tự viết — không phải bản dịch nguyên văn."
+---
+
+## Định lý Hội tụ Đơn điệu
+
+<DinhNghia so="2.4.1" ten="Dãy đơn điệu">
+Dãy $(a_n)$ **tăng** nếu $a_n \le a_{n+1}$ với mọi $n \in \mathbf{N}$, và **giảm** nếu $a_n \ge a_{n+1}$ với mọi $n \in \mathbf{N}$. Dãy **đơn điệu** nếu nó tăng hoặc giảm.
+</DinhNghia>
+
+<DinhLy so="2.4.2" ten="Định lý Hội tụ Đơn điệu">
+Dãy đơn điệu và bị chặn thì hội tụ.
+</DinhLy>
+
+**Dàn ý (trường hợp tăng).** Vấn đề cốt lõi: định nghĩa hội tụ đòi một *ứng viên* cho giới hạn, mà ta không có. Giải pháp — như mọi lần ở Chương 1 — là dùng supremum để **sản xuất** ứng viên.
+
+1. Tập $\{a_n : n \in \mathbf{N}\}$ khác rỗng, bị chặn trên; theo Tiên đề Đầy đủ có $s = \sup\{a_n : n \in \mathbf{N}\}$.
+2. Cho $\varepsilon > 0$. Vì $s$ là chặn trên *nhỏ nhất*, $s - \varepsilon$ không là chặn trên (Bổ đề 1.3.8, <XemMuc muc="1.3" />): có $N$ với $a_N > s - \varepsilon$.
+3. Vì dãy tăng, mọi $n \ge N$ đều có $a_n \ge a_N > s - \varepsilon$.
+4. Vì $s$ là chặn trên, $a_n \le s < s + \varepsilon$.
+5. Kết hợp: $s - \varepsilon < a_n < s + \varepsilon$, tức $|a_n - s| < \varepsilon$. Vậy $\lim a_n = s$. ∎
+
+<TomTat tieuDe="Định lý hữu dụng nhất của Chương 2">
+Nó cho phép khẳng định một dãy hội tụ **mà không cần biết giới hạn là gì**. Với chuỗi số dương, điều kiện “tăng” là tự động, nên mọi việc quy về “có bị chặn hay không”.
+
+Chú ý bước 3 — đó là chỗ *duy nhất* dùng giả thiết đơn điệu.
+</TomTat>
+
+**Mẹo làm bài đệ quy.** Với dãy $x_{n+1} = f(x_n)$, quy trình chuẩn ba bước: (1) quy nạp chứng minh dãy bị chặn; (2) quy nạp chứng minh dãy đơn điệu; (3) Định lý Hội tụ Đơn điệu cho $L = \lim x_n$ tồn tại, khi đó mới lấy giới hạn hai vế của hệ thức đệ quy để giải ra $L$.
+
+<Loi tieuDe="Bẫy kinh điển">
+Với $y_1 = 1$, $y_{n+1} = 3 - y_n$: vội “đặt $y = \lim y_n$, lấy giới hạn hai vế được $y = 3 - y$, suy ra $y = \frac32$” là *sai hoàn toàn*. Dãy này là $1, 2, 1, 2, \ldots$ — phân kỳ. Lấy giới hạn hai vế chỉ hợp lệ **sau khi** đã biết giới hạn tồn tại (<XemMuc bai-tap="2.4.2" chu="Bài tập 2.4.2" />).
+</Loi>
+
+## Chuỗi vô hạn: định nghĩa
+
+<DinhNghia so="2.4.3" ten="Hội tụ của chuỗi">
+Cho dãy $(b_n)$. **Chuỗi vô hạn** là biểu thức hình thức $\sum_{n=1}^{\infty} b_n = b_1 + b_2 + b_3 + \cdots$ Dãy **tổng riêng** $(s_m)$ được định nghĩa bởi
+
+$$
+s_m = b_1 + b_2 + \cdots + b_m.
+$$
+
+Chuỗi **hội tụ về $B$** nếu dãy $(s_m)$ hội tụ về $B$; khi đó viết $\sum_{n=1}^{\infty} b_n = B$.
+</DinhNghia>
+
+<GhiChu tieuDe="Bắt buộc phân biệt">
+Dãy *số hạng* $(b_1, b_2, b_3, \ldots)$ và dãy *tổng riêng* $(s_1, s_2, s_3, \ldots)$. Mọi câu hỏi về sự hội tụ của chuỗi là câu hỏi về dãy **thứ hai**. Nhầm hai dãy này là nguồn gốc phần lớn lỗi sai ở §2.7.
+</GhiChu>
+
+## Hai ví dụ nền tảng
+
+<ViDu so="2.4.4" ten="Chuỗi Σ 1/n² hội tụ">
+Các số hạng dương nên $(s_m)$ tăng; chỉ cần chặn trên. Với $k \ge 2$, $\frac{1}{k^2} < \frac{1}{k(k-1)} = \frac{1}{k-1} - \frac1k$, và tổng lồng nhau cho
+
+$$
+s_m < 1 + \left(1 - \frac12\right) + \left(\frac12 - \frac13\right) + \cdots + \left(\frac{1}{m-1} - \frac1m\right) = 2 - \frac1m < 2.
+$$
+
+Theo Định lý Hội tụ Đơn điệu, chuỗi hội tụ về một số không vượt quá $2$. (Giá trị chính xác là $\frac{\pi^2}{6}$, nhưng việc đó phải chờ đến các chương sau.)
+</ViDu>
+
+<ViDu so="2.4.5" ten="Chuỗi điều hòa Σ 1/n phân kỳ">
+Nhóm các số hạng theo lũy thừa của $2$:
+
+$$
+s_{2^k} = 1 + \frac12 + \left(\frac13 + \frac14\right) + \left(\frac15 + \cdots + \frac18\right) + \cdots + \left(\frac{1}{2^{k-1} + 1} + \cdots + \frac{1}{2^k}\right) \ge 1 + k \cdot \frac12,
+$$
+
+vì nhóm thứ $j$ có $2^{j-1}$ số hạng, mỗi số hạng $\ge \frac{1}{2^j}$, nên tổng mỗi nhóm $\ge \frac12$. Vế phải không bị chặn, nên $(s_m)$ không bị chặn, do đó phân kỳ (dãy hội tụ phải bị chặn — Định lý 2.3.2).
+</ViDu>
+
+<TomTat tieuDe="Hai ví dụ phải nhớ suốt đời">
+“Số hạng tiến về $0$” *không đủ* để chuỗi hội tụ — cả $\frac1n$ và $\frac{1}{n^2}$ đều có số hạng tiến về $0$, nhưng chỉ một chuỗi hội tụ. **Tốc độ** tiến về $0$ mới là điều quyết định.
+</TomTat>
+
+## Tiêu chuẩn cô đặc Cauchy
+
+<DinhLy so="2.4.6" ten="Tiêu chuẩn cô đặc Cauchy">
+Giả sử $(b_n)$ giảm và $b_n \ge 0$ với mọi $n \in \mathbf{N}$. Khi đó $\sum_{n=1}^{\infty} b_n$ hội tụ khi và chỉ khi chuỗi “cô đặc”
+
+$$
+\sum_{n=0}^{\infty} 2^n b_{2^n} = b_1 + 2b_2 + 4b_4 + 8b_8 + 16 b_{16} + \cdots
+$$
+
+hội tụ.
+</DinhLy>
+
+**Dàn ý.** Chính là kỹ thuật nhóm của Ví dụ 2.4.5, viết dưới dạng tổng quát. Vì $(b_n)$ giảm, mỗi khối $b_{2^k} + \cdots + b_{2^{k+1} - 1}$ (gồm $2^k$ số hạng) bị kẹp giữa $2^k b_{2^{k+1}}$ và $2^k b_{2^k}$. So sánh tổng riêng hai chuỗi rồi dùng Định lý Hội tụ Đơn điệu. Chiều “chuỗi cô đặc phân kỳ ⇒ chuỗi gốc phân kỳ” là <XemMuc bai-tap="2.4.9" chu="Bài tập 2.4.9" />.
+
+<HeQua so="2.4.7" ten="Chuỗi p">
+Chuỗi $\sum_{n=1}^{\infty} \frac{1}{n^p}$ hội tụ khi và chỉ khi $p > 1$.
+</HeQua>
+
+**Ý tưởng.** Chuỗi cô đặc là $\sum 2^n \cdot 2^{-np} = \sum \left(2^{1-p}\right)^n$ — một chuỗi hình học, hội tụ khi và chỉ khi $2^{1-p} < 1$, tức $p > 1$. Lập luận chặt cần các sự thật về chuỗi hình học ở §2.7 (<XemMuc muc="2.7" />).
+
+<TomTat tieuDe="Hệ quả này là thước đo của bạn">
+Hầu hết bài tập về hội tụ chuỗi được giải bằng cách so sánh với một chuỗi $p$ hoặc một chuỗi hình học. Hãy thuộc: $\sum \frac1n$ phân kỳ, $\sum \frac{1}{n^{1{,}001}}$ hội tụ, $\sum \frac{1}{n \ln n}$ phân kỳ (thử bằng tiêu chuẩn cô đặc!).
+</TomTat>
+
+Học dễ hiểu hơn: Định lý Hội tụ Đơn điệu ở <XemMuc bai={3} />, chuỗi ở <XemMuc bai={6} />.

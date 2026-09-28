@@ -1,0 +1,99 @@
+---
+mon: giai-tich
+chuong: 2
+muc: "2.3"
+tieu_de: Định lý Giới hạn Đại số và Thứ tự
+tieu_de_en: The Algebraic and Order Limit Theorems
+loai: theo-sach
+nguon: "Theo cấu trúc §2.3 của Stephen Abbott, Understanding Analysis, 2nd ed., Springer, 2015. Phát biểu được diễn đạt lại bằng tiếng Việt, dàn ý và bình luận tự viết — không phải bản dịch nguyên văn."
+---
+
+Định nghĩa hội tụ chỉ là điểm xuất phát. Mục này chứng minh những quy tắc quen thuộc để *tính* giới hạn — và phát hiện một ngoại lệ quan trọng.
+
+## Dãy hội tụ thì bị chặn
+
+<DinhNghia so="2.3.1" ten="Dãy bị chặn">
+Dãy $(x_n)$ **bị chặn** nếu tồn tại $M > 0$ sao cho $|x_n| \le M$ với mọi $n \in \mathbf{N}$.
+</DinhNghia>
+
+Hình học: có một đoạn $[-M, M]$ chứa mọi số hạng của dãy.
+
+<DinhLy so="2.3.2" ten="Hội tụ thì bị chặn">
+Mọi dãy hội tụ đều bị chặn.
+</DinhLy>
+
+**Dàn ý — khuôn mẫu “đuôi + đầu hữu hạn”.** Giả sử $(x_n) \to l$. Chọn *một* giá trị cụ thể $\varepsilon = 1$: có $N$ sao cho $n \ge N$ kéo theo $x_n \in (l - 1, l + 1)$, do đó $|x_n| < |l| + 1$. Phần **đuôi** đã bị chặn. Còn lại $N - 1$ số hạng đầu — hữu hạn, nên có số lớn nhất. Đặt
+
+$$
+M = \max\{|x_1|, |x_2|, \ldots, |x_{N-1}|,\ |l| + 1\}. \qquad ∎
+$$
+
+<GhiChu tieuDe="Nhận diện khuôn mẫu">
+Rất nhiều chứng minh trong chương có cấu trúc này: dùng định nghĩa hội tụ để xử lý phần đuôi vô hạn, rồi xử lý riêng phần đầu hữu hạn bằng max/min. Nó quay lại gần như nguyên xi ở Bổ đề 2.6.3 (<XemMuc muc="2.6" />).
+
+Chiều ngược lại *sai*: $\left((-1)^n\right)$ bị chặn nhưng phân kỳ.
+</GhiChu>
+
+## Định lý Giới hạn Đại số
+
+<DinhLy so="2.3.3" ten="Định lý Giới hạn Đại số">
+Giả sử $\lim a_n = a$ và $\lim b_n = b$. Khi đó
+
+(i) $\lim(c a_n) = ca$ với mọi $c \in \mathbf{R}$;
+
+(ii) $\lim(a_n + b_n) = a + b$;
+
+(iii) $\lim(a_n b_n) = ab$;
+
+(iv) $\lim(a_n / b_n) = a / b$, với điều kiện $b \ne 0$.
+</DinhLy>
+
+**Chiến lược chung.** Ta muốn khống chế $\big|(\text{số hạng}) - (\text{giới hạn đề xuất})\big|$, và công cụ duy nhất trong tay là: $|a_n - a|$ và $|b_n - b|$ nhỏ được tuỳ ý. Nên mọi chứng minh là bài toán **biến đổi đại số** để biểu thức cần khống chế hiện ra dưới dạng tổ hợp của $|a_n - a|$ và $|b_n - b|$.
+
+**(i)** $|c a_n - ca| = |c|\,|a_n - a|$. Chọn $N$ sao cho $|a_n - a| < \frac{\varepsilon}{|c|}$ (trường hợp $c = 0$ tầm thường).
+
+**(ii)** Bất đẳng thức tam giác: $|(a_n + b_n) - (a + b)| \le |a_n - a| + |b_n - b|$. Chia $\varepsilon$ làm đôi, lấy $N = \max\{N_1, N_2\}$.
+
+**(iii)** Thủ thuật *cộng thêm rồi trừ đi*:
+
+$$
+|a_n b_n - ab| = |a_n b_n - a b_n + a b_n - ab| \le |b_n|\,|a_n - a| + |a|\,|b_n - b|.
+$$
+
+$|b_n|$ là đại lượng thay đổi; nhưng $(b_n)$ hội tụ nên bị chặn (Định lý 2.3.2), tức $|b_n| \le M$. Thay bằng ước lượng xấu nhất $M$, rồi làm mỗi mảnh nhỏ hơn $\frac\varepsilon2$. (Trường hợp $a = 0$ cần chút cẩn thận; sách xử lý ở Bài tập 2.3.9 — <XemMuc bai-tap="2.3.9" chu="xem ở đây" />.)
+
+**(iv)** Nhờ (iii), chỉ cần chứng minh $(b_n) \to b \ne 0$ kéo theo $\left(\frac{1}{b_n}\right) \to \frac1b$. Ta có $\left|\frac{1}{b_n} - \frac1b\right| = \frac{|b - b_n|}{|b|\,|b_n|}$. Tử số làm nhỏ được; mẫu chứa $|b_n|$ nên cần **chặn dưới**: chọn $\varepsilon_0 = \frac{|b|}{2}$, có $N_1$ với $|b_n| > \frac{|b|}{2}$ khi $n \ge N_1$. Khi đó $\frac{1}{|b|\,|b_n|} < \frac{2}{|b|^2}$ và mọi thứ được khống chế.
+
+<TomTat tieuDe="Ba thủ thuật cần thuộc lòng từ §2.3">
+1. **Cộng thêm – trừ đi** để tạo cơ hội dùng bất đẳng thức tam giác.
+2. **Thay đại lượng thay đổi bằng chặn xấu nhất** ($|b_n| \le M$).
+3. **Chặn dưới cho mẫu số** bằng cách chọn $\varepsilon_0 = \frac{|b|}{2}$ — “đi đủ xa vào dãy để các số hạng gần $b$ hơn là gần $0$”.
+</TomTat>
+
+## Định lý Giới hạn Thứ tự
+
+<DinhLy so="2.3.4" ten="Định lý Giới hạn Thứ tự">
+Giả sử $\lim a_n = a$ và $\lim b_n = b$.
+
+(i) Nếu $a_n \ge 0$ với mọi $n \in \mathbf{N}$ thì $a \ge 0$.
+
+(ii) Nếu $a_n \le b_n$ với mọi $n \in \mathbf{N}$ thì $a \le b$.
+
+(iii) Nếu có $c \in \mathbf{R}$ với $c \le b_n$ cho mọi $n$ thì $c \le b$. Tương tự, nếu $a_n \le c$ với mọi $n$ thì $a \le c$.
+</DinhLy>
+
+**Dàn ý (i).** Phản chứng: giả sử $a < 0$. Chọn $\varepsilon = |a|$; định nghĩa hội tụ cho $N$ với $|a_N - a| < |a|$, điều này buộc $a_N < 0$ — mâu thuẫn. ∎
+
+(ii) suy ra từ (i) áp dụng cho dãy $(b_n - a_n) \ge 0$, cùng Định lý Giới hạn Đại số. (iii) là trường hợp riêng của (ii) với một dãy hằng.
+
+<Loi tieuDe="Cảnh báo: bất đẳng thức NGHIÊM NGẶT không được bảo toàn">
+Nếu $a_n < b_n$ với mọi $n$, ta chỉ kết luận được $a \le b$, **không phải** $a < b$.
+
+Phản ví dụ: $a_n = 0$ và $b_n = \frac1n$ — có $a_n < b_n$ với mọi $n$, nhưng cả hai giới hạn đều bằng $0$. Đây là hệ quả trực tiếp của <XemMuc bai-tap="1.2.10" chu="Bài tập 1.2.10" />: lập luận $\varepsilon$ chỉ sinh ra dấu $\le$. Lỗi này xuất hiện trong bài thi mỗi kỳ.
+</Loi>
+
+<GhiChu tieuDe="Khái niệm “đuôi” và “cuối cùng”">
+Giới hạn không phụ thuộc *chút nào* vào hữu hạn số hạng đầu. Vì vậy mọi giả thiết “với mọi $n$” trong các định lý trên đều làm yếu được thành “với mọi $n \ge N_1$ nào đó” — ta nói dãy **cuối cùng** (*eventually*) có tính chất đó. Chứng minh giữ nguyên, chỉ cần chọn $N$ đủ lớn.
+</GhiChu>
+
+Học dễ hiểu hơn ở <XemMuc bai={2} />. Bài tập nên làm: <XemMuc bai-tap="2.3.1" chu="2.3.1" /> (căn bậc hai), <XemMuc bai-tap="2.3.3" chu="2.3.3" /> (Định lý kẹp), <XemMuc bai-tap="2.3.10" chu="2.3.10" /> (bốn phỏng đoán).

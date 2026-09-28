@@ -1,0 +1,73 @@
+---
+mon: giai-tich
+chuong: 2
+muc: "2.5"
+tieu_de: Dãy con và Định lý Bolzano–Weierstrass
+tieu_de_en: Subsequences and the Bolzano–Weierstrass Theorem
+loai: theo-sach
+nguon: "Theo cấu trúc §2.5 của Stephen Abbott, Understanding Analysis, 2nd ed., Springer, 2015. Phát biểu được diễn đạt lại bằng tiếng Việt, dàn ý và bình luận tự viết — không phải bản dịch nguyên văn."
+---
+
+## Dãy con
+
+<DinhNghia so="2.5.1" ten="Dãy con">
+Cho dãy $(a_n)$ và một dãy tăng ngặt các số tự nhiên $n_1 < n_2 < n_3 < n_4 < \cdots$ Dãy
+
+$$
+(a_{n_1}, a_{n_2}, a_{n_3}, a_{n_4}, \ldots)
+$$
+
+gọi là một **dãy con** của $(a_n)$, ký hiệu $(a_{n_k})$, với $k \in \mathbf{N}$ là chỉ số của dãy con.
+</DinhNghia>
+
+Hai điều kiện ngầm định rất quan trọng: **thứ tự được giữ nguyên** và **không được lặp lại** số hạng. Từ $\left(1, \frac12, \frac13, \frac14, \ldots\right)$ thì $\left(\frac12, \frac14, \frac16, \ldots\right)$ là dãy con hợp lệ; còn $\left(\frac{1}{10}, \frac15, \frac{1}{100}, \ldots\right)$ (đảo thứ tự) và $\left(1, 1, \frac13, \frac13, \ldots\right)$ (lặp) thì không.
+
+<DinhLy so="2.5.2" ten="Dãy con của dãy hội tụ">
+Mọi dãy con của một dãy hội tụ đều hội tụ về cùng giới hạn với dãy gốc.
+</DinhLy>
+
+**Dàn ý.** Giả sử $(a_n) \to a$ và cho $\varepsilon > 0$: có $N$ với $|a_n - a| < \varepsilon$ khi $n \ge N$. Vì $n_k \ge k$ với mọi $k$ (dãy chỉ số tăng ngặt trong $\mathbf{N}$), cùng $N$ đó dùng được cho dãy con: $k \ge N$ kéo theo $|a_{n_k} - a| < \varepsilon$. ∎
+
+Kết quả “không mấy bất ngờ” này có những ứng dụng khá bất ngờ. Nó là mấu chốt để hiểu khi nào tổng vô hạn có tính kết hợp (sách giao ở Bài tập 2.5.3), và còn dùng để *tính* giới hạn:
+
+<ViDu so="2.5.3" ten="lim bⁿ = 0 khi 0 < b < 1">
+Vì $b > b^2 > b^3 > \cdots > 0$, dãy $(b^n)$ giảm và bị chặn dưới; Định lý Hội tụ Đơn điệu cho $(b^n) \to l$ với $b > l \ge 0$.
+
+Dãy $(b^{2n})$ là một dãy con, nên $(b^{2n}) \to l$ theo Định lý 2.5.2. Nhưng $b^{2n} = b^n \cdot b^n$, nên theo Định lý Giới hạn Đại số, $(b^{2n}) \to l \cdot l = l^2$. Giới hạn là duy nhất (Định lý 2.2.7), nên $l^2 = l$, và vì $l < b < 1$ nên $l = 0$.
+</ViDu>
+
+<ViDu so="2.5.4" ten="Tiêu chuẩn phân kỳ">
+Định lý 2.5.2 cho những chứng minh phân kỳ rất tiết kiệm. Ở Ví dụ 2.2.8 (<XemMuc muc="2.2" />), dãy
+
+$$
+\left(1, -\frac12, \frac13, -\frac14, \frac15, -\frac15, \frac15, -\frac15, \ldots\right)
+$$
+
+có dãy con $\left(\frac15, \frac15, \frac15, \ldots\right) \to \frac15$ và một dãy con khác $\left(-\frac15, -\frac15, \ldots\right) \to -\frac15$. **Hai dãy con hội tụ về hai giới hạn khác nhau** ⇒ dãy gốc phân kỳ. Không cần phủ định lượng từ gì cả.
+</ViDu>
+
+## Định lý Bolzano–Weierstrass
+
+Ở ví dụ trên, tìm ra dãy con hội tụ khá dễ. Với dãy **bị chặn**, điều đó *luôn* làm được.
+
+<DinhLy so="2.5.5" ten="Định lý Bolzano–Weierstrass">
+Mọi dãy bị chặn đều chứa một dãy con hội tụ.
+</DinhLy>
+
+**Dàn ý — phương pháp chia đôi.**
+
+1. Vì $(a_n)$ bị chặn, có $M > 0$ với mọi số hạng nằm trong $[-M, M]$.
+2. Chia đôi $[-M, M]$ thành hai đoạn đóng $[-M, 0]$ và $[0, M]$ (điểm giữa thuộc cả hai). Ít nhất một nửa phải chứa **vô hạn** số hạng của dãy. Chọn nửa đó làm $I_1$, và chọn một số hạng $a_{n_1} \in I_1$.
+3. Chia đôi $I_1$, chọn nửa chứa vô hạn số hạng làm $I_2$, và chọn $a_{n_2} \in I_2$ với $n_2 > n_1$ — làm được *chính vì* $I_2$ chứa vô hạn số hạng.
+4. Tiếp tục mãi: được dãy đoạn đóng lồng nhau $I_1 \supseteq I_2 \supseteq \cdots$ với độ dài $I_k$ bằng $M (1/2)^{k-1} \to 0$, và một dãy con $(a_{n_k})$ với $a_{n_k} \in I_k$.
+5. Theo Tính chất đoạn lồng nhau (<XemMuc muc="1.4" />), có $x$ thuộc mọi $I_k$. Cho $\varepsilon > 0$, chọn $N$ với $M(1/2)^{N-1} < \varepsilon$. Với $k \ge N$, cả $a_{n_k}$ và $x$ cùng nằm trong $I_k$, nên $|a_{n_k} - x| \le M(1/2)^{k-1} < \varepsilon$. Vậy $(a_{n_k}) \to x$. ∎
+
+<GhiChu tieuDe="Vì sao bước 2 cần “vô hạn” chứ không chỉ “khác rỗng”?">
+Vì ở bước 3 ta cần chọn chỉ số $n_2 > n_1$. Nếu $I_2$ chỉ chứa hữu hạn số hạng, có thể tất cả chúng đều có chỉ số nhỏ hơn $n_1$, và ta không dựng được dãy con (chỉ số phải tăng ngặt). Đây là chi tiết sinh viên hay bỏ qua và người chấm luôn để ý.
+</GhiChu>
+
+<TomTat tieuDe="Phương pháp chia đôi">
+Là một trong những kỹ thuật chủ lực của giải tích; nó sẽ quay lại ở Chương 3 (tính compact) và Chương 4 (định lý giá trị trung gian). Muốn luyện thêm, sách gợi ý dùng đúng chiến lược này để chứng minh Tiên đề Đầy đủ từ Tính chất đoạn lồng nhau (Bài tập 2.5.4).
+</TomTat>
+
+Học dễ hiểu hơn ở <XemMuc bai={4} />. Bài tập: <XemMuc bai-tap="2.5.1" chu="2.5.1" /> (ví dụ và phản ví dụ), <XemMuc bai-tap="2.5.5" chu="2.5.5" /> (mọi dãy con hội tụ cùng giới hạn).

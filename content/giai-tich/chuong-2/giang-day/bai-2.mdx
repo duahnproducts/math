@@ -1,0 +1,213 @@
+---
+mon: giai-tich
+chuong: 2
+bai: 2
+tieu_de: Các quy tắc tính giới hạn
+y_tuong: Giới hạn đi qua được cộng, trừ, nhân, chia — nhưng với dấu bất đẳng thức nghiêm ngặt thì có một ngoại lệ quan trọng.
+phu_muc: ["2.3"]
+---
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+Giới hạn ứng xử **đúng như ta mong đợi** với cộng, trừ, nhân, chia — nhưng với **dấu bất đẳng thức nghiêm ngặt** thì có một ngoại lệ quan trọng.
+</YTuong>
+
+## Hình dung trực quan — hai chiếc xe
+
+Hai chiếc xe cùng chạy về hai cái đích:
+
+- Xe A tiến về cột mốc km 30.
+- Xe B tiến về cột mốc km 50.
+
+Thì *khoảng cách giữa hai xe* tiến về 20 km, còn *tổng* hai vị trí tiến về 80.
+
+Nghe hiển nhiên — và nó *đúng*. Nhưng vì giới hạn được định nghĩa bằng $\varepsilon$–$N$, mọi điều “hiển nhiên” đều **phải được chứng minh**. Và chính trong lúc chứng minh, ta học được những thủ thuật dùng đến hết sách.
+
+### Còn ngoại lệ thì trông thế nào?
+
+Dãy $b_n = \frac{1}{n}$ luôn nằm *trên* dãy $a_n = 0$. Vậy mà hai giới hạn lại *bằng nhau*:
+
+<HinhNghiemNgat />
+
+## Kiến thức cần biết — dãy bị chặn
+
+Dãy $(x_n)$ là <ThuatNgu id="bounded-sequence">dãy bị chặn</ThuatNgu> nếu có một số $M > 0$ với $|x_n| \le M$ cho **mọi** $n$. Hình dung: cả dãy nằm gọn trong đoạn $[-M, M]$.
+
+<DinhLy ten="Định lý nền">
+Mọi dãy hội tụ đều bị chặn.
+</DinhLy>
+
+**Ý tưởng chứng minh — khuôn mẫu “đuôi + đầu hữu hạn”:**
+
+1. Giả sử $(x_n) \to l$. Chọn *một* giá trị $\varepsilon$ cụ thể, ví dụ $\varepsilon = 1$.
+2. Có $N$ sao cho $n \ge N$ kéo theo $|x_n - l| < 1$, tức $|x_n| < |l| + 1$. ⇒ **Phần đuôi** (vô hạn số hạng) đã bị chặn.
+3. Còn lại $x_1, \ldots, x_{N-1}$ — *hữu hạn* số hạng, nên có số lớn nhất.
+4. Đặt $M = \max\{|x_1|, \ldots, |x_{N-1}|,\ |l| + 1\}$. Xong. ∎
+
+<GhiChu tieuDe="Ghi nhớ khuôn mẫu này">
+“Dùng định nghĩa hội tụ xử lý **đuôi vô hạn**, rồi lấy **max** cho phần đầu hữu hạn.” Nó quay lại gần như nguyên xi ở <XemMuc bai={5} />.
+
+**Chiều ngược lại SAI:** dãy $\left((-1)^n\right) = (-1, 1, -1, 1, \ldots)$ bị chặn nhưng *phân kỳ*.
+</GhiChu>
+
+## Công thức — hai định lý
+
+<DinhLy ten="Định lý Giới hạn Đại số">
+Giả sử $\lim a_n = a$ và $\lim b_n = b$. Khi đó:
+
+$$
+\lim(c\,a_n) = ca, \qquad \lim(a_n + b_n) = a + b, \qquad \lim(a_n b_n) = ab, \qquad \lim \frac{a_n}{b_n} = \frac{a}{b} \ (\text{nếu } b \ne 0).
+$$
+
+</DinhLy>
+
+**Từng thành phần:** $a_n, b_n$ là hai dãy; $a, b$ là hai đích của chúng; $c$ là một hằng số. Định lý nói: phép tính trên *đích* bằng đích của phép tính trên *dãy*. Muốn tính giới hạn của một biểu thức phức tạp, tách nó thành những mảnh đã biết giới hạn.
+
+<DinhLy ten="Định lý Giới hạn Thứ tự">
+Giả sử $\lim a_n = a$ và $\lim b_n = b$.
+
+(i) Nếu $a_n \ge 0$ với mọi $n$ thì $a \ge 0$.
+
+(ii) Nếu $a_n \le b_n$ với mọi $n$ thì $a \le b$.
+
+(iii) Nếu $c \le b_n$ với mọi $n$ thì $c \le b$ (và tương tự ở phía kia).
+</DinhLy>
+
+**Khi nào dùng:** khi biết một *bất đẳng thức giữa các số hạng* và muốn có bất đẳng thức giữa *các giới hạn*. Tên chính thức và số hiệu theo sách ở <XemMuc muc="2.3" />.
+
+## Ví dụ mẫu — bốn thủ thuật cần thuộc
+
+### Thủ thuật 1: chia ε (dùng cho tổng)
+
+Cần: $|(a_n + b_n) - (a + b)| < \varepsilon$. Bất đẳng thức tam giác cho
+
+$$
+|(a_n + b_n) - (a + b)| = |(a_n - a) + (b_n - b)| \le |a_n - a| + |b_n - b|.
+$$
+
+Làm *mỗi mảnh* nhỏ hơn $\frac{\varepsilon}{2}$: chọn $N_1$ cho mảnh đầu, $N_2$ cho mảnh sau, rồi lấy $N = \max\{N_1, N_2\}$ để *cả hai* cùng có hiệu lực.
+
+### Thủ thuật 2: cộng thêm – trừ đi (dùng cho tích)
+
+$|a_n b_n - ab|$ không tách ra được ngay. **Mẹo:** chèn số hạng trung gian $a b_n$ — cộng vào rồi trừ đi:
+
+$$
+|a_n b_n - ab| = |a_n b_n - a b_n + a b_n - ab| \le |b_n|\,|a_n - a| + |a|\,|b_n - b|.
+$$
+
+**Vấn đề mới:** $|b_n|$ là đại lượng *thay đổi*, không khống chế trực tiếp được.
+
+### Thủ thuật 3: thay đại lượng thay đổi bằng chặn xấu nhất
+
+$(b_n)$ hội tụ ⇒ $(b_n)$ bị chặn (định lý nền ở trên!) ⇒ $|b_n| \le M$. Giờ cả hai hệ số $M$ và $|a|$ đều là *hằng số*.
+
+### Thủ thuật 4: chặn DƯỚI cho mẫu số (dùng cho thương)
+
+$\left|\frac{1}{b_n} - \frac{1}{b}\right| = \frac{|b - b_n|}{|b|\,|b_n|}$. Tử số làm nhỏ được, nhưng mẫu chứa $|b_n|$ — nếu $|b_n|$ gần $0$ thì phân số nổ tung.
+
+**Cách xử lý:** chọn $\varepsilon_0 = \frac{|b|}{2}$. Vì $(b_n) \to b \ne 0$, từ một lúc nào đó $|b_n| > \frac{|b|}{2}$ — các số hạng đã “gần $b$ hơn là gần $0$”. Khi đó $\frac{1}{|b|\,|b_n|} < \frac{2}{|b|^2}$, một hằng số.
+
+### Ghép lại — chứng minh $\lim(a_n b_n) = ab$ từng bước
+
+#### Bước 1 — Đề cho gì?
+
+$\lim a_n = a$ và $\lim b_n = b$.
+
+#### Bước 2 — Đề hỏi gì?
+
+Chứng minh $\lim(a_n b_n) = ab$: cho $\varepsilon > 0$, tìm $N$ để $n \ge N$ kéo theo $|a_n b_n - ab| < \varepsilon$.
+
+#### Bước 3 — Dùng gì, vì sao?
+
+Thủ thuật 2 để tách thành hai mảnh; thủ thuật 3 để hệ số thành hằng số; thủ thuật 1 để mỗi mảnh nhỏ hơn $\frac{\varepsilon}{2}$.
+
+#### Bước 4 — Giải
+
+Cho $\varepsilon > 0$. Vì $(b_n)$ hội tụ nên bị chặn: có $M > 0$ với $|b_n| \le M$ cho mọi $n$.
+
+- Chọn $N_1$ sao cho $n \ge N_1$ kéo theo $|a_n - a| < \frac{\varepsilon}{2M}$.
+- Chọn $N_2$ sao cho $n \ge N_2$ kéo theo $|b_n - b| < \frac{\varepsilon}{2(|a| + 1)}$. (Dùng $|a| + 1$ thay cho $|a|$ để khỏi chia cho $0$ khi $a = 0$.)
+
+Với $n \ge N = \max\{N_1, N_2\}$:
+
+$$
+|a_n b_n - ab| \le |b_n|\,|a_n - a| + |a|\,|b_n - b| < M \cdot \frac{\varepsilon}{2M} + |a| \cdot \frac{\varepsilon}{2(|a| + 1)} < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon. \qquad ∎
+$$
+
+#### Bước 5 — Kiểm tra
+
+Mỗi $N_i$ chỉ phụ thuộc $\varepsilon$ (và các hằng số $M$, $a$) — không có chữ $n$ ✓. Hai điều kiện cùng có hiệu lực vì $n \ge \max\{N_1, N_2\}$ ✓.
+
+#### Bước 6 — Tóm tắt cách làm
+
+<TomTat>
+Muốn khống chế $|\text{số hạng} - \text{giới hạn}|$: biến đổi đại số cho nó hiện ra dưới dạng tổ hợp của $|a_n - a|$ và $|b_n - b|$ → hệ số nào thay đổi thì thay bằng chặn xấu nhất → chia $\varepsilon$ cho các mảnh → lấy $N$ là max.
+</TomTat>
+
+<Loi tieuDe="Cảnh báo lớn nhất của bài: dấu < không đi qua giới hạn">
+Nếu $a_n < b_n$ với *mọi* $n$, ta chỉ kết luận được $\lim a_n \le \lim b_n$ — **không phải** $<$.
+
+**Phản ví dụ phải nhớ:** $a_n = 0$ và $b_n = \frac1n$. Rõ ràng $0 < \frac1n$ với mọi $n$, nhưng cả hai giới hạn đều bằng $0$ (hình ở mục 2).
+
+*Vì sao?* Vì lập luận $\varepsilon$ chỉ sinh ra dấu $\le$ — đúng như <XemMuc bai-tap="1.2.10" chu="Bài tập 1.2.10 của Chương 1" /> đã cảnh báo.
+</Loi>
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Lỗi 1: Bảo toàn dấu < qua giới hạn">
+Xem hộp cảnh báo ở trên. Lỗi này xuất hiện trong bài thi mỗi kỳ.
+</Loi>
+
+<Loi tieuDe="Lỗi 2: Quên lấy N = max{N₁, N₂}">
+Nếu chỉ lấy $N = N_1$, bất đẳng thức thứ hai chưa chắc có hiệu lực. Phải lấy max để *cả hai* cùng đúng.
+</Loi>
+
+<Loi tieuDe="Lỗi 3: Dùng Định lý Giới hạn Đại số khi chưa biết các giới hạn tồn tại">
+Định lý bắt đầu bằng “*giả sử* $\lim a_n = a$ và $\lim b_n = b$”. Nếu một trong hai dãy phân kỳ, định lý không nói gì.
+
+*Ví dụ:* $a_n = n$ và $b_n = -n$ đều phân kỳ, nhưng $a_n + b_n = 0$ hội tụ. Không mâu thuẫn — chỉ là định lý không áp dụng cho trường hợp này.
+</Loi>
+
+## Tóm tắt 30 giây
+
+- **Dãy hội tụ thì bị chặn** (chiều ngược sai).
+- **Giới hạn Đại số:** cộng, nhân, chia đều “đi qua” được dấu lim.
+- **Giới hạn Thứ tự:** $\le$ được bảo toàn, $<$ **thì không**.
+- Bốn thủ thuật: chia $\varepsilon$ · cộng thêm – trừ đi · chặn xấu nhất ($|b_n| \le M$) · chặn dưới mẫu ($\varepsilon_0 = |b|/2$).
+- Luôn lấy $N = \max\{N_1, N_2\}$ khi dùng hai điều kiện cùng lúc.
+
+<BaGoc>
+  <Goc ten="Hiểu">Giới hạn “giao hoán” với phép toán đại số, nhưng làm yếu bất đẳng thức nghiêm ngặt.</Goc>
+  <Goc ten="Nhớ">$a_n < b_n$ chỉ cho $\lim a_n \le \lim b_n$. Phản ví dụ: $0$ và $\frac1n$.</Goc>
+  <Goc ten="Làm">Bốn thủ thuật ở mục Ví dụ mẫu.</Goc>
+</BaGoc>
+
+## Bài tập
+
+<BaiLuyen do_kho="de" so="2.1">
+Dùng Định lý Giới hạn Đại số, tính:
+
+(a) $\displaystyle\lim \frac{3n^2 + 2n - 1}{5n^2 + 7}$
+
+(b) $\displaystyle\lim \left(\frac1n + \frac{2}{n^2}\right)\left(4 + \frac1n\right)$
+
+<GoiYNho>Ở (a), chia cả tử và mẫu cho $n^2$ để mọi mảnh đều có giới hạn đã biết. Nhớ kiểm tra giới hạn của mẫu khác $0$ trước khi chia.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="2.2">
+**Định lý kẹp.** Giả sử $x_n \le y_n \le z_n$ với mọi $n$, và $\lim x_n = \lim z_n = l$. Chứng minh $\lim y_n = l$.
+
+<GoiYNho>Cho $\varepsilon > 0$, chọn $N_1$ cho $|x_n - l| < \varepsilon$ và $N_2$ cho $|z_n - l| < \varepsilon$. Với $n \ge \max\{N_1, N_2\}$, chỉ ra $l - \varepsilon < x_n \le y_n \le z_n < l + \varepsilon$. Lời giải đầy đủ ở <XemMuc bai-tap="2.3.3" chu="Bài 2.3.3" />. Định lý này ngắn nhưng bạn sẽ dùng suốt đời.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="2.3">
+Với mỗi phỏng đoán, cho biết đúng hay sai. Đúng thì chứng minh; sai thì cho phản ví dụ.
+
+(a) Nếu $(a_n) \to 0$ và $|b_n - b| \le a_n$ với mọi $n$ thì $(b_n) \to b$.
+(b) Nếu $(a_n) \to a$ và $(b_n) \to b$ thì $\left(\frac{a_n}{b_n}\right) \to \frac{a}{b}$.
+(c) Nếu $(a_n) \to 0$ và $(b_n)$ bị chặn thì $(a_n b_n) \to 0$.
+(d) Nếu $(a_n) \to a$ thì $(|a_n|) \to |a|$.
+
+<GoiYNho>Ở (b), đọc lại điều kiện của định lý. Ở (d), dùng bất đẳng thức tam giác ngược $\big||x| - |y|\big| \le |x - y|$ từ Chương 1. Câu (a), (d) nằm trong <XemMuc bai-tap="2.3.10" chu="Bài 2.3.10" />; câu (c) là <XemMuc bai-tap="2.3.9" chu="Bài 2.3.9" />.</GoiYNho>
+</BaiLuyen>

@@ -1,0 +1,48 @@
+---
+so: "2.3.9"
+muc: "2.3"
+do_kho: vua
+nen_lam: false
+tieu_de: "Bị chặn nhân với dãy tiến về 0"
+can_dung: ["dinh-ly-2.3.2", "dinh-ly-2.3.3"]
+---
+
+<De>
+(a) Cho $(a_n)$ bị chặn (không nhất thiết hội tụ) và $\lim b_n = 0$. Chứng minh $\lim(a_n b_n) = 0$. Vì sao không được dùng Định lý Giới hạn Đại số ở đây?
+
+(b) Nếu thay giả thiết bằng $(b_n) \to b \ne 0$ thì có kết luận được gì về sự hội tụ của $(a_n b_n)$ không?
+
+(c) Dùng (a) chứng minh Định lý 2.3.3 (iii) trong trường hợp $a = 0$.
+</De>
+
+<GoiY so={1}>
+(a) $|a_n b_n| \le M |b_n|$ nếu $|a_n| \le M$. Làm $|b_n|$ nhỏ hơn $\frac{\varepsilon}{M}$. Định lý Giới hạn Đại số đòi *cả hai* dãy hội tụ.
+</GoiY>
+
+<GoiY so={2}>
+(b) Thử $a_n = (-1)^n$, $b_n = 1$. Rồi nghĩ: nếu $(a_n b_n)$ hội tụ và $b_n \to b \ne 0$, có suy ra được $(a_n)$ hội tụ không?
+
+(c) Nếu $a = 0$ thì $(a_n) \to 0$, còn $(b_n)$ hội tụ nên bị chặn — đổi vai hai dãy trong (a).
+</GoiY>
+
+<LoiGiai>
+**(a)** Có $M > 0$ với $|a_n| \le M$ cho mọi $n$. Cho $\varepsilon > 0$, chọn $N$ sao cho $n \ge N$ kéo theo $|b_n| < \frac{\varepsilon}{M}$. Khi đó
+
+$$
+|a_n b_n - 0| = |a_n|\,|b_n| \le M |b_n| < \varepsilon.
+$$
+
+Không dùng được Định lý Giới hạn Đại số vì nó giả sử $(a_n)$ **hội tụ**; ở đây $(a_n)$ chỉ bị chặn, ví dụ $a_n = (-1)^n$. ∎
+
+**(b)** Không kết luận được gì chung: với $b_n = 1$, dãy $a_n b_n = a_n$ có thể hội tụ ($a_n = 1$) hoặc phân kỳ ($a_n = (-1)^n$). Chính xác hơn: khi $b_n \to b \ne 0$, thì $(a_n b_n)$ hội tụ **khi và chỉ khi** $(a_n)$ hội tụ. Một chiều là Định lý Giới hạn Đại số (iii). Chiều kia: từ một lúc nào đó $b_n \ne 0$, và $a_n = \frac{a_n b_n}{b_n}$ hội tụ theo Định lý Giới hạn Đại số (iv).
+
+**(c)** Giả sử $(a_n) \to 0$ và $(b_n) \to b$. Theo Định lý 2.3.2, $(b_n)$ bị chặn. Áp dụng (a) với vai trò đổi cho nhau ($(b_n)$ bị chặn, $(a_n) \to 0$): $\lim(a_n b_n) = 0 = 0 \cdot b = ab$. ∎
+
+<GhiChu tieuDe="Vì sao cần xét riêng a = 0">
+Trong chứng minh (iii) của sách, có bước chọn $N$ để $|b_n - b| < \frac{\varepsilon}{2|a|}$ — vô nghĩa khi $a = 0$. Câu (c) lấp đúng lỗ hổng đó.
+</GhiChu>
+</LoiGiai>
+
+<LoiHayMac>
+Ở (a), kết luận bằng “$\lim(a_n b_n) = \lim a_n \cdot \lim b_n = \lim a_n \cdot 0 = 0$”. Biểu thức $\lim a_n$ có thể không tồn tại, nên phép tính này không có nghĩa.
+</LoiHayMac>

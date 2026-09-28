@@ -1,0 +1,54 @@
+---
+// Chương 2, Bài 4 — Chứng minh Bolzano–Weierstrass bằng chia đôi, với dãy
+// aₙ = (−1)ⁿ(1 + 1/n) trong [−2, 2]. Mỗi lần giữ nửa chứa vô hạn số hạng
+// (các số hạng chẵn 1 + 1/n), rồi chọn một số hạng có chỉ số lớn hơn lần trước.
+const a = (n: number) => (n % 2 === 0 ? 1 : -1) * (1 + 1 / n);
+const cacN = Array.from({ length: 24 }, (_, i) => i + 1);
+const doan = [
+  { ten: '[−M, M]', tu: -2, den: 2 },
+  { ten: 'I₁', tu: 0, den: 2, chon: 2 },
+  { ten: 'I₂', tu: 1, den: 2, chon: 4 },
+  { ten: 'I₃', tu: 1, den: 1.5, chon: 6 },
+  { ten: 'I₄', tu: 1, den: 1.25, chon: 8 },
+];
+const x = (v: number) => 272 + v * 100;
+const hang = (k: number) => 30 + k * 40;
+---
+
+<figure class="hinh" aria-labelledby="hinh-chia-doi-cap">
+  <svg viewBox="0 0 500 250" width="500" role="img" aria-label="Năm hàng: đoạn [−2, 2] rồi bốn nửa đoạn lồng nhau co dần về điểm 1">
+    {
+      doan.map((d, k) => (
+        <g>
+          <text x="60" y={hang(k) + 4} text-anchor="end" class="chu-mo">
+            {d.ten}
+          </text>
+          <line x1={x(-2)} y1={hang(k)} x2={x(2)} y2={hang(k)} class="net-mo" stroke-width="1" />
+          <line x1={x(d.tu)} y1={hang(k)} x2={x(d.den)} y2={hang(k)} class="nhan-manh" stroke-width="4" />
+          <line x1={x(d.tu)} y1={hang(k) - 8} x2={x(d.tu)} y2={hang(k) + 8} class="nhan-manh" stroke-width="2" />
+          <line x1={x(d.den)} y1={hang(k) - 8} x2={x(d.den)} y2={hang(k) + 8} class="nhan-manh" stroke-width="2" />
+          {cacN.map((n) => (
+            <circle cx={x(a(n))} cy={hang(k)} r="2.4" class={a(n) >= d.tu && a(n) <= d.den ? 'to-nhan' : 'diem-mo'} />
+          ))}
+          {d.chon && (
+            <g>
+              {/* Vòng khoanh rỗng: lớp .cam tô cả fill, nên ghi đè bằng style */}
+              <circle cx={x(a(d.chon))} cy={hang(k)} r="7" class="cam" style="fill: none" stroke-width="2" />
+              <text x={x(a(d.chon))} y={hang(k) - 12} text-anchor="middle" class="chu">
+                {`a${String(d.chon).replace(/\d/g, (c) => '₀₁₂₃₄₅₆₇₈₉'[Number(c)])}`}
+              </text>
+            </g>
+          )}
+        </g>
+      ))
+    }
+    <text x={x(-2)} y="232" text-anchor="middle" class="chu-mo">−2</text>
+    <text x={x(0)} y="232" text-anchor="middle" class="chu-mo">0</text>
+    <text x={x(1)} y="232" text-anchor="middle" class="chu-nhan">1</text>
+    <text x={x(2)} y="232" text-anchor="middle" class="chu-mo">2</text>
+  </svg>
+  <figcaption id="hinh-chia-doi-cap">
+    Dãy aₙ = (−1)ⁿ(1 + 1/n) nhảy qua nhảy lại. Mỗi lần chia đôi, giữ nửa chứa <b>vô hạn</b> số hạng, rồi khoanh một số
+    hạng có chỉ số lớn hơn lần trước: a₂, a₄, a₆, a₈, … Các đoạn lồng nhau co về điểm 1, kéo dãy con đó về 1.
+  </figcaption>
+</figure>

@@ -1,0 +1,42 @@
+---
+so: "2.4.9"
+muc: "2.4"
+do_kho: vua
+nen_lam: false
+tieu_de: "Hoàn tất Tiêu chuẩn cô đặc Cauchy"
+can_dung: ["dinh-ly-2.4.6", "vi-du-2.4.5", "dinh-ly-2.3.2"]
+---
+
+<De>
+Hoàn tất chứng minh Định lý 2.4.6: cho $(b_n)$ giảm, $b_n \ge 0$. Chứng minh rằng nếu chuỗi $\sum_{n=0}^{\infty} 2^n b_{2^n}$ phân kỳ thì $\sum_{n=1}^{\infty} b_n$ cũng phân kỳ. (Ví dụ 2.4.5 về chuỗi điều hòa là một gợi ý tốt.)
+</De>
+
+<GoiY so={1}>
+Cả hai chuỗi có số hạng không âm, nên tổng riêng *tăng*. Với dãy tăng: phân kỳ ⇔ không bị chặn. Vậy cần: tổng riêng của chuỗi cô đặc không bị chặn ⇒ tổng riêng của $\sum b_n$ không bị chặn. Tìm một bất đẳng thức dạng $s_{2^k} \ge (\text{hằng số}) \cdot t_k$.
+</GoiY>
+
+<GoiY so={2}>
+Nhóm như với chuỗi điều hòa: $s_{2^k} = b_1 + b_2 + (b_3 + b_4) + (b_5 + \cdots + b_8) + \cdots$ Khối $b_{2^{j-1}+1} + \cdots + b_{2^j}$ có $2^{j-1}$ số hạng, số nhỏ nhất là $b_{2^j}$ (dãy giảm).
+</GoiY>
+
+<LoiGiai>
+Đặt $s_m = b_1 + \cdots + b_m$ và $t_k = b_1 + 2b_2 + 4b_4 + \cdots + 2^k b_{2^k}$.
+
+Vì $b_n \ge 0$, cả $(t_k)$ lẫn $(s_m)$ đều tăng. Chuỗi cô đặc phân kỳ, nên $(t_k)$ **không bị chặn** (nếu bị chặn thì nó hội tụ theo Định lý Hội tụ Đơn điệu).
+
+Nhóm tổng riêng $s_{2^k}$ thành các khối; khối thứ $j$ ($j = 1, \ldots, k$) là $b_{2^{j-1}+1} + \cdots + b_{2^j}$, gồm $2^{j-1}$ số hạng, mỗi số hạng $\ge b_{2^j}$ vì dãy giảm:
+
+$$
+s_{2^k} = b_1 + \sum_{j=1}^{k} \left(b_{2^{j-1}+1} + \cdots + b_{2^j}\right) \ge b_1 + \sum_{j=1}^{k} 2^{j-1} b_{2^j} \ge \frac12\left(b_1 + \sum_{j=1}^{k} 2^j b_{2^j}\right) = \frac12 t_k.
+$$
+
+Vì $(t_k)$ không bị chặn, dãy con $(s_{2^k})$ không bị chặn, nên $(s_m)$ không bị chặn. Dãy không bị chặn thì không hội tụ (Định lý 2.3.2), vậy $\sum b_n$ phân kỳ. ∎
+
+<GhiChu tieuDe="Kiểm tra với chuỗi điều hòa">
+Với $b_n = \frac1n$: $t_k = 1 + 1 + \cdots + 1 = k + 1$, và bất đẳng thức cho $s_{2^k} \ge \frac{k+1}{2}$ — đúng là ước lượng ở Ví dụ 2.4.5 (hơi yếu hơn một chút).
+</GhiChu>
+</LoiGiai>
+
+<LoiHayMac>
+Nhóm sai khối: gom $b_{2^j} + \cdots + b_{2^{j+1}-1}$ rồi chặn *dưới* bởi $2^j b_{2^j}$. Trong khối này $b_{2^j}$ là số **lớn nhất**, nên chỉ chặn *trên* được — đó là chiều còn lại của định lý. Muốn chặn dưới, mỗi khối phải kết thúc tại $b_{2^j}$.
+</LoiHayMac>

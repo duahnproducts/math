@@ -1,0 +1,48 @@
+---
+so: "2.4.1"
+muc: "2.4"
+do_kho: de
+nen_lam: false
+tieu_de: "Dãy đệ quy xₙ₊₁ = 1/(4 − xₙ)"
+can_dung: ["dinh-ly-2.4.2", "dinh-ly-quy-nap"]
+---
+
+<De>
+Cho $x_1 = 3$ và $x_{n+1} = \dfrac{1}{4 - x_n}$.
+
+(a) Chứng minh dãy hội tụ.
+
+(b) Biết $\lim x_n$ tồn tại, giải thích vì sao $\lim x_{n+1}$ cũng tồn tại và bằng cùng giá trị.
+
+(c) Lấy giới hạn hai vế của hệ thức đệ quy để tính $\lim x_n$.
+</De>
+
+<GoiY so={1}>
+Tính vài số hạng: $x_2 = 1$, $x_3 = \frac13$, $x_4 = \frac{3}{11}$. Dãy có vẻ **giảm** và luôn **dương**. Theo quy trình ba bước: quy nạp chứng minh bị chặn, quy nạp chứng minh đơn điệu, rồi dùng Định lý Hội tụ Đơn điệu.
+</GoiY>
+
+<GoiY so={2}>
+Hàm $f(t) = \frac{1}{4 - t}$ **tăng** trên $(-\infty, 4)$: $s \le t < 4$ kéo theo $f(s) \le f(t)$. Nên nếu $x_{n+1} \le x_n$ (và cả hai nhỏ hơn $4$) thì $x_{n+2} = f(x_{n+1}) \le f(x_n) = x_{n+1}$. Ở (c), phương trình giới hạn có hai nghiệm — chọn nghiệm nào?
+</GoiY>
+
+<LoiGiai>
+**(a) Bị chặn.** Khẳng định: $0 < x_n \le 3$ với mọi $n$. Đúng với $n = 1$. Nếu $0 < x_n \le 3$ thì $1 \le 4 - x_n < 4$, nên $\frac14 < x_{n+1} \le 1$, nói riêng $0 < x_{n+1} \le 3$. Theo quy nạp, khẳng định đúng với mọi $n$.
+
+**Giảm.** Khẳng định: $x_{n+1} \le x_n$ với mọi $n$. Với $n = 1$: $x_2 = 1 \le 3 = x_1$. Giả sử $x_{n+1} \le x_n$. Cả hai đều $\le 3 < 4$, nên $4 - x_{n+1} \ge 4 - x_n > 0$, và lấy nghịch đảo: $x_{n+2} = \frac{1}{4 - x_{n+1}} \le \frac{1}{4 - x_n} = x_{n+1}$. Theo quy nạp, dãy giảm.
+
+Dãy giảm và bị chặn, nên hội tụ theo Định lý Hội tụ Đơn điệu.
+
+**(b)** Dãy $(x_{n+1}) = (x_2, x_3, x_4, \ldots)$ là $(x_n)$ bỏ đi số hạng đầu. Nếu $|x_n - L| < \varepsilon$ khi $n \ge N$ thì cũng có $|x_{n+1} - L| < \varepsilon$ khi $n \ge N$ (vì $n + 1 \ge N$). Vậy $\lim x_{n+1} = L$. (Cách khác: đây là một dãy con, dùng Định lý 2.5.2.)
+
+**(c)** Đặt $L = \lim x_n$. Vì $x_n \le 1$ khi $n \ge 2$, Định lý Giới hạn Thứ tự cho $L \le 1$, nên $4 - L \ge 3 \ne 0$. Theo Định lý Giới hạn Đại số, lấy giới hạn hai vế của $x_{n+1} = \frac{1}{4 - x_n}$:
+
+$$
+L = \frac{1}{4 - L} \iff L^2 - 4L + 1 = 0 \iff L = 2 \pm \sqrt3.
+$$
+
+Vì $L \le 1$, loại $2 + \sqrt3$. Vậy $\lim x_n = 2 - \sqrt3 \approx 0{,}268$. ∎
+</LoiGiai>
+
+<LoiHayMac>
+Giải phương trình $L = \frac{1}{4 - L}$ rồi dừng, không nói chọn nghiệm nào và vì sao. Phương trình giới hạn chỉ cho các *ứng viên*; phải dùng thông tin về dãy (ở đây $x_n \le 1$) để loại nghiệm thừa.
+</LoiHayMac>

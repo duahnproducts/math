@@ -1,0 +1,51 @@
+---
+so: "2.3.1"
+muc: "2.3"
+do_kho: vua
+nen_lam: true
+tieu_de: "Căn bậc hai đi qua giới hạn"
+can_dung: ["dinh-nghia-2.2.3", "dinh-ly-2.3.4"]
+---
+
+<De>
+Cho $x_n \ge 0$ với mọi $n \in \mathbf{N}$.
+
+(a) Nếu $(x_n) \to 0$, chứng minh $(\sqrt{x_n}) \to 0$.
+
+(b) Nếu $(x_n) \to x$, chứng minh $(\sqrt{x_n}) \to \sqrt{x}$.
+</De>
+
+<GoiY so={1}>
+(a) Muốn $\sqrt{x_n} < \varepsilon$ thì cần $x_n < \varepsilon^2$ — và $\varepsilon^2$ cũng là một số dương, nên dùng được định nghĩa $(x_n) \to 0$ với sai số $\varepsilon^2$.
+
+(b) Trước hết: vì sao $\sqrt{x}$ có nghĩa, tức $x \ge 0$? Rồi tách trường hợp $x = 0$ (chính là (a)) và $x > 0$.
+</GoiY>
+
+<GoiY so={2}>
+Với $x > 0$, nhân liên hợp:
+
+$$
+\left|\sqrt{x_n} - \sqrt{x}\right| = \frac{|x_n - x|}{\sqrt{x_n} + \sqrt{x}} \le \frac{|x_n - x|}{\sqrt{x}}.
+$$
+
+Mẫu số được chặn dưới bởi hằng số $\sqrt x > 0$ — nên chỉ cần làm $|x_n - x|$ nhỏ.
+</GoiY>
+
+<LoiGiai>
+**(a)** Cho $\varepsilon > 0$. Vì $(x_n) \to 0$, áp dụng định nghĩa với sai số $\varepsilon^2 > 0$: có $N$ sao cho $n \ge N$ kéo theo $|x_n - 0| = x_n < \varepsilon^2$. Khi đó $\sqrt{x_n} < \varepsilon$, tức $|\sqrt{x_n} - 0| < \varepsilon$. ∎
+
+**(b)** Vì $x_n \ge 0$ với mọi $n$, Định lý Giới hạn Thứ tự 2.3.4 (i) cho $x \ge 0$, nên $\sqrt x$ có nghĩa.
+
+- *Trường hợp $x = 0$:* đây là (a).
+- *Trường hợp $x > 0$:* với mọi $n$,
+
+  $$
+  \left|\sqrt{x_n} - \sqrt{x}\right| = \left|\frac{(\sqrt{x_n} - \sqrt{x})(\sqrt{x_n} + \sqrt{x})}{\sqrt{x_n} + \sqrt{x}}\right| = \frac{|x_n - x|}{\sqrt{x_n} + \sqrt{x}} \le \frac{|x_n - x|}{\sqrt{x}},
+  $$
+
+  vì $\sqrt{x_n} \ge 0$. Cho $\varepsilon > 0$, chọn $N$ sao cho $n \ge N$ kéo theo $|x_n - x| < \varepsilon\sqrt{x}$. Khi đó $\left|\sqrt{x_n} - \sqrt x\right| < \frac{\varepsilon \sqrt x}{\sqrt x} = \varepsilon$. ∎
+</LoiGiai>
+
+<LoiHayMac>
+Dùng mẹo liên hợp cho cả trường hợp $x = 0$: khi đó mẫu $\sqrt{x_n} + \sqrt{x} = \sqrt{x_n}$ có thể rất nhỏ (thậm chí bằng $0$), và bất đẳng thức “$\le \frac{|x_n - x|}{\sqrt x}$” chia cho $0$. Đó là lý do phải tách riêng trường hợp $x = 0$.
+</LoiHayMac>

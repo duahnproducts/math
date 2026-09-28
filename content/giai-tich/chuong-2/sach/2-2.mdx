@@ -1,0 +1,123 @@
+---
+mon: giai-tich
+chuong: 2
+muc: "2.2"
+tieu_de: Giới hạn của dãy số
+tieu_de_en: The Limit of a Sequence
+loai: theo-sach
+nguon: "Theo cấu trúc §2.2 của Stephen Abbott, Understanding Analysis, 2nd ed., Springer, 2015. Phát biểu được diễn đạt lại bằng tiếng Việt, dàn ý và bình luận tự viết — không phải bản dịch nguyên văn."
+---
+
+## Dãy số
+
+<DinhNghia so="2.2.1" ten="Dãy số">
+Một **dãy số** là một hàm có tập xác định là $\mathbf{N}$.
+</DinhNghia>
+
+Với hàm $f : \mathbf{N} \to \mathbf{R}$, ta viết $a_n$ thay cho $f(n)$ và $(a_n)$ thay cho $f$. Định nghĩa hình thức này dẫn ngay tới hình ảnh quen thuộc: một danh sách có thứ tự $a_1, a_2, a_3, \ldots$
+
+<ViDu so="2.2.2" ten="Các cách mô tả một dãy">
+Liệt kê: $\left(1, \frac12, \frac13, \frac14, \ldots\right)$. Công thức: $\left(\frac{1+n}{n}\right)_{n=1}^{\infty} = \left(2, \frac32, \frac43, \ldots\right)$ hoặc $a_n = 2^n$. **Đệ quy:** $x_1 = 2$ và $x_{n+1} = \frac{x_n + 1}{2}$ — cho số hạng đầu, và quy tắc tính số hạng sau từ số hạng trước.
+
+Đôi khi chỉ số bắt đầu từ $0$ hoặc từ một số khác $1$; điều đó không ảnh hưởng gì.
+</ViDu>
+
+## Định nghĩa hội tụ
+
+Đây là định nghĩa quan trọng nhất của cả cuốn sách.
+
+<DinhNghia so="2.2.3" ten="Hội tụ của dãy số">
+Dãy $(a_n)$ **hội tụ** về số thực $a$ nếu: với **mọi** số dương $\varepsilon$, **tồn tại** $N \in \mathbf{N}$ sao cho **hễ** $n \ge N$ **thì** $|a_n - a| < \varepsilon$.
+
+Ký hiệu: $\lim a_n = a$, hoặc $(a_n) \to a$, hoặc $\lim_{n \to \infty} a_n = a$.
+</DinhNghia>
+
+Để giải mã định nghĩa, hãy nhìn vào phần cuối “$|a_n - a| < \varepsilon$” — tập các điểm cách $a$ dưới $\varepsilon$.
+
+<DinhNghia so="2.2.4" ten="Lân cận ε">
+Với $a \in \mathbf{R}$ và $\varepsilon > 0$, tập
+
+$$
+V_\varepsilon(a) = \{x \in \mathbf{R} : |x - a| < \varepsilon\}
+$$
+
+gọi là **lân cận $\varepsilon$** của $a$ — khoảng mở tâm $a$, bán kính $\varepsilon$.
+</DinhNghia>
+
+Viết lại định nghĩa hội tụ bằng ngôn ngữ hình học:
+
+<DinhNghia so="2.2.3B" ten="Hội tụ — bản tôpô">
+Dãy $(a_n)$ hội tụ về $a$ nếu với mọi lân cận $V_\varepsilon(a)$ của $a$, có một thời điểm trong dãy mà **từ đó trở đi** mọi số hạng đều nằm trong $V_\varepsilon(a)$. Nói cách khác: *mọi lân cận $\varepsilon$ đều chứa tất cả trừ hữu hạn số hạng của dãy.*
+</DinhNghia>
+
+Hai phiên bản nói cùng một điều: số $N$ chính là thời điểm dãy **đi vào** $V_\varepsilon(a)$ và *không bao giờ ra nữa*. Giá trị của $N$ phụ thuộc $\varepsilon$ — lân cận càng hẹp thì $N$ có thể phải càng lớn. Hình dung trò chơi hai người: đối thủ đưa ra thách thức $\varepsilon$, bạn đáp lại bằng $N$; dãy hội tụ nếu bạn luôn đáp được (kéo thử ở <XemMuc bai={1} />).
+
+<ViDu so="2.2.5" ten="lim 1/√n = 0">
+*Nháp:* muốn $\frac{1}{\sqrt n} < \varepsilon$, tức $\sqrt n > \frac1\varepsilon$, tức $n > \frac{1}{\varepsilon^2}$.
+
+*Chứng minh:* Cho $\varepsilon > 0$. Theo tính chất Archimedes (<XemMuc muc="1.4" />), chọn $N \in \mathbf{N}$ với $N > \frac{1}{\varepsilon^2}$. Nếu $n \ge N$ thì $n > \frac{1}{\varepsilon^2}$, nên $\frac{1}{\sqrt n} < \varepsilon$, tức $\left|\frac{1}{\sqrt n} - 0\right| < \varepsilon$. ∎
+</ViDu>
+
+<ViDu so="2.2.6" ten="lim (n+1)/n = 1">
+*Nháp:* $\left|\frac{n+1}{n} - 1\right| = \frac1n$, nên cần $n > \frac1\varepsilon$.
+
+*Chứng minh:* Cho $\varepsilon > 0$, chọn $N \in \mathbf{N}$ với $N > \frac1\varepsilon$. Với $n \ge N$: $\left|\frac{n+1}{n} - 1\right| = \frac1n \le \frac1N < \varepsilon$. ∎
+</ViDu>
+
+## Khuôn mẫu viết chứng minh hội tụ
+
+<TomTat tieuDe="Mọi chứng minh (xₙ) → x đều có đúng bốn bước">
+1. “Cho $\varepsilon > 0$ tuỳ ý.”
+2. Chỉ ra cách chọn $N \in \mathbf{N}$. Đây là bước tốn công nhất — gần như toàn bộ công việc làm ở **nháp**, trước khi viết chứng minh chính thức.
+3. “Giả sử $n \ge N$.”
+4. Suy ra $|x_n - x| < \varepsilon$.
+</TomTat>
+
+**Cách làm nháp:** viết bất đẳng thức đích $|x_n - x| < \varepsilon$, rút gọn đại số, rồi *giải ngược* để tìm điều kiện trên $n$. Điều kiện đó cho $N$. Chứng minh chính thức thì đi **xuôi**: từ $n \ge N$ suy ra $|x_n - x| < \varepsilon$.
+
+<Loi tieuDe="Ba lỗi trình bày bị trừ điểm nặng">
+1. **Chọn $N$ phụ thuộc vào $n$.** $N$ chỉ được phụ thuộc $\varepsilon$.
+2. **Viết ngược thứ tự lượng từ.** Phải là “cho $\varepsilon$, tìm $N$”. Đảo thứ tự thì được một khái niệm hoàn toàn khác (<XemMuc bai-tap="2.2.1" chu="Bài tập 2.2.1" />).
+3. **Bắt đầu từ kết luận.** “$|a_n - a| < \varepsilon$ nên $n > \ldots$” là phần nháp, chưa phải chứng minh.
+</Loi>
+
+## Tính duy nhất của giới hạn
+
+<DinhLy so="2.2.7" ten="Tính duy nhất của giới hạn">
+Giới hạn của một dãy, nếu tồn tại, là duy nhất.
+</DinhLy>
+
+**Dàn ý.** Giả sử $(a_n) \to a$ và $(a_n) \to b$. Cho $\varepsilon > 0$. Chọn $N_1$ cho $|a_n - a| < \frac\varepsilon2$ và $N_2$ cho $|a_n - b| < \frac\varepsilon2$; lấy $n \ge \max\{N_1, N_2\}$. Khi đó
+
+$$
+|a - b| = |(a - a_n) + (a_n - b)| \le |a - a_n| + |a_n - b| < \frac\varepsilon2 + \frac\varepsilon2 = \varepsilon.
+$$
+
+Vì $\varepsilon > 0$ tuỳ ý, Định lý 1.2.6 (<XemMuc muc="1.2" />) cho $a = b$. Chi tiết: <XemMuc bai-tap="2.2.6" chu="Bài tập 2.2.6" />. ∎
+
+<TomTat tieuDe="Hai kỹ thuật vừa xuất hiện, dùng đến hết sách">
+- **Chèn điểm trung gian** rồi dùng bất đẳng thức tam giác: $|a - b| \le |a - a_n| + |a_n - b|$.
+- **Chia $\varepsilon$:** làm mỗi mảnh nhỏ hơn $\frac\varepsilon2$ để tổng nhỏ hơn $\varepsilon$; lấy $N = \max\{N_1, N_2\}$ để cả hai điều kiện cùng có hiệu lực.
+</TomTat>
+
+## Sự phân kỳ
+
+<ViDu so="2.2.8" ten="Một dãy không hội tụ về 0">
+Xét dãy
+
+$$
+\left(1, -\frac12, \frac13, -\frac14, \frac15, -\frac15, \frac15, -\frac15, \frac15, -\frac15, \ldots\right)
+$$
+
+— bốn số hạng đầu co dần, rồi từ đó dãy nhảy mãi giữa $\frac15$ và $-\frac15$. Với thách thức $\varepsilon = \frac12$, mọi số hạng từ thứ ba trở đi nằm trong $\left(-\frac12, \frac12\right)$; với $\varepsilon = \frac14$ cũng đáp được. Nhưng với $\varepsilon = \frac{1}{10}$ thì **không** $N$ nào dùng được, vì dãy liên tục quay về $\pm\frac15$. Định nghĩa nói “với **mọi** $\varepsilon$”, nên dãy không hội tụ về $0$.
+
+Tương tự, nó không hội tụ về $\frac15$: với $\varepsilon = \frac{1}{10}$, dãy liên tục *quay lại* lân cận $\left(\frac{1}{10}, \frac{3}{10}\right)$ nhưng không bao giờ *vào hẳn* và ở lại.
+</ViDu>
+
+**Phủ định định nghĩa hội tụ.** Muốn chứng minh $x$ *không* là giới hạn của $(x_n)$: chỉ ra **một** giá trị $\varepsilon_0 > 0$ cụ thể mà *không* $N$ nào đáp được — tức với mọi $N$, có $n \ge N$ với $|x_n - x| \ge \varepsilon_0$. Ba lượng từ đều đảo, thứ tự giữ nguyên (xem kỹ năng phủ định lượng từ ở <XemMuc bai-tap="1.2.11" chu="Bài tập 1.2.11" />).
+
+<DinhNghia so="2.2.9" ten="Phân kỳ">
+Dãy không hội tụ (về bất kỳ số thực nào) gọi là **phân kỳ**.
+</DinhNghia>
+
+Chứng minh phân kỳ trực tiếp từ định nghĩa khá vất vả; §2.5 sẽ có một tiêu chuẩn gọn hơn nhiều bằng dãy con (<XemMuc muc="2.5" />).

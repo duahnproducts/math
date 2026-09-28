@@ -1,0 +1,34 @@
+---
+// Chương 2, Bài 2 — Bất đẳng thức nghiêm ngặt không qua được giới hạn:
+// 0 < 1/n với mọi n, nhưng lim 0 = lim 1/n = 0.
+const cacN = Array.from({ length: 12 }, (_, i) => i + 1);
+const x = (n: number) => 56 + (n - 1) * 34;
+const y = (v: number) => 170 - v * 130;
+---
+
+<figure class="hinh" aria-labelledby="hinh-nghiem-ngat-cap">
+  <svg viewBox="0 0 480 210" width="480" role="img" aria-label="Các điểm 1/n nằm trên các điểm 0 nhưng cùng tiến về 0">
+    <line x1="40" y1={y(0)} x2="470" y2={y(0)} class="net" stroke-width="1.5"></line>
+    <line x1="40" y1="24" x2="40" y2={y(0)} class="net-mo" stroke-width="1"></line>
+    <text x="32" y={y(1) + 4} text-anchor="end" class="chu-mo">1</text>
+    <text x="32" y={y(0) + 4} text-anchor="end" class="chu-nhan">0</text>
+    {
+      cacN.map((n) => (
+        <g>
+          <line x1={x(n)} y1={y(1 / n) + 5} x2={x(n)} y2={y(0) - 5} class="net-mo" stroke-width="1" stroke-dasharray="2 3" />
+          <circle cx={x(n)} cy={y(1 / n)} r="4.5" class="to-nhan" />
+          <circle cx={x(n)} cy={y(0)} r="4" class="diem-mo" />
+        </g>
+      ))
+    }
+    <circle cx="300" cy="34" r="4.5" class="to-nhan"></circle>
+    <text x="310" y="38" class="chu">bₙ = 1/n</text>
+    <circle cx="300" cy="56" r="4" class="diem-mo"></circle>
+    <text x="310" y="60" class="chu">aₙ = 0</text>
+    <text x="470" y="200" text-anchor="end" class="chu-mo">n →</text>
+  </svg>
+  <figcaption id="hinh-nghiem-ngat-cap">
+    Với mọi n, điểm xanh (bₙ = 1/n) nằm <b>trên</b> điểm xám (aₙ = 0): aₙ &lt; bₙ. Nhưng cả hai dãy cùng tiến về 0 — qua
+    giới hạn, dấu &lt; chỉ còn lại dấu ≤.
+  </figcaption>
+</figure>

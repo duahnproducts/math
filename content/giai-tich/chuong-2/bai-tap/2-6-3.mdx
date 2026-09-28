@@ -1,0 +1,48 @@
+---
+so: "2.6.3"
+muc: "2.6"
+do_kho: vua
+nen_lam: false
+tieu_de: "Tổng và tích hai dãy Cauchy — chứng minh trực tiếp"
+can_dung: ["dinh-nghia-2.6.1", "bo-de-2.6.3"]
+---
+
+<De>
+Cho $(x_n)$ và $(y_n)$ là hai dãy Cauchy. Một cách dễ để thấy $(x_n + y_n)$ Cauchy là: theo Tiêu chuẩn Cauchy hai dãy hội tụ, nên tổng hội tụ, nên Cauchy. Hãy làm **không** dùng Tiêu chuẩn Cauchy và Định lý Giới hạn Đại số:
+
+(a) Chứng minh trực tiếp $(x_n + y_n)$ là dãy Cauchy.
+
+(b) Làm tương tự cho $(x_n y_n)$.
+</De>
+
+<GoiY so={1}>
+Bắt chước chứng minh Định lý Giới hạn Đại số, chỉ thay “giới hạn” bằng “số hạng thứ $m$”. (a) là chia $\varepsilon$. (b) cần thủ thuật cộng thêm – trừ đi.
+</GoiY>
+
+<GoiY so={2}>
+(b) $|x_n y_n - x_m y_m| = |x_n y_n - x_n y_m + x_n y_m - x_m y_m| \le |x_n|\,|y_n - y_m| + |y_m|\,|x_n - x_m|$. Hệ số $|x_n|$, $|y_m|$ thay đổi — thay bằng chặn xấu nhất nhờ Bổ đề 2.6.3.
+</GoiY>
+
+<LoiGiai>
+**(a)** Cho $\varepsilon > 0$. Chọn $N_1$ với $|x_n - x_m| < \frac\varepsilon2$ khi $m, n \ge N_1$, và $N_2$ với $|y_n - y_m| < \frac\varepsilon2$ khi $m, n \ge N_2$. Với $m, n \ge \max\{N_1, N_2\}$:
+
+$$
+|(x_n + y_n) - (x_m + y_m)| \le |x_n - x_m| + |y_n - y_m| < \frac\varepsilon2 + \frac\varepsilon2 = \varepsilon. \qquad ∎
+$$
+
+**(b)** Theo Bổ đề 2.6.3 có $M_1, M_2 > 0$ với $|x_n| \le M_1$ và $|y_n| \le M_2$ cho mọi $n$. Với mọi $m, n$:
+
+$$
+|x_n y_n - x_m y_m| \le |x_n|\,|y_n - y_m| + |y_m|\,|x_n - x_m| \le M_1 |y_n - y_m| + M_2 |x_n - x_m|.
+$$
+
+Cho $\varepsilon > 0$. Chọn $N_1$ với $|y_n - y_m| < \frac{\varepsilon}{2M_1}$ khi $m, n \ge N_1$, và $N_2$ với $|x_n - x_m| < \frac{\varepsilon}{2M_2}$ khi $m, n \ge N_2$. Với $m, n \ge \max\{N_1, N_2\}$, vế phải nhỏ hơn $\frac\varepsilon2 + \frac\varepsilon2 = \varepsilon$. ∎
+
+<GhiChu tieuDe="Vì sao bài này đáng làm">
+Nó cho thấy các thủ thuật ở §2.3 không phụ thuộc vào việc biết giới hạn: chúng là thủ thuật về *khoảng cách*, dùng được cho cả “khoảng cách tới đích” lẫn “khoảng cách giữa hai số hạng”.
+</GhiChu>
+</LoiGiai>
+
+<LoiHayMac>
+Ở (b), chặn $|x_n|$ bằng $|x_N| + 1$ với một $N$ cụ thể mà quên các số hạng đầu $n < N$. Phải lấy chặn cho **mọi** $n$ — đó chính là nội dung Bổ đề 2.6.3 (đuôi + đầu hữu hạn).
+</LoiHayMac>

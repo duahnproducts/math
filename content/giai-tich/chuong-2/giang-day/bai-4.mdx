@@ -1,0 +1,170 @@
+---
+mon: giai-tich
+chuong: 2
+bai: 4
+tieu_de: Dãy con và Bolzano–Weierstrass
+y_tuong: Dãy bị chặn có thể nhảy loạn xạ — nhưng luôn trích ra được một phần đi về một đích.
+phu_muc: ["2.5"]
+---
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+Dãy bị chặn có thể nhảy loạn xạ — nhưng luôn **trích ra được** một phần đi về một đích.
+</YTuong>
+
+## Hình dung trực quan — chụp ảnh đoàn tàu
+
+Một đoàn tàu dài vô hạn chạy qua. Bạn đứng chụp ảnh, nhưng chỉ chụp được *một số toa*.
+
+<ThuatNgu id="subsequence">Dãy con</ThuatNgu> là những toa bạn chụp được, với hai quy tắc:
+
+- **Giữ nguyên thứ tự** — không được chụp toa 5 rồi quay lại toa 3.
+- **Không lặp** — mỗi toa chụp tối đa một lần.
+
+**Vì sao điều này hữu ích?** Dãy $\left((-1)^n\right) = (-1, 1, -1, 1, \ldots)$ nhảy qua nhảy lại, không hội tụ. Nhưng nếu chỉ chụp các toa *chẵn*, bạn được $(1, 1, 1, \ldots)$ — hội tụ về $1$. Chụp các toa *lẻ*, được $(-1, -1, \ldots)$ — hội tụ về $-1$.
+
+<TomTat tieuDe="Hai dãy con, hai giới hạn khác nhau ⇒ dãy gốc phân kỳ">
+Đây là cách chứng minh phân kỳ **tiết kiệm nhất** — không cần phủ định lượng từ gì cả, chỉ cần chỉ ra hai dãy con (<ThuatNgu id="divergence-criterion">tiêu chuẩn phân kỳ</ThuatNgu>).
+</TomTat>
+
+Còn với dãy bị chặn bất kỳ, làm sao *luôn* chụp được một dãy con hội tụ? Chia đôi mãi:
+
+<HinhChiaDoi />
+
+## Kiến thức cần biết
+
+### a) Định nghĩa dãy con
+
+Cho dãy $(a_n)$ và một dãy chỉ số **tăng ngặt** $n_1 < n_2 < n_3 < \cdots$ Dãy $(a_{n_1}, a_{n_2}, a_{n_3}, \ldots)$ gọi là *dãy con*, ký hiệu $(a_{n_k})$.
+
+<GhiChu tieuDe="Sự thật nhỏ dùng khắp nơi">
+Vì dãy chỉ số tăng ngặt trong $\mathbf{N}$, ta luôn có $n_k \ge k$: số hạng thứ $k$ của dãy con nằm ở vị trí thứ $k$ hoặc xa hơn trong dãy gốc.
+</GhiChu>
+
+### b) Tính chất đoạn lồng nhau (Chương 1)
+
+Dãy đoạn **đóng** lồng nhau $I_1 \supseteq I_2 \supseteq \cdots$ có giao khác rỗng (<XemMuc muc="1.4" />).
+
+## Công thức — hai định lý
+
+<DinhLy ten="Định lý 1 — dãy con của dãy hội tụ">
+Mọi dãy con của một dãy *hội tụ* đều hội tụ về *cùng* giới hạn.
+</DinhLy>
+
+**Ý tưởng:** vì $n_k \ge k$, cùng một $N$ dùng được cho cả dãy con: $k \ge N$ kéo theo $n_k \ge N$, nên $|a_{n_k} - a| < \varepsilon$. ∎
+
+<DinhLy ten="Định lý Bolzano–Weierstrass">
+Mọi dãy **bị chặn** đều chứa một **dãy con hội tụ**.
+</DinhLy>
+
+**Từng thành phần:** “bị chặn” — cả dãy nằm trong một đoạn $[-M, M]$; “chứa một dãy con hội tụ” — không nói dãy gốc hội tụ, chỉ nói *trích ra được* một phần hội tụ. Tên riêng: <ThuatNgu id="bolzano-weierstrass">Định lý Bolzano–Weierstrass</ThuatNgu> (BW).
+
+## Ví dụ mẫu — chứng minh Bolzano–Weierstrass
+
+#### Bước 1 — Cho gì?
+
+Dãy $(a_n)$ bị chặn: $|a_n| \le M$ với mọi $n$.
+
+#### Bước 2 — Hỏi gì?
+
+Tìm dãy chỉ số $n_1 < n_2 < \cdots$ và một số $x$ sao cho $(a_{n_k}) \to x$.
+
+#### Bước 3 — Dùng gì?
+
+<ThuatNgu id="bisection">Phương pháp chia đôi</ThuatNgu> — kỹ thuật chủ lực của giải tích — cộng tính chất đoạn lồng nhau để *sản xuất* điểm $x$.
+
+#### Bước 4 — Giải
+
+**(1)** Dãy bị chặn nên mọi số hạng nằm trong $I_0 = [-M, M]$.
+
+**(2)** Chia đôi $I_0$. **Ít nhất một nửa chứa VÔ HẠN số hạng** của dãy. *Vì sao?* Nếu cả hai nửa chỉ chứa hữu hạn số hạng thì cả dãy hữu hạn — vô lý. Gọi nửa đó là $I_1$, chọn một số hạng $a_{n_1} \in I_1$.
+
+**(3)** Chia đôi $I_1$, lại chọn nửa chứa vô hạn số hạng, gọi là $I_2$. Chọn $a_{n_2} \in I_2$ **với $n_2 > n_1$**. *Bước này làm được chính vì $I_2$ chứa vô hạn số hạng* — luôn còn số hạng có chỉ số lớn hơn $n_1$.
+
+**(4)** Tiếp tục mãi, ta được:
+
+- dãy đoạn đóng lồng nhau $I_1 \supseteq I_2 \supseteq I_3 \supseteq \cdots$;
+- độ dài $I_k$ bằng $\frac{2M}{2^k} = \frac{M}{2^{k-1}} \to 0$;
+- dãy con $(a_{n_k})$ với $a_{n_k} \in I_k$.
+
+**(5)** Theo tính chất đoạn lồng nhau, có $x$ thuộc mọi $I_k$. Vì cả $x$ và $a_{n_k}$ đều nằm trong $I_k$:
+
+$$
+|a_{n_k} - x| \le \text{độ dài } I_k = \frac{M}{2^{k-1}} \longrightarrow 0.
+$$
+
+Vậy $(a_{n_k}) \to x$. ∎
+
+#### Bước 5 — Kiểm tra: vì sao bước (2) phải đòi “vô hạn” chứ không phải “khác rỗng”?
+
+Vì ở bước (3) ta cần chọn chỉ số $n_2 > n_1$. Nếu $I_2$ chỉ chứa hữu hạn số hạng, có thể tất cả chúng đều có chỉ số nhỏ hơn $n_1$ — và ta không dựng được dãy con (chỉ số phải tăng ngặt). **Đây là chi tiết sinh viên hay bỏ qua và người chấm luôn để ý.**
+
+#### Bước 6 — Một ứng dụng đẹp: tính $\lim b^n$ với $0 < b < 1$
+
+<ViDu ten="Dùng dãy con để tính giới hạn">
+Dãy $(b^n)$ giảm và bị chặn dưới bởi $0$, nên theo Định lý Hội tụ Đơn điệu (<XemMuc bai={3} />) nó hội tụ về một số $l$ nào đó.
+
+**Mẹo:** xét dãy con $(b^{2n})$. Theo Định lý 1, nó cũng hội tụ về $l$. Nhưng $b^{2n} = (b^n)^2$, nên theo Định lý Giới hạn Đại số nó hội tụ về $l^2$.
+
+Giới hạn là duy nhất nên $l^2 = l$, tức $l = 0$ hoặc $l = 1$. Vì dãy giảm và bắt đầu từ $b < 1$, ta có $l \le b < 1$, nên $l = 0$.
+</ViDu>
+
+<TomTat>
+Cách làm chung: cần giới hạn của một dãy khó → chứng minh nó *tồn tại* bằng MCT → dùng một dãy con viết được theo chính dãy đó để lập phương trình cho giới hạn.
+</TomTat>
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Lỗi 1: Cho dãy con được lặp hoặc đảo thứ tự">
+Không được. Chỉ số phải *tăng ngặt*. Từ $\left(1, \frac12, \frac13, \ldots\right)$ thì $\left(1, 1, \frac13, \frac13, \ldots\right)$ *không* phải dãy con.
+</Loi>
+
+<Loi tieuDe="Lỗi 2: Nghĩ Bolzano–Weierstrass nói dãy gốc hội tụ">
+Không. Nó chỉ nói *có một dãy con* hội tụ. Dãy $\left((-1)^n\right)$ bị chặn, có dãy con hội tụ, nhưng bản thân nó phân kỳ.
+</Loi>
+
+<Loi tieuDe="Lỗi 3: Quên giả thiết “bị chặn”">
+Dãy $(n) = (1, 2, 3, \ldots)$ không bị chặn và không có dãy con hội tụ nào — mọi dãy con của nó đều không bị chặn.
+</Loi>
+
+## Tóm tắt 30 giây
+
+- **Dãy con** = chọn ra một số số hạng, *giữ thứ tự*, *không lặp*; luôn có $n_k \ge k$.
+- Dãy hội tụ ⇒ mọi dãy con hội tụ về *cùng* giới hạn.
+- **Tiêu chuẩn phân kỳ:** hai dãy con, hai giới hạn khác nhau ⇒ dãy gốc phân kỳ.
+- **Bolzano–Weierstrass:** dãy bị chặn luôn có dãy con hội tụ.
+- Kỹ thuật: **chia đôi** + tính chất đoạn lồng nhau. Nhớ đòi nửa chứa *vô hạn* số hạng.
+
+<BaGoc>
+  <Goc ten="Hiểu">Bị chặn thì không chạy trốn được: chia đôi mãi luôn dồn được vô hạn số hạng vào một chỗ.</Goc>
+  <Goc ten="Nhớ">BW: bị chặn ⇒ có dãy con hội tụ (không phải cả dãy).</Goc>
+  <Goc ten="Làm">Chứng minh phân kỳ: tìm hai dãy con có hai giới hạn khác nhau.</Goc>
+</BaGoc>
+
+## Bài tập
+
+<BaiLuyen do_kho="de" so="4.1">
+Cho dãy $a_n = (-1)^n\left(1 + \frac1n\right)$.
+
+(a) Viết ra 6 số hạng đầu. (b) Tìm một dãy con hội tụ về $1$ và một dãy con hội tụ về $-1$. (c) Kết luận gì về dãy gốc?
+
+<GoiYNho>Đây chính là dãy trong hình chia đôi ở trên. Ở (c), dùng tiêu chuẩn phân kỳ.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="4.2">
+Với mỗi yêu cầu, cho ví dụ hoặc giải thích vì sao không thể:
+
+(a) Dãy không bị chặn nhưng có một dãy con hội tụ.
+(b) Dãy bị chặn có đúng ba dãy con hội tụ về ba giới hạn khác nhau.
+(c) Dãy mà *mọi* dãy con đều hội tụ, nhưng dãy gốc thì không.
+(d) Dãy bị chặn không có dãy con nào hội tụ.
+
+<GoiYNho>Ở (c): bản thân dãy gốc cũng là một dãy con của chính nó. Ở (d): nghĩ tới Bolzano–Weierstrass. Bài cùng kiểu trong sách: <XemMuc bai-tap="2.5.1" chu="Bài 2.5.1" />.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="4.3">
+Chứng minh: nếu $(a_n)$ bị chặn và *mọi* dãy con hội tụ của nó đều có cùng giới hạn $L$, thì bản thân $(a_n) \to L$.
+
+<GoiYNho>Phản chứng. Nếu $(a_n) \not\to L$ thì có $\varepsilon_0 > 0$ và vô hạn chỉ số $n$ với $|a_n - L| \ge \varepsilon_0$. Các số hạng đó tạo thành một dãy con bị chặn; áp dụng Bolzano–Weierstrass cho nó và tìm mâu thuẫn. Lời giải có ở <XemMuc bai-tap="2.5.5" chu="Bài 2.5.5" />.</GoiYNho>
+</BaiLuyen>

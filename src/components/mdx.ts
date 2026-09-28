@@ -21,12 +21,18 @@ import ViDu from './noi-dung/ViDu.astro';
 import XemMuc from './noi-dung/XemMuc.astro';
 import YTuong from './noi-dung/YTuong.astro';
 import HinhBaTruongHop from '../figures/HinhBaTruongHop.astro';
+import HinhCauThang from '../figures/HinhCauThang.astro';
+import HinhChiaDoi from '../figures/HinhChiaDoi.astro';
 import HinhDoanLongNhau from '../figures/HinhDoanLongNhau.astro';
 import HinhDuongCheo from '../figures/HinhDuongCheo.astro';
 import HinhDuongCheoCantor from '../figures/HinhDuongCheoCantor.astro';
 import HinhEpsilon from '../figures/HinhEpsilon.astro';
+import HinhEpsilonN from '../figures/HinhEpsilonN.astro';
 import HinhGhepDoi from '../figures/HinhGhepDoi.astro';
+import HinhHaiDinhNghia from '../figures/HinhHaiDinhNghia.astro';
 import HinhLoHong from '../figures/HinhLoHong.astro';
+import HinhNghiemNgat from '../figures/HinhNghiemNgat.astro';
+import HinhTongRieng from '../figures/HinhTongRieng.astro';
 import HinhTranNha from '../figures/HinhTranNha.astro';
 
 export const thanhPhanMdx = {
@@ -51,11 +57,17 @@ export const thanhPhanMdx = {
   XemMuc,
   YTuong,
   HinhBaTruongHop,
+  HinhCauThang,
+  HinhChiaDoi,
   HinhDoanLongNhau,
   HinhDuongCheo,
   HinhDuongCheoCantor,
   HinhEpsilon,
+  HinhEpsilonN,
   HinhGhepDoi,
+  HinhHaiDinhNghia,
   HinhLoHong,
+  HinhNghiemNgat,
+  HinhTongRieng,
   HinhTranNha,
 };
