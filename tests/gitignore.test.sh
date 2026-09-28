@@ -30,6 +30,19 @@ phai_bo_qua "micro/Microeconomics3e-Ch08.pdf"
 phai_bo_qua "micro/Microeconomics3e-Ch12.pdf"
 phai_bo_qua "micro/Lecture slides.zip"
 
+# File sinh ra khi làm web: thư viện, bản build, kết quả test
+phai_bo_qua "node_modules/astro/package.json"
+phai_bo_qua "dist/index.html"
+phai_bo_qua ".astro/types.d.ts"
+phai_bo_qua "test-results/.last-run.json"
+phai_bo_qua "playwright-report/index.html"
+
+# Mã nguồn và nội dung web phải được đưa lên repo
+khong_duoc_bo_qua "src/pages/index.astro"
+khong_duoc_bo_qua "content/giai-tich/mon.json"
+khong_duoc_bo_qua "public/tai-ve/giai-tich-chuong-1-bai-giang.pdf"
+khong_duoc_bo_qua "package-lock.json"
+
 # Bản dịch, bài giảng, lời giải
 khong_duoc_bo_qua "micro/Microeconomics3e-Ch03_TiengViet.pdf"
 khong_duoc_bo_qua "micro/Vi mô 7.pdf"

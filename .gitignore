@@ -4,3 +4,10 @@ gtich/sach.pdf
 dai so/W. Keith Nicholson - Linear Algebra with Applications (2023).pdf
 micro/Microeconomics3e-Ch[0-9][0-9].pdf
 micro/Lecture slides.zip
+
+# Web (Astro) — thư viện, bản build, file sinh tự động, kết quả test
+node_modules/
+dist/
+.astro/
+test-results/
+playwright-report/

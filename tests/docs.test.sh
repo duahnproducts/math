@@ -22,10 +22,26 @@ for nguon in CLAUDE.md product_design.md; do
   fi
 done
 
-# Những file có sẵn mà docs/tech_stack.md dựa vào
-for f in product_design.md gtich/translator-ui/DESIGN_SPEC.md .gitignore tests/gitignore.test.sh; do
+# Những file trong repo mà docs/tech_stack.md dựa vào.
+# gtich/translator-ui/DESIGN_SPEC.md chỉ nằm trên máy người soạn (không đưa lên
+# repo), nên bộ token của nó được chép vào src/styles/tokens.css và kiểm tra ở đó.
+for f in product_design.md .gitignore tests/gitignore.test.sh src/styles/tokens.css; do
   if [ ! -f "$f" ]; then
     echo "SAI: docs/tech_stack.md dựa vào file không có: $f"
+    loi=1
+  fi
+done
+
+# Tài liệu kỹ thuật phải mô tả chế độ màn hình sáng/tối
+if ! grep -q "Chế độ màn hình" docs/tech_stack.md; then
+  echo "SAI: docs/tech_stack.md chưa có mục Chế độ màn hình sáng/tối"
+  loi=1
+fi
+
+# Bộ token phải có cả giao diện sáng (mặc định) lẫn tối
+for chuoi in ':root' '[data-theme="dark"]'; do
+  if ! grep -qF "$chuoi" src/styles/tokens.css; then
+    echo "SAI: src/styles/tokens.css thiếu $chuoi"
     loi=1
   fi
 done

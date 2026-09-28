@@ -27,10 +27,10 @@ Mọi thứ miễn phí: không backend, không dịch vụ trả phí.
 | --- | --- | --- |
 | Khung web | Astro bản ổn định mới nhất (≥ 6), TypeScript `strict`, xuất web tĩnh | Mỗi bài, mỗi mục § là một trang HTML dựng sẵn. Bên dưới là Vite |
 | Nội dung | MDX (`@astrojs/mdx`) + Content Collections, schema Zod trong `src/content.config.ts` | Markdown chèn được component. Khai báo đầu file sai thì build báo lỗi |
-| Công thức | `remark-math` + `rehype-katex` + `katex`, CSS import cục bộ | Công thức thành HTML lúc build, trình duyệt không phải chạy JS |
+| Công thức | `remark-math` + `rehype-katex` + `katex`, CSS import cục bộ. Astro 7 mặc định dùng bộ xử lý Markdown Sätteri (không chạy plugin remark/rehype), nên phải đặt `markdown.processor: unified({...})` từ `@astrojs/markdown-remark` | Công thức thành HTML lúc build, trình duyệt không phải chạy JS |
 | Hình tĩnh | SVG viết tay trong component `.astro`, màu lấy từ biến CSS | Nét, đổi sáng/tối theo token |
 | Hình tương tác | React (`@astrojs/react`), mỗi hình nạp riêng bằng `client:visible`. Thư viện **Mafs** cho đồ thị toán | Chỉ trang có hình mới tải JS. Mafs chưa ra bản 1.0: thiếu gì thì tự vẽ SVG bằng React |
-| Giao diện | Token lấy từ `gtich/translator-ui/DESIGN_SPEC.md`, thêm bộ màu sáng làm **mặc định**, tối là tuỳ chọn | Đọc lâu trên nền tối dễ mỏi mắt (product_design.md, mục 11) |
+| Giao diện | Token lấy từ `gtich/translator-ui/DESIGN_SPEC.md`, chép vào `src/styles/tokens.css`, thêm bộ màu sáng làm **mặc định**, tối là tuỳ chọn. Người học tự chuyển sáng/tối — xem mục 12 | Đọc lâu trên nền tối dễ mỏi mắt (product_design.md, mục 11) |
 | Font | Inter (giao diện), Lora (nội dung), JetBrains Mono (số hiệu). Tự host qua gói `@fontsource/*` | Theo DESIGN_SPEC. Cả ba hỗ trợ tiếng Việt, giấy phép OFL |
 | Icon | Lucide, đóng gói cục bộ | Theo DESIGN_SPEC |
 | Tiến độ | `localStorage`. Logic viết thành hàm thuần trong `src/lib/` | Không cần tài khoản. Hàm thuần test được |
@@ -154,14 +154,17 @@ for t in tests/*.test.sh; do sh "$t" || exit 1; done
 
 ## 9. Deploy
 
-- **Mặc định:** GitHub Actions + `withastro/action` → GitHub Pages. Miễn phí khi
-  repo **công khai**.
+- **Mặc định:** GitHub Actions → GitHub Pages. Miễn phí khi repo **công khai**.
+  Workflow `.github/workflows/deploy.yml` tự viết các bước (cài, `npm test`,
+  build, đẩy lên Pages) thay cho `withastro/action`, để **test phải đạt thì mới
+  deploy**.
 - **Nếu repo riêng tư:** GitHub Pages gói miễn phí không hỗ trợ. Dùng Cloudflare
   gói miễn phí, cùng lệnh build.
-- Địa chỉ GitHub Pages có dạng `https://<tên>.github.io/hochanh/`: đặt `site` và
-  `base: '/hochanh'` trong `astro.config`. Mọi link nội bộ phải đi qua `base`.
-- Repo chưa có remote. Tạo repo và chọn công khai hay riêng tư là việc của người
-  dùng.
+- Repo: `https://github.com/duahnproducts/math` (công khai, kiểm tra 28/09/2026).
+  Địa chỉ web: `https://duahnproducts.github.io/math/`, nên `astro.config.mjs` đặt
+  `site: 'https://duahnproducts.github.io'` và `base: '/math'`. Mọi link nội bộ
+  phải đi qua `base` (hàm trong `src/lib/duong-dan.ts`).
+- Lần đầu cần bật Pages trong repo: *Settings → Pages → Source: GitHub Actions*.
 
 ## 10. Bẫy thường gặp
 
@@ -182,8 +185,44 @@ for t in tests/*.test.sh; do sh "$t" || exit 1; done
 2. Thêm `node_modules/`, `dist/`, `.astro/` vào `.gitignore`, cập nhật
    `tests/gitignore.test.sh`.
 3. Cài Vitest, Playwright. `npm test` gọi luôn các test shell.
-4. Chuyển token từ DESIGN_SPEC sang `src/styles/tokens.css`, thêm bộ màu sáng.
+4. Chuyển token từ DESIGN_SPEC sang `src/styles/tokens.css`, thêm bộ màu sáng
+   và nút chuyển sáng/tối (mục 12).
 5. Viết `src/content.config.ts` và hàm liên kết chéo trong `src/lib/`, kèm test.
 6. Dựng 6 màn hình của Phase 1 bằng dữ liệu mẫu nhỏ.
 7. Chuyển Giải tích Chương 1, rồi Đại số Chương 1, theo mục 7.
 8. Viết workflow deploy.
+
+## 12. Chế độ màn hình sáng/tối
+
+Người học chọn giao diện **sáng** hoặc **tối** bằng một nút trên thanh trên cùng
+(biểu tượng mặt trời / mặt trăng), có ở mọi trang.
+
+**Quy tắc:**
+
+- **Mặc định là sáng**, kể cả khi hệ điều hành đang để tối — vì đọc lâu trên nền
+  tối dễ mỏi mắt (product_design.md, mục 11). Chỉ khi người học bấm chuyển thì
+  mới sang tối.
+- Lựa chọn lưu trong `localStorage`, khoá `hochanh:giao-dien`, giá trị `sang` hoặc
+  `toi`. Giá trị lạ hoặc `localStorage` bị chặn (chế độ ẩn danh) thì coi như
+  sáng; web không được lỗi.
+- Lựa chọn áp dụng cho mọi trang và giữ nguyên khi tải lại hay mở lại web.
+
+**Cách làm:**
+
+| Phần | Làm gì |
+| --- | --- |
+| Token màu | `src/styles/tokens.css`: bộ sáng đặt ở `:root`, bộ tối (giá trị gốc của DESIGN_SPEC) đặt ở `:root[data-theme="dark"]`. Component chỉ dùng biến CSS, không viết mã màu cứng — nhờ vậy đổi một thuộc tính là đổi cả trang |
+| Tránh nháy trắng | Một đoạn script nhỏ nhúng thẳng vào `<head>` (`is:inline`), chạy **trước khi vẽ trang**: đọc `localStorage`, đặt `data-theme` lên `<html>`. Script lấy từ `src/lib/giao-dien.ts` để có test |
+| Nút chuyển | Component `NutGiaoDien.astro`: `<button>` có `aria-label` ("Chuyển sang giao diện tối/sáng") và `aria-pressed`. Bấm thì đổi `data-theme`, lưu `localStorage` |
+| Trình duyệt | Đặt `color-scheme: light` / `dark` theo giao diện để thanh cuộn, ô nhập, hộp thoại của trình duyệt đổi màu theo; cập nhật `<meta name="theme-color">` |
+| Công thức, hình | KaTeX dùng `currentColor` nên tự đổi màu. Hình SVG lấy màu từ biến CSS (`var(--text)`, `var(--accent)`…), không dùng màu cứng |
+| Chuyển động | Đổi giao diện không có hiệu ứng chuyển màu dài; tôn trọng `prefers-reduced-motion` |
+
+**Test:**
+
+- Vitest (`src/lib/giao-dien.test.ts`): đọc giá trị đã lưu (thiếu, lạ, bị chặn
+  → sáng), đổi qua lại, và chạy thử script đầu trang với `localStorage` giả.
+- Test shell (`tests/docs.test.sh`): `tokens.css` có đủ hai bộ màu.
+- Playwright: mở web → mặc định sáng → bấm nút → tối → tải lại trang vẫn tối →
+  sang trang khác vẫn tối.
+- Tương phản chữ ≥ 4.5:1 ở **cả hai** giao diện (checklist DESIGN_SPEC, mục 10).

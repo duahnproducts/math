@@ -1,0 +1,120 @@
+/*
+ * Design token của Hochanh.
+ * Nguồn: gtich/translator-ui/DESIGN_SPEC.md (phong cách học thuật, tối giản,
+ * một màu nhấn, nền giấy kẻ ô). Bản gốc chỉ có giao diện tối; ở đây thêm giao
+ * diện sáng và đặt làm MẶC ĐỊNH (docs/tech_stack.md, mục 12).
+ *
+ * Quy tắc: component chỉ dùng biến, không viết mã màu cứng — nhờ vậy đổi
+ * data-theme trên <html> là cả trang đổi theo.
+ */
+
+/* ---------- Giao diện SÁNG (mặc định) ---------- */
+:root {
+  color-scheme: light;
+
+  --bg: #F7F6F2;            /* giấy ngà — đọc lâu không chói */
+  --surface-1: #FFFFFF;     /* card, sidebar */
+  --surface-2: #F2F1EC;     /* ô nhập, item lồng trong card */
+  --surface-3: #E9E7E0;     /* nav đang chọn, nút secondary */
+  --surface-hover: #E4E2DA;
+  --paper: #FFFFFF;         /* trang đọc */
+  --grid: rgba(28, 36, 64, .045);
+  --line: rgba(20, 24, 40, .10);
+  --line-2: rgba(20, 24, 40, .18);
+  --shadow: 0 1px 2px rgba(20, 24, 40, .06), 0 4px 14px rgba(20, 24, 40, .06);
+
+  --text: #1B1E27;          /* tương phản đo trong tests/tuong-phan.test.ts */
+  --text-2: #464C5C;
+  --text-3: #5F6576;
+
+  --accent: #4A51CC;        /* iris đậm hơn bản tối để đủ tương phản trên nền sáng */
+  --accent-2: #3A40AD;
+  --accent-ink: #FFFFFF;
+  --accent-soft: rgba(74, 81, 204, .10);
+  --accent-line: rgba(74, 81, 204, .38);
+
+  --ok: #19724D;            /* định lý, "làm được" */
+  --warn: #955608;          /* ví dụ */
+  --err: #B83A3A;           /* lỗi hay mắc, "chưa làm được" */
+  --info: #1F6FA6;          /* định nghĩa */
+  --note: #5F6576;          /* ghi chú */
+
+  --k-math: #955608;
+  --k-code: #19724D;
+  --k-url: #1F6FA6;
+  --k-chem: #9B3F8C;
+
+  --box-mix: 7%;            /* độ đậm nền hộp màu */
+}
+
+/* ---------- Giao diện TỐI (giá trị gốc của DESIGN_SPEC) ---------- */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #0A0C10;
+  --surface-1: #11141B;
+  --surface-2: #161A23;
+  --surface-3: #1C212C;
+  --surface-hover: #222836;
+  --paper: #12151D;
+  --grid: rgba(255, 255, 255, .018);
+  --line: rgba(255, 255, 255, .07);
+  --line-2: rgba(255, 255, 255, .12);
+  --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 6px 18px rgba(0, 0, 0, .35);
+
+  --text: #E8EAF0;
+  --text-2: #A4ABBA;
+  --text-3: #81899B;
+
+  --accent: #8B93FF;
+  --accent-2: #A9AEFF;
+  --accent-ink: #0B0D1A;
+  --accent-soft: rgba(139, 147, 255, .12);
+  --accent-line: rgba(139, 147, 255, .35);
+
+  --ok: #5BD6A0;
+  --warn: #F2B866;
+  --err: #F07A7A;
+  --info: #6CC4F0;
+  --note: #A4ABBA;
+
+  --k-math: #F2B866;
+  --k-code: #5BD6A0;
+  --k-url: #6CC4F0;
+  --k-chem: #E28FD3;
+
+  --box-mix: 9%;
+}
+
+/* ---------- Không phụ thuộc giao diện ---------- */
+:root {
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-xl: 18px;
+
+  --font-sans: "Inter", "Segoe UI Variable Text", "Segoe UI", "Noto Sans", system-ui, sans-serif;
+  --font-serif: "Lora", "Source Serif 4", Cambria, Georgia, serif;
+  --font-mono: "JetBrains Mono", "Cascadia Code", Consolas, "DejaVu Sans Mono", monospace;
+
+  --ease-out: cubic-bezier(.2, .8, .2, 1);
+  --ease-io: cubic-bezier(.65, 0, .35, 1);
+  --ease-spring: cubic-bezier(.34, 1.36, .64, 1);
+  --t-fast: 120ms;
+  --t-base: 200ms;
+  --t-view: 320ms;
+  --t-slow: 600ms;
+
+  --cot-chu: 70ch;          /* cột chữ ~70 ký tự (product_design.md, mục 11) */
+  --sidebar: 264px;
+  --topbar: 60px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --t-fast: 1ms;
+    --t-base: 1ms;
+    --t-view: 1ms;
+    --t-slow: 1ms;
+  }
+}
