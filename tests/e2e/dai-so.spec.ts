@@ -39,3 +39,16 @@ test('sơ đồ đổi màu theo giao diện tối', async ({ page }) => {
   const mauToi = await net.evaluate((el) => getComputedStyle(el).stroke);
   expect(mauToi).not.toBe(mauSang);
 });
+
+test('Chương 2: §2.1–§2.2 có trang dịch, mục lục đủ 9 mục, có PDF tải về', async ({ page }) => {
+  for (const muc of ['2-1', '2-2']) {
+    await page.goto(`dai-so/chuong-2/sach/${muc}/`);
+    await expect(page.locator('[data-ghi-cong]')).toContainText('CC BY-NC-SA');
+    await expect(page.locator('.katex-error')).toHaveCount(0);
+  }
+  await expect(page.locator('#dinh-ly-2\\.2\\.1')).toBeVisible();
+
+  await page.goto('dai-so/chuong-2/');
+  await expect(page.getByText('Phép biến đổi tuyến tính').first()).toBeVisible();
+  await expect(page.locator('a[href$="tai-ve/dai-so-chuong-2-ban-dich.pdf"]')).toBeVisible();
+});

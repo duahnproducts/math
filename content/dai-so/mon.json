@@ -27,7 +27,26 @@
         }
       ]
     },
-    { "so": 2, "ten": "Đại số ma trận", "ten_en": "Matrix Algebra", "ghi_chu": "Đã có bản dịch PDF, chưa chuyển lên web." },
+    {
+      "so": 2,
+      "ten": "Đại số ma trận",
+      "ten_en": "Matrix Algebra",
+      "ghi_chu": "Đã chuyển lên web §2.1–§2.2; các mục còn lại đọc trong bản dịch PDF.",
+      "muc": [
+        { "so": "2.1", "ten": "Cộng ma trận, nhân với vô hướng, và chuyển vị" },
+        { "so": "2.2", "ten": "Phép nhân ma trận với vector" },
+        { "so": "2.3", "ten": "Phép nhân ma trận" },
+        { "so": "2.4", "ten": "Ma trận nghịch đảo" },
+        { "so": "2.5", "ten": "Ma trận sơ cấp" },
+        { "so": "2.6", "ten": "Phép biến đổi tuyến tính" },
+        { "so": "2.7", "ten": "Phân tích LU" },
+        { "so": "2.8", "ten": "Ứng dụng: mô hình kinh tế vào–ra" },
+        { "so": "2.9", "ten": "Ứng dụng: xích Markov" }
+      ],
+      "tai_ve": [
+        { "ten": "Bản dịch Chương 2 (PDF)", "tep": "dai-so-chuong-2-ban-dich.pdf", "mo_ta": "Bản dịch đầy đủ Chương 2. Giấy phép CC BY-NC-SA 4.0." }
+      ]
+    },
     { "so": 3, "ten": "Định thức và chéo hoá", "ten_en": "Determinants and Diagonalization", "ghi_chu": "Đã có bản dịch PDF, chưa chuyển lên web." },
     { "so": 4, "ten": "Hình học vector", "ten_en": "Vector Geometry", "ghi_chu": "Đã có bản dịch PDF, chưa chuyển lên web." },
     { "so": 5, "ten": "Không gian vector Rⁿ", "ten_en": "Vector Space Rⁿ", "ghi_chu": "Đã có bản dịch PDF, chưa chuyển lên web." },

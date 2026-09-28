@@ -1,0 +1,581 @@
+---
+mon: dai-so
+chuong: 2
+muc: "2.2"
+tieu_de: Phép nhân ma trận với vector
+tieu_de_en: Matrix-Vector Multiplication
+loai: dich-nguyen-van
+nguon: "Dịch từ W. Keith Nicholson, Linear Algebra with Applications, Version 2023 – Revision A, Vretta-Lyryx Inc. (https://lyryx.com/linear-algebra-applications/), Mục 2.2. Bản dịch phát hành theo giấy phép CC BY-NC-SA 4.0, giống bản gốc. Thay đổi: dịch sang tiếng Việt, thêm ghi chú cho người học."
+---
+
+Cho đến giờ ta đã dùng ma trận để giải hệ phương trình tuyến tính bằng cách thao tác trên các hàng của ma trận bổ sung. Trong mục này ta giới thiệu một cách khác để mô tả hệ tuyến tính, cách này sử dụng nhiều hơn ma trận hệ số của hệ và dẫn đến một cách “nhân” ma trận rất hữu ích.
+
+## Vector
+
+Một sự kiện quen thuộc trong hình học giải tích là hai điểm trong mặt phẳng có toạ độ $(a_1, a_2)$ và $(b_1, b_2)$ bằng nhau khi và chỉ khi $a_1 = b_1$ và $a_2 = b_2$. Hơn nữa, một điều kiện tương tự áp dụng cho các điểm $(a_1, a_2, a_3)$ trong không gian. Ta mở rộng ý tưởng này như sau.
+
+Một dãy có thứ tự $(a_1, a_2, \ldots, a_n)$ các số thực được gọi là một **bộ $n$ có thứ tự** (*ordered $n$-tuple*). Từ “có thứ tự” ở đây phản ánh việc ta đòi hỏi hai bộ $n$ có thứ tự bằng nhau khi và chỉ khi các phần tử tương ứng giống nhau. Nói cách khác,
+
+$$
+(a_1, a_2, \ldots, a_n) = (b_1, b_2, \ldots, b_n) \text{ khi và chỉ khi } a_1 = b_1,\ a_2 = b_2,\ \ldots,\ a_n = b_n.
+$$
+
+Như vậy các bộ 2 và bộ 3 có thứ tự chính là các cặp và bộ ba quen thuộc trong hình học.
+
+<DinhNghia so="2.4" ten="Tập Rⁿ các bộ n có thứ tự của số thực">
+Cho $\mathbb{R}$ là tập tất cả số thực. Tập tất cả các bộ $n$ có thứ tự lấy từ $\mathbb{R}$ có ký hiệu đặc biệt:
+
+$$
+\mathbb{R}^n \text{ ký hiệu tập tất cả các bộ } n \text{ có thứ tự của số thực.}
+$$
+
+</DinhNghia>
+
+Tuy các phần tử của $\mathbb{R}^n$ có thể viết thành hàng $(r_1, r_2, \ldots, r_n)$, ta sẽ thường viết chúng thành ma trận cột $n \times 1$: $\begin{bmatrix} r_1 \\ r_2 \\ \vdots \\ r_n \end{bmatrix}$, và dùng đại số ma trận như đã thấy ở Mục 2.1 trên các phần tử của $\mathbb{R}^n$. Chúng được gọi là **vector** hay **$n$-vector** và sẽ được ký hiệu bằng chữ đậm như $\mathbf{x}$ hay $\mathbf{v}$. Cách này quả thực rất tiện lợi và mạnh mẽ, như ta sẽ thấy. Ví dụ, ma trận $A$ cỡ $m \times n$ sẽ được viết thành một hàng gồm các $n$-vector (các cột của nó):
+
+$$
+A = \begin{bmatrix} \mathbf{a}_1 & \mathbf{a}_2 & \cdots & \mathbf{a}_n \end{bmatrix} \text{ trong đó } \mathbf{a}_j \text{ là cột thứ } j \text{ của } A \text{ với mỗi } j.
+$$
+
+Nếu $\mathbf{x}$ và $\mathbf{y}$ là hai $n$-vector trong $\mathbb{R}^n$ thì rõ ràng tổng ma trận $\mathbf{x} + \mathbf{y}$ của chúng cũng nằm trong $\mathbb{R}^n$, cũng như bội vô hướng $k\mathbf{x}$ với mọi số thực $k$. Ta diễn đạt nhận xét này bằng cách nói rằng $\mathbb{R}^n$ **đóng** (*closed*) đối với phép cộng và phép nhân với vô hướng. Nói riêng, mọi tính chất cơ bản trong Định lý 2.1.1 đều đúng với các $n$-vector này. Các tính chất đó là nền tảng và sẽ được dùng thường xuyên dưới đây mà không nhắc lại. Cũng như với ma trận nói chung, ma trận không cỡ $n \times 1$ được gọi là **$n$-vector không** trong $\mathbb{R}^n$, và nếu $\mathbf{x}$ là một $n$-vector thì $n$-vector $-\mathbf{x}$ được gọi là **đối** của $\mathbf{x}$.
+
+Tất nhiên, ta đã gặp các $n$-vector này ở <XemMuc muc="1.3" chu="Mục 1.3" /> với tư cách là nghiệm của hệ phương trình tuyến tính $n$ biến. Nói riêng, ta đã định nghĩa khái niệm tổ hợp tuyến tính của các vector và đã chứng tỏ rằng tổ hợp tuyến tính của các nghiệm của một hệ thuần nhất lại là một nghiệm. Rõ ràng, tổ hợp tuyến tính của các $n$-vector trong $\mathbb{R}^n$ lại nằm trong $\mathbb{R}^n$, một sự kiện mà ta sẽ dùng đến.
+
+Cũng có một cách hiểu hình học sẽ được nhắc lại ở Chương 4 và 5: các phần tử của $\mathbb{R}^n$ có thể xem như *điểm*, chẳng hạn điểm $P(2, 3)$ trong mặt phẳng $\mathbb{R}^2$, hoặc như một *vector* $\vec{v} = \begin{bmatrix} 2 \\ 3 \end{bmatrix}$ (như một mũi tên) đi từ gốc toạ độ đến điểm $P(2, 3)$ — và đó chính là lý do đưa vào tên gọi *vector*.
+
+## Phép nhân ma trận với vector
+
+Cho một hệ phương trình tuyến tính, vế trái của các phương trình chỉ phụ thuộc vào ma trận hệ số $A$ và cột $\mathbf{x}$ các biến, chứ không phụ thuộc vào các số hạng tự do. Nhận xét này dẫn đến một ý tưởng nền tảng trong đại số tuyến tính: ta xem vế trái của các phương trình như “tích” $A\mathbf{x}$ của ma trận $A$ và vector $\mathbf{x}$. Sự thay đổi góc nhìn đơn giản này dẫn đến một cách hoàn toàn mới để nhìn hệ tuyến tính — cách rất hữu ích và sẽ chiếm phần lớn sự chú ý của ta xuyên suốt cuốn sách.
+
+Để dẫn dắt định nghĩa của “tích” $A\mathbf{x}$, trước hết xét hệ gồm hai phương trình ba biến sau:
+
+$$
+\begin{aligned}
+ax_1 + bx_2 + cx_3 &= b_1 \\
+a'x_1 + b'x_2 + c'x_3 &= b_2
+\end{aligned} \tag{2.2}
+$$
+
+và đặt $A = \begin{bmatrix} a & b & c \\ a' & b' & c' \end{bmatrix}$, $\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}$, $\mathbf{b} = \begin{bmatrix} b_1 \\ b_2 \end{bmatrix}$ lần lượt là ma trận hệ số, ma trận biến và ma trận cột tự do. Hệ (2.2) có thể biểu diễn thành một phương trình vector duy nhất
+
+$$
+\begin{bmatrix} ax_1 + bx_2 + cx_3 \\ a'x_1 + b'x_2 + c'x_3 \end{bmatrix} = \begin{bmatrix} b_1 \\ b_2 \end{bmatrix}
+$$
+
+mà đến lượt nó lại có thể viết như sau:
+
+$$
+x_1 \begin{bmatrix} a \\ a' \end{bmatrix} + x_2 \begin{bmatrix} b \\ b' \end{bmatrix} + x_3 \begin{bmatrix} c \\ c' \end{bmatrix} = \begin{bmatrix} b_1 \\ b_2 \end{bmatrix}
+$$
+
+Bây giờ hãy để ý rằng các vector xuất hiện ở vế trái chính là các cột
+
+$$
+\mathbf{a}_1 = \begin{bmatrix} a \\ a' \end{bmatrix}, \quad \mathbf{a}_2 = \begin{bmatrix} b \\ b' \end{bmatrix}, \quad \mathbf{a}_3 = \begin{bmatrix} c \\ c' \end{bmatrix}
+$$
+
+của ma trận hệ số $A$. Do đó hệ (2.2) có dạng
+
+$$
+x_1\mathbf{a}_1 + x_2\mathbf{a}_2 + x_3\mathbf{a}_3 = \mathbf{b} \tag{2.3}
+$$
+
+Điều này cho thấy hệ (2.2) có nghiệm khi và chỉ khi ma trận cột tự do $\mathbf{b}$ là một **tổ hợp tuyến tính**[^1] của các cột của $A$, và trong trường hợp đó các phần tử của nghiệm chính là các hệ số $x_1$, $x_2$, $x_3$ trong tổ hợp tuyến tính này.
+
+Hơn nữa, điều này đúng trong trường hợp tổng quát. Nếu $A$ là ma trận $m \times n$ bất kỳ, thường tiện lợi khi xem $A$ như một hàng gồm các cột. Tức là, nếu $\mathbf{a}_1, \mathbf{a}_2, \ldots, \mathbf{a}_n$ là các cột của $A$, ta viết
+
+$$
+A = \begin{bmatrix} \mathbf{a}_1 & \mathbf{a}_2 & \cdots & \mathbf{a}_n \end{bmatrix}
+$$
+
+và nói rằng $A$ được cho *theo các cột của nó*.
+
+Bây giờ xét một hệ phương trình tuyến tính bất kỳ có ma trận hệ số $A$ cỡ $m \times n$. Nếu $\mathbf{b}$ là ma trận cột tự do của hệ, và nếu $\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix}$ là ma trận các biến thì, hoàn toàn như trên, hệ có thể viết thành một phương trình vector duy nhất
+
+$$
+x_1\mathbf{a}_1 + x_2\mathbf{a}_2 + \cdots + x_n\mathbf{a}_n = \mathbf{b} \tag{2.4}
+$$
+
+<ViDu so="2.2.1">
+Viết hệ $\left\{\begin{aligned} 3x_1 + 2x_2 - 4x_3 &= 0 \\ x_1 - 3x_2 + x_3 &= 3 \\ x_2 - 5x_3 &= -1 \end{aligned}\right.$ dưới dạng (2.4).
+
+**Lời giải.**
+
+$$
+x_1 \begin{bmatrix} 3 \\ 1 \\ 0 \end{bmatrix} + x_2 \begin{bmatrix} 2 \\ -3 \\ 1 \end{bmatrix} + x_3 \begin{bmatrix} -4 \\ 1 \\ -5 \end{bmatrix} = \begin{bmatrix} 0 \\ 3 \\ -1 \end{bmatrix}
+$$
+
+</ViDu>
+
+Như đã nói ở trên, ta xem vế trái của (2.4) là *tích* của ma trận $A$ và vector $\mathbf{x}$. Ý tưởng cơ bản này được chính thức hoá trong định nghĩa sau:
+
+<DinhNghia so="2.5" ten="Phép nhân ma trận với vector">
+Cho $A = \begin{bmatrix} \mathbf{a}_1 & \mathbf{a}_2 & \cdots & \mathbf{a}_n \end{bmatrix}$ là ma trận $m \times n$, viết theo các cột $\mathbf{a}_1, \mathbf{a}_2, \ldots, \mathbf{a}_n$ của nó. Nếu $\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix}$ là một $n$-vector bất kỳ thì tích $A\mathbf{x}$ được định nghĩa là $m$-vector cho bởi:
+
+$$
+A\mathbf{x} = x_1\mathbf{a}_1 + x_2\mathbf{a}_2 + \cdots + x_n\mathbf{a}_n
+$$
+
+</DinhNghia>
+
+Nói cách khác, nếu $A$ là $m \times n$ và $\mathbf{x}$ là một $n$-vector thì tích $A\mathbf{x}$ là *tổ hợp tuyến tính của các cột của $A$, trong đó các hệ số là các phần tử của $\mathbf{x}$* (theo thứ tự).
+
+<GhiChu tieuDe="Ghi chú cho người học — cách hiểu Ax">
+Đây là một trong những ý quan trọng nhất của cả chương. Có hai cách nhìn $A\mathbf{x}$:
+
+1. **Theo cột** (định nghĩa ở trên): $A\mathbf{x}$ là tổ hợp tuyến tính các cột của $A$. Cách nhìn này giải thích *tại sao* $A\mathbf{x} = \mathbf{b}$ có nghiệm khi và chỉ khi $\mathbf{b}$ “nằm trong” không gian sinh bởi các cột của $A$.
+2. **Theo hàng** (Định lý 2.2.5 phía sau): phần tử thứ $i$ của $A\mathbf{x}$ là tích vô hướng của hàng $i$ của $A$ với $\mathbf{x}$. Cách nhìn này thuận tiện khi *tính tay*.
+
+Người mới học thường chỉ nhớ cách 2 (vì dễ tính), rồi bị mắc kẹt khi gặp lý thuyết. Hãy cố nắm cả hai — cách 1 mới là cách giúp bạn *hiểu*.
+</GhiChu>
+
+Lưu ý rằng nếu $A$ là ma trận $m \times n$ thì tích $A\mathbf{x}$ chỉ được định nghĩa khi $\mathbf{x}$ là một $n$-vector, và khi đó vector $A\mathbf{x}$ là một $m$-vector, bởi vì điều này đúng với mỗi cột $\mathbf{a}_j$ của $A$. Nhưng trong trường hợp này, hệ phương trình tuyến tính có ma trận hệ số $A$ và vector tự do $\mathbf{b}$ có dạng một phương trình ma trận duy nhất
+
+$$
+A\mathbf{x} = \mathbf{b}
+$$
+
+Định lý sau kết hợp Định nghĩa 2.5 với phương trình (2.4) và tóm tắt phần thảo luận ở trên. Nhắc lại rằng một hệ phương trình tuyến tính được gọi là *có nghiệm* nếu nó có ít nhất một nghiệm.
+
+<DinhLy so="2.2.1">
+1. Mọi hệ phương trình tuyến tính đều có dạng $A\mathbf{x} = \mathbf{b}$, trong đó $A$ là ma trận hệ số, $\mathbf{b}$ là ma trận cột tự do, và $\mathbf{x}$ là ma trận các biến.
+2. Hệ $A\mathbf{x} = \mathbf{b}$ có nghiệm khi và chỉ khi $\mathbf{b}$ là một tổ hợp tuyến tính của các cột của $A$.
+3. Nếu $\mathbf{a}_1, \mathbf{a}_2, \ldots, \mathbf{a}_n$ là các cột của $A$ và nếu $\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix}$ thì $\mathbf{x}$ là nghiệm của hệ tuyến tính $A\mathbf{x} = \mathbf{b}$ khi và chỉ khi $x_1, x_2, \ldots, x_n$ là nghiệm của phương trình vector
+
+$$
+x_1\mathbf{a}_1 + x_2\mathbf{a}_2 + \cdots + x_n\mathbf{a}_n = \mathbf{b}
+$$
+
+</DinhLy>
+
+Một hệ phương trình tuyến tính ở dạng $A\mathbf{x} = \mathbf{b}$ như trong (1) của Định lý 2.2.1 được gọi là viết ở **dạng ma trận** (*matrix form*). Đây là một cách nhìn hệ tuyến tính rất hữu ích, như ta sẽ thấy.
+
+Định lý 2.2.1 biến bài toán giải hệ tuyến tính $A\mathbf{x} = \mathbf{b}$ thành bài toán biểu diễn ma trận cột tự do $\mathbf{b}$ thành tổ hợp tuyến tính của các cột của ma trận hệ số $A$. Sự thay đổi góc nhìn như vậy rất hữu ích, bởi vì cách này hay cách kia có thể tốt hơn trong một tình huống cụ thể; tầm quan trọng của định lý là ở chỗ *ta có quyền lựa chọn*.
+
+<ViDu so="2.2.2">
+Nếu $A = \begin{bmatrix} 2 & -1 & 3 & 5 \\ 0 & 2 & -3 & 1 \\ -3 & 4 & 1 & 2 \end{bmatrix}$ và $\mathbf{x} = \begin{bmatrix} 2 \\ 1 \\ 0 \\ -2 \end{bmatrix}$, hãy tính $A\mathbf{x}$.
+
+**Lời giải.** Theo Định nghĩa 2.5:
+
+$$
+A\mathbf{x} = 2\begin{bmatrix} 2 \\ 0 \\ -3 \end{bmatrix} + 1\begin{bmatrix} -1 \\ 2 \\ 4 \end{bmatrix} + 0\begin{bmatrix} 3 \\ -3 \\ 1 \end{bmatrix} - 2\begin{bmatrix} 5 \\ 1 \\ 2 \end{bmatrix} = \begin{bmatrix} -7 \\ 0 \\ -6 \end{bmatrix}.
+$$
+
+</ViDu>
+
+<ViDu so="2.2.3">
+Cho các cột $\mathbf{a}_1$, $\mathbf{a}_2$, $\mathbf{a}_3$, $\mathbf{a}_4$ trong $\mathbb{R}^3$, hãy viết $2\mathbf{a}_1 - 3\mathbf{a}_2 + 5\mathbf{a}_3 + \mathbf{a}_4$ ở dạng $A\mathbf{x}$, trong đó $A$ là một ma trận và $\mathbf{x}$ là một vector.
+
+**Lời giải.** Ở đây cột các hệ số là $\mathbf{x} = \begin{bmatrix} 2 \\ -3 \\ 5 \\ 1 \end{bmatrix}$. Do đó Định nghĩa 2.5 cho
+
+$$
+A\mathbf{x} = 2\mathbf{a}_1 - 3\mathbf{a}_2 + 5\mathbf{a}_3 + \mathbf{a}_4
+$$
+
+trong đó $A = \begin{bmatrix} \mathbf{a}_1 & \mathbf{a}_2 & \mathbf{a}_3 & \mathbf{a}_4 \end{bmatrix}$ là ma trận có $\mathbf{a}_1$, $\mathbf{a}_2$, $\mathbf{a}_3$, $\mathbf{a}_4$ làm các cột.
+</ViDu>
+
+<ViDu so="2.2.4">
+Cho $A = \begin{bmatrix} \mathbf{a}_1 & \mathbf{a}_2 & \mathbf{a}_3 & \mathbf{a}_4 \end{bmatrix}$ là ma trận $3 \times 4$ cho theo các cột $\mathbf{a}_1 = \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix}$, $\mathbf{a}_2 = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}$, $\mathbf{a}_3 = \begin{bmatrix} 3 \\ -1 \\ -3 \end{bmatrix}$, $\mathbf{a}_4 = \begin{bmatrix} 3 \\ 1 \\ 0 \end{bmatrix}$. Trong mỗi trường hợp dưới đây, hãy biểu diễn $\mathbf{b}$ thành tổ hợp tuyến tính của $\mathbf{a}_1$, $\mathbf{a}_2$, $\mathbf{a}_3$, $\mathbf{a}_4$, hoặc chứng tỏ nó không phải là tổ hợp tuyến tính như vậy. Giải thích câu trả lời của bạn có ý nghĩa gì đối với hệ phương trình tuyến tính $A\mathbf{x} = \mathbf{b}$ tương ứng.
+
+**a.** $\mathbf{b} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}$ · **b.** $\mathbf{b} = \begin{bmatrix} 4 \\ 2 \\ 1 \end{bmatrix}$
+
+**Lời giải.** Theo Định lý 2.2.1, $\mathbf{b}$ là tổ hợp tuyến tính của $\mathbf{a}_1$, $\mathbf{a}_2$, $\mathbf{a}_3$, $\mathbf{a}_4$ khi và chỉ khi hệ $A\mathbf{x} = \mathbf{b}$ có nghiệm. Vậy trong mỗi trường hợp ta đưa ma trận bổ sung $[A \mid \mathbf{b}]$ của hệ $A\mathbf{x} = \mathbf{b}$ về dạng rút gọn.
+
+**a.** Ở đây
+
+$$
+\left[\begin{array}{rrrr|r} 2 & 1 & 3 & 3 & 1 \\ 0 & 1 & -1 & 1 & 2 \\ -1 & 1 & -3 & 0 & 3 \end{array}\right] \to \left[\begin{array}{rrrr|r} 1 & 0 & 2 & 1 & 0 \\ 0 & 1 & -1 & 1 & 0 \\ 0 & 0 & 0 & 0 & 1 \end{array}\right]
+$$
+
+nên hệ $A\mathbf{x} = \mathbf{b}$ vô nghiệm trong trường hợp này. Do đó $\mathbf{b}$ *không* phải tổ hợp tuyến tính của $\mathbf{a}_1$, $\mathbf{a}_2$, $\mathbf{a}_3$, $\mathbf{a}_4$.
+
+**b.** Bây giờ
+
+$$
+\left[\begin{array}{rrrr|r} 2 & 1 & 3 & 3 & 4 \\ 0 & 1 & -1 & 1 & 2 \\ -1 & 1 & -3 & 0 & 1 \end{array}\right] \to \left[\begin{array}{rrrr|r} 1 & 0 & 2 & 1 & 1 \\ 0 & 1 & -1 & 1 & 2 \\ 0 & 0 & 0 & 0 & 0 \end{array}\right]
+$$
+
+nên hệ $A\mathbf{x} = \mathbf{b}$ có nghiệm. Vậy $\mathbf{b}$ là tổ hợp tuyến tính của $\mathbf{a}_1$, $\mathbf{a}_2$, $\mathbf{a}_3$, $\mathbf{a}_4$ trong trường hợp này. Thực ra nghiệm tổng quát là $x_1 = 1 - 2s - t$, $x_2 = 2 + s - t$, $x_3 = s$ và $x_4 = t$, với $s$ và $t$ là các tham số tuỳ ý.
+</ViDu>
+
+<ViDu so="2.2.5">
+Lấy $A$ là ma trận không, ta có $0\mathbf{x} = \mathbf{0}$ với mọi vector $\mathbf{x}$ theo Định nghĩa 2.5, vì mọi cột của ma trận không đều bằng không. Tương tự, $A\mathbf{0} = \mathbf{0}$ với mọi ma trận $A$, vì mọi phần tử của vector không đều bằng 0.
+</ViDu>
+
+<ViDu so="2.2.6">
+Nếu $I = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}$, hãy chứng tỏ rằng $I\mathbf{x} = \mathbf{x}$ với mọi vector $\mathbf{x}$ trong $\mathbb{R}^3$.
+
+**Lời giải.** Nếu $\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}$ thì Định nghĩa 2.5 cho
+
+$$
+I\mathbf{x} = x_1\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} + x_2\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} + x_3\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} = \begin{bmatrix} x_1 \\ 0 \\ 0 \end{bmatrix} + \begin{bmatrix} 0 \\ x_2 \\ 0 \end{bmatrix} + \begin{bmatrix} 0 \\ 0 \\ x_3 \end{bmatrix} = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = \mathbf{x}
+$$
+
+</ViDu>
+
+Ma trận $I$ trong Ví dụ 2.2.6 được gọi là **ma trận đơn vị** $3 \times 3$, và ta sẽ gặp lại những ma trận như vậy ở Ví dụ 2.2.11 phía dưới. Trước khi tiếp tục, ta xây dựng một số tính chất đại số của phép nhân ma trận với vector, những tính chất được dùng rất nhiều trong đại số tuyến tính.
+
+<DinhLy so="2.2.2">
+Cho $A$ và $B$ là các ma trận $m \times n$, và cho $\mathbf{x}$, $\mathbf{y}$ là các $n$-vector trong $\mathbb{R}^n$. Khi đó:
+
+1. $A(\mathbf{x} + \mathbf{y}) = A\mathbf{x} + A\mathbf{y}$.
+2. $A(a\mathbf{x}) = a(A\mathbf{x}) = (aA)\mathbf{x}$ với mọi vô hướng $a$.
+3. $(A + B)\mathbf{x} = A\mathbf{x} + B\mathbf{x}$.
+</DinhLy>
+
+**Chứng minh.** Ta chứng minh (3); các kiểm chứng khác tương tự và dành làm bài tập. Cho $A = \begin{bmatrix} \mathbf{a}_1 & \mathbf{a}_2 & \cdots & \mathbf{a}_n \end{bmatrix}$ và $B = \begin{bmatrix} \mathbf{b}_1 & \mathbf{b}_2 & \cdots & \mathbf{b}_n \end{bmatrix}$ được cho theo các cột của chúng. Vì cộng hai ma trận cũng chính là cộng các cột của chúng, ta có
+
+$$
+A + B = \begin{bmatrix} \mathbf{a}_1 + \mathbf{b}_1 & \mathbf{a}_2 + \mathbf{b}_2 & \cdots & \mathbf{a}_n + \mathbf{b}_n \end{bmatrix}
+$$
+
+Nếu ta viết $\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix}$ thì Định nghĩa 2.5 cho
+
+$$
+\begin{aligned}
+(A + B)\mathbf{x} &= x_1(\mathbf{a}_1 + \mathbf{b}_1) + x_2(\mathbf{a}_2 + \mathbf{b}_2) + \cdots + x_n(\mathbf{a}_n + \mathbf{b}_n) \\
+&= (x_1\mathbf{a}_1 + x_2\mathbf{a}_2 + \cdots + x_n\mathbf{a}_n) + (x_1\mathbf{b}_1 + x_2\mathbf{b}_2 + \cdots + x_n\mathbf{b}_n) \\
+&= A\mathbf{x} + B\mathbf{x} \qquad ∎
+\end{aligned}
+$$
+
+Định lý 2.2.2 cho phép thực hiện các phép tính ma trận–vector gần giống như trong số học thông thường. Ví dụ, với mọi ma trận $A$, $B$ cỡ $m \times n$ và mọi $n$-vector $\mathbf{x}$, $\mathbf{y}$, ta có:
+
+$$
+A(2\mathbf{x} - 5\mathbf{y}) = 2A\mathbf{x} - 5A\mathbf{y} \qquad \text{và} \qquad (3A - 7B)\mathbf{x} = 3A\mathbf{x} - 7B\mathbf{x}
+$$
+
+Ta sẽ dùng các thao tác như vậy xuyên suốt cuốn sách, thường là không nhắc lại.
+
+## Phương trình tuyến tính
+
+Định lý 2.2.2 cũng cho một cách hữu ích để mô tả nghiệm của hệ phương trình tuyến tính
+
+$$
+A\mathbf{x} = \mathbf{b}
+$$
+
+Có một hệ liên quan
+
+$$
+A\mathbf{x} = \mathbf{0}
+$$
+
+gọi là **hệ thuần nhất liên kết** (*associated homogeneous system*), thu được từ hệ ban đầu $A\mathbf{x} = \mathbf{b}$ bằng cách thay mọi số hạng tự do bằng số 0. Giả sử $\mathbf{x}_1$ là một nghiệm của $A\mathbf{x} = \mathbf{b}$ và $\mathbf{x}_0$ là một nghiệm của $A\mathbf{x} = \mathbf{0}$ (tức là $A\mathbf{x}_1 = \mathbf{b}$ và $A\mathbf{x}_0 = \mathbf{0}$). Khi đó $\mathbf{x}_1 + \mathbf{x}_0$ lại là một nghiệm nữa của $A\mathbf{x} = \mathbf{b}$. Thật vậy, Định lý 2.2.2 cho
+
+$$
+A(\mathbf{x}_1 + \mathbf{x}_0) = A\mathbf{x}_1 + A\mathbf{x}_0 = \mathbf{b} + \mathbf{0} = \mathbf{b}
+$$
+
+Nhận xét này có một mệnh đề đảo hữu ích.
+
+<DinhLy so="2.2.3">
+Giả sử $\mathbf{x}_1$ là một nghiệm riêng bất kỳ của hệ phương trình tuyến tính $A\mathbf{x} = \mathbf{b}$. Khi đó mọi nghiệm $\mathbf{x}_2$ của $A\mathbf{x} = \mathbf{b}$ đều có dạng
+
+$$
+\mathbf{x}_2 = \mathbf{x}_0 + \mathbf{x}_1
+$$
+
+với $\mathbf{x}_0$ là một nghiệm nào đó của hệ thuần nhất liên kết $A\mathbf{x} = \mathbf{0}$.
+</DinhLy>
+
+**Chứng minh.** Giả sử $\mathbf{x}_2$ cũng là nghiệm của $A\mathbf{x} = \mathbf{b}$, tức là $A\mathbf{x}_2 = \mathbf{b}$. Viết $\mathbf{x}_0 = \mathbf{x}_2 - \mathbf{x}_1$. Khi đó $\mathbf{x}_2 = \mathbf{x}_0 + \mathbf{x}_1$ và, dùng Định lý 2.2.2, ta tính
+
+$$
+A\mathbf{x}_0 = A(\mathbf{x}_2 - \mathbf{x}_1) = A\mathbf{x}_2 - A\mathbf{x}_1 = \mathbf{b} - \mathbf{b} = \mathbf{0}
+$$
+
+Vậy $\mathbf{x}_0$ là một nghiệm của hệ thuần nhất liên kết $A\mathbf{x} = \mathbf{0}$. ∎
+
+Lưu ý rằng phép khử Gauss cho ta một biểu diễn như vậy.
+
+<GhiChu tieuDe="Ghi chú cho người học — cấu trúc tập nghiệm">
+Định lý 2.2.3 nói một điều rất đẹp:
+
+$$
+\text{nghiệm tổng quát} = \text{một nghiệm riêng} + \text{nghiệm tổng quát của hệ thuần nhất}
+$$
+
+Nếu bạn từng học phương trình vi phân, bạn sẽ gặp lại *đúng* cấu trúc này. Đó không phải trùng hợp — cả hai đều là hệ quả của cùng một tính chất “tuyến tính”. Nhận ra được khuôn mẫu chung giữa các lĩnh vực khác nhau chính là dấu hiệu bạn đang hiểu sâu chứ không chỉ học thuộc.
+</GhiChu>
+
+<ViDu so="2.2.7">
+Biểu diễn mọi nghiệm của hệ sau thành tổng của một nghiệm cụ thể cộng với một nghiệm của hệ thuần nhất liên kết.
+
+$$
+\begin{aligned}
+x_1 - x_2 - x_3 + 3x_4 &= 2 \\
+2x_1 - x_2 - 3x_3 + 4x_4 &= 6 \\
+x_1 \phantom{{}- x_2} - 2x_3 + x_4 &= 4
+\end{aligned}
+$$
+
+**Lời giải.** Phép khử Gauss cho $x_1 = 4 + 2s - t$, $x_2 = 2 + s + 2t$, $x_3 = s$, $x_4 = t$, với $s$ và $t$ là các tham số tuỳ ý. Do đó nghiệm tổng quát có thể viết
+
+$$
+\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} = \begin{bmatrix} 4 + 2s - t \\ 2 + s + 2t \\ s \\ t \end{bmatrix} = \begin{bmatrix} 4 \\ 2 \\ 0 \\ 0 \end{bmatrix} + s\begin{bmatrix} 2 \\ 1 \\ 1 \\ 0 \end{bmatrix} + t\begin{bmatrix} -1 \\ 2 \\ 0 \\ 1 \end{bmatrix}
+$$
+
+Như vậy $\mathbf{x}_1 = \begin{bmatrix} 4 \\ 2 \\ 0 \\ 0 \end{bmatrix}$ là một nghiệm riêng (ứng với $s = 0 = t$), và $\mathbf{x}_0 = s\begin{bmatrix} 2 \\ 1 \\ 1 \\ 0 \end{bmatrix} + t\begin{bmatrix} -1 \\ 2 \\ 0 \\ 1 \end{bmatrix}$ cho tất cả nghiệm của hệ thuần nhất liên kết. (Để thấy vì sao như vậy, hãy thực hiện lại phép khử Gauss nhưng với mọi số hạng tự do đặt bằng 0.)
+</ViDu>
+
+Kết quả hữu ích sau được nêu ra mà không chứng minh.
+
+<DinhLy so="2.2.4">
+Cho $A\mathbf{x} = \mathbf{b}$ là một hệ phương trình với ma trận bổ sung $\begin{bmatrix} A & \mathbf{b} \end{bmatrix}$. Viết $\operatorname{rank} A = r$.
+
+1. $\operatorname{rank} \begin{bmatrix} A & \mathbf{b} \end{bmatrix}$ bằng $r$ hoặc $r + 1$.
+2. Hệ có nghiệm khi và chỉ khi $\operatorname{rank} \begin{bmatrix} A & \mathbf{b} \end{bmatrix} = r$.
+3. Hệ vô nghiệm khi và chỉ khi $\operatorname{rank} \begin{bmatrix} A & \mathbf{b} \end{bmatrix} = r + 1$.
+</DinhLy>
+
+## Tích vô hướng
+
+Định nghĩa 2.5 không phải lúc nào cũng là cách dễ nhất để tính tích ma trận–vector $A\mathbf{x}$, vì nó đòi hỏi phải chỉ ra tường minh các cột của $A$. Có một cách khác để tìm tích này, cách đó dùng ma trận $A$ như một khối nguyên vẹn mà không cần nhắc đến các cột của nó, nên rất hữu ích trong thực hành. Phương pháp này dựa trên khái niệm sau.
+
+<DinhNghia so="2.6" ten="Tích vô hướng trong Rⁿ">
+Nếu $(a_1, a_2, \ldots, a_n)$ và $(b_1, b_2, \ldots, b_n)$ là hai bộ $n$ có thứ tự thì **tích vô hướng** (*dot product*) của chúng được định nghĩa là số
+
+$$
+a_1b_1 + a_2b_2 + \cdots + a_nb_n
+$$
+
+thu được bằng cách nhân các phần tử tương ứng rồi cộng các kết quả lại.
+</DinhNghia>
+
+Để thấy điều này liên hệ với tích ma trận như thế nào, cho $A$ là ma trận $3 \times 4$ và $\mathbf{x}$ là một 4-vector. Viết
+
+$$
+\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} \quad \text{và} \quad A = \begin{bmatrix} a_{11} & a_{12} & a_{13} & a_{14} \\ a_{21} & a_{22} & a_{23} & a_{24} \\ a_{31} & a_{32} & a_{33} & a_{34} \end{bmatrix}
+$$
+
+theo ký hiệu ở Mục 2.1, ta tính
+
+$$
+\begin{aligned}
+A\mathbf{x} &= x_1\begin{bmatrix} a_{11} \\ a_{21} \\ a_{31} \end{bmatrix} + x_2\begin{bmatrix} a_{12} \\ a_{22} \\ a_{32} \end{bmatrix} + x_3\begin{bmatrix} a_{13} \\ a_{23} \\ a_{33} \end{bmatrix} + x_4\begin{bmatrix} a_{14} \\ a_{24} \\ a_{34} \end{bmatrix} \\
+&= \begin{bmatrix} a_{11}x_1 + a_{12}x_2 + a_{13}x_3 + a_{14}x_4 \\ a_{21}x_1 + a_{22}x_2 + a_{23}x_3 + a_{24}x_4 \\ a_{31}x_1 + a_{32}x_2 + a_{33}x_3 + a_{34}x_4 \end{bmatrix}
+\end{aligned}
+$$
+
+Từ đây ta thấy rằng *mỗi phần tử của $A\mathbf{x}$ là tích vô hướng của hàng tương ứng của $A$ với $\mathbf{x}$*. Phép tính này đúng trong trường hợp tổng quát, và ta ghi lại kết quả trong Định lý 2.2.5.
+
+<DinhLy so="2.2.5" ten="Quy tắc tích vô hướng (Dot Product Rule)">
+Cho $A$ là ma trận $m \times n$ và $\mathbf{x}$ là một $n$-vector. Khi đó mỗi phần tử của vector $A\mathbf{x}$ là tích vô hướng của hàng tương ứng của $A$ với $\mathbf{x}$.
+</DinhLy>
+
+Kết quả này được dùng rất nhiều trong đại số tuyến tính.
+
+Nếu $A$ là $m \times n$ và $\mathbf{x}$ là một $n$-vector thì việc tính $A\mathbf{x}$ bằng quy tắc tích vô hướng đơn giản hơn dùng Định nghĩa 2.5, vì phép tính có thể thực hiện trực tiếp mà không cần nhắc tường minh đến các cột của $A$. Phần tử thứ nhất của $A\mathbf{x}$ là tích vô hướng của hàng 1 của $A$ với $\mathbf{x}$. Khi tính tay, ta làm bằng cách đi *ngang* qua hàng một của $A$, đi *dọc* xuống cột $\mathbf{x}$, nhân các phần tử tương ứng, rồi cộng kết quả lại. Các phần tử khác của $A\mathbf{x}$ được tính theo cùng cách, dùng các hàng khác của $A$ với cột $\mathbf{x}$.
+
+Tổng quát, tính phần tử thứ $i$ của $A\mathbf{x}$ như sau:
+
+<TomTat>
+Đi ngang qua hàng $i$ của $A$ và đi dọc xuống cột $\mathbf{x}$, nhân các phần tử tương ứng, rồi cộng các kết quả.
+</TomTat>
+
+Để minh hoạ, ta làm lại Ví dụ 2.2.2 bằng quy tắc tích vô hướng thay vì Định nghĩa 2.5.
+
+<ViDu so="2.2.8">
+Nếu $A = \begin{bmatrix} 2 & -1 & 3 & 5 \\ 0 & 2 & -3 & 1 \\ -3 & 4 & 1 & 2 \end{bmatrix}$ và $\mathbf{x} = \begin{bmatrix} 2 \\ 1 \\ 0 \\ -2 \end{bmatrix}$, hãy tính $A\mathbf{x}$.
+
+**Lời giải.** Các phần tử của $A\mathbf{x}$ là tích vô hướng của các hàng của $A$ với $\mathbf{x}$:
+
+$$
+A\mathbf{x} = \begin{bmatrix} 2 \cdot 2 + (-1) \cdot 1 + 3 \cdot 0 + 5 \cdot (-2) \\ 0 \cdot 2 + 2 \cdot 1 + (-3) \cdot 0 + 1 \cdot (-2) \\ (-3) \cdot 2 + 4 \cdot 1 + 1 \cdot 0 + 2 \cdot (-2) \end{bmatrix} = \begin{bmatrix} -7 \\ 0 \\ -6 \end{bmatrix}
+$$
+
+Tất nhiên kết quả này khớp với kết quả ở Ví dụ 2.2.2.
+</ViDu>
+
+<ViDu so="2.2.9">
+Viết hệ phương trình tuyến tính sau ở dạng $A\mathbf{x} = \mathbf{b}$.
+
+$$
+\begin{aligned}
+5x_1 - x_2 + 2x_3 + x_4 - 3x_5 &= 8 \\
+x_1 + x_2 + 3x_3 - 5x_4 + 2x_5 &= -2 \\
+-x_1 + x_2 - 2x_3 \phantom{{}+ x_4} - 3x_5 &= 0
+\end{aligned}
+$$
+
+**Lời giải.** Viết $A = \begin{bmatrix} 5 & -1 & 2 & 1 & -3 \\ 1 & 1 & 3 & -5 & 2 \\ -1 & 1 & -2 & 0 & -3 \end{bmatrix}$, $\mathbf{b} = \begin{bmatrix} 8 \\ -2 \\ 0 \end{bmatrix}$, $\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{bmatrix}$. Khi đó quy tắc tích vô hướng cho
+
+$$
+A\mathbf{x} = \begin{bmatrix} 5x_1 - x_2 + 2x_3 + x_4 - 3x_5 \\ x_1 + x_2 + 3x_3 - 5x_4 + 2x_5 \\ -x_1 + x_2 - 2x_3 - 3x_5 \end{bmatrix}
+$$
+
+nên các phần tử của $A\mathbf{x}$ chính là vế trái của các phương trình trong hệ tuyến tính. Do đó hệ trở thành $A\mathbf{x} = \mathbf{b}$, vì hai ma trận bằng nhau khi và chỉ khi các phần tử tương ứng bằng nhau.
+</ViDu>
+
+<ViDu so="2.2.10">
+Nếu $A$ là ma trận không cỡ $m \times n$ thì $A\mathbf{x} = \mathbf{0}$ với mọi $n$-vector $\mathbf{x}$.
+
+**Lời giải.** Với mỗi $k$, phần tử thứ $k$ của $A\mathbf{x}$ là tích vô hướng của hàng $k$ của $A$ với $\mathbf{x}$, và giá trị đó bằng 0 vì hàng $k$ của $A$ gồm toàn số 0.
+</ViDu>
+
+<DinhNghia so="2.7" ten="Ma trận đơn vị">
+Với mỗi $n \ge 2$, **ma trận đơn vị** (*identity matrix*) $I_n$ là ma trận $n \times n$ có các số 1 trên đường chéo chính (từ góc trên trái xuống góc dưới phải), và các số 0 ở mọi vị trí khác.
+</DinhNghia>
+
+Vài ma trận đơn vị đầu tiên là
+
+$$
+I_2 = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}, \quad I_3 = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}, \quad I_4 = \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}, \quad \ldots
+$$
+
+Trong Ví dụ 2.2.6 ta đã chứng tỏ $I_3\mathbf{x} = \mathbf{x}$ với mọi 3-vector $\mathbf{x}$ bằng Định nghĩa 2.5. Kết quả sau cho thấy điều này đúng trong trường hợp tổng quát, và đó là lý do của tên gọi này.
+
+<ViDu so="2.2.11">
+Với mỗi $n \ge 2$ ta có $I_n\mathbf{x} = \mathbf{x}$ với mọi $n$-vector $\mathbf{x}$ trong $\mathbb{R}^n$.
+
+**Lời giải.** Ta kiểm chứng trường hợp $n = 4$. Cho 4-vector $\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix}$, quy tắc tích vô hướng cho
+
+$$
+I_4\mathbf{x} = \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} = \begin{bmatrix} x_1 + 0 + 0 + 0 \\ 0 + x_2 + 0 + 0 \\ 0 + 0 + x_3 + 0 \\ 0 + 0 + 0 + x_4 \end{bmatrix} = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} = \mathbf{x}
+$$
+
+Tổng quát, $I_n\mathbf{x} = \mathbf{x}$ vì phần tử thứ $k$ của $I_n\mathbf{x}$ là tích vô hướng của hàng $k$ của $I_n$ với $\mathbf{x}$, mà hàng $k$ của $I_n$ có số 1 ở vị trí $k$ và số 0 ở mọi vị trí khác.
+</ViDu>
+
+<ViDu so="2.2.12">
+Cho $A = \begin{bmatrix} \mathbf{a}_1 & \mathbf{a}_2 & \cdots & \mathbf{a}_n \end{bmatrix}$ là ma trận $m \times n$ bất kỳ với các cột $\mathbf{a}_1, \mathbf{a}_2, \ldots, \mathbf{a}_n$. Nếu $\mathbf{e}_j$ ký hiệu cột thứ $j$ của ma trận đơn vị $I_n$ cỡ $n \times n$ thì $A\mathbf{e}_j = \mathbf{a}_j$ với mỗi $j = 1, 2, \ldots, n$.
+
+**Lời giải.** Viết $\mathbf{e}_j = \begin{bmatrix} t_1 \\ t_2 \\ \vdots \\ t_n \end{bmatrix}$ trong đó $t_j = 1$, còn $t_i = 0$ với mọi $i \ne j$. Khi đó Định lý 2.2.5 cho
+
+$$
+A\mathbf{e}_j = t_1\mathbf{a}_1 + \cdots + t_j\mathbf{a}_j + \cdots + t_n\mathbf{a}_n = \mathbf{0} + \cdots + \mathbf{a}_j + \cdots + \mathbf{0} = \mathbf{a}_j
+$$
+
+</ViDu>
+
+Ví dụ 2.2.12 sẽ được nhắc lại về sau; bây giờ ta dùng nó để chứng minh:
+
+<DinhLy so="2.2.6">
+Cho $A$ và $B$ là các ma trận $m \times n$. Nếu $A\mathbf{x} = B\mathbf{x}$ với mọi $\mathbf{x}$ trong $\mathbb{R}^n$ thì $A = B$.
+</DinhLy>
+
+**Chứng minh.** Viết $A = \begin{bmatrix} \mathbf{a}_1 & \mathbf{a}_2 & \cdots & \mathbf{a}_n \end{bmatrix}$ và $B = \begin{bmatrix} \mathbf{b}_1 & \mathbf{b}_2 & \cdots & \mathbf{b}_n \end{bmatrix}$ theo các cột của chúng. Chỉ cần chứng tỏ $\mathbf{a}_k = \mathbf{b}_k$ với mọi $k$. Nhưng ta đang giả thiết $A\mathbf{e}_k = B\mathbf{e}_k$, điều này cho $\mathbf{a}_k = \mathbf{b}_k$ theo Ví dụ 2.2.12. ∎
+
+Ta đã giới thiệu phép nhân ma trận với vector như một cách mới để suy nghĩ về hệ phương trình tuyến tính. Nhưng nó còn có nhiều công dụng khác nữa. Hoá ra nhiều phép toán hình học có thể mô tả bằng phép nhân ma trận, và bây giờ ta khảo sát điều đó diễn ra như thế nào. Thêm một lợi ích nữa: cách mô tả này cho ta một “bức tranh” hình học về ma trận, bằng cách cho thấy tác dụng lên một vector khi nó được nhân với $A$. “Cách nhìn hình học” này về ma trận là một công cụ nền tảng để hiểu chúng.
+
+## Phép biến đổi
+
+Tập $\mathbb{R}^2$ có cách hiểu hình học là mặt phẳng Euclid, trong đó vector $\begin{bmatrix} a_1 \\ a_2 \end{bmatrix}$ trong $\mathbb{R}^2$ biểu diễn điểm $(a_1, a_2)$ trong mặt phẳng. Theo cách này ta xem $\mathbb{R}^2$ là tập tất cả các điểm trong mặt phẳng. Do đó, ta sẽ gọi các vector trong $\mathbb{R}^2$ là *điểm*, và viết toạ độ của chúng thành cột thay vì hàng. Để làm rõ cách hiểu hình học này, vector $\begin{bmatrix} a_1 \\ a_2 \end{bmatrix}$ được biểu diễn bằng một mũi tên đi từ gốc toạ độ $\begin{bmatrix} 0 \\ 0 \end{bmatrix}$ đến vector đó.
+
+Tương tự, ta đồng nhất $\mathbb{R}^3$ với không gian 3 chiều bằng cách viết điểm $(a_1, a_2, a_3)$ thành vector $\begin{bmatrix} a_1 \\ a_2 \\ a_3 \end{bmatrix}$ trong $\mathbb{R}^3$, cũng được biểu diễn bằng một mũi tên[^2] từ gốc toạ độ đến điểm đó. Theo cách này, các từ “điểm” và “vector” có cùng nghĩa trong mặt phẳng hoặc trong không gian.
+
+Ta bắt đầu bằng cách mô tả một phép biến đổi hình học cụ thể của mặt phẳng $\mathbb{R}^2$.
+
+<ViDu so="2.2.13">
+Xét phép biến đổi của $\mathbb{R}^2$ cho bởi **phép đối xứng qua trục $x$** (*reflection in the $x$ axis*). Phép toán này đưa vector $\begin{bmatrix} a_1 \\ a_2 \end{bmatrix}$ đến ảnh đối xứng $\begin{bmatrix} a_1 \\ -a_2 \end{bmatrix}$ của nó. Bây giờ hãy để ý rằng
+
+$$
+\begin{bmatrix} a_1 \\ -a_2 \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} \begin{bmatrix} a_1 \\ a_2 \end{bmatrix}
+$$
+
+nên việc lấy đối xứng $\begin{bmatrix} a_1 \\ a_2 \end{bmatrix}$ qua trục $x$ có thể thực hiện bằng cách nhân với ma trận $\begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}$.
+</ViDu>
+
+Nếu ta viết $A = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}$ thì Ví dụ 2.2.13 cho thấy phép đối xứng qua trục $x$ đưa mỗi vector $\mathbf{x}$ trong $\mathbb{R}^2$ đến vector $A\mathbf{x}$ trong $\mathbb{R}^2$. Như vậy nó là một ví dụ của một *hàm*
+
+$$
+T : \mathbb{R}^2 \to \mathbb{R}^2 \quad \text{với} \quad T(\mathbf{x}) = A\mathbf{x} \text{ với mọi } \mathbf{x} \text{ trong } \mathbb{R}^2
+$$
+
+Như vậy nó là một tổng quát hoá của các hàm quen thuộc $f : \mathbb{R} \to \mathbb{R}$ đưa một số $x$ đến một số thực khác $f(x)$.
+
+Tổng quát hơn, các hàm $T : \mathbb{R}^n \to \mathbb{R}^m$ được gọi là **phép biến đổi** (*transformations*) từ $\mathbb{R}^n$ vào $\mathbb{R}^m$. Một phép biến đổi $T$ như vậy là một quy tắc gán cho mỗi vector $\mathbf{x}$ trong $\mathbb{R}^n$ một vector $T(\mathbf{x})$ xác định duy nhất trong $\mathbb{R}^m$, gọi là **ảnh** (*image*) của $\mathbf{x}$ qua $T$. Ta ghi tình huống này bằng cách viết
+
+$$
+T : \mathbb{R}^n \to \mathbb{R}^m \qquad \text{hoặc} \qquad \mathbb{R}^n \xrightarrow{\ T\ } \mathbb{R}^m
+$$
+
+Để mô tả một phép biến đổi $T : \mathbb{R}^n \to \mathbb{R}^m$, ta phải chỉ rõ vector $T(\mathbf{x})$ trong $\mathbb{R}^m$ với mọi $\mathbf{x}$ trong $\mathbb{R}^n$. Điều này được gọi là *định nghĩa* $T$, hay chỉ rõ **tác động** (*action*) của $T$. Nói rằng tác động *định nghĩa* phép biến đổi nghĩa là ta xem hai phép biến đổi $S : \mathbb{R}^n \to \mathbb{R}^m$ và $T : \mathbb{R}^n \to \mathbb{R}^m$ là *bằng nhau* nếu chúng có cùng tác động; chính thức hơn
+
+$$
+S = T \quad \text{khi và chỉ khi} \quad S(\mathbf{x}) = T(\mathbf{x}) \text{ với mọi } \mathbf{x} \text{ trong } \mathbb{R}^n.
+$$
+
+Một lần nữa, đây chính là điều ta hiểu khi viết $f = g$ với $f, g : \mathbb{R} \to \mathbb{R}$ là các hàm thông thường.
+
+Các hàm $f : \mathbb{R} \to \mathbb{R}$ thường được mô tả bằng công thức, ví dụ $f(x) = x^2 + 1$ và $f(x) = \sin x$. Điều tương tự đúng với phép biến đổi; đây là một ví dụ.
+
+<ViDu so="2.2.14">
+Công thức $T\begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} = \begin{bmatrix} x_1 + x_2 \\ x_2 + x_3 \\ x_3 + x_4 \end{bmatrix}$ định nghĩa một phép biến đổi $\mathbb{R}^4 \to \mathbb{R}^3$.
+</ViDu>
+
+Ví dụ 2.2.13 gợi ý rằng phép nhân ma trận là một cách quan trọng để định nghĩa các phép biến đổi $\mathbb{R}^n \to \mathbb{R}^m$. Nếu $A$ là ma trận $m \times n$ bất kỳ, phép nhân với $A$ cho một phép biến đổi
+
+$$
+T_A : \mathbb{R}^n \to \mathbb{R}^m \quad \text{xác định bởi} \quad T_A(\mathbf{x}) = A\mathbf{x} \text{ với mọi } \mathbf{x} \text{ trong } \mathbb{R}^n
+$$
+
+<DinhNghia so="2.8" ten="Phép biến đổi ma trận T_A">
+$T_A$ được gọi là **phép biến đổi ma trận cảm sinh bởi $A$** (*matrix transformation induced by $A$*).
+</DinhNghia>
+
+Như vậy Ví dụ 2.2.13 cho thấy phép đối xứng qua trục $x$ là phép biến đổi ma trận $\mathbb{R}^2 \to \mathbb{R}^2$ cảm sinh bởi ma trận $\begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}$. Ngoài ra, phép biến đổi $\mathbb{R}^4 \to \mathbb{R}^3$ trong Ví dụ 2.2.14 là phép biến đổi ma trận cảm sinh bởi ma trận
+
+$$
+A = \begin{bmatrix} 1 & 1 & 0 & 0 \\ 0 & 1 & 1 & 0 \\ 0 & 0 & 1 & 1 \end{bmatrix} \quad \text{vì} \quad \begin{bmatrix} 1 & 1 & 0 & 0 \\ 0 & 1 & 1 & 0 \\ 0 & 0 & 1 & 1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} = \begin{bmatrix} x_1 + x_2 \\ x_2 + x_3 \\ x_3 + x_4 \end{bmatrix}
+$$
+
+<ViDu so="2.2.15">
+Cho $R_{\pi/2} : \mathbb{R}^2 \to \mathbb{R}^2$ ký hiệu phép quay ngược chiều kim đồng hồ quanh gốc toạ độ một góc $\frac{\pi}{2}$ radian (tức là $90^\circ$)[^3]. Chứng tỏ rằng $R_{\pi/2}$ được cảm sinh bởi ma trận $\begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}$.
+
+**Lời giải.** Tác dụng của $R_{\pi/2}$ là quay vector $\mathbf{x} = \begin{bmatrix} a \\ b \end{bmatrix}$ ngược chiều kim đồng hồ một góc $\frac{\pi}{2}$ để tạo ra vector $R_{\pi/2}(\mathbf{x})$. Vì hai tam giác tương ứng bằng nhau, ta được $R_{\pi/2}(\mathbf{x}) = \begin{bmatrix} -b \\ a \end{bmatrix}$. Nhưng
+
+$$
+\begin{bmatrix} -b \\ a \end{bmatrix} = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} a \\ b \end{bmatrix},
+$$
+
+nên ta được $R_{\pi/2}(\mathbf{x}) = A\mathbf{x}$ với mọi $\mathbf{x}$ trong $\mathbb{R}^2$, trong đó $A = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}$. Nói cách khác, $R_{\pi/2}$ là phép biến đổi ma trận cảm sinh bởi $A$.
+</ViDu>
+
+Nếu $A$ là ma trận không cỡ $m \times n$ thì $A$ cảm sinh phép biến đổi
+
+$$
+T : \mathbb{R}^n \to \mathbb{R}^m \quad \text{cho bởi} \quad T(\mathbf{x}) = A\mathbf{x} = \mathbf{0} \text{ với mọi } \mathbf{x} \text{ trong } \mathbb{R}^n
+$$
+
+Phép này được gọi là **phép biến đổi không** (*zero transformation*), ký hiệu $T = 0$.
+
+Một ví dụ quan trọng khác là **phép biến đổi đồng nhất** (*identity transformation*)
+
+$$
+1_{\mathbb{R}^n} : \mathbb{R}^n \to \mathbb{R}^n \quad \text{cho bởi} \quad 1_{\mathbb{R}^n}(\mathbf{x}) = \mathbf{x} \text{ với mọi } \mathbf{x} \text{ trong } \mathbb{R}^n
+$$
+
+Tức là, tác động của $1_{\mathbb{R}^n}$ lên $\mathbf{x}$ là *không làm gì cả*. Nếu $I_n$ ký hiệu ma trận đơn vị $n \times n$, ta đã chứng tỏ ở Ví dụ 2.2.11 rằng $I_n\mathbf{x} = \mathbf{x}$ với mọi $\mathbf{x}$ trong $\mathbb{R}^n$. Do đó $1_{\mathbb{R}^n}(\mathbf{x}) = I_n\mathbf{x}$ với mọi $\mathbf{x}$ trong $\mathbb{R}^n$; nghĩa là ma trận đơn vị $I_n$ cảm sinh phép biến đổi đồng nhất.
+
+Sau đây là hai ví dụ nữa về phép biến đổi ma trận với mô tả hình học rõ ràng.
+
+<ViDu so="2.2.16">
+Nếu $a > 0$, phép biến đổi ma trận $T\begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} ax \\ y \end{bmatrix}$ cảm sinh bởi ma trận $A = \begin{bmatrix} a & 0 \\ 0 & 1 \end{bmatrix}$ được gọi là **phép giãn theo $x$** (*$x$-expansion*) của $\mathbb{R}^2$ nếu $a > 1$, và **phép nén theo $x$** (*$x$-compression*) nếu $0 < a < 1$. Tương tự, nếu $b > 0$ thì ma trận $A = \begin{bmatrix} 1 & 0 \\ 0 & b \end{bmatrix}$ cho ta các phép giãn và nén theo $y$.
+</ViDu>
+
+<ViDu so="2.2.17">
+Nếu $a$ là một số, phép biến đổi ma trận $T\begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} x + ay \\ y \end{bmatrix}$ cảm sinh bởi ma trận $A = \begin{bmatrix} 1 & a \\ 0 & 1 \end{bmatrix}$ được gọi là **phép trượt theo $x$** (*$x$-shear*) của $\mathbb{R}^2$ (dương nếu $a > 0$ và âm nếu $a < 0$).
+</ViDu>
+
+Ta vội lưu ý rằng có những phép biến đổi hình học quan trọng *không phải* là phép biến đổi ma trận. Ví dụ, nếu $\mathbf{w}$ là một cột cố định trong $\mathbb{R}^n$, định nghĩa phép biến đổi $T_{\mathbf{w}} : \mathbb{R}^n \to \mathbb{R}^n$ bởi
+
+$$
+T_{\mathbf{w}}(\mathbf{x}) = \mathbf{x} + \mathbf{w} \quad \text{với mọi } \mathbf{x} \text{ trong } \mathbb{R}^n
+$$
+
+Khi đó $T_{\mathbf{w}}$ được gọi là **phép tịnh tiến** (*translation*) theo $\mathbf{w}$. Nói riêng, nếu $\mathbf{w} = \begin{bmatrix} 2 \\ 1 \end{bmatrix}$ trong $\mathbb{R}^2$ thì tác dụng của $T_{\mathbf{w}}$ lên $\begin{bmatrix} x \\ y \end{bmatrix}$ là tịnh tiến nó hai đơn vị sang phải và một đơn vị lên trên.
+
+Phép tịnh tiến $T_{\mathbf{w}}$ *không phải* là phép biến đổi ma trận trừ khi $\mathbf{w} = \mathbf{0}$. Thật vậy, nếu $T_{\mathbf{w}}$ được cảm sinh bởi một ma trận $A$ thì $A\mathbf{x} = T_{\mathbf{w}}(\mathbf{x}) = \mathbf{x} + \mathbf{w}$ phải đúng với mọi $\mathbf{x}$ trong $\mathbb{R}^n$. Nói riêng, lấy $\mathbf{x} = \mathbf{0}$ cho $\mathbf{w} = A\mathbf{0} = \mathbf{0}$.
+
+<GhiChu tieuDe="Ghi chú cho người học — vì sao đồ hoạ máy tính dùng toạ độ thuần nhất">
+Kết quả cuối này có hệ quả thực tế rất lớn. Trong đồ hoạ máy tính (2D/3D game, CAD), ta cần kết hợp *quay, co giãn* (là phép biến đổi ma trận) với *tịnh tiến* (không phải phép biến đổi ma trận). Giải pháp của ngành đồ hoạ là dùng **toạ độ thuần nhất** (*homogeneous coordinates*): nhúng $\mathbb{R}^2$ vào $\mathbb{R}^3$ bằng cách thêm một toạ độ bằng 1, khi đó phép tịnh tiến *trở thành* một phép nhân ma trận $3 \times 3$. Nhờ vậy GPU có thể gộp mọi phép biến đổi thành một ma trận duy nhất. Đây là ví dụ rất đẹp cho thấy một hạn chế lý thuyết dẫn đến một kỹ thuật thực tiễn.
+</GhiChu>
+
+[^1]: Tổ hợp tuyến tính đã được giới thiệu ở Mục 1.3 để mô tả nghiệm của hệ phương trình tuyến tính thuần nhất. Chúng sẽ được dùng rất nhiều ở phần sau.
+
+[^2]: Cách biểu diễn bằng “mũi tên” này cho vector trong $\mathbb{R}^2$ và $\mathbb{R}^3$ sẽ được dùng nhiều ở Chương 4.
+
+[^3]: Số đo radian cho góc dựa trên việc $360^\circ$ bằng $2\pi$ radian. Do đó $\pi$ radian $= 180^\circ$ và $\frac{\pi}{2}$ radian $= 90^\circ$.

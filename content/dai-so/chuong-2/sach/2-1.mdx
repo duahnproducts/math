@@ -1,0 +1,387 @@
+---
+mon: dai-so
+chuong: 2
+muc: "2.1"
+tieu_de: Cộng ma trận, nhân với vô hướng, và chuyển vị
+tieu_de_en: Matrix Addition, Scalar Multiplication, and Transposition
+loai: dich-nguyen-van
+nguon: "Dịch từ W. Keith Nicholson, Linear Algebra with Applications, Version 2023 – Revision A, Vretta-Lyryx Inc. (https://lyryx.com/linear-algebra-applications/), Mục 2.1. Bản dịch phát hành theo giấy phép CC BY-NC-SA 4.0, giống bản gốc. Thay đổi: dịch sang tiếng Việt, thêm ghi chú cho người học."
+---
+
+Trong Chương 1, ma trận xuất hiện như một cách viết gọn hệ phương trình tuyến tính. Chương này nghiên cứu *bản thân* ma trận như một đối tượng đại số: cộng, nhân với số, nhân hai ma trận, tìm nghịch đảo. Đây là nền tảng cho gần như mọi thứ phía sau — và cũng là nền của đồ hoạ máy tính, machine learning, và nhiều thuật toán trong khoa học máy tính.
+
+Một bảng số hình chữ nhật được gọi là một **ma trận** (*matrix*; số nhiều: *matrices*), và các số trong đó được gọi là **phần tử** (*entries*) của ma trận. Ma trận thường được ký hiệu bằng chữ in hoa: $A$, $B$, $C$, v.v. Do đó,
+
+$$
+A = \begin{bmatrix} 1 & 2 & -1 \\ 0 & 5 & 6 \end{bmatrix} \qquad B = \begin{bmatrix} 1 & -1 \\ 0 & 2 \end{bmatrix} \qquad C = \begin{bmatrix} 1 \\ 3 \\ 2 \end{bmatrix}
+$$
+
+đều là ma trận. Rõ ràng ma trận có nhiều hình dạng khác nhau tuỳ theo số hàng và số cột. Ví dụ, ma trận $A$ ở trên có 2 hàng và 3 cột. Tổng quát, một ma trận có $m$ hàng và $n$ cột được gọi là **ma trận $m \times n$** hay có **cỡ $m \times n$**. Như vậy các ma trận $A$, $B$, $C$ ở trên lần lượt có cỡ $2 \times 3$, $2 \times 2$ và $3 \times 1$. Ma trận cỡ $1 \times n$ được gọi là **ma trận hàng** (*row matrix*), còn ma trận cỡ $m \times 1$ được gọi là **ma trận cột** (*column matrix*). Ma trận cỡ $n \times n$ được gọi là **ma trận vuông** (*square matrix*).
+
+Mỗi phần tử của ma trận được xác định bởi hàng và cột chứa nó. Các hàng được đánh số từ trên xuống, các cột được đánh số từ trái sang phải. Khi đó **phần tử $(i, j)$** của một ma trận là số nằm đồng thời ở hàng $i$ và cột $j$. Ví dụ,
+
+$$
+\text{Phần tử } (1, 2) \text{ của } \begin{bmatrix} 1 & -1 \\ 0 & 1 \end{bmatrix} \text{ là } -1. \qquad \text{Phần tử } (2, 3) \text{ của } \begin{bmatrix} 1 & 2 & -1 \\ 0 & 5 & 6 \end{bmatrix} \text{ là } 6.
+$$
+
+Người ta thường dùng một ký hiệu đặc biệt cho các phần tử của ma trận. Nếu $A$ là ma trận $m \times n$ và phần tử $(i, j)$ của $A$ được ký hiệu là $a_{ij}$ thì $A$ được viết như sau:
+
+$$
+A = \begin{bmatrix} a_{11} & a_{12} & a_{13} & \cdots & a_{1n} \\ a_{21} & a_{22} & a_{23} & \cdots & a_{2n} \\ \vdots & \vdots & \vdots & & \vdots \\ a_{m1} & a_{m2} & a_{m3} & \cdots & a_{mn} \end{bmatrix}
+$$
+
+Thông thường điều này được viết gọn là $A = [a_{ij}]$. Như vậy $a_{ij}$ là phần tử ở hàng $i$ và cột $j$ của $A$. Ví dụ, một ma trận $3 \times 4$ trong ký hiệu này được viết
+
+$$
+A = \begin{bmatrix} a_{11} & a_{12} & a_{13} & a_{14} \\ a_{21} & a_{22} & a_{23} & a_{24} \\ a_{31} & a_{32} & a_{33} & a_{34} \end{bmatrix}
+$$
+
+Cần nêu rõ một quy ước về hàng và cột: *hàng luôn được nhắc trước cột*. Ví dụ:
+
+- Nếu ma trận có cỡ $m \times n$ thì nó có $m$ hàng và $n$ cột.
+- Khi nói phần tử $(i, j)$ của ma trận, nó nằm ở hàng $i$ và cột $j$.
+- Nếu một phần tử được ký hiệu $a_{ij}$ thì chỉ số dưới thứ nhất $i$ chỉ hàng, chỉ số thứ hai $j$ chỉ cột chứa $a_{ij}$.
+
+Hai điểm $(x_1, y_1)$ và $(x_2, y_2)$ trong mặt phẳng bằng nhau khi và chỉ khi[^1] chúng có cùng toạ độ, tức là $x_1 = x_2$ và $y_1 = y_2$. Tương tự, hai ma trận $A$ và $B$ được gọi là **bằng nhau** (viết $A = B$) khi và chỉ khi:
+
+1. Chúng có cùng cỡ.
+2. Các phần tử tương ứng bằng nhau.
+
+Nếu các phần tử của $A$ và $B$ được viết ở dạng $A = [a_{ij}]$, $B = [b_{ij}]$ như đã mô tả thì điều kiện thứ hai có dạng
+
+$$
+A = [a_{ij}] = [b_{ij}] = B \text{ nghĩa là } a_{ij} = b_{ij} \text{ với mọi } i \text{ và } j
+$$
+
+<ViDu so="2.1.1">
+Cho $A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$, $B = \begin{bmatrix} 1 & 2 & -1 \\ 3 & 0 & 1 \end{bmatrix}$ và $C = \begin{bmatrix} 1 & 0 \\ -1 & 2 \end{bmatrix}$. Hãy bàn về khả năng $A = B$, $B = C$, $A = C$.
+
+**Lời giải.** $A = B$ là không thể vì $A$ và $B$ khác cỡ: $A$ là $2 \times 2$ trong khi $B$ là $2 \times 3$. Tương tự, $B = C$ cũng không thể. Nhưng $A = C$ là có thể, với điều kiện các phần tử tương ứng bằng nhau:
+
+$$
+\begin{bmatrix} a & b \\ c & d \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ -1 & 2 \end{bmatrix} \text{ nghĩa là } a = 1,\ b = 0,\ c = -1,\ d = 2.
+$$
+
+</ViDu>
+
+## Phép cộng ma trận
+
+<DinhNghia so="2.1" ten="Phép cộng ma trận">
+Nếu $A$ và $B$ là các ma trận *cùng cỡ*, tổng $A + B$ của chúng là ma trận tạo thành bằng cách cộng các phần tử tương ứng.
+</DinhNghia>
+
+Nếu $A = [a_{ij}]$ và $B = [b_{ij}]$ thì điều này có dạng
+
+$$
+A + B = [a_{ij} + b_{ij}]
+$$
+
+Lưu ý rằng phép cộng *không* được định nghĩa cho các ma trận khác cỡ.
+
+<ViDu so="2.1.2">
+Nếu $A = \begin{bmatrix} 2 & 1 & 3 \\ -1 & 2 & 0 \end{bmatrix}$ và $B = \begin{bmatrix} 1 & 1 & -1 \\ 2 & 0 & 6 \end{bmatrix}$, hãy tính $A + B$.
+
+**Lời giải.**
+
+$$
+A + B = \begin{bmatrix} 2 + 1 & 1 + 1 & 3 - 1 \\ -1 + 2 & 2 + 0 & 0 + 6 \end{bmatrix} = \begin{bmatrix} 3 & 2 & 2 \\ 1 & 2 & 6 \end{bmatrix}
+$$
+
+</ViDu>
+
+<ViDu so="2.1.3">
+Tìm $a$, $b$, $c$ nếu $\begin{bmatrix} a & b & c \end{bmatrix} + \begin{bmatrix} c & a & b \end{bmatrix} = \begin{bmatrix} 3 & 2 & -1 \end{bmatrix}$.
+
+**Lời giải.** Cộng các ma trận ở vế trái ta được
+
+$$
+\begin{bmatrix} a + c & b + a & c + b \end{bmatrix} = \begin{bmatrix} 3 & 2 & -1 \end{bmatrix}
+$$
+
+Vì các phần tử tương ứng phải bằng nhau, ta được ba phương trình: $a + c = 3$, $b + a = 2$, $c + b = -1$. Giải ra được $a = 3$, $b = -1$, $c = 0$.
+</ViDu>
+
+Nếu $A$, $B$, $C$ là các ma trận cùng cỡ bất kỳ thì
+
+$$
+\begin{aligned}
+A + B &= B + A && \text{(luật giao hoán — commutative law)} \\
+A + (B + C) &= (A + B) + C && \text{(luật kết hợp — associative law)}
+\end{aligned}
+$$
+
+Thật vậy, nếu $A = [a_{ij}]$ và $B = [b_{ij}]$ thì phần tử $(i, j)$ của $A + B$ và của $B + A$ lần lượt là $a_{ij} + b_{ij}$ và $b_{ij} + a_{ij}$. Vì chúng bằng nhau với mọi $i$ và $j$, ta được
+
+$$
+A + B = [a_{ij} + b_{ij}] = [b_{ij} + a_{ij}] = B + A
+$$
+
+Luật kết hợp được kiểm chứng tương tự.
+
+Ma trận $m \times n$ có mọi phần tử bằng 0 được gọi là **ma trận không** (*zero matrix*) cỡ $m \times n$ và được ký hiệu là $0$ (hoặc $0_{mn}$ nếu cần nhấn mạnh cỡ). Do đó
+
+$$
+0 + X = X
+$$
+
+đúng với mọi ma trận $X$ cỡ $m \times n$. **Ma trận đối** của ma trận $A$ cỡ $m \times n$ (viết $-A$) được định nghĩa là ma trận $m \times n$ thu được bằng cách nhân mỗi phần tử của $A$ với $-1$. Nếu $A = [a_{ij}]$ thì $-A = [-a_{ij}]$. Do đó
+
+$$
+A + (-A) = 0
+$$
+
+đúng với mọi ma trận $A$, trong đó tất nhiên $0$ là ma trận không cùng cỡ với $A$.
+
+Một khái niệm gần gũi là **phép trừ** ma trận. Nếu $A$ và $B$ là hai ma trận $m \times n$, hiệu $A - B$ của chúng được định nghĩa bởi
+
+$$
+A - B = A + (-B)
+$$
+
+Lưu ý rằng nếu $A = [a_{ij}]$ và $B = [b_{ij}]$ thì
+
+$$
+A - B = [a_{ij}] + [-b_{ij}] = [a_{ij} - b_{ij}]
+$$
+
+là ma trận $m \times n$ tạo thành bằng cách trừ các phần tử tương ứng.
+
+<ViDu so="2.1.4">
+Cho $A = \begin{bmatrix} 3 & -1 & 0 \\ 1 & 2 & -4 \end{bmatrix}$, $B = \begin{bmatrix} 1 & -1 & 1 \\ -2 & 0 & 6 \end{bmatrix}$, $C = \begin{bmatrix} 1 & 0 & -2 \\ 3 & 1 & 1 \end{bmatrix}$. Tính $-A$, $A - B$ và $A + B - C$.
+
+**Lời giải.**
+
+$$
+\begin{aligned}
+-A &= \begin{bmatrix} -3 & 1 & 0 \\ -1 & -2 & 4 \end{bmatrix} \\
+A - B &= \begin{bmatrix} 3 - 1 & -1 - (-1) & 0 - 1 \\ 1 - (-2) & 2 - 0 & -4 - 6 \end{bmatrix} = \begin{bmatrix} 2 & 0 & -1 \\ 3 & 2 & -10 \end{bmatrix} \\
+A + B - C &= \begin{bmatrix} 3 + 1 - 1 & -1 - 1 - 0 & 0 + 1 - (-2) \\ 1 - 2 - 3 & 2 + 0 - 1 & -4 + 6 - 1 \end{bmatrix} = \begin{bmatrix} 3 & -2 & 3 \\ -4 & 1 & 1 \end{bmatrix}
+\end{aligned}
+$$
+
+</ViDu>
+
+<ViDu so="2.1.5">
+Giải $\begin{bmatrix} 3 & 2 \\ -1 & 1 \end{bmatrix} + X = \begin{bmatrix} 1 & 0 \\ -1 & 2 \end{bmatrix}$, trong đó $X$ là một ma trận.
+
+**Lời giải.** Ta giải phương trình số $a + x = b$ bằng cách trừ số $a$ ở cả hai vế để được $x = b - a$. Cách này cũng dùng được cho ma trận. Để giải $\begin{bmatrix} 3 & 2 \\ -1 & 1 \end{bmatrix} + X = \begin{bmatrix} 1 & 0 \\ -1 & 2 \end{bmatrix}$, chỉ cần trừ ma trận $\begin{bmatrix} 3 & 2 \\ -1 & 1 \end{bmatrix}$ ở cả hai vế để được
+
+$$
+X = \begin{bmatrix} 1 & 0 \\ -1 & 2 \end{bmatrix} - \begin{bmatrix} 3 & 2 \\ -1 & 1 \end{bmatrix} = \begin{bmatrix} 1 - 3 & 0 - 2 \\ -1 - (-1) & 2 - 1 \end{bmatrix} = \begin{bmatrix} -2 & -2 \\ 0 & 1 \end{bmatrix}
+$$
+
+Bạn đọc nên kiểm chứng rằng ma trận $X$ này quả thực thoả mãn phương trình ban đầu.
+</ViDu>
+
+Lời giải trong Ví dụ 2.1.5 giải phương trình ma trận $A + X = B$ một cách trực tiếp thông qua phép trừ ma trận: $X = B - A$. Chính khả năng làm việc với ma trận *như những thực thể nguyên vẹn* này nằm ở trung tâm của đại số ma trận.
+
+Cần lưu ý rằng cỡ của các ma trận trong một số phép tính thường được xác định bởi ngữ cảnh. Ví dụ, nếu
+
+$$
+A + C = \begin{bmatrix} 1 & 3 & -1 \\ 2 & 0 & 1 \end{bmatrix}
+$$
+
+thì $A$ và $C$ phải cùng cỡ (để $A + C$ có nghĩa), và cỡ đó phải là $2 \times 3$ (để tổng là $2 \times 3$). Cho đơn giản, ta sẽ thường bỏ qua việc nhắc đến những điều này khi chúng đã rõ từ ngữ cảnh.
+
+## Phép nhân với vô hướng
+
+Trong phép khử Gauss, nhân một hàng của ma trận với số $k$ nghĩa là nhân mọi phần tử của hàng đó với $k$.
+
+<DinhNghia so="2.2" ten="Phép nhân ma trận với vô hướng">
+Tổng quát hơn, nếu $A$ là một ma trận bất kỳ và $k$ là một số bất kỳ thì **bội vô hướng** (*scalar multiple*) $kA$ là ma trận thu được từ $A$ bằng cách nhân mỗi phần tử của $A$ với $k$.
+</DinhNghia>
+
+Nếu $A = [a_{ij}]$ thì $kA = [ka_{ij}]$. Như vậy $1A = A$ và $(-1)A = -A$ với mọi ma trận $A$.
+
+Thuật ngữ **vô hướng** (*scalar*) xuất hiện ở đây vì tập các số mà từ đó ta lấy các phần tử thường được gọi là tập các *vô hướng*. Ta vẫn đang dùng số thực làm vô hướng, nhưng hoàn toàn có thể dùng số phức.
+
+<ViDu so="2.1.6">
+Nếu $A = \begin{bmatrix} 3 & -1 & 4 \\ 2 & 0 & 6 \end{bmatrix}$ và $B = \begin{bmatrix} 1 & 2 & -1 \\ 0 & 3 & 2 \end{bmatrix}$, hãy tính $5A$, $\frac12 B$ và $3A - 2B$.
+
+**Lời giải.**
+
+$$
+5A = \begin{bmatrix} 15 & -5 & 20 \\ 10 & 0 & 30 \end{bmatrix}, \qquad \tfrac12 B = \begin{bmatrix} \frac12 & 1 & -\frac12 \\ 0 & \frac32 & 1 \end{bmatrix}
+$$
+
+$$
+3A - 2B = \begin{bmatrix} 9 & -3 & 12 \\ 6 & 0 & 18 \end{bmatrix} - \begin{bmatrix} 2 & 4 & -2 \\ 0 & 6 & 4 \end{bmatrix} = \begin{bmatrix} 7 & -7 & 14 \\ 6 & -6 & 14 \end{bmatrix}
+$$
+
+</ViDu>
+
+Nếu $A$ là ma trận bất kỳ, lưu ý rằng $kA$ có cùng cỡ với $A$ với mọi vô hướng $k$. Ta cũng có
+
+$$
+0A = 0 \qquad \text{và} \qquad k0 = 0
+$$
+
+vì ma trận không có mọi phần tử bằng 0. Nói cách khác, $kA = 0$ nếu $k = 0$ hoặc $A = 0$. Mệnh đề đảo của điều này cũng đúng, như Ví dụ 2.1.7 cho thấy.
+
+<ViDu so="2.1.7">
+Nếu $kA = 0$, hãy chứng tỏ rằng hoặc $k = 0$ hoặc $A = 0$.
+
+**Lời giải.** Viết $A = [a_{ij}]$, khi đó $kA = 0$ nghĩa là $ka_{ij} = 0$ với mọi $i$ và $j$. Nếu $k = 0$ thì không có gì phải làm. Nếu $k \ne 0$ thì $ka_{ij} = 0$ kéo theo $a_{ij} = 0$ với mọi $i$ và $j$; tức là $A = 0$.
+</ViDu>
+
+Để tiện tham khảo về sau, các tính chất cơ bản của phép cộng ma trận và phép nhân với vô hướng được liệt kê trong Định lý 2.1.1.
+
+<DinhLy so="2.1.1">
+Cho $A$, $B$, $C$ là các ma trận $m \times n$ tuỳ ý, với $m$ và $n$ cố định. Cho $k$ và $p$ là các số thực tuỳ ý. Khi đó
+
+1. $A + B = B + A$.
+2. $A + (B + C) = (A + B) + C$.
+3. Tồn tại ma trận $0$ cỡ $m \times n$ sao cho $0 + A = A$ với mọi $A$.
+4. Với mỗi $A$ tồn tại ma trận $-A$ cỡ $m \times n$ sao cho $A + (-A) = 0$.
+5. $k(A + B) = kA + kB$.
+6. $(k + p)A = kA + pA$.
+7. $(kp)A = k(pA)$.
+8. $1A = A$.
+</DinhLy>
+
+**Chứng minh.** Các tính chất 1–4 đã được nêu ở trên. Để kiểm tra tính chất 5, cho $A = [a_{ij}]$ và $B = [b_{ij}]$ là các ma trận cùng cỡ. Khi đó $A + B = [a_{ij} + b_{ij}]$ như trước, nên phần tử $(i, j)$ của $k(A + B)$ là
+
+$$
+k(a_{ij} + b_{ij}) = ka_{ij} + kb_{ij}
+$$
+
+Nhưng đây đúng là phần tử $(i, j)$ của $kA + kB$, và do đó $k(A + B) = kA + kB$. Các tính chất còn lại được kiểm chứng tương tự; chi tiết dành cho bạn đọc. ∎
+
+Các tính chất trong Định lý 2.1.1 cho phép ta tính toán với ma trận gần giống như cách tính toán với số. Trước hết, tính chất 2 suy ra rằng tổng
+
+$$
+(A + B) + C = A + (B + C)
+$$
+
+là như nhau dù được lập theo cách nào, nên được viết là $A + B + C$. Tương tự, tổng $A + B + C + D$ không phụ thuộc vào cách lập; ví dụ, nó bằng cả $(A + B) + (C + D)$ và $A + [B + (C + D)]$. Hơn nữa, tính chất 1 bảo đảm rằng, chẳng hạn,
+
+$$
+B + D + A + C = A + B + C + D
+$$
+
+Nói cách khác, thứ tự cộng các ma trận không quan trọng. Nhận xét tương tự áp dụng cho tổng của năm (hoặc nhiều hơn) ma trận.
+
+Các tính chất 5 và 6 trong Định lý 2.1.1 được gọi là các **luật phân phối** (*distributive laws*) cho phép nhân với vô hướng, và chúng mở rộng cho tổng nhiều hơn hai số hạng. Ví dụ,
+
+$$
+\begin{aligned}
+k(A + B - C) &= kA + kB - kC \\
+(k + p - m)A &= kA + pA - mA
+\end{aligned}
+$$
+
+Các nhận xét tương tự đúng cho nhiều hơn ba số hạng. Những sự kiện này, cùng với các tính chất 7 và 8, cho phép ta rút gọn biểu thức bằng cách gom số hạng đồng dạng, khai triển, và đặt nhân tử chung, hoàn toàn giống như cách thao tác với biểu thức đại số chứa biến và số thực. Ví dụ sau minh hoạ các kỹ thuật này.
+
+<ViDu so="2.1.8">
+Rút gọn $2(A + 3C) - 3(2C - B) - 3[2(2A + B - 4C) - 4(A - 2C)]$, trong đó $A$, $B$, $C$ đều là các ma trận cùng cỡ.
+
+**Lời giải.** Quá trình rút gọn diễn ra như thể $A$, $B$, $C$ là các biến.
+
+$$
+\begin{aligned}
+& 2(A + 3C) - 3(2C - B) - 3[2(2A + B - 4C) - 4(A - 2C)] \\
+&= 2A + 6C - 6C + 3B - 3[4A + 2B - 8C - 4A + 8C] \\
+&= 2A + 3B - 3[2B] \\
+&= 2A - 3B
+\end{aligned}
+$$
+
+</ViDu>
+
+## Chuyển vị của ma trận
+
+Nhiều kết quả về ma trận $A$ liên quan đến các *hàng* của $A$, và kết quả tương ứng cho *cột* được suy ra theo cách tương tự, về cơ bản là thay từ “hàng” bằng từ “cột” xuyên suốt. Định nghĩa sau được đưa ra với các ứng dụng như vậy trong đầu.
+
+<DinhNghia so="2.3" ten="Chuyển vị của ma trận">
+Nếu $A$ là ma trận $m \times n$, **chuyển vị** (*transpose*) của $A$, viết là $A^T$, là ma trận $n \times m$ mà các hàng của nó chính là các cột của $A$ theo cùng thứ tự.
+</DinhNghia>
+
+Nói cách khác, hàng thứ nhất của $A^T$ là cột thứ nhất của $A$ (tức là gồm các phần tử của cột 1 theo thứ tự). Tương tự, hàng thứ hai của $A^T$ là cột thứ hai của $A$, và cứ thế.
+
+<ViDu so="2.1.9">
+Viết chuyển vị của mỗi ma trận sau.
+
+$$
+A = \begin{bmatrix} 1 \\ 3 \\ 2 \end{bmatrix} \quad B = \begin{bmatrix} 5 & 2 & 6 \end{bmatrix} \quad C = \begin{bmatrix} 1 & 2 \\ 3 & 4 \\ 5 & 6 \end{bmatrix} \quad D = \begin{bmatrix} 3 & 1 & -1 \\ 1 & 3 & 2 \\ -1 & 2 & 1 \end{bmatrix}
+$$
+
+**Lời giải.**
+
+$$
+A^T = \begin{bmatrix} 1 & 3 & 2 \end{bmatrix}, \quad B^T = \begin{bmatrix} 5 \\ 2 \\ 6 \end{bmatrix}, \quad C^T = \begin{bmatrix} 1 & 3 & 5 \\ 2 & 4 & 6 \end{bmatrix}, \quad D^T = D.
+$$
+
+</ViDu>
+
+Nếu $A = [a_{ij}]$ là một ma trận, viết $A^T = [b_{ij}]$. Khi đó $b_{ij}$ là phần tử thứ $j$ của hàng thứ $i$ của $A^T$, và do đó là phần tử thứ $j$ của *cột* thứ $i$ của $A$. Điều này có nghĩa là $b_{ij} = a_{ji}$, nên định nghĩa của $A^T$ có thể phát biểu như sau:
+
+$$
+\text{Nếu } A = [a_{ij}] \text{ thì } A^T = [a_{ji}]. \tag{2.1}
+$$
+
+Điều này hữu ích khi kiểm chứng các tính chất sau của phép chuyển vị.
+
+<DinhLy so="2.1.2">
+Cho $A$ và $B$ là các ma trận cùng cỡ, và cho $k$ là một vô hướng.
+
+1. Nếu $A$ là ma trận $m \times n$ thì $A^T$ là ma trận $n \times m$.
+2. $(A^T)^T = A$.
+3. $(kA)^T = kA^T$.
+4. $(A + B)^T = A^T + B^T$.
+</DinhLy>
+
+**Chứng minh.** Tính chất 1 là một phần của định nghĩa $A^T$, và tính chất 2 suy ra từ (2.1). Về tính chất 3: Nếu $A = [a_{ij}]$ thì $kA = [ka_{ij}]$, nên (2.1) cho
+
+$$
+(kA)^T = [ka_{ji}] = k[a_{ji}] = kA^T
+$$
+
+Cuối cùng, nếu $B = [b_{ij}]$ thì $A + B = [c_{ij}]$ với $c_{ij} = a_{ij} + b_{ij}$. Khi đó (2.1) cho tính chất 4:
+
+$$
+(A + B)^T = [c_{ij}]^T = [c_{ji}] = [a_{ji} + b_{ji}] = [a_{ji}] + [b_{ji}] = A^T + B^T \qquad ∎
+$$
+
+Có một cách hữu ích khác để hình dung phép chuyển vị. Nếu $A = [a_{ij}]$ là ma trận $m \times n$ thì các phần tử $a_{11}, a_{22}, a_{33}, \ldots$ được gọi là **đường chéo chính** (*main diagonal*) của $A$. Do đó đường chéo chính chạy xuống dưới và sang phải từ góc trên bên trái của ma trận $A$. Như vậy, lập chuyển vị của ma trận $A$ có thể xem như “lật” $A$ quanh đường chéo chính của nó, hay “quay” $A$ một góc $180^\circ$ quanh đường thẳng chứa đường chéo chính. Điều này làm cho tính chất 2 trong Định lý 2.1.2 trở nên hiển nhiên.
+
+<ViDu so="2.1.10">
+Giải tìm $A$ nếu $\left(2A^T - 3\begin{bmatrix} 1 & 2 \\ -1 & 1 \end{bmatrix}\right)^T = \begin{bmatrix} 2 & 3 \\ -1 & 2 \end{bmatrix}$.
+
+**Lời giải.** Dùng Định lý 2.1.2, vế trái của phương trình là
+
+$$
+\left(2A^T - 3\begin{bmatrix} 1 & 2 \\ -1 & 1 \end{bmatrix}\right)^T = 2\left(A^T\right)^T - 3\begin{bmatrix} 1 & 2 \\ -1 & 1 \end{bmatrix}^T = 2A - 3\begin{bmatrix} 1 & -1 \\ 2 & 1 \end{bmatrix}
+$$
+
+Do đó phương trình trở thành
+
+$$
+2A - 3\begin{bmatrix} 1 & -1 \\ 2 & 1 \end{bmatrix} = \begin{bmatrix} 2 & 3 \\ -1 & 2 \end{bmatrix}
+$$
+
+Vậy $2A = \begin{bmatrix} 2 & 3 \\ -1 & 2 \end{bmatrix} + 3\begin{bmatrix} 1 & -1 \\ 2 & 1 \end{bmatrix} = \begin{bmatrix} 5 & 0 \\ 5 & 5 \end{bmatrix}$, nên cuối cùng $A = \frac12 \begin{bmatrix} 5 & 0 \\ 5 & 5 \end{bmatrix} = \frac52 \begin{bmatrix} 1 & 0 \\ 1 & 1 \end{bmatrix}$.
+</ViDu>
+
+Lưu ý rằng Ví dụ 2.1.10 cũng có thể giải bằng cách chuyển vị cả hai vế trước, rồi giải tìm $A^T$, và từ đó được $A = (A^T)^T$. Bạn đọc nên tự làm cách này.
+
+Ma trận $D = \begin{bmatrix} 1 & 2 \\ 2 & 5 \end{bmatrix}$ trong Ví dụ 2.1.9 có tính chất $D = D^T$. Những ma trận như vậy rất quan trọng; một ma trận $A$ được gọi là **đối xứng** (*symmetric*) nếu $A = A^T$. Một ma trận đối xứng $A$ nhất thiết phải vuông (nếu $A$ là $m \times n$ thì $A^T$ là $n \times m$, nên $A = A^T$ buộc $n = m$). Tên gọi này đến từ việc các ma trận đó thể hiện một tính đối xứng quanh đường chéo chính. Tức là, các phần tử nằm đối xứng nhau qua đường chéo chính thì bằng nhau. Ví dụ, $\begin{bmatrix} a & b & c \\ b' & d & e \\ c' & e' & f \end{bmatrix}$ là đối xứng khi $b = b'$, $c = c'$ và $e = e'$.
+
+<ViDu so="2.1.11">
+Nếu $A$ và $B$ là các ma trận đối xứng cỡ $n \times n$, hãy chứng tỏ rằng $A + B$ đối xứng.
+
+**Lời giải.** Ta có $A^T = A$ và $B^T = B$, nên theo Định lý 2.1.2 ta có $(A + B)^T = A^T + B^T = A + B$. Vậy $A + B$ đối xứng.
+</ViDu>
+
+<ViDu so="2.1.12">
+Giả sử ma trận vuông $A$ thoả mãn $A = 2A^T$. Chứng tỏ rằng nhất thiết $A = 0$.
+
+**Lời giải.** Nếu ta lặp lại phương trình đã cho, Định lý 2.1.2 cho
+
+$$
+A = 2A^T = 2\left(2A^T\right)^T = 2\left(2(A^T)^T\right) = 4A
+$$
+
+Trừ $A$ ở cả hai vế được $3A = 0$, nên $A = \frac13(0) = 0$.
+</ViDu>
+
+[^1]: Nếu $p$ và $q$ là hai mệnh đề, ta nói $p$ *kéo theo* $q$ nếu $q$ đúng bất cứ khi nào $p$ đúng. Khi đó “$p$ khi và chỉ khi $q$” nghĩa là cả $p$ kéo theo $q$ và $q$ kéo theo $p$. Xem Phụ lục B để biết thêm.
