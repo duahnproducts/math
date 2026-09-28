@@ -9,6 +9,7 @@ import { soSangSlug } from '../src/lib/duong-dan';
 import {
   CAC_MON,
   kiemTraChuong,
+  taoChiMucMon,
   trichThuatNgu,
   type DuLieuChuong,
   type MucTrongChuong,
@@ -110,6 +111,9 @@ for (const mon of cacMon) {
   }
 }
 
+// Liên kết sang chương khác (Chương 2 trỏ về Archimedes ở Chương 1) được đối chiếu với cả môn
+const chiMucTheoMon = new Map(cacMon.map((mon) => [mon, taoChiMucMon(cacChuong.filter((c) => c.mon === mon))]));
+
 describe('nội dung các chương', () => {
   it('có ít nhất một chương có nội dung', () => {
     expect(cacChuong.length).toBeGreaterThan(0);
@@ -117,7 +121,7 @@ describe('nội dung các chương', () => {
 
   describe.each(cacChuong.map((c) => [c.thuMuc, c] as const))('%s', (_ten, du) => {
     it('liên kết chéo trỏ tới mục có thật, không trùng số hiệu, có ghi công, bài giảng đủ 8 mục', () => {
-      expect(kiemTraChuong(du)).toEqual([]);
+      expect(kiemTraChuong(du, chiMucTheoMon.get(du.mon))).toEqual([]);
     });
 
     it('tên file khớp số hiệu khai báo', () => {

@@ -5,7 +5,7 @@ import { getCollection, render } from 'astro:content';
 import Icon from '@/components/Icon.astro';
 import { thanhPhanMdx } from '@/components/mdx';
 import Khung from '@/layouts/Khung.astro';
-import { baiTapCoHuongDan, layChuong, lienKetKhoi, viTriTuId, type BaiTapEntry } from '@/lib/du-lieu';
+import { baiTapCoHuongDan, layChuong, lienKetKhoiTrongMon, viTriTuId, type BaiTapEntry } from '@/lib/du-lieu';
 import { slugChuong, soChuongTuSlug, soSangSlug, taoDuongDan } from '@/lib/duong-dan';
 import { NHAN_DO_KHO, nhanLoaiSach } from '@/lib/noi-dung';
 import { khoaBaiTap, khoaChuong } from '@/lib/tien-do';
@@ -28,7 +28,7 @@ const { Content } = await render(bt);
 const d = taoDuongDan(import.meta.env.BASE_URL);
 const so = du.chuong.so;
 const coHuongDan = baiTapCoHuongDan(bt);
-const canDung = bt.data.can_dung.map((ma) => lienKetKhoi(du, ma));
+const canDung = await Promise.all(bt.data.can_dung.map((ma) => lienKetKhoiTrongMon(du, ma)));
 const cungMuc = du.baiTap.filter((b) => b.data.muc === bt.data.muc);
 const viTriSo = du.baiTap.indexOf(bt);
 const truoc = du.baiTap[viTriSo - 1];
@@ -84,17 +84,17 @@ const lopDoKho = { de: 'ok', vua: 'info', kho: 'warn' }[bt.data.do_kho];
             {canDung.map((k) =>
               k.muc ? (
                 <>
-                  <a href={`${d.sach(mon, so, k.muc)}#${k.ma}`}>{k.ten}</a>
+                  <a href={`${d.sach(mon, k.chuong, k.muc)}#${k.ma}`}>{k.ten}</a>
                   {k.baiGiang.length > 0 && (
                     <span class="so-hieu">
                       (học ở{' '}
                       {k.baiGiang.map((bai, i) => (
                         <>
                           {i > 0 && ', '}
-                          <a href={d.baiGiang(mon, so, bai)}>Bài {bai}</a>
+                          <a href={d.baiGiang(mon, k.chuong, bai)}>Bài {bai}</a>
                         </>
                       ))}
-                      )
+                      {k.chuong !== so && `, Chương ${k.chuong}`})
                     </span>
                   )}
                 </>

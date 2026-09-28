@@ -4,6 +4,7 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import { soChuongTuSlug } from './duong-dan';
 import {
   baiGiangPhuMuc,
+  chuongCuaKhoi,
   coHuongDan,
   soSanhSo,
   tenKhoi,
@@ -106,6 +107,8 @@ export function coNoiDung(du: DuLieuChuongWeb): boolean {
 export interface LienKetKhoi {
   ma: string;
   ten: string;
+  /** chương chứa khối — có thể khác chương của bài tập (Chương 2 dùng Archimedes ở Chương 1) */
+  chuong: number;
   muc?: string;
   baiGiang: number[];
 }
@@ -114,5 +117,23 @@ export function lienKetKhoi(du: DuLieuChuongWeb, ma: string): LienKetKhoi {
   const muc = timMucCuaKhoi(du.khoiTheoMuc, ma);
   const khoi = muc ? du.khoiTheoMuc[muc].find((k) => k.id === ma) : undefined;
   const baiGiang = muc ? baiGiangPhuMuc(du.baiGiang.map((b) => b.data), muc).map((b) => b.bai) : [];
-  return { ma, ten: tenKhoi(ma, khoi?.ten), muc, baiGiang };
+  return { ma, ten: tenKhoi(ma, khoi?.ten), chuong: du.chuong.so, muc, baiGiang };
+}
+
+/**
+ * Như lienKetKhoi, nhưng khối mang số của chương khác thì tìm ở chương đó; khối
+ * không số hiệu (tien-de-day-du) thì tìm ở chương này trước, rồi các chương khác.
+ */
+export async function lienKetKhoiTrongMon(du: DuLieuChuongWeb, ma: string): Promise<LienKetKhoi> {
+  const chuong = chuongCuaKhoi(ma);
+  if (chuong !== undefined) {
+    return lienKetKhoi(chuong === du.chuong.so ? du : await layChuong(du.mon.id, chuong), ma);
+  }
+  if (timMucCuaKhoi(du.khoiTheoMuc, ma)) return lienKetKhoi(du, ma);
+  for (const c of du.mon.chuong) {
+    if (c.so === du.chuong.so) continue;
+    const khac = await layChuong(du.mon.id, c.so);
+    if (timMucCuaKhoi(khac.khoiTheoMuc, ma)) return lienKetKhoi(khac, ma);
+  }
+  return lienKetKhoi(du, ma);
 }

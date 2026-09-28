@@ -3,9 +3,11 @@ import {
   TAM_MUC,
   bangDoiChieu,
   baiGiangPhuMuc,
+  chuongCuaKhoi,
   chuongCuaMuc,
   coHuongDan,
   kiemTraChuong,
+  taoChiMucMon,
   kiemTraTamMuc,
   mucCuaSo,
   phanTichCanDung,
@@ -102,6 +104,14 @@ describe('liên kết và thuật ngữ trong bài', () => {
   it('trích XemMuc theo mục, bài giảng, bài tập', () => {
     const mdx = '<XemMuc muc="1.3" /> và <XemMuc bai={2} chu="x" /> rồi <XemMuc bai-tap="1.3.6" />';
     expect(trichXemMuc(mdx)).toEqual([{ muc: '1.3' }, { bai: 2 }, { baiTap: '1.3.6' }]);
+  });
+  it('trích XemMuc tới bài giảng ở chương khác', () => {
+    expect(trichXemMuc('<XemMuc chuong={1} bai={4} />')).toEqual([{ bai: 4, chuong: 1 }]);
+  });
+  it('đọc chương của một khối từ số hiệu', () => {
+    expect(chuongCuaKhoi('dinh-ly-1.4.2')).toBe(1);
+    expect(chuongCuaKhoi('dinh-nghia-2.2.3')).toBe(2);
+    expect(chuongCuaKhoi('tien-de-day-du')).toBeUndefined();
   });
   it('trích mã thuật ngữ', () => {
     expect(trichThuatNgu('<ThuatNgu id="supremum">sup</ThuatNgu> <ThuatNgu en={false} id="field" />')).toEqual([
@@ -213,5 +223,70 @@ describe('kiemTraChuong', () => {
     const loi = kiemTraChuong(du);
     expect(loi.some((l) => l.includes('thiếu ghi công'))).toBe(true);
     expect(loi.some((l) => l.includes('thiếu mục "Bài tập"'))).toBe(true);
+  });
+
+  describe('liên kết sang chương khác của cùng môn', () => {
+    function chuongHai(): DuLieuChuong {
+      return {
+        mon: 'giai-tich',
+        chuong: 2,
+        cacMuc: [{ so: '2.2', ten: 'Giới hạn' }],
+        baiGiang: [],
+        sach: [
+          {
+            mon: 'giai-tich',
+            chuong: 2,
+            muc: '2.2',
+            tieu_de: 'G',
+            loai: 'theo-sach',
+            nguon: 'Abbott, Understanding Analysis, 2015',
+            tep: '2-2.mdx',
+            noiDung: 'Dùng Archimedes <XemMuc muc="1.1" />, <XemMuc chuong={1} bai={1} />, <XemMuc bai-tap="1.2.1" />.',
+          },
+        ],
+        baiTap: [
+          { so: '2.2.2', muc: '2.2', do_kho: 'de', nen_lam: true, can_dung: ['dinh-ly-1.1.1'], tep: '2-2-2.mdx', noiDung: '<De>…</De>' },
+        ],
+      };
+    }
+
+    it('chỉ mục của cả môn gom trang, bài giảng, bài tập và khối của mọi chương', () => {
+      const chiMuc = taoChiMucMon([chuongMau()]);
+      expect([...chiMuc.muc]).toEqual(['1.1']);
+      expect([...chiMuc.baiGiang]).toEqual(['1/1']);
+      expect([...chiMuc.baiTap]).toEqual(['1.2.1']);
+      expect([...chiMuc.khoi]).toEqual(['dinh-ly-1.1.1']);
+    });
+
+    it('trỏ sang chương khác có thật thì đạt', () => {
+      expect(kiemTraChuong(chuongHai(), taoChiMucMon([chuongMau(), chuongHai()]))).toEqual([]);
+    });
+
+    it('không có chỉ mục của môn thì mọi liên kết sang chương khác đều bị báo', () => {
+      const loi = kiemTraChuong(chuongHai());
+      expect(loi).toHaveLength(4);
+      expect(loi.some((l) => l.includes('§1.1'))).toBe(true);
+      expect(loi.some((l) => l.includes('Bài 1 (Chương 1)'))).toBe(true);
+      expect(loi.some((l) => l.includes('bài tập 1.2.1'))).toBe(true);
+      expect(loi.some((l) => l.includes('dinh-ly-1.1.1'))).toBe(true);
+    });
+
+    it('khối không số hiệu (tiên đề, quy nạp) được tìm ở chương này rồi ở cả môn', () => {
+      const mot = chuongMau();
+      mot.sach[0].noiDung += '<TienDe id="tien-de-day-du">…</TienDe>';
+      const hai = chuongHai();
+      hai.baiTap[0].can_dung = ['tien-de-day-du'];
+      expect(kiemTraChuong(hai, taoChiMucMon([mot, hai])).filter((l) => l.includes('can_dung'))).toEqual([]);
+      hai.baiTap[0].can_dung = ['tien-de-khong-co'];
+      expect(kiemTraChuong(hai, taoChiMucMon([mot, hai])).filter((l) => l.includes('can_dung'))).toHaveLength(1);
+    });
+
+    it('trỏ sang chương khác nhưng chưa có thì bị báo', () => {
+      const du = chuongHai();
+      du.sach[0].noiDung = '<XemMuc muc="1.4" /> <XemMuc chuong={1} bai={7} />';
+      du.baiTap[0].can_dung = ['dinh-ly-1.4.2'];
+      const loi = kiemTraChuong(du, taoChiMucMon([chuongMau(), du]));
+      expect(loi).toHaveLength(3);
+    });
   });
 });

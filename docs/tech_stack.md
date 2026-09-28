@@ -98,6 +98,13 @@ nhưng giữ đúng ý:
   `<DinhLy so="1.2.6">`. Khối này là đích của liên kết chéo.
 - `can_dung` ghi **loại kèm số hiệu**, ví dụ `dinh-nghia-1.2.3`, vì có sách
   đánh số riêng cho từng loại.
+- **Liên kết sang chương khác** (Chương 2 dựa trên Archimedes ở Chương 1):
+  số hiệu tự mang số chương, nên `can_dung: ["dinh-ly-1.4.2"]`,
+  `<XemMuc muc="1.4" />` và `<XemMuc bai-tap="1.2.10" />` viết như bình thường;
+  bài giảng chương khác thì thêm `chuong`: `<XemMuc chuong={1} bai={4} />`.
+  Khối không số hiệu (`tien-de-day-du`, `dinh-ly-quy-nap`) được tìm ở chương
+  đang học trước, rồi ở cả môn. Test dữ liệu đối chiếu mọi liên kết này với
+  toàn bộ môn học.
 - Phần chưa có nội dung thì **không tạo file rỗng**. Trang chương tự hiện
   "Chưa có" dựa trên file nào tồn tại.
 

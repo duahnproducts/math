@@ -171,6 +171,15 @@ export function trichKhoiSo(mdx: string): KhoiSo[] {
   return ketQua;
 }
 
+/**
+ * Chương chứa một khối, đọc từ số hiệu: 'dinh-ly-1.4.2' → 1. Khối không số hiệu
+ * ('tien-de-day-du') thì không biết → undefined.
+ */
+export function chuongCuaKhoi(ma: string): number | undefined {
+  const so = phanTichCanDung(ma)?.so;
+  return so ? chuongCuaMuc(so) : undefined;
+}
+
 /** 'dinh-ly-1.4.3' → { loai: 'dinh-ly', so: '1.4.3' }; 'tien-de-day-du' → { loai: 'tien-de' }. */
 export function phanTichCanDung(ma: string): { loai: string; so?: string } | null {
   const cacLoai = Object.values(LOAI_KHOI).sort((a, b) => b.length - a.length);
@@ -198,9 +207,14 @@ export interface LienKetTrongBai {
   muc?: string;
   bai?: number;
   baiTap?: string;
+  /** Chỉ dùng với `bai`: bài giảng ở chương khác (`<XemMuc chuong={1} bai={4} />`). */
+  chuong?: number;
 }
 
-/** Các <XemMuc muc="1.3" /> · <XemMuc bai={2} /> · <XemMuc bai-tap="1.3.6" /> trong MDX. */
+/**
+ * Các <XemMuc muc="1.3" /> · <XemMuc bai={2} /> · <XemMuc bai-tap="1.3.6" /> trong MDX.
+ * Mục § và bài tập tự mang số chương; bài giảng ở chương khác thì thêm `chuong={n}`.
+ */
 export function trichXemMuc(mdx: string): LienKetTrongBai[] {
   const ketQua: LienKetTrongBai[] = [];
   for (const m of mdx.matchAll(/<XemMuc\b([^>]*)>/g)) {
@@ -208,9 +222,10 @@ export function trichXemMuc(mdx: string): LienKetTrongBai[] {
     const muc = docThuocTinh(tt, 'muc');
     const baiTap = /\bbai-tap\s*=\s*["']([^"']+)["']/.exec(tt)?.[1];
     const bai = /\bbai\s*=\s*\{\s*(\d+)\s*\}/.exec(tt)?.[1];
+    const chuong = /\bchuong\s*=\s*\{\s*(\d+)\s*\}/.exec(tt)?.[1];
     if (muc) ketQua.push({ muc });
     else if (baiTap) ketQua.push({ baiTap });
-    else if (bai) ketQua.push({ bai: Number(bai) });
+    else if (bai) ketQua.push(chuong ? { bai: Number(bai), chuong: Number(chuong) } : { bai: Number(bai) });
   }
   return ketQua;
 }
@@ -284,11 +299,41 @@ export interface DuLieuChuong {
 }
 
 /**
+ * Những gì có thật ở mọi chương của một môn — để kiểm tra liên kết trỏ sang
+ * chương khác (Chương 2 dựa nhiều vào Chương 1).
+ */
+export interface ChiMucMon {
+  /** Mục § có trang: '1.4' */
+  muc: Set<string>;
+  /** Bài giảng: '1/4' (chương/bài) */
+  baiGiang: Set<string>;
+  /** Bài tập: '1.4.3' */
+  baiTap: Set<string>;
+  /** Khối có số hiệu: 'dinh-ly-1.4.2' */
+  khoi: Set<string>;
+}
+
+export function taoChiMucMon(cacChuong: Pick<DuLieuChuong, 'chuong' | 'baiGiang' | 'sach' | 'baiTap'>[]): ChiMucMon {
+  const chiMuc: ChiMucMon = { muc: new Set(), baiGiang: new Set(), baiTap: new Set(), khoi: new Set() };
+  for (const c of cacChuong) {
+    for (const b of c.baiGiang) chiMuc.baiGiang.add(`${c.chuong}/${b.bai}`);
+    for (const b of c.baiTap) chiMuc.baiTap.add(b.so);
+    for (const s of c.sach) {
+      chiMuc.muc.add(s.muc);
+      for (const k of trichKhoiSo(s.noiDung)) chiMuc.khoi.add(k.id);
+    }
+  }
+  return chiMuc;
+}
+
+/**
  * Kiểm tra toàn bộ ràng buộc của một chương (docs/tech_stack.md, mục 8):
  * liên kết chéo trỏ tới mục có thật, không trùng số hiệu, mục § nào cũng có
- * nguồn, bài giảng đủ 8 mục. Trả về danh sách lỗi, rỗng nếu đạt.
+ * nguồn, bài giảng đủ 8 mục. Liên kết sang chương khác được đối chiếu với
+ * `mon` (chỉ mục của cả môn); không có `mon` thì coi như chương khác chưa có gì.
+ * Trả về danh sách lỗi, rỗng nếu đạt.
  */
-export function kiemTraChuong(du: DuLieuChuong): string[] {
+export function kiemTraChuong(du: DuLieuChuong, mon?: ChiMucMon): string[] {
   const loi: string[] = [];
   const mucHopLe = new Set(du.cacMuc.map((m) => m.so));
   const mucCoSach = new Set(du.sach.map((s) => s.muc));
@@ -328,8 +373,17 @@ export function kiemTraChuong(du: DuLieuChuong): string[] {
     if (mucCuaSo(bt.so) !== bt.muc) loi.push(`${bt.tep}: số ${bt.so} không khớp muc ${bt.muc}`);
     if (!mucHopLe.has(bt.muc)) loi.push(`${bt.tep}: mục ${bt.muc} không có trong chương`);
     for (const ma of bt.can_dung) {
+      // Khối có số hiệu: tìm đúng chương của nó. Khối không số hiệu (tien-de-day-du):
+      // tìm ở chương này trước, rồi ở cả môn.
+      const chuongKhoi = chuongCuaKhoi(ma);
+      const coThat =
+        chuongKhoi === du.chuong
+          ? maKhoi.has(ma)
+          : chuongKhoi === undefined
+            ? maKhoi.has(ma) || (mon?.khoi.has(ma) ?? false)
+            : (mon?.khoi.has(ma) ?? false);
       if (!phanTichCanDung(ma)) loi.push(`${bt.tep}: can_dung "${ma}" sai dạng`);
-      else if (!maKhoi.has(ma)) loi.push(`${bt.tep}: can_dung "${ma}" không trỏ tới khối nào có thật`);
+      else if (!coThat) loi.push(`${bt.tep}: can_dung "${ma}" không trỏ tới khối nào có thật`);
     }
   }
 
@@ -338,9 +392,19 @@ export function kiemTraChuong(du: DuLieuChuong): string[] {
   const cacTep = [...du.baiGiang, ...du.sach, ...du.baiTap];
   for (const tep of cacTep) {
     for (const lk of trichXemMuc(tep.noiDung)) {
-      if (lk.muc && !mucCoSach.has(lk.muc)) loi.push(`${tep.tep}: XemMuc tới §${lk.muc} chưa có trang`);
-      if (lk.bai && !soBaiGiang.has(lk.bai)) loi.push(`${tep.tep}: XemMuc tới Bài ${lk.bai} không có`);
-      if (lk.baiTap && !soBaiTap.has(lk.baiTap)) loi.push(`${tep.tep}: XemMuc tới bài tập ${lk.baiTap} không có`);
+      if (lk.muc) {
+        const coThat = chuongCuaMuc(lk.muc) === du.chuong ? mucCoSach.has(lk.muc) : mon?.muc.has(lk.muc);
+        if (!coThat) loi.push(`${tep.tep}: XemMuc tới §${lk.muc} chưa có trang`);
+      }
+      if (lk.bai) {
+        const chuong = lk.chuong ?? du.chuong;
+        const coThat = chuong === du.chuong ? soBaiGiang.has(lk.bai) : mon?.baiGiang.has(`${chuong}/${lk.bai}`);
+        if (!coThat) loi.push(`${tep.tep}: XemMuc tới Bài ${lk.bai} (Chương ${chuong}) không có`);
+      }
+      if (lk.baiTap) {
+        const coThat = chuongCuaMuc(lk.baiTap) === du.chuong ? soBaiTap.has(lk.baiTap) : mon?.baiTap.has(lk.baiTap);
+        if (!coThat) loi.push(`${tep.tep}: XemMuc tới bài tập ${lk.baiTap} không có`);
+      }
     }
   }
 
