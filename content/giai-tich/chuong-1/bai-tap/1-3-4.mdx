@@ -1,0 +1,35 @@
+---
+so: "1.3.4"
+muc: "1.3"
+do_kho: vua
+tieu_de: "Sup của hợp các tập"
+can_dung: ["dinh-nghia-1.3.2"]
+---
+
+<De>
+Cho $A_1, A_2, \ldots$ là các tập khác rỗng, bị chặn trên.
+
+(a) Tìm công thức cho $\sup(A_1 \cup A_2)$ và mở rộng cho $\sup\left(\bigcup_{k=1}^n A_k\right)$.
+
+(b) Công thức đó có còn đúng với hợp vô hạn $\bigcup_{k=1}^\infty A_k$ không?
+</De>
+
+<GoiY so={1}>
+Cái trần thấp nhất của cả hai nhóm người là cái trần cao hơn trong hai cái trần riêng.
+</GoiY>
+
+<GoiY so={2}>
+(b) Một họ vô hạn các số thực có luôn có phần tử lớn nhất không? Thử $A_k = \{1 - 1/k\}$.
+</GoiY>
+
+<LoiGiai>
+**(a)** $\sup(A_1 \cup A_2) = \max\{\sup A_1, \sup A_2\}$. Tổng quát hoá hữu hạn (quy nạp): $\sup\left(\bigcup_{k=1}^n A_k\right) = \max\{\sup A_1, \ldots, \sup A_n\}$.
+
+**(b)** *Không* mở rộng được, vì một họ vô hạn số thực nói chung không có phần tử lớn nhất. Ví dụ $A_k = \{1 - 1/k\}$: mỗi $\sup A_k = 1 - 1/k$, họ này không có max, trong khi $\sup\left(\bigcup_k A_k\right) = 1$. Phát biểu đúng cho trường hợp vô hạn là
+
+$$
+\sup\Big(\bigcup_k A_k\Big) = \sup\{\sup A_k : k \in \mathbf{N}\}
+$$
+
+— với điều kiện vế phải tồn tại (họ có thể không bị chặn, ví dụ $A_k = \{k\}$).
+</LoiGiai>

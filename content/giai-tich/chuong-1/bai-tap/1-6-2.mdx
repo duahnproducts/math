@@ -1,0 +1,33 @@
+---
+so: "1.6.2"
+muc: "1.6"
+do_kho: vua
+tieu_de: "Kiểm tra từng bước lập luận đường chéo"
+can_dung: ["dinh-ly-1.6.1"]
+---
+
+<De>
+Trong chứng minh Định lý 1.6.1, số $x = .b_1b_2b_3\ldots$ được dựng bởi $b_n = 2$ nếu $a_{nn} \neq 2$ và $b_n = 3$ nếu $a_{nn} = 2$.
+
+(a) Giải thích vì sao $x \neq f(1)$.
+
+(b) Giải thích vì sao $x \neq f(n)$ với mọi $n \in \mathbf{N}$.
+
+(c) Hoàn tất chứng minh: $(0, 1)$ không đếm được.
+</De>
+
+<GoiY so={1}>
+Hai số khác nhau ở một chữ số thập phân — có chắc chúng khác nhau? Nhớ $0{,}5 = 0{,}4999\ldots$ Chữ số 2 và 3 giúp gì ở đây?
+</GoiY>
+
+<GoiY so={2}>
+(c) Chứng minh $x \in (0, 1)$ (ước lượng $x$ giữa $2/9$ và $1/3$), rồi dùng giả thiết toàn ánh.
+</GoiY>
+
+<LoiGiai>
+**(a)** $x$ và $f(1)$ khác nhau ở chữ số thập phân thứ nhất ($b_1 \neq a_{11}$ theo cách dựng). Vì mọi chữ số của $x$ đều là 2 hoặc 3, khai triển của $x$ không kết thúc và không có đuôi toàn 9, nên nó là khai triển *duy nhất* của $x$. Do đó khác nhau ở một chữ số kéo theo khác nhau thật sự.
+
+**(b)** Cùng lý do, $x$ và $f(n)$ khác nhau ở chữ số thứ $n$, nên $x \neq f(n)$ với mọi $n$.
+
+**(c)** Mọi chữ số của $x$ là 2 hoặc 3 nên $2/9 \le x \le 1/3$, tức $x \in (0, 1)$. Vậy $x$ là một phần tử của $(0, 1)$ không nằm trong ảnh của $f$ — mâu thuẫn với giả thiết $f$ toàn ánh. Do đó $(0, 1)$ không đếm được. ∎
+</LoiGiai>

@@ -1,0 +1,183 @@
+---
+mon: giai-tich
+chuong: 1
+bai: 5
+tieu_de: Đếm được và không đếm được
+y_tuong: Có nhiều loại vô hạn — và vô hạn của số thực lớn hơn vô hạn của số đếm.
+phu_muc: ["1.5", "1.6"]
+---
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+Có **nhiều loại vô hạn** — và vô hạn của số thực **lớn hơn** vô hạn của số đếm.
+</YTuong>
+
+## Hình dung trực quan
+
+Bạn bước vào rạp hát. Ghế kín người, không ghế trống, không ai đứng.
+
+**Câu hỏi:** số người có bằng số ghế không?
+
+Bạn *không cần đếm*. Chỉ cần nhìn: mỗi người một ghế, mỗi ghế một người. Vậy là **bằng nhau**.
+
+<GhiChu>
+Đây chính là ý tưởng của Cantor: **so sánh hai tập hợp bằng cách ghép đôi**, không cần đếm. Cách này có một ưu điểm lớn: nó *vẫn dùng được* khi hai tập đều vô hạn — lúc mà đếm là chuyện không thể.
+</GhiChu>
+
+## Kiến thức cần biết
+
+### a) Ghép đôi hoàn hảo (song ánh)
+
+Một cách ghép các phần tử của tập $A$ với tập $B$ sao cho:
+
+- không ai bị ghép chung (mỗi ghế một người) — gọi là <ThuatNgu id="one-to-one">đơn ánh</ThuatNgu>;
+- không ai bị bỏ sót (không ghế trống) — gọi là <ThuatNgu id="onto">toàn ánh</ThuatNgu>.
+
+Ghép được như vậy (một <ThuatNgu id="bijection">song ánh</ThuatNgu>) thì ta nói $A$ và $B$ **cùng lực lượng**, viết $A \sim B$.
+
+### b) “Đếm được” nghĩa là gì?
+
+Tập $A$ là <ThuatNgu id="countable">đếm được</ThuatNgu> nếu ghép đôi được với $\mathbf{N} = \{1, 2, 3, \ldots\}$.
+
+<TomTat>
+Nói nôm na: *đếm được = xếp thành một danh sách vô hạn được*: $a_1, a_2, a_3, a_4, \ldots$ sao cho *mọi* phần tử đều có mặt ở đâu đó trong danh sách.
+</TomTat>
+
+Tập vô hạn mà *không* xếp thành danh sách được gọi là **không đếm được**.
+
+## Công thức — hai định lý
+
+<DinhLy ten="Định lý A">
+Tập số hữu tỉ $\mathbf{Q}$ là **đếm được**.
+</DinhLy>
+
+<DinhLy ten="Định lý B">
+Tập số thực $\mathbf{R}$ là **KHÔNG đếm được**.
+</DinhLy>
+
+<GhiChu>
+Định lý A gây sốc vì phân số trông “nhiều hơn hẳn” số đếm — giữa 0 và 1 đã có vô hạn phân số rồi. Định lý B còn gây sốc hơn: nó nói có *hai cỡ vô hạn khác nhau*. Trước Cantor, không ai nghĩ điều đó có nghĩa.
+</GhiChu>
+
+## Ví dụ mẫu
+
+### Khởi động — một điều lạ lùng
+
+Xét tập số chẵn $E = \{2, 4, 6, 8, \ldots\}$. Nó là *một phần* của $\mathbf{N}$ — thiếu hẳn tất cả số lẻ. Vậy $E$ có ít phần tử hơn $\mathbf{N}$ không?
+
+<HinhGhepDoi />
+
+Mỗi số tự nhiên $n$ ghép với số chẵn $2n$. Không ai ghép chung. Không ai bị sót. **Ghép đôi hoàn hảo.** Kết luận: $E$ và $\mathbf{N}$ có *cùng* lực lượng!
+
+<TomTat>
+Trực giác “bộ phận thì nhỏ hơn toàn thể” chỉ đúng với tập **hữu hạn**. Với tập vô hạn, nó sai. Ai chưa chấp nhận được điều này thì không đọc tiếp được phần còn lại của bài.
+</TomTat>
+
+### Vì sao $\mathbf{Q}$ đếm được — ý tưởng
+
+**Vấn đề:** không thể xếp phân số theo thứ tự tăng dần (giữa hai phân số bất kỳ luôn còn phân số khác — không có “phân số kế tiếp”).
+
+**Mẹo:** đừng xếp theo độ lớn. Xếp theo **tổng tử + mẫu**.
+
+| Nhóm | Các phân số (tối giản) |
+| --- | --- |
+| tử + mẫu = 2 | $\frac{1}{1},\ \frac{-1}{1}$ |
+| tử + mẫu = 3 | $\frac{1}{2},\ \frac{-1}{2},\ \frac{2}{1},\ \frac{-2}{1}$ |
+| tử + mẫu = 4 | $\frac{1}{3},\ \frac{-1}{3},\ \frac{3}{1},\ \frac{-3}{1}$ |
+
+**Mỗi nhóm chỉ có hữu hạn phần tử**, và mọi phân số đều thuộc đúng một nhóm. Vậy cứ liệt kê $0$, rồi hết nhóm 2, rồi nhóm 3, rồi nhóm 4… là quét được toàn bộ $\mathbf{Q}$.
+
+Ví dụ $\frac{22}{7}$ nằm ở nhóm 29. Vì các nhóm trước nó đều hữu hạn, chắc chắn đến lượt nó trong danh sách. ∎
+
+### Vì sao $\mathbf{R}$ không đếm được — lập luận đường chéo
+
+Đây là lập luận nổi tiếng nhất của Cantor. Hãy đọc thật chậm.
+
+#### Bước 1 — Cho gì?
+
+Các số thực trong khoảng $(0, 1)$.
+
+#### Bước 2 — Hỏi gì?
+
+Có xếp chúng thành danh sách được không?
+
+#### Bước 3 — Dùng gì?
+
+Phản chứng. Giả sử xếp được, rồi chế ra một số bị bỏ sót.
+
+#### Bước 4 — Giải
+
+**Giả sử** xếp được thành danh sách. Viết mỗi số dưới dạng thập phân, xếp thành bảng. Giả thiết then chốt: *mọi* số trong $(0, 1)$ đều có mặt ở một dòng nào đó.
+
+**Bây giờ ta chế ra một số mới.** Chỉ nhìn các chữ số trên **đường chéo**, và làm ngược lại:
+
+- Chữ số thứ 1 của số mới: khác chữ số thứ 1 của dòng 1. (Nếu nó là 2 thì lấy 3, ngược lại lấy 2.)
+- Chữ số thứ 2: khác chữ số thứ 2 của dòng 2. Cùng quy tắc.
+- Chữ số thứ $n$: khác chữ số thứ $n$ của dòng $n$… cứ thế mãi.
+
+<HinhDuongCheoCantor />
+
+Gọi số vừa chế là $x$. **$x$ không thể nằm ở dòng nào cả!** Nó khác dòng 1 ở chữ số thứ nhất. Khác dòng 2 ở chữ số thứ hai. Khác dòng $n$ ở chữ số thứ $n$ — với *mọi* $n$.
+
+Nhưng $x$ rõ ràng là một số trong $(0, 1)$. Vậy danh sách đã bỏ sót nó. **Mâu thuẫn** với giả thiết “danh sách chứa mọi số”.
+
+#### Bước 5 — Kiểm tra
+
+Vì sao chỉ dùng chữ số 2 và 3? Để tránh rắc rối: một số có thể có hai cách viết thập phân ($0{,}5 = 0{,}4999\ldots$). Dùng riêng 2 và 3 thì không bao giờ gặp trường hợp đó.
+
+#### Bước 6 — Cách làm chung
+
+<TomTat tieuDe="Lập luận đường chéo">
+Giả sử liệt kê được → chế ra một phần tử *khác phần tử thứ $n$ ở vị trí thứ $n$* → phần tử đó bị bỏ sót → mâu thuẫn.
+</TomTat>
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Lỗi 1: Nghĩ “vô hạn là vô hạn, cái nào cũng như cái nào”">
+Sai. $\mathbf{N}$ và $\mathbf{R}$ đều vô hạn nhưng *không* cùng lực lượng. Đó chính là nội dung Định lý B.
+</Loi>
+
+<Loi tieuDe="Lỗi 2: Nghĩ tập con thực sự thì phải nhỏ hơn">
+Sai với tập vô hạn. Số chẵn là *một phần* của $\mathbf{N}$ mà vẫn cùng lực lượng.
+</Loi>
+
+<Loi tieuDe="Lỗi 3: Tưởng lập luận đường chéo dùng được cho Q">
+Thử xem: nếu áp dụng y hệt cho danh sách các *phân số* trong $(0, 1)$, ta vẫn chế ra được số $x$ khác mọi dòng. Nhưng **$x$ không có lý do gì để là phân số** — chuỗi chữ số của nó được chế tuỳ tiện, nói chung không tuần hoàn. Vậy không có mâu thuẫn nào cả. Và đúng vậy: $\mathbf{Q}$ *đếm được*.
+
+*Đây là bài kiểm tra hiểu bài tốt nhất của Bài 5. Nếu bạn tự nhận ra được điều này, bạn đã hiểu thật.*
+</Loi>
+
+## Tóm tắt 30 giây
+
+- So sánh hai tập vô hạn bằng **ghép đôi**, không phải bằng đếm.
+- **Đếm được** = xếp thành danh sách vô hạn được.
+- $\mathbf{N}$, số chẵn, $\mathbf{Z}$, $\mathbf{Q}$ — tất cả **đếm được** (cùng một cỡ vô hạn).
+- $\mathbf{R}$ **không đếm được** — một cỡ vô hạn lớn hơn hẳn.
+- Hệ quả bất ngờ: số vô tỉ **nhiều hơn** số hữu tỉ rất nhiều. Dù ta chỉ quen vài số vô tỉ ($\sqrt{2}$, $\pi$, $e$), chúng mới là đa số áp đảo.
+
+<BaGoc>
+  <Goc ten="Hiểu">“Bằng nhau” giữa hai tập vô hạn nghĩa là ghép đôi được một đổi một.</Goc>
+  <Goc ten="Nhớ">$\mathbf{Q}$ đếm được (xếp theo tử + mẫu); $\mathbf{R}$ không đếm được (đường chéo).</Goc>
+  <Goc ten="Làm">Muốn chứng minh không đếm được: giả sử có danh sách, chế phần tử khác dòng $n$ ở vị trí $n$.</Goc>
+</BaGoc>
+
+## Bài tập
+
+<BaiLuyen do_kho="de" so="5.1">
+Chứng minh tập số nguyên $\mathbf{Z} = \{\ldots, -2, -1, 0, 1, 2, \ldots\}$ là đếm được, bằng cách xếp nó thành một danh sách.
+
+<GoiYNho>Đừng xếp từ nhỏ đến lớn (không có điểm bắt đầu!). Hãy xếp kiểu $0, -1, 1, -2, 2, -3, 3, \ldots$ rồi viết công thức ghép đôi với $\mathbf{N}$.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="5.2">
+Gọi $\mathbf{I}$ là tập các số vô tỉ. Chứng minh $\mathbf{I}$ **không đếm được**.
+
+<GoiYNho>Phản chứng. Ta biết $\mathbf{R} = \mathbf{Q} \cup \mathbf{I}$. Nếu $\mathbf{I}$ đếm được thì… (bạn sẽ cần sự thật: hợp của hai tập đếm được thì đếm được — giải thích bằng cách liệt kê xen kẽ hai danh sách).</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="5.3">
+Xem lại Lỗi 3 ở mục Lỗi dễ mắc. Hãy viết ra bằng lời của bạn, thật rõ ràng, **lời giải thích đầy đủ** cho câu hỏi: *“Vì sao lập luận đường chéo chứng minh được $\mathbf{R}$ không đếm được, nhưng không chứng minh được $\mathbf{Q}$ không đếm được?”*
+
+Đây không phải bài tính toán — đây là bài kiểm tra xem bạn có thực sự hiểu chỗ nào mâu thuẫn được sinh ra hay không. So sánh với <XemMuc bai-tap="1.5.2" chu="Bài 1.5.2" /> và <XemMuc bai-tap="1.6.3" chu="Bài 1.6.3" /> trong sách.
+</BaiLuyen>

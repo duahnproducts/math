@@ -1,0 +1,94 @@
+---
+mon: giai-tich
+chuong: 1
+muc: "1.5"
+tieu_de: Lực lượng
+tieu_de_en: Cardinality
+loai: theo-sach
+nguon: "Theo cấu trúc §1.5 của Stephen Abbott, Understanding Analysis, 2nd ed., Springer, 2015. Phát biểu được diễn đạt lại bằng tiếng Việt, dàn ý và bình luận tự viết — không phải bản dịch nguyên văn."
+---
+
+## Tương ứng 1–1
+
+Làm sao so sánh “kích thước” của hai tập vô hạn, khi không thể đếm? Ý tưởng của Cantor: thay vì đếm, hãy **ghép cặp**.
+
+<DinhNghia so="1.5.1" ten="Đơn ánh và toàn ánh">
+Hàm $f : A \to B$ là <ThuatNgu id="one-to-one">đơn ánh</ThuatNgu> (1–1) nếu $a_1 \neq a_2$ trong $A$ kéo theo $f(a_1) \neq f(a_2)$ trong $B$. Hàm $f$ là <ThuatNgu id="onto">toàn ánh</ThuatNgu> nếu với mọi $b \in B$ đều có $a \in A$ với $f(a) = b$.
+</DinhNghia>
+
+Hàm vừa đơn ánh vừa toàn ánh gọi là **song ánh** — đó chính là một tương ứng 1–1.
+
+<DinhNghia so="1.5.2" ten="Cùng lực lượng">
+Tập $A$ **cùng lực lượng** với $B$ nếu tồn tại song ánh $f : A \to B$. Ký hiệu $A \sim B$.
+</DinhNghia>
+
+<ViDu so="1.5.3" ten="Số chẵn và số nguyên">
+(i) $E = \{2, 4, 6, \ldots\}$ là tập số tự nhiên chẵn. Khi đó $\mathbf{N} \sim E$ qua $f(n) = 2n$.
+
+(ii) $\mathbf{N} \sim \mathbf{Z}$ qua
+
+$$
+f(n) = \begin{cases} (n-1)/2 & \text{nếu } n \text{ lẻ}, \\ -n/2 & \text{nếu } n \text{ chẵn}, \end{cases}
+$$
+
+cho dãy $0, -1, 1, -2, 2, -3, 3, \ldots$
+</ViDu>
+
+<GhiChu tieuDe="Điều gây sốc ở ví dụ (i)">
+$E$ là tập con *thực sự* của $\mathbf{N}$ — thiếu hẳn tất cả số lẻ — vậy mà cùng lực lượng với $\mathbf{N}$. Trực giác “bộ phận nhỏ hơn toàn thể” là trực giác của tập *hữu hạn*; nó không áp dụng được cho tập vô hạn.
+</GhiChu>
+
+<ViDu so="1.5.4" ten="Khoảng (−1, 1) và R">
+Hàm $f(x) = \dfrac{x}{x^2 - 1}$ biến khoảng $(-1, 1)$ lên $\mathbf{R}$ một cách 1–1 và toàn ánh. Vậy $(-1, 1) \sim \mathbf{R}$. Tổng quát, mọi khoảng mở $(a, b)$ đều cùng lực lượng với $\mathbf{R}$ (<XemMuc bai-tap="1.5.4" chu="Bài tập 1.5.4" />).
+</ViDu>
+
+## Tập đếm được
+
+<DinhNghia so="1.5.5" ten="Đếm được">
+Tập $A$ là <ThuatNgu id="countable">đếm được</ThuatNgu> nếu $\mathbf{N} \sim A$. Tập vô hạn không đếm được gọi là **không đếm được**.
+</DinhNghia>
+
+Đặt một tập vào tương ứng 1–1 với $\mathbf{N}$ chính là *liệt kê* nó thành một danh sách vô hạn $a_1, a_2, a_3, \ldots$ Câu hỏi trở thành: mọi tập vô hạn đều liệt kê được chăng?
+
+<DinhLy so="1.5.6" ten="Q đếm được, R không đếm được">
+(i) Tập $\mathbf{Q}$ là đếm được.
+
+(ii) Tập $\mathbf{R}$ là không đếm được.
+</DinhLy>
+
+**Dàn ý (i).** Nhóm các số hữu tỉ thành từng khối *hữu hạn*: $A_1 = \{0\}$ và với $n \ge 2$,
+
+$$
+A_n = \left\{ \pm \frac{p}{q} : p, q \in \mathbf{N} \text{ tối giản},\ p + q = n \right\}.
+$$
+
+Mỗi $A_n$ hữu hạn và mỗi số hữu tỉ nằm trong đúng một $A_n$. Liệt kê lần lượt $A_1$, rồi $A_2$, rồi $A_3$… sẽ quét hết $\mathbf{Q}$ (số $\frac{22}{7}$ nằm trong $A_{29}$ nên chắc chắn đến lượt nó).
+
+**Dàn ý (ii) — phản chứng, dùng tính chất đoạn lồng nhau.**
+
+1. Giả sử có song ánh $f : \mathbf{N} \to \mathbf{R}$; đặt $x_n = f(n)$, danh sách $x_1, x_2, \ldots$ chứa *mọi* số thực.
+2. Dựng đoạn đóng $I_1$ không chứa $x_1$. Trong $I_1$ luôn có hai đoạn đóng con rời nhau; $x_2$ chỉ nằm được trong nhiều nhất một cái — chọn cái còn lại làm $I_2$. Cứ thế dựng $I_{n+1} \subseteq I_n$ với $x_{n+1} \notin I_{n+1}$.
+3. Mỗi $x_{n_0}$ nằm ngoài $I_{n_0}$ nên nằm ngoài giao $\bigcap I_n$. Danh sách chứa mọi số thực ⇒ giao rỗng.
+4. Nhưng Định lý 1.4.1 nói giao khác rỗng. Mâu thuẫn. ∎
+
+<Loi tieuDe="Bẫy kiểm tra hiểu bài">
+Vì sao không dùng đúng lập luận này cho $\mathbf{Q}$ để “chứng minh” $\mathbf{Q}$ không đếm được? Tự tìm lỗi trước (<XemMuc bai-tap="1.5.2" chu="Bài tập 1.5.2" />). *Gợi ý:* đoạn lồng nhau chỉ bảo đảm giao chứa một số *thực*; không gì bảo đảm số đó *hữu tỉ*.
+</Loi>
+
+## Hệ quả và các định lý bổ trợ
+
+<DinhLy so="1.5.7" ten="Tập con của tập đếm được">
+Nếu $A \subseteq B$ và $B$ đếm được thì $A$ hoặc đếm được, hoặc hữu hạn.
+</DinhLy>
+
+<DinhLy so="1.5.8" ten="Hợp các tập đếm được">
+(i) Nếu $A_1, A_2, \ldots, A_m$ đều đếm được thì $A_1 \cup A_2 \cup \cdots \cup A_m$ đếm được.
+
+(ii) Nếu $A_n$ đếm được với mọi $n \in \mathbf{N}$ thì $\bigcup_{n=1}^{\infty} A_n$ đếm được.
+</DinhLy>
+
+<TomTat tieuDe="Hệ quả bất ngờ nhất của chương">
+Gọi $\mathbf{I}$ là tập số vô tỉ, $\mathbf{R} = \mathbf{Q} \cup \mathbf{I}$. Nếu $\mathbf{I}$ đếm được thì theo 1.5.8, $\mathbf{R}$ cũng đếm được — mâu thuẫn. Vậy **$\mathbf{I}$ không đếm được**: số vô tỉ áp đảo số hữu tỉ về lực lượng, dù cả hai đều trù mật. Tương tự, số đại số đếm được nên số siêu việt không đếm được (<XemMuc bai-tap="1.5.9" chu="Bài tập 1.5.9" />).
+</TomTat>
+
+Học dễ hiểu hơn ở <XemMuc bai={5} />.

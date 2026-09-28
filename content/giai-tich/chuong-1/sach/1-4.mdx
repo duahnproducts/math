@@ -1,0 +1,87 @@
+---
+mon: giai-tich
+chuong: 1
+muc: "1.4"
+tieu_de: Hệ quả của tính đầy đủ
+tieu_de_en: Consequences of Completeness
+loai: theo-sach
+nguon: "Theo cấu trúc §1.4 của Stephen Abbott, Understanding Analysis, 2nd ed., Springer, 2015. Phát biểu được diễn đạt lại bằng tiếng Việt, dàn ý và bình luận tự viết — không phải bản dịch nguyên văn."
+---
+
+## Tính chất đoạn lồng nhau
+
+<DinhLy so="1.4.1" ten="Tính chất đoạn lồng nhau">
+Với mỗi $n \in \mathbf{N}$, cho đoạn đóng $I_n = [a_n, b_n] = \{x \in \mathbf{R} : a_n \le x \le b_n\}$, và giả sử $I_n \supseteq I_{n+1}$ với mọi $n$. Khi đó
+
+$$
+\bigcap_{n=1}^{\infty} I_n \neq \varnothing.
+$$
+
+</DinhLy>
+
+**Dàn ý.** Ta cần *sản xuất* ra một số thực nằm trong mọi $I_n$; công cụ duy nhất để sản xuất số thực là Tiên đề Đầy đủ. Vậy hãy tìm một tập bị chặn thích hợp.
+
+1. Đặt $A = \{a_n : n \in \mathbf{N}\}$ — tập các đầu mút trái.
+2. Vì các đoạn lồng nhau, *mỗi* $b_n$ đều là chặn trên của $A$ (vẽ hình: mọi $a_m$ nằm bên trái mọi $b_n$).
+3. $A$ khác rỗng, bị chặn trên ⇒ theo Tiên đề Đầy đủ có $x = \sup A$.
+4. Cố định $n$. Vì $x$ là chặn trên của $A$ nên $a_n \le x$. Vì $b_n$ là *một* chặn trên và $x$ là chặn trên *nhỏ nhất* nên $x \le b_n$.
+5. Vậy $a_n \le x \le b_n$, tức $x \in I_n$ với mọi $n$. ∎
+
+<Loi tieuDe="Hai giả thiết không thể bỏ">
+- **Đóng:** với khoảng mở, kết luận sai. Ví dụ $\bigcap_{n=1}^{\infty} (0, \frac1n) = \varnothing$ (<XemMuc bai-tap="1.4.3" chu="Bài tập 1.4.3" />).
+- **Bị chặn:** cần cho lập luận về chặn trên. Đối chiếu với Ví dụ 1.2.2, nơi giao là rỗng — những tập đó không phải đoạn đóng bị chặn.
+
+Chú ý bước 4 dùng *cả hai* vế của định nghĩa supremum — dấu hiệu của một chứng minh dùng sup đúng cách.
+</Loi>
+
+## Tính chất Archimedes
+
+<DinhLy so="1.4.2" ten="Tính chất Archimedes">
+(i) Với mọi $x \in \mathbf{R}$, tồn tại $n \in \mathbf{N}$ sao cho $n > x$.
+
+(ii) Với mọi số thực $y > 0$, tồn tại $n \in \mathbf{N}$ sao cho $\frac{1}{n} < y$.
+</DinhLy>
+
+**Dàn ý (phản chứng).** (i) tương đương: $\mathbf{N}$ không bị chặn trên. Giả sử ngược lại; theo Tiên đề Đầy đủ có $\alpha = \sup \mathbf{N}$. Theo Bổ đề 1.3.8 với $\varepsilon = 1$, có $n \in \mathbf{N}$ với $\alpha - 1 < n$, tức $\alpha < n + 1$. Nhưng $n + 1 \in \mathbf{N}$ — mâu thuẫn với việc $\alpha$ là chặn trên. (ii) suy ra từ (i) với $x = 1/y$.
+
+<GhiChu tieuDe="Tại sao điều “hiển nhiên” này cần chứng minh?">
+Tất cả những gì ta giả định về $\mathbf{R}$ là: trường có thứ tự chứa $\mathbf{Q}$, cộng Tiên đề Đầy đủ. Có những trường có thứ tự chứa phần tử “vô cùng lớn” (giải tích không chuẩn). Tính chất Archimedes khẳng định $\mathbf{R}$ không phải loại đó — và đó là *hệ quả* của tiên đề, không phải giả định thêm.
+</GhiChu>
+
+## Tính trù mật của Q trong R
+
+<DinhLy so="1.4.3" ten="Tính trù mật của Q trong R">
+Với hai số thực $a < b$ bất kỳ, tồn tại số hữu tỉ $r$ thoả mãn $a < r < b$.
+</DinhLy>
+
+**Dàn ý.** Cần tìm $m \in \mathbf{Z}$, $n \in \mathbf{N}$ với $a < \frac{m}{n} < b$.
+
+1. *Chọn mẫu số trước:* dùng Archimedes chọn $n$ với $\frac1n < b - a$ (bước lưới nhỏ hơn độ dài khoảng).
+2. *Chọn tử số:* lấy $m$ là số nguyên nhỏ nhất lớn hơn $na$, tức $m - 1 \le na < m$.
+3. $na < m$ cho ngay $a < \frac{m}{n}$.
+4. $m \le na + 1 < n\left(b - \frac1n\right) + 1 = nb$, nên $\frac{m}{n} < b$. ∎
+
+Hình dung bằng “cái lược” ở <XemMuc bai={4} />.
+
+<HeQua so="1.4.4" ten="Tính trù mật của số vô tỉ">
+Với hai số thực $a < b$ bất kỳ, tồn tại số vô tỉ $t$ thoả mãn $a < t < b$.
+</HeQua>
+
+**Ý tưởng:** áp dụng Định lý 1.4.3 cho cặp $a - \sqrt{2} < b - \sqrt{2}$ để có số hữu tỉ $r$ ở giữa, rồi xét $t = r + \sqrt{2}$. Cần biết: hữu tỉ cộng vô tỉ là vô tỉ (<XemMuc bai-tap="1.4.1" chu="Bài tập 1.4.1" />).
+
+## Sự tồn tại của căn bậc hai
+
+<DinhLy so="1.4.5" ten="Tồn tại √2">
+Tồn tại số thực $\alpha \in \mathbf{R}$ thoả mãn $\alpha^2 = 2$.
+</DinhLy>
+
+**Dàn ý.** Đặt $T = \{t \in \mathbf{R} : t^2 < 2\}$ và $\alpha = \sup T$ (tồn tại theo Tiên đề Đầy đủ). Loại trừ cả hai khả năng $\alpha^2 < 2$ và $\alpha^2 > 2$.
+
+- *Trường hợp $\alpha^2 < 2$:* $\left(\alpha + \frac1n\right)^2 < \alpha^2 + \frac{2\alpha + 1}{n}$. Vì $2 - \alpha^2 > 0$, dùng Archimedes chọn $n_0$ với $\frac{1}{n_0} < \frac{2 - \alpha^2}{2\alpha + 1}$; khi đó $\alpha + \frac{1}{n_0} \in T$ — mâu thuẫn với việc $\alpha$ là **chặn trên**.
+- *Trường hợp $\alpha^2 > 2$:* đối xứng, tìm được $\alpha - \frac{1}{n_0}$ vẫn là chặn trên — mâu thuẫn với việc $\alpha$ là chặn trên **nhỏ nhất**. Đây là <XemMuc bai-tap="1.4.7" chu="Bài tập 1.4.7" /> — hãy tự hoàn thành.
+
+Còn lại $\alpha^2 = 2$. ∎
+
+<TomTat tieuDe="Nhìn lại §1.1–§1.4">
+Ở §1.1 ta chứng minh $\sqrt{2}$ *không* nằm trong $\mathbf{Q}$. Đến đây ta chứng minh nó *có* nằm trong $\mathbf{R}$. Cùng một câu hỏi, hai câu trả lời khác nhau — và toàn bộ khác biệt đến từ Tiên đề Đầy đủ.
+</TomTat>

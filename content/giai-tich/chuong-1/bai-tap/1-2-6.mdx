@@ -1,0 +1,46 @@
+---
+so: "1.2.6"
+muc: "1.2"
+do_kho: vua
+nen_lam: true
+tieu_de: "Bất đẳng thức tam giác"
+can_dung: ["vi-du-1.2.5"]
+---
+
+<De>
+(a) Kiểm tra $|a + b| = |a| + |b|$ khi $a, b$ cùng dấu.
+
+(b) Chứng minh $|a + b| \le |a| + |b|$ với mọi $a, b$.
+
+(c) Chứng minh $|a - b| \le |a - c| + |c - d| + |d - b|$.
+
+(d) Chứng minh $\big||a| - |b|\big| \le |a - b|$ (bất đẳng thức tam giác ngược).
+</De>
+
+<GoiY so={1}>
+Cho (b), tránh xét bốn trường hợp dấu: so sánh **bình phương** hai vế, dùng $ab \le |ab|$.
+</GoiY>
+
+<GoiY so={2}>
+Cho (c): chèn điểm và áp dụng (b) hai lần. Cho (d): viết $a = (a - b) + b$ rồi áp dụng (b); sau đó đổi vai trò $a$ và $b$.
+</GoiY>
+
+<LoiGiai>
+**(a)** Nếu $a, b \ge 0$: $|a+b| = a + b = |a| + |b|$. Nếu $a, b \le 0$: $|a+b| = -(a+b) = (-a) + (-b) = |a| + |b|$.
+
+**(b)** Vì $ab \le |ab| = |a||b|$,
+
+$$
+(a+b)^2 = a^2 + 2ab + b^2 \le |a|^2 + 2|a||b| + |b|^2 = (|a| + |b|)^2.
+$$
+
+Hai vế không âm, lấy căn (hàm tăng) được $|a + b| \le |a| + |b|$.
+
+**(c)** Áp dụng hai lần: $|a - b| = |(a-c) + (c-d) + (d-b)| \le |a-c| + |(c-d) + (d-b)| \le |a-c| + |c-d| + |d-b|$.
+
+**(d)** Từ $a = (a - b) + b$ suy ra $|a| \le |a-b| + |b|$, tức $|a| - |b| \le |a-b|$. Đổi vai trò: $|b| - |a| \le |a - b|$. Hai bất đẳng thức cho $\big||a| - |b|\big| \le |a - b|$. ∎
+
+<GhiChu tieuDe="Ghi nhớ">
+Phần (d) sẽ dùng liên tục ở Chương 2 và 4, ví dụ để chứng minh “$(x_n) \to x$ kéo theo $(|x_n|) \to |x|$”. Học thuộc cả hai dạng.
+</GhiChu>
+</LoiGiai>

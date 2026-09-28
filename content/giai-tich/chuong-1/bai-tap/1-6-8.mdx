@@ -1,0 +1,35 @@
+---
+so: "1.6.8"
+muc: "1.6"
+do_kho: vua
+tieu_de: "Hoàn tất chứng minh Định lý Cantor"
+can_dung: ["dinh-ly-1.6.2"]
+---
+
+<De>
+Trong chứng minh Định lý Cantor, giả sử $f : A \to P(A)$ toàn ánh và $B = \{a \in A : a \notin f(a)\} = f(a')$.
+
+(a) Chứng minh trường hợp $a' \in B$ dẫn tới mâu thuẫn.
+
+(b) Chứng minh trường hợp $a' \notin B$ cũng dẫn tới mâu thuẫn. Kết luận.
+</De>
+
+<GoiY so={1}>
+Viết lại điều kiện “$a' \in B$” theo **định nghĩa** của $B$, rồi thay $f(a') = B$.
+</GoiY>
+
+<GoiY so={2}>
+Hai trường hợp đối xứng nhau: mỗi trường hợp dẫn tới điều ngược với chính nó.
+</GoiY>
+
+<LoiGiai>
+**(a)** Giả sử $a' \in B$. Theo định nghĩa $B = \{a : a \notin f(a)\}$, điều kiện để $a' \in B$ là $a' \notin f(a')$. Nhưng $f(a') = B$, nên $a' \notin B$. Mâu thuẫn.
+
+**(b)** Giả sử $a' \notin B$. Vì $B = f(a')$, điều này nghĩa là $a' \notin f(a')$ — mà đó đúng là điều kiện để $a'$ *thuộc* $B$. Vậy $a' \in B$. Mâu thuẫn.
+
+Cả hai khả năng đều vô lý, nên giả thiết “$f$ toàn ánh” phải sai. ∎
+
+<GhiChu tieuDe="Liên hệ">
+Đây chính là cấu trúc của nghịch lý Russell: “tập của mọi tập không chứa chính nó”. Russell phát hiện nghịch lý này (1901) khi suy ngẫm về đúng lập luận của Cantor, và nó buộc lý thuyết tập hợp phải được xây dựng lại trên nền tiên đề.
+</GhiChu>
+</LoiGiai>

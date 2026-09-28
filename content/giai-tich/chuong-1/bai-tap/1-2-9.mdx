@@ -1,0 +1,35 @@
+---
+so: "1.2.9"
+muc: "1.2"
+do_kho: de
+tieu_de: "Tạo ảnh của giao và của hợp"
+can_dung: ["dinh-nghia-1.2.3"]
+---
+
+<De>
+Tạo ảnh của $B$ qua $f : D \to \mathbf{R}$ là $f^{-1}(B) = \{x \in D : f(x) \in B\}$.
+
+(a) Cho $f(x) = x^2$, $A = [0, 4]$, $B = [-1, 1]$. Tìm $f^{-1}(A)$, $f^{-1}(B)$. So sánh $f^{-1}(A \cap B)$ với $f^{-1}(A) \cap f^{-1}(B)$, và tương tự cho phép hợp.
+
+(b) Chứng minh với hàm $g$ bất kỳ: $g^{-1}(A \cap B) = g^{-1}(A) \cap g^{-1}(B)$ và $g^{-1}(A \cup B) = g^{-1}(A) \cup g^{-1}(B)$.
+</De>
+
+<GoiY so={1}>
+$f^{-1}(B)$ gồm những $x$ mà $f(x)$ rơi vào $B$ — với $f(x) = x^2$, điều kiện $x^2 \in [-1, 1]$ nghĩa là gì?
+</GoiY>
+
+<GoiY so={2}>
+Với (b): viết chuỗi tương đương “$x \in g^{-1}(A \cap B) \iff g(x) \in A \cap B \iff \ldots$”. Mỗi bước đều là “khi và chỉ khi”.
+</GoiY>
+
+<LoiGiai>
+**(a)** $f^{-1}(A) = [-2, 2]$ và $f^{-1}(B) = [-1, 1]$. Vì $A \cap B = [0, 1]$, $f^{-1}(A \cap B) = [-1, 1] = f^{-1}(A) \cap f^{-1}(B)$. Vì $A \cup B = [-1, 4]$, $f^{-1}(A \cup B) = [-2, 2] = f^{-1}(A) \cup f^{-1}(B)$. Cả hai đều bằng.
+
+**(b)**
+
+$$
+x \in g^{-1}(A \cap B) \iff g(x) \in A \text{ và } g(x) \in B \iff x \in g^{-1}(A) \cap g^{-1}(B),
+$$
+
+và y hệt với “hoặc” cho phép hợp. Chuỗi tương đương này là **hai chiều ở mọi bước** — đó là lý do tạo ảnh luôn “ngoan”. ∎
+</LoiGiai>

@@ -1,0 +1,39 @@
+---
+so: "1.5.10"
+muc: "1.5"
+do_kho: kho
+tieu_de: "Tập không đếm được trong [0, 1]"
+can_dung: ["dinh-ly-1.5.8"]
+---
+
+<De>
+Cho $C \subseteq [0, 1]$ là tập không đếm được.
+
+(a) Chứng minh tồn tại $a \in (0, 1)$ sao cho $C \cap [a, 1]$ không đếm được.
+
+(b) Đặt $A = \{a \in (0, 1) : C \cap [a, 1] \text{ không đếm được}\}$ và $\alpha = \sup A$. Hỏi $C \cap [\alpha, 1]$ có nhất thiết không đếm được?
+
+(c) Nếu thay “không đếm được” bằng “vô hạn” thì kết luận (a) còn đúng không?
+</De>
+
+<GoiY so={1}>
+(a) Phản chứng: giả sử $C \cap [a, 1]$ đếm được với **mọi** $a$. Viết $C \cap (0, 1]$ thành hợp đếm được các tập $C \cap [1/n, 1]$.
+</GoiY>
+
+<GoiY so={2}>
+(b) Thử $C = [0, 1/2]$ và tính $A$, $\alpha$. (c) Thử một tập vô hạn “dồn về 0” như $\{0\} \cup \{1/n\}$.
+</GoiY>
+
+<LoiGiai>
+**(a)** Phản chứng: giả sử $C \cap [a, 1]$ đếm được với *mọi* $a \in (0, 1)$. Khi đó
+
+$$
+C \cap (0, 1] = \bigcup_{n=2}^\infty \big(C \cap [1/n, 1]\big)
+$$
+
+là hợp đếm được của các tập đếm được, nên đếm được. Thêm điểm 0 vẫn đếm được, tức $C$ đếm được — mâu thuẫn. ∎
+
+**(b) Không.** Phản ví dụ $C = [0, 1/2]$. Với $a \le 1/2$, $C \cap [a, 1] = [a, 1/2]$ không đếm được; với $a > 1/2$, giao rỗng. Vậy $A = (0, 1/2]$ và $\alpha = 1/2$, nhưng $C \cap [1/2, 1] = \{1/2\}$ chỉ có một phần tử.
+
+**(c) Sai.** $C = \{0\} \cup \{1/n : n \in \mathbf{N}\}$ là tập vô hạn, nhưng với mọi $a \in (0, 1)$, $C \cap [a, 1]$ chỉ chứa hữu hạn phần tử (các $1/n$ với $n \le 1/a$).
+</LoiGiai>

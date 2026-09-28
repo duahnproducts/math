@@ -1,0 +1,35 @@
+---
+so: "1.2.12"
+muc: "1.2"
+do_kho: de
+tieu_de: "Quy nạp: dãy bị chặn dưới và giảm"
+can_dung: ["dinh-ly-quy-nap"]
+---
+
+<De>
+Cho $y_1 = 6$ và $y_{n+1} = \dfrac{2y_n - 6}{3}$ với mọi $n \in \mathbf{N}$.
+
+(a) Chứng minh bằng quy nạp rằng $y_n > -6$ với mọi $n$.
+
+(b) Chứng minh dãy $(y_n)$ giảm.
+</De>
+
+<GoiY so={1}>
+(a): cơ sở $y_1 > -6$. Bước quy nạp: từ $y_n > -6$, làm đúng các phép biến đổi trong công thức (nhân 2, trừ 6, chia 3) lên cả hai vế.
+</GoiY>
+
+<GoiY so={2}>
+(b) có thể làm không cần quy nạp: $y_{n+1} \le y_n$ tương đương với điều gì? Biến đổi rồi dùng (a).
+</GoiY>
+
+<LoiGiai>
+**(a)** Cơ sở: $y_1 = 6 > -6$. Bước: giả sử $y_n > -6$. Khi đó $2y_n > -12$, nên $2y_n - 6 > -18$, chia cho 3 được $y_{n+1} > -6$. ∎
+
+**(b)** Quy nạp. Cơ sở: $y_2 = (12 - 6)/3 = 2 \le 6 = y_1$. Bước: giả sử $y_{n+1} \le y_n$. Nhân hai vế với $2/3$ rồi trừ 2 (bảo toàn thứ tự vì $2/3 > 0$):
+
+$$
+y_{n+2} = \frac{2y_{n+1} - 6}{3} \le \frac{2y_n - 6}{3} = y_{n+1}.
+$$
+
+*Cách khác cho (b), không cần quy nạp:* $y_{n+1} \le y_n \iff 2y_n - 6 \le 3y_n \iff -6 \le y_n$, đúng theo (a). ∎
+</LoiGiai>

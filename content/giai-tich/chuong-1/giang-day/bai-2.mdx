@@ -1,0 +1,182 @@
+---
+mon: giai-tich
+chuong: 1
+bai: 2
+tieu_de: Chặn trên, chặn dưới, sup và inf
+y_tuong: Sup là cái trần thấp nhất mà ta có thể đặt lên một tập số.
+phu_muc: ["1.3"]
+---
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+**Sup** là cái **trần thấp nhất** mà ta có thể đặt lên một tập số.
+</YTuong>
+
+## Hình dung trực quan
+
+Bạn có một nhóm người trong phòng. Ai cũng có chiều cao riêng.
+
+**Chặn trên** = một độ cao trần nhà mà *không ai đụng đầu*. Có *rất nhiều* chặn trên: trần 10 m được, trần 5 m được, trần 3 m cũng được.
+
+**Câu hỏi hay:** trần *thấp nhất* có thể hạ xuống mà vẫn không ai đụng đầu là bao nhiêu?
+
+<HinhTranNha />
+
+Cái trần màu đậm đó chính là **sup** — nó chạm đúng đỉnh đầu người cao nhất. Hạ thấp hơn một chút thôi là có người đụng đầu.
+
+<TomTat>
+**Nói gọn:** sup = *chặn trên nhỏ nhất*. Trần thấp nhất mà vẫn còn là trần.
+</TomTat>
+
+## Kiến thức cần biết
+
+### a) Tập hợp bị chặn trên
+
+Tập $A$ **bị chặn trên** nếu tìm được một số $b$ sao cho *mọi* phần tử của $A$ đều $\le b$. Số $b$ đó gọi là một <ThuatNgu id="upper-bound">chặn trên</ThuatNgu>.
+
+*Ví dụ:* $A = \{1, 2, 3\}$ bị chặn trên bởi $3$, bởi $10$, bởi $100$…
+
+*Ví dụ ngược:* tập số tự nhiên $\mathbf{N} = \{1, 2, 3, \ldots\}$ *không* bị chặn trên — bạn đưa số nào ra, tôi cũng tìm được số tự nhiên lớn hơn.
+
+### b) Tập hợp bị chặn dưới
+
+Tương tự nhưng ngược chiều: có số $l$ với mọi phần tử của $A$ đều $\ge l$. Gọi là **chặn dưới** (cái *sàn*).
+
+### c) Chú ý về số lượng
+
+<TomTat>
+Chặn trên thì có **vô số**. Nhưng chặn trên *nhỏ nhất* chỉ có **một**. Giống như: có vô số độ cao trần dùng được, nhưng chỉ có *một* độ cao thấp nhất.
+</TomTat>
+
+## Công thức — định nghĩa sup
+
+<DinhNghia ten="Cận trên nhỏ nhất (supremum)">
+Số thực $s$ gọi là <ThuatNgu id="supremum">cận trên nhỏ nhất</ThuatNgu> của tập $A$, viết $s = \sup A$, nếu thoả mãn *hai* điều:
+
+**(i)** $s$ là một chặn trên của $A$;
+
+**(ii)** nếu $b$ là chặn trên bất kỳ của $A$, thì $s \le b$.
+</DinhNghia>
+
+Giải thích từng phần:
+
+| Ký hiệu | Nghĩa |
+| --- | --- |
+| $A$ | tập số ta đang xét (nhóm người trong phòng) |
+| $s$ | số ta gọi là sup (độ cao trần đang xét) |
+| (i) | “đây *là* một cái trần” — không ai đụng đầu |
+| (ii) | “đây là trần *thấp nhất*” — mọi trần khác đều cao hơn hoặc bằng |
+| $\inf A$ | khái niệm đối xứng: cái *sàn cao nhất*, gọi là <ThuatNgu id="infimum">infimum</ThuatNgu> |
+
+<TomTat tieuDe="Khi làm bài, bạn LUÔN phải kiểm tra cả hai điều kiện">
+Chỉ chứng minh (i) thôi là chưa đủ — mới chỉ ra “đây là một cái trần”, chưa chứng minh nó thấp nhất. Đây là lỗi mất điểm phổ biến nhất của cả chương.
+</TomTat>
+
+## Ví dụ mẫu
+
+### Ví dụ A — tập $\{1, \tfrac12, \tfrac13, \tfrac14, \ldots\}$
+
+#### Bước 1 — Đề cho gì?
+
+Tập $A = \left\{ \dfrac{1}{n} : n = 1, 2, 3, \ldots \right\}$. Viết ra vài phần tử: $1;\ 0{,}5;\ 0{,}333;\ 0{,}25;\ 0{,}2;\ \ldots$ — các số nhỏ dần, tiến về 0 nhưng không bao giờ chạm 0.
+
+#### Bước 2 — Hỏi gì?
+
+Tìm $\sup A$ và $\inf A$.
+
+#### Bước 3 — Dùng gì?
+
+Dùng thẳng định nghĩa, kiểm tra (i) và (ii).
+
+#### Bước 4 — Giải
+
+**Đoán:** $\sup A = 1$.
+
+*Kiểm tra (i) — 1 có là chặn trên không?* Mọi phần tử có dạng $\frac{1}{n}$ với $n \ge 1$. Mẫu càng lớn thì phân số càng nhỏ, nên $\frac{1}{n} \le 1$ với mọi $n$. ✓
+
+*Kiểm tra (ii) — 1 có nhỏ hơn mọi chặn trên khác không?* Giả sử $b$ là một chặn trên bất kỳ. Vì $1 \in A$ (lấy $n = 1$), và $b$ phải lớn hơn hoặc bằng *mọi* phần tử, nên $1 \le b$. ✓
+
+Cả hai điều kiện thoả ⇒ $\sup A = 1$.
+
+Còn $\inf A$? Đáp án là $0$. Nhưng chú ý:
+
+<GhiChu>
+$\sup A = 1$ và $1$ **có** nằm trong $A$. Còn $\inf A = 0$ nhưng $0$ **KHÔNG** nằm trong $A$ — không có $n$ nào cho $\frac{1}{n} = 0$.
+</GhiChu>
+
+### Ví dụ B — khoảng mở và khoảng đóng
+
+Đây là ví dụ quan trọng nhất của bài. Hãy đọc kỹ.
+
+| Tập | sup | max | Ghi chú |
+| --- | --- | --- | --- |
+| $[0, 2] = \{x : 0 \le x \le 2\}$ | $2$ | $2$ | sup nằm trong tập |
+| $(0, 2) = \{x : 0 < x < 2\}$ | $2$ | **không có** | sup không nằm trong tập |
+
+**Vì sao $(0, 2)$ không có số lớn nhất?** Thử đi: bạn bảo $1{,}9$ là lớn nhất? Tôi đưa ra $1{,}95$. Bạn bảo $1{,}99$? Tôi đưa $1{,}995$. *Cứ số nào bạn đưa ra, tôi cũng tìm được số lớn hơn* (lấy trung bình của nó với 2). Nhưng sup thì vẫn tồn tại và bằng $2$ — dù $2$ không thuộc tập.
+
+<TomTat>
+Đây là lý do toán học cần khái niệm **sup** chứ không dùng **max**: *max* nhiều khi **không tồn tại**; *sup* thì (gần như) **luôn tồn tại**.
+</TomTat>
+
+#### Bước 5 — Kiểm tra
+
+$2$ có là chặn trên của $(0, 2)$ không? Có, mọi $x < 2$. Có chặn trên nào nhỏ hơn $2$ không? Không — nếu $b < 2$ thì số $\frac{b + 2}{2}$ nằm trong $(0, 2)$ và lớn hơn $b$, nên $b$ không phải chặn trên. (Nếu $b \le 0$ thì càng dễ: $1 \in (0,2)$ đã lớn hơn $b$.)
+
+#### Bước 6 — Cách làm chung
+
+<TomTat tieuDe="Quy trình tìm sup">
+1. Viết vài phần tử ra, đoán xem tập “tiến tới” số nào ở phía trên.
+2. Chứng minh số đó là chặn trên (điều kiện i).
+3. Chứng minh không chặn trên nào nhỏ hơn (điều kiện ii) — thường bằng cách giả sử có $b$ nhỏ hơn rồi tìm phần tử của tập vượt qua $b$.
+</TomTat>
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Lỗi 1: Nghĩ sup phải nằm trong tập">
+Sai. $\sup(0, 2) = 2$ mà $2 \notin (0, 2)$. Sup là “cái trần”, trần không phải là người. *Nhớ:* **nếu** tập có phần tử lớn nhất (<ThuatNgu id="maximum">max</ThuatNgu>) thì max chính là sup. Nhưng nhiều tập không có max mà vẫn có sup.
+</Loi>
+
+<Loi tieuDe="Lỗi 2: Chỉ kiểm tra điều kiện (i) rồi kết luận">
+Chứng minh “$5$ là chặn trên của $(0, 2)$” là đúng — nhưng $5$ đâu phải sup. Phải kiểm tra thêm (ii): không có chặn trên nào nhỏ hơn.
+</Loi>
+
+<Loi tieuDe="Lỗi 3: Lẫn lộn “bị chặn trên” và “hữu hạn”">
+Tập $(0, 2)$ có *vô hạn* phần tử nhưng vẫn *bị chặn trên*. Hai khái niệm khác nhau hoàn toàn: “bị chặn” nói về *độ lớn*, “hữu hạn” nói về *số lượng*.
+</Loi>
+
+## Tóm tắt 30 giây
+
+- **Chặn trên** = cái trần. Có vô số cái trần.
+- **Sup** = trần *thấp nhất*. Chỉ có một.
+- Định nghĩa có **hai** điều kiện — phải kiểm tra cả hai.
+- Sup **không nhất thiết** nằm trong tập. Max thì bắt buộc nằm trong tập.
+- Khi max tồn tại, max = sup. Nhưng max hay vắng mặt, còn sup thì ít khi vắng.
+- **Inf** là khái niệm đối xứng: cái *sàn cao nhất*.
+
+<BaGoc>
+  <Goc ten="Hiểu">Sup là trần thấp nhất: hạ thêm một chút là có phần tử vượt qua.</Goc>
+  <Goc ten="Nhớ">Hai điều kiện: (i) là chặn trên; (ii) nhỏ hơn hoặc bằng mọi chặn trên.</Goc>
+  <Goc ten="Làm">Đoán → kiểm tra (i) → giả sử có chặn trên $b$ nhỏ hơn rồi tìm phần tử vượt qua $b$.</Goc>
+</BaGoc>
+
+## Bài tập
+
+<BaiLuyen do_kho="de" so="2.1">
+Với mỗi tập sau, tìm sup và inf. Ghi rõ nó *có* hay *không* thuộc tập.
+
+(a) $\{2, 4, 6, 8\}$ (b) $[3, 7]$ (c) $(3, 7)$ (d) $\left\{ 1 - \dfrac{1}{n} : n = 1, 2, 3, \ldots \right\}$
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="2.2">
+Chứng minh đầy đủ (cả hai điều kiện) rằng $\sup \left\{ \dfrac{n}{n+1} : n = 1, 2, 3, \ldots \right\} = 1$.
+
+<GoiYNho tieuDe="Gợi ý cho điều kiện (ii)">Giả sử có chặn trên $b < 1$, hãy tìm một $n$ đủ lớn để $\dfrac{n}{n+1} > b$.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="2.3">
+Cho $A$ là tập khác rỗng, bị chặn trên, và $c$ là một số thực. Đặt $c + A = \{c + a : a \in A\}$. Chứng minh $\sup(c + A) = c + \sup A$.
+
+<GoiYNho tieuDe="Cách làm">Đặt $s = \sup A$, rồi chứng minh $c + s$ thoả mãn *cả hai* điều kiện của định nghĩa. Đây là mẫu bài tập chuẩn về sup — làm được bài này là bạn nắm chắc định nghĩa. Sau đó thử <XemMuc bai-tap="1.3.6" chu="Bài 1.3.6 trong sách" />.</GoiYNho>
+</BaiLuyen>

@@ -1,0 +1,37 @@
+---
+so: "1.2.10"
+muc: "1.2"
+do_kho: vua
+tieu_de: "ε chỉ cho bất đẳng thức không nghiêm ngặt"
+can_dung: ["dinh-ly-1.2.6"]
+---
+
+<De>
+Mệnh đề nào đúng? Chứng minh mệnh đề đúng, cho phản ví dụ với mệnh đề sai.
+
+(a) $a < b$ khi và chỉ khi $a < b + \varepsilon$ với mọi $\varepsilon > 0$.
+
+(b) $a < b$ nếu $a < b + \varepsilon$ với mọi $\varepsilon > 0$.
+
+(c) $a \le b$ khi và chỉ khi $a < b + \varepsilon$ với mọi $\varepsilon > 0$.
+</De>
+
+<GoiY so={1}>
+Thử trường hợp đặc biệt $a = b$. Điều kiện “$a < b + \varepsilon$ với mọi $\varepsilon > 0$” có thoả không?
+</GoiY>
+
+<GoiY so={2}>
+Với chiều (⇐) của (c): phản chứng, giả sử $a > b$ rồi chọn một $\varepsilon_0$ “xấu” làm hỏng giả thiết. Chọn $\varepsilon_0 = a - b$.
+</GoiY>
+
+<LoiGiai>
+**(a) Sai.** Chiều thuận đúng, nhưng chiều đảo sai: lấy $a = b = 0$, khi đó $0 < 0 + \varepsilon$ đúng với mọi $\varepsilon > 0$ mà $a < b$ sai.
+
+**(b) Sai**, cùng phản ví dụ trên.
+
+**(c) Đúng.** (⇒) $a \le b < b + \varepsilon$. (⇐) Phản chứng: nếu $a > b$, chọn $\varepsilon_0 = a - b > 0$ thì $b + \varepsilon_0 = a$, mâu thuẫn với $a < b + \varepsilon_0$. ∎
+
+<GhiChu tieuDe="Nguyên tắc tổng quát">
+Lập luận kiểu $\varepsilon$ chỉ cho ra bất đẳng thức **không nghiêm ngặt** ($\le$), không bao giờ cho ra $<$. Đây là lý do ở Chương 2, $a_n < b_n$ với mọi $n$ chỉ cho $\lim a_n \le \lim b_n$ chứ không cho dấu $<$.
+</GhiChu>
+</LoiGiai>

@@ -1,0 +1,48 @@
+---
+so: "1.4.7"
+muc: "1.4"
+do_kho: kho
+nen_lam: true
+tieu_de: "Hoàn tất chứng minh tồn tại √2"
+can_dung: ["dinh-ly-1.4.5", "dinh-ly-1.4.2"]
+---
+
+<De>
+Hoàn tất chứng minh Định lý 1.4.5: với $T = \{t \in \mathbf{R} : t^2 < 2\}$ và $\alpha = \sup T$, loại trừ trường hợp $\alpha^2 > 2$.
+</De>
+
+<GoiY so={1}>
+Trường hợp $\alpha^2 > 2$ phải mâu thuẫn với việc $\alpha$ là chặn trên **nhỏ nhất**. Vậy hãy tìm một chặn trên nhỏ hơn $\alpha$, dạng $\alpha - \frac1n$.
+</GoiY>
+
+<GoiY so={2}>
+$(\alpha - \frac1n)^2 = \alpha^2 - \frac{2\alpha}{n} + \frac1{n^2} > \alpha^2 - \frac{2\alpha}{n}$. Chọn $n_0$ để $\frac{2\alpha}{n_0} < \alpha^2 - 2$ và $\frac{1}{n_0} < \alpha$. Rồi chứng minh $\alpha - \frac{1}{n_0}$ là chặn trên của $T$.
+</GoiY>
+
+<LoiGiai>
+$1 \in T$ nên $\alpha \ge 1 > 0$. Giả sử $\alpha^2 > 2$. Với $n \in \mathbf{N}$,
+
+$$
+\left(\alpha - \frac1n\right)^2 = \alpha^2 - \frac{2\alpha}{n} + \frac{1}{n^2} > \alpha^2 - \frac{2\alpha}{n}.
+$$
+
+Vì $\alpha^2 - 2 > 0$, theo Archimedes chọn $n_0 \ge 2$ đủ lớn sao cho
+
+$$
+\frac{1}{n_0} < \frac{\alpha^2 - 2}{2\alpha} \quad \text{và} \quad \frac{1}{n_0} < \alpha.
+$$
+
+Điều kiện thứ nhất cho $\frac{2\alpha}{n_0} < \alpha^2 - 2$, do đó $\left(\alpha - \frac{1}{n_0}\right)^2 > \alpha^2 - (\alpha^2 - 2) = 2$. Điều kiện thứ hai bảo đảm $\alpha - \frac{1}{n_0} > 0$.
+
+Khẳng định $\alpha - \frac{1}{n_0}$ là chặn trên của $T$: lấy $t \in T$. Nếu $t \le 0$ thì hiển nhiên $t < \alpha - \frac{1}{n_0}$. Nếu $t > 0$ thì từ $t^2 < 2 < \left(\alpha - \frac{1}{n_0}\right)^2$ và cả hai số đều dương, suy ra $t < \alpha - \frac{1}{n_0}$.
+
+Vậy $\alpha - \frac{1}{n_0}$ là chặn trên của $T$ nhưng nhỏ hơn $\alpha$ — mâu thuẫn với việc $\alpha$ là chặn trên *nhỏ nhất*. ∎
+
+<GhiChu tieuDe="Đối xứng của lập luận">
+Trường hợp $\alpha^2 < 2$ mâu thuẫn với “$\alpha$ là *chặn trên*”; trường hợp $\alpha^2 > 2$ mâu thuẫn với “$\alpha$ là chặn trên *nhỏ nhất*”. Mỗi nửa của định nghĩa supremum bị dùng đúng một lần. Nếu bài làm của bạn chỉ dùng một nửa, chắc chắn có chỗ sai.
+</GhiChu>
+</LoiGiai>
+
+<LoiHayMac>
+Quên kiểm tra $\alpha - \frac{1}{n_0} > 0$. Không có điều này thì bước “$t^2 < (\alpha - \frac{1}{n_0})^2$ nên $t < \alpha - \frac{1}{n_0}$” không còn đúng (so sánh bình phương chỉ an toàn với số dương).
+</LoiHayMac>

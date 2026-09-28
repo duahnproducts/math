@@ -1,0 +1,43 @@
+---
+so: "1.5.7"
+muc: "1.5"
+do_kho: kho
+tieu_de: "Hình vuông và đoạn thẳng có cùng số điểm"
+can_dung: ["dinh-nghia-1.5.1"]
+---
+
+<De>
+Cho $S = (0, 1) \times (0, 1)$ là hình vuông đơn vị mở.
+
+(a) Tìm một đơn ánh từ $(0, 1)$ vào $S$.
+
+(b) Dùng khai triển thập phân, tìm một đơn ánh từ $S$ vào $(0, 1)$.
+
+(c) Kết luận gì khi kết hợp với Định lý Schröder–Bernstein (Bài 1.5.11)?
+</De>
+
+<GoiY so={1}>
+(a) Gửi mỗi $x$ tới một điểm trên một đường thẳng nằm ngang trong hình vuông.
+</GoiY>
+
+<GoiY so={2}>
+(b) **Đan xen chữ số**: từ $x = .a_1a_2a_3\ldots$ và $y = .b_1b_2b_3\ldots$ tạo số $.a_1b_1a_2b_2\ldots$ Cần một quy ước để mỗi số chỉ có một khai triển (dùng khai triển không kết thúc).
+</GoiY>
+
+<LoiGiai>
+**(a)** $x \mapsto (x, 1/2)$. Rõ ràng đơn ánh, không toàn ánh.
+
+**(b)** Quy ước: mỗi số trong $(0, 1)$ được viết bằng khai triển thập phân *không kết thúc* (thay đuôi $000\ldots$ bằng $999\ldots$); khi đó khai triển là duy nhất. Với $x = .a_1a_2a_3\ldots$ và $y = .b_1b_2b_3\ldots$, đặt
+
+$$
+F(x, y) = .a_1b_1a_2b_2a_3b_3\ldots
+$$
+
+$F$ đơn ánh: từ ảnh ta tách lại được $x$ và $y$ một cách duy nhất. $F$ *không* toàn ánh: chẳng hạn số $.1909090909\ldots$ (các chữ số ở vị trí chẵn đều là 9 từ một lúc nào đó) sẽ ứng với $y = .999\ldots = 1 \notin (0, 1)$, nên không có tạo ảnh hợp lệ.
+
+**(c)** Kết hợp (a), (b) với Định lý Schröder–Bernstein: $(0, 1) \sim S$.
+
+<GhiChu tieuDe="Kết quả đáng kinh ngạc">
+Hình vuông hai chiều có *đúng bằng* số điểm của đoạn thẳng một chiều. Chính Cantor cũng sửng sốt khi thấy điều này. Bài học: lực lượng *không* đo được số chiều.
+</GhiChu>
+</LoiGiai>

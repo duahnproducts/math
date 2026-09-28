@@ -1,0 +1,58 @@
+---
+mon: giai-tich
+chuong: 1
+muc: "1.6"
+tieu_de: Định lý Cantor
+tieu_de_en: Cantor's Theorem
+loai: theo-sach
+nguon: "Theo cấu trúc §1.6 của Stephen Abbott, Understanding Analysis, 2nd ed., Springer, 2015. Phát biểu được diễn đạt lại bằng tiếng Việt, dàn ý và bình luận tự viết — không phải bản dịch nguyên văn."
+---
+
+## Phương pháp đường chéo
+
+<DinhLy so="1.6.1" ten="Khoảng (0, 1) không đếm được">
+Khoảng mở $(0, 1) = \{x \in \mathbf{R} : 0 < x < 1\}$ là không đếm được.
+</DinhLy>
+
+**Dàn ý (Cantor, 1891).** Phản chứng: giả sử có song ánh $f : \mathbf{N} \to (0, 1)$. Viết mỗi $f(m)$ dạng thập phân $f(m) = .a_{m1}a_{m2}a_{m3}\ldots$ và xếp thành bảng, dòng $m$ là khai triển của $f(m)$. Dựng $x = .b_1 b_2 b_3 \ldots$ chỉ nhìn vào đường chéo:
+
+$$
+b_n = \begin{cases} 2 & \text{nếu } a_{nn} \neq 2, \\ 3 & \text{nếu } a_{nn} = 2. \end{cases}
+$$
+
+$x$ khác $f(n)$ ở chữ số thứ $n$ với mọi $n$, nhưng $x \in (0, 1)$ — mâu thuẫn với giả thiết toàn ánh. ∎
+
+<HinhDuongCheoCantor />
+
+<GhiChu tieuDe="Vì sao chọn chữ số 2 và 3?">
+Để tránh 0 và 9. Một số có *hai* khai triển thập phân khi khai triển kết thúc: $0{,}5 = 0{,}4999\ldots$ Nếu dùng chữ số 0 hoặc 9, số $x$ có thể chỉ khác các dòng “trên giấy” mà thực chất vẫn bằng một số trong danh sách. Chọn $\{2, 3\}$ loại bỏ hoàn toàn rắc rối đó (<XemMuc bai-tap="1.6.3" chu="Bài tập 1.6.3" />).
+</GhiChu>
+
+## Tập lũy thừa và Định lý Cantor
+
+<DinhNghia id="dinh-nghia-tap-luy-thua" ten="Tập lũy thừa">
+Với tập $A$, <ThuatNgu id="power-set">tập lũy thừa</ThuatNgu> $P(A)$ là tập gồm *tất cả* các tập con của $A$ (kể cả $\varnothing$ và chính $A$). Phần tử của $P(A)$ là các *tập*, không phải phần tử của $A$.
+</DinhNghia>
+
+Với $A = \{a, b, c\}$, $P(A)$ có $2^3 = 8$ phần tử. Tổng quát, nếu $A$ có $n$ phần tử thì $P(A)$ có $2^n$ phần tử — mỗi phần tử có hai lựa chọn: thuộc hoặc không thuộc tập con đang xét.
+
+<DinhLy so="1.6.2" ten="Định lý Cantor">
+Với tập $A$ bất kỳ, không có hàm $f : A \to P(A)$ nào là toàn ánh.
+</DinhLy>
+
+**Dàn ý.** Phản chứng: giả sử $f : A \to P(A)$ toàn ánh. Với mỗi $a \in A$, $f(a)$ là một tập con của $A$; nó có thể chứa $a$ hoặc không. Đặt
+
+$$
+B = \{ a \in A : a \notin f(a) \}.
+$$
+
+$B \subseteq A$ nên $B = f(a')$ với $a'$ nào đó. Hỏi: $a'$ có thuộc $B$ không?
+
+- Nếu $a' \in B$: theo định nghĩa $B$, phải có $a' \notin f(a') = B$. Mâu thuẫn.
+- Nếu $a' \notin B = f(a')$: theo định nghĩa $B$, điều đó nghĩa là $a' \in B$. Mâu thuẫn.
+
+Cả hai khả năng đều vô lý, nên $f$ không thể toàn ánh (<XemMuc bai-tap="1.6.8" chu="Bài tập 1.6.8" />). ∎
+
+<TomTat tieuDe="Cùng một thủ thuật đường chéo, ở dạng trừu tượng">
+Tập $B$ đóng vai trò của số $x$ trong chứng minh trước: nó được thiết kế để “khác” mỗi $f(a)$ tại đúng một vị trí — vị trí $a$. Hệ quả: $P(\mathbf{N})$ không đếm được (thực ra $P(\mathbf{N}) \sim \mathbf{R}$, <XemMuc bai-tap="1.6.9" chu="Bài tập 1.6.9" />). Áp dụng cho $\mathbf{R}$: $P(\mathbf{R})$ lớn hơn hẳn $\mathbf{R}$, rồi $P(P(\mathbf{R}))$ lớn hơn nữa. **Không có tập vô hạn lớn nhất.**
+</TomTat>

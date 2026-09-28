@@ -1,0 +1,45 @@
+---
+so: "1.5.3"
+muc: "1.5"
+do_kho: vua
+tieu_de: "Hợp các tập đếm được"
+can_dung: ["dinh-ly-1.5.8", "dinh-ly-1.5.7"]
+---
+
+<De>
+Chứng minh Định lý 1.5.8:
+
+(a) Hợp của hai (rồi của $m$) tập đếm được là đếm được.
+
+(b) Giải thích vì sao quy nạp **không** chứng minh được phần (ii) — hợp của vô hạn đếm được tập đếm được.
+
+(c) Chứng minh phần (ii) bằng cách xếp các phần tử thành mảng hai chiều.
+</De>
+
+<GoiY so={1}>
+(a) Làm cho hai tập rời nhau trước: thay $A_2$ bằng $B_2 = A_2 \setminus A_1$. Nếu $B_2$ vô hạn thì liệt kê xen kẽ $a_1, b_1, a_2, b_2, \ldots$
+</GoiY>
+
+<GoiY so={2}>
+(c) Dòng $n$ của mảng là danh sách của $A_n$. Đếm theo **đường chéo**: mỗi đường chéo chỉ có hữu hạn phần tử.
+</GoiY>
+
+<LoiGiai>
+**(a)** Với hai tập đếm được $A_1, A_2$, thay $A_2$ bằng $B_2 = A_2 \setminus A_1$; khi đó $A_1 \cup A_2 = A_1 \cup B_2$ và hai tập này rời nhau.
+
+*Nếu $B_2$ hữu hạn* (kể cả rỗng): ghép hữu hạn phần tử của $B_2$ vào *đầu* danh sách của $A_1$, vẫn được một danh sách vô hạn — hợp đếm được.
+
+*Nếu $B_2$ vô hạn:* $B_2 \subseteq A_2$ đếm được nên theo Định lý 1.5.7, $B_2$ đếm được. Liệt kê xen kẽ $a_1, b_1, a_2, b_2, \ldots$ cho song ánh với $\mathbf{N}$.
+
+Trường hợp $m$ tập: quy nạp, dùng $(A_1 \cup \cdots \cup A_m) \cup A_{m+1}$.
+
+**(b)** Quy nạp chỉ cho kết luận với từng $m$ hữu hạn; “hợp của vô hạn tập” không phải là trường hợp $m$ nào cả. Đây đúng là lỗi được cảnh báo ở Bài 1.2.13(b).
+
+**(c)** Với $A_n = \{a_{n1}, a_{n2}, a_{n3}, \ldots\}$, xếp thành mảng hai chiều rồi đếm theo đường chéo:
+
+$$
+a_{11};\ a_{12}, a_{21};\ a_{13}, a_{22}, a_{31};\ \ldots
+$$
+
+Mỗi đường chéo hữu hạn, và mọi phần tử nằm trên đúng một đường chéo, nên ta liệt kê được toàn bộ $\bigcup_n A_n$ (nếu các $A_n$ giao nhau thì bỏ các lần xuất hiện sau; tập thu được vẫn đếm được theo Định lý 1.5.7). ∎
+</LoiGiai>

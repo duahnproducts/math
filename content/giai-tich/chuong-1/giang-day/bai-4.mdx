@@ -1,0 +1,204 @@
+---
+mon: giai-tich
+chuong: 1
+bai: 4
+tieu_de: Bốn hệ quả lớn
+y_tuong: Từ một tiên đề, ta thu hoạch bốn sự thật dùng suốt phần còn lại của môn học.
+phu_muc: ["1.4"]
+---
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+Từ *một* tiên đề ở Bài 3, ta thu hoạch **bốn** sự thật sẽ dùng suốt phần còn lại của môn học.
+</YTuong>
+
+## Hình dung trực quan — bốn bức tranh
+
+| Kết quả | Bức tranh |
+| --- | --- |
+| **Archimedes** | Dù cái bể to đến mấy, múc đủ nhiều thìa nước thì cũng đầy. Không có con số nào “lớn vô địch” hơn mọi số đếm. |
+| **$\mathbf{Q}$ trù mật** | Hai số thực gần nhau đến mấy, vẫn chen được một phân số vào giữa. Như zoom vào thước kẻ: zoom bao nhiêu cũng thấy vạch. |
+| **Tồn tại $\sqrt{2}$** | Sợi dây đường chéo ở Bài 1 — giờ ta chứng minh được nó thật sự là một *số*. |
+| **Đoạn lồng nhau** | Những chiếc hộp lồng vào nhau, nhỏ dần mãi. Luôn có ít nhất một điểm nằm trong *tất cả* các hộp. |
+
+<HinhDoanLongNhau />
+
+## Kiến thức cần biết
+
+Chỉ cần hai thứ từ các bài trước:
+
+- Định nghĩa sup với *hai* điều kiện (<XemMuc bai={2} />).
+- Tiên đề đầy đủ (<XemMuc bai={3} />).
+
+Thêm một công cụ nhỏ rất hay dùng:
+
+<TomTat tieuDe="Mẹo ε cho sup">
+Nếu $s = \sup A$ thì với *bất kỳ* số dương $\varepsilon$ nào, luôn tìm được phần tử $a \in A$ với $a > s - \varepsilon$.
+
+*Vì sao?* Vì $s - \varepsilon$ nhỏ hơn $s$, mà $s$ là chặn trên *nhỏ nhất* — nên $s - \varepsilon$ không còn là chặn trên nữa. Không phải chặn trên nghĩa là có phần tử vượt qua nó.
+
+*Nói nôm na:* hạ trần xuống một tí thôi là có người đụng đầu ngay.
+</TomTat>
+
+Kéo thanh trượt để thử: với tập $A = \left\{1 - \frac{1}{n}\right\}$ có $\sup A = 1$, dù $\varepsilon$ nhỏ đến đâu vẫn có phần tử vượt qua $1 - \varepsilon$.
+
+<HinhEpsilon />
+
+## Công thức — bốn định lý
+
+### Định lý 1 — Tính chất Archimedes
+
+<DinhLy ten="Tính chất Archimedes">
+**(a)** Với mọi số thực $x$, luôn tìm được số tự nhiên $n$ lớn hơn $x$.
+
+**(b)** Với mọi số thực $y > 0$, luôn tìm được $n$ sao cho $\dfrac{1}{n} < y$.
+</DinhLy>
+
+**Giải thích:** (a) nói *không có số thực nào lớn hơn mọi số đếm*. (b) là cách nói khác: $\frac{1}{n}$ *nhỏ được tuỳ ý*, không có số dương nào “bé vô địch”.
+
+### Định lý 2 — $\mathbf{Q}$ trù mật trong $\mathbf{R}$
+
+<DinhLy ten="Tính trù mật của Q">
+Với hai số thực bất kỳ $a < b$, luôn tồn tại một phân số $r$ nằm giữa: $a < r < b$.
+</DinhLy>
+
+**Giải thích:** dù hai số thực sát nhau đến đâu, khe hở giữa chúng vẫn chứa phân số. Phân số “rải khắp” đường số.
+
+### Định lý 3 — $\sqrt{2}$ thật sự tồn tại
+
+<DinhLy ten="Sự tồn tại của √2">
+Tồn tại một số thực $\alpha$ thoả mãn $\alpha^2 = 2$.
+</DinhLy>
+
+**Giải thích:** ở Bài 1 ta chỉ chứng minh $\sqrt{2}$ *không phải phân số*. Giờ ta chứng minh nó *có mặt* trong $\mathbf{R}$. Hai chuyện khác nhau.
+
+### Định lý 4 — Đoạn lồng nhau
+
+<DinhLy ten="Tính chất đoạn lồng nhau">
+Cho dãy <ThuatNgu id="closed-open-interval">đoạn đóng</ThuatNgu> lồng nhau $I_1 \supseteq I_2 \supseteq I_3 \supseteq \cdots$ (mỗi đoạn nằm trong đoạn trước). Khi đó *giao* của tất cả chúng **khác rỗng** — có ít nhất một điểm thuộc mọi đoạn.
+</DinhLy>
+
+<GhiChu tieuDe="Chữ “đóng” cực kỳ quan trọng">
+Đoạn đóng $[a, b]$ *có* chứa hai đầu mút. Khoảng mở $(a, b)$ thì không. Với khoảng mở, định lý *sai*: các khoảng $\left(0, \frac{1}{n}\right)$ lồng nhau nhưng giao rỗng (sẽ chứng minh ở bài tập).
+</GhiChu>
+
+## Ví dụ mẫu — chứng minh hai định lý đầu
+
+### Chứng minh Định lý 1 (Archimedes)
+
+#### Bước 1 — Cho gì?
+
+Tiên đề đầy đủ.
+
+#### Bước 2 — Hỏi gì?
+
+Chứng minh $\mathbf{N}$ không bị chặn trên.
+
+#### Bước 3 — Dùng gì?
+
+Phản chứng + mẹo $\varepsilon$.
+
+#### Bước 4 — Giải
+
+**Giả sử** $\mathbf{N}$ *có* bị chặn trên. $\mathbf{N}$ khác rỗng và (theo giả sử) bị chặn trên ⇒ theo Tiên đề đầy đủ, tồn tại $\alpha = \sup \mathbf{N}$.
+
+Dùng mẹo $\varepsilon$ với $\varepsilon = 1$: tồn tại số tự nhiên $n$ với $n > \alpha - 1$. Cộng 1 vào hai vế: $n + 1 > \alpha$.
+
+**Nhưng $n + 1$ cũng là số tự nhiên!** Mà $\alpha$ được cho là chặn trên của $\mathbf{N}$ — nghĩa là mọi số tự nhiên đều $\le \alpha$. Vậy $n + 1 \le \alpha$. Mâu thuẫn.
+
+**Kết luận:** $\mathbf{N}$ không bị chặn trên. Tức với mọi $x$, luôn có $n \in \mathbf{N}$ với $n > x$.
+
+Phần (b) suy ra ngay: cho $y > 0$, áp dụng (a) với $x = \frac{1}{y}$ được $n > \frac{1}{y}$, lật ngược lại thành $\frac{1}{n} < y$. ∎
+
+### Chứng minh Định lý 2 ($\mathbf{Q}$ trù mật)
+
+**Ý tưởng hình ảnh trước khi vào công thức:** ta muốn chen một phân số $\frac{m}{n}$ vào khe $(a, b)$. Hình dung một cái lược có răng cách đều nhau $\frac{1}{n}$: $\ \ldots, \frac{1}{n}, \frac{2}{n}, \frac{3}{n}, \ldots\ $ Nếu răng lược *thưa hơn* cái khe, lược có thể bước qua khe mà không răng nào rơi vào. Nên ta phải chọn lược đủ **dày**.
+
+**Bước A — chọn mẫu số (độ dày của lược).** Dùng Archimedes phần (b) với $y = b - a$: chọn $n$ sao cho $\frac{1}{n} < b - a$. Tức khoảng cách giữa hai răng nhỏ hơn bề rộng khe ⇒ không thể bước qua.
+
+**Bước B — chọn tử số (răng nào rơi vào khe).** Lấy $m$ là số nguyên *nhỏ nhất* lớn hơn $na$. Tức là $m - 1 \le na < m$.
+
+**Bước C — kiểm tra $\frac{m}{n}$ nằm trong khe.**
+
+- *Vế trái:* từ $na < m$ chia hai vế cho $n$ được ngay $a < \frac{m}{n}$. ✓
+- *Vế phải:* từ $m - 1 \le na$ ta có $m \le na + 1$. Mà Bước A cho $\frac{1}{n} < b - a$, tức $a < b - \frac{1}{n}$. Thay vào:
+
+  $$
+  m \le na + 1 < n\left(b - \tfrac{1}{n}\right) + 1 = nb - 1 + 1 = nb.
+  $$
+
+  Chia cho $n$: $\frac{m}{n} < b$. ✓
+
+Vậy $a < \frac{m}{n} < b$. Ta đã chen được một phân số vào khe.
+
+#### Bước 5 — Kiểm tra
+
+Có dùng tiên đề đầy đủ không? Có — gián tiếp, qua Archimedes ở Bước A. Không có tiên đề thì không chọn được $n$.
+
+#### Bước 6 — Cách làm chung
+
+<TomTat>
+Bài toán “chen một phân số vào khoảng” luôn theo hai bước: **chọn mẫu số trước** (đủ lớn để bước lưới nhỏ hơn khoảng), **rồi chọn tử số** (số nguyên nhỏ nhất vượt qua $na$).
+</TomTat>
+
+### Hai định lý còn lại — ý tưởng ngắn
+
+**Định lý 3 ($\sqrt{2}$ tồn tại).** Đặt $T = \{t \in \mathbf{R} : t^2 < 2\}$ và lấy $\alpha = \sup T$ (tồn tại nhờ tiên đề). Rồi chứng minh $\alpha^2$ không thể nhỏ hơn 2, cũng không thể lớn hơn 2 — nên phải bằng 2.
+
+*Mẹo hiểu:* nếu $\alpha^2 < 2$ thì còn “chỗ trống”, ta nhích $\alpha$ lên một tí vẫn nằm trong $T$ ⇒ $\alpha$ không phải chặn trên. Nếu $\alpha^2 > 2$ thì hạ $\alpha$ xuống một tí vẫn là chặn trên ⇒ $\alpha$ không phải chặn trên *nhỏ nhất*. Hai khả năng đều bị loại.
+
+**Định lý 4 (đoạn lồng nhau).** Với $I_n = [a_n, b_n]$, lấy tập các đầu mút trái $A = \{a_1, a_2, a_3, \ldots\}$. Mọi $b_n$ đều là chặn trên của $A$ (vẽ hình ra sẽ thấy ngay). Đặt $x = \sup A$. Khi đó $a_n \le x \le b_n$ với mọi $n$, tức $x$ nằm trong mọi đoạn.
+
+Chi tiết đầy đủ ở <XemMuc muc="1.4" />.
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Lỗi 1: Coi tính chất Archimedes là hiển nhiên nên không chứng minh">
+Nó *trông* hiển nhiên, nhưng không phải. Tất cả những gì ta giả định về $\mathbf{R}$ là: các phép tính thông thường + tiên đề đầy đủ. Từ chừng ấy, việc “không có số lớn hơn mọi số đếm” *phải được chứng minh*. Thực tế có những hệ thống số (giải tích không chuẩn) trong đó nó sai.
+</Loi>
+
+<Loi tieuDe="Lỗi 2: Bỏ chữ “đóng” ở định lý đoạn lồng nhau">
+Với khoảng mở thì kết luận sai. Nhớ phản ví dụ: $\displaystyle\bigcap_{n} \left(0, \tfrac{1}{n}\right) = \varnothing$.
+</Loi>
+
+<Loi tieuDe="Lỗi 3: Nhầm “trù mật” với “đầy đủ”">
+$\mathbf{Q}$ *trù mật* (giữa hai phân số luôn có phân số khác) nhưng *không đầy đủ* (có lỗ hổng). Hai khái niệm hoàn toàn khác nhau. Đây chính là nội dung Bài tập 3.3 của Bài 3.
+</Loi>
+
+## Tóm tắt 30 giây
+
+| Kết quả | Nói gọn |
+| --- | --- |
+| **Archimedes** | $\mathbf{N}$ không bị chặn; $\frac{1}{n}$ nhỏ tuỳ ý |
+| **Trù mật** | giữa hai số thực bất kỳ luôn có phân số |
+| **Tồn tại $\sqrt{2}$** | Bài 1 nói nó không là phân số; giờ ta biết nó là số thực |
+| **Đoạn lồng nhau** | đoạn *đóng* lồng nhau thì giao khác rỗng |
+
+Cả bốn đều được chứng minh từ *đúng một* thứ: Tiên đề đầy đủ.
+
+<BaGoc>
+  <Goc ten="Hiểu">Tiên đề đầy đủ “sản xuất” ra số thực mỗi khi ta cần; bốn hệ quả là bốn lần dùng nó.</Goc>
+  <Goc ten="Nhớ">Mẹo $\varepsilon$: $s = \sup A$ ⇒ với mọi $\varepsilon > 0$ có $a \in A$, $a > s - \varepsilon$.</Goc>
+  <Goc ten="Làm">Chen phân số vào $(a, b)$: chọn $n$ với $\frac1n < b - a$, rồi $m$ nhỏ nhất lớn hơn $na$.</Goc>
+</BaGoc>
+
+## Bài tập
+
+<BaiLuyen do_kho="de" so="4.1">
+Dùng tính chất Archimedes, hãy tìm một số tự nhiên $n$ cụ thể sao cho: (a) $\frac{1}{n} < 0{,}001$ (b) $\frac{1}{n} < \frac{1}{500}$ (c) $n > 10^6$.
+
+(Bài này dễ, nhưng mục đích là để bạn thấy Archimedes thực ra nói điều rất bình thường.)
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="4.2">
+Chứng minh $\displaystyle\bigcap_{n=1}^{\infty} \left(0, \tfrac{1}{n}\right) = \varnothing$. Tức là: không có số thực nào nằm trong *tất cả* các khoảng $(0, 1)$, $\left(0, \frac12\right)$, $\left(0, \frac13\right)$, …
+
+<GoiYNho>Phản chứng. Giả sử có số $x$ nằm trong tất cả. Khi đó $x > 0$ và $x < \frac{1}{n}$ với mọi $n$. Dùng Archimedes để tìm mâu thuẫn. Bài này giải thích vì sao định lý đoạn lồng nhau bắt buộc phải dùng đoạn *đóng*. Đối chiếu với <XemMuc bai-tap="1.4.3" chu="Bài 1.4.3 trong sách" />.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="4.3">
+Chứng minh rằng giữa hai số thực bất kỳ $a < b$ luôn tồn tại một số **vô tỉ**.
+
+<GoiYNho>Áp dụng Định lý 2 cho cặp số $a - \sqrt{2}$ và $b - \sqrt{2}$ để được một phân số $r$ ở giữa. Rồi xét $t = r + \sqrt{2}$. Bạn sẽ cần sự thật: *phân số cộng số vô tỉ thì ra số vô tỉ* (tự chứng minh bằng phản chứng — chỉ hai dòng).</GoiYNho>
+</BaiLuyen>

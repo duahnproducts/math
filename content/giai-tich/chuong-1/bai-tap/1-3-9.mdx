@@ -1,0 +1,27 @@
+---
+so: "1.3.9"
+muc: "1.3"
+do_kho: vua
+tieu_de: "So sánh sup A và sup B"
+can_dung: ["bo-de-1.3.8"]
+---
+
+<De>
+(a) Nếu $\sup A < \sup B$, chứng minh tồn tại $b \in B$ là một chặn trên của $A$.
+
+(b) Cho ví dụ cho thấy kết luận trên có thể sai nếu chỉ giả thiết $\sup A \le \sup B$.
+</De>
+
+<GoiY so={1}>
+Khoảng cách $\varepsilon = \sup B - \sup A$ là dương. Dùng Bổ đề 1.3.8 cho tập $B$ với $\varepsilon$ đó.
+</GoiY>
+
+<GoiY so={2}>
+(b) Thử $A = B$ là một khoảng mở. Có phần tử nào của khoảng mở là chặn trên của chính nó?
+</GoiY>
+
+<LoiGiai>
+**(a)** Đặt $\varepsilon = \sup B - \sup A > 0$. Theo Bổ đề 1.3.8, tồn tại $b \in B$ với $b > \sup B - \varepsilon = \sup A$. Khi đó mọi $a \in A$ thoả $a \le \sup A < b$, nên $b$ là chặn trên của $A$. ∎
+
+**(b)** $A = B = (0, 1)$: $\sup A = \sup B = 1$, nhưng mọi $b \in (0, 1)$ đều thoả $b < 1$, nên không $b$ nào là chặn trên của $A$.
+</LoiGiai>

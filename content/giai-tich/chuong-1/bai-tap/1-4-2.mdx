@@ -1,0 +1,25 @@
+---
+so: "1.4.2"
+muc: "1.4"
+do_kho: vua
+tieu_de: "Nhận biết sup bằng dãy 1/n"
+can_dung: ["dinh-ly-1.4.2", "dinh-nghia-1.3.2"]
+---
+
+<De>
+Cho $A \subseteq \mathbf{R}$ khác rỗng, bị chặn trên, và $s \in \mathbf{R}$ có tính chất: với mọi $n \in \mathbf{N}$, $s + \frac1n$ là chặn trên của $A$ còn $s - \frac1n$ thì không. Chứng minh $s = \sup A$.
+</De>
+
+<GoiY so={1}>
+Cần hai việc: (i) $s$ là chặn trên; (ii) $s$ nhỏ hơn hoặc bằng mọi chặn trên. Cả hai đều bằng phản chứng.
+</GoiY>
+
+<GoiY so={2}>
+(i) Nếu có $a \in A$ với $a > s$, đặt $\varepsilon = a - s$ và dùng Archimedes chọn $n$ với $\frac1n < \varepsilon$ — so sánh $s + \frac1n$ với $a$. (ii) Làm đối xứng với $s - \frac1n$.
+</GoiY>
+
+<LoiGiai>
+**(i) $s$ là chặn trên.** Phản chứng: có $a \in A$ với $a > s$. Đặt $\varepsilon = a - s > 0$; theo Archimedes chọn $n$ với $1/n < \varepsilon$. Khi đó $s + 1/n < s + \varepsilon = a$, mâu thuẫn với việc $s + 1/n$ là chặn trên của $A$ (nó phải $\ge a$).
+
+**(ii) $s$ nhỏ hơn mọi chặn trên.** Lấy $b$ là chặn trên, phản chứng $b < s$. Đặt $\varepsilon = s - b > 0$, chọn $n$ với $1/n < \varepsilon$. Khi đó $s - 1/n > s - \varepsilon = b$. Nhưng $b$ là chặn trên và $s - 1/n > b$, nên $s - 1/n$ cũng là chặn trên — mâu thuẫn với giả thiết. Vậy $s \le b$. ∎
+</LoiGiai>

@@ -1,0 +1,29 @@
+---
+so: "1.5.8"
+muc: "1.5"
+do_kho: vua
+tieu_de: "Tập số dương có mọi tổng hữu hạn ≤ 2"
+can_dung: ["dinh-ly-1.5.8", "dinh-ly-1.4.2"]
+---
+
+<De>
+Cho $B$ là một tập các số thực dương sao cho mọi tập con hữu hạn của $B$ đều có tổng các phần tử $\le 2$. Chứng minh $B$ hữu hạn hoặc đếm được.
+</De>
+
+<GoiY so={1}>
+Chia $B$ thành các tầng theo độ lớn: $B_n = \{b \in B : b > 1/n\}$. Mỗi tầng có thể có nhiều phần tử đến đâu?
+</GoiY>
+
+<GoiY so={2}>
+Nếu $B_n$ có hơn $2n$ phần tử thì tổng của $2n + 1$ phần tử trong đó vượt quá 2. Rồi chứng minh $B = \bigcup_n B_n$ (cần Archimedes) và dùng Định lý 1.5.8.
+</GoiY>
+
+<LoiGiai>
+Với mỗi $n \in \mathbf{N}$ đặt $B_n = \{b \in B : b > 1/n\}$.
+
+*Mỗi $B_n$ hữu hạn:* nếu $B_n$ có nhiều hơn $2n$ phần tử, chọn $2n + 1$ phần tử trong đó; tổng của chúng lớn hơn $(2n+1)/n > 2$ — mâu thuẫn giả thiết. Vậy $|B_n| \le 2n$.
+
+*$B = \bigcup_{n=1}^\infty B_n$:* mọi $b \in B$ đều dương, nên theo Archimedes có $n$ với $1/n < b$, tức $b \in B_n$.
+
+Vậy $B$ là hợp đếm được của các tập hữu hạn, do đó hữu hạn hoặc đếm được (Định lý 1.5.8). ∎
+</LoiGiai>

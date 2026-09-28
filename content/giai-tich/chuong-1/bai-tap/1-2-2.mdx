@@ -1,0 +1,23 @@
+---
+so: "1.2.2"
+muc: "1.2"
+do_kho: de
+tieu_de: "Không có số hữu tỉ r nào để 2^r = 3"
+can_dung: []
+---
+
+<De>
+Chứng minh không có số hữu tỉ $r$ nào thoả $2^r = 3$.
+</De>
+
+<GoiY so={1}>
+Phản chứng: giả sử $r = p/q$. Trước hết tự hỏi $r$ âm, bằng 0 hay dương?
+</GoiY>
+
+<GoiY so={2}>
+Nâng hai vế của $2^{p/q} = 3$ lên luỹ thừa $q$ để khử căn. Rồi so sánh tính chẵn lẻ hai vế.
+</GoiY>
+
+<LoiGiai>
+Vì $2^0 = 1 < 3$ và hàm $2^x$ tăng nên $r > 0$. Viết $r = p/q$ với $p, q \in \mathbf{N}$. Từ $2^{p/q} = 3$, nâng luỹ thừa $q$: $2^p = 3^q$. Vế trái chẵn (vì $p \ge 1$), vế phải lẻ. Mâu thuẫn. ∎
+</LoiGiai>

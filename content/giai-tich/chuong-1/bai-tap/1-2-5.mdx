@@ -1,0 +1,33 @@
+---
+so: "1.2.5"
+muc: "1.2"
+do_kho: de
+tieu_de: "Luật De Morgan"
+can_dung: []
+---
+
+<De>
+Chứng minh luật De Morgan:
+
+(a) $(A \cap B)^c \subseteq A^c \cup B^c$;
+
+(b) $A^c \cup B^c \subseteq (A \cap B)^c$, từ đó $(A \cap B)^c = A^c \cup B^c$;
+
+(c) $(A \cup B)^c = A^c \cap B^c$.
+</De>
+
+<GoiY so={1}>
+Muốn chứng minh $X \subseteq Y$: lấy một phần tử bất kỳ $x \in X$ rồi chỉ ra $x \in Y$.
+</GoiY>
+
+<GoiY so={2}>
+$x \in (A \cap B)^c$ nghĩa là $x \notin A \cap B$ — tức là **không** có “$x \in A$ và $x \in B$”. Phủ định của “và” là “hoặc”.
+</GoiY>
+
+<LoiGiai>
+**(a)** $x \in (A \cap B)^c \Rightarrow x \notin A \cap B \Rightarrow$ phủ định của “$x \in A$ và $x \in B$” $\Rightarrow x \notin A$ hoặc $x \notin B \Rightarrow x \in A^c \cup B^c$.
+
+**(b)** Ngược lại, $x \in A^c \cup B^c \Rightarrow x \notin A$ hoặc $x \notin B \Rightarrow$ không thể có đồng thời $x \in A$ và $x \in B \Rightarrow x \notin A \cap B$. Hai bao hàm cho đẳng thức.
+
+**(c)** $x \in (A \cup B)^c \iff x \notin A$ *và* $x \notin B \iff x \in A^c \cap B^c$. Cả hai chiều cùng lúc. ∎
+</LoiGiai>

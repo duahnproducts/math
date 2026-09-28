@@ -1,0 +1,43 @@
+---
+so: "1.2.11"
+muc: "1.2"
+do_kho: vua
+nen_lam: true
+tieu_de: "Phủ định mệnh đề có lượng từ"
+can_dung: ["dinh-ly-1.4.2", "dinh-ly-1.4.3"]
+---
+
+<De>
+Viết phủ định của mỗi mệnh đề dưới dạng khẳng định (không dùng chữ “không”), rồi đoán mệnh đề hay phủ định của nó là đúng.
+
+(a) Với mọi số thực $a < b$, tồn tại $n \in \mathbf{N}$ sao cho $a + 1/n < b$.
+
+(b) Tồn tại số thực $x > 0$ sao cho $x < 1/n$ với mọi $n \in \mathbf{N}$.
+
+(c) Giữa hai số thực phân biệt bất kỳ luôn có một số hữu tỉ.
+</De>
+
+<GoiY so={1}>
+Quy tắc: đổi “với mọi” ↔ “tồn tại”, **giữ nguyên thứ tự** các lượng từ, rồi phủ định phần lõi.
+</GoiY>
+
+<GoiY so={2}>
+Để đoán đúng/sai, nghĩ tới tính chất Archimedes: $1/n$ nhỏ được tuỳ ý.
+</GoiY>
+
+<LoiGiai>
+**(a)** Phủ định: *tồn tại* $a < b$ sao cho $a + 1/n \ge b$ *với mọi* $n \in \mathbf{N}$. **Mệnh đề gốc đúng** (Archimedes: chọn $1/n < b - a$).
+
+**(b)** Phủ định: *với mọi* $x > 0$ *tồn tại* $n$ sao cho $x \ge 1/n$. **Phủ định đúng** (Archimedes). Không có số thực dương “vô cùng bé”.
+
+**(c)** Phủ định: tồn tại hai số thực $a < b$ sao cho mọi số hữu tỉ $r$ đều thoả $r \le a$ hoặc $r \ge b$. **Mệnh đề gốc đúng** (Định lý 1.4.3).
+
+<GhiChu tieuDe="Quy tắc phủ định">
+
+$$
+\neg\big(\forall x\, \exists y : P(x, y)\big) \;=\; \exists x\, \forall y : \neg P(x, y).
+$$
+
+Thứ tự lượng từ *giữ nguyên*, chỉ đổi loại. Kỹ năng này quyết định bạn có viết được chứng minh phân kỳ ở §2.2 hay không.
+</GhiChu>
+</LoiGiai>

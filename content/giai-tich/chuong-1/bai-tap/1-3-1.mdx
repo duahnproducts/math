@@ -1,0 +1,32 @@
+---
+so: "1.3.1"
+muc: "1.3"
+do_kho: vua
+nen_lam: true
+tieu_de: "Định nghĩa infimum và bổ đề ε cho inf"
+can_dung: ["dinh-nghia-1.3.2", "bo-de-1.3.8"]
+---
+
+<De>
+(a) Viết định nghĩa chính xác của **cận dưới lớn nhất** (infimum), song song với Định nghĩa 1.3.2.
+
+(b) Phát biểu và chứng minh một bổ đề cho infimum tương tự Bổ đề 1.3.8.
+</De>
+
+<GoiY so={1}>
+Lật ngược mọi thứ: “chặn trên” → “chặn dưới”, “$\le$” → “$\ge$”, “nhỏ nhất” → “lớn nhất”, “$s - \varepsilon$” → “$s + \varepsilon$”.
+</GoiY>
+
+<GoiY so={2}>
+Chiều (⇐) của bổ đề: lấy $l$ là chặn dưới bất kỳ, phản chứng $l > s$, rồi chọn $\varepsilon = l - s$.
+</GoiY>
+
+<LoiGiai>
+**(a) Định nghĩa.** Số thực $s$ là cận dưới lớn nhất (infimum) của $A$ nếu: (i) $s$ là một chặn dưới của $A$; (ii) nếu $l$ là chặn dưới bất kỳ của $A$ thì $l \le s$.
+
+**(b) Bổ đề.** Giả sử $s$ là chặn dưới của $A$. Khi đó $s = \inf A$ khi và chỉ khi với mọi $\varepsilon > 0$ tồn tại $a \in A$ thoả $a < s + \varepsilon$.
+
+*Chứng minh.* (⇒) Vì $s + \varepsilon > s$ và $s$ là chặn dưới *lớn nhất*, $s + \varepsilon$ không còn là chặn dưới, nên tồn tại $a \in A$ với $a < s + \varepsilon$.
+
+(⇐) Lấy $l$ là chặn dưới bất kỳ. Nếu $l > s$, đặt $\varepsilon = l - s > 0$; theo giả thiết có $a \in A$ với $a < s + \varepsilon = l$, mâu thuẫn với $l$ là chặn dưới. Vậy $l \le s$. ∎
+</LoiGiai>

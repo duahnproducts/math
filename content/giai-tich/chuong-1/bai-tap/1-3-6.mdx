@@ -1,0 +1,40 @@
+---
+so: "1.3.6"
+muc: "1.3"
+do_kho: vua
+nen_lam: true
+tieu_de: "sup(A + B) = sup A + sup B"
+can_dung: ["dinh-nghia-1.3.2", "bo-de-1.3.8"]
+---
+
+<De>
+Cho $A, B$ khác rỗng, bị chặn trên. Đặt $A + B = \{a + b : a \in A, b \in B\}$. Chứng minh $\sup(A + B) = \sup A + \sup B$ theo hai cách:
+
+(a)–(c) dùng thẳng Định nghĩa 1.3.2 (chặn trên + nhỏ nhất);
+
+(d) dùng Bổ đề 1.3.8.
+</De>
+
+<GoiY so={1}>
+Đặt $s = \sup A$, $t = \sup B$. Phần “chặn trên” dễ. Phần “nhỏ nhất”: lấy $u$ là chặn trên tuỳ ý của $A + B$ và **cố định** một $a \in A$ — khi đó $u - a$ là chặn trên của gì?
+</GoiY>
+
+<GoiY so={2}>
+Từ $t \le u - a$ viết lại thành $a \le u - t$ — đúng với *mọi* $a$. Cách (d): chia $\varepsilon$ thành $\varepsilon/2 + \varepsilon/2$.
+</GoiY>
+
+<LoiGiai>
+Đặt $s = \sup A$, $t = \sup B$.
+
+**(a)** Với mọi $a \in A$, $b \in B$: $a \le s$ và $b \le t$, nên $a + b \le s + t$. Vậy $s + t$ là chặn trên của $A + B$.
+
+**(b)** Lấy $u$ là chặn trên tuỳ ý của $A + B$ và cố định $a \in A$. Khi đó $a + b \le u$ với mọi $b \in B$, tức $b \le u - a$. Vậy $u - a$ là chặn trên của $B$, suy ra $t \le u - a$.
+
+**(c)** $t \le u - a$ viết lại thành $a \le u - t$, đúng với *mọi* $a \in A$ (vì $a$ được cố định tuỳ ý ở (b)). Vậy $u - t$ là chặn trên của $A$, nên $s \le u - t$, tức $s + t \le u$. Kết hợp (a): $\sup(A + B) = s + t$. ∎
+
+**(d) Dùng Bổ đề 1.3.8.** $s + t$ là chặn trên theo (a). Cho $\varepsilon > 0$. Chọn $a \in A$ với $a > s - \varepsilon/2$ và $b \in B$ với $b > t - \varepsilon/2$. Khi đó $a + b > (s + t) - \varepsilon$. Theo bổ đề, $s + t = \sup(A + B)$. ∎
+
+<GhiChu tieuDe="So sánh hai cách">
+Cách (a)–(c) dài hơn nhưng minh bạch. Cách (d) ngắn hơn nhiều. Thủ thuật “chia $\varepsilon$ thành $\varepsilon/2 + \varepsilon/2$” xuất hiện lần đầu ở đây và sẽ là kỹ thuật chủ đạo của cả Chương 2.
+</GhiChu>
+</LoiGiai>

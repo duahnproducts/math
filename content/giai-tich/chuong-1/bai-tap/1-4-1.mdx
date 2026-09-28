@@ -1,0 +1,37 @@
+---
+so: "1.4.1"
+muc: "1.4"
+do_kho: de
+tieu_de: "Phép toán trên Q và trên số vô tỉ"
+can_dung: []
+---
+
+<De>
+Gọi $\mathbf{I}$ là tập số vô tỉ.
+
+(a) Chứng minh $\mathbf{Q}$ đóng với phép cộng và phép nhân: $a, b \in \mathbf{Q}$ thì $a + b$ và $ab$ thuộc $\mathbf{Q}$.
+
+(b) Cho $a \in \mathbf{Q}$, $t \in \mathbf{I}$. Chứng minh $a + t \in \mathbf{I}$, và $at \in \mathbf{I}$ nếu $a \neq 0$.
+
+(c) $\mathbf{I}$ có đóng với phép cộng và phép nhân không?
+</De>
+
+<GoiY so={1}>
+(a) Viết $a = p/q$, $b = r/s$ rồi tính trực tiếp. (b) Phản chứng: nếu $a + t$ hữu tỉ thì $t = (a + t) - a$ là gì?
+</GoiY>
+
+<GoiY so={2}>
+(c) Tìm hai số vô tỉ có tổng (hoặc tích) là số hữu tỉ — nghĩ tới $\sqrt{2}$.
+</GoiY>
+
+<LoiGiai>
+**(a)** $a = p/q$, $b = r/s$ với $p, q, r, s \in \mathbf{Z}$, $q, s \neq 0$. Khi đó $a + b = (ps + qr)/(qs)$ và $ab = pr/(qs)$; cả hai là thương hai số nguyên với mẫu khác 0, nên thuộc $\mathbf{Q}$.
+
+**(b)** Nếu $a + t = r \in \mathbf{Q}$ thì $t = r + (-a) \in \mathbf{Q}$ theo (a) — mâu thuẫn. Vậy $a + t \in \mathbf{I}$. Nếu $a \neq 0$ và $at = r \in \mathbf{Q}$ thì $t = r \cdot (1/a) \in \mathbf{Q}$ — mâu thuẫn. Vậy $at \in \mathbf{I}$.
+
+**(c)** $\mathbf{I}$ *không* đóng: $\sqrt{2} + (-\sqrt{2}) = 0 \in \mathbf{Q}$ và $\sqrt{2} \cdot \sqrt{2} = 2 \in \mathbf{Q}$.
+
+<GhiChu tieuDe="Vì sao khác nhau?">
+$\mathbf{Q}$ là một *trường*, nên đóng với các phép toán. $\mathbf{I}$ chỉ là phần bù của một trường, không có cấu trúc đại số nào — nên không có lý do gì để đóng. Sự bất đối xứng giữa $\mathbf{Q}$ và $\mathbf{I}$ còn gặp lại ở §1.5.
+</GhiChu>
+</LoiGiai>

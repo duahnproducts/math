@@ -1,0 +1,43 @@
+---
+so: "1.5.11"
+muc: "1.5"
+do_kho: kho
+tieu_de: "Định lý Schröder–Bernstein"
+can_dung: ["dinh-nghia-1.5.1", "dinh-nghia-1.5.2"]
+---
+
+<De>
+Cho $f : X \to Y$ và $g : Y \to X$ đều là đơn ánh. Chứng minh $X \sim Y$ theo các bước:
+
+(a) Nếu phân hoạch được $X = A \cup A'$, $Y = B \cup B'$ (rời nhau) sao cho $f$ biến $A$ lên $B$ và $g$ biến $B'$ lên $A'$, thì $X \sim Y$.
+
+(b) Đặt $A_1 = X \setminus g(Y)$ và đệ quy $A_{n+1} = g(f(A_n))$. Chứng minh các $A_n$ đôi một rời nhau.
+
+(c)–(d) Đặt $A = \bigcup_n A_n$, $B = \bigcup_n f(A_n)$, $A' = X \setminus A$, $B' = Y \setminus B$. Chứng minh các tập này thoả điều kiện ở (a).
+</De>
+
+<GoiY so={1}>
+(a) Ghép hai mảnh: dùng $f$ trên $A$ và dùng $g^{-1}$ trên $A'$. Vì sao $g^{-1}$ xác định được trên $A'$?
+</GoiY>
+
+<GoiY so={2}>
+(d) Lấy $x \in A'$. Vì $x \notin A_1 = X \setminus g(Y)$ nên $x = g(y)$ với $y$ duy nhất. Chứng minh $y \in B'$ bằng phản chứng: nếu $y = f(a)$ với $a \in A_n$ thì $x$ thuộc tập nào?
+</GoiY>
+
+<LoiGiai>
+**(a)** Đặt
+
+$$
+h(x) = \begin{cases} f(x) & \text{nếu } x \in A, \\ g^{-1}(x) & \text{nếu } x \in A'. \end{cases}
+$$
+
+$h$ đơn ánh (hai nhánh đơn ánh, ảnh của chúng là $B$ và $B'$ rời nhau) và toàn ánh lên $B \cup B' = Y$. Vậy $X \sim Y$.
+
+**(b)** Vì $f$ và $g$ đơn ánh, mỗi $A_{n+1}$ là ảnh đơn ánh của $A_n$. $A_1$ rời mọi $A_{n+1}$ vì $A_{n+1} \subseteq g(Y)$ trong khi $A_1 \cap g(Y) = \varnothing$; với $m < n$, $A_m \cap A_n = \varnothing$ suy ra bằng quy nạp, dùng tính đơn ánh của $g \circ f$. Tương tự $\{f(A_n)\}$ đôi một rời nhau trong $Y$.
+
+**(c)** Theo định nghĩa, $f$ biến $A = \bigcup A_n$ lên $B = \bigcup f(A_n)$ (và đơn ánh).
+
+**(d)** Chứng minh $g$ biến $B'$ lên $A'$. Lấy $x \in A'$. Vì $x \notin A_1 = X \setminus g(Y)$, ta có $x = g(y)$ với $y$ duy nhất. Nếu $y \in B$ thì $y = f(a)$ với $a \in A_n$ nào đó, khi đó $x = g(f(a)) \in A_{n+1} \subseteq A$ — mâu thuẫn với $x \in A'$. Vậy $y \in B'$ và $g(y) = x$.
+
+Kết hợp với (a): tồn tại song ánh $h : X \to Y$, tức $X \sim Y$. ∎
+</LoiGiai>

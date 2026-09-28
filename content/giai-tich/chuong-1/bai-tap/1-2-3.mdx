@@ -1,0 +1,41 @@
+---
+so: "1.2.3"
+muc: "1.2"
+do_kho: vua
+tieu_de: "Đúng hay sai: giao của các tập lồng nhau"
+can_dung: ["vi-du-1.2.2"]
+---
+
+<De>
+Xét tính đúng/sai của các mệnh đề sau về tập hợp; mệnh đề sai thì cho phản ví dụ.
+
+(a) Nếu $A_1 \supseteq A_2 \supseteq A_3 \supseteq \cdots$ đều là tập vô hạn thì giao $\bigcap_{n=1}^\infty A_n$ cũng vô hạn.
+
+(b) Nếu $A_1 \supseteq A_2 \supseteq \cdots$ đều là tập hữu hạn, khác rỗng thì giao hữu hạn và khác rỗng.
+
+(c) $A \cap (B \cup C) = (A \cap B) \cup C$.
+
+(d) $A \cap (B \cap C) = (A \cap B) \cap C$.
+
+(e) $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$.
+</De>
+
+<GoiY so={1}>
+Với (a), nhớ lại Ví dụ 1.2.2. Với (c), thử những tập thật nhỏ, kể cả tập rỗng.
+</GoiY>
+
+<GoiY so={2}>
+Với (b): số phần tử $|A_1| \ge |A_2| \ge \cdots \ge 1$ là dãy số nguyên dương giảm — nó phải dừng lại ở đâu đó. Với (e): chứng minh bao hàm hai chiều.
+</GoiY>
+
+<LoiGiai>
+**(a) Sai.** $A_n = \{n, n+1, \ldots\}$ đều vô hạn, lồng nhau giảm, nhưng $\bigcap_{n=1}^\infty A_n = \varnothing$.
+
+**(b) Đúng.** Dãy $|A_1| \ge |A_2| \ge \cdots \ge 1$ là dãy số nguyên dương giảm nên dừng lại: có $N$ với $|A_n| = |A_N|$ cho mọi $n \ge N$. Kết hợp $A_n \subseteq A_N$ và cùng số phần tử hữu hạn, ta được $A_n = A_N$ với mọi $n \ge N$. Vậy giao bằng $A_N$ — hữu hạn và khác rỗng.
+
+**(c) Sai.** Lấy $A = \varnothing$, $B = \varnothing$, $C = \{1\}$: vế trái $\varnothing$, vế phải $\{1\}$.
+
+**(d) Đúng** (tính kết hợp của phép giao).
+
+**(e) Đúng** (tính phân phối). Chứng minh bằng bao hàm hai chiều.
+</LoiGiai>

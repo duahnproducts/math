@@ -1,0 +1,39 @@
+---
+so: "1.6.9"
+muc: "1.6"
+do_kho: kho
+tieu_de: "P(N) cùng lực lượng với R"
+can_dung: ["dinh-ly-1.6.2"]
+---
+
+<De>
+Chứng minh $P(\mathbf{N}) \sim \mathbf{R}$.
+</De>
+
+<GoiY so={1}>
+Đi qua tập trung gian $S$ gồm các dãy 0–1 (Bài 1.6.4). Bước 1: $P(\mathbf{N}) \sim S$. Rồi dùng Schröder–Bernstein (Bài 1.5.11): chỉ cần một đơn ánh $S \to \mathbf{R}$ và một đơn ánh $\mathbf{R} \to S$.
+</GoiY>
+
+<GoiY so={2}>
+$S \to \mathbf{R}$: đọc dãy $(b_n)$ như chữ số trong **cơ số 3** (chỉ dùng 0 và 1 nên khai triển duy nhất). $\mathbf{R} \to S$: qua $(0, 1)$, lấy các chữ số **nhị phân** không kết thúc.
+</GoiY>
+
+<LoiGiai>
+*Bước 1: $P(\mathbf{N}) \sim S$*, với $S$ là tập các dãy 0–1. Song ánh: $E \mapsto$ dãy chỉ thị $(\chi_E(1), \chi_E(2), \ldots)$.
+
+*Bước 2: đơn ánh $S \to \mathbf{R}$.* Gửi dãy $(b_n)$ tới số
+
+$$
+\sum_{n=1}^\infty \frac{b_n}{3^n} \in [0, 1].
+$$
+
+Vì chỉ dùng chữ số 0 và 1 trong hệ cơ số 3 (không bao giờ dùng chữ số lớn nhất là 2), khai triển là duy nhất, nên ánh xạ này đơn ánh. (Ảnh của nó chính là tập Cantor — gặp lại ở §3.1.)
+
+*Bước 3: đơn ánh $\mathbf{R} \to S$.* Trước hết $\mathbf{R} \sim (0, 1)$ (Bài 1.5.4). Mỗi $x \in (0, 1)$ gửi tới dãy chữ số *nhị phân* của nó, dùng quy ước khai triển không kết thúc để bảo đảm duy nhất. Đơn ánh.
+
+Schröder–Bernstein (Bài 1.5.11) cho $S \sim \mathbf{R}$; kết hợp Bước 1: $P(\mathbf{N}) \sim \mathbf{R}$. ∎
+
+<GhiChu tieuDe="Hệ quả về số cardinal">
+Ta vừa chứng minh $\mathbf{c} = \operatorname{card} \mathbf{R} = \operatorname{card} P(\mathbf{N}) = 2^{\aleph_0}$. Giả thuyết continuum, phát biểu bằng ký hiệu này, là câu hỏi liệu $2^{\aleph_0} = \aleph_1$ hay không.
+</GhiChu>
+</LoiGiai>

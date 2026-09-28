@@ -1,0 +1,161 @@
+---
+mon: giai-tich
+chuong: 1
+bai: 3
+tieu_de: Tiên đề đầy đủ
+y_tuong: Đường số thực không có lỗ — nói chính xác là mọi tập bị chặn trên đều có sup.
+phu_muc: ["1.3"]
+---
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+Đường số thực **không có lỗ** — và ta phát biểu điều đó bằng cách nói: mọi tập bị chặn trên đều **có** sup.
+</YTuong>
+
+## Hình dung trực quan
+
+Hãy tưởng tượng bạn đo nhiệt độ bằng một cái nhiệt kế *chỉ có vạch số nguyên*. Nhiệt độ thật hôm nay là $24{,}7^\circ$. Nhưng nhiệt kế của bạn chỉ có vạch 24 và 25 — **không vạch nào chỉ đúng**.
+
+Nhiệt độ thật *tồn tại*. Cái thước của bạn mới là thứ bị thiếu.
+
+<HinhLoHong />
+
+<GhiChu>
+Đó đúng là tình cảnh của *phân số*: có những vị trí trên đường số mà phân số không chạm tới — như $\sqrt{2}$ ở Bài 1. **Tập số thực $\mathbf{R}$** chính là cái nhiệt kế được lấp đầy mọi vạch.
+</GhiChu>
+
+## Kiến thức cần biết
+
+### a) “Tiên đề” nghĩa là gì?
+
+Tiên đề là điều ta **chấp nhận mà không chứng minh**. Nó là viên gạch nền.
+
+Không phải vì ta lười — mà vì *phải* bắt đầu từ đâu đó. Muốn chứng minh A ta cần B, muốn chứng minh B cần C… không thể lùi mãi. Đến lúc nào đó phải dừng và nói: “cái này ta coi là đúng.”
+
+### b) Nhắc lại từ Bài 2
+
+$\sup A$ = chặn trên nhỏ nhất của $A$, thoả mãn hai điều kiện (i) và (ii). Xem lại ở <XemMuc bai={2} />.
+
+### c) Nhắc lại từ Bài 1
+
+$\sqrt{2}$ không phải phân số.
+
+## Công thức — phát biểu tiên đề
+
+<TienDe ten="Tiên đề Đầy đủ">
+Mọi tập con **khác rỗng** của $\mathbf{R}$ mà **bị chặn trên** đều **có** cận trên nhỏ nhất.
+</TienDe>
+
+Giải thích từng chữ — mỗi chữ đều quan trọng:
+
+| Cụm từ | Ý nghĩa |
+| --- | --- |
+| *Mọi tập con của* $\mathbf{R}$ | áp dụng cho tập số thực, không phải tập phân số |
+| *khác rỗng* | tập rỗng không có sup — mọi số đều là chặn trên, không có cái nhỏ nhất |
+| *bị chặn trên* | phải có ít nhất một cái trần. Tập $\mathbf{N}$ không có trần nên không có sup |
+| *đều có* | đây là phần **khẳng định**: sup *tồn tại*, không cần tìm mới biết |
+
+<TomTat tieuDe="Điểm cốt lõi cần hiểu">
+Tiên đề này không dạy ta *cách tìm* sup. Nó chỉ bảo đảm sup *có tồn tại*.
+
+Nghe thì nhỏ, nhưng đó chính là toàn bộ sức mạnh: mỗi khi ta cần một con số mà chưa biết nó là gì, ta dựng một tập hợp rồi lấy sup — và tiên đề bảo đảm con số đó có thật.
+</TomTat>
+
+## Ví dụ mẫu — vì sao tiên đề này SAI trong thế giới phân số
+
+Đây là ví dụ quan trọng nhất của Chương 1. Nó cho thấy tiên đề không phải chuyện hiển nhiên.
+
+#### Bước 1 — Đề cho gì?
+
+Giả vờ thế giới chỉ có *phân số*, không có số thực. Xét tập
+
+$$
+S = \{ r \text{ là phân số} : r^2 < 2 \}.
+$$
+
+Tức là: tất cả các phân số mà bình phương nhỏ hơn 2. Ví dụ $1;\ 1{,}4;\ 1{,}41;\ 1{,}414;\ \ldots$
+
+#### Bước 2 — Hỏi gì?
+
+Tập này có sup *trong thế giới phân số* không?
+
+#### Bước 3 — Dùng gì?
+
+Dùng kết quả Bài 1: $\sqrt{2}$ không phải phân số.
+
+#### Bước 4 — Giải
+
+*$S$ có bị chặn trên không?* Có. Số $2$ là chặn trên (vì $2^2 = 4 > 2$). Số $1{,}5$ cũng là chặn trên (vì $1{,}5^2 = 2{,}25 > 2$).
+
+*Vậy chặn trên nhỏ nhất là bao nhiêu?*
+
+- Thử $1{,}5$. Nhưng $1{,}42^2 = 2{,}0164 > 2$, nên $1{,}42$ cũng là chặn trên — và nhỏ hơn.
+- Thử $1{,}42$. Nhưng $1{,}415^2 = 2{,}002\ldots > 2$, nên $1{,}415$ cũng là chặn trên — nhỏ hơn nữa.
+- Thử $1{,}415$. Lại tìm được $1{,}4143$ nhỏ hơn…
+
+**Cuộc săn tìm này không bao giờ kết thúc.** Cái trần thấp nhất “đáng lẽ” phải là $\sqrt{2}$. Nhưng $\sqrt{2}$ *không phải phân số*, nên trong thế giới phân số nó không tồn tại.
+
+**Kết quả:** $S$ bị chặn trên nhưng **không có sup trong $\mathbf{Q}$**.
+
+#### Bước 5 — Kiểm tra
+
+Điều này có mâu thuẫn với tiên đề không? Không — vì tiên đề nói về $\mathbf{R}$, không nói về $\mathbf{Q}$. Và đó chính là điểm mấu chốt.
+
+#### Bước 6 — Rút ra
+
+<TomTat>
+Tiên đề đầy đủ **đúng trong $\mathbf{R}$** nhưng **sai trong $\mathbf{Q}$**. Đây là *sự khác biệt duy nhất* giữa hai tập số đó. Mọi thứ khác — cộng, trừ, nhân, chia, so sánh lớn bé — đều giống hệt nhau.
+</TomTat>
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Lỗi 1: Quên điều kiện “khác rỗng” hoặc “bị chặn trên”">
+Tập $\mathbf{N} = \{1, 2, 3, \ldots\}$ không bị chặn trên, nên tiên đề *không* nói gì về nó. Đừng viết “theo tiên đề đầy đủ, $\sup \mathbf{N}$ tồn tại” — sai.
+</Loi>
+
+<Loi tieuDe="Lỗi 2: Nghĩ tiên đề nói tập nào cũng có phần tử lớn nhất">
+Không. Tiên đề nói về *sup*, không phải *max*. Tập $(0, 2)$ có sup bằng $2$ nhưng không có max. Đây đúng là lý do người ta dùng sup chứ không dùng max khi phát biểu.
+</Loi>
+
+<Loi tieuDe="Lỗi 3: Nghĩ tiên đề là điều hiển nhiên nên không cần nhắc">
+Ví dụ ở mục Ví dụ mẫu cho thấy nó *không* hiển nhiên — nó sai trong $\mathbf{Q}$. Mỗi lần bài làm của bạn khẳng định một con số tồn tại, phải chỉ rõ “theo Tiên đề Đầy đủ”.
+</Loi>
+
+## Tóm tắt 30 giây
+
+- **Tiên đề đầy đủ:** tập khác rỗng, bị chặn trên ⇒ có sup.
+- Ba điều kiện: *khác rỗng*, *bị chặn trên*, và đang làm việc trong $\mathbf{R}$.
+- Tiên đề này **sai trong $\mathbf{Q}$** — đó là điều phân biệt $\mathbf{R}$ với $\mathbf{Q}$.
+- Công dụng: mỗi khi cần một số mà chưa biết nó là gì, hãy *dựng một tập rồi lấy sup*. Tiên đề bảo đảm số đó có thật.
+- Đây là viên gạch nền của *toàn bộ* giải tích. Mọi định lý lớn ở Chương 2–5 đều truy về đây.
+
+<BaGoc>
+  <Goc ten="Hiểu">$\mathbf{R}$ không có lỗ hổng; $\mathbf{Q}$ thì có.</Goc>
+  <Goc ten="Nhớ">Khác rỗng + bị chặn trên (trong $\mathbf{R}$) ⇒ có sup.</Goc>
+  <Goc ten="Làm">Cần một con số ⇒ dựng tập thích hợp, kiểm tra hai điều kiện, lấy sup.</Goc>
+</BaGoc>
+
+## Bài tập
+
+<BaiLuyen do_kho="de" so="3.1">
+Với mỗi tập sau, cho biết tiên đề đầy đủ có áp dụng được không. Nếu không, chỉ rõ điều kiện nào bị vi phạm.
+
+(a) $\{x \in \mathbf{R} : x < 5\}$ (b) $\mathbf{N} = \{1, 2, 3, \ldots\}$ (c) tập rỗng (d) $\{x \in \mathbf{R} : x^2 < 10\}$
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="3.2">
+Tiên đề chỉ nói về *cận trên*. Vậy còn *cận dưới* thì sao — có cần thêm một tiên đề nữa không? Hãy chứng minh là **không cần**: nếu $A$ khác rỗng và bị chặn dưới, hãy chỉ ra cách dùng tiên đề đầy đủ để khẳng định $\inf A$ tồn tại.
+
+<GoiYNho>Xét tập $B$ gồm *tất cả các chặn dưới* của $A$. Chứng minh $B$ khác rỗng, bị chặn trên, rồi chứng minh $\sup B = \inf A$. Đây là <XemMuc bai-tap="1.3.3" chu="Bài 1.3.3 trong sách" />.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="3.3">
+Giải thích bằng lời của bạn (không cần công thức) vì sao hai câu sau *không* giống nhau:
+
+(a) “Giữa hai phân số bất kỳ luôn có một phân số khác.”
+
+(b) “Tập phân số không có lỗ hổng.”
+
+Câu (a) *đúng*, câu (b) *sai*. Vì sao câu (a) không kéo theo câu (b)?
+</BaiLuyen>

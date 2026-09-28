@@ -1,0 +1,25 @@
+---
+so: "1.4.4"
+muc: "1.4"
+do_kho: vua
+tieu_de: "sup của Q ∩ [a, b] bằng b"
+can_dung: ["dinh-ly-1.4.3", "bo-de-1.3.8"]
+---
+
+<De>
+Cho $a < b$ và $T = \mathbf{Q} \cap [a, b]$. Chứng minh $\sup T = b$.
+</De>
+
+<GoiY so={1}>
+Trước hết: $T$ khác rỗng không? $b$ có là chặn trên của $T$ không? Rồi dùng Bổ đề 1.3.8 thay vì định nghĩa.
+</GoiY>
+
+<GoiY so={2}>
+Cho $\varepsilon > 0$ (có thể giả sử $\varepsilon < b - a$). Tính trù mật cho một số hữu tỉ $r$ trong khoảng $(b - \varepsilon, b)$ — kiểm tra $r \in T$.
+</GoiY>
+
+<LoiGiai>
+$T \neq \varnothing$: theo tính trù mật có số hữu tỉ trong $(a, b) \subseteq [a, b]$. Rõ ràng $b$ là chặn trên của $T$.
+
+Dùng Bổ đề 1.3.8: cho $\varepsilon > 0$; không mất tổng quát giả sử $\varepsilon < b - a$ (nếu $\varepsilon$ lớn hơn thì thay bằng một $\varepsilon$ nhỏ hơn, kết luận vẫn mạnh hơn). Theo tính trù mật, có số hữu tỉ $r$ với $b - \varepsilon < r < b$. Vì $b - \varepsilon > a$, ta có $r \in [a, b]$, tức $r \in T$ và $r > b - \varepsilon$. Bổ đề cho $\sup T = b$. ∎
+</LoiGiai>

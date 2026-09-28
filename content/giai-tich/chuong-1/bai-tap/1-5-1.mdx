@@ -1,0 +1,33 @@
+---
+so: "1.5.1"
+muc: "1.5"
+do_kho: kho
+tieu_de: "Tập con vô hạn của tập đếm được"
+can_dung: ["dinh-ly-1.5.7"]
+---
+
+<De>
+Hoàn tất chứng minh Định lý 1.5.7: nếu $B$ đếm được và $A \subseteq B$ là tập vô hạn thì $A$ đếm được.
+</De>
+
+<GoiY so={1}>
+Có song ánh $f : \mathbf{N} \to B$, tức $B$ đã xếp thành danh sách $f(1), f(2), \ldots$ Hãy “đi dọc danh sách” và nhặt ra những phần tử thuộc $A$ theo đúng thứ tự gặp.
+</GoiY>
+
+<GoiY so={2}>
+Định nghĩa đệ quy $n_1 = \min\{n : f(n) \in A\}$, $n_{k+1} = \min\{n : f(n) \in A,\ n > n_k\}$ (min tồn tại nhờ nguyên lý sắp thứ tự tốt, tập khác rỗng vì $A$ vô hạn). Đặt $g(k) = f(n_k)$ rồi kiểm tra đơn ánh và toàn ánh.
+</GoiY>
+
+<LoiGiai>
+$B$ đếm được nên có song ánh $f : \mathbf{N} \to B$. Cho $A \subseteq B$ vô hạn. Định nghĩa đệ quy $n_1 = \min\{n \in \mathbf{N} : f(n) \in A\}$ và
+
+$$
+n_{k+1} = \min\{n \in \mathbf{N} : f(n) \in A \text{ và } n > n_k\}.
+$$
+
+Các tập này khác rỗng vì $A$ vô hạn (nếu rỗng thì $A$ chỉ có hữu hạn phần tử), nên min tồn tại (nguyên lý sắp thứ tự tốt của $\mathbf{N}$). Đặt $g(k) = f(n_k)$.
+
+*$g$ đơn ánh:* $(n_k)$ tăng ngặt nên các $n_k$ đôi một khác nhau; $f$ đơn ánh nên các $f(n_k)$ cũng vậy.
+
+*$g$ toàn ánh lên $A$:* cho $a \in A \subseteq B$, có duy nhất $m$ với $f(m) = a$. Vì $(n_k)$ tăng ngặt nên $n_k \ge k$, do đó có $k$ nhỏ nhất với $n_k \ge m$. Nếu $n_k > m$ thì $m$ lẽ ra đã được chọn ở bước $k$ (vì $f(m) \in A$ và $m > n_{k-1}$ theo tính nhỏ nhất của $k$) — mâu thuẫn với định nghĩa min. Vậy $n_k = m$ và $g(k) = a$. ∎
+</LoiGiai>

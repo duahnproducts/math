@@ -1,0 +1,43 @@
+---
+so: "1.5.9"
+muc: "1.5"
+do_kho: kho
+tieu_de: "Số đại số đếm được, số siêu việt thì không"
+can_dung: ["dinh-ly-1.5.8", "dinh-ly-1.5.6"]
+---
+
+<De>
+Số thực $x$ là **số đại số** nếu nó là nghiệm của một đa thức (khác 0) hệ số nguyên; ngược lại gọi là **số siêu việt**.
+
+(a) Chứng minh $\sqrt{2}$, $\sqrt[3]{2}$ và $\sqrt{3} + \sqrt{2}$ là số đại số.
+
+(b) Cố định $n$, gọi $A_n$ là tập các số đại số là nghiệm của đa thức hệ số nguyên bậc $n$. Chứng minh $A_n$ đếm được.
+
+(c) Suy ra tập số đại số đếm được. Kết luận gì về số siêu việt?
+</De>
+
+<GoiY so={1}>
+(a) Với $x = \sqrt{3} + \sqrt{2}$: bình phương, cô lập căn còn lại, bình phương lần nữa. (b) Một đa thức bậc $n$ hệ số nguyên được xác định bởi bộ $n+1$ hệ số — tập các bộ đó “to” cỡ nào?
+</GoiY>
+
+<GoiY so={2}>
+(b) $\mathbf{Z}^{n+1}$ đếm được và mỗi đa thức bậc $n$ có không quá $n$ nghiệm. (c) $\mathbf{R}$ = (đại số) ∪ (siêu việt).
+</GoiY>
+
+<LoiGiai>
+**(a)** $\sqrt{2}$ là nghiệm của $x^2 - 2$; $\sqrt[3]{2}$ là nghiệm của $x^3 - 2$. Với $x = \sqrt{3} + \sqrt{2}$:
+
+$$
+x^2 = 5 + 2\sqrt{6} \Rightarrow x^2 - 5 = 2\sqrt{6} \Rightarrow (x^2 - 5)^2 = 24 \Rightarrow x^4 - 10x^2 + 1 = 0.
+$$
+
+Cả ba đều là số đại số.
+
+**(b)** Tập các đa thức bậc $n$ hệ số nguyên tương ứng 1–1 với một tập con của $\mathbf{Z}^{n+1}$, mà $\mathbf{Z}^{n+1}$ đếm được (tích hữu hạn các tập đếm được là đếm được — quy nạp và lập luận đường chéo). Mỗi đa thức bậc $n$ có nhiều nhất $n$ nghiệm. Vậy $A_n$ là hợp đếm được của các tập hữu hạn, nên đếm được.
+
+**(c)** Tập mọi số đại số là $\bigcup_{n=1}^\infty A_n$, hợp đếm được của các tập đếm được, nên *đếm được*. Vì $\mathbf{R}$ không đếm được và $\mathbf{R}$ = (đại số) ∪ (siêu việt), tập số siêu việt *không đếm được*. ∎
+
+<GhiChu tieuDe="Một trong những lập luận đẹp nhất trong toán học">
+Ta vừa chứng minh có *không đếm được* số siêu việt — hầu hết số thực đều siêu việt — mà không cần chỉ ra dù chỉ *một* ví dụ cụ thể. Trong khi đó, chứng minh $e$ siêu việt (Hermite, 1873) và $\pi$ siêu việt (Lindemann, 1882) là những thành tựu lớn. Đây là sức mạnh — và cũng là giới hạn — của chứng minh không kiến thiết.
+</GhiChu>
+</LoiGiai>

@@ -1,0 +1,37 @@
+---
+so: "1.5.4"
+muc: "1.5"
+do_kho: vua
+tieu_de: "Khoảng nào cũng cùng lực lượng với R"
+can_dung: ["vi-du-1.5.4", "dinh-nghia-1.5.2"]
+---
+
+<De>
+(a) Chứng minh $(a, b) \sim \mathbf{R}$ với mọi khoảng mở $(a, b)$.
+
+(b) Chứng minh $(a, \infty) \sim \mathbf{R}$.
+
+(c) Chứng minh $[0, 1) \sim (0, 1)$ bằng cách viết ra một song ánh cụ thể.
+</De>
+
+<GoiY so={1}>
+(a) Trước hết co giãn và dịch $(a, b)$ về $(-1, 1)$ bằng một hàm bậc nhất, rồi dùng Ví dụ 1.5.4. (b) Hàm logarit biến $(0, \infty)$ lên $\mathbf{R}$.
+</GoiY>
+
+<GoiY so={2}>
+(c) Cần “chỗ” cho điểm $0$. Thủ thuật khách sạn Hilbert: gửi $0 \mapsto 1/2$, $1/2 \mapsto 1/3$, $1/3 \mapsto 1/4$, … và giữ nguyên mọi điểm khác.
+</GoiY>
+
+<LoiGiai>
+**(a)** Hợp thành hai song ánh. Trước hết $h(x) = \dfrac{2x - (a+b)}{b - a}$ là song ánh bậc nhất từ $(a, b)$ lên $(-1, 1)$. Sau đó $f(x) = \dfrac{x}{x^2 - 1}$ là song ánh từ $(-1, 1)$ lên $\mathbf{R}$ (Ví dụ 1.5.4). Hợp thành cho $(a, b) \sim \mathbf{R}$.
+
+**(b)** $x \mapsto \ln(x - a)$ là song ánh từ $(a, \infty)$ lên $\mathbf{R}$, với hàm ngược $y \mapsto a + e^y$.
+
+**(c)** Định nghĩa
+
+$$
+h(x) = \begin{cases} 1/2 & \text{nếu } x = 0, \\ \dfrac{1}{n+1} & \text{nếu } x = \dfrac{1}{n},\ n \ge 2, \\ x & \text{trong các trường hợp còn lại}. \end{cases}
+$$
+
+Hàm này biến $\{0\} \cup \{1/n : n \ge 2\}$ song ánh lên $\{1/n : n \ge 2\}$ và giữ nguyên mọi điểm khác, nên là song ánh từ $[0, 1)$ lên $(0, 1)$. ∎
+</LoiGiai>

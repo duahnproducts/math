@@ -1,0 +1,27 @@
+---
+so: "1.6.5"
+muc: "1.6"
+do_kho: de
+tieu_de: "Tập lũy thừa của tập hữu hạn"
+can_dung: ["dinh-nghia-tap-luy-thua"]
+---
+
+<De>
+(a) Liệt kê mọi phần tử của $P(A)$ với $A = \{a, b, c\}$.
+
+(b) Nếu $A$ có $n$ phần tử, chứng minh $P(A)$ có $2^n$ phần tử.
+</De>
+
+<GoiY so={1}>
+(a) Đừng quên $\varnothing$ và chính $A$. Liệt kê theo số phần tử: 0, 1, 2, 3.
+</GoiY>
+
+<GoiY so={2}>
+(b) Mỗi tập con được xác định bởi câu trả lời “có / không” cho từng phần tử của $A$.
+</GoiY>
+
+<LoiGiai>
+**(a)** $P(A) = \big\{\varnothing, \{a\}, \{b\}, \{c\}, \{a, b\}, \{a, c\}, \{b, c\}, \{a, b, c\}\big\}$ (8 phần tử).
+
+**(b)** Mỗi tập con $E \subseteq A$ tương ứng 1–1 với hàm chỉ thị $\chi_E : A \to \{0, 1\}$ ($\chi_E(x) = 1$ nếu $x \in E$). Số hàm từ tập $n$ phần tử vào tập 2 phần tử là $2^n$ (mỗi phần tử có 2 lựa chọn độc lập). ∎
+</LoiGiai>

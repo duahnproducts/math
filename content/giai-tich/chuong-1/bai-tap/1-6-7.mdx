@@ -1,0 +1,25 @@
+---
+so: "1.6.7"
+muc: "1.6"
+do_kho: de
+tieu_de: "Dựng tập B trong chứng minh Cantor"
+can_dung: ["dinh-ly-1.6.2"]
+---
+
+<De>
+Với mỗi hàm ở Bài 1.6.6(a), dựng tập $B = \{a \in A : a \notin f(a)\}$ và kiểm tra rằng $B$ không nằm trong ảnh của hàm.
+</De>
+
+<GoiY so={1}>
+Với từng phần tử $x$, hỏi: $x$ có nằm trong $f(x)$ không? Nếu **không** thì $x$ vào $B$.
+</GoiY>
+
+<GoiY so={2}>
+Với $f(x) = \{x\}$: mọi $x$ đều nằm trong $f(x)$. Với $g$: $a \notin \varnothing$, $b \notin \{a\}$, …
+</GoiY>
+
+<LoiGiai>
+*Với $f(x) = \{x\}$:* mỗi $x$ *thuộc* $f(x) = \{x\}$, nên không $x$ nào vào $B$; tức $B = \varnothing$. Và đúng vậy, $\varnothing$ không nằm trong ảnh của $f$ (ảnh là $\{\{a\}, \{b\}, \{c\}\}$).
+
+*Với $g(a) = \varnothing$, $g(b) = \{a\}$, $g(c) = \{a, b\}$:* $a \notin \varnothing$ nên $a \in B$; $b \notin \{a\}$ nên $b \in B$; $c \notin \{a, b\}$ nên $c \in B$. Vậy $B = \{a, b, c\} = A$, và $A$ không nằm trong ảnh của $g$ (ảnh là $\{\varnothing, \{a\}, \{a, b\}\}$). ∎
+</LoiGiai>

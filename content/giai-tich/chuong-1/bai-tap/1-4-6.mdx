@@ -1,0 +1,33 @@
+---
+so: "1.4.6"
+muc: "1.4"
+do_kho: vua
+tieu_de: "Những tập nào trù mật trong R?"
+can_dung: ["dinh-ly-1.4.3", "dinh-ly-1.4.2"]
+---
+
+<De>
+Tập nào sau đây trù mật trong $\mathbf{R}$? Giải thích.
+
+(a) Các phân số $p/q$ với $q \le 10$.
+
+(b) Các phân số $p/q$ với $q$ là luỹ thừa của 2.
+
+(c) Các phân số $p/q$ với $10|p| \ge q$.
+</De>
+
+<GoiY so={1}>
+Trù mật nghĩa là *mọi* khoảng $(a, b)$, dù nhỏ đến đâu, đều chứa phần tử của tập. Để bác bỏ, chỉ cần tìm **một** khoảng không chứa phần tử nào.
+</GoiY>
+
+<GoiY so={2}>
+(a) Mọi phân số có mẫu $\le 10$ đều viết được với mẫu chung $2520$. (b) Bắt chước chứng minh Định lý 1.4.3 với lưới $1/2^n$. (c) Viết lại điều kiện thành $|r| \ge 1/10$.
+</GoiY>
+
+<LoiGiai>
+**(a) Không trù mật.** Mọi phần tử viết được với mẫu chung $2520 = \operatorname{lcm}(1, \ldots, 10)$, nên tập nằm trong lưới $\{k/2520 : k \in \mathbf{Z}\}$. Khoảng $(0, 1/2520)$ không chứa phần tử nào.
+
+**(b) Trù mật** (các số nhị nguyên). Cho $a < b$, theo Archimedes chọn $n$ với $1/2^n < b - a$; lập luận y hệt Định lý 1.4.3 (lấy $m$ là số nguyên nhỏ nhất lớn hơn $2^n a$) cho $m/2^n \in (a, b)$.
+
+**(c) Không trù mật.** Tập này là $\{r \in \mathbf{Q} : |r| \ge 1/10\}$, không có phần tử nào trong khoảng $(0, 1/10)$.
+</LoiGiai>

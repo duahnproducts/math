@@ -1,0 +1,33 @@
+---
+so: "1.6.4"
+muc: "1.6"
+do_kho: vua
+tieu_de: "Tập các dãy 0–1 không đếm được"
+can_dung: ["dinh-ly-1.6.1"]
+---
+
+<De>
+Gọi $S$ là tập mọi dãy vô hạn gồm các số 0 và 1, ví dụ $(1, 0, 1, 0, 1, 0, \ldots)$ hay $(0, 0, 1, 1, 0, 0, 1, 1, \ldots)$. Chứng minh $S$ không đếm được.
+</De>
+
+<GoiY so={1}>
+Phản chứng: giả sử có song ánh $f : \mathbf{N} \to S$, viết $f(n) = (a_{n1}, a_{n2}, a_{n3}, \ldots)$ thành bảng.
+</GoiY>
+
+<GoiY so={2}>
+Dựng dãy mới bằng cách **lật** các phần tử trên đường chéo: $b_n = 1 - a_{nn}$.
+</GoiY>
+
+<LoiGiai>
+Phản chứng: giả sử có song ánh $f : \mathbf{N} \to S$ với $f(n) = (a_{n1}, a_{n2}, a_{n3}, \ldots)$. Dựng dãy $s = (b_n)$ theo đường chéo:
+
+$$
+b_n = 1 - a_{nn} \quad (\text{tức } b_n = 1 \text{ nếu } a_{nn} = 0, \ b_n = 0 \text{ nếu } a_{nn} = 1).
+$$
+
+Khi đó $s \in S$, nhưng $s \neq f(n)$ với mọi $n$ vì chúng khác nhau ở toạ độ thứ $n$. Mâu thuẫn với tính toàn ánh. ∎
+
+<GhiChu tieuDe="So với lập luận thập phân, bản này sạch hơn">
+Không có rắc rối khai triển kép, vì một dãy chỉ là một dãy. Nếu được chọn, hãy dùng bản này khi trình bày lập luận đường chéo.
+</GhiChu>
+</LoiGiai>

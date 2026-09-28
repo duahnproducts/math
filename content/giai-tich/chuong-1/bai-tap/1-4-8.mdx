@@ -1,0 +1,37 @@
+---
+so: "1.4.8"
+muc: "1.4"
+do_kho: kho
+tieu_de: "Tìm ví dụ hoặc chứng minh không thể"
+can_dung: ["dinh-ly-1.4.1"]
+---
+
+<De>
+Cho ví dụ, hoặc chứng minh không thể có:
+
+(a) Hai tập $A, B$ rời nhau với $\sup A = \sup B$, $\sup A \notin A$, $\sup B \notin B$.
+
+(b) Dãy khoảng mở lồng nhau $J_1 \supseteq J_2 \supseteq \cdots$ có giao khác rỗng nhưng hữu hạn.
+
+(c) Dãy đoạn đóng *không bị chặn* lồng nhau có giao rỗng.
+
+(d) Dãy đoạn đóng bị chặn $I_1, I_2, \ldots$ (không nhất thiết lồng nhau) sao cho $\bigcap_{n=1}^N I_n \neq \varnothing$ với mọi $N$ nhưng $\bigcap_{n=1}^\infty I_n = \varnothing$.
+</De>
+
+<GoiY so={1}>
+(a) Dùng cả tính trù mật của $\mathbf{Q}$ lẫn của số vô tỉ. (b) Co về một điểm. (c) Đẩy đoạn ra xa vô tận.
+</GoiY>
+
+<GoiY so={2}>
+(d) Đặt $K_N = \bigcap_{n=1}^N I_n$. Các $K_N$ là gì, và chúng có lồng nhau không? Áp dụng Tính chất đoạn lồng nhau.
+</GoiY>
+
+<LoiGiai>
+**(a) Được.** $A = \mathbf{Q} \cap (0, 1)$ và $B = \mathbf{I} \cap (0, 1)$. Hai tập rời nhau, cả hai có sup bằng 1 (do tính trù mật của $\mathbf{Q}$ và của $\mathbf{I}$), và 1 không thuộc tập nào.
+
+**(b) Được.** $J_n = (-1/n, 1/n)$, khi đó $\bigcap_n J_n = \{0\}$ — khác rỗng và chỉ có một phần tử.
+
+**(c) Được.** $L_n = [n, \infty)$. Giao rỗng theo Archimedes (không số thực nào lớn hơn mọi số tự nhiên).
+
+**(d) Không thể.** Đặt $K_N = \bigcap_{n=1}^N I_n$. Giao hữu hạn đoạn đóng bị chặn lại là một đoạn đóng bị chặn, theo giả thiết khác rỗng, và $K_1 \supseteq K_2 \supseteq \cdots$. Theo Định lý 1.4.1, $\bigcap_N K_N \neq \varnothing$. Nhưng $\bigcap_N K_N = \bigcap_n I_n$. Mâu thuẫn. ∎
+</LoiGiai>

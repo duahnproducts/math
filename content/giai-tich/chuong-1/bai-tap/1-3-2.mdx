@@ -1,0 +1,33 @@
+---
+so: "1.3.2"
+muc: "1.3"
+do_kho: de
+tieu_de: "Có hay không có tập như vậy?"
+can_dung: ["dinh-nghia-1.3.2", "dinh-nghia-1.3.4"]
+---
+
+<De>
+Cho ví dụ, hoặc giải thích vì sao không có:
+
+(a) Tập $B$ có $\inf B \ge \sup B$.
+
+(b) Tập hữu hạn chứa infimum nhưng không chứa supremum.
+
+(c) Tập con bị chặn của $\mathbf{Q}$ chứa supremum nhưng không chứa infimum.
+</De>
+
+<GoiY so={1}>
+(a) Nhớ rằng với $B$ khác rỗng, mọi $b \in B$ đều nằm giữa $\inf B$ và $\sup B$. Dấu “bằng” có xảy ra được không?
+</GoiY>
+
+<GoiY so={2}>
+(b) Tập hữu hạn khác rỗng luôn có max và min. (c) Thử một nửa khoảng như $(0, 1]$ nhưng chỉ lấy số hữu tỉ.
+</GoiY>
+
+<LoiGiai>
+**(a) Được**, lấy $B = \{5\}$: $\inf B = \sup B = 5$. Nếu đòi *nghiêm ngặt* $\inf B > \sup B$ thì *không thể* với $B$ khác rỗng, vì với mọi $b \in B$ ta có $\inf B \le b \le \sup B$.
+
+**(b) Không thể.** Mọi tập hữu hạn khác rỗng đều có phần tử lớn nhất và nhỏ nhất, mà max = sup và min = inf.
+
+**(c) Được.** $A = \{r \in \mathbf{Q} : 0 < r \le 1\}$ có $\sup A = 1 \in A$ và $\inf A = 0 \notin A$.
+</LoiGiai>

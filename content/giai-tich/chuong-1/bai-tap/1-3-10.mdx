@@ -1,0 +1,41 @@
+---
+so: "1.3.10"
+muc: "1.3"
+do_kho: kho
+tieu_de: "Tính chất lát cắt"
+can_dung: ["tien-de-day-du"]
+---
+
+<De>
+**Tính chất lát cắt:** nếu $A, B$ là hai tập khác rỗng, rời nhau, $A \cup B = \mathbf{R}$, và $a < b$ với mọi $a \in A$, $b \in B$, thì tồn tại $c \in \mathbf{R}$ sao cho $x \le c$ với mọi $x \in A$ và $x \ge c$ với mọi $x \in B$.
+
+(a) Dùng Tiên đề Đầy đủ chứng minh Tính chất lát cắt.
+
+(b) Chứng minh điều ngược lại: Tính chất lát cắt suy ra Tiên đề Đầy đủ.
+
+(c) Chứng minh Tính chất lát cắt sai trong $\mathbf{Q}$.
+</De>
+
+<GoiY so={1}>
+(a) Lấy $c = \sup A$. (b) Cho $E$ khác rỗng, bị chặn trên; đặt $B$ = tập mọi chặn trên của $E$ và $A = \mathbf{R} \setminus B$.
+</GoiY>
+
+<GoiY so={2}>
+(b) Sau khi lát cắt cho ra $c$, phải chứng minh $c \in B$ (tức $c$ là chặn trên của $E$): phản chứng, nếu có $e \in E$ với $e > c$ thì xét trung điểm $(c + e)/2$. (c) Cắt $\mathbf{Q}$ tại “$\sqrt{2}$”.
+</GoiY>
+
+<LoiGiai>
+**(a) Tiên đề Đầy đủ ⇒ Tính chất lát cắt.** $A$ khác rỗng và bị chặn trên (mọi $b \in B$ là chặn trên). Đặt $c = \sup A$. Khi đó $x \le c$ với mọi $x \in A$ (chặn trên), và $c \le b$ với mọi $b \in B$ (mỗi $b$ là chặn trên, $c$ là chặn trên nhỏ nhất). ∎
+
+**(b) Tính chất lát cắt ⇒ Tiên đề Đầy đủ.** Cho $E$ khác rỗng, bị chặn trên. Đặt $B$ là tập mọi chặn trên của $E$ và $A = \mathbf{R} \setminus B$. Khi đó $B \neq \varnothing$ (giả thiết) và $A \neq \varnothing$ (lấy $x_0 \in E$ thì $x_0 - 1$ không là chặn trên). Hai tập rời nhau, hợp bằng $\mathbf{R}$. Kiểm tra $a < b$: $a$ không là chặn trên nên có $e \in E$ với $e > a$; $b$ là chặn trên nên $b \ge e > a$.
+
+Tính chất lát cắt cho $c$ với $x \le c$ ($x \in A$) và $x \ge c$ ($x \in B$). Khẳng định $c \in B$: nếu không, $c \in A$, nên có $e \in E$ với $e > c$; khi đó $(c + e)/2 < e$ cũng không phải chặn trên, tức $(c+e)/2 \in A$, nhưng mọi phần tử của $A$ đều $\le c$ trong khi $(c + e)/2 > c$ — mâu thuẫn. Vậy $c$ là chặn trên của $E$, và $c \le b$ với mọi chặn trên $b$. Do đó $c = \sup E$. ∎
+
+**(c) Sai trong $\mathbf{Q}$.** Đặt
+
+$$
+A = \{x \in \mathbf{Q} : x < 0 \text{ hoặc } x^2 < 2\}, \qquad B = \{x \in \mathbf{Q} : x > 0 \text{ và } x^2 > 2\}.
+$$
+
+Vì không số hữu tỉ nào có bình phương bằng 2, hai tập rời nhau và hợp bằng $\mathbf{Q}$; dễ thấy $a < b$ với mọi $a \in A$, $b \in B$. Nhưng số $c$ cần tìm phải thoả $c^2 = 2$ (lập luận như Định lý 1.4.5), mà không có $c$ hữu tỉ như vậy. Đây chính là “lỗ hổng” của $\mathbf{Q}$ nói theo cách khác.
+</LoiGiai>

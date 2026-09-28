@@ -1,0 +1,105 @@
+---
+mon: giai-tich
+chuong: 1
+muc: "1.2"
+tieu_de: Kiến thức chuẩn bị
+tieu_de_en: Some Preliminaries
+loai: theo-sach
+nguon: "Theo cấu trúc §1.2 của Stephen Abbott, Understanding Analysis, 2nd ed., Springer, 2015. Phát biểu được diễn đạt lại bằng tiếng Việt, dàn ý và bình luận tự viết — không phải bản dịch nguyên văn."
+---
+
+## Tập hợp
+
+Các ký hiệu cần thống nhất:
+
+- $x \in A$: $x$ là phần tử của $A$; $x \notin A$: không phải phần tử.
+- **Hợp:** $x \in A \cup B$ khi $x \in A$ *hoặc* $x \in B$ (có thể cả hai).
+- **Giao:** $x \in A \cap B$ khi $x \in A$ *và* $x \in B$.
+- **Bao hàm:** $A \subseteq B$ nghĩa là mọi phần tử của $A$ đều thuộc $B$.
+- **Bằng nhau:** $A = B$ khi và chỉ khi $A \subseteq B$ *và* $B \subseteq A$ — kỹ thuật chuẩn: chứng minh **bao hàm hai chiều**.
+- **Phần bù** (với $A \subseteq \mathbf{R}$): $A^c = \{x \in \mathbf{R} : x \notin A\}$.
+- $\varnothing$: <ThuatNgu id="empty-set">tập rỗng</ThuatNgu>. Hai tập <ThuatNgu id="disjoint">rời nhau</ThuatNgu> nếu giao của chúng rỗng.
+
+<ViDu so="1.2.1" ten="Ba cách mô tả một tập hợp">
+Liệt kê ($\mathbf{N} = \{1, 2, 3, \ldots\}$), mô tả bằng lời (“tập các số tự nhiên chẵn”), hoặc nêu quy tắc: $S = \{r \in \mathbf{Q} : r^2 < 2\}$. Cách thứ ba là cách dùng nhiều nhất trong giải tích.
+</ViDu>
+
+<ViDu so="1.2.2" ten="Dãy tập lồng nhau có giao rỗng">
+Đặt $A_n = \{n, n+1, n+2, \ldots\}$. Khi đó $A_1 \supseteq A_2 \supseteq A_3 \supseteq \cdots$, hợp $\bigcup_{n=1}^\infty A_n = \mathbf{N}$, còn giao $\bigcap_{n=1}^\infty A_n = \varnothing$.
+
+*Vì sao giao rỗng?* Nếu có $m$ thuộc mọi $A_n$ thì $m \in A_{m+1} = \{m+1, m+2, \ldots\}$ — vô lý. Họ giảm dần gồm các tập vô hạn khác rỗng *vẫn có thể* giao rỗng — sẽ tương phản mạnh với tính chất đoạn lồng nhau ở §1.4.
+</ViDu>
+
+**Luật De Morgan:** $(A \cap B)^c = A^c \cup B^c$ và $(A \cup B)^c = A^c \cap B^c$. Cách chứng minh chuẩn là bao hàm hai chiều (<XemMuc bai-tap="1.2.5" chu="Bài tập 1.2.5" />).
+
+## Hàm số
+
+<DinhNghia so="1.2.3" ten="Hàm số">
+Cho hai tập $A$ và $B$. Một **hàm** từ $A$ vào $B$ là một quy tắc gán cho *mỗi* phần tử $x \in A$ *đúng một* phần tử $f(x) \in B$. Ký hiệu $f : A \to B$. $A$ là **tập xác định**; **tập giá trị** là $\{ y \in B : y = f(x) \text{ với } x \in A \}$ — một tập con của $B$, không nhất thiết bằng $B$.
+</DinhNghia>
+
+Định nghĩa này (của Dirichlet, khoảng những năm 1830) có ý nghĩa giải phóng: hàm *không cần* là một công thức.
+
+<ViDu so="1.2.4" ten="Hàm Dirichlet">
+
+$$
+g(x) = \begin{cases} 1 & \text{nếu } x \in \mathbf{Q}, \\ 0 & \text{nếu } x \notin \mathbf{Q}. \end{cases}
+$$
+
+Tập xác định là $\mathbf{R}$, tập giá trị là $\{0, 1\}$. Không có công thức thông thường, gần như không vẽ được đồ thị — nhưng vẫn là hàm hợp lệ. Nó là “phòng thí nghiệm” để thử các giả thuyết về liên tục và khả tích ở các chương sau.
+</ViDu>
+
+## Giá trị tuyệt đối và bất đẳng thức tam giác
+
+$$
+|x| = \begin{cases} x & \text{nếu } x \ge 0, \\ -x & \text{nếu } x < 0. \end{cases}
+$$
+
+<ViDu so="1.2.5" ten="Bất đẳng thức tam giác">
+Với mọi số thực $a, b$: (i) $|ab| = |a|\,|b|$; (ii) $|a + b| \le |a| + |b|$.
+
+Dạng dùng nhiều nhất là **chèn một điểm trung gian** $c$:
+
+$$
+|a - b| = |(a - c) + (c - b)| \le |a - c| + |c - b|.
+$$
+
+Đọc theo khoảng cách: “đi từ $a$ đến $b$ không xa hơn đi vòng qua $c$”.
+</ViDu>
+
+<GhiChu tieuDe="Công cụ dùng nhiều nhất trong cả sách">
+Mọi chứng minh về giới hạn, liên tục, hội tụ ở Chương 2–4 đều dùng thủ thuật chèn điểm này. Cách chứng minh (ii) gọn nhất: chứng minh $(a+b)^2 \le (|a| + |b|)^2$ rồi lấy căn (<XemMuc bai-tap="1.2.6" chu="Bài tập 1.2.6" />).
+</GhiChu>
+
+## Logic và chứng minh
+
+- **Chứng minh trực tiếp:** từ giả thiết suy diễn đến kết luận.
+- **Chứng minh phản chứng:** phủ định kết luận, suy ra mâu thuẫn.
+- **Chứng minh phản đảo:** mâu thuẫn rơi đúng vào giả thiết.
+- **“Khi và chỉ khi”:** phải chứng minh *hai* chiều (⇒) và (⇐).
+
+<DinhLy so="1.2.6" ten="Tiêu chuẩn ε cho đẳng thức">
+Hai số thực $a$ và $b$ bằng nhau khi và chỉ khi với mọi số thực $\varepsilon > 0$ ta có $|a - b| < \varepsilon$.
+</DinhLy>
+
+**Dàn ý.** (⇒) Nếu $a = b$ thì $|a - b| = 0 < \varepsilon$. (⇐) Phản chứng: nếu $a \neq b$ thì $\varepsilon_0 = |a - b| > 0$ là một lựa chọn hợp lệ, nhưng giả thiết lại cho $|a - b| < \varepsilon_0 = |a - b|$ — vô lý.
+
+<TomTat tieuDe="Định lý quan trọng nhất của §1.2">
+Muốn chứng minh hai đại lượng bằng nhau, ta chứng minh chúng *gần nhau tuỳ ý*. Kỹ năng cần luyện: thao tác và **phủ định** các cụm <ThuatNgu id="quantifiers">“với mọi / tồn tại”</ThuatNgu>. Phủ định của “với mọi $\varepsilon > 0$, $P(\varepsilon)$ đúng” là “tồn tại $\varepsilon_0 > 0$ sao cho $P(\varepsilon_0)$ sai” (<XemMuc bai-tap="1.2.11" chu="Bài tập 1.2.11" />).
+</TomTat>
+
+## Quy nạp
+
+<DinhLy id="dinh-ly-quy-nap" ten="Nguyên lý quy nạp">
+Nếu $S \subseteq \mathbf{N}$ thoả mãn: (i) $1 \in S$; (ii) hễ $n \in S$ thì $n + 1 \in S$ — thì $S = \mathbf{N}$.
+</DinhLy>
+
+Quy nạp dùng được cho hai việc: chứng minh mệnh đề, và *định nghĩa* dãy.
+
+<ViDu so="1.2.7" ten="Dãy xác định bằng quy nạp">
+Cho $x_1 = 1$ và $x_{n+1} = \frac{1}{2}x_n + 1$. Ta có $x_2 = \frac32$, $x_3 = \frac74$, … Dãy tăng: cơ sở $x_1 \le x_2$; bước quy nạp: từ $x_n \le x_{n+1}$, nhân hai vế với $\frac12$ rồi cộng 1 được $x_{n+1} \le x_{n+2}$.
+</ViDu>
+
+<Loi tieuDe="Bẫy quan trọng: hữu hạn không tự động thành vô hạn">
+Quy nạp chứng minh mệnh đề đúng với *mọi $n$ hữu hạn*, nhưng **không** tự cho kết luận về trường hợp vô hạn. Luật De Morgan cho hữu hạn tập chứng minh được bằng quy nạp; bản vô hạn cũng đúng nhưng *phải* chứng minh trực tiếp (<XemMuc bai-tap="1.2.13" chu="Bài tập 1.2.13" />).
+</Loi>

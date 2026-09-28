@@ -1,0 +1,99 @@
+---
+mon: giai-tich
+chuong: 1
+muc: "1.3"
+tieu_de: Tiên đề Đầy đủ
+tieu_de_en: The Axiom of Completeness
+loai: theo-sach
+nguon: "Theo cấu trúc §1.3 của Stephen Abbott, Understanding Analysis, 2nd ed., Springer, 2015. Phát biểu được diễn đạt lại bằng tiếng Việt, dàn ý và bình luận tự viết — không phải bản dịch nguyên văn."
+---
+
+## Điểm xuất phát: R là một trường có thứ tự chứa Q
+
+Ta *giả định* (chưa xây dựng) rằng $\mathbf{R}$ là một tập chứa $\mathbf{Q}$, là một <ThuatNgu id="ordered-field">trường có thứ tự</ThuatNgu> chứa $\mathbf{Q}$: các phép toán và thứ tự quen thuộc đều mở rộng được. Việc xây dựng $\mathbf{R}$ từ $\mathbf{Q}$ một cách chặt chẽ được hoãn lại tới §8.6 của sách.
+
+Điều còn thiếu — và là điều *duy nhất* phân biệt $\mathbf{R}$ với $\mathbf{Q}$ — là tính không có lỗ hổng.
+
+<TienDe id="tien-de-day-du" ten="Tiên đề Đầy đủ">
+Mọi tập con khác rỗng của $\mathbf{R}$ bị chặn trên đều có cận trên nhỏ nhất.
+</TienDe>
+
+## Cận trên đúng và cận dưới đúng
+
+<DinhNghia so="1.3.1" ten="Bị chặn">
+Tập $A \subseteq \mathbf{R}$ **bị chặn trên** nếu tồn tại $b \in \mathbf{R}$ sao cho $a \le b$ với mọi $a \in A$; số $b$ gọi là một **chặn trên** của $A$. Tương tự, $A$ **bị chặn dưới** nếu có $l \in \mathbf{R}$ với $l \le a$ cho mọi $a \in A$; $l$ gọi là một **chặn dưới**.
+</DinhNghia>
+
+<DinhNghia so="1.3.2" ten="Supremum">
+Số thực $s$ là **cận trên nhỏ nhất** của $A \subseteq \mathbf{R}$ nếu:
+
+(i) $s$ là một chặn trên của $A$;
+
+(ii) nếu $b$ là một chặn trên bất kỳ của $A$ thì $s \le b$.
+
+Ta gọi $s$ là <ThuatNgu id="supremum">supremum</ThuatNgu> của $A$, viết $s = \sup A$. Khái niệm đối ngẫu là **cận dưới lớn nhất** hay <ThuatNgu id="infimum">infimum</ThuatNgu>, ký hiệu $\inf A$.
+</DinhNghia>
+
+Supremum là *duy nhất*: nếu $s_1, s_2$ đều là cận trên nhỏ nhất thì theo (ii), $s_1 \le s_2$ và $s_2 \le s_1$, nên $s_1 = s_2$.
+
+<ViDu so="1.3.3" ten="Tập {1/n}">
+$A = \left\{ \frac{1}{n} : n \in \mathbf{N} \right\}$. Có $\sup A = 1$: (i) vì $\frac1n \le 1$ với mọi $n$; (ii) vì $1 \in A$ nên mọi chặn trên $b$ đều thoả $1 \le b$. Còn $\inf A = 0$ — nhưng chứng minh chặt chẽ cần tính chất Archimedes ở §1.4.
+</ViDu>
+
+Dễ hiểu hơn ở <XemMuc bai={2} />.
+
+## Supremum khác maximum ở chỗ nào
+
+<DinhNghia so="1.3.4" ten="Phần tử lớn nhất, nhỏ nhất">
+$a_0$ là **phần tử lớn nhất** (maximum) của $A$ nếu $a_0 \in A$ *và* $a_0 \ge a$ với mọi $a \in A$. Tương tự cho **phần tử nhỏ nhất** (minimum).
+</DinhNghia>
+
+<ViDu so="1.3.5" ten="Khoảng mở và đoạn đóng">
+$(0, 2) = \{x \in \mathbf{R} : 0 < x < 2\}$ và $[0, 2] = \{x \in \mathbf{R} : 0 \le x \le 2\}$ đều có sup bằng $2$. Nhưng $[0, 2]$ có max bằng $2$, còn $(0, 2)$ **không có** max, vì $2 \notin (0, 2)$.
+</ViDu>
+
+<TomTat>
+Supremum không nhất thiết thuộc tập; maximum thì bắt buộc thuộc tập. Khi max tồn tại, nó chính là sup. Sức mạnh của Tiên đề Đầy đủ nằm ở đây: max có thể không tồn tại, nhưng sup thì *luôn* tồn tại (với tập khác rỗng, bị chặn trên).
+</TomTat>
+
+## Vì sao tiên đề này sai trong Q
+
+<ViDu so="1.3.6" ten="Tập S = {r ∈ Q : r² < 2}">
+Giả vờ thế giới chỉ có số hữu tỉ. $S$ bị chặn trên ($2$, $\frac32$, $\frac{142}{100}$, $\frac{1415}{1000}$, …). Nhưng *không có* chặn trên nhỏ nhất trong $\mathbf{Q}$: cận trên nhỏ nhất “đáng lẽ” là $\sqrt{2}$, mà $\sqrt{2} \notin \mathbf{Q}$. Với bất kỳ chặn trên hữu tỉ nào, luôn có chặn trên hữu tỉ nhỏ hơn.
+</ViDu>
+
+Đó chính là “lỗ hổng”. Tiên đề Đầy đủ là lời tuyên bố rằng $\mathbf{R}$ không có những lỗ hổng như thế. Xem giải thích bằng hình ở <XemMuc bai={3} />.
+
+## Kỹ thuật làm bài: sup(c + A) = c + sup A
+
+<ViDu so="1.3.7" ten="Dịch chuyển một tập">
+Cho $A \subseteq \mathbf{R}$ khác rỗng, bị chặn trên, và $c \in \mathbf{R}$. Đặt $c + A = \{c + a : a \in A\}$. Khi đó $\sup(c + A) = c + \sup A$.
+
+**Dàn ý — tách đúng hai phần theo Định nghĩa 1.3.2.** Đặt $s = \sup A$.
+
+1. *Phần (i):* với mọi $a \in A$, $a \le s$ nên $c + a \le c + s$. Vậy $c + s$ là chặn trên của $c + A$.
+2. *Phần (ii):* lấy $b$ là chặn trên tuỳ ý của $c + A$, tức $c + a \le b$ với mọi $a$. Suy ra $a \le b - c$: $b - c$ là chặn trên của $A$. Vì $s$ là chặn trên *nhỏ nhất*, $s \le b - c$, tức $c + s \le b$.
+</ViDu>
+
+<GhiChu tieuDe="Ghi nhớ mẫu này">
+Mọi bài dạng $\sup(cA)$, $\sup(A + B)$, $\sup(A \cup B)$ (Bài tập 1.3.4–1.3.6) đều theo đúng khuôn: chứng minh (i) là chặn trên, rồi (ii) nhỏ hơn mọi chặn trên khác. Nếu chứng minh của bạn chỉ dùng một nửa định nghĩa, nhiều khả năng đã bỏ sót điều gì đó.
+</GhiChu>
+
+## Bổ đề đặc trưng ε
+
+<BoDe so="1.3.8" ten="Đặc trưng ε của supremum">
+Giả sử $s \in \mathbf{R}$ là một chặn trên của $A \subseteq \mathbf{R}$. Khi đó $s = \sup A$ khi và chỉ khi với mọi $\varepsilon > 0$, tồn tại $a \in A$ thoả $s - \varepsilon < a$.
+</BoDe>
+
+**Dàn ý.** Nói bằng lời: “$s$ là cận trên nhỏ nhất khi và chỉ khi mọi số nhỏ hơn $s$ đều *không* còn là chặn trên.”
+
+- (⇒) Nếu $s = \sup A$ và $\varepsilon > 0$ thì $s - \varepsilon < s$, nên $s - \varepsilon$ không là chặn trên; vậy có $a \in A$ với $a > s - \varepsilon$.
+- (⇐) Lấy $b$ là chặn trên bất kỳ. Nếu $b < s$, đặt $\varepsilon = s - b$ thì $s - \varepsilon = b$ không phải chặn trên — mâu thuẫn. Vậy $s \le b$, tức điều kiện (ii).
+
+<TomTat tieuDe="Vì sao bổ đề này quan trọng">
+Định nghĩa sup nói về “mọi chặn trên” — khó thao tác. Bổ đề chuyển nó sang ngôn ngữ $\varepsilon$, thứ tính toán trực tiếp được. Trong hầu hết bài tập, dùng bổ đề nhanh hơn dùng định nghĩa.
+</TomTat>
+
+<GhiChu tieuDe="Về infimum">
+Tiên đề chỉ nói về cận trên. Không cần thêm tiên đề cho cận dưới: nếu $A$ khác rỗng, bị chặn dưới, đặt $B$ là tập mọi chặn dưới của $A$ thì $\sup B = \inf A$ (<XemMuc bai-tap="1.3.3" chu="Bài tập 1.3.3" />).
+</GhiChu>

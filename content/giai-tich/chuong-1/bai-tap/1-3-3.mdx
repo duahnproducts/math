@@ -1,0 +1,32 @@
+---
+so: "1.3.3"
+muc: "1.3"
+do_kho: vua
+nen_lam: true
+tieu_de: "Infimum suy ra được từ Tiên đề Đầy đủ"
+can_dung: ["tien-de-day-du", "dinh-nghia-1.3.2"]
+---
+
+<De>
+(a) Cho $A$ khác rỗng, bị chặn dưới. Đặt $B = \{b \in \mathbf{R} : b \text{ là chặn dưới của } A\}$. Chứng minh $\sup B = \inf A$.
+
+(b) Giải thích vì sao từ (a) suy ra: không cần một tiên đề riêng cho sự tồn tại của infimum.
+</De>
+
+<GoiY so={1}>
+Trước hết chứng minh $B$ khác rỗng và bị chặn trên (ai là chặn trên của $B$?), để Tiên đề Đầy đủ cho ra $s = \sup B$.
+</GoiY>
+
+<GoiY so={2}>
+Mỗi $a \in A$ là một chặn trên của $B$. Vì $s$ là chặn trên **nhỏ nhất** của $B$, $s \le a$ — vậy $s$ là chặn dưới của $A$. Còn thiếu: $s$ là chặn dưới *lớn nhất*.
+</GoiY>
+
+<LoiGiai>
+**(a)** $B \neq \varnothing$ vì $A$ bị chặn dưới. $B$ bị chặn trên: lấy bất kỳ $a \in A$; mọi $b \in B$ thoả $b \le a$, nên $a$ là chặn trên của $B$. Theo Tiên đề Đầy đủ, $s = \sup B$ tồn tại.
+
+*$s$ là chặn dưới của $A$:* cố định $a \in A$. Như vừa nói, $a$ là một chặn trên của $B$; vì $s$ là chặn trên *nhỏ nhất*, $s \le a$. Do $a$ tuỳ ý, $s$ là chặn dưới của $A$, tức $s \in B$.
+
+*$s$ là chặn dưới lớn nhất:* mọi chặn dưới $l$ của $A$ đều thuộc $B$, mà $s$ là chặn trên của $B$, nên $l \le s$. Vậy $s = \inf A$. ∎
+
+**(b)** Sự tồn tại của infimum *suy ra được* từ Tiên đề Đầy đủ; không cần thêm tiên đề cho cận dưới.
+</LoiGiai>

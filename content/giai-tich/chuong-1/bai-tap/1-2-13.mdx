@@ -1,0 +1,45 @@
+---
+so: "1.2.13"
+muc: "1.2"
+do_kho: kho
+tieu_de: "De Morgan cho vô hạn tập: quy nạp không đủ"
+can_dung: ["dinh-ly-quy-nap"]
+---
+
+<De>
+(a) Chứng minh bằng quy nạp: $(A_1 \cup A_2 \cup \cdots \cup A_n)^c = A_1^c \cap A_2^c \cap \cdots \cap A_n^c$ với mọi $n \in \mathbf{N}$.
+
+(b) Giải thích vì sao quy nạp **không** dùng được để kết luận $\left(\bigcup_{n=1}^\infty A_n\right)^c = \bigcap_{n=1}^\infty A_n^c$. Tìm một ví dụ cho thấy một tính chất đúng với mọi $n$ hữu hạn nhưng sai “ở vô hạn”.
+
+(c) Chứng minh trực tiếp đẳng thức ở (b), không dùng quy nạp.
+</De>
+
+<GoiY so={1}>
+(a): cơ sở $n = 2$ chính là Bài 1.2.5. Bước: nhóm $(A_1 \cup \cdots \cup A_n) \cup A_{n+1}$ như hợp của *hai* tập.
+</GoiY>
+
+<GoiY so={2}>
+(b): nghĩ tới các khoảng $(0, 1/i)$ — giao của hữu hạn khoảng thì khác rỗng, còn giao của tất cả? (c): viết chuỗi “khi và chỉ khi” theo định nghĩa hợp, giao vô hạn.
+</GoiY>
+
+<LoiGiai>
+**(a)** Cơ sở $n = 2$ là Bài 1.2.5. Bước:
+
+$$
+(A_1 \cup \cdots \cup A_{n+1})^c = \big((A_1 \cup \cdots \cup A_n) \cup A_{n+1}\big)^c = (A_1 \cup \cdots \cup A_n)^c \cap A_{n+1}^c = A_1^c \cap \cdots \cap A_{n+1}^c.
+$$
+
+**(b)** Ví dụ $B_i = (0, 1/i)$. Với mọi $n$ hữu hạn, $\bigcap_{i=1}^n B_i = (0, 1/n) \neq \varnothing$, nhưng $\bigcap_{i=1}^\infty B_i = \varnothing$ (Archimedes). Quy nạp chỉ nói được về từng $n$ hữu hạn, không nói gì về “$n = \infty$”.
+
+**(c)**
+
+$$
+x \in \Big(\bigcup_{i=1}^\infty A_i\Big)^c \iff x \notin A_i \text{ với mọi } i \iff x \in A_i^c \text{ với mọi } i \iff x \in \bigcap_{i=1}^\infty A_i^c.
+$$
+
+Mỗi bước là một tương đương logic trực tiếp; không cần đến $n$ nào cả. ∎
+</LoiGiai>
+
+<LoiHayMac>
+Suy từ hữu hạn sang vô hạn bằng quy nạp. Quy nạp cho “mọi $n \in \mathbf{N}$”, không cho “$n = \infty$”. Lỗi này sẽ lặp lại ở Bài 1.5.3(b).
+</LoiHayMac>

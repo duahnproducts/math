@@ -1,0 +1,41 @@
+---
+so: "1.2.7"
+muc: "1.2"
+do_kho: de
+tieu_de: "Ảnh của giao và của hợp"
+can_dung: ["dinh-nghia-1.2.3"]
+---
+
+<De>
+Với hàm $f$ và tập $A$, ảnh của $A$ là $f(A) = \{f(x) : x \in A\}$.
+
+(a) Cho $f(x) = x^2$, $A = [0, 2]$, $B = [1, 4]$. Tìm $f(A)$, $f(B)$. So sánh $f(A \cap B)$ với $f(A) \cap f(B)$, và $f(A \cup B)$ với $f(A) \cup f(B)$.
+
+(b) Tìm hai tập $A, B$ để $f(A \cap B) \neq f(A) \cap f(B)$.
+
+(c) Chứng minh với hàm $g$ bất kỳ, luôn có $g(A \cap B) \subseteq g(A) \cap g(B)$.
+
+(d) Phát biểu và chứng minh kết quả tương tự cho phép hợp.
+</De>
+
+<GoiY so={1}>
+Với (b): hàm $x^2$ “gộp” $x$ và $-x$ về cùng một giá trị. Thử hai tập rời nhau nhưng có ảnh chung.
+</GoiY>
+
+<GoiY so={2}>
+Với (c), (d): lấy $y$ thuộc vế trái, viết $y = g(x)$ với $x$ thích hợp, rồi xem $x$ thuộc tập nào.
+</GoiY>
+
+<LoiGiai>
+**(a)** $f(A) = [0, 4]$, $f(B) = [1, 16]$. Vì $A \cap B = [1, 2]$ nên $f(A \cap B) = [1, 4] = f(A) \cap f(B)$: bằng nhau trong trường hợp này. Với hợp: $f(A \cup B) = f([0, 4]) = [0, 16] = f(A) \cup f(B)$.
+
+**(b)** $A = \{1\}$, $B = \{-1\}$: $A \cap B = \varnothing$ nên $f(A \cap B) = \varnothing$, trong khi $f(A) \cap f(B) = \{1\}$.
+
+**(c)** Nếu $y = g(x)$ với $x \in A \cap B$ thì $y \in g(A)$ và $y \in g(B)$.
+
+**(d)** Với hợp *luôn* có đẳng thức $g(A \cup B) = g(A) \cup g(B)$. Chiều $\subseteq$: $y = g(x)$ với $x \in A$ hoặc $x \in B$. Chiều $\supseteq$: hiển nhiên vì $A, B \subseteq A \cup B$.
+
+<GhiChu tieuDe="Bài học">
+Ảnh “hợp tác” tốt với phép *hợp* nhưng không với phép *giao* — vì hàm có thể không đơn ánh. Ngược lại, *tạo ảnh* (Bài 1.2.9) hợp tác tốt với cả hai. Đó là lý do trong tôpô người ta định nghĩa liên tục bằng tạo ảnh.
+</GhiChu>
+</LoiGiai>

@@ -1,0 +1,37 @@
+---
+so: "1.6.10"
+muc: "1.6"
+do_kho: kho
+tieu_de: "Hàm từ {0,1} vào N và từ N vào {0,1}"
+can_dung: ["dinh-ly-1.5.8", "dinh-ly-1.6.1"]
+---
+
+<De>
+(a) Tập các hàm từ $\{0, 1\}$ vào $\mathbf{N}$ đếm được hay không?
+
+(b) Tập các hàm từ $\mathbf{N}$ vào $\{0, 1\}$ đếm được hay không?
+
+(c) Một **phản xích** trong $P(\mathbf{N})$ là họ các tập con mà không tập nào chứa tập khác. $P(\mathbf{N})$ có chứa phản xích không đếm được không?
+</De>
+
+<GoiY so={1}>
+(a) Một hàm từ $\{0, 1\}$ vào $\mathbf{N}$ được xác định bởi đúng hai giá trị $(f(0), f(1))$. (b) Một hàm từ $\mathbf{N}$ vào $\{0, 1\}$ là gì quen thuộc?
+</GoiY>
+
+<GoiY so={2}>
+(c) Đồng nhất $\mathbf{N}$ với $\mathbf{Q}$. Với mỗi số thực $x$, lấy $A_x$ là tập các số hạng của một dãy số hữu tỉ hội tụ về $x$. Hai tập $A_x$, $A_y$ ($x \neq y$) giao nhau nhiều đến đâu?
+</GoiY>
+
+<LoiGiai>
+**(a) Đếm được.** Mỗi hàm $f$ xác định hoàn toàn bởi cặp $(f(0), f(1)) \in \mathbf{N} \times \mathbf{N}$, và tương ứng này là song ánh. $\mathbf{N} \times \mathbf{N}$ đếm được (lập luận đường chéo, Bài 1.5.3(c)).
+
+**(b) Không đếm được.** Đây chính là tập $S$ các dãy 0–1, không đếm được theo Bài 1.6.4 (và theo Bài 1.6.9, nó có lực lượng bằng $\mathbf{R}$).
+
+<GhiChu tieuDe="Đối chiếu (a) và (b)">
+Chỉ đổi chỗ tập nguồn và tập đích mà kết quả nhảy từ đếm được sang lực lượng continuum. Số hàm từ tập $m$ phần tử vào tập $n$ phần tử là $n^m$ — số mũ nằm ở *tập nguồn*.
+</GhiChu>
+
+**(c) Có.** Đồng nhất $\mathbf{N}$ với $\mathbf{Q}$ (cả hai đếm được). Với mỗi số thực $x$, chọn một dãy số hữu tỉ $(q^x_n)$ hội tụ về $x$ với các số hạng đôi một khác nhau, và đặt $A_x = \{q^x_n : n \in \mathbf{N}\} \subseteq \mathbf{Q}$.
+
+Với $x \neq y$, giao $A_x \cap A_y$ chỉ có *hữu hạn* phần tử: nếu vô hạn, ta trích được một dãy con của $(q^x_n)$ nằm trọn trong $A_y$, dãy con này vừa phải hội tụ về $x$ vừa về $y$ — vô lý. Vì $A_x$ vô hạn còn $A_x \cap A_y$ hữu hạn, không tập nào chứa tập kia. Vậy $\{A_x : x \in \mathbf{R}\}$ là một phản xích có lực lượng $\mathbf{c}$. ∎
+</LoiGiai>

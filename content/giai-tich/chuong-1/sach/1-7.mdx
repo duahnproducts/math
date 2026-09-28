@@ -1,0 +1,32 @@
+---
+mon: giai-tich
+chuong: 1
+muc: "1.7"
+tieu_de: "Kết luận: số cardinal"
+tieu_de_en: Epilogue
+loai: theo-sach
+nguon: "Theo cấu trúc §1.7 của Stephen Abbott, Understanding Analysis, 2nd ed., Springer, 2015. Nội dung được tóm lược và bình luận bằng lời người biên soạn — không phải bản dịch nguyên văn."
+---
+
+## Lực lượng là một quan hệ tương đương
+
+Quan hệ “cùng lực lượng” ($\sim$) là một <ThuatNgu id="equivalence-relation">quan hệ tương đương</ThuatNgu>: phản xạ, đối xứng, bắc cầu (<XemMuc bai-tap="1.5.5" chu="Bài tập 1.5.5" />). Nó chia các tập hợp thành từng lớp theo “kích thước”: $\mathbf{N}$, $\mathbf{Z}$, $\mathbf{Q}$ cùng một lớp; $\mathbf{R}$, mọi khoảng $(a, b)$ và $P(\mathbf{N})$ ở lớp khác; $P(\mathbf{R})$ ở lớp thứ ba; và cứ thế mãi.
+
+## Số cardinal
+
+Mỗi tập $X$ được gán một “số” gọi là **lực lượng** $\operatorname{card} X$, với $\operatorname{card} X = \operatorname{card} Y$ khi và chỉ khi $X \sim Y$. Viết $\operatorname{card} X \le \operatorname{card} Y$ nếu có đơn ánh $X \to Y$. Trong ngôn ngữ này, Định lý Cantor nói: $\operatorname{card} A < \operatorname{card} P(A)$ với mọi $A$.
+
+**Ký hiệu.** $\aleph_0 = \operatorname{card} \mathbf{N}$ (“aleph không”) là số cardinal vô hạn nhỏ nhất. $\mathbf{c} = \operatorname{card} \mathbf{R}$ gọi là lực lượng *continuum*. Nội dung của §1.5–§1.6 chính là: $\aleph_0 < \mathbf{c}$.
+
+<GhiChu tieuDe="Giả thuyết continuum">
+Có tồn tại tập $A \subseteq \mathbf{R}$ với $\aleph_0 < \operatorname{card} A < \mathbf{c}$ hay không? Cantor tin là không, nhưng không chứng minh được. Gödel (1940) chứng minh không thể *bác bỏ* giả thuyết này từ hệ tiên đề ZFC; Cohen (1963) chứng minh cũng không thể *chứng minh* nó. Vậy giả thuyết <ThuatNgu id="continuum-hypothesis">continuum</ThuatNgu> là *không quyết định được*.
+</GhiChu>
+
+## Liên hệ rộng hơn
+
+- Nếu $U$ là “tập của mọi thứ” thì Định lý Cantor cho $\operatorname{card} U < \operatorname{card} P(U)$ — tức $U$ *không* chứa mọi thứ. Vì thế lý thuyết tập hợp tiên đề phải hạn chế cái gì được gọi là “tập hợp”.
+- Thủ thuật đường chéo là hạt nhân của Định lý bất toàn Gödel và của chứng minh *bài toán dừng* trong khoa học máy tính. Nó còn quay lại ở Chương 6, trong chứng minh Định lý Arzelà–Ascoli.
+
+<TomTat tieuDe="Nếu chỉ được nhớ một điều từ cả chương">
+**Tiên đề Đầy đủ là thứ phân biệt $\mathbf{R}$ với $\mathbf{Q}$.** Mọi định lý lớn của giải tích ở Chương 2–5 đều truy ngược về đây.
+</TomTat>

@@ -1,0 +1,31 @@
+---
+so: "1.6.6"
+muc: "1.6"
+do_kho: de
+tieu_de: "Đơn ánh vào tập lũy thừa, nhưng không toàn ánh"
+can_dung: ["dinh-ly-1.6.2"]
+---
+
+<De>
+(a) Với $A = \{a, b, c\}$, tìm hai đơn ánh khác nhau từ $A$ vào $P(A)$.
+
+(b) Với $C = \{1, 2, 3, 4\}$, tìm một đơn ánh $g : C \to P(C)$.
+
+(c) Giải thích vì sao với tập hữu hạn, không có toàn ánh $C \to P(C)$.
+</De>
+
+<GoiY so={1}>
+(a) Cách tự nhiên nhất: gửi mỗi phần tử tới tập chỉ chứa chính nó. Cách khác: gửi tới các tập “lớn dần”.
+</GoiY>
+
+<GoiY so={2}>
+(c) So sánh số phần tử: $|P(C)| = 2^{|C|}$ với $|C|$.
+</GoiY>
+
+<LoiGiai>
+**(a)** $f(x) = \{x\}$; và $g(a) = \varnothing$, $g(b) = \{a\}$, $g(c) = \{a, b\}$.
+
+**(b)** $g(n) = \{n\}$ là đơn ánh $C \to P(C)$.
+
+**(c)** Không thể toàn ánh vì $|P(C)| = 2^{|C|} > |C|$ với mọi tập hữu hạn (do $2^n > n$ với mọi $n \ge 0$) — nguyên lý chuồng bồ câu.
+</LoiGiai>

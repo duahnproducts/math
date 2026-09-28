@@ -1,0 +1,30 @@
+---
+so: "1.4.3"
+muc: "1.4"
+do_kho: de
+nen_lam: true
+tieu_de: "Giao các khoảng (0, 1/n) là rỗng"
+can_dung: ["dinh-ly-1.4.2", "dinh-ly-1.4.1"]
+---
+
+<De>
+Chứng minh $\displaystyle\bigcap_{n=1}^\infty \left(0, \tfrac1n\right) = \varnothing$. Điều này cho thấy gì về giả thiết “đoạn đóng” trong Tính chất đoạn lồng nhau?
+</De>
+
+<GoiY so={1}>
+Phản chứng: giả sử có $x$ thuộc giao. Viết ra hai điều $x$ phải thoả.
+</GoiY>
+
+<GoiY so={2}>
+$x > 0$ và $x < 1/n$ với **mọi** $n$. Tính chất Archimedes (phần ii) nói gì với $y = x$?
+</GoiY>
+
+<LoiGiai>
+Phản chứng: giả sử $x$ thuộc giao. Khi đó $x > 0$ và $x < 1/n$ với *mọi* $n \in \mathbf{N}$. Nhưng theo Tính chất Archimedes (phần ii, với $y = x$), tồn tại $n$ với $1/n < x$. Mâu thuẫn. ∎
+
+*Ý nghĩa:* các khoảng $(0, 1/n)$ lồng nhau, bị chặn, nhưng **mở** — và giao rỗng. Giả thiết “đoạn *đóng*” trong Định lý 1.4.1 không thể bỏ được.
+</LoiGiai>
+
+<LoiHayMac>
+Nhiều bạn nói “giao chứa số 0”. Nhưng $0 \notin (0, 1/n)$ vì khoảng mở không chứa đầu mút. Đó đúng là điểm mấu chốt của bài.
+</LoiHayMac>

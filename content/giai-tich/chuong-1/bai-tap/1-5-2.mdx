@@ -1,0 +1,28 @@
+---
+so: "1.5.2"
+muc: "1.5"
+do_kho: vua
+nen_lam: true
+tieu_de: "Tìm lỗi trong “chứng minh” Q không đếm được"
+can_dung: ["dinh-ly-1.5.6", "dinh-ly-1.4.1"]
+---
+
+<De>
+Một bạn lặp lại chứng minh Định lý 1.5.6(ii) cho $\mathbf{Q}$: giả sử $\mathbf{Q} = \{r_1, r_2, \ldots\}$, dựng dãy đoạn đóng lồng nhau $I_n$ với $r_n \notin I_n$, rồi dùng Tính chất đoạn lồng nhau để kết luận $\mathbf{Q}$ không đếm được. Lập luận sai ở đâu?
+</De>
+
+<GoiY so={1}>
+Rà từng bước: việc dựng các $I_n$ có hợp lệ không? Tính chất đoạn lồng nhau có dùng đúng không? Vậy mâu thuẫn “được cho là” nằm ở đâu?
+</GoiY>
+
+<GoiY so={2}>
+Tính chất đoạn lồng nhau bảo đảm giao chứa một số **thực**. Có gì bảo đảm số đó là **hữu tỉ** không?
+</GoiY>
+
+<LoiGiai>
+Việc dựng dãy đoạn đóng lồng nhau $I_n$ với $r_n \notin I_n$ là hoàn toàn hợp lệ, và Tính chất đoạn lồng nhau đúng là cho $\bigcap_n I_n \neq \varnothing$. Lỗi nằm ở bước kết luận: nó chỉ bảo đảm tồn tại một **số thực** $x$ trong giao. *Không có gì* bảo đảm $x$ là số hữu tỉ. Vậy việc $x$ không nằm trong danh sách $\{r_1, r_2, \ldots\}$ các số hữu tỉ chẳng mâu thuẫn với điều gì cả — $x$ đơn giản là một số vô tỉ.
+
+<GhiChu tieuDe="Bài kiểm tra hiểu bài quan trọng nhất của §1.5">
+Trong chứng minh gốc cho $\mathbf{R}$, mâu thuẫn sinh ra vì danh sách được giả định chứa *mọi số thực* — nên $x$ bắt buộc phải có mặt. Với $\mathbf{Q}$, danh sách chỉ chứa mọi số hữu tỉ, và $x$ không buộc phải hữu tỉ. Hãy tự hỏi: “giả thiết toàn ánh áp đặt điều gì lên phần tử mà đoạn lồng nhau sinh ra?”
+</GhiChu>
+</LoiGiai>

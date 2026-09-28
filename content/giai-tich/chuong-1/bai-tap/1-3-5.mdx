@@ -1,0 +1,39 @@
+---
+so: "1.3.5"
+muc: "1.3"
+do_kho: vua
+tieu_de: "Sup của tập nhân với một hằng số"
+can_dung: ["dinh-nghia-1.3.2", "vi-du-1.3.7"]
+---
+
+<De>
+Cho $A \subseteq \mathbf{R}$ khác rỗng, bị chặn, và $c \in \mathbf{R}$. Đặt $cA = \{ca : a \in A\}$.
+
+(a) Nếu $c \ge 0$, chứng minh $\sup(cA) = c \sup A$.
+
+(b) Tìm công thức tương tự cho $\sup(cA)$ khi $c < 0$.
+</De>
+
+<GoiY so={1}>
+Theo khuôn của Ví dụ 1.3.7: đặt $s = \sup A$, chứng minh $cs$ thoả điều kiện (i), rồi điều kiện (ii). Xét riêng $c = 0$.
+</GoiY>
+
+<GoiY so={2}>
+Với (ii): nếu $b$ là chặn trên của $cA$ thì $ca \le b$, chia cho $c > 0$ được $a \le b/c$. Với $c < 0$: nhân với số âm thì **đảo** chiều bất đẳng thức.
+</GoiY>
+
+<LoiGiai>
+**(a)** Đặt $s = \sup A$. Với $c = 0$: $cA = \{0\}$ nên $\sup(cA) = 0 = 0 \cdot s$. Với $c > 0$:
+
+(i) $a \le s \Rightarrow ca \le cs$, nên $cs$ là chặn trên của $cA$.
+
+(ii) Nếu $b$ là chặn trên của $cA$ thì $ca \le b$ với mọi $a$, tức $a \le b/c$; vậy $b/c$ là chặn trên của $A$, suy ra $s \le b/c$, tức $cs \le b$. ∎
+
+**(b)** $c < 0$: phép nhân đảo thứ tự, nên
+
+$$
+\sup(cA) = c \inf A, \qquad \inf(cA) = c \sup A.
+$$
+
+(Cần $A$ bị chặn cả hai phía để hai vế cùng có nghĩa.)
+</LoiGiai>

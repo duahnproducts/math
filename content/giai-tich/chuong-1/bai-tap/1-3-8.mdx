@@ -1,0 +1,37 @@
+---
+so: "1.3.8"
+muc: "1.3"
+do_kho: de
+tieu_de: "Tính sup và inf của bốn tập"
+can_dung: ["dinh-nghia-1.3.2"]
+---
+
+<De>
+Tìm sup và inf của mỗi tập (không cần chứng minh), và cho biết chúng có thuộc tập không:
+
+(a) $\{m/n : m, n \in \mathbf{N},\ m < n\}$;
+
+(b) $\{(-1)^m/n : m, n \in \mathbf{N}\}$;
+
+(c) $\{n/(3n + 1) : n \in \mathbf{N}\}$;
+
+(d) $\{m/(m + n) : m, n \in \mathbf{N}\}$.
+</De>
+
+<GoiY so={1}>
+Viết ra vài phần tử của mỗi tập, xem chúng nằm trong khoảng nào và “tiến tới” đâu.
+</GoiY>
+
+<GoiY so={2}>
+(c) Viết $\frac{n}{3n+1} = \frac{1}{3 + 1/n}$ để thấy dãy tăng và tiến tới đâu. (d) Cho $m$ hoặc $n$ rất lớn.
+</GoiY>
+
+<LoiGiai>
+**(a)** Mọi phần tử nằm trong $(0, 1)$. $\sup = 1$ (lấy $m = n - 1$ được $1 - 1/n$, tiến tới 1; *không đạt*). $\inf = 0$ (lấy $m = 1$, $n$ lớn; *không đạt*).
+
+**(b)** Các giá trị là $\pm 1/n$. $\sup = 1$ ($m$ chẵn, $n = 1$; *đạt được*). $\inf = -1$ ($m$ lẻ, $n = 1$; *đạt được*).
+
+**(c)** $\{1/4, 2/7, 3/10, \ldots\}$ là dãy tăng tiến tới $1/3$. $\inf = 1/4$ (*đạt được*, tại $n = 1$), $\sup = 1/3$ (*không đạt*).
+
+**(d)** Mọi giá trị trong $(0, 1)$. $\sup = 1$ ($n = 1$, $m \to \infty$), $\inf = 0$ ($m = 1$, $n \to \infty$); cả hai *không đạt*.
+</LoiGiai>
