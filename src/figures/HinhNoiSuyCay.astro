@@ -1,0 +1,56 @@
+---
+// Đại số Ví dụ 3.2.10 — ba cây đo được và parabol nội suy p(x) = 0.7x − 0.02x²;
+// hệ số tính lại từ dữ liệu bằng src/lib/ma-tran.ts (có test).
+import { giaTriDaThuc, heSoNoiSuy } from '@/lib/ma-tran';
+
+const DU_LIEU: [number, number][] = [
+  [5, 3],
+  [10, 5],
+  [15, 6],
+];
+const UOC_LUONG = 12;
+const r = heSoNoiSuy(
+  DU_LIEU.map((d) => d[0]),
+  DU_LIEU.map((d) => d[1]),
+);
+const X0 = 44;
+const Y0 = 190;
+const px = (x: number) => X0 + x * 13;
+const py = (y: number) => Math.round((Y0 - y * 24) * 10) / 10;
+const duong = Array.from({ length: 41 }, (_, i) => i * 0.5)
+  .map((x) => `${px(x)},${py(giaTriDaThuc(r, x))}`)
+  .join(' ');
+const yUoc = giaTriDaThuc(r, UOC_LUONG);
+---
+
+<figure class="hinh" aria-labelledby="hinh-noi-suy-cay-cap" data-hinh-noi-suy-cay>
+  <svg viewBox="0 0 350 222" width="350" role="img" aria-label="Ba điểm dữ liệu (5, 3), (10, 5), (15, 6) và parabol nội suy; tại đường kính 12 ước lượng tuổi 5.52">
+    <line x1={X0} y1={Y0} x2={px(20) + 12} y2={Y0} class="net-mo" stroke-width="1" />
+    <line x1={X0} y1={Y0} x2={X0} y2={py(7.2)} class="net-mo" stroke-width="1" />
+    {
+      [0, 5, 10, 15, 20].map((x) => (
+        <text x={px(x)} y={Y0 + 15} text-anchor="middle" class="chu-mo">
+          {x}
+        </text>
+      ))
+    }
+    {
+      [0, 2, 4, 6].map((y) => (
+        <text x={X0 - 6} y={py(y) + 4} text-anchor="end" class="chu-mo">
+          {y}
+        </text>
+      ))
+    }
+    <polyline points={duong} class="nhan-manh" stroke-width="1.8" style="fill: none" />
+    <path d={`M${px(UOC_LUONG)} ${Y0} V${py(yUoc)} H${X0}`} class="net-mo" stroke-width="1" stroke-dasharray="4 3" style="fill: none" />
+    <circle cx={px(UOC_LUONG)} cy={py(yUoc)} r="4" class="to-nhan" />
+    <text x={px(UOC_LUONG) + 6} y={py(yUoc) + 18} class="chu-nhan">p(12) = {yUoc.toFixed(2)}</text>
+    {DU_LIEU.map(([x, y]) => <circle cx={px(x)} cy={py(y)} r="4.5" class="to-dam" />)}
+    <text x={px(20) + 14} y={Y0 + 4} class="chu-mo">cm</text>
+    <text x={X0 + 6} y={py(7.2) + 4} class="chu-mo">tuổi (năm)</text>
+  </svg>
+  <figcaption id="hinh-noi-suy-cay-cap">
+    Chấm đậm: ba cây đo được. Đường cong: đa thức bậc hai duy nhất đi qua cả ba điểm. Đọc tại đường kính 12 cm cho tuổi
+    ước lượng khoảng 5.52 năm.
+  </figcaption>
+</figure>

@@ -1,5 +1,16 @@
 import { describe, expect, it } from 'vitest';
-import { type MaTran, dinhThuc, maTranChieu, maTranDoiXung, maTranQuay, nhanMaTran, nhanVector } from './ma-tran';
+import {
+  type MaTran,
+  dinhThuc,
+  giaTriDaThuc,
+  giaiHe,
+  heSoNoiSuy,
+  maTranChieu,
+  maTranDoiXung,
+  maTranQuay,
+  nhanMaTran,
+  nhanVector,
+} from './ma-tran';
 
 const Q0: MaTran = [
   [1, 0],
@@ -171,5 +182,32 @@ describe('định thức (§3.1)', () => {
     const A = [[3, 4, 5], [1, 7, 2], [9, 8, -6]];
     expect(dinhThuc(A.map((h) => h.map((x) => 2 * x)))).toBeCloseTo(8 * -353, 9);
     expect(dinhThuc([[2, 1, 2], [4, 0, 4], [1, 3, 1]])).toBeCloseTo(0, 12);
+  });
+});
+
+describe('nội suy đa thức (§3.2)', () => {
+  it('Ví dụ 3.2.10: p(x) = 0.7x − 0.02x², p(12) = 5.52', () => {
+    const r = heSoNoiSuy([5, 10, 15], [3, 5, 6]);
+    [0, 0.7, -0.02].forEach((x, i) => expect(r[i]).toBeCloseTo(x, 12));
+    expect(giaTriDaThuc(r, 12)).toBeCloseTo(5.52, 12);
+  });
+
+  it('Ví dụ 3.2.9 (quy tắc Cramer): x₁ = −3/4', () => {
+    const A = [[5, 1, -1], [9, 1, -1], [1, -1, 5]];
+    expect(dinhThuc(A)).toBeCloseTo(-16, 9);
+    expect(giaiHe(A, [4, 1, 2])[0]).toBeCloseTo(-0.75, 12);
+  });
+
+  it('Ví dụ 3.2.6: A·adj A = 3I; Ví dụ 3.2.7: phần tử (2, 3) của A⁻¹ là 13/180', () => {
+    const A = [[1, 3, -2], [0, 1, 5], [-2, -6, 7]];
+    expect(nhanMaTran(A, [[37, -9, 17], [-10, 3, -5], [2, 0, 1]])).toEqual([[3, 0, 0], [0, 3, 0], [0, 0, 3]]);
+    const B = [[2, 1, 3], [5, -7, 1], [3, 0, -6]];
+    expect(dinhThuc(B)).toBeCloseTo(180, 9);
+    // cột 3 của B⁻¹ là nghiệm của Bx = e₃
+    expect(giaiHe(B, [0, 0, 1])[1]).toBeCloseTo(13 / 180, 12);
+  });
+
+  it('ma trận suy biến thì báo lỗi', () => {
+    expect(() => giaiHe([[1, 2], [2, 4]], [1, 2])).toThrow();
   });
 });

@@ -1,0 +1,465 @@
+---
+mon: dai-so
+chuong: 3
+muc: "3.2"
+tieu_de: Định thức và ma trận nghịch đảo
+tieu_de_en: Determinants and Matrix Inverses
+loai: dich-nguyen-van
+nguon: "Dịch từ W. Keith Nicholson, Linear Algebra with Applications, Version 2023 – Revision A, Vretta-Lyryx Inc. (https://lyryx.com/linear-algebra-applications/), Mục 3.2. Bản dịch phát hành theo giấy phép CC BY-NC-SA 4.0, giống bản gốc. Thay đổi: dịch sang tiếng Việt, thêm ghi chú cho người học."
+---
+
+Trong mục này ta suy ra vài định lý về định thức. Một hệ quả của chúng là: ma trận vuông $A$ khả nghịch khi và chỉ khi $\det A \ne 0$. Hơn nữa, định thức được dùng để cho một công thức tính $A^{-1}$, và công thức này lại cho một công thức (gọi là **quy tắc Cramer**) tính nghiệm của mọi hệ phương trình tuyến tính có ma trận hệ số khả nghịch.
+
+Ta bắt đầu bằng một định lý đáng chú ý (của Cauchy, năm 1812) về định thức của tích các ma trận.
+
+<DinhLy so="3.2.1" ten="Định lý về tích">
+Nếu $A$ và $B$ là các ma trận $n \times n$ thì $\det(AB) = \det A \det B$.
+</DinhLy>
+
+Sự phức tạp của phép nhân ma trận làm cho định lý về tích khá bất ngờ. Đây là một ví dụ trong đó nó tiết lộ một đồng nhất thức số học quan trọng.
+
+<ViDu so="3.2.1">
+Nếu $A = \begin{bmatrix} a & b \\ -b & a \end{bmatrix}$ và $B = \begin{bmatrix} c & d \\ -d & c \end{bmatrix}$ thì $AB = \begin{bmatrix} ac - bd & ad + bc \\ -(ad + bc) & ac - bd \end{bmatrix}$. Do đó $\det A \det B = \det(AB)$ cho đồng nhất thức
+
+$$
+(a^2 + b^2)(c^2 + d^2) = (ac - bd)^2 + (ad + bc)^2
+$$
+
+</ViDu>
+
+Định lý 3.2.1 mở rộng dễ dàng thành $\det(ABC) = \det A \det B \det C$. Thực ra quy nạp cho
+
+$$
+\det(A_1A_2 \cdots A_{k-1}A_k) = \det A_1 \det A_2 \cdots \det A_{k-1} \det A_k
+$$
+
+với mọi ma trận vuông $A_1, \ldots, A_k$ cùng cỡ. Nói riêng, nếu mỗi $A_i = A$, ta được
+
+$$
+\det(A^k) = (\det A)^k \quad \text{với mọi } k \ge 1
+$$
+
+Bây giờ ta có thể cho điều kiện khả nghịch.
+
+<DinhLy so="3.2.2">
+Ma trận $A$ cỡ $n \times n$ khả nghịch khi và chỉ khi $\det A \ne 0$. Khi đó $\det(A^{-1}) = \dfrac{1}{\det A}$.
+</DinhLy>
+
+**Chứng minh.** Nếu $A$ khả nghịch thì $AA^{-1} = I$; nên định lý về tích cho
+
+$$
+1 = \det I = \det(AA^{-1}) = \det A \det A^{-1}
+$$
+
+Do đó $\det A \ne 0$ và cũng có $\det A^{-1} = \frac{1}{\det A}$.
+
+Ngược lại, nếu $\det A \ne 0$, ta chứng tỏ $A$ có thể đưa về $I$ bằng các phép biến đổi sơ cấp theo hàng (rồi viện dẫn Định lý 2.4.5). Chắc chắn $A$ đưa được về dạng bậc thang rút gọn $R$, nên $R = E_k \cdots E_2E_1A$ với các $E_i$ là ma trận sơ cấp (Định lý 2.5.1). Do đó định lý về tích cho
+
+$$
+\det R = \det E_k \cdots \det E_2 \det E_1 \det A
+$$
+
+Vì $\det E \ne 0$ với mọi ma trận sơ cấp $E$, điều này cho thấy $\det R \ne 0$. Nói riêng, $R$ không có hàng không nào, nên $R = I$ vì $R$ vuông và ở dạng bậc thang rút gọn. ∎
+
+<ViDu so="3.2.2">
+Với những giá trị nào của $c$ thì $A = \begin{bmatrix} 1 & 0 & -c \\ -1 & 3 & 1 \\ 0 & 2c & -4 \end{bmatrix}$ có nghịch đảo?
+
+**Lời giải.** Tính $\det A$ bằng cách trước hết cộng $c$ lần cột 1 vào cột 3 rồi khai triển dọc theo hàng 1.
+
+$$
+\det A = \det \begin{bmatrix} 1 & 0 & -c \\ -1 & 3 & 1 \\ 0 & 2c & -4 \end{bmatrix} = \det \begin{bmatrix} 1 & 0 & 0 \\ -1 & 3 & 1 - c \\ 0 & 2c & -4 \end{bmatrix} = 2(c + 2)(c - 3)
+$$
+
+Do đó $\det A = 0$ nếu $c = -2$ hoặc $c = 3$, và $A$ có nghịch đảo nếu $c \ne -2$ và $c \ne 3$.
+</ViDu>
+
+<ViDu so="3.2.3">
+Nếu một tích $A_1A_2 \cdots A_k$ các ma trận vuông là khả nghịch, hãy chứng tỏ mỗi $A_i$ khả nghịch.
+
+**Lời giải.** Ta có $\det A_1 \det A_2 \cdots \det A_k = \det(A_1A_2 \cdots A_k)$ theo định lý về tích, và $\det(A_1A_2 \cdots A_k) \ne 0$ theo Định lý 3.2.2 vì $A_1A_2 \cdots A_k$ khả nghịch. Do đó
+
+$$
+\det A_1 \det A_2 \cdots \det A_k \ne 0
+$$
+
+nên $\det A_i \ne 0$ với mỗi $i$. Điều này cho thấy mỗi $A_i$ khả nghịch, lại theo Định lý 3.2.2.
+</ViDu>
+
+<DinhLy so="3.2.3">
+Nếu $A$ là ma trận vuông bất kỳ thì $\det A^T = \det A$.
+</DinhLy>
+
+**Chứng minh.** Trước hết xét trường hợp ma trận sơ cấp $E$. Nếu $E$ thuộc loại I hoặc II thì $E^T = E$; nên chắc chắn $\det E^T = \det E$. Nếu $E$ thuộc loại III thì $E^T$ cũng thuộc loại III; nên $\det E^T = 1 = \det E$ theo Định lý 3.1.2. Do đó $\det E^T = \det E$ với mọi ma trận sơ cấp $E$.
+
+Bây giờ cho $A$ là ma trận vuông bất kỳ. Nếu $A$ không khả nghịch thì $A^T$ cũng vậy; nên $\det A^T = 0 = \det A$ theo Định lý 3.2.2. Mặt khác, nếu $A$ khả nghịch thì $A = E_k \cdots E_2E_1$ với các $E_i$ là ma trận sơ cấp (Định lý 2.5.2). Do đó $A^T = E_1^TE_2^T \cdots E_k^T$ nên định lý về tích cho
+
+$$
+\det A^T = \det E_1^T \det E_2^T \cdots \det E_k^T = \det E_1 \det E_2 \cdots \det E_k = \det E_k \cdots \det E_2 \det E_1 = \det A \qquad ∎
+$$
+
+<GhiChu tieuDe="Ghi chú cho người học">
+Định lý 3.2.3 ($\det A^T = \det A$) có một hệ quả thực hành rất tiện: *mọi tính chất của định thức phát biểu cho hàng đều tự động đúng cho cột, và ngược lại*. Đó là lý do trong Định lý 3.1.2 mỗi tính chất đều có ngoặc “(hoặc cột)”. Bạn chỉ cần nhớ phiên bản hàng, phần cột là miễn phí.
+</GhiChu>
+
+<ViDu so="3.2.4">
+Nếu $\det A = 2$ và $\det B = 5$, hãy tính $\det(A^3B^{-1}A^TB^2)$.
+
+**Lời giải.**
+
+$$
+\begin{aligned}
+\det(A^3B^{-1}A^TB^2) &= \det(A^3)\det(B^{-1})\det(A^T)\det(B^2) \\
+&= (\det A)^3 \frac{1}{\det B} \det A (\det B)^2 \\
+&= 2^3 \cdot \frac{1}{5} \cdot 2 \cdot 5^2 = 80
+\end{aligned}
+$$
+
+</ViDu>
+
+<ViDu so="3.2.5">
+Một ma trận vuông được gọi là **trực giao** (*orthogonal*) nếu $A^{-1} = A^T$. Các giá trị có thể có của $\det A$ nếu $A$ trực giao là gì?
+
+**Lời giải.** Nếu $A$ trực giao, ta có $I = AA^T$. Lấy định thức để được
+
+$$
+1 = \det I = \det(AA^T) = \det A \det A^T = (\det A)^2
+$$
+
+Vì $\det A$ là một số, điều này nghĩa là $\det A = \pm 1$.
+</ViDu>
+
+Do đó Định lý 2.6.4 và 2.6.5 suy ra rằng phép quay quanh gốc toạ độ và phép đối xứng qua một đường thẳng đi qua gốc toạ độ trong $\mathbb{R}^2$ có ma trận trực giao với định thức lần lượt bằng $1$ và $-1$. Thực ra chúng là những phép biến đổi duy nhất như vậy của $\mathbb{R}^2$.
+
+## Ma trận phụ hợp
+
+Ở <XemMuc muc="2.4" chu="Mục 2.4" /> ta đã định nghĩa ma trận phụ hợp của ma trận $2 \times 2$ $A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$ là $\operatorname{adj}(A) = \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}$. Rồi ta đã kiểm chứng rằng $A(\operatorname{adj} A) = (\det A)I = (\operatorname{adj} A)A$ và do đó, nếu $\det A \ne 0$, $A^{-1} = \frac{1}{\det A}\operatorname{adj} A$. Bây giờ ta có thể định nghĩa ma trận phụ hợp của ma trận vuông tuỳ ý và chứng tỏ rằng công thức này cho nghịch đảo vẫn đúng (khi nghịch đảo tồn tại).
+
+Nhắc lại rằng phần bù đại số $(i, j)$ là $c_{ij}(A)$ của ma trận vuông $A$ là một số xác định cho mỗi vị trí $(i, j)$ trong ma trận. Nếu $A$ là ma trận vuông, **ma trận các phần bù đại số** của $A$ được định nghĩa là ma trận $[c_{ij}(A)]$ có phần tử $(i, j)$ là phần bù đại số $(i, j)$ của $A$.
+
+<DinhNghia so="3.3" ten="Ma trận phụ hợp">
+**Ma trận phụ hợp** (*adjugate*) của $A$, ký hiệu $\operatorname{adj}(A)$, là chuyển vị của ma trận các phần bù đại số; viết bằng ký hiệu,
+
+$$
+\operatorname{adj}(A) = [c_{ij}(A)]^T
+$$
+
+</DinhNghia>
+
+<ViDu so="3.2.6">
+Tính ma trận phụ hợp của $A = \begin{bmatrix} 1 & 3 & -2 \\ 0 & 1 & 5 \\ -2 & -6 & 7 \end{bmatrix}$ và tính $A(\operatorname{adj} A)$ và $(\operatorname{adj} A)A$.
+
+**Lời giải.** Trước hết ta tìm ma trận các phần bù đại số:
+
+$$
+[c_{ij}(A)] = \begin{bmatrix} 37 & -10 & 2 \\ -9 & 3 & 0 \\ 17 & -5 & 1 \end{bmatrix}
+$$
+
+Khi đó ma trận phụ hợp của $A$ là chuyển vị của ma trận này:
+
+$$
+\operatorname{adj} A = \begin{bmatrix} 37 & -10 & 2 \\ -9 & 3 & 0 \\ 17 & -5 & 1 \end{bmatrix}^T = \begin{bmatrix} 37 & -9 & 17 \\ -10 & 3 & -5 \\ 2 & 0 & 1 \end{bmatrix}
+$$
+
+Phép tính $A(\operatorname{adj} A)$ cho
+
+$$
+A(\operatorname{adj} A) = \begin{bmatrix} 1 & 3 & -2 \\ 0 & 1 & 5 \\ -2 & -6 & 7 \end{bmatrix} \begin{bmatrix} 37 & -9 & 17 \\ -10 & 3 & -5 \\ 2 & 0 & 1 \end{bmatrix} = \begin{bmatrix} 3 & 0 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 3 \end{bmatrix} = 3I
+$$
+
+và bạn đọc có thể kiểm chứng rằng cũng có $(\operatorname{adj} A)A = 3I$. Do đó, tương tự với trường hợp $2 \times 2$, ta đoán $\det A = 3$; và thực tế đúng như vậy.
+</ViDu>
+
+Hệ thức $A(\operatorname{adj} A) = (\det A)I$ đúng với mọi ma trận vuông $A$. Để thấy vì sao, xét trường hợp tổng quát $3 \times 3$. Viết gọn $c_{ij}(A) = c_{ij}$, ta có
+
+$$
+\operatorname{adj} A = \begin{bmatrix} c_{11} & c_{12} & c_{13} \\ c_{21} & c_{22} & c_{23} \\ c_{31} & c_{32} & c_{33} \end{bmatrix}^T = \begin{bmatrix} c_{11} & c_{21} & c_{31} \\ c_{12} & c_{22} & c_{32} \\ c_{13} & c_{23} & c_{33} \end{bmatrix}
+$$
+
+Nếu $A = [a_{ij}]$ theo ký hiệu thông thường, ta cần kiểm chứng $A(\operatorname{adj} A) = (\det A)I$.
+
+Xét phần tử $(1, 1)$ trong tích. Nó bằng $a_{11}c_{11} + a_{12}c_{12} + a_{13}c_{13}$, và đây chính là khai triển theo phần bù đại số của $\det A$ dọc theo hàng thứ nhất của $A$. Tương tự, phần tử $(2, 2)$ và phần tử $(3, 3)$ là các khai triển của $\det A$ dọc theo hàng 2 và hàng 3.
+
+Vậy còn phải xem vì sao các phần tử ngoài đường chéo trong tích $A(\operatorname{adj} A)$ đều bằng 0. Xét phần tử $(1, 2)$ của tích. Nó bằng $a_{11}c_{21} + a_{12}c_{22} + a_{13}c_{23}$. Biểu thức này trông giống khai triển theo phần bù đại số của định thức của một ma trận nào đó. Để thấy là ma trận nào, hãy để ý rằng $c_{21}$, $c_{22}$, $c_{23}$ đều được tính bằng cách xoá hàng 2 của $A$ (và một trong các cột), nên chúng giữ nguyên nếu hàng 2 của $A$ bị thay đổi. Nói riêng, nếu thay hàng 2 của $A$ bằng hàng 1, ta được
+
+$$
+a_{11}c_{21} + a_{12}c_{22} + a_{13}c_{23} = \det \begin{bmatrix} a_{11} & a_{12} & a_{13} \\ a_{11} & a_{12} & a_{13} \\ a_{31} & a_{32} & a_{33} \end{bmatrix} = 0
+$$
+
+trong đó khai triển dọc theo hàng 2 và định thức bằng 0 vì hai hàng giống nhau. Lập luận tương tự cho thấy các phần tử ngoài đường chéo khác đều bằng 0.
+
+Lập luận này đúng trong trường hợp tổng quát và cho phần thứ nhất của Định lý 3.2.4. Khẳng định thứ hai suy ra từ phần thứ nhất bằng cách nhân với vô hướng $\frac{1}{\det A}$.
+
+<DinhLy so="3.2.4" ten="Công thức ma trận phụ hợp">
+Nếu $A$ là ma trận vuông bất kỳ thì
+
+$$
+A(\operatorname{adj} A) = (\det A)I = (\operatorname{adj} A)A
+$$
+
+Nói riêng, nếu $\det A \ne 0$ thì nghịch đảo của $A$ được cho bởi
+
+$$
+A^{-1} = \frac{1}{\det A}\operatorname{adj} A
+$$
+
+</DinhLy>
+
+<Loi tieuDe="CẢNH BÁO — đây KHÔNG phải cách tính nghịch đảo trong thực tế">
+Cần nhấn mạnh rằng định lý này *không* phải cách hiệu quả để tìm nghịch đảo của ma trận $A$. Ví dụ, nếu $A$ là $10 \times 10$ thì việc tính $\operatorname{adj} A$ đòi hỏi tính $10^2 = 100$ định thức của các ma trận $9 \times 9$! Trong khi đó, thuật toán tìm nghịch đảo (<XemMuc muc="2.4" chu="Mục 2.4" />) tìm được $A^{-1}$ với công sức xấp xỉ bằng công sức tính một $\det A$ duy nhất.
+
+Rõ ràng Định lý 3.2.4 không phải một kết quả thực dụng: giá trị của nó là cho một *công thức* cho $A^{-1}$, hữu ích cho mục đích *lý thuyết*. Đây lại là một ví dụ nữa của bài học đã gặp ở <XemMuc muc="3.1" chu="Mục 3.1" />: công thức đẹp $\ne$ thuật toán tốt.
+</Loi>
+
+<ViDu so="3.2.7">
+Tìm phần tử $(2, 3)$ của $A^{-1}$ nếu $A = \begin{bmatrix} 2 & 1 & 3 \\ 5 & -7 & 1 \\ 3 & 0 & -6 \end{bmatrix}$.
+
+**Lời giải.** Trước hết tính
+
+$$
+\det A = \begin{vmatrix} 2 & 1 & 3 \\ 5 & -7 & 1 \\ 3 & 0 & -6 \end{vmatrix} = \begin{vmatrix} 2 & 1 & 7 \\ 5 & -7 & 11 \\ 3 & 0 & 0 \end{vmatrix} = 3\begin{vmatrix} 1 & 7 \\ -7 & 11 \end{vmatrix} = 180
+$$
+
+Vì $A^{-1} = \frac{1}{\det A}\operatorname{adj} A = \frac{1}{180}[c_{ij}(A)]^T$, phần tử $(2, 3)$ của $A^{-1}$ là phần tử $(3, 2)$ của ma trận $\frac{1}{180}[c_{ij}(A)]$; tức là nó bằng
+
+$$
+\frac{1}{180}c_{32}(A) = \frac{1}{180}\left(-\begin{vmatrix} 2 & 3 \\ 5 & 1 \end{vmatrix}\right) = \frac{13}{180}
+$$
+
+</ViDu>
+
+<ViDu so="3.2.8">
+Nếu $A$ là $n \times n$, $n \ge 2$, hãy chứng tỏ rằng $\det(\operatorname{adj} A) = (\det A)^{n-1}$.
+
+**Lời giải.** Viết $d = \det A$; ta phải chứng tỏ $\det(\operatorname{adj} A) = d^{n-1}$. Ta có $A(\operatorname{adj} A) = dI$ theo Định lý 3.2.4, nên lấy định thức được $d\det(\operatorname{adj} A) = d^n$. Do đó ta xong nếu $d \ne 0$. Giả sử $d = 0$; ta phải chứng tỏ $\det(\operatorname{adj} A) = 0$, tức là $\operatorname{adj} A$ không khả nghịch. Nếu $A \ne 0$, điều này suy ra từ $A(\operatorname{adj} A) = dI = 0$; nếu $A = 0$ thì nó suy ra vì khi đó $\operatorname{adj} A = 0$.
+</ViDu>
+
+## Quy tắc Cramer
+
+Định lý 3.2.4 có một ứng dụng đẹp cho phương trình tuyến tính. Giả sử $A\mathbf{x} = \mathbf{b}$ là hệ $n$ phương trình với $n$ biến $x_1, x_2, \ldots, x_n$. Ở đây $A$ là ma trận hệ số $n \times n$, còn $\mathbf{x}$ và $\mathbf{b}$ là các cột biến và cột tự do. Nếu $\det A \ne 0$, ta nhân bên trái với $A^{-1}$ để được nghiệm $\mathbf{x} = A^{-1}\mathbf{b}$. Khi dùng công thức ma trận phụ hợp, điều này trở thành
+
+$$
+\begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix} = \frac{1}{\det A}(\operatorname{adj} A)\mathbf{b} = \frac{1}{\det A}\begin{bmatrix} c_{11}(A) & c_{21}(A) & \cdots & c_{n1}(A) \\ c_{12}(A) & c_{22}(A) & \cdots & c_{n2}(A) \\ \vdots & \vdots & & \vdots \\ c_{1n}(A) & c_{2n}(A) & \cdots & c_{nn}(A) \end{bmatrix} \begin{bmatrix} b_1 \\ b_2 \\ \vdots \\ b_n \end{bmatrix}
+$$
+
+Do đó các biến $x_1, x_2, \ldots, x_n$ được cho bởi
+
+$$
+\begin{aligned}
+x_1 &= \frac{1}{\det A}[b_1c_{11}(A) + b_2c_{21}(A) + \cdots + b_nc_{n1}(A)] \\
+x_2 &= \frac{1}{\det A}[b_1c_{12}(A) + b_2c_{22}(A) + \cdots + b_nc_{n2}(A)] \\
+&\ \ \vdots \\
+x_n &= \frac{1}{\det A}[b_1c_{1n}(A) + b_2c_{2n}(A) + \cdots + b_nc_{nn}(A)]
+\end{aligned}
+$$
+
+Bây giờ đại lượng $b_1c_{11}(A) + b_2c_{21}(A) + \cdots + b_nc_{n1}(A)$ xuất hiện trong công thức của $x_1$ trông giống khai triển theo phần bù đại số của định thức của một ma trận nào đó. Các phần bù đại số liên quan là $c_{11}(A), c_{21}(A), \ldots, c_{n1}(A)$, ứng với cột thứ nhất của $A$. Nếu $A_1$ thu được từ $A$ bằng cách thay cột thứ nhất của $A$ bởi $\mathbf{b}$ thì $c_{i1}(A_1) = c_{i1}(A)$ với mỗi $i$, vì cột 1 bị xoá khi tính chúng. Do đó khai triển $\det(A_1)$ theo cột thứ nhất cho
+
+$$
+\det A_1 = b_1c_{11}(A_1) + \cdots + b_nc_{n1}(A_1) = b_1c_{11}(A) + \cdots + b_nc_{n1}(A) = (\det A)x_1
+$$
+
+Do đó $x_1 = \dfrac{\det A_1}{\det A}$, và các kết quả tương tự đúng cho các biến khác.
+
+<DinhLy so="3.2.5" ten="Quy tắc Cramer">
+Nếu $A$ là ma trận khả nghịch $n \times n$ thì nghiệm của hệ
+
+$$
+A\mathbf{x} = \mathbf{b}
+$$
+
+gồm $n$ phương trình với các biến $x_1, x_2, \ldots, x_n$ được cho bởi
+
+$$
+x_1 = \frac{\det A_1}{\det A}, \quad x_2 = \frac{\det A_2}{\det A}, \quad \cdots, \quad x_n = \frac{\det A_n}{\det A}
+$$
+
+trong đó với mỗi $k$, $A_k$ là ma trận thu được từ $A$ bằng cách thay cột $k$ bởi $\mathbf{b}$.
+</DinhLy>
+
+<ViDu so="3.2.9">
+Tìm $x_1$, cho hệ phương trình sau.
+
+$$
+\begin{array}{rcrcrcr}
+5x_1 & + & x_2 & - & x_3 & = & 4 \\
+9x_1 & + & x_2 & - & x_3 & = & 1 \\
+x_1 & - & x_2 & + & 5x_3 & = & 2
+\end{array}
+$$
+
+**Lời giải.** Tính định thức của ma trận hệ số $A$ và của ma trận $A_1$ thu được từ nó bằng cách thay cột thứ nhất bởi cột tự do.
+
+$$
+\det A = \det \begin{bmatrix} 5 & 1 & -1 \\ 9 & 1 & -1 \\ 1 & -1 & 5 \end{bmatrix} = -16, \qquad \det A_1 = \det \begin{bmatrix} 4 & 1 & -1 \\ 1 & 1 & -1 \\ 2 & -1 & 5 \end{bmatrix} = 12
+$$
+
+Do đó $x_1 = \dfrac{\det A_1}{\det A} = -\dfrac{3}{4}$ theo quy tắc Cramer.
+</ViDu>
+
+<GhiChu tieuDe="Ghi chú cho người học — Cramer cũng không thực dụng">
+Quy tắc Cramer *không* phải cách hiệu quả để giải hệ tuyến tính hay tìm nghịch đảo. Đúng là nó cho phép ta tính $x_1$ ở đây mà không cần tính $x_2$ hay $x_3$. Nhưng với hệ lớn, số phép tính cần để tìm *tất cả* các biến bằng thuật toán Gauss xấp xỉ bằng số phép tính cần để tìm *một* trong các định thức trong quy tắc Cramer. Hơn nữa, thuật toán Gauss hoạt động cả khi ma trận của hệ không khả nghịch và thậm chí khi ma trận hệ số không vuông.
+
+Vậy là ba công cụ đẹp trong hai mục này — khai triển phần bù đại số, công thức phụ hợp, quy tắc Cramer — đều *không* dùng trong tính toán thực tế. Giá trị của chúng là lý thuyết: chúng cho *công thức tường minh*, dùng để chứng minh các định lý khác và để hiểu cấu trúc. Khi viết code, hãy luôn dùng phép khử Gauss / phân tích LU.
+</GhiChu>
+
+## Nội suy đa thức
+
+Cho một tập dữ liệu, thường ta muốn hiểu xu hướng để dự báo các giá trị khác. Một phương pháp là mô hình hoá xu hướng bằng một đa thức. Đây là một ví dụ.
+
+<ViDu so="3.2.10">
+Một kiểm lâm viên muốn ước lượng tuổi (năm) của một cây bằng cách đo đường kính thân (cm). Cô thu được dữ liệu sau:
+
+|  | Cây 1 | Cây 2 | Cây 3 |
+| --- | :-: | :-: | :-: |
+| **Đường kính thân** | 5 | 10 | 15 |
+| **Tuổi** | 3 | 5 | 6 |
+
+Dùng dữ liệu này để ước lượng tuổi của một cây có đường kính thân 12 cm.
+
+**Lời giải.** Kiểm lâm viên quyết định “khớp” một đa thức bậc hai
+
+$$
+p(x) = r_0 + r_1x + r_2x^2
+$$
+
+với dữ liệu, tức là chọn các hệ số $r_0$, $r_1$, $r_2$ sao cho $p(5) = 3$, $p(10) = 5$, $p(15) = 6$, rồi dùng $p(12)$ làm ước lượng. Các điều kiện này cho ba phương trình tuyến tính:
+
+$$
+\begin{array}{rcrcrcr}
+r_0 & + & 5r_1 & + & 25r_2 & = & 3 \\
+r_0 & + & 10r_1 & + & 100r_2 & = & 5 \\
+r_0 & + & 15r_1 & + & 225r_2 & = & 6
+\end{array}
+$$
+
+Nghiệm (duy nhất) là $r_0 = 0$, $r_1 = \frac{7}{10}$, $r_2 = -\frac{1}{50}$, nên
+
+$$
+p(x) = \frac{7}{10}x - \frac{1}{50}x^2 = \frac{1}{50}x(35 - x)
+$$
+
+Do đó ước lượng là $p(12) = 5.52$.
+
+<HinhNoiSuyCay />
+</ViDu>
+
+Như trong Ví dụ 3.2.10, thường xảy ra chuyện hai biến $x$ và $y$ có liên hệ nhưng dạng hàm thực sự $y = f(x)$ của mối liên hệ là chưa biết. Giả sử với một số giá trị $x_1, x_2, \ldots, x_n$ của $x$, các giá trị tương ứng $y_1, y_2, \ldots, y_n$ đã biết (chẳng hạn từ đo đạc thực nghiệm). Một cách ước lượng giá trị $y$ ứng với một giá trị $a$ khác của $x$ là tìm một đa thức[^1]
+
+$$
+p(x) = r_0 + r_1x + r_2x^2 + \cdots + r_{n-1}x^{n-1}
+$$
+
+“khớp” với dữ liệu, tức là $p(x_i) = y_i$ đúng với mỗi $i = 1, 2, \ldots, n$. Khi đó ước lượng cho $y$ là $p(a)$. Như ta sẽ thấy, một đa thức như vậy luôn tồn tại nếu các $x_i$ đôi một khác nhau.
+
+Các điều kiện $p(x_i) = y_i$ ở dạng ma trận là
+
+$$
+\begin{bmatrix} 1 & x_1 & x_1^2 & \cdots & x_1^{n-1} \\ 1 & x_2 & x_2^2 & \cdots & x_2^{n-1} \\ \vdots & \vdots & \vdots & & \vdots \\ 1 & x_n & x_n^2 & \cdots & x_n^{n-1} \end{bmatrix} \begin{bmatrix} r_0 \\ r_1 \\ \vdots \\ r_{n-1} \end{bmatrix} = \begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{bmatrix} \tag{3.3}
+$$
+
+Có thể chứng minh được (xem Định lý 3.2.7) rằng định thức của ma trận hệ số bằng tích tất cả các số hạng $(x_i - x_j)$ với $i > j$ và do đó khác 0 (vì các $x_i$ đôi một khác nhau). Do đó hệ có nghiệm duy nhất $r_0, r_1, \ldots, r_{n-1}$. Điều này chứng minh:
+
+<DinhLy so="3.2.6">
+Cho $n$ cặp dữ liệu $(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)$, và giả sử các $x_i$ đôi một khác nhau. Khi đó tồn tại duy nhất một đa thức
+
+$$
+p(x) = r_0 + r_1x + r_2x^2 + \cdots + r_{n-1}x^{n-1}
+$$
+
+sao cho $p(x_i) = y_i$ với mỗi $i = 1, 2, \ldots, n$.
+</DinhLy>
+
+Đa thức trong Định lý 3.2.6 được gọi là **đa thức nội suy** (*interpolating polynomial*) cho dữ liệu.
+
+Ta kết thúc bằng việc tính định thức của ma trận hệ số trong phương trình (3.3). Nếu $a_1, a_2, \ldots, a_n$ là các số thì định thức
+
+$$
+\det \begin{bmatrix} 1 & a_1 & a_1^2 & \cdots & a_1^{n-1} \\ 1 & a_2 & a_2^2 & \cdots & a_2^{n-1} \\ 1 & a_3 & a_3^2 & \cdots & a_3^{n-1} \\ \vdots & \vdots & \vdots & & \vdots \\ 1 & a_n & a_n^2 & \cdots & a_n^{n-1} \end{bmatrix}
+$$
+
+được gọi là **định thức Vandermonde**. Có một công thức đơn giản cho định thức này. Nếu $n = 2$, nó bằng $(a_2 - a_1)$; nếu $n = 3$, nó bằng $(a_3 - a_2)(a_3 - a_1)(a_2 - a_1)$ theo Ví dụ 3.1.8. Kết quả tổng quát là tích
+
+$$
+\prod_{1 \le j < i \le n} (a_i - a_j)
+$$
+
+của tất cả các nhân tử $(a_i - a_j)$ với $1 \le j < i \le n$. Ví dụ, nếu $n = 4$ thì nó là
+
+$$
+(a_4 - a_3)(a_4 - a_2)(a_4 - a_1)(a_3 - a_2)(a_3 - a_1)(a_2 - a_1)
+$$
+
+<DinhLy so="3.2.7">
+Cho $a_1, a_2, \ldots, a_n$ là các số với $n \ge 2$. Khi đó định thức Vandermonde tương ứng được cho bởi
+
+$$
+\det \begin{bmatrix} 1 & a_1 & a_1^2 & \cdots & a_1^{n-1} \\ 1 & a_2 & a_2^2 & \cdots & a_2^{n-1} \\ \vdots & \vdots & \vdots & & \vdots \\ 1 & a_n & a_n^2 & \cdots & a_n^{n-1} \end{bmatrix} = \prod_{1 \le j < i \le n} (a_i - a_j)
+$$
+
+</DinhLy>
+
+**Chứng minh.** Ta có thể giả sử các $a_i$ đôi một khác nhau; nếu không thì cả hai vế đều bằng 0. Ta tiến hành quy nạp theo $n \ge 2$; ta đã có với $n = 2, 3$. Vậy giả sử nó đúng với $n - 1$. Mẹo ở đây là thay $a_n$ bằng một biến $x$, và xét định thức
+
+$$
+p(x) = \det \begin{bmatrix} 1 & a_1 & a_1^2 & \cdots & a_1^{n-1} \\ 1 & a_2 & a_2^2 & \cdots & a_2^{n-1} \\ \vdots & \vdots & \vdots & & \vdots \\ 1 & a_{n-1} & a_{n-1}^2 & \cdots & a_{n-1}^{n-1} \\ 1 & x & x^2 & \cdots & x^{n-1} \end{bmatrix}
+$$
+
+Khi đó $p(x)$ là đa thức bậc nhiều nhất $n - 1$ (khai triển dọc theo hàng cuối), và $p(a_i) = 0$ với mỗi $i = 1, 2, \ldots, n - 1$, vì trong mỗi trường hợp có hai hàng giống nhau trong định thức. Nói riêng, $p(a_1) = 0$, nên ta có $p(x) = (x - a_1)p_1(x)$ theo định lý Bézout (xem Phụ lục D). Vì $a_2 \ne a_1$, ta được $p_1(a_2) = 0$, và do đó $p_1(x) = (x - a_2)p_2(x)$. Như vậy $p(x) = (x - a_1)(x - a_2)p_2(x)$. Vì các $a_i$ đôi một khác nhau, quá trình này tiếp tục để được
+
+$$
+p(x) = (x - a_1)(x - a_2) \cdots (x - a_{n-1})\,d \tag{3.4}
+$$
+
+trong đó $d$ là hệ số của $x^{n-1}$ trong $p(x)$. Theo khai triển phần bù đại số của $p(x)$ dọc theo hàng cuối ta được
+
+$$
+d = (-1)^{n+n}\det \begin{bmatrix} 1 & a_1 & a_1^2 & \cdots & a_1^{n-2} \\ 1 & a_2 & a_2^2 & \cdots & a_2^{n-2} \\ \vdots & \vdots & \vdots & & \vdots \\ 1 & a_{n-1} & a_{n-1}^2 & \cdots & a_{n-1}^{n-2} \end{bmatrix}
+$$
+
+Vì $(-1)^{n+n} = 1$, giả thiết quy nạp cho thấy $d$ là tích tất cả các nhân tử $(a_i - a_j)$ với $1 \le j < i \le n - 1$. Kết quả bây giờ suy ra từ phương trình (3.4) bằng cách thay $a_n$ cho $x$ trong $p(x)$. ∎
+
+**Chứng minh Định lý 3.2.1.** Nếu $A$ và $B$ là các ma trận $n \times n$ ta phải chứng tỏ
+
+$$
+\det(AB) = \det A \det B \tag{3.5}
+$$
+
+Nhắc lại rằng nếu $E$ là ma trận sơ cấp thu được bằng cách làm một phép biến đổi hàng lên $I_n$ thì làm phép biến đổi đó lên ma trận $C$ (Bổ đề 2.5.1) cho ra $EC$. Bằng cách xét riêng ba loại ma trận sơ cấp, Định lý 3.1.2 cho thấy
+
+$$
+\det(EC) = \det E \det C \quad \text{với mọi ma trận } C \tag{3.6}
+$$
+
+Như vậy nếu $E_1, E_2, \ldots, E_k$ đều là ma trận sơ cấp thì theo quy nạp
+
+$$
+\det(E_k \cdots E_2E_1C) = \det E_k \cdots \det E_2 \det E_1 \det C \quad \text{với mọi } C \tag{3.7}
+$$
+
+**Bổ đề.** *Nếu $A$ không khả nghịch thì $\det A = 0$.*
+
+*Chứng minh.* Cho $A \to R$ với $R$ ở dạng bậc thang rút gọn, giả sử $E_n \cdots E_2E_1A = R$. Khi đó $R$ có một hàng không theo phần (4) của Định lý 2.4.5, và do đó $\det R = 0$. Nhưng khi đó (3.7) cho $\det A = 0$ vì $\det E \ne 0$ với mọi ma trận sơ cấp $E$.
+
+Bây giờ ta có thể chứng minh (3.5) bằng cách xét hai trường hợp.
+
+**Trường hợp 1.** $A$ không khả nghịch. Khi đó $AB$ cũng không khả nghịch (nếu ngược lại thì $A[B(AB)^{-1}] = I$ nên $A$ khả nghịch theo Hệ quả 2.4.2). Do đó Bổ đề trên (dùng hai lần) cho
+
+$$
+\det(AB) = 0 = 0 \cdot \det B = \det A \det B
+$$
+
+**Trường hợp 2.** $A$ khả nghịch. Khi đó $A$ là tích các ma trận sơ cấp theo Định lý 2.5.2, giả sử $A = E_1E_2 \cdots E_k$. Khi đó (3.7) với $C = I$ cho
+
+$$
+\det A = \det(E_1E_2 \cdots E_k) = \det E_1 \det E_2 \cdots \det E_k
+$$
+
+Nhưng rồi (3.7) với $C = B$ cho
+
+$$
+\det(AB) = \det[(E_1E_2 \cdots E_k)B] = \det E_1 \det E_2 \cdots \det E_k \det B = \det A \det B
+$$
+
+và (3.5) cũng đúng trong trường hợp này. ∎
+
+[^1]: Một **đa thức** là biểu thức dạng $a_0 + a_1x + a_2x^2 + \cdots + a_nx^n$, trong đó các $a_i$ là số và $x$ là biến. Nếu $a_n \ne 0$ thì số nguyên $n$ được gọi là **bậc** của đa thức, và $a_n$ là **hệ số dẫn đầu**. Xem Phụ lục D.

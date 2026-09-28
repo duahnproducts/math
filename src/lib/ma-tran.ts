@@ -61,3 +61,33 @@ export function dinhThuc(A: MaTran): number {
   }
   return det;
 }
+
+/** Nghiệm duy nhất của Ax = b (A vuông khả nghịch), bằng khử Gauss có chọn trụ. */
+export function giaiHe(A: MaTran, b: number[]): number[] {
+  const n = A.length;
+  const M = A.map((hang, i) => [...hang, b[i]]);
+  for (let k = 0; k < n; k++) {
+    let tru = k;
+    for (let i = k + 1; i < n; i++) if (Math.abs(M[i][k]) > Math.abs(M[tru][k])) tru = i;
+    if (M[tru][k] === 0) throw new Error('Ma trận không khả nghịch');
+    [M[tru], M[k]] = [M[k], M[tru]];
+    for (let i = 0; i < n; i++) {
+      if (i === k) continue;
+      const he = M[i][k] / M[k][k];
+      for (let j = k; j <= n; j++) M[i][j] -= he * M[k][j];
+    }
+  }
+  return M.map((hang, i) => hang[n] / hang[i]);
+}
+
+/** Hệ số r₀, r₁, …, r_(n−1) của đa thức nội suy qua các điểm (xᵢ, yᵢ) (Định lý 3.2.6). */
+export function heSoNoiSuy(xs: number[], ys: number[]): number[] {
+  return giaiHe(
+    xs.map((x) => xs.map((_, k) => x ** k)),
+    ys,
+  );
+}
+
+export function giaTriDaThuc(heSo: number[], x: number): number {
+  return heSo.reduceRight((t, r) => t * x + r, 0);
+}
