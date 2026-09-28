@@ -39,3 +39,25 @@ export function maTranChieu(m: number): MaTran {
     [k * m, k * m * m],
   ];
 }
+
+/** Định thức bằng khử Gauss có chọn trụ (Định lý 3.1.2 và 3.1.4). */
+export function dinhThuc(A: MaTran): number {
+  const M = A.map((hang) => [...hang]);
+  const n = M.length;
+  let det = 1;
+  for (let k = 0; k < n; k++) {
+    let tru = k;
+    for (let i = k + 1; i < n; i++) if (Math.abs(M[i][k]) > Math.abs(M[tru][k])) tru = i;
+    if (M[tru][k] === 0) return 0;
+    if (tru !== k) {
+      [M[tru], M[k]] = [M[k], M[tru]];
+      det = -det;
+    }
+    det *= M[k][k];
+    for (let i = k + 1; i < n; i++) {
+      const he = M[i][k] / M[k][k];
+      for (let j = k; j < n; j++) M[i][j] -= he * M[k][j];
+    }
+  }
+  return det;
+}

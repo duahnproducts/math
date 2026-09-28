@@ -85,3 +85,19 @@ test('bài tập Chương 2: 24 bài của §2.1, "Cần dùng" trỏ về §2.1
   await page.goto('thuat-ngu/');
   await expect(page.getByText('vector trạng thái dừng')).toBeVisible();
 });
+
+// Các mục Chương 3 đã có trang trên web (thêm dần theo tiến độ chuyển bản dịch)
+const MUC_CHUONG_3 = ['3-1'];
+
+test('Chương 3: các mục đã chuyển có trang dịch, công thức dựng không lỗi, có PDF tải về', async ({ page }) => {
+  for (const muc of MUC_CHUONG_3) {
+    await page.goto(`dai-so/chuong-3/sach/${muc}/`);
+    await expect(page.locator('[data-ghi-cong]')).toContainText('CC BY-NC-SA');
+    await expect(page.locator('.katex-error')).toHaveCount(0);
+  }
+  await page.goto('dai-so/chuong-3/sach/3-1/');
+  await expect(page.locator('#dinh-ly-3\\.1\\.1')).toContainText('khai triển');
+  await page.goto('dai-so/chuong-3/');
+  await expect(page.getByText('Giá trị riêng và vector riêng').first()).toBeVisible();
+  await expect(page.locator('a[href$="tai-ve/dai-so-chuong-3-ban-dich.pdf"]')).toBeVisible();
+});

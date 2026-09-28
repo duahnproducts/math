@@ -1,0 +1,400 @@
+---
+mon: dai-so
+chuong: 3
+muc: "3.1"
+tieu_de: Khai triển theo phần bù đại số
+tieu_de_en: The Cofactor Expansion
+loai: dich-nguyen-van
+nguon: "Dịch từ W. Keith Nicholson, Linear Algebra with Applications, Version 2023 – Revision A, Vretta-Lyryx Inc. (https://lyryx.com/linear-algebra-applications/), Mục 3.1. Bản dịch phát hành theo giấy phép CC BY-NC-SA 4.0, giống bản gốc. Thay đổi: dịch sang tiếng Việt, thêm ghi chú cho người học."
+---
+
+Ở <XemMuc muc="2.4" chu="Mục 2.4" /> ta đã định nghĩa định thức của ma trận $2 \times 2$ $A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$ như sau[^1]:
+
+$$
+\det A = \begin{vmatrix} a & b \\ c & d \end{vmatrix} = ad - bc
+$$
+
+và đã chứng tỏ (ở Ví dụ 2.4.4) rằng $A$ có nghịch đảo khi và chỉ khi $\det A \ne 0$. Một mục tiêu của chương này là làm điều đó cho *mọi* ma trận vuông $A$. Không có khó khăn gì với ma trận $1 \times 1$: nếu $A = [a]$, ta định nghĩa $\det A = \det[a] = a$ và lưu ý rằng $A$ khả nghịch khi và chỉ khi $a \ne 0$.
+
+Nếu $A$ là $3 \times 3$ và khả nghịch, ta tìm một định nghĩa thích hợp cho $\det A$ bằng cách thử đưa $A$ về ma trận đơn vị bằng các phép biến đổi hàng. Cột thứ nhất khác không ($A$ khả nghịch); giả sử phần tử $(1, 1)$ là $a \ne 0$. Khi đó các phép biến đổi hàng cho
+
+$$
+A = \begin{bmatrix} a & b & c \\ d & e & f \\ g & h & i \end{bmatrix} \to \begin{bmatrix} a & b & c \\ ad & ae & af \\ ag & ah & ai \end{bmatrix} \to \begin{bmatrix} a & b & c \\ 0 & ae - bd & af - cd \\ 0 & ah - bg & ai - cg \end{bmatrix} = \begin{bmatrix} a & b & c \\ 0 & u & af - cd \\ 0 & v & ai - cg \end{bmatrix}
+$$
+
+trong đó $u = ae - bd$ và $v = ah - bg$. Vì $A$ khả nghịch, một trong $u$ và $v$ khác 0; giả sử $u \ne 0$. Khi đó quá trình rút gọn tiếp tục
+
+$$
+A \to \begin{bmatrix} a & b & c \\ 0 & u & af - cd \\ 0 & v & ai - cg \end{bmatrix} \to \begin{bmatrix} a & b & c \\ 0 & u & af - cd \\ 0 & uv & u(ai - cg) \end{bmatrix} \to \begin{bmatrix} a & b & c \\ 0 & u & af - cd \\ 0 & 0 & w \end{bmatrix}
+$$
+
+trong đó $w = u(ai - cg) - v(af - cd) = a(aei + bfg + cdh - ceg - afh - bdi)$. Ta định nghĩa
+
+$$
+\det A = aei + bfg + cdh - ceg - afh - bdi \tag{3.1}
+$$
+
+và để ý rằng $\det A \ne 0$ vì $a \det A = w \ne 0$.
+
+Để dẫn dắt định nghĩa phía dưới, hãy gom các số hạng trong phương trình (3.1) liên quan đến các phần tử $a$, $b$, $c$ ở hàng 1 của $A$:
+
+$$
+\begin{aligned}
+\det A = \begin{vmatrix} a & b & c \\ d & e & f \\ g & h & i \end{vmatrix} &= aei + bfg + cdh - ceg - afh - bdi \\
+&= a(ei - fh) - b(di - fg) + c(dh - eg) \\
+&= a\begin{vmatrix} e & f \\ h & i \end{vmatrix} - b\begin{vmatrix} d & f \\ g & i \end{vmatrix} + c\begin{vmatrix} d & e \\ g & h \end{vmatrix}
+\end{aligned}
+$$
+
+Biểu thức cuối này có thể mô tả như sau: để tính định thức của ma trận $3 \times 3$ $A$, nhân mỗi phần tử ở hàng 1 với một *dấu* nhân với định thức của ma trận $2 \times 2$ thu được bằng cách xoá hàng và cột của phần tử đó, rồi cộng các kết quả lại. Các dấu xen kẽ dọc theo hàng 1, bắt đầu bằng $+$. Chính nhận xét này được tổng quát hoá dưới đây.
+
+<ViDu so="3.1.1">
+
+$$
+\begin{aligned}
+\det \begin{bmatrix} 2 & 3 & 7 \\ -4 & 0 & 6 \\ 1 & 5 & 0 \end{bmatrix} &= 2\begin{vmatrix} 0 & 6 \\ 5 & 0 \end{vmatrix} - 3\begin{vmatrix} -4 & 6 \\ 1 & 0 \end{vmatrix} + 7\begin{vmatrix} -4 & 0 \\ 1 & 5 \end{vmatrix} \\
+&= 2(-30) - 3(-6) + 7(-20) = -182
+\end{aligned}
+$$
+
+</ViDu>
+
+Điều này gợi ý một phương pháp *quy nạp* để định nghĩa định thức của ma trận vuông bất kỳ theo định thức của các ma trận nhỏ hơn một cỡ. Ý tưởng là định nghĩa định thức của ma trận $3 \times 3$ theo định thức của ma trận $2 \times 2$, rồi làm ma trận $4 \times 4$ theo ma trận $3 \times 3$, và cứ thế.
+
+Để mô tả điều này, ta cần một số thuật ngữ.
+
+<DinhNghia so="3.1" ten="Phần bù đại số của ma trận">
+Giả sử định thức của ma trận $(n - 1) \times (n - 1)$ đã được định nghĩa. Cho ma trận $A$ cỡ $n \times n$, đặt
+
+$$
+A_{ij} \text{ là ma trận } (n - 1) \times (n - 1) \text{ thu được từ } A \text{ bằng cách xoá hàng } i \text{ và cột } j.
+$$
+
+Khi đó **phần bù đại số** (*cofactor*) $c_{ij}(A)$ là vô hướng xác định bởi
+
+$$
+c_{ij}(A) = (-1)^{i+j} \det(A_{ij})
+$$
+
+Ở đây $(-1)^{i+j}$ được gọi là **dấu** của vị trí $(i, j)$.
+</DinhNghia>
+
+Dấu của một vị trí rõ ràng bằng $1$ hoặc $-1$, và sơ đồ sau rất hữu ích để nhớ:
+
+$$
+\begin{bmatrix} + & - & + & - & \cdots \\ - & + & - & + & \cdots \\ + & - & + & - & \cdots \\ - & + & - & + & \cdots \\ \vdots & \vdots & \vdots & \vdots & \end{bmatrix}
+$$
+
+Lưu ý rằng các dấu xen kẽ dọc theo mỗi hàng và mỗi cột, với dấu $+$ ở góc trên bên trái.
+
+<ViDu so="3.1.2">
+Tìm các phần bù đại số ở vị trí $(1, 2)$, $(3, 1)$ và $(2, 3)$ trong ma trận $A = \begin{bmatrix} 3 & -1 & 6 \\ 5 & 2 & 7 \\ 8 & 9 & 4 \end{bmatrix}$.
+
+**Lời giải.** Ở đây $A_{12}$ là ma trận $\begin{bmatrix} 5 & 7 \\ 8 & 4 \end{bmatrix}$ còn lại khi xoá hàng 1 và cột 2. Dấu của vị trí $(1, 2)$ là $(-1)^{1+2} = -1$, nên phần bù đại số $(1, 2)$ là
+
+$$
+c_{12}(A) = (-1)^{1+2}\begin{vmatrix} 5 & 7 \\ 8 & 4 \end{vmatrix} = (-1)(5 \cdot 4 - 7 \cdot 8) = (-1)(-36) = 36
+$$
+
+Chuyển sang vị trí $(3, 1)$, ta có
+
+$$
+c_{31}(A) = (-1)^{3+1}\begin{vmatrix} -1 & 6 \\ 2 & 7 \end{vmatrix} = (+1)(-7 - 12) = -19
+$$
+
+Cuối cùng, phần bù đại số $(2, 3)$ là
+
+$$
+c_{23}(A) = (-1)^{2+3}\begin{vmatrix} 3 & -1 \\ 8 & 9 \end{vmatrix} = (-1)(27 + 8) = -35
+$$
+
+Rõ ràng có thể tìm các phần bù đại số khác — tất cả có chín cái, mỗi vị trí trong ma trận một cái.
+</ViDu>
+
+Bây giờ ta có thể định nghĩa $\det A$ cho mọi ma trận vuông $A$.
+
+<DinhNghia so="3.2" ten="Khai triển theo phần bù đại số">
+Giả sử định thức của ma trận $(n - 1) \times (n - 1)$ đã được định nghĩa. Nếu $A = [a_{ij}]$ là $n \times n$, định nghĩa
+
+$$
+\det A = a_{11}c_{11}(A) + a_{12}c_{12}(A) + \cdots + a_{1n}c_{1n}(A)
+$$
+
+Đây được gọi là **khai triển theo phần bù đại số** của $\det A$ *dọc theo hàng 1*.
+</DinhNghia>
+
+Nó khẳng định rằng $\det A$ có thể tính bằng cách nhân các phần tử của hàng 1 với các phần bù đại số tương ứng, rồi cộng các kết quả. Điều đáng kinh ngạc là $\det A$ có thể tính bằng cách khai triển theo phần bù đại số dọc theo *bất kỳ* hàng hay cột nào: chỉ cần nhân mỗi phần tử của hàng hay cột đó với phần bù đại số tương ứng rồi cộng lại.
+
+<DinhLy so="3.1.1" ten="Định lý khai triển theo phần bù đại số">
+Định thức của ma trận $A$ cỡ $n \times n$ có thể tính bằng khai triển theo phần bù đại số dọc theo *bất kỳ* hàng hoặc cột nào của $A$. Tức là $\det A$ có thể tính bằng cách nhân mỗi phần tử của hàng hoặc cột đó với phần bù đại số tương ứng rồi cộng các kết quả.
+</DinhLy>
+
+Chứng minh sẽ được cho ở Mục 3.8.
+
+<ViDu so="3.1.3">
+Tính định thức của $A = \begin{bmatrix} 3 & 4 & 5 \\ 1 & 7 & 2 \\ 9 & 8 & -6 \end{bmatrix}$.
+
+**Lời giải.** Khai triển theo hàng thứ nhất như sau:
+
+$$
+\begin{aligned}
+\det A &= 3c_{11}(A) + 4c_{12}(A) + 5c_{13}(A) \\
+&= 3\begin{vmatrix} 7 & 2 \\ 8 & -6 \end{vmatrix} - 4\begin{vmatrix} 1 & 2 \\ 9 & -6 \end{vmatrix} + 5\begin{vmatrix} 1 & 7 \\ 9 & 8 \end{vmatrix} \\
+&= 3(-58) - 4(-24) + 5(-55) = -353
+\end{aligned}
+$$
+
+Lưu ý rằng các dấu xen kẽ dọc theo hàng (thực ra dọc theo *bất kỳ* hàng hay cột nào). Bây giờ ta tính $\det A$ bằng cách khai triển theo cột thứ nhất.
+
+$$
+\begin{aligned}
+\det A &= 3c_{11}(A) + 1c_{21}(A) + 9c_{31}(A) \\
+&= 3\begin{vmatrix} 7 & 2 \\ 8 & -6 \end{vmatrix} - \begin{vmatrix} 4 & 5 \\ 8 & -6 \end{vmatrix} + 9\begin{vmatrix} 4 & 5 \\ 7 & 2 \end{vmatrix} \\
+&= 3(-58) - (-64) + 9(-27) = -353
+\end{aligned}
+$$
+
+Mời bạn đọc kiểm chứng rằng $\det A$ có thể tính bằng cách khai triển theo bất kỳ hàng hoặc cột nào khác.
+</ViDu>
+
+Việc khai triển theo phần bù đại số dọc theo *bất kỳ* hàng hay cột nào của ma trận $A$ đều cho *cùng một* kết quả (định thức của $A$) là điều đáng chú ý, nói ít nhất là vậy. Việc chọn một hàng hay cột cụ thể có thể làm đơn giản phép tính.
+
+<ViDu so="3.1.4">
+Tính $\det A$ với $A = \begin{bmatrix} 3 & 0 & 0 & 0 \\ 5 & 1 & 2 & 0 \\ 2 & 6 & 0 & -1 \\ -6 & 3 & 1 & 0 \end{bmatrix}$.
+
+**Lời giải.** Lựa chọn đầu tiên ta phải làm là dùng hàng hay cột nào trong khai triển. Khai triển liên quan đến việc nhân các phần tử với phần bù đại số, nên công việc ít nhất khi hàng hoặc cột chứa càng nhiều số 0 càng tốt. Hàng 1 là lựa chọn tốt nhất trong ma trận này (cột 4 cũng được), và khai triển là
+
+$$
+\det A = 3c_{11}(A) + 0c_{12}(A) + 0c_{13}(A) + 0c_{14}(A) = 3\begin{vmatrix} 1 & 2 & 0 \\ 6 & 0 & -1 \\ 3 & 1 & 0 \end{vmatrix}
+$$
+
+Đây là giai đoạn đầu của phép tính, và ta đã thành công trong việc biểu diễn định thức của ma trận $4 \times 4$ $A$ theo định thức của một ma trận $3 \times 3$. Giai đoạn tiếp theo liên quan đến ma trận $3 \times 3$ này. Một lần nữa, ta có thể dùng bất kỳ hàng hay cột nào. Cột thứ ba được ưu tiên (có hai số 0), nên
+
+$$
+\det A = 3\left[0\begin{vmatrix} 6 & 0 \\ 3 & 1 \end{vmatrix} - (-1)\begin{vmatrix} 1 & 2 \\ 3 & 1 \end{vmatrix} + 0\begin{vmatrix} 1 & 2 \\ 6 & 0 \end{vmatrix}\right] = 3[0 + 1(-5) + 0] = -15
+$$
+
+Phép tính hoàn tất.
+</ViDu>
+
+<GhiChu tieuDe="Ghi chú cho người học — chi phí tính toán">
+Việc tính định thức của ma trận $A$ có thể rất mệt. Nếu $A$ là $4 \times 4$, khai triển theo bất kỳ hàng hay cột nào cũng cần tính bốn phần bù đại số, mỗi cái lại cần định thức của một ma trận $3 \times 3$. Nếu $A$ là $5 \times 5$, khai triển cần năm định thức $4 \times 4$!
+
+Nói theo ngôn ngữ DSA: khai triển theo phần bù đại số có độ phức tạp $O(n!)$ — *giai thừa*, tệ hơn cả hàm mũ. Với $n = 20$ thì $20! \approx 2.4 \times 10^{18}$ phép tính, máy tính hiện đại chạy hàng chục năm cũng không xong.
+
+Trong thực tế, người ta *không bao giờ* tính định thức bằng khai triển này với $n$ lớn. Thay vào đó dùng phép khử Gauss (đưa về dạng tam giác rồi nhân đường chéo) — chỉ $O(n^3)$. Mục này tiếp theo sẽ xây dựng đúng kỹ thuật đó. Đây là một bài học kinh điển: *định nghĩa* toán học và *thuật toán* hiệu quả thường là hai thứ rất khác nhau.
+</GhiChu>
+
+Động lực cho phương pháp là nhận xét (xem Ví dụ 3.1.4) rằng việc tính định thức được đơn giản hoá rất nhiều khi một hàng hay cột chủ yếu gồm các số 0. (Thực tế, khi một hàng hay cột gồm *toàn* số 0 thì định thức bằng 0 — chỉ cần khai triển theo hàng hay cột đó.)
+
+Nhắc lại tiếp rằng một cách tạo các số 0 trong ma trận là áp dụng các phép biến đổi sơ cấp theo hàng. Do đó, câu hỏi tự nhiên là một phép biến đổi hàng như vậy có tác dụng gì lên định thức của ma trận. Hoá ra tác dụng đó dễ xác định và các phép biến đổi sơ cấp theo *cột* cũng dùng được theo cách tương tự. Các nhận xét này dẫn đến một kỹ thuật tính định thức giúp giảm rất nhiều công sức. Thông tin cần thiết được cho trong Định lý 3.1.2.
+
+<DinhLy so="3.1.2">
+Cho $A$ là ma trận $n \times n$.
+
+1. Nếu $A$ có một hàng hoặc cột toàn số 0 thì $\det A = 0$.
+2. Nếu đổi chỗ hai hàng (hoặc cột) phân biệt của $A$ thì định thức của ma trận thu được là $-\det A$.
+3. Nếu nhân một hàng (hoặc cột) của $A$ với hằng số $u$ thì định thức của ma trận thu được là $u(\det A)$.
+4. Nếu hai hàng (hoặc cột) phân biệt của $A$ giống nhau thì $\det A = 0$.
+5. Nếu cộng vào một hàng của $A$ một bội của một hàng *khác* (hoặc cộng vào một cột một bội của một cột khác) thì định thức của ma trận thu được vẫn là $\det A$.
+
+</DinhLy>
+
+**Chứng minh.** Ta chứng minh các tính chất 2, 4, 5 và để phần còn lại làm bài tập.
+
+*Tính chất 2.* Nếu $A$ là $n \times n$, điều này suy ra bằng quy nạp theo $n$. Nếu $n = 2$, việc kiểm chứng dành cho bạn đọc. Nếu $n > 2$ và hai hàng bị đổi chỗ, gọi $B$ là ma trận thu được. Khai triển $\det A$ và $\det B$ dọc theo một hàng khác hai hàng đã đổi chỗ. Các phần tử ở hàng này giống nhau với cả $A$ và $B$, nhưng các phần bù đại số trong $B$ là số đối của các phần bù trong $A$ (theo quy nạp), vì các ma trận $(n - 1) \times (n - 1)$ tương ứng có hai hàng bị đổi chỗ. Do đó $\det B = -\det A$, như yêu cầu. Lập luận tương tự áp dụng nếu đổi chỗ hai cột.
+
+*Tính chất 4.* Nếu hai hàng của $A$ bằng nhau, gọi $B$ là ma trận thu được bằng cách đổi chỗ chúng. Khi đó $B = A$, nên $\det B = \det A$. Nhưng $\det B = -\det A$ theo tính chất 2, nên $\det A = \det B = 0$.
+
+*Tính chất 5.* Cho $B$ thu được từ $A = [a_{ij}]$ bằng cách cộng $u$ lần hàng $p$ vào hàng $q$. Khi đó hàng $q$ của $B$ là
+
+$$
+(a_{q1} + ua_{p1},\ a_{q2} + ua_{p2},\ \ldots,\ a_{qn} + ua_{pn})
+$$
+
+Các phần bù đại số của những phần tử này trong $B$ giống như trong $A$ (chúng không liên quan đến hàng $q$): viết bằng ký hiệu, $c_{qj}(B) = c_{qj}(A)$ với mỗi $j$. Do đó khai triển $B$ dọc theo hàng $q$ cho
+
+$$
+\begin{aligned}
+\det B &= (a_{q1} + ua_{p1})c_{q1}(A) + \cdots + (a_{qn} + ua_{pn})c_{qn}(A) \\
+&= [a_{q1}c_{q1}(A) + \cdots + a_{qn}c_{qn}(A)] + u[a_{p1}c_{q1}(A) + \cdots + a_{pn}c_{qn}(A)] \\
+&= \det A + u \det C
+\end{aligned}
+$$
+
+trong đó $C$ là ma trận thu được từ $A$ bằng cách thay hàng $q$ bởi hàng $p$. Vì hàng $p$ và $q$ của $C$ bằng nhau nên $\det C = 0$ theo tính chất 4. Do đó $\det B = \det A$, như yêu cầu. Như trước, chứng minh tương tự đúng cho cột. ∎
+
+Để minh hoạ Định lý 3.1.2, xét các định thức sau:
+
+$$
+\begin{aligned}
+&\begin{vmatrix} 3 & -1 & 2 \\ 2 & 5 & 1 \\ 0 & 0 & 0 \end{vmatrix} = 0 && \text{(vì hàng cuối gồm toàn số 0)} \\[4pt]
+&\begin{vmatrix} 3 & -1 & 5 \\ 2 & 8 & 7 \\ 1 & 2 & -1 \end{vmatrix} = -\begin{vmatrix} 5 & -1 & 3 \\ 7 & 8 & 2 \\ -1 & 2 & 1 \end{vmatrix} && \text{(vì hai cột bị đổi chỗ)} \\[4pt]
+&\begin{vmatrix} 8 & 1 & 2 \\ 3 & 0 & 9 \\ 1 & 2 & -1 \end{vmatrix} = 3\begin{vmatrix} 8 & 1 & 2 \\ 1 & 0 & 3 \\ 1 & 2 & -1 \end{vmatrix} && \text{(vì hàng hai bên trái gấp 3 lần hàng hai bên phải)} \\[4pt]
+&\begin{vmatrix} 2 & 1 & 2 \\ 4 & 0 & 4 \\ 1 & 3 & 1 \end{vmatrix} = 0 && \text{(vì hai cột giống nhau)} \\[4pt]
+&\begin{vmatrix} 2 & 5 & 2 \\ -1 & 2 & 9 \\ 3 & 1 & 1 \end{vmatrix} = \begin{vmatrix} 0 & 9 & 20 \\ -1 & 2 & 9 \\ 3 & 1 & 1 \end{vmatrix} && \text{(vì cộng hai lần hàng hai vào hàng một)}
+\end{aligned}
+$$
+
+Bốn ví dụ sau minh hoạ cách dùng Định lý 3.1.2 để tính định thức.
+
+<ViDu so="3.1.5">
+Tính $\det A$ khi $A = \begin{bmatrix} 1 & -1 & 3 \\ 1 & 0 & -1 \\ 2 & 1 & 6 \end{bmatrix}$.
+
+**Lời giải.** Ma trận có các phần tử bằng 0, nên khai triển theo (chẳng hạn) hàng thứ hai sẽ đỡ việc hơn. Tuy nhiên, có thể dùng một phép biến đổi cột để tạo số 0 ở vị trí $(2, 3)$ — cụ thể là cộng cột 1 vào cột 3. Vì điều này không làm thay đổi giá trị của định thức, ta được
+
+$$
+\det A = \begin{vmatrix} 1 & -1 & 3 \\ 1 & 0 & -1 \\ 2 & 1 & 6 \end{vmatrix} = \begin{vmatrix} 1 & -1 & 4 \\ 1 & 0 & 0 \\ 2 & 1 & 8 \end{vmatrix} = -\begin{vmatrix} -1 & 4 \\ 1 & 8 \end{vmatrix} = 12
+$$
+
+trong đó ta khai triển ma trận $3 \times 3$ thứ hai dọc theo hàng 2.
+</ViDu>
+
+<ViDu so="3.1.6">
+Nếu $\det \begin{bmatrix} a & b & c \\ p & q & r \\ x & y & z \end{bmatrix} = 6$, hãy tính $\det A$ với $A = \begin{bmatrix} a + x & b + y & c + z \\ 3x & 3y & 3z \\ -p & -q & -r \end{bmatrix}$.
+
+**Lời giải.** Trước hết đưa nhân tử chung ra khỏi hàng 2 và hàng 3.
+
+$$
+\det A = 3(-1)\det \begin{bmatrix} a + x & b + y & c + z \\ x & y & z \\ p & q & r \end{bmatrix}
+$$
+
+Bây giờ lấy hàng một trừ hàng hai rồi đổi chỗ hai hàng cuối.
+
+$$
+\det A = -3\det \begin{bmatrix} a & b & c \\ x & y & z \\ p & q & r \end{bmatrix} = 3\det \begin{bmatrix} a & b & c \\ p & q & r \\ x & y & z \end{bmatrix} = 3 \cdot 6 = 18
+$$
+
+</ViDu>
+
+Định thức của một ma trận là tổng các tích các phần tử của nó. Nói riêng, nếu các phần tử này là đa thức theo $x$ thì bản thân định thức là một đa thức theo $x$. Thường ta quan tâm xác định những giá trị $x$ nào làm định thức bằng 0, nên rất hữu ích nếu định thức được cho ở dạng nhân tử. Định lý 3.1.2 có thể giúp.
+
+<ViDu so="3.1.7">
+Tìm các giá trị của $x$ để $\det A = 0$, với $A = \begin{bmatrix} 1 & x & x \\ x & 1 & x \\ x & x & 1 \end{bmatrix}$.
+
+**Lời giải.** Để tính $\det A$, trước hết lấy hàng 2 và hàng 3 trừ đi $x$ lần hàng 1.
+
+$$
+\det A = \begin{vmatrix} 1 & x & x \\ x & 1 & x \\ x & x & 1 \end{vmatrix} = \begin{vmatrix} 1 & x & x \\ 0 & 1 - x^2 & x - x^2 \\ 0 & x - x^2 & 1 - x^2 \end{vmatrix} = \begin{vmatrix} 1 - x^2 & x - x^2 \\ x - x^2 & 1 - x^2 \end{vmatrix}
+$$
+
+Đến đây ta có thể tính thẳng định thức (kết quả là $2x^3 - 3x^2 + 1$). Nhưng rồi ta lại phải phân tích đa thức này thành nhân tử để tìm các giá trị $x$ làm nó bằng 0. Tuy nhiên, việc phân tích này có thể thu được trực tiếp bằng cách trước hết phân tích từng phần tử trong định thức rồi đưa nhân tử chung $(1 - x)$ ra khỏi mỗi hàng.
+
+$$
+\det A = \begin{vmatrix} (1 - x)(1 + x) & x(1 - x) \\ x(1 - x) & (1 - x)(1 + x) \end{vmatrix} = (1 - x)^2\begin{vmatrix} 1 + x & x \\ x & 1 + x \end{vmatrix} = (1 - x)^2(2x + 1)
+$$
+
+Do đó $\det A = 0$ nghĩa là $(1 - x)^2(2x + 1) = 0$, tức là $x = 1$ hoặc $x = -\frac{1}{2}$.
+</ViDu>
+
+<ViDu so="3.1.8">
+Nếu $a_1$, $a_2$, $a_3$ cho trước, hãy chứng tỏ rằng
+
+$$
+\det \begin{bmatrix} 1 & a_1 & a_1^2 \\ 1 & a_2 & a_2^2 \\ 1 & a_3 & a_3^2 \end{bmatrix} = (a_3 - a_1)(a_3 - a_2)(a_2 - a_1)
+$$
+
+**Lời giải.** Bắt đầu bằng cách lấy hàng 2 và hàng 3 trừ hàng 1, rồi khai triển dọc theo cột 1:
+
+$$
+\det \begin{bmatrix} 1 & a_1 & a_1^2 \\ 1 & a_2 & a_2^2 \\ 1 & a_3 & a_3^2 \end{bmatrix} = \det \begin{bmatrix} 1 & a_1 & a_1^2 \\ 0 & a_2 - a_1 & a_2^2 - a_1^2 \\ 0 & a_3 - a_1 & a_3^2 - a_1^2 \end{bmatrix} = \det \begin{bmatrix} a_2 - a_1 & a_2^2 - a_1^2 \\ a_3 - a_1 & a_3^2 - a_1^2 \end{bmatrix}
+$$
+
+Bây giờ $(a_2 - a_1)$ và $(a_3 - a_1)$ là nhân tử chung của hàng 1 và hàng 2 tương ứng, nên
+
+$$
+\det \begin{bmatrix} 1 & a_1 & a_1^2 \\ 1 & a_2 & a_2^2 \\ 1 & a_3 & a_3^2 \end{bmatrix} = (a_2 - a_1)(a_3 - a_1)\det \begin{bmatrix} 1 & a_2 + a_1 \\ 1 & a_3 + a_1 \end{bmatrix} = (a_2 - a_1)(a_3 - a_1)(a_3 - a_2)
+$$
+
+</ViDu>
+
+Ma trận trong Ví dụ 3.1.8 được gọi là **ma trận Vandermonde**, và công thức cho định thức của nó có thể tổng quát hoá cho trường hợp $n \times n$ (xem Định lý 3.2.7).
+
+Nếu $A$ là ma trận $n \times n$ thì lập $uA$ nghĩa là nhân *mọi* hàng của $A$ với $u$. Áp dụng tính chất 3 của Định lý 3.1.2, ta có thể đưa nhân tử chung $u$ ra khỏi từng hàng và thu được kết quả hữu ích sau.
+
+<DinhLy so="3.1.3">
+Nếu $A$ là ma trận $n \times n$ thì $\det(uA) = u^n \det A$ với mọi số $u$.
+</DinhLy>
+
+<GhiChu tieuDe="Ghi chú cho người học">
+Công thức $\det(uA) = u^n \det A$ là một chỗ rất hay bị sai. Nhiều người theo thói quen viết $\det(uA) = u \det A$ — sai. Lý do: nhân ma trận với $u$ là nhân *tất cả $n$ hàng*, mỗi hàng đóng góp một nhân tử $u$, nên tổng cộng là $u^n$.
+
+Kiểm tra nhanh với $A = I_2$ và $u = 2$: $\det(2I_2) = \det \begin{bmatrix} 2 & 0 \\ 0 & 2 \end{bmatrix} = 4 = 2^2 \det I_2$. Đúng. Thói quen tự kiểm tra bằng một trường hợp nhỏ cụ thể như thế này sẽ cứu bạn rất nhiều lần.
+</GhiChu>
+
+Ví dụ tiếp theo trình bày một loại ma trận có định thức dễ tính.
+
+<ViDu so="3.1.9">
+Tính $\det A$ nếu $A = \begin{bmatrix} a & 0 & 0 & 0 \\ u & b & 0 & 0 \\ v & w & c & 0 \\ x & y & z & d \end{bmatrix}$.
+
+**Lời giải.** Khai triển dọc theo hàng 1 để được $\det A = a\begin{vmatrix} b & 0 & 0 \\ w & c & 0 \\ y & z & d \end{vmatrix}$. Bây giờ khai triển cái này dọc theo hàng trên cùng để được $\det A = ab\begin{vmatrix} c & 0 \\ z & d \end{vmatrix} = abcd$, tích các phần tử trên đường chéo chính.
+</ViDu>
+
+Một ma trận vuông được gọi là **ma trận tam giác dưới** nếu mọi phần tử phía trên đường chéo chính đều bằng 0 (như trong Ví dụ 3.1.9). Tương tự, **ma trận tam giác trên** là ma trận có mọi phần tử phía dưới đường chéo chính bằng 0. **Ma trận tam giác** là ma trận tam giác trên hoặc tam giác dưới. Định lý 3.1.4 cho một quy tắc dễ để tính định thức của mọi ma trận tam giác.
+
+<DinhLy so="3.1.4">
+Nếu $A$ là ma trận vuông tam giác thì $\det A$ là tích các phần tử trên đường chéo chính.
+</DinhLy>
+
+Định lý 3.1.4 hữu ích trong tính toán bằng máy tính, vì việc đưa một ma trận về dạng tam giác bằng các phép biến đổi hàng là chuyện thường quy.
+
+<GhiChu tieuDe="Ghi chú cho người học — thuật toán tính định thức thực tế">
+Định lý 3.1.4 kết hợp với Định lý 3.1.2 chính là *thuật toán* tính định thức được dùng trong thực tế:
+
+1. Dùng phép khử Gauss đưa $A$ về dạng tam giác trên $U$, *ghi nhớ* mỗi lần đổi chỗ hàng (đổi dấu) và mỗi lần nhân hàng với hằng số.
+2. $\det A = (\pm 1) \times (\text{các hệ số}) \times (\text{tích đường chéo của } U)$.
+
+Độ phức tạp: $O(n^3)$ thay vì $O(n!)$. Đây chính xác là thứ `numpy.linalg.det` làm bên trong (qua phân tích LU ở <XemMuc muc="2.7" chu="Mục 2.7" /> — nhớ chứ?). Thực ra NumPy trả về $\det A$ bằng tích đường chéo của $U$ nhân với dấu của hoán vị $P$.
+</GhiChu>
+
+Ma trận khối như trong định lý sau xuất hiện thường xuyên trong thực hành, và định lý cho một phương pháp dễ để tính định thức của chúng.
+
+<DinhLy so="3.1.5">
+Xét các ma trận $\begin{bmatrix} A & X \\ 0 & B \end{bmatrix}$ và $\begin{bmatrix} A & 0 \\ Y & B \end{bmatrix}$ ở dạng khối, trong đó $A$ và $B$ là các ma trận vuông. Khi đó
+
+$$
+\det \begin{bmatrix} A & X \\ 0 & B \end{bmatrix} = \det A \det B \qquad \text{và} \qquad \det \begin{bmatrix} A & 0 \\ Y & B \end{bmatrix} = \det A \det B
+$$
+
+</DinhLy>
+
+**Chứng minh.** Viết $T = \begin{bmatrix} A & X \\ 0 & B \end{bmatrix}$ và tiến hành quy nạp theo $k$, trong đó $A$ là $k \times k$. Nếu $k = 1$, đó chính là khai triển theo phần bù đại số dọc cột 1. Tổng quát, đặt $S_i(T)$ là ma trận thu được từ $T$ bằng cách xoá hàng $i$ và cột 1. Khi đó khai triển $\det T$ dọc theo cột thứ nhất là
+
+$$
+\det T = a_{11}\det(S_1(T)) - a_{21}\det(S_2(T)) + \cdots \pm a_{k1}\det(S_k(T)) \tag{3.2}
+$$
+
+trong đó $a_{11}, a_{21}, \ldots, a_{k1}$ là các phần tử ở cột thứ nhất của $A$. Nhưng $S_i(T) = \begin{bmatrix} S_i(A) & X_i \\ 0 & B \end{bmatrix}$ với mỗi $i = 1, 2, \ldots, k$, nên $\det(S_i(T)) = \det(S_i(A)) \cdot \det B$ theo quy nạp. Do đó phương trình (3.2) trở thành
+
+$$
+\det T = \{a_{11}\det(S_1(A)) - a_{21}\det(S_2(A)) + \cdots \pm a_{k1}\det(S_k(A))\}\det B = \{\det A\}\det B
+$$
+
+như yêu cầu. Trường hợp tam giác dưới là tương tự. ∎
+
+<ViDu so="3.1.10">
+
+$$
+\det \begin{bmatrix} 2 & 3 & 1 & 3 \\ 1 & -2 & -1 & 1 \\ 0 & 1 & 0 & 1 \\ 0 & 4 & 0 & 1 \end{bmatrix} = -\det \begin{bmatrix} 2 & 1 & 3 & 3 \\ 1 & -1 & -2 & 1 \\ 0 & 0 & 1 & 1 \\ 0 & 0 & 4 & 1 \end{bmatrix} = -\begin{vmatrix} 2 & 1 \\ 1 & -1 \end{vmatrix}\begin{vmatrix} 1 & 1 \\ 4 & 1 \end{vmatrix} = -(-3)(-3) = -9
+$$
+
+</ViDu>
+
+Kết quả tiếp theo cho thấy $\det A$ là một phép biến đổi tuyến tính khi xem như hàm của một cột cố định của $A$.
+
+<DinhLy so="3.1.6">
+Cho các cột $\mathbf{c}_1, \ldots, \mathbf{c}_{j-1}, \mathbf{c}_{j+1}, \ldots, \mathbf{c}_n$ trong $\mathbb{R}^n$, định nghĩa $T : \mathbb{R}^n \to \mathbb{R}$ bởi
+
+$$
+T(\mathbf{x}) = \det \begin{bmatrix} \mathbf{c}_1 & \cdots & \mathbf{c}_{j-1} & \mathbf{x} & \mathbf{c}_{j+1} & \cdots & \mathbf{c}_n \end{bmatrix} \quad \text{với mọi } \mathbf{x} \text{ trong } \mathbb{R}^n
+$$
+
+Khi đó, với mọi $\mathbf{x}$, $\mathbf{y}$ trong $\mathbb{R}^n$ và mọi $a$ trong $\mathbb{R}$,
+
+$$
+T(\mathbf{x} + \mathbf{y}) = T(\mathbf{x}) + T(\mathbf{y}) \qquad \text{và} \qquad T(a\mathbf{x}) = aT(\mathbf{x})
+$$
+
+</DinhLy>
+
+[^1]: Định thức thường được viết $|A| = \det A$ dùng hai gạch đứng. Ta sẽ dùng cả hai ký hiệu.

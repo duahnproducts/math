@@ -38,6 +38,7 @@ test('không tràn ngang trên điện thoại', async ({ page }) => {
     'dai-so/chuong-2/sach/2-7/',
     'dai-so/chuong-2/sach/2-9/',
     'dai-so/chuong-2/bai-tap/2-1-15/',
+    'dai-so/chuong-3/sach/3-1/',
     'vi-mo/chuong-2/sach/2-2/',
     'thuat-ngu/',
   ]) {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { type MaTran, maTranChieu, maTranDoiXung, maTranQuay, nhanMaTran, nhanVector } from './ma-tran';
+import { type MaTran, dinhThuc, maTranChieu, maTranDoiXung, maTranQuay, nhanMaTran, nhanVector } from './ma-tran';
 
 const Q0: MaTran = [
   [1, 0],
@@ -147,5 +147,29 @@ describe('phân tích LU trong các ví dụ của §2.7', () => {
       [0, 0, 0, 1],
     ];
     expect(nhanMaTran(P, A)).toEqual(nhanMaTran(L, U));
+  });
+});
+
+describe('định thức (§3.1)', () => {
+  it('khớp các ví dụ của sách', () => {
+    expect(dinhThuc([[2, 3, 7], [-4, 0, 6], [1, 5, 0]])).toBeCloseTo(-182, 9);
+    expect(dinhThuc([[3, 4, 5], [1, 7, 2], [9, 8, -6]])).toBeCloseTo(-353, 9);
+    expect(dinhThuc([[3, 0, 0, 0], [5, 1, 2, 0], [2, 6, 0, -1], [-6, 3, 1, 0]])).toBeCloseTo(-15, 9);
+    expect(dinhThuc([[1, -1, 3], [1, 0, -1], [2, 1, 6]])).toBeCloseTo(12, 9);
+    expect(dinhThuc([[2, 3, 1, 3], [1, -2, -1, 1], [0, 1, 0, 1], [0, 4, 0, 1]])).toBeCloseTo(-9, 9);
+  });
+
+  it('Ví dụ 3.1.7: det = (1 − x)²(2x + 1); Ví dụ 3.1.8: Vandermonde', () => {
+    for (const x of [-2, -0.5, 0.3, 1, 4]) {
+      expect(dinhThuc([[1, x, x], [x, 1, x], [x, x, 1]])).toBeCloseTo((1 - x) ** 2 * (2 * x + 1), 9);
+    }
+    const [a1, a2, a3] = [2, -1, 5];
+    expect(dinhThuc([[1, a1, a1 ** 2], [1, a2, a2 ** 2], [1, a3, a3 ** 2]])).toBeCloseTo((a3 - a1) * (a3 - a2) * (a2 - a1), 9);
+  });
+
+  it('Định lý 3.1.3: det(uA) = uⁿ det A; hàng trùng nhau cho 0', () => {
+    const A = [[3, 4, 5], [1, 7, 2], [9, 8, -6]];
+    expect(dinhThuc(A.map((h) => h.map((x) => 2 * x)))).toBeCloseTo(8 * -353, 9);
+    expect(dinhThuc([[2, 1, 2], [4, 0, 4], [1, 3, 1]])).toBeCloseTo(0, 12);
   });
 });
