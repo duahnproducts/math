@@ -45,6 +45,23 @@ describe('workflow deploy', () => {
     expect(lenh('deploy').some((l) => l.startsWith('actions/deploy-pages'))).toBe(true);
   });
 
+  it('dùng các action bản chạy Node 24 (bản Node 20 đã bị GitHub ngừng hỗ trợ)', () => {
+    const toiThieu: Record<string, number> = {
+      'actions/checkout': 7,
+      'actions/setup-node': 7,
+      'actions/upload-artifact': 7,
+      'actions/upload-pages-artifact': 5,
+      'actions/deploy-pages': 5,
+    };
+    const cacAction = Object.values(wf.jobs).flatMap((j) => j.steps.flatMap((b) => (b.uses ? [b.uses] : [])));
+    expect(cacAction.length).toBeGreaterThan(0);
+    for (const a of cacAction) {
+      const [ten, ban] = a.split('@');
+      expect(toiThieu[ten], a).toBeDefined();
+      expect(Number(ban.replace(/^v/, '').split('.')[0]), a).toBeGreaterThanOrEqual(toiThieu[ten]);
+    }
+  });
+
   it('có quyền ghi Pages bằng OIDC', () => {
     expect(wf.permissions.pages).toBe('write');
     expect(wf.permissions['id-token']).toBe('write');
