@@ -1,5 +1,6 @@
 // Các component dùng được trong file MDX mà không cần import.
 // Trang render nội dung bằng <Content components={thanhPhanMdx} />.
+import AnhSlide from './noi-dung/AnhSlide.astro';
 import BaGoc from './noi-dung/BaGoc.astro';
 import BaiLuyen from './noi-dung/BaiLuyen.astro';
 import BoDe from './noi-dung/BoDe.astro';
@@ -15,6 +16,7 @@ import Loi from './noi-dung/Loi.astro';
 import LoiGiai from './noi-dung/LoiGiai.astro';
 import LoiHayMac from './noi-dung/LoiHayMac.astro';
 import ThuatNgu from './noi-dung/ThuatNgu.astro';
+import Slide from './noi-dung/Slide.astro';
 import TienDe from './noi-dung/TienDe.astro';
 import TomTat from './noi-dung/TomTat.astro';
 import ViDu from './noi-dung/ViDu.astro';
@@ -38,6 +40,7 @@ import HinhTongRieng from '../figures/HinhTongRieng.astro';
 import HinhTranNha from '../figures/HinhTranNha.astro';
 
 export const thanhPhanMdx = {
+  AnhSlide,
   BaGoc,
   BaiLuyen,
   BoDe,
@@ -52,6 +55,7 @@ export const thanhPhanMdx = {
   Loi,
   LoiGiai,
   LoiHayMac,
+  Slide,
   ThuatNgu,
   TienDe,
   TomTat,

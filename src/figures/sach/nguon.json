@@ -1,18 +1,175 @@
 {
   "_ghi_chu": "Nguồn của từng hình trong thư mục này: file PDF gốc (không có trong repo), trang (đánh số của file PDF), vùng cắt [x0, y0, x1, y1] theo điểm (pt). Dựng lại: python scripts/pdf-hinh-svg.py <pdf> src/figures/sach ten:trang:x0,y0,x1,y1",
   "hinh": {
-    "ds-bt-1-4-1a": { "sach": "nicholson-2023", "trang": 51, "hop": [352, 572, 514, 733] },
-    "ds-bt-1-4-1b": { "sach": "nicholson-2023", "trang": 52, "hop": [95, 76, 257, 214] },
-    "ds-bt-1-4-2": { "sach": "nicholson-2023", "trang": 52, "hop": [112, 262, 250, 401] },
-    "ds-bt-1-4-3": { "sach": "nicholson-2023", "trang": 52, "hop": [352, 195, 514, 338] },
-    "ds-vd-1-5-1": { "sach": "nicholson-2023", "trang": 53, "hop": [46, 165, 240, 349], "chu_toi_da": 10.5 },
-    "ds-bt-1-5-1": { "sach": "nicholson-2023", "trang": 54, "hop": [87, 118, 247, 268] },
-    "ds-bt-1-5-2": { "sach": "nicholson-2023", "trang": 54, "hop": [66, 255, 286, 416] },
-    "ds-bt-1-5-3": { "sach": "nicholson-2023", "trang": 54, "hop": [42, 420, 310, 570] },
-    "ds-bt-1-5-4": { "sach": "nicholson-2023", "trang": 54, "hop": [357, 123, 509, 272] },
-    "ds-bt-1-5-5": { "sach": "nicholson-2023", "trang": 54, "hop": [336, 316, 511, 450] }
+    "ds-bt-1-4-1a": {
+      "sach": "nicholson-2023",
+      "trang": 51,
+      "hop": [
+        352,
+        572,
+        514,
+        733
+      ]
+    },
+    "ds-bt-1-4-1b": {
+      "sach": "nicholson-2023",
+      "trang": 52,
+      "hop": [
+        95,
+        76,
+        257,
+        214
+      ]
+    },
+    "ds-bt-1-4-2": {
+      "sach": "nicholson-2023",
+      "trang": 52,
+      "hop": [
+        112,
+        262,
+        250,
+        401
+      ]
+    },
+    "ds-bt-1-4-3": {
+      "sach": "nicholson-2023",
+      "trang": 52,
+      "hop": [
+        352,
+        195,
+        514,
+        338
+      ]
+    },
+    "ds-vd-1-5-1": {
+      "sach": "nicholson-2023",
+      "trang": 53,
+      "hop": [
+        46,
+        165,
+        240,
+        349
+      ],
+      "chu_toi_da": 10.5
+    },
+    "ds-bt-1-5-1": {
+      "sach": "nicholson-2023",
+      "trang": 54,
+      "hop": [
+        87,
+        118,
+        247,
+        268
+      ]
+    },
+    "ds-bt-1-5-2": {
+      "sach": "nicholson-2023",
+      "trang": 54,
+      "hop": [
+        66,
+        255,
+        286,
+        416
+      ]
+    },
+    "ds-bt-1-5-3": {
+      "sach": "nicholson-2023",
+      "trang": 54,
+      "hop": [
+        42,
+        420,
+        310,
+        570
+      ]
+    },
+    "ds-bt-1-5-4": {
+      "sach": "nicholson-2023",
+      "trang": 54,
+      "hop": [
+        357,
+        123,
+        509,
+        272
+      ]
+    },
+    "ds-bt-1-5-5": {
+      "sach": "nicholson-2023",
+      "trang": 54,
+      "hop": [
+        336,
+        316,
+        511,
+        450
+      ]
+    },
+    "vm-2-ngan-sach": {
+      "sach": "vi-mo-c2-dich",
+      "chu_toi_da": 13,
+      "lop_chu": "chu",
+      "mau": "4a79b4:net/to-dam,8e3a99:nhan-manh/to-nhan,1f2944:net/to-dam",
+      "trang": 5,
+      "hop": [
+        222,
+        84,
+        608,
+        286
+      ]
+    },
+    "vm-2-ppf": {
+      "sach": "vi-mo-c2-dich",
+      "chu_toi_da": 13,
+      "lop_chu": "chu",
+      "mau": "4a79b4:net/to-dam,8e3a99:nhan-manh/to-nhan,1f2944:net/to-dam",
+      "trang": 12,
+      "hop": [
+        299,
+        90,
+        560,
+        335
+      ]
+    },
+    "vm-2-hai-rang-buoc": {
+      "sach": "vi-mo-c2-dich",
+      "chu_toi_da": 13,
+      "lop_chu": "chu",
+      "mau": "4a79b4:net/to-dam,8e3a99:nhan-manh/to-nhan,1f2944:net/to-dam",
+      "trang": 17,
+      "hop": [
+        130,
+        84,
+        730,
+        312
+      ]
+    },
+    "vm-2-ppf-hieu-qua": {
+      "sach": "vi-mo-c2-dich",
+      "chu_toi_da": 13,
+      "lop_chu": "chu",
+      "mau": "4a79b4:net/to-dam,8e3a99:nhan-manh/to-nhan,1f2944:net/to-dam",
+      "trang": 19,
+      "hop": [
+        290,
+        90,
+        566,
+        348
+      ]
+    },
+    "vm-2-loi-the-so-sanh": {
+      "sach": "vi-mo-c2-dich",
+      "chu_toi_da": 13,
+      "lop_chu": "chu",
+      "mau": "4a79b4:net/to-dam,8e3a99:nhan-manh/to-nhan,1f2944:net/to-dam",
+      "trang": 21,
+      "hop": [
+        105,
+        90,
+        725,
+        319
+      ]
+    }
   },
   "sach": {
-    "nicholson-2023": "W. Keith Nicholson, Linear Algebra with Applications, Version 2023 – Revision A (CC BY-NC-SA 4.0)"
+    "nicholson-2023": "W. Keith Nicholson, Linear Algebra with Applications, Version 2023 – Revision A (CC BY-NC-SA 4.0)",
+    "vi-mo-c2-dich": "Bản dịch slide Chương 2, OpenStax Principles of Microeconomics 3e (CC BY-NC-SA 4.0) — micro/Microeconomics3e-Ch02_TiengViet.pdf, biểu đồ đã vẽ lại với nhãn tiếng Việt"
   }
 }

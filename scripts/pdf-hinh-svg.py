@@ -1,13 +1,21 @@
 # Chuyển một vùng hình vector trong PDF gốc (giấy phép mở) thành SVG gọn cho web.
 # Màu cứng được đổi sang lớp CSS (net, nhan-manh, to-nhan, to-dam, chu-sach) để hình
 # đổi được sáng/tối. Cần: pip install pymupdf
-# Dùng: python scripts/pdf-hinh-svg.py [--chu-toi-da=10.5] (bỏ chữ lớn hơn cỡ này — chữ thân bài) <pdf> src/figures/sach ten:trang:x0,y0,x1,y1 ...
-import pymupdf, sys, os, html
+# Dùng: python scripts/pdf-hinh-svg.py [tuỳ chọn] <pdf> src/figures/sach ten:trang:x0,y0,x1,y1 ...
+#   --chu-toi-da=10.5   bỏ chữ lớn hơn cỡ này (chữ thân bài lọt vào vùng cắt)
+#   --lop-chu=chu       lớp CSS cho chữ (mặc định chu-sach: có chân)
+#   --mau=4a79b4:net/to-dam,...   màu gốc -> lớp cho nét/phần tô (mặc định: xám -> net, màu -> nhan-manh)
+import pymupdf, sys, os, html, math
+
+BANG_MAU = {}  # '4a79b4' -> ('net', 'to-dam'): lớp cho nét / cho phần tô
 
 def lop_mau(mau, loai):
     """Màu gốc -> lớp CSS. loai: 'stroke' hoặc 'fill'."""
     if mau is None:
         return None
+    hx = '%02x%02x%02x' % tuple(int(round(v * 255)) for v in mau)
+    if hx in BANG_MAU:
+        return BANG_MAU[hx][0 if loai == 'stroke' else 1]
     r, g, b = mau
     xam = max(r, g, b) - min(r, g, b) < 0.08
     if xam and max(r, g, b) > 0.92:
@@ -74,6 +82,9 @@ def chuyen(src, ten, trang, hop, out):
             tt.append('fill="none"')
         if ls:
             tt.append(f'stroke-width="{so(dr.get("width") or 0.5)}"')
+            gach = (dr.get('dashes') or '').split(']')[0].strip('[ ')
+            if gach:
+                tt.append(f'stroke-dasharray="{gach}"')
         phan.append(f'<path {" ".join(tt)}/>')
     for b in p.get_text('dict', clip=vung)['blocks']:
         for l in b.get('lines', []):
@@ -88,7 +99,14 @@ def chuyen(src, ten, trang, hop, out):
                 x, y = s['origin']
                 nghieng = 'Ital' in s['font'] or 'It' in s['font'].split('-')[-1] or s['flags'] & 2
                 kieu = ' font-style="italic"' if nghieng else ''
-                phan.append(f'<text x="{so(x-dx)}" y="{so(y-dy)}" font-size="{so(s["size"])}"{kieu} class="chu-sach">{html.escape(t)}</text>')
+                if s['flags'] & 16 or 'Bold' in s['font']:
+                    kieu += ' font-weight="bold"'
+                # Chữ xoay (nhãn trục dọc): hướng dòng (cos, sin) -> rotate quanh gốc chữ
+                cos, sin = l['dir']
+                if abs(cos - 1) > 1e-3:
+                    goc = math.degrees(math.atan2(sin, cos))
+                    kieu += f' transform="rotate({so(goc)} {so(x-dx)} {so(y-dy)})"'
+                phan.append(f'<text x="{so(x-dx)}" y="{so(y-dy)}" font-size="{so(s["size"])}"{kieu} class="{LOP_CHU}">{html.escape(t)}</text>')
     w, h = vung.width, vung.height
     svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {so(w)} {so(h)}" width="{so(w * 1.6)}" '
            f'role="img">\n' + '\n'.join(phan) + '\n</svg>\n')
@@ -96,11 +114,20 @@ def chuyen(src, ten, trang, hop, out):
     return len(svg), len(phan)
 
 CHU_TOI_DA = 1000.0  # mặc định: không lọc theo cỡ chữ
+LOP_CHU = 'chu-sach'  # chữ kiểu sách (có chân); biểu đồ slide dùng 'chu' (không chân)
 
 if __name__ == '__main__':
-    for a in [a for a in sys.argv if a.startswith('--chu-toi-da=')]:
-        CHU_TOI_DA = float(a.split('=')[1])
-        sys.argv.remove(a)
+    for a in list(sys.argv):
+        if a.startswith('--chu-toi-da='):
+            CHU_TOI_DA = float(a.split('=')[1]); sys.argv.remove(a)
+        elif a.startswith('--lop-chu='):
+            LOP_CHU = a.split('=')[1]; sys.argv.remove(a)
+        elif a.startswith('--mau='):
+            # --mau=4a79b4:net/to-dam,8e3a99:nhan-manh/to-nhan
+            for cap in a.split('=')[1].split(','):
+                hx, lop = cap.split(':')
+                BANG_MAU[hx.lower()] = tuple(lop.split('/'))
+            sys.argv.remove(a)
     src, out = sys.argv[1], sys.argv[2]
     os.makedirs(out, exist_ok=True)
     for spec in sys.argv[3:]:

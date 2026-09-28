@@ -1548,3 +1548,41 @@ dialog.hoi p {
     background: none;
   }
 }
+
+/* Slide dịch (Vi mô): mỗi slide là một khối, giữ số thứ tự của bộ slide gốc */
+.slide {
+  position: relative;
+  margin: 0.4em 0 1.8em;
+  padding: 18px 20px 10px;
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-lg);
+  background: var(--paper);
+}
+.slide .so-slide {
+  position: absolute;
+  top: -11px;
+  right: 14px;
+  margin: 0;
+  padding: 1px 8px;
+  border: 1px solid var(--line-2);
+  border-radius: 999px;
+  background: var(--surface-1);
+  color: var(--text-3);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+}
+.slide > :first-child + * {
+  margin-top: 0;
+}
+.slide .hinh {
+  margin: 0.6em 0;
+  border: 0;
+  padding: 4px 0;
+}
+.anh-slide img {
+  display: block;
+  max-width: min(100%, 460px);
+  height: auto;
+  margin: 0 auto;
+  border-radius: var(--r-md);
+}

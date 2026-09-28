@@ -1,0 +1,20 @@
+---
+// Ảnh chụp trong slide gốc: giữ nguyên ảnh, dịch chú thích nguồn (micro/README.md).
+// File ảnh nằm ở public/hinh/<ten>. Dùng: <AnhSlide ten="vi-mo/c2-s3.jpg" moTa="…" nguon="…" />
+import { noiFile } from '@/lib/duong-dan';
+
+interface Props {
+  ten: string;
+  moTa: string;
+  nguon: string;
+  rong?: number;
+  cao?: number;
+}
+const { ten, moTa, nguon, rong, cao } = Astro.props;
+const src = noiFile(import.meta.env.BASE_URL, 'hinh', ten);
+---
+
+<figure class="hinh anh-slide">
+  <img src={src} alt={moTa} loading="lazy" decoding="async" width={rong} height={cao} />
+  <figcaption>{nguon}</figcaption>
+</figure>

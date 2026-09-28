@@ -1,0 +1,21 @@
+{
+  "thuat_ngu": [
+    { "id": "budget-constraint", "en": "budget constraint", "vi": "giới hạn ngân sách", "giai_thich": "Tất cả các tổ hợp hàng hóa một người có thể mua khi chi tiêu toàn bộ thu nhập, với giá cho trước; là đường biên của tập hợp cơ hội." },
+    { "id": "opportunity-set", "en": "opportunity set", "vi": "tập hợp cơ hội", "giai_thich": "Tất cả các tổ hợp tiêu dùng một người có thể chi trả với giá và thu nhập cho trước (không nhất thiết tiêu hết thu nhập)." },
+    { "id": "opportunity-cost", "en": "opportunity cost", "vi": "chi phí cơ hội", "giai_thich": "Giá trị của phương án thay thế tốt nhất tiếp theo — cái phải từ bỏ để có được thứ mình chọn." },
+    { "id": "out-of-pocket-cost", "en": "out-of-pocket cost", "vi": "chi phí bằng tiền trực tiếp", "giai_thich": "Khoản tiền thực sự bỏ ra, ví dụ học phí, sách vở; khác với chi phí cơ hội như thu nhập bị mất." },
+    { "id": "marginal-analysis", "en": "marginal analysis", "vi": "phân tích cận biên", "giai_thich": "So sánh lợi ích và chi phí của việc chọn nhiều hơn hoặc ít hơn một chút." },
+    { "id": "utility", "en": "utility", "vi": "độ thỏa dụng", "giai_thich": "Sự hài lòng, tính hữu ích hoặc giá trị một người nhận được khi tiêu dùng hàng hóa, dịch vụ." },
+    { "id": "diminishing-marginal-utility", "en": "law of diminishing marginal utility", "vi": "quy luật độ thỏa dụng cận biên giảm dần", "giai_thich": "Càng có nhiều một thứ, mỗi đơn vị thêm vào càng mang lại ít thỏa mãn hơn." },
+    { "id": "sunk-costs", "en": "sunk costs", "vi": "chi phí chìm", "giai_thich": "Chi phí đã bỏ ra trong quá khứ và không thể thu hồi; không nên để nó chi phối quyết định hiện tại." },
+    { "id": "ppf", "en": "production possibilities frontier (PPF)", "vi": "đường giới hạn khả năng sản xuất", "giai_thich": "Các tổ hợp hiệu quả của hai sản phẩm mà nền kinh tế sản xuất được với nguồn lực sẵn có." },
+    { "id": "slope", "en": "slope", "vi": "độ dốc", "giai_thich": "Mức thay đổi theo trục tung khi đi một đơn vị theo trục hoành; trên PPF nó thể hiện chi phí cơ hội." },
+    { "id": "diminishing-returns", "en": "law of diminishing returns", "vi": "quy luật lợi suất giảm dần", "giai_thich": "Liên tục thêm nguồn lực vào sản xuất một thứ thì phần lợi ích tăng thêm ngày càng nhỏ; vì thế PPF cong." },
+    { "id": "productive-efficiency", "en": "productive efficiency", "vi": "hiệu quả sản xuất", "giai_thich": "Không thể sản xuất thêm hàng này mà không giảm hàng khác — mọi điểm nằm trên PPF." },
+    { "id": "allocative-efficiency", "en": "allocative efficiency", "vi": "hiệu quả phân bổ", "giai_thich": "Cơ cấu hàng hóa được sản xuất đúng là cơ cấu xã hội mong muốn nhất." },
+    { "id": "comparative-advantage", "en": "comparative advantage", "vi": "lợi thế so sánh", "giai_thich": "Sản xuất được một hàng hóa với chi phí cơ hội thấp hơn nước (hoặc người) khác." },
+    { "id": "positive-statements", "en": "positive statements", "vi": "nhận định thực chứng", "giai_thich": "Mô tả thế giới như nó vốn là; kiểm chứng được bằng thực tế." },
+    { "id": "normative-statements", "en": "normative statements", "vi": "nhận định chuẩn tắc", "giai_thich": "Mô tả thế giới nên như thế nào; là vấn đề quan điểm." },
+    { "id": "invisible-hand", "en": "invisible hand", "vi": "bàn tay vô hình", "giai_thich": "Ý của Adam Smith: hành vi vì lợi ích bản thân của các cá nhân có thể dẫn đến kết quả tốt cho xã hội." }
+  ]
+}

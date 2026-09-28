@@ -1,0 +1,16 @@
+---
+// Một slide của bộ slide dịch (Vi mô): mỗi slide là một khối, giữ đúng số thứ tự
+// của bản gốc (product_design.md, mục 5.2). Tiêu đề slide viết bằng "## …" ngay
+// trước khối để hiện trong mục lục trang.
+// Dùng: <Slide so={5} tong={25}>…</Slide>
+interface Props {
+  so: number;
+  tong: number;
+}
+const { so, tong } = Astro.props;
+---
+
+<section class="slide" id={`slide-${so}`} data-slide={so} aria-label={`Slide ${so} trên ${tong}`}>
+  <p class="so-slide">Slide {so} / {tong}</p>
+  <slot />
+</section>

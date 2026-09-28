@@ -27,6 +27,8 @@ test('trò chơi ε–N: kéo ε, mốc N nhảy theo', async ({ page }) => {
   await page.goto('giai-tich/chuong-2/giang-day/bai-1/');
   const hinh = page.locator('[data-tro-choi-epsilon-n]');
   await hinh.scrollIntoViewIfNeeded();
+  // Chờ React gắn vào hình (client:visible): Astro gỡ thuộc tính ssr khi xong
+  await expect(page.locator('astro-island', { has: hinh })).not.toHaveAttribute('ssr', /.*/);
   const moc = hinh.locator('[data-moc-n]');
   // Mặc định ε = 0,25 → N = 17 (khớp nháp N > 1/ε² của Ví dụ A)
   await expect(moc).toHaveText('N = 17');

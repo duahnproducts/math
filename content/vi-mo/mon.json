@@ -7,7 +7,23 @@
   "giay_phep": "CC BY-NC-SA 4.0 — được đăng bản dịch nguyên văn, không thu phí, không quảng cáo, giữ ghi công.",
   "loai_sach": "dich-nguyen-van",
   "chuong": [
-    { "so": 2, "ten": "Lựa chọn trong thế giới khan hiếm", "ten_en": "Choice in a World of Scarcity", "ghi_chu": "Đã có slide dịch PDF, chưa chuyển lên web." },
+    {
+      "so": 2,
+      "ten": "Lựa chọn trong thế giới khan hiếm",
+      "ten_en": "Choice in a World of Scarcity",
+      "muc": [
+        { "so": "2.1", "ten": "Cách cá nhân đưa ra lựa chọn dựa trên giới hạn ngân sách" },
+        { "so": "2.2", "ten": "Đường giới hạn khả năng sản xuất và các lựa chọn xã hội" },
+        { "so": "2.3", "ten": "Đối diện những phản biện đối với cách tiếp cận kinh tế học" }
+      ],
+      "tai_ve": [
+        {
+          "ten": "Slide dịch Chương 2 (PDF, 25 slide)",
+          "tep": "vi-mo-chuong-2-slide.pdf",
+          "mo_ta": "Bộ slide bài giảng OpenStax dịch sang tiếng Việt, biểu đồ vẽ lại với nhãn tiếng Việt. Giấy phép CC BY-NC-SA 4.0."
+        }
+      ]
+    },
     { "so": 3, "ten": "Cung và cầu", "ten_en": "Demand and Supply", "ghi_chu": "Đã có slide dịch PDF, chưa chuyển lên web." },
     { "so": 5, "ten": "Độ co giãn", "ten_en": "Elasticity", "ghi_chu": "Đã có slide dịch PDF, chưa chuyển lên web." },
     { "so": 7, "ten": "Sản xuất, chi phí và cấu trúc ngành", "ten_en": "Production, Costs, and Industry Structure", "ghi_chu": "Đã có slide dịch PDF, chưa chuyển lên web." },
