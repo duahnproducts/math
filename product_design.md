@@ -241,9 +241,12 @@ thưởng.
 
 ## 12. Technical Architecture
 
+> Phương án công nghệ đã chốt nằm ở `docs/tech_stack.md`. Chỗ nào khác với mục
+> này thì theo file đó.
+
 ### Frontend
-- React, TypeScript, Vite — cùng bộ với `learner`, để dùng lại kinh nghiệm và
-  cách tổ chức test.
+- Astro, TypeScript; React chỉ dùng cho hình tương tác. Bên dưới Astro vẫn là
+  Vite, nên dùng lại được kinh nghiệm và cách tổ chức test của `learner`.
 - KaTeX hiển thị công thức.
 
 ### Nội dung
@@ -269,8 +272,8 @@ Version 1 không cần backend. Web là trang tĩnh.
 Supabase chỉ thêm vào khi làm tài khoản và nộp bài, dùng cùng cách của `learner`.
 
 ### Deployment
-GitHub → GitHub Pages hoặc Vercel. Web chạy 24/7, không phụ thuộc laptop bật hay
-tắt.
+GitHub Pages nếu repo công khai, Cloudflare gói miễn phí nếu repo riêng tư. Web
+chạy 24/7, không phụ thuộc laptop bật hay tắt.
 
 ---
 
