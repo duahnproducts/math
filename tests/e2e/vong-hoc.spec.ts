@@ -6,7 +6,9 @@ import { expect, test } from '@playwright/test';
 test('vòng học cốt lõi và nút Học tiếp', async ({ page }) => {
   // Mở web
   await page.goto('./');
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('Học chậm mà chắc');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Hochanh');
+  // Đầu trang không còn khẩu hiệu "từ con số 0"
+  await expect(page.getByText(/con số 0/)).toHaveCount(0);
 
   // Chọn Giải tích
   await page.getByRole('link', { name: /Giải tích/ }).first().click();
