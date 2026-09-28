@@ -1,0 +1,99 @@
+---
+// Home — Học tiếp, ba môn, tiến độ gần đây (product_design.md, mục 9).
+import Icon from '@/components/Icon.astro';
+import Khung from '@/layouts/Khung.astro';
+import { coNoiDung, khoaBaiTapCuaChuong, khoaDocCuaChuong, layCacChuong, layDanhSachMon } from '@/lib/du-lieu';
+import { taoDuongDan } from '@/lib/duong-dan';
+import { nhanLoaiSach } from '@/lib/noi-dung';
+import { khoaChuong } from '@/lib/tien-do';
+
+const d = taoDuongDan(import.meta.env.BASE_URL);
+const cacMon = await layDanhSachMon();
+const chuongTheoMon = await Promise.all(cacMon.map((m) => layCacChuong(m.id)));
+
+// Bản đồ chương có nội dung → để script vẽ tiến độ gần đây
+const banDo: Record<string, { ten: string; href: string; khoaDoc: string[]; khoaBaiTap: string[] }> = {};
+for (const ds of chuongTheoMon) {
+  for (const du of ds.filter(coNoiDung)) {
+    banDo[khoaChuong(du.mon.id, du.chuong.so)] = {
+      ten: `${du.mon.ten} · Chương ${du.chuong.so} — ${du.chuong.ten}`,
+      href: d.chuong(du.mon.id, du.chuong.so),
+      khoaDoc: khoaDocCuaChuong(du),
+      khoaBaiTap: khoaBaiTapCuaChuong(du),
+    };
+  }
+}
+const batDau = chuongTheoMon[0]?.find((du) => du.baiGiang.length > 0);
+const hrefBatDau = batDau ? d.baiGiang(batDau.mon.id, batDau.chuong.so, batDau.baiGiang[0].data.bai) : d.mon(cacMon[0].id);
+---
+
+<Khung tieuDe="Hochanh" moTa="Học giáo trình đại học bằng tiếng Việt: giảng dạy dễ hiểu, bám theo sách, bài tập có gợi ý theo tầng." tabDuoi="trang-chu">
+  <div class="trang-hep">
+    <header class="dau-trang">
+      <p class="nhan-tren">Web học theo giáo trình</p>
+      <h1>Học chậm mà chắc, từ con số 0</h1>
+      <p class="phu-de">
+        Mỗi chương có hai lối vào: <b>Giảng dạy</b> (dễ hiểu, có hình) và <b>bám theo sách</b> (đúng số hiệu để đối
+        chiếu). Bài tập có gợi ý theo tầng — tự làm trước, rồi mới mở.
+      </p>
+    </header>
+
+    <section class="hoc-tiep" data-hop-hoc-tiep aria-label="Học tiếp">
+      <div class="than">
+        <p class="nhan" data-hoc-tiep-nhan>Bắt đầu từ đây</p>
+        <p class="tieu-de" data-hoc-tiep-tieu-de>
+          {batDau ? `Bài ${batDau.baiGiang[0].data.bai}: ${batDau.baiGiang[0].data.tieu_de}` : 'Chọn một môn học'}
+        </p>
+        <p class="vi-tri" data-hoc-tiep-vi-tri>
+          {batDau ? `${batDau.mon.ten} › Chương ${batDau.chuong.so} — ${batDau.chuong.ten}` : ''}
+        </p>
+      </div>
+      <a class="nut chinh" href={hrefBatDau} data-hoc-tiep-link>
+        Học tiếp <Icon ten="arrow-right" co={16} />
+      </a>
+    </section>
+
+    <section class="phan" id="mon-hoc" aria-labelledby="tieu-de-mon">
+      <h2 id="tieu-de-mon">Môn học</h2>
+      <div class="luoi">
+        {
+          cacMon.map((m, i) => {
+            const ds = chuongTheoMon[i];
+            const soCo = ds.filter(coNoiDung).length;
+            const soBaiGiang = ds.reduce((t, du) => t + du.baiGiang.length, 0);
+            const soMuc = ds.reduce((t, du) => t + du.sach.length, 0);
+            const soBaiTap = ds.reduce((t, du) => t + du.baiTap.length, 0);
+            return (
+              <a class="card the-mon" href={d.mon(m.id)}>
+                <Icon ten={m.id === 'giai-tich' ? 'sigma' : m.id === 'dai-so' ? 'layers' : 'book-open'} co={24} />
+                <h3>{m.ten}</h3>
+                <p class="en">{m.ten_en}</p>
+                <p class="mo-ta">{m.mo_ta}</p>
+                <div class="cac-phan">
+                  <span class="pill nhan">
+                    {soCo}/{m.chuong.length} chương trên web
+                  </span>
+                  {soBaiGiang > 0 ? <span class="pill ok">{soBaiGiang} bài giảng</span> : <span class="pill mo">Chưa có bài giảng</span>}
+                  {soMuc > 0 ? (
+                    <span class="pill info">
+                      {soMuc} mục {nhanLoaiSach(m.loai_sach).toLowerCase()}
+                    </span>
+                  ) : (
+                    <span class="pill mo">Chưa có {nhanLoaiSach(m.loai_sach).toLowerCase()}</span>
+                  )}
+                  {soBaiTap > 0 && <span class="pill warn">{soBaiTap} bài tập</span>}
+                </div>
+              </a>
+            );
+          })
+        }
+      </div>
+    </section>
+
+    <section class="phan" data-chuong-gan-day={JSON.stringify(banDo)} aria-labelledby="tieu-de-gan-day">
+      <h2 id="tieu-de-gan-day">Tiến độ gần đây</h2>
+      <ul class="luoi" style="list-style:none;margin:0;padding:0"></ul>
+      <p class="rong" data-rong>Chưa có tiến độ. Học xong một bài thì bấm “Đánh dấu đã học” — tiến độ lưu ngay trên máy này.</p>
+    </section>
+  </div>
+</Khung>

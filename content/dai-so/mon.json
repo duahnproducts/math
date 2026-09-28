@@ -1,0 +1,38 @@
+{
+  "ten": "Đại số tuyến tính",
+  "ten_en": "Linear Algebra",
+  "thu_tu": 2,
+  "mo_ta": "Hệ phương trình, ma trận, định thức, không gian vector, biến đổi tuyến tính, tính trực giao.",
+  "giao_trinh": "W. Keith Nicholson, Linear Algebra with Applications, Version 2023 – Revision A, Lyryx Learning",
+  "giay_phep": "CC BY-NC-SA 4.0 — được đăng bản dịch nguyên văn, không thu phí, không quảng cáo, giữ ghi công.",
+  "loai_sach": "dich-nguyen-van",
+  "chuong": [
+    {
+      "so": 1,
+      "ten": "Hệ phương trình tuyến tính",
+      "ten_en": "Systems of Linear Equations",
+      "muc": [
+        { "so": "1.1", "ten": "Nghiệm và các phép biến đổi sơ cấp" },
+        { "so": "1.2", "ten": "Phép khử Gauss" },
+        { "so": "1.3", "ten": "Hệ phương trình thuần nhất" },
+        { "so": "1.4", "ten": "Ứng dụng: dòng chảy trong mạng" },
+        { "so": "1.5", "ten": "Ứng dụng: mạng điện" },
+        { "so": "1.6", "ten": "Ứng dụng: phản ứng hoá học" }
+      ],
+      "tai_ve": [
+        {
+          "ten": "Bản dịch Chương 1 (PDF)",
+          "tep": "dai-so-chuong-1-ban-dich.pdf",
+          "mo_ta": "Bản dịch đầy đủ Chương 1, kèm bài tập. Giấy phép CC BY-NC-SA 4.0."
+        }
+      ]
+    },
+    { "so": 2, "ten": "Đại số ma trận", "ten_en": "Matrix Algebra", "ghi_chu": "Đã có bản dịch PDF, chưa chuyển lên web." },
+    { "so": 3, "ten": "Định thức và chéo hoá", "ten_en": "Determinants and Diagonalization", "ghi_chu": "Đã có bản dịch PDF, chưa chuyển lên web." },
+    { "so": 4, "ten": "Hình học vector", "ten_en": "Vector Geometry", "ghi_chu": "Đã có bản dịch PDF, chưa chuyển lên web." },
+    { "so": 5, "ten": "Không gian vector Rⁿ", "ten_en": "Vector Space Rⁿ", "ghi_chu": "Đã có bản dịch PDF, chưa chuyển lên web." },
+    { "so": 6, "ten": "Không gian vector", "ten_en": "Vector Spaces", "ghi_chu": "Đã có bản dịch PDF, chưa chuyển lên web." },
+    { "so": 7, "ten": "Biến đổi tuyến tính", "ten_en": "Linear Transformations", "ghi_chu": "Đã có bản dịch PDF, chưa chuyển lên web." },
+    { "so": 8, "ten": "Tính trực giao", "ten_en": "Orthogonality", "ghi_chu": "Đã có bản dịch PDF, chưa chuyển lên web." }
+  ]
+}

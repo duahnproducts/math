@@ -1,0 +1,11 @@
+---
+// Bổ đề có (hoặc không) số hiệu: <BoDe so="1.2.3" ten="…">…</BoDe>
+import KhoiSo from './KhoiSo.astro';
+interface Props {
+  so?: string;
+  id?: string;
+  ten?: string;
+}
+---
+
+<KhoiSo loai="bo-de" {...Astro.props}><slot /></KhoiSo>

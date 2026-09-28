@@ -1,0 +1,37 @@
+---
+so: "1.2.1"
+muc: "1.2"
+do_kho: vua
+tieu_de: √3 vô tỉ; lập luận hỏng ở đâu với √4
+can_dung: ["dinh-ly-1.1.1"]
+---
+
+<De>
+(a) Chứng minh $\sqrt{3}$ vô tỉ. Lập luận tương tự có dùng được cho $\sqrt{6}$ không?
+
+(b) Chứng minh của Định lý 1.1.1 hỏng ở đâu nếu thử áp dụng cho $\sqrt{4}$?
+</De>
+
+<GoiY so={1}>
+Làm y hệt chứng minh $\sqrt{2}$ vô tỉ, nhưng thay “chẵn / lẻ” bằng “chia hết cho 3 / không chia hết cho 3”. Bạn sẽ cần một bổ đề nhỏ: $3 \mid p^2 \Rightarrow 3 \mid p$.
+</GoiY>
+
+<GoiY so={2}>
+Chứng minh bổ đề bằng cách xét hai trường hợp $p = 3k + 1$ và $p = 3k + 2$, tính $p^2$ rồi xem số dư khi chia cho 3. Với $\sqrt{6}$: từ $p^2 = 6q^2$ suy ra $p$ chẵn, đặt $p = 2r$ rồi xem $q$ phải chẵn hay lẻ.
+</GoiY>
+
+<LoiGiai>
+**(a)** Giả sử $\sqrt{3} = p/q$ với $p, q \in \mathbf{Z}$ tối giản. Khi đó $p^2 = 3q^2$.
+
+*Bổ đề cần thiết:* $3 \mid p^2 \Rightarrow 3 \mid p$. Thật vậy, nếu $3 \nmid p$ thì $p = 3k+1$ hoặc $p = 3k+2$, cho $p^2 = 9k^2 + 6k + 1$ hoặc $p^2 = 9k^2 + 12k + 4$; cả hai đều dư 1 khi chia cho 3.
+
+Vậy $3 \mid p$, viết $p = 3r$: $9r^2 = 3q^2 \Rightarrow q^2 = 3r^2 \Rightarrow 3 \mid q$. Mâu thuẫn với tính tối giản.
+
+Với $\sqrt{6}$: từ $p^2 = 6q^2$ ta có $2 \mid p^2$ nên $2 \mid p$; đặt $p = 2r$ được $4r^2 = 6q^2$, tức $2r^2 = 3q^2$. Vế trái chẵn nên $3q^2$ chẵn, mà 3 lẻ nên $q^2$ chẵn, suy ra $q$ chẵn. Mâu thuẫn. *Có*, lập luận dùng được.
+
+**(b)** Với $\sqrt{4}$: từ $p^2 = 4q^2$ suy ra $p$ chẵn, đặt $p = 2r$ được $4r^2 = 4q^2$, tức $r^2 = q^2$. Không có kết luận nào về tính chẵn lẻ của $q$ — mắt xích “$q$ cũng chẵn” đứt ngay tại đây, và đúng như vậy, vì $\sqrt{4} = 2$ là số hữu tỉ.
+</LoiGiai>
+
+<LoiHayMac>
+Nhiều bạn viết thẳng “$3 \mid p^2$ nên $3 \mid p$” mà không chứng minh. Tính chất này đúng vì 3 là *số nguyên tố*; nó *sai* với hợp số: $4 \mid 6^2$ nhưng $4 \nmid 6$. Đây chính là lý do phần (b) hỏng.
+</LoiHayMac>

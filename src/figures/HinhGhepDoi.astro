@@ -1,0 +1,32 @@
+---
+// Bài 5 — Ghép đôi N với tập số chẵn E: mỗi n ghép với 2n, không ai bị ghép chung, không ai bị sót.
+const cot = [1, 2, 3, 4, 5, 6, 7];
+const x = (i: number) => 60 + i * 62;
+---
+
+<figure class="hinh" aria-labelledby="hinh-ghep-doi-cap">
+  <svg viewBox="0 0 520 150" width="520" role="img" aria-label="Mỗi số tự nhiên n được nối với số chẵn 2n">
+    <text x="16" y="44" class="chu-nhan">N</text>
+    <text x="16" y="124" class="chu-nhan">E</text>
+    {
+      cot.map((n, i) => (
+        <g>
+          <circle cx={x(i)} cy="40" r="15" class="to-nhan-nhat" />
+          <text x={x(i)} y="45" text-anchor="middle" class="chu">
+            {n}
+          </text>
+          <line x1={x(i)} y1="57" x2={x(i)} y2="101" class="nhan-manh" stroke-width="1.5" />
+          <circle cx={x(i)} cy="120" r="15" class="to-nhan-nhat" />
+          <text x={x(i)} y="125" text-anchor="middle" class="chu">
+            {2 * n}
+          </text>
+        </g>
+      ))
+    }
+    <text x="496" y="45" class="chu-mo">…</text>
+    <text x="496" y="125" class="chu-mo">…</text>
+  </svg>
+  <figcaption id="hinh-ghep-doi-cap">
+    n ↔ 2n: một người một ghế, một ghế một người. Tập số chẵn có cùng lực lượng với N dù chỉ là một phần của N.
+  </figcaption>
+</figure>

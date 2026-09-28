@@ -142,6 +142,8 @@ export interface KhoiSo {
   so?: string;
   /** Mã khối — cũng là id của phần tử HTML để trỏ tới (#dinh-ly-1.4.3). */
   id: string;
+  /** Tên riêng nếu có, ví dụ "Tính chất Archimedes" */
+  ten?: string;
 }
 
 export function idKhoi(loai: string, so?: string, id?: string): string {
@@ -164,7 +166,7 @@ export function trichKhoiSo(mdx: string): KhoiSo[] {
     const so = docThuocTinh(m[2], 'so');
     const id = docThuocTinh(m[2], 'id');
     if (!so && !id) continue; // khối không số hiệu (ví dụ minh hoạ) không là đích liên kết
-    ketQua.push({ loai, so, id: idKhoi(loai, so, id) });
+    ketQua.push({ loai, so, id: idKhoi(loai, so, id), ten: docThuocTinh(m[2], 'ten') });
   }
   return ketQua;
 }
@@ -188,6 +190,34 @@ export function tenKhoi(ma: string, tenRieng?: string): string {
   const loai = TEN_LOAI_KHOI[p.loai] ?? p.loai;
   if (p.so) return tenRieng ? `${loai} ${p.so} (${tenRieng})` : `${loai} ${p.so}`;
   return tenRieng ?? loai;
+}
+
+// ---- liên kết và thuật ngữ viết trong nội dung ----
+
+export interface LienKetTrongBai {
+  muc?: string;
+  bai?: number;
+  baiTap?: string;
+}
+
+/** Các <XemMuc muc="1.3" /> · <XemMuc bai={2} /> · <XemMuc bai-tap="1.3.6" /> trong MDX. */
+export function trichXemMuc(mdx: string): LienKetTrongBai[] {
+  const ketQua: LienKetTrongBai[] = [];
+  for (const m of mdx.matchAll(/<XemMuc\b([^>]*)>/g)) {
+    const tt = m[1];
+    const muc = docThuocTinh(tt, 'muc');
+    const baiTap = /\bbai-tap\s*=\s*["']([^"']+)["']/.exec(tt)?.[1];
+    const bai = /\bbai\s*=\s*\{\s*(\d+)\s*\}/.exec(tt)?.[1];
+    if (muc) ketQua.push({ muc });
+    else if (baiTap) ketQua.push({ baiTap });
+    else if (bai) ketQua.push({ bai: Number(bai) });
+  }
+  return ketQua;
+}
+
+/** Các mã thuật ngữ dùng trong <ThuatNgu id="…">. */
+export function trichThuatNgu(mdx: string): string[] {
+  return [...mdx.matchAll(/<ThuatNgu\b[^>]*\bid\s*=\s*["']([^"']+)["']/g)].map((m) => m[1]);
 }
 
 // ---- liên kết chéo ----
@@ -300,6 +330,17 @@ export function kiemTraChuong(du: DuLieuChuong): string[] {
     for (const ma of bt.can_dung) {
       if (!phanTichCanDung(ma)) loi.push(`${bt.tep}: can_dung "${ma}" sai dạng`);
       else if (!maKhoi.has(ma)) loi.push(`${bt.tep}: can_dung "${ma}" không trỏ tới khối nào có thật`);
+    }
+  }
+
+  // Liên kết <XemMuc> trong mọi file của chương phải trỏ tới trang có thật
+  const soBaiGiang = new Set(du.baiGiang.map((b) => b.bai));
+  const cacTep = [...du.baiGiang, ...du.sach, ...du.baiTap];
+  for (const tep of cacTep) {
+    for (const lk of trichXemMuc(tep.noiDung)) {
+      if (lk.muc && !mucCoSach.has(lk.muc)) loi.push(`${tep.tep}: XemMuc tới §${lk.muc} chưa có trang`);
+      if (lk.bai && !soBaiGiang.has(lk.bai)) loi.push(`${tep.tep}: XemMuc tới Bài ${lk.bai} không có`);
+      if (lk.baiTap && !soBaiTap.has(lk.baiTap)) loi.push(`${tep.tep}: XemMuc tới bài tập ${lk.baiTap} không có`);
     }
   }
 

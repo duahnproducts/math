@@ -1,0 +1,26 @@
+---
+// Thanh tiến độ: số liệu nằm trong localStorage nên script điền vào sau khi tải trang.
+interface Props {
+  /** Các khoá cần đếm */
+  cacKhoa: string[];
+  /** 'doc' = đếm bài/mục đã đánh dấu học; 'bai-tap' = đếm bài tự đánh giá "Làm được" */
+  kieu: 'doc' | 'bai-tap';
+  nhan: string;
+}
+const { cacKhoa, kieu, nhan } = Astro.props;
+---
+
+<div class="tien-do" data-thanh-tien-do={kieu} data-cac-khoa={JSON.stringify(cacKhoa)}>
+  <span>{nhan}</span>
+  <span
+    class="ray"
+    role="progressbar"
+    aria-label={nhan}
+    aria-valuemin="0"
+    aria-valuemax={cacKhoa.length}
+    aria-valuenow="0"
+  >
+    <span style="--p: 0"></span>
+  </span>
+  <span data-so-lieu>0/{cacKhoa.length}</span>
+</div>

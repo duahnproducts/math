@@ -1,0 +1,39 @@
+---
+// Bài 3 — Trong thế giới phân số, các chặn trên của S = {r : r² < 2} cứ nhỏ dần mà không có cái nhỏ nhất.
+// Trục số từ 1,385 đến 1,445.
+const x = (v: number) => 30 + ((v - 1.385) / 0.06) * 440;
+const duoi = [1.39, 1.4, 1.41];
+const tren = [1.44, 1.43, 1.42, 1.416];
+const can2 = Math.SQRT2;
+---
+
+<figure class="hinh" aria-labelledby="hinh-lo-hong-cap">
+  <svg viewBox="0 0 500 170" width="500" role="img" aria-label="Trục số: phân số tiến sát căn 2 từ hai phía nhưng ở căn 2 là một lỗ hổng">
+    <line x1="20" y1="90" x2="480" y2="90" class="net" stroke-width="1.5"></line>
+    {
+      duoi.map((v) => (
+        <g>
+          <circle cx={x(v)} cy="90" r="4" class="ok" />
+          <text x={x(v)} y="118" text-anchor="middle" class="chu-mo">{v.toString().replace('.', ',')}</text>
+        </g>
+      ))
+    }
+    {
+      tren.map((v, i) => (
+        <g>
+          <circle cx={x(v)} cy="90" r="4" class="cam" />
+          <text x={x(v)} y={i % 2 === 0 ? 70 : 56} text-anchor="middle" class="chu-mo">
+            {v.toString().replace('.', ',')}
+          </text>
+        </g>
+      ))
+    }
+    <circle cx={x(can2)} cy="90" r="7" fill="var(--paper)" class="nhan-manh" stroke-width="2.5"></circle>
+    <text x={x(can2)} y="150" text-anchor="middle" class="chu-nhan">√2 — lỗ hổng trong Q</text>
+    <text x="30" y="30" class="chu-mo">● xanh: phân số có bình phương &lt; 2 (thuộc S)</text>
+    <text x="30" y="46" class="chu-mo">● cam: chặn trên là phân số — luôn có cái nhỏ hơn</text>
+  </svg>
+  <figcaption id="hinh-lo-hong-cap">
+    Hai phía đều chen sát tới √2, nhưng chỗ √2 đứng lại không có phân số nào. Số thực lấp đúng lỗ đó.
+  </figcaption>
+</figure>

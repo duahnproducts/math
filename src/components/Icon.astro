@@ -1,0 +1,76 @@
+---
+// Icon Lucide (giấy phép ISC), đóng gói cục bộ qua lucide-static — không dùng CDN.
+// Nét 1.75, màu currentColor (DESIGN_SPEC, mục 8).
+import {
+  ArrowLeft,
+  ArrowRight,
+  BookA,
+  BookOpen,
+  Check,
+  ChevronRight,
+  CircleCheck,
+  Download,
+  FileText,
+  GraduationCap,
+  House,
+  Languages,
+  Layers,
+  Library,
+  Lightbulb,
+  ListChecks,
+  Moon,
+  PencilLine,
+  RotateCcw,
+  Search,
+  Sigma,
+  Star,
+  Sun,
+  TriangleAlert,
+} from 'lucide-static';
+
+const BO_ICON = {
+  'arrow-left': ArrowLeft,
+  'arrow-right': ArrowRight,
+  'book-a': BookA,
+  'book-open': BookOpen,
+  check: Check,
+  'chevron-right': ChevronRight,
+  'circle-check': CircleCheck,
+  download: Download,
+  'file-text': FileText,
+  'graduation-cap': GraduationCap,
+  house: House,
+  languages: Languages,
+  layers: Layers,
+  library: Library,
+  lightbulb: Lightbulb,
+  'list-checks': ListChecks,
+  moon: Moon,
+  'pencil-line': PencilLine,
+  'rotate-ccw': RotateCcw,
+  search: Search,
+  sigma: Sigma,
+  star: Star,
+  sun: Sun,
+  'triangle-alert': TriangleAlert,
+} as const;
+
+export type TenIcon = keyof typeof BO_ICON;
+
+interface Props {
+  ten: TenIcon;
+  co?: number;
+  class?: string;
+}
+
+const { ten, co = 18, class: lop = '' } = Astro.props;
+const svg = BO_ICON[ten]
+  .replace(/<!--[\s\S]*?-->/g, '')
+  .replace(/class="[^"]*"/, `class="icon ${lop}"`)
+  .replace(/width="24"/, `width="${co}"`)
+  .replace(/height="24"/, `height="${co}"`)
+  .replace(/stroke-width="2"/, 'stroke-width="1.75"')
+  .replace('<svg', '<svg aria-hidden="true" focusable="false"');
+---
+
+<Fragment set:html={svg} />

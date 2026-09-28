@@ -1,0 +1,22 @@
+---
+// Mục lục bên cạnh của một trang đọc (8 mục của bài giảng, hoặc các phần của mục §).
+interface Props {
+  tieuDe: { depth: number; slug: string; text: string }[];
+}
+const cac = Astro.props.tieuDe.filter((h) => h.depth === 2);
+---
+
+{
+  cac.length > 1 && (
+    <nav class="muc-luc-trang" aria-label="Trong trang này" data-muc-luc-trang>
+      <h2>Trong trang này</h2>
+      <ol>
+        {cac.map((h) => (
+          <li>
+            <a href={`#${h.slug}`}>{h.text}</a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  )
+}

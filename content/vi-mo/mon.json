@@ -1,0 +1,16 @@
+{
+  "ten": "Kinh tế vi mô",
+  "ten_en": "Microeconomics",
+  "thu_tu": 3,
+  "mo_ta": "Khan hiếm và lựa chọn, cung cầu, độ co giãn, chi phí sản xuất, cạnh tranh hoàn hảo.",
+  "giao_trinh": "OpenStax, Principles of Microeconomics 3e (slide bài giảng)",
+  "giay_phep": "CC BY-NC-SA 4.0 — được đăng bản dịch nguyên văn, không thu phí, không quảng cáo, giữ ghi công.",
+  "loai_sach": "dich-nguyen-van",
+  "chuong": [
+    { "so": 2, "ten": "Lựa chọn trong thế giới khan hiếm", "ten_en": "Choice in a World of Scarcity", "ghi_chu": "Đã có slide dịch PDF, chưa chuyển lên web." },
+    { "so": 3, "ten": "Cung và cầu", "ten_en": "Demand and Supply", "ghi_chu": "Đã có slide dịch PDF, chưa chuyển lên web." },
+    { "so": 5, "ten": "Độ co giãn", "ten_en": "Elasticity", "ghi_chu": "Đã có slide dịch PDF, chưa chuyển lên web." },
+    { "so": 7, "ten": "Sản xuất, chi phí và cấu trúc ngành", "ten_en": "Production, Costs, and Industry Structure", "ghi_chu": "Đã có slide dịch PDF, chưa chuyển lên web." },
+    { "so": 8, "ten": "Cạnh tranh hoàn hảo", "ten_en": "Perfect Competition", "ghi_chu": "Đã có slide dịch PDF, chưa chuyển lên web." }
+  ]
+}

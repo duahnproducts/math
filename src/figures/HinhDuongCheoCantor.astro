@@ -1,0 +1,79 @@
+---
+// Bài 5 — Lập luận đường chéo: số mới khác dòng n ở chữ số thứ n.
+const bang = [
+  '5 1 4 1 5 9',
+  '3 2 7 0 8 1',
+  '9 9 2 4 0 6',
+  '1 0 0 0 0 2',
+  '7 3 2 8 6 3',
+  '0 5 5 1 9 2',
+].map((d) => d.split(' ').map(Number));
+const moi = bang.map((dong, i) => (dong[i] === 2 ? 3 : 2));
+---
+
+<figure class="hinh hinh-cantor" aria-labelledby="hinh-cantor-cap">
+  <table class="bang-cantor">
+    <caption class="an-di">Danh sách số thực giả định, đường chéo được tô đậm</caption>
+    <tbody>
+      {
+        bang.map((dong, i) => (
+          <tr>
+            <th scope="row">số thứ {i + 1}</th>
+            <td>0,</td>
+            {dong.map((c, j) => (
+              <td class={i === j ? 'cheo' : undefined}>{c}</td>
+            ))}
+            <td class="mo">…</td>
+          </tr>
+        ))
+      }
+      <tr class="dong-moi">
+        <th scope="row">số mới x</th>
+        <td>0,</td>
+        {moi.map((c) => <td>{c}</td>)}
+        <td class="mo">…</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption id="hinh-cantor-cap">
+    Chữ số thứ n của x: nếu chữ số đường chéo là 2 thì lấy 3, còn lại lấy 2. Vậy x khác mọi dòng — danh sách đã bỏ sót x.
+  </figcaption>
+</figure>
+
+<style>
+  .bang-cantor {
+    margin: 0 auto;
+    border-collapse: collapse;
+    font-family: var(--font-mono);
+    font-size: 15px;
+  }
+  .bang-cantor th {
+    padding: 4px 12px 4px 0;
+    font-family: var(--font-sans);
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--text-3);
+    text-align: right;
+  }
+  .bang-cantor td {
+    width: 26px;
+    height: 28px;
+    text-align: center;
+    color: var(--text-2);
+  }
+  .bang-cantor td.cheo {
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-weight: 700;
+    border-radius: 4px;
+  }
+  .bang-cantor td.mo {
+    color: var(--text-3);
+  }
+  .bang-cantor .dong-moi th,
+  .bang-cantor .dong-moi td {
+    border-top: 2px solid var(--accent-line);
+    color: var(--accent);
+    font-weight: 700;
+  }
+</style>

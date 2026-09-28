@@ -1,0 +1,43 @@
+---
+// Đại số §1.1 — Hai phương trình hai biến: cắt nhau / song song / trùng nhau (vẽ lại Hình 1.1.1).
+// Toạ độ: gốc ở giữa ô, 1 đơn vị = 18px.
+const O = 80;
+const k = 18;
+const p = (x: number, y: number) => `${O + x * k},${O - y * k}`;
+const doan = (f: (x: number) => number, a = -4, b = 4) => `${p(a, f(a))} ${p(b, f(b))}`;
+const cac = [
+  { tieuDe: '(a) Nghiệm duy nhất', pt: ['x − y = 1', 'x + y = 3'], duong: [(x: number) => x - 1, (x: number) => 3 - x], diem: [2, 1] },
+  { tieuDe: '(b) Vô nghiệm', pt: ['x + y = 4', 'x + y = 2'], duong: [(x: number) => 4 - x, (x: number) => 2 - x] },
+  { tieuDe: '(c) Vô số nghiệm', pt: ['3x − y = 4', '−6x + 2y = −8'], duong: [(x: number) => 3 * x - 4], trung: true },
+];
+---
+
+<figure class="hinh" aria-labelledby="hinh-ba-th-cap">
+  <svg viewBox="0 0 540 230" width="540" role="img" aria-label="Ba trường hợp của hai đường thẳng: cắt nhau, song song, trùng nhau">
+    {
+      cac.map((c, i) => (
+        <g transform={`translate(${i * 180 + 10}, 10)`}>
+          <clipPath id={`o-${i}`}>
+            <rect x="0" y="0" width="160" height="160" />
+          </clipPath>
+          <rect x="0" y="0" width="160" height="160" rx="8" fill="none" class="net-mo" stroke-width="1" />
+          <g clip-path={`url(#o-${i})`}>
+            <line x1="0" y1={O} x2="160" y2={O} class="net-mo" stroke-width="1" />
+            <line x1={O} y1="0" x2={O} y2="160" class="net-mo" stroke-width="1" />
+            {c.duong.map((f, j) => (
+              <polyline points={doan(f)} fill="none" class={j === 0 ? 'nhan-manh' : 'cam'} stroke-width={c.trung ? 5 : 2.5} opacity={c.trung ? 0.9 : 1} />
+            ))}
+            {c.trung && <polyline points={doan(c.duong[0])} fill="none" class="cam" stroke-width="2" stroke-dasharray="6 5" />}
+            {c.diem && <circle cx={O + c.diem[0] * k} cy={O - c.diem[1] * k} r="5" class="ok" />}
+          </g>
+          <text x="80" y="182" text-anchor="middle" class="chu">{c.tieuDe}</text>
+          <text x="80" y="200" text-anchor="middle" class="chu-mo">{c.pt[0]}</text>
+          <text x="80" y="216" text-anchor="middle" class="chu-mo">{c.pt[1]}</text>
+        </g>
+      ))
+    }
+  </svg>
+  <figcaption id="hinh-ba-th-cap">
+    Vẽ lại Hình 1.1.1: nghiệm của hệ là các điểm nằm trên cả hai đường thẳng.
+  </figcaption>
+</figure>

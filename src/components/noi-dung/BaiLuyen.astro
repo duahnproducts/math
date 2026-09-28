@@ -1,0 +1,15 @@
+---
+// Bài tự luyện ở mục 8 của bài giảng (dễ → vừa → khó).
+import { NHAN_DO_KHO, type DoKho } from '@/lib/noi-dung';
+interface Props {
+  do_kho: DoKho;
+  so: string;
+}
+const { do_kho, so } = Astro.props;
+const lop = { de: 'ok', vua: 'info', kho: 'warn' }[do_kho];
+---
+
+<div class="bai-luyen">
+  <p class="dau"><span class={`pill ${lop}`}>{NHAN_DO_KHO[do_kho]}</span> Bài {so}</p>
+  <slot />
+</div>

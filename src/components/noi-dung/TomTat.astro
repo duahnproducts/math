@@ -1,0 +1,9 @@
+---
+// Hộp tóm tắt / quy trình cần nhớ (màu nhấn).
+import Hop from './Hop.astro';
+interface Props {
+  tieuDe?: string;
+}
+---
+
+<Hop loai="tom-tat" tieuDe={Astro.props.tieuDe}><slot /></Hop>

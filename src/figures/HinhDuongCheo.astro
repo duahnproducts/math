@@ -1,0 +1,46 @@
+---
+// Bài 1 — Hình vuông cạnh 1 mét và đường chéo √2. Thước chia 1/10, 1/100 không có vạch nào trúng.
+---
+
+<figure class="hinh" aria-labelledby="hinh-duong-cheo-cap">
+  <svg viewBox="0 0 520 250" width="520" role="img" aria-label="Hình vuông cạnh 1 mét, đường chéo dài căn 2 mét">
+    <!-- hình vuông -->
+    <rect x="40" y="30" width="170" height="170" fill="none" class="net" stroke-width="2"></rect>
+    <line x1="40" y1="200" x2="210" y2="30" class="nhan-manh" stroke-width="3"></line>
+    <text x="125" y="222" text-anchor="middle" class="chu">1 mét</text>
+    <text x="30" y="120" text-anchor="end" class="chu">1 mét</text>
+    <text x="140" y="100" class="chu-nhan" transform="rotate(-45 140 100)">dài bao nhiêu?</text>
+
+    <!-- thước phóng to quanh 1,41 -->
+    <text x="260" y="44" class="chu-mo">Phóng to cái thước quanh đầu sợi dây:</text>
+    <line x1="260" y1="120" x2="500" y2="120" class="net" stroke-width="1.5"></line>
+    {
+      Array.from({ length: 11 }, (_, i) => (
+        <g>
+          <line
+            x1={260 + i * 24}
+            y1={i % 5 === 0 ? 102 : 110}
+            x2={260 + i * 24}
+            y2="120"
+            class="net-mo"
+            stroke-width="1.2"
+          />
+          {i % 5 === 0 && (
+            <text x={260 + i * 24} y="96" text-anchor="middle" class="chu-mo">
+              {['1,410', '1,415', '1,420'][i / 5]}
+            </text>
+          )}
+        </g>
+      ))
+    }
+    <!-- √2 ≈ 1,41421… nằm giữa vạch 1,414 và 1,415 -->
+    <line x1="361.1" y1="80" x2="361.1" y2="140" class="nhan-manh" stroke-width="2.5"></line>
+    <circle cx="361.1" cy="120" r="4" class="to-nhan"></circle>
+    <text x="361.1" y="160" text-anchor="middle" class="chu-nhan">√2 = 1,41421…</text>
+    <text x="380" y="200" text-anchor="middle" class="chu-mo">Chia nhỏ đến đâu, đầu dây vẫn rơi</text>
+    <text x="380" y="218" text-anchor="middle" class="chu-mo">vào giữa hai vạch.</text>
+  </svg>
+  <figcaption id="hinh-duong-cheo-cap">
+    Sợi dây có thật, nhưng không vạch chia nào của thước (phân số) trùng đúng đầu dây.
+  </figcaption>
+</figure>

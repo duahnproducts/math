@@ -1,0 +1,11 @@
+---
+// Định lý có (hoặc không) số hiệu: <DinhLy so="1.2.3" ten="…">…</DinhLy>
+import KhoiSo from './KhoiSo.astro';
+interface Props {
+  so?: string;
+  id?: string;
+  ten?: string;
+}
+---
+
+<KhoiSo loai="dinh-ly" {...Astro.props}><slot /></KhoiSo>

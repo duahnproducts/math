@@ -1,0 +1,18 @@
+---
+// Nút chuyển giao diện sáng/tối (docs/tech_stack.md, mục 12).
+// Nhãn và aria-pressed được script cập nhật theo giao diện hiện tại.
+import Icon from './Icon.astro';
+import { nhanNutGiaoDien } from '@/lib/giao-dien';
+---
+
+<button
+  type="button"
+  class="nut-icon nut-giao-dien"
+  data-nut-giao-dien
+  aria-pressed="false"
+  aria-label={nhanNutGiaoDien('sang')}
+  title={nhanNutGiaoDien('sang')}
+>
+  <span class="khi-sang"><Icon ten="moon" /></span>
+  <span class="khi-toi"><Icon ten="sun" /></span>
+</button>

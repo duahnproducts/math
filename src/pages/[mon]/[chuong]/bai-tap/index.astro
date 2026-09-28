@@ -1,0 +1,129 @@
+---
+// Bài tập — danh sách lọc theo § và độ khó (product_design.md, mục 9).
+import Icon from '@/components/Icon.astro';
+import Khung from '@/layouts/Khung.astro';
+import { baiTapCoHuongDan, coNoiDung, layCacChuong, layChuong, layDanhSachMon } from '@/lib/du-lieu';
+import { slugChuong, soChuongTuSlug, taoDuongDan } from '@/lib/duong-dan';
+import { NHAN_DO_KHO } from '@/lib/noi-dung';
+import { khoaBaiTap } from '@/lib/tien-do';
+
+export async function getStaticPaths() {
+  const paths = [];
+  for (const m of await layDanhSachMon()) {
+    for (const du of (await layCacChuong(m.id)).filter(coNoiDung)) {
+      paths.push({ params: { mon: m.id, chuong: slugChuong(du.chuong.so) } });
+    }
+  }
+  return paths;
+}
+
+const { mon, chuong: slug } = Astro.params;
+const du = await layChuong(mon, soChuongTuSlug(slug));
+const d = taoDuongDan(import.meta.env.BASE_URL);
+const so = du.chuong.so;
+const cacMuc = du.chuong.muc.filter((m) => du.baiTap.some((b) => b.data.muc === m.so));
+const coNenLam = du.baiTap.some((b) => b.data.nen_lam);
+---
+
+<Khung
+  tieuDe={`Bài tập Chương ${so}`}
+  moTa={`Bài tập ${du.mon.ten}, Chương ${so} — gợi ý theo tầng và tự đánh giá`}
+  duongDan={[
+    { ten: du.mon.ten, href: d.mon(mon) },
+    { ten: `Chương ${so}`, href: d.chuong(mon, so) },
+    { ten: 'Bài tập' },
+  ]}
+  chuong={du}
+  tabDuoi="bai-tap"
+>
+  <div class="trang-hep">
+    <header class="dau-trang">
+      <p class="nhan-tren">{du.mon.ten} · Chương {so}</p>
+      <h1>Bài tập trong sách</h1>
+      <p class="phu-de">
+        Số hiệu giữ đúng theo sách. Tự làm trước ít nhất 20 phút, rồi mới mở gợi ý từng tầng.
+      </p>
+    </header>
+
+    {
+      du.baiTap.length === 0 ? (
+        <p class="rong">Chương này chưa có bài tập trên web.</p>
+      ) : (
+        <>
+          <div class="bo-loc" data-bo-loc-bai-tap role="group" aria-label="Lọc bài tập">
+            <div class="hang">
+              <span class="nhan-loc">Mục</span>
+              <button type="button" class="nut nho" data-loc-muc="" aria-pressed="true">Tất cả</button>
+              {cacMuc.map((m) => (
+                <button type="button" class="nut nho" data-loc-muc={m.so} aria-pressed="false" title={m.ten}>
+                  §{m.so}
+                </button>
+              ))}
+            </div>
+            <div class="hang">
+              <span class="nhan-loc">Độ khó</span>
+              <button type="button" class="nut nho" data-loc-do-kho="" aria-pressed="true">Tất cả</button>
+              {(['de', 'vua', 'kho'] as const).map((k) => (
+                <button type="button" class="nut nho" data-loc-do-kho={k} aria-pressed="false">
+                  {NHAN_DO_KHO[k]}
+                </button>
+              ))}
+            </div>
+            <div class="hang">
+              <span class="nhan-loc">Chỉ hiện</span>
+              {coNenLam && (
+                <button type="button" class="nut nho" data-loc-nen-lam aria-pressed="false">
+                  <span class="sao">★</span> Nên làm
+                </button>
+              )}
+              <button type="button" class="nut nho" data-loc-lam-lai aria-pressed="false">
+                <Icon ten="rotate-ccw" co={14} /> Cần làm lại
+              </button>
+              <button type="button" class="nut nhe nho" data-loc-xoa>
+                Bỏ lọc
+              </button>
+              <span class="so-hieu" style="margin-left:auto" data-dem-ket-qua aria-live="polite">
+                {du.baiTap.length}/{du.baiTap.length} bài
+              </span>
+            </div>
+          </div>
+
+          <ul class="luoi" style="list-style:none;margin:0;padding:0">
+            {du.baiTap.map((b) => (
+              <li
+                data-the-bai-tap
+                data-muc={b.data.muc}
+                data-do-kho={b.data.do_kho}
+                data-nen-lam={String(b.data.nen_lam)}
+                data-ket-qua=""
+              >
+                <a class="card the-nho" href={d.baiTap(mon, so, b.data.so)}>
+                  <span class="dong">
+                    <span class="ten">Bài {b.data.so}</span>
+                    {b.data.nen_lam && (
+                      <span class="sao" title="Nên làm bằng mọi giá">
+                        ★
+                      </span>
+                    )}
+                    <span class="so-hieu">§{b.data.muc}</span>
+                    <span class={`pill ${b.data.do_kho === 'de' ? 'ok' : b.data.do_kho === 'vua' ? 'info' : 'warn'}`}>
+                      {NHAN_DO_KHO[b.data.do_kho]}
+                    </span>
+                  </span>
+                  {b.data.tieu_de && <span class="tom">{b.data.tieu_de}</span>}
+                  <span class="dong">
+                    {!baiTapCoHuongDan(b) && <span class="pill mo">Chưa có hướng dẫn</span>}
+                    <span data-trang-thai-bai-tap={khoaBaiTap(mon, so, b.data.so)} class="pill trang-thai-bt" />
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p class="rong" data-rong-loc hidden>
+            Không có bài nào khớp bộ lọc.
+          </p>
+        </>
+      )
+    }
+  </div>
+</Khung>

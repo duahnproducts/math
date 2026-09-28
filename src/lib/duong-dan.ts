@@ -1,6 +1,12 @@
 // Đường dẫn nội bộ. Web chạy dưới base '/math/' (docs/tech_stack.md, mục 9),
 // nên mọi link phải ghép với base qua các hàm ở đây.
 
+/** Một mắt xích trong đường dẫn Môn › Chương › Bài. */
+export interface MatXich {
+  ten: string;
+  href?: string;
+}
+
 /** '1.2.5' → '1-2-5' (dùng trong tên file và URL). */
 export function soSangSlug(so: string): string {
   return so.replaceAll('.', '-');
@@ -36,6 +42,19 @@ export function noi(base: string, ...doan: string[]): string {
 export function noiFile(base: string, ...doan: string[]): string {
   const duongDan = noi(base, ...doan);
   return duongDan.length > 1 ? duongDan.slice(0, -1) : duongDan;
+}
+
+/**
+ * Đọc môn và chương từ đường dẫn trang hiện tại.
+ * viTriTuUrl('/math/giai-tich/chuong-1/giang-day/bai-2/', '/math/') → { mon: 'giai-tich', chuong: 1 }
+ */
+export function viTriTuUrl(pathname: string, base: string): { mon: string; chuong: number } | null {
+  const goc = noi(base);
+  const duongDan = noi(pathname);
+  if (!duongDan.startsWith(goc)) return null;
+  const [mon, slug] = duongDan.slice(goc.length).split('/');
+  const chuong = soChuongTuSlug(slug ?? '');
+  return mon && !Number.isNaN(chuong) ? { mon, chuong } : null;
 }
 
 export function taoDuongDan(base: string) {

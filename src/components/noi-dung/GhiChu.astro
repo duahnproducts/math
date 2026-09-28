@@ -1,0 +1,10 @@
+---
+// Hộp ghi chú (xám).
+import Hop from './Hop.astro';
+interface Props {
+  tieuDe?: string;
+}
+const { tieuDe = 'Ghi chú' } = Astro.props;
+---
+
+<Hop loai="ghi-chu" tieuDe={tieuDe}><slot /></Hop>

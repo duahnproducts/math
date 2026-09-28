@@ -13,7 +13,9 @@ import {
   tenKhoi,
   timMucCuaKhoi,
   trichKhoiSo,
+  trichThuatNgu,
   trichTieuDeCap2,
+  trichXemMuc,
   type DuLieuChuong,
 } from './noi-dung';
 
@@ -63,10 +65,10 @@ describe('khối có số hiệu', () => {
 
   it('trích đúng loại, số và id', () => {
     expect(trichKhoiSo(mdx)).toEqual([
-      { loai: 'dinh-nghia', so: '1.3.2', id: 'dinh-nghia-1.3.2' },
+      { loai: 'dinh-nghia', so: '1.3.2', id: 'dinh-nghia-1.3.2', ten: 'Supremum' },
       { loai: 'dinh-ly', so: '1.4.3', id: 'dinh-ly-1.4.3' },
       { loai: 'bo-de', so: '1.3.8', id: 'bo-de-1.3.8' },
-      { loai: 'tien-de', so: undefined, id: 'tien-de-day-du' },
+      { loai: 'tien-de', so: undefined, id: 'tien-de-day-du', ten: 'Tiên đề Đầy đủ' },
     ]);
   });
 
@@ -93,6 +95,19 @@ describe('khối có số hiệu', () => {
     expect(coHuongDan('<De>…</De><GoiY so={1}>…</GoiY>')).toBe(true);
     expect(coHuongDan('<De>…</De><LoiGiai>…</LoiGiai>')).toBe(true);
     expect(coHuongDan('<De>chỉ có đề</De>')).toBe(false);
+  });
+});
+
+describe('liên kết và thuật ngữ trong bài', () => {
+  it('trích XemMuc theo mục, bài giảng, bài tập', () => {
+    const mdx = '<XemMuc muc="1.3" /> và <XemMuc bai={2} chu="x" /> rồi <XemMuc bai-tap="1.3.6" />';
+    expect(trichXemMuc(mdx)).toEqual([{ muc: '1.3' }, { bai: 2 }, { baiTap: '1.3.6' }]);
+  });
+  it('trích mã thuật ngữ', () => {
+    expect(trichThuatNgu('<ThuatNgu id="supremum">sup</ThuatNgu> <ThuatNgu en={false} id="field" />')).toEqual([
+      'supremum',
+      'field',
+    ]);
   });
 });
 

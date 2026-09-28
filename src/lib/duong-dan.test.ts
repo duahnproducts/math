@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { noi, noiFile, slugSangSo, soChuongTuSlug, soSangSlug, taoDuongDan } from './duong-dan';
+import { noi, noiFile, slugSangSo, soChuongTuSlug, soSangSlug, taoDuongDan, viTriTuUrl } from './duong-dan';
 
 describe('số hiệu ↔ slug', () => {
   it('đổi qua lại', () => {
@@ -28,6 +28,18 @@ describe('noi', () => {
   });
   it('file không có dấu / cuối', () => {
     expect(noiFile('/math/', 'tai-ve', 'a.pdf')).toBe('/math/tai-ve/a.pdf');
+  });
+});
+
+describe('viTriTuUrl', () => {
+  it('đọc môn và chương từ đường dẫn', () => {
+    expect(viTriTuUrl('/math/giai-tich/chuong-1/giang-day/bai-2/', '/math/')).toEqual({ mon: 'giai-tich', chuong: 1 });
+    expect(viTriTuUrl('/math/dai-so/chuong-3', '/math')).toEqual({ mon: 'dai-so', chuong: 3 });
+  });
+  it('trang không thuộc chương nào → null', () => {
+    expect(viTriTuUrl('/math/', '/math/')).toBeNull();
+    expect(viTriTuUrl('/math/thuat-ngu/', '/math/')).toBeNull();
+    expect(viTriTuUrl('/khac/giai-tich/chuong-1/', '/math/')).toBeNull();
   });
 });
 

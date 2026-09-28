@@ -1,0 +1,20 @@
+---
+// Khối có số hiệu (định nghĩa, định lý, ví dụ…). Là đích của liên kết chéo:
+// id của phần tử = mã trong `can_dung`, ví dụ #dinh-ly-1.4.3.
+import Hop from './Hop.astro';
+import { TEN_LOAI_KHOI, idKhoi } from '@/lib/noi-dung';
+
+interface Props {
+  loai: 'dinh-nghia' | 'dinh-ly' | 'bo-de' | 'he-qua' | 'tien-de' | 'vi-du';
+  so?: string;
+  id?: string;
+  ten?: string;
+}
+const { loai, so, id, ten } = Astro.props;
+const ma = so || id ? idKhoi(loai, so, id) : undefined;
+const tieuDe = so ? `${TEN_LOAI_KHOI[loai]} ${so}` : TEN_LOAI_KHOI[loai];
+---
+
+<Hop loai={loai} tieuDe={tieuDe} tenRieng={ten} id={ma}>
+  <slot />
+</Hop>

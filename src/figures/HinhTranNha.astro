@@ -1,0 +1,26 @@
+---
+// Bài 2 — Chặn trên là cái trần; sup là trần thấp nhất, chạm đỉnh đầu người cao nhất.
+const cao = [70, 104, 92, 128, 60, 116];
+const day = 190;
+const caoNhat = Math.max(...cao);
+---
+
+<figure class="hinh" aria-labelledby="hinh-tran-nha-cap">
+  <svg viewBox="0 0 480 220" width="480" role="img" aria-label="Các cột chiều cao và ba cái trần; trần thấp nhất chạm cột cao nhất là sup">
+    <line x1="40" y1="30" x2="380" y2="30" class="net-mo" stroke-width="1.5" stroke-dasharray="5 4"></line>
+    <text x="390" y="34" class="chu-mo">trần 5 m</text>
+    <line x1="40" y1="48" x2="380" y2="48" class="net-mo" stroke-width="1.5" stroke-dasharray="5 4"></line>
+    <text x="390" y="52" class="chu-mo">trần 4 m</text>
+    <line x1="40" y1={day - caoNhat} x2="380" y2={day - caoNhat} class="nhan-manh" stroke-width="2.5"></line>
+    <text x="390" y={day - caoNhat + 4} class="chu-nhan">sup</text>
+    {
+      cao.map((h, i) => (
+        <rect x={62 + i * 54} y={day - h} width="20" height={h} rx="3" class={h === caoNhat ? 'to-nhan' : 'to-nhan-nhat'} />
+      ))
+    }
+    <line x1="40" y1={day} x2="380" y2={day} class="net" stroke-width="1.5"></line>
+  </svg>
+  <figcaption id="hinh-tran-nha-cap">
+    Có vô số cái trần (chặn trên). Sup là cái trần <b>thấp nhất</b>: hạ thêm một chút là có người đụng đầu.
+  </figcaption>
+</figure>

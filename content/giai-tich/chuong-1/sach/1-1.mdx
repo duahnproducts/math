@@ -1,0 +1,54 @@
+---
+mon: giai-tich
+chuong: 1
+muc: "1.1"
+tieu_de: Tính vô tỉ của √2
+tieu_de_en: "Discussion: The Irrationality of √2"
+loai: theo-sach
+nguon: "Theo cấu trúc §1.1 của Stephen Abbott, Understanding Analysis, 2nd ed., Springer, 2015. Phát biểu được diễn đạt lại bằng tiếng Việt, dàn ý chứng minh tự viết — không phải bản dịch nguyên văn."
+---
+
+## Bối cảnh: vì sao phải xây dựng lại tập số thực?
+
+Ở vi tích phân (*calculus*) bạn **tính**: đạo hàm, tích phân, giới hạn. Ở <ThuatNgu id="real-analysis">giải tích thực</ThuatNgu> bạn **chứng minh** rằng những phép tính đó hợp lệ — và để chứng minh được, phải biết chính xác tập số thực $\mathbf{R}$ là gì.
+
+Cả Chương 1 phục vụ một mục tiêu: tìm ra tính chất phân biệt $\mathbf{R}$ với $\mathbf{Q}$. Tính chất đó là **tính đầy đủ** (*completeness*).
+
+<GhiChu tieuDe="Mạch logic của cả chương">
+$\sqrt{2} \notin \mathbf{Q}$ (§1.1) ⇒ $\mathbf{Q}$ có “lỗ hổng” ⇒ cần một tiên đề lấp lỗ: Tiên đề Đầy đủ (§1.3) ⇒ từ đó suy ra Archimedes, tính trù mật của $\mathbf{Q}$, sự tồn tại của $\sqrt{2}$, tính chất đoạn lồng nhau (§1.4) ⇒ dùng đoạn lồng nhau chứng minh $\mathbf{R}$ không đếm được (§1.5) ⇒ tổng quát hoá thành Định lý Cantor (§1.6).
+</GhiChu>
+
+## Phát biểu
+
+<DinhLy so="1.1.1" ten="Tính vô tỉ của √2">
+Không có số hữu tỉ nào có bình phương bằng 2.
+</DinhLy>
+
+## Dàn ý chứng minh (phản chứng)
+
+1. Giả sử có $p, q \in \mathbf{Z}$ với $(p/q)^2 = 2$. Rút gọn về dạng **tối giản** — đây là bước quyết định, vì mâu thuẫn sẽ nằm đúng ở chữ “tối giản”.
+2. Từ $p^2 = 2q^2$ suy ra $p^2$ chẵn, kéo theo $p$ chẵn (vì bình phương số lẻ là số lẻ).
+3. Viết $p = 2r$, thay vào: $4r^2 = 2q^2$ nên $q^2 = 2r^2$, tức $q$ cũng chẵn.
+4. $p$ và $q$ cùng chia hết cho 2 — mâu thuẫn với giả thiết tối giản. ∎
+
+<Loi tieuDe="Bẫy thường gặp">
+Bước “$p^2$ chẵn ⇒ $p$ chẵn” **cần lập luận**, không được coi là hiển nhiên. Cách nhanh nhất: nếu $p = 2k + 1$ thì $p^2 = 4k^2 + 4k + 1$ là số lẻ.
+
+Lập luận này có chứng minh được $\sqrt{4}$ vô tỉ không? Không — và phải chỉ ra chính xác bước nào hỏng (đó là <XemMuc bai-tap="1.2.1" chu="Bài tập 1.2.1(b)" />).
+</Loi>
+
+## Ý nghĩa: trù mật mà vẫn thủng lỗ
+
+Người Hy Lạp cổ tin rằng tỉ số độ dài của hai đoạn thẳng luôn là số hữu tỉ. Đường chéo hình vuông cạnh 1 phá vỡ niềm tin đó. Cách hiện đại để xử lý là **mở rộng khái niệm số**:
+
+$$
+\mathbf{N} \subseteq \mathbf{Z} \subseteq \mathbf{Q} \subseteq \mathbf{R}.
+$$
+
+- $\mathbf{N} = \{1, 2, 3, \ldots\}$: cộng được, nhưng không trừ được.
+- $\mathbf{Z}$: thêm $0$ và số đối ⇒ trừ được.
+- $\mathbf{Q}$: thêm số nghịch đảo ⇒ chia được. $\mathbf{Q}$ là một <ThuatNgu id="field">trường</ThuatNgu>, hơn nữa là <ThuatNgu id="ordered-field">trường có thứ tự</ThuatNgu>.
+
+<TomTat tieuDe="Điểm mấu chốt">
+Giữa hai số hữu tỉ bất kỳ luôn có số hữu tỉ khác (lấy trung bình cộng). $\mathbf{Q}$ **trù mật** mà vẫn **thủng lỗ**: ta xấp xỉ $\sqrt{2}$ bằng số hữu tỉ tốt tuỳ ý, nhưng cái đích lại không nằm trong $\mathbf{Q}$. Trù mật không có nghĩa là đầy đủ.
+</TomTat>

@@ -1,0 +1,11 @@
+---
+// Định nghĩa có (hoặc không) số hiệu: <DinhNghia so="1.2.3" ten="…">…</DinhNghia>
+import KhoiSo from './KhoiSo.astro';
+interface Props {
+  so?: string;
+  id?: string;
+  ten?: string;
+}
+---
+
+<KhoiSo loai="dinh-nghia" {...Astro.props}><slot /></KhoiSo>

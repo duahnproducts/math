@@ -1,0 +1,32 @@
+---
+// Thuật ngữ trong bài: in đậm, kèm tiếng Anh; chạm/rê chuột để xem nghĩa lấy từ
+// bảng thuật ngữ của môn (product_design.md, mục 5.2).
+// Dùng: <ThuatNgu id="supremum">cận trên nhỏ nhất</ThuatNgu>
+import { getCollection } from 'astro:content';
+import { viTriTuUrl } from '@/lib/duong-dan';
+
+interface Props {
+  id: string;
+  /** Ẩn phần "(tiếng Anh)" khi câu đã nhắc tiếng Anh rồi */
+  en?: boolean;
+}
+const { id, en = true } = Astro.props;
+const viTri = viTriTuUrl(Astro.url.pathname, import.meta.env.BASE_URL);
+const cacBang = await getCollection('thuatNgu');
+// Ưu tiên bảng của môn đang học, sau đó tìm ở các môn khác
+const cuaMonNay = (b: (typeof cacBang)[number]) => (viTri && b.id.startsWith(`${viTri.mon}/`) ? 0 : 1);
+const bangUuTien = [...cacBang].sort((a, b) => cuaMonNay(a) - cuaMonNay(b));
+const tn = bangUuTien.flatMap((b) => b.data.thuat_ngu).find((t) => t.id === id);
+if (!tn) throw new Error(`Thuật ngữ "${id}" chưa có trong bảng thuật ngữ`);
+const maBong = `tn-${id}-${Math.random().toString(36).slice(2, 8)}`;
+const coChu = Astro.slots.has('default');
+---
+
+<span class="thuat-ngu" data-thuat-ngu>
+  <button type="button" aria-describedby={maBong}>{coChu ? <slot /> : tn.vi}</button>{
+    en && <span class="en"> ({tn.en})</span>
+  }<span class="bong" role="tooltip" id={maBong}>
+    <b>{tn.vi} — <i>{tn.en}</i></b>
+    {tn.giai_thich}
+  </span>
+</span>

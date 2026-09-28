@@ -1,0 +1,13 @@
+---
+// Gợi ý theo tầng: 1 = hướng đi, 2 = bước then chốt. Mở dần từng tầng (script bai-tap.ts).
+interface Props {
+  so: 1 | 2;
+}
+const { so } = Astro.props;
+const phu = so === 1 ? 'hướng đi' : 'bước then chốt';
+---
+
+<details class="tang goi-y" data-tang={`goi-y-${so}`}>
+  <summary>Gợi ý {so} <span class="phu">— {phu}</span></summary>
+  <div class="ruot van-ban"><slot /></div>
+</details>

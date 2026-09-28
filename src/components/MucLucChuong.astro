@@ -1,0 +1,94 @@
+---
+// Mục lục của chương đang học — thanh bên trái trên laptop (product_design.md, mục 9).
+import type { DuLieuChuongWeb } from '@/lib/du-lieu';
+import { taoDuongDan } from '@/lib/duong-dan';
+import { nhanLoaiSach } from '@/lib/noi-dung';
+import { khoaBaiGiang, khoaSach } from '@/lib/tien-do';
+
+interface Props {
+  du: DuLieuChuongWeb;
+  /** href của trang đang mở, để tô đậm */
+  hienTai: string;
+}
+const { du, hienTai } = Astro.props;
+const d = taoDuongDan(import.meta.env.BASE_URL);
+const mon = du.mon.id;
+const so = du.chuong.so;
+const mucCoTrang = new Set(du.sach.map((s) => s.data.muc));
+const tenSach = nhanLoaiSach(du.loaiSach);
+const hrefChuong = d.chuong(mon, so);
+const hrefBaiTap = d.dsBaiTap(mon, so);
+---
+
+<nav class="muc-luc-chuong" aria-label={`Mục lục Chương ${so}`}>
+  <h2>
+    <a href={hrefChuong} aria-current={hienTai === hrefChuong ? 'page' : undefined}>
+      Chương {so} — {du.chuong.ten}
+    </a>
+  </h2>
+  <p class="phu">{du.mon.ten}</p>
+
+  <h3>Giảng dạy</h3>
+  {
+    du.baiGiang.length === 0 ? (
+      <span class="chua-co">Chưa có bài giảng</span>
+    ) : (
+      <ul>
+        {du.baiGiang.map((b) => {
+          const href = d.baiGiang(mon, so, b.data.bai);
+          return (
+            <li>
+              <a
+                href={href}
+                aria-current={hienTai === href ? 'page' : undefined}
+                data-khoa-da-hoc={khoaBaiGiang(mon, so, b.data.bai)}
+              >
+                <span class="so">Bài {b.data.bai}</span>
+                <span>{b.data.tieu_de}</span>
+                <span class="dau-da-hoc" aria-label="đã học">✓</span>
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    )
+  }
+
+  <h3>{tenSach}</h3>
+  <ul>
+    {
+      du.chuong.muc.map((m) => {
+        if (!mucCoTrang.has(m.so)) {
+          return (
+            <li>
+              <span class="chua-co" title="Chưa có trên web">
+                <span class="so">§{m.so}</span>
+                <span>{m.ten}</span>
+              </span>
+            </li>
+          );
+        }
+        const href = d.sach(mon, so, m.so);
+        return (
+          <li>
+            <a href={href} aria-current={hienTai === href ? 'page' : undefined} data-khoa-da-hoc={khoaSach(mon, so, m.so)}>
+              <span class="so">§{m.so}</span>
+              <span>{m.ten}</span>
+              <span class="dau-da-hoc" aria-label="đã học">✓</span>
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+
+  <h3>Bài tập</h3>
+  <ul>
+    <li>
+      <a href={hrefBaiTap} aria-current={hienTai.startsWith(hrefBaiTap) ? 'page' : undefined}>
+        <span class="so">{du.baiTap.length}</span>
+        <span>Bài tập trong sách</span>
+      </a>
+    </li>
+  </ul>
+</nav>

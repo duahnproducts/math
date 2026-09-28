@@ -1,0 +1,9 @@
+---
+// Lỗi dễ mắc (đỏ): chỉ rõ sai ở đâu và vì sao sai.
+import Hop from './Hop.astro';
+interface Props {
+  tieuDe: string;
+}
+---
+
+<Hop loai="loi" tieuDe={Astro.props.tieuDe}><slot /></Hop>

@@ -1,0 +1,11 @@
+---
+// Ví dụ có (hoặc không) số hiệu: <ViDu so="1.2.3" ten="…">…</ViDu>
+import KhoiSo from './KhoiSo.astro';
+interface Props {
+  so?: string;
+  id?: string;
+  ten?: string;
+}
+---
+
+<KhoiSo loai="vi-du" {...Astro.props}><slot /></KhoiSo>

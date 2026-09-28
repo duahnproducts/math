@@ -1,0 +1,184 @@
+---
+mon: giai-tich
+chuong: 1
+bai: 1
+tieu_de: Vì sao phân số không đủ?
+y_tuong: Có những độ dài có thật mà không viết được thành phân số.
+phu_muc: ["1.1"]
+---
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+Có những độ dài **có thật** mà **không** viết được thành phân số.
+</YTuong>
+
+## Hình dung trực quan
+
+Bạn có một mảnh đất **hình vuông, mỗi cạnh 1 mét**. Bạn muốn căng một sợi dây theo **đường chéo**, từ góc này sang góc kia.
+
+**Câu hỏi:** sợi dây đó dài bao nhiêu mét?
+
+<HinhDuongCheo />
+
+Hai sự thật va vào nhau:
+
+- Sợi dây **có thật**. Bạn cầm được nó. Bạn đo được nó. Nó nằm ngay đó.
+- Nhưng dù bạn chia mét thành 10 phần, 100 phần, 1 triệu phần… **không phần nào chia đúng** sợi dây đó.
+
+Nói cách khác: cái thước của bạn — dù chia nhỏ đến đâu — **không bao giờ đo đúng** sợi dây này.
+
+<GhiChu tieuDe="Chuyện 2500 năm trước">
+Đây là phát hiện làm người Hy Lạp cổ sốc nặng. Họ tin chắc mọi độ dài đều đo được bằng phân số. Sợi dây này chứng minh họ sai.
+</GhiChu>
+
+## Kiến thức cần biết
+
+Chỉ cần bốn thứ. Đọc kỹ, vì lát nữa ta dùng cả bốn.
+
+### a) Số hữu tỉ là gì?
+
+Là số viết được dạng phân số $\dfrac{p}{q}$, với $p$ và $q$ là số nguyên ($q \neq 0$).
+
+Ví dụ: $\dfrac{3}{4}$, $\dfrac{-7}{2}$, và cả số $5$ nữa (vì $5 = \dfrac{5}{1}$). Ký hiệu tập các <ThuatNgu id="rational-numbers">số hữu tỉ</ThuatNgu>: $\mathbf{Q}$.
+
+### b) Phân số tối giản
+
+Là phân số đã rút gọn hết mức. $\dfrac{6}{8}$ chưa tối giản; rút gọn thành $\dfrac{3}{4}$ mới tối giản.
+
+<TomTat tieuDe="Điều quan trọng nhất cần nhớ">
+Ở dạng tối giản, **tử và mẫu KHÔNG cùng chia hết cho 2**. (Vì nếu cùng chẵn, ta đã rút gọn tiếp được rồi.)
+</TomTat>
+
+### c) Bình phương số lẻ luôn là số lẻ
+
+Thử xem: $3 \times 3 = 9$, $5 \times 5 = 25$, $7 \times 7 = 49$, $11 \times 11 = 121$. Tất cả đều lẻ.
+
+<TomTat tieuDe="Lật ngược lại — và đây là dạng ta sẽ dùng">
+**Nếu $p^2$ là số chẵn, thì $p$ bắt buộc phải chẵn.**
+
+Vì sao? Nếu $p$ lẻ thì $p^2$ phải lẻ. Mà $p^2$ đang chẵn. Vậy $p$ không thể lẻ.
+</TomTat>
+
+### d) Chứng minh phản chứng là gì?
+
+Giống cách một thám tử suy luận:
+
+> “Giả sử ông ta vô tội. Nếu vô tội thì lúc 8 giờ ông phải ở nhà. Nhưng camera quay được ông đang ở ngoài đường lúc 8 giờ. Vô lý. Vậy ông ta không vô tội.”
+
+Trong toán học, <ThuatNgu id="proof-by-contradiction">chứng minh phản chứng</ThuatNgu> đi đúng ba bước:
+
+**Giả sử điều cần chứng minh là SAI → Tìm ra điều vô lý → Vậy nó phải ĐÚNG.**
+
+## Công thức
+
+Sợi dây dài bao nhiêu? Dùng định lý Pythagoras cho tam giác vuông có hai cạnh đều bằng 1:
+
+$$
+d^2 = 1^2 + 1^2 = 2
+$$
+
+Giải thích từng ký hiệu:
+
+| Ký hiệu | Nghĩa |
+| --- | --- |
+| $d$ | độ dài đường chéo, tính bằng mét — cái ta muốn tìm |
+| $d^2$ | $d$ nhân với chính nó |
+| $1^2$ | độ dài một cạnh nhân với chính nó, bằng 1 |
+| $\sqrt{2}$ | *tên gọi* của cái số mà bình phương lên bằng 2 |
+
+Vậy $d = \sqrt{2}$. Bây giờ đến câu hỏi chính:
+
+<DinhLy ten="Điều cần chứng minh">
+**Không có phân số nào bình phương bằng 2.**
+</DinhLy>
+
+## Ví dụ mẫu — chứng minh từng bước
+
+#### Bước 1 — Đề cho gì?
+
+Ta có số $\sqrt{2}$, tức là số thoả mãn $(\sqrt{2})^2 = 2$.
+
+#### Bước 2 — Đề hỏi gì?
+
+Nó có viết được thành phân số không?
+
+#### Bước 3 — Dùng kiến thức nào, và tại sao?
+
+Dùng **phản chứng**. *Tại sao?* Vì chứng minh trực tiếp “không tồn tại” rất khó — ta phải kiểm tra vô hạn phân số, kiểm tra đến bao giờ mới hết? Còn phản chứng chỉ cần tìm ra **một** mâu thuẫn là xong.
+
+#### Bước 4 — Giải từng bước
+
+**Giả sử** có phân số $\dfrac{p}{q}$ *đã tối giản* với $\left(\dfrac{p}{q}\right)^2 = 2$.
+
+1. Nhân chéo hai vế: $p^2 = 2q^2$.
+2. Nhìn vế phải: nó có dạng $2 \times (\text{cái gì đó})$ ⇒ **$p^2$ là số chẵn**.
+3. Mà bình phương số lẻ thì lẻ (mục c ở trên) ⇒ **$p$ phải chẵn**.
+4. $p$ chẵn nghĩa là viết được $p = 2r$ với $r$ nguyên. Thay vào bước 1: $(2r)^2 = 2q^2 \implies 4r^2 = 2q^2 \implies q^2 = 2r^2$.
+5. Nhìn lại: $q^2$ cũng có dạng $2 \times (\text{cái gì đó})$ ⇒ $q^2$ chẵn ⇒ **$q$ cũng chẵn**.
+6. **MÂU THUẪN!** Ta vừa chứng minh *cả $p$ lẫn $q$ đều chẵn* — cả hai cùng chia hết cho 2. Nhưng ngay từ đầu ta đã nói $\dfrac{p}{q}$ *tối giản*, mà tối giản thì tử và mẫu không thể cùng chia hết cho 2.
+
+#### Bước 5 — Kiểm tra kết quả
+
+Mâu thuẫn đến từ đâu? Rà lại: mọi bước từ 1 đến 5 đều là phép tính đúng. Chỗ duy nhất có thể sai là **giả thiết ban đầu**. Vậy giả thiết sai.
+
+**Kết luận: không tồn tại phân số nào bình phương bằng 2.** ∎
+
+#### Bước 6 — Tóm tắt cách làm để tự áp dụng
+
+<TomTat>
+Giả sử có $\dfrac{p}{q}$ tối giản → ép ra $p$ chẵn → thay $p = 2r$ → ép ra $q$ chẵn → mâu thuẫn với “tối giản”.
+</TomTat>
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Lỗi 1: Nghĩ rằng 1,41421356 chính là √2">
+Bấm máy tính mà xem: $1{,}41421356^2 = 1{,}9999999\ldots$ — *không* bằng 2. Máy tính chỉ cho số *gần đúng*. Càng thêm chữ số càng gần, nhưng **không bao giờ đúng**. Đó chính là ý nghĩa của định lý ta vừa chứng minh.
+</Loi>
+
+<Loi tieuDe="Lỗi 2: Bỏ qua lời giải thích ở bước 3">
+Nhiều bạn viết thẳng “$p^2$ chẵn nên $p$ chẵn” mà không nói lý do. Phải giải thích rõ: *vì bình phương của số lẻ luôn là số lẻ*. Đi thi bỏ bước này là mất điểm.
+</Loi>
+
+<Loi tieuDe="Lỗi 3: Tưởng cách này chứng minh được mọi căn đều không phải phân số">
+Thử áp dụng y hệt cho $\sqrt{4}$:
+
+$$
+p^2 = 4q^2 \Rightarrow p \text{ chẵn} \Rightarrow p = 2r \Rightarrow 4r^2 = 4q^2 \Rightarrow r^2 = q^2
+$$
+
+**Dừng lại!** Từ $r^2 = q^2$ ta *không* suy ra được $q$ chẵn. Không có mâu thuẫn. Và đúng vậy: $\sqrt{4} = 2$, một số hữu tỉ bình thường.
+</Loi>
+
+## Tóm tắt 30 giây
+
+- Hình vuông cạnh 1 → đường chéo dài $\sqrt{2}$.
+- $\sqrt{2}$ **có thật** (đo được, cầm được) nhưng **không phải phân số**.
+- Cách chứng minh: giả sử là phân số tối giản → ép ra cả tử lẫn mẫu đều chẵn → vô lý.
+- **Ý nghĩa lớn:** tập số hữu tỉ $\mathbf{Q}$ **có lỗ hổng**. Ta cần tập số lớn hơn để lấp lỗ — gọi là <ThuatNgu id="real-numbers">tập số thực</ThuatNgu> $\mathbf{R}$.
+
+<BaGoc>
+  <Goc ten="Hiểu">Phân số không đủ để đo mọi độ dài. Đường số của phân số bị thủng lỗ.</Goc>
+  <Goc ten="Nhớ">$p^2$ chẵn ⇒ $p$ chẵn. Tối giản ⇒ tử và mẫu không cùng chẵn.</Goc>
+  <Goc ten="Làm">Quy trình 6 bước phản chứng ở mục Ví dụ mẫu.</Goc>
+</BaGoc>
+
+## Bài tập
+
+<BaiLuyen do_kho="de" so="1.1">
+Bình phương 5 số lẻ bất kỳ lớn hơn 10. Kết quả có luôn lẻ không? Rồi giải thích *tại sao* điều đó *luôn* đúng, chứ không chỉ với 5 số bạn thử.
+
+<GoiYNho>Mọi số lẻ viết được dạng $2k + 1$. Thử khai triển $(2k+1)^2$.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="1.2">
+Chứng minh $\sqrt{3}$ **không phải phân số**. Làm y hệt bài mẫu, nhưng thay “chẵn / lẻ” bằng “chia hết cho 3 / không chia hết cho 3”.
+
+<GoiYNho tieuDe="Bạn sẽ cần">Nếu $p^2$ chia hết cho 3 thì $p$ chia hết cho 3. Tự kiểm tra bằng cách xét $p = 3k + 1$ và $p = 3k + 2$. Bài này chính là <XemMuc bai-tap="1.2.1" chu="Bài 1.2.1 trong sách" />.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="1.3">
+Một bạn nói: *“Tớ chứng minh được $\sqrt{9}$ không phải phân số! Giả sử $\sqrt{9} = \dfrac{p}{q}$ tối giản, thì $p^2 = 9q^2$, nên $p^2$ chia hết cho 9, nên $p$ chia hết cho 9…”*
+
+Nhưng $\sqrt{9} = 3 = \dfrac{3}{1}$. **Bạn ấy sai ở đâu?** Chỉ ra chính xác bước hỏng.
+</BaiLuyen>

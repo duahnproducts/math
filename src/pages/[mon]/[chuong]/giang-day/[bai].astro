@@ -1,0 +1,146 @@
+---
+// Bài giảng — 8 mục, mục lục bên cạnh; nối chéo sang mục § tương ứng và bài tập.
+import { render } from 'astro:content';
+import Icon from '@/components/Icon.astro';
+import MucLucTrang from '@/components/MucLucTrang.astro';
+import { thanhPhanMdx } from '@/components/mdx';
+import Khung from '@/layouts/Khung.astro';
+import { layChuong, viTriTuId, type BaiGiangEntry } from '@/lib/du-lieu';
+import { slugChuong, soChuongTuSlug, taoDuongDan } from '@/lib/duong-dan';
+import { nhanLoaiSach } from '@/lib/noi-dung';
+import { khoaBaiGiang, khoaChuong } from '@/lib/tien-do';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const ds = await getCollection('giangDay');
+  return ds.map((e: BaiGiangEntry) => {
+    const v = viTriTuId(e.id);
+    return { params: { mon: v.mon, chuong: slugChuong(v.chuong), bai: `bai-${e.data.bai}` }, props: { id: e.id } };
+  });
+}
+
+const { mon, chuong: slug } = Astro.params;
+const du = await layChuong(mon, soChuongTuSlug(slug));
+const bai = du.baiGiang.find((b) => b.id === Astro.props.id)!;
+const { Content, headings } = await render(bai);
+const d = taoDuongDan(import.meta.env.BASE_URL);
+const so = du.chuong.so;
+const tenSach = nhanLoaiSach(du.loaiSach);
+const viTriSo = du.baiGiang.indexOf(bai);
+const truoc = du.baiGiang[viTriSo - 1];
+const sau = du.baiGiang[viTriSo + 1];
+const mucCoTrang = new Set(du.sach.map((s) => s.data.muc));
+const baiTapPhu = du.baiTap.filter((b) => bai.data.phu_muc.includes(b.data.muc));
+const pdf = du.chuong.tai_ve.find((t) => t.tep.includes('bai-giang'));
+const tieuDe = `Bài ${bai.data.bai}: ${bai.data.tieu_de}`;
+const href = d.baiGiang(mon, so, bai.data.bai);
+---
+
+<Khung
+  tieuDe={tieuDe}
+  moTa={bai.data.y_tuong}
+  duongDan={[
+    { ten: du.mon.ten, href: d.mon(mon) },
+    { ten: `Chương ${so}`, href: d.chuong(mon, so) },
+    { ten: `Bài ${bai.data.bai}` },
+  ]}
+  chuong={du}
+  viTri={{ href, tieuDe, duongDan: `${du.mon.ten} › Chương ${so} › Bài ${bai.data.bai}`, chuong: khoaChuong(mon, so) }}
+  tabDuoi="mon"
+>
+  <div class="trang-doc">
+    <article class="cot-doc">
+      <header class="dau-trang">
+        <p class="nhan-tren">
+          <span class="pill ok">Giảng dạy</span> Bài {bai.data.bai}/{du.baiGiang.length} · Chương {so}
+        </p>
+        <h1>{bai.data.tieu_de}</h1>
+        <div class="lien-ket-cheo">
+          {
+            bai.data.phu_muc.length > 0 && (
+              <>
+                <span>Bài này phủ:</span>
+                {bai.data.phu_muc.map((m) =>
+                  mucCoTrang.has(m) ? (
+                    <a class="nut nho" href={d.sach(mon, so, m)}>
+                      <Icon ten="book-open" co={14} /> {du.loaiSach === 'theo-sach' ? 'Đọc theo sách' : 'Đọc nguyên văn'} §{m}
+                    </a>
+                  ) : (
+                    <span class="pill mo">§{m} chưa có</span>
+                  ),
+                )}
+              </>
+            )
+          }
+          {
+            pdf && (
+              <a class="nut nhe nho" href={d.taiVe(pdf.tep)} download>
+                <Icon ten="download" co={14} /> PDF bài giảng
+              </a>
+            )
+          }
+        </div>
+      </header>
+
+      <div class="van-ban bai-giang">
+        <Content components={thanhPhanMdx} />
+      </div>
+
+      <div class="khung-danh-dau">
+        <button type="button" class="nut" data-danh-dau data-khoa={khoaBaiGiang(mon, so, bai.data.bai)} aria-pressed="false">
+          <Icon ten="circle-check" co={16} /> <span data-chu>Đánh dấu đã học</span>
+        </button>
+        <span data-goi-y-danh-dau>Học xong thì đánh dấu để theo dõi tiến độ.</span>
+      </div>
+
+      {
+        (bai.data.phu_muc.some((m) => mucCoTrang.has(m)) || baiTapPhu.length > 0) && (
+          <nav class="lien-ket-cheo" aria-label="Bước tiếp theo">
+            <span>Bước tiếp theo:</span>
+            {bai.data.phu_muc
+              .filter((m) => mucCoTrang.has(m))
+              .map((m) => (
+                <a class="nut nho" href={d.sach(mon, so, m)}>
+                  {tenSach} §{m}
+                </a>
+              ))}
+            {baiTapPhu.length > 0 && (
+              <a class="nut nho" href={`${d.dsBaiTap(mon, so)}?muc=${bai.data.phu_muc[0]}`}>
+                <Icon ten="pencil-line" co={14} /> Bài tập trong sách ({baiTapPhu.length})
+              </a>
+            )}
+          </nav>
+        )
+      }
+
+      <nav class="dieu-huong-cuoi" aria-label="Bài trước, bài sau">
+        {
+          truoc && (
+            <a href={d.baiGiang(mon, so, truoc.data.bai)}>
+              <small>← Bài trước</small>
+              Bài {truoc.data.bai}: {truoc.data.tieu_de}
+            </a>
+          )
+        }
+        {
+          sau ? (
+            <a class="sau" href={d.baiGiang(mon, so, sau.data.bai)}>
+              <small>Bài tiếp theo →</small>
+              Bài {sau.data.bai}: {sau.data.tieu_de}
+            </a>
+          ) : (
+            <a class="sau" href={d.chuong(mon, so)}>
+              <small>Hết phần giảng dạy →</small>
+              Về trang Chương {so}
+            </a>
+          )
+        }
+      </nav>
+
+      <p class="ghi-cong">
+        Bài giảng tự soạn, dựa theo {du.mon.giao_trinh}. {du.mon.giay_phep}
+      </p>
+    </article>
+    <MucLucTrang tieuDe={headings} />
+  </div>
+</Khung>

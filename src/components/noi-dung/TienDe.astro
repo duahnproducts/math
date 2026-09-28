@@ -1,0 +1,11 @@
+---
+// Tiên đề có (hoặc không) số hiệu: <TienDe so="1.2.3" ten="…">…</TienDe>
+import KhoiSo from './KhoiSo.astro';
+interface Props {
+  so?: string;
+  id?: string;
+  ten?: string;
+}
+---
+
+<KhoiSo loai="tien-de" {...Astro.props}><slot /></KhoiSo>

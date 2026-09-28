@@ -1,0 +1,24 @@
+---
+// Hộp màu theo loại nội dung. Màu nào mang nghĩa nào thì dùng đúng như vậy ở mọi nơi:
+// định nghĩa xanh dương · định lý xanh lá · ví dụ cam · ghi chú xám · lỗi đỏ.
+interface Props {
+  loai: 'dinh-nghia' | 'dinh-ly' | 'bo-de' | 'he-qua' | 'tien-de' | 'vi-du' | 'ghi-chu' | 'loi' | 'y-tuong' | 'tom-tat';
+  tieuDe?: string;
+  tenRieng?: string;
+  id?: string;
+}
+const { loai, tieuDe, tenRieng, id } = Astro.props;
+---
+
+<div class={`hop ${loai}`} id={id} data-loai-hop={loai}>
+  {
+    (tieuDe || tenRieng) && (
+      <p class="tieu-de-hop">
+        {tieuDe && <span>{tieuDe}</span>}
+        {tenRieng && <span class="ten-rieng">{tenRieng}</span>}
+        <slot name="lien-ket" />
+      </p>
+    )
+  }
+  <slot />
+</div>

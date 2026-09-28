@@ -1,0 +1,76 @@
+---
+// Môn học — danh sách chương; mỗi chương hiện phần nào đã có, phần nào chưa.
+import Icon from '@/components/Icon.astro';
+import ThanhTienDo from '@/components/ThanhTienDo.astro';
+import Khung from '@/layouts/Khung.astro';
+import { coNoiDung, khoaDocCuaChuong, layCacChuong, layDanhSachMon, layMon } from '@/lib/du-lieu';
+import { taoDuongDan } from '@/lib/duong-dan';
+import { nhanLoaiSach } from '@/lib/noi-dung';
+
+export async function getStaticPaths() {
+  const cacMon = await layDanhSachMon();
+  return cacMon.map((m) => ({ params: { mon: m.id } }));
+}
+
+const { mon } = Astro.params;
+const m = await layMon(mon);
+const cacChuong = await layCacChuong(mon);
+const d = taoDuongDan(import.meta.env.BASE_URL);
+const tenSach = nhanLoaiSach(m.loai_sach);
+---
+
+<Khung tieuDe={m.ten} moTa={m.mo_ta} duongDan={[{ ten: m.ten }]} tabDuoi="mon">
+  <div class="trang-hep">
+    <header class="dau-trang">
+      <p class="nhan-tren">Môn học</p>
+      <h1>{m.ten}</h1>
+      <p class="phu-de">{m.mo_ta}</p>
+      <p class="ghi-cong" style="margin-top:14px;border:0;padding:0">
+        Giáo trình: <em>{m.giao_trinh}</em>. {m.giay_phep}
+      </p>
+    </header>
+
+    <ol class="danh-sach-muc" aria-label="Các chương">
+      {
+        cacChuong.map((du) => {
+          const co = coNoiDung(du);
+          const noiDungThe = (
+            <>
+              <span class="so-hieu">Ch {du.chuong.so}</span>
+              <span class="than">
+                <b>{du.chuong.ten}</b> <span class="so-hieu">· {du.chuong.ten_en}</span>
+                <span class="cac-phan" style="margin-top:6px">
+                  {du.baiGiang.length > 0 ? (
+                    <span class="pill ok">Giảng dạy: {du.baiGiang.length} bài</span>
+                  ) : (
+                    <span class="pill mo">Giảng dạy: chưa có</span>
+                  )}
+                  {du.sach.length > 0 ? (
+                    <span class="pill info">
+                      {tenSach}: {du.sach.length}/{du.chuong.muc.length} mục
+                    </span>
+                  ) : (
+                    <span class="pill mo">{tenSach}: chưa có</span>
+                  )}
+                  {du.baiTap.length > 0 ? (
+                    <span class="pill warn">Bài tập: {du.baiTap.length}</span>
+                  ) : (
+                    <span class="pill mo">Bài tập: chưa có</span>
+                  )}
+                </span>
+                {!co && du.chuong.ghi_chu && <span class="mo-ta">{du.chuong.ghi_chu}</span>}
+                {co && (
+                  <span style="display:block;margin-top:8px;max-width:360px">
+                    <ThanhTienDo cacKhoa={khoaDocCuaChuong(du)} kieu="doc" nhan="Đã học" />
+                  </span>
+                )}
+              </span>
+              {co && <Icon ten="chevron-right" />}
+            </>
+          );
+          return <li>{co ? <a href={d.chuong(mon, du.chuong.so)}>{noiDungThe}</a> : <div class="chua-co">{noiDungThe}</div>}</li>;
+        })
+      }
+    </ol>
+  </div>
+</Khung>

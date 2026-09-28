@@ -1,0 +1,37 @@
+---
+// Liên kết chéo trong bài: <XemMuc muc="1.3" /> → "Đọc theo sách §1.3",
+// <XemMuc bai={2} /> → "Học dễ hiểu ở Bài 2", <XemMuc bai-tap="1.3.6" /> → "Bài 1.3.6".
+// Môn và chương lấy từ đường dẫn trang hiện tại.
+import { taoDuongDan, viTriTuUrl } from '@/lib/duong-dan';
+
+interface Props {
+  muc?: string;
+  bai?: number;
+  'bai-tap'?: string;
+  /** chữ hiển thị, nếu muốn khác mặc định */
+  chu?: string;
+}
+const { muc, bai, 'bai-tap': baiTap, chu } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const viTri = viTriTuUrl(Astro.url.pathname, base);
+if (!viTri) throw new Error(`XemMuc chỉ dùng trong trang thuộc một chương: ${Astro.url.pathname}`);
+const d = taoDuongDan(base);
+const laGiaiTich = viTri.mon === 'giai-tich';
+
+let href = '';
+let mauChu = '';
+if (muc) {
+  href = d.sach(viTri.mon, viTri.chuong, muc);
+  mauChu = `${laGiaiTich ? 'Đọc theo sách' : 'Đọc nguyên văn'} §${muc}`;
+} else if (bai) {
+  href = d.baiGiang(viTri.mon, viTri.chuong, bai);
+  mauChu = `Học dễ hiểu ở Bài ${bai}`;
+} else if (baiTap) {
+  href = d.baiTap(viTri.mon, viTri.chuong, baiTap);
+  mauChu = `Bài ${baiTap}`;
+} else {
+  throw new Error('XemMuc cần muc, bai hoặc bai-tap');
+}
+---
+
+<a href={href} data-lien-ket-cheo>{chu ?? mauChu}</a>

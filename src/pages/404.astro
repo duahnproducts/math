@@ -1,0 +1,19 @@
+---
+import Khung from '@/layouts/Khung.astro';
+import { taoDuongDan } from '@/lib/duong-dan';
+const d = taoDuongDan(import.meta.env.BASE_URL);
+---
+
+<Khung tieuDe="Không tìm thấy trang">
+  <div class="trang-hep">
+    <header class="dau-trang">
+      <p class="nhan-tren">Lỗi 404</p>
+      <h1>Không tìm thấy trang này</h1>
+      <p class="phu-de">Có thể trang đã đổi chỗ, hoặc phần nội dung này chưa được đưa lên web.</p>
+      <div class="hang-nut">
+        <a class="nut chinh" href={d.trangChu()}>Về trang chủ</a>
+        <a class="nut" href={d.thuatNgu()}>Tra thuật ngữ</a>
+      </div>
+    </header>
+  </div>
+</Khung>

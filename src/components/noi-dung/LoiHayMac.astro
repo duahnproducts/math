@@ -1,0 +1,12 @@
+---
+// Lỗi hay mắc ở chính bài này.
+interface Props {
+  tieuDe?: string;
+}
+const { tieuDe = 'Lỗi hay mắc' } = Astro.props;
+---
+
+<details class="tang loi-hay-mac" data-tang="loi-hay-mac">
+  <summary>{tieuDe}</summary>
+  <div class="ruot van-ban"><slot /></div>
+</details>

@@ -1,0 +1,28 @@
+---
+// Môn › Chương › Bài — người học luôn biết mình đang ở đâu (product_design.md, mục 8).
+import type { MatXich } from '@/lib/duong-dan';
+interface Props {
+  cac: MatXich[];
+}
+const { cac } = Astro.props;
+---
+
+{
+  cac.length > 0 && (
+    <nav class="duong-dan-trang" aria-label="Bạn đang ở">
+      <ol>
+        {cac.map((m, i) =>
+          i === cac.length - 1 || !m.href ? (
+            <li>
+              <span aria-current={i === cac.length - 1 ? 'page' : undefined}>{m.ten}</span>
+            </li>
+          ) : (
+            <li>
+              <a href={m.href}>{m.ten}</a>
+            </li>
+          ),
+        )}
+      </ol>
+    </nav>
+  )
+}

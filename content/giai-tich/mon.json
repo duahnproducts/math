@@ -1,0 +1,84 @@
+{
+  "ten": "Giải tích",
+  "ten_en": "Real Analysis",
+  "thu_tu": 1,
+  "mo_ta": "Hiểu vì sao các phép tính của vi tích phân đúng: số thực, dãy số, giới hạn, liên tục, đạo hàm, tích phân.",
+  "giao_trinh": "Stephen Abbott, Understanding Analysis, 2nd ed., Springer, 2015",
+  "giay_phep": "Sách gốc có bản quyền (Springer). Web chỉ diễn đạt lại định nghĩa, định lý bằng tiếng Việt, kèm dàn ý và lời giải tự viết; không đăng bản dịch nguyên văn hay PDF sách gốc.",
+  "loai_sach": "theo-sach",
+  "chuong": [
+    {
+      "so": 1,
+      "ten": "Tập số thực",
+      "ten_en": "The Real Numbers",
+      "muc": [
+        { "so": "1.1", "ten": "Tính vô tỉ của √2" },
+        { "so": "1.2", "ten": "Kiến thức chuẩn bị" },
+        { "so": "1.3", "ten": "Tiên đề Đầy đủ" },
+        { "so": "1.4", "ten": "Hệ quả của tính đầy đủ" },
+        { "so": "1.5", "ten": "Lực lượng" },
+        { "so": "1.6", "ten": "Định lý Cantor" },
+        { "so": "1.7", "ten": "Kết luận: số cardinal" }
+      ],
+      "tai_ve": [
+        {
+          "ten": "Trọn bộ 5 bài giảng Chương 1",
+          "tep": "giai-tich-chuong-1-bai-giang.pdf",
+          "mo_ta": "Bản PDF của phần Giảng dạy, để in ra học với giấy bút."
+        },
+        {
+          "ten": "Hướng dẫn học tập Chương 1 (Đọc sâu)",
+          "tep": "giai-tich-chuong-1-huong-dan-hoc-tap.pdf",
+          "mo_ta": "Đi theo từng mục § của sách, dày hơn bài giảng — dành cho người đã quen."
+        },
+        {
+          "ten": "Lời giải bài tập Chương 1",
+          "tep": "giai-tich-chuong-1-loi-giai.pdf",
+          "mo_ta": "Lời giải tự viết cho §1.2–§1.6. Tự làm trước rồi mới mở."
+        }
+      ]
+    },
+    {
+      "so": 2,
+      "ten": "Dãy số và chuỗi số",
+      "ten_en": "Sequences and Series",
+      "ghi_chu": "Đã có 6 bài giảng và hướng dẫn học tập dạng PDF, chưa chuyển lên web."
+    },
+    {
+      "so": 3,
+      "ten": "Tôpô cơ bản của R",
+      "ten_en": "Basic Topology of R",
+      "ghi_chu": "Đã có hướng dẫn học tập dạng PDF, chưa chuyển lên web."
+    },
+    {
+      "so": 4,
+      "ten": "Giới hạn hàm số và tính liên tục",
+      "ten_en": "Functional Limits and Continuity",
+      "ghi_chu": "Đã có hướng dẫn học tập dạng PDF, chưa chuyển lên web."
+    },
+    {
+      "so": 5,
+      "ten": "Đạo hàm",
+      "ten_en": "The Derivative",
+      "ghi_chu": "Đã có hướng dẫn học tập dạng PDF, chưa chuyển lên web."
+    },
+    {
+      "so": 6,
+      "ten": "Dãy hàm và chuỗi hàm",
+      "ten_en": "Sequences and Series of Functions",
+      "ghi_chu": "Đã có 6 bài giảng và phần Theo sách dạng PDF, chưa chuyển lên web."
+    },
+    {
+      "so": 7,
+      "ten": "Tích phân Riemann",
+      "ten_en": "The Riemann Integral",
+      "ghi_chu": "Đã có 5 bài giảng dạng PDF, chưa chuyển lên web."
+    },
+    {
+      "so": 8,
+      "ten": "Chủ đề bổ sung",
+      "ten_en": "Additional Topics",
+      "ghi_chu": "Đã có 4 bài giảng dạng PDF, chưa chuyển lên web."
+    }
+  ]
+}

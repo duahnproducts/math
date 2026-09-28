@@ -1,0 +1,121 @@
+---
+// Khung chung của mọi trang: thanh trên (đường dẫn, thuật ngữ, nút sáng/tối),
+// thanh bên (mục lục chương), thanh dưới trên điện thoại.
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/600.css';
+import '@fontsource/lora/400.css';
+import '@fontsource/lora/400-italic.css';
+import '@fontsource/lora/600.css';
+import '@fontsource/jetbrains-mono/400.css';
+import 'katex/dist/katex.min.css';
+import '../styles/tokens.css';
+import '../styles/global.css';
+
+import DuongDanTrang from '@/components/DuongDanTrang.astro';
+import Icon from '@/components/Icon.astro';
+import MucLucChuong from '@/components/MucLucChuong.astro';
+import NutGiaoDien from '@/components/NutGiaoDien.astro';
+import type { DuLieuChuongWeb } from '@/lib/du-lieu';
+import { taoDuongDan, type MatXich } from '@/lib/duong-dan';
+import { MAU_THANH_TRINH_DUYET, SCRIPT_KHOI_TAO_GIAO_DIEN } from '@/lib/giao-dien';
+import type { ViTri } from '@/lib/tien-do';
+
+interface Props {
+  tieuDe: string;
+  moTa?: string;
+  duongDan?: MatXich[];
+  /** Có thì hiện mục lục chương ở thanh bên */
+  chuong?: DuLieuChuongWeb;
+  /** Trang học (bài giảng, mục §, bài tập) khai báo vị trí để nút Học tiếp nhớ */
+  viTri?: Omit<ViTri, 'luc'>;
+  /** Tab đang chọn ở thanh dưới trên điện thoại */
+  tabDuoi?: 'trang-chu' | 'mon' | 'bai-tap' | 'thuat-ngu';
+}
+
+const { tieuDe, moTa, duongDan = [], chuong, viTri, tabDuoi } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const d = taoDuongDan(base);
+const tieuDeDayDu = tieuDe === 'Hochanh' ? 'Hochanh — Học theo giáo trình' : `${tieuDe} · Hochanh`;
+const hienTai = Astro.url.pathname;
+const hrefMon = chuong ? d.mon(chuong.mon.id) : `${d.trangChu()}#mon-hoc`;
+const hrefBaiTap = chuong ? d.dsBaiTap(chuong.mon.id, chuong.chuong.so) : d.dsBaiTap('giai-tich', 1);
+const favicon = `data:image/svg+xml,${encodeURIComponent(
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#4A51CC"/><text x="16" y="22.5" font-family="Georgia,serif" font-size="19" font-weight="700" text-anchor="middle" fill="#fff">H</text></svg>',
+)}`;
+---
+
+<!doctype html>
+<html lang="vi" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content={MAU_THANH_TRINH_DUYET.sang} />
+    <script is:inline set:html={SCRIPT_KHOI_TAO_GIAO_DIEN} />
+    <title>{tieuDeDayDu}</title>
+    {moTa && <meta name="description" content={moTa} />}
+    <link rel="icon" href={favicon} />
+  </head>
+  <body data-vi-tri={viTri ? JSON.stringify(viTri) : undefined}>
+    <a class="bo-qua" href="#noi-dung">Bỏ qua, tới nội dung</a>
+
+    <header class="topbar">
+      <a class="thuong-hieu" href={d.trangChu()} aria-label="Hochanh — Trang chủ">
+        <span class="logo" aria-hidden="true">H</span>
+        <span>Hochanh</span>
+      </a>
+      <DuongDanTrang cac={duongDan} />
+      <div class="topbar-phai">
+        <a class="nut nhe nho an-tren-dt" href={d.thuatNgu()}><Icon ten="languages" co={16} /> Thuật ngữ</a>
+        <NutGiaoDien />
+      </div>
+    </header>
+
+    <div class:list={['bo-cuc', { 'co-thanh-ben': chuong }]}>
+      {
+        chuong && (
+          <aside class="thanh-ben">
+            <MucLucChuong du={chuong} hienTai={hienTai} />
+          </aside>
+        )
+      }
+      <main id="noi-dung" class="noi-dung giay" tabindex="-1">
+        {
+          chuong && (
+            <details class="muc-luc-gon">
+              <summary>Mục lục Chương {chuong.chuong.so}</summary>
+              <div>
+                <MucLucChuong du={chuong} hienTai={hienTai} />
+              </div>
+            </details>
+          )
+        }
+        <slot />
+        <footer class="chan-trang">
+          Hochanh — web học miễn phí, không quảng cáo. Tiến độ chỉ lưu trên máy của bạn. Mỗi trang dịch ghi rõ
+          nguồn và giấy phép; sách gốc có bản quyền không được đăng lại.
+        </footer>
+      </main>
+    </div>
+
+    <nav class="thanh-duoi" aria-label="Điều hướng chính">
+      <a href={d.trangChu()} aria-current={tabDuoi === 'trang-chu' ? 'page' : undefined}>
+        <Icon ten="house" co={20} /><span>Trang chủ</span>
+      </a>
+      <a href={hrefMon} aria-current={tabDuoi === 'mon' ? 'page' : undefined}>
+        <Icon ten="library" co={20} /><span>Môn học</span>
+      </a>
+      <a href={hrefBaiTap} aria-current={tabDuoi === 'bai-tap' ? 'page' : undefined}>
+        <Icon ten="pencil-line" co={20} /><span>Bài tập</span>
+      </a>
+      <a href={d.thuatNgu()} aria-current={tabDuoi === 'thuat-ngu' ? 'page' : undefined}>
+        <Icon ten="languages" co={20} /><span>Thuật ngữ</span>
+      </a>
+    </nav>
+
+    <script>
+      import '../scripts/app.ts';
+    </script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+---
+// Hệ quả có (hoặc không) số hiệu: <HeQua so="1.2.3" ten="…">…</HeQua>
+import KhoiSo from './KhoiSo.astro';
+interface Props {
+  so?: string;
+  id?: string;
+  ten?: string;
+}
+---
+
+<KhoiSo loai="he-qua" {...Astro.props}><slot /></KhoiSo>

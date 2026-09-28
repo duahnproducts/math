@@ -1,0 +1,73 @@
+---
+// Thuật ngữ Anh – Việt theo môn, có tìm kiếm (gõ không dấu vẫn được).
+import { getCollection } from 'astro:content';
+import Icon from '@/components/Icon.astro';
+import Khung from '@/layouts/Khung.astro';
+import { layDanhSachMon } from '@/lib/du-lieu';
+
+const cacMon = await layDanhSachMon();
+const cacBang = await getCollection('thuatNgu');
+const nhom = cacMon
+  .map((m) => ({ mon: m, ds: cacBang.find((b) => b.id.split('/')[0] === m.id)?.data.thuat_ngu ?? [] }))
+  .filter((n) => n.ds.length > 0);
+const tong = nhom.reduce((t, n) => t + n.ds.length, 0);
+---
+
+<Khung tieuDe="Thuật ngữ Anh – Việt" moTa="Bảng thuật ngữ Anh – Việt của các môn." duongDan={[{ ten: 'Thuật ngữ' }]} tabDuoi="thuat-ngu">
+  <div class="trang-hep">
+    <header class="dau-trang">
+      <p class="nhan-tren">Tra cứu</p>
+      <h1>Thuật ngữ Anh – Việt</h1>
+      <p class="phu-de">
+        Đọc giáo trình tiếng Anh thì cần biết cả hai tên. Gõ tiếng Việt có dấu, không dấu hay tiếng Anh đều tìm được.
+      </p>
+    </header>
+
+    <div class="bo-loc">
+      <label class="hang" style="gap:10px">
+        <Icon ten="search" />
+        <span class="an-di">Tìm thuật ngữ</span>
+        <input
+          type="search"
+          data-tim-thuat-ngu
+          placeholder="Ví dụ: can tren, supremum, ma tran…"
+          style="flex:1;min-width:0;min-height:38px;padding:0 12px;border:1px solid var(--line-2);border-radius:var(--r-md);background:var(--surface-2);color:var(--text);font:inherit"
+        />
+        <span class="so-hieu" data-dem-thuat-ngu aria-live="polite">{tong} thuật ngữ</span>
+      </label>
+    </div>
+
+    {
+      nhom.map((n) => (
+        <section class="phan" data-nhom-thuat-ngu aria-labelledby={`tn-${n.mon.id}`}>
+          <h2 id={`tn-${n.mon.id}`}>{n.mon.ten}</h2>
+          <div class="cuon-ngang">
+            <table class="bang">
+              <thead>
+                <tr>
+                  <th scope="col">Tiếng Anh</th>
+                  <th scope="col">Tiếng Việt</th>
+                  <th scope="col">Giải thích ngắn</th>
+                </tr>
+              </thead>
+              <tbody>
+                {n.ds.map((t) => (
+                  <tr data-dong-thuat-ngu id={`${n.mon.id}-${t.id}`}>
+                    <td>
+                      <i>{t.en}</i>
+                    </td>
+                    <td>
+                      <b>{t.vi}</b>
+                    </td>
+                    <td style="color:var(--text-2)">{t.giai_thich}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      ))
+    }
+    <p class="rong" data-rong-thuat-ngu hidden>Không tìm thấy thuật ngữ nào.</p>
+  </div>
+</Khung>

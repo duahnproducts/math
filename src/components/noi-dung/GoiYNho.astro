@@ -1,0 +1,12 @@
+---
+// Gợi ý gấp lại trong bài tự luyện — tự nghĩ trước rồi mới mở.
+interface Props {
+  tieuDe?: string;
+}
+const { tieuDe = 'Gợi ý' } = Astro.props;
+---
+
+<details>
+  <summary>{tieuDe}</summary>
+  <slot />
+</details>

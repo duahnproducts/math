@@ -1,0 +1,290 @@
+---
+// Chương — lộ trình, hai tab Giảng dạy | Theo sách (Dịch nguyên văn), bảng đối chiếu,
+// danh sách bài tập (product_design.md, mục 9).
+import Icon from '@/components/Icon.astro';
+import ThanhTienDo from '@/components/ThanhTienDo.astro';
+import Khung from '@/layouts/Khung.astro';
+import {
+  coNoiDung,
+  khoaBaiTapCuaChuong,
+  khoaDocCuaChuong,
+  layCacChuong,
+  layChuong,
+  layDanhSachMon,
+} from '@/lib/du-lieu';
+import { slugChuong, soChuongTuSlug, taoDuongDan } from '@/lib/duong-dan';
+import { NHAN_DO_KHO, bangDoiChieu, nhanLoaiSach } from '@/lib/noi-dung';
+import { khoaBaiGiang, khoaBaiTap, khoaChuong, khoaSach } from '@/lib/tien-do';
+
+export async function getStaticPaths() {
+  const paths = [];
+  for (const m of await layDanhSachMon()) {
+    for (const du of (await layCacChuong(m.id)).filter(coNoiDung)) {
+      paths.push({ params: { mon: m.id, chuong: slugChuong(du.chuong.so) } });
+    }
+  }
+  return paths;
+}
+
+const { mon, chuong: slug } = Astro.params;
+const du = await layChuong(mon, soChuongTuSlug(slug));
+const d = taoDuongDan(import.meta.env.BASE_URL);
+const so = du.chuong.so;
+const tenSach = nhanLoaiSach(du.loaiSach);
+const mucCoSach = du.sach.map((s) => s.data.muc);
+const bang = bangDoiChieu(
+  du.chuong.muc,
+  du.baiGiang.map((b) => b.data),
+  mucCoSach,
+  du.baiTap.map((b) => b.data),
+);
+const nenLam = du.baiTap.filter((b) => b.data.nen_lam);
+const dsLamLai = du.baiTap.map((b) => ({
+  khoa: khoaBaiTap(mon, so, b.data.so),
+  so: b.data.so,
+  href: d.baiTap(mon, so, b.data.so),
+  ten: b.data.tieu_de ?? '',
+}));
+const dauTien = du.baiGiang[0]
+  ? { href: d.baiGiang(mon, so, du.baiGiang[0].data.bai), ten: `Bài ${du.baiGiang[0].data.bai}: ${du.baiGiang[0].data.tieu_de}` }
+  : du.sach[0]
+    ? { href: d.sach(mon, so, du.sach[0].data.muc), ten: `§${du.sach[0].data.muc} ${du.sach[0].data.tieu_de}` }
+    : { href: d.dsBaiTap(mon, so), ten: 'Bài tập' };
+const nguonChuong = du.sach[0]?.data.nguon ?? `${du.mon.giao_trinh}. ${du.mon.giay_phep}`;
+---
+
+<Khung
+  tieuDe={`Chương ${so} — ${du.chuong.ten}`}
+  moTa={`${du.mon.ten}, Chương ${so}: ${du.chuong.ten}`}
+  duongDan={[{ ten: du.mon.ten, href: d.mon(mon) }, { ten: `Chương ${so}` }]}
+  chuong={du}
+  tabDuoi="mon"
+>
+  <div class="trang-hep">
+    <header class="dau-trang">
+      <p class="nhan-tren">{du.mon.ten} · Chương {so}</p>
+      <h1>{du.chuong.ten}</h1>
+      <p class="phu-de"><em>{du.chuong.ten_en}</em> — {du.mon.giao_trinh}</p>
+      <div style="display:grid;gap:8px;margin-top:16px;max-width:520px">
+        <ThanhTienDo cacKhoa={khoaDocCuaChuong(du)} kieu="doc" nhan="Đã học" />
+        {du.baiTap.length > 0 && <ThanhTienDo cacKhoa={khoaBaiTapCuaChuong(du)} kieu="bai-tap" nhan="Bài tập làm được" />}
+      </div>
+    </header>
+
+    <section class="hoc-tiep" data-hop-hoc-tiep data-chuong={khoaChuong(mon, so)} aria-label="Học tiếp chương này">
+      <div class="than">
+        <p class="nhan" data-hoc-tiep-nhan>Bắt đầu chương</p>
+        <p class="tieu-de" data-hoc-tiep-tieu-de>{dauTien.ten}</p>
+        <p class="vi-tri" data-hoc-tiep-vi-tri>{du.mon.ten} › Chương {so}</p>
+      </div>
+      <a class="nut chinh" href={dauTien.href} data-hoc-tiep-link>Học tiếp <Icon ten="arrow-right" co={16} /></a>
+    </section>
+
+    {
+      du.baiGiang.length > 0 && (
+        <section class="phan" aria-labelledby="lo-trinh">
+          <h2 id="lo-trinh">Lộ trình</h2>
+          <p class="ghi">Mỗi buổi học một bài, làm bài tập cuối bài rồi mới sang bài sau.</p>
+          <ol class="lo-trinh">
+            {du.baiGiang.map((b) => (
+              <li>
+                <a href={d.baiGiang(mon, so, b.data.bai)} data-khoa-da-hoc={khoaBaiGiang(mon, so, b.data.bai)}>
+                  <span class="buoc">
+                    Bài {b.data.bai} {b.data.phu_muc.length > 0 && <span>· §{b.data.phu_muc.join(', §')}</span>}
+                    <span class="dau-da-hoc" aria-label="đã học">✓</span>
+                  </span>
+                  {b.data.tieu_de}
+                </a>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )
+    }
+
+    <section class="phan tabs" data-tabs aria-labelledby="hai-loi-vao">
+      <h2 id="hai-loi-vao">Hai lối vào cùng một nội dung</h2>
+      <div role="tablist" aria-label="Chọn phần">
+        <button role="tab" id="tab-giang-day" aria-controls="panel-giang-day" aria-selected="true" type="button">
+          Giảng dạy
+        </button>
+        <button role="tab" id="tab-sach" aria-controls="panel-sach" aria-selected="false" type="button" tabindex="-1">
+          {tenSach}
+        </button>
+      </div>
+
+      <div role="tabpanel" id="panel-giang-day" aria-labelledby="tab-giang-day">
+        {
+          du.baiGiang.length === 0 ? (
+            <p class="rong">Chương này chưa có bài giảng. Hãy đọc phần {tenSach.toLowerCase()}.</p>
+          ) : (
+            <ul class="danh-sach-muc">
+              {du.baiGiang.map((b) => (
+                <li>
+                  <a href={d.baiGiang(mon, so, b.data.bai)} data-khoa-da-hoc={khoaBaiGiang(mon, so, b.data.bai)}>
+                    <span class="so-hieu">Bài {b.data.bai}</span>
+                    <span class="than">
+                      <b>{b.data.tieu_de}</b>
+                      <span class="mo-ta">{b.data.y_tuong}</span>
+                    </span>
+                    <span class="dau-da-hoc" aria-label="đã học">✓</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )
+        }
+      </div>
+
+      <div role="tabpanel" id="panel-sach" aria-labelledby="tab-sach" hidden>
+        <ul class="danh-sach-muc">
+          {
+            du.chuong.muc.map((m) => {
+              const s = du.sach.find((x) => x.data.muc === m.so);
+              return (
+                <li>
+                  {s ? (
+                    <a href={d.sach(mon, so, m.so)} data-khoa-da-hoc={khoaSach(mon, so, m.so)}>
+                      <span class="so-hieu">§{m.so}</span>
+                      <span class="than">
+                        <b>{s.data.tieu_de}</b>
+                        <span class="mo-ta">{s.data.tieu_de_en}</span>
+                      </span>
+                      <span class="dau-da-hoc" aria-label="đã học">✓</span>
+                    </a>
+                  ) : (
+                    <div class="chua-co">
+                      <span class="so-hieu">§{m.so}</span>
+                      <span class="than">
+                        {m.ten} <span class="pill mo">Chưa có</span>
+                      </span>
+                    </div>
+                  )}
+                </li>
+              );
+            })
+          }
+        </ul>
+      </div>
+    </section>
+
+    {
+      du.chuong.muc.length > 0 && (
+        <section class="phan" aria-labelledby="doi-chieu">
+          <h2 id="doi-chieu">Bảng đối chiếu Bài ↔ § ↔ Bài tập</h2>
+          <p class="ghi">Mỗi dòng là một mục của sách: học dễ hiểu ở bài nào, đọc theo sách ở đâu, làm bài tập nào.</p>
+          <div class="cuon-ngang">
+            <table class="bang">
+              <thead>
+                <tr>
+                  <th scope="col">Mục §</th>
+                  <th scope="col">Giảng dạy</th>
+                  <th scope="col">{tenSach}</th>
+                  <th scope="col">Bài tập</th>
+                </tr>
+              </thead>
+              <tbody>
+                {bang.map((dong) => (
+                  <tr>
+                    <th scope="row" style="text-transform:none;letter-spacing:0;font-size:14px;color:var(--text)">
+                      <span class="so-hieu">§{dong.muc}</span> {dong.tenMuc}
+                    </th>
+                    <td>
+                      {dong.baiGiang.length > 0 ? (
+                        dong.baiGiang.map((bai, i) => (
+                          <>
+                            {i > 0 && ', '}
+                            <a href={d.baiGiang(mon, so, bai)}>Bài {bai}</a>
+                          </>
+                        ))
+                      ) : (
+                        <span class="pill mo">Chưa có</span>
+                      )}
+                    </td>
+                    <td>
+                      {dong.coSach ? <a href={d.sach(mon, so, dong.muc)}>Đọc §{dong.muc}</a> : <span class="pill mo">Chưa có</span>}
+                    </td>
+                    <td>
+                      {dong.soBaiTap > 0 ? (
+                        <a href={`${d.dsBaiTap(mon, so)}?muc=${dong.muc}`}>
+                          {dong.soBaiTap} bài{dong.soNenLam > 0 && <span class="sao"> · ★ {dong.soNenLam}</span>}
+                        </a>
+                      ) : (
+                        <span class="so-hieu">—</span>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      )
+    }
+
+    {
+      du.baiTap.length > 0 && (
+        <section class="phan" aria-labelledby="bai-tap-chuong">
+          <h2 id="bai-tap-chuong">Bài tập</h2>
+          <div class="luoi">
+            <div class="card">
+              <h3 style="margin:0 0 8px;font-size:15px">
+                <span class="sao">★</span> Nên làm bằng mọi giá
+              </h3>
+              {nenLam.length === 0 ? (
+                <p class="so-hieu">Chưa đánh dấu bài nào.</p>
+              ) : (
+                <ul style="margin:0;padding-left:18px">
+                  {nenLam.map((b) => (
+                    <li>
+                      <a href={d.baiTap(mon, so, b.data.so)}>Bài {b.data.so}</a>
+                      {b.data.tieu_de && ` — ${b.data.tieu_de}`} <span class="so-hieu">({NHAN_DO_KHO[b.data.do_kho]})</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+            <div class="card" data-can-lam-lai={JSON.stringify(dsLamLai)}>
+              <h3 style="margin:0 0 8px;font-size:15px">
+                <Icon ten="rotate-ccw" co={16} /> Bài nên làm lại
+              </h3>
+              <ul style="margin:0;padding-left:18px" />
+              <p class="so-hieu" data-rong>
+                Chưa có. Khi bạn tự đánh giá “Cần gợi ý” hoặc “Chưa làm được”, bài đó sẽ hiện ở đây.
+              </p>
+            </div>
+          </div>
+          <p style="margin-top:14px">
+            <a class="nut" href={d.dsBaiTap(mon, so)}>
+              <Icon ten="list-checks" co={16} /> Xem cả {du.baiTap.length} bài tập
+            </a>
+          </p>
+        </section>
+      )
+    }
+
+    {
+      du.chuong.tai_ve.length > 0 && (
+        <section class="phan" aria-labelledby="tai-ve">
+          <h2 id="tai-ve">Đọc sâu và tải về</h2>
+          <ul class="danh-sach-muc">
+            {du.chuong.tai_ve.map((t) => (
+              <li>
+                <a href={d.taiVe(t.tep)} download>
+                  <Icon ten="download" />
+                  <span class="than">
+                    <b>{t.ten}</b>
+                    <span class="mo-ta">{t.mo_ta}</span>
+                  </span>
+                  <span class="so-hieu">PDF</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    <p class="ghi-cong">Nguồn: {nguonChuong}</p>
+  </div>
+</Khung>
