@@ -1,0 +1,324 @@
+---
+mon: dai-so
+chuong: 1
+muc: "1.2"
+tieu_de: Phép khử Gauss
+tieu_de_en: Gaussian Elimination
+loai: dich-nguyen-van
+nguon: "Dịch từ W. Keith Nicholson, Linear Algebra with Applications, Version 2023 – Revision A, Vretta-Lyryx Inc. (https://lyryx.com/linear-algebra-applications/), Mục 1.2. Bản dịch phát hành theo giấy phép CC BY-NC-SA 4.0, giống bản gốc. Thay đổi: dịch sang tiếng Việt, thêm ghi chú cho người học."
+---
+
+Phương pháp đại số giới thiệu ở mục trước có thể tóm tắt như sau: cho một hệ phương trình tuyến tính, dùng một dãy phép biến đổi sơ cấp theo hàng để đưa ma trận bổ sung về một ma trận “đẹp” (nghĩa là các phương trình tương ứng dễ giải). Trong Ví dụ 1.1.3, ma trận đẹp đó có dạng
+
+$$
+\left[\begin{array}{ccc|c} 1 & 0 & 0 & * \\ 0 & 1 & 0 & * \\ 0 & 0 & 1 & * \end{array}\right]
+$$
+
+Các định nghĩa sau xác định rõ những ma trận “đẹp” xuất hiện trong quá trình này.
+
+## Dạng bậc thang
+
+<DinhNghia so="1.3" ten="Dạng bậc thang theo hàng (và dạng rút gọn)">
+Một ma trận được gọi là ở <ThuatNgu id="row-echelon-form">dạng bậc thang theo hàng</ThuatNgu> (và sẽ được gọi là **ma trận bậc thang**) nếu nó thoả mãn ba điều kiện sau:
+
+1. Mọi hàng không (hàng gồm toàn số 0) đều nằm ở dưới cùng.
+2. Phần tử khác 0 đầu tiên tính từ trái sang trong mỗi hàng khác 0 phải là số 1, gọi là <ThuatNgu id="leading-1">số 1 dẫn đầu</ThuatNgu> của hàng đó.
+3. Mỗi số 1 dẫn đầu nằm ở bên phải tất cả các số 1 dẫn đầu của những hàng phía trên nó.
+
+Một ma trận bậc thang được gọi là ở <ThuatNgu id="reduced-row-echelon-form">dạng bậc thang rút gọn</ThuatNgu> (và gọi là **ma trận bậc thang rút gọn**) nếu ngoài ra nó còn thoả mãn điều kiện:
+
+4. Mỗi số 1 dẫn đầu là phần tử khác 0 duy nhất trong cột của nó.
+</DinhNghia>
+
+Các ma trận bậc thang có dạng “bậc thang lầu”, như minh hoạ dưới đây (các dấu sao là số tuỳ ý).
+
+$$
+\begin{bmatrix}
+0 & 1 & * & * & * & * & * \\
+0 & 0 & 0 & 1 & * & * & * \\
+0 & 0 & 0 & 0 & 1 & * & * \\
+0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0
+\end{bmatrix}
+$$
+
+Các số 1 dẫn đầu đi “xuống dưới và sang phải” xuyên qua ma trận. Các phần tử nằm phía trên và bên phải các số 1 dẫn đầu là tuỳ ý, còn mọi phần tử nằm phía dưới và bên trái chúng đều bằng 0. Do đó, một ma trận ở dạng bậc thang sẽ ở dạng rút gọn nếu ngoài ra các phần tử nằm ngay phía trên mỗi số 1 dẫn đầu đều bằng 0. Lưu ý rằng một ma trận ở dạng bậc thang có thể, với thêm vài phép biến đổi hàng, được đưa về dạng rút gọn (dùng phép biến đổi hàng để tạo số 0 phía trên từng số 1 dẫn đầu, lần lượt, bắt đầu từ bên phải).
+
+<ViDu so="1.2.1">
+Các ma trận sau ở *dạng bậc thang* (với mọi lựa chọn số ở các vị trí $*$).
+
+$$
+\begin{bmatrix} 1 & * & * \\ 0 & 0 & 1 \end{bmatrix}
+\quad
+\begin{bmatrix} 0 & 1 & * & * \\ 0 & 0 & 1 & * \\ 0 & 0 & 0 & 0 \end{bmatrix}
+\quad
+\begin{bmatrix} 1 & * & * & * \\ 0 & 1 & * & * \\ 0 & 0 & 0 & 1 \end{bmatrix}
+\quad
+\begin{bmatrix} 1 & * & * \\ 0 & 1 & * \\ 0 & 0 & 1 \end{bmatrix}
+$$
+
+Ngược lại, các ma trận sau ở *dạng bậc thang rút gọn*.
+
+$$
+\begin{bmatrix} 1 & * & 0 \\ 0 & 0 & 1 \end{bmatrix}
+\quad
+\begin{bmatrix} 0 & 1 & 0 & * \\ 0 & 0 & 1 & * \\ 0 & 0 & 0 & 0 \end{bmatrix}
+\quad
+\begin{bmatrix} 1 & 0 & * & 0 \\ 0 & 1 & * & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}
+\quad
+\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}
+$$
+
+Việc chọn vị trí cho các số 1 dẫn đầu quyết định dạng bậc thang (rút gọn) — ngoại trừ các số ở vị trí $*$.
+</ViDu>
+
+Tầm quan trọng của ma trận bậc thang đến từ định lý sau.
+
+<DinhLy so="1.2.1">
+Mọi ma trận đều có thể đưa được về dạng bậc thang (rút gọn) bằng một dãy phép biến đổi sơ cấp theo hàng.
+</DinhLy>
+
+Thực ra ta có thể đưa ra một quy trình từng bước để thực sự tìm ra ma trận bậc thang. Hãy để ý rằng tuy có nhiều dãy phép biến đổi hàng khác nhau đưa được một ma trận về dạng bậc thang, dãy mà ta dùng dưới đây có tính hệ thống và dễ lập trình trên máy tính. Lưu ý rằng thuật toán này xử lý ma trận tổng quát, có thể có cả các cột toàn số 0.
+
+<DinhLy id="dinh-ly-thuat-toan-gauss" ten="Thuật toán Gauss">
+**Bước 1.** Nếu ma trận gồm toàn số 0 thì dừng — nó đã ở dạng bậc thang rồi.
+
+**Bước 2.** Ngược lại, tìm cột đầu tiên từ bên trái có chứa một phần tử khác 0 (gọi phần tử đó là $a$), rồi chuyển hàng chứa phần tử đó lên vị trí trên cùng.
+
+**Bước 3.** Bây giờ nhân hàng trên cùng mới với $1/a$ để tạo ra một số 1 dẫn đầu.
+
+**Bước 4.** Bằng cách lấy các hàng bên dưới trừ đi các bội của hàng đó, làm cho mọi phần tử nằm dưới số 1 dẫn đầu đều bằng 0.
+
+Đến đây hàng thứ nhất đã xong, và mọi phép biến đổi hàng tiếp theo chỉ thực hiện trên các hàng còn lại.
+
+**Bước 5.** Lặp lại các bước 1–4 trên ma trận gồm các hàng còn lại.
+
+Quá trình dừng khi hoặc không còn hàng nào ở bước 5, hoặc các hàng còn lại gồm toàn số 0.
+</DinhLy>
+
+<GhiChu tieuDe="Ghi chú cho người học — tính đệ quy">
+Thuật toán Gauss mang tính **đệ quy**: khi số 1 dẫn đầu thứ nhất đã có, quy trình được lặp lại trên phần các hàng còn lại của ma trận. Chính điều này làm thuật toán rất dễ cài đặt trên máy tính — bài toán kích thước $m \times n$ được quy về bài toán cùng dạng nhưng kích thước $(m-1) \times (n-1)$.
+</GhiChu>
+
+Lưu ý rằng lời giải của Ví dụ 1.1.3 không dùng đúng thuật toán Gauss như đã viết, bởi vì số 1 dẫn đầu đầu tiên không được tạo ra bằng cách chia hàng 1 cho 3. Lý do là để tránh phân số. Tuy nhiên khuôn mẫu chung thì rõ ràng: tạo các số 1 dẫn đầu từ trái sang phải, dùng lần lượt từng số đó để tạo các số 0 bên dưới nó. Sau đây là hai ví dụ nữa.
+
+<ViDu so="1.2.2">
+Giải hệ phương trình sau.
+
+$$
+\begin{aligned}
+3x + y - 4z &= -1 \\
+x \phantom{{}+ y} + 10z &= 5 \\
+4x + y + 6z &= 1
+\end{aligned}
+$$
+
+**Lời giải.** Ma trận bổ sung tương ứng là
+
+$$
+\left[\begin{array}{rrr|r} 3 & 1 & -4 & -1 \\ 1 & 0 & 10 & 5 \\ 4 & 1 & 6 & 1 \end{array}\right]
+$$
+
+Tạo số 1 dẫn đầu thứ nhất bằng cách đổi chỗ hàng 1 và hàng 2
+
+$$
+\left[\begin{array}{rrr|r} 1 & 0 & 10 & 5 \\ 3 & 1 & -4 & -1 \\ 4 & 1 & 6 & 1 \end{array}\right]
+$$
+
+Bây giờ lấy hàng 2 trừ 3 lần hàng 1, và lấy hàng 3 trừ 4 lần hàng 1. Kết quả là
+
+$$
+\left[\begin{array}{rrr|r} 1 & 0 & 10 & 5 \\ 0 & 1 & -34 & -16 \\ 0 & 1 & -34 & -19 \end{array}\right]
+$$
+
+Bây giờ lấy hàng 3 trừ hàng 2 để được
+
+$$
+\left[\begin{array}{rrr|r} 1 & 0 & 10 & 5 \\ 0 & 1 & -34 & -16 \\ 0 & 0 & 0 & -3 \end{array}\right]
+$$
+
+Điều này có nghĩa là hệ phương trình rút gọn sau
+
+$$
+\begin{aligned}
+x + 10z &= 5 \\
+y - 34z &= -16 \\
+0 &= -3
+\end{aligned}
+$$
+
+tương đương với hệ ban đầu. Nói cách khác, hai hệ có cùng nghiệm. Nhưng hệ cuối này rõ ràng không có nghiệm (phương trình cuối đòi hỏi $x$, $y$, $z$ thoả mãn $0x + 0y + 0z = -3$, mà không có bộ số nào như vậy). Do đó hệ ban đầu vô nghiệm.
+</ViDu>
+
+<ViDu so="1.2.3">
+Giải hệ phương trình sau.
+
+$$
+\begin{aligned}
+x_1 - 2x_2 - x_3 + 3x_4 &= 1 \\
+2x_1 - 4x_2 + x_3 \phantom{{}+ 3x_4} &= 5 \\
+x_1 - 2x_2 + 2x_3 - 3x_4 &= 4
+\end{aligned}
+$$
+
+**Lời giải.** Ma trận bổ sung là
+
+$$
+\left[\begin{array}{rrrr|r} 1 & -2 & -1 & 3 & 1 \\ 2 & -4 & 1 & 0 & 5 \\ 1 & -2 & 2 & -3 & 4 \end{array}\right]
+$$
+
+Lấy hàng 2 trừ 2 lần hàng 1 và lấy hàng 3 trừ hàng 1 ta được
+
+$$
+\left[\begin{array}{rrrr|r} 1 & -2 & -1 & 3 & 1 \\ 0 & 0 & 3 & -6 & 3 \\ 0 & 0 & 3 & -6 & 3 \end{array}\right]
+$$
+
+Bây giờ lấy hàng 3 trừ hàng 2 và nhân hàng 2 với $\frac{1}{3}$ để được
+
+$$
+\left[\begin{array}{rrrr|r} 1 & -2 & -1 & 3 & 1 \\ 0 & 0 & 1 & -2 & 1 \\ 0 & 0 & 0 & 0 & 0 \end{array}\right]
+$$
+
+Ma trận này đã ở dạng bậc thang, và ta đưa nó về dạng rút gọn bằng cách cộng hàng 2 vào hàng 1:
+
+$$
+\left[\begin{array}{rrrr|r} 1 & -2 & 0 & 1 & 2 \\ 0 & 0 & 1 & -2 & 1 \\ 0 & 0 & 0 & 0 & 0 \end{array}\right]
+$$
+
+Hệ phương trình rút gọn tương ứng là
+
+$$
+\begin{aligned}
+x_1 - 2x_2 + x_4 &= 2 \\
+x_3 - 2x_4 &= 1 \\
+0 &= 0
+\end{aligned}
+$$
+
+Các số 1 dẫn đầu ở đây nằm trong cột 1 và cột 3, nên các biến tương ứng $x_1$ và $x_3$ được gọi là <ThuatNgu id="leading-variables">biến dẫn đầu</ThuatNgu>. Vì ma trận ở dạng bậc thang rút gọn, các phương trình này có thể dùng để giải các biến dẫn đầu theo các biến không dẫn đầu $x_2$ và $x_4$. Cụ thể hơn, trong ví dụ hiện tại ta đặt $x_2 = s$ và $x_4 = t$ với $s$, $t$ tuỳ ý, khi đó các phương trình trở thành
+
+$$
+x_1 - 2s + t = 2 \quad \text{và} \quad x_3 - 2t = 1
+$$
+
+Cuối cùng các nghiệm được cho bởi
+
+$$
+x_1 = 2 + 2s - t, \quad x_2 = s, \quad x_3 = 1 + 2t, \quad x_4 = t
+$$
+
+với $s$ và $t$ tuỳ ý.
+</ViDu>
+
+## Phép khử Gauss
+
+Lời giải của Ví dụ 1.2.3 là điển hình cho trường hợp tổng quát. Để giải một hệ tuyến tính, ma trận bổ sung được đưa về dạng bậc thang rút gọn, và các biến tương ứng với các số 1 dẫn đầu được gọi là biến dẫn đầu. Vì ma trận ở dạng rút gọn, mỗi biến dẫn đầu chỉ xuất hiện trong *đúng một* phương trình, nên phương trình đó có thể giải ra để cho công thức của biến dẫn đầu theo các biến không dẫn đầu. Người ta quen gọi các biến không dẫn đầu là biến **tự do**, và đặt tên chúng bằng các biến mới $s, t, \ldots$, gọi là **tham số**. Do đó, như trong Ví dụ 1.2.3, mọi biến $x_i$ đều được cho bởi một công thức theo các tham số $s$ và $t$. Hơn nữa, mọi lựa chọn các tham số này đều dẫn đến một nghiệm của hệ, và mọi nghiệm đều sinh ra theo cách này. Quy trình này đúng trong trường hợp tổng quát, và được gọi là:
+
+<DinhLy id="dinh-ly-phep-khu-gauss" ten="Phép khử Gauss">
+Để giải một hệ phương trình tuyến tính, tiến hành như sau:
+
+1. Đưa ma trận bổ sung về ma trận bậc thang rút gọn bằng các phép biến đổi sơ cấp theo hàng.
+2. Nếu xuất hiện một hàng $\left[\begin{array}{cccc|c} 0 & 0 & \cdots & 0 & 1 \end{array}\right]$ thì hệ vô nghiệm.
+3. Ngược lại, gán các biến không dẫn đầu (nếu có) làm tham số, và dùng các phương trình tương ứng với ma trận bậc thang rút gọn để giải các biến dẫn đầu theo các tham số.
+</DinhLy>
+
+Có một biến thể của quy trình này, trong đó ma trận bổ sung chỉ được đưa về dạng bậc thang (chưa rút gọn). Các biến không dẫn đầu được gán làm tham số như trước. Sau đó phương trình cuối cùng (ứng với dạng bậc thang) được dùng để giải biến dẫn đầu cuối cùng theo các tham số. Biến dẫn đầu cuối này rồi được thế ngược vào tất cả các phương trình phía trước. Tiếp đó, phương trình áp chót cho ra biến dẫn đầu áp chót, và biến này cũng được thế ngược lại. Quá trình tiếp tục để cho ra nghiệm tổng quát. Quy trình này gọi là <ThuatNgu id="back-substitution">thế ngược</ThuatNgu>. Có thể chứng minh được rằng quy trình này hiệu quả hơn về mặt số học, nên nó quan trọng khi giải những hệ rất lớn. (Với $n$ phương trình và $n$ lớn, phép khử Gauss cần khoảng $n^3/2$ phép nhân và chia, trong khi con số này chỉ khoảng $n^3/3$ nếu dùng phép thế ngược.)
+
+<GhiChu tieuDe="Ghi chú cho người học — độ phức tạp thuật toán">
+Chú thích về $n^3/2$ so với $n^3/3$ ở trên chính là **phân tích độ phức tạp**. Cả hai đều là $O(n^3)$, nhưng hằng số khác nhau ($\frac12$ so với $\frac13$). Big-O giấu đi hằng số, và trong tính toán thực tế hằng số đó *có* ý nghĩa — với $n = 1000$, chênh lệch là hàng trăm triệu phép tính.
+</GhiChu>
+
+<ViDu so="1.2.4">
+Tìm điều kiện của các số $a$, $b$, $c$ sao cho hệ phương trình sau có nghiệm. Khi điều kiện đó thoả mãn, tìm tất cả nghiệm (theo $a$, $b$, $c$).
+
+$$
+\begin{aligned}
+x_1 + 3x_2 + x_3 &= a \\
+-x_1 - 2x_2 + x_3 &= b \\
+3x_1 + 7x_2 - x_3 &= c
+\end{aligned}
+$$
+
+**Lời giải.** Ta dùng phép khử Gauss, chỉ khác là bây giờ ma trận bổ sung
+
+$$
+\left[\begin{array}{rrr|c} 1 & 3 & 1 & a \\ -1 & -2 & 1 & b \\ 3 & 7 & -1 & c \end{array}\right]
+$$
+
+có các phần tử $a$, $b$, $c$ bên cạnh những số đã biết. Số 1 dẫn đầu thứ nhất đã sẵn có, nên ta tạo các số 0 bên dưới nó ở cột 1:
+
+$$
+\left[\begin{array}{rrr|c} 1 & 3 & 1 & a \\ 0 & 1 & 2 & a + b \\ 0 & -2 & -4 & c - 3a \end{array}\right]
+$$
+
+Số 1 dẫn đầu thứ hai đã xuất hiện, nên dùng nó để tạo các số 0 ở phần còn lại của cột 2:
+
+$$
+\left[\begin{array}{rrr|c} 1 & 0 & -5 & -2a - 3b \\ 0 & 1 & 2 & a + b \\ 0 & 0 & 0 & c - a + 2b \end{array}\right]
+$$
+
+Bây giờ toàn bộ lời giải phụ thuộc vào số $c - a + 2b = c - (a - 2b)$. Hàng cuối ứng với phương trình $0 = c - (a - 2b)$. Nếu $c \neq a - 2b$ thì hệ vô nghiệm (giống như trong Ví dụ 1.2.2). Do đó:
+
+$$
+\text{Hệ có nghiệm khi và chỉ khi } c = a - 2b.
+$$
+
+Trong trường hợp này ma trận cuối trở thành
+
+$$
+\left[\begin{array}{rrr|c} 1 & 0 & -5 & -2a - 3b \\ 0 & 1 & 2 & a + b \\ 0 & 0 & 0 & 0 \end{array}\right]
+$$
+
+Vậy nếu $c = a - 2b$, lấy $x_3 = t$ với $t$ là tham số, ta được các nghiệm
+
+$$
+x_1 = 5t - (2a + 3b), \quad x_2 = (a + b) - 2t, \quad x_3 = t.
+$$
+
+</ViDu>
+
+## Hạng của ma trận
+
+Có thể chứng minh được rằng dạng bậc thang rút gọn của một ma trận $A$ được xác định *duy nhất* bởi $A$. Nghĩa là, dù dùng dãy phép biến đổi hàng nào để đưa $A$ về ma trận bậc thang rút gọn, kết quả luôn là cùng một ma trận. (Chứng minh được cho ở cuối Mục 2.5.) Ngược lại, điều này *không* đúng với ma trận bậc thang (chưa rút gọn): những dãy phép biến đổi hàng khác nhau có thể đưa cùng một ma trận $A$ về những ma trận bậc thang khác nhau. Thật vậy, ma trận $A = \begin{bmatrix} 1 & -1 & 4 \\ 2 & -1 & 2 \end{bmatrix}$ có thể được đưa (bằng một phép biến đổi hàng) về ma trận bậc thang $\begin{bmatrix} 1 & -1 & 4 \\ 0 & 1 & -6 \end{bmatrix}$, rồi bằng một phép biến đổi hàng nữa về ma trận bậc thang (rút gọn) $\begin{bmatrix} 1 & 0 & -2 \\ 0 & 1 & -6 \end{bmatrix}$. Tuy nhiên, điều đúng là *số* $r$ các số 1 dẫn đầu phải như nhau trong mọi ma trận bậc thang đó (điều này sẽ được chứng minh ở Chương 5). Do đó số $r$ chỉ phụ thuộc vào $A$ chứ không phụ thuộc vào cách đưa $A$ về dạng bậc thang.
+
+<DinhNghia so="1.4" ten="Hạng của ma trận">
+<ThuatNgu id="rank">Hạng</ThuatNgu> của ma trận $A$ là số các số 1 dẫn đầu trong bất kỳ ma trận bậc thang nào mà $A$ có thể được đưa về bằng các phép biến đổi hàng.
+</DinhNghia>
+
+<ViDu so="1.2.5">
+Tính hạng của $A = \begin{bmatrix} 1 & 1 & -1 & 4 \\ 2 & 1 & 3 & 0 \\ 0 & 1 & -5 & 8 \end{bmatrix}$.
+
+**Lời giải.** Quá trình đưa $A$ về dạng bậc thang là
+
+$$
+A = \begin{bmatrix} 1 & 1 & -1 & 4 \\ 2 & 1 & 3 & 0 \\ 0 & 1 & -5 & 8 \end{bmatrix}
+\to \begin{bmatrix} 1 & 1 & -1 & 4 \\ 0 & -1 & 5 & -8 \\ 0 & 1 & -5 & 8 \end{bmatrix}
+\to \begin{bmatrix} 1 & 1 & -1 & 4 \\ 0 & 1 & -5 & 8 \\ 0 & 0 & 0 & 0 \end{bmatrix}
+$$
+
+Vì ma trận bậc thang này có hai số 1 dẫn đầu nên $\operatorname{rank} A = 2$.
+</ViDu>
+
+Giả sử $\operatorname{rank} A = r$, trong đó $A$ là ma trận có $m$ hàng và $n$ cột. Khi đó $r \le m$ vì các số 1 dẫn đầu nằm ở những hàng khác nhau, và $r \le n$ vì các số 1 dẫn đầu nằm ở những cột khác nhau. Hơn nữa, hạng có một ứng dụng hữu ích cho phương trình. Nhắc lại rằng một hệ phương trình tuyến tính được gọi là có nghiệm nếu nó có ít nhất một nghiệm.
+
+<DinhLy so="1.2.2">
+Giả sử một hệ gồm $m$ phương trình $n$ biến là có nghiệm, và hạng của ma trận bổ sung là $r$.
+
+1. Tập nghiệm chứa đúng $n - r$ tham số.
+2. Nếu $r < n$ thì hệ có vô số nghiệm.
+3. Nếu $r = n$ thì hệ có nghiệm duy nhất.
+</DinhLy>
+
+**Chứng minh.** Việc hạng của ma trận bổ sung bằng $r$ có nghĩa là có đúng $r$ biến dẫn đầu, và do đó có đúng $n - r$ biến không dẫn đầu. Tất cả các biến không dẫn đầu này đều được gán làm tham số trong thuật toán Gauss, nên tập nghiệm chứa đúng $n - r$ tham số. Do đó nếu $r < n$ thì có ít nhất một tham số, và vì vậy có vô số nghiệm. Nếu $r = n$ thì không có tham số nào và do đó có nghiệm duy nhất. ∎
+
+Định lý 1.2.2 cho thấy rằng, với *bất kỳ* hệ phương trình tuyến tính nào, chỉ tồn tại đúng ba khả năng:
+
+1. **Vô nghiệm.** Xảy ra khi có một hàng $\left[\begin{array}{ccc|c} 0 & \cdots & 0 & 1 \end{array}\right]$ xuất hiện trong dạng bậc thang. Đây là trường hợp hệ vô nghiệm.
+2. **Nghiệm duy nhất.** Xảy ra khi mọi biến đều là biến dẫn đầu.
+3. **Vô số nghiệm.** Xảy ra khi hệ có nghiệm và có ít nhất một biến không dẫn đầu, tức là có ít nhất một tham số.
+
+<ViDu so="1.2.6">
+Giả sử ma trận $A$ trong Ví dụ 1.2.5 là ma trận bổ sung của một hệ gồm $m = 3$ phương trình tuyến tính với $n = 3$ biến. Vì $\operatorname{rank} A = r = 2$, tập nghiệm sẽ có $n - r = 1$ tham số. Bạn đọc có thể tự kiểm chứng trực tiếp điều này.
+</ViDu>
+
+Nhiều bài toán quan trọng liên quan đến *bất phương trình* tuyến tính chứ không phải phương trình tuyến tính. Ví dụ, một điều kiện trên các biến $x$ và $y$ có thể ở dạng bất phương trình $2x - 5y \le 4$ thay vì đẳng thức $2x - 5y = 4$. Có một kỹ thuật (gọi là **thuật toán đơn hình** — *simplex algorithm*) để tìm nghiệm của một hệ các bất phương trình như vậy sao cho một hàm dạng $p = ax + by$ đạt giá trị lớn nhất, trong đó $a$ và $b$ là các hằng số cho trước.

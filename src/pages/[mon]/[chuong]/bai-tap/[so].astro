@@ -69,6 +69,8 @@ const lopDoKho = { de: 'ok', vua: 'info', kho: 'warn' }[bt.data.do_kho];
         <p class="phu-de">§{bt.data.muc} {tenMuc}</p>
       </header>
 
+      <!-- Thứ tự hiển thị (CSS order): Đề · Cần dùng · Gợi ý 1 · Gợi ý 2 · Lời giải · Lỗi hay mắc -->
+      <div class="than-bai-tap">
       <div class="van-ban">
         <Content components={thanhPhanMdx} />
       </div>
@@ -111,11 +113,12 @@ const lopDoKho = { de: 'ok', vua: 'info', kho: 'warn' }[bt.data.do_kho];
 
       {
         !coHuongDan && (
-          <p class="hop ghi-chu" style="font-size:14px">
+          <p class="hop ghi-chu ghi-chu-chua-co" style="font-size:14px">
             Bài này chưa có hướng dẫn giải. Hãy đọc lại các mục liên quan, tự làm, rồi tự đánh giá bên dưới.
           </p>
         )
       }
+      </div>
 
       <dialog class="hoi" data-hoi-20-phut aria-labelledby={`hoi-${bt.data.so}`}>
         <form method="dialog">

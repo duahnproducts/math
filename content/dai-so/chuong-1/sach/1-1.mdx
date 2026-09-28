@@ -1,0 +1,326 @@
+---
+mon: dai-so
+chuong: 1
+muc: "1.1"
+tieu_de: Nghiệm và các phép biến đổi sơ cấp
+tieu_de_en: Solutions and Elementary Operations
+loai: dich-nguyen-van
+nguon: "Dịch từ W. Keith Nicholson, Linear Algebra with Applications, Version 2023 – Revision A, Vretta-Lyryx Inc. (https://lyryx.com/linear-algebra-applications/), Mục 1.1. Bản dịch phát hành theo giấy phép CC BY-NC-SA 4.0, giống bản gốc. Thay đổi: dịch sang tiếng Việt, thêm ghi chú cho người học, vẽ lại Hình 1.1.1."
+---
+
+Các bài toán thực tế trong rất nhiều lĩnh vực — sinh học, kinh doanh, hoá học, khoa học máy tính, kinh tế học, điện tử, kỹ thuật, vật lý và các ngành khoa học xã hội — thường có thể quy về việc giải một <ThuatNgu id="system-of-linear-equations">hệ phương trình tuyến tính</ThuatNgu>. Đại số tuyến tính ra đời từ những nỗ lực tìm ra phương pháp có hệ thống để giải các hệ này, nên việc bắt đầu cuốn sách bằng phương trình tuyến tính là điều tự nhiên.
+
+Nếu $a$, $b$, $c$ là các số thực thì đồ thị của phương trình dạng
+
+$$
+ax + by = c
+$$
+
+là một đường thẳng (khi $a$ và $b$ không đồng thời bằng 0), nên phương trình như vậy được gọi là <ThuatNgu id="linear-equation">phương trình tuyến tính</ThuatNgu> theo hai biến $x$ và $y$. Tuy nhiên, người ta thường viết các biến dưới dạng $x_1, x_2, \ldots, x_n$ cho tiện, nhất là khi có nhiều hơn hai biến. Phương trình dạng
+
+$$
+a_1x_1 + a_2x_2 + \cdots + a_nx_n = b
+$$
+
+được gọi là phương trình tuyến tính theo $n$ biến $x_1, x_2, \ldots, x_n$. Ở đây $a_1, a_2, \ldots, a_n$ là các số thực (gọi là các <ThuatNgu id="coefficient">hệ số</ThuatNgu> của $x_1, x_2, \ldots, x_n$ theo thứ tự) và $b$ cũng là một số (gọi là <ThuatNgu id="constant-term">số hạng tự do</ThuatNgu> của phương trình). Một tập hợp hữu hạn các phương trình tuyến tính theo các biến $x_1, x_2, \ldots, x_n$ được gọi là một hệ phương trình tuyến tính theo các biến đó. Như vậy,
+
+$$
+2x_1 - 3x_2 + 5x_3 = 7
+$$
+
+là một phương trình tuyến tính; các hệ số của $x_1$, $x_2$, $x_3$ lần lượt là $2$, $-3$, $5$, và số hạng tự do là $7$. Lưu ý rằng mỗi biến trong một phương trình tuyến tính chỉ xuất hiện ở *bậc nhất*.
+
+Cho phương trình tuyến tính $a_1x_1 + a_2x_2 + \cdots + a_nx_n = b$, một dãy $n$ số $s_1, s_2, \ldots, s_n$ được gọi là một <ThuatNgu id="solution">nghiệm</ThuatNgu> của phương trình nếu
+
+$$
+a_1s_1 + a_2s_2 + \cdots + a_ns_n = b
+$$
+
+nghĩa là nếu phương trình được thoả mãn khi ta thay $x_1 = s_1$, $x_2 = s_2$, …, $x_n = s_n$. Một dãy số được gọi là nghiệm của một *hệ* phương trình nếu nó là nghiệm của *mọi* phương trình trong hệ đó.
+
+Ví dụ, $x = -2$, $y = 5$, $z = 0$ và $x = 0$, $y = 4$, $z = -1$ đều là nghiệm của hệ
+
+$$
+\begin{aligned}
+x + y + z &= 3 \\
+2x + y + 3z &= 1
+\end{aligned}
+$$
+
+Một hệ có thể hoàn toàn không có nghiệm, hoặc có nghiệm duy nhất, hoặc có vô số nghiệm. Chẳng hạn, hệ $x + y = 2$, $x + y = 3$ không có nghiệm, vì tổng của hai số không thể vừa bằng 2 vừa bằng 3. Một hệ không có nghiệm được gọi là <ThuatNgu id="inconsistent">vô nghiệm</ThuatNgu>; một hệ có ít nhất một nghiệm được gọi là <ThuatNgu id="consistent">có nghiệm</ThuatNgu>. Hệ trong ví dụ sau đây có vô số nghiệm.
+
+<ViDu so="1.1.1">
+Chứng tỏ rằng với mọi giá trị tuỳ ý của $s$ và $t$, bộ
+
+$$
+x_1 = t - s + 1, \quad x_2 = t + s + 2, \quad x_3 = s, \quad x_4 = t
+$$
+
+là một nghiệm của hệ
+
+$$
+\begin{aligned}
+x_1 - 2x_2 + 3x_3 + x_4 &= -3 \\
+2x_1 - x_2 + 3x_3 - x_4 &= 0
+\end{aligned}
+$$
+
+**Lời giải.** Chỉ cần thay các giá trị này của $x_1$, $x_2$, $x_3$, $x_4$ vào từng phương trình.
+
+$$
+\begin{aligned}
+x_1 - 2x_2 + 3x_3 + x_4 &= (t - s + 1) - 2(t + s + 2) + 3s + t = -3 \\
+2x_1 - x_2 + 3x_3 - x_4 &= 2(t - s + 1) - (t + s + 2) + 3s - t = 0
+\end{aligned}
+$$
+
+Vì cả hai phương trình đều được thoả mãn, đây là nghiệm với mọi lựa chọn của $s$ và $t$.
+</ViDu>
+
+Các đại lượng $s$ và $t$ trong Ví dụ 1.1.1 được gọi là các <ThuatNgu id="parameter">tham số</ThuatNgu>, và tập nghiệm được mô tả theo cách này được gọi là cho ở <ThuatNgu id="parametric-form">dạng tham số</ThuatNgu> và được gọi là <ThuatNgu id="general-solution">nghiệm tổng quát</ThuatNgu> của hệ. Hoá ra nghiệm của *mọi* hệ phương trình (nếu có nghiệm) đều có thể cho ở dạng tham số (tức là các biến $x_1, x_2, \ldots$ được biểu diễn qua các biến độc lập mới $s$, $t$, v.v.). Ví dụ sau cho thấy điều này xảy ra như thế nào trong trường hợp đơn giản nhất: chỉ có một phương trình.
+
+<ViDu so="1.1.2">
+Mô tả tất cả nghiệm của $3x - y + 2z = 6$ ở dạng tham số.
+
+**Lời giải.** Giải phương trình theo $y$ qua $x$ và $z$, ta được $y = 3x + 2z - 6$. Nếu $s$ và $t$ tuỳ ý thì, đặt $x = s$, $z = t$, ta được các nghiệm
+
+$$
+x = s, \quad y = 3s + 2t - 6, \quad z = t \qquad \text{với } s, t \text{ tuỳ ý.}
+$$
+
+Tất nhiên ta cũng có thể giải theo $x$: $x = \frac{1}{3}(y - 2z + 6)$. Khi đó, nếu lấy $y = p$, $z = q$, các nghiệm được biểu diễn như sau:
+
+$$
+x = \tfrac{1}{3}(p - 2q + 6), \quad y = p, \quad z = q \qquad \text{với } p, q \text{ tuỳ ý.}
+$$
+
+Cùng một họ nghiệm mà “trông” có thể khác nhau khá nhiều!
+</ViDu>
+
+<GhiChu tieuDe="Ghi chú cho người học">
+Ý quan trọng của Ví dụ 1.1.2: *cách viết* nghiệm không duy nhất, nhưng *tập* nghiệm thì duy nhất. Khi bạn tự giải một bài và ra đáp án “trông khác” đáp án trong sách, đừng vội kết luận là sai — hãy thử đặt lại tham số hoặc thay vài giá trị cụ thể để kiểm tra hai họ nghiệm có trùng nhau không.
+</GhiChu>
+
+## Ý nghĩa hình học khi có hai biến
+
+Khi chỉ có hai biến, nghiệm của hệ phương trình tuyến tính có thể mô tả bằng hình học, vì đồ thị của phương trình tuyến tính $ax + by = c$ là một đường thẳng nếu $a$ và $b$ không đồng thời bằng 0. Hơn nữa, điểm $P(s, t)$ với toạ độ $s$ và $t$ nằm trên đường thẳng khi và chỉ khi $as + bt = c$ — tức là khi $x = s$, $y = t$ là một nghiệm của phương trình. Do đó nghiệm của một *hệ* phương trình tuyến tính tương ứng với các điểm $P(s, t)$ nằm trên *tất cả* các đường thẳng đang xét.
+
+Nói riêng, nếu hệ chỉ gồm một phương trình thì phải có vô số nghiệm, vì có vô số điểm trên một đường thẳng. Nếu hệ có hai phương trình thì có ba khả năng cho hai đường thẳng tương ứng:
+
+1. Hai đường thẳng cắt nhau tại một điểm duy nhất. Khi đó hệ có *nghiệm duy nhất* ứng với điểm đó.
+2. Hai đường thẳng song song (và phân biệt) nên không cắt nhau. Khi đó hệ *vô nghiệm*.
+3. Hai đường thẳng trùng nhau. Khi đó hệ có *vô số nghiệm* — mỗi điểm trên đường thẳng chung cho một nghiệm.
+
+<HinhBaTruongHop />
+
+Trong trường hợp cuối, hai phương trình là $3x - y = 4$ và $-6x + 2y = -8$, có đồ thị trùng nhau.
+
+Với ba biến, đồ thị của phương trình $ax + by + cz = d$ có thể chứng minh được là một mặt phẳng (xem Mục 4.2), nên một lần nữa ta có “hình ảnh” của tập nghiệm. Tuy nhiên phương pháp đồ thị này có giới hạn: khi có nhiều hơn ba biến thì không thể hình dung được đồ thị (khi đó gọi là <ThuatNgu id="hyperplane">siêu phẳng</ThuatNgu>). Cần chuyển sang một phương pháp giải mang tính “đại số” hơn.
+
+## Ma trận bổ sung
+
+Trước khi mô tả phương pháp đó, ta giới thiệu một khái niệm giúp đơn giản hoá các tính toán. Xét hệ sau
+
+$$
+\begin{aligned}
+3x_1 + 2x_2 - x_3 + x_4 &= -1 \\
+2x_1 \phantom{{}+ 2x_2} - x_3 + 2x_4 &= 0 \\
+3x_1 + x_2 + 2x_3 + 5x_4 &= 2
+\end{aligned}
+$$
+
+gồm ba phương trình bốn biến. Bảng số (một bảng số hình chữ nhật được gọi là một <ThuatNgu id="matrix">ma trận</ThuatNgu>; ma trận sẽ được bàn kỹ hơn ở Chương 2)
+
+$$
+\left[\begin{array}{rrrr|r}
+3 & 2 & -1 & 1 & -1 \\
+2 & 0 & -1 & 2 & 0 \\
+3 & 1 & 2 & 5 & 2
+\end{array}\right]
+$$
+
+xuất hiện trong hệ được gọi là <ThuatNgu id="augmented-matrix">ma trận bổ sung</ThuatNgu> của hệ. Mỗi **hàng** của ma trận gồm các hệ số của các biến (theo thứ tự) lấy từ phương trình tương ứng, cùng với số hạng tự do. Để cho rõ, các số hạng tự do được ngăn cách bằng một vạch dọc. Ma trận bổ sung chỉ là một cách khác để mô tả hệ phương trình. Bảng các hệ số của các biến
+
+$$
+\left[\begin{array}{rrrr}
+3 & 2 & -1 & 1 \\
+2 & 0 & -1 & 2 \\
+3 & 1 & 2 & 5
+\end{array}\right]
+$$
+
+được gọi là <ThuatNgu id="coefficient-matrix">ma trận hệ số</ThuatNgu> của hệ, và $\left[\begin{array}{r} -1 \\ 0 \\ 2 \end{array}\right]$ được gọi là <ThuatNgu id="constant-matrix">ma trận cột tự do</ThuatNgu> của hệ.
+
+## Các phép biến đổi sơ cấp
+
+Phương pháp đại số để giải hệ phương trình tuyến tính được mô tả như sau. Hai hệ được gọi là <ThuatNgu id="equivalent-systems">tương đương</ThuatNgu> nếu chúng có cùng tập nghiệm. Ta giải một hệ bằng cách viết ra một dãy các hệ, hệ này nối tiếp hệ kia, mỗi hệ tương đương với hệ trước đó. Mỗi hệ trong dãy này có cùng tập nghiệm với hệ ban đầu; mục tiêu là đi đến một hệ dễ giải. Mỗi hệ trong dãy được suy ra từ hệ đứng trước bằng một thao tác đơn giản được chọn sao cho nó không làm thay đổi tập nghiệm.
+
+Để minh hoạ, ta giải hệ $x + 2y = -2$, $2x + y = 7$ theo cách này. Ở mỗi bước, ma trận bổ sung tương ứng được hiển thị. Hệ ban đầu là
+
+$$
+\begin{aligned}
+x + 2y &= -2 \\
+2x + y &= 7
+\end{aligned}
+\qquad
+\left[\begin{array}{rr|r} 1 & 2 & -2 \\ 2 & 1 & 7 \end{array}\right]
+$$
+
+Trước hết, lấy phương trình thứ hai trừ đi 2 lần phương trình thứ nhất. Hệ thu được là
+
+$$
+\begin{aligned}
+x + 2y &= -2 \\
+-3y &= 11
+\end{aligned}
+\qquad
+\left[\begin{array}{rr|r} 1 & 2 & -2 \\ 0 & -3 & 11 \end{array}\right]
+$$
+
+và hệ này tương đương với hệ ban đầu (xem Định lý 1.1.1). Đến đây ta được $y = -\frac{11}{3}$ bằng cách nhân phương trình thứ hai với $-\frac{1}{3}$. Kết quả là hệ tương đương
+
+$$
+\begin{aligned}
+x + 2y &= -2 \\
+y &= -\tfrac{11}{3}
+\end{aligned}
+\qquad
+\left[\begin{array}{rr|r} 1 & 2 & -2 \\ 0 & 1 & -\frac{11}{3} \end{array}\right]
+$$
+
+Cuối cùng, lấy phương trình thứ nhất trừ đi 2 lần phương trình thứ hai để được một hệ tương đương nữa.
+
+$$
+\begin{aligned}
+x &= \tfrac{16}{3} \\
+y &= -\tfrac{11}{3}
+\end{aligned}
+\qquad
+\left[\begin{array}{rr|r} 1 & 0 & \frac{16}{3} \\ 0 & 1 & -\frac{11}{3} \end{array}\right]
+$$
+
+Bây giờ hệ này quá dễ giải! Và vì nó tương đương với hệ ban đầu, nó cho ta nghiệm của hệ ban đầu.
+
+Hãy để ý rằng ở mỗi bước, một *phép biến đổi* nhất định được thực hiện trên hệ (và do đó trên ma trận bổ sung) để tạo ra một hệ tương đương.
+
+<DinhNghia so="1.1" ten="Các phép biến đổi sơ cấp">
+Các phép biến đổi sau, gọi là <ThuatNgu id="elementary-operations">phép biến đổi sơ cấp</ThuatNgu>, có thể thực hiện một cách thường quy trên hệ phương trình tuyến tính để tạo ra các hệ tương đương.
+
+I. Đổi chỗ hai phương trình.
+
+II. Nhân một phương trình với một số khác 0.
+
+III. Cộng vào một phương trình một bội của một phương trình *khác*.
+</DinhNghia>
+
+<DinhLy so="1.1.1">
+Giả sử một dãy các phép biến đổi sơ cấp được thực hiện trên một hệ phương trình tuyến tính. Khi đó hệ thu được có cùng tập nghiệm với hệ ban đầu, nên hai hệ là tương đương.
+</DinhLy>
+
+Chứng minh được cho ở cuối mục này.
+
+Các phép biến đổi sơ cấp thực hiện trên hệ phương trình tạo ra các thao tác tương ứng trên các *hàng* của ma trận bổ sung. Như vậy, nhân một hàng của ma trận với số $k$ nghĩa là nhân mọi phần tử của hàng đó với $k$. Cộng một hàng vào một hàng khác nghĩa là cộng từng phần tử của hàng đó vào phần tử tương ứng của hàng kia. Trừ hai hàng cũng làm tương tự. Lưu ý rằng ta coi hai hàng là bằng nhau khi các phần tử tương ứng giống nhau.
+
+Trong tính toán bằng tay (và trong chương trình máy tính), ta thao tác trên các hàng của ma trận bổ sung thay vì trên các phương trình. Vì lý do đó, ta phát biểu lại các phép biến đổi sơ cấp này cho ma trận.
+
+<DinhNghia so="1.2" ten="Các phép biến đổi sơ cấp theo hàng">
+Các phép sau được gọi là <ThuatNgu id="elementary-row-operations">phép biến đổi sơ cấp theo hàng</ThuatNgu> trên một ma trận.
+
+I. Đổi chỗ hai hàng.
+
+II. Nhân một hàng với một số khác 0.
+
+III. Cộng vào một hàng một bội của một hàng *khác*.
+</DinhNghia>
+
+Trong minh hoạ ở trên, một dãy các phép như vậy đã dẫn đến ma trận dạng $\left[\begin{array}{cc|c} 1 & 0 & * \\ 0 & 1 & * \end{array}\right]$, trong đó các dấu sao biểu thị các số tuỳ ý. Trong trường hợp ba phương trình ba biến, mục tiêu là tạo ra ma trận dạng
+
+$$
+\left[\begin{array}{ccc|c}
+1 & 0 & 0 & * \\
+0 & 1 & 0 & * \\
+0 & 0 & 1 & *
+\end{array}\right]
+$$
+
+Điều này không phải lúc nào cũng xảy ra, như ta sẽ thấy ở mục sau. Dưới đây là một ví dụ mà nó xảy ra.
+
+<ViDu so="1.1.3">
+Tìm tất cả nghiệm của hệ phương trình sau.
+
+$$
+\begin{aligned}
+3x + 4y + z &= 1 \\
+2x + 3y \phantom{{}+ z} &= 0 \\
+4x + 3y - z &= -2
+\end{aligned}
+$$
+
+**Lời giải.** Ma trận bổ sung của hệ ban đầu là
+
+$$
+\left[\begin{array}{rrr|r} 3 & 4 & 1 & 1 \\ 2 & 3 & 0 & 0 \\ 4 & 3 & -1 & -2 \end{array}\right]
+$$
+
+Để tạo số 1 ở góc trên bên trái, ta có thể nhân hàng 1 với $\frac{1}{3}$. Tuy nhiên, có thể thu được số 1 mà không phải đưa vào phân số, bằng cách lấy hàng 1 trừ hàng 2. Kết quả là
+
+$$
+\left[\begin{array}{rrr|r} 1 & 1 & 1 & 1 \\ 2 & 3 & 0 & 0 \\ 4 & 3 & -1 & -2 \end{array}\right]
+$$
+
+Số 1 ở góc trên trái bây giờ được dùng để “dọn dẹp” cột thứ nhất, nghĩa là tạo các số 0 ở những vị trí còn lại của cột đó. Trước hết lấy hàng 2 trừ đi 2 lần hàng 1 để được
+
+$$
+\left[\begin{array}{rrr|r} 1 & 1 & 1 & 1 \\ 0 & 1 & -2 & -2 \\ 4 & 3 & -1 & -2 \end{array}\right]
+$$
+
+Tiếp theo lấy hàng 3 trừ đi 4 lần hàng 1. Kết quả là
+
+$$
+\left[\begin{array}{rrr|r} 1 & 1 & 1 & 1 \\ 0 & 1 & -2 & -2 \\ 0 & -1 & -5 & -6 \end{array}\right]
+$$
+
+Việc xử lý cột 1 đã xong. Bây giờ ta dùng số 1 ở vị trí thứ hai của hàng thứ hai để dọn dẹp cột thứ hai, bằng cách lấy hàng 1 trừ hàng 2, rồi cộng hàng 2 vào hàng 3. Cho tiện, cả hai phép biến đổi hàng được làm trong một bước. Kết quả là
+
+$$
+\left[\begin{array}{rrr|r} 1 & 0 & 3 & 3 \\ 0 & 1 & -2 & -2 \\ 0 & 0 & -7 & -8 \end{array}\right]
+$$
+
+Lưu ý rằng hai thao tác cuối không ảnh hưởng đến cột thứ nhất (hàng thứ hai có số 0 ở đó), nên công sức ta bỏ ra cho cột 1 không bị phá hỏng. Cuối cùng ta dọn dẹp cột thứ ba. Bắt đầu bằng cách nhân hàng 3 với $-\frac{1}{7}$ để được
+
+$$
+\left[\begin{array}{rrr|r} 1 & 0 & 3 & 3 \\ 0 & 1 & -2 & -2 \\ 0 & 0 & 1 & \frac{8}{7} \end{array}\right]
+$$
+
+Bây giờ lấy hàng 1 trừ đi 3 lần hàng 3, rồi cộng vào hàng 2 hai lần hàng 3 để được
+
+$$
+\left[\begin{array}{rrr|r} 1 & 0 & 0 & -\frac{3}{7} \\ 0 & 1 & 0 & \frac{2}{7} \\ 0 & 0 & 1 & \frac{8}{7} \end{array}\right]
+$$
+
+Các phương trình tương ứng là $x = -\frac{3}{7}$, $y = \frac{2}{7}$, $z = \frac{8}{7}$, cho ta nghiệm (duy nhất).
+</ViDu>
+
+## Phép nghịch đảo và chứng minh Định lý 1.1.1
+
+Mọi phép biến đổi sơ cấp theo hàng đều có thể được *hoàn tác* bằng một phép biến đổi sơ cấp theo hàng khác cùng loại (gọi là phép **nghịch đảo** của nó). Để thấy điều đó, ta xét riêng từng loại I, II và III:
+
+- **Loại I.** Đổi chỗ hai hàng được hoàn tác bằng cách đổi chỗ chúng lần nữa.
+- **Loại II.** Nhân một hàng với số $k \neq 0$ được hoàn tác bằng cách nhân với $1/k$.
+- **Loại III.** Cộng $k$ lần hàng $p$ vào một hàng $q$ khác được hoàn tác bằng cách cộng $-k$ lần hàng $p$ vào hàng $q$ (trong ma trận mới). Lưu ý rằng điều kiện $p \neq q$ là thiết yếu ở đây.
+
+Để minh hoạ tình huống Loại III, giả sử ma trận ban đầu có bốn hàng, ký hiệu $R_1$, $R_2$, $R_3$, $R_4$, và ta cộng $k$ lần $R_2$ vào $R_3$. Khi đó phép ngược lại cộng $-k$ lần $R_2$ vào $R_3$. Sơ đồ sau minh hoạ tác dụng của việc làm phép biến đổi rồi làm phép ngược lại:
+
+$$
+\begin{bmatrix} R_1 \\ R_2 \\ R_3 \\ R_4 \end{bmatrix}
+\to
+\begin{bmatrix} R_1 \\ R_2 \\ R_3 + kR_2 \\ R_4 \end{bmatrix}
+\to
+\begin{bmatrix} R_1 \\ R_2 \\ (R_3 + kR_2) - kR_2 \\ R_4 \end{bmatrix}
+=
+\begin{bmatrix} R_1 \\ R_2 \\ R_3 \\ R_4 \end{bmatrix}
+$$
+
+Sự tồn tại của phép nghịch đảo cho các phép biến đổi sơ cấp theo hàng, và do đó cho các phép biến đổi sơ cấp trên hệ phương trình, cho ta:
+
+**Chứng minh Định lý 1.1.1.** Giả sử một hệ phương trình tuyến tính được biến đổi thành một hệ mới bởi một dãy các phép biến đổi sơ cấp. Khi đó mọi nghiệm của hệ ban đầu tự động là nghiệm của hệ mới, bởi vì cộng các phương trình, hoặc nhân một phương trình với một số khác 0, luôn cho ra một phương trình hợp lệ. Tương tự, mỗi nghiệm của hệ mới phải là nghiệm của hệ ban đầu, bởi vì hệ ban đầu có thể thu được từ hệ mới bằng một dãy phép biến đổi sơ cấp khác (các phép nghịch đảo của các phép ban đầu). Từ đó suy ra hệ ban đầu và hệ mới có cùng tập nghiệm. Định lý 1.1.1 được chứng minh. ∎

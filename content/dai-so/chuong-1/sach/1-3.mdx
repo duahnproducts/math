@@ -1,0 +1,196 @@
+---
+mon: dai-so
+chuong: 1
+muc: "1.3"
+tieu_de: Hệ phương trình thuần nhất
+tieu_de_en: Homogeneous Equations
+loai: dich-nguyen-van
+nguon: "Dịch từ W. Keith Nicholson, Linear Algebra with Applications, Version 2023 – Revision A, Vretta-Lyryx Inc. (https://lyryx.com/linear-algebra-applications/), Mục 1.3. Bản dịch phát hành theo giấy phép CC BY-NC-SA 4.0, giống bản gốc. Thay đổi: dịch sang tiếng Việt, thêm ghi chú cho người học."
+---
+
+Một hệ phương trình theo các biến $x_1, x_2, \ldots, x_n$ được gọi là <ThuatNgu id="homogeneous">thuần nhất</ThuatNgu> nếu tất cả các số hạng tự do đều bằng 0 — nghĩa là nếu mỗi phương trình của hệ có dạng
+
+$$
+a_1x_1 + a_2x_2 + \cdots + a_nx_n = 0
+$$
+
+Rõ ràng $x_1 = 0, x_2 = 0, \ldots, x_n = 0$ là một nghiệm của hệ như vậy; nó được gọi là <ThuatNgu id="trivial-solution">nghiệm tầm thường</ThuatNgu>. Bất kỳ nghiệm nào trong đó có ít nhất một biến nhận giá trị khác 0 được gọi là **nghiệm không tầm thường** (*nontrivial solution*). Mục tiêu chính của mục này là đưa ra một điều kiện hữu ích để một hệ thuần nhất có nghiệm không tầm thường. Ví dụ sau đây rất đáng học.
+
+<ViDu so="1.3.1">
+Chứng tỏ rằng hệ thuần nhất sau có nghiệm không tầm thường.
+
+$$
+\begin{aligned}
+x_1 - x_2 + 2x_3 - x_4 &= 0 \\
+2x_1 + 2x_2 \phantom{{}+ 2x_3} + x_4 &= 0 \\
+3x_1 + x_2 + 2x_3 - x_4 &= 0
+\end{aligned}
+$$
+
+**Lời giải.** Quá trình đưa ma trận bổ sung về dạng bậc thang rút gọn được phác ra dưới đây.
+
+$$
+\left[\begin{array}{rrrr|r} 1 & -1 & 2 & -1 & 0 \\ 2 & 2 & 0 & 1 & 0 \\ 3 & 1 & 2 & -1 & 0 \end{array}\right]
+\to
+\left[\begin{array}{rrrr|r} 1 & -1 & 2 & -1 & 0 \\ 0 & 4 & -4 & 3 & 0 \\ 0 & 4 & -4 & 2 & 0 \end{array}\right]
+\to
+\left[\begin{array}{rrrr|r} 1 & 0 & 1 & 0 & 0 \\ 0 & 1 & -1 & 0 & 0 \\ 0 & 0 & 0 & 1 & 0 \end{array}\right]
+$$
+
+Các biến dẫn đầu là $x_1$, $x_2$, $x_4$, nên $x_3$ được gán làm tham số — chẳng hạn $x_3 = t$. Khi đó nghiệm tổng quát là $x_1 = -t$, $x_2 = t$, $x_3 = t$, $x_4 = 0$. Do đó, lấy $t = 1$ (chẳng hạn), ta được một nghiệm không tầm thường: $x_1 = -1$, $x_2 = 1$, $x_3 = 1$, $x_4 = 0$.
+</ViDu>
+
+Sự tồn tại nghiệm không tầm thường trong Ví dụ 1.3.1 được bảo đảm bởi sự có mặt của một tham số trong nghiệm. Điều này là do có một biến không dẫn đầu ($x_3$ trong trường hợp này). Nhưng ở đây *phải* có một biến không dẫn đầu, vì có bốn biến mà chỉ có ba phương trình (và do đó nhiều nhất là ba biến dẫn đầu). Lập luận này tổng quát hoá thành chứng minh của định lý cơ bản sau.
+
+<DinhLy so="1.3.1">
+Nếu một hệ phương trình tuyến tính thuần nhất có số biến nhiều hơn số phương trình thì nó có nghiệm không tầm thường (thực ra là có vô số nghiệm).
+</DinhLy>
+
+**Chứng minh.** Giả sử có $m$ phương trình với $n$ biến, trong đó $n > m$, và gọi $R$ là dạng bậc thang rút gọn của ma trận bổ sung. Nếu có $r$ biến dẫn đầu thì có $n - r$ biến không dẫn đầu, và do đó $n - r$ tham số. Vậy chỉ cần chứng minh $r < n$. Nhưng $r \le m$ vì $R$ có $r$ số 1 dẫn đầu và $m$ hàng, và $m < n$ theo giả thiết. Vậy $r \le m < n$, cho ta $r < n$. ∎
+
+Lưu ý rằng mệnh đề *đảo* của Định lý 1.3.1 không đúng: nếu một hệ thuần nhất có nghiệm không tầm thường thì không nhất thiết nó phải có số biến nhiều hơn số phương trình (hệ $x_1 + x_2 = 0$, $2x_1 + 2x_2 = 0$ có nghiệm không tầm thường nhưng $m = 2 = n$).
+
+<GhiChu tieuDe="Ghi chú cho người học — mệnh đề đảo">
+“Nếu P thì Q” *không* kéo theo “nếu Q thì P”. Định lý nói: nhiều biến hơn phương trình ⇒ có nghiệm không tầm thường. Nó *không* nói: có nghiệm không tầm thường ⇒ nhiều biến hơn phương trình. Sách đưa luôn một **phản ví dụ** để bác bỏ chiều ngược lại. Thói quen “tìm phản ví dụ” này sẽ theo bạn suốt trong toán và cả trong kiểm thử phần mềm.
+</GhiChu>
+
+Định lý 1.3.1 rất hữu ích trong các ứng dụng. Ví dụ sau minh hoạ một ứng dụng từ hình học.
+
+<ViDu so="1.3.2">
+Ta gọi đồ thị của phương trình $ax^2 + bxy + cy^2 + dx + ey + f = 0$ là một **conic** nếu các số $a$, $b$, $c$ không đồng thời bằng 0. Chứng tỏ rằng có ít nhất một conic đi qua năm điểm bất kỳ trong mặt phẳng mà không cùng nằm trên một đường thẳng.
+
+**Lời giải.** Gọi toạ độ của năm điểm là $(p_1, q_1)$, $(p_2, q_2)$, $(p_3, q_3)$, $(p_4, q_4)$, $(p_5, q_5)$. Đồ thị của $ax^2 + bxy + cy^2 + dx + ey + f = 0$ đi qua $(p_i, q_i)$ nếu
+
+$$
+ap_i^2 + bp_iq_i + cq_i^2 + dp_i + eq_i + f = 0
+$$
+
+Điều này cho ta năm phương trình, mỗi phương trình ứng với một $i$, tuyến tính theo sáu biến $a$, $b$, $c$, $d$, $e$, $f$. Do đó có nghiệm không tầm thường theo Định lý 1.3.1. Nếu $a = b = c = 0$ thì năm điểm đều nằm trên đường thẳng có phương trình $dx + ey + f = 0$, trái với giả thiết. Vậy một trong các số $a$, $b$, $c$ phải khác 0.
+</ViDu>
+
+## Tổ hợp tuyến tính và nghiệm cơ bản
+
+Cũng như với hàng, hai *cột* được coi là bằng nhau nếu chúng có cùng số phần tử và các phần tử tương ứng giống nhau. Cho $\mathbf{x}$ và $\mathbf{y}$ là các cột có cùng số phần tử. Tương tự như với phép biến đổi sơ cấp theo hàng, tổng $\mathbf{x} + \mathbf{y}$ của chúng thu được bằng cách cộng các phần tử tương ứng, và nếu $k$ là một số thì **tích vô hướng** $k\mathbf{x}$ được định nghĩa bằng cách nhân mỗi phần tử của $\mathbf{x}$ với $k$. Cụ thể hơn:
+
+$$
+\text{Nếu } \mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix} \text{ và } \mathbf{y} = \begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{bmatrix}
+\text{ thì } \mathbf{x} + \mathbf{y} = \begin{bmatrix} x_1 + y_1 \\ x_2 + y_2 \\ \vdots \\ x_n + y_n \end{bmatrix} \text{ và } k\mathbf{x} = \begin{bmatrix} kx_1 \\ kx_2 \\ \vdots \\ kx_n \end{bmatrix}.
+$$
+
+Một tổng các bội vô hướng của nhiều cột được gọi là một <ThuatNgu id="linear-combination">tổ hợp tuyến tính</ThuatNgu> của các cột đó. Ví dụ, $s\mathbf{x} + t\mathbf{y}$ là một tổ hợp tuyến tính của $\mathbf{x}$ và $\mathbf{y}$ với mọi lựa chọn số $s$ và $t$.
+
+<ViDu so="1.3.3">
+Nếu $\mathbf{x} = \begin{bmatrix} 3 \\ -2 \end{bmatrix}$ và $\mathbf{y} = \begin{bmatrix} -1 \\ 1 \end{bmatrix}$ thì $2\mathbf{x} + 5\mathbf{y} = \begin{bmatrix} 6 \\ -4 \end{bmatrix} + \begin{bmatrix} -5 \\ 5 \end{bmatrix} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$.
+</ViDu>
+
+<ViDu so="1.3.4">
+Cho $\mathbf{x} = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}$, $\mathbf{y} = \begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix}$ và $\mathbf{z} = \begin{bmatrix} 3 \\ 1 \\ 1 \end{bmatrix}$. Nếu $\mathbf{v} = \begin{bmatrix} 0 \\ -1 \\ 2 \end{bmatrix}$ và $\mathbf{w} = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}$, hãy xác định xem $\mathbf{v}$ và $\mathbf{w}$ có phải là tổ hợp tuyến tính của $\mathbf{x}$, $\mathbf{y}$, $\mathbf{z}$ hay không.
+
+**Lời giải.** Với $\mathbf{v}$, ta phải xác định xem có tồn tại các số $r$, $s$, $t$ sao cho $\mathbf{v} = r\mathbf{x} + s\mathbf{y} + t\mathbf{z}$ hay không, tức là
+
+$$
+\begin{bmatrix} 0 \\ -1 \\ 2 \end{bmatrix} = r\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} + s\begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix} + t\begin{bmatrix} 3 \\ 1 \\ 1 \end{bmatrix} = \begin{bmatrix} r + 2s + 3t \\ s + t \\ r + t \end{bmatrix}
+$$
+
+Cho các phần tử tương ứng bằng nhau, ta được hệ phương trình tuyến tính $r + 2s + 3t = 0$, $s + t = -1$, $r + t = 2$ theo $r$, $s$, $t$. Bằng phép khử Gauss, nghiệm là $r = 2 - k$, $s = -1 - k$, $t = k$ với $k$ là tham số. Lấy $k = 0$, ta thấy $\mathbf{v} = 2\mathbf{x} - \mathbf{y}$ là một tổ hợp tuyến tính của $\mathbf{x}$, $\mathbf{y}$, $\mathbf{z}$.
+
+Chuyển sang $\mathbf{w}$, ta lại tìm $r$, $s$, $t$ sao cho $\mathbf{w} = r\mathbf{x} + s\mathbf{y} + t\mathbf{z}$; điều này dẫn đến các phương trình $r + 2s + 3t = 1$, $s + t = 1$, $r + t = 1$ theo các số thực $r$, $s$, $t$. Nhưng lần này hệ vô nghiệm, bạn đọc có thể tự kiểm chứng, nên $\mathbf{w}$ *không* phải là tổ hợp tuyến tính của $\mathbf{x}$, $\mathbf{y}$, $\mathbf{z}$.
+</ViDu>
+
+Ta quan tâm đến tổ hợp tuyến tính vì chúng cho một trong những cách tốt nhất để mô tả nghiệm tổng quát của hệ phương trình tuyến tính thuần nhất. Khi giải một hệ như vậy với $n$ biến $x_1, x_2, \ldots, x_n$, ta viết các biến thành một ma trận *cột* $\mathbf{x} = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \end{bmatrix}^T$ (lý do dùng cột sẽ rõ ở phần sau). Nghiệm tầm thường được ký hiệu $\mathbf{0}$. Minh hoạ: nghiệm tổng quát trong Ví dụ 1.3.1 là $x_1 = -t$, $x_2 = t$, $x_3 = t$, $x_4 = 0$, với $t$ là tham số, và bây giờ ta sẽ diễn đạt điều này bằng cách nói rằng nghiệm tổng quát là $\mathbf{x} = \begin{bmatrix} -t & t & t & 0 \end{bmatrix}^T$, với $t$ tuỳ ý.
+
+Bây giờ cho $\mathbf{x}$ và $\mathbf{y}$ là hai nghiệm của một hệ thuần nhất với $n$ biến. Khi đó mọi tổ hợp tuyến tính $s\mathbf{x} + t\mathbf{y}$ của các nghiệm này hoá ra lại là một nghiệm của hệ. Tổng quát hơn:
+
+<TomTat tieuDe="(1.1)">
+Mọi tổ hợp tuyến tính của các nghiệm của một hệ thuần nhất đều lại là một nghiệm.
+</TomTat>
+
+Thật vậy, giả sử một phương trình tiêu biểu trong hệ là $a_1x_1 + a_2x_2 + \cdots + a_nx_n = 0$, và giả sử $\mathbf{x}$, $\mathbf{y}$ là các nghiệm. Khi đó $a_1x_1 + \cdots + a_nx_n = 0$ và $a_1y_1 + \cdots + a_ny_n = 0$. Do đó $s\mathbf{x} + t\mathbf{y}$ cũng là một nghiệm, bởi vì
+
+$$
+\begin{aligned}
+&a_1(sx_1 + ty_1) + a_2(sx_2 + ty_2) + \cdots + a_n(sx_n + ty_n) \\
+&= [a_1(sx_1) + \cdots + a_n(sx_n)] + [a_1(ty_1) + \cdots + a_n(ty_n)] \\
+&= s(a_1x_1 + \cdots + a_nx_n) + t(a_1y_1 + \cdots + a_ny_n) \\
+&= s(0) + t(0) = 0
+\end{aligned}
+$$
+
+Một lập luận tương tự cho thấy Mệnh đề (1.1) cũng đúng với tổ hợp tuyến tính của nhiều hơn hai nghiệm.
+
+Điều đáng chú ý là *mọi* nghiệm của một hệ thuần nhất đều là tổ hợp tuyến tính của một số nghiệm riêng nhất định, và thực ra các nghiệm này dễ dàng tính được bằng thuật toán Gauss. Sau đây là một ví dụ.
+
+<ViDu so="1.3.5">
+Giải hệ thuần nhất có ma trận hệ số
+
+$$
+A = \begin{bmatrix} 1 & -2 & 3 & -2 \\ -3 & 6 & 1 & 0 \\ -2 & 4 & 4 & -2 \end{bmatrix}
+$$
+
+**Lời giải.** Quá trình đưa ma trận bổ sung về dạng rút gọn là
+
+$$
+\left[\begin{array}{rrrr|r} 1 & -2 & 3 & -2 & 0 \\ -3 & 6 & 1 & 0 & 0 \\ -2 & 4 & 4 & -2 & 0 \end{array}\right]
+\to
+\left[\begin{array}{rrrr|r} 1 & -2 & 0 & -\frac15 & 0 \\ 0 & 0 & 1 & -\frac35 & 0 \\ 0 & 0 & 0 & 0 & 0 \end{array}\right]
+$$
+
+nên các nghiệm là $x_1 = 2s + \frac15 t$, $x_2 = s$, $x_3 = \frac35 t$, $x_4 = t$ theo phép khử Gauss. Do đó ta có thể viết nghiệm tổng quát $\mathbf{x}$ ở dạng ma trận
+
+$$
+\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} = \begin{bmatrix} 2s + \frac15 t \\ s \\ \frac35 t \\ t \end{bmatrix} = s\begin{bmatrix} 2 \\ 1 \\ 0 \\ 0 \end{bmatrix} + t\begin{bmatrix} \frac15 \\ 0 \\ \frac35 \\ 1 \end{bmatrix} = s\mathbf{x}_1 + t\mathbf{x}_2.
+$$
+
+Ở đây $\mathbf{x}_1 = \begin{bmatrix} 2 & 1 & 0 & 0 \end{bmatrix}^T$ và $\mathbf{x}_2 = \begin{bmatrix} \frac15 & 0 & \frac35 & 1 \end{bmatrix}^T$ là các nghiệm riêng được xác định bởi thuật toán Gauss.
+</ViDu>
+
+Các nghiệm $\mathbf{x}_1$ và $\mathbf{x}_2$ trong Ví dụ 1.3.5 được gọi như sau:
+
+<DinhNghia so="1.5" ten="Nghiệm cơ bản">
+Thuật toán Gauss sinh ra một cách có hệ thống các nghiệm của mọi hệ tuyến tính thuần nhất, gọi là <ThuatNgu id="basic-solutions">nghiệm cơ bản</ThuatNgu>, mỗi tham số cho một nghiệm cơ bản.
+</DinhNghia>
+
+Hơn nữa, thuật toán cho một cách thường quy để biểu diễn *mọi* nghiệm thành tổ hợp tuyến tính của các nghiệm cơ bản như trong Ví dụ 1.3.5, ở đó nghiệm tổng quát $\mathbf{x}$ trở thành
+
+$$
+\mathbf{x} = s\begin{bmatrix} 2 \\ 1 \\ 0 \\ 0 \end{bmatrix} + t\begin{bmatrix} \frac15 \\ 0 \\ \frac35 \\ 1 \end{bmatrix} = s\begin{bmatrix} 2 \\ 1 \\ 0 \\ 0 \end{bmatrix} + \tfrac15 t\begin{bmatrix} 1 \\ 0 \\ 3 \\ 5 \end{bmatrix}
+$$
+
+Do đó, bằng cách đưa vào tham số mới $r = t/5$, ta có thể nhân nghiệm cơ bản ban đầu $\mathbf{x}_2$ với 5 và nhờ vậy khử được phân số. Vì lý do đó:
+
+<GhiChu tieuDe="Quy ước">
+Mọi bội vô hướng khác 0 của một nghiệm cơ bản vẫn được gọi là một nghiệm cơ bản.
+</GhiChu>
+
+Tương tự như vậy, thuật toán Gauss sinh ra các nghiệm cơ bản cho mọi hệ thuần nhất, mỗi tham số một nghiệm (không có nghiệm cơ bản nào nếu hệ chỉ có nghiệm tầm thường). Hơn nữa, mọi nghiệm đều được thuật toán cho dưới dạng tổ hợp tuyến tính của các nghiệm cơ bản này (như trong Ví dụ 1.3.5). Nếu $A$ có hạng $r$, Định lý 1.2.2 cho thấy có đúng $n - r$ tham số, và do đó $n - r$ nghiệm cơ bản. Điều này chứng minh:
+
+<DinhLy so="1.3.2">
+Cho $A$ là ma trận $m \times n$ có hạng $r$, và xét hệ thuần nhất với $n$ biến nhận $A$ làm ma trận hệ số. Khi đó:
+
+1. Hệ có đúng $n - r$ nghiệm cơ bản, mỗi tham số một nghiệm.
+2. Mọi nghiệm đều là tổ hợp tuyến tính của các nghiệm cơ bản đó.
+</DinhLy>
+
+<ViDu so="1.3.6">
+Tìm các nghiệm cơ bản của hệ thuần nhất có ma trận hệ số $A$, và biểu diễn mọi nghiệm thành tổ hợp tuyến tính của các nghiệm cơ bản, trong đó
+
+$$
+A = \begin{bmatrix} 1 & -3 & 0 & 2 & 2 \\ -2 & 6 & 1 & 2 & -5 \\ 3 & -9 & -1 & 0 & 7 \\ -3 & 9 & 2 & 6 & -8 \end{bmatrix}
+$$
+
+**Lời giải.** Quá trình đưa ma trận bổ sung về dạng bậc thang rút gọn là
+
+$$
+\left[\begin{array}{rrrrr|r} 1 & -3 & 0 & 2 & 2 & 0 \\ -2 & 6 & 1 & 2 & -5 & 0 \\ 3 & -9 & -1 & 0 & 7 & 0 \\ -3 & 9 & 2 & 6 & -8 & 0 \end{array}\right]
+\to
+\left[\begin{array}{rrrrr|r} 1 & -3 & 0 & 2 & 2 & 0 \\ 0 & 0 & 1 & 6 & -1 & 0 \\ 0 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 0 \end{array}\right]
+$$
+
+nên nghiệm tổng quát là $x_1 = 3r - 2s - 2t$, $x_2 = r$, $x_3 = -6s + t$, $x_4 = s$, $x_5 = t$, với $r$, $s$, $t$ là các tham số. Ở dạng ma trận, điều này là
+
+$$
+\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{bmatrix} = \begin{bmatrix} 3r - 2s - 2t \\ r \\ -6s + t \\ s \\ t \end{bmatrix} = r\begin{bmatrix} 3 \\ 1 \\ 0 \\ 0 \\ 0 \end{bmatrix} + s\begin{bmatrix} -2 \\ 0 \\ -6 \\ 1 \\ 0 \end{bmatrix} + t\begin{bmatrix} -2 \\ 0 \\ 1 \\ 0 \\ 1 \end{bmatrix}
+$$
+
+Do đó các nghiệm cơ bản là $\mathbf{x}_1 = \begin{bmatrix} 3 & 1 & 0 & 0 & 0 \end{bmatrix}^T$, $\mathbf{x}_2 = \begin{bmatrix} -2 & 0 & -6 & 1 & 0 \end{bmatrix}^T$, $\mathbf{x}_3 = \begin{bmatrix} -2 & 0 & 1 & 0 & 1 \end{bmatrix}^T$.
+</ViDu>

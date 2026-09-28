@@ -1139,8 +1139,38 @@ figure.hinh figcaption {
   align-items: center;
   gap: 8px;
 }
-.the-bai-tap .de {
-  margin-top: 14px;
+/* Thẻ bài tập: nội dung MDX và khối "Cần dùng" xếp chung một cột, sắp theo order */
+.than-bai-tap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.than-bai-tap > .van-ban {
+  display: contents;
+}
+.than-bai-tap > .van-ban > * + * {
+  margin-top: 0;
+}
+.than-bai-tap .de {
+  order: 1;
+}
+.than-bai-tap .can-dung {
+  order: 2;
+  margin: 4px 0;
+}
+.than-bai-tap .nhac-tang,
+.than-bai-tap .ghi-chu-chua-co {
+  order: 3;
+  margin: 0;
+}
+.than-bai-tap details.goi-y {
+  order: 4;
+}
+.than-bai-tap details.loi-giai {
+  order: 5;
+}
+.than-bai-tap details.loi-hay-mac {
+  order: 6;
 }
 .can-dung {
   display: flex;
