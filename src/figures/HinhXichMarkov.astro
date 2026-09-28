@@ -1,0 +1,75 @@
+---
+// Đại số Ví dụ 2.9.1 — sơ đồ chuyển trạng thái giữa hai nhà hàng A, B. Xác suất trên
+// mũi tên đọc từ các cột của ma trận chuyển P (src/lib/markov.ts).
+import { P_VI_DU_2_9_1 as P } from '@/lib/markov';
+import { DAU_MUI_TEN } from './mui-ten';
+
+const R = 22;
+const nut = [
+  { ten: 'A', x: 95, y: 88 },
+  { ten: 'B', x: 225, y: 88 },
+];
+const lam = (x: number) => Math.round(x * 10) / 10;
+// Cạnh j → i có xác suất P[i][j]; cạnh A → B cong lên, B → A cong xuống
+const cong = (tu: number, den: number, lech: number) => {
+  const a = nut[tu];
+  const b = nut[den];
+  const c = { x: (a.x + b.x) / 2, y: a.y + lech };
+  const dv = (p: { x: number; y: number }, q: { x: number; y: number }) => {
+    const d = Math.hypot(q.x - p.x, q.y - p.y);
+    return [(q.x - p.x) / d, (q.y - p.y) / d];
+  };
+  const [sx, sy] = dv(a, c);
+  const [ex, ey] = dv(b, c);
+  const p0 = { x: a.x + sx * R, y: a.y + sy * R };
+  const p2 = { x: b.x + ex * (R + 2), y: b.y + ey * (R + 2) };
+  const giua = { x: (p0.x + 2 * c.x + p2.x) / 4, y: (p0.y + 2 * c.y + p2.y) / 4 };
+  const goc = (Math.atan2(p2.y - p0.y, p2.x - p0.x) * 180) / Math.PI;
+  return {
+    d: `M${lam(p0.x)} ${lam(p0.y)} Q${lam(c.x)} ${lam(c.y)} ${lam(p2.x)} ${lam(p2.y)}`,
+    dau: `translate(${lam(giua.x)} ${lam(giua.y)}) rotate(${lam(goc)})`,
+    nhan: { x: giua.x, y: giua.y + (lech < 0 ? -10 : 20) },
+    p: P[den][tu],
+  };
+};
+const canh = [cong(0, 1, -62), cong(1, 0, 62)];
+const B = nut[1];
+const khuyen = {
+  d: `M${B.x + 16} ${B.y - 16} C${B.x + 80} ${B.y - 52} ${B.x + 80} ${B.y + 52} ${B.x + 16} ${B.y + 16}`,
+  dau: `translate(${B.x + 64} ${B.y}) rotate(90)`,
+  p: P[1][1],
+};
+---
+
+<figure class="hinh" aria-labelledby="hinh-xich-markov-cap" data-hinh-xich-markov>
+  <svg viewBox="0 0 330 176" width="330" role="img" aria-label="Sơ đồ chuyển: từ A sang B với xác suất 1, từ B sang A 0.25, ở lại B 0.75">
+    {
+      canh.map((c) => (
+        <g>
+          <path d={c.d} class="nhan-manh" stroke-width="1.8" style="fill: none" />
+          <path d={DAU_MUI_TEN} class="to-nhan" transform={c.dau} />
+          <text x={c.nhan.x} y={c.nhan.y} text-anchor="middle" class="chu">
+            {c.p}
+          </text>
+        </g>
+      ))
+    }
+    <path d={khuyen.d} class="nhan-manh" stroke-width="1.8" style="fill: none" />
+    <path d={DAU_MUI_TEN} class="to-nhan" transform={khuyen.dau} />
+    <text x={B.x + 72} y={B.y + 5} class="chu">{khuyen.p}</text>
+    {
+      nut.map((n) => (
+        <g>
+          <circle cx={n.x} cy={n.y} r={R} class="net" stroke-width="1.5" style="fill: var(--paper)" />
+          <text x={n.x} y={n.y + 6} text-anchor="middle" font-style="italic" class="chu-sach" font-size="18">
+            {n.ten}
+          </text>
+        </g>
+      ))
+    }
+  </svg>
+  <figcaption id="hinh-xich-markov-cap">
+    Mỗi mũi tên là một xác suất chuyển, đọc từ một cột của ma trận P. Từ A luôn sang B; từ B thì 1/4 số lần sang A và
+    3/4 số lần ở lại B.
+  </figcaption>
+</figure>

@@ -31,7 +31,7 @@
       "so": 2,
       "ten": "Đại số ma trận",
       "ten_en": "Matrix Algebra",
-      "ghi_chu": "Đã chuyển lên web §2.1–§2.2; các mục còn lại đọc trong bản dịch PDF.",
+      "ghi_chu": "Đã chuyển lên web đủ §2.1–§2.9; bài tập của chương đọc trong bản dịch PDF.",
       "muc": [
         { "so": "2.1", "ten": "Cộng ma trận, nhân với vô hướng, và chuyển vị" },
         { "so": "2.2", "ten": "Phép nhân ma trận với vector" },

@@ -40,12 +40,20 @@ test('sơ đồ đổi màu theo giao diện tối', async ({ page }) => {
   expect(mauToi).not.toBe(mauSang);
 });
 
-test('Chương 2: §2.1–§2.7 có trang dịch, mục lục đủ 9 mục, có PDF tải về', async ({ page }) => {
-  for (const muc of ['2-1', '2-2', '2-3', '2-4', '2-5', '2-6', '2-7']) {
+test('Chương 2: đủ §2.1–§2.9 có trang dịch, mục lục đủ 9 mục, có PDF tải về', async ({ page }) => {
+  for (let so = 1; so <= 9; so++) {
+    const muc = `2-${so}`;
     await page.goto(`dai-so/chuong-2/sach/${muc}/`);
     await expect(page.locator('[data-ghi-cong]')).toContainText('CC BY-NC-SA');
     await expect(page.locator('.katex-error')).toHaveCount(0);
   }
+  // §2.9: sơ đồ chuyển và đồ thị hội tụ của Ví dụ 2.9.1
+  await expect(page.locator('[data-hinh-xich-markov] svg')).toBeVisible();
+  await expect(page.locator('[data-hinh-hoi-tu-markov] svg')).toBeVisible();
+  // §2.3 → §2.9 (PageRank) nối liên kết
+  await page.goto('dai-so/chuong-2/sach/2-3/');
+  await page.getByRole('link', { name: 'Mục 2.9' }).click();
+  await expect(page).toHaveURL(/dai-so\/chuong-2\/sach\/2-9\/$/);
   // §2.6: ba hình vẽ lại (sách dịch viết "từ hình vẽ ta thấy" nhưng không in hình)
   await page.goto('dai-so/chuong-2/sach/2-6/');
   for (const hinh of ['binh-hanh', 'phep-quay', 'he-so-goc']) {

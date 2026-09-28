@@ -1,0 +1,238 @@
+---
+mon: dai-so
+chuong: 2
+muc: "2.9"
+tieu_de: Ứng dụng vào xích Markov
+tieu_de_en: An Application to Markov Chains
+loai: dich-nguyen-van
+nguon: "Dịch từ W. Keith Nicholson, Linear Algebra with Applications, Version 2023 – Revision A, Vretta-Lyryx Inc. (https://lyryx.com/linear-algebra-applications/), Mục 2.9. Bản dịch phát hành theo giấy phép CC BY-NC-SA 4.0, giống bản gốc. Thay đổi: dịch sang tiếng Việt, thêm ghi chú cho người học, thêm hình minh hoạ cho Ví dụ 2.9.1; chú thích tham khảo của bản gốc được dịch bổ sung trên web."
+---
+
+Nhiều hiện tượng tự nhiên tiến triển qua nhiều giai đoạn và ở mỗi giai đoạn có thể ở một trong nhiều trạng thái khác nhau. Ví dụ, thời tiết ở một thành phố tiến triển từng ngày và, vào bất kỳ ngày nào, có thể nắng hoặc mưa. Ở đây các trạng thái là “nắng” và “mưa”, và thời tiết tiến triển từ trạng thái này sang trạng thái khác theo từng giai đoạn ngày. Một ví dụ khác có thể là một đội bóng đá: các giai đoạn tiến triển là các trận đấu, và các trạng thái có thể là “thắng”, “hoà”, “thua”.
+
+Bố cục tổng quát như sau: một “hệ thống” khái niệm thực được vận hành, sinh ra một dãy các kết cục. Hệ thống tiến triển qua một loạt “giai đoạn”, và ở bất kỳ giai đoạn nào nó có thể ở một trong một số hữu hạn “trạng thái”. Ở một giai đoạn cho trước, trạng thái mà nó sẽ chuyển đến ở giai đoạn tiếp theo phụ thuộc vào lịch sử quá khứ và hiện tại của hệ thống — tức là vào dãy các trạng thái nó đã trải qua đến nay.
+
+<DinhNghia so="2.16" ten="Xích Markov">
+Một **xích Markov** (*Markov chain*) là một hệ thống tiến triển như vậy, trong đó trạng thái mà nó sẽ chuyển đến tiếp theo *chỉ* phụ thuộc vào trạng thái *hiện tại* của nó và *không* phụ thuộc vào lịch sử trước đó của hệ thống.[^1]
+</DinhNghia>
+
+Ngay cả trong trường hợp xích Markov, trạng thái mà hệ thống sẽ ở tại bất kỳ giai đoạn nào cũng chỉ được xác định theo *xác suất*. Nói cách khác, sự ngẫu nhiên đóng một vai trò. Ví dụ, nếu một đội bóng thắng một trận cụ thể, ta không biết nó sẽ thắng, hoà hay thua trận tiếp theo. Mặt khác, ta có thể biết rằng đội này có xu hướng duy trì chuỗi thắng; chẳng hạn, nếu thắng một trận thì nó có thể thắng trận tiếp theo $\frac{1}{2}$ số lần, thua $\frac{4}{10}$ số lần, và hoà $\frac{1}{10}$ số lần. Các phân số này được gọi là **xác suất** của các khả năng khác nhau.
+
+Ta sẽ xử lý xác suất một cách không hình thức ở đây: xác suất để một biến cố cho trước xảy ra là tỉ lệ thời gian dài hạn mà biến cố đó thực sự xảy ra. Do đó, mọi xác suất đều là số giữa 0 và 1. Xác suất bằng 0 nghĩa là biến cố không thể xảy ra; biến cố có xác suất 1 thì chắc chắn xảy ra.
+
+Nếu một xích Markov đang ở một trạng thái cụ thể, các xác suất để nó chuyển đến các trạng thái khác nhau ở giai đoạn tiếp theo được gọi là **xác suất chuyển** (*transition probabilities*) của xích, và chúng được giả thiết là các đại lượng đã biết. Để dẫn dắt các điều kiện tổng quát phía sau, xét ví dụ đơn giản sau. Ở đây hệ thống là một người đàn ông, các giai đoạn là các bữa trưa liên tiếp của ông ta, và các trạng thái là hai nhà hàng ông ta chọn.
+
+<ViDu so="2.9.1">
+Một người đàn ông luôn ăn trưa ở một trong hai nhà hàng $A$ và $B$. Ông không bao giờ ăn ở $A$ hai lần liên tiếp. Tuy nhiên, nếu ăn ở $B$, khả năng ông ăn ở $B$ lần tiếp theo gấp ba lần khả năng ăn ở $A$. Ban đầu, khả năng ông ăn ở mỗi nhà hàng là như nhau.
+
+**a.** Xác suất ông ăn ở $A$ vào ngày thứ ba sau ngày đầu là bao nhiêu?
+
+**b.** Tỉ lệ bữa trưa ông ăn ở $A$ là bao nhiêu?
+
+**Lời giải.** Bảng xác suất chuyển như sau. Cột $A$ cho thấy nếu ông ăn ở $A$ một ngày thì ngày hôm sau ông không bao giờ ăn ở đó nữa, nên chắc chắn chuyển sang $B$.
+
+| Bữa trưa tiếp theo ↓ · Bữa trưa hiện tại → | $A$ | $B$ |
+| --- | :-: | :-: |
+| $A$ | 0 | 0.25 |
+| $B$ | 1 | 0.75 |
+
+Cột $B$ cho thấy nếu ông ăn ở $B$ một ngày thì ngày hôm sau ông ăn ở đó $\frac{3}{4}$ số lần và chỉ chuyển sang $A$ $\frac{1}{4}$ số lần.
+
+<HinhXichMarkov />
+
+Nhà hàng ông đến vào một ngày cụ thể là không xác định. Điều nhiều nhất ta có thể mong đợi là biết *xác suất* ông sẽ đến $A$ hay $B$ vào ngày đó.
+
+Đặt $\mathbf{s}_m = \begin{bmatrix} s_1^{(m)} \\ s_2^{(m)} \end{bmatrix}$ ký hiệu **vector trạng thái** cho ngày $m$. Ở đây $s_1^{(m)}$ là xác suất ông ăn ở $A$ vào ngày $m$, và $s_2^{(m)}$ là xác suất ông ăn ở $B$ vào ngày $m$. Tiện lợi khi cho $\mathbf{s}_0$ ứng với ngày đầu tiên. Vì khả năng ông ăn ở $A$ hay $B$ vào ngày đầu là như nhau, $s_1^{(0)} = 0.5$ và $s_2^{(0)} = 0.5$, nên $\mathbf{s}_0 = \begin{bmatrix} 0.5 \\ 0.5 \end{bmatrix}$. Bây giờ đặt
+
+$$
+P = \begin{bmatrix} 0 & 0.25 \\ 1 & 0.75 \end{bmatrix}
+$$
+
+là **ma trận chuyển**. Ta khẳng định rằng hệ thức
+
+$$
+\mathbf{s}_{m+1} = P\mathbf{s}_m
+$$
+
+đúng với mọi số nguyên $m \ge 0$. Điều này sẽ được suy ra sau; hiện tại ta dùng nó để tính lần lượt $\mathbf{s}_1, \mathbf{s}_2, \mathbf{s}_3, \ldots$
+
+$$
+\mathbf{s}_1 = P\mathbf{s}_0 = \begin{bmatrix} 0.125 \\ 0.875 \end{bmatrix}, \quad \mathbf{s}_2 = P\mathbf{s}_1 = \begin{bmatrix} 0.21875 \\ 0.78125 \end{bmatrix}, \quad \mathbf{s}_3 = P\mathbf{s}_2 = \begin{bmatrix} 0.1953125 \\ 0.8046875 \end{bmatrix}
+$$
+
+Do đó xác suất bữa trưa thứ ba của ông (sau bữa đầu) là ở $A$ xấp xỉ 0.195, trong khi xác suất ở $B$ là 0.805. Nếu tiếp tục các phép tính này, các vector trạng thái tiếp theo là (đến năm chữ số):
+
+$$
+\mathbf{s}_4 = \begin{bmatrix} 0.20117 \\ 0.79883 \end{bmatrix}, \quad \mathbf{s}_5 = \begin{bmatrix} 0.19971 \\ 0.80029 \end{bmatrix}, \quad \mathbf{s}_6 = \begin{bmatrix} 0.20007 \\ 0.79993 \end{bmatrix}, \quad \mathbf{s}_7 = \begin{bmatrix} 0.19998 \\ 0.80002 \end{bmatrix}
+$$
+
+Hơn nữa, khi $m$ tăng, các phần tử của $\mathbf{s}_m$ ngày càng gần các phần tử tương ứng của $\begin{bmatrix} 0.2 \\ 0.8 \end{bmatrix}$. Do đó, về lâu dài, ông ăn 20% số bữa trưa ở $A$ và 80% ở $B$.
+
+<HinhHoiTuMarkov />
+</ViDu>
+
+Ví dụ 2.9.1 bao hàm hầu hết các đặc điểm thiết yếu của mọi xích Markov. Mô hình tổng quát như sau: hệ thống tiến triển qua nhiều giai đoạn và ở mỗi giai đoạn có thể ở đúng một trong $n$ trạng thái phân biệt. Nếu một xích Markov ở trạng thái $j$ tại một giai đoạn cụ thể, xác suất $p_{ij}$ để nó chuyển đến trạng thái $i$ ở giai đoạn tiếp theo được gọi là **xác suất chuyển**. Ma trận $n \times n$ $P = [p_{ij}]$ được gọi là **ma trận chuyển** (*transition matrix*) cho xích Markov.
+
+Ta đưa ra một giả thiết quan trọng về ma trận chuyển $P = [p_{ij}]$: *nó không phụ thuộc vào quá trình đang ở giai đoạn nào*. Giả thiết này nghĩa là các xác suất chuyển độc lập với thời gian — tức là chúng không thay đổi theo thời gian. Chính giả thiết này phân biệt các xích Markov trong tài liệu về chủ đề này.
+
+<ViDu so="2.9.2">
+Giả sử ma trận chuyển của một xích Markov ba trạng thái là
+
+$$
+P = \begin{bmatrix} p_{11} & p_{12} & p_{13} \\ p_{21} & p_{22} & p_{23} \\ p_{31} & p_{32} & p_{33} \end{bmatrix} = \begin{bmatrix} 0.3 & 0.1 & 0.6 \\ 0.5 & 0.9 & 0.2 \\ 0.2 & 0.0 & 0.2 \end{bmatrix}
+$$
+
+(cột chỉ trạng thái hiện tại, hàng chỉ trạng thái tiếp theo). Nếu, ví dụ, hệ thống ở trạng thái 2 thì cột 2 liệt kê các xác suất nó chuyển đi đâu tiếp theo. Như vậy xác suất là $p_{12} = 0.1$ để nó chuyển từ trạng thái 2 sang trạng thái 1, và xác suất là $p_{22} = 0.9$ để nó chuyển từ trạng thái 2 sang trạng thái 2. Việc $p_{32} = 0$ nghĩa là không thể có chuyện nó chuyển từ trạng thái 2 sang trạng thái 3 ở giai đoạn tiếp theo.
+</ViDu>
+
+Xét cột thứ $j$ của ma trận chuyển $P$. Nếu hệ thống ở trạng thái $j$ tại một giai đoạn nào đó, các xác suất chuyển $p_{1j}, p_{2j}, \ldots, p_{nj}$ biểu diễn tỉ lệ thời gian mà hệ thống sẽ chuyển sang trạng thái 1, trạng thái 2, …, trạng thái $n$ tương ứng, ở giai đoạn tiếp theo. Ta giả sử nó phải chuyển đến *một* trạng thái nào đó ở mỗi bước chuyển, nên tổng các xác suất này bằng 1:
+
+$$
+p_{1j} + p_{2j} + \cdots + p_{nj} = 1 \quad \text{với mỗi } j
+$$
+
+Như vậy các cột của $P$ đều có tổng bằng 1 và các phần tử của $P$ nằm giữa 0 và 1. Do đó $P$ được gọi là **ma trận ngẫu nhiên** (*stochastic matrix*).
+
+Như trong Ví dụ 2.9.1, ta đưa vào ký hiệu sau: đặt $s_i^{(m)}$ là xác suất hệ thống ở trạng thái $i$ sau $m$ bước chuyển. Các ma trận $n \times 1$
+
+$$
+\mathbf{s}_m = \begin{bmatrix} s_1^{(m)} \\ s_2^{(m)} \\ \vdots \\ s_n^{(m)} \end{bmatrix} \qquad m = 0, 1, 2, \ldots
+$$
+
+được gọi là các **vector trạng thái** (*state vectors*) cho xích Markov. Lưu ý rằng tổng các phần tử của $\mathbf{s}_m$ phải bằng 1, vì hệ thống phải ở một trạng thái nào đó sau $m$ bước chuyển. Ma trận $\mathbf{s}_0$ được gọi là **vector trạng thái ban đầu** và được cho như một phần dữ liệu của xích cụ thể.
+
+<DinhLy so="2.9.1">
+Cho $P$ là ma trận chuyển cho một xích Markov $n$ trạng thái. Nếu $\mathbf{s}_m$ là vector trạng thái ở giai đoạn $m$ thì
+
+$$
+\mathbf{s}_{m+1} = P\mathbf{s}_m
+$$
+
+với mỗi $m = 0, 1, 2, \ldots$
+</DinhLy>
+
+**Chứng minh (theo lối trực giác).** Giả sử xích Markov được chạy $N$ lần, mỗi lần bắt đầu với cùng vector trạng thái ban đầu. Nhắc lại rằng $p_{ij}$ là tỉ lệ thời gian hệ thống chuyển từ trạng thái $j$ ở một giai đoạn sang trạng thái $i$ ở giai đoạn tiếp theo, trong khi $s_i^{(m)}$ là tỉ lệ thời gian nó ở trạng thái $i$ tại giai đoạn $m$. Do đó $s_i^{(m+1)}N$ là (xấp xỉ) số lần hệ thống ở trạng thái $i$ tại giai đoạn $m + 1$. Ta sẽ tính con số này theo cách khác. Hệ thống đến được trạng thái $i$ ở giai đoạn $m + 1$ thông qua một trạng thái khác nào đó (giả sử trạng thái $j$) ở giai đoạn $m$. Số lần nó ở trạng thái $j$ tại giai đoạn đó là (xấp xỉ) $s_j^{(m)}N$, nên số lần nó đến được trạng thái $i$ qua trạng thái $j$ là $p_{ij}(s_j^{(m)}N)$. Lấy tổng theo $j$ cho ta số lần hệ thống ở trạng thái $i$ (tại giai đoạn $m + 1$). Đây là con số ta đã tính trước đó, nên
+
+$$
+s_i^{(m+1)}N = p_{i1}s_1^{(m)}N + p_{i2}s_2^{(m)}N + \cdots + p_{in}s_n^{(m)}N
+$$
+
+Chia cho $N$ cho $s_i^{(m+1)} = p_{i1}s_1^{(m)} + \cdots + p_{in}s_n^{(m)}$ với mỗi $i$, và điều này có thể biểu diễn thành phương trình ma trận $\mathbf{s}_{m+1} = P\mathbf{s}_m$. ∎
+
+Nếu cho trước vector xác suất ban đầu $\mathbf{s}_0$ và ma trận chuyển $P$, Định lý 2.9.1 cho lần lượt $\mathbf{s}_1, \mathbf{s}_2, \mathbf{s}_3, \ldots$ như sau:
+
+$$
+\mathbf{s}_1 = P\mathbf{s}_0, \quad \mathbf{s}_2 = P\mathbf{s}_1, \quad \mathbf{s}_3 = P\mathbf{s}_2, \quad \ldots
+$$
+
+Do đó vector trạng thái $\mathbf{s}_m$ được xác định hoàn toàn với mỗi $m = 0, 1, 2, \ldots$ bởi $P$ và $\mathbf{s}_0$.
+
+<ViDu so="2.9.3">
+Một bầy sói luôn săn ở một trong ba vùng $R_1$, $R_2$, $R_3$. Thói quen săn của chúng như sau:
+
+1. Nếu săn ở một vùng vào một ngày, khả năng chúng lại săn ở đó ngày hôm sau là 50–50.
+2. Nếu săn ở $R_1$, chúng không bao giờ săn ở $R_2$ ngày hôm sau.
+3. Nếu săn ở $R_2$ hoặc $R_3$, khả năng chúng săn ở mỗi vùng còn lại ngày hôm sau là như nhau.
+
+Nếu bầy sói săn ở $R_1$ vào thứ Hai, tìm xác suất chúng săn ở đó vào thứ Năm.
+
+**Lời giải.** Các giai đoạn của quá trình này là các ngày liên tiếp; các trạng thái là ba vùng. Ma trận chuyển $P$ được xác định như sau: thói quen thứ nhất khẳng định $p_{11} = p_{22} = p_{33} = \frac{1}{2}$. Cột 1 mô tả điều xảy ra khi bầy sói bắt đầu ở $R_1$: nó không bao giờ chuyển sang trạng thái 2, nên $p_{21} = 0$ và, vì cột phải có tổng bằng 1, $p_{31} = \frac{1}{2}$. Cột 2 mô tả điều xảy ra nếu bắt đầu ở $R_2$: $p_{22} = \frac{1}{2}$ và $p_{12}$, $p_{32}$ bằng nhau (theo thói quen 3), nên $p_{12} = p_{32} = \frac{1}{4}$. Cột 3 được điền tương tự.
+
+$$
+P = \begin{bmatrix} \frac{1}{2} & \frac{1}{4} & \frac{1}{4} \\ 0 & \frac{1}{2} & \frac{1}{4} \\ \frac{1}{2} & \frac{1}{4} & \frac{1}{2} \end{bmatrix}
+$$
+
+Bây giờ cho thứ Hai là giai đoạn ban đầu. Khi đó $\mathbf{s}_0 = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}$ vì bầy sói săn ở $R_1$ ngày đó. Rồi $\mathbf{s}_1$, $\mathbf{s}_2$, $\mathbf{s}_3$ lần lượt mô tả thứ Ba, thứ Tư, thứ Năm, và ta tính chúng dùng Định lý 2.9.1:
+
+$$
+\mathbf{s}_1 = \begin{bmatrix} \frac{1}{2} \\ 0 \\ \frac{1}{2} \end{bmatrix}, \quad \mathbf{s}_2 = \begin{bmatrix} \frac{3}{8} \\ \frac{1}{8} \\ \frac{4}{8} \end{bmatrix}, \quad \mathbf{s}_3 = \begin{bmatrix} \frac{11}{32} \\ \frac{6}{32} \\ \frac{15}{32} \end{bmatrix}
+$$
+
+Do đó xác suất bầy sói săn ở vùng $R_1$ vào thứ Năm là $\frac{11}{32}$.
+</ViDu>
+
+## Vector trạng thái dừng
+
+Một hiện tượng khác quan sát được ở Ví dụ 2.9.1 có thể diễn đạt tổng quát. Các vector trạng thái $\mathbf{s}_0, \mathbf{s}_1, \mathbf{s}_2, \ldots$ được tính trong ví dụ đó và thấy rằng chúng “tiến đến” $\mathbf{s} = \begin{bmatrix} 0.2 \\ 0.8 \end{bmatrix}$. Khi đó ta nói $\mathbf{s}_m$ **hội tụ** (*converges*) về $\mathbf{s}$. Với $m$ lớn, việc lấy $\mathbf{s}_m = \mathbf{s}$ có sai số rất nhỏ, nên xác suất dài hạn hệ thống ở trạng thái 1 là 0.2, còn xác suất ở trạng thái 2 là 0.8.
+
+Giả sử $P$ là ma trận chuyển của một xích Markov, và giả sử các vector trạng thái $\mathbf{s}_m$ hội tụ về một vector giới hạn $\mathbf{s}$. Khi đó $\mathbf{s}_m$ rất gần $\mathbf{s}$ với $m$ đủ lớn, nên $\mathbf{s}_{m+1}$ cũng rất gần $\mathbf{s}$. Như vậy phương trình $\mathbf{s}_{m+1} = P\mathbf{s}_m$ từ Định lý 2.9.1 được xấp xỉ rất sát bởi
+
+$$
+\mathbf{s} = P\mathbf{s}
+$$
+
+nên không ngạc nhiên khi $\mathbf{s}$ là nghiệm của phương trình ma trận này. Hơn nữa nó dễ giải vì có thể viết thành hệ phương trình tuyến tính thuần nhất
+
+$$
+(I - P)\mathbf{s} = \mathbf{0}
+$$
+
+với các phần tử của $\mathbf{s}$ làm biến.
+
+Trong Ví dụ 2.9.1, với $P = \begin{bmatrix} 0 & 0.25 \\ 1 & 0.75 \end{bmatrix}$, nghiệm tổng quát của $(I - P)\mathbf{s} = \mathbf{0}$ là $\mathbf{s} = \begin{bmatrix} t \\ 4t \end{bmatrix}$, với $t$ là tham số. Nhưng nếu ta đòi hỏi các phần tử của $\mathbf{s}$ có tổng bằng 1 (như phải đúng với mọi vector trạng thái), ta tìm được $t = 0.2$ và do đó $\mathbf{s} = \begin{bmatrix} 0.2 \\ 0.8 \end{bmatrix}$ như trước.
+
+Tất cả điều này dựa trên sự tồn tại của vector giới hạn cho dãy vector trạng thái, và vector như vậy có thể không phải lúc nào cũng tồn tại. Tuy nhiên nó tồn tại trong một tình huống hay gặp. Một ma trận ngẫu nhiên $P$ được gọi là **chính quy** (*regular*) nếu một luỹ thừa $P^m$ nào đó của $P$ có mọi phần tử lớn hơn 0. Ma trận $P$ của Ví dụ 2.9.1 là chính quy (ở đây mọi phần tử của $P^2$ đều dương), và định lý tổng quát như sau:
+
+<DinhLy so="2.9.2">
+Cho $P$ là ma trận chuyển của một xích Markov và giả sử $P$ chính quy. Khi đó tồn tại duy nhất một ma trận cột $\mathbf{s}$ thoả mãn các điều kiện sau:
+
+1. $P\mathbf{s} = \mathbf{s}$.
+2. Các phần tử của $\mathbf{s}$ đều dương và có tổng bằng 1.
+
+Hơn nữa, điều kiện 1 có thể viết thành
+
+$$
+(I - P)\mathbf{s} = \mathbf{0}
+$$
+
+và do đó cho một hệ phương trình tuyến tính thuần nhất theo $\mathbf{s}$. Cuối cùng, dãy vector trạng thái $\mathbf{s}_0, \mathbf{s}_1, \mathbf{s}_2, \ldots$ hội tụ về $\mathbf{s}$ theo nghĩa nếu $m$ đủ lớn thì mỗi phần tử của $\mathbf{s}_m$ được xấp xỉ rất sát bởi phần tử tương ứng của $\mathbf{s}$.
+</DinhLy>
+
+Định lý này không được chứng minh ở đây.[^2]
+
+Nếu $P$ là ma trận chuyển chính quy của một xích Markov, cột $\mathbf{s}$ thoả mãn các điều kiện 1 và 2 của Định lý 2.9.2 được gọi là **vector trạng thái dừng** (*steady-state vector*) cho xích Markov. Các phần tử của $\mathbf{s}$ là các xác suất dài hạn để xích ở mỗi trạng thái khác nhau.
+
+<ViDu so="2.9.4">
+Một người đàn ông ăn một trong ba loại súp — bò, gà và rau — mỗi ngày. Ông không bao giờ ăn cùng một loại súp hai ngày liên tiếp. Nếu ăn súp bò vào một ngày, khả năng ông ăn mỗi loại còn lại ngày hôm sau là như nhau; nếu không ăn súp bò, khả năng ông ăn súp bò ngày hôm sau gấp đôi khả năng ăn loại kia.
+
+**a.** Nếu ông ăn súp bò một ngày, xác suất ông lại ăn nó hai ngày sau là bao nhiêu?
+
+**b.** Các xác suất dài hạn ông ăn mỗi loại trong ba loại súp là bao nhiêu?
+
+**Lời giải.** Các trạng thái ở đây là $B$, $C$, $V$, ba loại súp. Ma trận chuyển $P$ cho trong bảng. (Nhắc lại rằng với mỗi trạng thái, cột tương ứng liệt kê các xác suất cho trạng thái tiếp theo.)
+
+$$
+P = \begin{bmatrix} 0 & \frac{2}{3} & \frac{2}{3} \\ \frac{1}{2} & 0 & \frac{1}{3} \\ \frac{1}{2} & \frac{1}{3} & 0 \end{bmatrix}
+$$
+
+Nếu ban đầu ông ăn súp bò thì vector trạng thái ban đầu là $\mathbf{s}_0 = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}$. Khi đó hai ngày sau vector trạng thái là $\mathbf{s}_2$. Nếu $P$ là ma trận chuyển thì
+
+$$
+\mathbf{s}_1 = P\mathbf{s}_0 = \frac{1}{2}\begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}, \qquad \mathbf{s}_2 = P\mathbf{s}_1 = \frac{1}{6}\begin{bmatrix} 4 \\ 1 \\ 1 \end{bmatrix}
+$$
+
+nên ông ăn súp bò hai ngày sau với xác suất $\frac{2}{3}$. Điều này trả lời (a.) và cũng cho thấy ông ăn súp gà và súp rau mỗi loại với xác suất $\frac{1}{6}$.
+
+Để tìm các xác suất dài hạn, ta phải tìm vector trạng thái dừng $\mathbf{s}$. Định lý 2.9.2 áp dụng được vì $P$ chính quy ($P^2$ có các phần tử dương), nên $\mathbf{s}$ thoả $P\mathbf{s} = \mathbf{s}$. Tức là $(I - P)\mathbf{s} = \mathbf{0}$, với
+
+$$
+I - P = \frac{1}{6}\begin{bmatrix} 6 & -4 & -4 \\ -3 & 6 & -2 \\ -3 & -2 & 6 \end{bmatrix}
+$$
+
+Nghiệm là $\mathbf{s} = \begin{bmatrix} 4t \\ 3t \\ 3t \end{bmatrix}$, với $t$ là tham số, và ta dùng $\mathbf{s} = \begin{bmatrix} 0.4 \\ 0.3 \\ 0.3 \end{bmatrix}$ vì các phần tử của $\mathbf{s}$ phải có tổng bằng 1. Do đó, về lâu dài, ông ăn súp bò 40% số lần và ăn súp gà, súp rau mỗi loại 30% số lần.
+</ViDu>
+
+<GhiChu tieuDe="Ghi chú cho người học — xích Markov trong IT và Cybersecurity">
+Xích Markov là một trong những công cụ có ứng dụng rộng nhất mà bạn học trong chương này:
+
+- **PageRank** (Google): web là một đồ thị khổng lồ; ma trận chuyển mô tả người dùng nhấp link ngẫu nhiên. Vector trạng thái dừng chính là thứ hạng của các trang.
+- **Phát hiện bất thường**: mô hình hoá chuỗi system call hoặc chuỗi sự kiện log bình thường bằng xích Markov; chuỗi có xác suất rất thấp là dấu hiệu đáng nghi (kỹ thuật này dùng trong IDS — Intrusion Detection System).
+- **Đánh giá độ tin cậy hệ thống**: các trạng thái “hoạt động / suy giảm / hỏng” với xác suất chuyển, từ đó tính thời gian uptime dài hạn.
+- **Phân tích mật khẩu**: mô hình Markov trên chuỗi ký tự dùng để ước lượng độ mạnh mật khẩu thực tế (khác với entropy lý thuyết).
+
+Bài tập tự làm rất tốt: viết một script Python đọc ma trận chuyển $P$ và vector ban đầu, lặp $\mathbf{s}_{m+1} = P\mathbf{s}_m$ khoảng 50 lần, rồi so sánh với nghiệm của $(I - P)\mathbf{s} = \mathbf{0}$. Bạn sẽ *thấy* sự hội tụ chứ không chỉ đọc về nó.
+</GhiChu>
+
+[^1]: Tên gọi này vinh danh Andrei Andreyevich Markov (1856–1922), giáo sư tại đại học ở St. Petersburg, Nga.
+
+[^2]: Bạn đọc quan tâm có thể tìm một chứng minh sơ cấp trong J. Kemeny, H. Mirkil, J. Snell và G. Thompson, *Finite Mathematical Structures* (Englewood Cliffs, N.J.: Prentice-Hall, 1958).

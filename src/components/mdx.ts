@@ -35,6 +35,7 @@ import HinhGhepDoi from '../figures/HinhGhepDoi.astro';
 import HinhHaiDinhNghia from '../figures/HinhHaiDinhNghia.astro';
 import HinhHeSoGoc from '../figures/HinhHeSoGoc.astro';
 import HinhHinhBinhHanh from '../figures/HinhHinhBinhHanh.astro';
+import HinhHoiTuMarkov from '../figures/HinhHoiTuMarkov.astro';
 import HinhLoHong from '../figures/HinhLoHong.astro';
 import HinhMang141 from '../figures/HinhMang141.astro';
 import HinhNghiemNgat from '../figures/HinhNghiemNgat.astro';
@@ -42,6 +43,7 @@ import HinhPhepQuay from '../figures/HinhPhepQuay.astro';
 import HinhSach from '../figures/HinhSach.astro';
 import HinhTongRieng from '../figures/HinhTongRieng.astro';
 import HinhTranNha from '../figures/HinhTranNha.astro';
+import HinhXichMarkov from '../figures/HinhXichMarkov.astro';
 
 export const thanhPhanMdx = {
   AnhSlide,
@@ -79,6 +81,7 @@ export const thanhPhanMdx = {
   HinhHaiDinhNghia,
   HinhHeSoGoc,
   HinhHinhBinhHanh,
+  HinhHoiTuMarkov,
   HinhLoHong,
   HinhMang141,
   HinhNghiemNgat,
@@ -86,4 +89,5 @@ export const thanhPhanMdx = {
   HinhSach,
   HinhTongRieng,
   HinhTranNha,
+  HinhXichMarkov,
 };
