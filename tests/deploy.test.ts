@@ -14,6 +14,7 @@ interface Buoc {
 }
 interface Job {
   needs?: string | string[];
+  'runs-on': string;
   steps: Buoc[];
 }
 const wf = parse(doc('.github/workflows/deploy.yml')) as {
@@ -59,6 +60,12 @@ describe('workflow deploy', () => {
       const [ten, ban] = a.split('@');
       expect(toiThieu[ten], a).toBeDefined();
       expect(Number(ban.replace(/^v/, '').split('.')[0]), a).toBeGreaterThanOrEqual(toiThieu[ten]);
+    }
+  });
+
+  it('ghim bản Ubuntu, không để ubuntu-latest tự nhảy lên bản mới làm hỏng cài Playwright', () => {
+    for (const [ten, job] of Object.entries(wf.jobs)) {
+      expect(job['runs-on'], ten).toMatch(/^ubuntu-\d{2}\.\d{2}$/);
     }
   });
 

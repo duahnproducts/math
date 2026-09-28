@@ -1,6 +1,8 @@
 # Deploy lên GitHub Pages (docs/tech_stack.md, mục 9).
 # Test phải đạt thì mới build và đẩy lên: typecheck → Vitest (+ test shell) → e2e → build.
 # Lần đầu: vào Settings → Pages → Source: GitHub Actions.
+# Runner ghim ubuntu-24.04: ubuntu-latest sẽ chuyển sang Ubuntu 26 từ 19/10/2026,
+# khi đó `playwright install --with-deps` có thể chưa hỗ trợ.
 name: Deploy
 
 on:
@@ -19,7 +21,7 @@ concurrency:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -40,7 +42,7 @@ jobs:
 
   build:
     needs: test
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -55,7 +57,7 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
