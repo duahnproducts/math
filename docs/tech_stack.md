@@ -271,7 +271,7 @@ Kiểu bong bóng học từ thanh điều hướng của `learner`
 | Nút | `.nut` bo tròn hẳn, có vệt sáng trên đỉnh. Bấm thì lún xuống nhanh, thả ra thì nảy về. `.nut-icon` hình tròn |
 | Ẩn khi cuộn | Lô-gic thuần `capNhatCuon` trong `src/lib/cuon.ts`: bỏ qua lần cuộn dưới 8px, gần đầu trang hoặc chạm đáy thì luôn hiện. Script đặt `data-an-thanh` trên `<html>`, còn CSS chỉ áp dụng khi màn hình rộng ≤ 760px |
 | Màu | Token `--glass`, `--glass-line`, `--glass-shadow`, `--bubble`, `--track`, `--bubble-raised`, `--gloss` có ở cả hai giao diện |
-| Cài lên màn hình chính | `public/manifest.webmanifest` dùng đường dẫn **tương đối** (`./`), nên đúng với base `/math/`. `display: standalone`. Biểu tượng vẽ bằng `scripts/tao-bieu-tuong.py` (chữ H, font Lora, màu nhấn). Thẻ `apple-mobile-web-app-capable`, `apple-touch-icon`, `viewport-fit=cover`. Thanh trạng thái để `default` để iOS lấy màu `theme-color`, tránh chữ trắng trên nền sáng |
+| Cài lên màn hình chính | `public/manifest.webmanifest` dùng đường dẫn **tương đối** (`./`), nên đúng với base `/math/`. `display: standalone`. Biểu tượng (ảnh đại diện của app) là ảnh chụp, tạo bằng `scripts/tao-bieu-tuong.py` từ `scripts/anh-bieu-tuong.jpg` (ảnh vuông đã cắt quanh khuôn mặt): icon 192/512 bo góc, bản maskable lấy rộng hơn để mặt nằm trong vùng an toàn, `apple-touch-icon` phủ kín, `favicon.png` 64px cho tab trình duyệt. Thẻ `apple-mobile-web-app-capable`, `apple-touch-icon`, `viewport-fit=cover`. Thanh trạng thái để `default` để iOS lấy màu `theme-color`, tránh chữ trắng trên nền sáng |
 | Chuyển động | `prefers-reduced-motion` thì mọi hiệu ứng bong bóng chạy tức thì (`--t-bubble: 1ms`) |
 
 **Cách cài** (ghi cho người học):

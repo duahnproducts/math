@@ -170,4 +170,9 @@ test('web cài được lên màn hình chính', async ({ page, request }) => {
   }
   const apple = await page.locator('link[rel="apple-touch-icon"]').getAttribute('href');
   expect((await request.get(apple!)).ok()).toBe(true);
+  const favicon = await page.locator('link[rel="icon"]').getAttribute('href');
+  expect(favicon).toBe('/math/favicon.png');
+  const traFavicon = await request.get(favicon!);
+  expect(traFavicon.ok()).toBe(true);
+  expect(traFavicon.headers()['content-type']).toContain('image/png');
 });

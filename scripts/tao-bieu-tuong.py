@@ -1,54 +1,55 @@
-"""Vẽ biểu tượng cài lên màn hình chính (PWA) cho Hochanh.
+"""Tạo biểu tượng của Hochanh (ảnh đại diện của app) từ ảnh chụp.
 
-Chữ "H" trắng, font Lora 600 (đúng font của logo trên thanh trên cùng), nền màu
-nhấn --accent của giao diện sáng. Ghi vào public/:
+Nguồn: scripts/anh-bieu-tuong.jpg — ảnh vuông 760×760, đã cắt sẵn quanh khuôn
+mặt từ ảnh gốc (không lưu ảnh gốc vào repo). Ghi vào public/:
 
-- icon-192.png, icon-512.png   biểu tượng thường (góc bo sẵn, nền trong suốt ở góc)
-- icon-maskable-512.png        Android tự cắt theo hình của máy: nền phủ kín,
-                               chữ nằm gọn trong vùng an toàn (hình tròn 80%)
+- icon-192.png, icon-512.png   biểu tượng thường: cắt sát mặt, góc bo sẵn
+                               (nền trong suốt ở góc)
+- icon-maskable-512.png        Android tự cắt theo hình của máy: lấy cả ảnh nguồn
+                               cho khuôn mặt nằm gọn trong vùng an toàn (hình tròn 80%)
 - apple-touch-icon.png         180×180, phủ kín: iOS tự bo góc
+- favicon.png                  64×64, biểu tượng trên tab trình duyệt
 
-Chạy lại khi đổi màu nhấn hoặc logo:  python scripts/tao-bieu-tuong.py
-Cần Pillow và đã `npm ci` (font lấy từ node_modules/@fontsource/lora).
+Chạy lại khi đổi ảnh:  python scripts/tao-bieu-tuong.py   (cần Pillow)
+Đổi ảnh khác thì thay anh-bieu-tuong.jpg và chỉnh VUNG_MAT cho khớp khuôn mặt.
 """
 
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw
 
 GOC = Path(__file__).resolve().parent.parent
 RA = GOC / "public"
-FONT = GOC / "node_modules/@fontsource/lora/files/lora-latin-600-normal.woff"
+NGUON = GOC / "scripts/anh-bieu-tuong.jpg"
 
-MAU_NHAN = (0x4A, 0x51, 0xCC)  # --accent, giao diện sáng (src/styles/tokens.css)
-MAU_CHU = (0xFF, 0xFF, 0xFF)  # --accent-ink
-PHONG = 4  # vẽ to gấp 4 rồi thu nhỏ cho mép mượt
+# Vùng vuông quanh khuôn mặt trong ảnh nguồn (trái, trên, phải, dưới), dùng cho
+# biểu tượng thường. Bản maskable lấy cả ảnh nguồn.
+VUNG_MAT = (90, 80, 670, 660)
+PHONG = 4  # vẽ mặt nạ bo góc to gấp 4 rồi thu nhỏ cho mép mượt
 
 
-def ve(co: int, bo_goc: float, ti_le_chu: float) -> Image.Image:
-    """co: cạnh ảnh (px). bo_goc: bán kính góc / cạnh (0 = vuông). ti_le_chu: cỡ chữ / cạnh."""
-    lon = co * PHONG
-    anh = Image.new("RGBA", (lon, lon), (0, 0, 0, 0))
-    but = ImageDraw.Draw(anh)
-    but.rounded_rectangle((0, 0, lon - 1, lon - 1), radius=int(lon * bo_goc), fill=MAU_NHAN + (255,))
-
-    font = ImageFont.truetype(str(FONT), int(lon * ti_le_chu))
-    # Căn giữa theo hình thật của chữ, không theo hộp dòng (Lora có phần dưới dòng sâu)
-    trai, tren, phai, duoi = but.textbbox((0, 0), "H", font=font)
-    x = (lon - (phai - trai)) / 2 - trai
-    y = (lon - (duoi - tren)) / 2 - tren
-    but.text((x, y), "H", font=font, fill=MAU_CHU + (255,))
-    return anh.resize((co, co), Image.LANCZOS)
+def ve(anh: Image.Image, co: int, bo_goc: float) -> Image.Image:
+    """co: cạnh ảnh (px). bo_goc: bán kính góc / cạnh (0 = vuông, phủ kín)."""
+    ra = anh.convert("RGB").resize((co, co), Image.LANCZOS).convert("RGBA")
+    if bo_goc:
+        lon = co * PHONG
+        mat_na = Image.new("L", (lon, lon), 0)
+        ImageDraw.Draw(mat_na).rounded_rectangle((0, 0, lon - 1, lon - 1), radius=int(lon * bo_goc), fill=255)
+        ra.putalpha(mat_na.resize((co, co), Image.LANCZOS))
+    return ra
 
 
 def main() -> None:
     RA.mkdir(exist_ok=True)
-    # Cùng tỉ lệ với logo 30px, bo góc 10px, chữ 17px trên thanh trên cùng
-    ve(192, 10 / 30, 0.62).save(RA / "icon-192.png", optimize=True)
-    ve(512, 10 / 30, 0.62).save(RA / "icon-512.png", optimize=True)
-    ve(512, 0, 0.46).save(RA / "icon-maskable-512.png", optimize=True)
-    ve(180, 0, 0.62).convert("RGB").save(RA / "apple-touch-icon.png", optimize=True)
-    for ten in ("icon-192.png", "icon-512.png", "icon-maskable-512.png", "apple-touch-icon.png"):
+    nguon = Image.open(NGUON)
+    mat = nguon.crop(VUNG_MAT)
+    # Bo góc cùng tỉ lệ với logo 30px, bo góc 10px trên thanh trên cùng
+    ve(mat, 192, 10 / 30).save(RA / "icon-192.png", optimize=True)
+    ve(mat, 512, 10 / 30).save(RA / "icon-512.png", optimize=True)
+    ve(nguon, 512, 0).convert("RGB").save(RA / "icon-maskable-512.png", optimize=True)
+    ve(mat, 180, 0).convert("RGB").save(RA / "apple-touch-icon.png", optimize=True)
+    ve(mat, 64, 8 / 32).save(RA / "favicon.png", optimize=True)
+    for ten in ("icon-192.png", "icon-512.png", "icon-maskable-512.png", "apple-touch-icon.png", "favicon.png"):
         print("đã ghi", (RA / ten).relative_to(GOC))
 
 

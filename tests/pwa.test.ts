@@ -73,17 +73,23 @@ describe('manifest', () => {
     expect(kichThuocPng('public/apple-touch-icon.png')).toBe('180x180');
   });
 
-  it('script vẽ biểu tượng còn đó để vẽ lại khi đổi màu', () => {
+  it('favicon 64×64 cho tab trình duyệt', () => {
+    expect(kichThuocPng('public/favicon.png')).toBe('64x64');
+  });
+
+  it('script và ảnh nguồn còn đó để tạo lại biểu tượng khi đổi ảnh', () => {
     expect(existsSync(new URL('scripts/tao-bieu-tuong.py', goc))).toBe(true);
+    expect(existsSync(new URL('scripts/anh-bieu-tuong.jpg', goc))).toBe(true);
   });
 });
 
 describe('khung trang khai báo đủ để cài', () => {
   const khung = doc('src/layouts/Khung.astro');
 
-  it('trỏ tới manifest và apple-touch-icon qua base', () => {
+  it('trỏ tới manifest, apple-touch-icon và favicon qua base', () => {
     expect(khung).toContain('rel="manifest" href={`${base}manifest.webmanifest`}');
     expect(khung).toContain('rel="apple-touch-icon" href={`${base}apple-touch-icon.png`}');
+    expect(khung).toContain('rel="icon" type="image/png" href={`${base}favicon.png`}');
   });
 
   it('iOS mở toàn màn hình khi cài từ Safari', () => {

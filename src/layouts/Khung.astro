@@ -48,9 +48,6 @@ const hrefTab: Record<TabDuoi, string> = {
   'thuat-ngu': d.thuatNgu(),
 };
 const chiSoTab = chiSoTabDuoi(tabDuoi);
-const favicon = `data:image/svg+xml,${encodeURIComponent(
-  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#4A51CC"/><text x="16" y="22.5" font-family="Georgia,serif" font-size="19" font-weight="700" text-anchor="middle" fill="#fff">H</text></svg>',
-)}`;
 ---
 
 <!doctype html>
@@ -70,7 +67,7 @@ const favicon = `data:image/svg+xml,${encodeURIComponent(
     <script is:inline set:html={SCRIPT_KHOI_TAO_GIAO_DIEN} />
     <title>{tieuDeDayDu}</title>
     {moTa && <meta name="description" content={moTa} />}
-    <link rel="icon" href={favicon} />
+    <link rel="icon" type="image/png" href={`${base}favicon.png`} />
   </head>
   <body data-vi-tri={viTri ? JSON.stringify(viTri) : undefined}>
     <a class="bo-qua" href="#noi-dung">Bỏ qua, tới nội dung</a>
