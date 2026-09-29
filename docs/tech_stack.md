@@ -35,7 +35,8 @@ Mọi thứ miễn phí: không backend, không dịch vụ trả phí.
 | Icon | Lucide, đóng gói cục bộ | Theo DESIGN_SPEC |
 | Tiến độ | `localStorage`. Logic viết thành hàm thuần trong `src/lib/` | Không cần tài khoản. Hàm thuần test được |
 | Tìm kiếm (Phase 5) | Pagefind | Tạo chỉ mục lúc build, không cần máy chủ. Xem mục 6 |
-| PWA (Phase 5) | `@vite-pwa/astro` | Cài lên điện thoại, đọc khi không có mạng |
+| Cài lên màn hình chính | `public/manifest.webmanifest` + thẻ `apple-mobile-web-app-*`, đã làm — xem mục 13 | Mở từ biểu tượng thì không còn thanh của trình duyệt |
+| PWA đọc offline (Phase 5) | `@vite-pwa/astro` | Thêm service worker để đọc khi không có mạng |
 | Test | Vitest + Playwright | Xem mục 8 |
 | Deploy | GitHub Actions + `withastro/action` → GitHub Pages | Xem mục 9 |
 
@@ -162,6 +163,10 @@ trước khi giao.
 
 Test dữ liệu đọc thẳng file trong `content/`, không phụ thuộc runtime Astro.
 
+Playwright chạy server ở cổng 4322 và dùng lại server đang chạy sẵn ở cổng đó.
+Khi nhiều bản làm việc (worktree) chạy song song trên cùng máy, đặt cổng riêng để
+khỏi test nhầm bản build của bản khác: `PW_CONG=4337 npm run test:e2e`.
+
 Khi chưa có `package.json`, chạy test shell bằng:
 
 ```bash
@@ -242,3 +247,43 @@ Người học chọn giao diện **sáng** hoặc **tối** bằng một nút t
 - Playwright: mở web → mặc định sáng → bấm nút → tối → tải lại trang vẫn tối →
   sang trang khác vẫn tối.
 - Tương phản chữ ≥ 4.5:1 ở **cả hai** giao diện (checklist DESIGN_SPEC, mục 10).
+
+## 13. Giao diện điện thoại: tối giản và bong bóng
+
+Trên điện thoại, thanh địa chỉ và thanh công cụ của trình duyệt đã chiếm hai đầu
+màn hình. Trang web **không tự ẩn được** các thanh đó, nên làm hai việc:
+
+1. **Cài lên màn hình chính.** Mở từ biểu tượng thì web chạy toàn màn hình, không
+   còn thanh nào của trình duyệt.
+2. **Thanh của chính Hochanh gọn lại và biết lùi đi.** Cuộn xuống để đọc thì thanh
+   trên và thanh dưới lùi ra khỏi màn hình; cuộn lên một chút, hoặc chạm đáy trang,
+   thì hiện lại. Laptop giữ nguyên.
+
+Kiểu bong bóng học từ thanh điều hướng của `learner`
+(https://duahnproducts.github.io/language-learning/, mã ở `learner/src/styles/bubble.css`).
+
+| Phần | Làm gì |
+| --- | --- |
+| Thanh dưới | Viên thuốc kính mờ nổi, tách khỏi mép, **chỉ có icon**. Tên mục nằm ở `aria-label` và `title`. Một bong bóng trượt tới ô đang chọn. Danh sách tab: `src/lib/thanh-duoi.ts` |
+| Bong bóng trượt | Cơ chế chung `.ray-bong` / `.bong-truot` trong `global.css`. Vị trí tính bằng CSS từ `--count` (số ô) và `--index` (ô đang chọn), nên không phải đo phần tử nào. Đường cong `--ease-bubble` vượt đích một chút rồi nảy về |
+| Trượt qua trang mới | Mỗi lần bấm là tải cả trang. Lúc bấm, script ghi ô cũ vào `sessionStorage` (khoá `hochanh:bong-truoc`, hạn 5 giây). Trang mới chạy `SCRIPT_BONG_THANH_DUOI` ngay sau thanh, trước khi thanh kịp vẽ: đặt bong bóng về ô cũ, rồi cho trượt sang ô mới |
+| Công tắc tab | Tab *Giảng dạy / Theo sách* ở trang chương là công tắc: rãnh lõm, bong bóng trắng nổi (`.cong-tac`). Các ô rộng bằng nhau nhờ lưới `1fr` |
+| Nút | `.nut` bo tròn hẳn, có vệt sáng trên đỉnh. Bấm thì lún xuống nhanh, thả ra thì nảy về. `.nut-icon` hình tròn |
+| Ẩn khi cuộn | Lô-gic thuần `capNhatCuon` trong `src/lib/cuon.ts`: bỏ qua lần cuộn dưới 8px, gần đầu trang hoặc chạm đáy thì luôn hiện. Script đặt `data-an-thanh` trên `<html>`, còn CSS chỉ áp dụng khi màn hình rộng ≤ 760px |
+| Màu | Token `--glass`, `--glass-line`, `--glass-shadow`, `--bubble`, `--track`, `--bubble-raised`, `--gloss` có ở cả hai giao diện |
+| Cài lên màn hình chính | `public/manifest.webmanifest` dùng đường dẫn **tương đối** (`./`), nên đúng với base `/math/`. `display: standalone`. Biểu tượng vẽ bằng `scripts/tao-bieu-tuong.py` (chữ H, font Lora, màu nhấn). Thẻ `apple-mobile-web-app-capable`, `apple-touch-icon`, `viewport-fit=cover`. Thanh trạng thái để `default` để iOS lấy màu `theme-color`, tránh chữ trắng trên nền sáng |
+| Chuyển động | `prefers-reduced-motion` thì mọi hiệu ứng bong bóng chạy tức thì (`--t-bubble: 1ms`) |
+
+**Cách cài** (ghi cho người học):
+
+- **iPhone:** mở web bằng **Safari**. Nếu đang ở trình duyệt trong app (Zalo,
+  Messenger…), bấm biểu tượng la bàn để mở bằng Safari. Sau đó bấm *Chia sẻ*, rồi
+  *Thêm vào MH chính*.
+- **Android:** mở bằng Chrome, bấm menu ⋮, rồi *Cài đặt ứng dụng* hoặc *Thêm vào
+  màn hình chính*.
+
+**Test:** `src/lib/thanh-duoi.test.ts` và `src/lib/cuon.test.ts` (Vitest). `tests/pwa.test.ts`
+kiểm tra manifest, kích thước biểu tượng, các thẻ trong `Khung.astro` và token có đủ ở
+hai giao diện. Playwright có `tests/e2e/dien-thoai.spec.ts` (viên thuốc, bong bóng trượt
+qua trang mới, ẩn khi cuộn, nút tròn, manifest tải được) và `tests/e2e/bong-bong.spec.ts`
+(công tắc tab, laptop không đổi).

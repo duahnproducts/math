@@ -3,9 +3,11 @@
 import { khoiTaoBaiTap } from './bai-tap';
 import { khoiTaoGiaoDien } from './giao-dien';
 import { khoiTaoTrang } from './giao-dien-trang';
+import { khoiTaoThanhBong } from './thanh-bong';
 import { khoiTaoTienDo } from './tien-do';
 
 khoiTaoGiaoDien();
 khoiTaoTienDo();
 khoiTaoBaiTap();
 khoiTaoTrang();
+khoiTaoThanhBong();

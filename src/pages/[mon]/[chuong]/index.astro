@@ -104,7 +104,8 @@ const nguonChuong = du.sach[0]?.data.nguon ?? `${du.mon.giao_trinh}. ${du.mon.gi
 
     <section class="phan tabs" data-tabs aria-labelledby="hai-loi-vao">
       <h2 id="hai-loi-vao">Hai lối vào cùng một nội dung</h2>
-      <div role="tablist" aria-label="Chọn phần">
+      <div role="tablist" aria-label="Chọn phần" class="ray-bong cong-tac" style="--count:2;--index:0">
+        <span class="bong-truot" aria-hidden="true"></span>
         <button role="tab" id="tab-giang-day" aria-controls="panel-giang-day" aria-selected="true" type="button">
           Giảng dạy
         </button>

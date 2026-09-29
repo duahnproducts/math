@@ -202,7 +202,10 @@ tiếp theo là gì (nút **Học tiếp**).
 
 ### Điều hướng
 - Laptop: thanh bên trái là mục lục của chương đang học.
-- Điện thoại: thanh dưới gồm Trang chủ · Môn học · Bài tập · Thuật ngữ.
+- Điện thoại: thanh dưới gồm Trang chủ · Môn học · Bài tập · Thuật ngữ, dạng viên
+  thuốc bong bóng nổi, chỉ có icon. Cuộn xuống để đọc thì thanh trên và thanh dưới
+  lùi đi, cuộn lên thì hiện lại. Web cài được lên màn hình chính để mở toàn màn
+  hình, không còn thanh của trình duyệt (`docs/tech_stack.md`, mục 13).
 
 ---
 

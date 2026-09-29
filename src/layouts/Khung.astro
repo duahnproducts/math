@@ -1,6 +1,6 @@
 ---
 // Khung chung của mọi trang: thanh trên (đường dẫn, thuật ngữ, nút sáng/tối),
-// thanh bên (mục lục chương), thanh dưới trên điện thoại.
+// thanh bên (mục lục chương), thanh dưới bong bóng trên điện thoại.
 import '@fontsource/inter/400.css';
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/600.css';
@@ -19,6 +19,7 @@ import NutGiaoDien from '@/components/NutGiaoDien.astro';
 import type { DuLieuChuongWeb } from '@/lib/du-lieu';
 import { taoDuongDan, type MatXich } from '@/lib/duong-dan';
 import { MAU_THANH_TRINH_DUYET, SCRIPT_KHOI_TAO_GIAO_DIEN } from '@/lib/giao-dien';
+import { CAC_TAB_DUOI, SCRIPT_BONG_THANH_DUOI, chiSoTabDuoi, type TabDuoi } from '@/lib/thanh-duoi';
 import type { ViTri } from '@/lib/tien-do';
 
 interface Props {
@@ -30,7 +31,7 @@ interface Props {
   /** Trang học (bài giảng, mục §, bài tập) khai báo vị trí để nút Học tiếp nhớ */
   viTri?: Omit<ViTri, 'luc'>;
   /** Tab đang chọn ở thanh dưới trên điện thoại */
-  tabDuoi?: 'trang-chu' | 'mon' | 'bai-tap' | 'thuat-ngu';
+  tabDuoi?: TabDuoi;
 }
 
 const { tieuDe, moTa, duongDan = [], chuong, viTri, tabDuoi } = Astro.props;
@@ -40,6 +41,13 @@ const tieuDeDayDu = tieuDe === 'Hochanh' ? 'Hochanh — Học theo giáo trình'
 const hienTai = Astro.url.pathname;
 const hrefMon = chuong ? d.mon(chuong.mon.id) : `${d.trangChu()}#mon-hoc`;
 const hrefBaiTap = chuong ? d.dsBaiTap(chuong.mon.id, chuong.chuong.so) : d.dsBaiTap('giai-tich', 1);
+const hrefTab: Record<TabDuoi, string> = {
+  'trang-chu': d.trangChu(),
+  mon: hrefMon,
+  'bai-tap': hrefBaiTap,
+  'thuat-ngu': d.thuatNgu(),
+};
+const chiSoTab = chiSoTabDuoi(tabDuoi);
 const favicon = `data:image/svg+xml,${encodeURIComponent(
   '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#4A51CC"/><text x="16" y="22.5" font-family="Georgia,serif" font-size="19" font-weight="700" text-anchor="middle" fill="#fff">H</text></svg>',
 )}`;
@@ -49,9 +57,16 @@ const favicon = `data:image/svg+xml,${encodeURIComponent(
 <html lang="vi" data-theme="light">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" content={MAU_THANH_TRINH_DUYET.sang} />
+    <!-- Cài lên màn hình chính: mở ra toàn màn hình, không còn thanh địa chỉ và thanh công cụ của trình duyệt -->
+    <link rel="manifest" href={`${base}manifest.webmanifest`} />
+    <link rel="apple-touch-icon" href={`${base}apple-touch-icon.png`} />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Hochanh" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <script is:inline set:html={SCRIPT_KHOI_TAO_GIAO_DIEN} />
     <title>{tieuDeDayDu}</title>
     {moTa && <meta name="description" content={moTa} />}
@@ -99,20 +114,23 @@ const favicon = `data:image/svg+xml,${encodeURIComponent(
       </main>
     </div>
 
-    <nav class="thanh-duoi" aria-label="Điều hướng chính">
-      <a href={d.trangChu()} aria-current={tabDuoi === 'trang-chu' ? 'page' : undefined}>
-        <Icon ten="house" co={20} /><span>Trang chủ</span>
-      </a>
-      <a href={hrefMon} aria-current={tabDuoi === 'mon' ? 'page' : undefined}>
-        <Icon ten="library" co={20} /><span>Môn học</span>
-      </a>
-      <a href={hrefBaiTap} aria-current={tabDuoi === 'bai-tap' ? 'page' : undefined}>
-        <Icon ten="pencil-line" co={20} /><span>Bài tập</span>
-      </a>
-      <a href={d.thuatNgu()} aria-current={tabDuoi === 'thuat-ngu' ? 'page' : undefined}>
-        <Icon ten="languages" co={20} /><span>Thuật ngữ</span>
-      </a>
+    <nav
+      class="thanh-duoi ray-bong"
+      aria-label="Điều hướng chính"
+      data-thanh-duoi
+      data-chi-so={chiSoTab}
+      style={`--count:${CAC_TAB_DUOI.length};--index:${Math.max(chiSoTab, 0)}`}
+    >
+      <span class="bong-truot" aria-hidden="true" data-an={chiSoTab < 0 ? '' : undefined}></span>
+      {
+        CAC_TAB_DUOI.map((t) => (
+          <a href={hrefTab[t.id]} aria-label={t.nhan} title={t.nhan} aria-current={tabDuoi === t.id ? 'page' : undefined}>
+            <Icon ten={t.icon} co={24} />
+          </a>
+        ))
+      }
     </nav>
+    <script is:inline set:html={SCRIPT_BONG_THANH_DUOI} />
 
     <script>
       import '../scripts/app.ts';

@@ -3,7 +3,9 @@ import { defineConfig, devices } from '@playwright/test';
 // E2E: chạy trên bản build thật (astro preview), đúng base /math/ như GitHub Pages.
 // Trên máy Windows dùng Edge có sẵn (không phải tải trình duyệt); trên CI dùng
 // Chromium của Playwright (cài bằng `npx playwright install --with-deps chromium`).
-const CONG = 4322;
+// PW_CONG: chạy song song nhiều bản làm việc (worktree) trên cùng máy mà không
+// vô tình dùng lại server của bản khác (reuseExistingServer).
+const CONG = Number(process.env.PW_CONG ?? 4322);
 const kenh = process.env.PW_CHANNEL ?? (process.platform === 'win32' ? 'msedge' : undefined);
 
 export default defineConfig({

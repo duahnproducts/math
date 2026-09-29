@@ -13,6 +13,9 @@ html {
 
 body {
   margin: 0;
+  /* viewport-fit=cover: xoay ngang thì chừa chỗ cho tai thỏ của iPhone */
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-sans);
@@ -168,38 +171,46 @@ kbd {
   text-overflow: ellipsis;
 }
 
-/* ---------- Nút ---------- */
+/* ---------- Nút: bong bóng ----------
+ * Viên thuốc bo tròn hẳn, có vệt sáng trên đỉnh. Bấm thì lún xuống thật nhanh,
+ * thả ra thì nảy về, vượt quá một chút (--ease-bubble) — như ấn vào bong bóng.
+ * Lúc lún dùng thời gian của :active, lúc nảy về dùng thời gian của trạng thái
+ * thường, nên hai chiều nhanh chậm khác nhau. */
 .nut {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   min-height: 36px;
-  padding: 0 14px;
-  border-radius: var(--r-md);
+  padding: 0 16px;
+  border-radius: 999px;
   border: 1px solid var(--line-2);
   background: var(--surface-1);
   color: var(--text);
+  box-shadow: var(--gloss);
   font: inherit;
   font-size: 14px;
   font-weight: 500;
   text-decoration: none;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   transition: background var(--t-fast) var(--ease-out), border-color var(--t-fast) var(--ease-out),
-    transform var(--t-fast) var(--ease-out);
+    transform var(--t-bubble) var(--ease-bubble);
 }
 .nut:hover {
   background: var(--surface-hover);
   color: var(--text);
 }
 .nut:active {
-  transform: scale(0.985);
+  transform: scale(0.94);
+  transition-duration: var(--t-fast);
+  transition-timing-function: var(--ease-out);
 }
 .nut.chinh {
   background: var(--accent);
   border-color: var(--accent);
   color: var(--accent-ink);
-  box-shadow: var(--shadow);
+  box-shadow: var(--gloss), var(--shadow);
 }
 .nut.chinh:hover {
   background: var(--accent-2);
@@ -208,6 +219,7 @@ kbd {
 .nut.nhe {
   background: transparent;
   border-color: transparent;
+  box-shadow: none;
   color: var(--text-2);
 }
 .nut.nhe:hover {
@@ -216,7 +228,7 @@ kbd {
 }
 .nut.nho {
   min-height: 30px;
-  padding: 0 10px;
+  padding: 0 12px;
   font-size: 13px;
 }
 .nut[aria-pressed='true'] {
@@ -227,22 +239,77 @@ kbd {
 .nut-icon {
   display: inline-grid;
   place-items: center;
-  width: 36px;
-  height: 36px;
-  border-radius: var(--r-md);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
   border: 1px solid transparent;
   background: transparent;
   color: var(--text-2);
   cursor: pointer;
   text-decoration: none;
-  transition: background var(--t-fast) var(--ease-out), transform var(--t-fast) var(--ease-out);
+  -webkit-tap-highlight-color: transparent;
+  transition: background var(--t-fast) var(--ease-out), transform var(--t-bubble) var(--ease-bubble);
 }
 .nut-icon:hover {
   background: var(--surface-2);
   color: var(--text);
 }
 .nut-icon:active {
-  transform: scale(0.94);
+  transform: scale(0.86);
+  transition-duration: var(--t-fast);
+  transition-timing-function: var(--ease-out);
+}
+
+/* ---------- Bong bóng trượt ----------
+ * Học từ learner (src/styles/bubble.css): một rãnh, trong đó MỘT bong bóng
+ * trượt từ ô này sang ô kia — mắt theo được nó đi đâu, như thanh tab của iOS.
+ * Vị trí tính hoàn toàn bằng CSS từ --count (số ô) và --index (ô đang chọn),
+ * nên không phải đo phần tử nào. Các ô phải rộng bằng nhau. */
+.ray-bong {
+  --dem: 5px;
+  position: relative;
+  display: flex;
+  padding: var(--dem);
+}
+.ray-bong > .bong-truot {
+  position: absolute;
+  top: var(--dem);
+  bottom: var(--dem);
+  left: var(--dem);
+  width: calc((100% - 2 * var(--dem)) / var(--count));
+  border-radius: 999px;
+  transform: translateX(calc(var(--index) * 100%));
+  pointer-events: none;
+  transition: transform var(--t-bubble) var(--ease-bubble), opacity var(--t-base) var(--ease-out);
+}
+.ray-bong > .bong-truot[data-an] {
+  opacity: 0;
+}
+/* Trang mới đặt bong bóng về ô cũ trước khi cho trượt: bước đó không có hiệu ứng */
+.ray-bong[data-dung-yen] > .bong-truot {
+  transition: none;
+}
+.ray-bong > :not(.bong-truot) {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* Công tắc: rãnh lõm xuống, bong bóng trắng nổi lên. Lưới 1fr: các ô rộng bằng
+ * nhau, bằng đúng ô có chữ dài nhất. */
+.cong-tac {
+  --dem: 4px;
+  display: inline-grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  max-width: 100%;
+  border-radius: 999px;
+  background: var(--track);
+  box-shadow: var(--track-shadow);
+}
+.cong-tac > .bong-truot {
+  background: var(--bubble-raised);
+  box-shadow: var(--bubble-raised-shadow);
 }
 
 /* Nút sáng/tối: hiện mặt trăng khi đang sáng (bấm để sang tối) và ngược lại */
@@ -1007,31 +1074,30 @@ figure.hinh figcaption {
   line-height: 1.6;
 }
 
-/* ---------- Tab ---------- */
-.tabs [role='tablist'] {
-  display: inline-flex;
-  gap: 4px;
-  padding: 4px;
-  border: 1px solid var(--line);
-  border-radius: var(--r-md);
-  background: var(--surface-2);
-}
+/* ---------- Tab: công tắc bong bóng (xem .cong-tac) ---------- */
 .tabs [role='tab'] {
-  min-height: 34px;
-  padding: 0 14px;
+  min-height: 36px;
+  padding: 0 18px;
   border: 0;
-  border-radius: var(--r-sm);
+  border-radius: 999px;
   background: transparent;
   color: var(--text-2);
   font: inherit;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: color var(--t-base) var(--ease-out), transform var(--t-bubble) var(--ease-bubble);
+}
+.tabs [role='tab']:hover {
+  color: var(--text);
+}
+.tabs [role='tab']:active {
+  transform: scale(0.95);
+  transition-duration: var(--t-fast);
 }
 .tabs [role='tab'][aria-selected='true'] {
-  background: var(--surface-1);
   color: var(--text);
-  box-shadow: var(--shadow);
 }
 .tabs [role='tabpanel'] {
   margin-top: 16px;
@@ -1425,7 +1491,7 @@ dialog.hoi p {
   gap: 6px;
 }
 
-/* ---------- Thanh dưới (điện thoại) ---------- */
+/* ---------- Thanh dưới (điện thoại): viên thuốc kính mờ nổi ---------- */
 .thanh-duoi {
   display: none;
 }
@@ -1466,11 +1532,28 @@ dialog.hoi p {
 
 @media (max-width: 760px) {
   body {
-    padding-bottom: 64px;
+    /* chừa chỗ cho viên thuốc nổi ở đáy, để chân trang không bị che */
+    padding-bottom: calc(96px + env(safe-area-inset-bottom));
   }
+  /* Thanh trên tối giản: không viền, kính mờ cùng màu nền, chỉ còn logo và nút
+   * sáng/tối. Cuộn xuống để đọc thì lùi lên, cuộn lên thì hiện lại. */
   .topbar {
-    padding: 0 12px;
+    height: calc(56px + env(safe-area-inset-top));
+    padding: env(safe-area-inset-top) 12px 0 16px;
     gap: 8px;
+    border-bottom-color: transparent;
+    background: color-mix(in srgb, var(--bg) 78%, transparent);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    backdrop-filter: blur(18px) saturate(160%);
+    transition: transform var(--t-view) var(--ease-out);
+  }
+  :root[data-an-thanh] .topbar {
+    transform: translateY(-100%);
+  }
+  .topbar .nut-giao-dien {
+    border: 1px solid var(--glass-line);
+    background: var(--glass);
+    box-shadow: var(--glass-shadow);
   }
   .topbar .duong-dan-trang,
   .topbar .an-tren-dt {
@@ -1502,35 +1585,61 @@ dialog.hoi p {
     left: 12px;
     right: 12px;
     top: auto;
-    bottom: 72px;
+    bottom: calc(92px + env(safe-area-inset-bottom));
     width: auto;
     max-width: none;
     font-size: 14px;
   }
+  /* Viên thuốc tách khỏi mép màn hình, chỉ có icon, bong bóng trượt dưới ô
+   * đang chọn (học từ thanh điều hướng của learner). */
   .thanh-duoi {
     position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    left: 16px;
+    right: 16px;
+    bottom: calc(12px + env(safe-area-inset-bottom));
     z-index: 40;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    max-width: 360px;
     height: 60px;
-    padding-bottom: env(safe-area-inset-bottom);
-    background: var(--surface-1);
-    border-top: 1px solid var(--line);
+    margin-inline: auto;
+    border: 1px solid var(--glass-line);
+    border-radius: 999px;
+    background: var(--glass);
+    -webkit-backdrop-filter: blur(22px) saturate(180%);
+    backdrop-filter: blur(22px) saturate(180%);
+    box-shadow: var(--glass-shadow);
+    transition: transform var(--t-view) var(--ease-out), opacity var(--t-view) var(--ease-out);
+  }
+  :root[data-an-thanh] .thanh-duoi {
+    transform: translateY(calc(100% + 24px + env(safe-area-inset-bottom)));
+    opacity: 0;
+    pointer-events: none;
+  }
+  .thanh-duoi > .bong-truot {
+    background: var(--bubble);
   }
   .thanh-duoi a {
     display: grid;
     place-items: center;
-    align-content: center;
-    gap: 2px;
-    color: var(--text-3);
-    font-size: 11px;
+    border-radius: 999px;
+    color: var(--text-2);
     text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: color var(--t-base) var(--ease-out), transform var(--t-bubble) var(--ease-bubble);
+  }
+  .thanh-duoi a:hover {
+    color: var(--text);
+  }
+  .thanh-duoi a:active {
+    transform: scale(0.86);
+    transition-duration: var(--t-fast);
+    transition-timing-function: var(--ease-out);
   }
   .thanh-duoi a[aria-current='page'] {
     color: var(--accent);
+  }
+  .thanh-duoi a[aria-current='page'] .icon {
+    stroke-width: 2.25;
   }
 }
 

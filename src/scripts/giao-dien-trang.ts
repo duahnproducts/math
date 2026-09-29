@@ -6,7 +6,10 @@ import { BO_LOC_TRONG, docBoLoc, ghiBoLoc, khopBoLoc, type BoLoc } from '../lib/
 function khoiTaoTab(): void {
   for (const khung of document.querySelectorAll<HTMLElement>('[data-tabs]')) {
     const tabs = [...khung.querySelectorAll<HTMLButtonElement>('[role="tab"]')];
+    const ray = khung.querySelector<HTMLElement>('[role="tablist"]');
     const chon = (tab: HTMLButtonElement, dat = true) => {
+      // Bong bóng trượt tới ô vừa chọn (vị trí tính bằng CSS từ --index)
+      ray?.style.setProperty('--index', String(tabs.indexOf(tab)));
       for (const t of tabs) {
         const dangChon = t === tab;
         t.setAttribute('aria-selected', String(dangChon));
