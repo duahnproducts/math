@@ -1,0 +1,259 @@
+---
+mon: dai-so
+chuong: 3
+muc: "3.3"
+tieu_de: Giá trị riêng và vector riêng
+tieu_de_en: Eigenvalues and Eigenvectors
+loai: dich-nguyen-van
+nguon: "Dịch từ W. Keith Nicholson, Linear Algebra with Applications, Version 2023 – Revision A, Vretta-Lyryx Inc. (https://lyryx.com/linear-algebra-applications/), Mục 3.3. Bản dịch phát hành theo giấy phép CC BY-NC-SA 4.0, giống bản gốc. Thay đổi: dịch sang tiếng Việt, thêm ghi chú cho người học và một hình minh hoạ vector riêng."
+---
+
+Thế giới đầy những ví dụ về các hệ thống tiến triển theo thời gian — thời tiết một vùng, nền kinh tế một quốc gia, độ đa dạng của một hệ sinh thái, v.v. Mô tả các hệ thống như vậy nói chung là khó, và nhiều phương pháp đã được phát triển cho các trường hợp đặc biệt. Trong mục này ta mô tả một phương pháp như vậy, gọi là **chéo hoá** (*diagonalization*), một trong những kỹ thuật quan trọng nhất của đại số tuyến tính. Một ví dụ rất màu mỡ của quy trình này là mô hình hoá sự tăng trưởng dân số của một loài động vật.
+
+<ViDu so="3.3.1">
+Xét sự tiến triển dân số của một loài chim. Vì số con đực và con cái gần bằng nhau, ta chỉ đếm con cái. Ta giả sử mỗi con cái ở giai đoạn non trong một năm rồi trở thành trưởng thành, và chỉ con trưởng thành mới sinh sản. Ta đưa ra ba giả thiết về tỉ lệ sinh sản và sống sót:
+
+1. Số chim cái non nở ra trong một năm bất kỳ gấp đôi số chim cái trưởng thành còn sống năm trước (ta nói *tỉ lệ sinh sản* bằng 2).
+2. Một nửa số chim cái trưởng thành trong một năm sống sót sang năm sau (tỉ lệ sống sót của chim trưởng thành là $\frac{1}{2}$).
+3. Một phần tư số chim cái non trong một năm sống sót để trở thành trưởng thành (tỉ lệ sống sót của chim non là $\frac{1}{4}$).
+
+Nếu ban đầu có 100 chim cái trưởng thành và 40 chim cái non, hãy tính dân số chim cái sau $k$ năm.
+
+**Lời giải.** Gọi $a_k$ và $j_k$ lần lượt là số chim cái trưởng thành và non sau $k$ năm, nên tổng dân số chim cái là $a_k + j_k$. Giả thiết 1 cho $j_{k+1} = 2a_k$, còn giả thiết 2 và 3 cho $a_{k+1} = \frac{1}{2}a_k + \frac{1}{4}j_k$. Do đó $a_k$ và $j_k$ ở các năm liên tiếp liên hệ với nhau bởi
+
+$$
+\begin{aligned}
+a_{k+1} &= \tfrac{1}{2}a_k + \tfrac{1}{4}j_k \\
+j_{k+1} &= 2a_k
+\end{aligned}
+$$
+
+Nếu ta viết $\mathbf{v}_k = \begin{bmatrix} a_k \\ j_k \end{bmatrix}$ và $A = \begin{bmatrix} \frac{1}{2} & \frac{1}{4} \\ 2 & 0 \end{bmatrix}$ thì các phương trình này có dạng ma trận
+
+$$
+\mathbf{v}_{k+1} = A\mathbf{v}_k, \quad \text{với mỗi } k = 0, 1, 2, \ldots
+$$
+
+Lấy $k = 0$ cho $\mathbf{v}_1 = A\mathbf{v}_0$, rồi $k = 1$ cho $\mathbf{v}_2 = A\mathbf{v}_1 = A^2\mathbf{v}_0$, và $k = 2$ cho $\mathbf{v}_3 = A^3\mathbf{v}_0$. Tiếp tục như vậy ta được
+
+$$
+\mathbf{v}_k = A^k\mathbf{v}_0, \quad \text{với mỗi } k = 0, 1, 2, \ldots
+$$
+
+Vì $\mathbf{v}_0 = \begin{bmatrix} a_0 \\ j_0 \end{bmatrix} = \begin{bmatrix} 100 \\ 40 \end{bmatrix}$ đã biết, việc tìm hồ sơ dân số $\mathbf{v}_k$ quy về việc tính $A^k$ với mọi $k \ge 0$. Ta sẽ hoàn tất phép tính này ở Ví dụ 3.5.1 sau khi phát triển một số kỹ thuật mới.
+</ViDu>
+
+Cho $A$ là ma trận $n \times n$ cố định. Một dãy $\mathbf{v}_0, \mathbf{v}_1, \mathbf{v}_2, \ldots$ các vector cột trong $\mathbb{R}^n$ được gọi là **hệ động lực tuyến tính** (*linear dynamical system*) nếu $\mathbf{v}_0$ đã biết và các $\mathbf{v}_k$ khác được xác định bởi điều kiện
+
+$$
+\mathbf{v}_{k+1} = A\mathbf{v}_k \quad \text{với mỗi } k = 0, 1, 2, \ldots
+$$
+
+Các điều kiện này được gọi là một **hệ thức truy hồi ma trận** cho các vector $\mathbf{v}_k$. Chúng suy ra $\mathbf{v}_k = A^k\mathbf{v}_0$ với mọi $k \ge 0$, nên việc tìm các cột $\mathbf{v}_k$ quy về việc tính $A^k$ với $k \ge 0$.
+
+Tính trực tiếp các luỹ thừa $A^k$ của ma trận vuông $A$ có thể rất tốn thời gian, nên ta dùng một phương pháp gián tiếp thông dụng. Ý tưởng là trước hết *chéo hoá* ma trận $A$, tức là tìm ma trận khả nghịch $P$ sao cho
+
+$$
+P^{-1}AP = D \text{ là ma trận đường chéo} \tag{3.8}
+$$
+
+Cách này hiệu quả vì các luỹ thừa $D^k$ của ma trận đường chéo $D$ rất dễ tính, và (3.8) cho phép ta tính $A^k$ theo $D^k$. Thật vậy, ta có thể giải (3.8) để được $A = PDP^{-1}$. Bình phương lên cho
+
+$$
+A^2 = (PDP^{-1})(PDP^{-1}) = PD^2P^{-1}
+$$
+
+Dùng điều này ta tính $A^3$ như sau:
+
+$$
+A^3 = AA^2 = (PDP^{-1})(PD^2P^{-1}) = PD^3P^{-1}
+$$
+
+Tiếp tục như vậy ta được Định lý 3.3.1.
+
+<DinhLy so="3.3.1">
+Nếu $A = PDP^{-1}$ thì $A^k = PD^kP^{-1}$ với mỗi $k = 1, 2, \ldots$
+</DinhLy>
+
+Do đó việc tính $A^k$ quy về việc tìm ma trận khả nghịch $P$ như trong (3.8). Để làm điều này, trước hết cần tính một số số nhất định (gọi là **giá trị riêng**) gắn với ma trận $A$.
+
+<DinhNghia so="3.4" ten="Giá trị riêng và vector riêng">
+Nếu $A$ là ma trận $n \times n$, một số $\lambda$ được gọi là **giá trị riêng** (*eigenvalue*) của $A$ nếu
+
+$$
+A\mathbf{x} = \lambda\mathbf{x} \quad \text{với cột } \mathbf{x} \ne \mathbf{0} \text{ nào đó.}
+$$
+
+Trong trường hợp này, $\mathbf{x}$ được gọi là **vector riêng** (*eigenvector*) của $A$ ứng với giá trị riêng $\lambda$, hay gọi tắt là **$\lambda$-vector riêng**.
+</DinhNghia>
+
+<GhiChu tieuDe="Ghi chú cho người học — ý nghĩa hình học">
+Đây là khái niệm quan trọng nhất còn lại của cả cuốn sách, nên hãy dừng lại và hiểu cho kỹ.
+
+Nhớ lại từ <XemMuc muc="2.6" chu="Mục 2.6" />: nhân với ma trận $A$ là một *phép biến đổi* — nó xoay, kéo giãn, bóp méo không gian. Hầu hết vector khi nhân với $A$ sẽ *đổi hướng*.
+
+**Vector riêng là những vector đặc biệt *không* đổi hướng** — $A$ chỉ kéo dài hay co ngắn chúng lại (và có thể lật ngược nếu $\lambda < 0$). Con số $\lambda$ cho biết kéo giãn bao nhiêu lần.
+
+Vì sao điều này quan trọng? Vì nếu ta tìm được đủ các hướng “đặc biệt” đó, ta có thể mô tả toàn bộ tác động phức tạp của $A$ chỉ bằng vài con số $\lambda$ — và khi ấy việc tính $A^{100}$ trở thành tính $\lambda^{100}$, cực kỳ dễ. Đó chính là ý tưởng chéo hoá.
+</GhiChu>
+
+<ViDu so="3.3.2">
+Nếu $A = \begin{bmatrix} 3 & 5 \\ 1 & -1 \end{bmatrix}$ và $\mathbf{x} = \begin{bmatrix} 5 \\ 1 \end{bmatrix}$ thì $A\mathbf{x} = 4\mathbf{x}$, nên $\lambda = 4$ là một giá trị riêng của $A$ với vector riêng tương ứng $\mathbf{x}$.
+</ViDu>
+
+Ma trận $A$ trong Ví dụ 3.3.2 còn có một giá trị riêng nữa ngoài $\lambda = 4$. Để tìm nó, ta xây dựng một quy trình tổng quát cho ma trận $A$ cỡ $n \times n$ bất kỳ.
+
+Theo định nghĩa, một số $\lambda$ là giá trị riêng của ma trận $A$ khi và chỉ khi $A\mathbf{x} = \lambda\mathbf{x}$ với cột $\mathbf{x} \ne \mathbf{0}$ nào đó. Điều này tương đương với việc hệ thuần nhất
+
+$$
+(\lambda I - A)\mathbf{x} = \mathbf{0}
+$$
+
+có nghiệm không tầm thường $\mathbf{x} \ne \mathbf{0}$. Theo Định lý 2.4.5, điều này xảy ra khi và chỉ khi ma trận $\lambda I - A$ không khả nghịch, và điều đó lại đúng khi và chỉ khi định thức của ma trận hệ số bằng 0:
+
+$$
+\det(\lambda I - A) = 0
+$$
+
+Điều kiện cuối này gợi ra định nghĩa sau:
+
+<DinhNghia so="3.5" ten="Đa thức đặc trưng">
+Nếu $A$ là ma trận $n \times n$, **đa thức đặc trưng** (*characteristic polynomial*) $c_A(x)$ của $A$ được định nghĩa bởi
+
+$$
+c_A(x) = \det(xI - A)
+$$
+
+</DinhNghia>
+
+Lưu ý rằng $c_A(x)$ quả thực là một đa thức theo biến $x$, và nó có bậc $n$ khi $A$ là $n \times n$. Thảo luận ở trên cho thấy một số $\lambda$ là giá trị riêng của $A$ khi và chỉ khi $c_A(\lambda) = 0$, tức là khi và chỉ khi $\lambda$ là nghiệm của đa thức đặc trưng $c_A(x)$. Ta ghi lại:
+
+<DinhLy so="3.3.2">
+Cho $A$ là ma trận $n \times n$.
+
+1. Các giá trị riêng $\lambda$ của $A$ là các nghiệm của đa thức đặc trưng $c_A(x)$ của $A$.
+2. Các $\lambda$-vector riêng $\mathbf{x}$ là các nghiệm khác không của hệ thuần nhất
+
+$$
+(\lambda I - A)\mathbf{x} = \mathbf{0}
+$$
+
+với $\lambda I - A$ là ma trận hệ số.
+</DinhLy>
+
+Trong thực hành, giải các phương trình ở phần 2 của Định lý 3.3.2 là một ứng dụng thường quy của phép khử Gauss, nhưng *tìm các giá trị riêng* có thể khó, thường cần máy tính (xem Mục 8.5). Hiện tại, các ví dụ và bài tập sẽ được dựng sao cho nghiệm của đa thức đặc trưng tương đối dễ tìm (thường là số nguyên). Tuy nhiên bạn đọc không nên vì thế mà tưởng rằng giá trị riêng dễ tìm như vậy với các ma trận xuất hiện trong ứng dụng thực tế!
+
+<ViDu so="3.3.3">
+Tìm đa thức đặc trưng của ma trận $A = \begin{bmatrix} 3 & 5 \\ 1 & -1 \end{bmatrix}$ ở Ví dụ 3.3.2, rồi tìm tất cả giá trị riêng và vector riêng của nó.
+
+**Lời giải.** Vì $xI - A = \begin{bmatrix} x & 0 \\ 0 & x \end{bmatrix} - \begin{bmatrix} 3 & 5 \\ 1 & -1 \end{bmatrix} = \begin{bmatrix} x - 3 & -5 \\ -1 & x + 1 \end{bmatrix}$, ta được
+
+$$
+c_A(x) = \det \begin{bmatrix} x - 3 & -5 \\ -1 & x + 1 \end{bmatrix} = x^2 - 2x - 8 = (x - 4)(x + 2)
+$$
+
+Do đó nghiệm của $c_A(x)$ là $\lambda_1 = 4$ và $\lambda_2 = -2$, nên đây là các giá trị riêng của $A$. Lưu ý $\lambda_1 = 4$ là giá trị riêng đã nói ở Ví dụ 3.3.2, nhưng ta tìm thêm được một cái mới: $\lambda_2 = -2$.
+
+Để tìm các vector riêng ứng với $\lambda_2 = -2$, để ý rằng trong trường hợp này
+
+$$
+\lambda_2I - A = \begin{bmatrix} \lambda_2 - 3 & -5 \\ -1 & \lambda_2 + 1 \end{bmatrix} = \begin{bmatrix} -5 & -5 \\ -1 & -1 \end{bmatrix}
+$$
+
+nên nghiệm tổng quát của $(\lambda_2I - A)\mathbf{x} = \mathbf{0}$ là $\mathbf{x} = t\begin{bmatrix} -1 \\ 1 \end{bmatrix}$ với $t$ là số thực tuỳ ý. Do đó các vector riêng $\mathbf{x}$ ứng với $\lambda_2$ là $\mathbf{x} = t\begin{bmatrix} -1 \\ 1 \end{bmatrix}$ với $t \ne 0$ tuỳ ý. Tương tự, $\lambda_1 = 4$ cho các vector riêng $\mathbf{x} = t\begin{bmatrix} 5 \\ 1 \end{bmatrix}$, $t \ne 0$.
+</ViDu>
+
+Lưu ý rằng một ma trận vuông $A$ có *rất nhiều* vector riêng ứng với một giá trị riêng $\lambda$ cho trước. Thực tế mọi nghiệm khác không $\mathbf{x}$ của $(\lambda I - A)\mathbf{x} = \mathbf{0}$ đều là vector riêng. Nhắc lại rằng các nghiệm này đều là tổ hợp tuyến tính của một số nghiệm cơ bản xác định bởi thuật toán Gauss (xem Định lý 1.3.2). Để ý rằng mọi bội khác không của một vector riêng lại là vector riêng, và những bội như vậy thường tiện hơn. Mọi tập các bội khác không của các nghiệm cơ bản của $(\lambda I - A)\mathbf{x} = \mathbf{0}$ sẽ được gọi là một **tập vector riêng cơ bản** ứng với $\lambda$.
+
+<ViDu so="3.3.4">
+Tìm đa thức đặc trưng, các giá trị riêng và các vector riêng cơ bản của $A = \begin{bmatrix} 2 & 0 & 0 \\ 1 & 2 & -1 \\ 1 & 3 & -2 \end{bmatrix}$.
+
+**Lời giải.** Ở đây đa thức đặc trưng là
+
+$$
+c_A(x) = \det \begin{bmatrix} x - 2 & 0 & 0 \\ -1 & x - 2 & 1 \\ -1 & -3 & x + 2 \end{bmatrix} = (x - 2)(x - 1)(x + 1)
+$$
+
+nên các giá trị riêng là $\lambda_1 = 2$, $\lambda_2 = 1$, $\lambda_3 = -1$. Để tìm mọi vector riêng ứng với $\lambda_1 = 2$, tính
+
+$$
+\lambda_1I - A = \begin{bmatrix} 0 & 0 & 0 \\ -1 & 0 & 1 \\ -1 & -3 & 4 \end{bmatrix}
+$$
+
+Ta cần các nghiệm (khác không) của $(\lambda_1I - A)\mathbf{x} = \mathbf{0}$. Ma trận bổ sung trở thành
+
+$$
+\left[\begin{array}{rrr|r} 0 & 0 & 0 & 0 \\ -1 & 0 & 1 & 0 \\ -1 & -3 & 4 & 0 \end{array}\right] \to \left[\begin{array}{rrr|r} 1 & 0 & -1 & 0 \\ 0 & 1 & -1 & 0 \\ 0 & 0 & 0 & 0 \end{array}\right]
+$$
+
+Do đó nghiệm tổng quát $\mathbf{x}$ là $\mathbf{x} = t\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}$ với $t$ tuỳ ý, nên ta có thể dùng $\mathbf{x}_1 = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}$ làm vector riêng cơ bản ứng với $\lambda_1 = 2$. Như bạn đọc có thể kiểm chứng, thuật toán Gauss cho các vector riêng cơ bản $\mathbf{x}_2 = \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}$ và $\mathbf{x}_3 = \begin{bmatrix} 0 \\ \frac{1}{3} \\ 1 \end{bmatrix}$ ứng với $\lambda_2 = 1$ và $\lambda_3 = -1$ tương ứng. Lưu ý rằng để khử phân số, ta có thể dùng $3\mathbf{x}_3 = \begin{bmatrix} 0 \\ 1 \\ 3 \end{bmatrix}$ làm $\lambda_3$-vector riêng cơ bản.
+</ViDu>
+
+<ViDu so="3.3.5">
+Nếu $A$ là ma trận vuông, hãy chứng tỏ rằng $A$ và $A^T$ có cùng đa thức đặc trưng, và do đó cùng giá trị riêng.
+
+**Lời giải.** Ta dùng $xI - A^T = (xI - A)^T$. Khi đó
+
+$$
+c_{A^T}(x) = \det(xI - A^T) = \det\left((xI - A)^T\right) = \det(xI - A) = c_A(x)
+$$
+
+theo Định lý 3.2.3. Do đó $c_{A^T}(x)$ và $c_A(x)$ có cùng nghiệm, nên $A^T$ và $A$ có cùng giá trị riêng (theo Định lý 3.3.2).
+</ViDu>
+
+Các giá trị riêng của một ma trận không nhất thiết phân biệt. Ví dụ, nếu $A = \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}$ thì đa thức đặc trưng là $(x - 1)^2$ nên giá trị riêng 1 xuất hiện hai lần. Hơn nữa, giá trị riêng thường *không* được tính như nghiệm của đa thức đặc trưng. Có các phương pháp số lặp (ví dụ thuật toán QR ở Mục 8.5) hiệu quả hơn nhiều với ma trận lớn.
+
+## Tính bất biến qua A
+
+Nếu $A$ là ma trận $2 \times 2$, ta có thể mô tả các vector riêng của $A$ một cách hình học bằng khái niệm sau. Một đường thẳng $L$ qua gốc toạ độ trong $\mathbb{R}^2$ được gọi là **$A$-bất biến** (*$A$-invariant*) nếu $A\mathbf{x}$ nằm trong $L$ bất cứ khi nào $\mathbf{x}$ nằm trong $L$. Nếu ta xem $A$ như phép biến đổi tuyến tính $\mathbb{R}^2 \to \mathbb{R}^2$, điều này đòi hỏi $A$ đưa $L$ vào chính nó.
+
+<ViDu so="3.3.6">
+Trục $x$, tức $L = \left\{ \begin{bmatrix} x \\ 0 \end{bmatrix} \mid x \text{ trong } \mathbb{R} \right\}$, là $A$-bất biến với mọi ma trận dạng $A = \begin{bmatrix} a & b \\ 0 & c \end{bmatrix}$, bởi vì
+
+$$
+\begin{bmatrix} a & b \\ 0 & c \end{bmatrix} \begin{bmatrix} x \\ 0 \end{bmatrix} = \begin{bmatrix} ax \\ 0 \end{bmatrix} \text{ nằm trong } L \text{ với mọi } \begin{bmatrix} x \\ 0 \end{bmatrix} \text{ trong } L
+$$
+
+</ViDu>
+
+Để thấy mối liên hệ với vector riêng, cho $\mathbf{x} \ne \mathbf{0}$ là vector khác không bất kỳ trong $\mathbb{R}^2$ và $L_\mathbf{x}$ là đường thẳng duy nhất qua gốc toạ độ chứa $\mathbf{x}$. Theo định nghĩa phép nhân với vô hướng ở Mục 2.6, ta thấy $L_\mathbf{x}$ gồm mọi bội vô hướng của $\mathbf{x}$, tức là
+
+$$
+L_\mathbf{x} = \mathbb{R}\mathbf{x} = \{t\mathbf{x} \mid t \text{ trong } \mathbb{R}\}
+$$
+
+Bây giờ giả sử $\mathbf{x}$ là vector riêng của $A$, chẳng hạn $A\mathbf{x} = \lambda\mathbf{x}$ với $\lambda$ nào đó trong $\mathbb{R}$. Khi đó nếu $t\mathbf{x}$ nằm trong $L_\mathbf{x}$ thì
+
+$$
+A(t\mathbf{x}) = t(A\mathbf{x}) = t(\lambda\mathbf{x}) = (t\lambda)\mathbf{x} \text{ lại nằm trong } L_\mathbf{x}
+$$
+
+Tức là $L_\mathbf{x}$ là $A$-bất biến. Mặt khác, nếu $L_\mathbf{x}$ là $A$-bất biến thì $A\mathbf{x}$ nằm trong $L_\mathbf{x}$ (vì $\mathbf{x}$ nằm trong $L_\mathbf{x}$). Do đó $A\mathbf{x} = t\mathbf{x}$ với $t$ nào đó, nên $\mathbf{x}$ là vector riêng của $A$ (với giá trị riêng $t$). Điều này chứng minh:
+
+<DinhLy so="3.3.3">
+Cho $A$ là ma trận $2 \times 2$, $\mathbf{x} \ne \mathbf{0}$ là vector trong $\mathbb{R}^2$, và $L_\mathbf{x}$ là đường thẳng qua gốc toạ độ trong $\mathbb{R}^2$ chứa $\mathbf{x}$. Khi đó
+
+$$
+\mathbf{x} \text{ là vector riêng của } A \quad \text{khi và chỉ khi} \quad L_\mathbf{x} \text{ là } A\text{-bất biến}
+$$
+
+</DinhLy>
+
+<HinhVectorRieng />
+
+<ViDu so="3.3.7">
+1. Nếu $\theta$ không là bội của $\pi$, hãy chứng tỏ rằng $A = \begin{bmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{bmatrix}$ không có giá trị riêng thực.
+2. Nếu $m$ là số thực, hãy chứng tỏ rằng $B = \frac{1}{1 + m^2}\begin{bmatrix} 1 - m^2 & 2m \\ 2m & m^2 - 1 \end{bmatrix}$ có 1 là một giá trị riêng.
+
+**Lời giải.**
+
+1. $A$ cảm sinh phép quay quanh gốc toạ độ một góc $\theta$ (Định lý 2.6.4). Vì $\theta$ không là bội của $\pi$, điều này cho thấy không đường thẳng nào qua gốc toạ độ là $A$-bất biến. Do đó $A$ không có vector riêng theo Định lý 3.3.3, nên không có giá trị riêng.
+2. $B$ cảm sinh phép đối xứng $Q_m$ qua đường thẳng qua gốc toạ độ với hệ số góc $m$ theo Định lý 2.6.5. Nếu $\mathbf{x}$ là điểm khác không bất kỳ trên đường thẳng đó thì rõ ràng $Q_m\mathbf{x} = \mathbf{x}$, tức là $Q_m\mathbf{x} = 1\mathbf{x}$. Do đó 1 là một giá trị riêng (với vector riêng $\mathbf{x}$).
+
+</ViDu>
+
+Nếu $\theta = \frac{\pi}{2}$ trong Ví dụ 3.3.7 thì $A = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}$ nên $c_A(x) = x^2 + 1$. Đa thức này không có nghiệm trong $\mathbb{R}$, nên $A$ không có giá trị riêng (thực), và do đó không có vector riêng thực. Thực ra các giá trị riêng của nó là các số phức $i$ và $-i$, với các vector riêng tương ứng $\begin{bmatrix} 1 \\ -i \end{bmatrix}$ và $\begin{bmatrix} 1 \\ i \end{bmatrix}$. Nói cách khác, $A$ *có* giá trị riêng và vector riêng, chỉ là không thực.
+
+Lưu ý rằng mọi đa thức đều có nghiệm phức[^1], nên mọi ma trận đều có giá trị riêng phức. Điều này gợi ý rằng ta thực sự nên làm đại số tuyến tính trên trường số phức. Quả thực, mọi thứ ta đã làm (khử Gauss, đại số ma trận, định thức, v.v.) đều hoạt động nếu mọi vô hướng là số phức.
+
+[^1]: Đây là **Định lý cơ bản của đại số**, được Gauss chứng minh lần đầu trong luận án tiến sĩ của ông.

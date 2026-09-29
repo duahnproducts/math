@@ -1,0 +1,52 @@
+---
+// Đại số §3.3 — với A = [3 5; 1 −1] của Ví dụ 3.3.2–3.3.3: vector riêng v = (−1, 1) nằm
+// trên đường A-bất biến, Av = −2v vẫn trên đường đó; vector thường u = (1, 0) bị đổi
+// hướng thành Au = (3, 1). Toạ độ tính bằng src/lib/ma-tran.ts.
+import { nhanVector } from '@/lib/ma-tran';
+import { DAU_MUI_TEN, muiTen } from './mui-ten';
+
+const A = [
+  [3, 5],
+  [1, -1],
+];
+const O = { x: 110, y: 120 };
+const DV = 44;
+const diem = ([x, y]: number[]) => ({ x: O.x + x * DV, y: O.y - y * DV });
+const v = [-1, 1];
+const u = [1, 0];
+const [pv, pAv, pu, pAu] = [v, nhanVector(A, v), u, nhanVector(A, u)].map(diem);
+const cacVector = [
+  { dich: pu, lop: 'net-mo', lopDau: 'diem-mo' },
+  { dich: pAu, lop: 'cam', lopDau: 'cam' },
+  { dich: pv, lop: 'net', lopDau: 'to-dam' },
+  { dich: pAv, lop: 'nhan-manh', lopDau: 'to-nhan' },
+].map((m) => ({ ...m, ...muiTen(O.x, O.y, m.dich.x, m.dich.y) }));
+// đường A-bất biến L_v: y = −x
+const dau = diem([-2.1, 2.1]);
+const cuoi = diem([2.6, -2.6]);
+---
+
+<figure class="hinh" aria-labelledby="hinh-vector-rieng-cap" data-hinh-vector-rieng>
+  <svg viewBox="0 0 300 250" width="300" role="img" aria-label="Vector riêng v bị A biến thành −2v trên cùng một đường thẳng; vector u bị đổi hướng">
+    <line x1="14" y1={O.y} x2="290" y2={O.y} class="net-mo" stroke-width="1" />
+    <line x1={O.x} y1="244" x2={O.x} y2="8" class="net-mo" stroke-width="1" />
+    <line x1={dau.x} y1={dau.y} x2={cuoi.x} y2={cuoi.y} class="nhan-manh" stroke-width="1" stroke-dasharray="5 4" />
+    {
+      cacVector.map((m) => (
+        <g>
+          <line x1={m.x1} y1={m.y1} x2={m.x2} y2={m.y2} class={m.lop} stroke-width="2" />
+          <path d={DAU_MUI_TEN} class={m.lopDau} transform={m.dau} />
+        </g>
+      ))
+    }
+    <text x={pv.x - 8} y={pv.y + 16} text-anchor="end" class="chu">v</text>
+    <text x={pAv.x + 8} y={pAv.y + 4} class="chu-nhan">Av = −2v</text>
+    <text x={pu.x - 2} y={pu.y + 16} text-anchor="middle" class="chu-mo">u</text>
+    <text x={pAu.x - 4} y={pAu.y - 8} text-anchor="end" class="chu">Au</text>
+    <text x={dau.x + 14} y={dau.y + 2} class="chu-mo">L<tspan dy="4" font-size="10">v</tspan></text>
+  </svg>
+  <figcaption id="hinh-vector-rieng-cap">
+    Với A của Ví dụ 3.3.3: vector riêng v = (−1, 1) bị A lật ngược và kéo dài gấp đôi nhưng vẫn nằm trên đường nét đứt
+    (đường A-bất biến). Vector u = (1, 0) không phải vector riêng nên Au = (3, 1) rời khỏi đường của u.
+  </figcaption>
+</figure>

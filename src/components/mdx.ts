@@ -44,6 +44,7 @@ import HinhPhepQuay from '../figures/HinhPhepQuay.astro';
 import HinhSach from '../figures/HinhSach.astro';
 import HinhTongRieng from '../figures/HinhTongRieng.astro';
 import HinhTranNha from '../figures/HinhTranNha.astro';
+import HinhVectorRieng from '../figures/HinhVectorRieng.astro';
 import HinhXichMarkov from '../figures/HinhXichMarkov.astro';
 
 export const thanhPhanMdx = {
@@ -91,5 +92,6 @@ export const thanhPhanMdx = {
   HinhSach,
   HinhTongRieng,
   HinhTranNha,
+  HinhVectorRieng,
   HinhXichMarkov,
 };

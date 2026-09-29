@@ -211,3 +211,26 @@ describe('nội suy đa thức (§3.2)', () => {
     expect(() => giaiHe([[1, 2], [2, 4]], [1, 2])).toThrow();
   });
 });
+
+describe('giá trị riêng và vector riêng (§3.3)', () => {
+  const tru = (l: number, A: MaTran) => A.map((h, i) => h.map((x, j) => (i === j ? l : 0) - x));
+  it('Ví dụ 3.3.2–3.3.3: λ = 4, −2 với vector riêng (5, 1), (−1, 1)', () => {
+    const A = [[3, 5], [1, -1]];
+    expect(nhanVector(A, [5, 1])).toEqual([20, 4]);
+    expect(nhanVector(A, [-1, 1])).toEqual([2, -2]);
+    for (const l of [4, -2]) expect(dinhThuc(tru(l, A))).toBeCloseTo(0, 12);
+  });
+
+  it('Ví dụ 3.3.4: λ = 2, 1, −1 với vector riêng cơ bản (1,1,1), (0,1,1), (0,1,3)', () => {
+    const A = [[2, 0, 0], [1, 2, -1], [1, 3, -2]];
+    const cap: [number, number[]][] = [
+      [2, [1, 1, 1]],
+      [1, [0, 1, 1]],
+      [-1, [0, 1, 3]],
+    ];
+    for (const [l, x] of cap) {
+      expect(dinhThuc(tru(l, A))).toBeCloseTo(0, 12);
+      nhanVector(A, x).forEach((y, i) => expect(y).toBeCloseTo(l * x[i], 12));
+    }
+  });
+});
