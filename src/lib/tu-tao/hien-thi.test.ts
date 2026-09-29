@@ -85,6 +85,12 @@ describe('baiGiangSangHtml', () => {
     expect(html).toContain('<details><summary>Gợi ý</summary>');
   });
 
+  it('bài chưa chuẩn hoá (nhập từ file) vẫn hiện bài tập dễ → vừa → khó', () => {
+    const h = baiGiangSangHtml(baiMau(1));
+    const nhan = [...h.matchAll(/<span class="pill \w+">(\S+)<\/span> Bài/g)].map((m) => m[1]);
+    expect(nhan).toEqual(['Dễ', 'Vừa', 'Khó']);
+  });
+
   it('bỏ dấu $ thừa quanh công thức', () => {
     const b = baiMau(1);
     b.cong_thuc[0].bieu_thuc = '$$ x^2 $$';

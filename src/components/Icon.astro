@@ -23,10 +23,12 @@ import {
   RotateCcw,
   Search,
   Sigma,
+  Sparkles,
   Star,
   Sun,
   TriangleAlert,
 } from 'lucide-static';
+import { svgIcon } from '@/lib/icon';
 
 const BO_ICON = {
   'arrow-left': ArrowLeft,
@@ -50,6 +52,7 @@ const BO_ICON = {
   'rotate-ccw': RotateCcw,
   search: Search,
   sigma: Sigma,
+  sparkles: Sparkles,
   star: Star,
   sun: Sun,
   'triangle-alert': TriangleAlert,
@@ -64,13 +67,7 @@ interface Props {
 }
 
 const { ten, co = 18, class: lop = '' } = Astro.props;
-const svg = BO_ICON[ten]
-  .replace(/<!--[\s\S]*?-->/g, '')
-  .replace(/class="[^"]*"/, `class="icon ${lop}"`)
-  .replace(/width="24"/, `width="${co}"`)
-  .replace(/height="24"/, `height="${co}"`)
-  .replace(/stroke-width="2"/, 'stroke-width="1.75"')
-  .replace('<svg', '<svg aria-hidden="true" focusable="false"');
+const svg = svgIcon(BO_ICON[ten], co, lop);
 ---
 
 <Fragment set:html={svg} />

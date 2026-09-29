@@ -71,7 +71,21 @@ export function taoDuongDan(base: string) {
     baiTap: (mon: string, chuong: number, so: string) =>
       noi(base, mon, slugChuong(chuong), 'bai-tap', soSangSlug(so)),
     taiVe: (tenFile: string) => noiFile(base, 'tai-ve', tenFile),
+    // Môn tự tạo từ PDF chỉ nằm trong trình duyệt, nên trang của chúng đọc mã môn từ ?…
+    tuTao: () => noi(base, 'tu-tao'),
+    monTuTao: (id: string) => `${noi(base, 'tu-tao', 'mon')}?id=${encodeURIComponent(id)}`,
+    baiTuTao: (id: string, chuong: number, bai: number) =>
+      `${noi(base, 'tu-tao', 'bai')}?mon=${encodeURIComponent(id)}&chuong=${chuong}&bai=${bai}`,
   };
+}
+
+/** Đọc ?mon=…&chuong=…&bai=… của trang bài tự tạo; thiếu hay sai thì null. */
+export function thamSoBaiTuTao(search: string): { mon: string; chuong: number; bai: number } | null {
+  const q = new URLSearchParams(search);
+  const mon = q.get('mon');
+  const chuong = Number(q.get('chuong'));
+  const bai = Number(q.get('bai'));
+  return mon && Number.isInteger(chuong) && chuong > 0 && Number.isInteger(bai) && bai > 0 ? { mon, chuong, bai } : null;
 }
 
 export type DuongDan = ReturnType<typeof taoDuongDan>;

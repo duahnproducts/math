@@ -1695,3 +1695,184 @@ dialog.hoi p {
   margin: 0 auto;
   border-radius: var(--r-md);
 }
+
+/* ---------- Tự tạo bài giảng từ PDF (product_design.md, mục 15) ---------- */
+.o-icon {
+  display: inline-flex;
+  align-items: center;
+}
+.the-khoa,
+.tao-moi {
+  margin-bottom: 8px;
+}
+.the-khoa h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 8px;
+  font-size: 17px;
+  font-weight: 600;
+}
+.the-khoa p {
+  margin: 0 0 10px;
+  color: var(--text-2);
+  font-size: 14.5px;
+}
+.tu-tao .ghi {
+  margin: 6px 0 0;
+  color: var(--text-3);
+  font-size: 13px;
+}
+.bieu-mau {
+  display: grid;
+  gap: 10px;
+  margin: 12px 0;
+}
+.bieu-mau.luoi-2 {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.bieu-mau.hang {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+.bieu-mau .o {
+  display: grid;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--text-2);
+}
+.tu-tao input:not([type='checkbox']):not([type='file']) {
+  width: 100%;
+  min-height: 36px;
+  padding: 6px 10px;
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-md);
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  font-size: 14.5px;
+}
+.tu-tao input.o-so {
+  width: 5.5em;
+  font-family: var(--font-mono);
+}
+.tu-tao input[aria-invalid='true'] {
+  border-color: var(--err);
+}
+.o-chon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-2);
+  font-size: 14px;
+}
+.loi-o {
+  margin: 4px 0 0;
+  color: var(--err);
+  font-size: 13px;
+}
+.nut:focus-within {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.nut:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.trang-thai-nho {
+  color: var(--text-2);
+  font-size: 13px;
+}
+.cac-buoc {
+  margin: 0;
+  padding-left: 1.3em;
+}
+.cac-buoc > li + li {
+  margin-top: 20px;
+}
+.bang-chuong td {
+  vertical-align: top;
+}
+.bang-chuong tr[data-can-kiem-tra] input.o-so {
+  border-color: var(--warn);
+}
+.tien-trinh {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin: 12px 0;
+  padding: 12px 16px;
+  border: 1px solid var(--accent-line);
+  border-radius: var(--r-md);
+  background: var(--accent-soft);
+  font-size: 14.5px;
+}
+.xoay {
+  animation: xoay 1s linear infinite;
+}
+@keyframes xoay {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .xoay {
+    animation: none;
+  }
+}
+.hop.ok {
+  --c: var(--ok);
+}
+.thong-bao {
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+}
+.thong-bao p {
+  margin: 0 0 8px;
+}
+.ds-chuong-tu-tao {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.ds-chuong-tu-tao .dong-dau {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.ds-chuong-tu-tao h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+.ds-chuong-tu-tao .tom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0 0;
+  color: var(--text-2);
+  font-size: 13.5px;
+}
+.ds-bai-tu-tao {
+  margin: 12px 0 0;
+  padding-left: 1.3em;
+  font-size: 14.5px;
+}
+.ds-bai-tu-tao > li + li {
+  margin-top: 6px;
+}
+.ds-bai-tu-tao .mo-ta {
+  display: block;
+  color: var(--text-3);
+  font-size: 13px;
+}
+.ds-bai-tu-tao .chua-co {
+  color: var(--text-3);
+}

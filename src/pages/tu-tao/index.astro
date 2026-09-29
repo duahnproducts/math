@@ -1,0 +1,26 @@
+---
+// Tự tạo bài giảng từ PDF (product_design.md, mục 15): người học nạp giáo trình của
+// một môn bất kỳ, Claude soạn bài giảng theo cách soạn các môn có sẵn. Mọi thứ chạy
+// trong trình duyệt (khoá API của người học, lưu IndexedDB), nên chỉ dựng ở máy khách.
+import TrangTuTao from '@/components/tu-tao/TrangTuTao';
+import Khung from '@/layouts/Khung.astro';
+---
+
+<Khung
+  tieuDe="Tự tạo bài giảng"
+  moTa="Nạp file PDF giáo trình của một môn bất kỳ, Claude soạn bài giảng 8 mục theo cách soạn các môn có sẵn trên Hochanh."
+  duongDan={[{ ten: 'Tự tạo bài giảng' }]}
+>
+  <div class="trang-hep">
+    <header class="dau-trang">
+      <p class="nhan-tren">Dùng khoá API Claude của bạn · bài giảng lưu trên máy bạn</p>
+      <h1>Tự tạo bài giảng từ PDF</h1>
+      <p class="phu-de">
+        Nạp file PDF giáo trình của một môn bất kỳ. Claude đọc từng chương rồi soạn bài giảng đúng như các môn có sẵn
+        trên Hochanh: khung 8 mục, <em>bản chất trước công thức</em>, ví dụ đời thường, lỗi dễ mắc, bài tập dễ → khó.
+      </p>
+    </header>
+    <TrangTuTao client:only="react" />
+    <noscript><p class="rong">Tính năng này cần bật JavaScript.</p></noscript>
+  </div>
+</Khung>

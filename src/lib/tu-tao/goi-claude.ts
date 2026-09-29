@@ -30,8 +30,9 @@ import {
   type ThongTinMon,
 } from './loi-nhac';
 
-export const MO_HINH = 'claude-opus-5-5';
-export const TEN_MO_HINH = 'Claude Opus 5.5';
+import { MO_HINH, TEN_MO_HINH } from './mo-hinh';
+
+export { MO_HINH, TEN_MO_HINH };
 /** Claude từ chối một yêu cầu thì máy chủ tự chạy lại bằng mô hình dự phòng Anthropic khuyên dùng. */
 export const BETA_DU_PHONG = 'server-side-fallback-2026-07-01';
 

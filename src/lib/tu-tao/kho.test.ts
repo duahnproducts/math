@@ -66,6 +66,18 @@ describe('kho IndexedDB', () => {
     expect(doc?.chuong[0].dan_y).toEqual(DAN_Y_MAU);
   });
 
+  it('giữ file PDF để tạo tiếp; xoá môn là xoá luôn PDF', async () => {
+    const m = await kho.luu(taoMonMoi(TT, LUC));
+    expect(await kho.docPdf(m.id)).toBeNull();
+    const du_lieu = new Uint8Array([37, 80, 68, 70]).buffer;
+    await kho.luuPdf(m.id, { ten_file: 'macro.pdf', du_lieu });
+    const pdf = await kho.docPdf(m.id);
+    expect(pdf?.ten_file).toBe('macro.pdf');
+    expect(new Uint8Array(pdf!.du_lieu)).toEqual(new Uint8Array([37, 80, 68, 70]));
+    await kho.xoa(m.id);
+    expect(await kho.docPdf(m.id)).toBeNull();
+  });
+
   it('bỏ qua bản ghi hỏng thay vì làm hỏng cả danh sách', async () => {
     const idb = new IDBFactory();
     const k = taoKho(idb);

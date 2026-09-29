@@ -1,0 +1,15 @@
+---
+// Một môn tự tạo: các chương, nút tạo bài giảng từng chương. Mã môn đọc từ ?id=…
+import TrangMon from '@/components/tu-tao/TrangMon';
+import Khung from '@/layouts/Khung.astro';
+import { taoDuongDan } from '@/lib/duong-dan';
+
+const d = taoDuongDan(import.meta.env.BASE_URL);
+---
+
+<Khung tieuDe="Môn tự tạo" duongDan={[{ ten: 'Tự tạo bài giảng', href: d.tuTao() }, { ten: 'Môn học' }]}>
+  <div class="trang-hep">
+    <TrangMon client:only="react" />
+    <noscript><p class="rong">Tính năng này cần bật JavaScript.</p></noscript>
+  </div>
+</Khung>

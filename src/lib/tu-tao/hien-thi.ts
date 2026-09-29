@@ -100,6 +100,7 @@ const BUOC_VI_DU: [keyof BaiGiangTuTao['vi_du_mau'], string][] = [
 ];
 
 const LOP_DO_KHO = { de: 'ok', vua: 'info', kho: 'warn' } as const;
+const THU_TU_DO_KHO = { de: 0, vua: 1, kho: 2 } as const;
 
 /** Mục lục bên cạnh: id và tên của 8 mục. */
 export const MUC_LUC_BAI = TAM_MUC.map((ten, i) => ({ id: `muc-${i + 1}`, ten }));
@@ -153,7 +154,9 @@ export function baiGiangSangHtml(b: BaiGiangTuTao): string {
   );
 
   phan.push(tieuDeMuc(7));
-  b.bai_tap.forEach((bt, i) => {
+  // Luôn dễ → vừa → khó, kể cả bài nhập từ file .json xếp lộn
+  const baiTap = [...b.bai_tap].sort((p, q) => THU_TU_DO_KHO[p.do_kho] - THU_TU_DO_KHO[q.do_kho]);
+  baiTap.forEach((bt, i) => {
     const goiY = bt.goi_y.trim() ? `<details><summary>Gợi ý</summary>${mdSangHtml(bt.goi_y)}</details>` : '';
     phan.push(
       `<div class="bai-luyen"><p class="dau"><span class="pill ${LOP_DO_KHO[bt.do_kho]}">${NHAN_DO_KHO[bt.do_kho]}</span> Bài ${b.so}.${i + 1}</p>${mdSangHtml(bt.de)}${goiY}</div>`,

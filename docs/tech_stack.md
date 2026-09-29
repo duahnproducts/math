@@ -15,9 +15,12 @@ Mọi thứ miễn phí: không backend, không dịch vụ trả phí.
 ## 1. Ràng buộc
 
 - **Miễn phí hoàn toàn:** chỉ dùng phần mềm mã nguồn mở và gói hosting miễn phí.
+  Riêng tính năng Tự tạo bài giảng (mục 14) gọi Claude bằng khoá API **của người
+  học**; web không trả và không thu đồng nào.
 - **Web tĩnh:** Version 1 không backend, không tài khoản.
 - **Không tải gì từ CDN khi chạy:** font, icon, CSS của KaTeX đều tự host, để
-  Phase 5 làm được PWA đọc khi không có mạng.
+  Phase 5 làm được PWA đọc khi không có mạng. Ngoại lệ duy nhất: trang Tự tạo bài
+  giảng gọi `api.anthropic.com` khi người học bấm tạo.
 - **Không thu phí, không quảng cáo:** giấy phép CC BY-NC-SA của Nicholson và
   OpenStax yêu cầu vậy.
 
@@ -30,6 +33,7 @@ Mọi thứ miễn phí: không backend, không dịch vụ trả phí.
 | Công thức | `remark-math` + `rehype-katex` + `katex`, CSS import cục bộ. Astro 7 mặc định dùng bộ xử lý Markdown Sätteri (không chạy plugin remark/rehype), nên phải đặt `markdown.processor: unified({...})` từ `@astrojs/markdown-remark` | Công thức thành HTML lúc build, trình duyệt không phải chạy JS |
 | Hình tĩnh | SVG viết tay trong component `.astro`, màu lấy từ biến CSS | Nét, đổi sáng/tối theo token |
 | Hình tương tác | React (`@astrojs/react`), mỗi hình nạp riêng bằng `client:visible`. Thư viện **Mafs** cho đồ thị toán | Chỉ trang có hình mới tải JS. Mafs chưa ra bản 1.0: thiếu gì thì tự vẽ SVG bằng React |
+| Tự tạo bài giảng | React (`client:only`), `@anthropic-ai/sdk`, `pdf-lib`, IndexedDB, unified + `rehype-sanitize` — xem mục 14 | Trang chạy hoàn toàn ở máy khách: đọc PDF, gọi Claude, lưu bài đều trong trình duyệt |
 | Giao diện | Token lấy từ `gtich/translator-ui/DESIGN_SPEC.md`, chép vào `src/styles/tokens.css`, thêm bộ màu sáng làm **mặc định**, tối là tuỳ chọn. Người học tự chuyển sáng/tối — xem mục 12 | Đọc lâu trên nền tối dễ mỏi mắt (product_design.md, mục 11) |
 | Font | Inter (giao diện), Lora (nội dung), JetBrains Mono (số hiệu). Tự host qua gói `@fontsource/*` | Theo DESIGN_SPEC. Cả ba hỗ trợ tiếng Việt, giấy phép OFL |
 | Icon | Lucide, đóng gói cục bộ | Theo DESIGN_SPEC |
@@ -50,7 +54,7 @@ Máy hiện tại: Node 24, npm 11, Python 3.12.
 | Next.js | Nặng hơn mức cần cho một web tĩnh |
 | Starlight (khung tài liệu của Astro) | Bố cục cố định kiểu docs, khó làm thẻ bài tập, gợi ý theo tầng, bảng đối chiếu |
 | MathJax | Nặng hơn KaTeX. KaTeX đủ cho cả ba môn |
-| Mathpix, Algolia, mọi dịch vụ trả phí | Trái ràng buộc miễn phí |
+| Mathpix, Algolia, mọi dịch vụ trả phí | Trái ràng buộc miễn phí (Claude ở mục 14 do người học tự trả bằng khoá của mình) |
 | Supabase, backend | Version 1 chưa có tài khoản |
 | Google Fonts, CDN | Cần chạy offline |
 
@@ -291,3 +295,47 @@ kiểm tra manifest, kích thước biểu tượng, các thẻ trong `Khung.ast
 hai giao diện. Playwright có `tests/e2e/dien-thoai.spec.ts` (viên thuốc, bong bóng trượt
 qua trang mới, ẩn khi cuộn, nút tròn, manifest tải được, `?v=` của từng biểu tượng khớp ảnh máy nhận về) và `tests/e2e/bong-bong.spec.ts`
 (công tắc tab, laptop không đổi).
+
+## 14. Tự tạo bài giảng từ PDF
+
+Người học nạp PDF giáo trình của một môn bất kỳ; Claude soạn bài giảng theo cách soạn
+các môn có sẵn (product_design.md, mục 15). Web vẫn tĩnh: mọi việc chạy trong trình
+duyệt.
+
+**Luồng dữ liệu**
+
+```text
+PDF (máy người học) ─pdf-lib─► cắt đúng trang của chương ─base64─► api.anthropic.com
+      ▲                                                               │ JSON đúng khuôn
+      └── IndexedDB: môn, dàn ý, bài giảng, file PDF ◄── kiểm tra ◄────┘
+Trang đọc: JSON → Markdown → HTML đã lọc sạch → KaTeX → cùng lớp CSS với bài soạn tay
+```
+
+**Cách làm**
+
+| Phần | Làm gì |
+| --- | --- |
+| Trang | `src/pages/tu-tao/` (`index`, `mon`, `bai`). Component React `client:only` trong `src/components/tu-tao/`. Mã môn, chương, bài nằm ở `?…` vì môn chỉ có trong trình duyệt (`taoDuongDan().monTuTao`, `.baiTuTao`, `thamSoBaiTuTao`) |
+| Gọi Claude | `src/lib/tu-tao/goi-claude.ts`: SDK `@anthropic-ai/sdk` với `dangerouslyAllowBrowser: true` (khoá là của chính người dùng trình duyệt), mô hình `claude-opus-5-5` (`mo-hinh.ts`), `thinking: adaptive`, luồng SSE để hiện số chữ đang viết. Dự phòng khi bị từ chối: `fallbacks: "default"`, beta `server-side-fallback-2026-07-01` |
+| Khuôn câu trả lời | Structured outputs (`output_config.format`) với ba JSON schema trong `khung.ts`: mục lục → dàn ý chương → bài giảng 8 mục (ví dụ mẫu đủ 6 bước, Hiểu · Nhớ · Làm, bài tập dễ → vừa → khó). Câu trả lời được kiểm tra lại bằng chính schema đó |
+| Lời nhắc | `loi-nhac.ts`: phương pháp của `gtich/GIA_SU.md` viết lại cho mọi môn, khung 8 mục (`TAM_MUC`), hai bài giảng mẫu import `?raw` từ `content/giai-tich/`. Không chứa gì thay đổi theo lần gọi |
+| Bộ nhớ đệm | `cache_control` trên lời nhắc hệ thống và trên khối PDF. Một chương = một lần lập dàn ý + mỗi bài một lần gọi, các lần sau đọc lại PDF từ bộ nhớ đệm |
+| Quy trình | `quy-trinh.ts`: cắt PDF → dàn ý → từng bài; lưu sau mỗi bước, nên Dừng / mất mạng thì Tạo tiếp chỉ viết bài còn thiếu. Việc thật được truyền vào để test |
+| PDF | `pdf.ts` (pdf-lib, nạp động chỉ khi cần): đọc, cắt trang, base64. Giới hạn trong `trang.ts`: đọc mục lục 40 trang đầu, một chương ≤ 120 trang, phần cắt ≤ 22 MB (API nhận tối đa 32 MB sau base64) |
+| Lưu trữ | `kho.ts`: IndexedDB `hochanh-tu-tao`, bảng `mon` và `pdf`. Tải về / nhập file `.json` để sao lưu |
+| Khoá API | `khoa-api.ts`: `sessionStorage` mặc định, `localStorage` khi người học chọn "Nhớ trên máy này", khoá `hochanh:khoa-claude`. Kho bị chặn thì coi như chưa có khoá |
+| Chi phí | `chi-phi.ts`: giá Claude Opus 5.5 (4 / 20 USD mỗi triệu token vào / ra; ghi bộ nhớ đệm 5, đọc 0,2). Ước tính trước khi bấm, cộng chi phí thật từ `usage` |
+| Hiển thị an toàn | `hien-thi.ts`: remark → rehype **không** bật HTML thô → `rehype-sanitize` (bỏ script, thuộc tính `on*`, `javascript:`, ảnh) → rồi mới KaTeX. Tiêu đề `#`/`##` hạ xuống `###` để bài chỉ có 8 tiêu đề cấp 2. Khung 8 mục và hộp màu do web dựng |
+
+**Test:**
+
+- Vitest `src/lib/tu-tao/*.test.ts`: schema hợp lệ với structured outputs (mọi đối tượng
+  `additionalProperties: false`, không dùng ràng buộc API chưa hỗ trợ); yêu cầu gửi đi
+  (header gọi thẳng từ trình duyệt, bộ nhớ đệm, dự phòng) qua `fetch` giả trả luồng SSE;
+  lỗi 401 / 400 / 429 / 529 / dừng thành câu tiếng Việt; bài đủ 8 mục; lọc mã độc;
+  cắt trang; khoảng trang; IndexedDB (`fake-indexeddb`); sao lưu `.json`; quy trình tạo
+  tiếp sau khi hỏng giữa chừng.
+- Playwright `tests/e2e/tu-tao.spec.ts`: giả lập `api.anthropic.com` bằng `page.route`.
+  Nhập khoá → chọn PDF → đọc mục lục → lưu môn → tạo một chương → đọc bài 8 mục, công
+  thức KaTeX, mã độc bị lọc → tải lại vẫn còn → tải `.json` → xoá → nhập lại. Thêm: khoá
+  sai, tự nhập chương, file hỏng, môn không có trên máy. Test không gọi mạng, không tốn tiền.

@@ -41,6 +41,13 @@ kiểm tra liên kết chéo, số hiệu và ghi công trước khi commit.
 Nội dung hiện có: Giải tích Chương 1–2 (bài giảng, Theo sách, bài tập có lời giải),
 Đại số tuyến tính Chương 1 (§1.1–§1.3 dịch nguyên văn, đề bài §1.1).
 
+## Tự tạo bài giảng từ PDF
+
+Trang `/tu-tao/` cho người học nạp PDF giáo trình của một môn bất kỳ; Claude soạn bài
+giảng 8 mục theo cách soạn các môn có sẵn. Chạy hoàn toàn trong trình duyệt bằng khoá
+API Claude của người học, bài lưu trong IndexedDB. Chi tiết: `product_design.md` mục 15,
+`docs/tech_stack.md` mục 14.
+
 ## Giấy phép nội dung
 
 Bản dịch Nicholson và OpenStax theo CC BY-NC-SA 4.0 (không thu phí, không quảng cáo).

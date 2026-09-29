@@ -90,6 +90,18 @@ const hrefBatDau = batDau ? d.baiGiang(batDau.mon.id, batDau.chuong.so, batDau.b
       </div>
     </section>
 
+    <section class="phan" aria-labelledby="tieu-de-tu-tao">
+      <h2 id="tieu-de-tu-tao">Môn khác?</h2>
+      <a class="card the-mon the-tu-tao" href={d.tuTao()} data-the-tu-tao>
+        <Icon ten="sparkles" co={24} />
+        <h3>Tự tạo bài giảng từ PDF</h3>
+        <p class="mo-ta">
+          Nạp giáo trình của một môn bất kỳ, Claude soạn bài giảng 8 mục theo đúng cách của các môn trên Hochanh. Dùng
+          khoá API Claude của bạn; bài giảng lưu ngay trên máy bạn.
+        </p>
+      </a>
+    </section>
+
     <section class="phan" data-chuong-gan-day={JSON.stringify(banDo)} aria-labelledby="tieu-de-gan-day">
       <h2 id="tieu-de-gan-day">Tiến độ gần đây</h2>
       <ul class="luoi" style="list-style:none;margin:0;padding:0"></ul>

@@ -74,11 +74,13 @@ Từ đó rút ra ba quy tắc:
 - Đánh dấu đã học, tiến độ lưu ngay trên máy
 - Chế độ sáng/tối
 - Tải PDF bài giảng
+- **Tự tạo bài giảng từ PDF** cho môn chưa có trên web — người học dùng khoá API
+  Claude của chính mình (mục 15)
 
 ### Chưa làm
 - Tài khoản, đăng nhập
 - Nộp bài làm để được chữa
-- AI gia sư, AI chấm bài
+- AI gia sư trò chuyện, AI chấm bài
 - XP, streak, thành tích
 - App mobile
 
@@ -199,6 +201,8 @@ tiếp theo là gì (nút **Học tiếp**).
 6. **Bài tập** — danh sách lọc theo § và độ khó, thẻ bài tập
 7. **Thuật ngữ** — Anh – Việt theo môn, có tìm kiếm
 8. **Tìm kiếm** — trong cả ba phần
+9. **Tự tạo bài giảng** — khoá API, môn của tôi, tạo môn mới từ PDF; trang môn tự tạo
+   (các chương, nút tạo bài giảng); trang đọc bài tự tạo (mục 15)
 
 ### Điều hướng
 - Laptop: thanh bên trái là mục lục của chương đang học.
@@ -349,7 +353,9 @@ Giống quy tắc của `learner`: mọi logic nằm trong `src/lib` dưới d�
 3. Hai phần Giảng dạy và Dịch nguyên văn luôn nối chéo được với nhau.
 4. Người học phải tự làm bài trước, rồi mới xem gợi ý và lời giải.
 5. Nội dung là file văn bản có test, không phải PDF nhúng vào trang.
-6. Chưa đưa AI và tài khoản vào khi vòng học cơ bản chưa ổn định.
+6. Chưa đưa AI và tài khoản vào khi vòng học cơ bản chưa ổn định. Ngoại lệ duy
+   nhất là **Tự tạo bài giảng từ PDF** (mục 15): tuỳ chọn, tách riêng, dùng khoá API
+   của người học, không đụng vào các môn soạn tay.
 
 ## Mục tiêu Version 1
 
@@ -365,3 +371,57 @@ Mở web
 → lần sau quay lại đúng chỗ đang học.
 
 Đó là vòng học cốt lõi cần hoàn thành trước khi mở rộng.
+
+---
+
+## 15. Tự tạo bài giảng từ PDF
+
+### Vì sao
+Ba môn trên web do người soạn làm tay, mỗi chương mất nhiều giờ. Người học muốn học
+môn khác thì chưa có gì. Tính năng này cho người học **nạp file PDF giáo trình của
+một môn bất kỳ**, rồi hệ thống tự soạn bài giảng **theo đúng cách làm của các môn có
+sẵn**.
+
+"Cách làm" ở đây là ba thứ đã có trong repo, được đưa nguyên vào lời nhắc cho Claude:
+
+- Phương pháp dạy của `gtich/GIA_SU.md`: bản chất trước công thức, ví dụ đời thường,
+  giải thích từng ký hiệu, giải bài 6 bước, phân biệt Hiểu · Nhớ · Làm, không nhảy
+  kiến thức.
+- Khung 8 mục của mục 5.1.
+- Hai bài giảng mẫu đọc thẳng từ `content/giai-tich/`. Sửa bài mẫu thì lời nhắc đổi theo.
+
+### Luồng
+
+```text
+Tự tạo bài giảng → nhập khoá API Claude (một lần)
+  → chọn file PDF
+  → Claude đọc mục lục ở 40 trang đầu (hoặc tự nhập chương)
+  → kiểm tra tên môn, khoảng trang từng chương → Lưu môn
+Trang môn → Tạo bài giảng cho một chương (báo trước chi phí ước tính)
+  → Claude lập dàn ý: các mục § và 3–7 bài
+  → viết lần lượt từng bài 8 mục, xong bài nào lưu bài đó
+  → đọc bài: cùng bố cục, hộp màu, mục lục 8 mục như bài soạn tay
+```
+
+Mất mạng hay bấm Dừng giữa chừng thì bài đã xong vẫn còn; bấm **Tạo tiếp** chỉ viết
+nốt bài còn thiếu. Sai khoảng trang thì sửa rồi tạo lại chương đó.
+
+### Ràng buộc
+
+| Ràng buộc | Cách giữ |
+| --- | --- |
+| Web miễn phí, không backend | Trình duyệt gọi thẳng Claude bằng **khoá API của người học**. Người học trả phí theo lượt cho Anthropic; web không thu gì, không có máy chủ trung gian |
+| Người học phải biết trước tốn bao nhiêu | Nút nào gọi Claude cũng ghi khoảng chi phí ước tính; khi tạo xong ghi chi phí thật |
+| Khoá API là bí mật | Mặc định chỉ nhớ đến khi đóng thẻ; muốn nhớ lâu thì tự chọn. Khoá chỉ gửi tới `api.anthropic.com` |
+| Bản quyền | PDF là của người học, chỉ gửi cho Claude để soạn bài. Bài giảng diễn đạt lại, không chép nguyên văn. Bài chỉ nằm trong trình duyệt của người học, **không đăng lên web**, không vào repo |
+| Nội dung do máy viết có thể sai | Trang bài ghi rõ "do Claude viết tự động, hãy đối chiếu với sách"; nhãn **Tự tạo** phân biệt với bài soạn tay |
+| Nội dung máy sinh có thể chứa mã độc (PDF "dặn" Claude) | Chỉ nhận Markdown, lọc sạch HTML trước khi hiện |
+| Dữ liệu chỉ ở một máy | Tải về file `.json` để sao lưu, nhập lại ở máy khác |
+
+### Chưa làm
+- Bài tập trong sách kèm gợi ý theo tầng, phần Dịch nguyên văn / Theo sách cho môn tự tạo
+- Hình minh hoạ SVG (Claude tả hình bằng lời hoặc bảng số)
+- Đánh dấu đã học, Học tiếp cho bài tự tạo
+- Đưa một môn tự tạo lên web cho mọi người: vẫn phải qua người soạn, soát tay, thành MDX có test
+
+Cách làm kỹ thuật: `docs/tech_stack.md`, mục 14.

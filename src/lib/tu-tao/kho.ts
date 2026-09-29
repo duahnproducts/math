@@ -1,11 +1,19 @@
 // Kho các môn tự tạo: IndexedDB trong trình duyệt của người học (một bài giảng nặng
 // cỡ 15–30 KB, cả cuốn sách dễ vượt 5 MB của localStorage). Không có máy chủ nào giữ
 // bản sao, nên có thêm Tải về / Nhập file .json để người học tự sao lưu.
+// File PDF gốc cũng được giữ ở bảng riêng, để lần sau tạo tiếp chương khác mà không
+// phải chọn lại file; xoá môn là xoá luôn PDF.
 import { chuanHoa } from '../bo-dau';
 import { PHIEN_BAN_MON, kiemTraMon, type ChuongTuTao, type MonTuTao } from './khung';
 
 const TEN_CSDL = 'hochanh-tu-tao';
 const BANG = 'mon';
+const BANG_PDF = 'pdf';
+
+export interface PdfDaLuu {
+  ten_file: string;
+  du_lieu: ArrayBuffer;
+}
 
 function yeuCau<T>(req: IDBRequest<T>): Promise<T> {
   return new Promise((xong, loi) => {
@@ -17,18 +25,25 @@ function yeuCau<T>(req: IDBRequest<T>): Promise<T> {
 function moCsdl(idb: IDBFactory): Promise<IDBDatabase> {
   return new Promise((xong, loi) => {
     const req = idb.open(TEN_CSDL, 1);
-    req.onupgradeneeded = () => req.result.createObjectStore(BANG, { keyPath: 'id' });
+    req.onupgradeneeded = () => {
+      req.result.createObjectStore(BANG, { keyPath: 'id' });
+      req.result.createObjectStore(BANG_PDF);
+    };
     req.onsuccess = () => xong(req.result);
     req.onerror = () => loi(req.error ?? new Error('Không mở được kho lưu trên máy.'));
     req.onblocked = () => loi(new Error('Kho lưu đang bị một thẻ khác của web giữ. Hãy đóng thẻ đó rồi thử lại.'));
   });
 }
 
-async function voiBang<T>(idb: IDBFactory, cheDo: IDBTransactionMode, viec: (b: IDBObjectStore) => IDBRequest<T>): Promise<T> {
+async function voiBang<T>(
+  idb: IDBFactory,
+  cheDo: IDBTransactionMode,
+  viec: (b: IDBObjectStore, pdf: IDBObjectStore) => IDBRequest<T>,
+): Promise<T> {
   const csdl = await moCsdl(idb);
   try {
-    const gd = csdl.transaction(BANG, cheDo);
-    const ketQua = await yeuCau(viec(gd.objectStore(BANG)));
+    const gd = csdl.transaction([BANG, BANG_PDF], cheDo);
+    const ketQua = await yeuCau(viec(gd.objectStore(BANG), gd.objectStore(BANG_PDF)));
     await new Promise<void>((xong, loi) => {
       gd.oncomplete = () => xong();
       gd.onerror = () => loi(gd.error);
@@ -44,7 +59,10 @@ export interface KhoMon {
   danhSach(): Promise<MonTuTao[]>;
   doc(id: string): Promise<MonTuTao | null>;
   luu(mon: MonTuTao, bayGio?: Date): Promise<MonTuTao>;
+  /** Xoá môn cùng file PDF đã giữ */
   xoa(id: string): Promise<void>;
+  luuPdf(id: string, pdf: PdfDaLuu): Promise<void>;
+  docPdf(id: string): Promise<PdfDaLuu | null>;
 }
 
 /** Kho trên IndexedDB. Test truyền IDBFactory giả (fake-indexeddb). */
@@ -73,7 +91,18 @@ export function taoKho(idb: IDBFactory = globalThis.indexedDB): KhoMon {
       return moi;
     },
     async xoa(id) {
-      await voiBang(idb, 'readwrite', (b) => b.delete(id));
+      await voiBang(idb, 'readwrite', (b, pdf) => {
+        pdf.delete(id);
+        return b.delete(id);
+      });
+    },
+    async luuPdf(id, pdf) {
+      await voiBang(idb, 'readwrite', (_b, bangPdf) => bangPdf.put(pdf, id));
+    },
+    async docPdf(id) {
+      const x = await voiBang<unknown>(idb, 'readonly', (_b, pdf) => pdf.get(id));
+      const p = x as Partial<PdfDaLuu> | undefined;
+      return p && typeof p.ten_file === 'string' && p.du_lieu instanceof ArrayBuffer ? (p as PdfDaLuu) : null;
     },
   };
 }

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { noi, noiFile, slugSangSo, soChuongTuSlug, soSangSlug, taoDuongDan, viTriTuUrl } from './duong-dan';
+import { noi, noiFile, slugSangSo, soChuongTuSlug, soSangSlug, taoDuongDan, thamSoBaiTuTao, viTriTuUrl } from './duong-dan';
 
 describe('số hiệu ↔ slug', () => {
   it('đổi qua lại', () => {
@@ -55,5 +55,20 @@ describe('taoDuongDan', () => {
     expect(d.baiTap('giai-tich', 1, '1.2.5')).toBe('/math/giai-tich/chuong-1/bai-tap/1-2-5/');
     expect(d.thuatNgu()).toBe('/math/thuat-ngu/');
     expect(d.taiVe('x.pdf')).toBe('/math/tai-ve/x.pdf');
+  });
+});
+
+describe('môn tự tạo từ PDF', () => {
+  const d = taoDuongDan('/math/');
+  it('trang tạo, trang môn, trang bài', () => {
+    expect(d.tuTao()).toBe('/math/tu-tao/');
+    expect(d.monTuTao('kinh-te-00000')).toBe('/math/tu-tao/mon/?id=kinh-te-00000');
+    expect(d.baiTuTao('kinh-te-00000', 2, 3)).toBe('/math/tu-tao/bai/?mon=kinh-te-00000&chuong=2&bai=3');
+  });
+  it('đọc lại tham số của trang bài', () => {
+    expect(thamSoBaiTuTao('?mon=kinh-te-00000&chuong=2&bai=3')).toEqual({ mon: 'kinh-te-00000', chuong: 2, bai: 3 });
+    expect(thamSoBaiTuTao('?mon=a&chuong=0&bai=1')).toBeNull();
+    expect(thamSoBaiTuTao('?chuong=1&bai=1')).toBeNull();
+    expect(thamSoBaiTuTao('?mon=a&chuong=x&bai=1')).toBeNull();
   });
 });
