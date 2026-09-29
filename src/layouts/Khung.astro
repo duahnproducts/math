@@ -16,6 +16,7 @@ import DuongDanTrang from '@/components/DuongDanTrang.astro';
 import Icon from '@/components/Icon.astro';
 import MucLucChuong from '@/components/MucLucChuong.astro';
 import NutGiaoDien from '@/components/NutGiaoDien.astro';
+import { APPLE_TOUCH_ICON, FAVICON, docFilePublic, kemPhienBan } from '@/lib/bieu-tuong';
 import type { DuLieuChuongWeb } from '@/lib/du-lieu';
 import { taoDuongDan, type MatXich } from '@/lib/duong-dan';
 import { MAU_THANH_TRINH_DUYET, SCRIPT_KHOI_TAO_GIAO_DIEN } from '@/lib/giao-dien';
@@ -59,7 +60,8 @@ const chiSoTab = chiSoTabDuoi(tabDuoi);
     <meta name="theme-color" content={MAU_THANH_TRINH_DUYET.sang} />
     <!-- Cài lên màn hình chính: mở ra toàn màn hình, không còn thanh địa chỉ và thanh công cụ của trình duyệt -->
     <link rel="manifest" href={`${base}manifest.webmanifest`} />
-    <link rel="apple-touch-icon" href={`${base}apple-touch-icon.png`} />
+    <!-- ?v= theo nội dung ảnh: đổi ảnh đại diện thì máy tải ảnh mới, không dùng ảnh cũ đã lưu -->
+    <link rel="apple-touch-icon" sizes="180x180" href={`${base}${kemPhienBan(APPLE_TOUCH_ICON, docFilePublic)}`} />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="Hochanh" />
@@ -67,7 +69,7 @@ const chiSoTab = chiSoTabDuoi(tabDuoi);
     <script is:inline set:html={SCRIPT_KHOI_TAO_GIAO_DIEN} />
     <title>{tieuDeDayDu}</title>
     {moTa && <meta name="description" content={moTa} />}
-    <link rel="icon" type="image/png" href={`${base}favicon.png`} />
+    <link rel="icon" type="image/png" href={`${base}${kemPhienBan(FAVICON, docFilePublic)}`} />
   </head>
   <body data-vi-tri={viTri ? JSON.stringify(viTri) : undefined}>
     <a class="bo-qua" href="#noi-dung">Bỏ qua, tới nội dung</a>

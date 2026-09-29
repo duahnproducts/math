@@ -12,6 +12,8 @@ mặt từ ảnh gốc (không lưu ảnh gốc vào repo). Ghi vào public/:
 
 Chạy lại khi đổi ảnh:  python scripts/tao-bieu-tuong.py   (cần Pillow)
 Đổi ảnh khác thì thay anh-bieu-tuong.jpg và chỉnh VUNG_MAT cho khớp khuôn mặt.
+Không cần đổi tên file: lúc build, đường dẫn tự kèm ?v= theo nội dung ảnh
+(src/lib/bieu-tuong.ts), nên điện thoại tải ảnh mới thay vì dùng ảnh cũ đã lưu.
 """
 
 from pathlib import Path

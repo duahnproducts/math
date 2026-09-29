@@ -1,7 +1,8 @@
 // Điện thoại: thanh dưới 4 mục, thanh bên ẩn, mục lục chương gọn, không tràn ngang.
 // Thanh dưới bong bóng, hai thanh lùi đi khi cuộn xuống đọc, web cài được lên màn
 // hình chính (docs/tech_stack.md, mục 13).
-import { expect, test, type Locator } from '@playwright/test';
+import { createHash } from 'node:crypto';
+import { expect, test, type APIRequestContext, type Locator } from '@playwright/test';
 
 /** Tâm ngang của phần tử, tính cả transform (bong bóng trượt bằng translateX). */
 const tamNgang = (loc: Locator) =>
@@ -166,13 +167,26 @@ test('web cài được lên màn hình chính', async ({ page, request }) => {
   expect(manifest.display).toBe('standalone');
   // Đường dẫn trong manifest tương đối → tính từ /math/
   for (const bt of manifest.icons as { src: string }[]) {
-    expect((await request.get(new URL(bt.src, `http://localhost${href}`).pathname)).ok(), bt.src).toBe(true);
+    const url = new URL(bt.src, `http://localhost${href}`);
+    await dungPhienBan(request, url.pathname + url.search);
   }
   const apple = await page.locator('link[rel="apple-touch-icon"]').getAttribute('href');
-  expect((await request.get(apple!)).ok()).toBe(true);
+  expect(apple).toMatch(/^\/math\/apple-touch-icon\.png\?v=[0-9a-f]{10}$/);
+  await dungPhienBan(request, apple!);
   const favicon = await page.locator('link[rel="icon"]').getAttribute('href');
-  expect(favicon).toBe('/math/favicon.png');
-  const traFavicon = await request.get(favicon!);
-  expect(traFavicon.ok()).toBe(true);
+  expect(favicon).toMatch(/^\/math\/favicon\.png\?v=[0-9a-f]{10}$/);
+  const traFavicon = await dungPhienBan(request, favicon!);
   expect(traFavicon.headers()['content-type']).toContain('image/png');
 });
+
+/**
+ * Biểu tượng tải được, và ?v= đúng là mã của ảnh máy nhận về: đổi ảnh đại diện thì
+ * đường dẫn đổi theo, điện thoại không dùng lại ảnh cũ đã lưu.
+ */
+async function dungPhienBan(request: APIRequestContext, duong: string) {
+  const tra = await request.get(duong);
+  expect(tra.ok(), duong).toBe(true);
+  const ma = createHash('sha256').update(await tra.body()).digest('hex').slice(0, 10);
+  expect(new URL(duong, 'http://localhost').searchParams.get('v'), duong).toBe(ma);
+  return tra;
+}

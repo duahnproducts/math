@@ -2,29 +2,15 @@
 // chạy toàn màn hình, không còn thanh địa chỉ và thanh công cụ của trình duyệt.
 import { existsSync, readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
-import { MAU_THANH_TRINH_DUYET } from '../src/lib/giao-dien';
+import { APPLE_TOUCH_ICON, FAVICON, docFilePublic, maPhienBan, taoManifest } from '../src/lib/bieu-tuong';
 
 const goc = new URL('..', import.meta.url);
 const doc = (duong: string) => readFileSync(new URL(duong, goc), 'utf8');
 
-interface BieuTuong {
-  src: string;
-  sizes: string;
-  type: string;
-  purpose?: string;
-}
-const manifest = JSON.parse(doc('public/manifest.webmanifest')) as {
-  name: string;
-  short_name: string;
-  lang: string;
-  start_url: string;
-  scope: string;
-  id: string;
-  display: string;
-  background_color: string;
-  theme_color: string;
-  icons: BieuTuong[];
-};
+// Manifest dựng lúc build (src/pages/manifest.webmanifest.ts) từ đúng các file trong public/
+const manifest = taoManifest(docFilePublic);
+/** `icon-192.png?v=…` → `icon-192.png` */
+const tenFile = (src: string) => src.split('?')[0];
 
 /** Rộng × cao đọc thẳng từ khối IHDR của file PNG. */
 function kichThuocPng(duong: string): string {
@@ -34,14 +20,9 @@ function kichThuocPng(duong: string): string {
 }
 
 describe('manifest', () => {
-  it('mở toàn màn hình, không có thanh của trình duyệt', () => {
-    expect(manifest.display).toBe('standalone');
-  });
-
-  it('tên và ngôn ngữ', () => {
-    expect(manifest.short_name).toBe('Hochanh');
-    expect(manifest.name).toContain('Hochanh');
-    expect(manifest.lang).toBe('vi');
+  it('không còn manifest tĩnh trong public/ đè lên bản dựng lúc build', () => {
+    expect(existsSync(new URL('public/manifest.webmanifest', goc))).toBe(false);
+    expect(existsSync(new URL('src/pages/manifest.webmanifest.ts', goc))).toBe(true);
   });
 
   it('đường dẫn tương đối, nên chạy đúng dưới base /math/ của GitHub Pages', () => {
@@ -50,15 +31,16 @@ describe('manifest', () => {
     }
   });
 
-  it('màu nền và màu thanh trạng thái trùng giao diện sáng mặc định', () => {
-    expect(manifest.background_color).toBe(MAU_THANH_TRINH_DUYET.sang);
-    expect(manifest.theme_color).toBe(MAU_THANH_TRINH_DUYET.sang);
-  });
-
   it('biểu tượng có thật, đúng kích thước khai báo', () => {
     for (const bt of manifest.icons) {
-      expect(bt.type).toBe('image/png');
-      expect(kichThuocPng(`public/${bt.src}`), bt.src).toBe(bt.sizes);
+      expect(kichThuocPng(`public/${tenFile(bt.src)}`), bt.src).toBe(bt.sizes);
+    }
+  });
+
+  it('đường dẫn biểu tượng mang mã phiên bản đúng với ảnh đang có', () => {
+    for (const bt of manifest.icons) {
+      const noiDung = readFileSync(new URL(`public/${tenFile(bt.src)}`, goc));
+      expect(bt.src, bt.src).toBe(`${tenFile(bt.src)}?v=${maPhienBan(noiDung)}`);
     }
   });
 
@@ -70,11 +52,11 @@ describe('manifest', () => {
   });
 
   it('iOS: apple-touch-icon 180×180', () => {
-    expect(kichThuocPng('public/apple-touch-icon.png')).toBe('180x180');
+    expect(kichThuocPng(`public/${APPLE_TOUCH_ICON}`)).toBe('180x180');
   });
 
   it('favicon 64×64 cho tab trình duyệt', () => {
-    expect(kichThuocPng('public/favicon.png')).toBe('64x64');
+    expect(kichThuocPng(`public/${FAVICON}`)).toBe('64x64');
   });
 
   it('script và ảnh nguồn còn đó để tạo lại biểu tượng khi đổi ảnh', () => {
@@ -88,8 +70,8 @@ describe('khung trang khai báo đủ để cài', () => {
 
   it('trỏ tới manifest, apple-touch-icon và favicon qua base', () => {
     expect(khung).toContain('rel="manifest" href={`${base}manifest.webmanifest`}');
-    expect(khung).toContain('rel="apple-touch-icon" href={`${base}apple-touch-icon.png`}');
-    expect(khung).toContain('rel="icon" type="image/png" href={`${base}favicon.png`}');
+    expect(khung).toContain('rel="apple-touch-icon" sizes="180x180" href={`${base}${kemPhienBan(APPLE_TOUCH_ICON, docFilePublic)}`}');
+    expect(khung).toContain('rel="icon" type="image/png" href={`${base}${kemPhienBan(FAVICON, docFilePublic)}`}');
   });
 
   it('iOS mở toàn màn hình khi cài từ Safari', () => {

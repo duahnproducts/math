@@ -35,7 +35,7 @@ Mọi thứ miễn phí: không backend, không dịch vụ trả phí.
 | Icon | Lucide, đóng gói cục bộ | Theo DESIGN_SPEC |
 | Tiến độ | `localStorage`. Logic viết thành hàm thuần trong `src/lib/` | Không cần tài khoản. Hàm thuần test được |
 | Tìm kiếm (Phase 5) | Pagefind | Tạo chỉ mục lúc build, không cần máy chủ. Xem mục 6 |
-| Cài lên màn hình chính | `public/manifest.webmanifest` + thẻ `apple-mobile-web-app-*`, đã làm — xem mục 13 | Mở từ biểu tượng thì không còn thanh của trình duyệt |
+| Cài lên màn hình chính | `manifest.webmanifest` (dựng lúc build) + thẻ `apple-mobile-web-app-*`, đã làm — xem mục 13 | Mở từ biểu tượng thì không còn thanh của trình duyệt |
 | PWA đọc offline (Phase 5) | `@vite-pwa/astro` | Thêm service worker để đọc khi không có mạng |
 | Test | Vitest + Playwright | Xem mục 8 |
 | Deploy | GitHub Actions + `withastro/action` → GitHub Pages | Xem mục 9 |
@@ -271,7 +271,7 @@ Kiểu bong bóng học từ thanh điều hướng của `learner`
 | Nút | `.nut` bo tròn hẳn, có vệt sáng trên đỉnh. Bấm thì lún xuống nhanh, thả ra thì nảy về. `.nut-icon` hình tròn |
 | Ẩn khi cuộn | Lô-gic thuần `capNhatCuon` trong `src/lib/cuon.ts`: bỏ qua lần cuộn dưới 8px, gần đầu trang hoặc chạm đáy thì luôn hiện. Script đặt `data-an-thanh` trên `<html>`, còn CSS chỉ áp dụng khi màn hình rộng ≤ 760px |
 | Màu | Token `--glass`, `--glass-line`, `--glass-shadow`, `--bubble`, `--track`, `--bubble-raised`, `--gloss` có ở cả hai giao diện |
-| Cài lên màn hình chính | `public/manifest.webmanifest` dùng đường dẫn **tương đối** (`./`), nên đúng với base `/math/`. `display: standalone`. Biểu tượng (ảnh đại diện của app) là ảnh chụp, tạo bằng `scripts/tao-bieu-tuong.py` từ `scripts/anh-bieu-tuong.jpg` (ảnh vuông đã cắt quanh khuôn mặt): icon 192/512 bo góc, bản maskable lấy rộng hơn để mặt nằm trong vùng an toàn, `apple-touch-icon` phủ kín, `favicon.png` 64px cho tab trình duyệt. Thẻ `apple-mobile-web-app-capable`, `apple-touch-icon`, `viewport-fit=cover`. Thanh trạng thái để `default` để iOS lấy màu `theme-color`, tránh chữ trắng trên nền sáng |
+| Cài lên màn hình chính | `manifest.webmanifest` dựng lúc build từ `src/pages/manifest.webmanifest.ts` (nội dung ở `taoManifest`, `src/lib/bieu-tuong.ts`), dùng đường dẫn **tương đối** (`./`), nên đúng với base `/math/`. `display: standalone`. Biểu tượng (ảnh đại diện của app) là ảnh chụp, tạo bằng `scripts/tao-bieu-tuong.py` từ `scripts/anh-bieu-tuong.jpg` (ảnh vuông đã cắt quanh khuôn mặt): icon 192/512 bo góc, bản maskable lấy rộng hơn để mặt nằm trong vùng an toàn, `apple-touch-icon` phủ kín, `favicon.png` 64px cho tab trình duyệt. **Mọi đường dẫn biểu tượng kèm `?v=`** = 10 ký tự đầu sha256 của file: điện thoại lưu biểu tượng theo đường dẫn, nên đổi ảnh mà giữ nguyên đường dẫn thì cài lại vẫn ra ảnh cũ. Đổi ảnh chỉ cần chạy lại script, mã tự đổi lúc build. `id` của manifest giữ nguyên để Android coi là cùng một app. Thẻ `apple-mobile-web-app-capable`, `apple-touch-icon`, `viewport-fit=cover`. Thanh trạng thái để `default` để iOS lấy màu `theme-color`, tránh chữ trắng trên nền sáng |
 | Chuyển động | `prefers-reduced-motion` thì mọi hiệu ứng bong bóng chạy tức thì (`--t-bubble: 1ms`) |
 
 **Cách cài** (ghi cho người học):
@@ -281,9 +281,13 @@ Kiểu bong bóng học từ thanh điều hướng của `learner`
   *Thêm vào MH chính*.
 - **Android:** mở bằng Chrome, bấm menu ⋮, rồi *Cài đặt ứng dụng* hoặc *Thêm vào
   màn hình chính*.
+- **Đã cài rồi, muốn lấy ảnh đại diện mới:** iPhone không bao giờ tự cập nhật biểu
+  tượng đã có trên màn hình chính — xoá biểu tượng cũ (giữ lâu biểu tượng → Xoá), mở
+  lại web bằng Safari rồi thêm lại. Android tự cập nhật sau vài ngày khi mở app
+  (có thể hỏi xác nhận); muốn ngay thì gỡ rồi cài lại.
 
-**Test:** `src/lib/thanh-duoi.test.ts` và `src/lib/cuon.test.ts` (Vitest). `tests/pwa.test.ts`
+**Test:** `src/lib/thanh-duoi.test.ts`, `src/lib/cuon.test.ts` và `src/lib/bieu-tuong.test.ts` (mã phiên bản biểu tượng) (Vitest). `tests/pwa.test.ts`
 kiểm tra manifest, kích thước biểu tượng, các thẻ trong `Khung.astro` và token có đủ ở
 hai giao diện. Playwright có `tests/e2e/dien-thoai.spec.ts` (viên thuốc, bong bóng trượt
-qua trang mới, ẩn khi cuộn, nút tròn, manifest tải được) và `tests/e2e/bong-bong.spec.ts`
+qua trang mới, ẩn khi cuộn, nút tròn, manifest tải được, `?v=` của từng biểu tượng khớp ảnh máy nhận về) và `tests/e2e/bong-bong.spec.ts`
 (công tắc tab, laptop không đổi).
