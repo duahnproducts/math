@@ -234,3 +234,17 @@ describe('giá trị riêng và vector riêng (§3.3)', () => {
     }
   });
 });
+
+describe('chéo hoá (§3.4)', () => {
+  const cheo = (d: number[]) => d.map((x, i) => d.map((_, j) => (i === j ? x : 0)));
+  it('Ví dụ 3.4.1 và 3.4.2: AP = PD, P khả nghịch', () => {
+    const cases: [MaTran, MaTran, number[]][] = [
+      [[[2, 0, 0], [1, 2, -1], [1, 3, -2]], [[1, 0, 0], [1, 1, 1], [1, 1, 3]], [2, 1, -1]],
+      [[[0, 1, 1], [1, 0, 1], [1, 1, 0]], [[1, -1, -1], [1, 1, 0], [1, 0, 1]], [2, -1, -1]],
+    ];
+    for (const [A, P, d] of cases) {
+      expect(nhanMaTran(A, P)).toEqual(nhanMaTran(P, cheo(d)));
+      expect(dinhThuc(P)).not.toBeCloseTo(0, 9);
+    }
+  });
+});

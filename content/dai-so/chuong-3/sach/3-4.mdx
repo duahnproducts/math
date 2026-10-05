@@ -1,0 +1,189 @@
+---
+mon: dai-so
+chuong: 3
+muc: "3.4"
+tieu_de: Chéo hoá
+tieu_de_en: Diagonalization
+loai: dich-nguyen-van
+nguon: "Dịch từ W. Keith Nicholson, Linear Algebra with Applications, Version 2023 – Revision A, Vretta-Lyryx Inc. (https://lyryx.com/linear-algebra-applications/), Mục 3.4. Bản dịch phát hành theo giấy phép CC BY-NC-SA 4.0, giống bản gốc. Thay đổi: dịch sang tiếng Việt, thêm ghi chú cho người học."
+---
+
+Một ma trận $D$ cỡ $n \times n$ được gọi là **ma trận đường chéo** nếu mọi phần tử ngoài đường chéo chính đều bằng 0, tức là nếu $D$ có dạng
+
+$$
+D = \begin{bmatrix} \lambda_1 & 0 & \cdots & 0 \\ 0 & \lambda_2 & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & \lambda_n \end{bmatrix} = \operatorname{diag}(\lambda_1, \lambda_2, \ldots, \lambda_n)
+$$
+
+trong đó $\lambda_1, \lambda_2, \ldots, \lambda_n$ là các số. Tính toán với ma trận đường chéo rất dễ. Thật vậy, nếu $D = \operatorname{diag}(\lambda_1, \ldots, \lambda_n)$ và $E = \operatorname{diag}(\mu_1, \ldots, \mu_n)$ là hai ma trận đường chéo thì tích $DE$ và tổng $D + E$ của chúng lại là ma trận đường chéo, thu được bằng cách làm cùng phép toán đó trên các phần tử đường chéo tương ứng:
+
+$$
+\begin{aligned}
+DE &= \operatorname{diag}(\lambda_1\mu_1, \lambda_2\mu_2, \ldots, \lambda_n\mu_n) \\
+D + E &= \operatorname{diag}(\lambda_1 + \mu_1, \lambda_2 + \mu_2, \ldots, \lambda_n + \mu_n)
+\end{aligned}
+$$
+
+Vì sự đơn giản của các công thức này, và để ý đến Định lý 3.3.1, ta đưa ra định nghĩa sau:
+
+<DinhNghia so="3.6" ten="Ma trận chéo hoá được">
+Ma trận $A$ cỡ $n \times n$ được gọi là **chéo hoá được** (*diagonalizable*) nếu
+
+$$
+P^{-1}AP \text{ là ma trận đường chéo với một ma trận khả nghịch } P \text{ cỡ } n \times n \text{ nào đó}
+$$
+
+Ở đây ma trận khả nghịch $P$ được gọi là **ma trận chéo hoá** (*diagonalizing matrix*) cho $A$.
+</DinhNghia>
+
+Để khám phá khi nào một ma trận $P$ như vậy tồn tại, ta gọi $\mathbf{x}_1, \mathbf{x}_2, \ldots, \mathbf{x}_n$ là các cột của $P$ và tìm cách xác định khi nào các $\mathbf{x}_i$ tồn tại và cách tính chúng. Viết $P$ theo các cột của nó:
+
+$$
+P = \begin{bmatrix} \mathbf{x}_1 & \mathbf{x}_2 & \cdots & \mathbf{x}_n \end{bmatrix}
+$$
+
+Hãy để ý rằng $P^{-1}AP = D$ với ma trận đường chéo $D$ nào đó đúng khi và chỉ khi
+
+$$
+AP = PD
+$$
+
+Nếu ta viết $D = \operatorname{diag}(\lambda_1, \lambda_2, \ldots, \lambda_n)$, với các $\lambda_i$ là các số cần xác định, thì phương trình $AP = PD$ trở thành
+
+$$
+A\begin{bmatrix} \mathbf{x}_1 & \cdots & \mathbf{x}_n \end{bmatrix} = \begin{bmatrix} \mathbf{x}_1 & \cdots & \mathbf{x}_n \end{bmatrix} \begin{bmatrix} \lambda_1 & 0 & \cdots & 0 \\ 0 & \lambda_2 & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & \lambda_n \end{bmatrix}
+$$
+
+Theo định nghĩa phép nhân ma trận, mỗi vế rút gọn thành
+
+$$
+\begin{bmatrix} A\mathbf{x}_1 & A\mathbf{x}_2 & \cdots & A\mathbf{x}_n \end{bmatrix} = \begin{bmatrix} \lambda_1\mathbf{x}_1 & \lambda_2\mathbf{x}_2 & \cdots & \lambda_n\mathbf{x}_n \end{bmatrix}
+$$
+
+So sánh các cột cho thấy $A\mathbf{x}_i = \lambda_i\mathbf{x}_i$ với mỗi $i$, nên
+
+$$
+P^{-1}AP = D \quad \text{khi và chỉ khi} \quad A\mathbf{x}_i = \lambda_i\mathbf{x}_i \text{ với mỗi } i
+$$
+
+Nói cách khác, $P^{-1}AP = D$ đúng khi và chỉ khi các phần tử đường chéo của $D$ là giá trị riêng của $A$ và các cột của $P$ là các vector riêng tương ứng. Điều này chứng minh kết quả nền tảng sau.
+
+<DinhLy so="3.4.1">
+Cho $A$ là ma trận $n \times n$.
+
+1. $A$ chéo hoá được khi và chỉ khi nó có các vector riêng $\mathbf{x}_1, \ldots, \mathbf{x}_n$ sao cho ma trận $P = \begin{bmatrix} \mathbf{x}_1 & \cdots & \mathbf{x}_n \end{bmatrix}$ khả nghịch.
+2. Khi đó $P^{-1}AP = \operatorname{diag}(\lambda_1, \lambda_2, \ldots, \lambda_n)$, trong đó với mỗi $i$, $\lambda_i$ là giá trị riêng của $A$ ứng với $\mathbf{x}_i$.
+
+</DinhLy>
+
+<GhiChu tieuDe="Ghi chú cho người học — chéo hoá nghĩa là gì">
+Định lý 3.4.1 nói một điều rất trực quan nếu bạn nghĩ theo phép biến đổi (<XemMuc muc="2.6" chu="Mục 2.6" />):
+
+Chéo hoá là *đổi hệ toạ độ* sang hệ mà các trục chính là các vector riêng. Trong hệ toạ độ mới đó, tác động của $A$ chỉ đơn giản là kéo giãn từng trục với hệ số $\lambda_i$ — không xoay, không bóp méo.
+
+Công thức $A = PDP^{-1}$ đọc từ phải sang trái chính là ba bước: $P^{-1}$ đổi sang hệ toạ độ vector riêng, $D$ kéo giãn các trục, $P$ đổi ngược về hệ toạ độ ban đầu.
+
+Đây là lý do $A^k = PD^kP^{-1}$: đổi hệ một lần, kéo giãn $k$ lần, đổi về. Bạn không phải đổi hệ đi đổi lại $k$ lần.
+</GhiChu>
+
+<ViDu so="3.4.1">
+Chéo hoá ma trận $A = \begin{bmatrix} 2 & 0 & 0 \\ 1 & 2 & -1 \\ 1 & 3 & -2 \end{bmatrix}$ ở Ví dụ 3.3.4.
+
+**Lời giải.** Theo Ví dụ 3.3.4, các giá trị riêng của $A$ là $\lambda_1 = 2$, $\lambda_2 = 1$, $\lambda_3 = -1$, với các vector riêng cơ bản tương ứng $\mathbf{x}_1 = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}$, $\mathbf{x}_2 = \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}$, $\mathbf{x}_3 = \begin{bmatrix} 0 \\ 1 \\ 3 \end{bmatrix}$. Vì ma trận $P = \begin{bmatrix} \mathbf{x}_1 & \mathbf{x}_2 & \mathbf{x}_3 \end{bmatrix} = \begin{bmatrix} 1 & 0 & 0 \\ 1 & 1 & 1 \\ 1 & 1 & 3 \end{bmatrix}$ khả nghịch, Định lý 3.4.1 bảo đảm rằng
+
+$$
+P^{-1}AP = \begin{bmatrix} \lambda_1 & 0 & 0 \\ 0 & \lambda_2 & 0 \\ 0 & 0 & \lambda_3 \end{bmatrix} = \begin{bmatrix} 2 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & -1 \end{bmatrix} = D
+$$
+
+Bạn đọc có thể kiểm chứng trực tiếp — dễ hơn là kiểm tra $AP = PD$.
+</ViDu>
+
+Trong Ví dụ 3.4.1, giả sử ta đặt $Q = \begin{bmatrix} \mathbf{x}_2 & \mathbf{x}_1 & \mathbf{x}_3 \end{bmatrix}$ là ma trận lập từ các vector riêng nhưng theo thứ tự khác. Khi đó $Q^{-1}AQ = \operatorname{diag}(\lambda_2, \lambda_1, \lambda_3)$ vẫn là ma trận đường chéo theo Định lý 3.4.1, nhưng các giá trị riêng ở thứ tự mới. Do đó ta có thể chọn ma trận chéo hoá $P$ sao cho các giá trị riêng $\lambda_i$ xuất hiện theo *bất kỳ* thứ tự nào ta muốn dọc đường chéo chính của $D$.
+
+Trong mọi ví dụ ở trên, mỗi giá trị riêng chỉ có một vector riêng cơ bản. Đây là một ma trận chéo hoá được mà điều đó không xảy ra.
+
+<ViDu so="3.4.2">
+Chéo hoá ma trận $A = \begin{bmatrix} 0 & 1 & 1 \\ 1 & 0 & 1 \\ 1 & 1 & 0 \end{bmatrix}$.
+
+**Lời giải.** Để tính đa thức đặc trưng của $A$, trước hết cộng hàng 2 và hàng 3 của $xI - A$ vào hàng 1:
+
+$$
+\begin{aligned}
+c_A(x) &= \det \begin{bmatrix} x & -1 & -1 \\ -1 & x & -1 \\ -1 & -1 & x \end{bmatrix} = \det \begin{bmatrix} x - 2 & x - 2 & x - 2 \\ -1 & x & -1 \\ -1 & -1 & x \end{bmatrix} \\
+&= \det \begin{bmatrix} x - 2 & 0 & 0 \\ -1 & x + 1 & 0 \\ -1 & 0 & x + 1 \end{bmatrix} = (x - 2)(x + 1)^2
+\end{aligned}
+$$
+
+Do đó các giá trị riêng là $\lambda_1 = 2$ và $\lambda_2 = -1$, với $\lambda_2$ lặp hai lần (ta nói $\lambda_2$ có *bội* bằng hai). Tuy nhiên $A$ vẫn chéo hoá được.
+
+Với $\lambda_1 = 2$, hệ $(\lambda_1I - A)\mathbf{x} = \mathbf{0}$ có nghiệm tổng quát $\mathbf{x} = t\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}$, nên một $\lambda_1$-vector riêng cơ bản là $\mathbf{x}_1 = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}$.
+
+Chuyển sang giá trị riêng lặp $\lambda_2 = -1$, ta phải giải $(\lambda_2I - A)\mathbf{x} = \mathbf{0}$. Bằng phép khử Gauss, nghiệm tổng quát là $\mathbf{x} = s\begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix} + t\begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix}$ với $s$, $t$ tuỳ ý. Do đó thuật toán Gauss cho *hai* $\lambda_2$-vector riêng cơ bản $\mathbf{x}_2 = \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}$ và $\mathbf{y}_2 = \begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix}$. Nếu ta lấy $P = \begin{bmatrix} \mathbf{x}_1 & \mathbf{x}_2 & \mathbf{y}_2 \end{bmatrix} = \begin{bmatrix} 1 & -1 & -1 \\ 1 & 1 & 0 \\ 1 & 0 & 1 \end{bmatrix}$ thì $P$ khả nghịch. Do đó $P^{-1}AP = \operatorname{diag}(2, -1, -1)$ theo Định lý 3.4.1.
+</ViDu>
+
+Ví dụ 3.4.2 là điển hình cho mọi ma trận chéo hoá được. Để mô tả trường hợp tổng quát, ta cần thêm thuật ngữ.
+
+<DinhNghia so="3.7" ten="Bội của một giá trị riêng">
+Một giá trị riêng $\lambda$ của ma trận vuông $A$ được gọi là có **bội** (*multiplicity*) $m$ nếu nó xuất hiện $m$ lần với tư cách nghiệm của đa thức đặc trưng $c_A(x)$.
+</DinhNghia>
+
+Ví dụ, giá trị riêng $\lambda_2 = -1$ trong Ví dụ 3.4.2 có bội 2. Trong ví dụ đó, thuật toán Gauss cho ra hai $\lambda_2$-vector riêng cơ bản, đúng bằng bội. Điều này đúng trong trường hợp tổng quát.
+
+<DinhLy so="3.4.2">
+Một ma trận vuông $A$ chéo hoá được khi và chỉ khi mọi giá trị riêng $\lambda$ có bội $m$ đều cho ra *đúng* $m$ vector riêng cơ bản; tức là khi và chỉ khi nghiệm tổng quát của hệ $(\lambda I - A)\mathbf{x} = \mathbf{0}$ có đúng $m$ tham số.
+</DinhLy>
+
+Một trường hợp của Định lý 3.4.2 đáng được nêu riêng.
+
+<DinhLy so="3.4.3">
+Một ma trận $n \times n$ có $n$ giá trị riêng *phân biệt* thì chéo hoá được.
+</DinhLy>
+
+Chứng minh Định lý 3.4.2 và 3.4.3 cần kỹ thuật cao hơn và được cho ở Chương 5. Quy trình sau tóm tắt phương pháp.
+
+<DinhLy id="dinh-ly-thuat-toan-cheo-hoa" ten="Thuật toán chéo hoá">
+Để chéo hoá ma trận $A$ cỡ $n \times n$:
+
+- **Bước 1.** Tìm các giá trị riêng $\lambda$ phân biệt của $A$.
+- **Bước 2.** Tính một tập vector riêng cơ bản ứng với mỗi giá trị riêng $\lambda$, dưới dạng nghiệm cơ bản của hệ thuần nhất $(\lambda I - A)\mathbf{x} = \mathbf{0}$.
+- **Bước 3.** Ma trận $A$ chéo hoá được khi và chỉ khi tổng cộng có $n$ vector riêng cơ bản.
+- **Bước 4.** Nếu $A$ chéo hoá được thì ma trận $P$ cỡ $n \times n$ có các vector riêng cơ bản này làm cột chính là ma trận chéo hoá cho $A$; tức là $P$ khả nghịch và $P^{-1}AP$ là ma trận đường chéo.
+
+</DinhLy>
+
+Thuật toán chéo hoá vẫn đúng cả khi các giá trị riêng là số phức không thực. Trong trường hợp đó các vector riêng cũng sẽ có phần tử phức.
+
+<ViDu so="3.4.3">
+Chứng tỏ rằng $A = \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}$ *không* chéo hoá được.
+
+**Lời giải 1.** Đa thức đặc trưng là $c_A(x) = (x - 1)^2$, nên $A$ chỉ có một giá trị riêng $\lambda_1 = 1$ với bội 2. Nhưng hệ $(\lambda_1I - A)\mathbf{x} = \mathbf{0}$ có nghiệm tổng quát $t\begin{bmatrix} 1 \\ 0 \end{bmatrix}$, nên chỉ có *một* tham số, và do đó chỉ có *một* vector riêng cơ bản. Bội là 2 nhưng chỉ có 1 vector riêng cơ bản, nên $A$ không chéo hoá được theo Định lý 3.4.2.
+
+**Lời giải 2.** Ta có $c_A(x) = (x - 1)^2$ nên giá trị riêng duy nhất của $A$ là $\lambda = 1$. Do đó, nếu $A$ chéo hoá được thì Định lý 3.4.1 sẽ cho $P^{-1}AP = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = I$ với ma trận khả nghịch $P$ nào đó. Nhưng khi đó $A = PIP^{-1} = I$, điều này không đúng. Vậy $A$ không thể chéo hoá được.
+</ViDu>
+
+<GhiChu tieuDe="Ghi chú cho người học — khi nào chéo hoá thất bại">
+Ví dụ 3.4.3 chỉ ra “điểm yếu” của chéo hoá: không phải ma trận nào cũng chéo hoá được. Vấn đề xảy ra khi một giá trị riêng có bội $m$ nhưng chỉ sinh ra ít hơn $m$ vector riêng cơ bản — ta nói ma trận bị *thiếu hụt* vector riêng.
+
+Hai cách “cứu” trong thực tế:
+
+- **Dạng chuẩn Jordan** (Chương 11): thay vì ma trận đường chéo hoàn toàn, ta chấp nhận một dạng “gần đường chéo” với vài số 1 phía trên đường chéo.
+- **Phân tích giá trị kỳ dị SVD** (Mục 8.6): hoạt động với *mọi* ma trận, kể cả không vuông. Đây là công cụ nền của PCA, hệ gợi ý, nén ảnh, và rất nhiều thứ trong machine learning.
+
+</GhiChu>
+
+Các ma trận chéo hoá được chia sẻ nhiều tính chất với các giá trị riêng của chúng. Ví dụ sau minh hoạ vì sao.
+
+<ViDu so="3.4.4">
+Nếu $\lambda^3 = 5\lambda$ với mọi giá trị riêng của ma trận chéo hoá được $A$, hãy chứng tỏ $A^3 = 5A$.
+
+**Lời giải.** Cho $P^{-1}AP = D = \operatorname{diag}(\lambda_1, \ldots, \lambda_n)$. Vì $\lambda_i^3 = 5\lambda_i$ với mỗi $i$, ta được
+
+$$
+D^3 = \operatorname{diag}(\lambda_1^3, \ldots, \lambda_n^3) = \operatorname{diag}(5\lambda_1, \ldots, 5\lambda_n) = 5D
+$$
+
+Do đó $A^3 = (PDP^{-1})^3 = PD^3P^{-1} = P(5D)P^{-1} = 5(PDP^{-1}) = 5A$ theo Định lý 3.3.1.
+</ViDu>
+
+Nếu $p(x)$ là đa thức bất kỳ và $p(\lambda) = 0$ với mọi giá trị riêng của ma trận chéo hoá được $A$ thì lập luận tương tự Ví dụ 3.4.4 cho thấy $p(A) = 0$. Như vậy Ví dụ 3.4.4 xử lý trường hợp $p(x) = x^3 - 5x$. Tổng quát, $p(A)$ được gọi là **giá trị của đa thức $p(x)$ tại ma trận $A$**. Ví dụ, nếu $p(x) = 2x^3 - 3x + 5$ thì $p(A) = 2A^3 - 3A + 5I$ — lưu ý việc dùng ma trận đơn vị.
+
+Nói riêng, nếu $c_A(x)$ ký hiệu đa thức đặc trưng của $A$ thì chắc chắn $c_A(\lambda) = 0$ với mỗi giá trị riêng $\lambda$ của $A$ (Định lý 3.3.2). Do đó $c_A(A) = 0$ với mọi ma trận chéo hoá được $A$. Thực ra điều này đúng với *mọi* ma trận vuông, chéo hoá được hay không, và kết quả tổng quát được gọi là **định lý Cayley–Hamilton**.

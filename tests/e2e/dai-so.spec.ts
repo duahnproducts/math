@@ -3,6 +3,7 @@
 import { expect, test } from '@playwright/test';
 
 test('Chương 1 đủ §1.1–§1.6, mục ứng dụng có sơ đồ', async ({ page }) => {
+  test.slow(); // đi qua nhiều trang KaTeX nặng
   for (let muc = 1; muc <= 6; muc++) {
     await page.goto(`dai-so/chuong-1/sach/1-${muc}/`);
     await expect(page.locator('[data-ghi-cong]')).toContainText('CC BY-NC-SA');
@@ -41,6 +42,7 @@ test('sơ đồ đổi màu theo giao diện tối', async ({ page }) => {
 });
 
 test('Chương 2: đủ §2.1–§2.9 có trang dịch, mục lục đủ 9 mục, có PDF tải về', async ({ page }) => {
+  test.slow(); // đi qua nhiều trang KaTeX nặng
   for (let so = 1; so <= 9; so++) {
     const muc = `2-${so}`;
     await page.goto(`dai-so/chuong-2/sach/${muc}/`);
@@ -87,9 +89,10 @@ test('bài tập Chương 2: 24 bài của §2.1, "Cần dùng" trỏ về §2.1
 });
 
 // Các mục Chương 3 đã có trang trên web (thêm dần theo tiến độ chuyển bản dịch)
-const MUC_CHUONG_3 = ['3-1', '3-2', '3-3'];
+const MUC_CHUONG_3 = ['3-1', '3-2', '3-3', '3-4'];
 
 test('Chương 3: các mục đã chuyển có trang dịch, công thức dựng không lỗi, có PDF tải về', async ({ page }) => {
+  test.slow(); // đi qua nhiều trang KaTeX nặng
   for (const muc of MUC_CHUONG_3) {
     await page.goto(`dai-so/chuong-3/sach/${muc}/`);
     await expect(page.locator('[data-ghi-cong]')).toContainText('CC BY-NC-SA');

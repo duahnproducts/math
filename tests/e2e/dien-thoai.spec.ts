@@ -32,6 +32,7 @@ test('thanh dưới và mục lục gọn trên điện thoại', async ({ page 
 });
 
 test('không tràn ngang trên điện thoại', async ({ page }) => {
+  test.slow(); // đi qua nhiều trang KaTeX nặng
   for (const duong of [
     './',
     'giai-tich/chuong-1/',
