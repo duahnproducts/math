@@ -1,0 +1,253 @@
+---
+mon: dai-so
+chuong: 3
+muc: "3.7"
+tieu_de: "Ứng dụng: hệ phương trình vi phân"
+tieu_de_en: An Application to Systems of Differential Equations
+loai: dich-nguyen-van
+nguon: "Dịch từ W. Keith Nicholson, Linear Algebra with Applications, Version 2023 – Revision A, Vretta-Lyryx Inc. (https://lyryx.com/linear-algebra-applications/), Mục 3.7. Bản dịch phát hành theo giấy phép CC BY-NC-SA 4.0, giống bản gốc. Thay đổi: dịch sang tiếng Việt, thêm ghi chú cho người học."
+---
+
+Một hàm $f$ của biến thực được gọi là **khả vi** nếu đạo hàm của nó tồn tại, và khi đó ta ký hiệu đạo hàm là $f'$. Nếu $f$ và $g$ là các hàm khả vi thì một hệ dạng
+
+$$
+\begin{aligned}
+f' &= 3f + 5g \\
+g' &= -f + 2g
+\end{aligned}
+$$
+
+được gọi là **hệ phương trình vi phân cấp một**, hay gọi tắt là **hệ vi phân**. Giải nhiều bài toán thực tế thường quy về việc tìm các bộ hàm thoả mãn hệ như vậy. Trong mục này ta chỉ ra cách chéo hoá giúp ích. Tất nhiên cần có kiến thức giải tích.
+
+## Hàm mũ
+
+Hệ vi phân đơn giản nhất là phương trình đơn sau:
+
+$$
+f' = af \quad \text{với } a \text{ là hằng số} \tag{3.14}
+$$
+
+Dễ kiểm chứng rằng $f(x) = e^{ax}$ là một nghiệm; thực ra (3.14) đủ đơn giản để ta tìm được *tất cả* nghiệm. Giả sử $f$ là nghiệm bất kỳ, nên $f'(x) = af(x)$ với mọi $x$. Xét hàm mới $g$ cho bởi $g(x) = f(x)e^{-ax}$. Khi đó quy tắc đạo hàm của tích cho
+
+$$
+\begin{aligned}
+g'(x) &= f(x)\left(-ae^{-ax}\right) + f'(x)e^{-ax} \\
+&= -af(x)e^{-ax} + [af(x)]e^{-ax} = 0
+\end{aligned}
+$$
+
+với mọi $x$. Do đó hàm $g(x)$ có đạo hàm bằng 0 nên phải là hằng số, giả sử $g(x) = c$. Như vậy $c = f(x)e^{-ax}$, tức là
+
+$$
+f(x) = ce^{ax}
+$$
+
+Nói cách khác, mọi nghiệm $f(x)$ của (3.14) chỉ là một bội vô hướng của $e^{ax}$. Vì mọi bội vô hướng như vậy đều dễ thấy là nghiệm của (3.14), ta đã chứng minh:
+
+<DinhLy so="3.7.1">
+Tập nghiệm của $f' = af$ là $\{ce^{ax} \mid c \text{ là hằng số bất kỳ}\} = \mathbb{R}e^{ax}$.
+</DinhLy>
+
+Đáng chú ý là kết quả này cùng với chéo hoá cho phép ta giải được rất nhiều hệ vi phân khác nhau.
+
+<ViDu so="3.7.1">
+Giả sử số lượng $n(t)$ vi khuẩn trong một môi trường nuôi cấy tại thời điểm $t$ có tính chất là tốc độ thay đổi của $n$ tỉ lệ với chính $n$. Nếu có $n_0$ vi khuẩn khi $t = 0$, hãy tìm số lượng tại thời điểm $t$.
+
+**Lời giải.** Gọi $k$ là hằng số tỉ lệ. Tốc độ thay đổi của $n(t)$ là đạo hàm theo thời gian $n'(t)$, nên quan hệ đã cho là $n'(t) = kn(t)$. Do đó Định lý 3.7.1 cho thấy mọi nghiệm $n$ đều có dạng $n(t) = ce^{kt}$, với $c$ là hằng số. Ở đây hằng số $c$ được xác định bởi yêu cầu có $n_0$ vi khuẩn khi $t = 0$. Do đó $n_0 = n(0) = ce^{k \cdot 0} = c$, nên
+
+$$
+n(t) = n_0e^{kt}
+$$
+
+cho số lượng tại thời điểm $t$. Tất nhiên hằng số $k$ phụ thuộc vào chủng vi khuẩn.
+</ViDu>
+
+Điều kiện $n(0) = n_0$ trong Ví dụ 3.7.1 được gọi là **điều kiện ban đầu** (*initial condition*) hay **điều kiện biên** (*boundary condition*) và dùng để chọn ra một nghiệm trong số các nghiệm có sẵn.
+
+## Hệ vi phân tổng quát
+
+Bài toán tổng quát là tìm các hàm khả vi $f_1, f_2, \ldots, f_n$ thoả mãn hệ phương trình dạng
+
+$$
+\begin{aligned}
+f_1' &= a_{11}f_1 + a_{12}f_2 + \cdots + a_{1n}f_n \\
+f_2' &= a_{21}f_1 + a_{22}f_2 + \cdots + a_{2n}f_n \\
+&\ \ \vdots \\
+f_n' &= a_{n1}f_1 + a_{n2}f_2 + \cdots + a_{nn}f_n
+\end{aligned}
+$$
+
+trong đó các $a_{ij}$ là hằng số. Đây gọi là **hệ phương trình vi phân tuyến tính**. Bước đầu tiên là đưa nó về dạng ma trận. Viết
+
+$$
+\mathbf{f} = \begin{bmatrix} f_1 \\ f_2 \\ \vdots \\ f_n \end{bmatrix}, \quad \mathbf{f}' = \begin{bmatrix} f_1' \\ f_2' \\ \vdots \\ f_n' \end{bmatrix}, \quad A = \begin{bmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & & \vdots \\ a_{n1} & a_{n2} & \cdots & a_{nn} \end{bmatrix}
+$$
+
+Khi đó hệ có thể viết gọn bằng phép nhân ma trận:
+
+$$
+\mathbf{f}' = A\mathbf{f}
+$$
+
+Do đó, cho ma trận $A$, bài toán là tìm một cột $\mathbf{f}$ gồm các hàm khả vi thoả điều kiện này. Điều này làm được nếu $A$ chéo hoá được.
+
+<ViDu so="3.7.2">
+Tìm một nghiệm của hệ
+
+$$
+\begin{aligned}
+f_1' &= f_1 + 3f_2 \\
+f_2' &= 2f_1 + 2f_2
+\end{aligned}
+$$
+
+thoả mãn $f_1(0) = 0$, $f_2(0) = 5$.
+
+**Lời giải.** Đây là $\mathbf{f}' = A\mathbf{f}$, với $\mathbf{f} = \begin{bmatrix} f_1 \\ f_2 \end{bmatrix}$ và $A = \begin{bmatrix} 1 & 3 \\ 2 & 2 \end{bmatrix}$. Bạn đọc có thể kiểm chứng $c_A(x) = (x - 4)(x + 1)$, và $\mathbf{x}_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$, $\mathbf{x}_2 = \begin{bmatrix} 3 \\ -2 \end{bmatrix}$ là các vector riêng ứng với các giá trị riêng 4 và $-1$. Do đó thuật toán chéo hoá cho $P^{-1}AP = \begin{bmatrix} 4 & 0 \\ 0 & -1 \end{bmatrix}$, với $P = \begin{bmatrix} 1 & 3 \\ 1 & -2 \end{bmatrix}$.
+
+Bây giờ xét các hàm mới $g_1$, $g_2$ cho bởi $\mathbf{f} = P\mathbf{g}$ (tương đương, $\mathbf{g} = P^{-1}\mathbf{f}$). Khi đó
+
+$$
+\begin{bmatrix} f_1 \\ f_2 \end{bmatrix} = \begin{bmatrix} 1 & 3 \\ 1 & -2 \end{bmatrix} \begin{bmatrix} g_1 \\ g_2 \end{bmatrix}, \quad \text{tức là} \quad \begin{aligned} f_1 &= g_1 + 3g_2 \\ f_2 &= g_1 - 2g_2 \end{aligned}
+$$
+
+Do đó $f_1' = g_1' + 3g_2'$ và $f_2' = g_1' - 2g_2'$, nên $\mathbf{f}' = P\mathbf{g}'$. Thế vào $\mathbf{f}' = A\mathbf{f}$ cho $P\mathbf{g}' = AP\mathbf{g}$, từ đó
+
+$$
+\mathbf{g}' = P^{-1}AP\mathbf{g}
+$$
+
+Nhưng điều này nghĩa là
+
+$$
+\begin{bmatrix} g_1' \\ g_2' \end{bmatrix} = \begin{bmatrix} 4 & 0 \\ 0 & -1 \end{bmatrix} \begin{bmatrix} g_1 \\ g_2 \end{bmatrix}, \quad \text{nên} \quad \begin{aligned} g_1' &= 4g_1 \\ g_2' &= -g_2 \end{aligned}
+$$
+
+Do đó Định lý 3.7.1 cho $g_1(x) = ce^{4x}$, $g_2(x) = de^{-x}$, với $c$, $d$ là hằng số. Cuối cùng,
+
+$$
+\begin{bmatrix} f_1(x) \\ f_2(x) \end{bmatrix} = P\begin{bmatrix} g_1(x) \\ g_2(x) \end{bmatrix} = \begin{bmatrix} 1 & 3 \\ 1 & -2 \end{bmatrix} \begin{bmatrix} ce^{4x} \\ de^{-x} \end{bmatrix} = \begin{bmatrix} ce^{4x} + 3de^{-x} \\ ce^{4x} - 2de^{-x} \end{bmatrix}
+$$
+
+nên nghiệm tổng quát là
+
+$$
+\begin{aligned}
+f_1(x) &= ce^{4x} + 3de^{-x} \\
+f_2(x) &= ce^{4x} - 2de^{-x}
+\end{aligned} \qquad c, d \text{ là hằng số}
+$$
+
+Đáng chú ý là điều này có thể viết ở dạng ma trận
+
+$$
+\begin{bmatrix} f_1(x) \\ f_2(x) \end{bmatrix} = c\begin{bmatrix} 1 \\ 1 \end{bmatrix}e^{4x} + d\begin{bmatrix} 3 \\ -2 \end{bmatrix}e^{-x}
+$$
+
+Tức là $\mathbf{f}(x) = c\mathbf{x}_1e^{4x} + d\mathbf{x}_2e^{-x}$.
+
+Cuối cùng, yêu cầu $f_1(0) = 0$ và $f_2(0) = 5$ xác định các hằng số $c$ và $d$:
+
+$$
+\begin{aligned}
+0 &= f_1(0) = c + 3d \\
+5 &= f_2(0) = c - 2d
+\end{aligned}
+$$
+
+Các phương trình này cho $c = 3$ và $d = -1$, nên
+
+$$
+\begin{aligned}
+f_1(x) &= 3e^{4x} - 3e^{-x} \\
+f_2(x) &= 3e^{4x} + 2e^{-x}
+\end{aligned}
+$$
+
+thoả mãn mọi yêu cầu.
+</ViDu>
+
+Kỹ thuật trong ví dụ này hoạt động trong trường hợp tổng quát.
+
+<DinhLy so="3.7.2">
+Xét hệ tuyến tính $\mathbf{f}' = A\mathbf{f}$ các phương trình vi phân, trong đó $A$ là ma trận $n \times n$ chéo hoá được. Cho $P^{-1}AP$ là ma trận đường chéo, với $P = \begin{bmatrix} \mathbf{x}_1 & \mathbf{x}_2 & \cdots & \mathbf{x}_n \end{bmatrix}$ và $\{\mathbf{x}_1, \ldots, \mathbf{x}_n\}$ là các vector riêng của $A$. Nếu $\mathbf{x}_i$ ứng với giá trị riêng $\lambda_i$ với mỗi $i$ thì mọi nghiệm $\mathbf{f}$ của $\mathbf{f}' = A\mathbf{f}$ đều có dạng
+
+$$
+\mathbf{f}(x) = c_1\mathbf{x}_1e^{\lambda_1x} + c_2\mathbf{x}_2e^{\lambda_2x} + \cdots + c_n\mathbf{x}_ne^{\lambda_nx}
+$$
+
+trong đó $c_1, c_2, \ldots, c_n$ là các hằng số tuỳ ý.
+</DinhLy>
+
+**Chứng minh.** Theo Định lý 3.4.1, ma trận $P$ khả nghịch và $P^{-1}AP = \operatorname{diag}(\lambda_1, \ldots, \lambda_n)$. Như trong Ví dụ 3.7.2, định nghĩa $\mathbf{g} = P^{-1}\mathbf{f}$; tương đương $\mathbf{f} = P\mathbf{g}$. Nếu $P = [p_{ij}]$ thì
+
+$$
+f_i = p_{i1}g_1 + p_{i2}g_2 + \cdots + p_{in}g_n
+$$
+
+Vì các $p_{ij}$ là hằng số, phép lấy đạo hàm bảo toàn quan hệ này:
+
+$$
+f_i' = p_{i1}g_1' + p_{i2}g_2' + \cdots + p_{in}g_n'
+$$
+
+nên $\mathbf{f}' = P\mathbf{g}'$. Thế vào $\mathbf{f}' = A\mathbf{f}$ cho $P\mathbf{g}' = AP\mathbf{g}$. Nhân bên trái với $P^{-1}$ cho $\mathbf{g}' = P^{-1}AP\mathbf{g}$, nên hệ ban đầu trở nên đơn giản hơn nhiều theo $\mathbf{g}$: mỗi $g_i' = \lambda_ig_i$. Định lý 3.7.1 suy ra nghiệm duy nhất là $g_i(x) = c_ie^{\lambda_ix}$ với $c_i$ là hằng số nào đó. Rồi quan hệ $\mathbf{f} = P\mathbf{g}$ cho
+
+$$
+\mathbf{f}(x) = \begin{bmatrix} \mathbf{x}_1 & \cdots & \mathbf{x}_n \end{bmatrix} \begin{bmatrix} c_1e^{\lambda_1x} \\ \vdots \\ c_ne^{\lambda_nx} \end{bmatrix} = c_1\mathbf{x}_1e^{\lambda_1x} + \cdots + c_n\mathbf{x}_ne^{\lambda_nx} \qquad ∎
+$$
+
+Định lý cho thấy mọi nghiệm của $\mathbf{f}' = A\mathbf{f}$ là một tổ hợp tuyến tính như trên, nên đây gọi là **nghiệm tổng quát** của hệ phương trình vi phân. Trong hầu hết trường hợp, các hàm nghiệm $f_i(x)$ được yêu cầu thoả mãn các điều kiện biên, thường có dạng $f_i(a) = b_i$. Các điều kiện này xác định các hằng số $c_i$.
+
+<GhiChu tieuDe="Ghi chú cho người học — lại là cấu trúc quen thuộc">
+Định lý 3.7.2 là một trong những chỗ đẹp nhất của chương. Hãy để ý khuôn mẫu:
+
+> *chéo hoá ⇒ hệ “rã” thành $n$ phương trình độc lập ⇒ giải từng cái riêng ⇒ ghép lại*
+
+Đây chính xác là cùng một ý tưởng với hệ động lực ở <XemMuc muc="3.5" chu="Mục 3.5" /> — chỉ khác là ở đó ta có $\lambda^k$, còn ở đây có $e^{\lambda x}$. Cả hai đều do cùng một lý do: trong hệ toạ độ vector riêng, các chiều không “nói chuyện” với nhau nữa.
+
+Ghi nhớ thêm cho ngành kỹ thuật: dấu của $\lambda$ quyết định tất cả. Nếu mọi $\operatorname{Re}(\lambda_i) < 0$ thì $e^{\lambda_ix} \to 0$ và hệ *ổn định*; nếu có một $\operatorname{Re}(\lambda) > 0$ thì nghiệm bùng nổ và hệ *không ổn định*. Đây là tiêu chuẩn ổn định trung tâm của lý thuyết điều khiển.
+</GhiChu>
+
+<ViDu so="3.7.3">
+Tìm nghiệm tổng quát của hệ
+
+$$
+\begin{aligned}
+f_1' &= 5f_1 + 8f_2 + 16f_3 \\
+f_2' &= 4f_1 + f_2 + 8f_3 \\
+f_3' &= -4f_1 - 4f_2 - 11f_3
+\end{aligned}
+$$
+
+Rồi tìm nghiệm thoả các điều kiện biên $f_1(0) = f_2(0) = f_3(0) = 1$.
+
+**Lời giải.** Hệ có dạng $\mathbf{f}' = A\mathbf{f}$, với $A = \begin{bmatrix} 5 & 8 & 16 \\ 4 & 1 & 8 \\ -4 & -4 & -11 \end{bmatrix}$. Ở đây $c_A(x) = (x + 3)^2(x - 1)$ và các vector riêng ứng với các giá trị riêng $-3$, $-3$, $1$ lần lượt là
+
+$$
+\mathbf{x}_1 = \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}, \quad \mathbf{x}_2 = \begin{bmatrix} -2 \\ 0 \\ 1 \end{bmatrix}, \quad \mathbf{x}_3 = \begin{bmatrix} 2 \\ 1 \\ -1 \end{bmatrix}
+$$
+
+Do đó, theo Định lý 3.7.2, nghiệm tổng quát là
+
+$$
+\mathbf{f}(x) = c_1\begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}e^{-3x} + c_2\begin{bmatrix} -2 \\ 0 \\ 1 \end{bmatrix}e^{-3x} + c_3\begin{bmatrix} 2 \\ 1 \\ -1 \end{bmatrix}e^{x}, \qquad c_i \text{ hằng số.}
+$$
+
+Các điều kiện biên $f_1(0) = f_2(0) = f_3(0) = 1$ xác định các hằng số $c_i$:
+
+$$
+\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix} = \mathbf{f}(0) = \begin{bmatrix} -1 & -2 & 2 \\ 1 & 0 & 1 \\ 0 & 1 & -1 \end{bmatrix} \begin{bmatrix} c_1 \\ c_2 \\ c_3 \end{bmatrix}
+$$
+
+Nghiệm là $c_1 = -3$, $c_2 = 5$, $c_3 = 4$, nên nghiệm cụ thể cần tìm là
+
+$$
+\begin{aligned}
+f_1(x) &= -7e^{-3x} + 8e^{x} \\
+f_2(x) &= -3e^{-3x} + 4e^{x} \\
+f_3(x) &= 5e^{-3x} - 4e^{x}
+\end{aligned}
+$$
+
+</ViDu>

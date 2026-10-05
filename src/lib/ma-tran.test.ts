@@ -273,3 +273,28 @@ describe('hệ động lực (§3.5)', () => {
     expect(v).toEqual([1 / 16, 1 / 16]);
   });
 });
+
+describe('hệ thức truy hồi (§3.6)', () => {
+  it('Ví dụ 3.6.2: xₖ = [3ᵏ⁺¹ − (−2)ᵏ⁺¹]/5; Ví dụ 3.6.3: Binet, x₁₂ = 233', () => {
+    const x = [1, 1];
+    const f = [1, 1];
+    for (let k = 0; k < 12; k++) {
+      x.push(x[k + 1] + 6 * x[k]);
+      f.push(f[k] + f[k + 1]);
+    }
+    x.forEach((xk, k) => expect(xk).toBe((3 ** (k + 1) - (-2) ** (k + 1)) / 5));
+    const [l1, l2] = [(1 + Math.sqrt(5)) / 2, (1 - Math.sqrt(5)) / 2];
+    f.forEach((fk, k) => expect(fk).toBeCloseTo((l1 ** (k + 1) - l2 ** (k + 1)) / Math.sqrt(5), 9));
+    expect(f[12]).toBe(233);
+  });
+});
+
+describe('hệ vi phân (§3.7)', () => {
+  it('Ví dụ 3.7.2: c = 3, d = −1; Ví dụ 3.7.3: c = (−3, 5, 4) và các vector riêng', () => {
+    giaiHe([[1, 3], [1, -2]], [0, 5]).forEach((c, i) => expect(c).toBeCloseTo([3, -1][i], 12));
+    const A = [[5, 8, 16], [4, 1, 8], [-4, -4, -11]];
+    const cap: [number, number[]][] = [[-3, [-1, 1, 0]], [-3, [-2, 0, 1]], [1, [2, 1, -1]]];
+    for (const [l, x] of cap) nhanVector(A, x).forEach((y, i) => expect(y).toBeCloseTo(l * x[i], 12));
+    giaiHe([[-1, -2, 2], [1, 0, 1], [0, 1, -1]], [1, 1, 1]).forEach((c, i) => expect(c).toBeCloseTo([-3, 5, 4][i], 12));
+  });
+});
