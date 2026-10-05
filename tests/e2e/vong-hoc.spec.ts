@@ -124,13 +124,14 @@ test('bảng đối chiếu trỏ tới danh sách bài tập đã lọc theo §
   await expect(page.locator('[data-the-bai-tap]:visible')).toHaveCount(3);
 });
 
-test('Đại số: trang dịch nguyên văn có ghi công, bài chưa có hướng dẫn có nhãn', async ({ page }) => {
+test('Đại số: trang dịch nguyên văn có ghi công, nối sang bài giảng, bài chưa có hướng dẫn có nhãn', async ({ page }) => {
   await page.goto('dai-so/chuong-1/');
   await page.getByRole('tab', { name: 'Dịch nguyên văn' }).click();
-  await page.getByRole('link', { name: /Phép khử Gauss/ }).first().click();
+  await page.locator('#panel-sach').getByRole('link', { name: /Phép khử Gauss/ }).first().click();
   await expect(page).toHaveURL(/dai-so\/chuong-1\/sach\/1-2\/$/);
   await expect(page.locator('[data-ghi-cong]')).toContainText('CC BY-NC-SA 4.0');
-  await expect(page.getByText('Mục này chưa có bài giảng dễ hiểu')).toBeVisible();
+  await page.getByRole('link', { name: 'Học dễ hiểu ở Bài 2' }).click();
+  await expect(page).toHaveURL(/dai-so\/chuong-1\/giang-day\/bai-2\/$/);
 
   await page.goto('dai-so/chuong-1/bai-tap/1-1-1/');
   await expect(page.locator('.nhan-tren').getByText('Chưa có hướng dẫn')).toBeVisible();

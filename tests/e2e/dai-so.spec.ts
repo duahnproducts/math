@@ -110,3 +110,22 @@ test('Chương 3: các mục đã chuyển có trang dịch, công thức dựng
   await expect(page.getByText('Giá trị riêng và vector riêng').first()).toBeVisible();
   await expect(page.locator('a[href$="tai-ve/dai-so-chuong-3-ban-dich.pdf"]')).toBeVisible();
 });
+
+test('bài giảng Chương 1: 5 bài đủ 8 mục, công thức không lỗi, sơ đồ mạng của bài 4, nối về §', async ({ page }) => {
+  test.slow(); // đi qua nhiều trang KaTeX nặng
+  await page.goto('dai-so/chuong-1/');
+  await expect(page.getByText('Chưa có bài giảng')).toHaveCount(0);
+  for (let bai = 1; bai <= 5; bai++) {
+    await page.goto(`dai-so/chuong-1/giang-day/bai-${bai}/`);
+    await expect(page.locator('h2', { hasText: 'Ý tưởng trong 1 câu' })).toBeVisible();
+    await expect(page.locator('h2', { hasText: 'Bài tập' })).toBeVisible();
+    await expect(page.locator('.katex-error')).toHaveCount(0);
+  }
+  // Bài 4 dùng lại hình mạng với dữ liệu riêng
+  await page.goto('dai-so/chuong-1/giang-day/bai-4/');
+  await expect(page.locator('[data-hinh-mang] svg')).toHaveAttribute('aria-label', /Mạng ba nút/);
+  // Bài 5 phủ hai mục §1.5, §1.6; §1.6 nối ngược về Bài 5
+  await page.goto('dai-so/chuong-1/sach/1-6/');
+  await page.getByRole('link', { name: 'Học dễ hiểu ở Bài 5' }).click();
+  await expect(page).toHaveURL(/dai-so\/chuong-1\/giang-day\/bai-5\/$/);
+});

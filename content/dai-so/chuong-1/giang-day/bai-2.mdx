@@ -1,0 +1,209 @@
+---
+mon: dai-so
+chuong: 1
+bai: 2
+tieu_de: Phép khử Gauss và dạng bậc thang
+y_tuong: Đưa ma trận về dạng bậc thang rồi đọc nghiệm; số ẩn trừ hạng cho biết có bao nhiêu tham số tự do.
+phu_muc: ["1.2"]
+---
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+Biến đổi ma trận cho đến khi nó có hình **bậc thang**, rồi đọc nghiệm. Ẩn nào **không** đứng ở bậc thang thì được chọn **tự do**.
+</YTuong>
+
+## Hình dung trực quan
+
+Hãy nhìn hình dáng của ma trận sau khi giải xong ở Bài 1:
+
+$$
+\left[\begin{array}{rrr|r} \boxed{1} & 1 & 1 & 6 \\ 0 & \boxed{1} & -2 & -4 \\ 0 & 0 & \boxed{-7} & -21 \end{array}\right]
+$$
+
+Các số 0 ở góc dưới bên trái tạo thành một **cái cầu thang** đi xuống. Mỗi bậc thang là chỗ một ẩn mới "bắt đầu". Nhờ hình cầu thang, hàng cuối chỉ còn **một ẩn**, giải ngay được, rồi leo dần lên.
+
+Nhưng không phải hệ nào cũng đẹp như vậy. Đôi khi cầu thang **nhảy cóc** — bỏ qua một cột:
+
+$$
+\left[\begin{array}{rrrr|r} \boxed{1} & 2 & -1 & 1 & 3 \\ 0 & 0 & \boxed{1} & 1 & 1 \end{array}\right]
+$$
+
+Cột 2 và cột 4 **không có bậc thang nào**. Hai ẩn đó không bị phương trình nào "ép" phải nhận một giá trị cụ thể. Ta được **chọn tùy ý** — đó là nguồn gốc của "vô số nghiệm".
+
+Giống như xếp lịch cho 4 người mà chỉ có 2 điều kiện ràng buộc: 2 người phải xếp theo điều kiện, 2 người còn lại thì muốn xếp đâu cũng được.
+
+## Kiến thức cần biết
+
+### a) Dạng bậc thang
+
+Một ma trận ở <ThuatNgu id="row-echelon-form">dạng bậc thang</ThuatNgu> nếu thoả ba điều:
+
+1. Hàng toàn số 0 (nếu có) nằm **dưới cùng**.
+2. Số khác 0 đầu tiên của mỗi hàng là **số 1**. Gọi nó là <ThuatNgu id="leading-1">số 1 dẫn đầu</ThuatNgu>.
+3. Số 1 dẫn đầu của hàng dưới nằm **lệch sang phải** so với hàng trên.
+
+Nếu thêm điều 4 — **cột chứa số 1 dẫn đầu có toàn số 0 ở mọi chỗ khác** — thì gọi là <ThuatNgu id="reduced-row-echelon-form">dạng bậc thang rút gọn</ThuatNgu>. Dạng này đọc nghiệm dễ nhất.
+
+### b) Hạng
+
+<ThuatNgu id="rank">Hạng</ThuatNgu> của ma trận là **số các số 1 dẫn đầu** sau khi đưa về dạng bậc thang. Hiểu nôm na: số phương trình **thực sự** khác nhau. Phương trình "trùng lặp" (suy ra được từ các phương trình khác) sẽ biến thành hàng 0 và không được đếm.
+
+### c) Ẩn chính và ẩn tự do
+
+- Ẩn ở cột có số 1 dẫn đầu là <ThuatNgu id="leading-variables">ẩn chính</ThuatNgu>.
+- Các ẩn còn lại là **ẩn tự do**. Ta đặt mỗi ẩn tự do bằng một <ThuatNgu id="parameter">tham số</ThuatNgu> ($s$, $t$, …) — một số được chọn tùy ý.
+
+## Công thức
+
+### Đếm tham số
+
+$$
+\text{số tham số} = n - r
+$$
+
+| Ký hiệu | Nghĩa |
+| --- | --- |
+| $n$ | số ẩn của hệ |
+| $r$ | hạng của ma trận hệ số (số số 1 dẫn đầu) |
+| $n - r$ | số ẩn tự do — số tham số trong nghiệm tổng quát |
+
+### Ba kết cục — nhìn dạng bậc thang là biết
+
+| Dạng bậc thang có… | Kết luận |
+| --- | --- |
+| Một hàng $[\,0 \ \cdots \ 0 \mid c\,]$ với $c \ne 0$ | **Vô nghiệm** (hàng đó nói $0 = c$, vô lý) |
+| Không có hàng như trên, và $r = n$ | **Đúng một** nghiệm |
+| Không có hàng như trên, và $r < n$ | **Vô số** nghiệm, có $n - r$ tham số |
+
+Sách gọi cách làm này là <ThuatNgu id="gaussian-elimination">phép khử Gauss</ThuatNgu> và chứng minh kết quả đếm tham số ở <XemMuc muc="1.2" chu="Định lý 1.2.2" />.
+
+## Ví dụ mẫu — hệ có vô số nghiệm
+
+Giải hệ
+
+$$
+\begin{aligned}
+x_1 + 2x_2 - x_3 + x_4 &= 3 \\
+2x_1 + 4x_2 - x_3 + 3x_4 &= 7 \\
+-x_1 - 2x_2 + 2x_3 \phantom{{}+ 3x_4} &= -2
+\end{aligned}
+$$
+
+#### Bước 1 — Đề cho gì?
+
+Ba phương trình, bốn ẩn $x_1, x_2, x_3, x_4$.
+
+#### Bước 2 — Đề hỏi gì?
+
+Tìm **mọi** nghiệm. Vì ẩn nhiều hơn phương trình, ta đoán có thể có vô số nghiệm — cần viết hết chúng ra.
+
+#### Bước 3 — Dùng kiến thức nào, và tại sao?
+
+Phép khử Gauss đến **dạng bậc thang rút gọn**. *Tại sao rút gọn?* Vì ở dạng đó mỗi ẩn chính chỉ còn dính với ẩn tự do, viết ngay ra công thức, khỏi phải thay ngược.
+
+#### Bước 4 — Giải từng bước
+
+$$
+\left[\begin{array}{rrrr|r} 1 & 2 & -1 & 1 & 3 \\ 2 & 4 & -1 & 3 & 7 \\ -1 & -2 & 2 & 0 & -2 \end{array}\right]
+$$
+
+1. Xoá cột 1 ở hàng 2, 3: $R_2 \to R_2 - 2R_1$, $R_3 \to R_3 + R_1$.
+
+$$
+\left[\begin{array}{rrrr|r} 1 & 2 & -1 & 1 & 3 \\ 0 & 0 & 1 & 1 & 1 \\ 0 & 0 & 1 & 1 & 1 \end{array}\right]
+$$
+
+2. Cột 2 ở hàng 2, 3 đều là 0 — **bỏ qua cột 2**, sang cột 3. Hàng 2 đã có số 1 dẫn đầu ở cột 3. Xoá số 1 bên dưới: $R_3 \to R_3 - R_2$.
+
+$$
+\left[\begin{array}{rrrr|r} 1 & 2 & -1 & 1 & 3 \\ 0 & 0 & 1 & 1 & 1 \\ 0 & 0 & 0 & 0 & 0 \end{array}\right]
+$$
+
+   Hàng 3 thành $0 = 0$: phương trình 3 **trùng lặp** với hai phương trình đầu. Không có hàng $0 = c \ne 0$, nên hệ **có nghiệm**.
+
+3. Rút gọn: xoá số $-1$ phía trên số 1 dẫn đầu ở cột 3: $R_1 \to R_1 + R_2$.
+
+$$
+\left[\begin{array}{rrrr|r} 1 & 2 & 0 & 2 & 4 \\ 0 & 0 & 1 & 1 & 1 \\ 0 & 0 & 0 & 0 & 0 \end{array}\right]
+$$
+
+4. Đếm: $n = 4$ ẩn, $r = 2$ số 1 dẫn đầu (cột 1 và cột 3). Vậy có $4 - 2 = 2$ tham số. Ẩn chính: $x_1, x_3$. Ẩn tự do: $x_2, x_4$.
+
+5. Đặt $x_2 = s$, $x_4 = t$ rồi đọc từng hàng:
+   - Hàng 1: $x_1 + 2s + 2t = 4$, nên $x_1 = 4 - 2s - 2t$.
+   - Hàng 2: $x_3 + t = 1$, nên $x_3 = 1 - t$.
+
+$$
+x_1 = 4 - 2s - 2t, \quad x_2 = s, \quad x_3 = 1 - t, \quad x_4 = t \qquad (s, t \text{ tuỳ ý})
+$$
+
+#### Bước 5 — Kiểm tra kết quả
+
+Chọn thử hai cặp tham số rồi thay vào hệ **gốc**:
+
+- $s = t = 0$ cho $(4, 0, 1, 0)$: $4 - 1 = 3$ ✓, $8 - 1 = 7$ ✓, $-4 + 2 = -2$ ✓.
+- $s = t = 1$ cho $(0, 1, 0, 1)$: $2 + 1 = 3$ ✓, $4 + 3 = 7$ ✓, $-2 = -2$ ✓.
+
+#### Bước 6 — Tóm tắt cách làm để tự áp dụng
+
+<TomTat>
+Khử từng cột từ trái sang phải; cột nào toàn 0 bên dưới thì bỏ qua → kiểm tra có hàng $0 = c \ne 0$ không → rút gọn (xoá cả phía trên số 1 dẫn đầu) → ẩn không có số 1 dẫn đầu đặt bằng tham số → mỗi hàng cho một ẩn chính.
+</TomTat>
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Lỗi 1: Thấy hàng toàn 0 là kết luận vô nghiệm">
+Hàng $\left[\begin{array}{cccc|c} 0 & 0 & 0 & 0 & 0 \end{array}\right]$ nghĩa là $0 = 0$ — **luôn đúng**, chỉ là phương trình thừa. Chỉ khi vế phải **khác 0**, như $0 = 5$, mới là vô nghiệm.
+</Loi>
+
+<Loi tieuDe="Lỗi 2: Chọn nhầm ẩn tự do">
+Ẩn tự do là ẩn ở cột **không có** số 1 dẫn đầu. Trong ví dụ trên, đặt $x_1 = s$ là sai: $x_1$ đã bị hàng 1 "giữ" rồi. Cứ nhìn cột nào có bậc thang là ẩn chính, không bàn cãi.
+</Loi>
+
+<Loi tieuDe="Lỗi 3: Đếm hạng trên ma trận chưa khử">
+Ma trận ban đầu có 3 hàng khác 0, nhưng hạng chỉ là 2 — vì một hàng trùng lặp. Phải đưa về dạng bậc thang **rồi mới** đếm.
+</Loi>
+
+## Tóm tắt 30 giây
+
+- Đưa ma trận về **bậc thang**: số 1 dẫn đầu đi xuống và lệch phải.
+- **Hạng** = số số 1 dẫn đầu.
+- Có hàng $0 = c \ne 0$ → vô nghiệm. Không có: hạng bằng số ẩn → một nghiệm; hạng nhỏ hơn → vô số nghiệm.
+- Số tham số = số ẩn − hạng.
+
+<BaGoc>
+  <Goc ten="Hiểu">Ẩn nào không bị số 1 dẫn đầu "giữ" thì được chọn tự do — đó là nguồn của vô số nghiệm.</Goc>
+  <Goc ten="Nhớ">Số tham số $= n - r$. Hàng $0 = c \ne 0$ nghĩa là vô nghiệm.</Goc>
+  <Goc ten="Làm">Khử từng cột → rút gọn → đặt tham số cho ẩn tự do → đọc ẩn chính.</Goc>
+</BaGoc>
+
+## Bài tập
+
+<BaiLuyen do_kho="de" so="2.1">
+Ma trận sau có ở dạng bậc thang không? Nếu có, hạng bằng bao nhiêu, và ẩn nào là ẩn tự do?
+
+$$
+\left[\begin{array}{rrrr|r} 1 & 3 & 0 & -1 & 2 \\ 0 & 0 & 1 & 4 & 5 \\ 0 & 0 & 0 & 0 & 0 \end{array}\right]
+$$
+
+<GoiYNho>Khoanh tròn các số 1 dẫn đầu. Luyện thêm: <XemMuc bai-tap="1.2.1" chu="Bài 1.2.1" /> và <XemMuc bai-tap="1.2.10" chu="Bài 1.2.10" /> trong sách.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="2.2">
+Giải hệ $x + y - z = 1$, $2x + 2y + z = 5$. Viết nghiệm theo tham số rồi tự kiểm tra bằng hai giá trị của tham số.
+
+<GoiYNho>Sau khi khử, cột 2 không có số 1 dẫn đầu, nên $y$ là ẩn tự do. Đáp số để kiểm tra: $z = 1$.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="2.3">
+Cho hệ
+
+$$
+\begin{aligned} x + y + z &= 1 \\ x + 2y + 3z &= 2 \\ 2x + 3y + az &= b \end{aligned}
+$$
+
+Tìm điều kiện của $a$ và $b$ để hệ có (1) đúng một nghiệm, (2) vô số nghiệm, (3) vô nghiệm.
+
+<GoiYNho tieuDe="Bạn sẽ cần">Khử như thường, coi $a$, $b$ là số. Hàng cuối sẽ có dạng $\left[\begin{array}{ccc|c} 0 & 0 & a - 4 & b - 3 \end{array}\right]$. Bây giờ xét $a - 4$ bằng 0 hay khác 0.</GoiYNho>
+</BaiLuyen>

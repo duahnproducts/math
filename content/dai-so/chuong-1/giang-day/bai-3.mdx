@@ -1,0 +1,176 @@
+---
+mon: dai-so
+chuong: 1
+bai: 3
+tieu_de: Hệ thuần nhất và nghiệm cơ bản
+y_tuong: Hệ có vế phải toàn số 0 luôn có nghiệm 0; mọi nghiệm khác được ghép từ vài nghiệm cơ bản bằng cách nhân và cộng.
+phu_muc: ["1.3"]
+---
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+Hệ có vế phải **toàn số 0** thì luôn có nghiệm "tất cả bằng 0". Câu hỏi thật sự là: có nghiệm **khác 0** không? Nếu có, mọi nghiệm đều **ghép** được từ vài nghiệm cơ bản.
+</YTuong>
+
+## Hình dung trực quan
+
+Bạn pha nước chanh. Công thức "vừa miệng" phải thoả một điều kiện cân bằng: **lượng đường gấp đôi lượng chanh**. Viết ra:
+
+$$
+2c - d = 0 \qquad (c = \text{thìa chanh},\ d = \text{thìa đường})
+$$
+
+- Không chanh, không đường: $c = 0$, $d = 0$. Đúng — nhưng chẳng ai uống cốc nước lọc đó. Đây là **nghiệm tầm thường**.
+- $c = 1$, $d = 2$: vừa miệng. Đây là một **nghiệm khác 0**.
+- Pha gấp 3 cho cả nhà: $c = 3$, $d = 6$. Vẫn vừa miệng.
+- Pha 1 cốc rồi thêm 1 cốc nữa: $(1, 2) + (1, 2) = (2, 4)$. Vẫn vừa miệng.
+
+Hai điều cuối là bí mật của bài này: với hệ có vế phải bằng 0, **nhân** một nghiệm với một số, hay **cộng** hai nghiệm, vẫn ra nghiệm. Nên chỉ cần biết vài "công thức gốc" là sinh ra được mọi công thức.
+
+## Kiến thức cần biết
+
+### a) Hệ thuần nhất
+
+Hệ <ThuatNgu id="homogeneous">thuần nhất</ThuatNgu> là hệ có **mọi** vế phải bằng 0:
+
+$$
+a_1x_1 + a_2x_2 + \cdots + a_nx_n = 0
+$$
+
+Bộ $x_1 = x_2 = \cdots = x_n = 0$ luôn là nghiệm, gọi là <ThuatNgu id="trivial-solution">nghiệm tầm thường</ThuatNgu>. Vì vậy hệ thuần nhất **không bao giờ vô nghiệm**.
+
+### b) Khi nào chắc chắn có nghiệm khác 0?
+
+Khi **số ẩn nhiều hơn số phương trình**. Lý do (từ Bài 2): hạng $r$ không vượt quá số phương trình $m$. Nếu $n > m$ thì $n - r \ge n - m > 0$, tức là có ít nhất **một** tham số — chọn tham số khác 0 là ra nghiệm khác 0. Sách gọi đây là <XemMuc muc="1.3" chu="Định lý 1.3.1" />.
+
+### c) Tổ hợp tuyến tính
+
+Một <ThuatNgu id="linear-combination">tổ hợp tuyến tính</ThuatNgu> của các cột $\mathbf{x}_1, \mathbf{x}_2$ là biểu thức dạng $s\,\mathbf{x}_1 + t\,\mathbf{x}_2$, với $s, t$ là số. Nói đời thường: **nhân mỗi cái với một số rồi cộng lại** — đúng việc ta làm với các cốc nước chanh.
+
+## Công thức
+
+### Nghiệm tổng quát của hệ thuần nhất
+
+$$
+\mathbf{x} = t_1\mathbf{x}_1 + t_2\mathbf{x}_2 + \cdots + t_k\mathbf{x}_k, \qquad k = n - r
+$$
+
+| Ký hiệu | Nghĩa |
+| --- | --- |
+| $\mathbf{x}$ | một nghiệm bất kỳ, viết thành cột |
+| $\mathbf{x}_1, \ldots, \mathbf{x}_k$ | các <ThuatNgu id="basic-solutions">nghiệm cơ bản</ThuatNgu> — các "công thức gốc" |
+| $t_1, \ldots, t_k$ | các tham số, chọn tuỳ ý |
+| $k = n - r$ | số nghiệm cơ bản = số ẩn tự do |
+
+**Cách lấy nghiệm cơ bản:** trong nghiệm có tham số, cho **một** tham số bằng 1 và **các tham số khác** bằng 0. Mỗi tham số cho một nghiệm cơ bản.
+
+## Ví dụ mẫu — tìm nghiệm cơ bản
+
+Giải hệ thuần nhất và viết nghiệm tổng quát qua các nghiệm cơ bản:
+
+$$
+\begin{aligned}
+x_1 - x_2 + 2x_3 - x_4 &= 0 \\
+2x_1 - 2x_2 + 5x_3 + x_4 &= 0
+\end{aligned}
+$$
+
+#### Bước 1 — Đề cho gì?
+
+Hai phương trình, bốn ẩn, vế phải đều bằng 0: một hệ thuần nhất.
+
+#### Bước 2 — Đề hỏi gì?
+
+Mọi nghiệm, viết thành tổ hợp tuyến tính của các nghiệm cơ bản.
+
+#### Bước 3 — Dùng kiến thức nào, và tại sao?
+
+Bốn ẩn, hai phương trình, nên chắc chắn có nghiệm khác 0. Dùng phép khử Gauss (Bài 2) để tìm nghiệm có tham số, rồi **tách theo từng tham số** để ra nghiệm cơ bản.
+
+Mẹo: với hệ thuần nhất, cột vế phải luôn là 0 và **giữ nguyên là 0** sau mọi phép biến đổi. Nên ta chỉ cần biến đổi ma trận hệ số.
+
+#### Bước 4 — Giải từng bước
+
+$$
+\left[\begin{array}{rrrr} 1 & -1 & 2 & -1 \\ 2 & -2 & 5 & 1 \end{array}\right]
+\xrightarrow{R_2 - 2R_1}
+\left[\begin{array}{rrrr} 1 & -1 & 2 & -1 \\ 0 & 0 & 1 & 3 \end{array}\right]
+\xrightarrow{R_1 - 2R_2}
+\left[\begin{array}{rrrr} 1 & -1 & 0 & -7 \\ 0 & 0 & 1 & 3 \end{array}\right]
+$$
+
+Số 1 dẫn đầu ở cột 1 và cột 3. Ẩn tự do: $x_2 = s$, $x_4 = t$. Đọc từng hàng:
+
+- $x_1 - s - 7t = 0$, nên $x_1 = s + 7t$.
+- $x_3 + 3t = 0$, nên $x_3 = -3t$.
+
+Viết thành cột rồi **tách theo $s$ và $t$**:
+
+$$
+\mathbf{x} = \begin{bmatrix} s + 7t \\ s \\ -3t \\ t \end{bmatrix}
+= s\begin{bmatrix} 1 \\ 1 \\ 0 \\ 0 \end{bmatrix} + t\begin{bmatrix} 7 \\ 0 \\ -3 \\ 1 \end{bmatrix}
+$$
+
+Hai nghiệm cơ bản: $\mathbf{x}_1 = (1, 1, 0, 0)$ (lấy $s = 1, t = 0$) và $\mathbf{x}_2 = (7, 0, -3, 1)$ (lấy $s = 0, t = 1$).
+
+#### Bước 5 — Kiểm tra kết quả
+
+- Số nghiệm cơ bản $= n - r = 4 - 2 = 2$ ✓
+- $\mathbf{x}_1 = (1, 1, 0, 0)$: $1 - 1 = 0$ ✓ và $2 - 2 = 0$ ✓
+- $\mathbf{x}_2 = (7, 0, -3, 1)$: $7 - 6 - 1 = 0$ ✓ và $14 - 15 + 1 = 0$ ✓
+
+Hai nghiệm cơ bản đúng, nên mọi tổ hợp $s\mathbf{x}_1 + t\mathbf{x}_2$ cũng đúng (nhớ chuyện nước chanh).
+
+#### Bước 6 — Tóm tắt cách làm để tự áp dụng
+
+<TomTat>
+Chỉ biến đổi ma trận hệ số (vế phải luôn là 0) → đặt tham số cho ẩn tự do → viết nghiệm thành cột → tách thành "tham số × cột số" → mỗi cột số là một nghiệm cơ bản.
+</TomTat>
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Lỗi 1: Kết luận hệ thuần nhất vô nghiệm">
+Không bao giờ xảy ra. Bộ toàn số 0 luôn là nghiệm. Nếu bạn đang ra "vô nghiệm" thì đã tính sai ở đâu đó — thường là quên rằng vế phải phải luôn bằng 0.
+</Loi>
+
+<Loi tieuDe="Lỗi 2: Hiểu ngược Định lý 1.3.1">
+Định lý nói: ẩn **nhiều hơn** phương trình ⇒ có nghiệm khác 0. **Không** nói chiều ngược lại. Hệ $x + y = 0$, $2x + 2y = 0$ có số ẩn **bằng** số phương trình mà vẫn có nghiệm khác 0, ví dụ $(1, -1)$.
+</Loi>
+
+<Loi tieuDe="Lỗi 3: Dùng sai cách này cho hệ không thuần nhất">
+Với hệ có vế phải **khác 0**, cộng hai nghiệm **không** còn là nghiệm. Ví dụ $x = 1$ là nghiệm của $x = 1$, nhưng $1 + 1 = 2$ thì không. Chuyện "nhân và cộng vẫn ra nghiệm" chỉ dành cho hệ thuần nhất.
+</Loi>
+
+## Tóm tắt 30 giây
+
+- Hệ thuần nhất: vế phải toàn 0. **Luôn** có nghiệm 0.
+- Ẩn nhiều hơn phương trình ⇒ chắc chắn có nghiệm khác 0.
+- Nhân hay cộng các nghiệm vẫn ra nghiệm.
+- Mọi nghiệm $= t_1\mathbf{x}_1 + \cdots + t_k\mathbf{x}_k$, với $k = n - r$ nghiệm cơ bản.
+
+<BaGoc>
+  <Goc ten="Hiểu">Vế phải bằng 0 nên nghiệm có thể phóng to, thu nhỏ, cộng dồn — giống nhân công thức pha chế.</Goc>
+  <Goc ten="Nhớ">Số nghiệm cơ bản $= n - r$. Ẩn nhiều hơn phương trình ⇒ có nghiệm khác 0.</Goc>
+  <Goc ten="Làm">Khử → tham số cho ẩn tự do → tách cột theo từng tham số.</Goc>
+</BaGoc>
+
+## Bài tập
+
+<BaiLuyen do_kho="de" so="3.1">
+Không cần giải, cho biết hệ $x + 2y - z = 0$, $3x - y + 4z = 0$ có nghiệm khác 0 không. Vì sao?
+
+<GoiYNho>Đếm số ẩn và số phương trình.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="3.2">
+Tìm các nghiệm cơ bản của hệ một phương trình $x_1 + 2x_2 - 3x_3 = 0$. Có bao nhiêu nghiệm cơ bản? Kiểm tra từng nghiệm.
+
+<GoiYNho>Hạng bằng 1, ba ẩn, nên có $3 - 1 = 2$ nghiệm cơ bản. Đặt $x_2 = s$, $x_3 = t$.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="3.3">
+Giả sử $\mathbf{u}$ và $\mathbf{v}$ đều là nghiệm của **cùng một** hệ thuần nhất. Giải thích bằng lời vì sao $2\mathbf{u} - 5\mathbf{v}$ cũng là nghiệm. Rồi cho một ví dụ cụ thể chứng tỏ điều này **sai** nếu hệ không thuần nhất.
+
+<GoiYNho tieuDe="Bạn sẽ cần">Thay $2\mathbf{u} - 5\mathbf{v}$ vào một phương trình $a_1x_1 + \cdots + a_nx_n = 0$ rồi gom theo $\mathbf{u}$ và $\mathbf{v}$. Luyện thêm: <XemMuc bai-tap="1.3.1" chu="Bài 1.3.1" /> và <XemMuc bai-tap="1.3.6" chu="Bài 1.3.6" /> trong sách.</GoiYNho>
+</BaiLuyen>

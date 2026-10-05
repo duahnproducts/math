@@ -1,0 +1,172 @@
+---
+mon: dai-so
+chuong: 1
+bai: 5
+tieu_de: Luật bảo toàn — mạch điện và phản ứng hoá học
+y_tuong: Cứ thứ gì được bảo toàn (dòng điện, nguyên tử) là viết được thành hệ phương trình tuyến tính; cân bằng phản ứng chính là giải một hệ thuần nhất.
+phu_muc: ["1.5", "1.6"]
+---
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+Ở đâu có một **luật bảo toàn** — dòng điện không tự mất, nguyên tử không tự sinh — ở đó có một **hệ phương trình tuyến tính**. Bài 4 là nước trong ống; bài này là điện trong dây và nguyên tử trong phản ứng.
+</YTuong>
+
+## Hình dung trực quan
+
+Bạn làm bánh bằng bộ đồ chơi xếp hình: 1 "bánh" cần đúng 2 mảnh đỏ và 3 mảnh xanh. Bạn **không thể** làm ra bánh nếu thiếu mảnh, và cũng **không thể** dư mảnh khi tháo bánh ra — mảnh không tự sinh, không tự mất.
+
+Phản ứng hoá học cũng vậy. Khi đốt khí gas (propane), các nguyên tử C, H, O chỉ **đổi chỗ** để ghép thành chất mới. Đếm nguyên tử từng loại ở hai bên mũi tên phải **bằng nhau**. Mỗi loại nguyên tử cho một phương trình.
+
+Mạch điện cũng thế: ở mỗi điểm nối dây, dòng điện chảy vào bằng dòng chảy ra (y hệt nước ở Bài 4), và đi trọn một vòng dây thì "lực đẩy" của pin được tiêu hết qua các điện trở.
+
+## Kiến thức cần biết
+
+### a) Mạch điện — ba định luật
+
+| Định luật | Nói gì | Đời thường |
+| --- | --- | --- |
+| Ohm | $V = IR$ | Điện trở $R$ càng lớn, càng cần "lực đẩy" $V$ lớn để đẩy dòng $I$ qua |
+| Kirchhoff về dòng | Ở mỗi điểm nối: dòng vào = dòng ra | Giống quy tắc nút ở Bài 4 |
+| Kirchhoff về áp | Đi hết một vòng kín: tổng điện áp của pin = tổng sụt áp $IR$ trên các điện trở | Năng lượng pin cấp ra được tiêu hết trong vòng đó |
+
+Ẩn là các dòng điện $I_1, I_2, \ldots$. Nếu tính ra $I$ âm, nghĩa là dòng chạy **ngược** chiều mũi tên mình đã đoán — không sai gì cả. Sách có một mạch đầy đủ với hình vẽ ở <XemMuc muc="1.5" chu="Ví dụ 1.5.1" />.
+
+### b) Phản ứng hoá học — bảo toàn nguyên tử
+
+Viết số phân tử chưa biết trước mỗi chất, ví dụ $x\,\mathrm{C_3H_8} + y\,\mathrm{O_2} \to z\,\mathrm{CO_2} + w\,\mathrm{H_2O}$.
+
+- $\mathrm{C_3H_8}$: một phân tử có 3 nguyên tử C, 8 nguyên tử H.
+- Với mỗi nguyên tố: (số nguyên tử bên trái) $=$ (số nguyên tử bên phải).
+
+Chuyển hết sang một vế, mỗi phương trình có vế phải bằng 0. Đó là **hệ thuần nhất** của Bài 3. Nghiệm có tham số — vì nhân đôi cả phản ứng vẫn cân bằng, đúng chuyện "nước chanh".
+
+## Công thức
+
+### Cân bằng phản ứng
+
+Với mỗi nguyên tố $E$:
+
+$$
+\sum_{\text{chất bên trái}} (\text{hệ số}) \times (\text{số nguyên tử } E \text{ trong chất}) = \sum_{\text{chất bên phải}} (\text{hệ số}) \times (\text{số nguyên tử } E \text{ trong chất})
+$$
+
+| Ký hiệu | Nghĩa |
+| --- | --- |
+| hệ số | số phân tử của chất đó — chính là ẩn $x, y, z, w$ |
+| số nguyên tử $E$ trong chất | chỉ số nhỏ viết dưới, ví dụ $\mathrm{H_2O}$ có 2 nguyên tử H, 1 nguyên tử O |
+| $\sum$ | cộng qua mọi chất ở bên đó |
+
+Cuối cùng chọn tham số sao cho mọi hệ số là **số nguyên dương nhỏ nhất** — đó là cách hoá học viết phương trình phản ứng.
+
+## Ví dụ mẫu — cân bằng phản ứng đốt khí gas
+
+Cân bằng phản ứng đốt propane (khí gas trong bình nấu ăn):
+
+$$
+x\,\mathrm{C_3H_8} + y\,\mathrm{O_2} \to z\,\mathrm{CO_2} + w\,\mathrm{H_2O}
+$$
+
+#### Bước 1 — Đề cho gì?
+
+Bốn chất, công thức của từng chất. Ẩn: số phân tử $x, y, z, w$.
+
+#### Bước 2 — Đề hỏi gì?
+
+Các số nguyên dương **nhỏ nhất** $x, y, z, w$ làm số nguyên tử mỗi loại bằng nhau ở hai bên.
+
+#### Bước 3 — Dùng kiến thức nào, và tại sao?
+
+Bảo toàn nguyên tử → mỗi nguyên tố (C, H, O) một phương trình → hệ thuần nhất (Bài 3). Ba phương trình, bốn ẩn, nên chắc chắn có nghiệm khác 0, với ít nhất một tham số.
+
+#### Bước 4 — Giải từng bước
+
+1. **Đếm từng nguyên tố.**
+
+| Nguyên tố | Bên trái | Bên phải | Phương trình |
+| --- | --- | --- | --- |
+| C | $3x$ | $z$ | $3x - z = 0$ |
+| H | $8x$ | $2w$ | $8x - 2w = 0$ |
+| O | $2y$ | $2z + w$ | $2y - 2z - w = 0$ |
+
+2. **Khử Gauss** (thứ tự cột: $x, y, z, w$; vế phải luôn 0 nên bỏ đi).
+
+$$
+\left[\begin{array}{rrrr} 3 & 0 & -1 & 0 \\ 8 & 0 & 0 & -2 \\ 0 & 2 & -2 & -1 \end{array}\right]
+$$
+
+   Thay vì khử máy móc, nhìn ngay: hàng 1 cho $z = 3x$; hàng 2 cho $w = 4x$. Thay vào hàng 3: $2y = 2z + w = 6x + 4x = 10x$, nên $y = 5x$. Ẩn tự do là $x$; đặt $x = t$:
+
+$$
+x = t, \quad y = 5t, \quad z = 3t, \quad w = 4t
+$$
+
+   (Khử từng bước như Bài 2 cũng ra đúng kết quả này: hạng 3, bốn ẩn, một tham số.)
+
+3. **Chọn số nguyên dương nhỏ nhất.** $t = 1$ cho $x = 1$, $y = 5$, $z = 3$, $w = 4$:
+
+$$
+\mathrm{C_3H_8} + 5\,\mathrm{O_2} \to 3\,\mathrm{CO_2} + 4\,\mathrm{H_2O}
+$$
+
+#### Bước 5 — Kiểm tra kết quả
+
+| Nguyên tố | Bên trái | Bên phải |
+| --- | --- | --- |
+| C | $1 \cdot 3 = 3$ | $3 \cdot 1 = 3$ ✓ |
+| H | $1 \cdot 8 = 8$ | $4 \cdot 2 = 8$ ✓ |
+| O | $5 \cdot 2 = 10$ | $3 \cdot 2 + 4 \cdot 1 = 10$ ✓ |
+
+#### Bước 6 — Tóm tắt cách làm để tự áp dụng
+
+<TomTat>
+Đặt ẩn cho số phân tử mỗi chất → mỗi nguyên tố một phương trình "trái = phải" → chuyển vế thành hệ thuần nhất → giải ra nghiệm theo tham số → chọn tham số để mọi hệ số là số nguyên dương nhỏ nhất → đếm lại từng nguyên tố.
+</TomTat>
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Lỗi 1: Quên nhân chỉ số với hệ số">
+Trong $4\,\mathrm{H_2O}$ có $4 \times 2 = 8$ nguyên tử H, không phải 2 hay 4. Ẩn (hệ số) nhân với chỉ số nhỏ, luôn luôn.
+</Loi>
+
+<Loi tieuDe="Lỗi 2: Đếm thiếu một nguyên tố xuất hiện ở nhiều chất">
+O có mặt trong **cả** $\mathrm{CO_2}$ **lẫn** $\mathrm{H_2O}$. Phương trình của O phải cộng cả hai: $2z + w$. Đếm sót một chất là hệ sai.
+</Loi>
+
+<Loi tieuDe="Lỗi 3: Dừng ở nghiệm có phân số hoặc chọn t = 0">
+$t = 0$ là nghiệm tầm thường: không có phản ứng nào. Còn nếu nghiệm ra phân số (ví dụ $y = \tfrac{5}{2}t$), hãy chọn $t$ là mẫu số chung để mọi hệ số thành số nguyên.
+</Loi>
+
+## Tóm tắt 30 giây
+
+- Luật bảo toàn ⇒ hệ phương trình tuyến tính.
+- Mạch điện: Ohm $V = IR$; điểm nối: vào = ra; vòng kín: điện áp pin = tổng $IR$.
+- Phản ứng hoá học: mỗi nguyên tố một phương trình; luôn là **hệ thuần nhất**.
+- Chọn tham số để hệ số là số nguyên dương nhỏ nhất.
+
+<BaGoc>
+  <Goc ten="Hiểu">Thứ gì không tự sinh ra, không tự mất đi thì "trước = sau" — đó là một phương trình.</Goc>
+  <Goc ten="Nhớ">Số nguyên tử = hệ số × chỉ số. Dòng âm nghĩa là chạy ngược chiều đã đoán.</Goc>
+  <Goc ten="Làm">Đếm từng nguyên tố → hệ thuần nhất → tham số → số nguyên nhỏ nhất → đếm lại.</Goc>
+</BaGoc>
+
+## Bài tập
+
+<BaiLuyen do_kho="de" so="5.1">
+Cân bằng phản ứng tạo nước: $x\,\mathrm{H_2} + y\,\mathrm{O_2} \to z\,\mathrm{H_2O}$.
+
+<GoiYNho>Hai nguyên tố, ba ẩn. Đặt $y = t$.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="5.2">
+Cân bằng phản ứng đốt ethanol (cồn): $x\,\mathrm{C_2H_6O} + y\,\mathrm{O_2} \to z\,\mathrm{CO_2} + w\,\mathrm{H_2O}$. Chú ý: ethanol cũng có một nguyên tử O.
+
+<GoiYNho>Phương trình của O: $x + 2y = 2z + w$. Đáp số để kiểm tra: $y = 3x$.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="5.3">
+Một bạn cân bằng $x\,\mathrm{Fe} + y\,\mathrm{O_2} \to z\,\mathrm{Fe_2O_3}$ và ra nghiệm $x = 2t$, $y = \tfrac{3}{2}t$, $z = t$. Bạn ấy kết luận "chọn $t = 1$, được $2\,\mathrm{Fe} + 1{,}5\,\mathrm{O_2} \to \mathrm{Fe_2O_3}$". Kết quả đúng về toán, nhưng chưa đúng cách viết hoá học. Sửa lại, và giải thích vì sao luôn có cách sửa như vậy.
+
+<GoiYNho tieuDe="Bạn sẽ cần">Mọi bội của một nghiệm hệ thuần nhất vẫn là nghiệm (Bài 3). Luyện thêm: <XemMuc bai-tap="1.6.1" chu="Bài 1.6.1" /> (đốt methane) và các mạch điện ở <XemMuc bai-tap="1.5.1" chu="Bài 1.5.1" /> trong sách.</GoiYNho>
+</BaiLuyen>

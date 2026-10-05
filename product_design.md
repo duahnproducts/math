@@ -31,7 +31,7 @@ chuyên ngành chưa vững.
 | Môn | Giáo trình | Giấy phép | Giảng dạy | Dịch / Theo sách | Bài tập |
 | --- | --- | --- | --- | --- | --- |
 | **Giải tích** (`gtich/`) | Abbott, *Understanding Analysis*, Springer 2015 | **Có bản quyền** | Bài giảng 8 mục: Ch 1, 2, 6, 7, 8. Hướng dẫn học tập theo mục: Ch 1–5 | "Trình bày theo sách": Ch 6 | Lời giải Ch 1 (§1.2–1.6). Bài tập dễ → khó cuối mỗi bài giảng |
-| **Đại số tuyến tính** (`dai so/`) | Nicholson, *Linear Algebra with Applications*, 2023 | CC BY-NC-SA 4.0 | Chưa có | Bản dịch đầy đủ Ch 1–8 | Đề bài nằm trong bản dịch, chưa có hướng dẫn giải |
+| **Đại số tuyến tính** (`dai so/`) | Nicholson, *Linear Algebra with Applications*, 2023 | CC BY-NC-SA 4.0 | Bài giảng 8 mục: Ch 1 | Bản dịch đầy đủ Ch 1–8 | Đề bài nằm trong bản dịch, chưa có hướng dẫn giải |
 | **Kinh tế vi mô** (`micro/`) | OpenStax, *Principles of Microeconomics 3e* (slide) | CC BY-NC-SA 4.0 | Chưa có | Slide dịch: Ch 2, 3, 5, 7, 8 | Slide không có bài tập. Câu hỏi cuối chương nằm trong sách, chưa nạp vào |
 
 **Nhận xét:** mỗi môn hiện chỉ mạnh ở một phía. Giải tích mạnh phần giảng dạy,

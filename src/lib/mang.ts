@@ -77,3 +77,18 @@ export const MANG_VI_DU_1_4_1: Mang = {
     { nut: 'C', vao: false, giaTri: 100, huong: [1, 0] },
   ],
 };
+
+/** Mạng ba nút của Bài giảng 4, Chương 1 (ví dụ tự đặt): 50 vào ở A, 30 ra ở B, 20 ra ở C. */
+export const MANG_BAI_GIANG_1_4: Mang = {
+  nut: { A: { x: 110, y: 120 }, B: { x: 300, y: 50 }, C: { x: 300, y: 190 } },
+  canh: [
+    { tu: 'A', den: 'B', ten: 'f1' },
+    { tu: 'A', den: 'C', ten: 'f2' },
+    { tu: 'B', den: 'C', ten: 'f3' },
+  ],
+  ngoai: [
+    { nut: 'A', vao: true, giaTri: 50, huong: [-1, 0] },
+    { nut: 'B', vao: false, giaTri: 30, huong: [1, 0] },
+    { nut: 'C', vao: false, giaTri: 20, huong: [1, 0] },
+  ],
+};

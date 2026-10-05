@@ -298,3 +298,56 @@ describe('hệ vi phân (§3.7)', () => {
     giaiHe([[-1, -2, 2], [1, 0, 1], [0, 1, -1]], [1, 1, 1]).forEach((c, i) => expect(c).toBeCloseTo([-3, 5, 4][i], 12));
   });
 });
+
+// Ví dụ mẫu và đáp số tự kiểm tra trong bài giảng Đại số Chương 1 (ví dụ tự đặt)
+describe('số liệu bài giảng Đại số Chương 1', () => {
+  const laNghiem = (A: MaTran, b: number[], x: number[]) => expect(nhanVector(A, x)).toEqual(b);
+
+  it('Bài 1: hệ ba ẩn có nghiệm duy nhất (1, 2, 3); bài tập 1.1 và 1.2', () => {
+    const A: MaTran = [
+      [1, 1, 1],
+      [2, -1, 1],
+      [1, 2, -1],
+    ];
+    giaiHe(A, [6, 3, 2]).forEach((x, i) => expect(x).toBeCloseTo([1, 2, 3][i], 12));
+    laNghiem([[1, 2, 5], [3, -1, 1]], [0, 7], [2, -1, 0]);
+    laNghiem([[1, -2], [3, 1]], [1, 10], [3, 1]);
+  });
+
+  it('Bài 2: x = (4 − 2s − 2t, s, 1 − t, t) là nghiệm với mọi s, t', () => {
+    const A: MaTran = [
+      [1, 2, -1, 1],
+      [2, 4, -1, 3],
+      [-1, -2, 2, 0],
+    ];
+    for (const [s, t] of [[0, 0], [1, 1], [-2, 3]]) laNghiem(A, [3, 7, -2], [4 - 2 * s - 2 * t, s, 1 - t, t]);
+  });
+
+  it('Bài 2, bài tập 2.3: hàng cuối là (a − 4 | b − 3)', () => {
+    // a ≠ 4 → nghiệm duy nhất (định thức khác 0); a = 4 → định thức bằng 0
+    const A = (a: number): MaTran => [
+      [1, 1, 1],
+      [1, 2, 3],
+      [2, 3, a],
+    ];
+    expect(dinhThuc(A(4))).toBeCloseTo(0, 12);
+    expect(dinhThuc(A(5))).toBeCloseTo(1, 12);
+  });
+
+  it('Bài 3: hai nghiệm cơ bản (1, 1, 0, 0) và (7, 0, −3, 1) của hệ thuần nhất', () => {
+    const A: MaTran = [
+      [1, -1, 2, -1],
+      [2, -2, 5, 1],
+    ];
+    laNghiem(A, [0, 0], [1, 1, 0, 0]);
+    laNghiem(A, [0, 0], [7, 0, -3, 1]);
+  });
+
+  it('Bài 5: propane C₃H₈ + 5O₂ → 3CO₂ + 4H₂O; ethanol, nước, sắt', () => {
+    // cột: hệ số các chất; hàng: nguyên tố; chất bên phải mang dấu trừ
+    laNghiem([[3, 0, -1, 0], [8, 0, 0, -2], [0, 2, -2, -1]], [0, 0, 0], [1, 5, 3, 4]);
+    laNghiem([[2, 0, -1, 0], [6, 0, 0, -2], [1, 2, -2, -1]], [0, 0, 0], [1, 3, 2, 3]);
+    laNghiem([[2, 0, -2], [0, 2, -1]], [0, 0], [2, 1, 2]);
+    laNghiem([[1, 0, -2], [0, 2, -3]], [0, 0], [4, 3, 2]);
+  });
+});

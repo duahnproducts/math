@@ -1,8 +1,19 @@
 ---
 // Đại số Ví dụ 1.4.1 — mạng đường một chiều. Sách gốc bản 2023 nhắc tới sơ đồ nhưng
 // không in hình, nên hình được vẽ lại từ chính các phương trình của ví dụ
-// (dữ liệu và test ở src/lib/mang.ts).
-import { MANG_VI_DU_1_4_1 as m, giuaCanh } from '@/lib/mang';
+// (dữ liệu và test ở src/lib/mang.ts). Bài giảng truyền mạng khác qua prop `mang`.
+import { MANG_VI_DU_1_4_1, giuaCanh, type Mang } from '@/lib/mang';
+
+interface Props {
+  mang?: Mang;
+  moTa?: string;
+  chuThich?: string;
+}
+const {
+  mang: m = MANG_VI_DU_1_4_1,
+  moTa = 'Mạng bốn giao lộ A, B, C, D với sáu đường một chiều f1 đến f6',
+  chuThich = 'Sơ đồ vẽ lại theo các phương trình của ví dụ: xe đi theo chiều mũi tên; 500 xe/giờ vào ở A, 400 và 100 xe/giờ ra ở B và C.',
+} = Astro.props;
 
 const chiSo = (t: string) => t.replace(/\d/g, (c) => '₀₁₂₃₄₅₆₇₈₉'[Number(c)]);
 const canh = m.canh.map((c) => {
@@ -22,7 +33,7 @@ const ngoai = m.ngoai.map((d) => {
 ---
 
 <figure class="hinh" aria-labelledby="hinh-mang-141-cap" data-hinh-mang>
-  <svg viewBox="0 0 440 240" width="440" role="img" aria-label="Mạng bốn giao lộ A, B, C, D với sáu đường một chiều f1 đến f6">
+  <svg viewBox="0 0 440 240" width="440" role="img" aria-label={moTa}>
     {
       canh.map((c) => (
         <g>
@@ -56,7 +67,5 @@ const ngoai = m.ngoai.map((d) => {
       ))
     }
   </svg>
-  <figcaption id="hinh-mang-141-cap">
-    Sơ đồ vẽ lại theo các phương trình của ví dụ: xe đi theo chiều mũi tên; 500 xe/giờ vào ở A, 400 và 100 xe/giờ ra ở B và C.
-  </figcaption>
+  <figcaption id="hinh-mang-141-cap">{chuThich}</figcaption>
 </figure>

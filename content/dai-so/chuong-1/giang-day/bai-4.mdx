@@ -1,0 +1,176 @@
+---
+mon: dai-so
+chuong: 1
+bai: 4
+tieu_de: Dòng chảy trong mạng
+y_tuong: Ở mỗi nút, lượng chảy vào bằng lượng chảy ra; mỗi nút cho một phương trình, và tham số cho biết ta còn được điều chỉnh bao nhiêu.
+phu_muc: ["1.4"]
+---
+
+import { MANG_BAI_GIANG_1_4 } from '@/lib/mang';
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+Ở mỗi ngã ba, **chảy vào bao nhiêu thì chảy ra bấy nhiêu**. Mỗi ngã ba cho một phương trình tuyến tính; giải hệ là biết mọi cách phân luồng có thể.
+</YTuong>
+
+## Hình dung trực quan
+
+Một hệ thống ống nước nhỏ: 50 lít mỗi phút đổ vào ở điểm $A$. Ở $B$ có một vòi lấy ra 30 lít/phút; ở $C$ có vòi lấy ra 20 lít/phút. Giữa các điểm có ba ống, nước chỉ chảy **theo chiều mũi tên**.
+
+<HinhMang141 mang={MANG_BAI_GIANG_1_4} moTa="Mạng ba nút A, B, C: 50 vào ở A, 30 ra ở B, 20 ra ở C, ba ống f1 từ A tới B, f2 từ A tới C, f3 từ B tới C" chuThich="Nước chảy theo chiều mũi tên. 50 lít/phút vào ở A; 30 và 20 lít/phút ra ở B và C." />
+
+Nước **không tự sinh ra, không tự mất đi** ở một ngã ba nào. Nên ở mỗi điểm, tổng vào phải bằng tổng ra. Cùng ý tưởng dùng cho dòng xe qua ngã tư, dòng tiền qua các tài khoản, dòng hàng qua các kho.
+
+Câu hỏi: mỗi ống phải dẫn bao nhiêu nước? Câu trả lời bất ngờ: **không chỉ một cách** — có cả một khoảng lựa chọn.
+
+## Kiến thức cần biết
+
+### a) Quy tắc nút
+
+Ở mỗi nút (điểm nối): **tổng dòng chảy vào = tổng dòng chảy ra**. Tính cả dòng từ bên ngoài vào và dòng ra bên ngoài.
+
+### b) Dòng chảy là ẩn
+
+Gọi lượng chảy trong mỗi ống là $f_1, f_2, \ldots$ Đây là các ẩn. Mỗi nút cho một phương trình tuyến tính theo các $f$.
+
+### c) Ống một chiều thì dòng không âm
+
+Nếu ống chỉ cho chảy theo một chiều, thì $f_i \ge 0$. Điều kiện này **không** nằm trong hệ phương trình — ta phải tự kiểm tra **sau khi** giải. Nó giới hạn khoảng giá trị của tham số.
+
+### d) Nghiệm có tham số (Bài 2)
+
+Nếu hệ có vô số nghiệm thì mạng có **nhiều cách phân luồng**. Tham số là "cái van" mà người vận hành được tự chỉnh.
+
+## Công thức
+
+Ở mỗi nút:
+
+$$
+\sum \text{dòng vào} = \sum \text{dòng ra}
+$$
+
+| Ký hiệu | Nghĩa |
+| --- | --- |
+| $\sum$ | "cộng tất cả lại" |
+| dòng vào | các ống có mũi tên **chỉ vào** nút, cộng với lượng đổ vào từ bên ngoài |
+| dòng ra | các ống có mũi tên **chỉ ra** khỏi nút, cộng với lượng lấy ra bên ngoài |
+
+Điều kiện để cả mạng có nghiệm: **tổng lượng đổ vào từ ngoài = tổng lượng lấy ra ngoài** (ở đây $50 = 30 + 20$). Nếu không, nước phải dồn ứ ở đâu đó — vô lý.
+
+## Ví dụ mẫu — phân luồng trong mạng ba nút
+
+Dùng mạng ở hình trên. Tìm mọi cách phân luồng $f_1, f_2, f_3$.
+
+#### Bước 1 — Đề cho gì?
+
+Ba nút $A, B, C$; ba ống một chiều $f_1$ ($A \to B$), $f_2$ ($A \to C$), $f_3$ ($B \to C$); 50 vào ở $A$, 30 ra ở $B$, 20 ra ở $C$.
+
+#### Bước 2 — Đề hỏi gì?
+
+Mọi bộ $(f_1, f_2, f_3)$ thoả quy tắc nút, **và** không âm vì ống một chiều.
+
+#### Bước 3 — Dùng kiến thức nào, và tại sao?
+
+Quy tắc nút cho hệ phương trình; giải bằng phép khử Gauss (Bài 2). Có ba ẩn mà các phương trình có thể trùng lặp, nên chuẩn bị gặp tham số.
+
+#### Bước 4 — Giải từng bước
+
+1. **Lập phương trình ở từng nút.**
+   - Nút $A$: vào 50; ra $f_1, f_2$. Vậy $f_1 + f_2 = 50$.
+   - Nút $B$: vào $f_1$; ra 30 và $f_3$. Vậy $f_1 - f_3 = 30$.
+   - Nút $C$: vào $f_2, f_3$; ra 20. Vậy $f_2 + f_3 = 20$.
+
+2. **Khử Gauss.**
+
+$$
+\left[\begin{array}{rrr|r} 1 & 1 & 0 & 50 \\ 1 & 0 & -1 & 30 \\ 0 & 1 & 1 & 20 \end{array}\right]
+\xrightarrow{R_2 - R_1}
+\left[\begin{array}{rrr|r} 1 & 1 & 0 & 50 \\ 0 & -1 & -1 & -20 \\ 0 & 1 & 1 & 20 \end{array}\right]
+$$
+
+$$
+\xrightarrow[R_3 - R_2]{R_2 \times (-1)}
+\left[\begin{array}{rrr|r} 1 & 1 & 0 & 50 \\ 0 & 1 & 1 & 20 \\ 0 & 0 & 0 & 0 \end{array}\right]
+\xrightarrow{R_1 - R_2}
+\left[\begin{array}{rrr|r} 1 & 0 & -1 & 30 \\ 0 & 1 & 1 & 20 \\ 0 & 0 & 0 & 0 \end{array}\right]
+$$
+
+   Hàng 3 thành $0 = 0$: một phương trình là thừa (vì $50 = 30 + 20$, nút cuối tự động cân bằng).
+
+3. **Đặt tham số.** Hạng 2, ba ẩn, nên có 1 tham số. Cột 3 không có số 1 dẫn đầu: đặt $f_3 = t$.
+
+$$
+f_1 = 30 + t, \qquad f_2 = 20 - t, \qquad f_3 = t
+$$
+
+4. **Áp điều kiện không âm.**
+   - $f_3 = t \ge 0$.
+   - $f_2 = 20 - t \ge 0$, nên $t \le 20$.
+   - $f_1 = 30 + t \ge 0$: luôn đúng khi $t \ge 0$.
+
+   Vậy $0 \le t \le 20$.
+
+#### Bước 5 — Kiểm tra kết quả
+
+Chọn $t = 5$: $f_1 = 35$, $f_2 = 15$, $f_3 = 5$.
+
+- Nút $A$: $35 + 15 = 50$ ✓
+- Nút $B$: vào 35, ra $30 + 5 = 35$ ✓
+- Nút $C$: vào $15 + 5 = 20$, ra 20 ✓
+
+Ý nghĩa: ống $f_3$ được dẫn từ 0 đến 20 lít/phút tuỳ ý. Dẫn nhiều qua $f_3$ thì $f_1$ phải gánh thêm, $f_2$ được bớt. Ống $f_1$ luôn mang **ít nhất 30** lít/phút.
+
+#### Bước 6 — Tóm tắt cách làm để tự áp dụng
+
+<TomTat>
+Đặt ẩn cho mỗi ống → mỗi nút viết "vào = ra" → khử Gauss → đặt tham số cho ẩn tự do → áp điều kiện không âm để tìm khoảng của tham số → thử một giá trị để kiểm tra mọi nút.
+</TomTat>
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Lỗi 1: Ngược chiều mũi tên">
+Ở nút $B$, ống $f_1$ **chảy vào** (mũi tên chỉ vào $B$), còn $f_3$ **chảy ra**. Viết nhầm $f_1 + f_3 = 30$ là ra một hệ khác hẳn. Trước khi viết, chỉ tay theo từng mũi tên.
+</Loi>
+
+<Loi tieuDe="Lỗi 2: Quên điều kiện không âm">
+Nghiệm $f_1 = 30 + t$, $f_2 = 20 - t$, $f_3 = t$ đúng về mặt đại số với **mọi** $t$. Nhưng $t = 25$ cho $f_2 = -5$: nước chảy ngược trong ống một chiều — không xảy ra được. Bài toán thực tế luôn cần bước này.
+</Loi>
+
+<Loi tieuDe="Lỗi 3: Hoảng khi gặp hàng 0 = 0">
+Với mạng kín, phương trình của nút cuối cùng luôn suy ra được từ các nút khác. Hàng $0 = 0$ là chuyện **bình thường**, không phải tính sai.
+</Loi>
+
+## Tóm tắt 30 giây
+
+- Mỗi nút: **vào = ra**. Mỗi nút một phương trình.
+- Ẩn là lượng chảy trong từng ống.
+- Thường có tham số → có nhiều cách phân luồng.
+- Ống một chiều ⇒ mọi $f_i \ge 0$ ⇒ tham số bị giới hạn trong một khoảng.
+
+<BaGoc>
+  <Goc ten="Hiểu">Không có gì tự sinh ra hay mất đi ở một nút, nên vào phải bằng ra.</Goc>
+  <Goc ten="Nhớ">Tổng ngoài vào = tổng ngoài ra; điều kiện $f_i \ge 0$ áp **sau** khi giải.</Goc>
+  <Goc ten="Làm">Lập phương trình từng nút → khử Gauss → tham số → khoảng của tham số.</Goc>
+</BaGoc>
+
+## Bài tập
+
+<BaiLuyen do_kho="de" so="4.1">
+Trong ví dụ mẫu, nếu muốn ống $f_2$ **không** dẫn nước ($f_2 = 0$), thì $f_1$ và $f_3$ bằng bao nhiêu? Kiểm tra ba nút.
+
+<GoiYNho>$f_2 = 20 - t = 0$ cho $t = 20$.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="4.2">
+Đổi đề: ở $C$ vòi lấy ra 25 lít/phút thay vì 20, các thứ khác giữ nguyên. Hệ còn có nghiệm không? Giải thích bằng cả phép khử Gauss **và** bằng lời.
+
+<GoiYNho>So tổng lượng đổ vào với tổng lượng lấy ra. Khi khử, hàng cuối sẽ thành $0 = c$ với $c$ bằng bao nhiêu?</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="4.3">
+Thêm ống thứ tư $f_4$ chảy từ $C$ ngược về $A$ (vẫn 50 vào ở $A$, 30 ra ở $B$, 20 ra ở $C$). Lập hệ, tìm nghiệm có bao nhiêu tham số, rồi tìm điều kiện của các tham số để mọi $f_i \ge 0$. Ống $f_1$ còn bắt buộc mang ít nhất 30 lít/phút nữa không?
+
+<GoiYNho tieuDe="Bạn sẽ cần">Bốn ẩn, hạng vẫn bằng 2, nên có 2 tham số. Luyện thêm với mạng trong sách: <XemMuc bai-tap="1.4.1" chu="Bài 1.4.1" />.</GoiYNho>
+</BaiLuyen>

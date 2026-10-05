@@ -1,0 +1,224 @@
+---
+mon: dai-so
+chuong: 1
+bai: 1
+tieu_de: Hệ phương trình và ba phép biến đổi
+y_tuong: Giải hệ là tìm bộ số làm đúng mọi phương trình cùng lúc; ta biến hệ khó thành hệ dễ mà không làm mất nghiệm nào.
+phu_muc: ["1.1"]
+---
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+Giải hệ phương trình là tìm những bộ số làm **đúng tất cả** các phương trình **cùng một lúc**. Cách làm: biến hệ khó thành hệ dễ bằng ba phép biến đổi **không làm mất, cũng không thêm** nghiệm nào.
+</YTuong>
+
+## Hình dung trực quan
+
+Bạn đi mua đồ uống hai lần:
+
+- Lần 1: **2 ly trà sữa + 1 cái bánh = 70 nghìn**.
+- Lần 2: **1 ly trà sữa + 1 cái bánh = 45 nghìn**.
+
+Hỏi mỗi món giá bao nhiêu?
+
+Không cần công thức, bạn cũng thấy: lần 1 mua **hơn đúng 1 ly trà sữa**, và trả **hơn 25 nghìn**. Vậy trà sữa giá 25 nghìn, bánh giá $45 - 25 = 20$ nghìn.
+
+Điều bạn vừa làm chính là **lấy phương trình này trừ phương trình kia**. Đó là một trong ba phép biến đổi của bài này.
+
+Mỗi phương trình hai ẩn là một **đường thẳng** trên mặt phẳng. Nghiệm của hệ là **điểm nằm trên cả hai đường**. Hai đường thẳng chỉ có ba cách đứng với nhau:
+
+<HinhBaTruongHop />
+
+- Cắt nhau → **đúng một** nghiệm.
+- Song song → **không có** nghiệm nào.
+- Trùng nhau → **vô số** nghiệm.
+
+Không bao giờ có chuyện "đúng 2 nghiệm" hay "đúng 5 nghiệm". Điều này đúng cả khi có nhiều ẩn hơn.
+
+## Kiến thức cần biết
+
+### a) Phương trình tuyến tính là gì?
+
+Là phương trình mà mỗi ẩn chỉ **nhân với một số rồi cộng lại**. Không bình phương, không nhân hai ẩn với nhau, không căn, không sin.
+
+| Tuyến tính | **Không** tuyến tính |
+| --- | --- |
+| $2x + 3y = 7$ | $x^2 + y = 7$ (có bình phương) |
+| $x_1 - x_2 + 5x_3 = 0$ | $xy = 4$ (hai ẩn nhân nhau) |
+| $\tfrac{1}{2}a - \sqrt{3}\,b = 1$ | $\sqrt{a} + b = 1$ (căn của ẩn) |
+
+Chú ý dòng cuối: $\sqrt{3}\,b$ vẫn tuyến tính, vì $\sqrt{3}$ chỉ là một **con số**. Cái bị cấm là căn **của ẩn**.
+
+### b) Hệ có nghiệm hay không
+
+- Hệ có ít nhất một nghiệm gọi là <ThuatNgu id="consistent">tương thích</ThuatNgu>.
+- Hệ không có nghiệm nào gọi là <ThuatNgu id="inconsistent">không tương thích</ThuatNgu>.
+
+### c) Ma trận bổ sung — viết hệ cho gọn
+
+Khi giải, tên ẩn ($x, y, z$) cứ lặp đi lặp lại. Ta bỏ chúng đi, chỉ giữ **các con số**, xếp thành bảng. Bảng đó gọi là <ThuatNgu id="augmented-matrix">ma trận bổ sung</ThuatNgu>.
+
+Ví dụ trà sữa ($x$ = giá trà sữa, $y$ = giá bánh):
+
+$$
+\begin{aligned} 2x + y &= 70 \\ x + y &= 45 \end{aligned}
+\quad\longrightarrow\quad
+\left[\begin{array}{rr|r} 2 & 1 & 70 \\ 1 & 1 & 45 \end{array}\right]
+$$
+
+Mỗi **hàng** là một phương trình. Mỗi **cột** bên trái vạch là một ẩn. Cột bên phải vạch là vế phải.
+
+## Công thức
+
+### Dạng chung của một phương trình tuyến tính
+
+$$
+a_1x_1 + a_2x_2 + \cdots + a_nx_n = b
+$$
+
+| Ký hiệu | Nghĩa |
+| --- | --- |
+| $x_1, \ldots, x_n$ | các **ẩn** — những số ta cần tìm |
+| $a_1, \ldots, a_n$ | các **hệ số** — số đứng trước mỗi ẩn, đề bài cho sẵn |
+| $b$ | **hằng số** ở vế phải, đề bài cho sẵn |
+| $n$ | số ẩn |
+
+### Ba phép biến đổi sơ cấp theo hàng
+
+Đây là ba việc **được phép làm** với ma trận bổ sung. Làm bao nhiêu lần cũng được, tập nghiệm không đổi.
+
+| Phép | Viết tắt | Đời thường |
+| --- | --- | --- |
+| I. Đổi chỗ hai hàng | $R_1 \leftrightarrow R_2$ | Đọc hai phương trình theo thứ tự khác — nghiệm đâu có đổi |
+| II. Nhân một hàng với số $k \ne 0$ | $R_2 \to 3R_2$ | "2 ly giá 50" cũng là "4 ly giá 100" |
+| III. Cộng $k$ lần hàng này vào hàng **khác** | $R_2 \to R_2 - 2R_1$ | Lấy hoá đơn này trừ bớt hoá đơn kia |
+
+**Tại sao không làm mất nghiệm?** Vì mỗi phép đều **làm ngược lại được**: đổi chỗ thì đổi lại; nhân $k$ thì nhân lại $\tfrac{1}{k}$; cộng $k$ lần thì trừ lại $k$ lần. Đi được và về được, nên hệ cũ và hệ mới có **đúng cùng** một tập nghiệm. Sách gọi đó là <XemMuc muc="1.1" chu="Định lý 1.1.1" />.
+
+## Ví dụ mẫu — giải một hệ ba ẩn
+
+Giải hệ
+
+$$
+\begin{aligned}
+x + y + z &= 6 \\
+2x - y + z &= 3 \\
+x + 2y - z &= 2
+\end{aligned}
+$$
+
+#### Bước 1 — Đề cho gì?
+
+Ba phương trình tuyến tính, ba ẩn $x, y, z$.
+
+#### Bước 2 — Đề hỏi gì?
+
+Tìm mọi bộ $(x, y, z)$ làm đúng **cả ba** phương trình.
+
+#### Bước 3 — Dùng kiến thức nào, và tại sao?
+
+Dùng ma trận bổ sung và ba phép biến đổi. *Tại sao?* Vì mục tiêu là **khử bớt ẩn**: làm cho hàng dưới chỉ còn ít ẩn, giải hàng đó trước, rồi đi ngược lên.
+
+#### Bước 4 — Giải từng bước
+
+Viết ma trận bổ sung:
+
+$$
+\left[\begin{array}{rrr|r} 1 & 1 & 1 & 6 \\ 2 & -1 & 1 & 3 \\ 1 & 2 & -1 & 2 \end{array}\right]
+$$
+
+1. **Xoá $x$ ở hàng 2 và hàng 3.** Dùng hàng 1 (có số 1 ở đầu, rất tiện):
+   $R_2 \to R_2 - 2R_1$ và $R_3 \to R_3 - R_1$.
+
+$$
+\left[\begin{array}{rrr|r} 1 & 1 & 1 & 6 \\ 0 & -3 & -1 & -9 \\ 0 & 1 & -2 & -4 \end{array}\right]
+$$
+
+2. **Đưa số 1 lên trước cho dễ tính.** Đổi chỗ $R_2 \leftrightarrow R_3$:
+
+$$
+\left[\begin{array}{rrr|r} 1 & 1 & 1 & 6 \\ 0 & 1 & -2 & -4 \\ 0 & -3 & -1 & -9 \end{array}\right]
+$$
+
+3. **Xoá $y$ ở hàng 3.** $R_3 \to R_3 + 3R_2$:
+
+$$
+\left[\begin{array}{rrr|r} 1 & 1 & 1 & 6 \\ 0 & 1 & -2 & -4 \\ 0 & 0 & -7 & -21 \end{array}\right]
+$$
+
+4. **Đọc từ dưới lên.**
+   - Hàng 3: $-7z = -21$, nên $z = 3$.
+   - Hàng 2: $y - 2z = -4$, nên $y = -4 + 2 \cdot 3 = 2$.
+   - Hàng 1: $x + y + z = 6$, nên $x = 6 - 2 - 3 = 1$.
+
+#### Bước 5 — Kiểm tra kết quả
+
+Thay $(x, y, z) = (1, 2, 3)$ vào hệ **gốc** (không phải hệ đã biến đổi):
+
+- $1 + 2 + 3 = 6$ ✓
+- $2 - 2 + 3 = 3$ ✓
+- $1 + 4 - 3 = 2$ ✓
+
+Hệ có **đúng một** nghiệm: $x = 1$, $y = 2$, $z = 3$.
+
+#### Bước 6 — Tóm tắt cách làm để tự áp dụng
+
+<TomTat>
+Viết ma trận bổ sung → dùng hàng có số 1 ở đầu để xoá cột đầu ở các hàng dưới → lặp lại với cột tiếp theo → đọc nghiệm từ hàng cuối đi lên → thay vào hệ **gốc** để kiểm tra.
+</TomTat>
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Lỗi 1: Quên biến đổi cột vế phải">
+Khi làm $R_2 \to R_2 - 2R_1$, phải trừ **cả số sau vạch**: $3 - 2 \cdot 6 = -9$. Nhiều bạn chỉ biến đổi phần hệ số rồi chép nguyên vế phải. Kết quả: ra một hệ khác hẳn, nghiệm sai.
+</Loi>
+
+<Loi tieuDe="Lỗi 2: Nhân một hàng với 0">
+Phép II đòi hỏi $k \ne 0$. Nhân với 0 thì cả hàng thành $0 = 0$, tức là **vứt bỏ** một phương trình. Hệ mới có thể có nhiều nghiệm hơn hệ cũ — sai luật "không thêm nghiệm".
+</Loi>
+
+<Loi tieuDe="Lỗi 3: Sửa hai hàng cùng lúc bằng nhau">
+Làm $R_1 \to R_1 - R_2$ **và cùng lúc** $R_2 \to R_2 - R_1$ là sai: hàng 2 phải dùng hàng 1 **đã đổi** chứ không phải hàng 1 cũ. Làm lần lượt từng phép, viết ra ma trận sau mỗi phép.
+</Loi>
+
+## Tóm tắt 30 giây
+
+- Phương trình tuyến tính: ẩn chỉ nhân với số rồi cộng lại.
+- Hệ có **0, 1, hoặc vô số** nghiệm. Không có số khác.
+- Viết hệ thành **ma trận bổ sung** cho gọn.
+- Ba phép được làm: **đổi chỗ** hai hàng, **nhân** một hàng với số khác 0, **cộng bội** của hàng này vào hàng khác. Tập nghiệm không đổi.
+
+<BaGoc>
+  <Goc ten="Hiểu">Mỗi phép biến đổi đều làm ngược lại được, nên không làm mất hay thêm nghiệm.</Goc>
+  <Goc ten="Nhớ">Ba phép: đổi chỗ, nhân $k \ne 0$, cộng $k$ lần hàng khác.</Goc>
+  <Goc ten="Làm">Khử cột đầu, rồi cột thứ hai… rồi đọc nghiệm từ dưới lên, cuối cùng thay vào hệ gốc.</Goc>
+</BaGoc>
+
+## Bài tập
+
+<BaiLuyen do_kho="de" so="1.1">
+Bộ $(x, y, z) = (2, -1, 0)$ có phải nghiệm của hệ sau không? Kiểm tra từng phương trình.
+
+$$
+\begin{aligned} x + 2y + 5z &= 0 \\ 3x - y + z &= 7 \end{aligned}
+$$
+
+<GoiYNho>Thay số vào **từng** phương trình. Chỉ cần một phương trình sai là bộ số không phải nghiệm.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="1.2">
+Viết ma trận bổ sung rồi giải hệ
+
+$$
+\begin{aligned} x - 2y &= 1 \\ 3x + y &= 10 \end{aligned}
+$$
+
+<GoiYNho>Làm $R_2 \to R_2 - 3R_1$ để xoá $x$ ở hàng 2. Đáp số để tự kiểm tra: $x = 3$.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="1.3">
+Xét hệ $x + y = 2$, $2x + 2y = k$. Với giá trị nào của $k$ thì hệ **vô nghiệm**? Với giá trị nào thì **vô số nghiệm**? Vì sao hệ này không bao giờ có **đúng một** nghiệm? Nối câu trả lời với hình ba trường hợp ở trên.
+
+<GoiYNho tieuDe="Bạn sẽ cần">Làm $R_2 \to R_2 - 2R_1$ rồi nhìn hàng thứ hai. Muốn luyện thêm, xem <XemMuc bai-tap="1.1.6" chu="Bài 1.1.6 trong sách" />.</GoiYNho>
+</BaiLuyen>
