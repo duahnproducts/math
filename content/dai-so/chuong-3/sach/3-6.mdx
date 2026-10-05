@@ -1,0 +1,175 @@
+---
+mon: dai-so
+chuong: 3
+muc: "3.6"
+tieu_de: "Ứng dụng: hệ thức truy hồi tuyến tính"
+tieu_de_en: An Application to Linear Recurrences
+loai: dich-nguyen-van
+nguon: "Dịch từ W. Keith Nicholson, Linear Algebra with Applications, Version 2023 – Revision A, Vretta-Lyryx Inc. (https://lyryx.com/linear-algebra-applications/), Mục 3.6. Bản dịch phát hành theo giấy phép CC BY-NC-SA 4.0, giống bản gốc. Thay đổi: dịch sang tiếng Việt, thêm ghi chú cho người học."
+---
+
+Thường xảy ra chuyện một bài toán giải được bằng cách tìm một dãy số $x_0, x_1, x_2, \ldots$ trong đó vài số đầu đã biết, còn các số sau được cho theo các số trước. Đây là một ví dụ tổ hợp trong đó mục tiêu là đếm số cách làm một việc gì đó.
+
+<ViDu so="3.6.1">
+Một nhà quy hoạch đô thị muốn xác định số cách $x_k$ để lấp đầy một dãy $k$ chỗ đỗ xe bằng ô tô con và xe tải, nếu mỗi xe tải chiếm hai chỗ. Tìm vài giá trị đầu của $x_k$.
+
+**Lời giải.** Rõ ràng $x_0 = 1$ và $x_1 = 1$, còn $x_2 = 2$ vì có thể là hai ô tô con hoặc một xe tải. Ta có $x_3 = 3$ (ba cấu hình là ccc, cT, Tc) và $x_4 = 5$ (cccc, ccT, cTc, Tcc, TT). Chìa khoá của phương pháp là tìm cách biểu diễn mỗi $x_k$ tiếp theo qua các giá trị trước. Ở đây ta khẳng định
+
+$$
+x_{k+2} = x_k + x_{k+1} \quad \text{với mọi } k \ge 0 \tag{3.11}
+$$
+
+Thật vậy, mọi cách lấp đầy $k + 2$ chỗ đều rơi vào một trong hai loại: hoặc một ô tô con đỗ ở chỗ đầu tiên (và $k + 1$ chỗ còn lại được lấp theo $x_{k+1}$ cách), hoặc một xe tải đỗ ở hai chỗ đầu (với $k$ chỗ còn lại được lấp theo $x_k$ cách). Do đó có $x_{k+1} + x_k$ cách lấp $k + 2$ chỗ.
+
+Hệ thức truy hồi (3.11) xác định $x_k$ với mọi $k \ge 2$ vì $x_0$ và $x_1$ đã cho. Vài giá trị đầu là
+
+$$
+x_0 = 1, \quad x_1 = 1, \quad x_2 = 2, \quad x_3 = 3, \quad x_4 = 5, \quad x_5 = 8, \ldots
+$$
+
+Rõ ràng ta có thể tìm $x_k$ với mọi $k$, nhưng ta mong muốn một “công thức” cho $x_k$ như một hàm của $k$. Hoá ra công thức như vậy tìm được bằng chéo hoá. Ta sẽ trở lại ví dụ này sau.
+</ViDu>
+
+Một dãy số $x_0, x_1, x_2, \ldots$ được gọi là cho **đệ quy** (*recursively*) nếu mỗi số trong dãy được xác định hoàn toàn bởi các số đứng trước nó. Các dãy như vậy xuất hiện thường xuyên trong toán học và khoa học máy tính. Công thức $x_{k+2} = x_{k+1} + x_k$ trong Ví dụ 3.6.1 là một ví dụ của **hệ thức truy hồi tuyến tính** (*linear recurrence relation*) *độ dài 2*, vì $x_{k+2}$ là tổng của hai số hạng đứng ngay trước; tổng quát, độ dài là $m$ nếu $x_{k+m}$ là tổng các bội của $x_k, x_{k+1}, \ldots, x_{k+m-1}$.
+
+Các dãy đệ quy tuyến tính đơn giản nhất có độ dài 1, tức là $x_{k+1}$ là một bội cố định của $x_k$ với mỗi $k$, chẳng hạn $x_{k+1} = ax_k$. Nếu $x_0$ cho trước thì $x_1 = ax_0$, $x_2 = a^2x_0$, và tiếp tục ta được $x_k = a^kx_0$ với mỗi $k \ge 0$, một công thức tường minh cho $x_k$.
+
+Các công thức như vậy không phải lúc nào cũng dễ tìm với mọi lựa chọn giá trị ban đầu. Đây là một ví dụ mà chéo hoá giúp ích.
+
+<ViDu so="3.6.2">
+Giả sử các số $x_0, x_1, x_2, \ldots$ được cho bởi hệ thức truy hồi tuyến tính
+
+$$
+x_{k+2} = x_{k+1} + 6x_k \quad \text{với } k \ge 0
+$$
+
+trong đó $x_0$ và $x_1$ cho trước. Tìm công thức cho $x_k$ khi $x_0 = 1$, $x_1 = 3$, và cũng khi $x_0 = 1$, $x_1 = 1$.
+
+**Lời giải.** Nếu $x_0 = 1$ và $x_1 = 3$ thì
+
+$$
+x_2 = 9, \quad x_3 = 27, \quad x_4 = 81
+$$
+
+và thấy rõ rằng $x_k = 3^k$ với $k = 0, 1, 2, 3, 4$. Công thức này đúng với mọi $k$, vì nó đúng với $k = 0$ và $k = 1$, và nó thoả mãn hệ thức truy hồi với mỗi $k$ (dễ kiểm tra).
+
+Tuy nhiên, nếu ta bắt đầu với $x_0 = 1$ và $x_1 = 1$ thì dãy tiếp tục
+
+$$
+x_2 = 7, \quad x_3 = 13, \quad x_4 = 55, \quad x_5 = 133, \ldots
+$$
+
+Trong trường hợp này dãy được xác định duy nhất nhưng không thấy công thức nào. Tuy nhiên, một mẹo đơn giản biến hệ thức truy hồi thành một hệ thức truy hồi *ma trận* mà kỹ thuật chéo hoá áp dụng được.
+
+Ý tưởng là tính dãy $\mathbf{v}_0, \mathbf{v}_1, \mathbf{v}_2, \ldots$ các cột thay vì các số, với
+
+$$
+\mathbf{v}_k = \begin{bmatrix} x_k \\ x_{k+1} \end{bmatrix} \quad \text{với mỗi } k \ge 0
+$$
+
+Khi đó $\mathbf{v}_0 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$ cho trước, và hệ thức truy hồi số biến thành hệ thức truy hồi ma trận:
+
+$$
+\mathbf{v}_{k+1} = \begin{bmatrix} x_{k+1} \\ x_{k+2} \end{bmatrix} = \begin{bmatrix} x_{k+1} \\ 6x_k + x_{k+1} \end{bmatrix} = \begin{bmatrix} 0 & 1 \\ 6 & 1 \end{bmatrix} \begin{bmatrix} x_k \\ x_{k+1} \end{bmatrix} = A\mathbf{v}_k
+$$
+
+với $A = \begin{bmatrix} 0 & 1 \\ 6 & 1 \end{bmatrix}$. Như vậy các cột $\mathbf{v}_k$ là một hệ động lực tuyến tính, nên Định lý 3.5.1 áp dụng được nếu $A$ chéo hoá được.
+
+Ta có $c_A(x) = (x - 3)(x + 2)$ nên các giá trị riêng là $\lambda_1 = 3$ và $\lambda_2 = -2$ với các vector riêng tương ứng $\mathbf{x}_1 = \begin{bmatrix} 1 \\ 3 \end{bmatrix}$ và $\mathbf{x}_2 = \begin{bmatrix} -1 \\ 2 \end{bmatrix}$. Vì $P = \begin{bmatrix} 1 & -1 \\ 3 & 2 \end{bmatrix}$ khả nghịch, nó là ma trận chéo hoá cho $A$. Các hệ số $b_i$ trong Định lý 3.5.1 là $\begin{bmatrix} b_1 \\ b_2 \end{bmatrix} = P^{-1}\mathbf{v}_0 = \begin{bmatrix} \frac{3}{5} \\ -\frac{2}{5} \end{bmatrix}$, nên định lý cho
+
+$$
+\begin{bmatrix} x_k \\ x_{k+1} \end{bmatrix} = \mathbf{v}_k = \frac{3}{5}3^k\begin{bmatrix} 1 \\ 3 \end{bmatrix} + \frac{-2}{5}(-2)^k\begin{bmatrix} -1 \\ 2 \end{bmatrix}
+$$
+
+So sánh các phần tử trên cho
+
+$$
+x_k = \frac{1}{5}\left[3^{k+1} - (-2)^{k+1}\right] \quad \text{với } k \ge 0
+$$
+
+Công thức này cho $x_0 = 1 = x_1$, và nó thoả hệ thức truy hồi, dễ kiểm chứng.
+</ViDu>
+
+Trở lại Ví dụ 3.6.1, các phương pháp này cho một công thức chính xác và một xấp xỉ tốt cho các số $x_k$ trong bài toán đó.
+
+<ViDu so="3.6.3">
+Trong Ví dụ 3.6.1, hãy tìm công thức cho $x_k$ và ước lượng nó với $k$ lớn.
+
+**Lời giải.** Ta đã thấy các số $x_k$ thoả $x_{k+2} = x_k + x_{k+1}$ với mọi $k \ge 0$. Viết $\mathbf{v}_k = \begin{bmatrix} x_k \\ x_{k+1} \end{bmatrix}$ như trước, hệ thức này trở thành
+
+$$
+\mathbf{v}_{k+1} = \begin{bmatrix} 0 & 1 \\ 1 & 1 \end{bmatrix}\mathbf{v}_k = A\mathbf{v}_k
+$$
+
+với $A = \begin{bmatrix} 0 & 1 \\ 1 & 1 \end{bmatrix}$. Hơn nữa $A$ chéo hoá được. Đa thức đặc trưng là $c_A(x) = x^2 - x - 1$ với các nghiệm $\frac{1}{2}(1 \pm \sqrt{5})$ theo công thức nghiệm bậc hai, nên $A$ có các giá trị riêng
+
+$$
+\lambda_1 = \tfrac{1}{2}\left(1 + \sqrt{5}\right) \qquad \text{và} \qquad \lambda_2 = \tfrac{1}{2}\left(1 - \sqrt{5}\right)
+$$
+
+Các vector riêng tương ứng là $\mathbf{x}_1 = \begin{bmatrix} 1 \\ \lambda_1 \end{bmatrix}$ và $\mathbf{x}_2 = \begin{bmatrix} 1 \\ \lambda_2 \end{bmatrix}$. Vì $P = \begin{bmatrix} 1 & 1 \\ \lambda_1 & \lambda_2 \end{bmatrix}$ khả nghịch, nó là ma trận chéo hoá. Ta tính các hệ số $b_1$, $b_2$:
+
+$$
+\begin{bmatrix} b_1 \\ b_2 \end{bmatrix} = P^{-1}\mathbf{v}_0 = \frac{1}{\sqrt{5}}\begin{bmatrix} \lambda_1 \\ -\lambda_2 \end{bmatrix}
+$$
+
+trong đó ta dùng $\lambda_1 + \lambda_2 = 1$. Do đó Định lý 3.5.1 cho
+
+$$
+\begin{bmatrix} x_k \\ x_{k+1} \end{bmatrix} = \mathbf{v}_k = \frac{\lambda_1}{\sqrt{5}}\lambda_1^k\begin{bmatrix} 1 \\ \lambda_1 \end{bmatrix} - \frac{\lambda_2}{\sqrt{5}}\lambda_2^k\begin{bmatrix} 1 \\ \lambda_2 \end{bmatrix}
+$$
+
+So sánh các phần tử trên cho công thức chính xác:
+
+$$
+x_k = \frac{1}{\sqrt{5}}\left[\lambda_1^{k+1} - \lambda_2^{k+1}\right] \quad \text{với } k \ge 0
+$$
+
+Cuối cùng, để ý rằng $\lambda_1$ là trội ở đây (thực ra $\lambda_1 = 1.618$ và $\lambda_2 = -0.618$ đến ba chữ số thập phân), nên $\lambda_2^{k+1}$ không đáng kể so với $\lambda_1^{k+1}$ khi $k$ lớn. Như vậy
+
+$$
+x_k \approx \frac{1}{\sqrt{5}}\lambda_1^{k+1} \quad \text{với mỗi } k \ge 0.
+$$
+
+Đây là xấp xỉ tốt, ngay cả với giá trị nhỏ như $k = 12$. Thật vậy, dùng lặp hệ thức truy hồi cho giá trị chính xác $x_{12} = 233$, còn xấp xỉ là $x_{12} \approx \frac{(1.618)^{13}}{\sqrt{5}} = 232.94$.
+</ViDu>
+
+Dãy $x_0, x_1, x_2, \ldots$ trong Ví dụ 3.6.3 lần đầu được Leonardo Pisano thành Pisa, còn gọi là **Fibonacci**, bàn đến năm 1202, và nay gọi là **dãy Fibonacci**. Nó được xác định hoàn toàn bởi $x_0 = 1$, $x_1 = 1$ và hệ thức $x_{k+2} = x_k + x_{k+1}$. Các số này đã được nghiên cứu hàng thế kỷ và có nhiều tính chất thú vị (thậm chí có cả một tạp chí, *Fibonacci Quarterly*, dành riêng cho chúng). Ví dụ, các nhà sinh học đã phát hiện rằng cách sắp xếp lá quanh thân của một số cây tuân theo khuôn mẫu Fibonacci. Công thức $x_k = \frac{1}{\sqrt{5}}\left[\lambda_1^{k+1} - \lambda_2^{k+1}\right]$ được gọi là **công thức Binet**. Nó đáng chú ý ở chỗ các $x_k$ là *số nguyên* còn $\lambda_1$, $\lambda_2$ thì *không*. Hiện tượng này có thể xảy ra ngay cả khi các giá trị riêng $\lambda_i$ là số phức không thực.
+
+<GhiChu tieuDe="Ghi chú cho người học — λ₁ chính là tỉ lệ vàng">
+Giá trị riêng trội $\lambda_1 = \frac{1 + \sqrt{5}}{2} \approx 1.618$ chính là **tỉ lệ vàng** (*golden ratio*), thường ký hiệu $\varphi$. Vì $x_k \approx \frac{1}{\sqrt{5}}\varphi^{k+1}$, tỉ số hai số Fibonacci liên tiếp tiến về $\varphi$ — một sự kiện nổi tiếng nay đã được giải thích hoàn toàn bằng đại số tuyến tính.
+
+**Bài tập lập trình gợi ý:** cài đặt ba cách tính $F_n$ rồi so sánh thời gian chạy:
+
+1. Đệ quy ngây thơ — $O(2^n)$, chậm khủng khiếp.
+2. Vòng lặp / quy hoạch động — $O(n)$.
+3. Luỹ thừa nhanh ma trận $A^n$ — $O(\log n)$.
+
+Bạn sẽ thấy rõ chênh lệch từ $n \approx 40$ trở đi. Lưu ý: dùng công thức Binet với số thực sẽ sai do sai số làm tròn khi $n$ lớn — một bài học hay về giới hạn của số dấu phẩy động.
+</GhiChu>
+
+Ta kết thúc bằng một ví dụ cho thấy hệ thức truy hồi *phi tuyến* có thể rất phức tạp.
+
+<ViDu so="3.6.4">
+Giả sử một dãy $x_0, x_1, x_2, \ldots$ thoả hệ thức truy hồi
+
+$$
+x_{k+1} = \begin{cases} \frac{1}{2}x_k & \text{nếu } x_k \text{ chẵn} \\ 3x_k + 1 & \text{nếu } x_k \text{ lẻ} \end{cases}
+$$
+
+Nếu $x_0 = 1$, dãy là $1, 4, 2, 1, 4, 2, 1, \ldots$ và cứ lặp vô hạn. Điều tương tự xảy ra nếu $x_0 = 7$. Khi đó dãy là
+
+$$
+7,\ 22,\ 11,\ 34,\ 17,\ 52,\ 26,\ 13,\ 40,\ 20,\ 10,\ 5,\ 16,\ 8,\ 4,\ 2,\ 1,\ \ldots
+$$
+
+và lại lặp. Tuy nhiên, *không ai biết* liệu mọi lựa chọn $x_0$ có cuối cùng dẫn về 1 hay không. Hoàn toàn có thể là với một $x_0$ nào đó, dãy sẽ tiếp tục sinh ra các giá trị khác nhau vô hạn, hoặc lặp lại một giá trị và quay vòng mà không bao giờ đạt tới 1. Không ai biết chắc.
+</ViDu>
+
+<GhiChu tieuDe="Ghi chú cho người học — giả thuyết Collatz">
+Ví dụ 3.6.4 chính là **giả thuyết Collatz** (còn gọi là bài toán $3n + 1$), một trong những bài toán mở nổi tiếng nhất của toán học. Nó đã được kiểm tra bằng máy tính với mọi $x_0$ đến khoảng $2^{68}$ và luôn đúng — nhưng vẫn chưa ai chứng minh được.
+
+Bài học quan trọng ở đây: chỉ cần thêm *một chút* phi tuyến (ở đây là “nếu chẵn / nếu lẻ”) là toàn bộ bộ máy đẹp đẽ của đại số tuyến tính — chéo hoá, giá trị riêng, công thức tường minh — *sụp đổ hoàn toàn*. Đó là lý do “tuyến tính” trong “đại số tuyến tính” là một điều kiện rất mạnh và rất quý.
+
+Đây cũng là lời nhắc cho người lập trình: kiểm tra bằng máy tính với hàng tỉ trường hợp *không phải* là chứng minh. Testing chỉ chứng minh được sự có mặt của lỗi, không chứng minh được sự vắng mặt của lỗi.
+</GhiChu>
