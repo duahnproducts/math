@@ -1,0 +1,173 @@
+---
+mon: dai-so
+chuong: 2
+bai: 4
+tieu_de: Ma trận nghịch đảo
+y_tuong: A⁻¹ là phép "làm ngược" của A; có nó thì giải Ax = b chỉ là x = A⁻¹b, và tìm nó bằng cách khử [A | I] thành [I | A⁻¹].
+phu_muc: ["2.4"]
+---
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+Ma trận nghịch đảo $A^{-1}$ là phép **làm ngược** của $A$: $A$ biến $\mathbf{x}$ thành $\mathbf{b}$, thì $A^{-1}$ biến $\mathbf{b}$ về lại $\mathbf{x}$. Không phải ma trận nào cũng làm ngược được.
+</YTuong>
+
+## Hình dung trực quan
+
+Hai bạn nhắn tin bí mật. Mỗi tin nhắn là một vector số, ví dụ $\mathbf{x} = (1, 2, 3)$. Người gửi **mã hoá** bằng cách nhân với một ma trận khoá $A$, gửi đi $\mathbf{b} = A\mathbf{x}$. Người nhận cần một ma trận "chìa khoá ngược" để **giải mã**: nhân $\mathbf{b}$ với nó và lấy lại đúng $\mathbf{x}$.
+
+Chìa khoá ngược đó là $A^{-1}$.
+
+Giống phép chia với số: muốn gỡ "nhân 5" thì "nhân $\tfrac{1}{5}$". Nhưng số 0 thì không gỡ được — mọi thứ nhân 0 đều thành 0, thông tin mất sạch. Với ma trận cũng có những ma trận "làm mất thông tin" như vậy, và chúng không có nghịch đảo.
+
+## Kiến thức cần biết
+
+### a) Định nghĩa
+
+Ma trận **vuông** $A$ cỡ $n \times n$ là <ThuatNgu id="invertible">khả nghịch</ThuatNgu> nếu có ma trận $B$ sao cho $AB = I$ và $BA = I$. Khi đó $B$ là <ThuatNgu id="inverse-matrix">ma trận nghịch đảo</ThuatNgu>, viết $A^{-1}$. Nghịch đảo nếu có thì **duy nhất**.
+
+### b) Khi nào khả nghịch?
+
+Với $A$ vuông $n \times n$, các câu sau **cùng đúng hoặc cùng sai** (sách: <XemMuc muc="2.4" chu="Định lý về nghịch đảo 2.4.5" />):
+
+- $A$ khả nghịch.
+- Hệ $A\mathbf{x} = \mathbf{0}$ chỉ có nghiệm tầm thường.
+- $A$ khử Gauss được về $I$ (hạng bằng $n$).
+- $A\mathbf{x} = \mathbf{b}$ có nghiệm với **mọi** $\mathbf{b}$.
+
+Nói đời thường: $A$ khả nghịch khi nó **không làm mất thông tin**.
+
+### c) Ma trận 2 × 2 — có công thức riêng
+
+Đại lượng $ad - bc$ của $\begin{bmatrix} a & b \\ c & d \end{bmatrix}$ gọi là <ThuatNgu id="determinant">định thức</ThuatNgu>. Bằng 0 thì không khả nghịch.
+
+## Công thức
+
+**Giải hệ bằng nghịch đảo.** Nếu $A$ khả nghịch thì hệ $A\mathbf{x} = \mathbf{b}$ có đúng một nghiệm:
+
+$$
+\mathbf{x} = A^{-1}\mathbf{b}
+$$
+
+(Nhân $A^{-1}$ vào bên **trái** hai vế: $A^{-1}A\mathbf{x} = A^{-1}\mathbf{b}$, mà $A^{-1}A = I$.)
+
+**Công thức 2 × 2:**
+
+$$
+\begin{bmatrix} a & b \\ c & d \end{bmatrix}^{-1} = \frac{1}{ad - bc}\begin{bmatrix} d & -b \\ -c & a \end{bmatrix} \qquad (ad - bc \ne 0)
+$$
+
+Nhớ: **đổi chỗ** hai số trên đường chéo chính, **đổi dấu** hai số còn lại, **chia** cho $ad - bc$.
+
+**Thuật toán cho mọi cỡ:** khử Gauss ma trận ghép $[A \mid I]$:
+
+$$
+[\,A \mid I\,] \xrightarrow{\text{biến đổi hàng}} [\,I \mid A^{-1}\,]
+$$
+
+Nếu bên trái không thành $I$ được (xuất hiện hàng 0) thì $A$ không khả nghịch.
+
+**Nghịch đảo của tích:** $(AB)^{-1} = B^{-1}A^{-1}$ — **đảo thứ tự**, như cởi giày trước rồi mới cởi tất.
+
+## Ví dụ mẫu — tìm nghịch đảo rồi giải mã
+
+Cho khoá $A = \begin{bmatrix} 1 & 1 & 0 \\ 0 & 1 & 1 \\ 1 & 2 & 2 \end{bmatrix}$. Tìm $A^{-1}$, rồi giải mã tin nhắn $\mathbf{b} = (3, 5, 11)$.
+
+#### Bước 1 — Đề cho gì?
+
+Ma trận vuông $3 \times 3$ là $A$, và vector đã mã hoá $\mathbf{b}$.
+
+#### Bước 2 — Đề hỏi gì?
+
+$A^{-1}$, và $\mathbf{x}$ sao cho $A\mathbf{x} = \mathbf{b}$.
+
+#### Bước 3 — Dùng kiến thức nào, và tại sao?
+
+Thuật toán $[A \mid I] \to [I \mid A^{-1}]$, vì $A$ cỡ $3 \times 3$ (công thức $2 \times 2$ không dùng được). Có $A^{-1}$ rồi thì $\mathbf{x} = A^{-1}\mathbf{b}$.
+
+#### Bước 4 — Giải từng bước
+
+$$
+\left[\begin{array}{rrr|rrr} 1 & 1 & 0 & 1 & 0 & 0 \\ 0 & 1 & 1 & 0 & 1 & 0 \\ 1 & 2 & 2 & 0 & 0 & 1 \end{array}\right]
+\xrightarrow{R_3 - R_1}
+\left[\begin{array}{rrr|rrr} 1 & 1 & 0 & 1 & 0 & 0 \\ 0 & 1 & 1 & 0 & 1 & 0 \\ 0 & 1 & 2 & -1 & 0 & 1 \end{array}\right]
+$$
+
+$$
+\xrightarrow{R_3 - R_2}
+\left[\begin{array}{rrr|rrr} 1 & 1 & 0 & 1 & 0 & 0 \\ 0 & 1 & 1 & 0 & 1 & 0 \\ 0 & 0 & 1 & -1 & -1 & 1 \end{array}\right]
+\xrightarrow{R_2 - R_3}
+\left[\begin{array}{rrr|rrr} 1 & 1 & 0 & 1 & 0 & 0 \\ 0 & 1 & 0 & 1 & 2 & -1 \\ 0 & 0 & 1 & -1 & -1 & 1 \end{array}\right]
+$$
+
+$$
+\xrightarrow{R_1 - R_2}
+\left[\begin{array}{rrr|rrr} 1 & 0 & 0 & 0 & -2 & 1 \\ 0 & 1 & 0 & 1 & 2 & -1 \\ 0 & 0 & 1 & -1 & -1 & 1 \end{array}\right]
+\qquad\Longrightarrow\qquad
+A^{-1} = \begin{bmatrix} 0 & -2 & 1 \\ 1 & 2 & -1 \\ -1 & -1 & 1 \end{bmatrix}
+$$
+
+Giải mã:
+
+$$
+\mathbf{x} = A^{-1}\mathbf{b} = \begin{bmatrix} 0 - 10 + 11 \\ 3 + 10 - 11 \\ -3 - 5 + 11 \end{bmatrix} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}
+$$
+
+#### Bước 5 — Kiểm tra kết quả
+
+- $AA^{-1}$: hàng 1 của $A$ là $(1, 1, 0)$ chấm ba cột của $A^{-1}$: $0 + 1 = 1$, $-2 + 2 = 0$, $1 - 1 = 0$ ✓. Làm tương tự hai hàng còn lại, ra đúng $I$.
+- Mã hoá lại: $A(1, 2, 3) = (1 + 2,\ 2 + 3,\ 1 + 4 + 6) = (3, 5, 11) = \mathbf{b}$ ✓.
+
+#### Bước 6 — Tóm tắt cách làm để tự áp dụng
+
+<TomTat>
+Ghép $[A \mid I]$ → khử Gauss đến khi bên trái là $I$ (nếu ra hàng 0 thì dừng: không khả nghịch) → bên phải là $A^{-1}$ → kiểm tra $AA^{-1} = I$ → giải hệ bằng $\mathbf{x} = A^{-1}\mathbf{b}$.
+</TomTat>
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Lỗi 1: Viết phép chia ma trận">
+Không có "$\mathbf{b} / A$" hay "$\dfrac{B}{A}$". Phải nói rõ nhân $A^{-1}$ bên **trái** hay bên **phải**, vì $A^{-1}B$ và $BA^{-1}$ thường khác nhau.
+</Loi>
+
+<Loi tieuDe="Lỗi 2: Quên đảo thứ tự">
+$(AB)^{-1} = B^{-1}A^{-1}$, không phải $A^{-1}B^{-1}$. Kiểm tra: $(AB)(B^{-1}A^{-1}) = A(BB^{-1})A^{-1} = AA^{-1} = I$.
+</Loi>
+
+<Loi tieuDe="Lỗi 3: Sai dấu trong công thức 2 × 2">
+Đường chéo chính **đổi chỗ** (không đổi dấu); đường chéo phụ **đổi dấu** (không đổi chỗ). Luôn nhân thử lại với $A$ xem có ra $I$ không — mất 30 giây mà tránh được mất điểm.
+</Loi>
+
+## Tóm tắt 30 giây
+
+- $A^{-1}$ làm ngược $A$: $AA^{-1} = A^{-1}A = I$.
+- Khả nghịch ⇔ không làm mất thông tin ⇔ $A\mathbf{x} = \mathbf{0}$ chỉ có nghiệm 0 ⇔ khử được về $I$.
+- $2 \times 2$: đổi chỗ, đổi dấu, chia $ad - bc$.
+- Mọi cỡ: $[A \mid I] \to [I \mid A^{-1}]$. Giải hệ: $\mathbf{x} = A^{-1}\mathbf{b}$.
+
+<BaGoc>
+  <Goc ten="Hiểu">Nghịch đảo tồn tại khi phép nhân với $A$ không làm mất thông tin, nên làm ngược được.</Goc>
+  <Goc ten="Nhớ">Công thức $2 \times 2$; $(AB)^{-1} = B^{-1}A^{-1}$.</Goc>
+  <Goc ten="Làm">Khử $[A \mid I]$ → kiểm tra $AA^{-1} = I$ → $\mathbf{x} = A^{-1}\mathbf{b}$.</Goc>
+</BaGoc>
+
+## Bài tập
+
+<BaiLuyen do_kho="de" so="4.1">
+Tìm nghịch đảo của $\begin{bmatrix} 3 & 5 \\ 1 & 2 \end{bmatrix}$ bằng công thức $2 \times 2$, rồi nhân thử để kiểm tra.
+
+<GoiYNho>$ad - bc = 6 - 5 = 1$, nên không có phân số.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="4.2">
+Với giá trị nào của $k$ thì $\begin{bmatrix} 2 & k \\ 4 & 6 \end{bmatrix}$ **không** khả nghịch? Giải thích bằng ngôn ngữ "mất thông tin": khi đó hai cột liên hệ với nhau thế nào?
+
+<GoiYNho>Giải $ad - bc = 0$. Khi đó cột 2 là bội của cột 1.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="4.3">
+Dùng $A^{-1}$ trong ví dụ mẫu để giải mã thêm hai tin $\mathbf{b}_1 = (2, 2, 4)$ và $\mathbf{b}_2 = (0, 1, 3)$. Vì sao có $A^{-1}$ rồi thì giải nhiều tin cùng khoá nhanh hơn khử Gauss từng tin? Rồi giải thích vì sao ma trận $\begin{bmatrix} 1 & 2 \\ 2 & 4 \end{bmatrix}$ là một khoá **tồi**: hai tin khác nhau nào bị mã hoá thành cùng một vector?
+
+<GoiYNho tieuDe="Bạn sẽ cần">Tìm $\mathbf{x} \ne \mathbf{0}$ với $A\mathbf{x} = \mathbf{0}$; khi đó $\mathbf{x}$ và $\mathbf{0}$ cho cùng một bản mã. Ý "giải nhiều hệ cùng một ma trận" sẽ quay lại ở <XemMuc bai={7} /> (phân tích LU).</GoiYNho>
+</BaiLuyen>

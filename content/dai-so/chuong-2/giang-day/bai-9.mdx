@@ -1,0 +1,170 @@
+---
+mon: dai-so
+chuong: 2
+bai: 9
+tieu_de: Xích Markov — dự báo bằng phép nhân ma trận
+y_tuong: Nhân vector xác suất hôm nay với ma trận chuyển là ra xác suất ngày mai; nhân mãi thì dồn về một trạng thái dừng giải được từ (I − P)s = 0.
+phu_muc: ["2.9"]
+---
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+Biết xác suất **hôm nay**, nhân với **ma trận chuyển** là ra xác suất **ngày mai**. Nhân mãi, xác suất thường dồn về một **trạng thái dừng** — tìm được bằng một hệ thuần nhất.
+</YTuong>
+
+## Hình dung trực quan
+
+Thời tiết ở một thị trấn chỉ có hai kiểu: **nắng** hoặc **mưa**. Người ta quan sát nhiều năm và thấy:
+
+- Hôm nay nắng thì ngày mai nắng với xác suất 0,8, mưa với xác suất 0,2.
+- Hôm nay mưa thì ngày mai nắng với xác suất 0,4, mưa với xác suất 0,6.
+
+Điều quan trọng: ngày mai **chỉ phụ thuộc vào hôm nay**, không cần nhớ hôm qua hay tuần trước. Hệ thống "không có trí nhớ dài" như vậy gọi là xích Markov.
+
+Hôm nay trời nắng. Ngày kia mưa với xác suất bao nhiêu? Sau một tháng thì sao? Phép nhân ma trận ở <XemMuc bai={2} /> trả lời cả hai câu.
+
+## Kiến thức cần biết
+
+### a) Vector trạng thái
+
+<ThuatNgu id="state-vector">Vector trạng thái</ThuatNgu> $\mathbf{s}_m$ ghi xác suất của từng trạng thái ở ngày $m$. Ví dụ $\mathbf{s}_0 = (1, 0)$: hôm nay chắc chắn nắng. Các phần tử **không âm** và **cộng lại bằng 1** (trời phải ở kiểu nào đó).
+
+### b) Ma trận chuyển
+
+<ThuatNgu id="transition-matrix">Ma trận chuyển</ThuatNgu> $P$: ô $p_{ij}$ = xác suất **từ trạng thái $j$ sang trạng thái $i$**. Mỗi **cột** là "từ một trạng thái, đi đâu", nên **tổng mỗi cột bằng 1**.
+
+$$
+P = \begin{array}{c|cc} & \text{từ nắng} & \text{từ mưa} \\ \hline \text{sang nắng} & 0{,}8 & 0{,}4 \\ \text{sang mưa} & 0{,}2 & 0{,}6 \end{array}
+$$
+
+### c) Hệ thuần nhất (Chương 1)
+
+Trạng thái dừng là nghiệm của một hệ thuần nhất có vô số nghiệm; ta chọn nghiệm có tổng bằng 1.
+
+## Công thức
+
+**Đi một bước:**
+
+$$
+\mathbf{s}_{m+1} = P\,\mathbf{s}_m \qquad\Longrightarrow\qquad \mathbf{s}_m = P^m\mathbf{s}_0
+$$
+
+| Ký hiệu | Nghĩa |
+| --- | --- |
+| $\mathbf{s}_m$ | xác suất các trạng thái ở bước $m$ |
+| $P\mathbf{s}_m$ | trộn các cột của $P$ theo $\mathbf{s}_m$: "nếu nắng thì đi theo cột 1, nếu mưa thì theo cột 2", có trọng số |
+
+Sách: <XemMuc muc="2.9" chu="Định lý 2.9.1" />.
+
+**Trạng thái dừng** $\mathbf{s}$: không đổi sau một bước, $P\mathbf{s} = \mathbf{s}$. Tương đương
+
+$$
+(I - P)\mathbf{s} = \mathbf{0}, \qquad \text{tổng các phần tử của } \mathbf{s} = 1
+$$
+
+Nếu $P$ <ThuatNgu id="regular-stochastic">chính quy</ThuatNgu> (một luỹ thừa nào đó của $P$ có mọi phần tử dương) thì trạng thái dừng là **duy nhất**, và $\mathbf{s}_m$ dồn về nó **dù xuất phát từ đâu** (<XemMuc muc="2.9" chu="Định lý 2.9.2" />).
+
+## Ví dụ mẫu — dự báo và trạng thái dừng
+
+Với $P$ ở trên, hôm nay nắng: $\mathbf{s}_0 = (1, 0)$. (a) Tính xác suất mưa vào ngày kia. (b) Về lâu dài, bao nhiêu phần trăm số ngày có nắng?
+
+#### Bước 1 — Đề cho gì?
+
+Ma trận chuyển $P$ (tổng mỗi cột bằng 1 ✓) và trạng thái ban đầu $\mathbf{s}_0 = (1, 0)$.
+
+#### Bước 2 — Đề hỏi gì?
+
+(a) Phần tử thứ hai của $\mathbf{s}_2$. (b) Trạng thái dừng $\mathbf{s}$.
+
+#### Bước 3 — Dùng kiến thức nào, và tại sao?
+
+(a) Nhân $P$ hai lần. (b) Giải $(I - P)\mathbf{s} = \mathbf{0}$ với tổng bằng 1. $P$ có mọi phần tử dương nên chính quy — trạng thái dừng duy nhất, và đó chính là "lâu dài".
+
+#### Bước 4 — Giải từng bước
+
+**(a)**
+
+$$
+\mathbf{s}_1 = P\mathbf{s}_0 = \begin{bmatrix} 0{,}8 \\ 0{,}2 \end{bmatrix},
+\qquad
+\mathbf{s}_2 = P\mathbf{s}_1 = \begin{bmatrix} 0{,}8 \cdot 0{,}8 + 0{,}4 \cdot 0{,}2 \\ 0{,}2 \cdot 0{,}8 + 0{,}6 \cdot 0{,}2 \end{bmatrix} = \begin{bmatrix} 0{,}72 \\ 0{,}28 \end{bmatrix}
+$$
+
+Xác suất mưa vào ngày kia: **0,28**.
+
+**(b)** $I - P = \begin{bmatrix} 0{,}2 & -0{,}4 \\ -0{,}2 & 0{,}4 \end{bmatrix}$. Hàng 2 bằng $-1$ lần hàng 1, nên chỉ còn một phương trình:
+
+$$
+0{,}2s_1 - 0{,}4s_2 = 0 \quad\Longrightarrow\quad s_1 = 2s_2
+$$
+
+Đặt $s_2 = t$ thì $s_1 = 2t$. Tổng bằng 1: $3t = 1$, nên $t = \tfrac{1}{3}$.
+
+$$
+\mathbf{s} = \left(\tfrac{2}{3}, \tfrac{1}{3}\right)
+$$
+
+Về lâu dài, khoảng **67%** số ngày có nắng.
+
+#### Bước 5 — Kiểm tra kết quả
+
+- $P\mathbf{s} = \left(0{,}8 \cdot \tfrac{2}{3} + 0{,}4 \cdot \tfrac{1}{3},\ 0{,}2 \cdot \tfrac{2}{3} + 0{,}6 \cdot \tfrac{1}{3}\right) = \left(\tfrac{2}{3}, \tfrac{1}{3}\right) = \mathbf{s}$ ✓.
+- Nhìn dãy xác suất nắng: tiến dần về $\tfrac{2}{3} \approx 0{,}667$ ✓.
+
+| Ngày $m$ | 0 | 1 | 2 | 3 | 4 |
+| --- | --- | --- | --- | --- | --- |
+| Xác suất nắng | 1 | 0,8 | 0,72 | 0,688 | 0,6752 |
+
+#### Bước 6 — Tóm tắt cách làm để tự áp dụng
+
+<TomTat>
+Lập $P$ theo cột (từ $j$ sang $i$), kiểm tra tổng mỗi cột bằng 1 → dự báo: nhân $P$ liên tiếp → lâu dài: giải $(I - P)\mathbf{s} = \mathbf{0}$, chọn nghiệm có tổng bằng 1 → kiểm tra $P\mathbf{s} = \mathbf{s}$.
+</TomTat>
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Lỗi 1: Lập P theo hàng">
+Ở đây quy ước **cột** là "từ", **hàng** là "sang", và tổng mỗi **cột** bằng 1. Nếu bạn thấy tổng mỗi **hàng** bằng 1 thì đó là $P^T$ — có sách dùng quy ước này, nhưng khi đó phải nhân vector ở bên trái. Đừng trộn hai quy ước.
+</Loi>
+
+<Loi tieuDe="Lỗi 2: Quên điều kiện tổng bằng 1">
+$(I - P)\mathbf{s} = \mathbf{0}$ có vô số nghiệm, ví dụ $(2, 1)$ hay $(20, 10)$. Chỉ nghiệm có tổng bằng 1 mới là xác suất.
+</Loi>
+
+<Loi tieuDe="Lỗi 3: Nghĩ trạng thái dừng phụ thuộc hôm nay">
+Với $P$ chính quy, xuất phát nắng hay mưa đều dồn về cùng $\left(\tfrac{2}{3}, \tfrac{1}{3}\right)$. Hôm nay chỉ ảnh hưởng vài ngày đầu.
+</Loi>
+
+## Tóm tắt 30 giây
+
+- $\mathbf{s}_{m+1} = P\mathbf{s}_m$: hôm nay nhân $P$ ra ngày mai.
+- Cột $j$ của $P$: từ trạng thái $j$ đi đâu. Tổng mỗi cột bằng 1.
+- Trạng thái dừng: $(I - P)\mathbf{s} = \mathbf{0}$, tổng bằng 1.
+- $P$ chính quy ⇒ dồn về trạng thái dừng duy nhất, bất kể xuất phát.
+
+<BaGoc>
+  <Goc ten="Hiểu">Ngày mai chỉ phụ thuộc hôm nay; nhân ma trận chính là "trộn" các khả năng.</Goc>
+  <Goc ten="Nhớ">$\mathbf{s}_m = P^m\mathbf{s}_0$. Trạng thái dừng: $P\mathbf{s} = \mathbf{s}$, tổng bằng 1.</Goc>
+  <Goc ten="Làm">Lập $P$ theo cột → nhân để dự báo → giải hệ thuần nhất cho lâu dài.</Goc>
+</BaGoc>
+
+## Bài tập
+
+<BaiLuyen do_kho="de" so="9.1">
+Với $P$ trong ví dụ mẫu, nếu hôm nay **mưa** ($\mathbf{s}_0 = (0, 1)$), tính xác suất nắng vào ngày mai và ngày kia.
+
+<GoiYNho>$\mathbf{s}_1$ chính là cột 2 của $P$. Đáp số để kiểm tra: ngày kia nắng với xác suất $0{,}56$.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="9.2">
+Một người đi làm bằng xe buýt hoặc xe máy. Hôm nay đi xe buýt thì mai đi xe buýt với xác suất 0,7; hôm nay đi xe máy thì mai đi xe buýt với xác suất 0,5. Lập $P$ và tìm trạng thái dừng.
+
+<GoiYNho>Cột 1 (từ xe buýt): $(0{,}7;\ 0{,}3)$. Đáp số để kiểm tra: lâu dài đi xe buýt $\tfrac{5}{8}$ số ngày.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="9.3">
+Cho $P = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}$. Tính $\mathbf{s}_1, \mathbf{s}_2, \mathbf{s}_3$ khi $\mathbf{s}_0 = (1, 0)$. Dãy có dồn về đâu không? Trạng thái dừng có tồn tại không? Điều gì trong định nghĩa "chính quy" bị vi phạm?
+
+<GoiYNho tieuDe="Bạn sẽ cần">Tính vài luỹ thừa $P^2, P^3$: có luỹ thừa nào có mọi phần tử dương không? Xem thêm ví dụ hai nhà hàng có hình hội tụ ở <XemMuc muc="2.9" chu="Mục 2.9" />.</GoiYNho>
+</BaiLuyen>

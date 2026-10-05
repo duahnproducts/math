@@ -1,0 +1,164 @@
+---
+mon: dai-so
+chuong: 2
+bai: 7
+tieu_de: Phân tích LU — khử một lần, giải nhiều lần
+y_tuong: Tách A = LU thành hai ma trận tam giác; giải hệ tam giác chỉ là thế từng bước, nên khử Gauss một lần là dùng lại được cho mọi vế phải.
+phu_muc: ["2.7"]
+---
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+Tách $A$ thành **tích hai ma trận tam giác** $A = LU$. Hệ có ma trận tam giác giải rất nhanh (thế từng ẩn), nên khử Gauss **một lần** để có $L$, $U$ là giải được **mọi** vế phải $\mathbf{b}$.
+</YTuong>
+
+## Hình dung trực quan
+
+Một nhà máy hằng ngày phải giải cùng một hệ $A\mathbf{x} = \mathbf{b}$: ma trận $A$ (cấu trúc dây chuyền) **không đổi**, chỉ có $\mathbf{b}$ (đơn hàng trong ngày) thay đổi.
+
+Khử Gauss lại từ đầu mỗi sáng là phí công: phần tốn sức nhất — khử các cột của $A$ — lần nào cũng giống hệt nhau. Giống nấu cơm cho cả tuần: **sơ chế một lần** (rửa, thái, ướp), mỗi ngày chỉ việc **nấu nhanh**.
+
+Phân tích LU là "sơ chế": nó cất kết quả khử Gauss vào hai ma trận tam giác. Mỗi $\mathbf{b}$ mới chỉ cần hai lượt thế đơn giản.
+
+## Kiến thức cần biết
+
+### a) Ma trận tam giác
+
+- <ThuatNgu id="upper-triangular">Tam giác trên</ThuatNgu>: mọi số **dưới** đường chéo chính bằng 0. Ma trận dạng bậc thang là tam giác trên.
+- <ThuatNgu id="lower-triangular">Tam giác dưới</ThuatNgu>: mọi số **trên** đường chéo chính bằng 0.
+
+### b) Giải hệ tam giác — chỉ cần thế
+
+- $U\mathbf{x} = \mathbf{y}$ ($U$ tam giác trên): giải ẩn **cuối** trước rồi đi ngược lên — <ThuatNgu id="back-substitution">thế ngược</ThuatNgu> (như Chương 1).
+- $L\mathbf{y} = \mathbf{b}$ ($L$ tam giác dưới): giải ẩn **đầu** trước rồi đi xuống — <ThuatNgu id="forward-substitution">thế xuôi</ThuatNgu>.
+
+### c) Cách dựng L theo sách
+
+Khử Gauss $A$ về bậc thang $U$ (có các số 1 dẫn đầu) **không đổi chỗ hàng**. Ở mỗi bước, trước khi chia hàng để tạo số 1, ghi lại **cột đang khử** (từ hàng đang xét trở xuống). Xếp các cột ghi được vào $L$, phía trên điền 0. Sách: <XemMuc muc="2.7" chu="Thuật toán LU" />.
+
+## Công thức
+
+$$
+A = LU \qquad\Longrightarrow\qquad A\mathbf{x} = \mathbf{b} \iff \begin{cases} L\mathbf{y} = \mathbf{b} & \text{(thế xuôi, tìm } \mathbf{y}) \\ U\mathbf{x} = \mathbf{y} & \text{(thế ngược, tìm } \mathbf{x}) \end{cases}
+$$
+
+| Ký hiệu | Nghĩa |
+| --- | --- |
+| $L$ | ma trận tam giác **dưới** (Lower), ghi lại các cột đã khử |
+| $U$ | ma trận tam giác **trên** (Upper) — chính là dạng bậc thang của $A$ |
+| $\mathbf{y}$ | vector trung gian: $\mathbf{y} = U\mathbf{x}$ |
+
+Vì sao đúng? $A\mathbf{x} = L(U\mathbf{x}) = L\mathbf{y}$. Nên giải $L\mathbf{y} = \mathbf{b}$ trước, rồi $U\mathbf{x} = \mathbf{y}$.
+
+## Ví dụ mẫu — phân tích rồi giải
+
+Cho $A = \begin{bmatrix} 2 & 4 & 2 \\ 1 & 3 & 4 \\ -1 & 1 & 9 \end{bmatrix}$. Tìm $A = LU$, rồi giải $A\mathbf{x} = \mathbf{b}$ với $\mathbf{b} = (8, 8, 9)$.
+
+#### Bước 1 — Đề cho gì?
+
+Ma trận vuông $3 \times 3$ là $A$ và một vế phải $\mathbf{b}$.
+
+#### Bước 2 — Đề hỏi gì?
+
+Hai ma trận tam giác $L$, $U$ với $A = LU$; rồi nghiệm $\mathbf{x}$.
+
+#### Bước 3 — Dùng kiến thức nào, và tại sao?
+
+Thuật toán LU: khử Gauss không đổi chỗ hàng, ghi lại từng cột đang khử. Rồi giải hai hệ tam giác thay vì khử lại $[A \mid \mathbf{b}]$.
+
+#### Bước 4 — Giải từng bước
+
+**Phần 1 — Khử và ghi cột.**
+
+1. Cột 1 là $(2, 1, -1)$. **Ghi lại** $\mathbf{c}_1 = (2, 1, -1)$. Chia hàng 1 cho 2, rồi khử:
+$$
+\begin{bmatrix} 2 & 4 & 2 \\ 1 & 3 & 4 \\ -1 & 1 & 9 \end{bmatrix}
+\to
+\begin{bmatrix} 1 & 2 & 1 \\ 1 & 3 & 4 \\ -1 & 1 & 9 \end{bmatrix}
+\xrightarrow[R_3 + R_1]{R_2 - R_1}
+\begin{bmatrix} 1 & 2 & 1 \\ 0 & 1 & 3 \\ 0 & 3 & 10 \end{bmatrix}
+$$
+2. Xét từ hàng 2 xuống, cột 2 là $(1, 3)$. **Ghi lại** $\mathbf{c}_2 = (1, 3)$. Hàng 2 đã có số 1; khử $R_3 \to R_3 - 3R_2$:
+$$
+\begin{bmatrix} 1 & 2 & 1 \\ 0 & 1 & 3 \\ 0 & 0 & 1 \end{bmatrix} = U
+$$
+3. Xét hàng 3, cột 3 là $(1)$. **Ghi lại** $\mathbf{c}_3 = (1)$.
+
+Xếp các cột ghi lại vào $L$:
+
+$$
+L = \begin{bmatrix} 2 & 0 & 0 \\ 1 & 1 & 0 \\ -1 & 3 & 1 \end{bmatrix}, \qquad U = \begin{bmatrix} 1 & 2 & 1 \\ 0 & 1 & 3 \\ 0 & 0 & 1 \end{bmatrix}
+$$
+
+**Phần 2 — Thế xuôi $L\mathbf{y} = \mathbf{b}$:**
+
+- $2y_1 = 8$, nên $y_1 = 4$.
+- $y_1 + y_2 = 8$, nên $y_2 = 4$.
+- $-y_1 + 3y_2 + y_3 = 9$, nên $y_3 = 9 + 4 - 12 = 1$.
+
+**Phần 3 — Thế ngược $U\mathbf{x} = \mathbf{y} = (4, 4, 1)$:**
+
+- $x_3 = 1$.
+- $x_2 + 3x_3 = 4$, nên $x_2 = 1$.
+- $x_1 + 2x_2 + x_3 = 4$, nên $x_1 = 1$.
+
+Nghiệm: $\mathbf{x} = (1, 1, 1)$.
+
+#### Bước 5 — Kiểm tra kết quả
+
+- $LU$, hàng 3: $-1 \cdot (1, 2, 1) + 3 \cdot (0, 1, 3) + 1 \cdot (0, 0, 1) = (-1, 1, 9)$ ✓ — đúng hàng 3 của $A$. Hai hàng còn lại kiểm tra tương tự.
+- $A(1, 1, 1)$ = tổng mỗi hàng của $A$ $= (8, 8, 9) = \mathbf{b}$ ✓.
+
+#### Bước 6 — Tóm tắt cách làm để tự áp dụng
+
+<TomTat>
+Khử Gauss không đổi chỗ hàng, trước mỗi bước ghi lại cột đang khử → các cột đó xếp thành $L$, kết quả khử là $U$ → mỗi $\mathbf{b}$: thế xuôi tìm $\mathbf{y}$, thế ngược tìm $\mathbf{x}$ → kiểm tra $A\mathbf{x} = \mathbf{b}$.
+</TomTat>
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Lỗi 1: Giải U trước L">
+Thứ tự là $L\mathbf{y} = \mathbf{b}$ **trước**, $U\mathbf{x} = \mathbf{y}$ **sau** — vì $\mathbf{b} = L(U\mathbf{x})$, lớp ngoài cùng là $L$. Giải $U\mathbf{x} = \mathbf{b}$ là sai.
+</Loi>
+
+<Loi tieuDe="Lỗi 2: Đổi chỗ hàng trong lúc khử">
+Thuật toán LU đơn giản cần khử **không đổi chỗ hàng**. Nếu bắt buộc phải đổi (gặp số 0 ở vị trí trụ), ta được dạng $PA = LU$ với $P$ là <ThuatNgu id="permutation-matrix">ma trận hoán vị</ThuatNgu> — xem <XemMuc muc="2.7" chu="Định lý 2.7.2" />.
+</Loi>
+
+<Loi tieuDe="Lỗi 3: Ghi cột sau khi đã chia">
+Cột ghi vào $L$ là cột **trước khi** chia để tạo số 1 dẫn đầu. Ghi sau khi chia thì đường chéo của $L$ toàn số 1 — không khớp với $U$ đã có số 1 dẫn đầu, và $LU \ne A$.
+</Loi>
+
+## Tóm tắt 30 giây
+
+- $A = LU$: $L$ tam giác dưới, $U$ tam giác trên (bậc thang).
+- Dựng: khử Gauss không đổi chỗ hàng, ghi cột đang khử vào $L$.
+- Giải: $L\mathbf{y} = \mathbf{b}$ (thế xuôi), rồi $U\mathbf{x} = \mathbf{y}$ (thế ngược).
+- Lợi ích: khử một lần, giải nhanh cho mọi $\mathbf{b}$.
+
+<BaGoc>
+  <Goc ten="Hiểu">$L$ và $U$ cất sẵn công khử Gauss, để không phải làm lại mỗi lần đổi vế phải.</Goc>
+  <Goc ten="Nhớ">Ghi cột trước khi chia. $L$ trước, $U$ sau.</Goc>
+  <Goc ten="Làm">Khử và ghi cột → kiểm tra $LU = A$ → thế xuôi → thế ngược.</Goc>
+</BaGoc>
+
+## Bài tập
+
+<BaiLuyen do_kho="de" so="7.1">
+Dùng lại $L$, $U$ trong ví dụ mẫu để giải $A\mathbf{x} = (2, 1, -1)$. **Không** khử lại $A$.
+
+<GoiYNho>Đáp số để kiểm tra: $\mathbf{x} = (1, 0, 0)$ — vì $\mathbf{b}$ chính là cột 1 của $A$.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="7.2">
+Tìm phân tích LU của $A = \begin{bmatrix} 3 & 6 \\ 2 & 7 \end{bmatrix}$, kiểm tra $LU = A$, rồi giải $A\mathbf{x} = (9, 9)$.
+
+<GoiYNho>Ghi $\mathbf{c}_1 = (3, 2)$. Sau khi khử, phần còn lại ở hàng 2 cột 2 là $3$, nên $\mathbf{c}_2 = (3)$.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="7.3">
+Ma trận $\begin{bmatrix} 0 & 1 \\ 1 & 1 \end{bmatrix}$ có phân tích $LU$ (không đổi chỗ hàng) không? Vì sao? Đổi chỗ hai hàng thì sao — tìm $P$, $L$, $U$ với $PA = LU$.
+
+<GoiYNho tieuDe="Bạn sẽ cần">Thử viết $L = \begin{bmatrix} a & 0 \\ b & c \end{bmatrix}$, $U = \begin{bmatrix} 1 & d \\ 0 & 1 \end{bmatrix}$ rồi so ô góc trên trái của $LU$ với $A$. Ma trận hoán vị $P$ là ma trận sơ cấp loại I ở <XemMuc bai={5} />.</GoiYNho>
+</BaiLuyen>

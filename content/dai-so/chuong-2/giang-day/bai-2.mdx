@@ -1,0 +1,168 @@
+---
+mon: dai-so
+chuong: 2
+bai: 2
+tieu_de: Nhân ma trận với vector
+y_tuong: Ax là pha trộn các cột của A theo công thức x; nhờ vậy cả một hệ phương trình gọn lại thành Ax = b.
+phu_muc: ["2.2"]
+---
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+$A\mathbf{x}$ là **pha trộn các cột của $A$** theo "công thức" $\mathbf{x}$: lấy cột 1 nhân $x_1$, cột 2 nhân $x_2$, … rồi cộng lại. Nhờ vậy cả một hệ phương trình viết gọn thành $A\mathbf{x} = \mathbf{b}$.
+</YTuong>
+
+## Hình dung trực quan
+
+Ba món ăn sáng, mỗi món có lượng đạm và tinh bột (gam) như sau — mỗi **cột** là một món:
+
+$$
+A = \begin{array}{c|ccc} & \text{cơm} & \text{trứng} & \text{sữa} \\ \hline \text{đạm} & 4 & 6 & 8 \\ \text{tinh bột} & 45 & 1 & 12 \end{array}
+$$
+
+Bạn ăn 2 phần cơm, 3 quả trứng, 1 hộp sữa: $\mathbf{x} = (2, 3, 1)$. Tổng đạm và tinh bột là bao nhiêu?
+
+$$
+2\begin{bmatrix} 4 \\ 45 \end{bmatrix} + 3\begin{bmatrix} 6 \\ 1 \end{bmatrix} + 1\begin{bmatrix} 8 \\ 12 \end{bmatrix} = \begin{bmatrix} 8 + 18 + 8 \\ 90 + 3 + 12 \end{bmatrix} = \begin{bmatrix} 34 \\ 105 \end{bmatrix}
+$$
+
+Đó chính là $A\mathbf{x}$: **34 g đạm, 105 g tinh bột**. Mỗi cột là một "nguyên liệu", $\mathbf{x}$ là "số phần", kết quả là "tổng hợp".
+
+## Kiến thức cần biết
+
+### a) Vector là một cột số
+
+Một <ThuatNgu id="n-vector">vector</ThuatNgu> trong $\mathbb{R}^n$ là một cột gồm $n$ số. Tập mọi vector như vậy ký hiệu $\mathbb{R}^n$. Để tiết kiệm chỗ, ta hay viết ngang: $\mathbf{x} = (2, 3, 1)$, nhưng hiểu là một cột.
+
+### b) Tổ hợp tuyến tính (nhắc lại từ Chương 1)
+
+"Nhân mỗi vector với một số rồi cộng lại." $A\mathbf{x}$ chính là một tổ hợp tuyến tính các cột của $A$.
+
+### c) Tích vô hướng
+
+<ThuatNgu id="dot-product">Tích vô hướng</ThuatNgu> của hai vector cùng số phần tử: nhân từng cặp rồi cộng.
+
+$$
+(1, 2, -1) \cdot (2, -1, 3) = 1 \cdot 2 + 2 \cdot (-1) + (-1) \cdot 3 = -3
+$$
+
+### d) Ma trận đơn vị
+
+<ThuatNgu id="identity-matrix">Ma trận đơn vị</ThuatNgu> $I$: số 1 trên đường chéo chính, 0 ở chỗ khác. $I\mathbf{x} = \mathbf{x}$ — như nhân với số 1.
+
+## Công thức
+
+Cho $A$ cỡ $m \times n$ với các cột $\mathbf{a}_1, \ldots, \mathbf{a}_n$, và $\mathbf{x} = (x_1, \ldots, x_n)$:
+
+$$
+A\mathbf{x} = x_1\mathbf{a}_1 + x_2\mathbf{a}_2 + \cdots + x_n\mathbf{a}_n
+$$
+
+| Ký hiệu | Nghĩa |
+| --- | --- |
+| $\mathbf{a}_j$ | cột thứ $j$ của $A$ — một vector có $m$ số |
+| $x_j$ | phần tử thứ $j$ của $\mathbf{x}$ — "lấy bao nhiêu" cột $j$ |
+| $A\mathbf{x}$ | kết quả: một vector có **$m$** số (bằng số hàng của $A$) |
+
+**Cách tính nhanh — quy tắc tích vô hướng:** phần tử thứ $i$ của $A\mathbf{x}$ = (hàng $i$ của $A$) $\cdot$ $\mathbf{x}$. Hai cách luôn ra cùng một kết quả (sách: <XemMuc muc="2.2" chu="Định lý 2.2.5" />).
+
+**Hệ phương trình viết gọn:** hệ $m$ phương trình, $n$ ẩn với ma trận hệ số $A$ và vế phải $\mathbf{b}$ chính là
+
+$$
+A\mathbf{x} = \mathbf{b}
+$$
+
+Và hệ có nghiệm **khi và chỉ khi** $\mathbf{b}$ là một tổ hợp tuyến tính các cột của $A$.
+
+## Ví dụ mẫu — tính hai cách, rồi đọc ra hệ phương trình
+
+Cho $A = \begin{bmatrix} 1 & 2 & -1 \\ 3 & 0 & 4 \end{bmatrix}$ và $\mathbf{x} = (2, -1, 3)$. Tính $A\mathbf{x}$, rồi viết hệ phương trình mà $\mathbf{x}$ là một nghiệm.
+
+#### Bước 1 — Đề cho gì?
+
+$A$ cỡ $2 \times 3$, $\mathbf{x}$ có 3 phần tử.
+
+#### Bước 2 — Đề hỏi gì?
+
+Vector $A\mathbf{x}$, và một hệ $A\mathbf{x} = \mathbf{b}$ nhận $\mathbf{x}$ làm nghiệm.
+
+#### Bước 3 — Dùng kiến thức nào, và tại sao?
+
+Kiểm tra cỡ trước: $A$ có **3 cột**, $\mathbf{x}$ có **3 số** — khớp, nhân được. Kết quả có **2 số** (bằng số hàng). Tính theo cột để hiểu, theo hàng để tính nhanh, so hai kết quả để tự kiểm tra.
+
+#### Bước 4 — Giải từng bước
+
+**Cách 1 — trộn cột:**
+
+$$
+A\mathbf{x} = 2\begin{bmatrix} 1 \\ 3 \end{bmatrix} - 1\begin{bmatrix} 2 \\ 0 \end{bmatrix} + 3\begin{bmatrix} -1 \\ 4 \end{bmatrix} = \begin{bmatrix} 2 - 2 - 3 \\ 6 - 0 + 12 \end{bmatrix} = \begin{bmatrix} -3 \\ 18 \end{bmatrix}
+$$
+
+**Cách 2 — hàng nhân $\mathbf{x}$:**
+
+- Hàng 1: $(1, 2, -1) \cdot (2, -1, 3) = 2 - 2 - 3 = -3$.
+- Hàng 2: $(3, 0, 4) \cdot (2, -1, 3) = 6 + 0 + 12 = 18$.
+
+Đặt $\mathbf{b} = (-3, 18)$. Hệ $A\mathbf{x} = \mathbf{b}$ viết ra là
+
+$$
+\begin{aligned} x_1 + 2x_2 - x_3 &= -3 \\ 3x_1 \phantom{{}+ 2x_2} + 4x_3 &= 18 \end{aligned}
+$$
+
+#### Bước 5 — Kiểm tra kết quả
+
+Hai cách cho cùng $(-3, 18)$ ✓. Thay $(2, -1, 3)$ vào hệ: $2 - 2 - 3 = -3$ ✓, $6 + 12 = 18$ ✓.
+
+#### Bước 6 — Tóm tắt cách làm để tự áp dụng
+
+<TomTat>
+Kiểm tra: số cột của $A$ = số phần tử của $\mathbf{x}$ → tính phần tử $i$ bằng (hàng $i$) $\cdot \mathbf{x}$ → nhớ ý nghĩa: đó là trộn các cột → hệ phương trình nào cũng viết được thành $A\mathbf{x} = \mathbf{b}$.
+</TomTat>
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Lỗi 1: Nhân khi cỡ không khớp">
+$A$ cỡ $2 \times 3$ chỉ nhân được với vector **3** số. $A\,(1, 2)$ không có nghĩa: không biết lấy bao nhiêu cột 3.
+</Loi>
+
+<Loi tieuDe="Lỗi 2: Kết quả sai số phần tử">
+$A\mathbf{x}$ có số phần tử bằng **số hàng** của $A$, không phải số cột. Ở ví dụ trên $\mathbf{x}$ có 3 số nhưng $A\mathbf{x}$ chỉ có 2.
+</Loi>
+
+<Loi tieuDe="Lỗi 3: Lấy cột của A nhân với x">
+Theo quy tắc tích vô hướng, ta dùng **hàng** của $A$ chấm với $\mathbf{x}$. Còn khi trộn, ta dùng **cột** của $A$ nhân với **từng số** $x_j$. Hai cách — đừng trộn lẫn chúng.
+</Loi>
+
+## Tóm tắt 30 giây
+
+- $A\mathbf{x}$ = trộn các cột của $A$ theo các số trong $\mathbf{x}$.
+- Tính nhanh: phần tử $i$ = hàng $i$ chấm $\mathbf{x}$.
+- Số cột của $A$ = số phần tử của $\mathbf{x}$; kết quả có số phần tử = số hàng của $A$.
+- Hệ phương trình = $A\mathbf{x} = \mathbf{b}$. Có nghiệm ⇔ $\mathbf{b}$ trộn được từ các cột của $A$.
+
+<BaGoc>
+  <Goc ten="Hiểu">Cột là nguyên liệu, $\mathbf{x}$ là số phần, $A\mathbf{x}$ là tổng hợp.</Goc>
+  <Goc ten="Nhớ">$(m \times n)$ nhân ($n$ số) ra ($m$ số). Phần tử $i$ = hàng $i \cdot \mathbf{x}$.</Goc>
+  <Goc ten="Làm">Kiểm tra cỡ → tính theo hàng → đối chiếu bằng cách trộn cột.</Goc>
+</BaGoc>
+
+## Bài tập
+
+<BaiLuyen do_kho="de" so="2.1">
+Tính $\begin{bmatrix} 2 & 1 \\ -1 & 3 \end{bmatrix}\begin{bmatrix} 4 \\ -2 \end{bmatrix}$ bằng cả hai cách.
+
+<GoiYNho>Đáp số để kiểm tra: phần tử đầu bằng $8 - 2 = 6$.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="2.2">
+Với $A$ trong ví dụ mẫu, viết vector $\mathbf{b} = (1, 3)$ thành tổ hợp tuyến tính các cột của $A$ (nghĩa là tìm một $\mathbf{x}$ với $A\mathbf{x} = \mathbf{b}$).
+
+<GoiYNho>Giải hệ $A\mathbf{x} = \mathbf{b}$ bằng phép khử Gauss (<XemMuc chuong={1} bai={2} />). Có vô số đáp án; một trong số đó có $x_3 = 0$.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="2.3">
+Cho $\mathbf{x}_1$ là một nghiệm của $A\mathbf{x} = \mathbf{b}$ và $\mathbf{x}_0$ là một nghiệm của hệ thuần nhất $A\mathbf{x} = \mathbf{0}$. Chứng tỏ $\mathbf{x}_1 + t\mathbf{x}_0$ cũng là nghiệm của $A\mathbf{x} = \mathbf{b}$ với mọi số $t$. Điều này giải thích gì về hình dạng nghiệm tổng quát ở Chương 1?
+
+<GoiYNho tieuDe="Bạn sẽ cần">Hai tính chất $A(\mathbf{x} + \mathbf{y}) = A\mathbf{x} + A\mathbf{y}$ và $A(t\mathbf{x}) = t(A\mathbf{x})$. Sách gọi kết quả này là <XemMuc muc="2.2" chu="Định lý 2.2.3" />.</GoiYNho>
+</BaiLuyen>

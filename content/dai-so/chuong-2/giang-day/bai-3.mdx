@@ -1,0 +1,172 @@
+---
+mon: dai-so
+chuong: 2
+bai: 3
+tieu_de: Nhân hai ma trận
+y_tuong: AB là làm B trước rồi A sau; mỗi cột của AB là A nhân với một cột của B, nên thứ tự nhân rất quan trọng.
+phu_muc: ["2.3"]
+---
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+Nhân $AB$ là **ghép hai bước**: $B$ làm trước, $A$ làm sau. Mỗi cột của $AB$ là $A$ nhân với một cột của $B$ — và vì thứ tự bước quan trọng, nói chung $AB \ne BA$.
+</YTuong>
+
+## Hình dung trực quan
+
+Một quán pha hai món từ hai nguyên liệu. Công thức (mỗi **cột** là một món):
+
+$$
+B = \begin{array}{c|cc} & \text{trà sữa} & \text{sữa tươi} \\ \hline \text{sữa} & 2 & 3 \\ \text{trà} & 1 & 0 \end{array}
+$$
+
+Hai nhà cung cấp bán nguyên liệu (nghìn đồng mỗi phần) — mỗi **hàng** là một nhà cung cấp:
+
+$$
+A = \begin{array}{c|cc} & \text{sữa} & \text{trà} \\ \hline \text{NCC 1} & 5 & 4 \\ \text{NCC 2} & 6 & 2 \end{array}
+$$
+
+Một ly trà sữa nếu mua của NCC 1 tốn bao nhiêu? $2$ phần sữa $\times 5 + 1$ phần trà $\times 4 = 14$. Đó là **hàng 1 của $A$ chấm cột 1 của $B$**. Làm hết bốn ô:
+
+$$
+AB = \begin{array}{c|cc} & \text{trà sữa} & \text{sữa tươi} \\ \hline \text{NCC 1} & 14 & 15 \\ \text{NCC 2} & 14 & 18 \end{array}
+$$
+
+Hai bước được ghép: **món → nguyên liệu** ($B$), rồi **nguyên liệu → tiền** ($A$). Kết quả $AB$ đi thẳng **món → tiền**. Lưu ý chữ "nguyên liệu" ở giữa: số cột của $A$ (2 nguyên liệu) phải bằng số hàng của $B$ (2 nguyên liệu). Đó là điều kiện để nhân được.
+
+## Kiến thức cần biết
+
+### a) Nhân ma trận với vector (Bài 2)
+
+$A\mathbf{x}$ trộn các cột của $A$ theo $\mathbf{x}$. Phần tử $i$ = hàng $i$ chấm $\mathbf{x}$.
+
+### b) Điều kiện cỡ
+
+$A$ cỡ $m \times n$, $B$ cỡ $n \times k$: **hai số ở giữa phải bằng nhau**. Kết quả cỡ $m \times k$ (hai số ở ngoài).
+
+$$
+(m \times \underbrace{n) \ (n}_{\text{phải bằng}} \times k) \;\longrightarrow\; m \times k
+$$
+
+### c) Thứ tự quan trọng
+
+Đi giày rồi đi tất khác hẳn đi tất rồi đi giày. Phép nhân ma trận cũng vậy: nói chung $AB \ne BA$. Có khi $AB$ tính được mà $BA$ thì không (cỡ không khớp). Khi $AB = BA$ ta nói $A$ và $B$ <ThuatNgu id="commute">giao hoán</ThuatNgu>.
+
+## Công thức
+
+Với $B$ có các cột $\mathbf{b}_1, \ldots, \mathbf{b}_k$:
+
+$$
+AB = \begin{bmatrix} A\mathbf{b}_1 & A\mathbf{b}_2 & \cdots & A\mathbf{b}_k \end{bmatrix}
+\qquad
+(AB)_{ij} = (\text{hàng } i \text{ của } A) \cdot (\text{cột } j \text{ của } B)
+$$
+
+| Ký hiệu | Nghĩa |
+| --- | --- |
+| $\mathbf{b}_j$ | cột $j$ của $B$ |
+| $A\mathbf{b}_j$ | cột $j$ của kết quả — tính như Bài 2 |
+| $(AB)_{ij}$ | ô hàng $i$, cột $j$ của $AB$ |
+
+Các quy tắc **vẫn đúng** như với số: $A(BC) = (AB)C$, $A(B + C) = AB + AC$, $IA = AI = A$.
+
+Các quy tắc **không còn đúng**: $AB = BA$; "$AB = 0$ thì $A = 0$ hoặc $B = 0$".
+
+Và một quy tắc mới, hay quên: $(AB)^T = B^TA^T$ — **đảo thứ tự**. Sách: <XemMuc muc="2.3" chu="Định lý 2.3.1 và 2.3.3" />.
+
+## Ví dụ mẫu — tính một tích, và xem thứ tự quan trọng thế nào
+
+Cho $A = \begin{bmatrix} 1 & 2 \\ 3 & -1 \end{bmatrix}$, $B = \begin{bmatrix} 2 & 0 & 1 \\ 1 & -1 & 4 \end{bmatrix}$. Tính $AB$. Có tính được $BA$ không?
+
+#### Bước 1 — Đề cho gì?
+
+$A$ cỡ $2 \times 2$, $B$ cỡ $2 \times 3$.
+
+#### Bước 2 — Đề hỏi gì?
+
+Ma trận $AB$, và $BA$ có tồn tại không.
+
+#### Bước 3 — Dùng kiến thức nào, và tại sao?
+
+Điều kiện cỡ trước: $(2 \times 2)(2 \times 3)$ — hai số giữa bằng 2, nhân được, ra $2 \times 3$. Còn $(2 \times 3)(2 \times 2)$ — giữa là 3 và 2, **không** nhân được. Sau đó tính từng ô bằng hàng chấm cột.
+
+#### Bước 4 — Giải từng bước
+
+Hàng của $A$: $(1, 2)$ và $(3, -1)$. Cột của $B$: $(2, 1)$, $(0, -1)$, $(1, 4)$.
+
+| | cột 1: $(2, 1)$ | cột 2: $(0, -1)$ | cột 3: $(1, 4)$ |
+| --- | --- | --- | --- |
+| hàng 1: $(1, 2)$ | $2 + 2 = 4$ | $0 - 2 = -2$ | $1 + 8 = 9$ |
+| hàng 2: $(3, -1)$ | $6 - 1 = 5$ | $0 + 1 = 1$ | $3 - 4 = -1$ |
+
+$$
+AB = \begin{bmatrix} 4 & -2 & 9 \\ 5 & 1 & -1 \end{bmatrix}
+$$
+
+$BA$: **không tồn tại**, vì $B$ có 3 cột còn $A$ có 2 hàng.
+
+#### Bước 5 — Kiểm tra kết quả
+
+Kiểm tra cột 3 bằng cách trộn cột (Bài 2): $A(1, 4) = 1\begin{bmatrix} 1 \\ 3 \end{bmatrix} + 4\begin{bmatrix} 2 \\ -1 \end{bmatrix} = \begin{bmatrix} 9 \\ -1 \end{bmatrix}$ ✓. Cỡ kết quả $2 \times 3$ ✓.
+
+**Thêm một ví dụ nhỏ để thấy $AB \ne BA$** ngay cả khi cả hai đều tính được. Với $C = \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix}$, $D = \begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix}$:
+
+$$
+CD = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}, \qquad DC = \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix}
+$$
+
+Không những $CD \ne DC$, mà $CD = 0$ dù $C \ne 0$ và $D \ne 0$!
+
+#### Bước 6 — Tóm tắt cách làm để tự áp dụng
+
+<TomTat>
+Viết cỡ hai ma trận cạnh nhau → hai số giữa bằng nhau mới nhân được, kết quả lấy hai số ngoài → ô $(i, j)$ = hàng $i$ chấm cột $j$ → kiểm tra một cột bằng cách trộn cột.
+</TomTat>
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Lỗi 1: Nhân từng ô cùng chỗ">
+$AB$ **không** phải là $[a_{ij}b_{ij}]$. Phép "nhân từng ô" không phải phép nhân ma trận. Ví dụ nguyên liệu ở trên cho thấy vì sao: giá một ly cần **cộng** qua mọi nguyên liệu.
+</Loi>
+
+<Loi tieuDe="Lỗi 2: Đổi chỗ khi biến đổi">
+Từ $AB = AC$ **không** suy ra $B = C$ (trừ khi $A$ khả nghịch — Bài 4). Và $(A + B)^2 = A^2 + AB + BA + B^2$, **không** phải $A^2 + 2AB + B^2$.
+</Loi>
+
+<Loi tieuDe="Lỗi 3: Chuyển vị tích mà không đảo thứ tự">
+$(AB)^T = B^TA^T$. Viết $A^TB^T$ thường thậm chí không nhân được vì sai cỡ.
+</Loi>
+
+## Tóm tắt 30 giây
+
+- $(m \times n)(n \times k) = m \times k$. Hai số giữa phải bằng nhau.
+- Ô $(i, j)$ của $AB$ = hàng $i$ của $A$ chấm cột $j$ của $B$.
+- $AB$ = làm $B$ trước, $A$ sau.
+- $AB \ne BA$ nói chung; $(AB)^T = B^TA^T$.
+
+<BaGoc>
+  <Goc ten="Hiểu">Nhân ma trận là ghép hai bước biến đổi nối tiếp nhau.</Goc>
+  <Goc ten="Nhớ">Hàng chấm cột. Số giữa bằng nhau. Không giao hoán.</Goc>
+  <Goc ten="Làm">Viết cỡ → kiểm tra → lập bảng hàng × cột → tính từng ô.</Goc>
+</BaGoc>
+
+## Bài tập
+
+<BaiLuyen do_kho="de" so="3.1">
+Với $A$, $B$ trong phần Hình dung trực quan, tính $BA$. Nó có bằng $AB$ không? $BA$ có ý nghĩa gì trong câu chuyện quán nước không?
+
+<GoiYNho>$BA$ tính được (cả hai đều $2 \times 2$). Thử đọc tên hàng và cột: có khớp nhau không?</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="3.2">
+Tìm mọi ma trận $X = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$ giao hoán với $D = \begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix}$, tức là $XD = DX$.
+
+<GoiYNho>Tính cả hai tích theo $a, b, c, d$ rồi cho các ô bằng nhau. Đáp số: $b = c = 0$.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="3.3">
+Tìm một ma trận $A$ cỡ $2 \times 2$, khác 0, sao cho $A^2 = 0$, và giải thích vì sao điều này không bao giờ xảy ra với số thường. Rồi chứng tỏ: nếu $A^2 = 0$ thì $(I + A)(I - A) = I$.
+
+<GoiYNho tieuDe="Bạn sẽ cần">Ma trận $C$ ở ví dụ mẫu. Khai triển $(I + A)(I - A)$ cẩn thận theo thứ tự. Phần sau dẫn sang ma trận nghịch đảo ở <XemMuc bai={4} />.</GoiYNho>
+</BaiLuyen>

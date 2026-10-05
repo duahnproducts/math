@@ -1,0 +1,167 @@
+---
+mon: dai-so
+chuong: 2
+bai: 1
+tieu_de: Ma trận — cộng, nhân với số, chuyển vị
+y_tuong: Ma trận là một bảng số; cộng thì cộng từng ô cùng chỗ, nhân với số thì nhân mọi ô, chuyển vị thì lật hàng thành cột.
+phu_muc: ["2.1"]
+---
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+Ma trận là **một bảng số**. Cộng hai bảng là cộng **từng ô cùng chỗ**; nhân bảng với một số là nhân **mọi ô**; chuyển vị là **lật hàng thành cột**.
+</YTuong>
+
+## Hình dung trực quan
+
+Hai quán nước ghi số ly bán được (đơn vị: chục ly) trong tháng 1:
+
+| Tháng 1 | Trà sữa | Bánh | Cà phê |
+| --- | --- | --- | --- |
+| Quán 1 | 12 | 8 | 5 |
+| Quán 2 | 10 | 6 | 9 |
+
+Bỏ tiêu đề đi, giữ lại các con số, ta được một ma trận:
+
+$$
+A = \begin{bmatrix} 12 & 8 & 5 \\ 10 & 6 & 9 \end{bmatrix}
+\qquad
+B = \begin{bmatrix} 14 & 7 & 6 \\ 9 & 8 & 10 \end{bmatrix} \ (\text{tháng 2})
+$$
+
+- **Tổng hai tháng:** quán 1 bán trà sữa $12 + 14 = 26$. Cộng từng ô cùng chỗ: $A + B = \begin{bmatrix} 26 & 15 & 11 \\ 19 & 14 & 19 \end{bmatrix}$.
+- **Kế hoạch tăng gấp đôi:** nhân mọi ô với 2: $2A$.
+- **Xoay bảng** cho hàng là món, cột là quán: đó là **chuyển vị** $A^T = \begin{bmatrix} 12 & 10 \\ 8 & 6 \\ 5 & 9 \end{bmatrix}$.
+
+Không có gì bí ẩn — đó chính là những việc bạn vẫn làm với bảng tính Excel.
+
+## Kiến thức cần biết
+
+### a) Cỡ và phần tử
+
+Ma trận có $m$ hàng, $n$ cột gọi là ma trận <ThuatNgu id="matrix-size">cỡ</ThuatNgu> $m \times n$ (đọc "m nhân n"). Ma trận $A$ ở trên có cỡ $2 \times 3$.
+
+Số nằm ở hàng $i$, cột $j$ ký hiệu $a_{ij}$ — **hàng trước, cột sau**. Ở trên $a_{13} = 5$ (hàng 1, cột 3).
+
+### b) Hai ma trận bằng nhau
+
+Khi chúng **cùng cỡ** và **mọi ô cùng chỗ bằng nhau**.
+
+### c) Ma trận không và ma trận đối
+
+- <ThuatNgu id="zero-matrix">Ma trận không</ThuatNgu> $0$: mọi ô bằng 0. Cộng với nó không làm thay đổi gì, như số 0.
+- Ma trận đối $-A$: đổi dấu mọi ô. $A + (-A) = 0$.
+
+### d) Ma trận đối xứng
+
+Ma trận vuông $A$ gọi là <ThuatNgu id="symmetric-matrix">đối xứng</ThuatNgu> nếu $A^T = A$ — tức là gấp đôi theo **đường chéo chính** (từ góc trên trái xuống góc dưới phải) thì hai nửa trùng nhau. Ví dụ bảng khoảng cách giữa các thành phố: từ Huế đi Đà Nẵng bằng từ Đà Nẵng đi Huế.
+
+## Công thức
+
+Với $A = [a_{ij}]$, $B = [b_{ij}]$ **cùng cỡ** và $k$ là một số:
+
+$$
+A + B = [a_{ij} + b_{ij}], \qquad kA = [k\,a_{ij}], \qquad A^T = [a_{ji}]
+$$
+
+| Ký hiệu | Nghĩa |
+| --- | --- |
+| $[a_{ij}]$ | "ma trận có ô ở hàng $i$, cột $j$ bằng $a_{ij}$" |
+| $a_{ij} + b_{ij}$ | cộng hai ô ở **cùng** hàng $i$, cột $j$ |
+| $k\,a_{ij}$ | ô nào cũng nhân với $k$ |
+| $a_{ji}$ | ô hàng $i$, cột $j$ của $A^T$ lấy từ ô hàng $j$, cột $i$ của $A$ — đảo chỉ số |
+
+Vài quy tắc dùng nhiều (đều kiểm tra được bằng cách nhìn từng ô):
+
+- $A + B = B + A$, $\quad k(A + B) = kA + kB$
+- $(A^T)^T = A$, $\quad (A + B)^T = A^T + B^T$, $\quad (kA)^T = kA^T$
+
+Sách liệt kê đủ ở <XemMuc muc="2.1" chu="Định lý 2.1.1 và 2.1.2" />.
+
+## Ví dụ mẫu — giải một phương trình ma trận
+
+Cho $A = \begin{bmatrix} 2 & -1 \\ 0 & 3 \end{bmatrix}$, $B = \begin{bmatrix} 1 & 4 \\ -2 & 5 \end{bmatrix}$. Tìm ma trận $X$ sao cho $2X + A = B$.
+
+#### Bước 1 — Đề cho gì?
+
+Hai ma trận $2 \times 2$ là $A$, $B$ và một đẳng thức chứa ẩn $X$.
+
+#### Bước 2 — Đề hỏi gì?
+
+Ma trận $X$ (cũng phải cỡ $2 \times 2$, nếu không thì không cộng được với $A$).
+
+#### Bước 3 — Dùng kiến thức nào, và tại sao?
+
+Phép cộng và nhân với số tuân theo đúng các quy tắc như với số thường. Nên ta **chuyển vế** và **chia cho 2** y như giải $2x + a = b$.
+
+#### Bước 4 — Giải từng bước
+
+1. Chuyển $A$ sang vế phải: $2X = B - A$.
+2. Tính $B - A$ từng ô:
+$$
+B - A = \begin{bmatrix} 1 - 2 & 4 - (-1) \\ -2 - 0 & 5 - 3 \end{bmatrix} = \begin{bmatrix} -1 & 5 \\ -2 & 2 \end{bmatrix}
+$$
+3. Nhân với $\tfrac{1}{2}$:
+$$
+X = \tfrac{1}{2}(B - A) = \begin{bmatrix} -\tfrac{1}{2} & \tfrac{5}{2} \\ -1 & 1 \end{bmatrix}
+$$
+
+#### Bước 5 — Kiểm tra kết quả
+
+$$
+2X + A = \begin{bmatrix} -1 & 5 \\ -2 & 2 \end{bmatrix} + \begin{bmatrix} 2 & -1 \\ 0 & 3 \end{bmatrix} = \begin{bmatrix} 1 & 4 \\ -2 & 5 \end{bmatrix} = B \ ✓
+$$
+
+#### Bước 6 — Tóm tắt cách làm để tự áp dụng
+
+<TomTat>
+Coi ma trận như một số: chuyển vế, nhân chia với số khác 0 như thường → tính từng ô → thay ngược vào đề để kiểm tra.
+</TomTat>
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Lỗi 1: Cộng hai ma trận khác cỡ">
+$\begin{bmatrix} 1 & 2 \end{bmatrix} + \begin{bmatrix} 1 \\ 2 \end{bmatrix}$ **không có nghĩa**. Một bảng 1 hàng 2 cột không cộng với bảng 2 hàng 1 cột được — các ô không có "bạn cùng chỗ".
+</Loi>
+
+<Loi tieuDe="Lỗi 2: Nhân với số mà chỉ nhân một hàng">
+$3A$ nhân **mọi** ô với 3. Đừng nhầm với phép biến đổi hàng ở Chương 1, nơi ta chỉ nhân **một** hàng.
+</Loi>
+
+<Loi tieuDe="Lỗi 3: Chuyển vị sai trục">
+Chuyển vị là lật qua **đường chéo chính**: hàng 1 thành cột 1, hàng 2 thành cột 2. Ma trận $2 \times 3$ chuyển vị thành $3 \times 2$. Nếu cỡ không đổi chỗ thì bạn đã làm sai.
+</Loi>
+
+## Tóm tắt 30 giây
+
+- Ma trận cỡ $m \times n$: $m$ hàng, $n$ cột. Ô $a_{ij}$: hàng $i$, cột $j$.
+- Cộng: cùng cỡ, cộng từng ô cùng chỗ. Nhân số: nhân mọi ô.
+- Chuyển vị $A^T$: hàng thành cột. Đối xứng: $A^T = A$.
+- Mọi quy tắc cộng, nhân số giống hệt số thường.
+
+<BaGoc>
+  <Goc ten="Hiểu">Ma trận chỉ là bảng số; các phép này là việc bạn vẫn làm với bảng tính.</Goc>
+  <Goc ten="Nhớ">$a_{ij}$: hàng trước cột sau. $(A^T)_{ij} = a_{ji}$.</Goc>
+  <Goc ten="Làm">Kiểm tra cỡ trước → tính từng ô → kiểm tra lại.</Goc>
+</BaGoc>
+
+## Bài tập
+
+<BaiLuyen do_kho="de" so="1.1">
+Với $A$ và $B$ trong ví dụ mẫu, tính $3A - 2B$ và $A^T$.
+
+<GoiYNho>Đáp số để kiểm tra: ô góc trên trái của $3A - 2B$ bằng $6 - 2 = 4$. Luyện thêm: <XemMuc bai-tap="2.1.2" chu="Bài 2.1.2" /> trong sách.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="1.2">
+Cho $A = \begin{bmatrix} 1 & 2 & 0 \\ -1 & 3 & 4 \end{bmatrix}$. Tính $A + A^T$ nếu được. Nếu không được, giải thích vì sao, rồi kiểm tra rằng $A^T + B$ có nghĩa khi $B$ có cỡ bao nhiêu.
+
+<GoiYNho>So cỡ của $A$ và $A^T$.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="1.3">
+Chứng minh rằng với mọi ma trận vuông $A$, ma trận $A + A^T$ luôn đối xứng. Thử trước với một ma trận $2 \times 2$ cụ thể, rồi mới viết lập luận chung.
+
+<GoiYNho tieuDe="Bạn sẽ cần">Tính $(A + A^T)^T$ bằng hai quy tắc $(A + B)^T = A^T + B^T$ và $(A^T)^T = A$. Bài này chính là <XemMuc bai-tap="2.1.17" chu="Bài 2.1.17" /> trong sách; làm tiếp <XemMuc bai-tap="2.1.20" chu="Bài 2.1.20" /> (phản đối xứng).</GoiYNho>
+</BaiLuyen>

@@ -1,0 +1,154 @@
+---
+mon: dai-so
+chuong: 2
+bai: 8
+tieu_de: Mô hình kinh tế vào–ra
+y_tuong: Các ngành vừa sản xuất vừa tiêu thụ hàng của nhau; muốn đủ hàng cho người dùng thì phải giải hệ (I − E)p = d.
+phu_muc: ["2.8"]
+---
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+Các ngành kinh tế **vừa làm ra hàng, vừa dùng hàng của nhau**. Muốn sản xuất đủ cho người tiêu dùng, mỗi ngành phải làm ra **nhiều hơn** nhu cầu — và lượng cần làm ra là nghiệm của một hệ phương trình tuyến tính.
+</YTuong>
+
+## Hình dung trực quan
+
+Một nền kinh tế tí hon chỉ có hai ngành: **Nông nghiệp** và **Điện**.
+
+- Muốn trồng lúa thì cần điện (bơm nước) và cả lúa giống.
+- Muốn chạy nhà máy điện thì công nhân cần ăn — tức là cần nông sản.
+
+Người dân cần 60 đơn vị nông sản và 30 đơn vị điện. Nếu mỗi ngành chỉ làm **đúng** 60 và 30, thì một phần bị **chính các ngành** dùng mất trong quá trình sản xuất, và người dân sẽ thiếu. Phải làm ra bao nhiêu mới vừa đủ?
+
+Vòng luẩn quẩn: làm thêm lúa thì cần thêm điện; làm thêm điện thì cần thêm lúa… Đại số tuyến tính gỡ vòng này chỉ bằng một hệ phương trình.
+
+## Kiến thức cần biết
+
+### a) Ma trận vào–ra (ma trận tiêu hao)
+
+Ô $e_{ij}$ của <ThuatNgu id="input-output-matrix">ma trận vào–ra</ThuatNgu> $E$ = lượng hàng của **ngành $i$** cần dùng để **ngành $j$** làm ra **1 đơn vị** hàng.
+
+Đọc theo **cột $j$**: "công thức đầu vào" của ngành $j$.
+
+| | Nông nghiệp làm 1 đv | Điện làm 1 đv |
+| --- | --- | --- |
+| Cần nông sản | 0,2 | 0,3 |
+| Cần điện | 0,4 | 0,1 |
+
+$$
+E = \begin{bmatrix} 0{,}2 & 0{,}3 \\ 0{,}4 & 0{,}1 \end{bmatrix}
+$$
+
+### b) Hai loại mô hình
+
+- **Mô hình đóng:** không có ai ở ngoài; mọi hàng làm ra đều do các ngành dùng hết. Khi đó tổng mỗi cột của $E$ bằng 1, và ta tìm $\mathbf{p}$ với $E\mathbf{p} = \mathbf{p}$ (cân bằng giá).
+- **Mô hình mở:** có thêm <ThuatNgu id="demand-matrix">nhu cầu</ThuatNgu> $\mathbf{d}$ từ bên ngoài (người tiêu dùng). Đây là mô hình của bài này.
+
+### c) Ma trận nghịch đảo (Bài 4)
+
+Ta sẽ cần $(I - E)^{-1}$ — và muốn mọi phần tử của nó **không âm**, để lượng sản xuất không bao giờ âm.
+
+## Công thức
+
+Gọi $\mathbf{p}$ là tổng sản lượng mỗi ngành. Sản lượng chia làm hai phần:
+
+$$
+\underbrace{\mathbf{p}}_{\text{làm ra}} = \underbrace{E\mathbf{p}}_{\text{các ngành tự dùng}} + \underbrace{\mathbf{d}}_{\text{người dân dùng}}
+\qquad\Longleftrightarrow\qquad
+(I - E)\mathbf{p} = \mathbf{d}
+$$
+
+| Ký hiệu | Nghĩa |
+| --- | --- |
+| $\mathbf{p}$ | sản lượng cần làm ra của mỗi ngành — ẩn |
+| $E\mathbf{p}$ | phần sản lượng bị chính các ngành tiêu hao (trộn các cột của $E$ theo $\mathbf{p}$ — Bài 2) |
+| $\mathbf{d}$ | nhu cầu bên ngoài — đề cho |
+| $I - E$ | "phần còn lại cho bên ngoài" trên mỗi đơn vị sản xuất |
+
+Nếu $I - E$ khả nghịch: $\mathbf{p} = (I - E)^{-1}\mathbf{d}$. Điều kiện để $(I - E)^{-1}$ không âm được sách nêu ở <XemMuc muc="2.8" chu="Định lý 2.8.2" />; một trường hợp hay gặp: **mọi tổng cột của $E$ nhỏ hơn 1** — mỗi ngành tiêu hao ít hơn giá trị nó làm ra.
+
+## Ví dụ mẫu — mỗi ngành phải làm ra bao nhiêu?
+
+Với $E$ ở trên và nhu cầu $\mathbf{d} = (60, 30)$, tìm sản lượng $\mathbf{p}$.
+
+#### Bước 1 — Đề cho gì?
+
+Ma trận tiêu hao $E$ và nhu cầu ngoài $\mathbf{d} = (60, 30)$.
+
+#### Bước 2 — Đề hỏi gì?
+
+$\mathbf{p} = (p_1, p_2)$: lượng nông sản và điện cần làm ra.
+
+#### Bước 3 — Dùng kiến thức nào, và tại sao?
+
+Mô hình mở: $(I - E)\mathbf{p} = \mathbf{d}$. Ma trận $2 \times 2$ nên dùng công thức nghịch đảo $2 \times 2$ ở <XemMuc bai={4} />. Tổng cột của $E$ là $0{,}6$ và $0{,}4$, đều nhỏ hơn 1, nên chắc chắn ra nghiệm không âm.
+
+#### Bước 4 — Giải từng bước
+
+1. $I - E = \begin{bmatrix} 1 - 0{,}2 & -0{,}3 \\ -0{,}4 & 1 - 0{,}1 \end{bmatrix} = \begin{bmatrix} 0{,}8 & -0{,}3 \\ -0{,}4 & 0{,}9 \end{bmatrix}$.
+2. $ad - bc = 0{,}8 \cdot 0{,}9 - (-0{,}3)(-0{,}4) = 0{,}72 - 0{,}12 = 0{,}6$.
+3. $(I - E)^{-1} = \dfrac{1}{0{,}6}\begin{bmatrix} 0{,}9 & 0{,}3 \\ 0{,}4 & 0{,}8 \end{bmatrix} = \begin{bmatrix} 1{,}5 & 0{,}5 \\ \tfrac{2}{3} & \tfrac{4}{3} \end{bmatrix}$ — mọi phần tử dương ✓.
+4. $\mathbf{p} = (I - E)^{-1}\mathbf{d} = \begin{bmatrix} 1{,}5 \cdot 60 + 0{,}5 \cdot 30 \\ \tfrac{2}{3} \cdot 60 + \tfrac{4}{3} \cdot 30 \end{bmatrix} = \begin{bmatrix} 105 \\ 80 \end{bmatrix}$.
+
+Nông nghiệp phải làm ra **105** đơn vị (người dân chỉ cần 60), ngành điện **80** đơn vị (người dân chỉ cần 30).
+
+#### Bước 5 — Kiểm tra kết quả
+
+Phần các ngành tự dùng: $E\mathbf{p} = \begin{bmatrix} 0{,}2 \cdot 105 + 0{,}3 \cdot 80 \\ 0{,}4 \cdot 105 + 0{,}1 \cdot 80 \end{bmatrix} = \begin{bmatrix} 45 \\ 50 \end{bmatrix}$.
+
+Còn lại cho người dân: $\mathbf{p} - E\mathbf{p} = (105 - 45,\ 80 - 50) = (60, 30) = \mathbf{d}$ ✓.
+
+#### Bước 6 — Tóm tắt cách làm để tự áp dụng
+
+<TomTat>
+Lập $E$ (cột $j$ = đầu vào của ngành $j$) → tính $I - E$ → giải $(I - E)\mathbf{p} = \mathbf{d}$ (nghịch đảo hoặc khử Gauss) → kiểm tra $\mathbf{p} - E\mathbf{p} = \mathbf{d}$ và $\mathbf{p} \ge 0$.
+</TomTat>
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Lỗi 1: Đọc E theo hàng thay vì theo cột">
+$e_{ij}$ là hàng **của ngành $i$** mà **ngành $j$** dùng. Cột $j$ là công thức của ngành $j$. Lập ma trận theo hàng là ra $E^T$ — kết quả sai.
+</Loi>
+
+<Loi tieuDe="Lỗi 2: Giải Ep = d hoặc p = d">
+Nhu cầu ngoài là **phần còn lại** sau khi các ngành tự dùng: $\mathbf{p} - E\mathbf{p} = \mathbf{d}$. Lấy $\mathbf{p} = \mathbf{d}$ là quên mất các ngành tiêu hao lẫn nhau.
+</Loi>
+
+<Loi tieuDe="Lỗi 3: Không kiểm tra dấu">
+Một nghiệm có phần tử âm vẫn đúng về đại số, nhưng vô nghĩa về kinh tế (không thể sản xuất "−10 tấn lúa"). Luôn kiểm tra $\mathbf{p} \ge 0$.
+</Loi>
+
+## Tóm tắt 30 giây
+
+- $e_{ij}$: hàng ngành $i$ cần cho 1 đơn vị của ngành $j$.
+- Mô hình mở: $\mathbf{p} = E\mathbf{p} + \mathbf{d}$, tức là $(I - E)\mathbf{p} = \mathbf{d}$.
+- Tổng mỗi cột của $E$ nhỏ hơn 1 ⇒ $(I - E)^{-1} \ge 0$ ⇒ luôn có sản lượng không âm.
+- Mỗi ngành phải làm ra **nhiều hơn** nhu cầu ngoài.
+
+<BaGoc>
+  <Goc ten="Hiểu">Làm ra = tự dùng + người dân dùng. Phần tự dùng tạo ra vòng luẩn quẩn mà hệ phương trình gỡ được.</Goc>
+  <Goc ten="Nhớ">$(I - E)\mathbf{p} = \mathbf{d}$. Cột $j$ của $E$ = đầu vào của ngành $j$.</Goc>
+  <Goc ten="Làm">Lập $E$ → $I - E$ → giải → kiểm tra $\mathbf{p} - E\mathbf{p} = \mathbf{d}$.</Goc>
+</BaGoc>
+
+## Bài tập
+
+<BaiLuyen do_kho="de" so="8.1">
+Với cùng $E$ như ví dụ mẫu, nhu cầu đổi thành $\mathbf{d} = (30, 30)$. Tính $\mathbf{p}$ bằng $(I - E)^{-1}$ đã tìm.
+
+<GoiYNho>Đáp số để kiểm tra: $p_1 = 60$.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="8.2">
+Nếu người dân cần thêm **1 đơn vị điện** (các nhu cầu khác giữ nguyên), mỗi ngành phải làm ra thêm bao nhiêu? Câu trả lời nằm ở cột nào của $(I - E)^{-1}$? Vì sao ngành nông nghiệp cũng phải làm thêm?
+
+<GoiYNho>$(I - E)^{-1}(\mathbf{d} + \mathbf{e}_2) = (I - E)^{-1}\mathbf{d} + (I - E)^{-1}\mathbf{e}_2$.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="8.3">
+Mô hình đóng: $E = \begin{bmatrix} 0{,}6 & 0{,}3 \\ 0{,}4 & 0{,}7 \end{bmatrix}$ (tổng mỗi cột bằng 1). Tìm mọi $\mathbf{p} \ne \mathbf{0}$ với $E\mathbf{p} = \mathbf{p}$. Vì sao ở mô hình này $I - E$ **không** khả nghịch, và vì sao điều đó lại là điều tốt?
+
+<GoiYNho tieuDe="Bạn sẽ cần">$(I - E)\mathbf{p} = \mathbf{0}$ là hệ thuần nhất (<XemMuc chuong={1} bai={3} />). Hai hàng của $I - E$ có liên hệ gì với nhau?</GoiYNho>
+</BaiLuyen>

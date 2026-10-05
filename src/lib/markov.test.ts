@@ -46,3 +46,27 @@ describe('xích Markov của §2.9', () => {
     expect(laNgauNhien([[0.5, 1], [0.4, 0]])).toBe(false);
   });
 });
+
+describe('bài giảng 9, Chương 2: thời tiết nắng/mưa (ví dụ tự đặt)', () => {
+  const P = [
+    [0.8, 0.4],
+    [0.2, 0.6],
+  ];
+
+  it('xác suất nắng 1; 0.8; 0.72; 0.688; 0.6752 rồi dồn về 2/3', () => {
+    expect(laNgauNhien(P)).toBe(true);
+    const nang = dayTrangThai(P, [1, 0], 40).map((s) => s[0]);
+    [1, 0.8, 0.72, 0.688, 0.6752].forEach((p, m) => expect(nang[m]).toBeCloseTo(p, 12));
+    expect(nang[40]).toBeCloseTo(2 / 3, 10);
+    expect(dayTrangThai(P, [0, 1], 2)[2][0]).toBeCloseTo(0.56, 12);
+  });
+
+  it('bài tập 9.2: xe buýt 5/8 là trạng thái dừng', () => {
+    const Q = [
+      [0.7, 0.5],
+      [0.3, 0.5],
+    ];
+    const s = dayTrangThai(Q, [5 / 8, 3 / 8], 1)[1];
+    expect(s[0]).toBeCloseTo(5 / 8, 12);
+  });
+});

@@ -351,3 +351,70 @@ describe('số liệu bài giảng Đại số Chương 1', () => {
     laNghiem([[1, 0, -2], [0, 2, -3]], [0, 0], [4, 3, 2]);
   });
 });
+
+// Ví dụ mẫu và đáp số tự kiểm tra trong bài giảng Đại số Chương 2 (ví dụ tự đặt)
+describe('số liệu bài giảng Đại số Chương 2', () => {
+  const ganDung = (a: MaTran, b: MaTran) => a.forEach((hang, i) => hang.forEach((x, j) => expect(x).toBeCloseTo(b[i][j], 12)));
+  const I2: MaTran = [
+    [1, 0],
+    [0, 1],
+  ];
+
+  it('Bài 2: Ax = (−3, 18), bữa sáng (34, 105)', () => {
+    expect(nhanVector([[1, 2, -1], [3, 0, 4]], [2, -1, 3])).toEqual([-3, 18]);
+    expect(nhanVector([[4, 6, 8], [45, 1, 12]], [2, 3, 1])).toEqual([34, 105]);
+  });
+
+  it('Bài 3: AB, chi phí quán nước, CD = 0 nhưng DC ≠ 0', () => {
+    expect(nhanMaTran([[1, 2], [3, -1]], [[2, 0, 1], [1, -1, 4]])).toEqual([[4, -2, 9], [5, 1, -1]]);
+    expect(nhanMaTran([[5, 4], [6, 2]], [[2, 3], [1, 0]])).toEqual([[14, 15], [14, 18]]);
+    const C = [[0, 1], [0, 0]];
+    const D = [[1, 0], [0, 0]];
+    expect(nhanMaTran(C, D)).toEqual([[0, 0], [0, 0]]);
+    expect(nhanMaTran(D, C)).toEqual(C);
+  });
+
+  it('Bài 4: nghịch đảo 3×3 và giải mã (1, 2, 3), (0, 2, 0), (1, −1, 2)', () => {
+    const A = [[1, 1, 0], [0, 1, 1], [1, 2, 2]];
+    const nghichDao = [[0, -2, 1], [1, 2, -1], [-1, -1, 1]];
+    expect(nhanMaTran(A, nghichDao)).toEqual([[1, 0, 0], [0, 1, 0], [0, 0, 1]]);
+    expect(nhanVector(nghichDao, [3, 5, 11])).toEqual([1, 2, 3]);
+    expect(nhanVector(nghichDao, [2, 2, 4])).toEqual([0, 2, 0]);
+    expect(nhanVector(nghichDao, [0, 1, 3])).toEqual([1, -1, 2]);
+  });
+
+  it('Bài 5: A = E₁⁻¹E₂⁻¹E₃⁻¹ và A⁻¹ = E₃E₂E₁', () => {
+    const A = [[1, 2], [3, 4]];
+    const E1 = [[1, 0], [-3, 1]];
+    const E2 = [[1, 0], [0, -0.5]];
+    const E3 = [[1, -2], [0, 1]];
+    ganDung(nhanMaTran(E3, nhanMaTran(E2, nhanMaTran(E1, A))), I2);
+    ganDung(nhanMaTran(E3, nhanMaTran(E2, E1)), [[-2, 1], [1.5, -0.5]]);
+    expect(nhanMaTran(nhanMaTran([[1, 0], [3, 1]], [[1, 0], [0, -2]]), [[1, 2], [0, 1]])).toEqual(A);
+  });
+
+  it('Bài 6: quay 90° rồi đối xứng qua trục x là đối xứng qua y = −x', () => {
+    const QR = nhanMaTran(maTranDoiXung(0), maTranQuay(Math.PI / 2));
+    ganDung(QR, [[0, -1], [-1, 0]]);
+    ganDung(nhanMaTran(QR, QR), I2);
+    ganDung(nhanMaTran(maTranQuay(Math.PI / 2), maTranDoiXung(0)), [[0, 1], [1, 0]]);
+  });
+
+  it('Bài 7: LU của A, giải (8, 8, 9) và bài tập 7.2', () => {
+    const L = [[2, 0, 0], [1, 1, 0], [-1, 3, 1]];
+    const U = [[1, 2, 1], [0, 1, 3], [0, 0, 1]];
+    const A = [[2, 4, 2], [1, 3, 4], [-1, 1, 9]];
+    expect(nhanMaTran(L, U)).toEqual(A);
+    expect(nhanVector(L, [4, 4, 1])).toEqual([8, 8, 9]);
+    expect(nhanVector(U, [1, 1, 1])).toEqual([4, 4, 1]);
+    expect(nhanMaTran([[3, 0], [2, 3]], [[1, 2], [0, 1]])).toEqual([[3, 6], [2, 7]]);
+  });
+
+  it('Bài 8: sản lượng (105, 80) đáp ứng nhu cầu (60, 30)', () => {
+    const E = [[0.2, 0.3], [0.4, 0.1]];
+    const IE = [[0.8, -0.3], [-0.4, 0.9]];
+    giaiHe(IE, [60, 30]).forEach((p, i) => expect(p).toBeCloseTo([105, 80][i], 10));
+    giaiHe(IE, [30, 30]).forEach((p, i) => expect(p).toBeCloseTo([60, 60][i], 10));
+    nhanVector(E, [105, 80]).forEach((x, i) => expect(x).toBeCloseTo([45, 50][i], 10));
+  });
+});

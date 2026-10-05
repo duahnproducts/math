@@ -129,3 +129,25 @@ test('bài giảng Chương 1: 5 bài đủ 8 mục, công thức không lỗi, 
   await page.getByRole('link', { name: 'Học dễ hiểu ở Bài 5' }).click();
   await expect(page).toHaveURL(/dai-so\/chuong-1\/giang-day\/bai-5\/$/);
 });
+
+test('bài giảng Chương 2: 9 bài đủ 8 mục, công thức không lỗi, nối hai chiều với §', async ({ page }) => {
+  test.slow(); // đi qua nhiều trang KaTeX nặng
+  await page.goto('dai-so/chuong-2/');
+  await expect(page.getByText('Chưa có bài giảng')).toHaveCount(0);
+  for (let bai = 1; bai <= 9; bai++) {
+    await page.goto(`dai-so/chuong-2/giang-day/bai-${bai}/`);
+    await expect(page.locator('h2', { hasText: 'Ý tưởng trong 1 câu' })).toBeVisible();
+    await expect(page.locator('h2', { hasText: 'Bài tập' })).toBeVisible();
+    await expect(page.locator('.katex-error')).toHaveCount(0);
+  }
+  // Bài 6 dùng lại hình phép quay của §2.6
+  await page.goto('dai-so/chuong-2/giang-day/bai-6/');
+  await expect(page.locator('[data-hinh-phep-quay] svg')).toBeVisible();
+  // Bài 2 trỏ về bài giảng Chương 1; §2.4 nối về Bài 4
+  await page.goto('dai-so/chuong-2/giang-day/bai-2/');
+  // (liên kết nằm trong gợi ý đang thu gọn nên tìm theo href)
+  await expect(page.locator('a[href$="dai-so/chuong-1/giang-day/bai-2/"]')).toHaveText('Học dễ hiểu ở Bài 2, Chương 1');
+  await page.goto('dai-so/chuong-2/sach/2-4/');
+  await page.getByRole('link', { name: 'Học dễ hiểu ở Bài 4' }).click();
+  await expect(page).toHaveURL(/dai-so\/chuong-2\/giang-day\/bai-4\/$/);
+});

@@ -1,0 +1,160 @@
+---
+mon: dai-so
+chuong: 2
+bai: 6
+tieu_de: Phép biến đổi tuyến tính — ma trận là một chuyển động
+y_tuong: Phép biến đổi giữ nguyên phép cộng và phép nhân với số luôn là nhân với một ma trận, và các cột của ma trận ấy là ảnh của các vector đơn vị.
+phu_muc: ["2.6"]
+---
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+Một phép biến đổi "tôn trọng" phép cộng và phép nhân với số thì **luôn là nhân với một ma trận**. Muốn biết ma trận đó, chỉ cần xem nó đưa **các vector đơn vị** đi đâu.
+</YTuong>
+
+## Hình dung trực quan
+
+Bạn xoay một tấm ảnh trên điện thoại. Mọi điểm trên ảnh đều chuyển động, nhưng có hai điều không đổi:
+
+- Đường thẳng vẫn thẳng, gốc toạ độ vẫn đứng yên.
+- Hình bình hành vẫn là hình bình hành.
+
+Một phép biến đổi như vậy gọi là **tuyến tính**. Điều kỳ diệu: để biết cả tấm ảnh đi đâu, chỉ cần theo dõi **hai mũi tên** — mũi tên $\mathbf{e}_1 = (1, 0)$ và $\mathbf{e}_2 = (0, 1)$. Mọi điểm khác là tổ hợp của chúng, nên tự động đi theo.
+
+<HinhPhepQuay />
+
+Hình trên: phép quay một góc $\theta$ đưa $\mathbf{e}_1$ tới $(\cos\theta, \sin\theta)$ và $\mathbf{e}_2$ tới $(-\sin\theta, \cos\theta)$. Đặt hai kết quả đó làm **hai cột**, ta có ngay ma trận quay.
+
+## Kiến thức cần biết
+
+### a) Phép biến đổi
+
+Một <ThuatNgu id="linear-transformation">phép biến đổi</ThuatNgu> $T: \mathbb{R}^n \to \mathbb{R}^m$ là một quy tắc: nhận vào một vector $n$ số, trả ra một vector $m$ số. Ví dụ: $T(x, y) = (x + y,\ 2y)$.
+
+### b) Tuyến tính nghĩa là gì?
+
+$T$ tuyến tính khi, với mọi vector $\mathbf{x}, \mathbf{y}$ và mọi số $a$:
+
+1. $T(\mathbf{x} + \mathbf{y}) = T(\mathbf{x}) + T(\mathbf{y})$ — biến đổi tổng = tổng các biến đổi.
+2. $T(a\mathbf{x}) = aT(\mathbf{x})$ — kéo dài rồi biến đổi = biến đổi rồi kéo dài.
+
+Hệ quả nhanh: luôn có $T(\mathbf{0}) = \mathbf{0}$. Nên phép **tịnh tiến** (dời mọi điểm đi 1 bước) không tuyến tính.
+
+### c) Vector đơn vị chuẩn
+
+$\mathbf{e}_1 = (1, 0, \ldots, 0)$, $\mathbf{e}_2 = (0, 1, 0, \ldots)$, … Chúng tạo thành <ThuatNgu id="standard-basis">cơ sở chính tắc</ThuatNgu>: mọi $\mathbf{x} = x_1\mathbf{e}_1 + \cdots + x_n\mathbf{e}_n$.
+
+### d) Ghép hai phép biến đổi
+
+Làm $T$ trước rồi $S$ sau, viết $S \circ T$. Ma trận của nó là **tích** $BA$ nếu $S$ có ma trận $B$, $T$ có ma trận $A$ (đúng tinh thần Bài 3: "phải làm trước").
+
+## Công thức
+
+Nếu $T: \mathbb{R}^n \to \mathbb{R}^m$ tuyến tính thì $T(\mathbf{x}) = A\mathbf{x}$ với
+
+$$
+A = \begin{bmatrix} T(\mathbf{e}_1) & T(\mathbf{e}_2) & \cdots & T(\mathbf{e}_n) \end{bmatrix}
+$$
+
+| Ký hiệu | Nghĩa |
+| --- | --- |
+| $T(\mathbf{e}_j)$ | ảnh của vector đơn vị thứ $j$ — trở thành **cột $j$** của $A$ |
+| $A$ | ma trận cỡ $m \times n$ của $T$ |
+
+Vì sao? $\mathbf{x} = x_1\mathbf{e}_1 + \cdots + x_n\mathbf{e}_n$, nên theo tính tuyến tính $T(\mathbf{x}) = x_1T(\mathbf{e}_1) + \cdots + x_nT(\mathbf{e}_n)$ — đúng là "trộn các cột" của Bài 2. Sách: <XemMuc muc="2.6" chu="Định lý 2.6.2" />.
+
+Ba ma trận hay gặp trong mặt phẳng:
+
+| Phép | Ma trận |
+| --- | --- |
+| Quay góc $\theta$ ngược chiều kim đồng hồ | $\begin{bmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{bmatrix}$ |
+| Đối xứng qua trục $x$ | $\begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}$ |
+| Chiếu xuống trục $x$ | $\begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix}$ |
+
+## Ví dụ mẫu — ghép phép quay với phép đối xứng
+
+Gọi $T$ là: **quay** $90°$ ngược chiều kim đồng hồ, **rồi** lấy **đối xứng qua trục $x$**. Tìm ma trận của $T$, và cho biết $T$ thực chất là phép gì.
+
+#### Bước 1 — Đề cho gì?
+
+Hai phép: quay $R$ góc $90°$, rồi đối xứng $Q$ qua trục $x$.
+
+#### Bước 2 — Đề hỏi gì?
+
+Ma trận của $T = Q \circ R$, và mô tả hình học của nó.
+
+#### Bước 3 — Dùng kiến thức nào, và tại sao?
+
+Cách nhanh nhất: theo dõi $\mathbf{e}_1$ và $\mathbf{e}_2$ qua hai bước — ảnh của chúng là hai cột. Rồi kiểm tra bằng tích ma trận $QR$ (chú ý thứ tự: $R$ làm trước nên đứng bên phải).
+
+#### Bước 4 — Giải từng bước
+
+1. **Theo dõi $\mathbf{e}_1 = (1, 0)$:** quay $90°$ được $(0, 1)$; đối xứng qua trục $x$ (đổi dấu toạ độ thứ hai) được $(0, -1)$.
+2. **Theo dõi $\mathbf{e}_2 = (0, 1)$:** quay $90°$ được $(-1, 0)$; đối xứng qua trục $x$ vẫn là $(-1, 0)$.
+3. Đặt làm hai cột:
+$$
+A = \begin{bmatrix} 0 & -1 \\ -1 & 0 \end{bmatrix}
+$$
+4. **Kiểm tra bằng tích:** $R = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}$ (quay với $\theta = 90°$), $Q = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}$:
+$$
+QR = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}\begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} = \begin{bmatrix} 0 & -1 \\ -1 & 0 \end{bmatrix} \ ✓
+$$
+5. **Đây là phép gì?** $A$ đổi $(x, y)$ thành $(-y, -x)$. Điểm $(1, -1)$ đi tới $(1, -1)$: **đứng yên**. Điểm $(1, 1)$ đi tới $(-1, -1)$: **lật ngược**. Vậy $T$ là phép **đối xứng qua đường thẳng $y = -x$**.
+
+#### Bước 5 — Kiểm tra kết quả
+
+Đối xứng qua $y = -x$ phải giữ nguyên mọi điểm trên đường đó: $(t, -t) \mapsto (t, -t)$ ✓. Và làm hai lần phải về chỗ cũ: $A^2 = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = I$ ✓.
+
+#### Bước 6 — Tóm tắt cách làm để tự áp dụng
+
+<TomTat>
+Theo dõi từng $\mathbf{e}_j$ qua mọi bước → ảnh cuối cùng là cột $j$ → kiểm tra bằng tích các ma trận, bước làm trước đứng bên phải → thử vài điểm đặc biệt để đoán ý nghĩa hình học.
+</TomTat>
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Lỗi 1: Xếp ảnh của e₁, e₂ thành hàng">
+$T(\mathbf{e}_j)$ là **cột** thứ $j$. Xếp thành hàng là ra ma trận chuyển vị — với phép quay, đó là quay **ngược chiều**.
+</Loi>
+
+<Loi tieuDe="Lỗi 2: Sai thứ tự khi ghép">
+"$R$ rồi $Q$" có ma trận $QR$, không phải $RQ$. Thử tính $RQ$: ra $\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}$ — đối xứng qua $y = x$, một phép khác hẳn.
+</Loi>
+
+<Loi tieuDe="Lỗi 3: Tưởng mọi phép “trông thẳng” đều tuyến tính">
+$T(x, y) = (x + 1,\ y)$ dời mọi thứ sang phải 1 bước. Đường thẳng vẫn thẳng, nhưng $T(0, 0) = (1, 0) \ne (0, 0)$. Không tuyến tính, nên **không** viết được dạng $A\mathbf{x}$.
+</Loi>
+
+## Tóm tắt 30 giây
+
+- Tuyến tính: giữ phép cộng và phép nhân với số. Luôn có $T(\mathbf{0}) = \mathbf{0}$.
+- Mọi phép tuyến tính là nhân với ma trận $A = [\,T(\mathbf{e}_1) \ \cdots \ T(\mathbf{e}_n)\,]$.
+- Ghép: làm $T$ (ma trận $A$) rồi $S$ (ma trận $B$) ra ma trận $BA$.
+- Quay, đối xứng, chiếu đều là phép tuyến tính.
+
+<BaGoc>
+  <Goc ten="Hiểu">Biết hai mũi tên $\mathbf{e}_1, \mathbf{e}_2$ đi đâu là biết cả mặt phẳng đi đâu.</Goc>
+  <Goc ten="Nhớ">Cột $j$ = $T(\mathbf{e}_j)$. Ma trận quay. Ghép = nhân, bước trước đứng phải.</Goc>
+  <Goc ten="Làm">Theo dõi $\mathbf{e}_j$ → xếp thành cột → kiểm tra bằng tích → thử điểm đặc biệt.</Goc>
+</BaGoc>
+
+## Bài tập
+
+<BaiLuyen do_kho="de" so="6.1">
+Viết ma trận của phép quay $180°$. Nó đưa điểm $(3, -2)$ tới đâu? Kiểm tra bằng hình vẽ.
+
+<GoiYNho>$\cos 180° = -1$, $\sin 180° = 0$.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="6.2">
+$T(x, y) = (2x - y,\ x + 3y)$ có tuyến tính không? Nếu có, tìm ma trận của nó bằng cách tính $T(\mathbf{e}_1)$ và $T(\mathbf{e}_2)$. Còn $S(x, y) = (xy,\ y)$ thì sao?
+
+<GoiYNho>Với $S$, thử $S(2\mathbf{x})$ và $2S(\mathbf{x})$ với $\mathbf{x} = (1, 1)$.</GoiYNho>
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="6.3">
+Tìm ma trận của phép "chiếu xuống trục $x$ rồi quay $90°$". Phép này có khả nghịch không? Giải thích bằng hình (thông tin nào bị mất?) và bằng định thức $ad - bc$ ở <XemMuc bai={4} />.
+
+<GoiYNho tieuDe="Bạn sẽ cần">Phép chiếu làm mọi điểm trên trục $y$ dồn về gốc. Hai điểm khác nhau nào cho cùng một ảnh?</GoiYNho>
+</BaiLuyen>
