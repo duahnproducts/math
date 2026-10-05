@@ -1,0 +1,173 @@
+---
+mon: dai-so
+chuong: 3
+muc: "3.8"
+tieu_de: Chứng minh Định lý khai triển theo phần bù đại số
+tieu_de_en: Proof of the Cofactor Expansion Theorem
+loai: dich-nguyen-van
+nguon: "Dịch từ W. Keith Nicholson, Linear Algebra with Applications, Version 2023 – Revision A, Vretta-Lyryx Inc. (https://lyryx.com/linear-algebra-applications/), Mục 3.8. Bản dịch phát hành theo giấy phép CC BY-NC-SA 4.0, giống bản gốc. Thay đổi: dịch sang tiếng Việt, thêm ghi chú cho người học; toàn bộ chứng minh được dịch trên web (bản PDF chỉ tóm tắt mục này)."
+---
+
+<GhiChu tieuDe="Ghi chú cho người học — có nên đọc mục này?">
+Mục này là chứng minh đầy đủ của Định lý 3.1.1 (khai triển theo *bất kỳ* hàng hoặc cột nào cũng cho cùng một kết quả). Nó không cần thiết để *sử dụng* định thức; nó ở đây để hoàn thiện về mặt logic — tác giả đã dùng định lý này từ <XemMuc muc="3.1" chu="Mục 3.1" /> và có nghĩa vụ chứng minh nó.
+
+Ý chính, nói ngắn gọn: định nghĩa định thức bằng khai triển theo cột 1, chứng minh nó có các tính chất của Định lý 3.1.2 đối với *hàng* (Bổ đề 3.8.2), rồi dùng $\det A = \det A^T$ để chuyển sang cột và sang mọi hàng.
+</GhiChu>
+
+Nhắc lại rằng định nghĩa của thuật ngữ *định thức* mang tính quy nạp: định thức của mọi ma trận $1 \times 1$ được định nghĩa trước; rồi nó được dùng để định nghĩa định thức của ma trận $2 \times 2$. Rồi điều đó lại được dùng cho trường hợp $3 \times 3$, và cứ thế. Trường hợp ma trận $1 \times 1$ $[a]$ không có vấn đề gì. Ta chỉ cần định nghĩa
+
+$$
+\det[a] = a
+$$
+
+như ở Mục 3.1. Cho ma trận $A$ cỡ $n \times n$, định nghĩa $A_{ij}$ là ma trận $(n - 1) \times (n - 1)$ thu được từ $A$ bằng cách xoá hàng $i$ và cột $j$. Bây giờ giả sử định thức của mọi ma trận $(n - 1) \times (n - 1)$ đã được định nghĩa. Khi đó định thức của $A$ được *định nghĩa* là
+
+$$
+\begin{aligned}
+\det A &= a_{11}\det A_{11} - a_{21}\det A_{21} + \cdots + (-1)^{n+1}a_{n1}\det A_{n1} \\
+&= \sum_{i=1}^{n} (-1)^{i+1}a_{i1}\det A_{i1}
+\end{aligned}
+$$
+
+trong đó ký hiệu tổng được dùng cho tiện.[^1] Để ý rằng, theo thuật ngữ của Mục 3.1, đây chính là khai triển theo phần bù đại số của $\det A$ dọc theo cột thứ nhất, và $(-1)^{i+j}\det A_{ij}$ là phần bù đại số $(i, j)$ (trước đây ký hiệu $c_{ij}(A)$).[^2] Để minh hoạ định nghĩa, xét ma trận $2 \times 2$ $A = \begin{bmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{bmatrix}$. Khi đó định nghĩa cho
+
+$$
+\det \begin{bmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{bmatrix} = a_{11}\det[a_{22}] - a_{21}\det[a_{12}] = a_{11}a_{22} - a_{21}a_{12}
+$$
+
+và điều này giống với định nghĩa ở Mục 3.1.
+
+Tất nhiên, nhiệm vụ bây giờ là dùng định nghĩa này để *chứng minh* rằng khai triển theo phần bù đại số dọc theo *bất kỳ* hàng hay cột nào đều cho $\det A$ (đây là Định lý 3.1.1). Chứng minh tiến hành bằng cách trước hết thiết lập các tính chất của định thức nêu trong Định lý 3.1.2 nhưng chỉ cho *hàng* (xem Bổ đề 3.8.2). Làm xong điều đó, chứng minh đầy đủ của Định lý 3.1.1 không khó. Chứng minh Bổ đề 3.8.2 cần kết quả chuẩn bị sau.
+
+<BoDe so="3.8.1">
+Cho $A$, $B$ và $C$ là các ma trận $n \times n$ giống hệt nhau, chỉ trừ hàng thứ $p$ của $A$ là tổng của các hàng thứ $p$ của $B$ và $C$. Khi đó
+
+$$
+\det A = \det B + \det C
+$$
+
+</BoDe>
+
+**Chứng minh.** Ta tiến hành bằng quy nạp theo $n$, các trường hợp $n = 1$ và $n = 2$ dễ kiểm tra. Xét $a_{i1}$ và $A_{i1}$:
+
+*Trường hợp 1:* Nếu $i \ne p$,
+
+$$
+a_{i1} = b_{i1} = c_{i1} \qquad \text{và} \qquad \det A_{i1} = \det B_{i1} + \det C_{i1}
+$$
+
+theo quy nạp, vì $A_{i1}$, $B_{i1}$, $C_{i1}$ giống hệt nhau, chỉ trừ một hàng của $A_{i1}$ là tổng của các hàng tương ứng của $B_{i1}$ và $C_{i1}$.
+
+*Trường hợp 2:* Nếu $i = p$,
+
+$$
+a_{p1} = b_{p1} + c_{p1} \qquad \text{và} \qquad A_{p1} = B_{p1} = C_{p1}
+$$
+
+Bây giờ viết ra tổng định nghĩa của $\det A$, tách riêng số hạng thứ $p$ để xem xét.
+
+$$
+\begin{aligned}
+\det A &= \sum_{i \ne p} a_{i1}(-1)^{i+1}\det A_{i1} + a_{p1}(-1)^{p+1}\det A_{p1} \\
+&= \sum_{i \ne p} a_{i1}(-1)^{i+1}\left[\det B_{i1} + \det C_{i1}\right] + (b_{p1} + c_{p1})(-1)^{p+1}\det A_{p1}
+\end{aligned}
+$$
+
+trong đó $\det A_{i1} = \det B_{i1} + \det C_{i1}$ theo quy nạp. Nhưng các số hạng ở đây liên quan đến $B_{i1}$ và $b_{p1}$ cộng lại thành $\det B$ vì $a_{i1} = b_{i1}$ nếu $i \ne p$ và $A_{p1} = B_{p1}$. Tương tự, các số hạng liên quan đến $C_{i1}$ và $c_{p1}$ cộng lại thành $\det C$. Do đó $\det A = \det B + \det C$, như yêu cầu. ∎
+
+<BoDe so="3.8.2">
+Cho $A = [a_{ij}]$ là ma trận $n \times n$.
+
+1. Nếu $B = [b_{ij}]$ được lập từ $A$ bằng cách nhân một hàng của $A$ với số $u$ thì $\det B = u\det A$.
+2. Nếu $A$ có một hàng toàn số 0 thì $\det A = 0$.
+3. Nếu $B = [b_{ij}]$ được lập bằng cách đổi chỗ hai hàng của $A$ thì $\det B = -\det A$.
+4. Nếu $A$ có hai hàng giống nhau thì $\det A = 0$.
+5. Nếu $B = [b_{ij}]$ được lập bằng cách cộng một bội của một hàng của $A$ vào một hàng khác thì $\det B = \det A$.
+
+</BoDe>
+
+**Chứng minh.** Để tham khảo về sau, các tổng định nghĩa của $\det A$ và $\det B$ như sau:
+
+$$
+\det A = \sum_{i=1}^{n} a_{i1}(-1)^{i+1}\det A_{i1} \tag{3.16}
+$$
+
+$$
+\det B = \sum_{i=1}^{n} b_{i1}(-1)^{i+1}\det B_{i1} \tag{3.17}
+$$
+
+*Tính chất 1.* Chứng minh bằng quy nạp theo $n$, các trường hợp $n = 1$ và $n = 2$ dễ kiểm chứng. Xét số hạng thứ $i$ trong tổng (3.17) của $\det B$, trong đó $B$ là kết quả của việc nhân hàng $p$ của $A$ với $u$.
+
+- **a.** Nếu $i \ne p$ thì $b_{i1} = a_{i1}$ và $\det B_{i1} = u\det A_{i1}$ theo quy nạp vì $B_{i1}$ có được từ $A_{i1}$ bằng cách nhân một hàng với $u$.
+- **b.** Nếu $i = p$ thì $b_{p1} = ua_{p1}$ và $B_{p1} = A_{p1}$.
+
+Trong cả hai trường hợp, mỗi số hạng trong phương trình (3.17) bằng $u$ lần số hạng tương ứng trong phương trình (3.16), nên rõ ràng $\det B = u\det A$.
+
+*Tính chất 2.* Điều này rõ ràng theo tính chất 1 vì hàng toàn số 0 có nhân tử chung $u = 0$.
+
+*Tính chất 3.* Trước hết để ý rằng chỉ cần chứng minh tính chất 3 cho việc đổi chỗ hai hàng *kề nhau*. (Các hàng $p$ và $q$ ($q > p$) có thể đổi chỗ bằng cách thực hiện $2(q - p) - 1$ lần đổi chỗ kề nhau, dẫn đến một số *lẻ* lần đổi dấu của định thức.) Vậy giả sử các hàng $p$ và $p + 1$ của $A$ được đổi chỗ để được $B$. Lại xét số hạng thứ $i$ trong phương trình (3.17).
+
+- **a.** Nếu $i \ne p$ và $i \ne p + 1$ thì $b_{i1} = a_{i1}$ và $\det B_{i1} = -\det A_{i1}$ theo quy nạp vì $B_{i1}$ có được từ việc đổi chỗ hai hàng kề nhau trong $A_{i1}$. Do đó số hạng thứ $i$ trong phương trình (3.17) là số đối của số hạng thứ $i$ trong phương trình (3.16). Do đó $\det B = -\det A$ trong trường hợp này.
+- **b.** Nếu $i = p$ hoặc $i = p + 1$ thì $b_{p1} = a_{p+1,1}$ và $B_{p1} = A_{p+1,1}$, còn $b_{p+1,1} = a_{p1}$ và $B_{p+1,1} = A_{p1}$. Do đó các số hạng $p$ và $p + 1$ trong phương trình (3.17) là
+
+$$
+\begin{aligned}
+b_{p1}(-1)^{p+1}\det B_{p1} &= -a_{p+1,1}(-1)^{(p+1)+1}\det(A_{p+1,1}) \\
+b_{p+1,1}(-1)^{(p+1)+1}\det B_{p+1,1} &= -a_{p1}(-1)^{p+1}\det(A_{p1})
+\end{aligned}
+$$
+
+Điều này nghĩa là các số hạng $p$ và $p + 1$ trong phương trình (3.17) giống các số hạng này trong phương trình (3.16), chỉ trừ thứ tự bị đảo và các dấu bị đổi. Như vậy tổng (3.17) là số đối của tổng (3.16); tức là $\det B = -\det A$.
+
+*Tính chất 4.* Nếu các hàng $p$ và $q$ trong $A$ giống nhau, cho $B$ thu được từ $A$ bằng cách đổi chỗ hai hàng này. Khi đó $B = A$ nên $\det A = \det B$. Nhưng $\det B = -\det A$ theo tính chất 3 nên $\det A = -\det A$. Điều này suy ra $\det A = 0$.
+
+*Tính chất 5.* Giả sử $B$ là kết quả của việc cộng $u$ lần hàng $q$ của $A$ vào hàng $p$. Khi đó Bổ đề 3.8.1 áp dụng cho $B$ cho thấy $\det B = \det A + \det C$, trong đó $C$ thu được từ $A$ bằng cách thay hàng $p$ bởi $u$ lần hàng $q$. Bây giờ từ các tính chất 1 và 4 suy ra $\det C = 0$ nên $\det B = \det A$, như đã khẳng định. ∎
+
+Các sự kiện này đủ để ta chứng minh Định lý 3.1.1. Cho tiện, nó được phát biểu lại ở đây theo ký hiệu của các bổ đề trên. Khác biệt duy nhất giữa các ký hiệu là phần bù đại số $(i, j)$ của ma trận $A$ cỡ $n \times n$ trước đây được ký hiệu
+
+$$
+c_{ij}(A) = (-1)^{i+j}\det A_{ij}
+$$
+
+<DinhLy so="3.8.1">
+Nếu $A = [a_{ij}]$ là ma trận $n \times n$ thì
+
+1. $\det A = \sum_{i=1}^{n} a_{ij}(-1)^{i+j}\det A_{ij}$ (khai triển theo phần bù đại số dọc theo cột $j$).
+2. $\det A = \sum_{j=1}^{n} a_{ij}(-1)^{i+j}\det A_{ij}$ (khai triển theo phần bù đại số dọc theo hàng $i$).
+
+Ở đây $A_{ij}$ ký hiệu ma trận thu được từ $A$ bằng cách xoá hàng $i$ và cột $j$.
+</DinhLy>
+
+**Chứng minh.** Bổ đề 3.8.2 khẳng định tính đúng đắn của Định lý 3.1.2 cho *hàng*. Với thông tin này, các lập luận ở <XemMuc muc="3.2" chu="Mục 3.2" /> tiến hành đúng như đã viết để thiết lập rằng $\det A = \det A^T$ đúng với mọi ma trận $A$ cỡ $n \times n$. Bây giờ giả sử $B$ thu được từ $A$ bằng cách đổi chỗ hai cột. Khi đó $B^T$ thu được từ $A^T$ bằng cách đổi chỗ hai hàng nên, theo tính chất 3 của Bổ đề 3.8.2,
+
+$$
+\det B = \det B^T = -\det A^T = -\det A
+$$
+
+Do đó tính chất 3 của Bổ đề 3.8.2 cũng đúng cho *cột*.
+
+Điều này cho phép ta chứng minh khai triển theo phần bù đại số cho cột. Cho ma trận $A = [a_{ij}]$ cỡ $n \times n$, cho $B = [b_{ij}]$ thu được bằng cách chuyển cột $j$ sang bên trái, dùng $j - 1$ lần đổi chỗ các cột kề nhau. Khi đó $\det B = (-1)^{j-1}\det A$ và, vì $B_{i1} = A_{ij}$ và $b_{i1} = a_{ij}$ với mọi $i$, ta được
+
+$$
+\begin{aligned}
+\det A &= (-1)^{j-1}\det B = (-1)^{j-1}\sum_{i=1}^{n} b_{i1}(-1)^{i+1}\det B_{i1} \\
+&= \sum_{i=1}^{n} a_{ij}(-1)^{i+j}\det A_{ij}
+\end{aligned}
+$$
+
+Đây là khai triển theo phần bù đại số của $\det A$ dọc theo cột $j$.
+
+Cuối cùng, để chứng minh khai triển theo hàng, viết $B = A^T$. Khi đó $B_{ij} = (A_{ji})^T$ và $b_{ij} = a_{ji}$ với mọi $i$ và $j$. Khai triển $\det B$ dọc theo cột $j$ cho
+
+$$
+\begin{aligned}
+\det A = \det A^T = \det B &= \sum_{i=1}^{n} b_{ij}(-1)^{i+j}\det B_{ij} \\
+&= \sum_{i=1}^{n} a_{ji}(-1)^{j+i}\det\left[(A_{ji})^T\right] = \sum_{i=1}^{n} a_{ji}(-1)^{j+i}\det A_{ji}
+\end{aligned}
+$$
+
+Đây là khai triển cần tìm của $\det A$ dọc theo hàng $j$. ∎
+
+[^1]: Ký hiệu tổng là cách viết tắt tiện lợi cho tổng của các biểu thức tương tự nhau. Ví dụ $a_1 + a_2 + a_3 + a_4 = \sum_{i=1}^{4} a_i$, $a_5b_5 + a_6b_6 + a_7b_7 + a_8b_8 = \sum_{k=5}^{8} a_kb_k$, và $1^2 + 2^2 + 3^2 + 4^2 + 5^2 = \sum_{j=1}^{5} j^2$.
+
+[^2]: Lưu ý rằng ở đầu Mục 3.1 ta đã dùng khai triển dọc theo *hàng* 1. Định nghĩa bằng khai triển theo cột 1 tiện hơn ở đây.

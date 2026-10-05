@@ -89,7 +89,7 @@ test('bài tập Chương 2: 24 bài của §2.1, "Cần dùng" trỏ về §2.1
 });
 
 // Các mục Chương 3 đã có trang trên web (thêm dần theo tiến độ chuyển bản dịch)
-const MUC_CHUONG_3 = ['3-1', '3-2', '3-3', '3-4', '3-5', '3-6', '3-7'];
+const MUC_CHUONG_3 = ['3-1', '3-2', '3-3', '3-4', '3-5', '3-6', '3-7', '3-8'];
 
 test('Chương 3: các mục đã chuyển có trang dịch, công thức dựng không lỗi, có PDF tải về', async ({ page }) => {
   test.slow(); // đi qua nhiều trang KaTeX nặng

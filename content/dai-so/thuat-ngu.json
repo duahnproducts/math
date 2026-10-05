@@ -74,6 +74,24 @@
     { "id": "transition-matrix", "en": "transition matrix", "vi": "ma trận chuyển", "giai_thich": "pᵢⱼ là xác suất chuyển từ trạng thái j sang trạng thái i." },
     { "id": "state-vector", "en": "state vector", "vi": "vector trạng thái", "giai_thich": "s_m: xác suất ở mỗi trạng thái sau m bước; s_(m+1) = P s_m." },
     { "id": "steady-state-vector", "en": "steady-state vector", "vi": "vector trạng thái dừng", "giai_thich": "s thoả Ps = s, phần tử dương, tổng bằng 1: xác suất dài hạn." },
-    { "id": "regular-stochastic", "en": "regular (stochastic matrix)", "vi": "(ma trận ngẫu nhiên) chính quy", "giai_thich": "Có một luỹ thừa Pᵐ với mọi phần tử dương." }
+    { "id": "regular-stochastic", "en": "regular (stochastic matrix)", "vi": "(ma trận ngẫu nhiên) chính quy", "giai_thich": "Có một luỹ thừa Pᵐ với mọi phần tử dương." },
+    { "id": "minor", "en": "minor", "vi": "phần bù (định thức con)", "giai_thich": "det(Aᵢⱼ): định thức sau khi xoá hàng i, cột j." },
+    { "id": "cofactor", "en": "cofactor", "vi": "phần bù đại số", "giai_thich": "cᵢⱼ(A) = (−1)^(i+j) det(Aᵢⱼ)." },
+    { "id": "cofactor-expansion", "en": "cofactor expansion", "vi": "khai triển theo phần bù đại số", "giai_thich": "Tính det A theo một hàng hoặc một cột bất kỳ." },
+    { "id": "cramers-rule", "en": "Cramer's rule", "vi": "quy tắc Cramer", "giai_thich": "xₖ = det Aₖ / det A, với Aₖ thay cột k của A bằng b." },
+    { "id": "vandermonde", "en": "Vandermonde determinant", "vi": "định thức Vandermonde", "giai_thich": "Bằng tích mọi (aᵢ − aⱼ) với i > j." },
+    { "id": "interpolating-polynomial", "en": "interpolating polynomial", "vi": "đa thức nội suy", "giai_thich": "Đa thức duy nhất bậc < n đi qua n điểm có hoành độ khác nhau." },
+    { "id": "orthogonal-matrix", "en": "orthogonal matrix", "vi": "ma trận trực giao", "giai_thich": "A⁻¹ = Aᵀ; định thức bằng ±1." },
+    { "id": "eigenvalue", "en": "eigenvalue", "vi": "giá trị riêng", "giai_thich": "Số λ thoả Ax = λx với x ≠ 0." },
+    { "id": "eigenvector", "en": "eigenvector", "vi": "vector riêng", "giai_thich": "Vector x ≠ 0 mà A chỉ kéo giãn: Ax = λx." },
+    { "id": "characteristic-polynomial", "en": "characteristic polynomial", "vi": "đa thức đặc trưng", "giai_thich": "c_A(x) = det(xI − A); nghiệm là các giá trị riêng." },
+    { "id": "diagonalizable", "en": "diagonalizable", "vi": "chéo hoá được", "giai_thich": "Có P khả nghịch với P⁻¹AP là ma trận đường chéo." },
+    { "id": "diagonalizing-matrix", "en": "diagonalizing matrix", "vi": "ma trận chéo hoá", "giai_thich": "Ma trận P có các cột là vector riêng." },
+    { "id": "multiplicity", "en": "multiplicity", "vi": "bội (của giá trị riêng)", "giai_thich": "Số lần λ là nghiệm của c_A(x)." },
+    { "id": "dominant-eigenvalue", "en": "dominant eigenvalue", "vi": "giá trị riêng trội", "giai_thich": "Có bội 1 và trị tuyệt đối lớn hơn mọi giá trị riêng khác." },
+    { "id": "linear-dynamical-system", "en": "linear dynamical system", "vi": "hệ động lực tuyến tính", "giai_thich": "Dãy vₖ₊₁ = Avₖ." },
+    { "id": "trajectory", "en": "trajectory", "vi": "quỹ đạo", "giai_thich": "Dãy v₀, v₁, v₂, … của một hệ động lực." },
+    { "id": "linear-recurrence", "en": "linear recurrence", "vi": "hệ thức truy hồi tuyến tính", "giai_thich": "xₖ₊ₘ là tổ hợp tuyến tính của m số hạng trước, ví dụ Fibonacci." },
+    { "id": "differential-equation", "en": "differential equation", "vi": "phương trình vi phân", "giai_thich": "Phương trình chứa đạo hàm; hệ f′ = Af giải bằng chéo hoá." }
   ]
 }
