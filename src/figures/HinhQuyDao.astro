@@ -1,0 +1,42 @@
+---
+// Đại số §3.5 — quỹ đạo v₀, v₁ = Av₀, v₂, … của hệ động lực 2×2, tính trực tiếp
+// bằng phép nhân ma trận (src/lib/ma-tran.ts). Dùng chung cho Ví dụ 3.5.4–3.5.7.
+import { type MaTran, nhanVector } from '@/lib/ma-tran';
+
+interface Props {
+  ten: string;
+  A: MaTran;
+  diemDau: number[][];
+  soBuoc: number;
+  moTa: string;
+  chuThich: string;
+}
+const { ten, A, diemDau, soBuoc, moTa, chuThich } = Astro.props;
+const N = 150; // nửa cạnh khung, pixel
+const DV = N / 1.2; // khung toạ độ [−1.2, 1.2]²
+const p = ([x, y]: number[]) => ({ x: Math.round((N + x * DV) * 10) / 10, y: Math.round((N - y * DV) * 10) / 10 });
+const quyDao = diemDau.map((v0) => {
+  const ds = [v0];
+  for (let k = 0; k < soBuoc; k++) ds.push(nhanVector(A, ds[k]));
+  return ds.map(p);
+});
+const id = `hinh-quy-dao-${ten}`;
+---
+
+<figure class="hinh" aria-labelledby={id} data-hinh-quy-dao={ten}>
+  <svg viewBox={`0 0 ${2 * N} ${2 * N}`} width="260" role="img" aria-label={moTa}>
+    <line x1="0" y1={N} x2={2 * N} y2={N} class="net-mo" stroke-width="1" />
+    <line x1={N} y1="0" x2={N} y2={2 * N} class="net-mo" stroke-width="1" />
+    {
+      quyDao.map((ds) => (
+        <g>
+          <polyline points={ds.map((d) => `${d.x},${d.y}`).join(' ')} class="nhan-manh" stroke-width="1.3" style="fill: none" />
+          {ds.map((d, k) => <circle cx={d.x} cy={d.y} r={k === 0 ? 3.5 : 2.4} class={k === 0 ? 'to-dam' : 'to-nhan'} />)}
+        </g>
+      ))
+    }
+    <text x={2 * N - 6} y={N - 6} text-anchor="end" class="chu-mo">x</text>
+    <text x={N + 6} y="14" class="chu-mo">y</text>
+  </svg>
+  <figcaption id={id}>{chuThich}</figcaption>
+</figure>

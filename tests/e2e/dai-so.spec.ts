@@ -89,7 +89,7 @@ test('bài tập Chương 2: 24 bài của §2.1, "Cần dùng" trỏ về §2.1
 });
 
 // Các mục Chương 3 đã có trang trên web (thêm dần theo tiến độ chuyển bản dịch)
-const MUC_CHUONG_3 = ['3-1', '3-2', '3-3', '3-4'];
+const MUC_CHUONG_3 = ['3-1', '3-2', '3-3', '3-4', '3-5'];
 
 test('Chương 3: các mục đã chuyển có trang dịch, công thức dựng không lỗi, có PDF tải về', async ({ page }) => {
   test.slow(); // đi qua nhiều trang KaTeX nặng
@@ -104,6 +104,8 @@ test('Chương 3: các mục đã chuyển có trang dịch, công thức dựng
   await expect(page.locator('[data-hinh-noi-suy-cay] svg')).toBeVisible();
   await page.goto('dai-so/chuong-3/sach/3-3/');
   await expect(page.locator('[data-hinh-vector-rieng] svg')).toBeVisible();
+  await page.goto('dai-so/chuong-3/sach/3-5/');
+  await expect(page.locator('[data-hinh-quy-dao] svg')).toHaveCount(4);
   await page.goto('dai-so/chuong-3/');
   await expect(page.getByText('Giá trị riêng và vector riêng').first()).toBeVisible();
   await expect(page.locator('a[href$="tai-ve/dai-so-chuong-3-ban-dich.pdf"]')).toBeVisible();

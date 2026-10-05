@@ -248,3 +248,28 @@ describe('chéo hoá (§3.4)', () => {
     }
   });
 });
+
+describe('hệ động lực (§3.5)', () => {
+  it('Ví dụ 3.5.1: aₖ = 220/3 + 80/3(−½)ᵏ, jₖ = 440/3 − 320/3(−½)ᵏ', () => {
+    const A = [[0.5, 0.25], [2, 0]];
+    let v = [100, 40];
+    for (let k = 0; k <= 8; k++) {
+      const q = (-0.5) ** k;
+      expect(v[0]).toBeCloseTo(220 / 3 + (80 / 3) * q, 9);
+      expect(v[1]).toBeCloseTo(440 / 3 - (320 / 3) * q, 9);
+      v = nhanVector(A, v);
+    }
+  });
+
+  it('Ví dụ 3.5.3: xₖ = [2(−2)ᵏ + 1]/3', () => {
+    const x = [1, -1];
+    for (let k = 0; k < 10; k++) x.push(2 * x[k] - x[k + 1]);
+    x.forEach((xk, k) => expect(xk).toBe((2 * (-2) ** k + 1) / 3));
+  });
+
+  it('Ví dụ 3.5.7: v₄ = (1/16, 1/16)', () => {
+    let v = [1, 1];
+    for (let k = 0; k < 4; k++) v = nhanVector([[0, 0.5], [-0.5, 0]], v);
+    expect(v).toEqual([1 / 16, 1 / 16]);
+  });
+});

@@ -1,0 +1,260 @@
+---
+mon: dai-so
+chuong: 3
+muc: "3.5"
+tieu_de: Hệ động lực tuyến tính
+tieu_de_en: Linear Dynamical Systems
+loai: dich-nguyen-van
+nguon: "Dịch từ W. Keith Nicholson, Linear Algebra with Applications, Version 2023 – Revision A, Vretta-Lyryx Inc. (https://lyryx.com/linear-algebra-applications/), Mục 3.5. Bản dịch phát hành theo giấy phép CC BY-NC-SA 4.0, giống bản gốc. Thay đổi: dịch sang tiếng Việt, thêm ghi chú cho người học, vẽ lại các hình quỹ đạo."
+---
+
+Ta đã bắt đầu <XemMuc muc="3.3" chu="Mục 3.3" /> bằng một ví dụ sinh thái học mô hình hoá sự tiến triển dân số của một loài chim. Như đã hứa, bây giờ ta hoàn tất ví dụ đó.
+
+Dân số chim được mô tả bằng hồ sơ dân số chim cái $\mathbf{v}_k = \begin{bmatrix} a_k \\ j_k \end{bmatrix}$, trong đó $a_k$ và $j_k$ là số chim cái trưởng thành và non có mặt $k$ năm sau khi quan sát các giá trị ban đầu $a_0$, $j_0$. Mô hình giả sử các số này liên hệ bởi
+
+$$
+\begin{aligned}
+a_{k+1} &= \tfrac{1}{2}a_k + \tfrac{1}{4}j_k \\
+j_{k+1} &= 2a_k
+\end{aligned}
+$$
+
+Nếu viết $A = \begin{bmatrix} \frac{1}{2} & \frac{1}{4} \\ 2 & 0 \end{bmatrix}$ thì các cột $\mathbf{v}_k$ thoả $\mathbf{v}_{k+1} = A\mathbf{v}_k$ với mỗi $k$, nên $\mathbf{v}_k = A^k\mathbf{v}_0$. Bây giờ ta có thể dùng kỹ thuật chéo hoá để xác định hồ sơ dân số $\mathbf{v}_k$ với mọi $k$ theo các giá trị ban đầu.
+
+<ViDu so="3.5.1">
+Giả sử các giá trị ban đầu là $a_0 = 100$ chim cái trưởng thành và $j_0 = 40$ chim cái non, hãy tính $a_k$ và $j_k$ với $k = 1, 2, \ldots$
+
+**Lời giải.** Đa thức đặc trưng của $A = \begin{bmatrix} \frac{1}{2} & \frac{1}{4} \\ 2 & 0 \end{bmatrix}$ là $c_A(x) = x^2 - \frac{1}{2}x - \frac{1}{2} = (x - 1)(x + \frac{1}{2})$, nên các giá trị riêng là $\lambda_1 = 1$ và $\lambda_2 = -\frac{1}{2}$. Phép khử Gauss cho các vector riêng cơ bản tương ứng; cho tiện ta dùng các bội $\mathbf{x}_1 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}$ và $\mathbf{x}_2 = \begin{bmatrix} -1 \\ 4 \end{bmatrix}$. Do đó ma trận chéo hoá là $P = \begin{bmatrix} 1 & -1 \\ 2 & 4 \end{bmatrix}$ và ta được
+
+$$
+P^{-1}AP = D \quad \text{với} \quad D = \begin{bmatrix} 1 & 0 \\ 0 & -\frac{1}{2} \end{bmatrix}
+$$
+
+Điều này cho $A = PDP^{-1}$, nên với mỗi $k \ge 0$ ta có thể tính $A^k$ tường minh:
+
+$$
+A^k = PD^kP^{-1} = \begin{bmatrix} 1 & -1 \\ 2 & 4 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & (-\frac{1}{2})^k \end{bmatrix} \frac{1}{6}\begin{bmatrix} 4 & 1 \\ -2 & 1 \end{bmatrix} = \frac{1}{6}\begin{bmatrix} 4 + 2(-\frac{1}{2})^k & 1 - (-\frac{1}{2})^k \\ 8 - 8(-\frac{1}{2})^k & 2 + 4(-\frac{1}{2})^k \end{bmatrix}
+$$
+
+Do đó
+
+$$
+\begin{bmatrix} a_k \\ j_k \end{bmatrix} = \mathbf{v}_k = A^k\mathbf{v}_0 = \frac{1}{6}\begin{bmatrix} 4 + 2(-\frac{1}{2})^k & 1 - (-\frac{1}{2})^k \\ 8 - 8(-\frac{1}{2})^k & 2 + 4(-\frac{1}{2})^k \end{bmatrix} \begin{bmatrix} 100 \\ 40 \end{bmatrix} = \frac{1}{6}\begin{bmatrix} 440 + 160(-\frac{1}{2})^k \\ 880 - 640(-\frac{1}{2})^k \end{bmatrix}
+$$
+
+So sánh các phần tử trên và dưới, ta được công thức chính xác cho $a_k$ và $j_k$:
+
+$$
+a_k = \frac{220}{3} + \frac{80}{3}\left(-\frac{1}{2}\right)^k \qquad \text{và} \qquad j_k = \frac{440}{3} - \frac{320}{3}\left(-\frac{1}{2}\right)^k
+$$
+
+Ở đây $k = 0, 1, 2, \ldots$[^1] Trong thực hành, các giá trị chính xác của $a_k$ và $j_k$ thường không cần thiết. Cái cần là một thước đo về cách các số này hành xử với $k$ lớn. Điều này dễ thấy ở đây. Vì $(-\frac{1}{2})^k$ gần bằng 0 với $k$ lớn, ta có các giá trị xấp xỉ
+
+$$
+a_k \approx \frac{220}{3} \qquad \text{và} \qquad j_k \approx \frac{440}{3} \qquad \text{nếu } k \text{ lớn}
+$$
+
+Do đó, về lâu dài, dân số chim cái ổn định với số chim non gấp khoảng hai lần số chim trưởng thành.
+</ViDu>
+
+<DinhNghia so="3.8" ten="Hệ động lực tuyến tính">
+Nếu $A$ là ma trận $n \times n$, một dãy $\mathbf{v}_0, \mathbf{v}_1, \mathbf{v}_2, \ldots$ các cột trong $\mathbb{R}^n$ được gọi là **hệ động lực tuyến tính** nếu $\mathbf{v}_0$ được cho trước và $\mathbf{v}_1, \mathbf{v}_2, \ldots$ được cho bởi hệ thức truy hồi ma trận $\mathbf{v}_{k+1} = A\mathbf{v}_k$ với mỗi $k \ge 0$. Ta gọi $A$ là **ma trận di cư** (*migration matrix*) của hệ.
+</DinhNghia>
+
+Ta có $\mathbf{v}_1 = A\mathbf{v}_0$, rồi $\mathbf{v}_2 = A^2\mathbf{v}_0$, và tiếp tục ta được
+
+$$
+\mathbf{v}_k = A^k\mathbf{v}_0 \quad \text{với mỗi } k = 1, 2, \ldots \tag{3.9}
+$$
+
+Do đó các cột $\mathbf{v}_k$ được xác định bởi các luỹ thừa $A^k$, và các luỹ thừa này tính được hiệu quả nếu $A$ chéo hoá được. Thực ra (3.9) có thể dùng để cho một “công thức” đẹp cho $\mathbf{v}_k$ trong trường hợp này.
+
+Giả sử $A$ chéo hoá được với các giá trị riêng $\lambda_1, \ldots, \lambda_n$ và các vector riêng cơ bản tương ứng $\mathbf{x}_1, \ldots, \mathbf{x}_n$. Nếu $P = \begin{bmatrix} \mathbf{x}_1 & \cdots & \mathbf{x}_n \end{bmatrix}$ là ma trận chéo hoá thì $P$ khả nghịch và $P^{-1}AP = D = \operatorname{diag}(\lambda_1, \ldots, \lambda_n)$ theo Định lý 3.4.1. Do đó $A = PDP^{-1}$ nên (3.9) và Định lý 3.3.1 cho
+
+$$
+\mathbf{v}_k = A^k\mathbf{v}_0 = (PD^kP^{-1})\mathbf{v}_0 = PD^k(P^{-1}\mathbf{v}_0)
+$$
+
+Cho tiện, ta ký hiệu cột $P^{-1}\mathbf{v}_0$ xuất hiện ở đây là
+
+$$
+\mathbf{b} = P^{-1}\mathbf{v}_0 = \begin{bmatrix} b_1 \\ b_2 \\ \vdots \\ b_n \end{bmatrix}
+$$
+
+Khi đó phép nhân ma trận cho
+
+$$
+\mathbf{v}_k = b_1\lambda_1^k\mathbf{x}_1 + b_2\lambda_2^k\mathbf{x}_2 + \cdots + b_n\lambda_n^k\mathbf{x}_n \tag{3.10}
+$$
+
+với mỗi $k \ge 0$. Đây là công thức chính xác rất hữu ích cho các cột $\mathbf{v}_k$. Nói riêng,
+
+$$
+\mathbf{v}_0 = b_1\mathbf{x}_1 + b_2\mathbf{x}_2 + \cdots + b_n\mathbf{x}_n
+$$
+
+Tuy nhiên, công thức chính xác như vậy cho $\mathbf{v}_k$ thường không cần trong thực hành; cái cần chỉ là *ước lượng* $\mathbf{v}_k$ với $k$ lớn. Điều này dễ làm nếu $A$ có một giá trị riêng lớn nhất. Một giá trị riêng $\lambda$ của ma trận $A$ được gọi là **giá trị riêng trội** (*dominant eigenvalue*) của $A$ nếu nó có bội 1 và
+
+$$
+|\lambda| > |\mu| \quad \text{với mọi giá trị riêng } \mu \ne \lambda
+$$
+
+Ví dụ, $\lambda_1 = 1$ là trội trong Ví dụ 3.5.1.
+
+Giả sử $A$ có giá trị riêng trội. Bằng cách chọn thứ tự đặt các cột $\mathbf{x}_i$ trong $P$, ta có thể giả sử $\lambda_1$ là trội. Lấy $\lambda_1^k$ làm nhân tử chung trong (3.10):
+
+$$
+\mathbf{v}_k = \lambda_1^k\left[b_1\mathbf{x}_1 + b_2\left(\frac{\lambda_2}{\lambda_1}\right)^k\mathbf{x}_2 + \cdots + b_n\left(\frac{\lambda_n}{\lambda_1}\right)^k\mathbf{x}_n\right]
+$$
+
+Vì $\lambda_1$ trội nên $|\lambda_i| < |\lambda_1|$ với mỗi $i \ge 2$, nên các số $(\lambda_i/\lambda_1)^k$ trở nên nhỏ về giá trị tuyệt đối khi $k$ tăng. Do đó $\mathbf{v}_k$ xấp xỉ bằng số hạng đầu $\lambda_1^kb_1\mathbf{x}_1$, và ta viết $\mathbf{v}_k \approx \lambda_1^kb_1\mathbf{x}_1$.
+
+<DinhLy so="3.5.1">
+Xét hệ động lực $\mathbf{v}_0, \mathbf{v}_1, \mathbf{v}_2, \ldots$ với hệ thức truy hồi $\mathbf{v}_{k+1} = A\mathbf{v}_k$ với $k \ge 0$, trong đó $A$ và $\mathbf{v}_0$ cho trước. Giả sử $A$ là ma trận $n \times n$ chéo hoá được với các giá trị riêng $\lambda_1, \ldots, \lambda_n$ và các vector riêng cơ bản tương ứng $\mathbf{x}_1, \ldots, \mathbf{x}_n$, và cho $P = \begin{bmatrix} \mathbf{x}_1 & \cdots & \mathbf{x}_n \end{bmatrix}$ là ma trận chéo hoá. Khi đó công thức chính xác cho $\mathbf{v}_k$ là
+
+$$
+\mathbf{v}_k = b_1\lambda_1^k\mathbf{x}_1 + b_2\lambda_2^k\mathbf{x}_2 + \cdots + b_n\lambda_n^k\mathbf{x}_n \quad \text{với mỗi } k \ge 0
+$$
+
+trong đó các hệ số $b_i$ đến từ $\mathbf{b} = P^{-1}\mathbf{v}_0 = \begin{bmatrix} b_1 \\ \vdots \\ b_n \end{bmatrix}$.
+
+Hơn nữa, nếu $A$ có giá trị riêng trội $\lambda_1$ thì $\mathbf{v}_k$ được xấp xỉ bởi
+
+$$
+\mathbf{v}_k \approx b_1\lambda_1^k\mathbf{x}_1 \quad \text{với } k \text{ đủ lớn.}
+$$
+
+</DinhLy>
+
+<ViDu so="3.5.2">
+Trở lại Ví dụ 3.5.1, ta thấy $\lambda_1 = 1$ là giá trị riêng trội, với vector riêng $\mathbf{x}_1 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}$. Ở đây $P = \begin{bmatrix} 1 & -1 \\ 2 & 4 \end{bmatrix}$ và $\mathbf{v}_0 = \begin{bmatrix} 100 \\ 40 \end{bmatrix}$ nên $P^{-1}\mathbf{v}_0 = \frac{1}{3}\begin{bmatrix} 220 \\ -80 \end{bmatrix}$. Do đó $b_1 = \frac{220}{3}$, nên
+
+$$
+\begin{bmatrix} a_k \\ j_k \end{bmatrix} = \mathbf{v}_k \approx b_1\lambda_1^k\mathbf{x}_1 = \frac{220}{3} \cdot 1^k\begin{bmatrix} 1 \\ 2 \end{bmatrix}
+$$
+
+với $k$ lớn. Do đó $a_k \approx \frac{220}{3}$ và $j_k \approx \frac{440}{3}$ như ở Ví dụ 3.5.1.
+</ViDu>
+
+<ViDu so="3.5.3">
+Giả sử một dãy $x_0, x_1, x_2, \ldots$ được xác định bởi
+
+$$
+x_0 = 1, \quad x_1 = -1, \quad \text{và} \quad x_{k+2} = 2x_k - x_{k+1} \text{ với mọi } k \ge 0
+$$
+
+Tìm công thức cho $x_k$ theo $k$.
+
+**Lời giải.** Dùng hệ thức truy hồi lặp lại cho
+
+$$
+x_2 = 3, \quad x_3 = -5, \quad x_4 = 11, \quad x_5 = -21, \ldots
+$$
+
+nên các $x_i$ được xác định nhưng không thấy quy luật nào. Ý tưởng là tìm $\mathbf{v}_k = \begin{bmatrix} x_k \\ x_{k+1} \end{bmatrix}$ với mỗi $k$ thay vì tìm $x_k$, rồi lấy $x_k$ là thành phần trên của $\mathbf{v}_k$. Lý do cách này hoạt động là hệ thức truy hồi bảo đảm rằng các $\mathbf{v}_k$ tạo thành một hệ động lực:
+
+$$
+\mathbf{v}_{k+1} = \begin{bmatrix} x_{k+1} \\ x_{k+2} \end{bmatrix} = \begin{bmatrix} x_{k+1} \\ 2x_k - x_{k+1} \end{bmatrix} = A\mathbf{v}_k \quad \text{với} \quad A = \begin{bmatrix} 0 & 1 \\ 2 & -1 \end{bmatrix}
+$$
+
+Các giá trị riêng của $A$ là $\lambda_1 = -2$ và $\lambda_2 = 1$ với các vector riêng $\mathbf{x}_1 = \begin{bmatrix} 1 \\ -2 \end{bmatrix}$ và $\mathbf{x}_2 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$, nên ma trận chéo hoá là $P = \begin{bmatrix} 1 & 1 \\ -2 & 1 \end{bmatrix}$.
+
+Hơn nữa, $\mathbf{b} = P^{-1}\mathbf{v}_0 = \frac{1}{3}\begin{bmatrix} 2 \\ 1 \end{bmatrix}$ nên công thức chính xác cho $\mathbf{v}_k$ là
+
+$$
+\begin{bmatrix} x_k \\ x_{k+1} \end{bmatrix} = \mathbf{v}_k = \frac{2}{3}(-2)^k\begin{bmatrix} 1 \\ -2 \end{bmatrix} + \frac{1}{3}1^k\begin{bmatrix} 1 \\ 1 \end{bmatrix}
+$$
+
+So sánh các phần tử trên cho công thức mong muốn:
+
+$$
+x_k = \frac{1}{3}\left[2(-2)^k + 1\right] \quad \text{với mọi } k = 0, 1, 2, \ldots
+$$
+
+Bạn đọc nên kiểm tra điều này với vài giá trị đầu của $k$.
+</ViDu>
+
+<GhiChu tieuDe="Ghi chú cho người học — kỹ thuật rất đáng nhớ">
+Ví dụ 3.5.3 minh hoạ một kỹ thuật cực kỳ hữu ích: *biến hệ thức truy hồi bậc cao thành hệ động lực bậc nhất* bằng cách gom nhiều số hạng liên tiếp vào một vector.
+
+Áp dụng nổi tiếng nhất là dãy Fibonacci $F_{k+2} = F_{k+1} + F_k$. Với $A = \begin{bmatrix} 0 & 1 \\ 1 & 1 \end{bmatrix}$, ta chéo hoá và ra ngay công thức Binet, trong đó xuất hiện tỉ lệ vàng $\varphi = \frac{1 + \sqrt{5}}{2}$ (chính là giá trị riêng trội).
+
+Trong lập trình, cách nhìn ma trận này còn cho thuật toán tính $F_n$ với độ phức tạp $O(\log n)$ bằng *luỹ thừa nhanh ma trận* ($A^n$ tính bằng bình phương liên tiếp) — nhanh hơn hẳn vòng lặp $O(n)$. Đây là một bài tập rất hay nếu bạn thích DSA.
+</GhiChu>
+
+## Mô tả bằng đồ thị của hệ động lực
+
+Nếu cho một hệ động lực $\mathbf{v}_{k+1} = A\mathbf{v}_k$, dãy $\mathbf{v}_0, \mathbf{v}_1, \mathbf{v}_2, \ldots$ được gọi là **quỹ đạo** (*trajectory*) của hệ xuất phát từ $\mathbf{v}_0$. Rất bổ ích khi vẽ đồ thị của hệ bằng cách viết $\mathbf{v}_k = \begin{bmatrix} x_k \\ y_k \end{bmatrix}$ và vẽ các giá trị liên tiếp thành các điểm $(x_k, y_k)$ trong mặt phẳng. Sau đây là vài ví dụ minh hoạ các tính chất của hệ động lực. Cho dễ tính, ta giả sử ma trận $A$ đơn giản, thường là ma trận đường chéo.
+
+<ViDu so="3.5.4" ten="Điểm hút">
+Cho $A = \begin{bmatrix} \frac{1}{2} & 0 \\ 0 & \frac{1}{3} \end{bmatrix}$. Các giá trị riêng là $\frac{1}{2}$ và $\frac{1}{3}$, với các vector riêng tương ứng $\mathbf{x}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$, $\mathbf{x}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$. Công thức chính xác là
+
+$$
+\mathbf{v}_k = b_1\left(\tfrac{1}{2}\right)^k\begin{bmatrix} 1 \\ 0 \end{bmatrix} + b_2\left(\tfrac{1}{3}\right)^k\begin{bmatrix} 0 \\ 1 \end{bmatrix}
+$$
+
+với $k = 0, 1, 2, \ldots$ theo Định lý 3.5.1, trong đó các hệ số $b_1$, $b_2$ phụ thuộc vào điểm đầu $\mathbf{v}_0$. Với mọi lựa chọn $\mathbf{v}_0$, các quỹ đạo đều hội tụ về gốc toạ độ, vì cả hai giá trị riêng đều nhỏ hơn 1 về giá trị tuyệt đối. Vì lý do đó, gốc toạ độ được gọi là **điểm hút** (*attractor*) của hệ.
+
+<HinhQuyDao ten="diem-hut" A={[[0.5, 0], [0, 1 / 3]]} diemDau={[[1, 1], [-1, 1], [1, -1], [-1, -1], [0.4, 1.15], [-0.4, 1.15], [0.4, -1.15], [-0.4, -1.15]]} soBuoc={6} moTa="Các quỹ đạo từ tám điểm đầu đều tiến về gốc toạ độ" chuThich="Mỗi quỹ đạo bắt đầu ở chấm đậm; các điểm tiếp theo dồn về gốc toạ độ." />
+</ViDu>
+
+<ViDu so="3.5.5" ten="Điểm đẩy">
+Cho $A = \begin{bmatrix} \frac{3}{2} & 0 \\ 0 & \frac{4}{3} \end{bmatrix}$. Các giá trị riêng là $\frac{3}{2}$ và $\frac{4}{3}$, với cùng các vector riêng như trên. Công thức chính xác là
+
+$$
+\mathbf{v}_k = b_1\left(\tfrac{3}{2}\right)^k\begin{bmatrix} 1 \\ 0 \end{bmatrix} + b_2\left(\tfrac{4}{3}\right)^k\begin{bmatrix} 0 \\ 1 \end{bmatrix}
+$$
+
+Vì cả hai giá trị riêng đều lớn hơn 1 về giá trị tuyệt đối, các quỹ đạo phân kỳ ra xa gốc toạ độ với mọi điểm ban đầu. Vì lý do đó, gốc toạ độ được gọi là **điểm đẩy** (*repellor*).
+
+<HinhQuyDao ten="diem-day" A={[[1.5, 0], [0, 4 / 3]]} diemDau={[[0.12, 0.12], [-0.12, 0.12], [0.12, -0.12], [-0.12, -0.12], [0.05, 0.15], [-0.05, 0.15], [0.05, -0.15], [-0.05, -0.15]]} soBuoc={8} moTa="Các quỹ đạo từ tám điểm gần gốc toạ độ đều chạy ra xa" chuThich="Xuất phát gần gốc toạ độ (chấm đậm), các quỹ đạo bị đẩy ra xa." />
+</ViDu>
+
+<ViDu so="3.5.6" ten="Điểm yên ngựa">
+Cho $A = \begin{bmatrix} 1 & -\frac{1}{2} \\ -\frac{1}{2} & 1 \end{bmatrix}$. Các giá trị riêng là $\frac{3}{2}$ và $\frac{1}{2}$, với các vector riêng tương ứng $\mathbf{x}_1 = \begin{bmatrix} -1 \\ 1 \end{bmatrix}$ và $\mathbf{x}_2 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$. Công thức chính xác là
+
+$$
+\mathbf{v}_k = b_1\left(\tfrac{3}{2}\right)^k\begin{bmatrix} -1 \\ 1 \end{bmatrix} + b_2\left(\tfrac{1}{2}\right)^k\begin{bmatrix} 1 \\ 1 \end{bmatrix}
+$$
+
+Trong trường hợp này $\frac{3}{2}$ là giá trị riêng trội, nên nếu $b_1 \ne 0$ thì $\mathbf{v}_k \approx b_1(\frac{3}{2})^k\begin{bmatrix} -1 \\ 1 \end{bmatrix}$ với $k$ lớn, và $\mathbf{v}_k$ tiến đến đường thẳng $y = -x$. Tuy nhiên, nếu $b_1 = 0$ thì $\mathbf{v}_k = b_2(\frac{1}{2})^k\begin{bmatrix} 1 \\ 1 \end{bmatrix}$ và tiến về gốc toạ độ dọc đường thẳng $y = x$. Nói chung các quỹ đạo có dạng như trong hình, và gốc toạ độ được gọi là **điểm yên ngựa** (*saddle point*) của hệ động lực trong trường hợp này.
+
+<HinhQuyDao ten="yen-ngua" A={[[1, -0.5], [-0.5, 1]]} diemDau={[[1.15, 1.05], [1.05, 1.15], [-1.15, -1.05], [-1.05, -1.15], [1.15, 0.95], [0.95, 1.15], [-1.15, -0.95], [-0.95, -1.15]]} soBuoc={7} moTa="Các quỹ đạo đến gần gốc toạ độ dọc đường y bằng x rồi bị đẩy ra theo đường y bằng âm x" chuThich="Xuất phát gần đường y = x, các quỹ đạo tiến vào gần gốc rồi bị đẩy ra theo hướng đường y = −x." />
+</ViDu>
+
+<ViDu so="3.5.7" ten="Giá trị riêng phức">
+Cho $A = \begin{bmatrix} 0 & \frac{1}{2} \\ -\frac{1}{2} & 0 \end{bmatrix}$. Đa thức đặc trưng là $c_A(x) = x^2 + \frac{1}{4}$, nên các giá trị riêng là các số phức $\frac{i}{2}$ và $-\frac{i}{2}$ với $i^2 = -1$. Do đó $A$ không chéo hoá được trên trường số thực. Tuy nhiên các quỹ đạo không khó mô tả. Nếu bắt đầu với $\mathbf{v}_0 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$ thì quỹ đạo bắt đầu như
+
+$$
+\mathbf{v}_1 = \begin{bmatrix} \frac{1}{2} \\ -\frac{1}{2} \end{bmatrix}, \quad \mathbf{v}_2 = \begin{bmatrix} -\frac{1}{4} \\ -\frac{1}{4} \end{bmatrix}, \quad \mathbf{v}_3 = \begin{bmatrix} -\frac{1}{8} \\ \frac{1}{8} \end{bmatrix}, \quad \mathbf{v}_4 = \begin{bmatrix} \frac{1}{16} \\ \frac{1}{16} \end{bmatrix}, \ldots
+$$
+
+Mỗi quỹ đạo *xoáy trôn ốc* vào gốc toạ độ, nên gốc toạ độ là điểm hút. Lưu ý rằng hai giá trị riêng (phức) ở đây có giá trị tuyệt đối nhỏ hơn 1. Nếu chúng có giá trị tuyệt đối lớn hơn 1, các quỹ đạo sẽ xoáy ra xa gốc toạ độ.
+
+<HinhQuyDao ten="xoay-oc" A={[[0, 0.5], [-0.5, 0]]} diemDau={[[1, 1]]} soBuoc={8} moTa="Quỹ đạo từ điểm (1, 1) xoáy trôn ốc vào gốc toạ độ" chuThich="Từ v₀ = (1, 1), mỗi bước quay một phần tư vòng và co lại một nửa." />
+</ViDu>
+
+<GhiChu tieuDe="Ghi chú cho người học — vì sao phần này quan trọng">
+Bốn ví dụ 3.5.4–3.5.7 là một bảng phân loại nhỏ mà bạn nên nhớ:
+
+| Điều kiện giá trị riêng | Hành vi |
+| --- | --- |
+| mọi $\lvert\lambda_i\rvert < 1$ | hội tụ về gốc (điểm hút — hệ *ổn định*) |
+| mọi $\lvert\lambda_i\rvert > 1$ | phân kỳ (điểm đẩy — hệ *không ổn định*) |
+| có cả $\lvert\lambda\rvert > 1$ và $\lvert\lambda\rvert < 1$ | điểm yên ngựa |
+| $\lambda$ phức, $\lvert\lambda\rvert < 1$ | xoáy trôn ốc vào trong |
+
+Đây chính là **lý thuyết ổn định** — nền tảng của điều khiển tự động, xử lý tín hiệu số, và phân tích độ ổn định của thuật toán số. Trong xử lý tín hiệu, điều kiện “mọi $|\lambda| < 1$” chính là điều kiện để một bộ lọc số ổn định (các cực nằm trong đường tròn đơn vị).
+</GhiChu>
+
+## Thuật toán PageRank của Google
+
+Các giá trị riêng trội rất hữu ích cho công cụ tìm kiếm Google. Khi có truy vấn từ người dùng, Google có phương pháp tinh vi để xác định “độ liên quan” của mỗi trang web với truy vấn đó. Khi các trang liên quan đã được xác định, chúng được sắp theo thứ tự quan trọng dựa trên một xếp hạng toàn bộ các trang, gọi là **PageRank**.
+
+Web chứa rất nhiều liên kết từ trang này sang trang khác. Google diễn giải một liên kết từ trang $j$ đến trang $i$ như một “phiếu bầu” cho tầm quan trọng của trang $i$. Do đó nếu trang $i$ có nhiều liên kết trỏ đến hơn trang $j$ thì $i$ được xem là “quan trọng” hơn và được gán PageRank cao hơn. Một cách nhìn là xem các trang như các đỉnh trong một đồ thị có hướng khổng lồ (xem <XemMuc muc="2.3" chu="Mục 2.3" />[^2]). Khi đó nếu trang $j$ liên kết đến trang $i$ thì có một cạnh từ $j$ đến $i$, và phần tử $(i, j)$ bằng 1 trong ma trận kề tương ứng (ở đây gọi là **ma trận liên thông**). Như vậy số lượng lớn các số 1 ở hàng $i$ của ma trận này là một thước đo PageRank của trang $i$.
+
+Tuy nhiên điều này chưa tính đến PageRank của *các trang liên kết đến* $i$. Một cách tiếp cận là tính một *vector riêng trội* $\mathbf{x}$ cho ma trận liên thông. Trong hầu hết trường hợp các phần tử của $\mathbf{x}$ có thể chọn dương với tổng bằng 1. Mỗi trang ứng với một phần tử của $\mathbf{x}$, nên tổng các phần tử của các trang liên kết đến trang $i$ là thước đo thứ hạng của trang $i$. Thực tế, Google chọn PageRank của một trang sao cho nó tỉ lệ với tổng này.
+
+[^1]: *Ghi chú của người dịch:* bản gốc in $j_k = \frac{440}{3} + \frac{320}{3}\left(-\frac{1}{2}\right)^k$. Dấu đúng là dấu trừ, như phép nhân ma trận ở trên cho thấy; kiểm nhanh với $k = 0$: $\frac{440}{3} - \frac{320}{3} = 40 = j_0$.
+
+[^2]: *Ghi chú của người dịch:* bản gốc ghi “Section 2.2”; đồ thị có hướng được trình bày ở Mục 2.3.
