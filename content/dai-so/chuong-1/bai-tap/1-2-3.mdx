@@ -33,3 +33,31 @@ $$
 \left[\begin{array}{rrrrr|r} 1 & -1 & 2 & 4 & 6 & 2 \\ 0 & 1 & 2 & 1 & -1 & -1 \\ 0 & 0 & 0 & 1 & 0 & 1 \\ 0 & 0 & 0 & 0 & 0 & 0 \end{array}\right]
 $$
 </De>
+
+<GoiY so={1}>
+Không cần biến đổi thêm (trừ câu c, d nên rút gọn tiếp hoặc thế ngược). Xác định cột có số 1 dẫn đầu → ẩn chính; các ẩn còn lại đặt tham số.
+</GoiY>
+
+<GoiY so={2}>
+Câu a: ẩn chính $x_1, x_3, x_6$; tham số $x_2 = r$, $x_4 = s$, $x_5 = t$. Câu c, d: giải hàng dưới trước rồi thay ngược lên.
+</GoiY>
+
+<LoiGiai>
+**a.** Ẩn chính $x_1, x_3, x_6$. Đặt $x_2 = r$, $x_4 = s$, $x_5 = t$:
+$$x_1 = -1 - 2r - 3s - t, \quad x_3 = 2 + s - t, \quad x_6 = 3.$$
+
+**b.** Ẩn chính $x_1, x_3, x_5$. Đặt $x_2 = r$, $x_4 = s$, $x_6 = t$:
+$$x_1 = 1 + 2r - 2s - t, \quad x_3 = -1 - 5s + 3t, \quad x_5 = 1 - 6t.$$
+
+**c.** Ẩn chính $x_1, x_2, x_4$. Đặt $x_3 = s$, $x_5 = t$. Hàng 3: $x_4 = t$. Hàng 2: $x_2 = 1 + s - t$. Hàng 1:
+$$x_1 = 1 - 2x_2 - x_3 - 3x_4 - x_5 = -1 - 3s - 2t.$$
+
+**d.** Ẩn chính $x_1, x_2, x_4$. Đặt $x_3 = s$, $x_5 = t$. Hàng 3: $x_4 = 1$. Hàng 2: $x_2 = -1 - 2s - 1 + t = -2 - 2s + t$. Hàng 1:
+$$x_1 = 2 + x_2 - 2s - 4 - 6t = -4 - 4s - 5t.$$
+
+Kiểm tra câu d, hàng 1: $(-4 - 4s - 5t) - (-2 - 2s + t) + 2s + 4 + 6t = 2$ ✓.
+</LoiGiai>
+
+<LoiHayMac>
+Quên ẩn có cột toàn 0 ở giữa (như $x_2$ ở câu a). Ẩn không có số 1 dẫn đầu thì **luôn** là tham số, kể cả khi nó không xuất hiện trong phương trình nào.
+</LoiHayMac>

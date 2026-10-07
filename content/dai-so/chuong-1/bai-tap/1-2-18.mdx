@@ -14,3 +14,27 @@ Một trường có ba câu lạc bộ và mỗi sinh viên bắt buộc phải 
 
 Nếu tỉ lệ sinh viên trong mỗi câu lạc bộ không đổi, hãy tìm các tỉ lệ đó.
 </De>
+
+<GoiY so={1}>
+Gọi $a, b, c$ là tỉ lệ sinh viên ở A, B, C. "Không đổi" nghĩa là số vào mỗi CLB sau một năm bằng chính nó: $a = \tfrac{4}{10}a + \tfrac{2}{10}b + \tfrac{2}{10}c$, …
+</GoiY>
+
+<GoiY so={2}>
+Ba phương trình đó là một hệ thuần nhất có vô số nghiệm. Thêm điều kiện $a + b + c = 1$ để chọn đúng một nghiệm.
+</GoiY>
+
+<LoiGiai>
+Nhân 10 và chuyển vế:
+$$
+\begin{aligned} -6a + 2b + 2c &= 0 \\ a - 3b + 2c &= 0 \\ 5a + b - 4c &= 0 \end{aligned}
+$$
+Khử Gauss cho hạng 2 (phương trình thứ ba thừa). Nghiệm: $a = 5t$, $b = 7t$, $c = 8t$. Từ $a + b + c = 1$: $20t = 1$, $t = \tfrac{1}{20}$.
+
+Tỉ lệ: **A $\tfrac{1}{4}$, B $\tfrac{7}{20}$, C $\tfrac{2}{5}$** (tức 25%, 35%, 40%).
+
+Kiểm tra CLB A: $0{,}4 \cdot 0{,}25 + 0{,}2 \cdot 0{,}35 + 0{,}2 \cdot 0{,}4 = 0{,}1 + 0{,}07 + 0{,}08 = 0{,}25$ ✓.
+</LoiGiai>
+
+<LoiHayMac>
+Lập phương trình theo **lượng đi ra** khỏi mỗi CLB thay vì **lượng vào**. Số sinh viên ở A năm sau gồm người **ở lại** A cộng người **từ B, C chuyển sang** A.
+</LoiHayMac>

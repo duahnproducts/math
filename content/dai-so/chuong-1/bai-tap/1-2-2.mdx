@@ -21,3 +21,31 @@ $$
 \left[\begin{array}{rrrrrrr} 0 & -1 & 3 & 1 & 3 & 2 & 1 \\ 0 & -2 & 6 & 1 & -5 & 0 & -1 \\ 0 & 3 & -9 & 2 & 4 & 1 & -1 \\ 0 & 1 & -3 & -1 & 3 & 0 & 1 \end{array}\right]
 $$
 </De>
+
+<GoiY so={1}>
+Cột 1 toàn 0, bỏ qua. Bắt đầu từ cột 2: chọn hàng có số $\pm 1$ ở cột 2 đưa lên đầu, tạo số 1 dẫn đầu, rồi khử cột 2 ở mọi hàng khác.
+</GoiY>
+
+<GoiY so={2}>
+Sau khi khử cột 2, cột 3 sẽ toàn 0 ở các hàng dưới (vì cột 3 $= -2 \times$ cột 2 ở câu a, $-3 \times$ ở câu b). Bỏ qua cột 3, sang cột 4.
+</GoiY>
+
+<LoiGiai>
+Khử từng cột từ trái sang phải, nhớ xoá cả **phía trên** số 1 dẫn đầu. Kết quả:
+
+**a.**
+$$
+\left[\begin{array}{rrrrrrr} 0 & 1 & -2 & 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 & 3 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 & 0 & 0 & 1 \end{array}\right]
+$$
+
+**b.**
+$$
+\left[\begin{array}{rrrrrrr} 0 & 1 & -3 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 & 0 & 0 & -1 \\ 0 & 0 & 0 & 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 1 & 1 \end{array}\right]
+$$
+
+Kiểm tra nhanh: dạng bậc thang rút gọn của một ma trận là **duy nhất**, nên đi đường nào cũng phải ra đúng các ma trận này. Mỗi ma trận có 4 số 1 dẫn đầu, hạng bằng 4.
+</LoiGiai>
+
+<LoiHayMac>
+Dừng ở dạng bậc thang (chỉ khử phía dưới). Đề hỏi dạng **rút gọn**, nên mọi số phía trên mỗi số 1 dẫn đầu cũng phải về 0.
+</LoiHayMac>

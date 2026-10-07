@@ -11,3 +11,37 @@ Trong mỗi trường hợp, tìm (nếu có thể) điều kiện của $a$, $b
 
 **a.** $\left\{\begin{aligned} 3x + y - z &= a \\ x - y + 2z &= b \\ 5x + 3y - 4z &= c \end{aligned}\right.$ · **b.** $\left\{\begin{aligned} 2x + y - z &= a \\ 2y + 3z &= b \\ x - z &= c \end{aligned}\right.$ · **c.** $\left\{\begin{aligned} -x + 3y + 2z &= -8 \\ x + z &= 2 \\ 3x + 3y + az &= b \end{aligned}\right.$ · **d.** $\left\{\begin{aligned} x + ay &= 0 \\ y + bz &= 0 \\ z + cx &= 0 \end{aligned}\right.$ · **e.** $\left\{\begin{aligned} 3x - y + 2z &= 3 \\ x + y - z &= 2 \\ 2x - 2y + 3z &= b \end{aligned}\right.$ · **f.** $\left\{\begin{aligned} x + ay - z &= 1 \\ -x + (a - 2)y + z &= -1 \\ 2x + 2y + (a - 2)z &= 1 \end{aligned}\right.$
 </De>
+
+<GoiY so={1}>
+Khử Gauss với $a, b, c$ như số. Nếu ma trận hệ số luôn có một hàng 0 sau khi khử (câu a, e), điều kiện có nghiệm là vế phải ở hàng đó bằng 0.
+</GoiY>
+
+<GoiY so={2}>
+Câu c, f: hệ số ở góc dưới phải phụ thuộc $a$ — xét nó bằng 0 hay không. Câu d là hệ thuần nhất: không bao giờ vô nghiệm.
+</GoiY>
+
+<LoiGiai>
+**a.** Khử ra hàng cuối $[\,0\ 0\ 0 \mid c + b - 2a\,]$. Không bao giờ có đúng một nghiệm. Nếu $c = 2a - b$: vô số nghiệm; nếu không: vô nghiệm.
+
+**b.** Khử ra ba số 1 dẫn đầu với mọi $a, b, c$: **luôn** có đúng một nghiệm.
+
+**c.** Hàng cuối thành $(a - 6)z = b$ (sau khi rút gọn).
+- $a \ne 6$: một nghiệm.
+- $a = 6$, $b \ne 0$: vô nghiệm.
+- $a = 6$, $b = 0$: vô số nghiệm.
+
+**d.** Thế liên tiếp: $x = -ay$, $y = -bz$, nên $x = abz$; phương trình 3: $z + abcz = 0$, tức $(1 + abc)z = 0$.
+- $abc \ne -1$: chỉ có nghiệm $0$ (một nghiệm).
+- $abc = -1$: vô số nghiệm. Không bao giờ vô nghiệm (hệ thuần nhất).
+
+**e.** Hàng cuối thành $[\,0\ 0\ 0 \mid b - 1\,]$. $b = 1$: vô số nghiệm; $b \ne 1$: vô nghiệm. Không bao giờ có một nghiệm.
+
+**f.** $R_2 + R_1$: $(2a - 2)y = 0$. $R_3 - 2R_1$: $(2 - 2a)y + az = -1$.
+- $a \ne 0$, $a \ne 1$: một nghiệm.
+- $a = 1$: hàng 2 thành $0 = 0$, hàng 3 cho $z = -1$; vô số nghiệm ($y$ tự do).
+- $a = 0$: $y = 0$ từ hàng 2, hàng 3 thành $0 = -1$: vô nghiệm.
+</LoiGiai>
+
+<LoiHayMac>
+Ở câu d, quên rằng hệ thuần nhất luôn có nghiệm $0$, rồi kết luận "vô nghiệm" khi $abc = -1$. Hàng $0 = 0$ không bao giờ là vô nghiệm.
+</LoiHayMac>

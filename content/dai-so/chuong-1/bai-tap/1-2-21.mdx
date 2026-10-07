@@ -8,3 +8,27 @@ tieu_de: "Đếm đồng xu"
 <De>
 Một cậu bé có \$1.05 gồm các đồng dime, nickel và penny. Nếu tổng cộng có 17 đồng xu, cậu có thể có bao nhiêu đồng mỗi loại?
 </De>
+
+<GoiY so={1}>
+Gọi $d, n, p$ là số đồng dime (10 xu), nickel (5 xu), penny (1 xu). Hai phương trình: tổng số đồng và tổng giá trị.
+</GoiY>
+
+<GoiY so={2}>
+$d + n + p = 17$, $10d + 5n + p = 105$. Trừ: $9d + 4n = 88$. Nghiệm phải là **số nguyên không âm** — thử các $d$ làm $88 - 9d$ chia hết cho 4.
+</GoiY>
+
+<LoiGiai>
+Từ $9d + 4n = 88$: $88 - 9d$ chia hết cho 4 nên $d$ chia hết cho 4: $d \in \{0, 4, 8\}$.
+
+| $d$ | $n = \tfrac{88 - 9d}{4}$ | $p = 17 - d - n$ | Hợp lệ? |
+| --- | --- | --- | --- |
+| 0 | 22 | $-5$ | Không |
+| 4 | 13 | 0 | Có (không có penny) |
+| 8 | 4 | 5 | Có |
+
+Nếu cậu bé có đủ cả ba loại: **8 dime, 4 nickel, 5 penny**. Kiểm tra: $80 + 20 + 5 = 105$ ✓, $8 + 4 + 5 = 17$ ✓. (Nếu cho phép thiếu penny thì còn đáp án 4 dime, 13 nickel.)
+</LoiGiai>
+
+<LoiHayMac>
+Dừng ở nghiệm có tham số $d = t$, $n = 22 - \tfrac{9}{4}t$, … Bài toán thực tế đòi **số nguyên không âm**, nên phải lọc thêm — điều mà phép khử Gauss không tự làm.
+</LoiHayMac>

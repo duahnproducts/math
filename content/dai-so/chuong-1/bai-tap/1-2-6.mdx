@@ -11,3 +11,27 @@ Biểu diễn phương trình cuối của mỗi hệ thành tổng các bội c
 
 **a.** $\left\{\begin{aligned} x_1 + x_2 + x_3 &= 1 \\ 2x_1 - x_2 + 3x_3 &= 3 \\ x_1 - 2x_2 + 2x_3 &= 2 \end{aligned}\right.$ · **b.** $\left\{\begin{aligned} x_1 + 2x_2 - 3x_3 &= -3 \\ x_1 + 3x_2 - 5x_3 &= 5 \\ x_1 - 2x_2 + 5x_3 &= -35 \end{aligned}\right.$
 </De>
+
+<GoiY so={1}>
+Tìm $p$, $q$ sao cho $p \cdot(\text{PT 1}) + q \cdot(\text{PT 2}) = \text{PT 3}$. So từng hệ số và vế phải cho một hệ theo $p, q$.
+</GoiY>
+
+<GoiY so={2}>
+Câu a: hệ số của $x_1$ cho $p + 2q = 1$, của $x_2$ cho $p - q = -2$. Giải ra rồi kiểm tra hai hệ số còn lại.
+</GoiY>
+
+<LoiGiai>
+**a.** $p + 2q = 1$ và $p - q = -2$ cho $q = 1$, $p = -1$. Kiểm tra $x_3$: $-1 + 3 = 2$ ✓; vế phải: $-1 + 3 = 2$ ✓.
+
+$$\text{PT 3} = -\,\text{PT 1} + \text{PT 2}$$
+
+**b.** $p + q = 1$ (hệ số $x_1$) và $2p + 3q = -2$ (hệ số $x_2$) cho $q = -4$, $p = 5$. Kiểm tra $x_3$: $-15 + 20 = 5$ ✓; vế phải: $-15 - 20 = -35$ ✓.
+
+$$\text{PT 3} = 5\,\text{PT 1} - 4\,\text{PT 2}$$
+
+Ý nghĩa: phương trình 3 là thừa; khi khử Gauss nó sẽ thành hàng $0 = 0$.
+</LoiGiai>
+
+<LoiHayMac>
+Chỉ so hệ số của hai ẩn rồi dừng. Phải kiểm tra **cả** hệ số còn lại và vế phải — nếu một chỗ không khớp thì không tồn tại $p, q$.
+</LoiHayMac>

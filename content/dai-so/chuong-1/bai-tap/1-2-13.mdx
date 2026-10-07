@@ -13,3 +13,27 @@ $$
 \left[\begin{array}{rrr} b_1 + c_1 & b_2 + c_2 & b_3 + c_3 \\ c_1 + a_1 & c_2 + a_2 & c_3 + a_3 \\ a_1 + b_1 & a_2 + b_2 & a_3 + b_3 \end{array}\right] \quad\text{về}\quad \left[\begin{array}{rrr} a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3 \\ c_1 & c_2 & c_3 \end{array}\right].
 $$
 </De>
+
+<GoiY so={1}>
+Cộng cả ba hàng được $2(a + b + c)$ ở mỗi vị trí. Đó là "tổng" — từ tổng trừ đi từng hàng sẽ ra từng hàng đơn.
+</GoiY>
+
+<GoiY so={2}>
+Sau khi có hàng $a + b + c$ ở trên cùng, $R_2 - R_1$ cho $-b$, $R_3 - R_1$ cho $-c$.
+</GoiY>
+
+<LoiGiai>
+Viết tắt mỗi hàng: $R_1 = b + c$, $R_2 = c + a$, $R_3 = a + b$ (theo từng vị trí 1, 2, 3).
+
+1. $R_1 \to R_1 + R_2$, rồi $R_1 \to R_1 + R_3$: $R_1 = 2(a + b + c)$.
+2. $R_1 \to \tfrac{1}{2}R_1$: $R_1 = a + b + c$.
+3. $R_2 \to R_2 - R_1$: $R_2 = -b$. $\ R_3 \to R_3 - R_1$: $R_3 = -c$.
+4. $R_1 \to R_1 + R_2$, rồi $R_1 \to R_1 + R_3$: $R_1 = a$.
+5. $R_2 \to -R_2$, $R_3 \to -R_3$: $R_2 = b$, $R_3 = c$.
+
+Kết quả là ma trận với các hàng $a$, $b$, $c$ như yêu cầu. Mỗi bước chỉ là **một** phép biến đổi sơ cấp.
+</LoiGiai>
+
+<LoiHayMac>
+Viết "$R_1 \to R_1 + R_2 + R_3$" như một bước. Đó là **hai** phép biến đổi sơ cấp; nên tách ra khi đề hỏi một dãy phép biến đổi sơ cấp.
+</LoiHayMac>

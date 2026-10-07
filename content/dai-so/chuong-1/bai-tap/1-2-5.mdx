@@ -11,3 +11,35 @@ Tìm tất cả nghiệm (nếu có) của mỗi hệ sau.
 
 **a.** $\left\{\begin{aligned} x + y + 2z &= 8 \\ 3x - y + z &= 0 \\ -x + 3y + 4z &= -4 \end{aligned}\right.$ · **b.** $\left\{\begin{aligned} -2x + 3y + 3z &= -9 \\ 3x - 4y + z &= 5 \\ -5x + 7y + 2z &= -14 \end{aligned}\right.$ · **c.** $\left\{\begin{aligned} x + y - z &= 10 \\ -x + 4y + 5z &= -5 \\ x + 6y + 3z &= 15 \end{aligned}\right.$ · **d.** $\left\{\begin{aligned} x + 2y - z &= 2 \\ 2x + 5y - 3z &= 1 \\ x + 4y - 3z &= 3 \end{aligned}\right.$ · **e.** $\left\{\begin{aligned} 5x + y &= 2 \\ 3x - y + 2z &= 1 \\ x + y - z &= 5 \end{aligned}\right.$ · **f.** $\left\{\begin{aligned} 3x - 2y + z &= -2 \\ x - y + 3z &= 5 \\ -x + y + z &= -1 \end{aligned}\right.$ · **g.** $\left\{\begin{aligned} x + y + z &= 2 \\ x + z &= 1 \\ 2x + 5y + 2z &= 7 \end{aligned}\right.$ · **h.** $\left\{\begin{aligned} x + 2y - 4z &= 10 \\ 2x - y + 2z &= 5 \\ x + y - 2z &= 7 \end{aligned}\right.$
 </De>
+
+<GoiY so={1}>
+Lập ma trận bổ sung, khử Gauss đến dạng bậc thang. Xem có hàng $[\,0\ 0\ 0 \mid c \ne 0\,]$ không; nếu không, đếm tham số $= 3 - \text{hạng}$.
+</GoiY>
+
+<GoiY so={2}>
+Kết cục để tự đối chiếu: a, f một nghiệm; b, c, g, h vô số nghiệm (một tham số); d, e vô nghiệm.
+</GoiY>
+
+<LoiGiai>
+**a.** $(x, y, z) = (17, 31, -20)$. Kiểm tra: $17 + 31 - 40 = 8$ ✓.
+
+**b.** Vô số nghiệm: $x = -21 - 15t$, $y = -17 - 11t$, $z = t$.
+
+**c.** Vô số nghiệm: $x = 9 + 9t$, $y = 1 - 4t$, $z = 5t$ (đặt $z = 5t$ để tránh phân số).
+
+**d.** Khử ra hàng $[\,0\ 0\ 0 \mid c\,]$ với $c \ne 0$: **vô nghiệm**. ($R_2 - 2R_1$, $R_3 - R_1$ cho $(0, 1, -1 \mid -3)$ và $(0, 2, -2 \mid 1)$; rồi $R_3 - 2R_2$ cho $0 = 7$.)
+
+**e.** Tương tự: **vô nghiệm**.
+
+**f.** $(x, y, z) = (-7, -9, 1)$. Kiểm tra: $-21 + 18 + 1 = -2$ ✓.
+
+**g.** Vô số nghiệm: $x = 1 - t$, $y = 1$, $z = t$.
+
+**h.** Vô số nghiệm: $x = 4$, $y = 3 + 2t$, $z = t$.
+
+Kiểm tra câu h với $t = 0$: $(4, 3, 0)$ cho $4 + 6 = 10$ ✓, $8 - 3 = 5$ ✓, $4 + 3 = 7$ ✓.
+</LoiGiai>
+
+<LoiHayMac>
+Ở câu c, nghiệm có phân số kiểu $x = 9 + \tfrac{9}{5}t$. Không sai, nhưng đổi tham số ($z = 5t$) cho gọn và dễ kiểm tra. Hai cách viết cho **cùng** một tập nghiệm.
+</LoiHayMac>

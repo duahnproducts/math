@@ -31,3 +31,37 @@ Bây giờ giả sử ma trận bổ sung $A$ có 3 hàng và 5 cột.
 
 **j.** Nếu $\operatorname{rank} C = 3$ thì hệ có nghiệm.
 </De>
+
+<GoiY so={1}>
+Với mệnh đề sai, tìm một hệ **nhỏ nhất** có thể (một hoặc hai phương trình) làm phản ví dụ. Với mệnh đề đúng, dùng Định lý 1.2.2 ($n - r$ tham số).
+</GoiY>
+
+<GoiY so={2}>
+Câu g–j: ma trận bổ sung $3 \times 5$ nghĩa là 3 phương trình, **4** ẩn; $C$ cỡ $3 \times 4$.
+</GoiY>
+
+<LoiGiai>
+**a. Sai.** $x + y = 1$: vô số nghiệm, nhưng $A = [\,1\ 1 \mid 1\,]$ không có hàng 0.
+
+**b. Sai.** Hệ $x = 1$, $0x = 0$ có hàng 0 nhưng chỉ một nghiệm.
+
+**c. Đúng.** Vô nghiệm nghĩa là dạng rút gọn của $A$ có hàng $[\,0 \cdots 0 \mid 1\,]$; phần bên trái của hàng đó là một hàng 0 trong dạng rút gọn của $C$.
+
+**d. Sai.** $x + y = 1$, $2x + 2y = 2$: $C$ khử ra một hàng 0 nhưng hệ có nghiệm.
+
+**e. Đúng.** Chọn mọi số hạng tự do bằng 0 thì $x = 0$ là nghiệm.
+
+**f. Sai.** $x + y = 0$, $x + y = 0$ có nghiệm; đổi vế phải thành $0$ và $1$ thì vô nghiệm.
+
+**g. Đúng.** Hạng $r \le 3 < 4$ ẩn, nên có ít nhất $4 - r \ge 1$ tham số.
+
+**h. Đúng.** $A$ có 3 hàng, nên nhiều nhất 3 số 1 dẫn đầu.
+
+**i. Sai.** $A$ có thể có số 1 dẫn đầu ở **cột vế phải**: dạng rút gọn $\left[\begin{array}{cccc|c} 1&0&0&0&0 \\ 0&1&0&0&0 \\ 0&0&0&0&1 \end{array}\right]$ có hạng 3 mà vô nghiệm.
+
+**j. Đúng.** $\operatorname{rank} C = 3$ nghĩa là mọi hàng của dạng rút gọn đều có số 1 dẫn đầu nằm ở phần hệ số, nên không có hàng $[\,0 \cdots 0 \mid 1\,]$.
+</LoiGiai>
+
+<LoiHayMac>
+Lẫn $A$ (ma trận bổ sung) với $C$ (ma trận hệ số). Câu i và j chỉ khác nhau đúng chỗ này, và kết luận ngược nhau.
+</LoiHayMac>

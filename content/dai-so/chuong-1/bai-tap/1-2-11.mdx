@@ -11,3 +11,29 @@ Tìm hạng của mỗi ma trận sau.
 
 **a.** $\left[\begin{array}{rrr} 1 & 1 & 2 \\ 3 & -1 & 1 \\ -1 & 3 & 4 \end{array}\right]$ · **b.** $\left[\begin{array}{rrr} -2 & 3 & 3 \\ 3 & -4 & 1 \\ -5 & 7 & 2 \end{array}\right]$ · **c.** $\left[\begin{array}{rrrr} 1 & 1 & -1 & 3 \\ -1 & 4 & 5 & -2 \\ 1 & 6 & 3 & 4 \end{array}\right]$ · **d.** $\left[\begin{array}{rrrr} 3 & -2 & 1 & -2 \\ 1 & -1 & 3 & 5 \\ -1 & 1 & 1 & -1 \end{array}\right]$ · **e.** $\left[\begin{array}{rrrr} 1 & 2 & -1 & 0 \\ 0 & a & 1 - a & a^2 + 1 \\ 1 & 2 - a & -1 & -2a^2 \end{array}\right]$ · **f.** $\left[\begin{array}{rrrr} 1 & 1 & 2 & a^2 \\ 1 & 1 - a & 2 & 0 \\ 2 & 2 - a & 6 - a & 4 \end{array}\right]$
 </De>
+
+<GoiY so={1}>
+Khử Gauss, đếm số 1 dẫn đầu. Câu a, b chính là ma trận hệ số của Bài 1.2.5 a, b — dùng lại kết quả.
+</GoiY>
+
+<GoiY so={2}>
+Câu e, f có tham số $a$: khử xong, hàng cuối có dạng (biểu thức theo $a$) × (một hàng số). Tìm $a$ làm biểu thức đó bằng 0.
+</GoiY>
+
+<LoiGiai>
+**a.** 3 · **b.** 2 · **c.** 2 · **d.** 3
+
+**e.** $R_3 - R_1$ rồi $R_3 + R_2$ cho hàng $(0, 0, 1 - a, 1 - a^2) = (1 - a)(0, 0, 1, 1 + a)$.
+- $a = 1$: hàng 3 bằng 0, hạng 2.
+- $a = 0$: hàng 2 là $(0, 0, 1, 1)$, trùng hàng 3, hạng 2.
+- Còn lại: hạng 3.
+
+**f.** $R_2 - R_1$, $R_3 - 2R_1$, rồi $R_3 - R_2$ cho hàng $(0, 0, 2 - a, 4 - a^2) = (2 - a)(0, 0, 1, 2 + a)$; hàng 2 là $(0, -a, 0, -a^2)$.
+- $a = 2$: hạng 2.
+- $a = 0$: hàng 2 bằng 0, hạng 2.
+- Còn lại: hạng 3.
+</LoiGiai>
+
+<LoiHayMac>
+Chia hàng cho $a$ hay $1 - a$ mà không tách trường hợp. Phép chia cho 0 làm "mất" đúng những giá trị đặc biệt mà đề đang hỏi.
+</LoiHayMac>

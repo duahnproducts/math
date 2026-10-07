@@ -12,3 +12,23 @@ tieu_de: "Tìm lại điểm số bị mất"
 
 **b.** Điều này có làm được với bốn người chơi không (biết các tổng của người 1 và 2, 2 và 3, 3 và 4, 4 và 1)?
 </De>
+
+<GoiY so={1}>
+Gọi điểm là $x_1, x_2, x_3$ và các tổng đã biết là $s_{12}, s_{23}, s_{31}$. Cộng cả ba tổng được gì?
+</GoiY>
+
+<GoiY so={2}>
+Câu b: với bốn người, thử $(x_1 + x_2) + (x_3 + x_4)$ và $(x_2 + x_3) + (x_4 + x_1)$ — hai tổng này luôn bằng nhau. Điều đó nói gì về hạng?
+</GoiY>
+
+<LoiGiai>
+**a.** Cộng ba phương trình: $x_1 + x_2 + x_3 = \tfrac{1}{2}(s_{12} + s_{23} + s_{31})$. Trừ đi từng tổng:
+$$x_3 = \tfrac{1}{2}(s_{23} + s_{31} - s_{12}), \quad x_1 = \tfrac{1}{2}(s_{12} + s_{31} - s_{23}), \quad x_2 = \tfrac{1}{2}(s_{12} + s_{23} - s_{31}).$$
+Nghiệm duy nhất — tìm lại được.
+
+**b.** Không. PT 1 + PT 3 = PT 2 + PT 4, nên hạng nhiều nhất là 3 với 4 ẩn: có tham số. Phản ví dụ cụ thể: điểm $(1, 1, 1, 1)$ và $(2, 0, 2, 0)$ cho cùng các tổng $(2, 2, 2, 2)$.
+</LoiGiai>
+
+<LoiHayMac>
+Nghĩ "4 phương trình, 4 ẩn thì giải được". Phải kiểm tra hạng: ở đây có một phương trình thừa.
+</LoiHayMac>

@@ -8,3 +8,25 @@ tieu_de: "Ba điểm luôn nằm trên một parabol"
 <De>
 Cho các điểm $(p_1, q_1)$, $(p_2, q_2)$, $(p_3, q_3)$ trong mặt phẳng với $p_1$, $p_2$, $p_3$ đôi một khác nhau, chứng tỏ rằng chúng nằm trên một đường cong có phương trình $y = a + bx + cx^2$. [Gợi ý: Giải theo $a$, $b$, $c$.]
 </De>
+
+<GoiY so={1}>
+Ba điểm cho ba phương trình theo $a, b, c$: $a + bp_i + cp_i^2 = q_i$, $i = 1, 2, 3$. Cần chứng tỏ hệ luôn có nghiệm.
+</GoiY>
+
+<GoiY so={2}>
+Trừ PT 1 khỏi PT 2 và PT 3, rồi chia cho $p_2 - p_1$ và $p_3 - p_1$ (khác 0). Bạn được hai phương trình dạng $b + c(p_i + p_1) = \ldots$
+</GoiY>
+
+<LoiGiai>
+PT 2 − PT 1: $b(p_2 - p_1) + c(p_2^2 - p_1^2) = q_2 - q_1$. Chia cho $p_2 - p_1 \ne 0$:
+$$b + c(p_1 + p_2) = \frac{q_2 - q_1}{p_2 - p_1}.$$
+Tương tự: $b + c(p_1 + p_3) = \dfrac{q_3 - q_1}{p_3 - p_1}$.
+
+Trừ hai phương trình này: $c(p_3 - p_2) = (\text{một số đã biết})$. Vì $p_3 \ne p_2$, ta tìm được $c$ duy nhất; rồi $b$, rồi $a$ từ PT 1.
+
+Vậy hệ có (đúng một) nghiệm: ba điểm nằm trên **đúng một** đường cong $y = a + bx + cx^2$ (có thể $c = 0$, khi ba điểm thẳng hàng).
+</LoiGiai>
+
+<LoiHayMac>
+Quên dùng giả thiết $p_i$ đôi một khác nhau. Chính nó cho phép chia; nếu hai điểm có cùng hoành độ mà tung độ khác nhau thì không có hàm số nào đi qua cả hai.
+</LoiHayMac>

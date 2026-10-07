@@ -13,3 +13,23 @@ Trong mỗi trường hợp, chứng tỏ rằng dạng bậc thang rút gọn �
 
 **b.** $\left[\begin{array}{rrr} 1 & a & b + c \\ 1 & b & c + a \\ 1 & c & a + b \end{array}\right]$ với $c \ne a$ hoặc $b \ne a$; kết quả $\left[\begin{array}{rrr} 1 & 0 & * \\ 0 & 1 & * \\ 0 & 0 & 0 \end{array}\right]$
 </De>
+
+<GoiY so={1}>
+Câu a: hàng 2 chỉ có một số khác 0 ($b$). Đưa nó lên đầu, chia cho $b$, rồi dùng nó xoá cột 1.
+</GoiY>
+
+<GoiY so={2}>
+Câu b: $R_2 - R_1$ cho $(0,\ b - a,\ a - b) = (b - a)(0, 1, -1)$; tương tự $R_3 - R_1 = (c - a)(0, 1, -1)$. Ít nhất một trong $b - a$, $c - a$ khác 0 nên chia được.
+</GoiY>
+
+<LoiGiai>
+**a.** $R_1 \leftrightarrow R_2$, $R_1 \to \tfrac{1}{b}R_1$: hàng 1 là $(1, 0, 0)$. Khử cột 1: hàng 2 thành $(0, 0, a)$, hàng 3 thành $(0, c, r)$. Đổi chỗ hàng 2, 3; chia hàng 2 cho $c$, hàng 3 cho $a$: $(0, 1, \tfrac{r}{c})$, $(0, 0, 1)$. Cuối cùng $R_2 - \tfrac{r}{c}R_3$ ra $I$. Mọi phép chia đều hợp lệ vì $abc \ne 0$.
+
+**b.** Giả sử $b \ne a$ (trường hợp $c \ne a$ làm tương tự sau khi đổi chỗ hàng 2, 3). Chia $R_2$ cho $b - a$: $(0, 1, -1)$. Khi đó $R_3 - (c - a)R_2 = 0$ và $R_1 - aR_2 = (1, 0, a + b + c)$:
+$$\left[\begin{array}{rrc} 1 & 0 & a + b + c \\ 0 & 1 & -1 \\ 0 & 0 & 0 \end{array}\right]$$
+đúng dạng đã cho, với $* = a + b + c$ và $-1$.
+</LoiGiai>
+
+<LoiHayMac>
+Chia cho $b - a$ mà quên giả thiết. Đề cho "$c \ne a$ **hoặc** $b \ne a$", nên phải nói rõ đang dùng trường hợp nào, và vì sao trường hợp kia cũng làm được.
+</LoiHayMac>
