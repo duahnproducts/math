@@ -1,0 +1,83 @@
+---
+// Vi mô slide 1.14 — sơ đồ dòng luân chuyển, vẽ lại với nhãn tiếng Việt (micro/README.md:
+// biểu đồ vẽ lại bằng SVG, không chụp ảnh tiếng Anh). Hai cung trên đi từ doanh nghiệp về hộ
+// gia đình (A: hàng hóa và dịch vụ, D: tiền công…), hai cung dưới đi ngược lại (B: thanh toán,
+// C: dịch vụ lao động) — đúng chiều mũi tên của hình gốc.
+import { cung, DAU_MUI_TEN } from './mui-ten';
+
+const cx = 300;
+const cy = 250;
+const ngoai = 210;
+const trong = 140;
+const nuaCao = 17; // nửa chiều cao hộp: cung chạm đúng mép trên/dưới của hộp
+const lam = (x: number) => Math.round(x * 10) / 10;
+
+// Cung bán kính r nối hai hộp, đi qua phía trên (tren) hoặc phía dưới; mũi tên ở đầu cuối
+function dong(r: number, tren: boolean) {
+  const a = Math.asin(nuaCao / r);
+  const lui = 7 / r; // thân dừng sau đầu mũi tên
+  const [dau, cuoi] = tren ? [a, Math.PI - a] : [Math.PI + a, 2 * Math.PI - a];
+  const x = cx + r * Math.cos(cuoi);
+  const y = cy - r * Math.sin(cuoi);
+  const goc = (Math.atan2(-Math.cos(cuoi), -Math.sin(cuoi)) * 180) / Math.PI;
+  return { d: cung(cx, cy, r, dau, cuoi - lui), dauMui: `translate(${lam(x)} ${lam(y)}) rotate(${lam(goc)})` };
+}
+
+// Đường đặt chữ, luôn đi từ trái sang phải để chữ không bị lộn ngược
+function duongChu(r: number, tren: boolean) {
+  const b = 0.3;
+  const diem = (t: number) => `${lam(cx + r * Math.cos(t))} ${lam(cy - r * Math.sin(t))}`;
+  return tren
+    ? `M${diem(Math.PI - b)} A${r} ${r} 0 0 1 ${diem(b)}`
+    : `M${diem(Math.PI + b)} A${r} ${r} 0 0 0 ${diem(2 * Math.PI - b)}`;
+}
+
+const cacDong = [
+  { ma: 'a', r: ngoai, tren: true, nhan: 'A: Hàng hóa và dịch vụ' },
+  { ma: 'd', r: trong, tren: true, nhan: 'D: Tiền công, tiền lương và phúc lợi' },
+  { ma: 'b', r: ngoai, tren: false, nhan: 'B: Thanh toán cho hàng hóa và dịch vụ' },
+  { ma: 'c', r: trong, tren: false, nhan: 'C: Dịch vụ lao động' },
+].map((d) => ({ ...d, ...dong(d.r, d.tren), chu: duongChu(d.tren ? d.r + 7 : d.r + 19, d.tren) }));
+
+const hop = [
+  { ten: 'Hộ gia đình', x: 40 },
+  { ten: 'Doanh nghiệp', x: 400 },
+];
+---
+
+<figure class="hinh" aria-labelledby="hinh-dong-luan-chuyen-cap" data-hinh-dong-luan-chuyen>
+  <svg
+    viewBox="0 0 600 490"
+    width="560"
+    role="img"
+    aria-label="Sơ đồ dòng luân chuyển: doanh nghiệp đưa hàng hóa và dịch vụ (A) cùng tiền công, tiền lương và phúc lợi (D) tới hộ gia đình; hộ gia đình trả tiền cho hàng hóa và dịch vụ (B) và cung cấp dịch vụ lao động (C) cho doanh nghiệp."
+  >
+    <defs>
+      {cacDong.map((d) => <path id={`dlc-chu-${d.ma}`} d={d.chu} />)}
+    </defs>
+    {
+      cacDong.map((d) => (
+        <g data-dong={d.ma}>
+          <path d={d.d} class="nhan-manh" stroke-width="1.8" style="fill: none" />
+          <path d={DAU_MUI_TEN} class="to-nhan" transform={d.dauMui} />
+          <text class="chu">
+            <textPath href={`#dlc-chu-${d.ma}`} startOffset="50%" text-anchor="middle">
+              {d.nhan}
+            </textPath>
+          </text>
+        </g>
+      ))
+    }
+    {
+      hop.map((h) => (
+        <g>
+          <rect x={h.x} y={cy - nuaCao} width="160" height={nuaCao * 2} rx="3" class="net to-nhan-nhat" stroke-width="1.5" />
+          <text x={h.x + 80} y={cy + 5} text-anchor="middle" class="chu">
+            {h.ten}
+          </text>
+        </g>
+      ))
+    }
+  </svg>
+  <figcaption id="hinh-dong-luan-chuyen-cap">Sơ đồ dòng luân chuyển</figcaption>
+</figure>

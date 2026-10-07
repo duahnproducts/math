@@ -39,7 +39,8 @@ Phần chưa có thì **không tạo file rỗng** — web tự hiện “Chưa 
 kiểm tra liên kết chéo, số hiệu và ghi công trước khi commit.
 
 Nội dung hiện có: Giải tích Chương 1–2 (bài giảng, Theo sách, bài tập có lời giải),
-Đại số tuyến tính Chương 1 (§1.1–§1.3 dịch nguyên văn, đề bài §1.1).
+Đại số tuyến tính Chương 1–3 (dịch nguyên văn; bài giảng và bài tập Chương 1–2),
+Kinh tế vi mô Chương 1–3 (slide dịch nguyên văn, biểu đồ nhãn tiếng Việt).
 
 ## Tự tạo bài giảng từ PDF
 

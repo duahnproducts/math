@@ -2,11 +2,22 @@
   "ten": "Kinh tế vi mô",
   "ten_en": "Microeconomics",
   "thu_tu": 3,
-  "mo_ta": "Khan hiếm và lựa chọn, cung cầu, độ co giãn, chi phí sản xuất, cạnh tranh hoàn hảo.",
+  "mo_ta": "Kinh tế học là gì, khan hiếm và lựa chọn, cung cầu, độ co giãn, chi phí sản xuất, cạnh tranh hoàn hảo.",
   "giao_trinh": "OpenStax, Principles of Microeconomics 3e (slide bài giảng)",
   "giay_phep": "CC BY-NC-SA 4.0 — được đăng bản dịch nguyên văn, không thu phí, không quảng cáo, giữ ghi công.",
   "loai_sach": "dich-nguyen-van",
   "chuong": [
+    {
+      "so": 1,
+      "ten": "Chào mừng đến với kinh tế học!",
+      "ten_en": "Welcome to Economics!",
+      "muc": [
+        { "so": "1.1", "ten": "Kinh tế học là gì và vì sao kinh tế học quan trọng?" },
+        { "so": "1.2", "ten": "Kinh tế học vi mô và kinh tế học vĩ mô" },
+        { "so": "1.3", "ten": "Các nhà kinh tế học dùng lý thuyết và mô hình để hiểu các vấn đề kinh tế như thế nào" },
+        { "so": "1.4", "ten": "Các nền kinh tế có thể được tổ chức ra sao: tổng quan về các hệ thống kinh tế" }
+      ]
+    },
     {
       "so": 2,
       "ten": "Lựa chọn trong thế giới khan hiếm",

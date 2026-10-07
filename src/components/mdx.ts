@@ -26,6 +26,7 @@ import HinhBaTruongHop from '../figures/HinhBaTruongHop.astro';
 import HinhCauThang from '../figures/HinhCauThang.astro';
 import HinhChiaDoi from '../figures/HinhChiaDoi.astro';
 import HinhDoanLongNhau from '../figures/HinhDoanLongNhau.astro';
+import HinhDongLuanChuyen from '../figures/HinhDongLuanChuyen.astro';
 import HinhDoThiCoHuong from '../figures/HinhDoThiCoHuong.astro';
 import HinhDuongCheo from '../figures/HinhDuongCheo.astro';
 import HinhDuongCheoCantor from '../figures/HinhDuongCheoCantor.astro';
@@ -75,6 +76,7 @@ export const thanhPhanMdx = {
   HinhCauThang,
   HinhChiaDoi,
   HinhDoanLongNhau,
+  HinhDongLuanChuyen,
   HinhDoThiCoHuong,
   HinhDuongCheo,
   HinhDuongCheoCantor,

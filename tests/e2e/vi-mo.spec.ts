@@ -28,6 +28,57 @@ test('biểu đồ và ảnh trong slide hiển thị', async ({ page }) => {
   }
 });
 
+test('Chương 1: đủ 23/23 slide, đúng thứ tự qua bốn mục §', async ({ page }) => {
+  const cacSo: number[] = [];
+  for (const muc of ['1-1', '1-2', '1-3', '1-4']) {
+    await page.goto(`vi-mo/chuong-1/sach/${muc}/`);
+    await expect(page.locator('[data-ghi-cong]')).toContainText('CC BY-NC-SA');
+    const so = await page.locator('[data-slide]').evaluateAll((els) => els.map((e) => Number(e.getAttribute('data-slide'))));
+    cacSo.push(...so);
+  }
+  expect(cacSo).toEqual(Array.from({ length: 23 }, (_, i) => i + 1));
+  await expect(page.locator('#slide-23')).toContainText('CC BY-NC-SA 4.0 International');
+  // Lỗi đánh máy của bản gốc được ghi chú lại (micro/README.md)
+  await expect(page.locator('#slide-23')).toContainText('lỗi đánh máy');
+});
+
+test('Chương 1: ảnh chụp giữ nguồn, sơ đồ dòng luân chuyển vẽ lại với nhãn tiếng Việt', async ({ page }) => {
+  const anhTheoMuc: Record<string, number[]> = { '1-1': [4, 5, 6, 7, 9], '1-3': [12], '1-4': [17, 18, 22] };
+  for (const [muc, cacSlide] of Object.entries(anhTheoMuc)) {
+    await page.goto(`vi-mo/chuong-1/sach/${muc}/`);
+    for (const so of cacSlide) {
+      const anh = page.locator(`#slide-${so} img`);
+      await anh.scrollIntoViewIfNeeded();
+      await expect(anh).toHaveJSProperty('complete', true);
+      expect(await anh.evaluate((img: HTMLImageElement) => img.naturalWidth), `slide ${so}`).toBeGreaterThan(0);
+      await expect(page.locator(`#slide-${so} figcaption`)).toContainText(/CC BY 2\.0|phạm vi công cộng/);
+    }
+  }
+
+  await page.goto('vi-mo/chuong-1/sach/1-3/');
+  const hinh = page.locator('#slide-14 [data-hinh-dong-luan-chuyen] svg');
+  await expect(hinh).toBeVisible();
+  for (const nhan of ['Hộ gia đình', 'Doanh nghiệp', 'A: Hàng hóa và dịch vụ', 'B: Thanh toán cho hàng hóa và dịch vụ', 'C: Dịch vụ lao động', 'D: Tiền công, tiền lương và phúc lợi']) {
+    await expect(hinh.getByText(nhan, { exact: true })).toBeVisible();
+  }
+  // Mũi tên đúng chiều hình gốc: A, D chảy về hộ gia đình (bên trái), B, C chảy về doanh nghiệp (bên phải)
+  const hopHo = await hinh.getByText('Hộ gia đình', { exact: true }).boundingBox();
+  const hopDn = await hinh.getByText('Doanh nghiệp', { exact: true }).boundingBox();
+  for (const [ma, ve] of [['a', hopHo], ['d', hopHo], ['b', hopDn], ['c', hopDn]] as const) {
+    const dau = await hinh.locator(`[data-dong="${ma}"] path.to-nhan`).boundingBox();
+    const giuaDau = dau!.x + dau!.width / 2;
+    expect(Math.abs(giuaDau - (ve!.x + ve!.width / 2)), `dòng ${ma}`).toBeLessThan(90);
+  }
+});
+
+test('trang môn Vi mô dẫn tới Chương 1', async ({ page }) => {
+  await page.goto('vi-mo/');
+  await page.getByRole('link', { name: /Chào mừng đến với kinh tế học/ }).first().click();
+  await expect(page).toHaveURL(/vi-mo\/chuong-1\/$/);
+  await page.getByRole('link', { name: /Kinh tế học vi mô và kinh tế học vĩ mô/ }).first().click();
+  await expect(page).toHaveURL(/vi-mo\/chuong-1\/sach\/1-2\/$/);
+});
+
 test('Chương 3: đủ 38/38 slide, đúng thứ tự qua năm mục §', async ({ page }) => {
   const cacSo: number[] = [];
   for (const muc of ['3-1', '3-2', '3-3', '3-4', '3-5']) {
