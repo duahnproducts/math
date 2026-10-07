@@ -17,3 +17,25 @@ Trong mỗi trường hợp, hãy chứng minh mệnh đề là đúng, hoặc c
 
 **d.** Nếu một dãy phép biến đổi hàng trên một hệ tuyến tính dẫn đến một hệ vô nghiệm thì hệ ban đầu vô nghiệm.
 </De>
+
+<GoiY so={1}>
+Với mỗi câu, thử với một hệ nhỏ cụ thể trước. Nếu thấy sai, chính hệ đó là phản ví dụ.
+</GoiY>
+
+<GoiY so={2}>
+Câu c, d: nhớ rằng mọi phép biến đổi hàng đều **không đổi tập nghiệm** (Định lý 1.1.1).
+</GoiY>
+
+<LoiGiai>
+**a. Sai.** Ma trận bổ sung có $m$ hàng (mỗi phương trình một hàng) và $n + 1$ cột. Phản ví dụ: hệ một phương trình hai ẩn $x + y = 1$ có ma trận $\left[\begin{array}{rr|r} 1 & 1 & 1 \end{array}\right]$ — một hàng, không phải hai.
+
+**b. Sai.** Hệ $x = 1$ (hoặc $x + y = 3$, $x - y = 1$) có đúng một nghiệm.
+
+**c. Đúng.** Phép biến đổi hàng không làm đổi tập nghiệm, nên nghiệm của hệ cũ vẫn là nghiệm của hệ mới.
+
+**d. Đúng.** Hệ mới và hệ cũ có cùng tập nghiệm; hệ mới vô nghiệm nên hệ cũ cũng vô nghiệm.
+</LoiGiai>
+
+<LoiHayMac>
+Ở câu a, đếm nhầm hàng với cột. Hàng ứng với **phương trình**, cột ứng với **ẩn** (cộng thêm cột vế phải).
+</LoiHayMac>

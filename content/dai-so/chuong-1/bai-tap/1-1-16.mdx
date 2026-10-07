@@ -8,3 +8,26 @@ tieu_de: "Giải hệ bằng cách đổi biến"
 <De>
 Giải hệ $\left\{\begin{aligned} 3x + 2y &= 5 \\ 7x + 5y &= 1 \end{aligned}\right.$ bằng cách đổi biến $\left\{\begin{aligned} x &= 5x' - 2y' \\ y &= -7x' + 3y' \end{aligned}\right.$ rồi giải các phương trình thu được theo $x'$ và $y'$.
 </De>
+
+<GoiY so={1}>
+Thay $x = 5x' - 2y'$, $y = -7x' + 3y'$ vào từng phương trình rồi gom theo $x'$, $y'$.
+</GoiY>
+
+<GoiY so={2}>
+Phương trình đầu thành $x' = 5$; phương trình thứ hai thành $y' = 1$. Sau đó tính lại $x$, $y$.
+</GoiY>
+
+<LoiGiai>
+- $3x + 2y = 3(5x' - 2y') + 2(-7x' + 3y') = 15x' - 14x' - 6y' + 6y' = x'$. Vậy $x' = 5$.
+- $7x + 5y = 7(5x' - 2y') + 5(-7x' + 3y') = 35x' - 35x' - 14y' + 15y' = y'$. Vậy $y' = 1$.
+
+Đổi về biến cũ: $x = 5 \cdot 5 - 2 \cdot 1 = 23$, $y = -7 \cdot 5 + 3 \cdot 1 = -32$.
+
+Kiểm tra: $3 \cdot 23 + 2(-32) = 5$ ✓; $7 \cdot 23 + 5(-32) = 1$ ✓.
+
+(Phép đổi biến được chọn khéo để hệ mới "tách rời" — sau này bạn sẽ thấy đó chính là nhân với ma trận nghịch đảo.)
+</LoiGiai>
+
+<LoiHayMac>
+Dừng ở $x' = 5$, $y' = 1$. Đề hỏi nghiệm của hệ gốc theo $x$, $y$ — phải đổi ngược lại.
+</LoiHayMac>

@@ -11,3 +11,30 @@ Dùng ma trận bổ sung để tìm nghiệm của mỗi hệ sau.
 
 **a.** $\begin{aligned} x + y + 2z &= -1 \\ 2x + y + 3z &= 0 \\ -2y + z &= 2 \end{aligned}$ **b.** $\begin{aligned} 2x + y + z &= -1 \\ x + 2y + z &= 0 \\ 3x - 2z &= 5 \end{aligned}$
 </De>
+
+<GoiY so={1}>
+Khử $x$ ở hàng 2 và 3 bằng hàng 1, rồi khử $y$ ở hàng 3, đọc nghiệm từ dưới lên.
+</GoiY>
+
+<GoiY so={2}>
+Đáp số có phân số (mẫu 3 ở câu a, mẫu 9 ở câu b) — không phải dấu hiệu sai. Hãy kiểm tra bằng cách thay vào hệ gốc.
+</GoiY>
+
+<LoiGiai>
+**a.** $\left[\begin{array}{rrr|r} 1 & 1 & 2 & -1 \\ 2 & 1 & 3 & 0 \\ 0 & -2 & 1 & 2 \end{array}\right] \xrightarrow{R_2 - 2R_1} \left[\begin{array}{rrr|r} 1 & 1 & 2 & -1 \\ 0 & -1 & -1 & 2 \\ 0 & -2 & 1 & 2 \end{array}\right] \xrightarrow{R_3 - 2R_2} \left[\begin{array}{rrr|r} 1 & 1 & 2 & -1 \\ 0 & -1 & -1 & 2 \\ 0 & 0 & 3 & -2 \end{array}\right]$
+
+Vậy $z = -\tfrac{2}{3}$; $-y - z = 2$ cho $y = -\tfrac{4}{3}$; $x = -1 - y - 2z = \tfrac{5}{3}$.
+
+Kiểm tra: $\tfrac{5}{3} - \tfrac{4}{3} - \tfrac{4}{3} = -1$ ✓; $\tfrac{10}{3} - \tfrac{4}{3} - 2 = 0$ ✓; $\tfrac{8}{3} - \tfrac{2}{3} = 2$ ✓.
+
+**b.** Đổi chỗ để có số 1 ở đầu: $R_1 \leftrightarrow R_2$, rồi $R_2 - 2R_1$, $R_3 - 3R_1$:
+$\left[\begin{array}{rrr|r} 1 & 2 & 1 & 0 \\ 0 & -3 & -1 & -1 \\ 0 & -6 & -5 & 5 \end{array}\right] \xrightarrow{R_3 - 2R_2} \left[\begin{array}{rrr|r} 1 & 2 & 1 & 0 \\ 0 & -3 & -1 & -1 \\ 0 & 0 & -3 & 7 \end{array}\right]$
+
+Vậy $z = -\tfrac{7}{3}$; $-3y - z = -1$ cho $y = \tfrac{10}{9}$; $x = -2y - z = \tfrac{1}{9}$.
+
+Kiểm tra: $3 \cdot \tfrac{1}{9} - 2(-\tfrac{7}{3}) = \tfrac{1}{3} + \tfrac{14}{3} = 5$ ✓.
+</LoiGiai>
+
+<LoiHayMac>
+Ở câu b, dùng hàng 1 có số 2 ở đầu ngay từ đầu sẽ ra nhiều phân số và dễ nhầm. Đổi chỗ hàng (phép I) để có số 1 ở đầu là bước rẻ mà đỡ được nhiều lỗi.
+</LoiHayMac>

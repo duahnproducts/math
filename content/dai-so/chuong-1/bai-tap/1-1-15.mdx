@@ -9,3 +9,31 @@ can_dung: ["vi-du-1.1.3"]
 <De>
 Tìm tam thức bậc hai $a + bx + cx^2$ sao cho đồ thị của $y = a + bx + cx^2$ chứa các điểm $(-1, 6)$, $(2, 0)$ và $(3, 2)$.
 </De>
+
+<GoiY so={1}>
+Điểm $(x_0, y_0)$ nằm trên đồ thị nghĩa là $a + bx_0 + cx_0^2 = y_0$. Mỗi điểm cho một phương trình **tuyến tính theo $a, b, c$**.
+</GoiY>
+
+<GoiY so={2}>
+Ba điểm cho ba phương trình: $a - b + c = 6$, $a + 2b + 4c = 0$, $a + 3b + 9c = 2$. Giải bằng phép khử.
+</GoiY>
+
+<LoiGiai>
+$$
+\left[\begin{array}{rrr|r} 1 & -1 & 1 & 6 \\ 1 & 2 & 4 & 0 \\ 1 & 3 & 9 & 2 \end{array}\right]
+\xrightarrow[R_3 - R_1]{R_2 - R_1}
+\left[\begin{array}{rrr|r} 1 & -1 & 1 & 6 \\ 0 & 3 & 3 & -6 \\ 0 & 4 & 8 & -4 \end{array}\right]
+\xrightarrow[\tfrac14 R_3]{\tfrac13 R_2}
+\left[\begin{array}{rrr|r} 1 & -1 & 1 & 6 \\ 0 & 1 & 1 & -2 \\ 0 & 1 & 2 & -1 \end{array}\right]
+$$
+
+$R_3 - R_2$ cho $c = 1$; rồi $b = -2 - c = -3$; $a = 6 + b - c = 2$.
+
+Tam thức cần tìm: $y = 2 - 3x + x^2$.
+
+Kiểm tra: $x = -1$: $2 + 3 + 1 = 6$ ✓; $x = 2$: $2 - 6 + 4 = 0$ ✓; $x = 3$: $2 - 9 + 9 = 2$ ✓.
+</LoiGiai>
+
+<LoiHayMac>
+Nghĩ $x$, $y$ là ẩn. Ở bài này $x, y$ là **số đã biết** (toạ độ điểm), còn ẩn là các hệ số $a, b, c$ — và hệ tuyến tính theo chúng dù có $x^2$.
+</LoiHayMac>

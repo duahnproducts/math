@@ -15,3 +15,27 @@ $$
 
 vô nghiệm trừ khi $c = 2b - 3a$.
 </De>
+
+<GoiY so={1}>
+Khử như bình thường, coi $a, b, c$ là các số đã biết. Mục tiêu: xem hàng cuối có vế trái bằng 0 không.
+</GoiY>
+
+<GoiY so={2}>
+Sau $R_2 - 2R_1$, $R_3 - R_1$, hai hàng dưới có phần hệ số tỉ lệ với nhau. Làm thêm $R_3 - 2R_2$.
+</GoiY>
+
+<LoiGiai>
+$$
+\left[\begin{array}{rrr|c} 1 & 2 & -1 & a \\ 2 & 1 & 3 & b \\ 1 & -4 & 9 & c \end{array}\right]
+\xrightarrow[R_3 - R_1]{R_2 - 2R_1}
+\left[\begin{array}{rrr|c} 1 & 2 & -1 & a \\ 0 & -3 & 5 & b - 2a \\ 0 & -6 & 10 & c - a \end{array}\right]
+\xrightarrow{R_3 - 2R_2}
+\left[\begin{array}{rrr|c} 1 & 2 & -1 & a \\ 0 & -3 & 5 & b - 2a \\ 0 & 0 & 0 & c - 2b + 3a \end{array}\right]
+$$
+
+Hàng cuối nói $0 = c - 2b + 3a$. Nếu $c \ne 2b - 3a$ thì vế phải khác 0: vô lý, hệ vô nghiệm. Vậy hệ chỉ có thể có nghiệm khi $c = 2b - 3a$ (và khi đó có vô số nghiệm, vì còn một ẩn tự do).
+</LoiGiai>
+
+<LoiHayMac>
+Tính sai vế phải ở bước cuối: $(c - a) - 2(b - 2a) = c - 2b + 3a$ — dấu của $a$ đổi thành cộng. Nên viết rõ ngoặc trước khi khai triển.
+</LoiHayMac>

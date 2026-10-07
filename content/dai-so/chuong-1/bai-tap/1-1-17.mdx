@@ -14,3 +14,30 @@ $$
 
 [Gợi ý: Nhân hai vế với $(x^2 + 2)(2x - 1)$ rồi đồng nhất hệ số các luỹ thừa của $x$.]
 </De>
+
+<GoiY so={1}>
+Sau khi nhân hai vế với $(x^2 + 2)(2x - 1)$: $x^2 - x + 3 = (ax + b)(2x - 1) + c(x^2 + 2)$. Khai triển vế phải.
+</GoiY>
+
+<GoiY so={2}>
+Hai đa thức bằng nhau với mọi $x$ khi và chỉ khi hệ số từng luỹ thừa bằng nhau. So hệ số của $x^2$, $x$, và hằng số — ba phương trình tuyến tính theo $a, b, c$.
+</GoiY>
+
+<LoiGiai>
+Vế phải $= 2ax^2 - ax + 2bx - b + cx^2 + 2c = (2a + c)x^2 + (-a + 2b)x + (-b + 2c)$.
+
+So hệ số:
+$$
+\begin{aligned} 2a + c &= 1 \\ -a + 2b &= -1 \\ -b + 2c &= 3 \end{aligned}
+$$
+
+Từ phương trình 2: $a = 2b + 1$. Từ phương trình 3: $c = \tfrac{1}{2}(3 + b)$. Thay vào phương trình 1: $4b + 2 + \tfrac{3 + b}{2} = 1$, tức $9b = -5$, nên $b = -\tfrac{5}{9}$.
+
+Vậy $a = -\tfrac{1}{9}$, $b = -\tfrac{5}{9}$, $c = \tfrac{11}{9}$.
+
+Kiểm tra tại $x = 0$: vế trái $\tfrac{3}{(2)(-1)} = -\tfrac{3}{2}$; vế phải $\tfrac{b}{2} + \tfrac{c}{-1} = -\tfrac{5}{18} - \tfrac{22}{18} = -\tfrac{27}{18} = -\tfrac{3}{2}$ ✓.
+</LoiGiai>
+
+<LoiHayMac>
+Khai triển $(ax + b)(2x - 1)$ thiếu số hạng: phải có đủ bốn tích $2ax^2$, $-ax$, $2bx$, $-b$.
+</LoiHayMac>
