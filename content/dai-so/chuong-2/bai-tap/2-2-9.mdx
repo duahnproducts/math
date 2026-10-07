@@ -1,0 +1,32 @@
+---
+so: "2.2.9"
+muc: "2.2"
+do_kho: vua
+tieu_de: "Tìm b không phải tổ hợp tuyến tính"
+can_dung: ["dinh-ly-2.2.1"]
+de_tom_tat: true
+---
+
+<De>
+Cho $\mathbf{a}_1 = (1, 0, 1)$, $\mathbf{a}_2 = (1, 1, 0)$, $\mathbf{a}_3 = (0, -1, 1)$. Tìm một vector $\mathbf{b}$ **không** là tổ hợp tuyến tính của chúng, và giải thích vì sao (gợi ý: phần (2) của Định lý 2.2.1).
+</De>
+
+<GoiY so={1}>
+Để ý $\mathbf{a}_3 = \mathbf{a}_1 - \mathbf{a}_2$. Vậy mọi tổ hợp chỉ là tổ hợp của $\mathbf{a}_1$, $\mathbf{a}_2$.
+</GoiY>
+
+<GoiY so={2}>
+Khử $[\,\mathbf{a}_1\ \mathbf{a}_2\ \mathbf{a}_3 \mid \mathbf{b}\,]$ với $\mathbf{b} = (b_1, b_2, b_3)$: hàng cuối cho điều kiện $-b_1 + b_2 + b_3 = 0$. Chọn $\mathbf{b}$ vi phạm điều kiện đó.
+</GoiY>
+
+<LoiGiai>
+Khử ma trận bổ sung với $\mathbf{b} = (b_1, b_2, b_3)$:
+$$\left[\begin{array}{rrr|c} 1 & 1 & 0 & b_1 \\ 0 & 1 & -1 & b_2 \\ 1 & 0 & 1 & b_3 \end{array}\right] \to \left[\begin{array}{rrr|c} 1 & 1 & 0 & b_1 \\ 0 & 1 & -1 & b_2 \\ 0 & 0 & 0 & b_3 - b_1 + b_2 \end{array}\right]$$
+Hệ có nghiệm khi và chỉ khi $b_3 - b_1 + b_2 = 0$.
+
+Chọn $\mathbf{b} = (0, 0, 1)$: $1 - 0 + 0 = 1 \ne 0$, nên hệ vô nghiệm và theo Định lý 2.2.1(2), $\mathbf{b}$ không là tổ hợp tuyến tính của $\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}_3$.
+</LoiGiai>
+
+<LoiHayMac>
+Chọn $\mathbf{b}$ "trông khác" các vector đã cho rồi kết luận. Ví dụ $(2, 1, 1)$ trông khác nhưng lại bằng $\mathbf{a}_1 + \mathbf{a}_2$. Phải kiểm bằng điều kiện có nghiệm.
+</LoiHayMac>

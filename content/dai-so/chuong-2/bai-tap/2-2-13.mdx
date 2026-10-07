@@ -1,0 +1,32 @@
+---
+so: "2.2.13"
+muc: "2.2"
+do_kho: de
+tieu_de: "Đối xứng qua mặt phẳng toạ độ"
+can_dung: ["dinh-nghia-2.8"]
+de_tom_tat: true
+---
+
+<De>
+Chứng tỏ mỗi phép $T: \mathbb{R}^3 \to \mathbb{R}^3$ sau là phép nhân với một ma trận, và tìm ma trận đó.
+
+**a.** Đối xứng qua mặt phẳng $xy$. · **b.** Đối xứng qua mặt phẳng $yz$.
+</De>
+
+<GoiY so={1}>
+Đối xứng qua một mặt phẳng toạ độ giữ nguyên hai toạ độ nằm trong mặt phẳng, và đổi dấu toạ độ còn lại.
+</GoiY>
+
+<GoiY so={2}>
+Mặt phẳng $xy$ là $z = 0$: đổi dấu $z$.
+</GoiY>
+
+<LoiGiai>
+**a.** $T(x, y, z) = (x, y, -z)$: $\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & -1 \end{bmatrix}$.
+
+**b.** $T(x, y, z) = (-x, y, z)$: $\begin{bmatrix} -1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}$.
+</LoiGiai>
+
+<LoiHayMac>
+Đổi dấu nhầm toạ độ. Toạ độ bị đổi dấu là toạ độ **không** có trong tên mặt phẳng ($z$ với mặt $xy$, $x$ với mặt $yz$).
+</LoiHayMac>

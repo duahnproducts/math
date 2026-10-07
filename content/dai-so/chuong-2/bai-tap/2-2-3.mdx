@@ -1,0 +1,38 @@
+---
+so: "2.2.3"
+muc: "2.2"
+do_kho: de
+tieu_de: "Tính Ax bằng hai cách"
+can_dung: ["dinh-nghia-2.5", "dinh-ly-2.2.5"]
+de_tom_tat: true
+---
+
+<De>
+Tính $A\mathbf{x}$ (với $\mathbf{x}$ là cột các ẩn $x_1, x_2, \ldots$) theo hai cách: (i) trộn các cột theo Định nghĩa 2.5; (ii) hàng chấm $\mathbf{x}$ theo Định lý 2.2.5.
+
+**a.** $A = \begin{bmatrix} 3 & -2 & 0 \\ 5 & -4 & 1 \end{bmatrix}$ · **b.** $A = \begin{bmatrix} 1 & 2 & 3 \\ 0 & -4 & 5 \end{bmatrix}$ · **c.** $A = \begin{bmatrix} -2 & 0 & 5 & 4 \\ 1 & 2 & 0 & 3 \\ -5 & 6 & -7 & 8 \end{bmatrix}$ · **d.** $A = \begin{bmatrix} 3 & -4 & 1 & 6 \\ 0 & 2 & 1 & 5 \\ -8 & 7 & -3 & 0 \end{bmatrix}$
+</De>
+
+<GoiY so={1}>
+Cách (i): $A\mathbf{x} = x_1(\text{cột } 1) + x_2(\text{cột } 2) + \cdots$. Cách (ii): thành phần thứ $i$ = (hàng $i$) $\cdot\ \mathbf{x}$.
+</GoiY>
+
+<GoiY so={2}>
+Số thành phần của $\mathbf{x}$ bằng số cột của $A$ (3 ở câu a, b; 4 ở câu c, d). Hai cách phải ra cùng kết quả.
+</GoiY>
+
+<LoiGiai>
+Cách (i), câu a: $x_1\begin{bmatrix} 3 \\ 5 \end{bmatrix} + x_2\begin{bmatrix} -2 \\ -4 \end{bmatrix} + x_3\begin{bmatrix} 0 \\ 1 \end{bmatrix}$; cộng lại ra đúng kết quả của cách (ii) dưới đây.
+
+**a.** $A\mathbf{x} = \begin{bmatrix} 3x_1 - 2x_2 \\ 5x_1 - 4x_2 + x_3 \end{bmatrix}$
+
+**b.** $A\mathbf{x} = \begin{bmatrix} x_1 + 2x_2 + 3x_3 \\ -4x_2 + 5x_3 \end{bmatrix}$
+
+**c.** $A\mathbf{x} = \begin{bmatrix} -2x_1 + 5x_3 + 4x_4 \\ x_1 + 2x_2 + 3x_4 \\ -5x_1 + 6x_2 - 7x_3 + 8x_4 \end{bmatrix}$
+
+**d.** $A\mathbf{x} = \begin{bmatrix} 3x_1 - 4x_2 + x_3 + 6x_4 \\ 2x_2 + x_3 + 5x_4 \\ -8x_1 + 7x_2 - 3x_3 \end{bmatrix}$
+</LoiGiai>
+
+<LoiHayMac>
+Ra kết quả có số thành phần bằng số **cột**. $A\mathbf{x}$ có số thành phần bằng số **hàng** của $A$ (2 ở câu a, b; 3 ở câu c, d).
+</LoiHayMac>

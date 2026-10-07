@@ -1,0 +1,29 @@
+---
+so: "2.2.12"
+muc: "2.2"
+do_kho: de
+tieu_de: "Phép chiếu từ R³ xuống R²"
+can_dung: ["dinh-nghia-2.8"]
+de_tom_tat: true
+---
+
+<De>
+Phép chiếu $P: \mathbb{R}^3 \to \mathbb{R}^2$ cho bởi $P(x, y, z) = (x, y)$. Chứng tỏ $P$ là phép nhân với một ma trận và tìm ma trận đó.
+</De>
+
+<GoiY so={1}>
+Ma trận phải có cỡ $2 \times 3$: nhận vào 3 số, trả ra 2 số.
+</GoiY>
+
+<GoiY so={2}>
+Tìm $A$ sao cho $A(x, y, z) = (x, y)$: hàng 1 chấm $(x, y, z)$ phải ra $x$.
+</GoiY>
+
+<LoiGiai>
+$$P\begin{bmatrix} x \\ y \\ z \end{bmatrix} = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}\begin{bmatrix} x \\ y \\ z \end{bmatrix}.$$
+Vậy $P$ là phép nhân với ma trận $\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}$. Cột của nó chính là $P(1,0,0) = (1,0)$, $P(0,1,0) = (0,1)$, $P(0,0,1) = (0,0)$.
+</LoiGiai>
+
+<LoiHayMac>
+Viết ma trận $3 \times 2$. Cỡ của ma trận là (số thành phần **đầu ra**) × (số thành phần **đầu vào**) $= 2 \times 3$.
+</LoiHayMac>

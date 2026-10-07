@@ -1,0 +1,38 @@
+---
+so: "2.2.11"
+muc: "2.2"
+do_kho: de
+tieu_de: "Ma trận của phép đối xứng và phép quay trong mặt phẳng"
+can_dung: ["dinh-nghia-2.8"]
+de_tom_tat: true
+---
+
+<De>
+Chứng tỏ mỗi phép biến đổi $T: \mathbb{R}^2 \to \mathbb{R}^2$ sau là phép nhân với một ma trận, và tìm ma trận đó.
+
+**a.** Đối xứng qua trục $y$. · **b.** Đối xứng qua đường $y = x$. · **c.** Đối xứng qua đường $y = -x$. · **d.** Quay $\tfrac{\pi}{2}$ **theo** chiều kim đồng hồ.
+</De>
+
+<GoiY so={1}>
+Viết $T(x, y)$ thành công thức theo $x, y$; nếu mỗi thành phần là tổ hợp tuyến tính của $x, y$ thì $T$ là phép nhân với ma trận.
+</GoiY>
+
+<GoiY so={2}>
+Cách nhanh: cột 1 của ma trận là $T(1, 0)$, cột 2 là $T(0, 1)$.
+</GoiY>
+
+<LoiGiai>
+**a.** $T(x, y) = (-x, y)$: $\begin{bmatrix} -1 & 0 \\ 0 & 1 \end{bmatrix}$.
+
+**b.** $T(x, y) = (y, x)$: $\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}$.
+
+**c.** $T(x, y) = (-y, -x)$: $\begin{bmatrix} 0 & -1 \\ -1 & 0 \end{bmatrix}$.
+
+**d.** Quay theo chiều kim đồng hồ: $(1, 0) \mapsto (0, -1)$ và $(0, 1) \mapsto (1, 0)$, nên $T(x, y) = (y, -x)$: $\begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix}$.
+
+Trong mỗi trường hợp $T(\mathbf{x}) = A\mathbf{x}$ với ma trận $A$ tương ứng.
+</LoiGiai>
+
+<LoiHayMac>
+Ở câu d dùng ma trận quay **ngược** chiều kim đồng hồ $\begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}$. Thử với $(1, 0)$: quay theo chiều kim đồng hồ phải ra $(0, -1)$, hướng xuống.
+</LoiHayMac>

@@ -31,7 +31,7 @@
       "so": 2,
       "ten": "Đại số ma trận",
       "ten_en": "Matrix Algebra",
-      "ghi_chu": "Đủ §2.1–§2.9 và 24 bài tập của §2.1. Đề bài tập §2.2–§2.9 chưa được dịch — xem bản gốc tiếng Anh.",
+      "ghi_chu": "Đủ §2.1–§2.9. Bài tập có gợi ý và lời giải: §2.1 (đề dịch nguyên văn), §2.2 (đề viết lại ngắn gọn). Bài tập §2.3–§2.9 chưa có — xem bản gốc tiếng Anh.",
       "muc": [
         { "so": "2.1", "ten": "Cộng ma trận, nhân với vô hướng, và chuyển vị" },
         { "so": "2.2", "ten": "Phép nhân ma trận với vector" },

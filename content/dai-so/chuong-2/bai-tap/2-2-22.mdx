@@ -1,0 +1,29 @@
+---
+so: "2.2.22"
+muc: "2.2"
+do_kho: vua
+tieu_de: "Chứng minh A(x + y) = Ax + Ay"
+can_dung: ["dinh-ly-2.2.2", "dinh-nghia-2.5"]
+de_tom_tat: true
+---
+
+<De>
+Chứng minh phần (1) của Định lý 2.2.2: $A(\mathbf{x} + \mathbf{y}) = A\mathbf{x} + A\mathbf{y}$.
+</De>
+
+<GoiY so={1}>
+Viết $A = [\,\mathbf{a}_1 \cdots \mathbf{a}_n\,]$, $\mathbf{x} = (x_1, \ldots, x_n)$, $\mathbf{y} = (y_1, \ldots, y_n)$. Thành phần $j$ của $\mathbf{x} + \mathbf{y}$ là $x_j + y_j$.
+</GoiY>
+
+<GoiY so={2}>
+Áp Định nghĩa 2.5 cho $\mathbf{x} + \mathbf{y}$, rồi dùng $(x_j + y_j)\mathbf{a}_j = x_j\mathbf{a}_j + y_j\mathbf{a}_j$ (Định lý 2.1.1).
+</GoiY>
+
+<LoiGiai>
+$$A(\mathbf{x} + \mathbf{y}) = \sum_{j=1}^n (x_j + y_j)\mathbf{a}_j = \sum_{j=1}^n (x_j\mathbf{a}_j + y_j\mathbf{a}_j) = \sum_{j=1}^n x_j\mathbf{a}_j + \sum_{j=1}^n y_j\mathbf{a}_j = A\mathbf{x} + A\mathbf{y}.$$
+Đẳng thức đầu và cuối theo Định nghĩa 2.5; đẳng thức thứ hai theo tính phân phối của phép nhân vô hướng; thứ ba do sắp lại thứ tự cộng.
+</LoiGiai>
+
+<LoiHayMac>
+Dùng chính điều cần chứng minh ở giữa lập luận. Mỗi bước phải dựa vào định nghĩa $A\mathbf{x}$ hoặc tính chất của phép cộng, nhân vô hướng — đã biết từ §2.1.
+</LoiHayMac>

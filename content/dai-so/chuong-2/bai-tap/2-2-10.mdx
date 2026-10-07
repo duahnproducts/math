@@ -1,0 +1,67 @@
+---
+so: "2.2.10"
+muc: "2.2"
+do_kho: vua
+nen_lam: true
+tieu_de: "Đúng hay sai: tích ma trận với vector"
+can_dung: ["dinh-ly-2.2.1", "dinh-ly-2.2.2"]
+de_tom_tat: true
+---
+
+<De>
+Chứng minh đúng hoặc cho phản ví dụ.
+
+**a.** $(3, 2)$ là tổ hợp tuyến tính của $(1, 0)$ và $(0, 1)$.
+
+**b.** Nếu $A\mathbf{x}$ có một thành phần bằng 0 thì $A$ có một hàng toàn 0.
+
+**c.** Nếu $A\mathbf{x} = \mathbf{0}$ với một $\mathbf{x} \ne \mathbf{0}$ thì $A = 0$.
+
+**d.** Mọi tổ hợp tuyến tính của các vector trong $\mathbb{R}^n$ đều viết được dạng $A\mathbf{x}$.
+
+**e.** Nếu $A = [\,\mathbf{a}_1\ \mathbf{a}_2\ \mathbf{a}_3\,]$ và $\mathbf{b} = 3\mathbf{a}_1 - 2\mathbf{a}_2$ thì $A\mathbf{x} = \mathbf{b}$ có nghiệm.
+
+**f.** Nếu $A = [\,\mathbf{a}_1\ \mathbf{a}_2\ \mathbf{a}_3\,]$ và $A\mathbf{x} = \mathbf{b}$ có nghiệm thì $\mathbf{b} = s\mathbf{a}_1 + t\mathbf{a}_2$ với $s, t$ nào đó.
+
+**g.** Nếu $A$ cỡ $m \times n$ với $m < n$ thì $A\mathbf{x} = \mathbf{b}$ có nghiệm với mọi $\mathbf{b}$.
+
+**h.** Nếu $A\mathbf{x} = \mathbf{b}$ có nghiệm với một $\mathbf{b}$ thì có nghiệm với mọi $\mathbf{b}$.
+
+**i.** Nếu $\mathbf{x}_1$, $\mathbf{x}_2$ là nghiệm của $A\mathbf{x} = \mathbf{b}$ thì $\mathbf{x}_1 - \mathbf{x}_2$ là nghiệm của $A\mathbf{x} = \mathbf{0}$.
+
+**j.** Nếu $A = [\,\mathbf{a}_1\ \mathbf{a}_2\ \mathbf{a}_3\,]$ và $\mathbf{a}_3 = s\mathbf{a}_1 + t\mathbf{a}_2$ thì $A\mathbf{x} = \mathbf{0}$ với $\mathbf{x} = (s, t, -1)$.
+</De>
+
+<GoiY so={1}>
+Với các câu sai, phản ví dụ nhỏ nhất thường là một ma trận $1 \times 2$ như $A = [\,1\ \ -1\,]$, hoặc ma trận $0$.
+</GoiY>
+
+<GoiY so={2}>
+Câu e, j: viết $A\mathbf{x}$ thành $x_1\mathbf{a}_1 + x_2\mathbf{a}_2 + x_3\mathbf{a}_3$ rồi chọn $\mathbf{x}$ thích hợp.
+</GoiY>
+
+<LoiGiai>
+**a. Đúng.** $(3, 2) = 3(1, 0) + 2(0, 1)$.
+
+**b. Sai.** $A = [\,1\ \ -1\,]$, $\mathbf{x} = (1, 1)$: $A\mathbf{x} = [0]$ nhưng $A$ không có hàng 0.
+
+**c. Sai.** Cùng ví dụ: $A\mathbf{x} = \mathbf{0}$, $\mathbf{x} \ne \mathbf{0}$, mà $A \ne 0$.
+
+**d. Đúng.** $x_1\mathbf{v}_1 + \cdots + x_k\mathbf{v}_k = A\mathbf{x}$ với $A = [\,\mathbf{v}_1 \cdots \mathbf{v}_k\,]$.
+
+**e. Đúng.** $\mathbf{x} = (3, -2, 0)$ là nghiệm.
+
+**f. Sai.** $\mathbf{a}_1 = \mathbf{a}_2 = 0$, $\mathbf{a}_3 = 1$ (ma trận $1 \times 3$), $\mathbf{b} = 1$: có nghiệm $(0, 0, 1)$, nhưng $s\cdot 0 + t \cdot 0 \ne 1$.
+
+**g. Sai.** $A = [\,0\ \ 0\,]$, $\mathbf{b} = [1]$: vô nghiệm.
+
+**h. Sai.** $A = [0]$: có nghiệm khi $\mathbf{b} = 0$, vô nghiệm khi $\mathbf{b} = 1$.
+
+**i. Đúng.** $A(\mathbf{x}_1 - \mathbf{x}_2) = A\mathbf{x}_1 - A\mathbf{x}_2 = \mathbf{b} - \mathbf{b} = \mathbf{0}$.
+
+**j. Đúng.** $A\mathbf{x} = s\mathbf{a}_1 + t\mathbf{a}_2 - \mathbf{a}_3 = \mathbf{0}$.
+</LoiGiai>
+
+<LoiHayMac>
+Ở câu c, mượn quy tắc của số: "$ax = 0$, $x \ne 0$ thì $a = 0$". Với ma trận điều này **sai** — đây là một trong những khác biệt quan trọng nhất giữa ma trận và số.
+</LoiHayMac>

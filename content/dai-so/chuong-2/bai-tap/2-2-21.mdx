@@ -1,0 +1,30 @@
+---
+so: "2.2.21"
+muc: "2.2"
+do_kho: vua
+tieu_de: "Ax = 0 với mọi x thì A = 0"
+can_dung: ["dinh-ly-2.2.6"]
+de_tom_tat: true
+---
+
+<De>
+Cho $A$ cỡ $m \times n$ và $A\mathbf{x} = \mathbf{0}$ với **mọi** $\mathbf{x} \in \mathbb{R}^n$. Chứng tỏ $A = 0$. (Gợi ý: xét $A\mathbf{e}_j$, với $\mathbf{e}_j$ là cột $j$ của $I_n$.)
+</De>
+
+<GoiY so={1}>
+"Với mọi $\mathbf{x}$" cho phép chọn những $\mathbf{x}$ đơn giản nhất: các vector đơn vị $\mathbf{e}_j$.
+</GoiY>
+
+<GoiY so={2}>
+$A\mathbf{e}_j$ bằng gì? (Trộn các cột với hệ số $0, \ldots, 1, \ldots, 0$.)
+</GoiY>
+
+<LoiGiai>
+$A\mathbf{e}_j = 0\mathbf{a}_1 + \cdots + 1\mathbf{a}_j + \cdots + 0\mathbf{a}_n = \mathbf{a}_j$ là cột thứ $j$ của $A$. Theo giả thiết $A\mathbf{e}_j = \mathbf{0}$, nên mọi cột $\mathbf{a}_j = \mathbf{0}$. Vậy $A = 0$.
+
+(Đây là trường hợp $B = 0$ của Định lý 2.2.6.)
+</LoiGiai>
+
+<LoiHayMac>
+Chỉ dùng một $\mathbf{x}$ (ví dụ $(1, 1, \ldots, 1)$). Một $\mathbf{x}$ không đủ — xem Bài 2.2.10c. Cần đủ $n$ vector $\mathbf{e}_1, \ldots, \mathbf{e}_n$ để "soi" từng cột.
+</LoiHayMac>

@@ -1,0 +1,38 @@
+---
+so: "2.2.8"
+muc: "2.2"
+do_kho: vua
+tieu_de: "Giải hệ, tách nghiệm riêng và nghiệm cơ bản"
+can_dung: ["dinh-ly-2.2.3"]
+de_tom_tat: true
+---
+
+<De>
+Viết hệ dưới dạng $A\mathbf{x} = \mathbf{b}$, giải bằng phép khử Gauss, rồi viết nghiệm thành một nghiệm riêng cộng tổ hợp tuyến tính các nghiệm cơ bản của $A\mathbf{x} = \mathbf{0}$.
+
+**a.** $x_1 - 2x_2 + x_3 + 4x_4 - x_5 = 8$, $\ -2x_1 + 4x_2 + x_3 - 2x_4 - 4x_5 = -1$, $\ 3x_1 - 6x_2 + 8x_3 + 4x_4 - 13x_5 = 1$, $\ 8x_1 - 16x_2 + 7x_3 + 12x_4 - 6x_5 = 11$.
+
+**b.** $x_1 - 2x_2 + x_3 + 2x_4 + 3x_5 = -4$, $\ -3x_1 + 6x_2 - 2x_3 - 3x_4 - 11x_5 = 11$, $\ -2x_1 + 4x_2 - x_3 + x_4 - 8x_5 = 7$, $\ -x_1 + 2x_2 + 3x_4 - 5x_5 = 3$.
+</De>
+
+<GoiY so={1}>
+Ma trận bổ sung $4 \times 6$. Cột 2 luôn bằng $-2$ lần cột 1, nên $x_2$ sẽ là ẩn tự do.
+</GoiY>
+
+<GoiY so={2}>
+Ở cả hai câu, hạng bằng 3, nên có $5 - 3 = 2$ tham số: $x_2 = s$, $x_5 = t$.
+</GoiY>
+
+<LoiGiai>
+**a.** Dạng rút gọn: $x_1 - 2x_2 + x_5 = -\tfrac{7}{3}$, $\ x_3 - 2x_5 = -\tfrac{1}{3}$, $\ x_4 = \tfrac{8}{3}$. Nên
+$$\mathbf{x} = \left(-\tfrac{7}{3}, 0, -\tfrac{1}{3}, \tfrac{8}{3}, 0\right) + s(2, 1, 0, 0, 0) + t(-1, 0, 2, 0, 1).$$
+
+**b.** Dạng rút gọn: $x_1 - 2x_2 + 5x_5 = -3$, $\ x_3 - 2x_5 = -1$, $\ x_4 = 0$. Nên
+$$\mathbf{x} = (-3, 0, -1, 0, 0) + s(2, 1, 0, 0, 0) + t(-5, 0, 2, 0, 1).$$
+
+Kiểm tra nghiệm riêng câu b, phương trình 1: $-3 - 1 = -4$ ✓.
+</LoiGiai>
+
+<LoiHayMac>
+Nhân nghiệm cơ bản với 3 để bỏ phân số rồi nhân luôn cả nghiệm riêng. Được phép nhân **nghiệm cơ bản** (vẫn là nghiệm thuần nhất), nhưng **không** được nhân nghiệm riêng — nó phải thoả đúng $A\mathbf{x} = \mathbf{b}$.
+</LoiHayMac>

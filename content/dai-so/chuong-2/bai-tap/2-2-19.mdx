@@ -1,0 +1,30 @@
+---
+so: "2.2.19"
+muc: "2.2"
+do_kho: vua
+tieu_de: "Một nghiệm thuần nhất khác 0 cho vô số nghiệm"
+can_dung: ["dinh-ly-2.2.3"]
+de_tom_tat: true
+---
+
+<De>
+Cho $\mathbf{x}_1$ là nghiệm của $A\mathbf{x} = \mathbf{b}$ và $\mathbf{x}_0 \ne \mathbf{0}$ là nghiệm của $A\mathbf{x} = \mathbf{0}$. Chứng tỏ $\mathbf{x}_1 + t\mathbf{x}_0$ ($t$ là số) là một họ vô hạn, một tham số, các nghiệm của $A\mathbf{x} = \mathbf{b}$.
+</De>
+
+<GoiY so={1}>
+Hai việc: (1) mỗi $\mathbf{x}_1 + t\mathbf{x}_0$ là nghiệm; (2) các nghiệm này **khác nhau** khi $t$ khác nhau.
+</GoiY>
+
+<GoiY so={2}>
+Cho (2): nếu $\mathbf{x}_1 + t\mathbf{x}_0 = \mathbf{x}_1 + s\mathbf{x}_0$ thì $(t - s)\mathbf{x}_0 = \mathbf{0}$. Dùng $\mathbf{x}_0 \ne \mathbf{0}$.
+</GoiY>
+
+<LoiGiai>
+(1) $A(\mathbf{x}_1 + t\mathbf{x}_0) = A\mathbf{x}_1 + tA\mathbf{x}_0 = \mathbf{b} + \mathbf{0} = \mathbf{b}$.
+
+(2) Nếu $\mathbf{x}_1 + t\mathbf{x}_0 = \mathbf{x}_1 + s\mathbf{x}_0$ thì $(t - s)\mathbf{x}_0 = \mathbf{0}$. Vì $\mathbf{x}_0$ có một thành phần khác 0, ta phải có $t - s = 0$. Vậy mỗi giá trị $t$ cho một nghiệm riêng biệt, nên có vô số nghiệm.
+</LoiGiai>
+
+<LoiHayMac>
+Bỏ qua bước (2). Không có nó thì chưa biết các nghiệm có trùng nhau không — và đúng là chúng trùng hết nếu $\mathbf{x}_0 = \mathbf{0}$.
+</LoiHayMac>

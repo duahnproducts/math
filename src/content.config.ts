@@ -79,6 +79,8 @@ const baiTap = defineCollection({
     nen_lam: z.boolean().default(false),
     tieu_de: z.string().optional(),
     can_dung: z.array(maKhoi).default([]),
+    /** Đề viết lại ngắn gọn bằng lời của người biên soạn (giữ số hiệu, số liệu của sách), không dịch nguyên văn */
+    de_tom_tat: z.boolean().default(false),
   }),
 });
 

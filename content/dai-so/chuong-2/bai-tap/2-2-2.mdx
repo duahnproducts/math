@@ -1,0 +1,40 @@
+---
+so: "2.2.2"
+muc: "2.2"
+do_kho: de
+tieu_de: "Từ hệ phương trình ra phương trình vector"
+can_dung: ["dinh-ly-2.2.1"]
+de_tom_tat: true
+---
+
+<De>
+Viết mỗi hệ thành một phương trình vector $x_1\mathbf{a}_1 + \cdots + x_n\mathbf{a}_n = \mathbf{b}$ (không cần giải):
+
+**a.** $x_1 - x_2 + 3x_3 = 5$, $\ -3x_1 + x_2 + x_3 = -6$, $\ 5x_1 - 8x_2 = 9$.
+
+**b.** $x_1 - 2x_2 - x_3 + x_4 = 5$, $\ -x_1 + x_3 - 2x_4 = -3$, $\ 2x_1 - 2x_2 + 7x_3 = 8$, $\ 3x_1 - 4x_2 + 9x_3 - 2x_4 = 12$.
+</De>
+
+<GoiY so={1}>
+Ngược với Bài 2.2.1: gom hệ số của **cùng một ẩn** ở mọi phương trình thành một cột.
+</GoiY>
+
+<GoiY so={2}>
+Ẩn nào vắng mặt trong một phương trình thì thành phần tương ứng của cột là 0.
+</GoiY>
+
+<LoiGiai>
+**a.**
+$$
+x_1\begin{bmatrix} 1 \\ -3 \\ 5 \end{bmatrix} + x_2\begin{bmatrix} -1 \\ 1 \\ -8 \end{bmatrix} + x_3\begin{bmatrix} 3 \\ 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 5 \\ -6 \\ 9 \end{bmatrix}
+$$
+
+**b.**
+$$
+x_1\begin{bmatrix} 1 \\ -1 \\ 2 \\ 3 \end{bmatrix} + x_2\begin{bmatrix} -2 \\ 0 \\ -2 \\ -4 \end{bmatrix} + x_3\begin{bmatrix} -1 \\ 1 \\ 7 \\ 9 \end{bmatrix} + x_4\begin{bmatrix} 1 \\ -2 \\ 0 \\ -2 \end{bmatrix} = \begin{bmatrix} 5 \\ -3 \\ 8 \\ 12 \end{bmatrix}
+$$
+</LoiGiai>
+
+<LoiHayMac>
+Quên số 0 cho ẩn vắng mặt, khiến các cột dài ngắn khác nhau. Mỗi cột phải có đúng **số phương trình** thành phần.
+</LoiHayMac>

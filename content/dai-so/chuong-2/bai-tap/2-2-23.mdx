@@ -1,0 +1,30 @@
+---
+so: "2.2.23"
+muc: "2.2"
+do_kho: vua
+tieu_de: "Chứng minh A(ax) = a(Ax) = (aA)x"
+can_dung: ["dinh-ly-2.2.2", "dinh-nghia-2.5"]
+de_tom_tat: true
+---
+
+<De>
+Chứng minh phần (2) của Định lý 2.2.2: $A(a\mathbf{x}) = a(A\mathbf{x}) = (aA)\mathbf{x}$ với mọi số $a$.
+</De>
+
+<GoiY so={1}>
+Thành phần $j$ của $a\mathbf{x}$ là $ax_j$; cột $j$ của $aA$ là $a\mathbf{a}_j$.
+</GoiY>
+
+<GoiY so={2}>
+Áp Định nghĩa 2.5 cho từng biểu thức, rồi đưa $a$ ra ngoài tổng.
+</GoiY>
+
+<LoiGiai>
+$$A(a\mathbf{x}) = \sum_j (ax_j)\mathbf{a}_j = a\sum_j x_j\mathbf{a}_j = a(A\mathbf{x}),$$
+$$(aA)\mathbf{x} = \sum_j x_j(a\mathbf{a}_j) = a\sum_j x_j\mathbf{a}_j = a(A\mathbf{x}).$$
+Hai đẳng thức dùng $(kp)\mathbf{v} = k(p\mathbf{v})$ và $k(\mathbf{u} + \mathbf{v}) = k\mathbf{u} + k\mathbf{v}$ của Định lý 2.1.1.
+</LoiGiai>
+
+<LoiHayMac>
+Chỉ chứng minh một trong hai đẳng thức. Đề có **ba** biểu thức bằng nhau; cần chỉ ra cả $A(a\mathbf{x})$ lẫn $(aA)\mathbf{x}$ đều bằng $a(A\mathbf{x})$.
+</LoiHayMac>

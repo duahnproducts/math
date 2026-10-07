@@ -179,7 +179,9 @@ const lopDoKho = { de: 'ok', vua: 'info', kho: 'warn' }[bt.data.do_kho];
         {
           du.loaiSach === 'theo-sach'
             ? `Đề bài được tóm tắt bằng tiếng Việt; số hiệu giữ nguyên theo ${du.mon.giao_trinh}. Gợi ý và lời giải là của người biên soạn.`
-            : `Đề bài dịch từ ${du.mon.giao_trinh}. ${du.mon.giay_phep}`
+            : bt.data.de_tom_tat
+              ? `Đề bài viết lại ngắn gọn theo ${du.mon.giao_trinh}, giữ số hiệu và số liệu. ${du.mon.giay_phep} Gợi ý và lời giải là của người biên soạn.`
+              : `Đề bài dịch từ ${du.mon.giao_trinh}. ${du.mon.giay_phep}`
         }
       </p>
     </article>

@@ -1,0 +1,45 @@
+---
+so: "2.2.5"
+muc: "2.2"
+do_kho: vua
+nen_lam: true
+tieu_de: "Nghiệm = nghiệm riêng + nghiệm thuần nhất"
+can_dung: ["dinh-ly-2.2.3"]
+de_tom_tat: true
+---
+
+<De>
+Với mỗi hệ, viết mọi nghiệm dưới dạng một nghiệm riêng cộng với nghiệm của hệ thuần nhất tương ứng.
+
+**a.** $x + y + z = 2$, $\ 2x + y = 3$, $\ x - y - 3z = 0$.
+
+**b.** $x - y - 4z = -4$, $\ x + 2y + 5z = 2$, $\ x + y + 2z = 0$.
+
+**c.** $x_1 + x_2 - x_3 - 5x_5 = 2$, $\ x_2 + x_3 - 4x_5 = -1$, $\ x_2 + x_3 + x_4 - x_5 = -1$, $\ 2x_1 - 4x_3 + x_4 + x_5 = 6$.
+
+**d.** $2x_1 + x_2 - x_3 - x_4 = -1$, $\ 3x_1 + x_2 + x_3 - 2x_4 = -2$, $\ -x_1 - x_2 + 2x_3 + x_4 = 2$, $\ -2x_1 - x_2 + 2x_4 = 3$.
+</De>
+
+<GoiY so={1}>
+Giải bằng phép khử Gauss. Nghiệm tổng quát có dạng "hằng số + tham số × cột".
+</GoiY>
+
+<GoiY so={2}>
+Phần hằng số (cho mọi tham số bằng 0) là một nghiệm riêng $\mathbf{x}_p$; phần chứa tham số là nghiệm của hệ thuần nhất $A\mathbf{x} = \mathbf{0}$ (Định lý 2.2.3).
+</GoiY>
+
+<LoiGiai>
+**a.** $\begin{bmatrix} x \\ y \\ z \end{bmatrix} = \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix} + t\begin{bmatrix} 1 \\ -2 \\ 1 \end{bmatrix}$
+
+**b.** $\begin{bmatrix} x \\ y \\ z \end{bmatrix} = \begin{bmatrix} -2 \\ 2 \\ 0 \end{bmatrix} + t\begin{bmatrix} 1 \\ -3 \\ 1 \end{bmatrix}$
+
+**c.** $\mathbf{x} = (3, -1, 0, 0, 0) + s(2, -1, 1, 0, 0) + t(1, 4, 0, -3, 1)$
+
+**d.** $\mathbf{x} = (3, -9, -2, 0) + t(-1, 4, 1, 1)$
+
+Kiểm tra nghiệm riêng câu a: $1 + 1 + 0 = 2$ ✓, $2 + 1 = 3$ ✓, $1 - 1 - 0 = 0$ ✓. Kiểm tra phần thuần nhất: $(1, -2, 1)$ cho $1 - 2 + 1 = 0$, $2 - 2 = 0$, $1 + 2 - 3 = 0$ ✓.
+</LoiGiai>
+
+<LoiHayMac>
+Nghĩ rằng nghiệm riêng phải "đặc biệt". Bất kỳ nghiệm nào cũng dùng được; chọn tham số bằng 0 chỉ là cách nhanh nhất để có một nghiệm.
+</LoiHayMac>

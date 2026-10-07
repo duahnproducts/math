@@ -1,0 +1,29 @@
+---
+so: "2.2.6"
+muc: "2.2"
+do_kho: de
+tieu_de: "Tổ hợp của nghiệm thuần nhất"
+can_dung: ["dinh-ly-2.2.2"]
+de_tom_tat: true
+---
+
+<De>
+Cho $\mathbf{x}_0$, $\mathbf{x}_1$ là nghiệm của hệ thuần nhất $A\mathbf{x} = \mathbf{0}$. Dùng Định lý 2.2.2 để chứng tỏ $s\mathbf{x}_0 + t\mathbf{x}_1$ cũng là nghiệm với mọi số $s$, $t$.
+</De>
+
+<GoiY so={1}>
+Tính $A(s\mathbf{x}_0 + t\mathbf{x}_1)$. Cần chứng tỏ nó bằng $\mathbf{0}$.
+</GoiY>
+
+<GoiY so={2}>
+Phần (1) của Định lý 2.2.2 tách tổng; phần (2) đưa số ra ngoài.
+</GoiY>
+
+<LoiGiai>
+$$A(s\mathbf{x}_0 + t\mathbf{x}_1) = A(s\mathbf{x}_0) + A(t\mathbf{x}_1) = s(A\mathbf{x}_0) + t(A\mathbf{x}_1) = s\mathbf{0} + t\mathbf{0} = \mathbf{0}.$$
+Đẳng thức đầu theo phần (1), đẳng thức thứ hai theo phần (2) của Định lý 2.2.2.
+</LoiGiai>
+
+<LoiHayMac>
+Áp dụng cho hệ **không** thuần nhất. Nếu $A\mathbf{x}_0 = A\mathbf{x}_1 = \mathbf{b} \ne \mathbf{0}$ thì $A(s\mathbf{x}_0 + t\mathbf{x}_1) = (s + t)\mathbf{b}$, chỉ bằng $\mathbf{b}$ khi $s + t = 1$.
+</LoiHayMac>

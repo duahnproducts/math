@@ -76,14 +76,21 @@ test('Chương 2: đủ §2.1–§2.9 có trang dịch, mục lục đủ 9 mụ
   await expect(page.locator('a[href$="tai-ve/dai-so-chuong-2-ban-dich.pdf"]')).toBeVisible();
 });
 
-test('bài tập Chương 2: 24 bài của §2.1 đều có lời giải, "Cần dùng" trỏ về §2.1, thuật ngữ mới có trong bảng', async ({ page }) => {
+test('bài tập Chương 2: 47 bài của §2.1–§2.2 đều có lời giải, "Cần dùng" trỏ về §2.1, thuật ngữ mới có trong bảng', async ({ page }) => {
   await page.goto('dai-so/chuong-2/bai-tap/');
-  await expect(page.locator('[data-the-bai-tap]')).toHaveCount(24);
+  await expect(page.locator('[data-the-bai-tap]')).toHaveCount(47);
   await expect(page.locator('.pill', { hasText: 'Chưa có hướng dẫn' })).toHaveCount(0);
 
   await page.goto('dai-so/chuong-2/bai-tap/2-1-18/');
   await expect(page.locator('details[data-tang="loi-giai"]')).toHaveCount(1);
   await expect(page.locator('.can-dung a').first()).toHaveAttribute('href', /sach\/2-1\/#vi-du-2\.1\.12$/);
+  await expect(page.locator('.katex-error')).toHaveCount(0);
+
+  // §2.2: đề viết lại ngắn gọn, ghi công nói rõ điều đó và vẫn giữ giấy phép
+  await page.goto('dai-so/chuong-2/bai-tap/2-2-4/');
+  await expect(page.locator('.ghi-cong')).toContainText('viết lại ngắn gọn');
+  await expect(page.locator('.ghi-cong')).toContainText('CC BY-NC-SA');
+  await expect(page.locator('details[data-tang="loi-giai"]')).toHaveCount(1);
   await expect(page.locator('.katex-error')).toHaveCount(0);
 
   await page.goto('thuat-ngu/');

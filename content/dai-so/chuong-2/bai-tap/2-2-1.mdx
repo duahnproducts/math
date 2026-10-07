@@ -1,0 +1,44 @@
+---
+so: "2.2.1"
+muc: "2.2"
+do_kho: de
+tieu_de: "Từ phương trình vector ra hệ phương trình"
+can_dung: ["dinh-ly-2.2.1"]
+de_tom_tat: true
+---
+
+<De>
+Viết hệ phương trình tuyến tính tương đương (không cần giải):
+
+**a.** $x_1(2, -3, 0) + x_2(1, 1, 4) + x_3(2, 0, -1) = (5, 6, -3)$
+
+**b.** $x_1(1, 0, 1, 0) + x_2(-3, 8, 2, 1) + x_3(-3, 0, 2, 2) + x_4(3, 2, 0, -2) = (5, 1, 2, 0)$
+
+(các vector viết ngang cho gọn, hiểu là vector cột)
+</De>
+
+<GoiY so={1}>
+Hai vector cột bằng nhau khi từng thành phần bằng nhau. Thành phần thứ $i$ cho phương trình thứ $i$.
+</GoiY>
+
+<GoiY so={2}>
+Phương trình thứ $i$: lấy thành phần thứ $i$ của **mỗi** vector, nhân với hệ số $x_j$ tương ứng, cộng lại.
+</GoiY>
+
+<LoiGiai>
+**a.**
+$$
+\begin{aligned} 2x_1 + x_2 + 2x_3 &= 5 \\ -3x_1 + x_2 &= 6 \\ 4x_2 - x_3 &= -3 \end{aligned}
+$$
+
+**b.**
+$$
+\begin{aligned} x_1 - 3x_2 - 3x_3 + 3x_4 &= 5 \\ 8x_2 + 2x_4 &= 1 \\ x_1 + 2x_2 + 2x_3 &= 2 \\ x_2 + 2x_3 - 2x_4 &= 0 \end{aligned}
+$$
+
+Mỗi vector trở thành một **cột** hệ số: đó chính là ý của Định lý 2.2.1.
+</LoiGiai>
+
+<LoiHayMac>
+Chép mỗi vector thành một **phương trình**. Mỗi vector là một **cột** của ma trận hệ số; phương trình được đọc theo **hàng** (cùng một vị trí ở mọi vector).
+</LoiHayMac>
