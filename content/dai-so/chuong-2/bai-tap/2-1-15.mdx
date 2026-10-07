@@ -17,3 +17,25 @@ Trong mỗi trường hợp hãy tìm ma trận $A$.
 
 **d.** $\left(2A^T - 5\begin{bmatrix} 1 & 0 \\ -1 & 2 \end{bmatrix}\right)^T = 4A - 9\begin{bmatrix} 1 & 1 \\ -1 & 0 \end{bmatrix}$
 </De>
+
+<GoiY so={1}>
+Tính phần ma trận số trước (chuyển vị, nhân vô hướng), rồi giải như phương trình thường. Câu b, c, d: nhớ $(X^T)^T = X$ và $(X + Y)^T = X^T + Y^T$.
+</GoiY>
+
+<GoiY so={2}>
+Câu c: chuyển vị vế trái: $2A^T - 3\begin{bmatrix} 1 & 2 & 0 \end{bmatrix}^T = 3A^T + 2\begin{bmatrix} 1 & -1 & 2 \end{bmatrix}^T$. Giải $A^T$ rồi chuyển vị.
+</GoiY>
+
+<LoiGiai>
+**a.** $A = \begin{bmatrix} 2 & 1 \\ 0 & 5 \\ 3 & 8 \end{bmatrix} - 3\begin{bmatrix} 1 & 1 \\ -1 & 2 \\ 0 & 4 \end{bmatrix} = \begin{bmatrix} -1 & -2 \\ 3 & -1 \\ 3 & -4 \end{bmatrix}$.
+
+**b.** $3A^T = \begin{bmatrix} 8 & 0 \\ 3 & 1 \end{bmatrix} - \begin{bmatrix} 2 & 0 \\ 0 & 4 \end{bmatrix} = \begin{bmatrix} 6 & 0 \\ 3 & -3 \end{bmatrix}$, nên $A^T = \begin{bmatrix} 2 & 0 \\ 1 & -1 \end{bmatrix}$ và $A = \begin{bmatrix} 2 & 1 \\ 0 & -1 \end{bmatrix}$.
+
+**c.** $-A^T = 3\begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix} + 2\begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix} = \begin{bmatrix} 5 \\ 4 \\ 4 \end{bmatrix}$, nên $A = \begin{bmatrix} -5 & -4 & -4 \end{bmatrix}$.
+
+**d.** Vế trái $= 2A - 5\begin{bmatrix} 1 & -1 \\ 0 & 2 \end{bmatrix}$. Nên $2A = 9\begin{bmatrix} 1 & 1 \\ -1 & 0 \end{bmatrix} - 5\begin{bmatrix} 1 & -1 \\ 0 & 2 \end{bmatrix} = \begin{bmatrix} 4 & 14 \\ -9 & -10 \end{bmatrix}$, và $A = \begin{bmatrix} 2 & 7 \\ -\tfrac{9}{2} & -5 \end{bmatrix}$.
+</LoiGiai>
+
+<LoiHayMac>
+Ở câu d, quên chuyển vị ma trận số khi phá ngoặc: $\left(-5\begin{bmatrix} 1 & 0 \\ -1 & 2 \end{bmatrix}\right)^T = -5\begin{bmatrix} 1 & -1 \\ 0 & 2 \end{bmatrix}$.
+</LoiHayMac>

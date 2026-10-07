@@ -9,3 +9,21 @@ can_dung: ["vi-du-2.1.12"]
 <De>
 Nếu $A$ là ma trận vuông và $A = kA^T$ với $k \ne \pm 1$, hãy chứng tỏ $A = 0$.
 </De>
+
+<GoiY so={1}>
+Chuyển vị hai vế của $A = kA^T$ được $A^T = kA$. Thay ngược vào đẳng thức ban đầu.
+</GoiY>
+
+<GoiY so={2}>
+Bạn sẽ được $A = k^2A$, tức $(1 - k^2)A = 0$. Dùng giả thiết $k \ne \pm 1$.
+</GoiY>
+
+<LoiGiai>
+Chuyển vị: $A^T = (kA^T)^T = kA$. Thay vào: $A = kA^T = k(kA) = k^2A$. Vậy $(1 - k^2)A = 0$.
+
+Vì $k \ne \pm 1$ nên $1 - k^2 \ne 0$; nhân hai vế với $\tfrac{1}{1 - k^2}$ được $A = 0$.
+</LoiGiai>
+
+<LoiHayMac>
+Không dùng giả thiết $k \ne \pm 1$. Với $k = 1$ thì mọi ma trận đối xứng thoả $A = A^T$, và với $k = -1$ mọi ma trận phản đối xứng thoả — nên kết luận $A = 0$ sai trong hai trường hợp đó.
+</LoiHayMac>

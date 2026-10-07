@@ -9,3 +9,24 @@ can_dung: ["vi-du-2.1.7", "dinh-ly-2.1.2"]
 <De>
 Cho $A$ là ma trận vuông. Nếu $A = pB^T$ và $B = qA^T$ với ma trận $B$ nào đó và các số $p$, $q$, hãy chứng tỏ rằng hoặc $A = 0 = B$ hoặc $pq = 1$. [Gợi ý: Ví dụ 2.1.7.]
 </De>
+
+<GoiY so={1}>
+Thay $B = qA^T$ vào $A = pB^T$.
+</GoiY>
+
+<GoiY so={2}>
+$B^T = (qA^T)^T = qA$, nên $A = pqA$, tức $(1 - pq)A = 0$. Xét $pq = 1$ hay không.
+</GoiY>
+
+<LoiGiai>
+$B^T = qA$, nên $A = pB^T = pqA$, tức $(1 - pq)A = 0$.
+
+- Nếu $pq \ne 1$: nhân với $\tfrac{1}{1 - pq}$ được $A = 0$, rồi $B = qA^T = 0$.
+- Nếu không thì $pq = 1$.
+
+Vậy hoặc $A = 0 = B$, hoặc $pq = 1$.
+</LoiGiai>
+
+<LoiHayMac>
+Kết luận $A = 0$ mà quên suy ra $B = 0$. Đề hỏi cả hai; $B = qA^T$ cho ngay $B = 0$ khi $A = 0$.
+</LoiHayMac>

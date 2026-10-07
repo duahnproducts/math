@@ -15,3 +15,25 @@ Một ma trận vuông $W$ được gọi là **phản đối xứng** (*skew-sy
 
 **c.** Chứng tỏ rằng $S$ và $W$ trong phần (b) được xác định duy nhất bởi $A$.
 </De>
+
+<GoiY so={1}>
+Câu a: tính $(A - A^T)^T$. Câu b: thử $S = \tfrac{1}{2}(A + A^T)$, $W = \tfrac{1}{2}(A - A^T)$.
+</GoiY>
+
+<GoiY so={2}>
+Câu c: giả sử $A = S + W = S' + W'$. Ma trận $S - S' = W' - W$ vừa đối xứng vừa phản đối xứng. Ma trận như vậy phải bằng gì?
+</GoiY>
+
+<LoiGiai>
+**a.** $(A - A^T)^T = A^T - A = -(A - A^T)$.
+
+**b.** $S = \tfrac{1}{2}(A + A^T)$ đối xứng (Bài 2.1.17), $W = \tfrac{1}{2}(A - A^T)$ phản đối xứng (câu a), và $S + W = \tfrac{1}{2}A + \tfrac{1}{2}A = A$.
+
+**c.** Nếu $A = S + W = S' + W'$ thì $M = S - S' = W' - W$. Vì $M$ là hiệu hai ma trận đối xứng nên $M^T = M$; vì là hiệu hai ma trận phản đối xứng nên $M^T = -M$. Vậy $M = -M$, theo Bài 2.1.12 $M = 0$: $S = S'$, $W = W'$.
+
+Ví dụ: $A = \begin{bmatrix} 1 & 4 \\ 2 & 3 \end{bmatrix}$ cho $S = \begin{bmatrix} 1 & 3 \\ 3 & 3 \end{bmatrix}$, $W = \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix}$.
+</LoiGiai>
+
+<LoiHayMac>
+Ở câu c chỉ chỉ ra một cách tách rồi nói "vậy duy nhất". Tồn tại (câu b) và duy nhất (câu c) là hai việc khác nhau; duy nhất phải giả sử có **hai** cách tách rồi chứng minh chúng trùng nhau.
+</LoiHayMac>

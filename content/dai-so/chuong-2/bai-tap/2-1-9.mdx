@@ -13,3 +13,23 @@ Nếu $A$ là ma trận $2 \times 2$ bất kỳ, hãy chứng tỏ rằng:
 
 **b.** $A = p\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} + q\begin{bmatrix} 1 & 1 \\ 0 & 0 \end{bmatrix} + r\begin{bmatrix} 1 & 0 \\ 1 & 0 \end{bmatrix} + s\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}$ với các số $p$, $q$, $r$, $s$ nào đó.
 </De>
+
+<GoiY so={1}>
+Viết $A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$. Tính vế phải theo các số chưa biết, rồi cho từng ô bằng nhau.
+</GoiY>
+
+<GoiY so={2}>
+Câu b: được hệ $p + q + r = a$, $q + s = b$, $r + s = c$, $p = d$. Hệ này luôn có nghiệm.
+</GoiY>
+
+<LoiGiai>
+**a.** Vế phải bằng $\begin{bmatrix} a & b \\ c & d \end{bmatrix}$ — chọn chính các phần tử của $A$.
+
+**b.** Vế phải bằng $\begin{bmatrix} p + q + r & q + s \\ r + s & p \end{bmatrix}$. Cho bằng $A$ và giải:
+$$p = d, \quad q = \tfrac{1}{2}(a + b - c - d), \quad r = \tfrac{1}{2}(a - b + c - d), \quad s = \tfrac{1}{2}(-a + b + c + d).$$
+Kiểm tra ô $(1, 2)$: $q + s = \tfrac{1}{2}(2b) = b$ ✓. Vì hệ luôn có nghiệm với mọi $a, b, c, d$, mọi $A$ đều viết được như vậy.
+</LoiGiai>
+
+<LoiHayMac>
+Chỉ thử với một ma trận cụ thể. Đề nói "$A$ **bất kỳ**", nên phải giải với $a, b, c, d$ là chữ.
+</LoiHayMac>

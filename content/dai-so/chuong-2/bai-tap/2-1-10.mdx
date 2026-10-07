@@ -9,3 +9,21 @@ can_dung: ["dinh-nghia-2.2"]
 <De>
 Cho $A = \begin{bmatrix} 1 & 1 & -1 \end{bmatrix}$, $B = \begin{bmatrix} 0 & 1 & 2 \end{bmatrix}$, $C = \begin{bmatrix} 3 & 0 & 1 \end{bmatrix}$. Nếu $rA + sB + tC = 0$ với các vô hướng $r$, $s$, $t$ nào đó, hãy chứng tỏ rằng nhất thiết $r = s = t = 0$.
 </De>
+
+<GoiY so={1}>
+$rA + sB + tC$ là một ma trận $1 \times 3$. Cho ba ô bằng 0 được ba phương trình theo $r, s, t$.
+</GoiY>
+
+<GoiY so={2}>
+Hệ thuần nhất: $r + 3t = 0$, $r + s = 0$, $-r + 2s + t = 0$. Chứng tỏ nó chỉ có nghiệm tầm thường.
+</GoiY>
+
+<LoiGiai>
+Từ PT 1: $r = -3t$. Từ PT 2: $s = -r = 3t$. Thay vào PT 3: $3t + 6t + t = 10t = 0$, nên $t = 0$, rồi $r = s = 0$.
+
+Vậy chỉ có $r = s = t = 0$. (Sau này ta sẽ nói $A, B, C$ **độc lập tuyến tính**.)
+</LoiGiai>
+
+<LoiHayMac>
+Kết luận ngay "vì $A, B, C$ khác nhau nên hệ số bằng 0". Ba ma trận khác nhau vẫn có thể có tổ hợp bằng 0 (ví dụ $A$, $2A$, $3A$) — phải giải hệ.
+</LoiHayMac>

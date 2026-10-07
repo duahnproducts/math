@@ -1,5 +1,5 @@
 // Đại số tuyến tính (Phase 2 — đổ bản dịch có sẵn): trang dịch nguyên văn có hình
-// vẽ lại/lấy từ bản gốc, bài tập có đề và nhãn "Chưa có hướng dẫn".
+// vẽ lại/lấy từ bản gốc; bài tập có đề, gợi ý theo tầng, lời giải và lỗi hay mắc.
 import { expect, test } from '@playwright/test';
 
 test('Chương 1 đủ §1.1–§1.6, mục ứng dụng có sơ đồ', async ({ page }) => {
@@ -76,12 +76,13 @@ test('Chương 2: đủ §2.1–§2.9 có trang dịch, mục lục đủ 9 mụ
   await expect(page.locator('a[href$="tai-ve/dai-so-chuong-2-ban-dich.pdf"]')).toBeVisible();
 });
 
-test('bài tập Chương 2: 24 bài của §2.1, "Cần dùng" trỏ về §2.1, thuật ngữ mới có trong bảng', async ({ page }) => {
+test('bài tập Chương 2: 24 bài của §2.1 đều có lời giải, "Cần dùng" trỏ về §2.1, thuật ngữ mới có trong bảng', async ({ page }) => {
   await page.goto('dai-so/chuong-2/bai-tap/');
   await expect(page.locator('[data-the-bai-tap]')).toHaveCount(24);
+  await expect(page.locator('.pill', { hasText: 'Chưa có hướng dẫn' })).toHaveCount(0);
 
   await page.goto('dai-so/chuong-2/bai-tap/2-1-18/');
-  await expect(page.locator('.pill', { hasText: 'Chưa có hướng dẫn' })).toBeVisible();
+  await expect(page.locator('details[data-tang="loi-giai"]')).toHaveCount(1);
   await expect(page.locator('.can-dung a').first()).toHaveAttribute('href', /sach\/2-1\/#vi-du-2\.1\.12$/);
   await expect(page.locator('.katex-error')).toHaveCount(0);
 

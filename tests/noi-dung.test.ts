@@ -190,3 +190,18 @@ describe('bản quyền', () => {
     }
   });
 });
+
+// Bài tập Đại số: bài nào cũng có gợi ý theo tầng, lời giải và lỗi hay mắc
+describe('hướng dẫn bài tập Đại số', () => {
+  const baiTapDaiSo = cacChuong.filter((c) => c.mon === 'dai-so').flatMap((c) => c.baiTap);
+
+  it('có bài tập để kiểm', () => {
+    expect(baiTapDaiSo.length).toBeGreaterThan(0);
+  });
+
+  it.each(baiTapDaiSo.map((b) => [b.so, b] as const))('%s: đủ gợi ý 1, 2, lời giải, lỗi hay mắc', (_so, b) => {
+    for (const khoi of ['<GoiY so={1}>', '<GoiY so={2}>', '<LoiGiai>', '<LoiHayMac>']) {
+      expect(b.noiDung, `${b.tep} thiếu ${khoi}`).toContain(khoi);
+    }
+  });
+});

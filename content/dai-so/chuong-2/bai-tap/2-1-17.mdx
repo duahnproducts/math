@@ -9,3 +9,22 @@ can_dung: ["dinh-ly-2.1.2"]
 <De>
 Chứng tỏ rằng $A + A^T$ đối xứng với mọi ma trận vuông $A$.
 </De>
+
+<GoiY so={1}>
+Tính $(A + A^T)^T$.
+</GoiY>
+
+<GoiY so={2}>
+Dùng $(X + Y)^T = X^T + Y^T$ và $(A^T)^T = A$.
+</GoiY>
+
+<LoiGiai>
+$$(A + A^T)^T = A^T + (A^T)^T = A^T + A = A + A^T.$$
+Vậy $A + A^T$ bằng chuyển vị của nó, tức là đối xứng.
+
+Ví dụ: $A = \begin{bmatrix} 1 & 2 \\ 5 & 3 \end{bmatrix}$ cho $A + A^T = \begin{bmatrix} 2 & 7 \\ 7 & 6 \end{bmatrix}$ — đối xứng ✓.
+</LoiGiai>
+
+<LoiHayMac>
+Quên giả thiết "vuông". Nếu $A$ không vuông thì $A$ và $A^T$ khác cỡ, $A + A^T$ không tồn tại.
+</LoiHayMac>

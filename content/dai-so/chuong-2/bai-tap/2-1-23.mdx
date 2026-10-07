@@ -13,3 +13,23 @@ Cho $A$, $A_1$, $A_2$, …, $A_n$ là các ma trận cùng cỡ. Dùng quy nạp
 
 **b.** $(k_1 + k_2 + \cdots + k_n)A = k_1A + k_2A + \cdots + k_nA$ với mọi số $k_1, k_2, \ldots, k_n$
 </De>
+
+<GoiY so={1}>
+Quy nạp: bước cơ sở $n = 1$ (hiển nhiên) hoặc $n = 2$ (chính là tính chất 5, 6). Bước quy nạp: nhóm $A_1 + \cdots + A_n$ thành $(A_1 + \cdots + A_{n-1}) + A_n$.
+</GoiY>
+
+<GoiY so={2}>
+Áp tính chất cho **hai** số hạng, rồi dùng giả thiết quy nạp cho phần trong ngoặc.
+</GoiY>
+
+<LoiGiai>
+**a.** Với $n = 1$: $kA_1 = kA_1$. Giả sử đúng với $n - 1$. Khi đó
+$$k(A_1 + \cdots + A_n) = k\big[(A_1 + \cdots + A_{n-1}) + A_n\big] = k(A_1 + \cdots + A_{n-1}) + kA_n = kA_1 + \cdots + kA_{n-1} + kA_n,$$
+đẳng thức thứ hai theo tính chất 5, thứ ba theo giả thiết quy nạp.
+
+**b.** Tương tự: $(k_1 + \cdots + k_n)A = \big[(k_1 + \cdots + k_{n-1}) + k_n\big]A = (k_1 + \cdots + k_{n-1})A + k_nA$ theo tính chất 6, rồi dùng giả thiết quy nạp cho số hạng đầu.
+</LoiGiai>
+
+<LoiHayMac>
+Viết "và cứ tiếp tục như vậy" thay cho bước quy nạp. Quy nạp cần chỉ rõ: dùng giả thiết với $n - 1$ ở **đâu**.
+</LoiHayMac>
