@@ -11,3 +11,24 @@ Tìm điện áp $x$ sao cho dòng điện $I_1 = 0$.
 
 <HinhSach ten="ds-bt-1-5-5" moTa="Mạch với nguồn x V, 2 V và 5 V, điện trở 1 Ω, 1 Ω, 2 Ω; dòng I1, I2, I3" />
 </De>
+
+<GoiY so={1}>
+Lập hệ Kirchhoff như thường nhưng coi $x$ là thêm một ẩn. Rồi thêm điều kiện $I_1 = 0$.
+</GoiY>
+
+<GoiY so={2}>
+Nút trên: $I_3 = I_1 + I_2$. Vòng phải (nhánh giữa và nhánh phải) không chứa $x$ — dùng nó tìm $I_2$, $I_3$ trước.
+</GoiY>
+
+<LoiGiai>
+- Nút trên: $I_3 = I_1 + I_2$.
+- Vòng trái (nhánh trái theo chiều $I_1$, quay về qua nhánh giữa ngược chiều $I_2$): $x - 2 = I_1 - I_2$.
+- Vòng phải (nhánh giữa theo chiều $I_2$, rồi theo chiều $I_3$ qua nhánh phải): nguồn 2 V cùng chiều, nguồn 5 V ngược chiều: $2 - 5 = I_2 + 2I_3$.
+
+Cho $I_1 = 0$: $I_3 = I_2$, nên $-3 = 3I_2$, $I_2 = I_3 = -1$. Vòng trái: $x - 2 = 0 - (-1) = 1$, nên
+$$x = 3 \ \text{V}.$$
+</LoiGiai>
+
+<LoiHayMac>
+Cho $I_1 = 0$ rồi bỏ luôn vòng trái. Chính vòng trái chứa $x$ — nó là phương trình duy nhất cho ra đáp số.
+</LoiHayMac>

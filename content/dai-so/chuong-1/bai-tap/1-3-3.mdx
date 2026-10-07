@@ -11,3 +11,27 @@ Cho $\mathbf{x} = \begin{bmatrix} 2 \\ 1 \\ -1 \end{bmatrix}$, $\mathbf{y} = \be
 
 **a.** $\mathbf{v} = \begin{bmatrix} 0 \\ 1 \\ -3 \end{bmatrix}$ · **b.** $\mathbf{v} = \begin{bmatrix} 4 \\ 3 \\ -4 \end{bmatrix}$ · **c.** $\mathbf{v} = \begin{bmatrix} 3 \\ 1 \\ 0 \end{bmatrix}$ · **d.** $\mathbf{v} = \begin{bmatrix} 3 \\ 0 \\ 3 \end{bmatrix}$
 </De>
+
+<GoiY so={1}>
+Tìm $r, s, t$ với $r\mathbf{x} + s\mathbf{y} + t\mathbf{z} = \mathbf{v}$. So từng thành phần: đó là hệ ba phương trình, ba ẩn $r, s, t$, với các cột là $\mathbf{x}, \mathbf{y}, \mathbf{z}$.
+</GoiY>
+
+<GoiY so={2}>
+Ma trận $[\,\mathbf{x}\ \mathbf{y}\ \mathbf{z} \mid \mathbf{v}\,]$ có hạng phần hệ số bằng 2 ($\mathbf{z} = \mathbf{x} - \mathbf{y}$), nên khi có nghiệm thì có vô số cách viết.
+</GoiY>
+
+<LoiGiai>
+Để ý $\mathbf{z} = \mathbf{x} - \mathbf{y}$. Khử $[\,\mathbf{x}\ \mathbf{y}\ \mathbf{z} \mid \mathbf{v}\,]$ cho nghiệm theo tham số $t$:
+
+**a.** $\mathbf{v} = (1 - t)\mathbf{x} + (t - 2)\mathbf{y} + t\mathbf{z}$. Chẳng hạn $t = 0$: $\mathbf{v} = \mathbf{x} - 2\mathbf{y}$. Kiểm tra: $(2, 1, -1) - (2, 0, 2) = (0, 1, -3)$ ✓.
+
+**b.** Hệ vô nghiệm: $\mathbf{v}$ **không** là tổ hợp tuyến tính của $\mathbf{x}, \mathbf{y}, \mathbf{z}$.
+
+**c.** $\mathbf{v} = (1 - t)\mathbf{x} + (1 + t)\mathbf{y} + t\mathbf{z}$; với $t = 0$: $\mathbf{v} = \mathbf{x} + \mathbf{y}$ ✓.
+
+**d.** $\mathbf{v} = -t\mathbf{x} + (3 + t)\mathbf{y} + t\mathbf{z}$; với $t = 0$: $\mathbf{v} = 3\mathbf{y}$ ✓.
+</LoiGiai>
+
+<LoiHayMac>
+Xếp $\mathbf{x}, \mathbf{y}, \mathbf{z}$ thành **hàng** của ma trận. Các vector được tổ hợp phải là **cột**, vì mỗi thành phần cho một phương trình.
+</LoiHayMac>

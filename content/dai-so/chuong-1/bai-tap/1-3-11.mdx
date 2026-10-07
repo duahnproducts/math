@@ -9,3 +9,24 @@ can_dung: ["dinh-ly-1.2.2"]
 <De>
 Xét một hệ phương trình tuyến tính thuần nhất với $n$ biến, và giả sử ma trận bổ sung có hạng $r$. Chứng tỏ rằng hệ có nghiệm không tầm thường khi và chỉ khi $n > r$.
 </De>
+
+<GoiY so={1}>
+Hệ thuần nhất luôn có nghiệm; theo Định lý 1.2.2 nghiệm tổng quát có $n - r$ tham số.
+</GoiY>
+
+<GoiY so={2}>
+Cần chứng minh hai chiều: $n > r$ ⇒ có nghiệm khác 0; và $n = r$ ⇒ chỉ có nghiệm 0.
+</GoiY>
+
+<LoiGiai>
+Cột vế phải toàn 0 nên hạng của ma trận bổ sung bằng hạng ma trận hệ số, là $r \le n$. Hệ luôn có nghiệm, nên theo Định lý 1.2.2 có đúng $n - r$ tham số.
+
+- Nếu $n > r$: có ít nhất một tham số; cho nó bằng 1 được một nghiệm khác 0.
+- Nếu $n = r$: không có tham số, nghiệm duy nhất — chính là nghiệm tầm thường.
+
+Vậy có nghiệm không tầm thường khi và chỉ khi $n > r$.
+</LoiGiai>
+
+<LoiHayMac>
+Chỉ chứng minh một chiều. "Khi và chỉ khi" đòi cả hai: chiều "chỉ khi" là trường hợp $n = r$ ở trên.
+</LoiHayMac>

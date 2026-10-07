@@ -11,3 +11,27 @@ Trong mỗi trường hợp sau, tìm tất cả giá trị của $a$ để hệ
 
 **a.** $\left\{\begin{aligned} x - 2y + z &= 0 \\ x + ay - 3z &= 0 \\ -x + 6y - 5z &= 0 \end{aligned}\right.$ · **b.** $\left\{\begin{aligned} x + 2y + z &= 0 \\ x + 3y + 6z &= 0 \\ 2x + 3y + az &= 0 \end{aligned}\right.$ · **c.** $\left\{\begin{aligned} x + y - z &= 0 \\ ay - z &= 0 \\ x + y + az &= 0 \end{aligned}\right.$ · **d.** $\left\{\begin{aligned} ax + y + z &= 0 \\ x + y - z &= 0 \\ x + y + az &= 0 \end{aligned}\right.$
 </De>
+
+<GoiY so={1}>
+Khử Gauss ma trận hệ số (vế phải luôn 0). Có nghiệm không tầm thường khi và chỉ khi hạng nhỏ hơn 3 — tức là sau khi khử phải xuất hiện một hàng 0, và hàng đó phụ thuộc $a$.
+</GoiY>
+
+<GoiY so={2}>
+Hàng cuối sau khi khử có dạng $(0, 0, k(a))$. Giải $k(a) = 0$, rồi thay từng giá trị $a$ tìm nghiệm có tham số.
+</GoiY>
+
+<LoiGiai>
+**a.** Hàng cuối tỉ lệ với $a - 2$. Có nghiệm không tầm thường khi và chỉ khi $a = 2$; khi đó $x = y = z = t$.
+
+**b.** Hàng cuối tỉ lệ với $a + 3$. Khi $a = -3$: $(x, y, z) = t(9, -5, 1)$.
+
+**c.** Hai giá trị: $a = 0$ cho $(x, y, z) = t(-1, 1, 0)$; $a = -1$ cho $(x, y, z) = t(2, -1, 1)$.
+
+**d.** Hai giá trị: $a = 1$ cho $(x, y, z) = t(-1, 1, 0)$; $a = -1$ cho $(x, y, z) = t(1, 0, 1)$.
+
+Kiểm tra câu b với $t = 1$: $9 - 10 + 1 = 0$ ✓, $9 - 15 + 6 = 0$ ✓, $18 - 15 - 3 = 0$ ✓.
+</LoiGiai>
+
+<LoiHayMac>
+Ở câu c, d chỉ tìm được một giá trị của $a$. Biểu thức quyết định là bậc hai ($a(a + 1)$ và $(a - 1)(a + 1)$), nên phải xét **cả hai** nghiệm.
+</LoiHayMac>

@@ -20,13 +20,14 @@ test('Chương 1 đủ §1.1–§1.6, mục ứng dụng có sơ đồ', async (
   await expect(mach).toHaveAttribute('aria-label', /Mạch điện/);
 });
 
-test('bài tập Chương 1: đủ 66 bài, bài mạng điện có hình, chưa có hướng dẫn thì có nhãn', async ({ page }) => {
+test('bài tập Chương 1: đủ 66 bài, bài nào cũng có gợi ý và lời giải, bài mạng điện có hình', async ({ page }) => {
   await page.goto('dai-so/chuong-1/bai-tap/');
   await expect(page.locator('[data-the-bai-tap]')).toHaveCount(66);
+  await expect(page.locator('.pill', { hasText: 'Chưa có hướng dẫn' })).toHaveCount(0);
 
   await page.goto('dai-so/chuong-1/bai-tap/1-5-3/');
   await expect(page.locator('[data-hinh-sach="ds-bt-1-5-3"] svg')).toBeVisible();
-  await expect(page.locator('.pill', { hasText: 'Chưa có hướng dẫn' })).toBeVisible();
+  await expect(page.locator('details[data-tang="loi-giai"]')).toHaveCount(1);
   // "Cần dùng" trỏ về ví dụ mạch điện ở §1.5
   await expect(page.locator('.can-dung a').first()).toHaveAttribute('href', /sach\/1-5\/#vi-du-1\.5\.1$/);
 });

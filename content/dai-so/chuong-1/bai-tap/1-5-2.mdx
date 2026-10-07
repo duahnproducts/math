@@ -11,3 +11,26 @@ Tìm các dòng điện trong mạch.
 
 <HinhSach ten="ds-bt-1-5-2" moTa="Mạch hình thoi: nguồn 5 V và 10 V, điện trở 5 Ω, 10 Ω, 5 Ω; dòng I1, I2, I3" />
 </De>
+
+<GoiY so={1}>
+Nút bên trái: $I_1$ và $I_2$ đi vào, $I_3$ đi ra. Hai vòng: vòng trên (qua nguồn 5 V) và vòng dưới (qua nguồn 10 V), cả hai dùng chung nhánh $10\,\Omega$ ở giữa.
+</GoiY>
+
+<GoiY so={2}>
+Chú ý: nguồn 5 V đẩy dòng từ trái lên đỉnh trên, **ngược** chiều mũi tên $I_1$.
+</GoiY>
+
+<LoiGiai>
+- Nút trái: $I_3 = I_1 + I_2$.
+- Vòng trên (trái → đỉnh trên → phải → giữa → trái): nguồn 5 V cùng chiều đi; nhánh trên đi ngược $I_1$, nhánh giữa cùng chiều $I_2$: $5 = -5I_1 + 10I_2$.
+- Vòng dưới (trái → đỉnh dưới → phải → giữa → trái): $10 = 5I_3 + 10I_2$.
+
+Thay $I_3$: $5I_1 + 15I_2 = 10$ và $-5I_1 + 10I_2 = 5$. Cộng lại: $25I_2 = 15$. Vậy
+$$I_1 = \tfrac{1}{5}, \quad I_2 = \tfrac{3}{5}, \quad I_3 = \tfrac{4}{5} \ (\text{A}).$$
+
+Kiểm tra vòng ngoài (trên rồi dưới): $10 - 5 = 5I_3 + 5I_1 = 4 + 1$ ✓.
+</LoiGiai>
+
+<LoiHayMac>
+Cộng nguồn 5 V với dấu dương khi đi theo chiều $I_1$. Chiều của **nguồn** (mũi tên cạnh pin) và chiều của **dòng** là hai thứ khác nhau — xét dấu riêng cho từng cái.
+</LoiHayMac>

@@ -11,3 +11,26 @@ Tìm các dòng điện trong mạch.
 
 <HinhSach ten="ds-bt-1-5-1" moTa="Mạch hai nút: nguồn 20 V và 10 V, điện trở 6 Ω, 4 Ω, 2 Ω; dòng I1, I2, I3" />
 </De>
+
+<GoiY so={1}>
+Định luật Kirchhoff: ở nút bên phải, dòng vào = dòng ra; mỗi vòng kín: tổng điện áp nguồn (theo chiều đi) = tổng $IR$ (dấu theo chiều dòng so với chiều đi).
+</GoiY>
+
+<GoiY so={2}>
+Ba phương trình: $I_1 = I_2 + I_3$; vòng trên: $6I_1 + 4I_2 = 20$; vòng dưới: $2I_3 - 4I_2 = 10$.
+</GoiY>
+
+<LoiGiai>
+- Nút phải: $I_1$ vào; $I_2$, $I_3$ ra: $I_1 = I_2 + I_3$.
+- Vòng trên (đi theo chiều $I_1$, quay về qua điện trở $4\,\Omega$ theo chiều $I_2$): nguồn 20 V cùng chiều đi: $20 = 6I_1 + 4I_2$.
+- Vòng dưới (từ nút phải đi xuống qua nguồn 10 V, theo chiều $I_3$, rồi quay lên qua $4\,\Omega$ ngược chiều $I_2$): $10 = 2I_3 - 4I_2$.
+
+Thay $I_1 = I_2 + I_3$: $10I_2 + 6I_3 = 20$ và $-4I_2 + 2I_3 = 10$. Giải được
+$$I_1 = \tfrac{40}{11}, \quad I_2 = -\tfrac{5}{11}, \quad I_3 = \tfrac{45}{11} \ (\text{A}).$$
+
+$I_2$ âm: dòng qua điện trở $4\,\Omega$ thực ra chạy **ngược** chiều mũi tên. Kiểm tra vòng ngoài: $6 \cdot \tfrac{40}{11} + 2 \cdot \tfrac{45}{11} = 30 = 20 + 10$ ✓.
+</LoiGiai>
+
+<LoiHayMac>
+Sai dấu khi đi ngược chiều dòng qua điện trở. Đi **cùng** chiều mũi tên của $I$ thì cộng $IR$; đi **ngược** thì trừ.
+</LoiHayMac>

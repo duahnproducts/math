@@ -11,3 +11,25 @@ Tìm các dòng điện trong mạch.
 
 <HinhSach ten="ds-bt-1-5-3" moTa="Mạch nhiều vòng: nguồn 5 V, 20 V, 5 V, 5 V, 10 V, điện trở 10 Ω, 20 Ω, 10 Ω, 20 Ω; dòng I1 đến I6" />
 </De>
+
+<GoiY so={1}>
+Có 4 nút (2 trên, 2 dưới) và 3 vòng con (trái, giữa, phải). Vòng trái và vòng phải mỗi vòng chỉ chứa **một** ẩn chạy qua điện trở — giải ngay được.
+</GoiY>
+
+<GoiY so={2}>
+Vòng trái: $10I_1 = 5 + 10 + 5$. Vòng phải: $20I_6 = 20 - 5$. Vòng giữa không có nguồn tổng (hai nguồn 5 V triệt nhau): $10I_4 + 20I_3 = 0$.
+</GoiY>
+
+<LoiGiai>
+- Nút trên trái: $I_1 = I_2 + I_3$ · Nút dưới trái: $I_1 = I_2 + I_4$ · Nút trên phải: $I_6 = I_3 + I_5$ · Nút dưới phải: $I_6 = I_4 + I_5$.
+- Vòng trái: ba nguồn 5 V, 10 V, 5 V cùng chiều đi theo $I_1$, $I_2$: $10I_1 = 20$, nên $I_1 = 2$.
+- Vòng phải: nguồn 20 V cùng chiều, nguồn 5 V ở giữa ngược chiều: $20I_6 = 15$, nên $I_6 = \tfrac{3}{4}$.
+- Vòng giữa: $10I_4 + 20I_3 = 0$.
+
+Từ hai nút bên trái: $I_3 = I_4$; cùng với vòng giữa: $I_3 = I_4 = 0$. Suy ra
+$$I_1 = 2, \quad I_2 = 2, \quad I_3 = 0, \quad I_4 = 0, \quad I_5 = \tfrac{3}{4}, \quad I_6 = \tfrac{3}{4} \ (\text{A}).$$
+</LoiGiai>
+
+<LoiHayMac>
+Lập đủ 6 phương trình rồi khử máy móc trên ma trận $6 \times 7$. Không sai, nhưng dễ nhầm. Nhìn vòng nào chỉ có một điện trở thì giải vòng đó trước.
+</LoiHayMac>

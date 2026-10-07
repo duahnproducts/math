@@ -17,3 +17,31 @@ Tìm các dòng chảy khả dĩ trong mỗi mạng ống dẫn sau.
 
 <HinhSach ten="ds-bt-1-4-1b" moTa="Mạng năm nút: 50 vào bên trái, 75 vào nút giữa, 25 ra ở trên, 60 ra bên phải, 40 ra ở dưới; các ống f1 đến f7" />
 </De>
+
+<GoiY so={1}>
+Ở mỗi nút: tổng dòng chảy vào = tổng dòng chảy ra. Chỉ tay theo từng mũi tên để biết ống nào vào, ống nào ra.
+</GoiY>
+
+<GoiY so={2}>
+Câu a có 4 nút, 5 ẩn: nghiệm có 2 tham số. Câu b có 5 nút, 7 ẩn: 3 tham số (một phương trình nút luôn thừa).
+</GoiY>
+
+<LoiGiai>
+**a.** Gọi các nút: trái, trên, phải, dưới.
+- Trái: $40 + f_3 = f_1 + f_4$ · Trên: $f_1 + f_2 = 50$ · Phải: $60 = f_2 + f_3 + f_5$ · Dưới: $f_4 + f_5 = 50$.
+
+Đặt $f_3 = t$, $f_5 = s$:
+$$f_1 = s + t - 10, \quad f_2 = 60 - s - t, \quad f_3 = t, \quad f_4 = 50 - s, \quad f_5 = s.$$
+
+**b.** Các nút: trái, trên, giữa (nút có 75 đổ vào), dưới, phải.
+- Trái: $50 = f_1 + f_3 + f_5$ · Trên: $f_1 = 25 + f_2$ · Giữa: $f_3 + 75 = f_4 + f_6$ · Dưới: $f_5 + f_6 = 40 + f_7$ · Phải: $f_2 + f_4 + f_7 = 60$.
+
+Đặt $f_4 = r$, $f_6 = s$, $f_7 = t$:
+$$f_1 = 85 - r - t, \quad f_2 = 60 - r - t, \quad f_3 = r + s - 75, \quad f_5 = 40 - s + t.$$
+
+Kiểm tra câu a với $s = 20$, $t = 10$: $(20, 30, 10, 30, 20)$; nút trái $40 + 10 = 20 + 30$ ✓, nút phải $60 = 30 + 10 + 20$ ✓. Nếu các ống chỉ chảy một chiều thì thêm điều kiện mọi $f_i \ge 0$.
+</LoiGiai>
+
+<LoiHayMac>
+Ở câu a, $f_3$ chảy từ **phải sang trái** (mũi tên chỉ về nút trái), nên nó là dòng **vào** của nút trái. Viết nhầm chiều là cả hệ sai.
+</LoiHayMac>

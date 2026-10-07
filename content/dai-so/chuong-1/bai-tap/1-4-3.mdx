@@ -13,3 +13,27 @@ Một vòng xuyến giao thông có năm đường một chiều, xe vào và ra
 
 **a.** Tính các dòng chảy khả dĩ. · **b.** Đường nào có lưu lượng lớn nhất?
 </De>
+
+<GoiY so={1}>
+Mỗi nút của vòng xuyến có một đoạn vào và một đoạn ra trên vòng, cộng với xe vào/ra từ ngoài.
+</GoiY>
+
+<GoiY so={2}>
+Đặt $f_5 = t$ rồi đi vòng quanh: từ nút $A$ suy ra $f_1$, từ $B$ suy ra $f_2$, …
+</GoiY>
+
+<LoiGiai>
+**a.**
+- $A$: $50 + f_5 = f_1$ · $B$: $f_1 = 30 + f_2$ · $C$: $f_2 + 40 = f_3$ · $D$: $f_3 = 25 + f_4$ · $E$: $f_4 = 35 + f_5$.
+
+Đặt $f_5 = t$ ($t \ge 0$ vì đường một chiều):
+$$f_1 = 50 + t, \quad f_2 = 20 + t, \quad f_3 = 60 + t, \quad f_4 = 35 + t, \quad f_5 = t.$$
+
+**b.** Mọi dòng đều bằng $t$ cộng một hằng số, nên đường có lưu lượng lớn nhất luôn là $f_3$ (đoạn $CD$), với ít nhất 60 xe.
+
+Kiểm tra: tổng vào $50 + 40 = 90$, tổng ra $30 + 25 + 35 = 90$ ✓.
+</LoiGiai>
+
+<LoiHayMac>
+Nghĩ rằng phải biết $t$ mới trả lời được câu b. So sánh các biểu thức $50 + t$, $20 + t$, … là đủ — số hạng $t$ giống nhau ở mọi đoạn.
+</LoiHayMac>

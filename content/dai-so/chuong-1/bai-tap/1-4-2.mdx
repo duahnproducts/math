@@ -15,3 +15,30 @@ Một mạng kênh tưới tiêu được đề xuất như trong sơ đồ kèm
 
 **b.** Nếu kênh $BC$ bị đóng, phải duy trì dòng chảy trên $AD$ trong khoảng nào để không kênh nào phải tải dòng chảy lớn hơn 30?
 </De>
+
+<GoiY so={1}>
+Lập phương trình ở 4 nút $A, B, C, D$ theo chiều mũi tên. Có 5 ẩn, hạng 3, nên nghiệm có 2 tham số.
+</GoiY>
+
+<GoiY so={2}>
+Câu b: "đóng kênh $BC$" nghĩa là $f_3 = 0$. Thay vào, rồi viết điều kiện $0 \le f_i \le 30$ cho mọi kênh theo $f_4$ (kênh $AD$).
+</GoiY>
+
+<LoiGiai>
+**a.**
+- $A$: $55 = f_1 + f_4$ · $B$: $f_1 = 20 + f_2 + f_3$ · $C$: $f_3 + f_5 = 15$ · $D$: $f_2 + f_4 = 20 + f_5$.
+
+Đặt $f_4 = t$, $f_5 = s$:
+$$f_1 = 55 - t, \quad f_2 = 20 - t + s, \quad f_3 = 15 - s, \quad f_4 = t, \quad f_5 = s.$$
+
+**b.** $f_3 = 0$ cho $s = 15$. Khi đó $f_1 = 55 - t$, $f_2 = 35 - t$, $f_5 = 15$, $f_4 = t$. Điều kiện mọi kênh từ 0 đến 30:
+- $f_1 = 55 - t \le 30$ cho $t \ge 25$;
+- $f_2 = 35 - t$ nằm trong $[0, 30]$ cho $5 \le t \le 35$;
+- $f_4 = t \le 30$.
+
+Vậy dòng chảy trên $AD$ phải nằm trong khoảng $25 \le f_4 \le 30$.
+</LoiGiai>
+
+<LoiHayMac>
+Chỉ kiểm tra kênh $AD$ không vượt 30 mà quên các kênh khác. Điều kiện chặt nhất ở đây lại đến từ kênh $AB$ ($f_1 \le 30$ buộc $f_4 \ge 25$).
+</LoiHayMac>

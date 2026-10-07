@@ -17,3 +17,31 @@ Với mỗi hệ thuần nhất sau, hãy tìm một tập nghiệm cơ bản v�
 
 **d.** $\left\{\begin{aligned} x_1 + x_2 - 2x_3 - 2x_4 + 2x_5 &= 0 \\ 2x_1 + 2x_2 - 4x_3 - 4x_4 + x_5 &= 0 \\ x_1 - x_2 + 2x_3 + 4x_4 + x_5 &= 0 \\ -2x_1 - 4x_2 + 8x_3 + 10x_4 + x_5 &= 0 \end{aligned}\right.$
 </De>
+
+<GoiY so={1}>
+Đưa ma trận hệ số về dạng rút gọn. Mỗi ẩn tự do cho một nghiệm cơ bản: cho ẩn đó bằng 1, các ẩn tự do khác bằng 0.
+</GoiY>
+
+<GoiY so={2}>
+Số nghiệm cơ bản $= 5 - \text{hạng}$: câu a có 2, câu b có 3, câu c có 2, câu d có 2. Nếu nghiệm cơ bản có phân số, nhân với mẫu chung cho gọn (vẫn là nghiệm cơ bản).
+</GoiY>
+
+<LoiGiai>
+**a.** Rút gọn: $x_1 + 2x_2 - \tfrac{1}{3}x_5 = 0$, $x_3 + \tfrac{2}{3}x_5 = 0$, $x_4 + x_5 = 0$. Ẩn tự do $x_2 = s$, $x_5 = 3t$:
+$$\mathbf{x} = s(-2, 1, 0, 0, 0) + t(1, 0, -2, -3, 3).$$
+
+**b.** Hạng 2; ẩn tự do $x_2, x_4, x_5$:
+$$\mathbf{x} = r(-2, 1, 0, 0, 0) + s(-2, 0, -1, 1, 0) + t(-3, 0, -2, 0, 1).$$
+
+**c.** Hạng 3; ẩn tự do $x_4, x_5$:
+$$\mathbf{x} = s(-2, 1, 1, 1, 0) + t(0, 0, 1, 0, 1).$$
+
+**d.** Hạng 3 ($x_5 = 0$); ẩn tự do $x_3, x_4$:
+$$\mathbf{x} = s(0, 2, 1, 0, 0) + t(-1, 3, 0, 1, 0).$$
+
+Kiểm tra (câu d, nghiệm thứ hai) với phương trình 3: $-1 - 3 + 0 + 4 + 0 = 0$ ✓.
+</LoiGiai>
+
+<LoiHayMac>
+Ở câu d quên rằng $x_5$ là ẩn **chính** (bằng 0), không phải ẩn tự do. Chỉ cột **không** có số 1 dẫn đầu mới cho nghiệm cơ bản.
+</LoiHayMac>

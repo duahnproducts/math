@@ -11,3 +11,27 @@ Tìm các dòng điện trong mạch. Tất cả điện trở đều là $10\,\
 
 <HinhSach ten="ds-bt-1-5-4" moTa="Mạch tam giác với nguồn 20 V ở cạnh đáy và nguồn 10 V ở nhánh giữa; dòng I1 đến I6" />
 </De>
+
+<GoiY so={1}>
+Bốn nút: ba đỉnh tam giác và tâm. Nguồn 20 V nằm ở cạnh đáy (cùng chiều $I_1$); nguồn 10 V ở nhánh dọc, đẩy dòng **từ đỉnh xuống tâm** — ngược chiều $I_2$.
+</GoiY>
+
+<GoiY so={2}>
+Ba vòng: đáy–tâm (qua $I_1, I_3, I_5$), trái (qua $I_6, I_5, I_2$), phải (qua $I_4, I_3, I_2$). Hai nhánh có nguồn không có điện trở.
+</GoiY>
+
+<LoiGiai>
+- Đỉnh trên: $I_2 = I_4 + I_6$ · Góc trái: $I_6 = I_1 + I_5$ · Góc phải: $I_3 = I_1 + I_4$ · Tâm: $I_2 = I_3 + I_5$.
+- Vòng đáy (trái → phải → tâm → trái): $20 = 10I_3 - 10I_5$.
+- Vòng trái (đỉnh → góc trái → tâm → đỉnh): $-10 = 10I_6 + 10I_5$.
+- Vòng phải (đỉnh → góc phải → tâm → đỉnh): $-10 = 10I_4 + 10I_3$.
+
+Giải hệ:
+$$I_1 = 2, \quad I_2 = -1, \quad I_3 = \tfrac{1}{2}, \quad I_4 = -\tfrac{3}{2}, \quad I_5 = -\tfrac{3}{2}, \quad I_6 = \tfrac{1}{2} \ (\text{A}).$$
+
+Các dòng âm chạy ngược chiều mũi tên. Kiểm tra tâm: $I_3 + I_5 = \tfrac{1}{2} - \tfrac{3}{2} = -1 = I_2$ ✓.
+</LoiGiai>
+
+<LoiHayMac>
+Thêm điện trở $10\,\Omega$ vào nhánh có nguồn. "Mọi điện trở đều $10\,\Omega$" chỉ áp cho các nhánh **có vẽ** điện trở; nhánh đáy và nhánh dọc chỉ có pin.
+</LoiHayMac>

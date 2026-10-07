@@ -15,3 +15,23 @@ $$
 
 **a.** $\mathbf{y} = \begin{bmatrix} 1 \\ 2 \\ 4 \\ 0 \end{bmatrix}$ · **b.** $\mathbf{y} = \begin{bmatrix} -1 \\ 9 \\ 2 \\ 6 \end{bmatrix}$
 </De>
+
+<GoiY so={1}>
+Lập hệ $r\mathbf{a}_1 + s\mathbf{a}_2 + t\mathbf{a}_3 = \mathbf{y}$: bốn phương trình, ba ẩn. Thường hệ như vậy vô nghiệm — phải kiểm tra.
+</GoiY>
+
+<GoiY so={2}>
+Thành phần thứ ba và thứ tư cho ngay: $2s + t = y_3$ và $r + t = y_4$. Dùng chúng để biểu diễn $r, s$ theo $t$ rồi thay vào hai phương trình còn lại.
+</GoiY>
+
+<LoiGiai>
+**a.** $2s + t = 4$, $r + t = 0$. Thay $r = -t$, $s = 2 - \tfrac{t}{2}$ vào thành phần 1: $t + 6 - \tfrac{3t}{2} + t = 1$ cho $t = -10$; vào thành phần 2: $-3t + 2 - \tfrac{t}{2} + t = 2$ cho $t = 0$. Mâu thuẫn — **không** là tổ hợp tuyến tính.
+
+**b.** Tương tự được $r = 2$, $s = -1$, $t = 4$:
+$$\mathbf{y} = 2\mathbf{a}_1 - \mathbf{a}_2 + 4\mathbf{a}_3.$$
+Kiểm tra: $(-2 - 3 + 4,\ 6 - 1 + 4,\ 0 - 2 + 4,\ 2 + 0 + 4) = (-1, 9, 2, 6)$ ✓.
+</LoiGiai>
+
+<LoiHayMac>
+Dùng ba phương trình đầu, giải ra $r, s, t$ rồi kết luận. Phải kiểm tra **cả** phương trình thứ tư — ở câu a chính nó (hoặc một phương trình khác) gây mâu thuẫn.
+</LoiHayMac>
