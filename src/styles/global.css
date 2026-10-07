@@ -951,6 +951,16 @@ figure.hinh figcaption {
 .hinh .to-dam {
   fill: var(--text);
 }
+/* Biểu đồ cắt từ slide dịch: chữ không chân, giữ đúng cỡ chữ của bản gốc (thuộc tính
+   font-size trong SVG) để nhãn dày như số liệu từng điểm không chồng lên nhau */
+.hinh .chu-slide {
+  fill: var(--text);
+  font-family: var(--font-sans);
+}
+.hinh .chu-slide-nhan {
+  fill: var(--accent);
+  font-family: var(--font-sans);
+}
 .hinh-sach svg {
   max-width: 100%;
 }
@@ -1687,6 +1697,17 @@ dialog.hoi p {
   margin: 0.6em 0;
   border: 0;
   padding: 4px 0;
+}
+/* Hai hình (a), (b) đặt cạnh nhau như slide gốc; màn hình hẹp thì xếp chồng */
+.hai-hinh {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 4px 20px;
+  align-items: start;
+}
+.hai-hinh .hinh figcaption {
+  text-align: left;
+  line-height: 1.5;
 }
 .anh-slide img {
   display: block;

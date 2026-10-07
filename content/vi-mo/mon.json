@@ -24,7 +24,25 @@
         }
       ]
     },
-    { "so": 3, "ten": "Cung và cầu", "ten_en": "Demand and Supply", "ghi_chu": "Đã có slide dịch PDF, chưa chuyển lên web." },
+    {
+      "so": 3,
+      "ten": "Cung và cầu",
+      "ten_en": "Demand and Supply",
+      "muc": [
+        { "so": "3.1", "ten": "Cầu, cung và trạng thái cân bằng trên thị trường hàng hóa và dịch vụ" },
+        { "so": "3.2", "ten": "Sự dịch chuyển của cầu và cung hàng hóa, dịch vụ" },
+        { "so": "3.3", "ten": "Thay đổi giá và lượng cân bằng: quy trình bốn bước" },
+        { "so": "3.4", "ten": "Giá trần và giá sàn" },
+        { "so": "3.5", "ten": "Cung, cầu và hiệu quả" }
+      ],
+      "tai_ve": [
+        {
+          "ten": "Slide dịch Chương 3 (PDF, 38 slide)",
+          "tep": "vi-mo-chuong-3-slide.pdf",
+          "mo_ta": "Bộ slide bài giảng OpenStax dịch sang tiếng Việt, biểu đồ vẽ lại với nhãn tiếng Việt. Giấy phép CC BY-NC-SA 4.0."
+        }
+      ]
+    },
     { "so": 5, "ten": "Độ co giãn", "ten_en": "Elasticity", "ghi_chu": "Đã có slide dịch PDF, chưa chuyển lên web." },
     { "so": 7, "ten": "Sản xuất, chi phí và cấu trúc ngành", "ten_en": "Production, Costs, and Industry Structure", "ghi_chu": "Đã có slide dịch PDF, chưa chuyển lên web." },
     { "so": 8, "ten": "Cạnh tranh hoàn hảo", "ten_en": "Perfect Competition", "ghi_chu": "Đã có slide dịch PDF, chưa chuyển lên web." }

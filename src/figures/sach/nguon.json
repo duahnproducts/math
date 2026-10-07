@@ -166,10 +166,389 @@
         725,
         319
       ]
+    },
+    "vm-3-duong-cau": {
+      "sach": "vi-mo-c3-dich",
+      "chu_toi_da": 12,
+      "lop_chu": "chu-slide",
+      "chu_mau": "c0399f:chu-slide-nhan",
+      "mau": "3b6fb0:net/to-dam,c0399f:nhan-manh/to-nhan,333333:net/to-dam",
+      "trang": 6,
+      "hop": [
+        155,
+        88,
+        533,
+        307
+      ]
+    },
+    "vm-3-duong-cung": {
+      "sach": "vi-mo-c3-dich",
+      "chu_toi_da": 12,
+      "lop_chu": "chu-slide",
+      "chu_mau": "c0399f:chu-slide-nhan",
+      "mau": "3b6fb0:net/to-dam,c0399f:nhan-manh/to-nhan,333333:net/to-dam",
+      "trang": 9,
+      "hop": [
+        155,
+        88,
+        508,
+        307
+      ]
+    },
+    "vm-3-can-bang": {
+      "sach": "vi-mo-c3-dich",
+      "chu_toi_da": 12,
+      "lop_chu": "chu-slide",
+      "chu_mau": "c0399f:chu-slide-nhan",
+      "mau": "3b6fb0:net/to-dam,c0399f:nhan-manh/to-nhan,333333:net/to-dam",
+      "trang": 11,
+      "hop": [
+        155,
+        93,
+        529,
+        328
+      ]
+    },
+    "vm-3-cau-p0": {
+      "sach": "vi-mo-c3-dich",
+      "chu_toi_da": 12,
+      "lop_chu": "chu-slide",
+      "chu_mau": "c0399f:chu-slide-nhan",
+      "mau": "3b6fb0:net/to-dam,c0399f:nhan-manh/to-nhan,333333:net/to-dam",
+      "trang": 13,
+      "hop": [
+        257,
+        96,
+        562,
+        308
+      ]
+    },
+    "vm-3-dich-cau-a": {
+      "sach": "vi-mo-c3-dich",
+      "chu_toi_da": 12,
+      "lop_chu": "chu-slide",
+      "chu_mau": "c0399f:chu-slide-nhan",
+      "mau": "3b6fb0:net/to-dam,c0399f:nhan-manh/to-nhan,333333:net/to-dam",
+      "trang": 14,
+      "hop": [
+        107,
+        113,
+        393,
+        313
+      ]
+    },
+    "vm-3-dich-cau-b": {
+      "sach": "vi-mo-c3-dich",
+      "chu_toi_da": 12,
+      "lop_chu": "chu-slide",
+      "chu_mau": "c0399f:chu-slide-nhan",
+      "mau": "3b6fb0:net/to-dam,c0399f:nhan-manh/to-nhan,333333:net/to-dam",
+      "trang": 14,
+      "hop": [
+        429,
+        113,
+        725,
+        313
+      ]
+    },
+    "vm-3-cau-o-to": {
+      "sach": "vi-mo-c3-dich",
+      "chu_toi_da": 12,
+      "lop_chu": "chu-slide",
+      "chu_mau": "c0399f:chu-slide-nhan",
+      "mau": "3b6fb0:net/to-dam,c0399f:nhan-manh/to-nhan,333333:net/to-dam",
+      "trang": 15,
+      "hop": [
+        208,
+        93,
+        619,
+        328
+      ]
+    },
+    "vm-3-yeu-to-cau-a": {
+      "sach": "vi-mo-c3-dich",
+      "chu_toi_da": 12,
+      "lop_chu": "chu-slide",
+      "chu_mau": "c0399f:chu-slide-nhan",
+      "mau": "3b6fb0:net/to-dam,c0399f:nhan-manh/to-nhan,333333:net/to-dam",
+      "trang": 17,
+      "hop": [
+        122,
+        93,
+        420,
+        274
+      ]
+    },
+    "vm-3-yeu-to-cau-b": {
+      "sach": "vi-mo-c3-dich",
+      "chu_toi_da": 12,
+      "lop_chu": "chu-slide",
+      "chu_mau": "c0399f:chu-slide-nhan",
+      "mau": "3b6fb0:net/to-dam,c0399f:nhan-manh/to-nhan,333333:net/to-dam",
+      "trang": 17,
+      "hop": [
+        429,
+        93,
+        700,
+        274
+      ]
+    },
+    "vm-3-cung-p0": {
+      "sach": "vi-mo-c3-dich",
+      "chu_toi_da": 12,
+      "lop_chu": "chu-slide",
+      "chu_mau": "c0399f:chu-slide-nhan",
+      "mau": "3b6fb0:net/to-dam,c0399f:nhan-manh/to-nhan,333333:net/to-dam",
+      "trang": 19,
+      "hop": [
+        257,
+        96,
+        562,
+        308
+      ]
+    },
+    "vm-3-gia-cung": {
+      "sach": "vi-mo-c3-dich",
+      "chu_toi_da": 12,
+      "lop_chu": "chu-slide",
+      "chu_mau": "c0399f:chu-slide-nhan",
+      "mau": "3b6fb0:net/to-dam,c0399f:nhan-manh/to-nhan,333333:net/to-dam",
+      "trang": 20,
+      "hop": [
+        242,
+        96,
+        512,
+        308
+      ]
+    },
+    "vm-3-thay-doi-gia": {
+      "sach": "vi-mo-c3-dich",
+      "chu_toi_da": 12,
+      "lop_chu": "chu-slide",
+      "chu_mau": "c0399f:chu-slide-nhan",
+      "mau": "3b6fb0:net/to-dam,c0399f:nhan-manh/to-nhan,333333:net/to-dam",
+      "trang": 21,
+      "hop": [
+        223,
+        96,
+        518,
+        323
+      ]
+    },
+    "vm-3-dich-cung": {
+      "sach": "vi-mo-c3-dich",
+      "chu_toi_da": 12,
+      "lop_chu": "chu-slide",
+      "chu_mau": "c0399f:chu-slide-nhan",
+      "mau": "3b6fb0:net/to-dam,c0399f:nhan-manh/to-nhan,333333:net/to-dam",
+      "trang": 22,
+      "hop": [
+        223,
+        96,
+        509,
+        323
+      ]
+    },
+    "vm-3-cung-o-to": {
+      "sach": "vi-mo-c3-dich",
+      "chu_toi_da": 12,
+      "lop_chu": "chu-slide",
+      "chu_mau": "c0399f:chu-slide-nhan",
+      "mau": "3b6fb0:net/to-dam,c0399f:nhan-manh/to-nhan,333333:net/to-dam",
+      "trang": 23,
+      "hop": [
+        208,
+        93,
+        619,
+        328
+      ]
+    },
+    "vm-3-yeu-to-cung-a": {
+      "sach": "vi-mo-c3-dich",
+      "chu_toi_da": 12,
+      "lop_chu": "chu-slide",
+      "chu_mau": "c0399f:chu-slide-nhan",
+      "mau": "3b6fb0:net/to-dam,c0399f:nhan-manh/to-nhan,333333:net/to-dam",
+      "trang": 25,
+      "hop": [
+        122,
+        82,
+        393,
+        274
+      ]
+    },
+    "vm-3-yeu-to-cung-b": {
+      "sach": "vi-mo-c3-dich",
+      "chu_toi_da": 12,
+      "lop_chu": "chu-slide",
+      "chu_mau": "c0399f:chu-slide-nhan",
+      "mau": "3b6fb0:net/to-dam,c0399f:nhan-manh/to-nhan,333333:net/to-dam",
+      "trang": 25,
+      "hop": [
+        429,
+        82,
+        700,
+        274
+      ]
+    },
+    "vm-3-ca-hoi": {
+      "sach": "vi-mo-c3-dich",
+      "chu_toi_da": 12,
+      "lop_chu": "chu-slide",
+      "chu_mau": "c0399f:chu-slide-nhan",
+      "mau": "3b6fb0:net/to-dam,c0399f:nhan-manh/to-nhan,333333:net/to-dam",
+      "trang": 27,
+      "hop": [
+        208,
+        78,
+        566,
+        328
+      ]
+    },
+    "vm-3-tin-tuc": {
+      "sach": "vi-mo-c3-dich",
+      "chu_toi_da": 12,
+      "lop_chu": "chu-slide",
+      "chu_mau": "c0399f:chu-slide-nhan",
+      "mau": "3b6fb0:net/to-dam,c0399f:nhan-manh/to-nhan,333333:net/to-dam",
+      "trang": 28,
+      "hop": [
+        242,
+        96,
+        578,
+        308
+      ]
+    },
+    "vm-3-buu-chinh-a": {
+      "sach": "vi-mo-c3-dich",
+      "chu_toi_da": 12,
+      "lop_chu": "chu-slide",
+      "chu_mau": "c0399f:chu-slide-nhan",
+      "mau": "3b6fb0:net/to-dam,c0399f:nhan-manh/to-nhan,333333:net/to-dam",
+      "trang": 29,
+      "hop": [
+        107,
+        144,
+        393,
+        348
+      ]
+    },
+    "vm-3-buu-chinh-b": {
+      "sach": "vi-mo-c3-dich",
+      "chu_toi_da": 12,
+      "lop_chu": "chu-slide",
+      "chu_mau": "c0399f:chu-slide-nhan",
+      "mau": "3b6fb0:net/to-dam,c0399f:nhan-manh/to-nhan,333333:net/to-dam",
+      "trang": 29,
+      "hop": [
+        429,
+        144,
+        716,
+        348
+      ]
+    },
+    "vm-3-buu-chinh-chong": {
+      "sach": "vi-mo-c3-dich",
+      "chu_toi_da": 12,
+      "lop_chu": "chu-slide",
+      "chu_mau": "c0399f:chu-slide-nhan",
+      "mau": "3b6fb0:net/to-dam,c0399f:nhan-manh/to-nhan,333333:net/to-dam",
+      "trang": 30,
+      "hop": [
+        242,
+        96,
+        578,
+        316
+      ]
+    },
+    "vm-3-di-chuyen": {
+      "sach": "vi-mo-c3-dich",
+      "chu_toi_da": 12,
+      "lop_chu": "chu-slide",
+      "chu_mau": "c0399f:chu-slide-nhan",
+      "mau": "3b6fb0:net/to-dam,c0399f:nhan-manh/to-nhan,333333:net/to-dam",
+      "trang": 31,
+      "hop": [
+        242,
+        122,
+        578,
+        334
+      ]
+    },
+    "vm-3-gia-tran": {
+      "sach": "vi-mo-c3-dich",
+      "chu_toi_da": 12,
+      "lop_chu": "chu-slide",
+      "chu_mau": "c0399f:chu-slide-nhan",
+      "mau": "3b6fb0:net/to-dam,c0399f:nhan-manh/to-nhan,333333:net/to-dam",
+      "trang": 33,
+      "hop": [
+        193,
+        96,
+        567,
+        320
+      ]
+    },
+    "vm-3-gia-san": {
+      "sach": "vi-mo-c3-dich",
+      "chu_toi_da": 12,
+      "lop_chu": "chu-slide",
+      "chu_mau": "c0399f:chu-slide-nhan",
+      "mau": "3b6fb0:net/to-dam,c0399f:nhan-manh/to-nhan,333333:net/to-dam",
+      "trang": 34,
+      "hop": [
+        223,
+        92,
+        581,
+        316
+      ]
+    },
+    "vm-3-thang-du": {
+      "sach": "vi-mo-c3-dich",
+      "chu_toi_da": 12,
+      "lop_chu": "chu-slide",
+      "chu_mau": "c0399f:chu-slide-nhan",
+      "mau": "3b6fb0:net/to-dam,c0399f:nhan-manh/to-nhan,333333:net/to-dam",
+      "trang": 36,
+      "hop": [
+        215,
+        66,
+        586,
+        320
+      ]
+    },
+    "vm-3-hieu-qua-tran": {
+      "sach": "vi-mo-c3-dich",
+      "chu_toi_da": 12,
+      "lop_chu": "chu-slide",
+      "chu_mau": "c0399f:chu-slide-nhan",
+      "mau": "3b6fb0:net/to-dam,c0399f:nhan-manh/to-nhan,333333:net/to-dam",
+      "trang": 37,
+      "hop": [
+        107,
+        94,
+        394,
+        295
+      ]
+    },
+    "vm-3-hieu-qua-san": {
+      "sach": "vi-mo-c3-dich",
+      "chu_toi_da": 12,
+      "lop_chu": "chu-slide",
+      "chu_mau": "c0399f:chu-slide-nhan",
+      "mau": "3b6fb0:net/to-dam,c0399f:nhan-manh/to-nhan,333333:net/to-dam",
+      "trang": 37,
+      "hop": [
+        429,
+        94,
+        716,
+        295
+      ]
     }
   },
   "sach": {
     "nicholson-2023": "W. Keith Nicholson, Linear Algebra with Applications, Version 2023 – Revision A (CC BY-NC-SA 4.0)",
-    "vi-mo-c2-dich": "Bản dịch slide Chương 2, OpenStax Principles of Microeconomics 3e (CC BY-NC-SA 4.0) — micro/Microeconomics3e-Ch02_TiengViet.pdf, biểu đồ đã vẽ lại với nhãn tiếng Việt"
+    "vi-mo-c2-dich": "Bản dịch slide Chương 2, OpenStax Principles of Microeconomics 3e (CC BY-NC-SA 4.0) — micro/Microeconomics3e-Ch02_TiengViet.pdf, biểu đồ đã vẽ lại với nhãn tiếng Việt",
+    "vi-mo-c3-dich": "Bản dịch slide Chương 3, OpenStax Principles of Microeconomics 3e (CC BY-NC-SA 4.0) — micro/Microeconomics3e-Ch03_TiengViet.pdf, biểu đồ đã vẽ lại với nhãn tiếng Việt"
   }
 }

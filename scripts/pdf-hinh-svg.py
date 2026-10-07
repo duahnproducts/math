@@ -4,6 +4,7 @@
 # Dùng: python scripts/pdf-hinh-svg.py [tuỳ chọn] <pdf> src/figures/sach ten:trang:x0,y0,x1,y1 ...
 #   --chu-toi-da=10.5   bỏ chữ lớn hơn cỡ này (chữ thân bài lọt vào vùng cắt)
 #   --lop-chu=chu       lớp CSS cho chữ (mặc định chu-sach: có chân)
+#   --chu-mau=c0399f:chu-slide-nhan   màu chữ gốc -> lớp riêng (mặc định: mọi chữ dùng --lop-chu)
 #   --mau=4a79b4:net/to-dam,...   màu gốc -> lớp cho nét/phần tô (mặc định: xám -> net, màu -> nhan-manh)
 import pymupdf, sys, os, html, math
 
@@ -106,7 +107,8 @@ def chuyen(src, ten, trang, hop, out):
                 if abs(cos - 1) > 1e-3:
                     goc = math.degrees(math.atan2(sin, cos))
                     kieu += f' transform="rotate({so(goc)} {so(x-dx)} {so(y-dy)})"'
-                phan.append(f'<text x="{so(x-dx)}" y="{so(y-dy)}" font-size="{so(s["size"])}"{kieu} class="{LOP_CHU}">{html.escape(t)}</text>')
+                lop_chu = MAU_CHU.get('%06x' % s['color'], LOP_CHU)
+                phan.append(f'<text x="{so(x-dx)}" y="{so(y-dy)}" font-size="{so(s["size"])}"{kieu} class="{lop_chu}">{html.escape(t)}</text>')
     w, h = vung.width, vung.height
     svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {so(w)} {so(h)}" width="{so(w * 1.6)}" '
            f'role="img">\n' + '\n'.join(phan) + '\n</svg>\n')
@@ -115,6 +117,7 @@ def chuyen(src, ten, trang, hop, out):
 
 CHU_TOI_DA = 1000.0  # mặc định: không lọc theo cỡ chữ
 LOP_CHU = 'chu-sach'  # chữ kiểu sách (có chân); biểu đồ slide dùng 'chu' (không chân)
+MAU_CHU = {}  # 'c0399f' -> 'chu-slide-nhan': chữ có màu riêng (điểm cân bằng E…)
 
 if __name__ == '__main__':
     for a in list(sys.argv):
@@ -122,6 +125,12 @@ if __name__ == '__main__':
             CHU_TOI_DA = float(a.split('=')[1]); sys.argv.remove(a)
         elif a.startswith('--lop-chu='):
             LOP_CHU = a.split('=')[1]; sys.argv.remove(a)
+        elif a.startswith('--chu-mau='):
+            # --chu-mau=c0399f:chu-slide-nhan
+            for cap in a.split('=')[1].split(','):
+                hx, lop = cap.split(':')
+                MAU_CHU[hx.lower()] = lop
+            sys.argv.remove(a)
         elif a.startswith('--mau='):
             # --mau=4a79b4:net/to-dam,8e3a99:nhan-manh/to-nhan
             for cap in a.split('=')[1].split(','):
