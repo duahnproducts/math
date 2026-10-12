@@ -4,6 +4,7 @@ import {
   NHAN_TU_DANH_GIA,
   baiCanLamLai,
   boDanhDauDaHoc,
+  boTienDoMon,
   capNhatViTri,
   chuongGanDay,
   daHoc,
@@ -185,6 +186,7 @@ function veTatCa(td: TienDo): void {
 }
 
 export function khoiTaoTienDo(): void {
+  capNhatKho((td) => boTienDoMon(td, 'giai-tich'));
   ghiViTri();
   for (const nut of document.querySelectorAll<HTMLButtonElement>('[data-danh-dau]')) {
     nut.addEventListener('click', () => {

@@ -23,7 +23,7 @@ for (const ds of chuongTheoMon) {
     };
   }
 }
-const batDau = chuongTheoMon[0]?.find((du) => du.baiGiang.length > 0);
+const batDau = chuongTheoMon.flat().find((du) => du.baiGiang.length > 0);
 const hrefBatDau = batDau ? d.baiGiang(batDau.mon.id, batDau.chuong.so, batDau.baiGiang[0].data.bai) : d.mon(cacMon[0].id);
 ---
 

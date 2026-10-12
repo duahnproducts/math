@@ -7,8 +7,8 @@
 //
 // Lời nhắc hệ thống không chứa gì thay đổi theo lần gọi (ngày giờ, tên file…),
 // để mọi lần gọi dùng chung một bộ nhớ đệm (prompt caching).
-import baiMau1 from '../../../content/giai-tich/chuong-1/giang-day/bai-1.mdx?raw';
-import baiMau2 from '../../../content/giai-tich/chuong-2/giang-day/bai-1.mdx?raw';
+import baiMau1 from '../../../content/dai-so/chuong-1/giang-day/bai-1.mdx?raw';
+import baiMau2 from '../../../content/dai-so/chuong-2/giang-day/bai-1.mdx?raw';
 import type { BaiTrongDanY, DanYChuong } from './khung';
 import { TAM_MUC } from './khung';
 
@@ -57,7 +57,7 @@ ${TAM_MUC.map((m, i) => `${i + 1}. **${m}** — ${VIEC_CUA_MUC[m]}`).join('\n')}
 
 # Bài giảng mẫu
 
-Dưới đây là hai bài giảng người soạn web đã viết tay cho môn Giải tích. Hãy học theo giọng văn, độ sâu, cách chọn ví dụ đời thường, cách giải thích từng ký hiệu và cách chia bước — rồi áp dụng cho môn trong file PDF, dù đó là môn gì.
+Dưới đây là hai bài giảng người soạn web đã viết tay cho môn Đại số tuyến tính. Hãy học theo giọng văn, độ sâu, cách chọn ví dụ đời thường, cách giải thích từng ký hiệu và cách chia bước — rồi áp dụng cho môn trong file PDF, dù đó là môn gì.
 
 Bài mẫu viết bằng MDX, có các thẻ riêng của web: <YTuong>, <TomTat>, <GhiChu>, <DinhLy>, <Loi>, <BaGoc>/<Goc>, <BaiLuyen>/<GoiYNho>, <ThuatNgu>, <XemMuc> và hình vẽ như <HinhDuongCheo />. Bạn KHÔNG viết các thẻ đó mà điền nội dung vào đúng trường JSON: <Loi> → loi_de_mac, <BaGoc> → hieu/nho/lam, <BaiLuyen> → bai_tap, các bước "Bước 1 … Bước 6" của Ví dụ mẫu → vi_du_mau. Bạn không vẽ được hình, nên ở mục Hình dung trực quan hãy tả hình thật cụ thể bằng lời, hoặc dùng bảng số.
 

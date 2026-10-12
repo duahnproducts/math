@@ -111,6 +111,17 @@ export function ghiTienDo(td: TienDo): string {
   return JSON.stringify(td);
 }
 
+/** Xóa tiến độ của môn đã gỡ, giữ lại chỗ học gần nhất của các môn còn lại. */
+export function boTienDoMon(td: TienDo, mon: string): TienDo {
+  const thuocMon = (k: string) => k.startsWith(mon + '/');
+  const giu = <T>(du: Record<string, T>) => Object.fromEntries(Object.entries(du).filter(([k]) => !thuocMon(k)));
+  const lanCuoiTheoChuong = giu(td.lanCuoiTheoChuong);
+  const lanCuoi = td.lanCuoi && thuocMon(td.lanCuoi.chuong)
+    ? Object.values(lanCuoiTheoChuong).sort((a, b) => b.luc - a.luc)[0] ?? null
+    : td.lanCuoi;
+  return { ...td, daHoc: giu(td.daHoc), tuDanhGia: giu(td.tuDanhGia), lanCuoiTheoChuong, lanCuoi };
+}
+
 // ---- cập nhật ----
 
 export function danhDauDaHoc(td: TienDo, khoa: string, luc: number): TienDo {

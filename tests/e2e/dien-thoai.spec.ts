@@ -13,7 +13,7 @@ const tamNgang = (loc: Locator) =>
 const khung = (loc: Locator) => loc.evaluate((e) => e.getBoundingClientRect().toJSON() as DOMRect);
 
 test('thanh dưới và mục lục gọn trên điện thoại', async ({ page }) => {
-  await page.goto('giai-tich/chuong-1/giang-day/bai-3/');
+  await page.goto('dai-so/chuong-1/giang-day/bai-3/');
   const thanhDuoi = page.getByRole('navigation', { name: 'Điều hướng chính' });
   await expect(thanhDuoi).toBeVisible();
   for (const ten of ['Trang chủ', 'Môn học', 'Bài tập', 'Thuật ngữ']) {
@@ -24,24 +24,24 @@ test('thanh dưới và mục lục gọn trên điện thoại', async ({ page 
   const mucLuc = page.locator('details.muc-luc-gon');
   await expect(mucLuc).toBeVisible();
   await mucLuc.locator('summary').click();
-  await expect(mucLuc.getByRole('link', { name: /Bốn hệ quả lớn/ })).toBeVisible();
+  await expect(mucLuc.getByRole('link', { name: /Hệ thuần nhất và nghiệm cơ bản/ })).toBeVisible();
 
   // Nút Bài tập ở thanh dưới đưa tới bài tập của chương đang học
   await thanhDuoi.getByRole('link', { name: 'Bài tập' }).click();
-  await expect(page).toHaveURL(/giai-tich\/chuong-1\/bai-tap\/$/);
+  await expect(page).toHaveURL(/dai-so\/chuong-1\/bai-tap\/$/);
 });
 
 test('không tràn ngang trên điện thoại', async ({ page }) => {
   test.slow(); // đi qua nhiều trang KaTeX nặng
   for (const duong of [
     './',
-    'giai-tich/chuong-1/',
-    'giai-tich/chuong-1/giang-day/bai-5/',
-    'giai-tich/chuong-1/bai-tap/1-5-4/',
-    'giai-tich/chuong-2/giang-day/bai-1/',
-    'giai-tich/chuong-2/giang-day/bai-5/',
-    'giai-tich/chuong-2/sach/2-1/',
-    'giai-tich/chuong-2/bai-tap/2-7-2/',
+    'dai-so/chuong-1/',
+    'dai-so/chuong-1/giang-day/bai-5/',
+    'dai-so/chuong-1/bai-tap/1-5-4/',
+    'dai-so/chuong-2/giang-day/bai-1/',
+    'dai-so/chuong-2/giang-day/bai-5/',
+    'dai-so/chuong-2/sach/2-1/',
+    'dai-so/chuong-2/bai-tap/2-1-1/',
     'dai-so/chuong-1/sach/1-3/',
     'dai-so/chuong-1/bai-tap/1-5-3/',
     'dai-so/chuong-2/sach/2-2/',
@@ -71,7 +71,7 @@ test('nút sáng/tối có trên điện thoại', async ({ page }) => {
 });
 
 test('thanh dưới là viên thuốc bong bóng, chỉ có icon', async ({ page }) => {
-  await page.goto('giai-tich/chuong-1/giang-day/bai-3/');
+  await page.goto('dai-so/chuong-1/giang-day/bai-3/');
   const thanh = page.getByRole('navigation', { name: 'Điều hướng chính' });
   const man = page.viewportSize()!;
 
@@ -105,7 +105,7 @@ test('bấm ô khác: trang mới cho bong bóng trượt từ ô cũ sang', asy
       }
     }).observe(document, { subtree: true, attributes: true, attributeFilter: ['style'] });
   });
-  await page.goto('giai-tich/chuong-1/giang-day/bai-3/');
+  await page.goto('dai-so/chuong-1/giang-day/bai-3/');
   await page.getByRole('navigation', { name: 'Điều hướng chính' }).getByRole('link', { name: 'Thuật ngữ' }).click();
   await expect(page).toHaveURL(/thuat-ngu\/$/);
 
@@ -126,7 +126,7 @@ test('bấm ô khác: trang mới cho bong bóng trượt từ ô cũ sang', asy
 });
 
 test('cuộn xuống đọc thì hai thanh lùi đi, cuộn lên hoặc chạm đáy thì hiện lại', async ({ page }) => {
-  await page.goto('giai-tich/chuong-1/giang-day/bai-3/');
+  await page.goto('dai-so/chuong-1/giang-day/bai-3/');
   const html = page.locator('html');
   const thanhDuoi = page.getByRole('navigation', { name: 'Điều hướng chính' });
   const thanhTren = page.locator('.topbar');
@@ -150,7 +150,7 @@ test('cuộn xuống đọc thì hai thanh lùi đi, cuộn lên hoặc chạm �
 });
 
 test('nút bấm là bong bóng: viên thuốc bo tròn, nút icon hình tròn', async ({ page }) => {
-  await page.goto('giai-tich/chuong-1/giang-day/bai-3/');
+  await page.goto('dai-so/chuong-1/giang-day/bai-3/');
   for (const nut of await page.locator('main .nut:visible').all()) {
     const { r, h } = await nut.evaluate((e) => ({
       r: parseFloat(getComputedStyle(e).borderTopLeftRadius),

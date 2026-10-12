@@ -20,7 +20,7 @@ describe('lời nhắc hệ thống — "cách làm" của các môn soạn tay'
 
   it('lấy nguyên văn hai bài giảng mẫu từ content/', () => {
     expect(BAI_GIANG_MAU).toHaveLength(2);
-    const bai1 = readFileSync('content/giai-tich/chuong-1/giang-day/bai-1.mdx', 'utf8');
+    const bai1 = readFileSync('content/dai-so/chuong-1/giang-day/bai-1.mdx', 'utf8');
     expect(BAI_GIANG_MAU[0]).toBe(bai1);
     for (const b of BAI_GIANG_MAU) expect(LOI_NHAC_HE_THONG).toContain(b.trim());
   });

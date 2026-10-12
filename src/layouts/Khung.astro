@@ -41,7 +41,7 @@ const d = taoDuongDan(base);
 const tieuDeDayDu = tieuDe === 'Hochanh' ? 'Hochanh — Học theo giáo trình' : `${tieuDe} · Hochanh`;
 const hienTai = Astro.url.pathname;
 const hrefMon = chuong ? d.mon(chuong.mon.id) : `${d.trangChu()}#mon-hoc`;
-const hrefBaiTap = chuong ? d.dsBaiTap(chuong.mon.id, chuong.chuong.so) : d.dsBaiTap('giai-tich', 1);
+const hrefBaiTap = chuong ? d.dsBaiTap(chuong.mon.id, chuong.chuong.so) : d.dsBaiTap('dai-so', 1);
 const hrefTab: Record<TabDuoi, string> = {
   'trang-chu': d.trangChu(),
   mon: hrefMon,

@@ -1,4 +1,4 @@
-// Hiệu ứng bong bóng trên laptop: tab "Giảng dạy | Theo sách" là công tắc có bong
+// Hiệu ứng bong bóng trên laptop: tab "Giảng dạy | Dịch nguyên văn" là công tắc có bong
 // bóng trượt; thanh dưới và việc ẩn thanh khi cuộn chỉ dành cho điện thoại.
 import { expect, test, type Locator } from '@playwright/test';
 
@@ -12,11 +12,11 @@ const lech = async (a: Locator, b: Locator) => Math.abs((await tamNgang(a)) - (a
 test('tab hai lối vào là công tắc bong bóng: bấm hay dùng phím mũi tên thì bong bóng trượt theo', async ({
   page,
 }) => {
-  await page.goto('giai-tich/chuong-1/');
+  await page.goto('dai-so/chuong-1/');
   const ray = page.getByRole('tablist', { name: 'Chọn phần' });
   const bong = ray.locator('.bong-truot');
   const giangDay = ray.getByRole('tab', { name: 'Giảng dạy' });
-  const theoSach = ray.getByRole('tab', { name: 'Theo sách' });
+  const theoSach = ray.getByRole('tab', { name: 'Dịch nguyên văn' });
 
   // Hai ô rộng bằng nhau thì bong bóng mới vừa khít từng ô
   const [r1, r2] = await Promise.all([giangDay, theoSach].map((t) => t.evaluate((e) => e.getBoundingClientRect().width)));
@@ -36,7 +36,7 @@ test('tab hai lối vào là công tắc bong bóng: bấm hay dùng phím mũi 
 });
 
 test('laptop: không có thanh dưới, thanh trên đứng yên khi cuộn', async ({ page }) => {
-  await page.goto('giai-tich/chuong-1/giang-day/bai-3/');
+  await page.goto('dai-so/chuong-1/giang-day/bai-3/');
   await expect(page.getByRole('navigation', { name: 'Điều hướng chính' })).toBeHidden();
   await page.evaluate(() => window.scrollTo(0, 1500));
   await page.waitForTimeout(400);

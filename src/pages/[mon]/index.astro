@@ -30,6 +30,7 @@ const tenSach = nhanLoaiSach(m.loai_sach);
       </p>
     </header>
 
+    {cacChuong.length === 0 && <p class="chua-co" role="status">Chưa có nội dung.</p>}
     <ol class="danh-sach-muc" aria-label="Các chương">
       {
         cacChuong.map((du) => {

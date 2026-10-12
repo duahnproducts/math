@@ -12,7 +12,7 @@ test('mặc định sáng — kể cả khi hệ điều hành đang để tối
 });
 
 test('bấm nút thì chuyển tối, tải lại và sang trang khác vẫn giữ', async ({ page }) => {
-  await page.goto('giai-tich/chuong-1/');
+  await page.goto('dai-so/chuong-1/');
   const nut = page.locator('[data-nut-giao-dien]');
   await expect(nut).toHaveAttribute('aria-label', 'Chuyển sang giao diện tối');
   await expect(nut).toHaveAttribute('aria-pressed', 'false');
@@ -29,7 +29,7 @@ test('bấm nút thì chuyển tối, tải lại và sang trang khác vẫn gi�
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
 
   // Sang trang khác: vẫn tối
-  await page.goto('giai-tich/chuong-1/giang-day/bai-1/');
+  await page.goto('dai-so/chuong-1/giang-day/bai-1/');
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
   expect(await page.evaluate(() => document.documentElement.style.colorScheme)).toBe('dark');
 
@@ -58,7 +58,7 @@ test('localStorage bị chặn thì web vẫn chạy, dùng giao diện sáng', 
   });
   const loi: string[] = [];
   page.on('pageerror', (e) => loi.push(e.message));
-  await page.goto('giai-tich/chuong-1/');
+  await page.goto('dai-so/chuong-1/');
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
   await page.locator('[data-nut-giao-dien]').click();
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');

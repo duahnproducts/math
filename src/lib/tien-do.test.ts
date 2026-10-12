@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   baiCanLamLai,
   boDanhDauDaHoc,
+  boTienDoMon,
   capNhatViTri,
   chuongGanDay,
   daHoc,
@@ -115,5 +116,24 @@ describe('tổng hợp', () => {
     td = luuTuDanhGia(td, 'c', 'lam-duoc', 9);
     td = luuTuDanhGia(td, 'd', 'chua-lam-duoc', 3);
     expect(baiCanLamLai(td, ['a', 'b', 'c', 'd', 'e'])).toEqual(['d', 'b', 'a']);
+  });
+});
+
+
+describe('xóa dữ liệu môn đã gỡ', () => {
+  it('xóa đúng Giải tích và khôi phục Học tiếp của môn khác, không sửa trạng thái cũ', () => {
+    let td = danhDauDaHoc(tienDoRong(), 'giai-tich/1/giang-day/1', 1);
+    td = danhDauDaHoc(td, 'dai-so/1/giang-day/1', 2);
+    td = luuTuDanhGia(td, 'giai-tich/1/bai-tap/1.1.1', 'can-goi-y', 3);
+    td = capNhatViTri(td, viTri('/math/dai-so/chuong-1/', 'dai-so/1', 4));
+    td = capNhatViTri(td, viTri('/math/giai-tich/chuong-1/', 'giai-tich/1', 5));
+    const moi = boTienDoMon(td, 'giai-tich');
+    expect(moi.daHoc).toEqual({ 'dai-so/1/giang-day/1': 2 });
+    expect(moi.tuDanhGia).toEqual({});
+    expect(Object.keys(moi.lanCuoiTheoChuong)).toEqual(['dai-so/1']);
+    expect(moi.lanCuoi?.chuong).toBe('dai-so/1');
+    expect(td.lanCuoi?.chuong).toBe('giai-tich/1');
+    expect(boTienDoMon(moi, 'giai-tich')).toEqual(moi);
+    expect(boTienDoMon(capNhatViTri(tienDoRong(), viTri('/x/', 'giai-tich/1', 1)), 'giai-tich').lanCuoi).toBeNull();
   });
 });
