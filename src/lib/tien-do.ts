@@ -24,6 +24,8 @@ export interface ViTri {
 
 export interface TienDo {
   phienBan: 1;
+  /** Giữ tiến độ Ross tách khỏi bộ Abbott đã gỡ. */
+  nguonGiaiTich?: 'ross-2013';
   /** khoá bài giảng / mục § → thời điểm đánh dấu đã học */
   daHoc: Record<string, number>;
   /** khoá bài tập → kết quả tự đánh giá */
@@ -84,6 +86,7 @@ export function docTienDo(chuoi: string | null | undefined): TienDo {
     return td;
   }
   if (!laDoiTuong(du)) return td;
+  if (du.nguonGiaiTich === 'ross-2013') td.nguonGiaiTich = 'ross-2013';
 
   if (laDoiTuong(du.daHoc)) {
     for (const [k, v] of Object.entries(du.daHoc)) {
@@ -109,6 +112,11 @@ export function docTienDo(chuoi: string | null | undefined): TienDo {
 
 export function ghiTienDo(td: TienDo): string {
   return JSON.stringify(td);
+}
+
+/** Chuyển giáo trình một lần; các lượt mở sau giữ nguyên tiến độ Ross. */
+export function chuyenSangRoss(td: TienDo): TienDo {
+  return td.nguonGiaiTich === 'ross-2013' ? td : { ...boTienDoMon(td, 'giai-tich'), nguonGiaiTich: 'ross-2013' };
 }
 
 /** Xóa tiến độ của môn đã gỡ, giữ lại chỗ học gần nhất của các môn còn lại. */

@@ -1,0 +1,92 @@
+---
+mon: giai-tich
+chuong: 1
+bai: 3
+tieu_de: "§3. Số thực, thứ tự và khoảng cách"
+y_tuong: "Các quy tắc đại số cho phép biến đổi số, còn giá trị tuyệt đối đo khoảng cách để kiểm soát độ gần."
+phu_muc: []
+---
+
+import HinhRoss from '../../../../src/figures/HinhRoss.astro';
+
+## Ý tưởng trong 1 câu
+
+> Các quy tắc đại số cho phép biến đổi số, còn giá trị tuyệt đối đo khoảng cách để kiểm soát độ gần.
+
+## Hình dung trực quan
+
+Trên thước thẳng, điểm −3 và điểm 2 cách nhau 5 đơn vị. Khoảng cách không thể âm, dù hiệu −3−2 bằng −5. Vì vậy ta dùng giá trị tuyệt đối $|-3-2|=5$.
+
+Đi từ A tới C có thể ghé B. Đường thẳng trực tiếp không dài hơn đường đi vòng. Bất đẳng thức tam giác biến hình dung này thành công cụ để gom nhiều sai số nhỏ thành một sai số nhỏ.
+
+## Kiến thức cần biết
+
+Số thực R bao gồm Q và các số vô tỉ, được hình dung trên trục số. Ta sẽ phân biệt R với Q bằng tính đầy đủ ở §4. Chỉ nói “có cộng, nhân và so sánh” chưa đủ phân biệt hai tập.
+
+Khi giải bất phương trình, cộng cùng số vào hai vế không đổi chiều. Nhân số dương giữ chiều; nhân số âm đảo chiều. Chia cho c chỉ hợp lệ khi c khác 0. Tích ab=0 thì ít nhất một thừa số bằng 0; không nhất thiết cả hai bằng 0.
+
+## Công thức / Định nghĩa
+
+**R là một trường có thứ tự.** “Trường” ở đây là hệ số có các quy tắc: cộng và nhân kết hợp; cộng và nhân giao hoán; có số 0 cho phép cộng, số 1 cho phép nhân; mỗi số có số đối; mỗi số khác 0 có nghịch đảo; phép nhân phân phối qua phép cộng. Ví dụ $a(b+c)=ab+ac$ chính là quy tắc phân phối.
+
+Thứ tự có các tính chất: hai số luôn so sánh được; a≤b và b≤a kéo theo a=b; a≤b≤c kéo theo a≤c; cộng c vào hai vế giữ chiều; nhân c≥0 giữ chiều. Ta dùng các tính chất này, không dùng hình vẽ để thay chứng minh.
+
+**Giá trị tuyệt đối:** $|a|=a$ khi a≥0 và $|a|=-a$ khi a&lt;0. **Khoảng cách:** $d(a,b)=|a-b|$. a,b là hai vị trí; d là độ dài giữa chúng.
+
+$$|ab|=|a||b|,\qquad |a+b|\leq |a|+|b|.$$
+
+$$|a-c|\leq |a-b|+|b-c|,\qquad ||a|-|b||\leq |a-b|.$$
+
+Hai dấu gạch ngoài ở công thức cuối lấy giá trị tuyệt đối của hiệu hai độ dài. Với r>0, điều kiện $|x-a|<r$ tương đương $a-r<x<a+r$. x là điểm đang xét, a là tâm, r là bán kính vùng cho phép. Dấu ≤ cho khoảng đóng; dấu &lt; cho khoảng mở.
+
+**Tại sao tam giác đúng?** Ta có $-|a|\leq a\leq|a|$ và $-|b|\leq b\leq|b|$. Cộng từng vế được $-(|a|+|b|)\leq a+b\leq|a|+|b|$. Dù a+b âm hay dương, giá trị tuyệt đối không vượt |a|+|b|.
+
+## Ví dụ mẫu
+
+### Ví dụ A: Đọc điều kiện khoảng cách
+
+**Bước 1:** $|x-3|<0,2$. **Bước 2:** tìm các giá trị x. **Bước 3:** dùng cách đọc giá trị tuyệt đối như khoảng cách tới tâm 3.
+
+**Bước 4:** $-0,2<x-3<0,2$. Cộng 3 vào ba vế: $2,8<x<3,2$. Tập nghiệm là (2,8; 3,2), dùng dấu chấm phẩy để tránh nhầm với dấu phẩy thập phân.
+
+**Bước 5:** x=3 thỏa; x=3,2 không thỏa vì sai số đúng 0,2, không nhỏ hơn 0,2. **Bước 6:** khoảng cách &lt; bán kính biến thành tâm−bán kính &lt; x &lt; tâm+bán kính.
+
+### Ví dụ B: Gom sai số
+
+**Bước 1:** $|x-2|<0,03$ và $|y-5|<0,02$. **Bước 2:** kiểm soát sai số của x+y so với 7. **Bước 3:** dùng bất đẳng thức tam giác vì sai số tổng bằng tổng hai sai lệch.
+
+**Bước 4:** $|(x+y)-7|=|(x-2)+(y-5)|\leq|x-2|+|y-5|<0,03+0,02=0,05$.
+
+**Bước 5:** nếu x=2,01 và y=4,99 thì tổng đúng 7; sai số có thể nhỏ hơn nhiều so với cận 0,05. **Bước 6:** tìm cách tách biểu thức thành những sai lệch đã biết rồi chặn từng phần.
+
+### Ví dụ C: Quy tắc khử cần điều kiện
+
+**Bước 1:** ac=bc. **Bước 2:** khi nào suy được a=b? **Bước 3:** dùng nghịch đảo của c. **Bước 4:** nếu c≠0, nhân hai vế với 1/c được a=b. Nếu c=0, a=2,b=7 vẫn cho ac=bc=0. **Bước 5:** phản ví dụ chỉ đúng chỗ thiếu điều kiện. **Bước 6:** trước mỗi phép chia, ghi rõ mẫu khác 0.
+
+## Lỗi dễ mắc
+
+- **Bỏ gạch tuyệt đối:** $|a-b|$ không luôn bằng a−b; nó còn phụ thuộc vị trí của a và b.
+- **Cho tam giác thành đẳng thức:** a=1,b=−1 cho |a+b|=0 nhưng |a|+|b|=2.
+- **Nhân số âm không đảo chiều:** 1&lt;3, nhân −2 cho −2>−6. Nhớ kiểm tra dấu của số nhân.
+
+## Tóm tắt 30 giây
+
+> Giá trị tuyệt đối là độ dài. Tam giác nói rằng độ dài của tổng không vượt tổng độ dài. Nó là dụng cụ chính để kiểm soát sai số trong giới hạn.
+
+**HIỂU:** vị trí có dấu, khoảng cách không có dấu âm. **NHỚ:** tam giác; đổi dấu khi nhân âm; không chia cho 0. **LÀM:** tách sai số, chuyển khoảng cách thành khoảng nghiệm.
+
+## Bài tập
+
+### DỄ - Tính khoảng cách
+
+Tính $|-7|$, $|2-(-4)|$ và tìm x thỏa $|x+1|\leq2$. **Gợi ý:** tâm của |x+1| là −1.
+
+### VỪA - Ghép hai sai số
+
+Biết $|x-4|<0,01$, $|y+2|<0,02$. Chứng minh $|(x-y)-6|<0,03$. **Gợi ý:** viết $(x-y)-6=(x-4)-(y+2)$.
+
+### KHÓ - Tam giác ngược
+
+Chứng minh $||a|-|b||\leq|a-b|$ với mọi a,b thực. **Gợi ý:** viết $a=(a-b)+b$ để chặn |a|−|b|; đổi vai a,b để chặn theo chiều còn lại.
+
+Nguồn kiến thức: Kenneth A. Ross, *Elementary Analysis: The Theory of Calculus*, ấn bản thứ hai, 2013, §3. Bài giảng diễn đạt bằng lời riêng; ví dụ và bài tập do người biên soạn bổ sung.

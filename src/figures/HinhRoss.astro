@@ -1,0 +1,54 @@
+---
+interface Props { loai: 'sup' | 'cut' | 'epsilon' | 'monotone' | 'limsup' }
+const { loai } = Astro.props;
+const nhan = {
+  sup: 'Tập (0,1), cận dưới đúng 0 và cận trên đúng 1 đều không thuộc tập',
+  cut: 'Lát cắt Dedekind: các số hữu tỉ bên trái biên căn 2',
+  epsilon: 'Dãy 1/n đi vào dải sai số 0,1 khi n lớn hơn 10',
+  monotone: 'Dãy 1−1/n tăng và tiến tới cận trên đúng 1',
+  limsup: 'Dãy (−1)^n+1/n có hai biên đuôi là −1 và 1',
+}[loai];
+const day = loai === 'epsilon' || loai === 'monotone' || loai === 'limsup';
+const y = (v: number) => loai === 'limsup' ? 145 - 65*v : 205 - 140*v;
+const points = Array.from({length:30}, (_,i) => {
+  const n=i+1;
+  return {x:55+n*16,y:y(loai==='epsilon'?1/n:loai==='monotone'?1-1/n:(-1)**n+1/n)};
+});
+---
+<figure data-hinh-ross={loai}>
+  <svg viewBox="0 0 600 285" role="img" aria-label={nhan}>
+    <title>{nhan}</title>
+    {day ? <>
+      {loai==='epsilon' && <rect x="55" y={y(.1)} width="490" height="28" class="dai" />}
+      <path d="M55 20V240H550" class="net" />
+      <text x="20" y="18">Giá trị</text><text x="525" y="264">n</text>
+      {[0,1,...(loai==='limsup'?[-1]:[])].map(v=><><line x1="55" x2="545" y1={y(v)} y2={y(v)} class="bien" /><text x="24" y={y(v)+5}>{v}</text></>)}
+      {points.map(p=><circle cx={p.x} cy={p.y} r="3.5" class="diem" />)}
+      {[1,10,20,30].map(n=><text x={55+n*16} y="258" text-anchor="middle">{n}</text>)}
+      {loai==='epsilon' && <><line x1="215" x2="215" y1="28" y2="240" class="bien" /><text x="245" y="45">n &gt; 10: |1/n| &lt; 0,1</text></>}
+      {loai==='monotone' && <text x="260" y="46">Cận trên đúng: 1</text>}
+      {loai==='limsup' && <><text x="380" y="68">limsup = 1</text><text x="380" y="232">liminf = −1</text></>}
+    </> : <>
+      <line x1="40" x2="560" y1="145" y2="145" class="net" />
+      {loai==='sup' ? <>
+        {[100,500].map(x=><circle cx={x} cy="145" r="8" class="rong" />)}
+        {[.12,.25,.5,.7,.85,.95].map(v=><circle cx={100+400*v} cy="145" r="4" class="diem" />)}
+        <text x="100" y="110" text-anchor="middle">0 = inf</text><text x="500" y="110" text-anchor="middle">1 = sup</text>
+        <text x="300" y="200" text-anchor="middle">Hai biên không thuộc tập (0,1)</text>
+      </> : <>
+        {[.5,.8,1,1.2,1.3,1.4].map(v=><circle cx={60+(v-.4)*330} cy="145" r="4" class="diem" />)}
+        <circle cx={60+(Math.SQRT2-.4)*330} cy="145" r="8" class="rong" />
+        <text x="430" y="100">Biên √2</text>
+        <text x="300" y="210" text-anchor="middle">Các số hữu tỉ bên trái thuộc lát cắt</text>
+      </>}
+    </>}
+  </svg>
+</figure>
+<style>
+  figure { margin:24px 0; } svg { display:block; width:100%; height:auto; color:var(--text); }
+  text { fill:currentColor; font:16px sans-serif; }
+  .net { fill:none; stroke:currentColor; stroke-width:1.5; }
+  .bien { stroke:currentColor; stroke-dasharray:5 5; opacity:.55; }
+  .diem { fill:currentColor; } .rong { fill:var(--bg); stroke:currentColor; stroke-width:2; }
+  .dai { fill:currentColor; opacity:.12; }
+</style>

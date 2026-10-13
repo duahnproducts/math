@@ -12,12 +12,30 @@
       "ten": "Hệ phương trình tuyến tính",
       "ten_en": "Systems of Linear Equations",
       "muc": [
-        { "so": "1.1", "ten": "Nghiệm và các phép biến đổi sơ cấp" },
-        { "so": "1.2", "ten": "Phép khử Gauss" },
-        { "so": "1.3", "ten": "Hệ phương trình thuần nhất" },
-        { "so": "1.4", "ten": "Ứng dụng: dòng chảy trong mạng" },
-        { "so": "1.5", "ten": "Ứng dụng: mạng điện" },
-        { "so": "1.6", "ten": "Ứng dụng: phản ứng hoá học" }
+        {
+          "so": "1.1",
+          "ten": "Nghiệm và các phép biến đổi sơ cấp"
+        },
+        {
+          "so": "1.2",
+          "ten": "Phép khử Gauss"
+        },
+        {
+          "so": "1.3",
+          "ten": "Hệ phương trình thuần nhất"
+        },
+        {
+          "so": "1.4",
+          "ten": "Ứng dụng: dòng chảy trong mạng"
+        },
+        {
+          "so": "1.5",
+          "ten": "Ứng dụng: mạng điện"
+        },
+        {
+          "so": "1.6",
+          "ten": "Ứng dụng: phản ứng hoá học"
+        }
       ],
       "tai_ve": [
         {
@@ -33,18 +51,49 @@
       "ten_en": "Matrix Algebra",
       "ghi_chu": "Đủ §2.1–§2.9. Bài tập có gợi ý và lời giải: §2.1 (đề dịch nguyên văn), §2.2 (đề viết lại ngắn gọn). Bài tập §2.3–§2.9 chưa có — xem bản gốc tiếng Anh.",
       "muc": [
-        { "so": "2.1", "ten": "Cộng ma trận, nhân với vô hướng, và chuyển vị" },
-        { "so": "2.2", "ten": "Phép nhân ma trận với vector" },
-        { "so": "2.3", "ten": "Phép nhân ma trận" },
-        { "so": "2.4", "ten": "Ma trận nghịch đảo" },
-        { "so": "2.5", "ten": "Ma trận sơ cấp" },
-        { "so": "2.6", "ten": "Phép biến đổi tuyến tính" },
-        { "so": "2.7", "ten": "Phân tích LU" },
-        { "so": "2.8", "ten": "Ứng dụng: mô hình kinh tế vào–ra" },
-        { "so": "2.9", "ten": "Ứng dụng: xích Markov" }
+        {
+          "so": "2.1",
+          "ten": "Cộng ma trận, nhân với vô hướng, và chuyển vị"
+        },
+        {
+          "so": "2.2",
+          "ten": "Phép nhân ma trận với vector"
+        },
+        {
+          "so": "2.3",
+          "ten": "Phép nhân ma trận"
+        },
+        {
+          "so": "2.4",
+          "ten": "Ma trận nghịch đảo"
+        },
+        {
+          "so": "2.5",
+          "ten": "Ma trận sơ cấp"
+        },
+        {
+          "so": "2.6",
+          "ten": "Phép biến đổi tuyến tính"
+        },
+        {
+          "so": "2.7",
+          "ten": "Phân tích LU"
+        },
+        {
+          "so": "2.8",
+          "ten": "Ứng dụng: mô hình kinh tế vào–ra"
+        },
+        {
+          "so": "2.9",
+          "ten": "Ứng dụng: xích Markov"
+        }
       ],
       "tai_ve": [
-        { "ten": "Bản dịch Chương 2 (PDF)", "tep": "dai-so-chuong-2-ban-dich.pdf", "mo_ta": "Bản dịch đầy đủ Chương 2. Giấy phép CC BY-NC-SA 4.0." }
+        {
+          "ten": "Bản dịch Chương 2 (PDF)",
+          "tep": "dai-so-chuong-2-ban-dich.pdf",
+          "mo_ta": "Bản dịch đầy đủ Chương 2. Giấy phép CC BY-NC-SA 4.0."
+        }
       ]
     },
     {
@@ -53,23 +102,111 @@
       "ten_en": "Determinants and Diagonalization",
       "ghi_chu": "Đủ §3.1–§3.8. Đề bài tập Chương 3 chưa được dịch — xem bản gốc tiếng Anh.",
       "muc": [
-        { "so": "3.1", "ten": "Khai triển theo phần bù đại số" },
-        { "so": "3.2", "ten": "Định thức và ma trận nghịch đảo" },
-        { "so": "3.3", "ten": "Giá trị riêng và vector riêng" },
-        { "so": "3.4", "ten": "Chéo hoá" },
-        { "so": "3.5", "ten": "Hệ động lực tuyến tính" },
-        { "so": "3.6", "ten": "Ứng dụng: hệ thức truy hồi tuyến tính" },
-        { "so": "3.7", "ten": "Ứng dụng: hệ phương trình vi phân" },
-        { "so": "3.8", "ten": "Chứng minh Định lý khai triển theo phần bù đại số" }
+        {
+          "so": "3.1",
+          "ten": "Khai triển theo phần bù đại số"
+        },
+        {
+          "so": "3.2",
+          "ten": "Định thức và ma trận nghịch đảo"
+        },
+        {
+          "so": "3.3",
+          "ten": "Giá trị riêng và vector riêng"
+        },
+        {
+          "so": "3.4",
+          "ten": "Chéo hoá"
+        },
+        {
+          "so": "3.5",
+          "ten": "Hệ động lực tuyến tính"
+        },
+        {
+          "so": "3.6",
+          "ten": "Ứng dụng: hệ thức truy hồi tuyến tính"
+        },
+        {
+          "so": "3.7",
+          "ten": "Ứng dụng: hệ phương trình vi phân"
+        },
+        {
+          "so": "3.8",
+          "ten": "Chứng minh Định lý khai triển theo phần bù đại số"
+        }
       ],
       "tai_ve": [
-        { "ten": "Bản dịch Chương 3 (PDF)", "tep": "dai-so-chuong-3-ban-dich.pdf", "mo_ta": "Bản dịch Chương 3 kèm bảng thuật ngữ. Giấy phép CC BY-NC-SA 4.0." }
+        {
+          "ten": "Bản dịch Chương 3 (PDF)",
+          "tep": "dai-so-chuong-3-ban-dich.pdf",
+          "mo_ta": "Bản dịch Chương 3 kèm bảng thuật ngữ. Giấy phép CC BY-NC-SA 4.0."
+        }
       ]
     },
-    { "so": 4, "ten": "Hình học vector", "ten_en": "Vector Geometry", "ghi_chu": "Đã có bản dịch PDF, chưa chuyển lên web." },
-    { "so": 5, "ten": "Không gian vector Rⁿ", "ten_en": "Vector Space Rⁿ", "ghi_chu": "Đã có bản dịch PDF, chưa chuyển lên web." },
-    { "so": 6, "ten": "Không gian vector", "ten_en": "Vector Spaces", "ghi_chu": "Đã có bản dịch PDF, chưa chuyển lên web." },
-    { "so": 7, "ten": "Biến đổi tuyến tính", "ten_en": "Linear Transformations", "ghi_chu": "Đã có bản dịch PDF, chưa chuyển lên web." },
-    { "so": 8, "ten": "Tính trực giao", "ten_en": "Orthogonality", "ghi_chu": "Đã có bản dịch PDF, chưa chuyển lên web." }
+    {
+      "so": 4,
+      "ten": "Hình học vector",
+      "ten_en": "Vector Geometry",
+      "ghi_chu": "Đã có bản dịch PDF tải về. Chưa chuyển thành các mục đọc trực tiếp trên web; bản PDF không gồm phần bài tập của sách.",
+      "tai_ve": [
+        {
+          "ten": "Bản dịch Chương 4 (PDF)",
+          "tep": "dai-so-chuong-4-ban-dich.pdf",
+          "mo_ta": "Bản dịch tiếng Việt từ W. Keith Nicholson, Linear Algebra with Applications (2023), Lyryx Learning. Không gồm phần bài tập. Giấy phép CC BY-NC-SA 4.0."
+        }
+      ]
+    },
+    {
+      "so": 5,
+      "ten": "Không gian vector Rⁿ",
+      "ten_en": "Vector Space Rⁿ",
+      "ghi_chu": "Đã có bản dịch PDF tải về. Chưa chuyển thành các mục đọc trực tiếp trên web; bản PDF không gồm phần bài tập của sách.",
+      "tai_ve": [
+        {
+          "ten": "Bản dịch Chương 5 (PDF)",
+          "tep": "dai-so-chuong-5-ban-dich.pdf",
+          "mo_ta": "Bản dịch tiếng Việt từ W. Keith Nicholson, Linear Algebra with Applications (2023), Lyryx Learning. Không gồm phần bài tập. Giấy phép CC BY-NC-SA 4.0."
+        }
+      ]
+    },
+    {
+      "so": 6,
+      "ten": "Không gian vector",
+      "ten_en": "Vector Spaces",
+      "ghi_chu": "Đã có bản dịch PDF tải về. Chưa chuyển thành các mục đọc trực tiếp trên web; bản PDF không gồm phần bài tập của sách.",
+      "tai_ve": [
+        {
+          "ten": "Bản dịch Chương 6 (PDF)",
+          "tep": "dai-so-chuong-6-ban-dich.pdf",
+          "mo_ta": "Bản dịch tiếng Việt từ W. Keith Nicholson, Linear Algebra with Applications (2023), Lyryx Learning. Không gồm phần bài tập. Giấy phép CC BY-NC-SA 4.0."
+        }
+      ]
+    },
+    {
+      "so": 7,
+      "ten": "Biến đổi tuyến tính",
+      "ten_en": "Linear Transformations",
+      "ghi_chu": "Đã có bản dịch PDF tải về. Chưa chuyển thành các mục đọc trực tiếp trên web; bản PDF không gồm phần bài tập của sách.",
+      "tai_ve": [
+        {
+          "ten": "Bản dịch Chương 7 (PDF)",
+          "tep": "dai-so-chuong-7-ban-dich.pdf",
+          "mo_ta": "Bản dịch tiếng Việt từ W. Keith Nicholson, Linear Algebra with Applications (2023), Lyryx Learning. Không gồm phần bài tập. Giấy phép CC BY-NC-SA 4.0."
+        }
+      ]
+    },
+    {
+      "so": 8,
+      "ten": "Tính trực giao",
+      "ten_en": "Orthogonality",
+      "ghi_chu": "Đã có bản dịch PDF tải về. Chưa chuyển thành các mục đọc trực tiếp trên web; bản PDF không gồm phần bài tập của sách.",
+      "tai_ve": [
+        {
+          "ten": "Bản dịch Chương 8 (PDF)",
+          "tep": "dai-so-chuong-8-ban-dich.pdf",
+          "mo_ta": "Bản dịch tiếng Việt từ W. Keith Nicholson, Linear Algebra with Applications (2023), Lyryx Learning. Không gồm phần bài tập. Giấy phép CC BY-NC-SA 4.0."
+        }
+      ]
+    }
   ]
 }

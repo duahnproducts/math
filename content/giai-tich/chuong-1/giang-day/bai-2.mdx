@@ -1,0 +1,95 @@
+---
+mon: giai-tich
+chuong: 1
+bai: 2
+tieu_de: "§2. Số hữu tỉ và số vô tỉ"
+y_tuong: "Phân số mô tả được rất nhiều độ dài, nhưng có những độ dài chính xác không thể viết thành tỉ số hai số nguyên."
+phu_muc: []
+---
+
+import HinhRoss from '../../../../src/figures/HinhRoss.astro';
+
+## Ý tưởng trong 1 câu
+
+> Phân số mô tả được rất nhiều độ dài, nhưng có những độ dài chính xác không thể viết thành tỉ số hai số nguyên.
+
+## Hình dung trực quan
+
+Chia chiếc bánh thành 4 phần bằng nhau, lấy 3 phần được 3/4. Muốn ghi nhiệt độ âm, ta mở rộng số tự nhiên thành số nguyên. Muốn chia 1 cho 4, ta lại mở rộng số nguyên thành số hữu tỉ.
+
+Nhưng đường chéo hình vuông cạnh 1 có bình phương độ dài bằng 2. Các phân số 1,4; 1,41; 1,414 tiến gần độ dài đó. Tiến gần không có nghĩa là bằng chính xác. Đây là “chỗ thiếu” của số hữu tỉ cần được lấp bằng số thực.
+
+## Kiến thức cần biết
+
+$\mathbb{Z}$ là các số nguyên: …, -2, -1, 0, 1, 2, …. Phân số tối giản là phân số có tử và mẫu không còn ước chung lớn hơn 1. Ví dụ 6/8 rút gọn thành 3/4. Một số nguyên k chia hết cho d nếu k=dm với m nguyên.
+
+Số chẵn có dạng 2k; số lẻ có dạng 2k+1. Bình phương số lẻ vẫn lẻ vì $(2k+1)^2=2(2k^2+2k)+1$. Do đó nếu $m^2$ chẵn thì m phải chẵn.
+
+**Phản chứng** là cách chứng minh: giả sử điều ngược lại, rồi suy ra một điều không thể xảy ra. Ta cần biết chính xác điều nào mâu thuẫn với giả thiết nào.
+
+## Công thức / Định nghĩa
+
+$$\mathbb{Q}=\{m/n:m,n\in\mathbb{Z},\ n\ne0\}.$$
+
+- Q: tập số hữu tỉ; m: tử số; n: mẫu số; $\ne$: khác; dấu hai chấm trong mô tả tập đọc là “sao cho”.
+- **Vô tỉ:** số thực không thuộc Q. Mọi số nguyên đều hữu tỉ vì k=k/1.
+- **Số đại số:** nghiệm của một đa thức khác đa thức không, có hệ số nguyên.
+- **Số siêu việt:** không phải số đại số. π và e là những ví dụ; chứng minh điều này nằm ngoài bài học.
+
+Một đa thức có dạng $c_dx^d+\cdots+c_1x+c_0$, với các $c_j$ nguyên, d≥1, $c_d\ne0$. x là ẩn, d là bậc. Ví dụ $\sqrt{3}$ là đại số vì thỏa $x^2-3=0$; 3/5 là đại số vì thỏa 5x-3=0. Vậy “vô tỉ” và “siêu việt” không đồng nghĩa.
+
+**Định lý nghiệm hữu tỉ:** nếu p/q tối giản là nghiệm của đa thức trên, với q>0 và $c_0\ne0$, thì p là ước của $c_0$, và q là ước của $c_d$. Viết gọn $p\mid c_0$, $q\mid c_d$. Đây chỉ là danh sách ứng viên, chưa khẳng định ứng viên nào là nghiệm.
+
+**Tại sao đúng?** Thay x=p/q rồi nhân với $q^d$. Chuyển các số hạng chứa p sang một bên cho thấy p chia $c_0q^d$. Vì p và q nguyên tố cùng nhau, p phải chia $c_0$. Tương tự, gom các số hạng chứa q cho thấy q chia $c_dp^d$, nên q chia $c_d$. Với đa thức có hệ số đầu là 1, mọi nghiệm hữu tỉ phải là số nguyên.
+
+## Ví dụ mẫu
+
+### Ví dụ A: Vì sao căn 3 vô tỉ?
+
+**Bước 1:** số dương có bình phương bằng 3. **Bước 2:** chứng minh nó không thuộc Q. **Bước 3:** dùng phản chứng và định lý nghiệm hữu tỉ để giới hạn các khả năng.
+
+**Bước 4:** giả sử $\sqrt{3}=p/q$ tối giản, q>0. Nó là nghiệm của $x^2-3=0$. Định lý cho q là ước của 1, nên q=1; p là ước của -3, nên p∈&#123;−3,−1,1,3&#125;. Bình phương các ứng viên chỉ được 1 hoặc 9, không được 3. Mâu thuẫn. Vậy $\sqrt{3}$ vô tỉ.
+
+**Bước 5:** 1,732 là hữu tỉ và bình phương xấp xỉ 3, nhưng không phải chính xác căn 3. **Bước 6:** giả sử có phân số nghiệm → lập danh sách hữu hạn → loại mọi ứng viên.
+
+### Ví dụ B: Chứng minh căn 2 bằng chẵn/lẻ
+
+**Bước 1:** giả sử một phân số p/q có bình phương bằng 2. **Bước 2:** tìm mâu thuẫn. **Bước 3:** chọn phân số tối giản, vì muốn mâu thuẫn với “không có ước chung”.
+
+**Bước 4:** $p^2=2q^2$, nên p² chẵn, kéo theo p chẵn. Viết p=2k. Thay vào được $4k^2=2q^2$, tức $q^2=2k^2$, nên q cũng chẵn. Cả p và q đều chia hết cho 2, trái với tối giản. Suy ra căn 2 không hữu tỉ.
+
+**Bước 5:** điều mâu thuẫn là tính tối giản, không phải việc tồn tại hai số chẵn. **Bước 6:** khi chứng minh vô tỉ bằng chia hết, luôn rút gọn phân số ngay từ đầu.
+
+### Ví dụ C: Ứng viên chưa chắc là nghiệm
+
+**Bước 1:** đa thức $2x^2-3x+1$. **Bước 2:** tìm nghiệm hữu tỉ. **Bước 3:** tử là ước của 1, mẫu là ước của 2.
+
+**Bước 4:** ứng viên là ±1, ±1/2. Thay từng số: 1 và 1/2 cho 0; −1 cho 6; −1/2 cho 3. Vậy hai nghiệm là 1 và 1/2. **Bước 5:** phân tích $(2x-1)(x-1)$ kiểm tra kết quả. **Bước 6:** lập ứng viên rồi thay kiểm tra; không dừng ở danh sách.
+
+## Lỗi dễ mắc
+
+- **Có căn thì vô tỉ:** $\sqrt{9}=3$ là hữu tỉ. Phải kiểm tra số cụ thể.
+- **Thập phân dài thì vô tỉ:** 0,123456789 là phân số hữu tỉ. Số thập phân hữu hạn hoặc vô hạn tuần hoàn đều hữu tỉ; tính dài không quyết định.
+- **Vô tỉ cộng vô tỉ luôn vô tỉ:** $\sqrt{2}+(-\sqrt{2})=0$ là phản ví dụ. Chỉ một phản ví dụ đủ bác bỏ phát biểu “luôn”.
+
+## Tóm tắt 30 giây
+
+> Q gồm các phân số. Căn 2 chỉ ra Q còn thiếu số. Vô tỉ có thể vẫn là đại số; định lý nghiệm hữu tỉ giúp tìm hoặc loại nghiệm phân số.
+
+**HIỂU:** xấp xỉ và bằng chính xác là hai mức khác nhau. **NHỚ:** mẫu khác 0, phân số tối giản, điều kiện hệ số nguyên. **LÀM:** phản chứng; dùng chia hết hoặc danh sách ứng viên.
+
+## Bài tập
+
+### DỄ - Phân loại
+
+Trong các số −7, 0,125, $\sqrt{16}$, $\sqrt{5}$, số nào hữu tỉ? Với mỗi số hữu tỉ, viết thành phân số. **Gợi ý:** số nguyên có mẫu 1; 0,125=125/1000; không suy luận chỉ từ ký hiệu căn.
+
+### VỪA - Dùng nghiệm hữu tỉ
+
+Chứng minh $\sqrt{6}$ vô tỉ bằng đa thức $x^2-6$. **Gợi ý:** nếu nghiệm hữu tỉ thì phải nguyên; các ứng viên nguyên là các ước của 6.
+
+### KHÓ - Vô tỉ nhưng đại số
+
+Đặt $a=1+\sqrt{2}$. Chứng minh a vô tỉ và tìm một đa thức hệ số nguyên nhận a làm nghiệm. **Gợi ý:** nếu a hữu tỉ thì a−1 cũng hữu tỉ. Để tìm đa thức, bình phương $a-1=\sqrt{2}$.
+
+Nguồn kiến thức: Kenneth A. Ross, *Elementary Analysis: The Theory of Calculus*, ấn bản thứ hai, 2013, §2. Bài giảng diễn đạt bằng lời riêng; ví dụ và bài tập do người biên soạn bổ sung.

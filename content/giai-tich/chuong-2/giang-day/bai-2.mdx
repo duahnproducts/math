@@ -1,0 +1,104 @@
+---
+mon: giai-tich
+chuong: 2
+bai: 2
+tieu_de: "§8. Cách tìm và viết chứng minh giới hạn"
+y_tuong: "Ta có thể tìm lời giải bằng cách làm ngược từ sai số mong muốn, rồi viết chứng minh theo chiều xuôi từ một N cụ thể."
+phu_muc: []
+---
+
+import HinhRoss from '../../../../src/figures/HinhRoss.astro';
+
+## Ý tưởng trong 1 câu
+
+> Ta có thể tìm lời giải bằng cách làm ngược từ sai số mong muốn, rồi viết chứng minh theo chiều xuôi từ một N cụ thể.
+
+## Hình dung trực quan
+
+Bạn cần đến trường trước 7 giờ. Khi lập kế hoạch, làm ngược: đi đường 20 phút nên rời nhà trước 6 giờ 40; chuẩn bị 10 phút nên bắt đầu trước 6 giờ 30. Khi thực hiện, làm xuôi: bắt đầu đúng giờ → rời nhà đúng giờ → đến trường đúng giờ.
+
+Chứng minh ε–N cũng có hai lượt. Lượt nháp giúp tìm N. Lượt chính thức phải chỉ ra rằng N đã chọn thật sự bảo đảm sai số cho mọi n>N. Một dòng “muốn sai số &lt;ε thì n phải lớn” chưa hoàn thành lời giải.
+
+## Kiến thức cần biết
+
+Ôn định nghĩa hội tụ ở §7, giá trị tuyệt đối ở §3, cách giải bất phương trình với số dương. Với x>0, bất đẳng thức 1/x&lt;ε tương đương x>1/ε. Trước khi nhân hoặc chia, kiểm tra dấu mẫu.
+
+Bạn không cần chọn N nhỏ nhất. Nếu sai số ≤C/n khi n≥n₀, chọn số nguyên N≥max&#123;n₀,C/ε&#125; là đủ. $\max$ là số lớn nhất trong danh sách; nó gom nhiều yêu cầu vào một mốc.
+
+## Công thức / Định nghĩa
+
+**Khuôn hội tụ:** cho ε>0; chọn N theo ε; xét n>N; chặn |aₙ−L|; kết thúc bằng &lt;ε; suy ra giới hạn. N phải là giá trị hoặc quy tắc cụ thể, không viết vòng tròn “chọn N để dãy đủ gần”.
+
+**Phủ định hội tụ về L:**
+
+$$\exists\varepsilon_0>0,\ \forall N,\ \exists n>N:\ |a_n-L|\geq\varepsilon_0.$$
+
+ε₀ là một mức sai số cố định khiến dãy thất bại mãi mãi. Để chứng minh không có bất kỳ giới hạn nào, ta phải bác bỏ mọi L thực, không chỉ một L đoán trước.
+
+**Giữ bất đẳng thức khi lấy giới hạn:** nếu aₙ→L và aₙ≥c từ một mốc trở đi thì L≥c. Nếu L&lt;c, đặt ε=(c−L)/2; đuôi vừa phải ≥c vừa phải &lt;L+ε&lt;c, mâu thuẫn. Dấu nghiêm có thể mất: aₙ>0 không bảo đảm L>0 vì 1/n→0.
+
+**Cách dùng kẹp:** nếu uₙ≤aₙ≤vₙ về sau, uₙ→L và vₙ→L thì aₙ→L. Với ε>0, sau cả hai mốc có L−ε&lt;uₙ≤aₙ≤vₙ&lt;L+ε. Đây là lý do kẹp hoạt động.
+
+**Xa 0 về sau:** nếu aₙ→L≠0 thì cuối cùng $|a_n|>|L|/2$. Thật vậy, chọn ε=|L|/2 rồi dùng $|a_n|\geq |L|-|a_n-L|$. Nếu mọi aₙ đều khác 0, ghép cận này với giá trị nhỏ nhất trong hữu hạn số hạng đầu để có cận dương cho toàn dãy. Ý này giúp xử lý nghịch đảo ở §9.
+
+## Ví dụ mẫu
+
+### Ví dụ A: Sai số phân thức
+
+**Bước 1:** $a_n=(4n+3)/(2n+1)$, n≥1. **Bước 2:** chứng minh aₙ→2. **Bước 3:** trừ đích 2 để sai số đơn giản; sau đó tìm N.
+
+**Bước 4 - Tìm trong nháp:**
+
+$$\left|\frac{4n+3}{2n+1}-2\right|=\frac{1}{2n+1}<\frac{1}{2n}.$$
+
+Muốn cận cuối &lt;ε, chỉ cần n>1/(2ε). **Viết chính thức:** cho ε>0. Chọn N nguyên ≥max&#123;1,1/(2ε)&#125;. Với n>N, mẫu dương và sai số &lt;1/(2n)&lt;ε. Vậy aₙ→2.
+
+**Bước 5:** n=10 cho 43/21≈2,0476; ε=0,05 cho N=10, nên mọi n>10 đều đạt. **Bước 6:** trừ đích, rút gọn, chặn bằng C/n, chọn N an toàn.
+
+### Ví dụ B: Căn thức cần liên hợp
+
+**Bước 1:** $b_n=\sqrt{n^2+4}-n$. **Bước 2:** chứng minh bₙ→0. **Bước 3:** nhân liên hợp vì hai số lớn trừ nhau không dễ chặn trực tiếp.
+
+**Bước 4:**
+
+$$b_n=\frac{4}{\sqrt{n^2+4}+n},\qquad 0<b_n\leq\frac{2}{n}.$$
+
+Vì √(n²+4)≥n, mẫu ≥2n. Cho ε>0, chọn N nguyên ≥2/ε. n>N kéo theo |bₙ|≤2/n&lt;ε. Vậy giới hạn bằng 0.
+
+**Bước 5:** b₁=√5−1>0, còn n lớn làm cận 2/n nhỏ. **Bước 6:** hai căn hoặc hai lượng lớn trừ nhau → thử liên hợp trước.
+
+### Ví dụ C: Dãy (−1)ⁿ không hội tụ
+
+**Bước 1:** aₙ=(−1)ⁿ. **Bước 2:** chứng minh không tồn tại L thực làm giới hạn. **Bước 3:** chọn một sai số cố định; dùng cả chỉ số chẵn lẫn lẻ sau mọi mốc.
+
+**Bước 4:** giả sử aₙ→L. Với ε=1/2, sau một N, mọi số hạng cách L ít hơn 1/2. Chọn một n chẵn>N và một m lẻ>N. Khi ấy |1−L|&lt;1/2 và |−1−L|&lt;1/2. Tam giác cho $2=|1-(-1)|\leq|1-L|+|L+1|<1$, mâu thuẫn. Vậy không có L.
+
+**Bước 5:** không chỉ bác bỏ L=1 hay L=−1; lập luận bác bỏ L bất kỳ. **Bước 6:** tìm hai nhóm số hạng luôn xuất hiện về sau nhưng cách nhau một khoảng cố định.
+
+## Lỗi dễ mắc
+
+- **Sai thứ tự chọn:** cho ε rồi chọn N, không chọn N cố định trước mọi ε.
+- **Chỉ kiểm tra n=N+1:** phải chứng minh cận hoạt động với mọi n>N; một phép tính đơn lẻ không đủ.
+- **Bác bỏ một đích rồi kết luận phân kỳ:** chứng minh không tiến tới 0 vẫn có thể để ngỏ tiến tới 2. Phải bác bỏ mọi L hoặc dùng một tiêu chuẩn thích hợp.
+
+## Tóm tắt 30 giây
+
+> Nháp làm ngược để tìm N; chứng minh làm xuôi để kiểm tra N. Dãy không hội tụ khi một sai số cố định vẫn bị vi phạm muộn tùy ý, với mọi đích đề xuất.
+
+**HIỂU:** N là lời cam kết cho toàn bộ đuôi. **NHỚ:** cận C/n, liên hợp, phủ định ∀/∃. **LÀM:** tách hai lượt nháp và lời giải chính thức.
+
+## Bài tập
+
+### DỄ - Một lũy thừa
+
+Chứng minh 1/n²→0 bằng ε–N. **Gợi ý:** n>1/√ε là đủ; chọn số nguyên lớn hơn ngưỡng.
+
+### VỪA - Tìm cận đơn giản
+
+Chứng minh $(5n+2)/(n+3)\to5$. **Gợi ý:** sai số chính xác là 13/(n+3), có thể chặn bởi 13/n.
+
+### KHÓ - Đúng miền của giới hạn
+
+Giả sử aₙ→L và 2≤aₙ≤7 với mọi n. Chứng minh 2≤L≤7 bằng định nghĩa, rồi cho ví dụ aₙ>2 nhưng L=2. **Gợi ý:** phản chứng từng phía; dùng 2+1/n cho ví dụ.
+
+Nguồn kiến thức: Kenneth A. Ross, *Elementary Analysis: The Theory of Calculus*, ấn bản thứ hai, 2013, §8. Bài giảng diễn đạt bằng lời riêng; ví dụ và bài tập do người biên soạn bổ sung.

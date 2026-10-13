@@ -1,0 +1,112 @@
+---
+mon: giai-tich
+chuong: 2
+bai: 3
+tieu_de: "§9. Các định lý giới hạn cho dãy"
+y_tuong: "Khi các dãy thành phần đã hội tụ, ta có thể ghép giới hạn bằng các quy tắc có điều kiện rõ ràng."
+phu_muc: []
+---
+
+import HinhRoss from '../../../../src/figures/HinhRoss.astro';
+
+## Ý tưởng trong 1 câu
+
+> Khi các dãy thành phần đã hội tụ, ta có thể ghép giới hạn bằng các quy tắc có điều kiện rõ ràng.
+
+## Hình dung trực quan
+
+Bạn đo chiều dài và chiều rộng của một hình chữ nhật ngày càng chính xác. Nếu hai phép đo tiến tới a và b, diện tích tính từ chúng tiến tới ab. Nhưng nếu chia cho một phép đo đang gần 0, sai số nhỏ ở mẫu có thể tạo kết quả rất lớn. Vì vậy quy tắc chia cần mẫu có giới hạn khác 0.
+
+Các định lý giúp tránh viết lại ε–N cho mỗi phép tính. Ta vẫn phải hiểu vì sao chúng đúng và kiểm tra điều kiện trước khi dùng.
+
+## Kiến thức cần biết
+
+Ôn hội tụ, kẹp, tam giác. Một dãy bị chặn khi có M>0 sao cho |aₙ|≤M với mọi n. Hội tụ kéo theo bị chặn: lấy ε=1 để chặn đuôi bởi |L|+1; hữu hạn số hạng đầu đều có giá trị hữu hạn, nên lấy max của các cận.
+
+Chiều ngược sai: (−1)ⁿ bị chặn bởi 1 nhưng không hội tụ. Khi tính phân thức đa thức, chia tử và mẫu cho lũy thừa cao nhất của n ở mẫu thường tạo các thành phần 1/nᵖ tiến tới 0.
+
+## Công thức / Định nghĩa
+
+Nếu aₙ→a, bₙ→b là giới hạn thực và k cố định thì:
+
+$$ka_n\to ka,\qquad a_n+b_n\to a+b,\qquad a_nb_n\to ab.$$
+
+Nếu b≠0 và bₙ≠0 tại các chỉ số đang xét thì $a_n/b_n\to a/b$. Do b≠0, bₙ tự động khác 0 về sau; có thể bỏ hữu hạn chỉ số đầu nếu biểu thức ở đó chưa được định nghĩa. k,a,b là số thực cố định, không phụ thuộc n.
+
+**Ý tưởng chứng minh tổng:** $|(a_n+b_n)-(a+b)|\leq|a_n-a|+|b_n-b|$. Cho mỗi phần &lt;ε/2, rồi lấy max của hai mốc.
+
+**Ý tưởng chứng minh tích:** thêm bớt aₙb để được $|a_nb_n-ab|\leq|a_n||b_n-b|+|b||a_n-a|$. Chọn M>0 chặn |aₙ|; yêu cầu hai sai số lần lượt &lt;ε/(2M) và ε/[2(|b|+1)]. Dùng |b|+1 để không chia cho 0 khi b=0.
+
+**Ý tưởng chứng minh nghịch đảo:** về sau |bₙ|≥|b|/2, nên $|1/b_n-1/b|\leq2|b_n-b|/|b|^2$. Sai số ở vế phải về 0; mẫu đã được chặn xa 0.
+
+**Các giới hạn nền:** $1/n^p\to0$ với p>0; $q^n\to0$ khi |q|&lt;1; $n^{1/n}\to1$; $c^{1/n}\to1$ với c>0. p,q,c là hằng số. $c^{1/n}$ là căn bậc n dương của c: số dương mà lũy thừa n bằng c. Đây là kết quả về các dãy, không phải phép thế n=∞.
+
+**Nhị thức dùng trong chứng minh:** khai triển (1+h)ⁿ bằng cách nhân n thừa số (1+h). Chọn h từ đúng một thừa số có n cách, tạo nh; chọn h từ hai thừa số có n(n−1)/2 cách, tạo n(n−1)h²/2. Với n≥2, ta có $(1+h)^n=1+nh+n(n-1)h^2/2+\cdots+h^n$. Khi h≥0, mọi số hạng đều không âm, nên bỏ bớt số hạng cho một cận dưới. Đây là ý nghĩa của việc dùng nhị thức trong hai chứng minh sau.
+
+Với |q|∈(0,1), viết |q|=1/(1+h), h>0. Nhị thức cho (1+h)ⁿ≥1+nh, nên |q|ⁿ≤1/(1+nh)→0. Với $u_n=n^{1/n}-1\geq0$, nhị thức cho n=(1+uₙ)ⁿ≥n(n−1)uₙ²/2 khi n≥2, nên $0\leq u_n\leq\sqrt{2/(n-1)}\to0$. Với c≥1, cuối cùng 1≤c^(1/n)≤n^(1/n); với 0&lt;c&lt;1, lấy nghịch đảo của trường hợp 1/c>1.
+
+**Giới hạn vô cực:** aₙ→+∞ nghĩa là với mọi M>0, có N sao cho n>N kéo theo aₙ>M. aₙ→−∞ nghĩa là với mọi M&lt;0, cuối cùng aₙ&lt;M. M là mức hữu hạn tùy ý; N phụ thuộc M. Các dãy này phân kỳ theo nghĩa hội tụ hữu hạn.
+
+Nếu aₙ→+∞ và bₙ→b>0, hoặc bₙ→+∞, thì aₙbₙ→+∞: chọn cận m>0 để bₙ≥m về sau, rồi yêu cầu aₙ>M/m. Nếu aₙ>0, thì aₙ→+∞ khi và chỉ khi 1/aₙ→0. Các định lý cộng/nhân/chia hữu hạn không tự động áp dụng khi một giới hạn là vô cực.
+
+## Ví dụ mẫu
+
+### Ví dụ A: Phân thức bậc ba
+
+**Bước 1:** $a_n=(2n^3+5n+1)/(5n^3-2n^2+4)$. **Bước 2:** tìm giới hạn. **Bước 3:** chia cả tử và mẫu cho n³ để dùng các giới hạn 1/nᵖ.
+
+**Bước 4:**
+
+$$a_n=\frac{2+5/n^2+1/n^3}{5-2/n+4/n^3}\ \longrightarrow\ \frac{2}{5}.$$
+
+Tử →2, mẫu →5≠0; với n≥1 mẫu gốc ≥3n³+4>0 vì 2n²≤2n³. Quy tắc thương hợp lệ.
+
+**Bước 5:** chỉ so hệ số đầu sau khi đã kiểm tra mẫu và các phần còn lại. **Bước 6:** chuẩn hóa → giới hạn tử/mẫu → mẫu giới hạn khác 0 → lấy thương.
+
+### Ví dụ B: Mẫu giới hạn bằng 0
+
+**Bước 1:** $b_n=(n^2+1)/(n+1)$. **Bước 2:** xét giới hạn. **Bước 3:** so sánh dưới với n thay vì cố dùng quy tắc thương có mẫu →0.
+
+**Bước 4:** với n≥1, n+1≤2n, nên $b_n\geq n^2/(2n)=n/2$. Cho M>0, chọn N nguyên ≥2M. n>N kéo theo bₙ≥n/2>M. Vậy bₙ→+∞.
+
+**Bước 5:** kết luận là phân kỳ đến +∞, không là hội tụ thực. **Bước 6:** khi không đủ điều kiện thương hữu hạn, quay về so sánh và định nghĩa M–N.
+
+### Ví dụ C: Kẹp dãy dao động
+
+**Bước 1:** $c_n=\sin(n)/n$. **Bước 2:** tìm giới hạn. **Bước 3:** không cần biết sin(n) có giới hạn; chỉ cần |sin(n)|≤1.
+
+**Bước 4:** −1/n≤cₙ≤1/n. Hai cận →0, nên kẹp cho cₙ→0. **Bước 5:** không dùng quy tắc tích bằng cách gán giới hạn cho sin(n). **Bước 6:** thành phần dao động bị chặn nhân một thành phần về 0 thường xử lý bằng kẹp.
+
+### Ví dụ D: Dãy không bị chặn nhưng không tới vô cực
+
+**Bước 1:** dₙ=(−1)ⁿn. **Bước 2:** có giới hạn mở rộng không? **Bước 3:** kiểm tra “mọi số hạng về sau”, không chỉ có số hạng lớn.
+
+**Bước 4:** dãy không hội tụ hữu hạn vì không bị chặn. Nó không →+∞ vì sau mọi N vẫn có chỉ số lẻ n với dₙ&lt;0. Nó không →−∞ vì vẫn có chỉ số chẵn n với dₙ>0. **Bước 5:** sup tập giá trị=+∞, inf=−∞ không tạo một giới hạn dãy. **Bước 6:** tập không bị chặn và dãy đi về vô cực là hai yêu cầu khác nhau.
+
+## Lỗi dễ mắc
+
+- **Dùng quy tắc thương khi mẫu →0:** 1/n chia 1/n →1, nhưng 1 chia 1/n →∞. Mẫu →0 tự nó chưa quyết định kết quả.
+- **Mặc nhiên có giới hạn cho dãy dao động:** sin(n) cần kẹp, không được thế một giá trị giới hạn chưa chứng minh.
+- **Giải phương trình L=F(L) rồi coi như đã chứng minh hội tụ:** phương trình chỉ cho ứng viên nếu dãy hội tụ. §10 sẽ giúp chứng minh sự tồn tại trước.
+
+## Tóm tắt 30 giây
+
+> Quy tắc giới hạn là công cụ ghép những điều đã biết. Thương cần mẫu khác 0 ở giới hạn; vô cực cần định nghĩa hoặc định lý riêng. Bị chặn chưa đủ hội tụ.
+
+**HIỂU:** sai số của tổng/tích/thương được kiểm soát nhờ điều kiện. **NHỚ:** các giới hạn nền và điều kiện mẫu. **LÀM:** chuẩn hóa, kẹp, so sánh, phân loại hữu hạn/vô cực/không tồn tại.
+
+## Bài tập
+
+### DỄ - Phân thức
+
+Tính giới hạn $(7n^2+2)/(3n^2+n+1)$, nêu vì sao quy tắc thương hợp lệ. **Gợi ý:** chia n²; mẫu giới hạn là 3.
+
+### VỪA - Kẹp
+
+Chứng minh $(-1)^n/(n+2)\to0$ và $\cos(n)/(n^2+1)\to0$. **Gợi ý:** lấy giá trị tuyệt đối và chặn bởi 1/(n+2), 1/(n²+1).
+
+### KHÓ - Định nghĩa vô cực
+
+Chứng minh $(n^3+2)/(n^2+1)\to+\infty$ bằng M–N. **Gợi ý:** n²+1≤2n² khi n≥1, nên phân thức ≥n/2.
+
+Nguồn kiến thức: Kenneth A. Ross, *Elementary Analysis: The Theory of Calculus*, ấn bản thứ hai, 2013, §9. Bài giảng diễn đạt bằng lời riêng; ví dụ và bài tập do người biên soạn bổ sung.

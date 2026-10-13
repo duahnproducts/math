@@ -125,6 +125,18 @@ cả chỉ mục lẫn từ khoá, và phải có test.
 
 ## 7. Chuyển PDF thành nội dung
 
+**Cập nhật 13/10/2026:** Giải tích dùng bộ bài giảng tự soạn Kenneth Ross,
+*Elementary Analysis*, 2nd ed. (2013), §1–§10. Nguồn Markdown có sẵn được đưa
+thành 10 bài MDX: 6 bài Chương 1, 4 bài Chương 2 (chưa phủ toàn bộ Chương 2).
+Số § Ross nằm trong tiêu đề bài; `phu_muc` để rỗng vì chưa có trang Theo sách,
+không đổi số § thành số mục giả dạng `1.1`. Hình được dựng bằng SVG trong
+`HinhRoss.astro`. PDF tổng hợp tự soạn được tải về từ cả hai chương. Tiến độ
+Abbott được dọn một lần khi chuyển sang Ross, rồi giữ tiến độ mới.
+
+Đại số Chương 4–8 và Vi mô Chương 5, 7, 8 có PDF bản dịch ghi nguồn và giấy
+phép CC BY-NC-SA 4.0; chưa chuyển thành nội dung đọc trực tiếp. Chương có
+`tai_ve` cũng được xuất trang, không hiện nút Học tiếp trỏ tới bài tập chưa có.
+
 **Hiện trạng (kiểm tra 28/09/2026):** không có file nguồn `.tex` hay `.md` nào;
 mọi tài liệu chỉ có PDF. Chữ trích tự động từ PDF bị mất khoảng trắng và vỡ công
 thức, nên không dùng trực tiếp.

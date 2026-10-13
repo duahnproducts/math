@@ -1,0 +1,96 @@
+---
+mon: giai-tich
+chuong: 1
+bai: 4
+tieu_de: "§4. Tiên đề đầy đủ, sup và inf"
+y_tuong: "Trong số thực, một tập không rỗng có trần chặn phía trên luôn có một trần thấp nhất."
+phu_muc: []
+---
+
+import HinhRoss from '../../../../src/figures/HinhRoss.astro';
+
+## Ý tưởng trong 1 câu
+
+> Trong số thực, một tập không rỗng có trần chặn phía trên luôn có một trần thấp nhất.
+
+## Hình dung trực quan
+
+Các chiều cao của đồ vật trong phòng có thể được chặn bằng trần cao 3 m, 4 m hoặc 10 m. Cận trên không duy nhất. Sup là trần thấp nhất vẫn đủ chặn mọi đồ vật. Nó có thể không trùng chiều cao của bất kỳ đồ vật nào.
+
+Với tập (0,1), các điểm đều nhỏ hơn 1, nhưng có thể sát 1 tùy ý. Bất kỳ trần nào dưới 1 sẽ bị một điểm của tập vượt qua. Vì vậy 1 là sup, dù 1 không thuộc tập. Đây là điểm khác nhau giữa “trần thấp nhất” và “vật cao nhất”.
+
+<HinhRoss loai="sup" />
+
+*Tập (0,1): 0 và 1 là hai biên nhưng không nằm trong tập. Hình chỉ lấy vài điểm đại diện.*
+
+## Kiến thức cần biết
+
+Khoảng (a,b) không chứa hai đầu; [a,b] chứa cả hai; [a,b) chứa a nhưng không chứa b. $S\subseteq\mathbb{R}$ nghĩa là mọi phần tử S đều là số thực. “Không rỗng” nghĩa là có ít nhất một phần tử.
+
+Để chứng minh một số là nhỏ nhất trong một nhóm, cần hai việc: nó thuộc nhóm đang xét và nó không lớn hơn bất kỳ số nào khác của nhóm đó. Với sup, nhóm đang xét là nhóm tất cả cận trên, không phải nhóm các phần tử của S.
+
+## Công thức / Định nghĩa
+
+**Cận trên:** M thỏa s≤M với mọi s∈S. **Cận dưới:** m thỏa m≤s với mọi s∈S. **Bị chặn:** có cả cận trên và cận dưới. **max S:** phần tử thuộc S và lớn nhất S. **min S:** phần tử thuộc S và nhỏ nhất S.
+
+**Supremum**, viết sup S, là cận trên nhỏ nhất. **Infimum**, viết inf S, là cận dưới lớn nhất. S là tập; s là một phần tử; M,m là các số dùng làm cận. Sup/inf không bắt buộc thuộc S, còn max/min bắt buộc thuộc S.
+
+**Tiên đề đầy đủ:** mọi tập con không rỗng của R, bị chặn trên, có sup là một số thực. Hệ quả: tập không rỗng bị chặn dưới có inf; xét tập $-S=\{-s:s\in S\}$ để được $\inf S=-\sup(-S)$.
+
+**Cách kiểm tra sup:** u=sup S khi và chỉ khi (i) s≤u với mọi s∈S, (ii) với mọi ε>0, có s∈S sao cho u−ε&lt;s. ε là một khoảng dương nhỏ tùy ý. Điều (ii) nói không thể hạ trần xuống dù chỉ một chút. Với inf, đổi thành s≥l và có s&lt;l+ε.
+
+**Tính Archimedes:** với a,b>0, tồn tại n∈N sao cho na>b. Dù chiếc thìa rất nhỏ và bồn nước rất lớn, một số hữu hạn lần xúc đủ lớn sẽ vượt lượng nước cần xét. Hệ quả: N không bị chặn trên; với ε>0, tồn tại n sao cho 1/n&lt;ε.
+
+**Vì sao Archimedes theo từ đầy đủ?** Nếu na≤b cho mọi n, tập &#123;na&#125; có sup u. Vì u−a&lt;u, có n₀a>u−a. Thế thì (n₀+1)a>u, trái với u là cận trên. Sự tồn tại u chính là chỗ dùng tiên đề đầy đủ.
+
+**Q trù mật trong R:** với a&lt;b, có r∈Q sao cho a&lt;r&lt;b. “Trù mật” chỉ nói không có khoảng mở nào bỏ sạch số hữu tỉ; nó không nói mọi số thực là hữu tỉ. Chọn n để 1/n&lt;b−a, rồi chọn số nguyên m đầu tiên lớn hơn na. Khi ấy na&lt;m≤na+1&lt;nb; chia n được r=m/n. Việc tồn tại số nguyên đầu tiên ấy theo từ Archimedes và thứ tự của các số nguyên. Các số vô tỉ cũng trù mật: tìm hữu tỉ r trong (a−√2,b−√2), rồi r+√2 là vô tỉ nằm giữa a,b.
+
+## Ví dụ mẫu
+
+### Ví dụ A: Một tập có sup nhưng không có max
+
+**Bước 1:** $S=\{1-1/n:n\in\mathbb{N}\}$. **Bước 2:** tìm sup, inf, max, min. **Bước 3:** dùng định nghĩa cận và tiêu chuẩn ε của sup.
+
+**Bước 4:** mọi phần tử &lt;1, nên 1 là cận trên. Với ε>0, Archimedes cho n>1/ε. Khi đó 1/n&lt;ε và 1−1/n>1−ε. Vì vậy sup S=1. Nhưng 1 không thuộc S, nên không có max. Tại n=1 được 0; với mọi n≥1, 1−1/n≥0. Vậy inf S=min S=0.
+
+**Bước 5:** vài phần tử là 0, 1/2, 2/3, 3/4. Với mỗi phần tử luôn có phần tử sau lớn hơn. **Bước 6:** chứng minh “là cận” rồi “không thể tốt hơn”; sau cùng kiểm tra cận có thuộc tập không.
+
+### Ví dụ B: Tính đầy đủ khác tính trù mật
+
+**Bước 1:** $A=\{q\in\mathbb{Q}:q\geq0,\ q^2<2\}$. **Bước 2:** so sánh sup khi làm việc trong R và trong Q. **Bước 3:** dùng căn 2 và tính trù mật của Q.
+
+**Bước 4:** trong R, mọi q∈A nhỏ hơn √2. Mọi u&lt;√2 đều không phải cận trên: nếu u&lt;0 thì 0∈A đã vượt u; nếu u≥0, có hữu tỉ q nằm giữa u và √2, nên q∈A và q>u. Vậy sup trong R là √2. Trong Q, một cận trên hữu tỉ phải lớn hơn √2 vì √2 không hữu tỉ. Giữa √2 và cận đó lại có hữu tỉ nhỏ hơn, vẫn là cận trên. Không có cận trên hữu tỉ nhỏ nhất.
+
+**Bước 5:** A không rỗng vì 1∈A, và 2 là cận trên hữu tỉ; thiếu sup trong Q không phải do thiếu cận. **Bước 6:** ghi rõ đang tìm sup trong hệ số nào.
+
+### Ví dụ C: Thu nhỏ tập thì biên dịch vào trong
+
+**Bước 1:** S⊆T, cả hai không rỗng và bị chặn. **Bước 2:** so sánh bốn biên. **Bước 3:** dùng ý nghĩa cận. **Bước 4:** sup T chặn trên mọi phần tử S nên sup S≤sup T. inf T chặn dưới S nên inf T≤inf S. Chọn s∈S được inf S≤s≤sup S. Ghép lại: $\inf T\leq\inf S\leq\sup S\leq\sup T$. **Bước 5:** S=&#123;1&#125;, T=&#123;0,1,2&#125; phù hợp. **Bước 6:** cận của tập lớn cũng là cận của tập nhỏ.
+
+## Lỗi dễ mắc
+
+- **Sup luôn thuộc tập:** sai với (0,1). Nếu sup S thuộc S thì mới gọi nó là max S.
+- **Có cận trên thì cận trên nào cũng là sup:** tập &#123;1,2&#125; có cận trên 100, nhưng sup là 2. Phải kiểm tra tính nhỏ nhất.
+- **Q trù mật nên Q đầy đủ:** các phân số luôn có mặt giữa hai số, nhưng biên của A ở ví dụ B vẫn không thuộc Q.
+
+## Tóm tắt 30 giây
+
+> Đầy đủ bảo đảm tồn tại biên chính xác. Sup là trần thấp nhất; inf là sàn cao nhất. Max/min cần thuộc tập. Archimedes cho 1/n nhỏ tùy ý; trù mật cho phân số giữa hai số.
+
+**HIỂU:** biên và phần tử là hai vai khác nhau. **NHỚ:** không rỗng + bị chặn trên → sup hữu hạn trong R. **LÀM:** cận → xấp xỉ biên → kiểm tra thuộc tập.
+
+## Bài tập
+
+### DỄ - Bốn loại biên
+
+Tìm sup, inf, max, min của &#123;−2,1,4&#125;, (−2,4] và [−2,4). **Gợi ý:** sup và inf nhìn vào hai biên; max/min kiểm tra dấu ngoặc.
+
+### VỪA - Chứng minh một inf
+
+Với $S=\{1/n:n\in\mathbb{N}\}$, chứng minh inf S=0, max S=1 và không có min. **Gợi ý:** mọi số hạng dương; dùng Archimedes để làm 1/n nhỏ hơn bất kỳ ε>0.
+
+### KHÓ - Sup của một tổng tập
+
+Cho A,B không rỗng và bị chặn. Đặt $A+B=\{a+b:a\in A,b\in B\}$. Chứng minh sup(A+B)=sup A+sup B. **Gợi ý:** trước hết chứng minh là cận trên. Sau đó chọn a>sup A−ε/2 và b>sup B−ε/2.
+
+Nguồn kiến thức: Kenneth A. Ross, *Elementary Analysis: The Theory of Calculus*, ấn bản thứ hai, 2013, §4. Bài giảng diễn đạt bằng lời riêng; ví dụ và bài tập do người biên soạn bổ sung.

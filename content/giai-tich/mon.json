@@ -3,8 +3,37 @@
   "ten_en": "Real Analysis",
   "thu_tu": 1,
   "mo_ta": "Hiểu vì sao các phép tính của vi tích phân đúng: số thực, dãy số, giới hạn, liên tục, đạo hàm, tích phân.",
-  "giao_trinh": "Stephen Abbott, Understanding Analysis, 2nd ed., Springer, 2015",
-  "giay_phep": "Sách gốc có bản quyền (Springer). Web chỉ diễn đạt lại định nghĩa, định lý bằng tiếng Việt, kèm dàn ý và lời giải tự viết; không đăng bản dịch nguyên văn hay PDF sách gốc.",
+  "giao_trinh": "Kenneth A. Ross, Elementary Analysis: The Theory of Calculus, 2nd ed., Springer, 2013",
+  "giay_phep": "Sách gốc có bản quyền (Springer). Bài giảng viết bằng lời riêng, với ví dụ và bài tập tự soạn; không đăng bản dịch nguyên văn hay PDF sách gốc.",
   "loai_sach": "theo-sach",
-  "chuong": []
+  "chuong": [
+    {
+      "so": 1,
+      "ten": "Nền tảng số thực (§1–§6)",
+      "ten_en": "The Real Number System",
+      "muc": [],
+      "ghi_chu": "6 bài giảng theo Ross. Bài tập tự soạn nằm ở mục 8 của từng bài. Phần Theo sách chưa có.",
+      "tai_ve": [
+        {
+          "ten": "Bài giảng Ross §1–§10 (PDF, 37 trang)",
+          "tep": "giai-tich-ross-bai-giang-1-10.pdf",
+          "mo_ta": "10 bài giảng viết bằng lời riêng, 31 ví dụ và 30 bài tập tự soạn; gồm §1–§6 của Chương 1 và §7–§10 của Chương 2."
+        }
+      ]
+    },
+    {
+      "so": 2,
+      "ten": "Dãy số và giới hạn (§7–§10)",
+      "ten_en": "Sequences",
+      "muc": [],
+      "ghi_chu": "4 bài giảng theo Ross, mới phủ §7–§10 của Chương 2. Bài tập tự soạn nằm ở mục 8 của từng bài. Phần Theo sách chưa có.",
+      "tai_ve": [
+        {
+          "ten": "Bài giảng Ross §1–§10 (PDF, 37 trang)",
+          "tep": "giai-tich-ross-bai-giang-1-10.pdf",
+          "mo_ta": "PDF tổng hợp cả hai chương; §7–§10 ở trang 22–34, phần ôn tập và gợi ý ở trang 35–37."
+        }
+      ]
+    }
+  ]
 }

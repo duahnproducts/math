@@ -41,6 +41,7 @@ const tenSach = nhanLoaiSach(m.loai_sach);
               <span class="than">
                 <b>{du.chuong.ten}</b> <span class="so-hieu">· {du.chuong.ten_en}</span>
                 <span class="cac-phan" style="margin-top:6px">
+                  {du.chuong.tai_ve.length > 0 && <span class="pill info">PDF tải về: {du.chuong.tai_ve.length}</span>}
                   {du.baiGiang.length > 0 ? (
                     <span class="pill ok">Giảng dạy: {du.baiGiang.length} bài</span>
                   ) : (
@@ -59,8 +60,8 @@ const tenSach = nhanLoaiSach(m.loai_sach);
                     <span class="pill mo">Bài tập: chưa có</span>
                   )}
                 </span>
-                {!co && du.chuong.ghi_chu && <span class="mo-ta">{du.chuong.ghi_chu}</span>}
-                {co && (
+                {du.chuong.ghi_chu && <span class="mo-ta">{du.chuong.ghi_chu}</span>}
+                {khoaDocCuaChuong(du).length > 0 && (
                   <span style="display:block;margin-top:8px;max-width:360px">
                     <ThanhTienDo cacKhoa={khoaDocCuaChuong(du)} kieu="doc" nhan="Đã học" />
                   </span>

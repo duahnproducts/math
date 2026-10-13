@@ -1,0 +1,122 @@
+---
+mon: giai-tich
+chuong: 2
+bai: 4
+tieu_de: "§10. Dãy đơn điệu, limsup/liminf và Cauchy"
+y_tuong: "Tính đầy đủ cho phép chứng minh một dãy có đích đến ngay cả khi chưa biết đích ấy là số nào."
+phu_muc: []
+---
+
+import HinhRoss from '../../../../src/figures/HinhRoss.astro';
+
+## Ý tưởng trong 1 câu
+
+> Tính đầy đủ cho phép chứng minh một dãy có đích đến ngay cả khi chưa biết đích ấy là số nào.
+
+## Hình dung trực quan
+
+Một mực nước tăng dần nhưng luôn ở dưới miệng bình sẽ tiến tới một mức xác định. Mực nước không cần chạm miệng bình; đích có thể thấp hơn miệng bình. Điều quan trọng là nó chỉ đi một hướng và có trần.
+
+Với dãy Cauchy, ta chưa biết vị trí đích. Ta chỉ biết rằng mọi điểm của phần đuôi tụ lại sát nhau tùy ý. “Gần nhau” và “gần một đích” là hai cách mô tả khác; trong R, tính đầy đủ làm chúng tương đương.
+
+<HinhRoss loai="monotone" />
+
+*Dãy 1−1/n tăng, bị chặn trên bởi 1 và tiến tới sup của tập số hạng, bằng 1.*
+
+## Kiến thức cần biết
+
+Ôn sup/inf ở §4, hội tụ ở §7, giới hạn vô cực ở §9. Với truy hồi $a_{n+1}=F(a_n)$, ta phải chứng minh các số hạng được định nghĩa và giữ trong miền hợp lệ. Sau đó chứng minh tồn tại giới hạn; cuối cùng mới lấy giới hạn hai vế.
+
+Để xét đơn điệu, thường tính aₙ₊₁−aₙ hoặc so sánh hai số hạng. Hiệu ≥0 cho tăng; hiệu ≤0 cho giảm. Dãy dương có thể dùng tỉ số, nhưng phải biết mẫu dương. Chỉ nhìn vài số hạng chưa chứng minh đơn điệu cho mọi n.
+
+## Công thức / Định nghĩa
+
+**Tăng:** aₙ≤aₙ₊₁ với mọi n. **Giảm:** aₙ≥aₙ₊₁. Trong sách, tăng/giảm cho phép dấu bằng; “tăng nghiêm ngặt” dùng &lt;. **Đơn điệu:** tăng hoặc giảm.
+
+**Định lý đơn điệu:** dãy tăng và bị chặn trên hội tụ về $\sup\{a_n:n\in\mathbb{N}\}$; dãy giảm và bị chặn dưới hội tụ về inf tập số hạng. Dãy tăng không bị chặn trên →+∞; dãy giảm không bị chặn dưới →−∞.
+
+**Chứng minh trường hợp tăng:** đặt L=sup&#123;aₙ&#125;; L tồn tại nhờ tính đầy đủ. Cho ε>0, L−ε không phải cận trên, nên có aₖ>L−ε. Vì dãy tăng, mọi n≥k cho L−ε&lt;aₖ≤aₙ≤L. Do đó |aₙ−L|&lt;ε. Trường hợp giảm đổi hướng và dùng inf. Nếu tăng không bị chặn, với mỗi M tìm aₖ>M rồi mọi aₙ về sau đều ≥aₖ>M.
+
+**Đuôi và hai biên:** đặt $u_N=\inf\{a_n:n>N\}$, $v_N=\sup\{a_n:n>N\}$. Khi N tăng, tập đuôi thu nhỏ, nên u_N tăng, v_N giảm. Với dãy bị chặn, cả hai có giới hạn hữu hạn. Trong hệ mở rộng, vẫn định nghĩa được chúng cho dãy không bị chặn.
+
+$$\liminf a_n=\lim_{N\to\infty}u_N,\qquad \limsup a_n=\lim_{N\to\infty}v_N.$$
+
+- N: vị trí cắt bỏ đầu dãy; n: chỉ số còn lại trong đuôi.
+- u_N: sàn của đuôi; v_N: trần của đuôi; $\liminf$: giới hạn của các sàn; $\limsup$: giới hạn của các trần.
+- Luôn có liminf aₙ≤limsup aₙ. Dãy có giới hạn mở rộng L khi và chỉ khi hai biên ấy cùng bằng L.
+
+**Vì sao hai biên bằng nhau là đủ?** Khi cùng về một L thực, cho ε>0, chọn N đủ lớn để u_N>L−ε và v_N&lt;L+ε. Mọi n>N nằm giữa hai biên nên |aₙ−L|&lt;ε. Nếu cả hai bằng +∞, u_N cuối cùng vượt mọi M nên toàn đuôi vượt M; trường hợp −∞ dùng v_N. Ngược lại, khi toàn đuôi về L, các sàn/trần cũng bị kẹp về L.
+
+**Cauchy:**
+
+$$\forall\varepsilon>0,\ \exists N,\ \forall m,n>N:\ |a_n-a_m|<\varepsilon.$$
+
+m,n là hai chỉ số bất kỳ trong đuôi, không chỉ hai chỉ số liên tiếp. Khác với hội tụ, công thức Cauchy không nhắc tới L. **Trong R:** dãy hội tụ hữu hạn khi và chỉ khi Cauchy.
+
+**Hội tụ ⇒ Cauchy:** cho sai số tới L của từng số hạng &lt;ε/2; tam giác cho khoảng cách giữa hai số hạng &lt;ε. **Cauchy ⇒ bị chặn:** dùng ε=1, cố định số hạng aₖ trong đuôi, mọi số hạng còn lại cách nó &lt;1; thêm hữu hạn đầu để chặn toàn dãy.
+
+**Cauchy ⇒ hội tụ:** vì bị chặn, u_N,v_N có giới hạn. Với ε>0, điều Cauchy cho aₙ&lt;aₘ+ε với mọi m,n>N. Lấy sup theo n được v_N≤aₘ+ε; suy ra v_N−ε≤u_N. Do đó 0≤v_N−u_N≤ε. Các đuôi muộn hơn cũng thỏa, nên limsup−liminf≤ε. Vì đúng với mọi ε>0, hai biên bằng nhau; định lý ở trên cho hội tụ. Chính tính đầy đủ của R bảo đảm các biên và giới hạn đơn điệu tồn tại.
+
+**Thập phân là một giới hạn:** các số cắt sau n chữ số của K.d₁d₂… tạo dãy tăng, bị chặn trên bởi K+1. Vì vậy nó có giới hạn thực. Chẳng hạn số cắt của 0,999… là 1−10⁻ⁿ; giới hạn bằng 1. Hai cách viết thập phân có thể biểu diễn cùng số.
+
+## Ví dụ mẫu
+
+### Ví dụ A: Truy hồi, chứng minh tồn tại trước
+
+**Bước 1:** a₁=1, $a_{n+1}=(a_n+2)/2$. **Bước 2:** chứng minh hội tụ và tìm giới hạn. **Bước 3:** tìm khoảng ổn định và tính đơn điệu, sau đó mới lấy giới hạn.
+
+**Bước 4:** chứng minh 1≤aₙ&lt;2 bằng quy nạp. Đúng tại n=1. Nếu 1≤aₙ&lt;2 thì 3/2≤(aₙ+2)/2&lt;2, nên bước chuyển đúng. Hiệu $a_{n+1}-a_n=(2-a_n)/2>0$, vậy dãy tăng và bị chặn trên bởi 2. Định lý đơn điệu cho một giới hạn L. Vì dãy dịch aₙ₊₁ cũng về L, quy tắc tổng và nhân cho L=(L+2)/2, suy ra L=2.
+
+**Bước 5:** a₂=1,5; a₃=1,75. Có thể kiểm tra bằng công thức $a_n=2-2^{1-n}$, nhưng không cần công thức để chứng minh tồn tại. **Bước 6:** miền ổn định → đơn điệu → bị chặn → hội tụ → phương trình cho L.
+
+### Ví dụ B: Hai biên không trùng nhau
+
+**Bước 1:** $b_n=(-1)^n+1/n$. **Bước 2:** tìm limsup, liminf và quyết định hội tụ. **Bước 3:** tách chỉ số chẵn/lẻ để hiểu trần và sàn của mọi đuôi.
+
+**Bước 4:** với n=2k, b₂ₖ=1+1/(2k), giảm về 1. Với n=2k−1, b₂ₖ₋₁=−1+1/(2k−1), giảm về −1. Mỗi đuôi có các số hạng chẵn tiến sát 1 từ trên và các số hạng lẻ tiến sát −1 từ trên. Sàn mỗi đuôi bằng −1, còn trần là số hạng chẵn đầu tiên còn lại, tiến về 1. Vì vậy liminf=−1 và limsup=1. Hai biên khác nhau nên dãy không hội tụ, cũng không có giới hạn ±∞.
+
+**Bước 5:** b₂=1,5 là sup của toàn bộ tập số hạng, nhưng limsup=1. **Bước 6:** sup nhìn cả dãy; limsup bỏ được đầu hữu hạn rồi xét trần đuôi.
+
+<HinhRoss loai="limsup" />
+
+*Hai nhóm của (−1)^n+1/n tiến tới hai biên khác nhau. Đây là lý do phần đuôi không co về một điểm.*
+
+### Ví dụ C: Chứng minh Cauchy khi chưa dùng đích
+
+**Bước 1:** aₙ=1/n. **Bước 2:** kiểm tra Cauchy trực tiếp. **Bước 3:** chặn khoảng cách hai số hạng bằng cận chỉ phụ thuộc mốc N.
+
+**Bước 4:** cho ε>0, chọn N nguyên ≥1/ε. Nếu m,n>N thì cả 1/m và 1/n thuộc (0,1/N). Khoảng cách giữa chúng &lt;1/N≤ε. Vậy |1/n−1/m|&lt;ε và dãy Cauchy. **Bước 5:** ta không cần đưa L=0 vào công thức Cauchy. **Bước 6:** nhốt toàn bộ đuôi trong một khoảng có chiều dài nhỏ hơn hoặc bằng ε và có hai đầu không đạt.
+
+### Ví dụ D: Hai số hạng kề gần nhau chưa đủ
+
+**Bước 1:** $H_n=1+1/2+\cdots+1/n$. **Bước 2:** xét Cauchy. **Bước 3:** chọn hai chỉ số xa nhau, vì định nghĩa yêu cầu mọi cặp.
+
+**Bước 4:** $H_{n+1}-H_n=1/(n+1)\to0$. Tuy vậy $H_{2n}-H_n=1/(n+1)+\cdots+1/(2n)\geq n/(2n)=1/2$. Với ε₀=1/2, sau mọi N chọn n>N và m=2n; khoảng cách ≥ε₀. Vậy Hₙ không Cauchy. **Bước 5:** n và 2n đều lớn hơn N, đúng yêu cầu phủ định. **Bước 6:** phải kiểm soát toàn bộ khoảng tích lũy, không chỉ một bước nhỏ.
+
+## Lỗi dễ mắc
+
+- **Đơn điệu là đủ:** aₙ=n tăng nhưng không hội tụ hữu hạn vì thiếu cận trên.
+- **Giải phương trình điểm cố định trước:** aₙ₊₁=2aₙ, a₁=1 cho ứng viên L=0 nếu giả sử hội tụ, nhưng thực tế aₙ=2ⁿ⁻¹→∞. Phải chứng minh tồn tại trước.
+- **Cauchy chỉ yêu cầu |aₙ₊₁−aₙ|→0:** ví dụ D bác bỏ. Mọi cặp m,n>N mới đúng định nghĩa.
+
+## Tóm tắt 30 giây
+
+> Đơn điệu có cận cho tồn tại giới hạn. liminf/limsup đo sàn và trần của đuôi. Cauchy nói toàn đuôi tụ sát nhau, và trong R điều ấy tương đương hội tụ hữu hạn.
+
+**HIỂU:** tồn tại đích và tìm đích là hai bước. **NHỚ:** đơn điệu + cận; liminf=limsup; Cauchy với mọi cặp. **LÀM:** xét truy hồi, biên đuôi, hoặc chặn khoảng cách hai chỉ số.
+
+## Bài tập
+
+### DỄ - Nhận diện
+
+Phân loại đơn điệu, bị chặn và hội tụ của 1/n, 1−1/n, n và (−1)ⁿ/n. **Gợi ý:** dãy cuối hội tụ dù không đơn điệu.
+
+### VỪA - Truy hồi
+
+Cho a₁=0 và $a_{n+1}=(a_n+3)/2$. Chứng minh 0≤aₙ&lt;3, dãy tăng, rồi tìm giới hạn. **Gợi ý:** hiệu là (3−aₙ)/2; không viết phương trình cho L trước khi chứng minh hội tụ.
+
+### KHÓ - Một tiêu chuẩn Cauchy hữu ích
+
+Giả sử $|a_{n+1}-a_n|\leq2^{-n}$ với mọi n≥1. Chứng minh (aₙ) Cauchy, từ đó hội tụ trong R. **Gợi ý:** với m>n, dùng tam giác cho |aₘ−aₙ|≤∑ từ k=n đến m−1 của 2⁻ᵏ&lt;2¹⁻ⁿ. Tổng hữu hạn này tính được bằng công thức cấp số nhân; không cần lý thuyết chuỗi vô hạn.
+
+Nguồn kiến thức: Kenneth A. Ross, *Elementary Analysis: The Theory of Calculus*, ấn bản thứ hai, 2013, §10. Bài giảng diễn đạt bằng lời riêng; ví dụ và bài tập do người biên soạn bổ sung.

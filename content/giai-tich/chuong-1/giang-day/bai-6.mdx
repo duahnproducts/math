@@ -1,0 +1,98 @@
+---
+mon: giai-tich
+chuong: 1
+bai: 6
+tieu_de: "§6. Xây dựng số thực bằng lát cắt Dedekind"
+y_tuong: "Ta có thể xác định một điểm trên trục số bằng toàn bộ các số hữu tỉ nằm ở bên trái nó."
+phu_muc: []
+---
+
+import HinhRoss from '../../../../src/figures/HinhRoss.astro';
+
+## Ý tưởng trong 1 câu
+
+> Ta có thể xác định một điểm trên trục số bằng toàn bộ các số hữu tỉ nằm ở bên trái nó.
+
+## Hình dung trực quan
+
+Bạn chưa biết chính xác vị trí một hàng rào nhưng biết mọi vị trí hữu tỉ nào nằm phía bên trái. Danh sách đầy đủ ấy xác định ranh giới. Ranh giới có thể là 1/2 hoặc căn 2. Muốn tạo ra căn 2 mà chưa dùng số thực, ta mô tả phía trái bằng các điều kiện chỉ chứa phân số và phép bình phương.
+
+“Lát cắt” không phải một lát bánh có độ dày. Nó là một tập số hữu tỉ lấp đầy phía bên trái của một biên. Mục §6 được sách đánh dấu mở rộng: mục tiêu trước mắt là hiểu cách xây dựng, không học toàn bộ chi tiết phép nhân lát cắt.
+
+<HinhRoss loai="cut" />
+
+*Các điểm hữu tỉ phía trái mô tả một biên. Hình chỉ minh họa; định nghĩa lát cắt không cần giả sử biên đã là số thực.*
+
+## Kiến thức cần biết
+
+Ôn tập con và thứ tự của Q. $\alpha\subseteq\beta$ nghĩa là mọi phần tử của α đều thuộc β. Chữ α,β đọc là alpha, beta; ở bài này chúng là các tập hữu tỉ, không phải các số đã biết trước.
+
+Nếu r&lt;t thì trung điểm (r+t)/2 cũng hữu tỉ và nằm giữa r,t. Vì vậy tập tất cả hữu tỉ nhỏ hơn một số hữu tỉ t không có phần tử lớn nhất: sau r luôn còn trung điểm lớn hơn r mà vẫn nhỏ hơn t.
+
+Khi xây dựng R từ Q, không được định nghĩa một số mới bằng cách mặc nhiên dùng chính số mới ấy. Ta dùng √2 để hình dung, nhưng công thức tạo lát cắt phải chỉ dùng các phép toán đã có trong Q.
+
+## Công thức / Định nghĩa
+
+Một **lát cắt Dedekind** α là tập con của Q có ba tính chất: (i) không rỗng và không bằng toàn bộ Q; (ii) nếu r∈α và s∈Q, s&lt;r, thì s∈α; (iii) α không có phần tử lớn nhất. Điều (ii) gọi là đóng về bên trái: đã nhận một điểm thì nhận mọi điểm nhỏ hơn.
+
+Với t hữu tỉ, đặt $t^*=\{r\in\mathbb{Q}:r<t\}$. Dấu * biểu thị lát cắt đại diện cho t. Điểm t không thuộc $t^*$, vì dùng dấu &lt;. Chọn t−1 để thấy không rỗng; t+1 để thấy không bằng Q; dùng trung điểm để thấy không có max.
+
+**Định nghĩa thứ tự và phép cộng:** $\alpha\leq\beta$ khi $\alpha\subseteq\beta$; $\alpha+\beta=\{r+s:r\in\alpha,s\in\beta\}$. r,s là các số hữu tỉ thuộc hai lát cắt. Ví dụ $1^*+2^*=3^*$.
+
+Vì sao tổng là lát cắt? Chọn r∈α,s∈β cho thấy không rỗng. Chọn một cận hữu tỉ A ở ngoài α và B ở ngoài β; mọi phần tử α nhỏ hơn A, mọi phần tử β nhỏ hơn B, nên tổng nhỏ hơn A+B, không là Q. Nếu u=r+s thuộc tổng và v&lt;u hữu tỉ, thì v−s&lt;r nên v−s∈α, do đó v∈α+β. Cuối cùng, α không có max nên có r'>r trong α; r'+s>u vẫn thuộc tổng. Cả ba điều được kiểm tra.
+
+**Phép đối cần chú ý biên:** có thể đặt $-\alpha=\{r\in\mathbb{Q}:\text{ có }s\notin\alpha\text{ với }r<-s\}$. Không đơn giản lấy &#123;−r:r∈α&#125;, vì tập ấy nằm phía bên phải. Dấu &lt; và điều kiện tồn tại s giúp loại điểm biên để lát cắt không có max.
+
+**Đầy đủ xuất hiện bằng hợp tập:** cho một họ không rỗng các lát cắt, bị chặn trên bởi lát cắt β. Hợp γ của mọi lát cắt trong họ không rỗng, nằm trong β nên không bằng Q, đóng về bên trái, và không có max vì mỗi phần tử nằm trong một lát cắt không có max. γ chứa mọi lát cắt của họ; bất kỳ cận trên nào cũng chứa γ. Vậy γ là sup. Đây là ý tưởng vì sao cách xây dựng ấy lấp được khoảng trống.
+
+Với hai lát cắt dương, phép nhân phải dựa vào các phần tử dương rồi bổ sung toàn bộ phía trái để vẫn có lát cắt. Sau đó xử lý dấu để định nghĩa cho trường hợp khác. Sách chỉ phác thảo việc này; bạn không cần giả vờ đã chứng minh đầy đủ mọi tiên đề trường ở đây.
+
+## Ví dụ mẫu
+
+### Ví dụ A: Lát cắt đại diện cho căn 2
+
+**Bước 1:** tập $\alpha=\{r\in\mathbb{Q}:r<0\}\cup\{r\in\mathbb{Q}:r\geq0,\ r^2<2\}$. **Bước 2:** kiểm tra là lát cắt. **Bước 3:** kiểm tra lần lượt ba điều của định nghĩa.
+
+**Bước 4:** −1∈α, còn 2∉α. Nếu r∈α và s&lt;r, thì s&lt;0 luôn thuộc α; nếu s≥0 thì r≥0 và s²&lt;r²&lt;2, nên s∈α. Để không có max: nếu r&lt;0, 0∈α lớn hơn r. Nếu r≥0, chọn hữu tỉ h>0 sao cho h&lt;1 và $h<(2-r^2)/(2r+1)$. Khi ấy $2rh+h^2<h(2r+1)<2-r^2$, nên $(r+h)^2<2$. Vậy r+h∈α và r+h>r. Hữu tỉ h nhỏ như thế tồn tại theo tính Archimedes của Q.
+
+**Bước 5:** tập chỉ dùng phân số, số 0, số 2 và bình phương. Sau khi xây dựng R, biên ấy được gọi là √2. **Bước 6:** không rỗng, không toàn bộ → đóng trái → tạo phần tử lớn hơn cho mọi phần tử.
+
+### Ví dụ B: Vì sao phép nhân ngây thơ thất bại?
+
+**Bước 1:** $0^*=\{r\in\mathbb{Q}:r<0\}$. **Bước 2:** thử lấy mọi tích rs với r,s∈0*. **Bước 3:** kiểm tra có biểu diễn 0 và có là lát cắt không.
+
+**Bước 4:** r,s đều âm nên rs dương. Ngược lại, mọi q>0 hữu tỉ viết q=(−1)(−q), nên tập tích là các hữu tỉ dương. Tập này không đóng về bên trái: 1 thuộc tập mà −1&lt;1 không thuộc. Nó cũng không thể là 0*, vốn chỉ gồm số âm.
+
+**Bước 5:** chỉ một vi phạm đã đủ bác bỏ cách định nghĩa phép nhân. **Bước 6:** một công thức trông giống phép toán quen thuộc vẫn phải đáp ứng định nghĩa của đối tượng mới.
+
+### Ví dụ C: Cộng hai lát cắt hữu tỉ
+
+**Bước 1:** s,t∈Q. **Bước 2:** chứng minh $s^*+t^*=(s+t)^*$. **Bước 3:** chứng minh hai tập chứa nhau. **Bước 4:** nếu r&lt;s và u&lt;t thì r+u&lt;s+t. Ngược lại, nếu v&lt;s+t, đặt δ=(s+t−v)/2>0; r=s−δ&lt;s và u=t−δ&lt;t cho r+u=v. **Bước 5:** δ hữu tỉ nên r,u đúng là phần tử của Q. **Bước 6:** chứng minh đẳng thức tập bằng hai chiều.
+
+## Lỗi dễ mắc
+
+- **Chỉ lấy r²&lt;2:** các hữu tỉ rất âm bị loại. Chẳng hạn −1 thuộc nhưng −2 không thuộc; tập không đóng về trái.
+- **Dùng r≤t cho t*:** nếu t hữu tỉ thì t trở thành max, vi phạm điều (iii).
+- **Nhầm một lát cắt với một phân số:** lát cắt là cả một tập phân số, đóng vai trò biểu diễn một số mới.
+
+## Tóm tắt 30 giây
+
+> Lát cắt biểu diễn một số bằng tất cả các hữu tỉ ở bên trái. Ba điều giữ cho tập có đúng hình dạng một phía của biên. Hợp các lát cắt bị chặn tạo ra sup.
+
+**HIỂU:** cách xây dựng tránh giả sử trước các số còn thiếu. **NHỚ:** không rỗng, không toàn Q, đóng trái, không max. **LÀM:** kiểm tra ba điều; chứng minh hai tập bằng nhau qua hai chiều.
+
+## Bài tập
+
+### DỄ - Một lát cắt hữu tỉ
+
+Chứng minh $\{r\in\mathbb{Q}:r<3/2\}$ là lát cắt. **Gợi ý:** chọn hai hữu tỉ hai phía; với r&lt;3/2, lấy trung điểm giữa r và 3/2.
+
+### VỪA - Thứ tự
+
+Cho s,t hữu tỉ. Chứng minh s≤t khi và chỉ khi $s^*\subseteq t^*$. **Gợi ý:** chiều thuận theo dấu &lt;; chiều ngược, giả sử s>t rồi lấy r=(s+t)/2.
+
+### KHÓ - Sup bằng hợp
+
+Cho một họ không rỗng các lát cắt, có cận trên β theo quan hệ chứa tập. Chứng minh hợp γ của họ là lát cắt và là cận trên nhỏ nhất. **Gợi ý:** lấy r∈γ thì r nằm trong ít nhất một lát cắt của họ; dùng lát cắt ấy để tạo phần tử lớn hơn r.
+
+Nguồn kiến thức: Kenneth A. Ross, *Elementary Analysis: The Theory of Calculus*, ấn bản thứ hai, 2013, §6. Bài giảng diễn đạt bằng lời riêng; ví dụ và bài tập do người biên soạn bổ sung.

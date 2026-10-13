@@ -1,0 +1,100 @@
+---
+mon: giai-tich
+chuong: 2
+bai: 1
+tieu_de: "§7. Giới hạn của dãy số"
+y_tuong: "Một dãy tiến tới L khi, với bất kỳ mức sai số dương nào, mọi số hạng đủ muộn đều nằm gần L hơn mức ấy."
+phu_muc: []
+---
+
+import HinhRoss from '../../../../src/figures/HinhRoss.astro';
+
+## Ý tưởng trong 1 câu
+
+> Một dãy tiến tới L khi, với bất kỳ mức sai số dương nào, mọi số hạng đủ muộn đều nằm gần L hơn mức ấy.
+
+## Hình dung trực quan
+
+Một người bước về mốc 0, mỗi lần cách mốc 1/n mét. Sau 10 bước khoảng cách là 0,1 m; sau 100 bước là 0,01 m. Bạn đặt một vùng nhỏ quanh 0. Người ấy cuối cùng đi vào vùng rồi không ra nữa. Vùng nhỏ hơn cần đợi lâu hơn.
+
+Với dãy (−1)ⁿ, người ấy nhảy giữa −1 và 1. Có vô hạn lần ở 1 nhưng cũng vô hạn lần ở −1. Vì vậy “thường xuyên gần 1” chưa phải hội tụ về 1. Hội tụ yêu cầu tất cả số hạng về sau đều gần.
+
+<HinhRoss loai="epsilon" />
+
+*Dãy 1/n. Vùng xanh là |x|&lt;0,1; với n>10, tất cả số hạng nằm trong vùng. n=10 nằm đúng biên nên chưa thỏa dấu &lt;.*
+
+## Kiến thức cần biết
+
+Một dãy là một hàm nhận đầu vào là chỉ số nguyên. $a_n$ là giá trị tại chỉ số n; $(a_n)$ là cả dãy. Ví dụ aₙ=1/n cho (1,1/2,1/3,…). Trong tài liệu này n bắt đầu từ 1, trừ khi ghi khác.
+
+Tập giá trị và dãy khác nhau: dãy (1,−1,1,−1,…) có vô hạn vị trí, còn tập &#123;−1,1&#125; có hai phần tử. Thứ tự và số lần xuất hiện quan trọng với dãy, không được giữ trong tập giá trị.
+
+Ôn $|a_n-L|$ là khoảng cách tới L. Ôn Archimedes cho phép chọn một số nguyên lớn hơn mọi ngưỡng hữu hạn. Nhờ đó N trong định nghĩa có thể chọn là số nguyên.
+
+## Công thức / Định nghĩa
+
+$$a_n\to L\quad\Longleftrightarrow\quad \forall\varepsilon>0,\ \exists N\in\mathbb{N},\ \forall n>N:\ |a_n-L|<\varepsilon.$$
+
+- $a_n$: số hạng tại vị trí n; L: số thực đích; →: tiến tới.
+- ε (epsilon): mức sai số dương tùy ý; không phải một số cố định như 0,001.
+- N: mốc đủ muộn, được chọn sau ε và có thể phụ thuộc ε.
+- ∀: với mọi; ∃: tồn tại; n>N: xét toàn bộ phần đuôi của dãy.
+- $\lim_{n\to\infty}a_n=L$: cách viết khác của aₙ→L.
+
+**Đọc theo thứ tự:** đối phương đưa ε>0; ta chọn một N; từ đó bất kỳ n>N nào cũng phải có sai số &lt;ε. Không được chọn N sau khi biết n, vì cùng một N phải làm việc cho toàn bộ phần đuôi.
+
+**Hội tụ** nghĩa là có giới hạn thực hữu hạn. **Phân kỳ** nghĩa là không hội tụ theo định nghĩa ấy. Ở §9 ta sẽ thêm cách nói “phân kỳ đến ±∞”; điều đó vẫn không phải hội tụ hữu hạn.
+
+**Giới hạn duy nhất:** nếu dãy tiến tới cả L và K, đặt ε=|L−K|/3 khi L≠K. Sau cả hai mốc, tam giác cho $|L-K|\leq|L-a_n|+|a_n-K|<2|L-K|/3$, vô lý. Vậy L=K. Ta không thể vừa ở gần hai điểm cách nhau cố định với sai số nhỏ tùy ý.
+
+**Bỏ hoặc sửa hữu hạn số hạng đầu không đổi giới hạn.** Với mỗi ε, chọn mốc nằm sau cả các số hạng đã sửa và mốc hội tụ cũ. Giới hạn chỉ kiểm soát phần đuôi.
+
+## Ví dụ mẫu
+
+### Ví dụ A: Đọc và chứng minh 1/n tiến về 0
+
+**Bước 1:** aₙ=1/n, n≥1. **Bước 2:** chứng minh giới hạn là 0. **Bước 3:** dùng định nghĩa vì cần giải thích “gần 0” chính xác.
+
+**Bước 4:** cho ε>0 bất kỳ. Chọn một số nguyên N≥1/ε. Nếu n>N thì n>1/ε, nên $|a_n-0|=1/n<\varepsilon$. Định nghĩa được đáp ứng, vậy aₙ→0.
+
+**Bước 5:** ε=0,01 cho phép chọn N=100. n=101 có sai số 1/101&lt;0,01. N không cần tối ưu, chỉ cần đủ lớn. **Bước 6:** tính sai số → tìm điều kiện n → chọn N → kiểm tra mọi n>N.
+
+### Ví dụ B: Đo sai số của một dãy có dấu đổi
+
+**Bước 1:** $b_n=2+(-1)^n/n$. **Bước 2:** chứng minh bₙ→2. **Bước 3:** lấy giá trị tuyệt đối để bỏ dấu dao động.
+
+**Bước 4:** $|b_n-2|=|(-1)^n|/n=1/n$. Với ε>0 chọn N≥1/ε. n>N kéo theo sai số &lt;ε. Vậy bₙ→2. Dãy có thể dao động quanh đích mà vẫn hội tụ nếu biên độ co về 0.
+
+**Bước 5:** b₁=1, b₂=2,5, b₃=5/3. Không tăng đều nhưng sai số nhỏ dần. **Bước 6:** hướng dao động không quyết định; độ lớn sai số mới quyết định.
+
+### Ví dụ C: Một số hạng đầu rất lớn
+
+**Bước 1:** c₁=10⁶, cₙ=1/n khi n≥2. **Bước 2:** xét giới hạn. **Bước 3:** định nghĩa chỉ xét đuôi. **Bước 4:** chọn N là số nguyên ≥max&#123;1,1/ε&#125;; n>N thì n≥2 và |cₙ|=1/n&lt;ε. Vậy cₙ→0. **Bước 5:** số hạng đầu lớn không bị bỏ khỏi dãy, chỉ không ảnh hưởng giới hạn. **Bước 6:** chọn mốc vượt mọi ngoại lệ hữu hạn.
+
+## Lỗi dễ mắc
+
+- **Chỉ kiểm tra một ε:** ε=0,1 đúng chưa đủ. Phải giải cho ε>0 bất kỳ.
+- **Nghĩ số hạng phải bằng giới hạn:** 1/n không bao giờ bằng 0 nhưng vẫn hội tụ về 0.
+- **Nghĩ hội tụ phải đơn điệu:** ví dụ B hội tụ dù lên xuống. Đơn điệu là một cách bảo đảm hội tụ khi có thêm cận, không phải điều kiện bắt buộc.
+
+## Tóm tắt 30 giây
+
+> Cho một vùng sai số nhỏ tùy ý quanh L, dãy hội tụ phải vào vùng ấy và ở lại từ một lúc nào đó. N phụ thuộc ε, còn điều kiện đúng cho mọi n>N.
+
+**HIỂU:** “cuối cùng ở lại”, không chỉ “ghé qua nhiều lần”. **NHỚ:** ∀ε>0 → ∃N → ∀n>N. **LÀM:** kiểm soát |aₙ−L|.
+
+## Bài tập
+
+### DỄ - Viết số hạng và chọn mốc
+
+Viết năm số hạng đầu của aₙ=1/(n+1). Tìm N nguyên để n>N kéo theo |aₙ|&lt;0,01. **Gợi ý:** N=100 là một mốc an toàn, nhưng có thể chọn nhỏ hơn.
+
+### VỪA - Một chứng minh ε–N
+
+Chứng minh $3+2/n\to3$ bằng định nghĩa. **Gợi ý:** sai số là 2/n; N có thể chọn ≥2/ε.
+
+### KHÓ - Chứng minh duy nhất
+
+Giả sử aₙ→L và aₙ→K. Tự viết chứng minh L=K bằng phản chứng. **Gợi ý:** nếu hai đích khác nhau, dùng ε=|L−K|/3 và chọn mốc lớn hơn cả hai mốc.
+
+Nguồn kiến thức: Kenneth A. Ross, *Elementary Analysis: The Theory of Calculus*, ấn bản thứ hai, 2013, §7. Bài giảng diễn đạt bằng lời riêng; ví dụ và bài tập do người biên soạn bổ sung.

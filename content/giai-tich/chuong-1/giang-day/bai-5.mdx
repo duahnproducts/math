@@ -1,0 +1,91 @@
+---
+mon: giai-tich
+chuong: 1
+bai: 5
+tieu_de: "§5. Các ký hiệu cộng vô cực và trừ vô cực"
+y_tuong: "Vô cực ghi lại việc không có cận hữu hạn; nó không phải một số thực để tính toán tùy ý."
+phu_muc: []
+---
+
+import HinhRoss from '../../../../src/figures/HinhRoss.astro';
+
+## Ý tưởng trong 1 câu
+
+> Vô cực ghi lại việc không có cận hữu hạn; nó không phải một số thực để tính toán tùy ý.
+
+## Hình dung trực quan
+
+Bạn đặt ra một mức điểm rất lớn. Nếu luôn có một giá trị vượt mức ấy, dù mức ấy lớn đến đâu, tập giá trị không bị chặn trên. Ta ghi sup bằng +∞ để mô tả tình trạng đó.
+
+Không có số tự nhiên “cuối cùng” mang tên ∞. Sau mỗi số n vẫn có n+1. Dấu vô cực giúp diễn đạt quy luật, không tạo thêm một số nguyên ở cuối hàng.
+
+## Kiến thức cần biết
+
+Ôn cận trên/cận dưới của §4. “Không bị chặn trên” nghĩa là với mọi M thực, có s∈S sao cho s>M. “Không bị chặn dưới” nghĩa là với mọi m thực, có s∈S sao cho s&lt;m. Hai tính chất này khác nhau: N không bị chặn trên nhưng vẫn bị chặn dưới bởi 1.
+
+“Có một giá trị vượt mỗi mức” cũng khác “tất cả các giá trị về sau vượt mức”. Khác biệt ấy sẽ quan trọng ở giới hạn dãy trong §9.
+
+## Công thức / Định nghĩa
+
+Mở rộng trục số bằng hai ký hiệu, ta viết $\overline{\mathbb{R}}=\mathbb{R}\cup\{-\infty,+\infty\}$ với $-\infty<x<+\infty$ cho mọi x thực. Dấu gạch trên R chỉ hệ số thực mở rộng; dấu ∪ nghĩa là hợp tập.
+
+Với S⊆R không rỗng: nếu không bị chặn trên, quy ước sup S=+∞; nếu không bị chặn dưới, quy ước inf S=−∞. Nếu có cận hữu hạn, dùng sup/inf của §4. Nhờ đó sup và inf luôn có nghĩa trong hệ mở rộng với tập không rỗng. Bài này không đặt quy ước cho tập rỗng.
+
+- $[a,+\infty)=\{x\in\mathbb{R}:x\geq a\}$.
+- $(a,+\infty)=\{x\in\mathbb{R}:x>a\}$.
+- $(-\infty,b]=\{x\in\mathbb{R}:x\leq b\}$.
+- $(-\infty,+\infty)=\mathbb{R}$.
+
+a,b là số thực chỉ đầu mút hữu hạn. Ngoặc cạnh vô cực luôn là ngoặc tròn vì vô cực không phải phần tử thực của khoảng đó. Không áp dụng nguyên xi phép toán của trường cho ±∞. Những dạng như ∞−∞, 0·∞, ∞/∞ không có giá trị chung trong tính giới hạn; phải trở về biểu thức cụ thể.
+
+**Quan hệ vẫn đúng:** nếu S⊆T và cả hai không rỗng, thì inf T≤inf S≤sup S≤sup T trong thứ tự mở rộng. **Tổng tập:** với A,B không rỗng, sup(A+B)=sup A+sup B và inf(A+B)=inf A+inf B, hiểu tổng cùng dấu hoặc một số hữu hạn với vô cực theo quy ước. Sup của tập con R không rỗng không là −∞; inf không là +∞, nên hai công thức không tạo dạng +∞−∞.
+
+## Ví dụ mẫu
+
+### Ví dụ A: Tập có một biên hữu hạn
+
+**Bước 1:** $S=\{x^2:x\in\mathbb{R}\}$. **Bước 2:** viết S thành khoảng và tìm biên. **Bước 3:** bình phương luôn không âm, mọi y≥0 có x=√y.
+
+**Bước 4:** S=[0,+∞). S chứa 0 và mọi phần tử ≥0, nên inf S=min S=0. Với mọi M≥0, chọn x=√(M+1) thì x²=M+1>M; với M&lt;0, x=0 đã vượt M. Vậy S không bị chặn trên và sup S=+∞. Không có max.
+
+**Bước 5:** số âm không xuất hiện; số dương lớn tùy ý vẫn xuất hiện. **Bước 6:** xác định tập trước, chứng minh vượt mọi cận sau.
+
+### Ví dụ B: Một phía không bị chặn của tổng tập
+
+**Bước 1:** A=&#123;−3,2&#125;, B=N. **Bước 2:** tìm sup(A+B), inf(A+B). **Bước 3:** cố định phần tử A rồi dịch B.
+
+**Bước 4:** A+B gồm −3+n và 2+n. Giá trị nhỏ nhất là −3+1=−2. Nhánh −3+n không bị chặn trên nên sup(A+B)=+∞; inf(A+B)=min(A+B)=−2. Phù hợp với sup A+sup B=2+∞=∞ và inf A+inf B=−3+1=−2.
+
+**Bước 5:** không nói “∞ là số lớn nhất của tổng tập”, vì tập không có phần tử lớn nhất. **Bước 6:** một nhánh không bị chặn đã đủ làm tổng tập không bị chặn.
+
+### Ví dụ C: Vì sao không tính vô cực máy móc?
+
+**Bước 1:** hai biểu thức n−n và 2n−n. **Bước 2:** so sánh khi n tăng. **Bước 3:** tính biểu thức trước khi mô tả vô cực. **Bước 4:** n−n=0, còn 2n−n=n tăng không bị chặn. Cả hai đều có hai thành phần tăng tới +∞ nhưng hiệu có kết quả khác. **Bước 5:** Ở §9 ta sẽ chứng minh giới hạn đúng bằng định nghĩa. **Bước 6:** dạng ∞−∞ không quyết định kết quả.
+
+## Lỗi dễ mắc
+
+- **Viết max N=∞:** ∞ không thuộc N; N không có max. Đúng là sup N=+∞ theo quy ước mở rộng.
+- **Dùng ngoặc vuông tại vô cực:** [0,∞] không phải cách viết khoảng các số thực trong bài. Viết [0,∞).
+- **Không bị chặn nghĩa là không bị chặn cả hai phía:** [0,∞) bị chặn dưới nhưng không bị chặn trên.
+
+## Tóm tắt 30 giây
+
+> +∞ và −∞ là hai ký hiệu biên. Dùng chúng để viết khoảng không bị chặn và sup/inf mở rộng. Luôn quay về ý nghĩa “vượt mọi cận hữu hạn”.
+
+**HIỂU:** không có một số thực lớn nhất. **NHỚ:** vô cực không là phần tử của khoảng thực. **LÀM:** tìm cận hữu hạn hoặc chứng minh không có cận.
+
+## Bài tập
+
+### DỄ - Khoảng và biên
+
+Viết $\{x\in\mathbb{R}:x\leq5\}$ bằng ký hiệu khoảng; tìm sup, inf, max và min. **Gợi ý:** tập kéo dài mãi về bên trái, nhưng chứa 5.
+
+### VỪA - Hai phía
+
+Với $S=\{(-1)^n n:n\in\mathbb{N}\}$, tìm sup và inf trong hệ mở rộng. **Gợi ý:** n chẵn tạo số dương lớn tùy ý; n lẻ tạo số âm có độ lớn tùy ý.
+
+### KHÓ - Phép đối của tập không bị chặn
+
+Cho S⊆R không rỗng, chứng minh inf S=−sup(−S), kể cả trường hợp S không bị chặn dưới. **Gợi ý:** trường hợp hữu hạn dùng §4; nếu S không bị chặn dưới thì −S không bị chặn trên.
+
+Nguồn kiến thức: Kenneth A. Ross, *Elementary Analysis: The Theory of Calculus*, ấn bản thứ hai, 2013, §5. Bài giảng diễn đạt bằng lời riêng; ví dụ và bài tập do người biên soạn bổ sung.

@@ -38,9 +38,12 @@ Trỏ sang chương khác: `<XemMuc muc="1.4" />`, `<XemMuc chuong={1} bai={4} /
 Phần chưa có thì **không tạo file rỗng** — web tự hiện “Chưa có”. Chạy `npm test` để
 kiểm tra liên kết chéo, số hiệu và ghi công trước khi commit.
 
-Nội dung hiện có: Giải tích Chương 1–2 (bài giảng, Theo sách, bài tập có lời giải),
-Đại số tuyến tính Chương 1–3 (dịch nguyên văn; bài giảng và bài tập Chương 1–2),
-Kinh tế vi mô Chương 1–3 (slide dịch nguyên văn, biểu đồ nhãn tiếng Việt).
+Nội dung hiện có: Giải tích theo Kenneth Ross §1–§10 (6 bài ở Chương 1, 4 bài
+ở Chương 2, PDF tổng hợp 37 trang; bài tập tự soạn nằm cuối mỗi bài). Bộ Abbott
+đã gỡ; phần Theo sách của Ross chưa có. Đại số tuyến tính Chương 1–3 đọc trực
+tiếp trên web, Chương 4–8 có bản dịch PDF tải về; bài giảng và bài tập Chương
+1–2. Kinh tế vi mô Chương 1–3 đọc trực tiếp; Chương 5, 7, 8 có slide dịch PDF.
+Chương chỉ có PDF vẫn có trang để tải về, với nhãn rõ phần chưa chuyển lên web.
 
 ## Tự tạo bài giảng từ PDF
 
@@ -52,5 +55,5 @@ API Claude của người học, bài lưu trong IndexedDB. Chi tiết: `product
 ## Giấy phép nội dung
 
 Bản dịch Nicholson và OpenStax theo CC BY-NC-SA 4.0 (không thu phí, không quảng cáo).
-Sách Abbott có bản quyền: web chỉ diễn đạt lại và dùng lời giải tự viết; không đăng
-PDF sách gốc.
+Sách Ross và Abbott có bản quyền: web chỉ diễn đạt lại và dùng ví dụ, bài tập tự
+soạn; không đăng bản dịch nguyên văn hay PDF sách gốc.

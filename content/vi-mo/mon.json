@@ -12,10 +12,22 @@
       "ten": "Chào mừng đến với kinh tế học!",
       "ten_en": "Welcome to Economics!",
       "muc": [
-        { "so": "1.1", "ten": "Kinh tế học là gì và vì sao kinh tế học quan trọng?" },
-        { "so": "1.2", "ten": "Kinh tế học vi mô và kinh tế học vĩ mô" },
-        { "so": "1.3", "ten": "Các nhà kinh tế học dùng lý thuyết và mô hình để hiểu các vấn đề kinh tế như thế nào" },
-        { "so": "1.4", "ten": "Các nền kinh tế có thể được tổ chức ra sao: tổng quan về các hệ thống kinh tế" }
+        {
+          "so": "1.1",
+          "ten": "Kinh tế học là gì và vì sao kinh tế học quan trọng?"
+        },
+        {
+          "so": "1.2",
+          "ten": "Kinh tế học vi mô và kinh tế học vĩ mô"
+        },
+        {
+          "so": "1.3",
+          "ten": "Các nhà kinh tế học dùng lý thuyết và mô hình để hiểu các vấn đề kinh tế như thế nào"
+        },
+        {
+          "so": "1.4",
+          "ten": "Các nền kinh tế có thể được tổ chức ra sao: tổng quan về các hệ thống kinh tế"
+        }
       ]
     },
     {
@@ -23,9 +35,18 @@
       "ten": "Lựa chọn trong thế giới khan hiếm",
       "ten_en": "Choice in a World of Scarcity",
       "muc": [
-        { "so": "2.1", "ten": "Cách cá nhân đưa ra lựa chọn dựa trên giới hạn ngân sách" },
-        { "so": "2.2", "ten": "Đường giới hạn khả năng sản xuất và các lựa chọn xã hội" },
-        { "so": "2.3", "ten": "Đối diện những phản biện đối với cách tiếp cận kinh tế học" }
+        {
+          "so": "2.1",
+          "ten": "Cách cá nhân đưa ra lựa chọn dựa trên giới hạn ngân sách"
+        },
+        {
+          "so": "2.2",
+          "ten": "Đường giới hạn khả năng sản xuất và các lựa chọn xã hội"
+        },
+        {
+          "so": "2.3",
+          "ten": "Đối diện những phản biện đối với cách tiếp cận kinh tế học"
+        }
       ],
       "tai_ve": [
         {
@@ -40,11 +61,26 @@
       "ten": "Cung và cầu",
       "ten_en": "Demand and Supply",
       "muc": [
-        { "so": "3.1", "ten": "Cầu, cung và trạng thái cân bằng trên thị trường hàng hóa và dịch vụ" },
-        { "so": "3.2", "ten": "Sự dịch chuyển của cầu và cung hàng hóa, dịch vụ" },
-        { "so": "3.3", "ten": "Thay đổi giá và lượng cân bằng: quy trình bốn bước" },
-        { "so": "3.4", "ten": "Giá trần và giá sàn" },
-        { "so": "3.5", "ten": "Cung, cầu và hiệu quả" }
+        {
+          "so": "3.1",
+          "ten": "Cầu, cung và trạng thái cân bằng trên thị trường hàng hóa và dịch vụ"
+        },
+        {
+          "so": "3.2",
+          "ten": "Sự dịch chuyển của cầu và cung hàng hóa, dịch vụ"
+        },
+        {
+          "so": "3.3",
+          "ten": "Thay đổi giá và lượng cân bằng: quy trình bốn bước"
+        },
+        {
+          "so": "3.4",
+          "ten": "Giá trần và giá sàn"
+        },
+        {
+          "so": "3.5",
+          "ten": "Cung, cầu và hiệu quả"
+        }
       ],
       "tai_ve": [
         {
@@ -54,8 +90,44 @@
         }
       ]
     },
-    { "so": 5, "ten": "Độ co giãn", "ten_en": "Elasticity", "ghi_chu": "Đã có slide dịch PDF, chưa chuyển lên web." },
-    { "so": 7, "ten": "Sản xuất, chi phí và cấu trúc ngành", "ten_en": "Production, Costs, and Industry Structure", "ghi_chu": "Đã có slide dịch PDF, chưa chuyển lên web." },
-    { "so": 8, "ten": "Cạnh tranh hoàn hảo", "ten_en": "Perfect Competition", "ghi_chu": "Đã có slide dịch PDF, chưa chuyển lên web." }
+    {
+      "so": 5,
+      "ten": "Độ co giãn",
+      "ten_en": "Elasticity",
+      "ghi_chu": "Đã có slide dịch PDF tải về. Chưa chuyển thành các mục đọc trực tiếp trên web.",
+      "tai_ve": [
+        {
+          "ten": "Slide dịch Chương 5 (PDF, 25 slide)",
+          "tep": "vi-mo-chuong-5-slide.pdf",
+          "mo_ta": "OpenStax / Rice University, Principles of Microeconomics 3e. Dịch văn bản sang tiếng Việt và vẽ lại biểu đồ với nhãn tiếng Việt. Giấy phép CC BY-NC-SA 4.0."
+        }
+      ]
+    },
+    {
+      "so": 7,
+      "ten": "Sản xuất, chi phí và cấu trúc ngành",
+      "ten_en": "Production, Costs, and Industry Structure",
+      "ghi_chu": "Đã có slide dịch PDF tải về. Chưa chuyển thành các mục đọc trực tiếp trên web.",
+      "tai_ve": [
+        {
+          "ten": "Slide dịch Chương 7 (PDF, 30 slide)",
+          "tep": "vi-mo-chuong-7-slide.pdf",
+          "mo_ta": "OpenStax / Rice University, Principles of Microeconomics 3e. Dịch văn bản sang tiếng Việt và vẽ lại biểu đồ với nhãn tiếng Việt. Giấy phép CC BY-NC-SA 4.0."
+        }
+      ]
+    },
+    {
+      "so": 8,
+      "ten": "Cạnh tranh hoàn hảo",
+      "ten_en": "Perfect Competition",
+      "ghi_chu": "Đã có slide dịch PDF tải về. Chưa chuyển thành các mục đọc trực tiếp trên web.",
+      "tai_ve": [
+        {
+          "ten": "Slide dịch Chương 8 (PDF, 23 slide)",
+          "tep": "vi-mo-chuong-8-slide.pdf",
+          "mo_ta": "OpenStax / Rice University, Principles of Microeconomics 3e. Dịch văn bản sang tiếng Việt và vẽ lại biểu đồ với nhãn tiếng Việt. Giấy phép CC BY-NC-SA 4.0."
+        }
+      ]
+    }
   ]
 }

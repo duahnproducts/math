@@ -39,6 +39,7 @@ const bang = bangDoiChieu(
   du.baiTap.map((b) => b.data),
 );
 const nenLam = du.baiTap.filter((b) => b.data.nen_lam);
+const coBaiDoc = du.baiGiang.length + du.sach.length + du.baiTap.length > 0;
 const dsLamLai = du.baiTap.map((b) => ({
   khoa: khoaBaiTap(mon, so, b.data.so),
   so: b.data.so,
@@ -49,7 +50,9 @@ const dauTien = du.baiGiang[0]
   ? { href: d.baiGiang(mon, so, du.baiGiang[0].data.bai), ten: `Bài ${du.baiGiang[0].data.bai}: ${du.baiGiang[0].data.tieu_de}` }
   : du.sach[0]
     ? { href: d.sach(mon, so, du.sach[0].data.muc), ten: `§${du.sach[0].data.muc} ${du.sach[0].data.tieu_de}` }
-    : { href: d.dsBaiTap(mon, so), ten: 'Bài tập' };
+    : du.baiTap.length > 0
+      ? { href: d.dsBaiTap(mon, so), ten: 'Bài tập' }
+      : { href: '#tai-ve', ten: du.chuong.tai_ve[0]?.ten ?? 'Tài liệu tải về' };
 const nguonChuong = du.sach[0]?.data.nguon ?? `${du.mon.giao_trinh}. ${du.mon.giay_phep}`;
 ---
 
@@ -66,19 +69,20 @@ const nguonChuong = du.sach[0]?.data.nguon ?? `${du.mon.giao_trinh}. ${du.mon.gi
       <h1>{du.chuong.ten}</h1>
       <p class="phu-de"><em>{du.chuong.ten_en}</em> — {du.mon.giao_trinh}</p>
       <div style="display:grid;gap:8px;margin-top:16px;max-width:520px">
-        <ThanhTienDo cacKhoa={khoaDocCuaChuong(du)} kieu="doc" nhan="Đã học" />
+        {khoaDocCuaChuong(du).length > 0 && <ThanhTienDo cacKhoa={khoaDocCuaChuong(du)} kieu="doc" nhan="Đã học" />}
         {du.baiTap.length > 0 && <ThanhTienDo cacKhoa={khoaBaiTapCuaChuong(du)} kieu="bai-tap" nhan="Bài tập làm được" />}
       </div>
     </header>
 
-    <section class="hoc-tiep" data-hop-hoc-tiep data-chuong={khoaChuong(mon, so)} aria-label="Học tiếp chương này">
+    {du.chuong.ghi_chu && <p class="ghi">{du.chuong.ghi_chu}</p>}
+    {coBaiDoc && <section class="hoc-tiep" data-hop-hoc-tiep data-chuong={khoaChuong(mon, so)} aria-label="Học tiếp chương này">
       <div class="than">
         <p class="nhan" data-hoc-tiep-nhan>Bắt đầu chương</p>
         <p class="tieu-de" data-hoc-tiep-tieu-de>{dauTien.ten}</p>
         <p class="vi-tri" data-hoc-tiep-vi-tri>{du.mon.ten} › Chương {so}</p>
       </div>
       <a class="nut chinh" href={dauTien.href} data-hoc-tiep-link>Học tiếp <Icon ten="arrow-right" co={16} /></a>
-    </section>
+    </section>}
 
     {
       du.baiGiang.length > 0 && (

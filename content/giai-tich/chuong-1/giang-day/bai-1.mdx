@@ -1,0 +1,100 @@
+---
+mon: giai-tich
+chuong: 1
+bai: 1
+tieu_de: "§1. Số tự nhiên và quy nạp"
+y_tuong: "Nếu bước đầu đúng và mỗi bước đúng kéo theo bước kế tiếp đúng, thì toàn bộ chuỗi bước đều đúng."
+phu_muc: []
+---
+
+import HinhRoss from '../../../../src/figures/HinhRoss.astro';
+
+## Ý tưởng trong 1 câu
+
+> Nếu bước đầu đúng và mỗi bước đúng kéo theo bước kế tiếp đúng, thì toàn bộ chuỗi bước đều đúng.
+
+## Hình dung trực quan
+
+Hãy xếp các quân domino theo hàng. Muốn tất cả đổ, cần hai việc: đẩy quân đầu tiên; bảo đảm mỗi quân khi đổ sẽ làm quân sau đổ. Chỉ đẩy quân đầu thì chưa đủ nếu giữa hàng có một khoảng trống. Chỉ bảo đảm truyền từ quân này sang quân sau cũng chưa đủ nếu chưa đẩy quân nào.
+
+Quy nạp toán học làm cùng công việc bằng lập luận. “Quân thứ n đổ” được thay bằng “mệnh đề ở số n đúng”. Ta không kiểm tra hàng triệu số; ta chứng minh một quy tắc truyền đúng cho mọi n.
+
+**Đích đến:** bạn nhận ra khi nào nên dùng quy nạp, viết được bước đầu và bước chuyển, phân biệt kiểm tra ví dụ với chứng minh.
+
+## Kiến thức cần biết
+
+Tập hợp là một nhóm đối tượng. $n\in\mathbb{N}$ nghĩa là n thuộc tập số tự nhiên. Trong sách này, $\mathbb{N}=\{1,2,3,\ldots\}$; số 0 không nằm trong tập ấy. Một mệnh đề là câu có thể xác định đúng hay sai. Chẳng hạn “n bình phương là số chẵn” phụ thuộc vào n.
+
+Một biểu thức tổng như $1+3+\cdots+(2n-1)$ có n số hạng. Ba chấm nghĩa là tiếp tục theo quy luật đã chỉ ra. Để chuyển từ n sang n+1, ta thêm số hạng $2(n+1)-1=2n+1$.
+
+## Công thức / Định nghĩa
+
+**Năm tiên đề Peano** mô tả nền móng của số tự nhiên: 1 thuộc N; nếu n thuộc N thì n+1 thuộc N; 1 không phải số liền sau của số nào trong N; hai số có cùng số liền sau thì bằng nhau; một tập con chứa 1 và chứa n+1 mỗi khi chứa n phải là toàn bộ N. Tiên đề là điều được chọn làm điểm xuất phát của hệ thống.
+
+Tiên đề cuối cho nguyên lý quy nạp:
+
+$$P(1)\ \mathrm{true},\quad P(n)\Rightarrow P(n+1)\quad\Longrightarrow\quad P(n)\ \mathrm{true}\ \mathrm{for\ all}\ n\in\mathbb{N}.$$
+
+- $P(n)$: phát biểu cần chứng minh tại số n.
+- $\Rightarrow$: “nếu vế trước đúng thì vế sau đúng”.
+- **Bước đầu:** kiểm tra P(1).
+- **Giả thiết quy nạp:** tạm giả sử P(n) đúng cho một n bất kỳ.
+- **Bước chuyển:** chỉ dùng giả thiết đó và kiến thức đã biết để suy ra P(n+1).
+
+Nếu phát biểu bắt đầu ở $n_0$ khác 1, kiểm tra $P(n_0)$ và chứng minh bước chuyển cho mọi $n\geq n_0$. Bạn phải nêu rõ điểm bắt đầu. Không được coi mệnh đề P(n) đã đúng cho mọi n ngay trong giả thiết; đó chính là điều đang cần chứng minh.
+
+## Ví dụ mẫu
+
+### Ví dụ A: Tổng n số lẻ đầu tiên
+
+**Bước 1 - Đề cho gì?** Các số lẻ $1,3,5,\ldots,2n-1$, với $n\geq1$.
+
+**Bước 2 - Hỏi gì?** Chứng minh tổng bằng $n^2$ cho mọi n.
+
+**Bước 3 - Dùng gì và vì sao?** Quy nạp, vì tổng ở n+1 là tổng ở n cộng thêm một số hạng dễ viết.
+
+**Bước 4 - Giải.** Tại n=1, vế trái là 1 và vế phải là $1^2=1$. Giả sử $1+3+\cdots+(2n-1)=n^2$. Thêm số lẻ kế tiếp, ta được:
+
+$$1+3+\cdots+(2n-1)+(2n+1)=n^2+2n+1=(n+1)^2.$$
+
+Vậy P(n) kéo theo P(n+1). Theo quy nạp, công thức đúng với mọi n≥1.
+
+**Bước 5 - Kiểm tra.** n=4 cho $1+3+5+7=16=4^2$. Kiểm tra này giúp phát hiện lỗi tính; phần quy nạp mới bảo đảm kết luận cho tất cả n.
+
+**Bước 6 - Cách làm nhớ lại.** Viết đúng số hạng mới; thay tổng cũ bằng giả thiết; biến đổi ra đúng công thức ở n+1.
+
+### Ví dụ B: Quy nạp cho bài chia hết
+
+**Bước 1:** xét $3^n-1$, n≥1. **Bước 2:** chứng minh chia hết cho 2. **Bước 3:** dùng quy nạp vì $3^{n+1}=3\cdot3^n$.
+
+**Bước 4:** n=1 cho 2. Giả sử $3^n-1=2k$ với k nguyên. Khi đó $3^{n+1}-1=3(3^n-1)+2=6k+2=2(3k+1)$. Vì 3k+1 nguyên, bước chuyển đúng. Kết luận theo quy nạp.
+
+**Bước 5:** n=2 cho 8, chia hết cho 2. **Bước 6:** đưa biểu thức mới về một bội của biểu thức cũ cộng một số đã chia hết.
+
+## Lỗi dễ mắc
+
+- **Chỉ thử vài số:** đúng ở 1, 2, 3 không bảo đảm đúng ở 100. Ví dụ $n^2+n+41$ cho nhiều số nguyên tố ban đầu nhưng ở n=41 nó chia hết cho 41.
+- **Bỏ bước đầu:** P(n) ⇒ P(n+1) có thể đúng dù mọi P(n) đều sai. “n là số âm” là phát biểu sai với mọi n∈N; quan hệ kéo theo vẫn không tạo ra điểm bắt đầu đúng.
+- **Dùng kết luận trong bước chuyển:** đừng viết ngay tổng mới bằng $(n+1)^2$ rồi coi đó là lời giải. Hãy xuất phát từ tổng cũ đã được giả sử đúng.
+
+## Tóm tắt 30 giây
+
+> Quy nạp có hai ổ khóa: điểm bắt đầu và bước truyền. Mở đủ hai ổ thì mới kết luận được vô hạn trường hợp.
+
+**HIỂU:** chứng minh một quy tắc truyền thay cho thử từng số. **NHỚ:** bước đầu → giả thiết → bước chuyển → kết luận. **LÀM:** xác định số hạng mới và biến đổi từ công thức cũ.
+
+## Bài tập
+
+### DỄ - Kiểm tra điểm bắt đầu
+
+Xét phát biểu $1+2+\cdots+n=n(n+1)/2$. Kiểm tra n=1, n=2 và viết chính xác phát biểu ở n+1. **Gợi ý:** thay tất cả n trong công thức bằng n+1; số hạng cuối mới là n+1.
+
+### VỪA - Tự viết quy nạp
+
+Chứng minh $2+4+\cdots+2n=n(n+1)$ với mọi n≥1. **Gợi ý:** số hạng mới là 2(n+1); sau khi thay giả thiết, đặt n+1 làm nhân tử chung.
+
+### KHÓ - Bước đầu khác 1
+
+Chứng minh $2^n>n^2$ với mọi số nguyên n≥5. **Gợi ý:** bắt đầu ở 5. Từ $2^{n+1}>2n^2$, cần kiểm tra $2n^2\geq(n+1)^2$ cho n≥5. Không thử bắt đầu ở 4 vì tại đó chỉ có dấu bằng.
+
+Nguồn kiến thức: Kenneth A. Ross, *Elementary Analysis: The Theory of Calculus*, ấn bản thứ hai, 2013, §1. Bài giảng diễn đạt bằng lời riêng; ví dụ và bài tập do người biên soạn bổ sung.

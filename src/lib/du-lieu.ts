@@ -99,7 +99,7 @@ export function khoaBaiTapCuaChuong(du: DuLieuChuongWeb): string[] {
 }
 
 export function coNoiDung(du: DuLieuChuongWeb): boolean {
-  return du.baiGiang.length + du.sach.length + du.baiTap.length > 0;
+  return du.baiGiang.length + du.sach.length + du.baiTap.length + du.chuong.tai_ve.length > 0;
 }
 
 // ---- liên kết chéo cho một mã khối (can_dung) ----
