@@ -133,6 +133,12 @@ không đổi số § thành số mục giả dạng `1.1`. Hình được dựn
 `HinhRoss.astro`. PDF tổng hợp tự soạn được tải về từ cả hai chương. Tiến độ
 Abbott được dọn một lần khi chuyển sang Ross, rồi giữ tiến độ mới.
 
+Bản dịch Ross §1–§15 (63 trang) được đăng theo yêu cầu của chủ website ở
+`public/tai-ve/giai-tich-ross-ban-dich-1-15.pdf`, liên kết từ cả hai chương.
+Tài liệu ghi nguồn Kenneth A. Ross / Springer (2013) và ghi rõ không chính thức;
+không dùng giấy phép CC của Đại số / Vi mô cho bản dịch này. Phần Theo sách
+đọc trực tiếp trên web vẫn chưa có.
+
 Đại số Chương 4–8 và Vi mô Chương 5, 7, 8 có PDF bản dịch ghi nguồn và giấy
 phép CC BY-NC-SA 4.0; chưa chuyển thành nội dung đọc trực tiếp. Chương có
 `tai_ve` cũng được xuất trang, không hiện nút Học tiếp trỏ tới bài tập chưa có.

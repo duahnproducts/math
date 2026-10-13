@@ -1,4 +1,17 @@
 import { expect, test } from '@playwright/test';
+import { readFileSync } from 'node:fs';
+
+test('bản dịch Ross §1–§15 có liên kết ở cả hai chương và tải đúng nguyên file', async ({page,request})=>{
+  for (const chapter of [1,2]) {
+    await page.goto(`giai-tich/chuong-${chapter}/`);
+    const link=page.getByRole('link',{name:/Bản dịch Ross §1–§15/});
+    await expect(link).toBeVisible();
+    await expect(link).toHaveAttribute('href','/math/tai-ve/giai-tich-ross-ban-dich-1-15.pdf');
+  }
+  const pdf=await request.get('tai-ve/giai-tich-ross-ban-dich-1-15.pdf');
+  expect(pdf.ok()).toBe(true);
+  expect(await pdf.body()).toEqual(readFileSync('public/tai-ve/giai-tich-ross-ban-dich-1-15.pdf'));
+});
 
 test('10 bài Ross đọc trực tiếp, đủ 8 mục, công thức và hình; tải PDF được', async ({page,request}) => {
   test.slow();

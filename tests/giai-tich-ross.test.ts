@@ -2,14 +2,23 @@ import { readdirSync, readFileSync } from 'node:fs';
 import { expect, test } from 'vitest';
 import { chuyenSangRoss, docTienDo, ghiTienDo, tienDoRong } from '../src/lib/tien-do';
 
-test('Ross §1–§10 chia đúng hai chương, giữ chương Abbott và bản dịch sách gốc ngoài web', () => {
+test('Ross §1–§10 chia đúng hai chương, có bài giảng và bản dịch PDF, không khôi phục Abbott', () => {
   const mon = JSON.parse(readFileSync('content/giai-tich/mon.json', 'utf8'));
   expect(mon.giao_trinh).toContain('Kenneth A. Ross');
   expect(mon.chuong.map((c: {so:number})=>c.so)).toEqual([1,2]);
   for (const [chapter,count] of [[1,6],[2,4]]) {
     expect(readdirSync(`content/giai-tich/chuong-${chapter}/giang-day`)).toHaveLength(count);
   }
-  expect(readdirSync('public/tai-ve').filter(f=>f.startsWith('giai-tich-'))).toEqual(['giai-tich-ross-bai-giang-1-10.pdf']);
+  expect(readdirSync('public/tai-ve').filter(f=>f.startsWith('giai-tich-')).sort()).toEqual([
+    'giai-tich-ross-bai-giang-1-10.pdf', 'giai-tich-ross-ban-dich-1-15.pdf',
+  ]);
+  for (const c of mon.chuong) {
+    const translation=c.tai_ve.find((t:{tep:string})=>t.tep==='giai-tich-ross-ban-dich-1-15.pdf');
+    expect(translation.ten).toContain('63 trang');
+    expect(translation.mo_ta).toContain('Kenneth A. Ross');
+    expect(translation.mo_ta).toContain('không chính thức');
+  }
+  expect(readFileSync('public/tai-ve/giai-tich-ross-ban-dich-1-15.pdf').subarray(0,5).toString()).toBe('%PDF-');
 });
 
 test('đổi từ Abbott sang Ross chỉ xóa tiến độ Giải tích một lần, giữ các môn khác và tiến độ mới', () => {

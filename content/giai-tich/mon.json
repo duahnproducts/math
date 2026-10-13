@@ -4,7 +4,7 @@
   "thu_tu": 1,
   "mo_ta": "Hiểu vì sao các phép tính của vi tích phân đúng: số thực, dãy số, giới hạn, liên tục, đạo hàm, tích phân.",
   "giao_trinh": "Kenneth A. Ross, Elementary Analysis: The Theory of Calculus, 2nd ed., Springer, 2013",
-  "giay_phep": "Sách gốc có bản quyền (Springer). Bài giảng viết bằng lời riêng, với ví dụ và bài tập tự soạn; không đăng bản dịch nguyên văn hay PDF sách gốc.",
+  "giay_phep": "Sách gốc © Kenneth A. Ross / Springer, 2013. Bài giảng viết bằng lời riêng, với ví dụ và bài tập tự soạn. Bản dịch tiếng Việt phục vụ học tập, không phải bản dịch chính thức của nhà xuất bản.",
   "loai_sach": "theo-sach",
   "chuong": [
     {
@@ -18,6 +18,11 @@
           "ten": "Bài giảng Ross §1–§10 (PDF, 37 trang)",
           "tep": "giai-tich-ross-bai-giang-1-10.pdf",
           "mo_ta": "10 bài giảng viết bằng lời riêng, 31 ví dụ và 30 bài tập tự soạn; gồm §1–§6 của Chương 1 và §7–§10 của Chương 2."
+        },
+        {
+          "ten": "Bản dịch Ross §1–§15 (PDF, 63 trang)",
+          "tep": "giai-tich-ross-ban-dich-1-15.pdf",
+          "mo_ta": "Bản dịch tiếng Việt từ Elementary Analysis: The Theory of Calculus, Kenneth A. Ross, ấn bản thứ hai (Springer, 2013), §1–§15, gồm lý thuyết và bài tập. Bản dịch phục vụ học tập, không chính thức. Chương 1 tương ứng §1–§6."
         }
       ]
     },
@@ -32,6 +37,11 @@
           "ten": "Bài giảng Ross §1–§10 (PDF, 37 trang)",
           "tep": "giai-tich-ross-bai-giang-1-10.pdf",
           "mo_ta": "PDF tổng hợp cả hai chương; §7–§10 ở trang 22–34, phần ôn tập và gợi ý ở trang 35–37."
+        },
+        {
+          "ten": "Bản dịch Ross §1–§15 (PDF, 63 trang)",
+          "tep": "giai-tich-ross-ban-dich-1-15.pdf",
+          "mo_ta": "Bản dịch tiếng Việt từ Elementary Analysis: The Theory of Calculus, Kenneth A. Ross, ấn bản thứ hai (Springer, 2013), §1–§15, gồm lý thuyết và bài tập. Bản dịch phục vụ học tập, không chính thức. Chương 2 tương ứng §7–§15."
         }
       ]
     }

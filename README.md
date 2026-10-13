@@ -40,7 +40,8 @@ kiểm tra liên kết chéo, số hiệu và ghi công trước khi commit.
 
 Nội dung hiện có: Giải tích theo Kenneth Ross §1–§10 (6 bài ở Chương 1, 4 bài
 ở Chương 2, PDF tổng hợp 37 trang; bài tập tự soạn nằm cuối mỗi bài). Bộ Abbott
-đã gỡ; phần Theo sách của Ross chưa có. Đại số tuyến tính Chương 1–3 đọc trực
+đã gỡ; có bản dịch Ross §1–§15 (PDF, 63 trang) tải ở cả hai chương, chưa chuyển
+thành các mục đọc trực tiếp. Đại số tuyến tính Chương 1–3 đọc trực
 tiếp trên web, Chương 4–8 có bản dịch PDF tải về; bài giảng và bài tập Chương
 1–2. Kinh tế vi mô Chương 1–3 đọc trực tiếp; Chương 5, 7, 8 có slide dịch PDF.
 Chương chỉ có PDF vẫn có trang để tải về, với nhãn rõ phần chưa chuyển lên web.
@@ -55,5 +56,7 @@ API Claude của người học, bài lưu trong IndexedDB. Chi tiết: `product
 ## Giấy phép nội dung
 
 Bản dịch Nicholson và OpenStax theo CC BY-NC-SA 4.0 (không thu phí, không quảng cáo).
-Sách Ross và Abbott có bản quyền: web chỉ diễn đạt lại và dùng ví dụ, bài tập tự
-soạn; không đăng bản dịch nguyên văn hay PDF sách gốc.
+Sách Ross và Abbott có bản quyền. Bài giảng dùng lời riêng, ví dụ và bài tập tự
+soạn. Bản dịch PDF Ross §1–§15 được đăng theo yêu cầu của chủ website, có ghi
+nguồn và ghi rõ là bản dịch không chính thức; không gắn giấy phép CC của các
+môn khác cho tài liệu này. Không đăng PDF sách gốc tiếng Anh.
