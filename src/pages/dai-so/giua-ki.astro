@@ -1,0 +1,100 @@
+---
+import Khung from '@/layouts/Khung.astro';
+import { DE_GIUA_KI } from '@/lib/de-giua-ki';
+import { taoDuongDan } from '@/lib/duong-dan';
+import { mdSangHtml } from '@/lib/tu-tao/hien-thi';
+const d = taoDuongDan(import.meta.env.BASE_URL);
+---
+<Khung tieuDe="Kiểm tra giữa kì Đại số · 60 phút" moTa="Đề tự soạn Chương 1–3: 6 câu, 10 điểm, 60 phút, lời giải đầy đủ và thang điểm từng ý." duongDan={[{ten: 'Đại số tuyến tính', href: d.mon('dai-so')}, {ten: 'Kiểm tra giữa kì'}]} tabDuoi="mon">
+  <div class="trang-hep de-thi">
+    <header class="dau-trang">
+      <p class="nhan-tren">Đại số tuyến tính · Chương 1–3 · Đề tự soạn số 01</p>
+      <h1>Kiểm tra giữa kì</h1>
+      <p class="phu-de">60 phút · 6 câu tự luận · Thang điểm 10</p>
+      <p>Hệ phương trình tuyến tính, đại số ma trận, định thức và chéo hóa. Đề tự soạn dựa trên các bài giảng theo Nicholson (2023) đã có trên Hochanh.</p>
+    </header>
+    <section class="huong-dan van-ban" aria-labelledby="huong-dan">
+      <h2 id="huong-dan">Trước khi làm bài</h2>
+      <p>Làm độc lập, không tra tài liệu; được dùng máy tính số học cơ bản. Trình bày phép biến đổi và lý do, không chỉ ghi kết quả. Có thể làm trên giấy và ghi đáp án hoặc lời giải vào ô dưới mỗi câu.</p>
+      <p>Bấm <strong>Bắt đầu 60 phút</strong> khi sẵn sàng. Đồng hồ tiếp tục chạy khi rời trang. Bài làm được lưu trong trình duyệt này khi bộ nhớ khả dụng. Hết giờ, bài được khóa và bạn có thể mở đáp án để tự chấm.</p>
+      <p>Đây là đề lấy mẫu kiến thức trọng tâm trong 60 phút, không kiểm tra riêng mọi ứng dụng ở cả ba chương. Các cách giải đúng khác đều được tính điểm tương đương.</p>
+      <noscript><p>Hãy bật JavaScript để dùng đồng hồ và ô bài làm. Bạn vẫn có thể đọc đề và lời giải bên dưới, làm trên giấy trong 60 phút.</p></noscript>
+    </section>
+    <div class="bang-thi" data-bang-thi>
+      <div><span class="nhan-gio">Thời gian còn lại</span><strong id="dong-ho" role="timer" aria-label="Thời gian còn lại">60:00</strong></div>
+      <div class="nut-thi">
+        <button class="nut chinh" id="bat-dau" type="button" hidden>Bắt đầu 60 phút</button>
+        <button class="nut chinh" id="nop-bai" type="button" hidden>Kết thúc bài làm</button>
+        <button class="nut" id="lam-lai" type="button" hidden>Làm lại đề</button>
+        <button class="nut" id="in-de" type="button" hidden>In đề</button>
+      </div>
+      <p id="trang-thai-thi" role="status">Làm trên giấy hoặc bật JavaScript để bắt đầu tính giờ.</p>
+      <p id="luu-bai" role="status"></p>
+    </div>
+    <nav class="nhay-cau" aria-label="Đi tới câu hỏi">
+      {DE_GIUA_KI.map((c, i) => <a class="nut nho" href={`#cau-${i+1}`}>Câu {i+1} · {c.diem.toLocaleString('vi-VN')} đ</a>)}
+    </nav>
+    <div id="de-bai">
+      {DE_GIUA_KI.map((c,i) => <section class="cau-thi van-ban" id={`cau-${i+1}`}>
+        <p class="nhan-tren">{c.diem.toLocaleString('vi-VN')} điểm · Gợi ý thời gian: {c.phut} phút</p>
+        <h2>Câu {i+1}. {c.ten}</h2>
+        <div set:html={mdSangHtml(c.de)} />
+        <div class="o-bai-lam" hidden>
+          <label for={`bai-lam-${i+1}`}>Bài làm câu {i+1}</label>
+          <textarea id={`bai-lam-${i+1}`} data-bai-lam={i} rows="5" disabled placeholder="Ghi cách làm và kết quả; hoặc làm trên giấy rồi đối chiếu lời giải." />
+        </div>
+      </section>)}
+    </div>
+    <section id="dap-an" class="van-ban" aria-labelledby="tieu-de-dap-an">
+      <h2 id="tieu-de-dap-an">Đáp án, lời giải và thang điểm</h2>
+      <p id="nhac-dap-an">Tự làm đủ 60 phút trước khi xem. Nếu chỉ muốn ôn, bạn có thể mở đáp án ngay; thao tác này kết thúc lượt thi hiện tại.</p>
+      <button class="nut" id="xem-dap-an" type="button" hidden>Xem đáp án và tự chấm</button>
+      <div id="noi-dung-dap-an">
+        <p><strong>Cách tự chấm:</strong> cộng các ý làm đúng, tối đa 10 điểm. Mỗi dòng thang điểm cần cả kết quả và lập luận tương ứng; không trừ hai lần cho cùng một lỗi tính toán. Web không tự chấm phần tự luận.</p>
+        {DE_GIUA_KI.map((c,i) => <details class="loi-giai-thi">
+          <summary>Câu {i+1} · {c.ten} · {c.diem.toLocaleString('vi-VN')} điểm</summary>
+          <div set:html={mdSangHtml(c.loiGiai)} />
+          <h3>Thang điểm câu {i+1}</h3>
+          <ul>{c.cham.map(y => <li>{y.ten}: <strong>{y.diem.toLocaleString('vi-VN')} điểm</strong>.</li>)}</ul>
+          <p>Ôn lại: {c.muc.map((m,j) => <>{j > 0 && ' · '}<a href={d.sach('dai-so', Number(m[0]), m)}>§{m}</a></>)}</p>
+        </details>)}
+      </div>
+    </section>
+    <dialog id="xac-nhan-thi" aria-labelledby="noi-dung-xac-nhan">
+      <p id="noi-dung-xac-nhan"></p>
+      <form method="dialog" class="nut-thi"><button class="nut" value="huy">Quay lại</button><button class="nut chinh" value="dong-y">Đồng ý</button></form>
+    </dialog>
+  </div>
+</Khung>
+<script>
+  import '../../scripts/thi-giua-ki';
+</script>
+<style>
+  .de-thi { max-width: 850px; }
+  .huong-dan, .cau-thi { border: 1px solid var(--line-2); background: var(--paper); padding: 24px; border-radius: var(--r-lg); margin: 24px 0; }
+  .bang-thi { position: sticky; top: 72px; z-index: 5; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; background: var(--surface-1); border: 1px solid var(--accent-line); border-radius: var(--r-lg); padding: 16px; box-shadow: var(--shadow); }
+  .nhan-gio { display: block; font-size: .8rem; color: var(--text-2); }
+  #dong-ho { font: 600 1.8rem var(--font-mono); color: var(--accent); }
+  .nut-thi, .nhay-cau { display: flex; flex-wrap: wrap; gap: 8px; }
+  .nhay-cau { margin: 24px 0; }
+  #trang-thai-thi, #luu-bai { width: 100%; margin: 0; font-size: .85rem; color: var(--text-2); }
+  #luu-bai:empty { display: none; }
+  .cau-thi { scroll-margin-top: 230px; }
+  .cau-thi h2 { margin-top: 8px; }
+  label { display: block; font-weight: 600; margin: 18px 0 8px; }
+  textarea { box-sizing: border-box; width: 100%; resize: vertical; font: inherit; color: var(--text); background: var(--surface-2); border: 1px solid var(--line-2); border-radius: var(--r-md); padding: 12px; }
+  textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  textarea:disabled { opacity: .8; }
+  .loi-giai-thi { border-bottom: 1px solid var(--line-2); padding: 18px 0; }
+  summary { cursor: pointer; font-weight: 600; }
+  dialog { color: var(--text); background: var(--surface-1); border: 1px solid var(--line-2); border-radius: var(--r-lg); max-width: min(440px, 90vw); padding: 24px; }
+  dialog::backdrop { background: var(--glass); backdrop-filter: blur(4px); }
+  [hidden] { display: none !important; }
+  @media (max-width: 760px) { .bang-thi { top: 8px; } .huong-dan, .cau-thi { padding: 16px; } }
+  @media print {
+    .bang-thi, .nhay-cau, .o-bai-lam, #xem-dap-an, .huong-dan, #dap-an { display: none !important; }
+    .cau-thi { break-inside: avoid; border: 0; padding: 0; }
+    :global(.topbar), :global(.thanh-duoi), :global(.chan-trang) { display: none !important; }
+    :global(.noi-dung) { padding: 0 !important; }
+  }
+</style>

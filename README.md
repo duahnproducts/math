@@ -49,6 +49,11 @@ giữ nguyên; các mục §2.3–§2.9 và toàn bộ đề gốc Chương 3 ch
 Kinh tế vi mô Chương 1–3 đọc trực tiếp; Chương 5, 7, 8 có slide dịch PDF.
 Chương chỉ có PDF vẫn có trang để tải về, với nhãn rõ phần chưa chuyển lên web.
 
+Đại số có đề giữa kì tự soạn tại `/dai-so/giua-ki/`: Chương 1–3, 60 phút,
+6 câu tự luận, 10 điểm. Đồng hồ theo thời gian thật; bài làm lưu tại trình duyệt,
+khóa khi hết giờ hoặc kết thúc. Đáp án mở riêng, có lời giải từng bước và thang
+điểm từng ý để tự chấm. Nút In đề in phần câu hỏi; đáp án không nằm trong bản in.
+
 ## Tự tạo bài giảng từ PDF
 
 Trang `/tu-tao/` cho người học nạp PDF giáo trình của một môn bất kỳ; Claude soạn bài

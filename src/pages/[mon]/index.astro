@@ -30,6 +30,12 @@ const tenSach = nhanLoaiSach(m.loai_sach);
       </p>
     </header>
 
+    {mon === 'dai-so' && <section class="hop y-tuong" aria-label="Kiểm tra giữa kì">
+      <h2>Kiểm tra giữa kì · Chương 1–3</h2>
+      <p>60 phút · 6 câu tự luận · 10 điểm. Có đồng hồ, lưu bài làm và lời giải đầy đủ kèm thang điểm từng ý.</p>
+      <a class="nut chinh" href={d.giuaKi('dai-so')}>Làm bài kiểm tra giữa kì</a>
+    </section>}
+
     {cacChuong.length === 0 && <p class="chua-co" role="status">Chưa có nội dung.</p>}
     <ol class="danh-sach-muc" aria-label="Các chương">
       {

@@ -62,6 +62,7 @@ export function taoDuongDan(base: string) {
     trangChu: () => noi(base),
     thuatNgu: () => noi(base, 'thuat-ngu'),
     mon: (mon: string) => noi(base, mon),
+    giuaKi: (mon: string) => noi(base, mon, 'giua-ki'),
     chuong: (mon: string, chuong: number) => noi(base, mon, slugChuong(chuong)),
     baiGiang: (mon: string, chuong: number, bai: number) =>
       noi(base, mon, slugChuong(chuong), 'giang-day', `bai-${bai}`),
