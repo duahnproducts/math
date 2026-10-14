@@ -1,0 +1,128 @@
+---
+mon: dai-so
+chuong: 3
+bai: 3
+tieu_de: "Giá trị riêng: những hướng không đổi đường"
+y_tuong: "Vector riêng là hướng mà ma trận chỉ kéo giãn hoặc đảo chiều; giá trị riêng là hệ số nhân trên hướng ấy."
+phu_muc: ["3.3"]
+---
+
+import HinhDinhThuc from '../../../../src/figures/HinhDinhThuc.astro';
+import HinhCheoHoa from '../../../../src/figures/HinhCheoHoa.astro';
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+Vector riêng là hướng mà ma trận chỉ kéo giãn hoặc đảo chiều; giá trị riêng là hệ số nhân trên hướng ấy.
+</YTuong>
+
+## Hình dung trực quan
+
+Một vector thường có thể đổi cả hướng và độ dài sau phép nhân A. Một vector riêng vẫn nằm trên cùng đường thẳng qua gốc; nếu hệ số âm, mũi tên quay sang phía ngược trên đường ấy.
+
+<HinhVectorRieng />
+
+Hình dùng ma trận $\begin{bmatrix}3&5\\1&-1\end{bmatrix}$: vector $(-1,1)$ có ảnh $(2,-2)=-2(-1,1)$. Ví dụ mẫu dưới dùng ma trận khác để tính trọn quy trình.
+
+## Kiến thức cần biết
+
+Ôn nhân ma trận–vector, hệ thuần nhất và định thức. $I$ là ma trận đơn vị. Hệ $(A-\lambda I)v=0$ luôn có nghiệm 0, nhưng ta cần nghiệm **khác 0**; điều đó chỉ xảy ra khi hệ số không khả nghịch.
+
+## Công thức
+
+$$Av=\lambda v,\qquad v\ne0.$$
+
+| Ký hiệu | Ý nghĩa |
+| --- | --- |
+| A | Ma trận vuông n×n |
+| v | Vector riêng khác 0 |
+| λ | Giá trị riêng, có thể bằng 0 |
+| $c_A(t)=\det(tI-A)$ | Đa thức đặc trưng |
+
+Các giá trị riêng là nghiệm của $c_A(t)=0$. Với mỗi λ, giải $(A-\lambda I)v=0$ bằng Gauss; bỏ vector 0 khỏi kết quả khi nói vector riêng. Mọi bội khác 0 của vector riêng vẫn là vector riêng cùng λ. Các nghiệm kể cả 0 tạo **không gian riêng**.
+
+Trên hướng v, $A^kv=\lambda^kv$. Nếu $P^{-1}AP=D$ thì $A^k=PD^kP^{-1}$; nhưng tìm đủ cột cho P là việc của Bài 4. Đường thẳng &#123;tv&#125; được A giữ trong chính nó, gọi là bất biến. λ=0 nghĩa là hướng ấy bị ép về gốc; λ âm nghĩa đảo chiều, không có nghĩa vector riêng bị cấm.
+
+Với ma trận thực có thể có nghiệm phức của đa thức đặc trưng. Phép quay 90° có đa thức t²+1, không có giá trị riêng thực; đừng tự giả sử mọi ma trận thực đều có đủ hướng riêng thực.
+
+## Ví dụ mẫu
+
+### Bước 1 — Đề cho gì
+
+$A=\begin{bmatrix}3&1\\1&3\end{bmatrix}$.
+
+### Bước 2 — Hỏi gì
+
+Tìm mọi giá trị riêng và mô tả vector riêng tương ứng.
+
+### Bước 3 — Dùng kiến thức nào và vì sao
+
+Giải phương trình định thức để tìm λ, rồi giải hệ thuần nhất cho từng λ.
+
+### Bước 4 — Giải từng bước
+
+$c_A(t)=(t-3)^2-1=(t-4)(t-2)$ nên λ=4 hoặc 2.
+
+λ=4: $(A-4I)v=0$ cho $-x+y=0$, nên $v=s(1,1)^T$, s≠0.
+
+λ=2: $(A-2I)v=0$ cho $x+y=0$, nên $v=s(1,-1)^T$, s≠0.
+
+### Bước 5 — Kiểm tra
+
+$A(1,1)^T=(4,4)^T$ và $A(1,-1)^T=(2,-2)^T$. Hai hướng đều qua gốc và không đổi đường.
+
+### Bước 6 — Tóm tắt cách làm
+
+Đa thức đặc trưng → nghiệm λ → khử từng hệ → bỏ vector 0 → nhân A để kiểm tra.
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Nhận vector 0 làm vector riêng">
+0 thỏa Av=λv với mọi λ nên không đặc trưng cho một hướng; định nghĩa loại nó.
+</Loi>
+
+<Loi tieuDe="Tìm λ rồi dừng">
+Bài thường còn hỏi vector riêng: phải giải hệ thuần nhất cho từng λ.
+</Loi>
+
+<Loi tieuDe="Trừ λ ở mọi ô">
+λI chỉ có λ trên đường chéo; các ô ngoài đường chéo giữ nguyên.
+</Loi>
+
+## Tóm tắt 30 giây
+
+<BaGoc>
+<Goc ten="Hiểu">Một số hướng vẫn nằm trên chính đường ấy sau biến đổi.</Goc>
+<Goc ten="Nhớ">Av=λv với v≠0; det(tI−A)=0.</Goc>
+<Goc ten="Làm">Tìm λ rồi giải hệ cho v, kiểm tra bằng phép nhân trực tiếp.</Goc>
+</BaGoc>
+
+## Bài tập
+
+Các bài dưới đây là **bài luyện tự soạn**, dùng số riêng của bộ luyện trên web; không phải số bài trong sách Nicholson. Mỗi liên kết mở đề, hai tầng gợi ý và lời giải để bạn tự làm trước.
+
+<BaiLuyen do_kho="de" so="3.3.1">
+Cho $A=\begin{bmatrix}2&1\\0&3\end{bmatrix}$. Kiểm tra v=(1,0) và w=(1,1) là vector riêng; tìm λ tương ứng.
+
+<GoiYNho>Nhân A với từng vector.</GoiYNho>
+
+<XemMuc bai-tap="3.3.1" />
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="3.3.2">
+Tìm giá trị riêng và vector riêng của $A=\begin{bmatrix}4&1\\0&2\end{bmatrix}$.
+
+<GoiYNho>Ma trận tam giác có đa thức (t−4)(t−2).</GoiYNho>
+
+<XemMuc bai-tap="3.3.2" />
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="3.3.3">
+Cho $A=\begin{bmatrix}1&2\\2&4\end{bmatrix}$. Chứng minh 0 là giá trị riêng và tìm mọi vector riêng ứng với nó.
+
+<GoiYNho>Giải Av=0 với v khác 0.</GoiYNho>
+
+<XemMuc bai-tap="3.3.3" />
+</BaiLuyen>
+
+Đọc đối chiếu: <XemMuc muc="3.3" />.

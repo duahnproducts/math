@@ -106,7 +106,7 @@ const href = d.baiGiang(mon, so, bai.data.bai);
               ))}
             {baiTapPhu.length > 0 && (
               <a class="nut nho" href={`${d.dsBaiTap(mon, so)}?muc=${bai.data.phu_muc[0]}`}>
-                <Icon ten="pencil-line" co={14} /> Bài tập trong sách ({baiTapPhu.length})
+                <Icon ten="pencil-line" co={14} /> {baiTapPhu.some((b) => b.data.tu_soan) ? 'Bài tập và bài luyện' : 'Bài tập trong sách'} ({baiTapPhu.length})
               </a>
             )}
           </nav>

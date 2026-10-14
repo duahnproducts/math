@@ -1,0 +1,26 @@
+---
+// Hình tự soạn: A=[2 1;0 3], hai cột là (2,0),(1,3), diện tích ảnh bằng 6.
+---
+<figure class="hinh" data-hinh-dinh-thuc>
+  <svg viewBox="0 0 470 220" width="470" role="img" aria-label="Ô vuông diện tích 1 biến thành hình bình hành có cạnh (2,0) và (1,3), diện tích 6">
+    <path d="M30 165H130 M30 175V35 M240 165H420 M240 175V25" class="truc" />
+    <path d="M30 165H70V125H30Z" class="mien" />
+    <path d="M240 165H320L360 45H280Z" class="mien" />
+    <path d="M150 110H210 M200 103L210 110L200 117" class="net" />
+    <text x="50" y="151" text-anchor="middle">1</text>
+    <text x="300" y="110" text-anchor="middle">6</text>
+    <text x="180" y="90" text-anchor="middle">A</text>
+    <text x="280" y="185" text-anchor="middle">u = (2, 0)</text>
+    <text x="280" y="32">v = (1, 3)</text>
+    <text x="50" y="211" text-anchor="middle">Trước</text>
+    <text x="310" y="211" text-anchor="middle">Sau: |det A| = 6</text>
+  </svg>
+  <figcaption>Hai cột của A tạo hai cạnh ảnh. Diện tích nhân 6; nếu đổi hai cột thì định thức đổi dấu.</figcaption>
+</figure>
+<style>
+  svg { max-width:100%; height:auto; }
+  .truc { fill:none; stroke:var(--text-3); stroke-width:1; }
+  .net { fill:none; stroke:var(--text); stroke-width:2; }
+  .mien { fill:var(--accent-soft); stroke:var(--accent); stroke-width:2; }
+  text { fill:var(--text); font:13px sans-serif; }
+</style>

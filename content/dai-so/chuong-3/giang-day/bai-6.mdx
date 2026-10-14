@@ -1,0 +1,118 @@
+---
+mon: dai-so
+chuong: 3
+bai: 6
+tieu_de: "Truy hồi tuyến tính: gom nhiều bước vào một vector"
+y_tuong: "Một truy hồi bậc hai trở thành hệ ma trận bậc nhất khi ta lưu hai số hạng liên tiếp trong cùng một vector."
+phu_muc: ["3.6"]
+---
+
+import HinhDinhThuc from '../../../../src/figures/HinhDinhThuc.astro';
+import HinhCheoHoa from '../../../../src/figures/HinhCheoHoa.astro';
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+Một truy hồi bậc hai trở thành hệ ma trận bậc nhất khi ta lưu hai số hạng liên tiếp trong cùng một vector.
+</YTuong>
+
+## Hình dung trực quan
+
+Để tính số xe cần cho ngày mai, ta có thể cần số liệu hôm nay và hôm qua. Lưu cả hai vào một trạng thái thì quy tắc chuyển sang trạng thái kế tiếp chỉ cần một phép nhân ma trận.
+
+$$\begin{bmatrix}u_k\\u_{k+1}\end{bmatrix}\ \longmapsto\ \begin{bmatrix}u_{k+1}\\u_{k+2}\end{bmatrix}.$$
+
+Trong bài toán bãi đỗ xe của sách, xe con chiếm một chỗ, xe tải hai chỗ. Cách lấp k+2 chỗ kết thúc bằng xe con hoặc xe tải cho truy hồi Fibonacci. Hai trường hợp cuối không chồng nhau, nên cộng số cách.
+
+## Kiến thức cần biết
+
+Ôn dãy, điều kiện ban đầu và chéo hoá. Truy hồi bậc hai cần hai số đầu u₀,u₁. Quy tắc phải tuyến tính và có hệ số cố định để dùng đúng ma trận dưới đây; quy tắc chia trường hợp theo chẵn/lẻ của giá trị không tự có dạng ấy.
+
+## Công thức
+
+Với $u_{k+2}=a u_{k+1}+b u_k$, đặt $z_k=(u_k,u_{k+1})^T$:
+$$z_{k+1}=\begin{bmatrix}0&1\\b&a\end{bmatrix}z_k.$$
+
+a,b là hệ số truy hồi; z₀=(u₀,u₁). Đa thức đặc trưng là $r^2-ar-b$. Nếu có hai nghiệm phân biệt r₁,r₂, mỗi nghiệm cho vector riêng (1,rᵢ), nên $u_k=c_1r_1^k+c_2r_2^k$. Giải c₁+c₂=u₀, c₁r₁+c₂r₂=u₁. Không lấy riêng một nghiệm rồi bỏ điều kiện đầu.
+
+Khi nghiệm lặp r, hai biểu thức rᵏ giống nhau và không cho đủ tham số. Có thể phải dùng thêm krᵏ; cần chứng minh hoặc dùng công cụ cho trường hợp không chéo hoá được, không áp dụng máy móc công thức hai nghiệm phân biệt.
+
+**Fibonacci:** F₀=0,F₁=1,Fₖ₊₂=Fₖ₊₁+Fₖ có r₁=φ=(1+√5)/2, r₂=ψ=(1−√5)/2. Công thức Binet là $(\varphi^k-\psi^k)/\sqrt5$. Dù có căn vô tỉ, các số hạng vẫn nguyên vì cùng thỏa truy hồi nguyên và hai giá trị đầu. Tính lũy thừa ma trận bằng bình phương liên tiếp cũng cho cách tính nhanh với phép toán nguyên.
+
+## Ví dụ mẫu
+
+### Bước 1 — Đề cho gì
+
+$u_0=2$, $u_1=4$, $u_{k+2}=4u_{k+1}-3u_k$.
+
+### Bước 2 — Hỏi gì
+
+Tìm công thức uₖ và kiểm tra vài số đầu.
+
+### Bước 3 — Dùng kiến thức nào và vì sao
+
+Đa thức r²−4r+3 có hai nghiệm phân biệt nên dùng hai hướng riêng.
+
+### Bước 4 — Giải từng bước
+
+$(r-3)(r-1)=0$ cho r=3,1. Vậy $u_k=c_1 3^k+c_2$. Điều kiện đầu: c₁+c₂=2,3c₁+c₂=4, nên c₁=1,c₂=1. Kết luận $u_k=3^k+1$.
+
+### Bước 5 — Kiểm tra
+
+u₂=10,u₃=28. Từ truy hồi: 4·4−3·2=10 và 4·10−3·4=28. Thế công thức vào truy hồi cũng đúng mọi k.
+
+### Bước 6 — Tóm tắt cách làm
+
+Lập vector trạng thái → tìm nghiệm đặc trưng → giải hệ số từ điều kiện đầu → kiểm tra truy hồi và hai số đầu.
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Đảo vị trí trong vector">
+Nếu dùng (uₖ,uₖ₊₁) thì hàng đầu A phải là (0,1); đổi thứ tự vector phải đổi ma trận.
+</Loi>
+
+<Loi tieuDe="Sai dấu hệ số b">
+r²−ar−b=0; b âm làm số hạng tự do dương.
+</Loi>
+
+<Loi tieuDe="Hai nghiệm bằng nhau vẫn dùng hai bội rᵏ">
+Hai biểu thức trùng nhau không tạo hai tham số độc lập.
+</Loi>
+
+## Tóm tắt 30 giây
+
+<BaGoc>
+<Goc ten="Hiểu">Lưu hai giá trị liên tiếp biến nhớ hai bước thành nhớ một trạng thái.</Goc>
+<Goc ten="Nhớ">Ma trận [[0,1],[b,a]], đa thức r²−ar−b.</Goc>
+<Goc ten="Làm">Tìm đủ tham số rồi dùng cả u₀,u₁.</Goc>
+</BaGoc>
+
+## Bài tập
+
+Các bài dưới đây là **bài luyện tự soạn**, dùng số riêng của bộ luyện trên web; không phải số bài trong sách Nicholson. Mỗi liên kết mở đề, hai tầng gợi ý và lời giải để bạn tự làm trước.
+
+<BaiLuyen do_kho="de" so="3.6.1">
+Với $u_{k+2}=5u_{k+1}-6u_k$, $u_0=1,u_1=2$, lập A cho zₖ=(uₖ,uₖ₊₁) và tính z₁.
+
+<GoiYNho>Hàng đầu lấy tọa độ thứ hai.</GoiYNho>
+
+<XemMuc bai-tap="3.6.1" />
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="3.6.2">
+Giải $u_{k+2}=5u_{k+1}-6u_k$, $u_0=2,u_1=5$.
+
+<GoiYNho>Phương trình đặc trưng là (r−2)(r−3)=0.</GoiYNho>
+
+<XemMuc bai-tap="3.6.2" />
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="3.6.3">
+Cho $u_{k+2}=4u_{k+1}-4u_k$, $u_0=1,u_1=4$. Đặt vₖ=uₖ/2ᵏ và tìm uₖ.
+
+<GoiYNho>Chia truy hồi cho 2^(k+2).</GoiYNho>
+
+<XemMuc bai-tap="3.6.3" />
+</BaiLuyen>
+
+Đọc đối chiếu: <XemMuc muc="3.6" />.

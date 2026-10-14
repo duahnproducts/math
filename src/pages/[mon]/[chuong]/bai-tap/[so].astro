@@ -63,6 +63,7 @@ const lopDoKho = { de: 'ok', vua: 'info', kho: 'warn' }[bt.data.do_kho];
           <span>·</span>
           <span class={`pill ${lopDoKho}`}>{NHAN_DO_KHO[bt.data.do_kho]}</span>
           {bt.data.nen_lam && <span class="pill warn">★ Nên làm</span>}
+          {bt.data.tu_soan && <span class="pill info" data-bai-tu-soan>Bài luyện tự soạn</span>}
           {!coHuongDan && <span class="pill mo">Chưa có hướng dẫn</span>}
         </p>
         <h1>{bt.data.tieu_de ?? `Bài ${bt.data.so}`}</h1>
@@ -177,7 +178,9 @@ const lopDoKho = { de: 'ok', vua: 'info', kho: 'warn' }[bt.data.do_kho];
 
       <p class="ghi-cong">
         {
-          du.loaiSach === 'theo-sach'
+          bt.data.tu_soan
+            ? `Bài luyện tự soạn theo chủ đề §${bt.data.muc} của ${du.mon.giao_trinh}. Số hiệu thuộc bộ bài luyện của website, không phải số bài trong sách. Đề, gợi ý và lời giải do người biên soạn viết; phát hành theo CC BY-NC-SA 4.0.`
+            : du.loaiSach === 'theo-sach'
             ? `Đề bài được tóm tắt bằng tiếng Việt; số hiệu giữ nguyên theo ${du.mon.giao_trinh}. Gợi ý và lời giải là của người biên soạn.`
             : bt.data.de_tom_tat
               ? `Đề bài viết lại ngắn gọn theo ${du.mon.giao_trinh}, giữ số hiệu và số liệu. ${du.mon.giay_phep} Gợi ý và lời giải là của người biên soạn.`

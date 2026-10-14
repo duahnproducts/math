@@ -42,8 +42,11 @@ Nội dung hiện có: Giải tích theo Kenneth Ross §1–§10 (6 bài ở Ch�
 ở Chương 2, PDF tổng hợp 37 trang; bài tập tự soạn nằm cuối mỗi bài). Bộ Abbott
 đã gỡ; có bản dịch Ross §1–§15 (PDF, 63 trang) tải ở cả hai chương, chưa chuyển
 thành các mục đọc trực tiếp. Đại số tuyến tính Chương 1–3 đọc trực
-tiếp trên web, Chương 4–8 có bản dịch PDF tải về; bài giảng và bài tập Chương
-1–2. Kinh tế vi mô Chương 1–3 đọc trực tiếp; Chương 5, 7, 8 có slide dịch PDF.
+tiếp trên web, Chương 4–8 có bản dịch PDF tải về; bài giảng Chương 1–3.
+Chương 3 có thêm 24 bài luyện tự soạn, mỗi mục ba mức, hai tầng gợi ý và lời giải;
+nhãn tự soạn phân biệt với số bài trong sách. Bài tập sách Chương 1 và §2.1–§2.2
+giữ nguyên; các mục §2.3–§2.9 và toàn bộ đề gốc Chương 3 chưa chuyển hết.
+Kinh tế vi mô Chương 1–3 đọc trực tiếp; Chương 5, 7, 8 có slide dịch PDF.
 Chương chỉ có PDF vẫn có trang để tải về, với nhãn rõ phần chưa chuyển lên web.
 
 ## Tự tạo bài giảng từ PDF

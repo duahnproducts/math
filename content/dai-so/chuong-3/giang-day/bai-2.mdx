@@ -1,0 +1,119 @@
+---
+mon: dai-so
+chuong: 3
+bai: 2
+tieu_de: "Định thức, nghịch đảo, Cramer và nội suy"
+y_tuong: "Định thức khác 0 báo ma trận vuông khả nghịch; phần bù đại số còn cho công thức nghịch đảo và nghiệm của hệ."
+phu_muc: ["3.2"]
+---
+
+import HinhDinhThuc from '../../../../src/figures/HinhDinhThuc.astro';
+import HinhCheoHoa from '../../../../src/figures/HinhCheoHoa.astro';
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+Định thức khác 0 báo ma trận vuông khả nghịch; phần bù đại số còn cho công thức nghịch đảo và nghiệm của hệ.
+</YTuong>
+
+## Hình dung trực quan
+
+Một phép biến đổi có thể kéo giãn và xô lệch tấm lưới nhưng vẫn gỡ lại được, miễn không ép phẳng nó. Định thức khác 0 kiểm tra điều ấy. Có nghịch đảo nghĩa là mỗi đầu ra có đúng một đầu vào.
+
+Nội suy là một ứng dụng khác: qua ba điểm có hoành độ khác nhau, tìm một đa thức bậc không quá hai khớp đúng dữ liệu. Mỗi điểm cho một phương trình về các hệ số.
+
+## Kiến thức cần biết
+
+Ôn $AA^{-1}=I$, giải hệ vuông, phần bù $C_{ij}$. **Phụ hợp** adj(A) là chuyển vị của ma trận các phần bù: phần tử (i,j) là $C_{ji}$, không phải $C_{ij}$. Khả nghịch đòi ma trận vuông.
+
+## Công thức
+
+Với ma trận vuông cùng cỡ: $\det(AB)=\det A\det B$, $\det A^T=\det A$. Ma trận A khả nghịch khi và chỉ khi det A khác 0; khi đó $\det A^{-1}=1/\det A$.
+
+$$A\operatorname{adj}(A)=\det(A)I,\qquad A^{-1}=\frac{\operatorname{adj}(A)}{\det A}.$$
+
+Với $A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$, nghịch đảo là $\frac1{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}$ nếu $ad-bc\ne0$.
+
+**Cramer:** với $Ax=b$, det A≠0, nghiệm thứ j là $x_j=\det A_j/\det A$. $A_j$ thay **cột j** của A bằng b. Nếu det A=0 thì công thức không áp dụng; hệ có thể vô nghiệm hoặc vô số nghiệm.
+
+**Nội suy:** $p(x)=c_0+\cdots+c_{n-1}x^{n-1}$ khớp n điểm $(t_i,y_i)$ cho hệ Vandermonde. Định thức hệ số là $\prod_{j<i}(t_i-t_j)$, khác 0 khi mọi hoành độ khác nhau, nên có duy nhất đa thức bậc không quá n−1. Công thức phụ hợp/Cramer hữu ích về lý thuyết; khử Gauss/LU thường gọn hơn cho hệ lớn.
+
+## Ví dụ mẫu
+
+### Bước 1 — Đề cho gì
+
+$A=\begin{bmatrix}2&1\\1&1\end{bmatrix}$, $b=(5,3)^T$.
+
+### Bước 2 — Hỏi gì
+
+Tính nghịch đảo và giải Ax=b theo hai cách.
+
+### Bước 3 — Dùng kiến thức nào và vì sao
+
+det A=1 khác 0; dùng nghịch đảo 2×2 rồi đối chiếu với Cramer.
+
+### Bước 4 — Giải từng bước
+
+$A^{-1}=\begin{bmatrix}1&-1\\-1&2\end{bmatrix}$, nên $x=A^{-1}b=(2,1)^T$.
+
+Cramer: $A_1=\begin{bmatrix}5&1\\3&1\end{bmatrix}$ có det=2; $A_2=\begin{bmatrix}2&5\\1&3\end{bmatrix}$ có det=1. Chia cho det A=1 cho cùng nghiệm.
+
+### Bước 5 — Kiểm tra
+
+$2(2)+1=5$, $2+1=3$; nhân $AA^{-1}$ được I.
+
+### Bước 6 — Tóm tắt cách làm
+
+Kiểm tra det trước → chọn nghịch đảo/khử/Cramer → thế nghiệm về hệ ban đầu.
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Chia cho det A khi bằng 0">
+Kết luận cần quay lại xét hạng và hệ; không gọi một thương 0/0 là nghiệm.
+</Loi>
+
+<Loi tieuDe="Thay hàng trong Cramer">
+A_j thay cột j vì ẩn x_j đi với cột j của A.
+</Loi>
+
+<Loi tieuDe="Quên chuyển vị ma trận phần bù">
+Phụ hợp là chuyển vị; với 2×2 phải đổi chỗ a,d và đổi dấu b,c.
+</Loi>
+
+## Tóm tắt 30 giây
+
+<BaGoc>
+<Goc ten="Hiểu">det≠0 bảo đảm gỡ lại phép biến đổi và giải duy nhất.</Goc>
+<Goc ten="Nhớ">det(AB), phụ hợp, điều kiện Cramer; nội suy cần hoành độ phân biệt.</Goc>
+<Goc ten="Làm">Tính định thức rồi kiểm tra nghiệm bằng thế lại.</Goc>
+</BaGoc>
+
+## Bài tập
+
+Các bài dưới đây là **bài luyện tự soạn**, dùng số riêng của bộ luyện trên web; không phải số bài trong sách Nicholson. Mỗi liên kết mở đề, hai tầng gợi ý và lời giải để bạn tự làm trước.
+
+<BaiLuyen do_kho="de" so="3.2.1">
+Xét $A=\begin{bmatrix}1&2\\2&4\end{bmatrix}$ và $B=\begin{bmatrix}1&2\\3&5\end{bmatrix}$. Ma trận nào khả nghịch?
+
+<GoiYNho>Tính hai định thức.</GoiYNho>
+
+<XemMuc bai-tap="3.2.1" />
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="3.2.2">
+Giải $2x+y=7$, $x-y=2$ bằng Cramer.
+
+<GoiYNho>Lập A và b đúng thứ tự phương trình.</GoiYNho>
+
+<XemMuc bai-tap="3.2.2" />
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="3.2.3">
+Tìm đa thức bậc không quá hai qua (0,1), (1,3), (2,7). Giải thích tính duy nhất.
+
+<GoiYNho>Viết p(x)=c₀+c₁x+c₂x².</GoiYNho>
+
+<XemMuc bai-tap="3.2.3" />
+</BaiLuyen>
+
+Đọc đối chiếu: <XemMuc muc="3.2" />.

@@ -1,0 +1,126 @@
+---
+mon: dai-so
+chuong: 3
+bai: 4
+tieu_de: "Chéo hoá: đổi trục để tính lũy thừa"
+y_tuong: "Chéo hoá đổi sang hệ tọa độ gồm các vector riêng để ma trận chỉ còn nhân từng tọa độ với một số."
+phu_muc: ["3.4"]
+---
+
+import HinhDinhThuc from '../../../../src/figures/HinhDinhThuc.astro';
+import HinhCheoHoa from '../../../../src/figures/HinhCheoHoa.astro';
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+Chéo hoá đổi sang hệ tọa độ gồm các vector riêng để ma trận chỉ còn nhân từng tọa độ với một số.
+</YTuong>
+
+## Hình dung trực quan
+
+Một chuyển động phức tạp theo hai trục ngang/dọc có thể đơn giản theo hai đường chéo. Nếu chọn các trục mới là những hướng riêng, hai thành phần không trộn vào nhau nữa.
+
+<HinhCheoHoa />
+
+Đọc $A=PDP^{-1}$ từ phải sang trái: đổi tọa độ bằng P⁻¹, kéo giãn bằng D, rồi đổi về bằng P. P không nhất thiết là phép quay; các vector riêng không bắt buộc vuông góc.
+
+## Kiến thức cần biết
+
+Ôn vector riêng, ma trận khả nghịch và nhân theo thứ tự. Các cột của P phải **độc lập tuyến tính**: không cột nào là tổ hợp của các cột còn lại. Với ma trận vuông, điều này tương đương det P≠0.
+
+## Công thức
+
+A chéo hoá được nếu có P khả nghịch sao cho $P^{-1}AP=D$ đường chéo. Tương đương $AP=PD$, nên cột thứ j của P phải là vector riêng ứng với ô thứ j của D.
+
+$$P=[v_1\ \cdots\ v_n],\quad D=\operatorname{diag}(\lambda_1,\ldots,\lambda_n),\quad A^k=PD^kP^{-1}.$$
+
+$D^k$ chỉ cần nâng từng ô đường chéo lên lũy thừa k. Trong công thức k=0, dùng D⁰=I kể cả khi có λ=0.
+
+**Điều kiện:** có n vector riêng độc lập. n giá trị riêng phân biệt là điều kiện đủ. Nếu λ lặp m lần trong đa thức đặc trưng (bội đại số), phải có m vector riêng cơ bản độc lập cho λ ấy; tổng cộng đủ n. Khi làm trên R, còn cần đa thức đặc trưng tách hết thành nghiệm thực; không bỏ sót điều kiện trường số.
+
+Ví dụ $I$ có một giá trị riêng lặp nhưng vẫn chéo hoá được. Ngược lại $J=\begin{bmatrix}1&1\\0&1\end{bmatrix}$ chỉ có vector riêng dạng (s,0), nên không thể chọn hai cột độc lập. Biết λ lặp chưa đủ kết luận thành công hay thất bại.
+
+Với đa thức p, nếu A=PDP⁻¹ thì p(A)=Pp(D)P⁻¹; hệ số hằng c của p trở thành cI. Nếu p bằng 0 tại mọi λ của ma trận chéo hoá được, thì p(A)=0. Định lý Cayley–Hamilton còn nói c_A(A)=0 cho mọi ma trận vuông; chứng minh tổng quát vượt khỏi phép chéo hoá này.
+
+## Ví dụ mẫu
+
+### Bước 1 — Đề cho gì
+
+$A=\begin{bmatrix}3&1\\1&3\end{bmatrix}$; Bài 3 cho v₁=(1,1), v₂=(1,−1), λ₁=4, λ₂=2.
+
+### Bước 2 — Hỏi gì
+
+Chéo hoá và viết công thức Aᵏ.
+
+### Bước 3 — Dùng kiến thức nào và vì sao
+
+Ghép hai vector riêng làm cột, giữ đúng thứ tự λ trên D.
+
+### Bước 4 — Giải từng bước
+
+$P=\begin{bmatrix}1&1\\1&-1\end{bmatrix}$ có det P=−2 nên khả nghịch; $P^{-1}=\frac12\begin{bmatrix}1&1\\1&-1\end{bmatrix}$, $D=\operatorname{diag}(4,2)$.
+
+Nhân ba ma trận cho
+$$A^k=\frac12\begin{bmatrix}4^k+2^k&4^k-2^k\\4^k-2^k&4^k+2^k\end{bmatrix}.$$
+
+Không cần nhân A với chính nó k lần.
+
+### Bước 5 — Kiểm tra
+
+k=0 cho I; k=1 cho A; k=2 cho $\begin{bmatrix}10&6\\6&10\end{bmatrix}$, đúng nhân trực tiếp.
+
+### Bước 6 — Tóm tắt cách làm
+
+Tìm riêng → đủ vector độc lập → ghép P,D cùng thứ tự → kiểm tra AP=PD → tính hàm của D.
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Đảo thứ tự giá trị riêng">
+Đổi hai cột P thì phải đổi hai ô tương ứng trong D.
+</Loi>
+
+<Loi tieuDe="Đủ n vector nhưng phụ thuộc">
+Hai bội của cùng một hướng không tạo hai trục.
+</Loi>
+
+<Loi tieuDe="Giá trị riêng lặp là thất bại">
+I có giá trị riêng lặp vẫn đủ mọi hướng; J ở trên mới thiếu hướng.
+</Loi>
+
+## Tóm tắt 30 giây
+
+<BaGoc>
+<Goc ten="Hiểu">Chéo hoá là thay hệ tọa độ, không làm đổi phép biến đổi gốc.</Goc>
+<Goc ten="Nhớ">P khả nghịch, AP=PD, Aᵏ=PDᵏP⁻¹.</Goc>
+<Goc ten="Làm">Kiểm tra đủ hướng và thứ tự trước khi nâng lũy thừa.</Goc>
+</BaGoc>
+
+## Bài tập
+
+Các bài dưới đây là **bài luyện tự soạn**, dùng số riêng của bộ luyện trên web; không phải số bài trong sách Nicholson. Mỗi liên kết mở đề, hai tầng gợi ý và lời giải để bạn tự làm trước.
+
+<BaiLuyen do_kho="de" so="3.4.1">
+Với A trong ví dụ mẫu, chọn $Q=\begin{bmatrix}1&1\\-1&1\end{bmatrix}$. D tương ứng là diag(4,2) hay diag(2,4)?
+
+<GoiYNho>Xem cột đầu Q thuộc hướng riêng nào.</GoiYNho>
+
+<XemMuc bai-tap="3.4.1" />
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="3.4.2">
+Dùng công thức bài giảng để tính A³ cho $A=\begin{bmatrix}3&1\\1&3\end{bmatrix}$.
+
+<GoiYNho>Thay k=3.</GoiYNho>
+
+<XemMuc bai-tap="3.4.2" />
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="3.4.3">
+Chứng minh $J=\begin{bmatrix}2&1\\0&2\end{bmatrix}$ không chéo hoá được trên R.
+
+<GoiYNho>Giá trị riêng duy nhất là 2 với bội 2.</GoiYNho>
+
+<XemMuc bai-tap="3.4.3" />
+</BaiLuyen>
+
+Đọc đối chiếu: <XemMuc muc="3.4" />.

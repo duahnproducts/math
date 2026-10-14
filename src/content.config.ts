@@ -81,6 +81,8 @@ const baiTap = defineCollection({
     can_dung: z.array(maKhoi).default([]),
     /** Đề viết lại ngắn gọn bằng lời của người biên soạn (giữ số hiệu, số liệu của sách), không dịch nguyên văn */
     de_tom_tat: z.boolean().default(false),
+    /** Bài luyện tự soạn: số hiệu thuộc bộ bài luyện, không phải số bài của sách. */
+    tu_soan: z.boolean().default(false),
   }),
 });
 

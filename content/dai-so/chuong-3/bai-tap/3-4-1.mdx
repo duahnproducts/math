@@ -1,0 +1,29 @@
+---
+so: "3.4.1"
+muc: "3.4"
+do_kho: de
+nen_lam: true
+tu_soan: true
+tieu_de: "Kiểm tra thứ tự P và D"
+can_dung: ["dinh-ly-3.4.1"]
+---
+
+<De>
+Với A trong ví dụ mẫu, chọn $Q=\begin{bmatrix}1&1\\-1&1\end{bmatrix}$. D tương ứng là diag(4,2) hay diag(2,4)?
+</De>
+
+<GoiY so={1}>
+Xem cột đầu Q thuộc hướng riêng nào.
+</GoiY>
+
+<GoiY so={2}>
+Cột đầu là (1,−1), ứng với 2.
+</GoiY>
+
+<LoiGiai>
+Cột đầu Q là v₂ nên ứng với λ=2; cột sau là v₁ ứng với 4. Do det Q=2 khác 0, Q chéo hoá A với D=diag(2,4). Nhân AQ=QD để kiểm tra. Thứ tự giá trị riêng phải theo thứ tự cột chứ không theo lớn bé.
+</LoiGiai>
+
+<LoiHayMac>
+Không giữ D cũ khi đã đổi cột.
+</LoiHayMac>

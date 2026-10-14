@@ -100,6 +100,47 @@ test('bài tập Chương 2: 47 bài của §2.1–§2.2 đều có lời giải
 // Các mục Chương 3 đã có trang trên web (thêm dần theo tiến độ chuyển bản dịch)
 const MUC_CHUONG_3 = ['3-1', '3-2', '3-3', '3-4', '3-5', '3-6', '3-7', '3-8'];
 
+test('Chương 3: tám bài giảng, nối hai chiều với sách và bộ bài luyện', async ({ page }) => {
+  test.slow();
+  await page.goto('dai-so/chuong-3/');
+  await expect(page.getByText('Chưa có bài giảng')).toHaveCount(0);
+  for (let i = 1; i <= 8; i++) {
+    await page.goto(`dai-so/chuong-3/giang-day/bai-${i}/`);
+    await expect(page.locator('.bai-giang h2')).toHaveCount(8);
+    await expect(page.locator('.katex-error')).toHaveCount(0);
+    await expect(page.getByRole('link', { name: 'Bài tập và bài luyện (3)' })).toBeVisible();
+    await page.goto(`dai-so/chuong-3/sach/3-${i}/`);
+    await page.getByRole('link', { name: `Học dễ hiểu ở Bài ${i}` }).click();
+    await expect(page).toHaveURL(new RegExp(`giang-day/bai-${i}/$`));
+  }
+  await page.goto('dai-so/chuong-3/giang-day/bai-1/');
+  await expect(page.locator('[data-hinh-dinh-thuc] svg')).toBeVisible();
+  await page.goto('dai-so/chuong-3/giang-day/bai-4/');
+  await expect(page.locator('[data-hinh-cheo-hoa] svg')).toBeVisible();
+});
+
+test('Chương 3: 24 bài luyện tự soạn có gợi ý, lời giải, bộ lọc và nhãn nguồn đúng', async ({ page }) => {
+  test.slow();
+  await page.goto('dai-so/chuong-3/bai-tap/');
+  await expect(page.getByRole('heading', { name: 'Bài tập và bài luyện' })).toBeVisible();
+  await expect(page.locator('[data-the-bai-tap]')).toHaveCount(24);
+  await expect(page.locator('[data-bai-tu-soan]')).toHaveCount(24);
+  await page.locator('[data-loc-muc="3.4"]').click();
+  await expect(page.locator('[data-the-bai-tap]:visible')).toHaveCount(3);
+  for (let i = 1; i <= 8; i++) {
+    for (let j = 1; j <= 3; j++) {
+      await page.goto(`dai-so/chuong-3/bai-tap/3-${i}-${j}/`);
+      await expect(page.locator('[data-bai-tu-soan]')).toBeVisible();
+      await expect(page.locator('.ghi-cong')).toContainText('không phải số bài trong sách');
+      await expect(page.locator('.katex-error')).toHaveCount(0);
+      await expect(page.locator('details[data-tang="loi-giai"]')).toHaveCount(1);
+      await expect(page.locator('.can-dung a').first()).toHaveAttribute('href', new RegExp(`sach/3-${i}/#`));
+    }
+  }
+  await page.locator('details[data-tang="goi-y-1"] summary').click();
+  await expect(page.locator('details[data-tang="goi-y-1"]')).toHaveAttribute('open','');
+});
+
 test('Chương 3: các mục đã chuyển có trang dịch, công thức dựng không lỗi, có PDF tải về', async ({ page }) => {
   test.slow(); // đi qua nhiều trang KaTeX nặng
   for (const muc of MUC_CHUONG_3) {

@@ -1,0 +1,124 @@
+---
+mon: dai-so
+chuong: 3
+bai: 7
+tieu_de: "Hệ vi phân: từ lũy thừa sang hàm mũ"
+y_tuong: "Chéo hoá cũng tách hệ đạo hàm thành các phương trình riêng, với nghiệm e mũ λt thay cho λ mũ k."
+phu_muc: ["3.7"]
+---
+
+import HinhDinhThuc from '../../../../src/figures/HinhDinhThuc.astro';
+import HinhCheoHoa from '../../../../src/figures/HinhCheoHoa.astro';
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+Chéo hoá cũng tách hệ đạo hàm thành các phương trình riêng, với nghiệm e mũ λt thay cho λ mũ k.
+</YTuong>
+
+## Hình dung trực quan
+
+Hai bình chứa chất trao đổi với nhau liên tục. Lượng chất thay đổi từng khoảnh khắc thay vì mỗi ngày. Đạo hàm mô tả tốc độ thay đổi; các hướng riêng vẫn giúp tách sự pha trộn thành các chuyển động đơn giản.
+
+So hai dòng: rời rạc $x_{k+1}=Ax_k$ cho thành phần λᵏ; liên tục $x'(t)=Ax(t)$ cho thành phần $e^{\lambda t}$. Không dùng cùng một tiêu chuẩn ổn định cho hai dòng.
+
+## Kiến thức cần biết
+
+Bài ứng dụng này cần biết đạo hàm tổng/tích và $(e^{at})'=ae^{at}$. x'(t) là vector gồm đạo hàm từng tọa độ. Điều kiện x(0)=b là **điều kiện ban đầu**; nó chọn các hằng số. Nếu chưa học đạo hàm, trước mắt hiểu bước đổi tọa độ, rồi quay lại kiểm tra nghiệm khi đã học giải tích.
+
+## Công thức
+
+Phương trình y'=λy có mọi nghiệm y(t)=ce^(λt). Thật vậy, đạo hàm của y(t)e^(−λt) bằng 0 nên tích này hằng trên khoảng đang xét.
+
+Nếu $A=PDP^{-1}$ và $x=Py$ với P hằng, thì $x'=Py'$; thế vào x'=Ax cho $y'=Dy$. Do đó:
+$$x(t)=\sum_{i=1}^n c_i e^{\lambda_i t}v_i,\qquad Pc=x(0).$$
+
+| Ký hiệu | Nghĩa |
+| --- | --- |
+| t | Thời gian liên tục |
+| vᵢ,λᵢ | Vector riêng và giá trị riêng tương ứng |
+| cᵢ | Hệ số từ điều kiện đầu, không phải hàm của t |
+| x'(t) | Tốc độ đổi từng thành phần |
+
+Trong trường hợp chéo hoá được, các λ thực âm cho thành phần co về 0; λ dương cho tăng nếu hệ số khác 0; λ=0 cho thành phần hằng. Với λ phức xét phần thực: Re(λ)&lt;0 làm biên độ suy giảm. Re(λ)=0 cần xét cấu trúc thêm, không tự kết luận hút về gốc. Ma trận không chéo hoá được cần phương pháp khác, nên đừng dùng tổng trên khi thiếu n hướng riêng.
+
+## Ví dụ mẫu
+
+### Bước 1 — Đề cho gì
+
+$A=\begin{bmatrix}-2&1\\1&-2\end{bmatrix}$, $x(0)=(2,0)^T$.
+
+### Bước 2 — Hỏi gì
+
+Giải x′=Ax và quyết định diễn biến khi t→+∞.
+
+### Bước 3 — Dùng kiến thức nào và vì sao
+
+Dùng hai hướng (1,1) và (1,−1) ứng với λ=−1,−3.
+
+### Bước 4 — Giải từng bước
+
+x(0)=(1,1)+(1,−1), nên c₁=c₂=1. Vì thế
+$$x(t)=e^{-t}(1,1)^T+e^{-3t}(1,-1)^T.$$
+
+Tọa độ là $x_1=e^{-t}+e^{-3t}$, $x_2=e^{-t}-e^{-3t}$. Cả hai →0 vì hai số mũ có hệ số âm.
+
+### Bước 5 — Kiểm tra
+
+Tại 0 được (2,0). Đạo hàm là $(-e^{-t}-3e^{-3t},-e^{-t}+3e^{-3t})^T$; nhân Ax cho cùng vector. Đã kiểm tra cả phương trình lẫn điều kiện đầu.
+
+### Bước 6 — Tóm tắt cách làm
+
+Tìm hướng riêng → thay λᵏ bằng e^(λt) → giải c từ đầu → đạo hàm và thế lại.
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Dùng λᵏ cho thời gian liên tục">
+Đạo hàm của e^(λt) tạo λ; λᵏ thuộc truy hồi rời rạc.
+</Loi>
+
+<Loi tieuDe="Âm nghĩa là luôn ổn định theo mọi kiểu thời gian">
+λ=−3 làm e^(−3t) co nhưng (−3)ᵏ tăng độ lớn.
+</Loi>
+
+<Loi tieuDe="Chỉ kiểm tra tại t=0">
+Đúng điều kiện đầu chưa đủ; phải thỏa x′=Ax trên toàn khoảng.
+</Loi>
+
+## Tóm tắt 30 giây
+
+<BaGoc>
+<Goc ten="Hiểu">Cùng phép đổi trục, khác quy luật tiến triển theo thời gian.</Goc>
+<Goc ten="Nhớ">Nghiệm e^(λt)v; Pc=x(0); dấu phần thực kiểm soát biên độ.</Goc>
+<Goc ten="Làm">Tính đạo hàm và so với Ax trước khi kết luận.</Goc>
+</BaGoc>
+
+## Bài tập
+
+Các bài dưới đây là **bài luyện tự soạn**, dùng số riêng của bộ luyện trên web; không phải số bài trong sách Nicholson. Mỗi liên kết mở đề, hai tầng gợi ý và lời giải để bạn tự làm trước.
+
+<BaiLuyen do_kho="de" so="3.7.1">
+Giải y′=−2y, y(0)=3.
+
+<GoiYNho>Nghiệm tổng quát ce^(−2t).</GoiYNho>
+
+<XemMuc bai-tap="3.7.1" />
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="3.7.2">
+Giải x′=diag(−1,2)x với x(0)=(4,0). Nghiệm có tăng vô hạn vì có λ=2 không?
+
+<GoiYNho>Giải từng tọa độ.</GoiYNho>
+
+<XemMuc bai-tap="3.7.2" />
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="3.7.3">
+Xét A=diag(−2,−1/2). So diễn biến mọi nghiệm x′=Ax với dãy zₖ₊₁=Azₖ; lấy z₀=(1,1).
+
+<GoiYNho>Vi phân dùng e^(λt); truy hồi dùng λᵏ.</GoiYNho>
+
+<XemMuc bai-tap="3.7.3" />
+</BaiLuyen>
+
+Đọc đối chiếu: <XemMuc muc="3.7" />.

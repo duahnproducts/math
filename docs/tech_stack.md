@@ -99,6 +99,11 @@ nhưng giữ đúng ý:
   (ghi công và giấy phép — bắt buộc).
 - **Bài tập:** `so` (ví dụ `"1.2.5"`), `muc`, `do_kho` (`de` / `vua` / `kho`),
   `nen_lam` (dấu ★), `can_dung`.
+  `tu_soan: true` dành cho bài luyện do người biên soạn đặt đề; số hiệu của bộ
+  luyện không phải số bài Nicholson. Danh sách, trang chi tiết và liên kết từ
+  bài giảng hiển thị nhãn tương ứng; ghi công không gọi chúng là đề dịch.
+  Chương 3 Đại số có 8 bài giảng §3.1–§3.8 và 24 bài luyện loại này. Nguồn
+  biên soạn ở `scripts/soan-dai-so-chuong-3.py`; chạy script sinh lại các MDX.
 - **Khối có số hiệu** (định nghĩa, định lý, ví dụ) viết bằng component, ví dụ
   `<DinhLy so="1.2.6">`. Khối này là đích của liên kết chéo.
 - `can_dung` ghi **loại kèm số hiệu**, ví dụ `dinh-nghia-1.2.3`, vì có sách

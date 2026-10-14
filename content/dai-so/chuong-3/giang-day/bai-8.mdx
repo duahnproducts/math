@@ -1,0 +1,125 @@
+---
+mon: dai-so
+chuong: 3
+bai: 8
+tieu_de: "Vì sao khai triển theo mọi hàng hoặc cột đều đúng?"
+y_tuong: "Định nghĩa định thức bằng một cột rồi dùng quy nạp và quy tắc đổi hàng để chứng minh mọi cách khai triển cho cùng kết quả."
+phu_muc: ["3.8"]
+---
+
+import HinhDinhThuc from '../../../../src/figures/HinhDinhThuc.astro';
+import HinhCheoHoa from '../../../../src/figures/HinhCheoHoa.astro';
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+Định nghĩa định thức bằng một cột rồi dùng quy nạp và quy tắc đổi hàng để chứng minh mọi cách khai triển cho cùng kết quả.
+</YTuong>
+
+## Hình dung trực quan
+
+Một phép đo chỉ đáng tin khi đổi cách thao tác vẫn cho cùng đáp số. Ở Bài 1 ta đã được phép chọn hàng/cột tiện nhất. Bây giờ cần giải thích vì sao quyền lựa chọn ấy hợp lệ.
+
+Hình dung một cây tính toán: ma trận 3×3 tách thành ba ma trận 2×2, rồi thành các số 1×1. Quy nạp đi từ cỡ nhỏ sang lớn, không bắt đầu bằng chính điều phải chứng minh.
+
+## Kiến thức cần biết
+
+Ôn quy nạp: đúng ở cỡ 1, giả sử đúng ở cỡ n−1 rồi suy ra cỡ n. $A_{ij}$ bỏ hàng i/cột j. Tính tuyến tính theo **một hàng khi các hàng khác cố định** khác với tính tuyến tính theo cả ma trận.
+
+## Công thức
+
+**Định nghĩa ban đầu:** det[a]=a. Với cỡ n, định nghĩa bằng **cột 1**:
+$$\det A=\sum_{i=1}^n(-1)^{i+1}a_{i1}\det A_{i1}.$$
+
+Chưa được dùng khai triển cột khác trước khi chứng minh. Dàn đường chứng minh của §3.8:
+
+1. **Bổ đề cộng một hàng:** hàng p của A bằng hàng p của B cộng hàng p của C, còn các hàng khác giống nhau, thì det A=det B+det C. Trong tổng cột 1, nếu i=p thì hệ số aₚ₁ tách tổng; nếu i≠p thì ma trận con còn hàng p và dùng quy nạp để tách.
+2. Tương tự, nhân một hàng với c nhân định thức với c. Từ đó có hàng 0 ⇒ định thức 0.
+3. Đổi hai hàng kề làm đổi dấu. Với ma trận con không xóa hai hàng ấy, dùng quy nạp; hai số hạng xóa một trong hai hàng hoán đổi vị trí và khác dấu. Đổi hai hàng xa thực hiện bằng số lẻ lần đổi hàng kề.
+4. Hai hàng bằng nhau ⇒ đổi chúng vừa giữ ma trận vừa đổi dấu định thức, nên det=0. Cộng c lần một hàng vào hàng khác: tách theo bước 1; số hạng thêm có hai hàng tỉ lệ nên bằng 0. Vì thế phép cộng bội giữ định thức.
+5. Dùng các quy tắc hàng để thiết lập det Aᵀ=det A như §3.2, rồi chuyển quy tắc đổi hàng sang đổi cột.
+6. Đưa cột j về cột 1 cần j−1 lần đổi cột kề. Kết hợp dấu ấy với dấu i+1 trong định nghĩa cho $(-1)^{j-1+i+1}=(-1)^{i+j}$, đúng công thức khai triển cột j. Chuyển vị một lần nữa cho khai triển theo mọi hàng.
+
+Chi tiết đủ từng trường hợp ở <XemMuc muc="3.8" />. Bài này giải thích cấu trúc chứng minh để bạn biết mỗi bước đang dựa vào điều gì, không dùng kết luận cuối làm giả thiết.
+
+**Tuyến tính từng hàng không cho det(A+B)=det A+det B.** Nếu cộng cả ma trận, nhiều hàng cùng thay đổi; khi tách sẽ có các số hạng chéo. Ví dụ A=B=I₂: det(A+B)=4 còn det A+det B=2.
+
+## Ví dụ mẫu
+
+### Bước 1 — Đề cho gì
+
+$A=\begin{bmatrix}1&2&0\\0&3&4\\5&0&6\end{bmatrix}$.
+
+### Bước 2 — Hỏi gì
+
+Tính theo hàng 1 và cột 3; giải thích vì sao hai kết quả phải trùng.
+
+### Bước 3 — Dùng kiến thức nào và vì sao
+
+Định lý khai triển cho phép chọn hai đường; theo dõi dấu và ma trận con để kiểm tra.
+
+### Bước 4 — Giải từng bước
+
+Theo hàng 1: $1(3\cdot6-4\cdot0)-2(0\cdot6-4\cdot5)=18+40=58$.
+
+Theo cột 3: phần tử 4 ở (2,3) có dấu trừ, minor bằng $1\cdot0-2\cdot5=-10$; phần tử 6 ở (3,3) có minor $1\cdot3-2\cdot0=3$. Vậy det=−4(−10)+6(3)=58.
+
+### Bước 5 — Kiểm tra
+
+Cùng 58. Hai phép tính minh họa định lý; thử một ma trận không thay thế chứng minh cho mọi cỡ n.
+
+### Bước 6 — Tóm tắt cách làm
+
+Phân biệt định nghĩa và định lý → hiểu bước quy nạp → dùng dấu do đổi cột → kiểm tra bằng hai đường.
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Dùng định lý để chứng minh chính nó">
+Bắt đầu bằng định nghĩa cột 1, rồi các bổ đề hàng; không viện khai triển tùy ý quá sớm.
+</Loi>
+
+<Loi tieuDe="Nhầm tuyến tính từng hàng với cả ma trận">
+Các hàng khác phải giữ cố định trong bổ đề cộng.
+</Loi>
+
+<Loi tieuDe="Thử nhiều ví dụ rồi gọi là chứng minh">
+Ví dụ kiểm lỗi tính; quy nạp và các bổ đề mới bao quát mọi ma trận.
+</Loi>
+
+## Tóm tắt 30 giây
+
+<BaGoc>
+<Goc ten="Hiểu">Các quy tắc hàng là cầu nối từ một định nghĩa đến nhiều cách tính.</Goc>
+<Goc ten="Nhớ">Dấu i+j đến từ dấu cột 1 cộng số lần chuyển cột.</Goc>
+<Goc ten="Làm">Theo dõi đúng giả thiết của mỗi bổ đề, tránh suy luận vòng.</Goc>
+</BaGoc>
+
+## Bài tập
+
+Các bài dưới đây là **bài luyện tự soạn**, dùng số riêng của bộ luyện trên web; không phải số bài trong sách Nicholson. Mỗi liên kết mở đề, hai tầng gợi ý và lời giải để bạn tự làm trước.
+
+<BaiLuyen do_kho="de" so="3.8.1">
+Cho A=B=I₂. Tính det(A+B) và det A+det B. Có đẳng thức tổng quát không?
+
+<GoiYNho>A+B=2I₂.</GoiYNho>
+
+<XemMuc bai-tap="3.8.1" />
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="3.8.2">
+Cho B có các hàng (1,2),(3,4); C có các hàng (5,6),(3,4). Đặt A có các hàng (6,8),(3,4). Kiểm tra bổ đề cộng hàng 1.
+
+<GoiYNho>Hàng 2 giữ nguyên.</GoiYNho>
+
+<XemMuc bai-tap="3.8.2" />
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="3.8.3">
+Dùng tính cộng/tỉ lệ theo một hàng và “hai hàng bằng nhau thì det=0” để chứng minh Rₚ←Rₚ+cR_q, p≠q, giữ định thức.
+
+<GoiYNho>Tách định thức theo tổng ở hàng p.</GoiYNho>
+
+<XemMuc bai-tap="3.8.3" />
+</BaiLuyen>
+
+Đọc đối chiếu: <XemMuc muc="3.8" />.

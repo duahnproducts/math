@@ -1,0 +1,123 @@
+---
+mon: dai-so
+chuong: 3
+bai: 1
+tieu_de: "Định thức: diện tích và khai triển phần bù"
+y_tuong: "Định thức đo hệ số thay đổi diện tích có hướng; khai triển phần bù giúp tính nó bằng các ma trận nhỏ hơn."
+phu_muc: ["3.1"]
+---
+
+import HinhDinhThuc from '../../../../src/figures/HinhDinhThuc.astro';
+import HinhCheoHoa from '../../../../src/figures/HinhCheoHoa.astro';
+
+## Ý tưởng trong 1 câu
+
+<YTuong>
+Định thức đo hệ số thay đổi diện tích có hướng; khai triển phần bù giúp tính nó bằng các ma trận nhỏ hơn.
+</YTuong>
+
+## Hình dung trực quan
+
+Một tấm lưới ô vuông có hai cạnh đơn vị. Ma trận có hai cột $u=(2,0)$ và $v=(1,3)$ đưa ô vuông thành hình bình hành đáy 2, cao 3. Diện tích mới bằng 6 lần diện tích cũ. Đổi thứ tự hai cột giữ diện tích nhưng đảo hướng: định thức đổi dấu.
+
+<HinhDinhThuc />
+
+Nếu hai cột cùng nằm trên một đường, hình bị ép phẳng; diện tích bằng 0. Đây là trực giác của ma trận không khả nghịch, không phải quy tắc đếm nghiệm cho mọi hệ bất kỳ.
+
+## Kiến thức cần biết
+
+Ôn ma trận vuông, phép khử hàng và định thức $2\times2$: $ad-bc$. Đường chéo chính chạy từ góc trên trái xuống góc dưới phải. $A_{ij}$ là ma trận thu được bằng cách bỏ hàng $i$ và cột $j$; nó nhỏ hơn $A$ một cấp. Phân biệt ma trận con với số định thức của nó.
+
+## Công thức
+
+**Phần bù đại số:** $C_{ij}=(-1)^{i+j}\det A_{ij}$. Dấu tạo bàn cờ: hàng đầu $+,-,+$, hàng sau $-,+,-$.
+
+**Khai triển theo hàng $i$:** $\det A=\sum_{j=1}^n a_{ij}C_{ij}$. Theo cột $j$: $\det A=\sum_{i=1}^n a_{ij}C_{ij}$. $a_{ij}$ là phần tử tại vị trí $(i,j)$; $C_{ij}$ là số phần bù tại đúng vị trí ấy; $\sum$ là cộng các số hạng. Chọn hàng/cột có nhiều số 0 để ít tính.
+
+| Phép làm trên hàng | Tác động tới định thức |
+| --- | --- |
+| Đổi hai hàng | Đổi dấu |
+| Nhân một hàng với $c$ | Nhân định thức với $c$ |
+| Cộng bội một hàng vào hàng khác | Không đổi |
+
+Ma trận tam giác có định thức bằng tích các phần tử đường chéo. Một hàng 0 hoặc hai hàng bằng nhau cho định thức 0. Các quy tắc cột tương tự. Với $A$ cỡ $n\times n$, $\det(cA)=c^n\det A$ vì cả $n$ hàng đều bị nhân $c$.
+
+## Ví dụ mẫu
+
+### Bước 1 — Đề cho gì
+
+$A=\begin{bmatrix}2&0&1\\1&3&0\\0&2&4\end{bmatrix}$.
+
+### Bước 2 — Hỏi gì
+
+Tính định thức bằng khai triển và kiểm tra bằng khử hàng.
+
+### Bước 3 — Dùng kiến thức nào và vì sao
+
+Hàng đầu có một số 0, nên khai triển chỉ có hai số hạng khác 0.
+
+### Bước 4 — Giải từng bước
+
+$\det A=2\det\begin{bmatrix}3&0\\2&4\end{bmatrix}+1\det\begin{bmatrix}1&3\\0&2\end{bmatrix}=2(12)+2=26$.
+
+Phần tử $(1,3)$ có dấu $(-1)^4=+$; vì vậy số hạng thứ hai là cộng 2.
+
+### Bước 5 — Kiểm tra
+
+Dùng $R_2\leftarrow R_2-\frac12R_1$, rồi $R_3\leftarrow R_3-\frac23R_2$ được ma trận tam giác với đường chéo $2,3,13/3$. Không phép nào đổi định thức; tích bằng 26.
+
+### Bước 6 — Tóm tắt cách làm
+
+Chọn hàng/cột thưa → tính ma trận con → gắn dấu bàn cờ → cộng; khi khử phải theo dõi từng phép đổi định thức.
+
+## Lỗi dễ mắc
+
+<Loi tieuDe="Quên dấu phần bù">
+Phần tử ở vị trí (1,2) có dấu trừ dù chính số ấy đang dương.
+</Loi>
+
+<Loi tieuDe="Nhân một hàng như nhân cả ma trận">
+Nhân một hàng với 2 cho hệ số 2, còn nhân cả ma trận $3\times3$ với 2 cho hệ số $2^3$.
+</Loi>
+
+<Loi tieuDe="Dùng quy tắc đường chéo cho mọi cỡ">
+Quy tắc Sarrus chỉ dành cho 3×3; khai triển hoặc khử dùng được tổng quát.
+</Loi>
+
+## Tóm tắt 30 giây
+
+<BaGoc>
+<Goc ten="Hiểu">Định thức bằng 0 khi diện tích/thể tích bị ép mất một chiều.</Goc>
+<Goc ten="Nhớ">Khai triển theo mọi hàng/cột cho cùng kết quả; khử hàng có ba quy tắc riêng.</Goc>
+<Goc ten="Làm">Chọn cách ít phép tính rồi kiểm tra bằng cách thứ hai.</Goc>
+</BaGoc>
+
+## Bài tập
+
+Các bài dưới đây là **bài luyện tự soạn**, dùng số riêng của bộ luyện trên web; không phải số bài trong sách Nicholson. Mỗi liên kết mở đề, hai tầng gợi ý và lời giải để bạn tự làm trước.
+
+<BaiLuyen do_kho="de" so="3.1.1">
+Tính $\det\begin{bmatrix}2&1\\3&4\end{bmatrix}$ và định thức sau khi đổi hai hàng.
+
+<GoiYNho>Dùng ad−bc.</GoiYNho>
+
+<XemMuc bai-tap="3.1.1" />
+</BaiLuyen>
+
+<BaiLuyen do_kho="vua" so="3.1.2">
+Tính $\det\begin{bmatrix}1&0&2\\0&3&0\\4&0&5\end{bmatrix}$.
+
+<GoiYNho>Chọn hàng 2 hoặc cột 2.</GoiYNho>
+
+<XemMuc bai-tap="3.1.2" />
+</BaiLuyen>
+
+<BaiLuyen do_kho="kho" so="3.1.3">
+Biết $\det A=5$ với $A$ cỡ $3\times3$. Từ A, đổi hàng 1 và 2, nhân hàng 3 với 2, rồi cộng 4 lần hàng 1 vào hàng 2 để được B. Tính det B và det(2A).
+
+<GoiYNho>Theo dõi hệ số của từng phép.</GoiYNho>
+
+<XemMuc bai-tap="3.1.3" />
+</BaiLuyen>
+
+Đọc đối chiếu: <XemMuc muc="3.1" />.

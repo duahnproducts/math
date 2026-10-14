@@ -23,6 +23,7 @@ const d = taoDuongDan(import.meta.env.BASE_URL);
 const so = du.chuong.so;
 const cacMuc = du.chuong.muc.filter((m) => du.baiTap.some((b) => b.data.muc === m.so));
 const coNenLam = du.baiTap.some((b) => b.data.nen_lam);
+const coTuSoan = du.baiTap.some((b) => b.data.tu_soan);
 ---
 
 <Khung
@@ -39,9 +40,11 @@ const coNenLam = du.baiTap.some((b) => b.data.nen_lam);
   <div class="trang-hep">
     <header class="dau-trang">
       <p class="nhan-tren">{du.mon.ten} · Chương {so}</p>
-      <h1>Bài tập trong sách</h1>
+      <h1>{coTuSoan ? 'Bài tập và bài luyện' : 'Bài tập trong sách'}</h1>
       <p class="phu-de">
-        Số hiệu giữ đúng theo sách. Tự làm trước ít nhất 20 phút, rồi mới mở gợi ý từng tầng.
+        {coTuSoan
+          ? 'Bài luyện tự soạn có nhãn riêng; số hiệu của chúng thuộc bộ luyện trên web, không phải số bài của sách. Tự làm trước, rồi mở gợi ý từng tầng.'
+          : 'Số hiệu giữ đúng theo sách. Tự làm trước ít nhất 20 phút, rồi mới mở gợi ý từng tầng.'}
       </p>
     </header>
 
@@ -112,6 +115,7 @@ const coNenLam = du.baiTap.some((b) => b.data.nen_lam);
                   </span>
                   {b.data.tieu_de && <span class="tom">{b.data.tieu_de}</span>}
                   <span class="dong">
+                    {b.data.tu_soan && <span class="pill info" data-bai-tu-soan>Bài luyện tự soạn</span>}
                     {!baiTapCoHuongDan(b) && <span class="pill mo">Chưa có hướng dẫn</span>}
                     <span data-trang-thai-bai-tap={khoaBaiTap(mon, so, b.data.so)} class="pill trang-thai-bt" />
                   </span>

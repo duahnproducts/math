@@ -1,0 +1,26 @@
+---
+// Sơ đồ thứ tự của A=PDP⁻¹, đọc theo chiều tác động lên vector x.
+---
+<figure class="hinh" data-hinh-cheo-hoa>
+  <svg viewBox="0 0 540 160" width="540" role="img" aria-label="Đầu vào x qua P nghịch đảo để đổi tọa độ, qua D để nhân từng hướng, rồi qua P để trở về Ax">
+    <g class="hop">
+      <rect x="70" y="35" width="110" height="65" rx="8" />
+      <rect x="220" y="35" width="110" height="65" rx="8" />
+      <rect x="370" y="35" width="110" height="65" rx="8" />
+    </g>
+    <path d="M30 68H65 M55 61L65 68L55 75 M185 68H215 M205 61L215 68L205 75 M335 68H365 M355 61L365 68L355 75 M485 68H520 M510 61L520 68L510 75" />
+    <g text-anchor="middle">
+      <text x="15" y="73">x</text><text x="125" y="61">P⁻¹</text><text x="125" y="83">Đổi tọa độ</text>
+      <text x="275" y="61">D</text><text x="275" y="83">Nhân từng hướng</text>
+      <text x="425" y="61">P</text><text x="425" y="83">Đổi về</text><text x="528" y="93">Ax</text>
+      <text x="275" y="137">Thực hiện từ phải sang trái trong công thức A = PDP⁻¹</text>
+    </g>
+  </svg>
+  <figcaption>Chỉ đổi tọa độ ở đầu và cuối. Lặp A nhiều lần tương đương thay D bằng Dᵏ ở giữa.</figcaption>
+</figure>
+<style>
+  svg { max-width:100%; height:auto; }
+  rect { fill:var(--accent-soft); stroke:var(--accent); }
+  path { fill:none; stroke:var(--text); stroke-width:1.5; }
+  text { fill:var(--text); font:12px sans-serif; }
+</style>

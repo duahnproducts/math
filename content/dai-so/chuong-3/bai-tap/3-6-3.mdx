@@ -1,0 +1,29 @@
+---
+so: "3.6.3"
+muc: "3.6"
+do_kho: kho
+nen_lam: true
+tu_soan: true
+tieu_de: "Nghiệm lặp cần thêm một dạng"
+can_dung: ["vi-du-3.6.2"]
+---
+
+<De>
+Cho $u_{k+2}=4u_{k+1}-4u_k$, $u_0=1,u_1=4$. Đặt vₖ=uₖ/2ᵏ và tìm uₖ.
+</De>
+
+<GoiY so={1}>
+Chia truy hồi cho 2^(k+2).
+</GoiY>
+
+<GoiY so={2}>
+vₖ₊₂=2vₖ₊₁−vₖ nên các hiệu vₖ₊₁−vₖ bằng nhau.
+</GoiY>
+
+<LoiGiai>
+v₀=1,v₁=2 và vₖ₊₂−vₖ₊₁=vₖ₊₁−vₖ. Các hiệu đều 1, nên vₖ=1+k; uₖ=(1+k)2ᵏ. Kiểm tra k=0,1 cho 1,4 và thế biểu thức vào truy hồi. Nghiệm đặc trưng 2 lặp làm cần dạng k2ᵏ, không phải hai bội cùng 2ᵏ.
+</LoiGiai>
+
+<LoiHayMac>
+Không áp dụng giả thiết hai nghiệm phân biệt vào nghiệm kép.
+</LoiHayMac>
