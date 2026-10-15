@@ -108,7 +108,7 @@ test('Chương 3: tám bài giảng, nối hai chiều với sách và bộ bài
     await page.goto(`dai-so/chuong-3/giang-day/bai-${i}/`);
     await expect(page.locator('.bai-giang h2')).toHaveCount(8);
     await expect(page.locator('.katex-error')).toHaveCount(0);
-    await expect(page.getByRole('link', { name: 'Bài tập và bài luyện (3)' })).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Làm bài tập bài này →' })).toBeVisible();
     await page.goto(`dai-so/chuong-3/sach/3-${i}/`);
     await page.getByRole('link', { name: `Học dễ hiểu ở Bài ${i}` }).click();
     await expect(page).toHaveURL(new RegExp(`giang-day/bai-${i}/$`));
