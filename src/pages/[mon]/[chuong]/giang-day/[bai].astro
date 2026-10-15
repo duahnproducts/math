@@ -31,6 +31,8 @@ const truoc = du.baiGiang[viTriSo - 1];
 const sau = du.baiGiang[viTriSo + 1];
 const mucCoTrang = new Set(du.sach.map((s) => s.data.muc));
 const baiTapPhu = du.baiTap.filter((b) => bai.data.phu_muc.includes(b.data.muc));
+const mucCoBaiTap = bai.data.phu_muc.filter((m) => baiTapPhu.some((b) => b.data.muc === m));
+const mucBaiLuyen = headings.find((h) => h.depth === 2 && h.text.startsWith('Bài tập'));
 const pdf = du.chuong.tai_ve.find((t) => t.tep.includes('bai-giang'));
 const tieuDe = `Bài ${bai.data.bai}: ${bai.data.tieu_de}`;
 const href = d.baiGiang(mon, so, bai.data.bai);
@@ -94,7 +96,7 @@ const href = d.baiGiang(mon, so, bai.data.bai);
       </div>
 
       {
-        (bai.data.phu_muc.some((m) => mucCoTrang.has(m)) || baiTapPhu.length > 0) && (
+        (bai.data.phu_muc.some((m) => mucCoTrang.has(m)) || mucBaiLuyen || baiTapPhu.length > 0) && (
           <nav class="lien-ket-cheo" aria-label="Bước tiếp theo">
             <span>Bước tiếp theo:</span>
             {bai.data.phu_muc
@@ -104,9 +106,14 @@ const href = d.baiGiang(mon, so, bai.data.bai);
                   {tenSach} §{m}
                 </a>
               ))}
-            {baiTapPhu.length > 0 && (
-              <a class="nut nho" href={`${d.dsBaiTap(mon, so)}?muc=${bai.data.phu_muc[0]}`}>
-                <Icon ten="pencil-line" co={14} /> {baiTapPhu.some((b) => b.data.tu_soan) ? 'Bài tập và bài luyện' : 'Bài tập trong sách'} ({baiTapPhu.length})
+            {mucCoBaiTap.map((m) => (
+              <a class="nut chinh" data-bai-tap-bai-nay href={`${d.dsBaiTap(mon, so)}?muc=${encodeURIComponent(m)}`}>
+                <Icon ten="pencil-line" co={16} /> Làm bài tập bài này{mucCoBaiTap.length > 1 ? ` · §${m}` : ''} →
+              </a>
+            ))}
+            {mucCoBaiTap.length === 0 && mucBaiLuyen && (
+              <a class="nut chinh" data-bai-tap-bai-nay href={`#${mucBaiLuyen.slug}`}>
+                <Icon ten="pencil-line" co={16} /> Làm bài tập bài này →
               </a>
             )}
           </nav>
