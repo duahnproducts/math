@@ -1,0 +1,60 @@
+---
+so: "2.6.23"
+muc: "2.6"
+do_kho: vua
+tieu_de: "Phép biến đổi tuyến tính — bài 23"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.6.23"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.6.23 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-6-23-1" moTa="Đề gốc Nicholson bài 2.6.23, phần 1; xem bản văn bản bên dưới hình" />
+
+<HinhSach ten="ds-de-2-6-23-2" moTa="Đề gốc Nicholson bài 2.6.23, phần 2; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.6.23  If x̸ = 0 and y are vectors in Rn, show
+
+that there is a linear transformation T : Rn →Rn such thatT(x) = y. [Hint: By Deﬁnition 2.5, ﬁnd a matrix A such
+that Ax = y.]
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Dùng tính bảo toàn tổ hợp tuyến tính hoặc tìm ảnh của các vector đơn vị.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Cột thứ j của ma trận ánh xạ là ảnh của vector đơn vị thứ j; phép hợp thành đặt ma trận thực hiện sau ở bên trái.
+
+</GoiY>
+
+<LoiGiai>
+
+Vì $x\ne0$, $x^Tx>0$. Đặt
+
+$$
+A=\frac{yx^T}{x^Tx},\qquad T(z)=Az.
+$$
+
+ Đây là ánh xạ ma trận nên tuyến tính, và $T(x)=y(x^Tx)/(x^Tx)=y$. Công thức còn đúng khi $y=0$; không chia cho một thành phần có thể bằng 0 của $x$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Vector đầu vào, đầu ra có thể khác kích thước. Khi dùng mô tả hình học, kiểm tra cả chiều quay và độ dài.
+
+</LoiHayMac>

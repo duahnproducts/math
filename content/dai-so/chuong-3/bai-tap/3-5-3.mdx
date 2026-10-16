@@ -1,29 +1,51 @@
 ---
 so: "3.5.3"
 muc: "3.5"
-do_kho: kho
-nen_lam: true
-tu_soan: true
-tieu_de: "Hướng trội không có trong trạng thái đầu"
-can_dung: ["dinh-ly-3.5.1"]
+do_kho: vua
+tieu_de: "Hệ động lực tuyến tính — bài 3"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.5.3"
 ---
 
 <De>
-Với $A=\begin{bmatrix}3&1\\1&3\end{bmatrix}$ và $x_0=(1,-1)^T$, chứng minh xₖ=2ᵏx₀, dù 4 là giá trị riêng trội.
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.5.3 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-5-3-1" moTa="Đề gốc Nicholson bài 3.5.3, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.5.3  In the model of Example 3.3.1, does the
+ﬁnal outcome depend on the initial population of adult
+and juvenile females? Support your answer.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </De>
 
 <GoiY so={1}>
-Kiểm tra Ax₀.
+
+Viết vector trạng thái sau k bước dưới dạng A mũ k nhân trạng thái ban đầu.
+
 </GoiY>
 
 <GoiY so={2}>
-Hệ số của (1,1) trong x₀ bằng 0.
+
+Khai triển trạng thái ban đầu theo cơ sở vector riêng, rồi so sánh môđun các trị riêng có hệ số khác 0.
+
 </GoiY>
 
 <LoiGiai>
-Ax₀=(2,−2)=2x₀. Quy nạp hoặc công thức hướng riêng cho xₖ=2ᵏx₀. Hướng trội (1,1) có hệ số 0 nên không xuất hiện. Kiểm tra k=1 trực tiếp. Phải xét phép phân tích x₀, không chỉ phổ của A.
+
+Với các tỷ lệ trong ví dụ, ma trận là $\begin{bmatrix}1/2&1/4\\2&0\end{bmatrix}$, trị riêng là $1,-1/2$. Vector riêng dương cho trị riêng 1 là $(1,2)^T$. Nếu ban đầu $(a_0,j_0)^T\ge0$, không đồng thời bằng 0, hệ số của vector riêng này bằng $(4a_0+j_0)/6>0$. Hạng chứa $(-1/2)^k$ tiến về 0, nên quần thể luôn ổn định, không phụ thuộc cơ cấu ban đầu về loại kết cục. Tuy nhiên mức quần thể giới hạn bằng $[(4a_0+j_0)/6](1,2)^T$, có phụ thuộc số lượng ban đầu. Nếu ban đầu bằng 0 thì luôn bằng 0.
+
 </LoiGiai>
 
 <LoiHayMac>
-Đừng coi hướng trội luôn xuất hiện với mọi trạng thái đầu.
+
+Trị riêng trội quyết định tốc độ khi hệ số tương ứng khác 0; giữ cả giả thiết về trạng thái ban đầu.
+
 </LoiHayMac>

@@ -1,29 +1,58 @@
 ---
 so: "3.4.3"
 muc: "3.4"
-do_kho: kho
-nen_lam: true
-tu_soan: true
-tieu_de: "Một ma trận không chéo hoá được"
-can_dung: ["dinh-ly-3.4.1"]
+do_kho: vua
+tieu_de: "Chéo hoá — bài 3"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.4.3"
 ---
 
 <De>
-Chứng minh $J=\begin{bmatrix}2&1\\0&2\end{bmatrix}$ không chéo hoá được trên R.
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.4.3 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-4-3-1" moTa="Đề gốc Nicholson bài 3.4.3, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.4.3
+
+             1  3            2  0
+    a.  If A =         and B =           verify that A
+             0  2            0  1
+      and B are diagonalizable, but AB is not.
+
+             1   0
+    b.  If D =          ﬁnd a diagonalizable matrix A
+             0 −1      such that D+A is not diagonalizable.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </De>
 
 <GoiY so={1}>
-Giá trị riêng duy nhất là 2 với bội 2.
+
+Tìm các trị riêng và cơ sở từng không gian riêng.
+
 </GoiY>
 
 <GoiY so={2}>
-Giải (J−2I)v=0, được y=0.
+
+Ghép các vector riêng độc lập thành cột của P, rồi kiểm tra AP = PD. Cần đủ số cột bằng cấp ma trận.
+
 </GoiY>
 
 <LoiGiai>
-c_J(t)=(t−2)². Không gian riêng là &#123;(x,0)&#125;, chỉ có một vector cơ bản độc lập. Ma trận 2×2 cần hai cột độc lập; mọi hai vector riêng ở đây cùng đường nên P suy biến. Do đó không chéo hoá được. Kiểm tra thêm: nếu chéo hoá được với D=2I thì J=P(2I)P⁻¹=2I, trái ô (1,2)=1.
+
+**a.** $A$ có hai trị riêng phân biệt 1,2, nên chéo hóa được; $B$ đã chéo. Nhưng $AB=\begin{bmatrix}2&3\\0&2\end{bmatrix}$ chỉ có trị riêng 2, không phải $2I$, nên không chéo hóa được (không gian riêng chỉ một chiều). **b.** Chọn $A=\begin{bmatrix}0&1\\0&2\end{bmatrix}$, có hai trị riêng phân biệt 0,2. Khi đó $D+A=\begin{bmatrix}1&1\\0&1\end{bmatrix}$ chỉ có trị riêng 1 và một vector riêng độc lập, nên không chéo hóa được.
+
 </LoiGiai>
 
 <LoiHayMac>
-Không nhầm bội 2 với hai vector riêng độc lập.
+
+Trị riêng lặp không tự động ngăn chéo hóa; cần so sánh số vector riêng độc lập với cấp ma trận.
+
 </LoiHayMac>

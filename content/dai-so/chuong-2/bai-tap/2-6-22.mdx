@@ -1,0 +1,53 @@
+---
+so: "2.6.22"
+muc: "2.6"
+do_kho: vua
+tieu_de: "Phép biến đổi tuyến tính — bài 22"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.6.22"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.6.22 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-6-22-1" moTa="Đề gốc Nicholson bài 2.6.22, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.6.22  Given vectors w and x in Rn, denote
+their dot product by w·x.
+    a. Given w in Rn, deﬁne Tw : Rn →R by Tw(x) =
+     w·x for all x in Rn. Show that Tw is a linear trans-      formation.
+    b. Show that every linear transformation T : Rn →R        is given as in (a); that is T = Tw for some w in Rn.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Dùng tính bảo toàn tổ hợp tuyến tính hoặc tìm ảnh của các vector đơn vị.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Cột thứ j của ma trận ánh xạ là ảnh của vector đơn vị thứ j; phép hợp thành đặt ma trận thực hiện sau ở bên trái.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** Tích vô hướng phân phối và đồng nhất: $w\cdot(x+y)=w\cdot x+w\cdot y$, $w\cdot(ax)=a(w\cdot x)$. Vì vậy $T_w$ tuyến tính, có ma trận hàng $w^T$. **b.** Với mọi $T:\mathbb R^n\to\mathbb R$ tuyến tính, đặt $w_j=T(e_j)$. Khi đó $T(x)=\sum_jx_jT(e_j)=\sum_jw_jx_j=w\cdot x$. Vậy $T=T_w$ với $w=(w_1,\ldots,w_n)$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Vector đầu vào, đầu ra có thể khác kích thước. Khi dùng mô tả hình học, kiểm tra cả chiều quay và độ dài.
+
+</LoiHayMac>

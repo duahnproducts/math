@@ -1,0 +1,128 @@
+---
+so: "2.4.5"
+muc: "2.4"
+do_kho: vua
+tieu_de: "Ma trận nghịch đảo — bài 5"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.4.5"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.4.5 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-4-5-1" moTa="Đề gốc Nicholson bài 2.4.5, phần 1; xem bản văn bản bên dưới hình" />
+
+<HinhSach ten="ds-de-2-4-5-2" moTa="Đề gốc Nicholson bài 2.4.5, phần 2; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.4.5  Find A when
+
+               1                     1      −   a. (3A)−1 =    −1      b. (2A)T =    −1               0   1                2   3
+                  2   0
+   c.  (I +3A)−1 =
+                  1 −1
+                   2  1
+   d.  (I −2AT)−1 =  1  1
+
+        1        −1    2  3e.  A    −1    =        0   1          1  1
+      1  0     −1    1  0
+f.         A  =
+      2  1           2  2
+                  1  1g.  AT     −1 = 2     −2I         2  3
+              T       1  1
+h.  A−1 −2I  = −2  1  0
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Tìm cách biến đổi đẳng thức về một tích bằng ma trận đơn vị.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Khi tìm nghịch đảo bằng khử hàng, làm cùng phép biến đổi trên cả hai khối của [A | I].
+
+</GoiY>
+
+<LoiGiai>
+
+Đặt $K=\begin{bmatrix}1&-1\\0&1\end{bmatrix},L=\begin{bmatrix}1&-1\\2&3\end{bmatrix},P=\begin{bmatrix}2&0\\1&-1\end{bmatrix},Q=\begin{bmatrix}2&1\\1&1\end{bmatrix},R=\begin{bmatrix}2&3\\1&1\end{bmatrix},T=\begin{bmatrix}1&0\\2&2\end{bmatrix},V=\begin{bmatrix}1&1\\2&3\end{bmatrix},W=\begin{bmatrix}1&1\\1&0\end{bmatrix}$. Dùng $(XY)^{-1}=Y^{-1}X^{-1}$ và $(X^T)^{-1}=(X^{-1})^T$.
+
+**a.** $3A=K^{-1}$; suy ra
+
+$$
+A=\begin{bmatrix}\frac{1}{3}&\frac{1}{3}\\0&\frac{1}{3}\end{bmatrix}.
+$$
+
+
+
+**b.** $2A=L^T$; suy ra
+
+$$
+A=\begin{bmatrix}\frac{1}{2}&1\\- \frac{1}{2}&\frac{3}{2}\end{bmatrix}.
+$$
+
+
+
+**c.** $I+3A=P^{-1}$; suy ra
+
+$$
+A=\begin{bmatrix}- \frac{1}{6}&0\\\frac{1}{6}&- \frac{2}{3}\end{bmatrix}.
+$$
+
+
+
+**d.** $I-2A^T=Q^{-1}$; suy ra
+
+$$
+A=\begin{bmatrix}0&\frac{1}{2}\\\frac{1}{2}&- \frac{1}{2}\end{bmatrix}.
+$$
+
+
+
+**e.** $AK=R^{-1}$; suy ra
+
+$$
+A=\begin{bmatrix}-1&2\\1&-1\end{bmatrix}.
+$$
+
+
+
+**f.** $\begin{bmatrix}1&0\\2&1\end{bmatrix}A=T$; suy ra
+
+$$
+A=\begin{bmatrix}1&0\\0&2\end{bmatrix}.
+$$
+
+
+
+**g.** $A^T-2I=(2V)^{-1}$; suy ra
+
+$$
+A=\begin{bmatrix}\frac{7}{2}&-1\\- \frac{1}{2}&\frac{5}{2}\end{bmatrix}.
+$$
+
+
+
+**h.** $A^{-1}-2I=(-2W)^T$; suy ra
+
+$$
+A=\begin{bmatrix}- \frac{1}{2}&- \frac{1}{2}\\- \frac{1}{2}&0\end{bmatrix}.
+$$
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Chỉ nhân khử bằng nghịch đảo sau khi đã chứng minh nó tồn tại; phân biệt nhân bên trái và bên phải.
+
+</LoiHayMac>

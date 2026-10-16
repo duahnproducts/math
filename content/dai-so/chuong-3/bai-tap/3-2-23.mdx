@@ -1,0 +1,67 @@
+---
+so: "3.2.23"
+muc: "3.2"
+do_kho: vua
+tieu_de: "Định thức và ma trận nghịch đảo — bài 23"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.2.23"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.23 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-2-23-1" moTa="Đề gốc Nicholson bài 3.2.23, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.2.23  Find a polynomial p(x) of degree 3
+such that:
+
+    a. p(0) = p(1) = 1, p(−1) = 4, p(2) = −5
+    b. p(0) = p(1) = 1, p(−1) = 2, p(−2) = −3
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Dùng định thức của tích và công thức nghịch đảo qua adjugate khi thích hợp.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Ô (i,j) của nghịch đảo lấy phần bù tại (j,i), chia định thức; Cramer thay cột bằng vế phải.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** Đặt $p(x)=\sum_{j=0}^{3}c_jx^j$, thay các điểm vào và giải hệ Vandermonde (các hoành độ khác nhau nên nghiệm duy nhất). Thu
+
+$$
+p(x)=- \frac{3 x^{3}}{2} + \frac{3 x^{2}}{2} + 1.
+$$
+
+ Thế từng hoành độ cho lại đúng tung độ đã cho.
+
+**b.** Đặt $p(x)=\sum_{j=0}^{3}c_jx^j$, thay các điểm vào và giải hệ Vandermonde (các hoành độ khác nhau nên nghiệm duy nhất). Thu
+
+$$
+p(x)=\frac{7 x^{3}}{6} + \frac{x^{2}}{2} - \frac{5 x}{3} + 1.
+$$
+
+ Thế từng hoành độ cho lại đúng tung độ đã cho.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phải chuyển vị bảng phần bù để được adjugate, và chỉ chia cho định thức khi nó khác 0.
+
+</LoiHayMac>

@@ -1,0 +1,68 @@
+---
+so: "2.4.9"
+muc: "2.4"
+do_kho: vua
+tieu_de: "Ma trận nghịch đảo — bài 9"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.4.9"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.4.9 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-4-9-1" moTa="Đề gốc Nicholson bài 2.4.9, phần 1; xem bản văn bản bên dưới hình" />
+
+<HinhSach ten="ds-de-2-4-9-2" moTa="Đề gốc Nicholson bài 2.4.9, phần 2; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.4.9  In each case either prove the assertion or
+give an example showing that it is false.
+
+    a.  If A̸ = 0 is a square matrix, then A is invertible.
+    b.  If A and B are both invertible, then A+B is invert-
+        ible.
+
+    c.  If A and B are both invertible, then (A−1B)T is in-
+       vertible.
+
+    d.  If A4 = 3I, then A is invertible.
+    e.  If A2 = A and A̸ = 0, then A is invertible.
+     f.  If AB = B for some B̸ = 0, then A is invertible.
+    g.  If A is invertible and skew symmetric (AT = −A),       the same is true of A−1.
+
+h.  If A2 is invertible, then A is invertible.
+
+ i.  If AB = I, then A and B commute.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Tìm cách biến đổi đẳng thức về một tích bằng ma trận đơn vị.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Khi tìm nghịch đảo bằng khử hàng, làm cùng phép biến đổi trên cả hai khối của [A | I].
+
+</GoiY>
+
+<LoiGiai>
+
+**a Sai:** $\operatorname{diag}(1,0)$ khác 0 nhưng suy biến. **b Sai:** $A=I,B=-I$ thì tổng bằng 0. **c Đúng:** $A^{-1}B$ là tích hai ma trận khả nghịch và chuyển vị vẫn khả nghịch; nghịch đảo là $(B^{-1}A)^T$. **d Đúng:** $A^{-1}=A^3/3$. **e Sai:** $P=\operatorname{diag}(1,0)$ lũy đẳng nhưng suy biến. **f Sai:** lấy $A=B=P$. **g Đúng:** $(A^{-1})^T=(A^T)^{-1}=(-A)^{-1}=-A^{-1}$. **h Đúng:** $Ax=0$ kéo theo $A^2x=0$, nên $x=0$; ma trận vuông $A$ khả nghịch. **i Đúng:** ma trận vuông có $AB=I$ thì $B=A^{-1}$, nên $BA=I=AB$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Chỉ nhân khử bằng nghịch đảo sau khi đã chứng minh nó tồn tại; phân biệt nhân bên trái và bên phải.
+
+</LoiHayMac>

@@ -13,7 +13,7 @@ import {
   layDanhSachMon,
 } from '@/lib/du-lieu';
 import { slugChuong, soChuongTuSlug, taoDuongDan } from '@/lib/duong-dan';
-import { NHAN_DO_KHO, bangDoiChieu, nhanLoaiSach } from '@/lib/noi-dung';
+import { NHAN_DO_KHO, bangDoiChieu, nhanLoaiSach, nhanMuc, nhanBaiTap } from '@/lib/noi-dung';
 import { khoaBaiGiang, khoaBaiTap, khoaChuong, khoaSach } from '@/lib/tien-do';
 
 export async function getStaticPaths() {
@@ -144,13 +144,13 @@ const nguonChuong = du.sach[0]?.data.nguon ?? `${du.mon.giao_trinh}. ${du.mon.gi
       <div role="tabpanel" id="panel-sach" aria-labelledby="tab-sach" hidden>
         <ul class="danh-sach-muc">
           {
-            du.chuong.muc.map((m) => {
+            du.chuong.muc.filter((m) => !m.so.endsWith('.0')).map((m) => {
               const s = du.sach.find((x) => x.data.muc === m.so);
               return (
                 <li>
                   {s ? (
                     <a href={d.sach(mon, so, m.so)} data-khoa-da-hoc={khoaSach(mon, so, m.so)}>
-                      <span class="so-hieu">§{m.so}</span>
+                      <span class="so-hieu">{nhanMuc(m.so)}</span>
                       <span class="than">
                         <b>{s.data.tieu_de}</b>
                         <span class="mo-ta">{s.data.tieu_de_en}</span>
@@ -159,7 +159,7 @@ const nguonChuong = du.sach[0]?.data.nguon ?? `${du.mon.giao_trinh}. ${du.mon.gi
                     </a>
                   ) : (
                     <div class="chua-co">
-                      <span class="so-hieu">§{m.so}</span>
+                      <span class="so-hieu">{nhanMuc(m.so)}</span>
                       <span class="than">
                         {m.ten} <span class="pill mo">Chưa có</span>
                       </span>
@@ -192,7 +192,7 @@ const nguonChuong = du.sach[0]?.data.nguon ?? `${du.mon.giao_trinh}. ${du.mon.gi
                 {bang.map((dong) => (
                   <tr>
                     <th scope="row" style="text-transform:none;letter-spacing:0;font-size:14px;color:var(--text)">
-                      <span class="so-hieu">§{dong.muc}</span> {dong.tenMuc}
+                      <span class="so-hieu">{nhanMuc(dong.muc)}</span> {dong.tenMuc}
                     </th>
                     <td>
                       {dong.baiGiang.length > 0 ? (
@@ -242,7 +242,7 @@ const nguonChuong = du.sach[0]?.data.nguon ?? `${du.mon.giao_trinh}. ${du.mon.gi
                 <ul style="margin:0;padding-left:18px">
                   {nenLam.map((b) => (
                     <li>
-                      <a href={d.baiTap(mon, so, b.data.so)}>Bài {b.data.so}</a>
+                      <a href={d.baiTap(mon, so, b.data.so)}>{nhanBaiTap(b.data.so, b.data.tu_soan)}</a>
                       {b.data.tieu_de && ` — ${b.data.tieu_de}`} <span class="so-hieu">({NHAN_DO_KHO[b.data.do_kho]})</span>
                     </li>
                   ))}

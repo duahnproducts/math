@@ -2,7 +2,7 @@
 // Mục lục của chương đang học — thanh bên trái trên laptop (product_design.md, mục 9).
 import type { DuLieuChuongWeb } from '@/lib/du-lieu';
 import { taoDuongDan } from '@/lib/duong-dan';
-import { nhanLoaiSach } from '@/lib/noi-dung';
+import { nhanLoaiSach, nhanMuc } from '@/lib/noi-dung';
 import { khoaBaiGiang, khoaSach } from '@/lib/tien-do';
 
 interface Props {
@@ -57,12 +57,12 @@ const hrefBaiTap = d.dsBaiTap(mon, so);
   <h3>{tenSach}</h3>
   <ul>
     {
-      du.chuong.muc.map((m) => {
+      du.chuong.muc.filter((m) => !m.so.endsWith('.0')).map((m) => {
         if (!mucCoTrang.has(m.so)) {
           return (
             <li>
               <span class="chua-co" title="Chưa có trên web">
-                <span class="so">§{m.so}</span>
+                <span class="so">{nhanMuc(m.so)}</span>
                 <span>{m.ten}</span>
               </span>
             </li>
@@ -72,7 +72,7 @@ const hrefBaiTap = d.dsBaiTap(mon, so);
         return (
           <li>
             <a href={href} aria-current={hienTai === href ? 'page' : undefined} data-khoa-da-hoc={khoaSach(mon, so, m.so)}>
-              <span class="so">§{m.so}</span>
+              <span class="so">{nhanMuc(m.so)}</span>
               <span>{m.ten}</span>
               <span class="dau-da-hoc" aria-label="đã học">✓</span>
             </a>

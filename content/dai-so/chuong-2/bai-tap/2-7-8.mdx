@@ -1,0 +1,50 @@
+---
+so: "2.7.8"
+muc: "2.7"
+do_kho: vua
+tieu_de: "Phân tích LU — bài 8"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.7.8"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.7.8 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-7-8-1" moTa="Đề gốc Nicholson bài 2.7.8, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.7.8 Prove Lemma 2.7.1(2). [Hint: Use block
+multiplication and induction.]
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Khử các phần tử dưới pivot và ghi lại phép khử, hệ số pivot, các lần đổi hàng.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Với PA = LU, giải Ly = Pb trước rồi giải Ux = y; phân biệt L đơn vị và U có pivot bằng 1.
+
+</GoiY>
+
+<LoiGiai>
+
+Ma trận tam giác có định thức bằng tích các phần tử đường chéo, nên khả nghịch khi và chỉ khi tất cả các phần tử ấy khác 0. Để chứng minh nghịch đảo vẫn tam giác dưới, giải $Ax=e_j$ bằng thế tiến: các phương trình hàng $1,\ldots,j-1$ lần lượt cho $x_1=\cdots=x_{j-1}=0$. Vì nghiệm này là cột $j$ của $A^{-1}$, mọi ô phía trên đường chéo của nghịch đảo bằng 0. Trường hợp tam giác trên dùng thế ngược, hoặc chuyển vị kết quả vừa chứng minh.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Không áp dụng phân tích LU không đổi hàng khi xuất hiện pivot 0; kiểm tra quy ước chuẩn hóa của đề.
+
+</LoiHayMac>

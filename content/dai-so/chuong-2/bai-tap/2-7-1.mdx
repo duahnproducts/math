@@ -1,0 +1,118 @@
+---
+so: "2.7.1"
+muc: "2.7"
+do_kho: vua
+tieu_de: "Phân tích LU — bài 1"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.7.1"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.7.1 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-7-1-1" moTa="Đề gốc Nicholson bài 2.7.1, phần 1; xem bản văn bản bên dưới hình" />
+
+<HinhSach ten="ds-de-2-7-1-2" moTa="Đề gốc Nicholson bài 2.7.1, phần 2; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.7.1  Find an LU-factorization of the follow-
+ing matrices.
+
+         2   6 −2   0  2    a.     3   9        3  1            −3      
+      −1 −3   1 −3  1                   
+         2   4   2
+    b.     1        3        −1    
+      −1   7 −7              
+         2   6 −2   0  2         1   5        2  5    c.         −1      
+         3   7 −3 −2  5
+      −1 −1   1   2  3                                                          
+
+    −1 −3   1   0 −1      1   4   1   1   1d.                 
+      1   2 −3 −1   1
+      0 −2 −4 −2   0                                                       
+      2   2   4   6   0  2
+        1 −1   2   1   3  1 
+e.   −2   2 −4 −1   1  6      0   2   0   3   4  8
+    −2   4 −4   1 −2  6                                                                                                       
+     2   2 −2  4  2     1        0  2  1 f.    −1        
+     3   1 −2  6  3
+     1   3 −2  2  1                                             
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Khử các phần tử dưới pivot và ghi lại phép khử, hệ số pivot, các lần đổi hàng.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Với PA = LU, giải Ly = Pb trước rồi giải Ux = y; phân biệt L đơn vị và U có pivot bằng 1.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** Khử các phần tử dưới pivot bằng cộng bội hàng, rồi chia hàng pivot để hệ số dẫn đầu bằng 1. Ghi các hệ số khử và hệ số chia vào $L$, được
+
+$$
+L=\begin{bmatrix}2&0&0\\3&3&0\\-1&-3&1\end{bmatrix},\quad U=\begin{bmatrix}1&3&-1&0&1\\0&0&0&1&- \frac{2}{3}\\0&0&0&0&0\end{bmatrix}.
+$$
+
+ Nhân từng hàng của $L$ với các cột của $U$ cho đúng $A$; $L$ tam giác dưới khả nghịch, $U$ bậc thang có pivot 1.
+
+**b.** Khử các phần tử dưới pivot bằng cộng bội hàng, rồi chia hàng pivot để hệ số dẫn đầu bằng 1. Ghi các hệ số khử và hệ số chia vào $L$, được
+
+$$
+L=\begin{bmatrix}2&0&0\\1&-3&0\\-1&9&1\end{bmatrix},\quad U=\begin{bmatrix}1&2&1\\0&1&- \frac{2}{3}\\0&0&0\end{bmatrix}.
+$$
+
+ Nhân từng hàng của $L$ với các cột của $U$ cho đúng $A$; $L$ tam giác dưới khả nghịch, $U$ bậc thang có pivot 1.
+
+**c.** Khử các phần tử dưới pivot bằng cộng bội hàng, rồi chia hàng pivot để hệ số dẫn đầu bằng 1. Ghi các hệ số khử và hệ số chia vào $L$, được
+
+$$
+L=\begin{bmatrix}2&0&0&0\\1&2&0&0\\3&-2&6&0\\-1&2&0&1\end{bmatrix},\quad U=\begin{bmatrix}1&3&-1&0&1\\0&1&0&1&2\\0&0&0&0&1\\0&0&0&0&0\end{bmatrix}.
+$$
+
+ Nhân từng hàng của $L$ với các cột của $U$ cho đúng $A$; $L$ tam giác dưới khả nghịch, $U$ bậc thang có pivot 1.
+
+**d.** Khử các phần tử dưới pivot bằng cộng bội hàng, rồi chia hàng pivot để hệ số dẫn đầu bằng 1. Ghi các hệ số khử và hệ số chia vào $L$, được
+
+$$
+L=\begin{bmatrix}-1&0&0&0\\1&1&0&0\\1&-1&1&0\\0&-2&0&1\end{bmatrix},\quad U=\begin{bmatrix}1&3&-1&0&1\\0&1&2&1&0\\0&0&0&0&0\\0&0&0&0&0\end{bmatrix}.
+$$
+
+ Nhân từng hàng của $L$ với các cột của $U$ cho đúng $A$; $L$ tam giác dưới khả nghịch, $U$ bậc thang có pivot 1.
+
+**e.** Khử các phần tử dưới pivot bằng cộng bội hàng, rồi chia hàng pivot để hệ số dẫn đầu bằng 1. Ghi các hệ số khử và hệ số chia vào $L$, được
+
+$$
+L=\begin{bmatrix}2&0&0&0&0\\1&-2&0&0&0\\-2&4&1&0&0\\0&2&1&1&0\\-2&6&1&0&1\end{bmatrix},\quad U=\begin{bmatrix}1&1&2&3&0&1\\0&1&0&1&- \frac{3}{2}&0\\0&0&0&1&7&8\\0&0&0&0&0&0\\0&0&0&0&0&0\end{bmatrix}.
+$$
+
+ Nhân từng hàng của $L$ với các cột của $U$ cho đúng $A$; $L$ tam giác dưới khả nghịch, $U$ bậc thang có pivot 1.
+
+**f.** Khử các phần tử dưới pivot bằng cộng bội hàng, rồi chia hàng pivot để hệ số dẫn đầu bằng 1. Ghi các hệ số khử và hệ số chia vào $L$, được
+
+$$
+L=\begin{bmatrix}2&0&0&0\\1&-2&0&0\\3&-2&1&0\\1&2&0&1\end{bmatrix},\quad U=\begin{bmatrix}1&1&-1&2&1\\0&1&- \frac{1}{2}&0&0\\0&0&0&0&0\\0&0&0&0&0\end{bmatrix}.
+$$
+
+ Nhân từng hàng của $L$ với các cột của $U$ cho đúng $A$; $L$ tam giác dưới khả nghịch, $U$ bậc thang có pivot 1.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Không áp dụng phân tích LU không đổi hàng khi xuất hiện pivot 0; kiểm tra quy ước chuẩn hóa của đề.
+
+</LoiHayMac>

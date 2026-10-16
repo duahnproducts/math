@@ -49,7 +49,7 @@
       "so": 2,
       "ten": "Đại số ma trận",
       "ten_en": "Matrix Algebra",
-      "ghi_chu": "Đủ §2.1–§2.9. Bài tập có gợi ý và lời giải: §2.1 (đề dịch nguyên văn), §2.2 (đề viết lại ngắn gọn). Bài tập §2.3–§2.9 chưa có — xem bản gốc tiếng Anh.",
+      "ghi_chu": "Đủ 220 đề gốc Nicholson 2023 và lời giải tiếng Việt từng bài, kể cả bài bổ sung cuối chương. Các đề mới giữ nguyên tiếng Anh, công thức và ma trận của sách.",
       "muc": [
         {
           "so": "2.1",
@@ -86,6 +86,10 @@
         {
           "so": "2.9",
           "ten": "Ứng dụng: xích Markov"
+        },
+        {
+          "so": "2.0",
+          "ten": "Bài tập bổ sung cuối chương"
         }
       ],
       "tai_ve": [
@@ -100,7 +104,7 @@
       "so": 3,
       "ten": "Định thức và chéo hoá",
       "ten_en": "Determinants and Diagonalization",
-      "ghi_chu": "Đủ 8 bài giảng và phần theo sách §3.1–§3.8. Có 24 bài luyện tự soạn (mỗi mục ba mức), hai tầng gợi ý và lời giải. Số bài luyện thuộc bộ riêng của web; chưa chuyển toàn bộ bài tập gốc Nicholson.",
+      "ghi_chu": "Đủ 124 đề gốc Nicholson 2023 và lời giải tiếng Việt từng bài, kể cả bài bổ sung cuối chương. Giữ riêng 24 bài luyện tự soạn có hướng dẫn. Các đề gốc giữ nguyên tiếng Anh, công thức và ma trận của sách.",
       "muc": [
         {
           "so": "3.1",
@@ -133,6 +137,10 @@
         {
           "so": "3.8",
           "ten": "Chứng minh Định lý khai triển theo phần bù đại số"
+        },
+        {
+          "so": "3.0",
+          "ten": "Bài tập bổ sung cuối chương"
         }
       ],
       "tai_ve": [

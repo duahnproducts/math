@@ -1,0 +1,52 @@
+---
+so: "3.5.5"
+muc: "3.5"
+do_kho: vua
+tieu_de: "Hệ động lực tuyến tính — bài 5"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.5.5"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.5.5 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-5-5-1" moTa="Đề gốc Nicholson bài 3.5.5, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.5.5  In Example 3.3.1, let the juvenile sur-
+vival rate be 2 and let the reproduction rate be 2. What               5
+values of the adult survival rate α will ensure that the
+population stabilizes?
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Viết vector trạng thái sau k bước dưới dạng A mũ k nhân trạng thái ban đầu.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Khai triển trạng thái ban đầu theo cơ sở vector riêng, rồi so sánh môđun các trị riêng có hệ số khác 0.
+
+</GoiY>
+
+<LoiGiai>
+
+Ma trận là $M=\begin{bmatrix}\alpha&2/5\\2&0\end{bmatrix}$. Muốn ổn định với ban đầu không âm khác 0, trị riêng trội phải bằng 1. Thay $\lambda=1$ vào $\lambda^2-\alpha\lambda-4/5=0$ cho $\alpha=1/5$. Trị riêng còn lại là $-4/5$, có môđun nhỏ hơn 1 nên hạng đó tắt dần. Vì vậy tỷ lệ sống trưởng thành cần là $\alpha=1/5=20\%$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Trị riêng trội quyết định tốc độ khi hệ số tương ứng khác 0; giữ cả giả thiết về trạng thái ban đầu.
+
+</LoiHayMac>

@@ -1,0 +1,69 @@
+---
+so: "2.3.12"
+muc: "2.3"
+do_kho: vua
+tieu_de: "Phép nhân ma trận — bài 12"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.3.12"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.12 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-3-12-1" moTa="Đề gốc Nicholson bài 2.3.12, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.3.12  In each case give formulas for all pow-
+ers A, A2, A3, ... of A using the block decomposition
+indicated.
+
+           1   0   0
+    a. A =   1   1             −1 
+           1 −1   1                
+           1 −1   2 −1           0   1   0   0    b. A =             
+           0   0 −1   1           0   0   0   1                                                        
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Kiểm tra kích thước rồi dùng quy tắc hàng–cột cho tích ma trận.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự các thừa số khi khai triển.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** Khối dưới phải $H=\begin{bmatrix}1&-1\\-1&1\end{bmatrix}$ thỏa $H^2=2H$, còn $H(1,1)^T=0$. Do đó, với $n\ge1$,
+
+$$
+A^n=\begin{bmatrix}1&0&0\\1&2^{n-1}&-2^{n-1}\\1&-2^{n-1}&2^{n-1}\end{bmatrix}.
+$$
+
+ **b.** Dùng quy nạp theo phép nhân khối (hoặc nhân $A^nA$) cho
+
+$$
+A^n=\begin{bmatrix}1&- n&1 - \left(-1\right)^{n}&\frac{\left(-1\right)^{n}}{2} - \frac{1}{2}\\0&1&0&0\\0&0&\left(-1\right)^{n}&\frac{1}{2} - \frac{\left(-1\right)^{n}}{2}\\0&0&0&1\end{bmatrix}.
+$$
+
+ Kiểm tra $n=1$ khôi phục đúng ma trận đề; nhân thêm $A$ kiểm tra bước chuyển từ $n$ sang $n+1$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phép nhân ma trận không giao hoán; không dùng tính khử nếu chưa có điều kiện thích hợp.
+
+</LoiHayMac>

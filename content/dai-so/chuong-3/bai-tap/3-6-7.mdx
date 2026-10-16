@@ -1,0 +1,59 @@
+---
+so: "3.6.7"
+muc: "3.6"
+do_kho: vua
+tieu_de: "Ứng dụng: hệ thức truy hồi tuyến tính — bài 7"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.6.7"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.6.7 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-6-7-1" moTa="Đề gốc Nicholson bài 3.6.7, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.6.7  Find xk, the number of ways to make
+a stack of k poker chips if only red, blue, and gold chips
+are used and no two gold chips are adjacent. [Hint: Show
+that xk+2 = 2xk+1 +2xk by considering how many stacks
+have a red, blue, or gold chip on top.]
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Lập phương trình đặc trưng hoặc phân loại đối tượng đếm theo bước cuối.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Dùng các điều kiện đầu để xác định hệ số trong nghiệm tổng quát; nghiệm đặc trưng bội cần thêm lũy thừa của chỉ số.
+
+</GoiY>
+
+<LoiGiai>
+
+Phân loại theo đồng trên cùng: đỏ hoặc xanh cho $2x_{k+1}$ cách khi chồng cao $k+2$; vàng thì đồng ngay dưới phải đỏ/xanh, cho $2x_k$ cách. Vậy $x_{k+2}=2x_{k+1}+2x_k$, với $x_0=1,x_1=3$. Phương trình đặc trưng $t^{2} - 2 t - 2=0$. Tổ hợp các nghiệm lũy thừa, rồi dùng các giá trị đầu để giải các hệ số, được
+
+$$
+x_k=- \frac{\sqrt{3} \left(1 - \sqrt{3}\right)^{k}}{3} + \frac{\left(1 - \sqrt{3}\right)^{k}}{2} + \frac{\left(1 + \sqrt{3}\right)^{k}}{2} + \frac{\sqrt{3} \left(1 + \sqrt{3}\right)^{k}}{3}.
+$$
+
+ Thế $k=0,\ldots,1$ cho đúng điều kiện đầu; thay vào truy hồi cho đồng nhất thức.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Ghi rõ các giá trị đầu, kể cả cách đếm độ dài 0. Đừng áp dụng công thức cho nghiệm phân biệt vào trường hợp nghiệm bội.
+
+</LoiHayMac>

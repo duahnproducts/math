@@ -1,0 +1,71 @@
+---
+so: "3.7.7"
+muc: "3.7"
+do_kho: vua
+tieu_de: "Ứng dụng: hệ phương trình vi phân — bài 7"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.7.7"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.7.7 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-7-7-1" moTa="Đề gốc Nicholson bài 3.7.7, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.7.7  Writing  f ′′′ = ( f ′′)′, consider the third
+order differential equation
+
+                     f ′′′ −a1 f ′′ −a2 f ′ −a3 f = 0
+where a1, a2, and a3 are real numbers. Let
+f1 = f, f2 = f ′ −a1 f and f3 = f ′′ −a1 f ′ −a2 f ′′.
+
+                         f1
+    a. Show that     f2     a solution to the system             
+                         f3             is
+              f 1′ = a1 f1 + f2
+              f 2′ = a2 f1 + f3 ,   
+              f 3′ = a3 f1   
+                        f 1′        a1  1  0        f1          that is      f 2′        a2  0  1        f2                        
+                        f 3′        a3  0  0        f3          =            
+                                    f1
+    b. Show further that if     f2     any solution to this                   
+                                    f3      system, then f = f1 is a solutionis   to Equation 3.15.
+
+Remark. A similar construction casts every linear differ-
+ential equation of order n (with constant coefﬁcients) as
+an n×n linear system of ﬁrst order equations. However,the matrix need not be diagonalizable, so other methods
+have been developed.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Với hệ f′ = Af, tìm cơ sở vector riêng của A; với phương trình vô hướng, tìm hàm mũ tương ứng.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Mỗi vector riêng v với trị riêng λ cho nghiệm v nhân exp(λx); giải các hệ số bằng điều kiện đầu.
+
+</GoiY>
+
+<LoiGiai>
+
+**Sửa lỗi ký hiệu bản in:** cần đặt $f_3=f\prime\prime-a_1f\prime-a_2f$, thay vì hạng cuối $-a_2f\prime\prime$ được in trong đề. **a.** Với định nghĩa đúng, $f_1\prime=a_1f_1+f_2$; $f_2\prime=f\prime\prime-a_1f\prime=a_2f_1+f_3$; $f_3\prime=f\prime\prime\prime-a_1f\prime\prime-a_2f\prime=a_3f_1$. Đó là ba hàng của hệ. **b.** Từ hai phương trình đầu suy ra $f_1\prime\prime=a_1f_1\prime+a_2f_1+f_3$. Đạo hàm rồi dùng $f_3\prime=a_3f_1$ cho $f_1\prime\prime\prime-a_1f_1\prime\prime-a_2f_1\prime-a_3f_1=0$, là phương trình bậc ba của bài này. Tham chiếu “Equation 3.15” trong câu (b) cũng là lỗi đánh số, vì 3.15 là phương trình bậc hai của bài trước.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Kiểm tra nghiệm bằng cả đạo hàm và điều kiện đầu. Hệ số hằng ở vế phải cần một nghiệm riêng.
+
+</LoiHayMac>

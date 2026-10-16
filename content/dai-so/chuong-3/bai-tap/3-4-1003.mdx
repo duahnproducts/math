@@ -1,0 +1,29 @@
+---
+so: "3.4.1003"
+muc: "3.4"
+do_kho: kho
+nen_lam: true
+tu_soan: true
+tieu_de: "Một ma trận không chéo hoá được"
+can_dung: ["dinh-ly-3.4.1"]
+---
+
+<De>
+Chứng minh $J=\begin{bmatrix}2&1\\0&2\end{bmatrix}$ không chéo hoá được trên R.
+</De>
+
+<GoiY so={1}>
+Giá trị riêng duy nhất là 2 với bội 2.
+</GoiY>
+
+<GoiY so={2}>
+Giải (J−2I)v=0, được y=0.
+</GoiY>
+
+<LoiGiai>
+c_J(t)=(t−2)². Không gian riêng là &#123;(x,0)&#125;, chỉ có một vector cơ bản độc lập. Ma trận 2×2 cần hai cột độc lập; mọi hai vector riêng ở đây cùng đường nên P suy biến. Do đó không chéo hoá được. Kiểm tra thêm: nếu chéo hoá được với D=2I thì J=P(2I)P⁻¹=2I, trái ô (1,2)=1.
+</LoiGiai>
+
+<LoiHayMac>
+Không nhầm bội 2 với hai vector riêng độc lập.
+</LoiHayMac>

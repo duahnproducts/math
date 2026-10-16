@@ -1,0 +1,58 @@
+---
+so: "3.2.34"
+muc: "3.2"
+do_kho: vua
+tieu_de: "Định thức và ma trận nghịch đảo — bài 34"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.2.34"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.34 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-2-34-1" moTa="Đề gốc Nicholson bài 3.2.34, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.2.34  Let A and B denote invertible n×n ma-trices. Show that:
+
+    a.  adj (adj A) = (det A)n−2A (here n ≥2) [Hint: See     Example 3.2.8.]
+
+    b.  adj (A−1) = (adj A)−1
+
+    c.  adj (AT) = (adj A)T
+
+    d.  adj (AB) = (adj B)(adj A)  [Hint:  Show  that
+    AB adj(AB) = AB adj B adj A.]
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Dùng định thức của tích và công thức nghịch đảo qua adjugate khi thích hợp.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Ô (i,j) của nghịch đảo lấy phần bù tại (j,i), chia định thức; Cramer thay cột bằng vế phải.
+
+</GoiY>
+
+<LoiGiai>
+
+Đặt $d=\det A\ne0$, dùng $\operatorname{adj}A=dA^{-1}$ và $\det(\operatorname{adj}A)=d^{n-1}$. **a.** $\operatorname{adj}(\operatorname{adj}A)=d^{n-1}(dA^{-1})^{-1}=d^{n-2}A$. **b.** $\operatorname{adj}(A^{-1})=d^{-1}A=(dA^{-1})^{-1}=(\operatorname{adj}A)^{-1}$. **c.** $\operatorname{adj}(A^T)=d(A^{-1})^T=(\operatorname{adj}A)^T$. **d.** $\operatorname{adj}(AB)=\det A\det B\,(AB)^{-1}=(\det B)B^{-1}(\det A)A^{-1}=(\operatorname{adj}B)(\operatorname{adj}A)$. Thứ tự ở (d) bị đảo theo công thức nghịch đảo tích.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phải chuyển vị bảng phần bù để được adjugate, và chỉ chia cho định thức khi nó khác 0.
+
+</LoiHayMac>

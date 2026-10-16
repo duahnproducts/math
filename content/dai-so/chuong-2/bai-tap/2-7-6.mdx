@@ -1,0 +1,59 @@
+---
+so: "2.7.6"
+muc: "2.7"
+do_kho: vua
+tieu_de: "Phân tích LU — bài 6"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.7.6"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.7.6 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-7-6-1" moTa="Đề gốc Nicholson bài 2.7.6, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.7.6
+
+    a. Let L and L1 be invertible lower triangular matri-
+       ces, and let U and U1 be invertible upper triangu-
+        lar matrices. Show that LU = L1U1 if and only if
+       there exists an invertible diagonal matrix D such
+       that L1 = LD and U1 = D−1U. [Hint: Scrutinize
+     L−1L1 = UU−11  .]
+
+    b. Use part (a) to prove Theorem 2.7.3 in the case
+       that A is invertible.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Khử các phần tử dưới pivot và ghi lại phép khử, hệ số pivot, các lần đổi hàng.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Với PA = LU, giải Ly = Pb trước rồi giải Ux = y; phân biệt L đơn vị và U có pivot bằng 1.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** Từ $LU=L_1U_1$ suy ra $L^{-1}L_1=UU_1^{-1}$. Vế trái tam giác dưới, vế phải tam giác trên; do đó ma trận chung là ma trận chéo khả nghịch $D$. Suy ra $L_1=LD$, $U_1=D^{-1}U$. Chiều đảo: $(LD)(D^{-1}U)=LU$. **b.** Nếu $U,U_1$ đều có các phần tử dẫn đầu bằng 1 và $A$ khả nghịch, chúng là tam giác trên với đường chéo toàn 1. Từ $U_1=D^{-1}U$ suy ra từng phần tử đường chéo của $D$ bằng 1. Vậy $D=I$, $L_1=L$, $U_1=U$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Không áp dụng phân tích LU không đổi hàng khi xuất hiện pivot 0; kiểm tra quy ước chuẩn hóa của đề.
+
+</LoiHayMac>

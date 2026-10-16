@@ -1,0 +1,64 @@
+---
+so: "2.9.12"
+muc: "2.9"
+do_kho: vua
+tieu_de: "Ứng dụng: xích Markov — bài 12"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.9.12"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.9.12 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-9-12-1" moTa="Đề gốc Nicholson bài 2.9.12, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.9.12  Consider the 2×2 stochastic matrix
+                q   P =  1−p                ,
+           p  1−qwhere 0 < p < 1 and 0 < q < 1.
+
+                     1    q    a. Show that              is the steady-state vector for
+                p+q   p
+      P.
+
+    b. Show   that  Pm   converges   to   the   matrix
+         1   q  q                  by ﬁrst verifying inductively that
+       p+q   p  p
+                1   q  q     Pm =              + (1−p−q)m                                  p  −q   for            p+q                              p+q
+                p  p          −p   q    m = 1, 2, .... (It can be shown that the sequence
+      of powers P, P2, P3,  ... of any regular transi-
+       tion matrix converges to the matrix each of whose
+      columns equals the steady-state vector for P.)
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Xếp rõ thứ tự trạng thái; cột j mô tả xác suất rời trạng thái j.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Sau k lần chuyển dùng lũy thừa thứ k; phân bố dừng thỏa Ps = s và tổng thành phần bằng 1.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** Nhân trực tiếp với $s=(q,p)^T/(p+q)$ cho $Ps=s$; cả hai thành phần dương và tổng bằng 1. **b.** Đặt $J=\frac1{p+q}\begin{bmatrix}q&q\\p&p\end{bmatrix}$, $K=I-J=\frac1{p+q}\begin{bmatrix}p&-q\\-p&q\end{bmatrix}$. Ta có $J^2=J$, $K^2=K$, $JK=KJ=0$ và $P=J+(1-p-q)K$. Nhân hoặc quy nạp suy ra $P^m=J+(1-p-q)^mK$. Do $0<p,q<1$, $|1-p-q|<1$, nên hạng thứ hai tiến về 0 và $P^m\to J$. Các cột của giới hạn đều bằng $s$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phân bố sau hữu hạn bước khác phân bố dài hạn. Regular đòi một lũy thừa có mọi ô dương.
+
+</LoiHayMac>

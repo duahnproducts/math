@@ -1,0 +1,55 @@
+---
+so: "3.3.7"
+muc: "3.3"
+do_kho: vua
+tieu_de: "Giá trị riêng và vector riêng — bài 7"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.3.7"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.3.7 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-3-7-1" moTa="Đề gốc Nicholson bài 3.3.7, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.3.7
+
+    a.  If all rows of A have the same sum s, show that s
+        is an eigenvalue.
+
+    b.  If all columns of A have the same sum s, show that
+       s is an eigenvalue.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Bắt đầu từ Av = λv với v khác 0, hoặc đa thức đặc trưng det(xI − A).
+
+</GoiY>
+
+<GoiY so={2}>
+
+Không gian riêng là hạt nhân của A − λI; đa thức của ma trận tác động lên vector riêng bằng đa thức của trị riêng.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** Đặt $\mathbf1=(1,\ldots,1)^T\ne0$. Mỗi ô của $A\mathbf1$ là tổng một hàng, nên $A\mathbf1=s\mathbf1$: $s$ là trị riêng. **b.** Nếu tổng cột bằng $s$, thì $A^T\mathbf1=s\mathbf1$. Ma trận chuyển vị có cùng đa thức đặc trưng vì $\det(xI-A^T)=\det((xI-A)^T)$. Do đó $s$ cũng là trị riêng của $A$, dù $\mathbf1$ không nhất thiết là vector riêng của $A$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Vector 0 không là vector riêng. Trị riêng của ma trận thực vẫn có thể là số phức.
+
+</LoiHayMac>

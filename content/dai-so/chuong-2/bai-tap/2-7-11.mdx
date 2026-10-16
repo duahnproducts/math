@@ -1,0 +1,59 @@
+---
+so: "2.7.11"
+muc: "2.7"
+do_kho: vua
+tieu_de: "Phân tích LU — bài 11"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.7.11"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.7.11 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-7-11-1" moTa="Đề gốc Nicholson bài 2.7.11, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.7.11 Prove Lemma 2.7.2. [Hint: P−1k = Pk.
+                   Ik  0
+Write Pk =              in block form where P0  is an
+            0  P0
+(m−k)×(m−k) permutation matrix.]
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Khử các phần tử dưới pivot và ghi lại phép khử, hệ số pivot, các lần đổi hàng.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Với PA = LU, giải Ly = Pb trước rồi giải Ux = y; phân biệt L đơn vị và U có pivot bằng 1.
+
+</GoiY>
+
+<LoiGiai>
+
+Gọi $P$ là ma trận đổi hàng $k$ với một hàng phía dưới, $j<k$. Khi đó $P^2=I$ và $Pe_i=e_i$ với $i\le j$. Viết ma trận cần xét là $L=I+ve_j^T$, trong đó $v$ chỉ có thể khác 0 từ vị trí $j$ trở xuống (lấy cột đã thay trừ $e_j$). Ta có
+
+$$
+PLP=I+(Pv)e_j^T=L_1.
+$$
+
+ $Pv$ chỉ hoán vị hai thành phần của phần đuôi, nên $L_1$ đúng dạng thay một cột như trong bổ đề. Nhân bên phải với $P$ cho $PL=L_1P$, là điều phải chứng minh.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Không áp dụng phân tích LU không đổi hàng khi xuất hiện pivot 0; kiểm tra quy ước chuẩn hóa của đề.
+
+</LoiHayMac>

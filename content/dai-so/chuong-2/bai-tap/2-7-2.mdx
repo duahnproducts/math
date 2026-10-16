@@ -1,0 +1,86 @@
+---
+so: "2.7.2"
+muc: "2.7"
+do_kho: vua
+tieu_de: "Phân tích LU — bài 2"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.7.2"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.7.2 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-7-2-1" moTa="Đề gốc Nicholson bài 2.7.2, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.7.2  Find a permutation matrix P and an LU-
+factorization of PA if A is:
+       0   0  2                0 −1  2   a.    0      4              b.     0   0  4       −1                   
+       3   5  1           −1   2  1      0     2  1  3                     −1             1   3  1  4   c.  −1            
+         1 −1 −3  6  2
+         2 −2 −4  1  0                       3  0            −1 −2         2   4       5   d.         −6   
+         1   1  −1  3
+         2   5  −10  1                                                 
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Khử các phần tử dưới pivot và ghi lại phép khử, hệ số pivot, các lần đổi hàng.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Với PA = LU, giải Ly = Pb trước rồi giải Ux = y; phân biệt L đơn vị và U có pivot bằng 1.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** Đổi hàng theo $P$, sau đó khử dưới pivot và chuẩn hóa hàng pivot:
+
+$$
+P=\begin{bmatrix}0&0&1\\0&1&0\\1&0&0\end{bmatrix},\quad L=\begin{bmatrix}3&0&0\\0&-1&0\\0&0&2\end{bmatrix},\quad U=\begin{bmatrix}1&\frac{5}{3}&\frac{1}{3}\\0&1&-4\\0&0&1\end{bmatrix}.
+$$
+
+ Kiểm tra trực tiếp $PA=LU$. Các hàng của $P$ cho biết thứ tự các hàng ban đầu sau khi hoán vị.
+
+**b.** Đổi hàng theo $P$, sau đó khử dưới pivot và chuẩn hóa hàng pivot:
+
+$$
+P=\begin{bmatrix}0&0&1\\1&0&0\\0&1&0\end{bmatrix},\quad L=\begin{bmatrix}-1&0&0\\0&-1&0\\0&0&4\end{bmatrix},\quad U=\begin{bmatrix}1&-2&-1\\0&1&-2\\0&0&1\end{bmatrix}.
+$$
+
+ Kiểm tra trực tiếp $PA=LU$. Các hàng của $P$ cho biết thứ tự các hàng ban đầu sau khi hoán vị.
+
+**c.** Đổi hàng theo $P$, sau đó khử dưới pivot và chuẩn hóa hàng pivot:
+
+$$
+P=\begin{bmatrix}0&1&0&0\\1&0&0&0\\0&0&0&1\\0&0&1&0\end{bmatrix},\quad L=\begin{bmatrix}-1&0&0&0\\0&-1&0&0\\2&0&2&0\\1&0&0&7\end{bmatrix},\quad U=\begin{bmatrix}1&-1&-3&-1&-4\\0&1&-2&-1&-3\\0&0&1&\frac{3}{2}&4\\0&0&0&1&\frac{6}{7}\end{bmatrix}.
+$$
+
+ Kiểm tra trực tiếp $PA=LU$. Các hàng của $P$ cho biết thứ tự các hàng ban đầu sau khi hoán vị.
+
+**d.** Đổi hàng theo $P$, sau đó khử dưới pivot và chuẩn hóa hàng pivot:
+
+$$
+P=\begin{bmatrix}1&0&0&0\\0&0&1&0\\0&0&0&1\\0&1&0&0\end{bmatrix},\quad L=\begin{bmatrix}-1&0&0&0\\1&-1&0&0\\2&1&-2&0\\2&0&0&5\end{bmatrix},\quad U=\begin{bmatrix}1&2&-3&0\\0&1&-2&-3\\0&0&1&-2\\0&0&0&1\end{bmatrix}.
+$$
+
+ Kiểm tra trực tiếp $PA=LU$. Các hàng của $P$ cho biết thứ tự các hàng ban đầu sau khi hoán vị.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Không áp dụng phân tích LU không đổi hàng khi xuất hiện pivot 0; kiểm tra quy ước chuẩn hóa của đề.
+
+</LoiHayMac>

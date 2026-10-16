@@ -1,0 +1,83 @@
+---
+so: "3.2.24"
+muc: "3.2"
+do_kho: vua
+tieu_de: "Định thức và ma trận nghịch đảo — bài 24"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.2.24"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.24 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-2-24-1" moTa="Đề gốc Nicholson bài 3.2.24, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.2.24  Given the following data pairs, ﬁnd the
+interpolating polynomial of degree at most 3 and estimate
+the value of y corresponding to x = 1.5.
+
+
+    a. (0, 1), (1, 2), (2, 5), (3, 10)
+
+    b. (0, 1), (1, 1.49), (2, −0.42), (3, −11.33)
+    c. (0, 2), (1, 2.03), (2, −0.40), (−1, 0.89)
+
+
+                          1   a  b
+                          
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Dùng định thức của tích và công thức nghịch đảo qua adjugate khi thích hợp.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Ô (i,j) của nghịch đảo lấy phần bù tại (j,i), chia định thức; Cramer thay cột bằng vế phải.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** Đặt $p(x)=\sum_{j=0}^{3}c_jx^j$, thay các điểm vào và giải hệ Vandermonde (các hoành độ khác nhau nên nghiệm duy nhất). Thu
+
+$$
+p(x)=x^{2} + 1.
+$$
+
+ Thế từng hoành độ cho lại đúng tung độ đã cho. Tại $x=1.5$, $y\approx p(1.5)=\frac{13}{4}$.
+
+**b.** Đặt $p(x)=\sum_{j=0}^{3}c_jx^j$, thay các điểm vào và giải hệ Vandermonde (các hoành độ khác nhau nên nghiệm duy nhất). Thu
+
+$$
+p(x)=- \frac{11 x^{3}}{10} + \frac{21 x^{2}}{10} - \frac{51 x}{100} + 1.
+$$
+
+ Thế từng hoành độ cho lại đúng tung độ đã cho. Tại $x=1.5$, $y\approx p(1.5)=\frac{499}{400}$.
+
+**c.** Đặt $p(x)=\sum_{j=0}^{3}c_jx^j$, thay các điểm vào và giải hệ Vandermonde (các hoành độ khác nhau nên nghiệm duy nhất). Thu
+
+$$
+p(x)=- \frac{23 x^{3}}{100} - \frac{27 x^{2}}{50} + \frac{4 x}{5} + 2.
+$$
+
+ Thế từng hoành độ cho lại đúng tung độ đã cho. Tại $x=1.5$, $y\approx p(1.5)=\frac{967}{800}$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phải chuyển vị bảng phần bù để được adjugate, và chỉ chia cho định thức khi nó khác 0.
+
+</LoiHayMac>

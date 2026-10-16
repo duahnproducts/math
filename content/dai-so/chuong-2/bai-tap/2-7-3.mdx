@@ -1,0 +1,116 @@
+---
+so: "2.7.3"
+muc: "2.7"
+do_kho: vua
+tieu_de: "Phân tích LU — bài 3"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.7.3"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.7.3 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-7-3-1" moTa="Đề gốc Nicholson bài 2.7.3, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise  2.7.3    In each  case  use  the  given LU-
+ decomposition of A to solve the system Ax = b by ﬁnding
+ y such that Ly = b, and then x such that Ux = y:
+
+        2   0  0     1  0  0  1
+a. A =   0      0     0  0  1  2        −1                    1   1  3     0  0  0  1       1                  ;
+  b =      −1           2        
+          2  0  0     1  1  0 −1b. A =    1  3  0     0  1  0   1                        
+       −1  2  1     0  0  0   0                            ;       −2
+  b =      −1           1        
+                           1  −1  2    1               0  0  0       −2                   0    1  1              1       0  0c. A =     −1               −4    ;
+                                                     2       −1    0  2  0                           0    0  1  −1          0    1  0  2
+                           0    0  0    1                                                           1                                                                                                                                                      
+   b =  −1           2
+          0                        
+          2    0  0    0     1  −1    0    1          1       0    0     0    1d. A =     −1              −2  −1 
+       −1    1  2    0     0    0    1    1
+          3    0  1  −1     0    0    0    0                 4                                                                  ;
+   b =  −6           4
+          5                        
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Khử các phần tử dưới pivot và ghi lại phép khử, hệ số pivot, các lần đổi hàng.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Với PA = LU, giải Ly = Pb trước rồi giải Ux = y; phân biệt L đơn vị và U có pivot bằng 1.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** Đặt $y=Ux$. Thế tiến trong $Ly=b$ cho
+
+$$
+y=\begin{bmatrix}\frac{1}{2}\\1\\\frac{1}{6}\end{bmatrix}.
+$$
+
+ Thế ngược từ hàng dưới lên trong $Ux=y$ được
+
+$$
+x=\begin{bmatrix}\frac{1}{3}\\\frac{2}{3}\\\frac{1}{6}\end{bmatrix}.
+$$
+
+ Thế lại cho $LUx=b$, xác nhận mọi nghiệm.
+
+**b.** Đặt $y=Ux$. Thế tiến trong $Ly=b$ cho
+
+$$
+y=\begin{bmatrix}-1\\0\\0\end{bmatrix}.
+$$
+
+ Thế ngược từ hàng dưới lên trong $Ux=y$ được
+
+$$
+x=\begin{bmatrix}2 \tau_{0} - 1\\- \tau_{0}\\\tau_{0}\end{bmatrix}.
+$$
+
+ Các ký hiệu $\tau_i$ là tham số thực tự do. Thế lại cho $LUx=b$, xác nhận mọi nghiệm.
+
+**c.** Đặt $y=Ux$. Thế tiến trong $Ly=b$ cho
+
+$$
+y=\begin{bmatrix}- \frac{1}{2}\\\frac{1}{2}\\\frac{3}{4}\\- \frac{1}{4}\end{bmatrix}.
+$$
+
+ Thế ngược từ hàng dưới lên trong $Ux=y$ được
+
+$$
+x=\begin{bmatrix}- \frac{21}{8}\\- \frac{9}{8}\\\frac{5}{8}\\- \frac{1}{4}\end{bmatrix}.
+$$
+
+ Thế lại cho $LUx=b$, xác nhận mọi nghiệm.
+
+**d.** Đặt $y=Ux$. Thế tiến trong $Ly=b$ cho
+
+$$
+y=\begin{bmatrix}2\\6\\0\\1\end{bmatrix}.
+$$
+
+ Hàng cuối của $Ux=y$ có vế trái bằng 0 nhưng vế phải khác 0, nên hệ vô nghiệm.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Không áp dụng phân tích LU không đổi hàng khi xuất hiện pivot 0; kiểm tra quy ước chuẩn hóa của đề.
+
+</LoiHayMac>

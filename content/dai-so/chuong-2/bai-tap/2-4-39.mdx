@@ -1,0 +1,64 @@
+---
+so: "2.4.39"
+muc: "2.4"
+do_kho: vua
+tieu_de: "Ma trận nghịch đảo — bài 39"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.4.39"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.4.39 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-4-39-1" moTa="Đề gốc Nicholson bài 2.4.39, phần 1; xem bản văn bản bên dưới hình" />
+
+<HinhSach ten="ds-de-2-4-39-2" moTa="Đề gốc Nicholson bài 2.4.39, phần 2; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.4.39 An n×n matrix P is called an idempo-tent if P2 = P. Show that:
+
+    a.  I is the only invertible idempotent.
+    b. P is an idempotent if and only if I −2P is self-       inverse.
+    c. U is self-inverse if and only if U = I−2P for some      idempotent P.
+
+d.  I −aP is invertible fora  any a̸ = 1, and that
+    (I −aP)−1 = I +  1−a  P.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Tìm cách biến đổi đẳng thức về một tích bằng ma trận đơn vị.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Khi tìm nghịch đảo bằng khử hàng, làm cùng phép biến đổi trên cả hai khối của [A | I].
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** $P^2=P$ và $P$ khả nghịch cho $P=I$ sau khi nhân với $P^{-1}$; $I$ hiển nhiên lũy đẳng. **b.** $(I-2P)^2=I+4(P^2-P)$ bằng $I$ khi và chỉ khi $P^2=P$. **c.** Nếu $U^2=I$, đặt $P=(I-U)/2$ thì $P^2=P$; chiều ngược dùng (b). **d.** Với $a\ne1$, khai triển và dùng $P^2=P$ xác nhận
+
+$$
+(I-aP)\left(I+\frac{a}{1-a}P\right)=I.
+$$
+
+ Tích theo thứ tự ngược cũng bằng $I$, nên đây là công thức nghịch đảo.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Chỉ nhân khử bằng nghịch đảo sau khi đã chứng minh nó tồn tại; phân biệt nhân bên trái và bên phải.
+
+</LoiHayMac>

@@ -1,0 +1,69 @@
+---
+so: "2.9.3"
+muc: "2.9"
+do_kho: vua
+tieu_de: "Ứng dụng: xích Markov — bài 3"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.9.3"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.9.3 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-9-3-1" moTa="Đề gốc Nicholson bài 2.9.3, phần 1; xem bản văn bản bên dưới hình" />
+
+<HinhSach ten="ds-de-2-9-3-2" moTa="Đề gốc Nicholson bài 2.9.3, phần 2; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.9.3 A fox hunts in three territories A, B, and
+C. He never hunts in the same territory on two successive
+days. If he hunts in A, then he hunts in C the next day. If
+he hunts in B or C, he is twice as likely to hunt in A the
+next day as in the other territory.
+
+
+    a. What proportion of his time does he spend in A, in
+      B, and in C?
+
+b.  If he hunts in A on Monday (C on Monday), what
+    is the probability that he will hunt in B on Thurs-
+   day?
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Xếp rõ thứ tự trạng thái; cột j mô tả xác suất rời trạng thái j.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Sau k lần chuyển dùng lũy thừa thứ k; phân bố dừng thỏa Ps = s và tổng thành phần bằng 1.
+
+</GoiY>
+
+<LoiGiai>
+
+Theo thứ tự $A,B,C$, cột là lãnh thổ hôm trước:
+
+$$
+P=\begin{bmatrix}0&\frac{2}{3}&\frac{2}{3}\\0&0&\frac{1}{3}\\1&\frac{1}{3}&0\end{bmatrix}.
+$$
+
+ **a.** Giải $Ps=s$, tổng bằng 1, được $s=\begin{bmatrix}\frac{2}{5}\\\frac{3}{20}\\\frac{9}{20}\end{bmatrix}$. Đó là tỷ lệ thời gian ở từng lãnh thổ. **b.** Thứ Hai tới thứ Năm có ba lần chuyển. Xác suất ở $B$ lần lượt là $(P^3)_{BA}=0$ nếu xuất phát ở $A$, và $(P^3)_{BC}=\frac{7}{27}$ nếu xuất phát ở $C$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phân bố sau hữu hạn bước khác phân bố dài hạn. Regular đòi một lũy thừa có mọi ô dương.
+
+</LoiHayMac>

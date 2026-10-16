@@ -1,0 +1,57 @@
+---
+so: "3.2.28"
+muc: "3.2"
+do_kho: vua
+tieu_de: "Định thức và ma trận nghịch đảo — bài 28"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.2.28"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.28 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-2-28-1" moTa="Đề gốc Nicholson bài 3.2.28, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+3  0   1
+Exercise 3.2.28  If A−1 =   0  2   3        adj A.                        
+                        3  1 −1                        ﬁnd
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Dùng định thức của tích và công thức nghịch đảo qua adjugate khi thích hợp.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Ô (i,j) của nghịch đảo lấy phần bù tại (j,i), chia định thức; Cramer thay cột bằng vế phải.
+
+</GoiY>
+
+<LoiGiai>
+
+$\det(A^{-1})=-21$, nên $\det A=- \frac{1}{21}$. Do đó
+
+$$
+\operatorname{adj}A=(\det A)A^{-1}=\begin{bmatrix}- \frac{1}{7}&0&- \frac{1}{21}\\0&- \frac{2}{21}&- \frac{1}{7}\\- \frac{1}{7}&- \frac{1}{21}&\frac{1}{21}\end{bmatrix}.
+$$
+
+ Không cần tìm riêng $A$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phải chuyển vị bảng phần bù để được adjugate, và chỉ chia cho định thức khi nó khác 0.
+
+</LoiHayMac>

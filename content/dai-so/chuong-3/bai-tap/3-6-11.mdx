@@ -1,0 +1,72 @@
+---
+so: "3.6.11"
+muc: "3.6"
+do_kho: vua
+tieu_de: "Ứng dụng: hệ thức truy hồi tuyến tính — bài 11"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.6.11"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.6.11 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-6-11-1" moTa="Đề gốc Nicholson bài 3.6.11, phần 1; xem bản văn bản bên dưới hình" />
+
+<HinhSach ten="ds-de-3-6-11-2" moTa="Đề gốc Nicholson bài 3.6.11, phần 2; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.6.11  Consider the length 3 recurrence
+xk+3 = axk +bxk+1 +cxk+2.
+
+                   xk             0  1  0
+    a.  If vk =   xk+1     A =   0  0  1          that                       
+                xk+2            a  b  c      vk+1 = Avk.  and          show
+
+                                         1
+    b.  If λ is any eigenvalue of A, show that x =  λ                                2                               λ        is a λ-eigenvector.                 
+       [Hint: Show directly that Ax = λx.]
+
+c. Generalize (a) and (b) to a recurrence
+
+          xk+4 = axk +bxk+1 +cxk+2 +dxk+3
+
+   of length 4.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Lập phương trình đặc trưng hoặc phân loại đối tượng đếm theo bước cuối.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Dùng các điều kiện đầu để xác định hệ số trong nghiệm tổng quát; nghiệm đặc trưng bội cần thêm lũy thừa của chỉ số.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** Nhân $Av_k$ cho $(x_{k+1},x_{k+2},ax_k+bx_{k+1}+cx_{k+2})^T=v_{k+1}$. **b.** Đa thức đặc trưng là $\lambda^3-c\lambda^2-b\lambda-a=0$. Vì thế $A(1,\lambda,\lambda^2)^T=(\lambda,\lambda^2,a+b\lambda+c\lambda^2)^T=(\lambda,\lambda^2,\lambda^3)^T$; vector có thành phần đầu 1 nên khác 0. **c.** Độ dài 4 dùng $v_k=(x_k,x_{k+1},x_{k+2},x_{k+3})^T$ và
+
+$$
+A=\begin{bmatrix}0&1&0&0\\0&0&1&0\\0&0&0&1\\a&b&c&d\end{bmatrix}.
+$$
+
+ Vector riêng tương ứng là $(1,\lambda,\lambda^2,\lambda^3)^T$ vì phương trình đặc trưng $\lambda^4-d\lambda^3-c\lambda^2-b\lambda-a=0$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Ghi rõ các giá trị đầu, kể cả cách đếm độ dài 0. Đừng áp dụng công thức cho nghiệm phân biệt vào trường hợp nghiệm bội.
+
+</LoiHayMac>

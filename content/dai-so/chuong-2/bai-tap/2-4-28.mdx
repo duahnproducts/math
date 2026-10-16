@@ -1,0 +1,60 @@
+---
+so: "2.4.28"
+muc: "2.4"
+do_kho: vua
+tieu_de: "Ma trận nghịch đảo — bài 28"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.4.28"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.4.28 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-4-28-1" moTa="Đề gốc Nicholson bài 2.4.28, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.4.28  Let A be an n×n matrix and let I be the
+n×n identity matrix.
+    a.  If A2 = 0, verify that (I −A)−1 = I +A.
+    b.  If A3 = 0, verify that (I −A)−1 = I +A+A2.
+                       1  2 −1    c. Find the inverse of   0  1   3                                               0  0   1                           .
+    d.  If An = 0, ﬁnd the formula for (I −A)−1.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Tìm cách biến đổi đẳng thức về một tích bằng ma trận đơn vị.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Khi tìm nghịch đảo bằng khử hàng, làm cùng phép biến đổi trên cả hai khối của [A | I].
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** $(I-A)(I+A)=I-A^2=I$ và tích ngược cũng bằng $I$. **b.** $(I-A)(I+A+A^2)=I-A^3=I$. **c.** Đặt ma trận đề là $I-N$; khi đó $N^3=0$. Vậy nghịch đảo là $I+N+N^2=\begin{bmatrix}1&-1&-1\\0&1&3\\0&0&1\end{bmatrix}$. **d.** Tổng hình học hữu hạn cho
+
+$$
+(I-A)^{-1}=I+A+\cdots+A^{n-1}\quad\text{khi }A^n=0.
+$$
+
+ Nhân hai phía rút gọn thành $I-A^n=I$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Chỉ nhân khử bằng nghịch đảo sau khi đã chứng minh nó tồn tại; phân biệt nhân bên trái và bên phải.
+
+</LoiHayMac>

@@ -1,29 +1,83 @@
 ---
 so: "3.2.1"
 muc: "3.2"
-do_kho: de
-nen_lam: true
-tu_soan: true
-tieu_de: "Có nghịch đảo không?"
-can_dung: ["dinh-ly-3.2.5"]
+do_kho: vua
+tieu_de: "Định thức và ma trận nghịch đảo — bài 1"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.2.1"
 ---
 
 <De>
-Xét $A=\begin{bmatrix}1&2\\2&4\end{bmatrix}$ và $B=\begin{bmatrix}1&2\\3&5\end{bmatrix}$. Ma trận nào khả nghịch?
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.1 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-2-1-1" moTa="Đề gốc Nicholson bài 3.2.1, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.2.1  Find the adjugate of each of the follow-
+ing matrices.
+         5  1  3              1 −1  2   a.        2  3              b.    3   1  0     −1                    
+         1  4  8              0 −1  1      1   0                 2  2             −1             1  −1   c.         1   0         d.      2        2                                      3     −1                 −1    
+         0 −1   1              2   2 −1                              
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </De>
 
 <GoiY so={1}>
-Tính hai định thức.
+
+Dùng định thức của tích và công thức nghịch đảo qua adjugate khi thích hợp.
+
 </GoiY>
 
 <GoiY so={2}>
-det A=0; det B=−1.
+
+Ô (i,j) của nghịch đảo lấy phần bù tại (j,i), chia định thức; Cramer thay cột bằng vế phải.
+
 </GoiY>
 
 <LoiGiai>
-Cần xét khả nghịch hai ma trận vuông. det A=4−4=0 nên A không khả nghịch. det B=5−6=−1 khác 0 nên B khả nghịch. Hàng phụ thuộc ở A là kiểm tra trực quan độc lập. Luôn xét det khác 0, không chỉ det dương.
+
+**a.** Tính $C_{ij}=(-1)^{i+j}\det A_{ij}$ rồi chuyển vị bảng phần bù, được
+
+$$
+\operatorname{adj}A=\begin{bmatrix}4&4&-3\\11&37&-18\\-6&-19&11\end{bmatrix}.
+$$
+
+ Kiểm tra $A\operatorname{adj}A=(\det A)I$.
+
+**b.** Tính $C_{ij}=(-1)^{i+j}\det A_{ij}$ rồi chuyển vị bảng phần bù, được
+
+$$
+\operatorname{adj}A=\begin{bmatrix}1&-1&-2\\-3&1&6\\-3&1&4\end{bmatrix}.
+$$
+
+ Kiểm tra $A\operatorname{adj}A=(\det A)I$.
+
+**c.** Tính $C_{ij}=(-1)^{i+j}\det A_{ij}$ rồi chuyển vị bảng phần bù, được
+
+$$
+\operatorname{adj}A=\begin{bmatrix}1&1&1\\1&1&1\\1&1&1\end{bmatrix}.
+$$
+
+ Kiểm tra $A\operatorname{adj}A=(\det A)I$.
+
+**d.** Tính $C_{ij}=(-1)^{i+j}\det A_{ij}$ rồi chuyển vị bảng phần bù, được
+
+$$
+\operatorname{adj}A=\begin{bmatrix}- \frac{1}{3}&\frac{2}{3}&\frac{2}{3}\\\frac{2}{3}&- \frac{1}{3}&\frac{2}{3}\\\frac{2}{3}&\frac{2}{3}&- \frac{1}{3}\end{bmatrix}.
+$$
+
+ Kiểm tra $A\operatorname{adj}A=(\det A)I$.
+
 </LoiGiai>
 
 <LoiHayMac>
-Định thức âm vẫn cho ma trận khả nghịch.
+
+Phải chuyển vị bảng phần bù để được adjugate, và chỉ chia cho định thức khi nó khác 0.
+
 </LoiHayMac>

@@ -1,0 +1,56 @@
+---
+so: "2.5.22"
+muc: "2.5"
+do_kho: vua
+tieu_de: "Ma trận sơ cấp — bài 22"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.5.22"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.5.22 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-5-22-1" moTa="Đề gốc Nicholson bài 2.5.22, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.5.22  Suppose B is obtained from A by:
+
+    a. interchanging rows i and j;
+
+    b. multiplying row i by k̸ = 0;
+    c. adding k times row i to row j (i̸ = j).
+    In each case describe how to obtain B−1 from A−1.
+[Hint: See part (a) of the preceding exercise.]
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Nhận diện phép hàng và ma trận sơ cấp tương ứng.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Một phép hàng là nhân trái; một phép cột là nhân phải. Ghi thứ tự các phép trước khi lập tích.
+
+</GoiY>
+
+<LoiGiai>
+
+Viết $B=EA$, suy ra $B^{-1}=A^{-1}E^{-1}$, tức làm phép cột tương ứng với nghịch đảo của phép hàng. **a.** Đổi cột $i,j$ của $A^{-1}$. **b.** Nhân cột $i$ với $1/k$. **c.** Với $R_j\leftarrow R_j+kR_i$, $E^{-1}=I-ke_je_i^T$, nên cột $i$ của $A^{-1}$ được thay bằng cột $i$ trừ $k$ lần cột $j$; các cột khác giữ nguyên. Chú ý cột đích là $i$, không phải $j$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phép thực hiện sau nằm bên trái trong tích ma trận sơ cấp dùng cho khử hàng.
+
+</LoiHayMac>

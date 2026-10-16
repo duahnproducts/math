@@ -1,0 +1,51 @@
+---
+so: "2.9.11"
+muc: "2.9"
+do_kho: vua
+tieu_de: "Ứng dụng: xích Markov — bài 11"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.9.11"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.9.11 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-9-11-1" moTa="Đề gốc Nicholson bài 2.9.11, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.9.11 A stochastic matrix is doubly stochas-
+tic if all the row sums also equal 1. Find the steady-state
+vector for a doubly stochastic matrix.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Xếp rõ thứ tự trạng thái; cột j mô tả xác suất rời trạng thái j.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Sau k lần chuyển dùng lũy thừa thứ k; phân bố dừng thỏa Ps = s và tổng thành phần bằng 1.
+
+</GoiY>
+
+<LoiGiai>
+
+Đặt $s=\frac1n(1,\ldots,1)^T$. Vì tổng mỗi hàng bằng 1, $(Ps)_i=\frac1n\sum_jp_{ij}=1/n=s_i$; tổng các thành phần của $s$ bằng 1. Vậy vector đều là vector dừng. Nếu ma trận regular thì đó là vector dừng duy nhất và là giới hạn từ mọi phân bố ban đầu. Nếu không regular, không nhất thiết duy nhất; chẳng hạn $P=I$ giữ nguyên mọi phân bố.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phân bố sau hữu hạn bước khác phân bố dài hạn. Regular đòi một lũy thừa có mọi ô dương.
+
+</LoiHayMac>

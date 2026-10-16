@@ -1,0 +1,58 @@
+---
+so: "3.3.11"
+muc: "3.3"
+do_kho: vua
+tieu_de: "Giá trị riêng và vector riêng — bài 11"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.3.11"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.3.11 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-3-11-1" moTa="Đề gốc Nicholson bài 3.3.11, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.3.11 An n×n matrix A is called nilpotent if
+Am = 0 for some m ≥1.
+
+    a. Show that every triangular matrix with zeros on
+       the main diagonal is nilpotent.
+
+    b.  If A is nilpotent, show that λ = 0 is the only eigen-
+      value (even complex) of A.
+
+    c. Deduce that cA(x) = xn, if A is n×n and nilpotent.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Bắt đầu từ Av = λv với v khác 0, hoặc đa thức đặc trưng det(xI − A).
+
+</GoiY>
+
+<GoiY so={2}>
+
+Không gian riêng là hạt nhân của A − λI; đa thức của ma trận tác động lên vector riêng bằng đa thức của trị riêng.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** Với tam giác trên nghiêm ngặt, $(A^k)_{ij}$ chỉ có thể khác 0 khi $j-i\ge k$; do đó $A^n=0$. Tam giác dưới dùng chuyển vị. **b.** Nếu $Av=\lambda v$ và $A^m=0$, thì $0=A^mv=\lambda^mv$. Vì $v\ne0$, $\lambda=0$, kể cả khi xét số phức. **c.** Đa thức đặc trưng đơn thức đầu hệ số 1, bậc $n$, có $n$ nghiệm phức kể bội. Theo (b) tất cả đều bằng 0, nên $c_A(x)=x^n$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Vector 0 không là vector riêng. Trị riêng của ma trận thực vẫn có thể là số phức.
+
+</LoiHayMac>

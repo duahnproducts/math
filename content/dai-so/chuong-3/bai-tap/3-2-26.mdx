@@ -1,0 +1,61 @@
+---
+so: "3.2.26"
+muc: "3.2"
+do_kho: vua
+tieu_de: "Định thức và ma trận nghịch đảo — bài 26"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.2.26"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.26 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-2-26-1" moTa="Đề gốc Nicholson bài 3.2.26, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.2.26
+
+                    a  p  q
+    a. Show that A =   0  b   r      an inverse if and                                       0  0  c      only if  = 0,and ﬁnd A−1hasin that case.                abc̸
+
+    b. Show that if an upper triangular matrix is invert-
+        ible, the inverse is also upper triangular.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Dùng định thức của tích và công thức nghịch đảo qua adjugate khi thích hợp.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Ô (i,j) của nghịch đảo lấy phần bù tại (j,i), chia định thức; Cramer thay cột bằng vế phải.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** Ma trận tam giác có $\det A=abc$, nên khả nghịch đúng khi $abc\ne0$. Giải $AX=I$ bằng thế ngược được
+
+$$
+A^{-1}=\begin{bmatrix}\frac{1}{a}&- \frac{p}{a b}&\frac{- b q + p r}{a b c}\\0&\frac{1}{b}&- \frac{r}{b c}\\0&0&\frac{1}{c}\end{bmatrix}.
+$$
+
+ **b.** Cột $j$ của $A^{-1}$ là nghiệm $Ax=e_j$. Thế ngược từ hàng $n$ về hàng $j+1$ cho các thành phần $x_n,\ldots,x_{j+1}$ đều bằng 0. Do đó các ô dưới đường chéo của nghịch đảo bằng 0; nghịch đảo tam giác trên.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phải chuyển vị bảng phần bù để được adjugate, và chỉ chia cho định thức khi nó khác 0.
+
+</LoiHayMac>

@@ -1,0 +1,50 @@
+---
+so: "2.7.5"
+muc: "2.7"
+do_kho: vua
+tieu_de: "Phân tích LU — bài 5"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.7.5"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.7.5 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-7-5-1" moTa="Đề gốc Nicholson bài 2.7.5, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.7.5  Show that we can accomplish any row
+interchange by using only row operations of other types.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Khử các phần tử dưới pivot và ghi lại phép khử, hệ số pivot, các lần đổi hàng.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Với PA = LU, giải Ly = Pb trước rồi giải Ux = y; phân biệt L đơn vị và U có pivot bằng 1.
+
+</GoiY>
+
+<LoiGiai>
+
+Gọi hai hàng ban đầu là $u,v$. Thực hiện theo thứ tự $R_i\leftarrow R_i+R_j$, $R_j\leftarrow-R_j$, $R_j\leftarrow R_j+R_i$, $R_i\leftarrow R_i-R_j$. Hai hàng lần lượt thành $(u+v,v)$, $(u+v,-v)$, $(u+v,u)$, $(v,u)$. Chỉ dùng cộng bội hàng và nhân hàng với số khác 0, nên đã biểu diễn phép đổi hàng bằng hai loại còn lại.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Không áp dụng phân tích LU không đổi hàng khi xuất hiện pivot 0; kiểm tra quy ước chuẩn hóa của đề.
+
+</LoiHayMac>

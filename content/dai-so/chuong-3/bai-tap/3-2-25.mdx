@@ -1,0 +1,57 @@
+---
+so: "3.2.25"
+muc: "3.2"
+do_kho: vua
+tieu_de: "Định thức và ma trận nghịch đảo — bài 25"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.2.25"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.25 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-2-25-1" moTa="Đề gốc Nicholson bài 3.2.25, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.2.25    If A =         1  c           that                          
+                   −b −c  1det A = 1 + a2 + b2 + c2. Hence,−a ﬁnd A−1 showfor any a, b,
+and c.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Dùng định thức của tích và công thức nghịch đảo qua adjugate khi thích hợp.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Ô (i,j) của nghịch đảo lấy phần bù tại (j,i), chia định thức; Cramer thay cột bằng vế phải.
+
+</GoiY>
+
+<LoiGiai>
+
+Khai triển hàng đầu: $\det A=(1+c^2)-a(-a+bc)+b(ac+b)=1+a^2+b^2+c^2>0$. Vì vậy luôn khả nghịch với mọi $a,b,c$ thực. Tính bảng phần bù rồi chuyển vị cho
+
+$$
+A^{-1}=\frac1{1+a^2+b^2+c^2}\begin{bmatrix}c^{2} + 1&- a - b c&a c - b\\a - b c&b^{2} + 1&- a b - c\\a c + b&- a b + c&a^{2} + 1\end{bmatrix}.
+$$
+
+ Nhân hai chiều xác nhận bằng $I$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phải chuyển vị bảng phần bù để được adjugate, và chỉ chia cho định thức khi nó khác 0.
+
+</LoiHayMac>

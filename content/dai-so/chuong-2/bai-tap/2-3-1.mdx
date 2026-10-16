@@ -1,0 +1,87 @@
+---
+so: "2.3.1"
+muc: "2.3"
+do_kho: vua
+tieu_de: "Phép nhân ma trận — bài 1"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.3.1"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.1 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-3-1-1" moTa="Đề gốc Nicholson bài 2.3.1, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.3.1 Compute the following matrix products.
+
+       1   3    2   a.            −1
+       0 −2    0   1
+                     2  3  1
+       1      2   b.     −1         1  9  7       2   0  4          
+               −1  0  2               3     
+       5  0   c.       −7      1       1  5   9     
+               −1               3 0
+   d.   1  3 −3  −2  1                      0  6       1  0  0   3                     −2   e.    0  1  0     5              −7        0  0  1     9   7              2  
+    f.   1 −1  3   1 
+               −8         2        
+   g.     1    1      3           −1
+      −7     3  1    2   h.            −1
+       5  2   −5   3
+                  a  0  0
+       2  3  1
+    i.               0  b  0       5  7  4                          0  0  c       a  0  0   a′  0  0
+    j.    0  b  0     0   b′  0                         0  0  c     0  0   c′                  
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Kiểm tra kích thước rồi dùng quy tắc hàng–cột cho tích ma trận.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Ở mỗi ý, số cột của ma trận trái bằng số hàng của ma trận phải. Kích thước kết quả là số hàng bên trái nhân số cột bên phải.
+
+</GoiY>
+
+<LoiGiai>
+
+Dùng $(AB)_{ij}=\sum_k a_{ik}b_{kj}$: lấy hàng thứ $i$ của ma trận trái nhân vô hướng với cột thứ $j$ của ma trận phải. Ví dụ ở (a), ô $(1,2)$ bằng $1(-1)+3(1)=2$. Kết quả đầy đủ:
+
+**a.** $\begin{bmatrix}2&2\\0&-2\end{bmatrix}$.
+
+**b.** $\begin{bmatrix}-1&-6&-2\\0&6&10\end{bmatrix}$.
+
+**c.** $\begin{bmatrix}22\\-1\end{bmatrix}$.
+
+**d.** $\begin{bmatrix}-3&-15\end{bmatrix}$.
+
+**e.** $\begin{bmatrix}3&-2\\5&-7\\9&7\end{bmatrix}$.
+
+**f.** $\begin{bmatrix}-23\end{bmatrix}$.
+
+**g.** $\begin{bmatrix}2&-2&6\\1&-1&3\\-7&7&-21\end{bmatrix}$.
+
+**h.** $\begin{bmatrix}1&0\\0&1\end{bmatrix}$.
+
+**i.** $\begin{bmatrix}2 a&3 b&c\\5 a&7 b&4 c\end{bmatrix}$.
+
+**j.** $\begin{bmatrix}a a_{p}&0&0\\0&b b_{p}&0\\0&0&c c_{p}\end{bmatrix}$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phép nhân ma trận không giao hoán; không dùng tính khử nếu chưa có điều kiện thích hợp.
+
+</LoiHayMac>

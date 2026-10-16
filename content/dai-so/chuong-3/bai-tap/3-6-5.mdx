@@ -1,0 +1,50 @@
+---
+so: "3.6.5"
+muc: "3.6"
+do_kho: vua
+tieu_de: "Ứng dụng: hệ thức truy hồi tuyến tính — bài 5"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.6.5"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.6.5 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-6-5-1" moTa="Đề gốc Nicholson bài 3.6.5, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.6.5 How many “words” of k letters can be
+made from the letters {a, b} if there are no adjacent a’s?
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Lập phương trình đặc trưng hoặc phân loại đối tượng đếm theo bước cuối.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Dùng các điều kiện đầu để xác định hệ số trong nghiệm tổng quát; nghiệm đặc trưng bội cần thêm lũy thừa của chỉ số.
+
+</GoiY>
+
+<LoiGiai>
+
+Gọi số từ hợp lệ độ dài $k$ là $w_k$. Nếu ký tự cuối là $b$, bỏ nó còn $w_{k-1}$ cách; nếu là $a$ và $k\ge2$, ký tự trước buộc là $b$, bỏ cặp $ba$ còn $w_{k-2}$ cách. Do đó $w_k=w_{k-1}+w_{k-2}$, $w_0=1,w_1=2$. Suy ra $w_k=F_{k+2}=(\phi^{k+2}-\psi^{k+2})/\sqrt5$, với $\phi,\psi=(1\pm\sqrt5)/2$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Ghi rõ các giá trị đầu, kể cả cách đếm độ dài 0. Đừng áp dụng công thức cho nghiệm phân biệt vào trường hợp nghiệm bội.
+
+</LoiHayMac>

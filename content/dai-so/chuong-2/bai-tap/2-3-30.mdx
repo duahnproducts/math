@@ -1,0 +1,56 @@
+---
+so: "2.3.30"
+muc: "2.3"
+do_kho: vua
+tieu_de: "Phép nhân ma trận — bài 30"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.3.30"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.30 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-3-30-1" moTa="Đề gốc Nicholson bài 2.3.30, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.3.30 The trace of a square matrix A, denoted
+tr A, is the sum of the elements on the main diagonal of
+A. Show that, if A and B are n×n matrices:
+   a. tr(A+B) = tr A+ tr B.
+   b.  tr(kA) = k tr(A) for any number k.
+   c.  tr(AT) = tr(A).         d.  tr(AB) = tr(BA).
+   e.  tr(AAT) is the sum of the squares of all entries of
+      A.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Kiểm tra kích thước rồi dùng quy tắc hàng–cột cho tích ma trận.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự các thừa số khi khai triển.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** $\operatorname{tr}(A+B)=\sum_i(a_{ii}+b_{ii})=\operatorname{tr}A+\operatorname{tr}B$. **b.** $\operatorname{tr}(kA)=\sum_i ka_{ii}=k\operatorname{tr}A$. **c.** Chuyển vị giữ các ô đường chéo. **d.** $\operatorname{tr}(AB)=\sum_{i,j}a_{ij}b_{ji}=\sum_{j,i}b_{ji}a_{ij}=\operatorname{tr}(BA)$. **e.** Ô $(i,i)$ của $AA^T$ là $\sum_j a_{ij}^2$; cộng theo $i$ cho tổng bình phương tất cả phần tử.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phép nhân ma trận không giao hoán; không dùng tính khử nếu chưa có điều kiện thích hợp.
+
+</LoiHayMac>

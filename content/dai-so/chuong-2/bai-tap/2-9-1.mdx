@@ -1,0 +1,60 @@
+---
+so: "2.9.1"
+muc: "2.9"
+do_kho: vua
+tieu_de: "Ứng dụng: xích Markov — bài 1"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.9.1"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.9.1 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-9-1-1" moTa="Đề gốc Nicholson bài 2.9.1, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.9.1 Which of the following stochastic matri-
+ces is regular?
+
+
+       0  0   1                      1  0   1                  2                      2       3                                              1             b.    a.  1  0                                         1  1   1                  2                      4       3
+       0  1  0                      1  0   1                                         4       3                                                                                                     
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Xếp rõ thứ tự trạng thái; cột j mô tả xác suất rời trạng thái j.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Sau k lần chuyển dùng lũy thừa thứ k; phân bố dừng thỏa Ps = s và tổng thành phần bằng 1.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** Lũy thừa thứ 5 là
+
+$$
+P^5=\begin{bmatrix}\frac{1}{4}&\frac{1}{4}&\frac{1}{8}\\\frac{1}{4}&\frac{1}{2}&\frac{3}{8}\\\frac{1}{2}&\frac{1}{4}&\frac{1}{2}\end{bmatrix},
+$$
+
+ mọi ô đều dương, nên ma trận regular. **b.** Cột thứ 2 là $e_2$, tức trạng thái 2 hấp thụ. Vì $P^me_2=e_2$ với mọi $m$, cột này luôn có hai ô bằng 0; không lũy thừa nào toàn dương. Vì vậy ma trận không regular.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phân bố sau hữu hạn bước khác phân bố dài hạn. Regular đòi một lũy thừa có mọi ô dương.
+
+</LoiHayMac>

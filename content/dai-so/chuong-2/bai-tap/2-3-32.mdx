@@ -1,0 +1,61 @@
+---
+so: "2.3.32"
+muc: "2.3"
+do_kho: vua
+tieu_de: "Phép nhân ma trận — bài 32"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.3.32"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.32 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-3-32-1" moTa="Đề gốc Nicholson bài 2.3.32, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.3.32 A square matrix P is called an
+idempotent if P2 = P. Show that:
+
+    a. 0 and I are idempotents.
+
+       1  1     1  0          1  1  1    b.                  ,                 , and                    , are idem-
+       0  0     1  0          2  1  1
+       potents.
+    c.  If P is an idempotent, so is I −P. Show further
+       that P(I −P) = 0.
+    d.  If P is an idempotent, so is PT.
+    e.  If P is an idempotent, so is Q = P+AP−PAP for      any square matrix A (of the same size as P).
+     f.  If A is n× m and B is m × n, and if AB = In, then    BA is an idempotent.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Kiểm tra kích thước rồi dùng quy tắc hàng–cột cho tích ma trận.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự các thừa số khi khai triển.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** $0^2=0,I^2=I$. **b.** Nhân trực tiếp từng ma trận. Với $J$ là ma trận $2\times2$ toàn 1, $J^2=2J$, nên $(J/2)^2=J/2$; hai ma trận còn lại bình phương cũng giữ nguyên từng hàng. **c.** $(I-P)^2=I-2P+P^2=I-P$ và $P(I-P)=P-P^2=0$. **d.** $(P^T)^2=(P^2)^T=P^T$. **e.** Đặt $Z=(I-P)AP$. Khi đó $PZ=0,ZP=Z,Z^2=0$. Vì $Q=P+Z$, $Q^2=P+Z=Q$. **f.** $(BA)^2=B(AB)A=BI_nA=BA$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phép nhân ma trận không giao hoán; không dùng tính khử nếu chưa có điều kiện thích hợp.
+
+</LoiHayMac>

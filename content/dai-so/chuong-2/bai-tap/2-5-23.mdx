@@ -1,0 +1,59 @@
+---
+so: "2.5.23"
+muc: "2.5"
+do_kho: vua
+tieu_de: "Ma trận sơ cấp — bài 23"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.5.23"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.5.23 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-5-23-1" moTa="Đề gốc Nicholson bài 2.5.23, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.5.23 Two m×n matrices A and B are called
+equivalent (written A e∼B) if there exist invertible matri-
+ces U and V (sizes m×m and n×n) such that A = UBV.
+
+    a. Prove the following the properties of equivalence.
+
+               i. A e∼A for all m×n matrices A.
+                  B              ii.  If A e∼B, then                         e∼A.
+                 B                         A             iii.  If A e∼B and                        e∼C, then                                  e∼C.
+    b. Prove that two m × n matrices are equivalent if      they have the same rank. [Hint: Use part (a) and
+     Theorem 2.5.3.]
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Nhận diện phép hàng và ma trận sơ cấp tương ứng.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Một phép hàng là nhân trái; một phép cột là nhân phải. Ghi thứ tự các phép trước khi lập tích.
+
+</GoiY>
+
+<LoiGiai>
+
+**a(i).** $A=IAI$. **a(ii).** Nếu $A=UBV$, thì $B=U^{-1}AV^{-1}$. **a(iii).** Nếu $A=UBV$, $B=XCY$, thì $A=(UX)C(YV)$; các tích vẫn khả nghịch. **b.** Nếu $A,B$ cùng hạng $r$, đưa chúng về cùng khối chuẩn $K=\begin{bmatrix}I_r&0\\0&0\end{bmatrix}$: $U_AAV_A=K=U_BBV_B$. Suy ra $A=U_A^{-1}U_BB V_BV_A^{-1}$, nên tương đương. Ngược lại, nhân bởi ma trận khả nghịch giữ hạng, nên tương đương cũng kéo theo cùng hạng.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phép thực hiện sau nằm bên trái trong tích ma trận sơ cấp dùng cho khử hàng.
+
+</LoiHayMac>

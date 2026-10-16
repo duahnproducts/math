@@ -26,11 +26,11 @@ describe('Đại số chương 3: lộ trình học đầy đủ', () => {
   });
 
   it('24 bài luyện ghi rõ tự soạn, mỗi mục có đủ ba mức và đủ hướng dẫn', () => {
-    expect(readdirSync(`${root}/bai-tap`).filter((f) => f.endsWith('.mdx'))).toHaveLength(24);
+    expect(readdirSync(`${root}/bai-tap`).filter((f) => f.endsWith('.mdx') && read('bai-tap',f).data.tu_soan)).toHaveLength(24);
     for (let i = 1; i <= 8; i++) {
       for (let j = 1; j <= 3; j++) {
-        const { data, body } = read('bai-tap', `3-${i}-${j}.mdx`);
-        expect(data.so).toBe(`3.${i}.${j}`);
+        const { data, body } = read('bai-tap', `3-${i}-${1000+j}.mdx`);
+        expect(data.so).toBe(`3.${i}.${1000+j}`);
         expect(data.tu_soan).toBe(true);
         expect(data.de_tom_tat).toBeUndefined();
         expect(data.do_kho).toBe(['de', 'vua', 'kho'][j - 1]);

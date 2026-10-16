@@ -1,29 +1,98 @@
 ---
 so: "3.4.1"
 muc: "3.4"
-do_kho: de
-nen_lam: true
-tu_soan: true
-tieu_de: "Kiểm tra thứ tự P và D"
-can_dung: ["dinh-ly-3.4.1"]
+do_kho: vua
+tieu_de: "Chéo hoá — bài 1"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.4.1"
 ---
 
 <De>
-Với A trong ví dụ mẫu, chọn $Q=\begin{bmatrix}1&1\\-1&1\end{bmatrix}$. D tương ứng là diag(4,2) hay diag(2,4)?
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.4.1 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-4-1-1" moTa="Đề gốc Nicholson bài 3.4.1, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.4.1  In each case ﬁnd the characteristic poly-
+nomial, eigenvalues, eigenvectors, and (if possible) an in-
+vertible matrix P such that P−1AP is diagonal.
+
+           1  2                    2   a. A =                        b. A =     −4
+           3  2               −1 −1
+           7  0 −4              1   1 −3   c. A =   0  5   0        d. A =   2   0   6                               
+           5  0 −2              1 −1   5        1        3        0  1  0              −2   e. A =   2   6               f. A =   3  0  1            −6             
+           1   2 −1             2  0  0        3   1   1       2   1  1
+   g. A =                       h. A =   0   1  0       −4 −2 −5              
+            2   2   5            1 −1  2       λ  0  0                
+    i. A =   0 λ  0   = µ               λ̸           0  0 µ                 ,
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </De>
 
 <GoiY so={1}>
-Xem cột đầu Q thuộc hướng riêng nào.
+
+Tìm các trị riêng và cơ sở từng không gian riêng.
+
 </GoiY>
 
 <GoiY so={2}>
-Cột đầu là (1,−1), ứng với 2.
+
+Ghép các vector riêng độc lập thành cột của P, rồi kiểm tra AP = PD. Cần đủ số cột bằng cấp ma trận.
+
 </GoiY>
 
 <LoiGiai>
-Cột đầu Q là v₂ nên ứng với λ=2; cột sau là v₁ ứng với 4. Do det Q=2 khác 0, Q chéo hoá A với D=diag(2,4). Nhân AQ=QD để kiểm tra. Thứ tự giá trị riêng phải theo thứ tự cột chứ không theo lớn bé.
+
+**a.** $c_A(x)=\left(x - 4\right) \left(x + 1\right)$. Giải $(A-\lambda I)v=0$ cho từng nghiệm: $\lambda=-1$ (bội đại số 1), $E_\lambda=\operatorname{span}\{\begin{bmatrix}-1\\1\end{bmatrix}\}$; $\lambda=4$ (bội đại số 1), $E_\lambda=\operatorname{span}\{\begin{bmatrix}\frac{2}{3}\\1\end{bmatrix}\}$. Vector riêng là mọi vector khác 0 trong các không gian vừa ghi. Ghép các vector cơ sở theo thứ tự trên:
+
+$$
+P=\begin{bmatrix}-1&\frac{2}{3}\\1&1\end{bmatrix},\qquad P^{-1}AP=D=\begin{bmatrix}-1&0\\0&4\end{bmatrix}.
+$$
+
+ Kiểm tra $AP=PD$ và $\det P\ne0$.
+
+**b.** $c_A(x)=\left(x - 3\right) \left(x + 2\right)$. Giải $(A-\lambda I)v=0$ cho từng nghiệm: $\lambda=-2$ (bội đại số 1), $E_\lambda=\operatorname{span}\{\begin{bmatrix}1\\1\end{bmatrix}\}$; $\lambda=3$ (bội đại số 1), $E_\lambda=\operatorname{span}\{\begin{bmatrix}-4\\1\end{bmatrix}\}$. Vector riêng là mọi vector khác 0 trong các không gian vừa ghi. Ghép các vector cơ sở theo thứ tự trên:
+
+$$
+P=\begin{bmatrix}1&-4\\1&1\end{bmatrix},\qquad P^{-1}AP=D=\begin{bmatrix}-2&0\\0&3\end{bmatrix}.
+$$
+
+ Kiểm tra $AP=PD$ và $\det P\ne0$.
+
+**c.** $c_A(x)=\left(x - 5\right) \left(x - 3\right) \left(x - 2\right)$. Giải $(A-\lambda I)v=0$ cho từng nghiệm: $\lambda=2$ (bội đại số 1), $E_\lambda=\operatorname{span}\{\begin{bmatrix}\frac{4}{5}\\0\\1\end{bmatrix}\}$; $\lambda=3$ (bội đại số 1), $E_\lambda=\operatorname{span}\{\begin{bmatrix}1\\0\\1\end{bmatrix}\}$; $\lambda=5$ (bội đại số 1), $E_\lambda=\operatorname{span}\{\begin{bmatrix}0\\1\\0\end{bmatrix}\}$. Vector riêng là mọi vector khác 0 trong các không gian vừa ghi. Ghép các vector cơ sở theo thứ tự trên:
+
+$$
+P=\begin{bmatrix}\frac{4}{5}&1&0\\0&0&1\\1&1&0\end{bmatrix},\qquad P^{-1}AP=D=\begin{bmatrix}2&0&0\\0&3&0\\0&0&5\end{bmatrix}.
+$$
+
+ Kiểm tra $AP=PD$ và $\det P\ne0$.
+
+**d.** $c_A(x)=\left(x - 2\right)^{3}$. Giải $(A-\lambda I)v=0$ cho từng nghiệm: $\lambda=2$ (bội đại số 3), $E_\lambda=\operatorname{span}\{\begin{bmatrix}1\\1\\0\end{bmatrix},\begin{bmatrix}-3\\0\\1\end{bmatrix}\}$. Vector riêng là mọi vector khác 0 trong các không gian vừa ghi. Tổng số vector cơ sở độc lập chỉ là 2, nhỏ hơn cấp 3, nên không chéo hóa được.
+
+**e.** $c_A(x)=\left(x - 2\right)^{3}$. Giải $(A-\lambda I)v=0$ cho từng nghiệm: $\lambda=2$ (bội đại số 3), $E_\lambda=\operatorname{span}\{\begin{bmatrix}-2\\1\\0\end{bmatrix},\begin{bmatrix}3\\0\\1\end{bmatrix}\}$. Vector riêng là mọi vector khác 0 trong các không gian vừa ghi. Tổng số vector cơ sở độc lập chỉ là 2, nhỏ hơn cấp 3, nên không chéo hóa được.
+
+**f.** $c_A(x)=\left(x - 2\right) \left(x + 1\right)^{2}$. Giải $(A-\lambda I)v=0$ cho từng nghiệm: $\lambda=-1$ (bội đại số 2), $E_\lambda=\operatorname{span}\{\begin{bmatrix}- \frac{1}{2}\\\frac{1}{2}\\1\end{bmatrix}\}$; $\lambda=2$ (bội đại số 1), $E_\lambda=\operatorname{span}\{\begin{bmatrix}1\\2\\1\end{bmatrix}\}$. Vector riêng là mọi vector khác 0 trong các không gian vừa ghi. Tổng số vector cơ sở độc lập chỉ là 2, nhỏ hơn cấp 3, nên không chéo hóa được.
+
+**g.** $c_A(x)=\left(x - 3\right) \left(x - 2\right) \left(x - 1\right)$. Giải $(A-\lambda I)v=0$ cho từng nghiệm: $\lambda=1$ (bội đại số 1), $E_\lambda=\operatorname{span}\{\begin{bmatrix}1\\-3\\1\end{bmatrix}\}$; $\lambda=2$ (bội đại số 1), $E_\lambda=\operatorname{span}\{\begin{bmatrix}-1\\1\\0\end{bmatrix}\}$; $\lambda=3$ (bội đại số 1), $E_\lambda=\operatorname{span}\{\begin{bmatrix}0\\-1\\1\end{bmatrix}\}$. Vector riêng là mọi vector khác 0 trong các không gian vừa ghi. Ghép các vector cơ sở theo thứ tự trên:
+
+$$
+P=\begin{bmatrix}1&-1&0\\-3&1&-1\\1&0&1\end{bmatrix},\qquad P^{-1}AP=D=\begin{bmatrix}1&0&0\\0&2&0\\0&0&3\end{bmatrix}.
+$$
+
+ Kiểm tra $AP=PD$ và $\det P\ne0$.
+
+**h.** $c_A(x)=\left(x - 3\right) \left(x - 1\right)^{2}$. Giải $(A-\lambda I)v=0$ cho từng nghiệm: $\lambda=1$ (bội đại số 2), $E_\lambda=\operatorname{span}\{\begin{bmatrix}-1\\0\\1\end{bmatrix}\}$; $\lambda=3$ (bội đại số 1), $E_\lambda=\operatorname{span}\{\begin{bmatrix}1\\0\\1\end{bmatrix}\}$. Vector riêng là mọi vector khác 0 trong các không gian vừa ghi. Tổng số vector cơ sở độc lập chỉ là 2, nhỏ hơn cấp 3, nên không chéo hóa được. **i.** Với $A=\operatorname{diag}(\lambda,\lambda,\mu)$, $\lambda\ne\mu$, đa thức đặc trưng là $(x-\lambda)^2(x-\mu)$. $E_\lambda=\operatorname{span}\{e_1,e_2\}$, $E_\mu=\operatorname{span}\{e_3\}$. Chọn $P=I$, ma trận đã chéo; vector riêng là mọi vector khác 0 thuộc một trong hai không gian này.
+
 </LoiGiai>
 
 <LoiHayMac>
-Không giữ D cũ khi đã đổi cột.
+
+Trị riêng lặp không tự động ngăn chéo hóa; cần so sánh số vector riêng độc lập với cấp ma trận.
+
 </LoiHayMac>

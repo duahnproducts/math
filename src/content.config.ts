@@ -83,6 +83,10 @@ const baiTap = defineCollection({
     de_tom_tat: z.boolean().default(false),
     /** Bài luyện tự soạn: số hiệu thuộc bộ bài luyện, không phải số bài của sách. */
     tu_soan: z.boolean().default(false),
+    /** Đề gốc chưa dịch: giữ số liệu bằng hình vector và có nhãn tiếng Anh rõ ràng. */
+    de_goc_tieng_anh: z.boolean().default(false),
+    /** Số bài in trong sách, dùng cho bài bổ sung có định danh web x.0.y. */
+    so_sach: z.string().optional(),
   }),
 });
 

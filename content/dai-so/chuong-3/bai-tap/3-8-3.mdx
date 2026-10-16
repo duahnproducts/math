@@ -1,29 +1,56 @@
 ---
 so: "3.8.3"
 muc: "3.8"
-do_kho: kho
-nen_lam: true
-tu_soan: true
-tieu_de: "Suy quy tắc cộng bội hàng"
-can_dung: ["bo-de-3.8.1"]
+do_kho: vua
+tieu_de: "Chứng minh Định lý khai triển theo phần bù đại số — bài 3"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.8.3"
 ---
 
 <De>
-Dùng tính cộng/tỉ lệ theo một hàng và “hai hàng bằng nhau thì det=0” để chứng minh Rₚ←Rₚ+cR_q, p≠q, giữ định thức.
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.8.3 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-8-3-1" moTa="Đề gốc Nicholson bài 3.8.3, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.8.3  If u is a number and A is an n×n matrix,prove that det (uA) = un det A by induction on n, using
+only the deﬁnition of det A.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </De>
 
 <GoiY so={1}>
-Tách định thức theo tổng ở hàng p.
+
+Dùng định nghĩa khai triển định thức và quy nạp theo cấp ma trận.
+
 </GoiY>
 
 <GoiY so={2}>
-Số hạng thêm có hàng p bằng c lần hàng q.
+
+Tách trường hợp hàng/cột đang xét bị xóa khỏi minor và trường hợp nó còn lại; dùng giả thiết quy nạp cho minor.
+
 </GoiY>
 
 <LoiGiai>
-Gọi B là kết quả phép cộng hàng. Tuyến tính theo hàng p cho det B=det A+c det C, trong đó C thay hàng p của A bằng chính hàng q, còn các hàng khác giữ nguyên. Vì p≠q, C có hai hàng bằng nhau nên det C=0. Vậy det B=det A. Đã dùng đúng từng giả thiết, không dùng quy tắc cần chứng minh làm bước giữa.
+
+Cấp 1: $\det([ua])=ua=u\det([a])$. Giả sử công thức đúng cấp $n-1$. Theo định nghĩa khai triển cột đầu,
+
+$$
+\det(uA)=\sum_i(-1)^{i+1}(ua_{i1})\det(uA_{i1}).
+$$
+
+ Dùng quy nạp cho từng minor: $\det(uA_{i1})=u^{n-1}\det A_{i1}$. Rút $u^n$ khỏi tổng, được $u^n\sum_i(-1)^{i+1}a_{i1}\det A_{i1}=u^n\det A$. Lập luận không chia cho $u$, nên đúng cả $u=0$.
+
 </LoiGiai>
 
 <LoiHayMac>
-C phải chỉ thay hàng p, giữ nguyên hàng q để nhận hai hàng bằng nhau.
+
+Khi đề yêu cầu chứng minh từ định nghĩa, không dùng chính tính chất định thức đang cần chứng minh làm giả thiết.
+
 </LoiHayMac>

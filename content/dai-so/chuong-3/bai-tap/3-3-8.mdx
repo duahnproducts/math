@@ -1,0 +1,64 @@
+---
+so: "3.3.8"
+muc: "3.3"
+do_kho: vua
+tieu_de: "Giá trị riêng và vector riêng — bài 8"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.3.8"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.3.8 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-3-8-1" moTa="Đề gốc Nicholson bài 3.3.8, phần 1; xem bản văn bản bên dưới hình" />
+
+<HinhSach ten="ds-de-3-3-8-2" moTa="Đề gốc Nicholson bài 3.3.8, phần 2; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.3.8  Let A be an invertible n×n matrix.
+
+    a. Show that the eigenvalues of A are nonzero.
+
+b. Show that the eigenvalues of A−1 are precisely the
+   numbers 1/λ, where λ is an eigenvalue of A.
+
+                            (−x)n                                  det A cA  1x  .c. Show that cA−1(x) =
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Bắt đầu từ Av = λv với v khác 0, hoặc đa thức đặc trưng det(xI − A).
+
+</GoiY>
+
+<GoiY so={2}>
+
+Không gian riêng là hạt nhân của A − λI; đa thức của ma trận tác động lên vector riêng bằng đa thức của trị riêng.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** Trị riêng 0 sẽ kéo theo $Av=0$ với $v\ne0$, trái với khả nghịch. **b.** Từ $Av=\lambda v$, nhân $A^{-1}$ và chia $\lambda\ne0$ được $A^{-1}v=\lambda^{-1}v$; chiều ngược tương tự. **c.** Với $x\ne0$,
+
+$$
+\det(xI-A^{-1})=\det(-A^{-1})\det(I-xA)=\frac{(-x)^n}{\det A}c_A(1/x).
+$$
+
+ Hai vế sau khi nhân/rút các lũy thừa là đa thức bằng nhau trên vô hạn điểm, nên đồng nhất và công thức còn đúng tại $x=0$ theo dạng đa thức đã rút gọn.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Vector 0 không là vector riêng. Trị riêng của ma trận thực vẫn có thể là số phức.
+
+</LoiHayMac>

@@ -1,0 +1,65 @@
+---
+so: "3.1.27"
+muc: "3.1"
+do_kho: vua
+tieu_de: "Khai triển theo phần bù đại số — bài 27"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.1.27"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.1.27 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-1-27-1" moTa="Đề gốc Nicholson bài 3.1.27, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.1.27  Let A be an n×n matrix. Given a poly-
+nomial p(x) = a0 +a1x+···+amxm, we write
+p(A) = a0I +a1A+···+amAm.
+   For example, if p(x) = 2−3x+5x2, then
+p(A) = 2I −3A+5A2. The characteristic polynomial of
+A is deﬁned to be cA(x) = det [xI −A], and the Cayley-
+Hamilton theorem asserts that cA(A) = 0 for any matrix
+A.
+
+    a. Verify the theorem for
+
+                3   2                1      1               i. A =                    −1                1 −1             ii. A =  0   1  0                                     8   2  2                          
+                             a  b
+    b. Prove the theorem for A =
+                                 c  d
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Chọn hàng hoặc cột nhiều số 0 để khai triển định thức.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Cộng bội một hàng vào hàng khác giữ định thức; đổi hai hàng đổi dấu; nhân một hàng nhân định thức với cùng hệ số.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.1.** $c_A(x)=x^{2} - 2 x - 5$. Thay $x$ bởi $A$ (hệ số hằng nhân với $I$), tính các lũy thừa rồi cộng được $c_A(A)=\begin{bmatrix}0&0\\0&0\end{bmatrix}$, xác nhận định lý.
+
+**a.2.** $c_A(x)=x^{3} - 4 x^{2} - 3 x + 6$. Thay $x$ bởi $A$ (hệ số hằng nhân với $I$), tính các lũy thừa rồi cộng được $c_A(A)=\begin{bmatrix}0&0&0\\0&0&0\\0&0&0\end{bmatrix}$, xác nhận định lý. **b.** Với $A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$, $c_A(x)=x^2-(a+d)x+(ad-bc)$. Nhân $A^2$ cho các ô $a^2+bc$, $b(a+d)$, $c(a+d)$, $d^2+bc$. Trừ $(a+d)A$ rồi cộng $(ad-bc)I$, cả bốn ô đều bằng 0. Vì vậy $c_A(A)=0$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Dấu phần bù tại ô (i,j) là (−1) mũ i+j. Nhân cả ma trận cấp n với c nhân định thức với c mũ n.
+
+</LoiHayMac>

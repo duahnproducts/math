@@ -11,3 +11,4 @@ dist/
 .astro/
 test-results/
 playwright-report/
+__pycache__/

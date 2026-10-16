@@ -1,0 +1,64 @@
+---
+so: "2.5.3"
+muc: "2.5"
+do_kho: vua
+tieu_de: "Ma trận sơ cấp — bài 3"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.5.3"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.5.3 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-5-3-1" moTa="Đề gốc Nicholson bài 2.5.3, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+1  2
+Exercise 2.5.3  Let A =           and
+                 −1  1
+          1C =  −1          .       2  1
+
+    a. Find elementary matrices E1 and E2 such that
+    C = E2E1A.
+
+    b. Show that there is no elementary matrix E such
+       that C = EA.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Nhận diện phép hàng và ma trận sơ cấp tương ứng.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Một phép hàng là nhân trái; một phép cột là nhân phải. Ghi thứ tự các phép trước khi lập tích.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** Đổi hai hàng, rồi trừ hàng 1 mới khỏi hàng 2:
+
+$$
+E_1=\begin{bmatrix}0&1\\1&0\end{bmatrix},\quad E_2=\begin{bmatrix}1&0\\-1&1\end{bmatrix},\quad E_2E_1A=C.
+$$
+
+ **b.** Cả hai hàng của $C$ khác hàng cùng vị trí của $A$, nên phép nhân một hàng / cộng bội hàng không đủ. Phép đổi hai hàng cho hàng dưới $(1,2)$, khác $(2,1)$ của $C$. Ba loại phép hàng đều không thể thực hiện trong một bước.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phép thực hiện sau nằm bên trái trong tích ma trận sơ cấp dùng cho khử hàng.
+
+</LoiHayMac>

@@ -1,0 +1,59 @@
+---
+so: "3.0.5"
+muc: "3.0"
+do_kho: vua
+tieu_de: "Bài bổ sung 3.5"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.5"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.5 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-0-5-1" moTa="Đề gốc Nicholson bài 3.5, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+R1Exercise 3.5  Let A =        be a 2   2 matrix with                      R2      ×
+rows R1 and R2. If det A = 5, ﬁnd det B where
+                     3R1 +2R3
+            B =
+                     2R1 +5R2
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Đọc rõ giả thiết và xác định mệnh đề hoặc đại lượng cần tìm.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Với đẳng thức tổng quát, khai triển có giữ thứ tự; với mệnh đề sai, tìm một phản ví dụ thỏa giả thiết.
+
+</GoiY>
+
+<LoiGiai>
+
+**Lỗi dữ kiện:** $A$ chỉ có hai hàng $R_1,R_2$, nhưng hàng đầu của $B$ trong bản in ghi $3R_1+2R_3$; $R_3$ không được định nghĩa. Với đúng dữ kiện in như vậy, không thể xác định duy nhất $\det B$. Nếu ý định là $3R_1+2R_2$, thì
+
+$$
+B=\begin{bmatrix}3&2\\2&5\end{bmatrix}A,
+$$
+
+ nên $\det B=(15-4)\det A=11\cdot5=55$. Đây là kết quả sau khi sửa $R_3$ thành $R_2$, không phải kết quả suy ra từ dữ kiện thiếu ban đầu.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Kiểm tra các trường hợp suy biến và dữ kiện chưa được định nghĩa trước khi chia hoặc khử.
+
+</LoiHayMac>

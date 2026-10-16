@@ -2,28 +2,51 @@
 so: "3.3.2"
 muc: "3.3"
 do_kho: vua
-nen_lam: true
-tu_soan: true
-tieu_de: "Tìm toàn bộ hướng riêng"
-can_dung: ["dinh-ly-3.3.2"]
+tieu_de: "Giá trị riêng và vector riêng — bài 2"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.3.2"
 ---
 
 <De>
-Tìm giá trị riêng và vector riêng của $A=\begin{bmatrix}4&1\\0&2\end{bmatrix}$.
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.3.2 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-3-2-1" moTa="Đề gốc Nicholson bài 3.3.2, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.3.2  Let A denote an n × n matrix and put
+A1 = A −αI, α in R. Show that λ is an eigenvalue of
+A if and only if λ −α is an eigenvalue of A1. (Hence,the eigenvalues of A1 are just those of A “shifted” by α.)
+How do the eigenvectors compare?
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </De>
 
 <GoiY so={1}>
-Ma trận tam giác có đa thức (t−4)(t−2).
+
+Bắt đầu từ Av = λv với v khác 0, hoặc đa thức đặc trưng det(xI − A).
+
 </GoiY>
 
 <GoiY so={2}>
-Với λ=2, phương trình là 2x+y=0.
+
+Không gian riêng là hạt nhân của A − λI; đa thức của ma trận tác động lên vector riêng bằng đa thức của trị riêng.
+
 </GoiY>
 
 <LoiGiai>
-Giá trị riêng 4,2. λ=4 cho y=0, nên v=s(1,0), s≠0. λ=2 cho y=−2x, nên v=s(1,−2), s≠0. Nhân A cho lần lượt (4,0) và (2,−4), đúng các bội 4 và 2. Liệt kê mỗi họ và điều kiện tham số khác 0.
+
+Nếu $Av=\lambda v$ với $v\ne0$, thì $(A-\alpha I)v=(\lambda-\alpha)v$. Ngược lại, $(A-\alpha I)v=\mu v$ cho $Av=(\mu+\alpha)v$. Do đó các trị riêng dịch đi $-\alpha$, còn không gian riêng được giữ nguyên: $E_{\lambda-\alpha}(A-\alpha I)=E_\lambda(A)$.
+
 </LoiGiai>
 
 <LoiHayMac>
-Vector riêng không chỉ là một đại diện; có mọi bội khác 0.
+
+Vector 0 không là vector riêng. Trị riêng của ma trận thực vẫn có thể là số phức.
+
 </LoiHayMac>

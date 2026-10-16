@@ -1,0 +1,50 @@
+---
+so: "3.2.12"
+muc: "3.2"
+do_kho: vua
+tieu_de: "Định thức và ma trận nghịch đảo — bài 12"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.2.12"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.12 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-2-12-1" moTa="Đề gốc Nicholson bài 3.2.12, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.2.12   If A and B are n× n matrices, if AB =
+−BA, and if n is odd, show that either A or B has no in-verse.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Dùng định thức của tích và công thức nghịch đảo qua adjugate khi thích hợp.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Ô (i,j) của nghịch đảo lấy phần bù tại (j,i), chia định thức; Cramer thay cột bằng vế phải.
+
+</GoiY>
+
+<LoiGiai>
+
+Lấy định thức hai vế: $\det A\det B=\det(-BA)=(-1)^n\det B\det A=-\det A\det B$ vì $n$ lẻ. Suy ra $2\det A\det B=0$, nên ít nhất một trong hai định thức bằng 0. Do đó ít nhất một ma trận không khả nghịch.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phải chuyển vị bảng phần bù để được adjugate, và chỉ chia cho định thức khi nó khác 0.
+
+</LoiHayMac>

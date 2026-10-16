@@ -1,0 +1,63 @@
+---
+so: "2.5.21"
+muc: "2.5"
+do_kho: vua
+tieu_de: "Ma trận sơ cấp — bài 21"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.5.21"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.5.21 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-5-21-1" moTa="Đề gốc Nicholson bài 2.5.21, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.5.21 Deﬁne an elementary column operation
+on a matrix to be one of the following:  (I) Interchange
+two columns. (II) Multiply a column by a nonzero scalar.
+(III) Add a multiple of a column to another column.
+Show that:
+
+    a.  If an elementary column operation is done to an
+    m × n matrix A, the result is AF, where F is an
+    n×n elementary matrix.
+    b. Given any m × n matrix A, there exist m × m ele-
+      mentary matrices E1, ..., Ek and n×n elementary
+      matrices F1, ..., Fp such that, in block form,
+
+                                                     Ir  0
+              Ek ···E1AF1···Fp =   0  0
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Nhận diện phép hàng và ma trận sơ cấp tương ứng.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Một phép hàng là nhân trái; một phép cột là nhân phải. Ghi thứ tự các phép trước khi lập tích.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** Chuyển vị một phép cột biến nó thành phép hàng trên $A^T$: nếu kết quả chuyển vị là $EA^T$, thì kết quả ban đầu là $AE^T$. Vì $E^T$ sơ cấp, lấy $F=E^T$. **b.** Khử hàng về RREF, đưa các cột trụ về trước bằng hoán vị cột, rồi dùng các cột đơn vị ấy khử mọi ô ngoài khối trụ. Kết quả là $\begin{bmatrix}I_r&0\\0&0\end{bmatrix}$, $r=\operatorname{rank}A$. Mỗi bước là một phép hàng hoặc cột sơ cấp nên cho đúng tích $E_k\cdots E_1AF_1\cdots F_p$ trong đề.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phép thực hiện sau nằm bên trái trong tích ma trận sơ cấp dùng cho khử hàng.
+
+</LoiHayMac>

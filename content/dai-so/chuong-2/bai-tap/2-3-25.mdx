@@ -1,0 +1,69 @@
+---
+so: "2.3.25"
+muc: "2.3"
+do_kho: vua
+tieu_de: "Phép nhân ma trận — bài 25"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.3.25"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.25 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-3-25-1" moTa="Đề gốc Nicholson bài 2.3.25, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.3.25 An autoparts manufacturer makes fend-
+ers, doors, and hoods. Each requires assembly and pack-
+aging carried out at factories: Plant 1, Plant 2, and Plant
+3. Matrix A below gives the number of hours for assem-
+bly and packaging, and matrix B gives the hourly rates at
+the three plants. Explain the meaning of the (3, 2)-entry
+in the matrix AB. Which plant is the most economical to
+operate? Give reasons.
+               Assembly   Packaging
+      Fenders        12       2
+     Doors          21       3     =  A                             Hoods         10       2                        
+                Plant 1   Plant 2     Plant 3
+  Assembly       21      18      20
+                          =  B
+  Packaging       14      10      13
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Kiểm tra kích thước rồi dùng quy tắc hàng–cột cho tích ma trận.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự các thừa số khi khai triển.
+
+</GoiY>
+
+<LoiGiai>
+
+Tích $AB$ lấy số giờ từng công đoạn nhân đơn giá tại từng nhà máy:
+
+$$
+AB=\begin{bmatrix}280&236&266\\483&408&459\\238&200&226\end{bmatrix}.
+$$
+
+ Ô $(3,2)=10\cdot18+2\cdot10=200$ là chi phí làm một nắp ca-pô tại nhà máy 2. Cột 2 nhỏ nhất trên cả ba hàng (236, 408, 200), nên nhà máy 2 rẻ nhất cho từng loại sản phẩm và cho mọi hỗn hợp sản lượng không âm.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phép nhân ma trận không giao hoán; không dùng tính khử nếu chưa có điều kiện thích hợp.
+
+</LoiHayMac>

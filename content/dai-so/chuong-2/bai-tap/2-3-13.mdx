@@ -1,0 +1,57 @@
+---
+so: "2.3.13"
+muc: "2.3"
+do_kho: vua
+tieu_de: "Phép nhân ma trận — bài 13"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.3.13"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.13 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-3-13-1" moTa="Đề gốc Nicholson bài 2.3.13, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.3.13  Compute the following using block
+multiplication (all blocks are k×k).
+              I  X       I  0             I  X       I   a.                              b.          −X
+     −Y    I    Y   TI        0    I    0      I
+   c.     I  X      I  X         d.    I  XT             I                   n                 −X
+           I  X
+   e.            any n       0        ≥1         −I  n
+       0  X
+    f.            any n           I  0      ≥1
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Kiểm tra kích thước rồi dùng quy tắc hàng–cột cho tích ma trận.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự các thừa số khi khai triển.
+
+</GoiY>
+
+<LoiGiai>
+
+Nhân theo hàng–cột khối, giữ thứ tự của $X,Y$. **a.** $\begin{bmatrix}I+XY&X\\0&I\end{bmatrix}$. **b.** $I_{2k}$. **c.** $I+XX^T$. **d.** $-X^T+X^T=0$. **e.** Bình phương ma trận đã cho bằng $I_{2k}$; lũy thừa chẵn là $I_{2k}$, lẻ là ma trận ban đầu. **f.** Nếu $F=\begin{bmatrix}0&X\\I&0\end{bmatrix}$ thì $F^2=\operatorname{diag}(X,X)$; do đó $F^{2r}=\operatorname{diag}(X^r,X^r)$ và $F^{2r+1}=\begin{bmatrix}0&X^{r+1}\\X^r&0\end{bmatrix}$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phép nhân ma trận không giao hoán; không dùng tính khử nếu chưa có điều kiện thích hợp.
+
+</LoiHayMac>

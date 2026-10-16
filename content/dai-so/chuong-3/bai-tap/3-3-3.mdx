@@ -1,29 +1,51 @@
 ---
 so: "3.3.3"
 muc: "3.3"
-do_kho: kho
-nen_lam: true
-tu_soan: true
-tieu_de: "Giá trị riêng bằng 0"
-can_dung: ["dinh-ly-3.3.2"]
+do_kho: vua
+tieu_de: "Giá trị riêng và vector riêng — bài 3"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.3.3"
 ---
 
 <De>
-Cho $A=\begin{bmatrix}1&2\\2&4\end{bmatrix}$. Chứng minh 0 là giá trị riêng và tìm mọi vector riêng ứng với nó.
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.3.3 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-3-3-1" moTa="Đề gốc Nicholson bài 3.3.3, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise  3.3.3    Show  that  the  eigenvalues  of
+  cosθ  −sinθ   are eiθ and e−iθ.  sinθ   cosθ
+(See Appendix A)
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </De>
 
 <GoiY so={1}>
-Giải Av=0 với v khác 0.
+
+Bắt đầu từ Av = λv với v khác 0, hoặc đa thức đặc trưng det(xI − A).
+
 </GoiY>
 
 <GoiY so={2}>
-x+2y=0; chọn y tự do.
+
+Không gian riêng là hạt nhân của A − λI; đa thức của ma trận tác động lên vector riêng bằng đa thức của trị riêng.
+
 </GoiY>
 
 <LoiGiai>
-Hệ Av=0 rút về x+2y=0. Nghiệm v=t(−2,1), t≠0; chúng khác 0 và Av=0=0v nên λ=0 hợp lệ. det A=0 là kiểm tra độc lập. Tổng quát ma trận vuông suy biến có 0 là giá trị riêng.
+
+Khai triển $c_A(x)=(x-\cos\theta)^2+\sin^2\theta=x^2-2\cos\theta\,x+1$. Hai nghiệm phức là $\cos\theta\pm i\sin\theta=e^{\pm i\theta}$. Nếu $\sin\theta=0$, hai nghiệm trùng nhau, ma trận là $I$ hoặc $-I$; công thức vẫn đúng. Khi $\sin\theta\ne0$, không có trị riêng thực.
+
 </LoiGiai>
 
 <LoiHayMac>
-Chỉ v bị cấm bằng 0; λ vẫn có thể bằng 0.
+
+Vector 0 không là vector riêng. Trị riêng của ma trận thực vẫn có thể là số phức.
+
 </LoiHayMac>

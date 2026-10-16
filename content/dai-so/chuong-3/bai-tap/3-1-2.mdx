@@ -2,28 +2,49 @@
 so: "3.1.2"
 muc: "3.1"
 do_kho: vua
-nen_lam: true
-tu_soan: true
-tieu_de: "Khai triển hàng nhiều số 0"
-can_dung: ["dinh-ly-3.1.1"]
+tieu_de: "Khai triển theo phần bù đại số — bài 2"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.1.2"
 ---
 
 <De>
-Tính $\det\begin{bmatrix}1&0&2\\0&3&0\\4&0&5\end{bmatrix}$.
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.1.2 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-1-2-1" moTa="Đề gốc Nicholson bài 3.1.2, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.1.2  Show that det A = 0 if A has a row or
+column consisting of zeros.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </De>
 
 <GoiY so={1}>
-Chọn hàng 2 hoặc cột 2.
+
+Chọn hàng hoặc cột nhiều số 0 để khai triển định thức.
+
 </GoiY>
 
 <GoiY so={2}>
-Phần bù tại (2,2) có dấu cộng.
+
+Cộng bội một hàng vào hàng khác giữ định thức; đổi hai hàng đổi dấu; nhân một hàng nhân định thức với cùng hệ số.
+
 </GoiY>
 
 <LoiGiai>
-Đề cho ma trận 3×3, cần định thức. Khai triển hàng 2 chỉ còn $3C_{22}$. Ta có $C_{22}=\det\begin{bmatrix}1&2\\4&5\end{bmatrix}=5-8=-3$. Do đó định thức $3(-3)=-9$. Khử hàng 3 bằng hàng 1 cũng cho đường chéo 1,3,−3, tích −9. Chọn hàng thưa trước khi khai triển.
+
+Khai triển theo hàng toàn 0: $\det A=\sum_j0\cdot C_{ij}=0$. Nếu là cột toàn 0, khai triển theo cột ấy cũng được tổng các số 0. Không cần tính các phần bù đại số.
+
 </LoiGiai>
 
 <LoiHayMac>
-Không bỏ nhầm cột khi lập ma trận con.
+
+Dấu phần bù tại ô (i,j) là (−1) mũ i+j. Nhân cả ma trận cấp n với c nhân định thức với c mũ n.
+
 </LoiHayMac>

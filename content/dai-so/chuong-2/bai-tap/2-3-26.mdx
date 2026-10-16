@@ -1,0 +1,66 @@
+---
+so: "2.3.26"
+muc: "2.3"
+do_kho: vua
+tieu_de: "Phép nhân ma trận — bài 26"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.3.26"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.26 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-3-26-1" moTa="Đề gốc Nicholson bài 2.3.26, phần 1; xem bản văn bản bên dưới hình" />
+
+<HinhSach ten="ds-de-2-3-26-2" moTa="Đề gốc Nicholson bài 2.3.26, phần 2; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.3.26  For the directed graph below, ﬁnd the
+adjacency matrix A, compute A3, and determine the num-
+ber of paths of length 3 from v1 to v4 and from v2 to v3.
+
+v1           v2
+
+
+
+
+v4           v3
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Kiểm tra kích thước rồi dùng quy tắc hàng–cột cho tích ma trận.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự các thừa số khi khai triển.
+
+</GoiY>
+
+<LoiGiai>
+
+Dùng quy ước $a_{ij}$ đếm mũi tên từ $v_j$ tới $v_i$. Đọc đúng hướng mũi tên trên đồ thị được
+
+$$
+A=\begin{bmatrix}1&0&1&0\\1&0&0&0\\0&0&0&1\\1&1&0&0\end{bmatrix},\qquad A^3=\begin{bmatrix}2&1&1&1\\1&0&1&1\\2&0&1&0\\2&0&2&1\end{bmatrix}.
+$$
+
+ Vì vậy số đường độ dài 3 từ $v_1$ tới $v_4$ là $(A^3)_{41}=2$, và từ $v_2$ tới $v_3$ là $(A^3)_{32}=0$. Lũy thừa ma trận đếm đường vì mỗi bước nhân ghép thêm một cạnh qua một đỉnh trung gian.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phép nhân ma trận không giao hoán; không dùng tính khử nếu chưa có điều kiện thích hợp.
+
+</LoiHayMac>

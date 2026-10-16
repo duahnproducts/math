@@ -1,0 +1,113 @@
+---
+so: "2.5.12"
+muc: "2.5"
+do_kho: vua
+tieu_de: "Ma trận sơ cấp — bài 12"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.5.12"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.5.12 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-5-12-1" moTa="Đề gốc Nicholson bài 2.5.12, phần 1; xem bản văn bản bên dưới hình" />
+
+<HinhSach ten="ds-de-2-5-12-2" moTa="Đề gốc Nicholson bài 2.5.12, phần 2; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.5.12  In each case ﬁnd invertible U and V
+                           Ir  0such that UAV =                 , where r = rank A.
+                0  0
+
+            1   1                3  2   a. A =         −1     b. A =
+        −2 −2   4            2  1
+
+         1 −1   2  1c. A =   2        0  3        −1      
+         0   1 −4  1      1  1  0                  −1d. A =   3  2  1   1                        1  0  1   3               
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Nhận diện phép hàng và ma trận sơ cấp tương ứng.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Một phép hàng là nhân trái; một phép cột là nhân phải. Ghi thứ tự các phép trước khi lập tích.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** Khử hàng để các cột trụ tạo thành $I_r$, đổi các cột trụ về trước rồi trừ phần ngoài trụ. Một lựa chọn cụ thể là
+
+$$
+U=\begin{bmatrix}2&\frac{1}{2}\\1&\frac{1}{2}\end{bmatrix},\quad V=\begin{bmatrix}1&0&-1\\0&0&1\\0&1&0\end{bmatrix}.
+$$
+
+ Nhân kiểm tra
+
+$$
+UAV=\begin{bmatrix}1&0&0\\0&1&0\end{bmatrix},
+$$
+
+ nên $r=2$. Hai ma trận $U,V$ khả nghịch vì là tích các phép hàng / cột đảo được.
+
+**b.** Khử hàng để các cột trụ tạo thành $I_r$, đổi các cột trụ về trước rồi trừ phần ngoài trụ. Một lựa chọn cụ thể là
+
+$$
+U=\begin{bmatrix}-1&2\\2&-3\end{bmatrix},\quad V=\begin{bmatrix}1&0\\0&1\end{bmatrix}.
+$$
+
+ Nhân kiểm tra
+
+$$
+UAV=\begin{bmatrix}1&0\\0&1\end{bmatrix},
+$$
+
+ nên $r=2$. Hai ma trận $U,V$ khả nghịch vì là tích các phép hàng / cột đảo được.
+
+**c.** Khử hàng để các cột trụ tạo thành $I_r$, đổi các cột trụ về trước rồi trừ phần ngoài trụ. Một lựa chọn cụ thể là
+
+$$
+U=\begin{bmatrix}-1&1&0\\-2&1&0\\2&-1&1\end{bmatrix},\quad V=\begin{bmatrix}1&0&2&-2\\0&1&4&-1\\0&0&1&0\\0&0&0&1\end{bmatrix}.
+$$
+
+ Nhân kiểm tra
+
+$$
+UAV=\begin{bmatrix}1&0&0&0\\0&1&0&0\\0&0&0&0\end{bmatrix},
+$$
+
+ nên $r=2$. Hai ma trận $U,V$ khả nghịch vì là tích các phép hàng / cột đảo được.
+
+**d.** Khử hàng để các cột trụ tạo thành $I_r$, đổi các cột trụ về trước rồi trừ phần ngoài trụ. Một lựa chọn cụ thể là
+
+$$
+U=\begin{bmatrix}-2&1&0\\3&-1&0\\2&-1&1\end{bmatrix},\quad V=\begin{bmatrix}1&0&-1&-3\\0&1&1&4\\0&0&1&0\\0&0&0&1\end{bmatrix}.
+$$
+
+ Nhân kiểm tra
+
+$$
+UAV=\begin{bmatrix}1&0&0&0\\0&1&0&0\\0&0&0&0\end{bmatrix},
+$$
+
+ nên $r=2$. Hai ma trận $U,V$ khả nghịch vì là tích các phép hàng / cột đảo được.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phép thực hiện sau nằm bên trái trong tích ma trận sơ cấp dùng cho khử hàng.
+
+</LoiHayMac>

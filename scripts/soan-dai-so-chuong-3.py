@@ -228,7 +228,7 @@ import HinhCheoHoa from '../../../../src/figures/HinhCheoHoa.astro';
         body+='</BaGoc>\n\n## Bài tập\n\nCác bài dưới đây là **bài luyện tự soạn**, dùng số riêng của bộ luyện trên web; không phải số bài trong sách Nicholson. Mỗi liên kết mở đề, hai tầng gợi ý và lời giải để bạn tự làm trước.\n'
         exdir=OUT/'bai-tap';exdir.mkdir(exist_ok=True)
         for j,(title,prompt,h1,h2,answer,mistake) in enumerate(d['tasks'],1):
-            number=f'3.{i}.{j}';level=['de','vua','kho'][j-1]
+            number=f'3.{i}.{1000+j}';level=['de','vua','kho'][j-1]
             body+=f'\n<BaiLuyen do_kho="{level}" so="{number}">\n{prompt}\n\n<GoiYNho>{h1}</GoiYNho>\n\n<XemMuc bai-tap="{number}" />\n</BaiLuyen>\n'
             ex=f'''---
 so: "{number}"
@@ -260,7 +260,7 @@ can_dung: ["{d['anchor']}"]
 {mistake}
 </LoiHayMac>
 '''
-            (exdir/f'3-{i}-{j}.mdx').write_text(safe_mdx(ex),encoding='utf-8')
+            (exdir/f'3-{i}-{1000+j}.mdx').write_text(safe_mdx(ex),encoding='utf-8')
         body+=f'\nĐọc đối chiếu: <XemMuc muc="3.{i}" />.\n'
         (directory/f'bai-{i}.mdx').write_text(front+safe_mdx(body),encoding='utf-8')
     print('Đã sinh 8 bài giảng và 24 bài luyện tự soạn, phủ đủ §3.1-§3.8.')

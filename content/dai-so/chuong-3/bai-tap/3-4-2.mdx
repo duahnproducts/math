@@ -2,28 +2,84 @@
 so: "3.4.2"
 muc: "3.4"
 do_kho: vua
-nen_lam: true
-tu_soan: true
-tieu_de: "Tính A mũ ba"
-can_dung: ["dinh-ly-3.4.1"]
+tieu_de: "Chéo hoá — bài 2"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.4.2"
 ---
 
 <De>
-Dùng công thức bài giảng để tính A³ cho $A=\begin{bmatrix}3&1\\1&3\end{bmatrix}$.
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.4.2 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-4-2-1" moTa="Đề gốc Nicholson bài 3.4.2, phần 1; xem bản văn bản bên dưới hình" />
+
+<HinhSach ten="ds-de-3-4-2-2" moTa="Đề gốc Nicholson bài 3.4.2, phần 2; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.4.2  In each case, ﬁnd P−1AP and then com-
+pute An.
+
+        6             1  5a. A =    −5    , P =
+        2 −1         1  2
+                               4b. A =  −7  −12    , P =  −3
+          6  −10           2 −3
+   [Hint:   (PDP−1)n = PDnP−1  for  each  n =
+   1, 2, ....]
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </De>
 
 <GoiY so={1}>
-Thay k=3.
+
+Tìm các trị riêng và cơ sở từng không gian riêng.
+
 </GoiY>
 
 <GoiY so={2}>
-4³=64,2³=8.
+
+Ghép các vector riêng độc lập thành cột của P, rồi kiểm tra AP = PD. Cần đủ số cột bằng cấp ma trận.
+
 </GoiY>
 
 <LoiGiai>
-A³ có ô đường chéo (64+8)/2=36, hai ô còn lại (64−8)/2=28. Vậy A³=[[36,28],[28,36]]. Nhân A²=[[10,6],[6,10]] với A cho cùng kết quả. Chéo hoá giúp thay phép nhân dài bằng hai lũy thừa số.
+
+**a.** Nhân trực tiếp được
+
+$$
+P^{-1}AP=\begin{bmatrix}1&0\\0&4\end{bmatrix}.
+$$
+
+ Vì $A=PDP^{-1}$, các thừa số giữa triệt tiêu khi nhân lặp, nên
+
+$$
+A^n=PD^nP^{-1}=\begin{bmatrix}\frac{5 \cdot 4^{n}}{3} - \frac{2}{3}&\frac{5}{3} - \frac{5 \cdot 4^{n}}{3}\\\frac{2 \cdot 4^{n}}{3} - \frac{2}{3}&\frac{5}{3} - \frac{2 \cdot 2^{2 n}}{3}\end{bmatrix}.
+$$
+
+ Thế $n=0$ cho $I$ và $n=1$ cho $A$.
+
+**b. Lỗi dữ kiện bản in.** Với đúng $A,P$ được in, phép nhân cho
+
+$$
+P^{-1}AP=\begin{bmatrix}161&-240\\120&-178\end{bmatrix},
+$$
+
+ không phải ma trận chéo. Đa thức đặc trưng là $x^2+17x+142$, có nghiệm phức $(-17\pm i\sqrt{279})/2$. Để vẫn tính được lũy thừa, đặt $B=A+17I/2$; nhân cho $B^2=-279I/4$. Chọn $\theta$ với $\cos\theta=-17/(2\sqrt{142})$, $\sin\theta=\sqrt{279}/(2\sqrt{142})$. Khi đó
+
+$$
+A^n=(\sqrt{142})^n\left[\cos(n\theta)I+\frac{2\sin(n\theta)}{\sqrt{279}}B\right].
+$$
+
+ Công thức theo khai triển nhị thức hoặc đồng nhất thức lượng giác, đúng cả $n=0$. Không áp dụng gợi ý về $D^n$ cho ma trận $P^{-1}AP$ này như thể nó là ma trận chéo.
+
 </LoiGiai>
 
 <LoiHayMac>
-Ngoài đường chéo là hiệu, không phải tổng.
+
+Trị riêng lặp không tự động ngăn chéo hóa; cần so sánh số vector riêng độc lập với cấp ma trận.
+
 </LoiHayMac>

@@ -1,0 +1,64 @@
+---
+so: "3.4.13"
+muc: "3.4"
+do_kho: vua
+tieu_de: "Chéo hoá — bài 13"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.4.13"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.4.13 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-4-13-1" moTa="Đề gốc Nicholson bài 3.4.13, phần 1; xem bản văn bản bên dưới hình" />
+
+<HinhSach ten="ds-de-3-4-13-2" moTa="Đề gốc Nicholson bài 3.4.13, phần 2; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.4.13  Let A2 = I, and assume that A̸ = I and
+A̸ = −I.
+    a. Show that the only eigenvalues of A are λ = 1 and
+    λ = −1.
+    b. Show that A is diagonalizable. [Hint: Verify that
+     A(A+I) = A+I and A(A−I) = −(A−I), and then
+      look at nonzero columns of A+I and of A−I.]
+
+c.  If Qm : R2 →R2 is reﬂection in the line y = mx
+   where m̸ = 0, use (b) to show that the matrix of  Qm is diagonalizable for each m.
+
+d. Now prove (c) geometrically using Theorem 3.3.3.
+
+                          3 −3             2      
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Tìm các trị riêng và cơ sở từng không gian riêng.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Ghép các vector riêng độc lập thành cột của P, rồi kiểm tra AP = PD. Cần đủ số cột bằng cấp ma trận.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** Từ $Av=\lambda v$, $A^2v=v$ cho $\lambda^2=1$, nên chỉ có thể là $\pm1$. Hai trị riêng đều thực sự xuất hiện: nếu $A-I\ne0$, một cột khác 0 của nó thỏa $A(A-I)=-(A-I)$; tương tự $A+I\ne0$ cho vector riêng 1. **b.** Mọi $v$ tách được $v=(v+Av)/2+(v-Av)/2$. Hai thành phần lần lượt thuộc $E_1,E_{-1}$. Giao hai không gian chỉ là 0, nên tổng trực tiếp bằng toàn không gian; ghép hai cơ sở cho cơ sở vector riêng. **c.** Đối xứng hai lần là đồng nhất, ma trận $Q_m^2=I$, nên dùng (b) chéo hóa được. **d.** Vector $(1,m)$ trên trục đối xứng có trị riêng 1; vector $(-m,1)$ vuông góc có trị riêng -1. Chọn $P=\begin{bmatrix}1&-m\\m&1\end{bmatrix}$, $\det P=1+m^2>0$, thì $P^{-1}Q_mP=\operatorname{diag}(1,-1)$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Trị riêng lặp không tự động ngăn chéo hóa; cần so sánh số vector riêng độc lập với cấp ma trận.
+
+</LoiHayMac>

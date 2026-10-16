@@ -1,0 +1,59 @@
+---
+so: "2.0.6"
+muc: "2.0"
+do_kho: vua
+tieu_de: "Bài bổ sung 2.6"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.6"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.6 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-0-6-1" moTa="Đề gốc Nicholson bài 2.6, phần 1; xem bản văn bản bên dưới hình" />
+
+<HinhSach ten="ds-de-2-0-6-2" moTa="Đề gốc Nicholson bài 2.6, phần 2; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.6 Let Ipq denote the n×n matrix with (p, q)-entry equal to 1 and all other entries 0. Show that:
+
+a.  In = I11 +I22 +···+Inn.
+                 Ips   if q = r
+b.  IpqIrs =                            .
+            0    if q̸ = r
+                                     i=1 ∑nj=1 aijIij.c.  If A = [aij] is n×n, then A = ∑n
+d.  If A = [aij], then IpqAIrs = aqrIps for all p, q, r, and
+    s.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Đọc rõ giả thiết và xác định mệnh đề hoặc đại lượng cần tìm.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Với đẳng thức tổng quát, khai triển có giữ thứ tự; với mệnh đề sai, tìm một phản ví dụ thỏa giả thiết.
+
+</GoiY>
+
+<LoiGiai>
+
+Dùng ký hiệu $I_{pq}=e_pe_q^T$. **a.** Tổng $\sum_i e_ie_i^T$ có đường chéo toàn 1, ngoài chéo bằng 0, nên bằng $I_n$. **b.** $I_{pq}I_{rs}=e_p(e_q^Te_r)e_s^T=\delta_{qr}I_{ps}$, cho hai trường hợp đề nêu. **c.** Tổng $\sum_{ij}a_{ij}I_{ij}$ có đúng ô $(i,j)$ là $a_{ij}$, nên bằng $A$. **d.** $I_{pq}AI_{rs}=e_p(e_q^TAe_r)e_s^T=a_{qr}I_{ps}$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Kiểm tra các trường hợp suy biến và dữ kiện chưa được định nghĩa trước khi chia hoặc khử.
+
+</LoiHayMac>

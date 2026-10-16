@@ -1,0 +1,52 @@
+---
+so: "2.7.4"
+muc: "2.7"
+do_kho: vua
+tieu_de: "Phân tích LU — bài 4"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.7.4"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.7.4 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-7-4-1" moTa="Đề gốc Nicholson bài 2.7.4, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+0  1
+Exercise 2.7.4 Show that      = LU is impossible
+                       1  0
+where L is lower triangular and U is upper triangular.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Khử các phần tử dưới pivot và ghi lại phép khử, hệ số pivot, các lần đổi hàng.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Với PA = LU, giải Ly = Pb trước rồi giải Ux = y; phân biệt L đơn vị và U có pivot bằng 1.
+
+</GoiY>
+
+<LoiGiai>
+
+Giả sử $A=LU$ với $L=\begin{bmatrix}a&0\\b&c\end{bmatrix}$, $U=\begin{bmatrix}d&e\\0&f\end{bmatrix}$. Ô (1,2) cho $ae=1$, nên $a\ne0$. Ô (1,1) cho $ad=0$, suy ra $d=0$. Nhưng ô (2,1) là $bd=0$, trái với $A_{21}=1$. Vì vậy không có phân tích như vậy nếu không hoán vị hàng.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Không áp dụng phân tích LU không đổi hàng khi xuất hiện pivot 0; kiểm tra quy ước chuẩn hóa của đề.
+
+</LoiHayMac>

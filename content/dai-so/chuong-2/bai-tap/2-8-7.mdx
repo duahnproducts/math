@@ -1,0 +1,58 @@
+---
+so: "2.8.7"
+muc: "2.8"
+do_kho: vua
+tieu_de: "Ứng dụng: mô hình kinh tế vào–ra — bài 7"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.8.7"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.8.7 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-8-7-1" moTa="Đề gốc Nicholson bài 2.8.7, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.8.7  Find a 2 × 2 matrix E with entries be-tween 0 and 1 such that:
+
+    a.  I −E has no inverse.
+    b.  I −E has an inverse but not all entries of (I −E)−1       are nonnegative.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Thiết lập phương trình cân bằng Ep = p hoặc kiểm tra tính không âm của nghịch đảo I − E.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Tổng cột của ma trận stochastic bằng 1. Để tìm giá tương đối, giải hệ thuần nhất rồi chuẩn hóa.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** Chọn $E=\frac12\begin{bmatrix}1&1\\1&1\end{bmatrix}$. Khi đó $(I-E)(1,1)^T=0$ nên không khả nghịch. **b.** Chọn $E=\begin{bmatrix}3/4&1/2\\1/2&3/4\end{bmatrix}$. Ta có $\det(I-E)=-3/16$ và
+
+$$
+(I-E)^{-1}=\begin{bmatrix}-4/3&-8/3\\-8/3&-4/3\end{bmatrix}.
+$$
+
+ Tất cả ô của $E$ đều nằm giữa 0 và 1, nhưng nghịch đảo có các ô âm.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Một vector cân bằng chỉ xác định tỷ lệ giá; phân biệt điều kiện không âm với dương và không mặc nhiên coi I − E khả nghịch.
+
+</LoiHayMac>

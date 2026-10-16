@@ -2,28 +2,49 @@
 so: "3.7.2"
 muc: "3.7"
 do_kho: vua
-nen_lam: true
-tu_soan: true
-tieu_de: "Hệ đã đường chéo"
-can_dung: ["dinh-ly-3.7.2"]
+tieu_de: "Ứng dụng: hệ phương trình vi phân — bài 2"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.7.2"
 ---
 
 <De>
-Giải x′=diag(−1,2)x với x(0)=(4,0). Nghiệm có tăng vô hạn vì có λ=2 không?
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.7.2 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-7-2-1" moTa="Đề gốc Nicholson bài 3.7.2, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.7.2 Show that the solution to  f ′ = af satis-
+fying f(x0) = k is f(x) = kea(x−x0).
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </De>
 
 <GoiY so={1}>
-Giải từng tọa độ.
+
+Với hệ f′ = Af, tìm cơ sở vector riêng của A; với phương trình vô hướng, tìm hàm mũ tương ứng.
+
 </GoiY>
 
 <GoiY so={2}>
-Hệ số của hướng thứ hai bằng 0.
+
+Mỗi vector riêng v với trị riêng λ cho nghiệm v nhân exp(λx); giải các hệ số bằng điều kiện đầu.
+
 </GoiY>
 
 <LoiGiai>
-x₁(t)=4e^(−t),x₂(t)=0e^(2t)=0. Nghiệm cụ thể tiến về gốc. Có λ dương nghĩa có trạng thái đầu tăng, không phải mọi trạng thái đầu đều tăng. Kiểm tra đầu (4,0) và đạo hàm trực tiếp.
+
+Nghiệm tổng quát của $f\prime=af$ là $Ce^{ax}$. Thay $f(x_0)=k$ cho $C=ke^{-ax_0}$, nên $f(x)=ke^{a(x-x_0)}$. Đạo hàm cho $f\prime=af$, và tại $x=x_0$ được $k$. Công thức bao gồm $a=0$ và $k=0$.
+
 </LoiGiai>
 
 <LoiHayMac>
-Phải xem hệ số của hướng có λ dương.
+
+Kiểm tra nghiệm bằng cả đạo hàm và điều kiện đầu. Hệ số hằng ở vế phải cần một nghiệm riêng.
+
 </LoiHayMac>

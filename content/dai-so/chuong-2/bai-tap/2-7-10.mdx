@@ -1,0 +1,54 @@
+---
+so: "2.7.10"
+muc: "2.7"
+do_kho: vua
+tieu_de: "Phân tích LU — bài 10"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.7.10"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.7.10 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-7-10-1" moTa="Đề gốc Nicholson bài 2.7.10, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise  2.7.10    Let  c1,  c2,  ...,  cr  be columns
+                                                                                                     j  de-of  lengths m, m −1,  ..., m −r + 1.    If knotes column  j of Im, show that L(m) [c1, c2, ..., cr] =
+L(m)[c1]L(m) [k1, c2]L(m) [k1, k2, c3]···
+L(m)[k1, k2, ..., kr−1, cr].  The notation  is as in the
+proof of Theorem 2.7.2. [Hint: Use induction on m and
+block multiplication.]
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Khử các phần tử dưới pivot và ghi lại phép khử, hệ số pivot, các lần đổi hàng.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Với PA = LU, giải Ly = Pb trước rồi giải Ux = y; phân biệt L đơn vị và U có pivot bằng 1.
+
+</GoiY>
+
+<LoiGiai>
+
+Chứng minh bằng quy nạp theo số cột đã thay. Sau $j-1$ thừa số, tích có các cột $c_1,\ldots,c_{j-1}$ đã cài vào phần dưới đường chéo, còn các cột $j,\ldots,m$ là cột đơn vị. Thừa số tiếp theo chỉ khác $I$ ở cột $j$: vector ấy bằng tổ hợp của $e_j,\ldots,e_m$, nên nhân bên trái bởi tích trước đó giữ nguyên nó. Mọi cột khác không đổi. Do đó tích mới chính là $L^{(m)}[c_1,\ldots,c_j]$. Bắt đầu $j=1$ hiển nhiên, kết thúc $j=r$ cho đẳng thức cần chứng minh.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Không áp dụng phân tích LU không đổi hàng khi xuất hiện pivot 0; kiểm tra quy ước chuẩn hóa của đề.
+
+</LoiHayMac>

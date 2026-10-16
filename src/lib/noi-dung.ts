@@ -31,6 +31,7 @@ export interface ThongTinBaiTap {
   nen_lam: boolean;
   can_dung: string[];
   tieu_de?: string;
+  de_goc_tieng_anh?: boolean;
 }
 
 export interface MucTrongChuong {
@@ -109,6 +110,18 @@ export function soSanhSo(a: string, b: string): number {
 /** '1.2.5' → '1.2' (mục § chứa nó). */
 export function mucCuaSo(so: string): string {
   return so.split('.').slice(0, 2).join('.');
+}
+
+/** Nhóm .0 dành cho phần bổ sung không đánh số mục trong sách. */
+export function nhanMuc(muc: string): string {
+  return muc.endsWith('.0') ? 'Bổ sung' : `§${muc}`;
+}
+
+export function nhanBaiTap(so: string, tuSoan = false): string {
+  const parts = so.split('.').map(Number);
+  if (parts[1] === 0) return `Bài bổ sung ${parts[0]}.${parts[2]}`;
+  if (tuSoan && parts[2] >= 1000) return `Bài luyện ${parts[0]}.${parts[1]}.${parts[2] - 1000}`;
+  return `Bài ${so}`;
 }
 
 /** '1.2' → 1 */

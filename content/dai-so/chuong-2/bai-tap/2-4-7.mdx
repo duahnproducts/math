@@ -1,0 +1,58 @@
+---
+so: "2.4.7"
+muc: "2.4"
+do_kho: vua
+tieu_de: "Ma trận nghịch đảo — bài 7"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.4.7"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.4.7 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-4-7-1" moTa="Đề gốc Nicholson bài 2.4.7, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+y
+Exercise 2.4.7 Given               0  4      y2                               
+                         x3       2   1  0      y3        z1         1 x2 =1 1 y1                       −1and    z2         2        0      y2    express the            −3        
+        z3      −1   1 −2      y3variables    x1,=x2,and x3 in terms ofz1, z2, and,  z3.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Tìm cách biến đổi đẳng thức về một tích bằng ma trận đơn vị.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Khi tìm nghịch đảo bằng khử hàng, làm cùng phép biến đổi trên cả hai khối của [A | I].
+
+</GoiY>
+
+<LoiGiai>
+
+Từ $z=By$ suy ra $y=B^{-1}z$. Thế vào $x=Ay$, được
+
+$$
+x=AB^{-1}z=\begin{bmatrix}\frac{24}{7}&- \frac{4}{7}&\frac{5}{7}\\\frac{26}{7}&- \frac{9}{7}&- \frac{1}{7}\\\frac{16}{7}&- \frac{5}{7}&\frac{8}{7}\end{bmatrix}\begin{bmatrix}z_1\\z_2\\z_3\end{bmatrix}.
+$$
+
+ Mỗi hàng của ma trận trên cho lần lượt công thức $x_1,x_2,x_3$. Kiểm tra bằng cách nhân ma trận hệ số này với $B$, thu lại $A$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Chỉ nhân khử bằng nghịch đảo sau khi đã chứng minh nó tồn tại; phân biệt nhân bên trái và bên phải.
+
+</LoiHayMac>

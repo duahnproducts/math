@@ -1,0 +1,55 @@
+---
+so: "3.2.6"
+muc: "3.2"
+do_kho: vua
+tieu_de: "Định thức và ma trận nghịch đảo — bài 6"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.2.6"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.6 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-2-6-1" moTa="Đề gốc Nicholson bài 3.2.6, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.2.6  Let A =      q   r      assume that                      
+                       u  v wdet A = 3. Compute:  p      and
+
+                          4u  2a −p    a.  det (2B−1) where B =   4v  2b                         −q 
+                      4w  2c  −r                           
+                        2p −a+u  3u    b.  det (2C−1) where C =   2q          3v                      −b+v    
+                              2r −c+w  3w                              
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Dùng định thức của tích và công thức nghịch đảo qua adjugate khi thích hợp.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Ô (i,j) của nghịch đảo lấy phần bù tại (j,i), chia định thức; Cramer thay cột bằng vế phải.
+
+</GoiY>
+
+<LoiGiai>
+
+Gọi các hàng của $A$ là $r_1,r_2,r_3$, $\det A=3$. **a.** $B=[4r_3^T\;2r_1^T\;-r_2^T]$. Thứ tự (3,1,2) có dấu dương, nên $\det B=4\cdot2\cdot(-1)\cdot3=-24$. Do đó $\det(2B^{-1})=8/(-24)=-1/3$. **b.** $C=[2r_2^T\;(-r_1+r_3)^T\;3r_3^T]$. Tuyến tính theo cột giữa bỏ hạng có hai cột tỷ lệ, nên $\det C=-6\det[r_2^T,r_1^T,r_3^T]=18$. Vậy $\det(2C^{-1})=8/18=4/9$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phải chuyển vị bảng phần bù để được adjugate, và chỉ chia cho định thức khi nó khác 0.
+
+</LoiHayMac>

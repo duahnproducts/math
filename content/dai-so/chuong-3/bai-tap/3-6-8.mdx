@@ -1,0 +1,62 @@
+---
+so: "3.6.8"
+muc: "3.6"
+do_kho: vua
+tieu_de: "Ứng dụng: hệ thức truy hồi tuyến tính — bài 8"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.6.8"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.6.8 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-6-8-1" moTa="Đề gốc Nicholson bài 3.6.8, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.6.8 A nuclear reactor contains α- and β-
+particles. In every second each α-particle splits into three
+β-particles, and each β-particle splits into an α-particle
+and two β-particles. If there is a single α-particle in the
+reactor at time t = 0, how many α-particles are there at
+t = 20 seconds? [Hint: Let xk and yk denote the number
+of α- and β-particles at time t = k seconds. Find xk+1
+and yk+1 in terms of xk and yk.]
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Lập phương trình đặc trưng hoặc phân loại đối tượng đếm theo bước cuối.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Dùng các điều kiện đầu để xác định hệ số trong nghiệm tổng quát; nghiệm đặc trưng bội cần thêm lũy thừa của chỉ số.
+
+</GoiY>
+
+<LoiGiai>
+
+Gọi $x_k,y_k$ là số hạt $\alpha,\beta$. Mỗi $\beta$ sinh một $\alpha$, mỗi $\alpha$ sinh ba $\beta$, nên $x_{k+1}=y_k$, $y_{k+1}=3x_k+2y_k$. Suy ra $x_{k+2}=2x_{k+1}+3x_k$, $x_0=1,x_1=0$. Giải được $x_k=(3^k+3(-1)^k)/4$. Vì vậy
+
+$$
+x_{20}=\frac{3^{20}+3}{4}=871696101.
+$$
+
+ Kiểm tra những bước đầu: $x_0=1,x_1=0,x_2=3$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Ghi rõ các giá trị đầu, kể cả cách đếm độ dài 0. Đừng áp dụng công thức cho nghiệm phân biệt vào trường hợp nghiệm bội.
+
+</LoiHayMac>

@@ -4,7 +4,7 @@
 // Môn lấy từ đường dẫn trang hiện tại. Mục § và bài tập tự mang số chương nên trỏ
 // được sang chương khác; bài giảng ở chương khác thì ghi thêm chuong={1}.
 import { taoDuongDan, viTriTuUrl } from '@/lib/duong-dan';
-import { chuongCuaMuc } from '@/lib/noi-dung';
+import { chuongCuaMuc, nhanBaiTap } from '@/lib/noi-dung';
 
 interface Props {
   muc?: string;
@@ -33,7 +33,7 @@ if (muc) {
   mauChu = c === viTri.chuong ? `Học dễ hiểu ở Bài ${bai}` : `Học dễ hiểu ở Bài ${bai}, Chương ${c}`;
 } else if (baiTap) {
   href = d.baiTap(viTri.mon, chuongCuaMuc(baiTap), baiTap);
-  mauChu = `Bài ${baiTap}`;
+  mauChu = nhanBaiTap(baiTap, Number(baiTap.split('.')[2]) >= 1000);
 } else {
   throw new Error('XemMuc cần muc, bai hoặc bai-tap');
 }

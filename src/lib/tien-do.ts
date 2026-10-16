@@ -26,6 +26,7 @@ export interface TienDo {
   phienBan: 1;
   /** Giữ tiến độ Ross tách khỏi bộ Abbott đã gỡ. */
   nguonGiaiTich?: 'ross-2013';
+  boBaiTapDaiSo?: 2;
   /** khoá bài giảng / mục § → thời điểm đánh dấu đã học */
   daHoc: Record<string, number>;
   /** khoá bài tập → kết quả tự đánh giá */
@@ -87,6 +88,7 @@ export function docTienDo(chuoi: string | null | undefined): TienDo {
   }
   if (!laDoiTuong(du)) return td;
   if (du.nguonGiaiTich === 'ross-2013') td.nguonGiaiTich = 'ross-2013';
+  if (du.boBaiTapDaiSo === 2) td.boBaiTapDaiSo = 2;
 
   if (laDoiTuong(du.daHoc)) {
     for (const [k, v] of Object.entries(du.daHoc)) {
@@ -117,6 +119,20 @@ export function ghiTienDo(td: TienDo): string {
 /** Chuyển giáo trình một lần; các lượt mở sau giữ nguyên tiến độ Ross. */
 export function chuyenSangRoss(td: TienDo): TienDo {
   return td.nguonGiaiTich === 'ross-2013' ? td : { ...boTienDoMon(td, 'giai-tich'), nguonGiaiTich: 'ross-2013' };
+}
+
+/** Chuyển khóa bài tự soạn trước khi dùng số cũ cho đề Nicholson. */
+export function chuyenBaiLuyenChuong3(td: TienDo): TienDo {
+  if (td.boBaiTapDaiSo === 2) return td;
+  const khoaMoi = (k: string) => k.replace(/^dai-so\/3\/bai-tap\/3\.([1-8])\.([1-3])$/, (_,m,b) => `dai-so/3/bai-tap/3.${m}.${1000+Number(b)}`);
+  const viTriMoi = (v: ViTri): ViTri => ({ ...v, href: v.href.replace(/\/dai-so\/chuong-3\/bai-tap\/3-([1-8])-([1-3])\/$/, (_,m,b) => `/dai-so/chuong-3/bai-tap/3-${m}-${1000+Number(b)}/`) });
+  return {
+    ...td, boBaiTapDaiSo: 2,
+    daHoc: Object.fromEntries(Object.entries(td.daHoc).map(([k,v]) => [khoaMoi(k),v])),
+    tuDanhGia: Object.fromEntries(Object.entries(td.tuDanhGia).map(([k,v]) => [khoaMoi(k),v])),
+    lanCuoi: td.lanCuoi ? viTriMoi(td.lanCuoi) : null,
+    lanCuoiTheoChuong: Object.fromEntries(Object.entries(td.lanCuoiTheoChuong).map(([k,v]) => [k,viTriMoi(v)])),
+  };
 }
 
 /** Xóa tiến độ của môn đã gỡ, giữ lại chỗ học gần nhất của các môn còn lại. */

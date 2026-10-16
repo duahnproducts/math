@@ -1,0 +1,58 @@
+---
+so: "3.2.10"
+muc: "3.2"
+do_kho: vua
+tieu_de: "Định thức và ma trận nghịch đảo — bài 10"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.2.10"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.10 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-2-10-1" moTa="Đề gốc Nicholson bài 3.2.10, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.2.10  Explain what can be said about det A
+if:
+
+   a. A2 = A                    b. A2 = I
+   c. A3 = A                   d. PA = P  and P   is
+                                     invertible
+   e. A2 = uA and A is n×n    f. A = −AT and A is n×
+                            n
+   g. A2 + I = 0 and A is
+    n×n
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Dùng định thức của tích và công thức nghịch đảo qua adjugate khi thích hợp.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Ô (i,j) của nghịch đảo lấy phần bù tại (j,i), chia định thức; Cramer thay cột bằng vế phải.
+
+</GoiY>
+
+<LoiGiai>
+
+Đặt $d=\det A$. **a.** $d^2=d$, nên $d\in\{0,1\}$. **b.** $d^2=1$, nên $d=\pm1$. **c.** $d^3=d$, nên $d\in\{-1,0,1\}$. **d.** Nhân $P^{-1}$ được $A=I$, nên $d=1$. **e.** $d^2=u^nd$, nên $d=0$ hoặc $d=u^n$; nếu $A$ khả nghịch thì $A=uI$. **f.** $d=\det(-A^T)=(-1)^nd$; nếu $n$ lẻ thì $d=0$, nếu $n$ chẵn thì không có ràng buộc từ riêng đẳng thức này (thực tế định thức phản đối xứng thực không âm). **g.** $A^2=-I$ cho $d^2=(-1)^n$. Không có ma trận thực khi $n$ lẻ; khi $n$ chẵn, thực tế $d=1$: các trị riêng phức đi theo cặp $i,-i$, mỗi cặp có tích 1.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phải chuyển vị bảng phần bù để được adjugate, và chỉ chia cho định thức khi nó khác 0.
+
+</LoiHayMac>

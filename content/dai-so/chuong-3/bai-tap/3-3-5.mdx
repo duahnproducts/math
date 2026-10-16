@@ -1,0 +1,61 @@
+---
+so: "3.3.5"
+muc: "3.3"
+do_kho: vua
+tieu_de: "Giá trị riêng và vector riêng — bài 5"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.3.5"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.3.5 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-3-5-1" moTa="Đề gốc Nicholson bài 3.3.5, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+a  b
+Exercise 3.3.5  Given A =        show that:
+                           c  d
+
+    a. cA(x) = x2 −tr Ax + det A, where tr A = a+ d is       called the trace of A.
+
+    b. The eigenvalues are                              1               +4bc                              2                   (a+d)±  (a−b)2                        h    p            i
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Bắt đầu từ Av = λv với v khác 0, hoặc đa thức đặc trưng det(xI − A).
+
+</GoiY>
+
+<GoiY so={2}>
+
+Không gian riêng là hạt nhân của A − λI; đa thức của ma trận tác động lên vector riêng bằng đa thức của trị riêng.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** $c_A(x)=(x-a)(x-d)-bc=x^2-(a+d)x+(ad-bc)=x^2-(\operatorname{tr}A)x+\det A$. **b.** Công thức nghiệm bậc hai cho
+
+$$
+\lambda=\frac{a+d\pm\sqrt{(a-d)^2+4bc}}2.
+$$
+
+ Bản in ghi $(a-b)^2$ trong căn là lỗi đánh máy; phải là $(a-d)^2$, vì biệt thức $(a+d)^2-4(ad-bc)=(a-d)^2+4bc$. Các nghiệm có thể phức nếu biệt thức âm.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Vector 0 không là vector riêng. Trị riêng của ma trận thực vẫn có thể là số phức.
+
+</LoiHayMac>

@@ -1,0 +1,55 @@
+---
+so: "3.7.5"
+muc: "3.7"
+do_kho: vua
+tieu_de: "Ứng dụng: hệ phương trình vi phân — bài 5"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.7.5"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.7.5 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-7-5-1" moTa="Đề gốc Nicholson bài 3.7.5, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.7.5  Let A be an invertible diagonalizable
+n× n matrix and let b be an n-column of constant func-tions. We can solve the system f′ = Af+b as follows:
+
+    a.  If g satisﬁes g′ = Ag (using Theorem 3.7.2), show
+       that f = g−A−1b is a solution to f′ = Af+b.
+    b. Show that every solution to f′ = Af+b arises as in
+       (a) for some solution g to g′ = Ag.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Với hệ f′ = Af, tìm cơ sở vector riêng của A; với phương trình vô hướng, tìm hàm mũ tương ứng.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Mỗi vector riêng v với trị riêng λ cho nghiệm v nhân exp(λx); giải các hệ số bằng điều kiện đầu.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** Đặt $f=g-A^{-1}b$. Vì $b$ không đổi, $f\prime=g\prime=Ag=A(f+A^{-1}b)=Af+b$. **b.** Với nghiệm $f$ bất kỳ, đặt $g=f+A^{-1}b$. Khi đó $g\prime=f\prime=Af+b=A(f+A^{-1}b)=Ag$. Vì vậy mọi nghiệm không thuần nhất nhận được từ nghiệm thuần nhất bằng phép tịnh tiến này. Điều kiện khả nghịch bảo đảm $A^{-1}b$ xác định; chéo hóa dùng để tìm $g$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Kiểm tra nghiệm bằng cả đạo hàm và điều kiện đầu. Hệ số hằng ở vế phải cần một nghiệm riêng.
+
+</LoiHayMac>

@@ -1,0 +1,67 @@
+---
+so: "2.9.7"
+muc: "2.9"
+do_kho: vua
+tieu_de: "Ứng dụng: xích Markov — bài 7"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.9.7"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.9.7 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-9-7-1" moTa="Đề gốc Nicholson bài 2.9.7, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.9.7  Suppose you have 1¢ and match coins
+with a friend. At each match you either win or lose 1¢
+with equal probability.  If you go broke or ever get 4¢,
+you quit. Assume your friend never quits.  If the states
+are 0, 1, 2, 3, and 4 representing your wealth, show that
+the corresponding transition matrix P is not regular. Find
+the probability that you will go broke after 3 matches.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Xếp rõ thứ tự trạng thái; cột j mô tả xác suất rời trạng thái j.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Sau k lần chuyển dùng lũy thừa thứ k; phân bố dừng thỏa Ps = s và tổng thành phần bằng 1.
+
+</GoiY>
+
+<LoiGiai>
+
+Theo thứ tự số tiền $0,1,2,3,4$,
+
+$$
+P=\begin{bmatrix}1&\frac{1}{2}&0&0&0\\0&0&\frac{1}{2}&0&0\\0&\frac{1}{2}&0&\frac{1}{2}&0\\0&0&\frac{1}{2}&0&0\\0&0&0&\frac{1}{2}&1\end{bmatrix}.
+$$
+
+ Trạng thái 0 và 4 hấp thụ; chẳng hạn $P^me_0=e_0$, nên không regular. Bắt đầu với 1 xu: $s_0=e_1$ (cột thứ hai trong thứ tự này). Sau ba ván
+
+$$
+s_3=P^3s_0=\begin{bmatrix}\frac{5}{8}\\0\\\frac{1}{4}\\0\\\frac{1}{8}\end{bmatrix}.
+$$
+
+ Xác suất đã phá sản là ô đầu, $5/8$. Bao gồm cả trường hợp đã phá sản từ ván đầu, vì người chơi dừng lại ở trạng thái 0.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phân bố sau hữu hạn bước khác phân bố dài hạn. Regular đòi một lũy thừa có mọi ô dương.
+
+</LoiHayMac>

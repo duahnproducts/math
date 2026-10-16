@@ -1,0 +1,51 @@
+---
+so: "2.9.10"
+muc: "2.9"
+do_kho: vua
+tieu_de: "Ứng dụng: xích Markov — bài 10"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.9.10"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.9.10 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-9-10-1" moTa="Đề gốc Nicholson bài 2.9.10, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.9.10   If sm is the stage-m state vector for a
+Markov chain, show that sm+k = Pksm holds for all m ≥1
+and k ≥1 (where P is the transition matrix).
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Xếp rõ thứ tự trạng thái; cột j mô tả xác suất rời trạng thái j.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Sau k lần chuyển dùng lũy thừa thứ k; phân bố dừng thỏa Ps = s và tổng thành phần bằng 1.
+
+</GoiY>
+
+<LoiGiai>
+
+Từ định nghĩa $s_{r+1}=Ps_r$, với $k=1$ công thức đúng. Nếu $s_{m+k}=P^ks_m$, thì $s_{m+k+1}=Ps_{m+k}=P(P^ks_m)=P^{k+1}s_m$. Quy nạp theo $k$ chứng minh $s_{m+k}=P^ks_m$ cho mọi chỉ số được nêu. Tính chất chỉ phụ thuộc trạng thái hiện tại bảo đảm dùng cùng một $P$ ở mỗi bước.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phân bố sau hữu hạn bước khác phân bố dài hạn. Regular đòi một lũy thừa có mọi ô dương.
+
+</LoiHayMac>

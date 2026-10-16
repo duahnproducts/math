@@ -1,0 +1,85 @@
+---
+so: "2.9.8"
+muc: "2.9"
+do_kho: vua
+tieu_de: "Ứng dụng: xích Markov — bài 8"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.9.8"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.9.8 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-9-8-1" moTa="Đề gốc Nicholson bài 2.9.8, phần 1; xem bản văn bản bên dưới hình" />
+
+<HinhSach ten="ds-de-2-9-8-2" moTa="Đề gốc Nicholson bài 2.9.8, phần 2; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.9.8 A mouse is put into a maze of compart-
+ments, as in the diagram. Assume that he always leaves
+
+any compartment he enters and that he is equally likely
+to take any tunnel entry.
+
+
+                                  3
+              1
+
+                        2
+
+
+                        4
+
+                       5
+
+
+    a.  If he starts in compartment 1, ﬁnd the probability
+       that he is in compartment 1 again after 3 moves.
+
+    b. Find the compartment in which he spends most of
+       his time if he is left for a long time.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Xếp rõ thứ tự trạng thái; cột j mô tả xác suất rời trạng thái j.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Sau k lần chuyển dùng lũy thừa thứ k; phân bố dừng thỏa Ps = s và tổng thành phần bằng 1.
+
+</GoiY>
+
+<LoiGiai>
+
+Từ sơ đồ, các đường hầm là $1\! -\!2$, $1\! -\!3$, $1\! -\!5$, $2\! -\!4$, $3\! -\!4$, $3\! -\!5$. Chia mỗi cột của ma trận kề cho số đường ra khỏi ngăn tương ứng, được
+
+$$
+P=\begin{bmatrix}0&\frac{1}{2}&\frac{1}{3}&0&\frac{1}{2}\\\frac{1}{3}&0&0&\frac{1}{2}&0\\\frac{1}{3}&0&0&\frac{1}{2}&\frac{1}{2}\\0&\frac{1}{2}&\frac{1}{3}&0&0\\\frac{1}{3}&0&\frac{1}{3}&0&0\end{bmatrix}.
+$$
+
+ **a.** Xác suất quay lại 1 sau ba bước là $(P^3)_{11}=\frac{1}{9}$. **b.** Giải $Ps=s$ và chuẩn hóa cho
+
+$$
+s=\begin{bmatrix}\frac{1}{4}\\\frac{1}{6}\\\frac{1}{4}\\\frac{1}{6}\\\frac{1}{6}\end{bmatrix}.
+$$
+
+ Hai ngăn 1 và 3 có xác suất lớn nhất bằng $1/4$ mỗi ngăn. Cũng có thể dùng tính chất bước đi đều trên đồ thị vô hướng: xác suất dừng tỷ lệ với bậc, ở đây các bậc là $(3,2,3,2,2)$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phân bố sau hữu hạn bước khác phân bố dài hạn. Regular đòi một lũy thừa có mọi ô dương.
+
+</LoiHayMac>

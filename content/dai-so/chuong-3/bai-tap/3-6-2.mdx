@@ -2,28 +2,69 @@
 so: "3.6.2"
 muc: "3.6"
 do_kho: vua
-nen_lam: true
-tu_soan: true
-tieu_de: "Công thức của truy hồi"
-can_dung: ["vi-du-3.6.2"]
+tieu_de: "Ứng dụng: hệ thức truy hồi tuyến tính — bài 2"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.6.2"
 ---
 
 <De>
-Giải $u_{k+2}=5u_{k+1}-6u_k$, $u_0=2,u_1=5$.
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.6.2 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-6-2-1" moTa="Đề gốc Nicholson bài 3.6.2, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.6.2  Solve the following linear recurrences.
+
+    a. xk+3 = 6xk+2 −11xk+1+6xk, where x0 = 1, x1 = 0,      and x2 = 1.
+    b. xk+3 = −2xk+2 +xk+1 +2xk, where x0 = 1, x1 = 0,      and x2 = 1.
+
+                     xk
+[Hint: Use vk =   xk+1              
+                  xk+2                .]
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </De>
 
 <GoiY so={1}>
-Phương trình đặc trưng là (r−2)(r−3)=0.
+
+Lập phương trình đặc trưng hoặc phân loại đối tượng đếm theo bước cuối.
+
 </GoiY>
 
 <GoiY so={2}>
-c₁+c₂=2 và 2c₁+3c₂=5.
+
+Dùng các điều kiện đầu để xác định hệ số trong nghiệm tổng quát; nghiệm đặc trưng bội cần thêm lũy thừa của chỉ số.
+
 </GoiY>
 
 <LoiGiai>
-Hai nghiệm 2,3 cho uₖ=c₁2ᵏ+c₂3ᵏ. Hệ đầu cho c₁=c₂=1. Vậy uₖ=2ᵏ+3ᵏ. k=2 cho 13, đúng 5·5−6·2. Thế hai lũy thừa vào truy hồi kiểm tra đúng mọi k.
+
+**a.** Phương trình đặc trưng $\left(t - 3\right) \left(t - 2\right) \left(t - 1\right)=0$. Tổ hợp các nghiệm lũy thừa, rồi dùng các giá trị đầu để giải các hệ số, được
+
+$$
+x_k=- 4 \cdot 2^{k} + \frac{3 \cdot 3^{k}}{2} + \frac{7}{2}.
+$$
+
+ Thế $k=0,\ldots,2$ cho đúng điều kiện đầu; thay vào truy hồi cho đồng nhất thức.
+
+**b.** Phương trình đặc trưng $\left(t - 1\right) \left(t + 1\right) \left(t + 2\right)=0$. Tổ hợp các nghiệm lũy thừa, rồi dùng các giá trị đầu để giải các hệ số, được
+
+$$
+x_k=\frac{\left(-1\right)^{k}}{2} + \frac{1}{2}.
+$$
+
+ Thế $k=0,\ldots,2$ cho đúng điều kiện đầu; thay vào truy hồi cho đồng nhất thức.
+
 </LoiGiai>
 
 <LoiHayMac>
-Cần giải hệ số, không lấy luôn 1 nếu điều kiện đầu khác.
+
+Ghi rõ các giá trị đầu, kể cả cách đếm độ dài 0. Đừng áp dụng công thức cho nghiệm phân biệt vào trường hợp nghiệm bội.
+
 </LoiHayMac>

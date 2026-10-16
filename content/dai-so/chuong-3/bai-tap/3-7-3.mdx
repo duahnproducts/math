@@ -1,29 +1,60 @@
 ---
 so: "3.7.3"
 muc: "3.7"
-do_kho: kho
-nen_lam: true
-tu_soan: true
-tieu_de: "So hai kiểu thời gian"
-can_dung: ["dinh-ly-3.7.2"]
+do_kho: vua
+tieu_de: "Ứng dụng: hệ phương trình vi phân — bài 3"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.7.3"
 ---
 
 <De>
-Xét A=diag(−2,−1/2). So diễn biến mọi nghiệm x′=Ax với dãy zₖ₊₁=Azₖ; lấy z₀=(1,1).
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.7.3 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-7-3-1" moTa="Đề gốc Nicholson bài 3.7.3, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.7.3 A radioactive element decays at a rate
+proportional to the amount present. Suppose an initial
+mass of 10 g decays to 8 g in 3 hours.
+
+    a. Find the mass t hours later.
+
+    b. Find the half-life of the element—the time taken
+       to decay to half its mass.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </De>
 
 <GoiY so={1}>
-Vi phân dùng e^(λt); truy hồi dùng λᵏ.
+
+Với hệ f′ = Af, tìm cơ sở vector riêng của A; với phương trình vô hướng, tìm hàm mũ tương ứng.
+
 </GoiY>
 
 <GoiY so={2}>
-e^(−2t) co, nhưng (−2)ᵏ không co.
+
+Mỗi vector riêng v với trị riêng λ cho nghiệm v nhân exp(λx); giải các hệ số bằng điều kiện đầu.
+
 </GoiY>
 
 <LoiGiai>
-Mọi nghiệm vi phân có dạng (c₁e^(−2t),c₂e^(−t/2)) nên đều về gốc. Dãy từ z₀=(1,1) là ((−2)ᵏ,(−1/2)ᵏ): tọa độ đầu dao động với độ lớn tăng; tọa độ sau về 0. Kiểm tra k=1 là (−2,−1/2). Hai tiêu chuẩn khác nhau vì cùng λ đi vào hai hàm khác nhau.
+
+Gọi khối lượng $m(t)$. Định luật cho $m\prime=rm$, nên $m(t)=10e^{rt}$. Điều kiện $m(3)=8$ cho $e^{3r}=4/5$, $r=\ln(4/5)/3<0$. **a.** $m(t)=10(4/5)^{t/3}$ gram. **b.** Đặt $m(T)=5$: $(4/5)^{T/3}=1/2$, nên
+
+$$
+T=\frac{3\ln(1/2)}{\ln(4/5)}\approx9.319\text{ giờ}.
+$$
+
 </LoiGiai>
 
 <LoiHayMac>
-Không dùng |λ|&lt;1 để xét vi phân.
+
+Kiểm tra nghiệm bằng cả đạo hàm và điều kiện đầu. Hệ số hằng ở vế phải cần một nghiệm riêng.
+
 </LoiHayMac>

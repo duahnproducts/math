@@ -1,0 +1,61 @@
+---
+so: "3.3.12"
+muc: "3.3"
+do_kho: vua
+tieu_de: "Giá trị riêng và vector riêng — bài 12"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.3.12"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.3.12 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-3-12-1" moTa="Đề gốc Nicholson bài 3.3.12, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+B  0
+Exercise 3.3.12  Let A =          where B and C are
+                       0 C
+square matrices.
+
+    a. Show that cA(x) = cB(x)cC(x).
+
+    b.  If x and y are eigenvectors of B and C, respec-
+                      x        0
+        tively, show that       and        are eigenvec-
+                      0        y
+       tors of A, and show how every eigenvector of A
+       arises from such eigenvectors.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Bắt đầu từ Av = λv với v khác 0, hoặc đa thức đặc trưng det(xI − A).
+
+</GoiY>
+
+<GoiY so={2}>
+
+Không gian riêng là hạt nhân của A − λI; đa thức của ma trận tác động lên vector riêng bằng đa thức của trị riêng.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** $xI-A=\operatorname{diag}(xI-B,xI-C)$, nên định thức bằng $c_B(x)c_C(x)$. **b.** Nếu $Bx=\lambda x$, $x\ne0$, thì $A(x,0)^T=\lambda(x,0)^T$; tương tự cho $(0,y)^T$ từ $Cy=\lambda y$. Tổng quát, $(u,v)^T$ là vector riêng trị riêng $\lambda$ khi và chỉ khi $Bu=\lambda u$, $Cv=\lambda v$, và ít nhất một trong $u,v$ khác 0. Vì vậy $E_\lambda(A)=E_\lambda(B)\oplus E_\lambda(C)$, hiểu không gian riêng là $\{0\}$ nếu $\lambda$ không là trị riêng của khối tương ứng. Khi hai khối có chung trị riêng, vector riêng có thể có cả hai phần khác 0.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Vector 0 không là vector riêng. Trị riêng của ma trận thực vẫn có thể là số phức.
+
+</LoiHayMac>

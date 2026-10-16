@@ -1,0 +1,102 @@
+---
+so: "2.5.1"
+muc: "2.5"
+do_kho: vua
+tieu_de: "Ma trận sơ cấp — bài 1"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.5.1"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.5.1 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-5-1-1" moTa="Đề gốc Nicholson bài 2.5.1, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.5.1  For each of the following elementary
+matrices, describe the corresponding elementary row op-
+eration and write the inverse.
+
+           1  0  3                0  0  1
+   a. E =   0  1  0          b. E =   0  1  0                                       0  0  1                1  0  0        1  0  0            1  0  0
+   c. E =   0   12  0          d. E =       1  0                       −2                0  0  1                 0  0  1        0  1  0           1  0  0  
+   e. E =   1  0  0            f. E =   0  1  0                                       0  0  1                0  0  5                            
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Nhận diện phép hàng và ma trận sơ cấp tương ứng.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Một phép hàng là nhân trái; một phép cột là nhân phải. Ghi thứ tự các phép trước khi lập tích.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** $R_1\leftarrow R_1+3R_3$; đảo bằng trừ $3R_3$;
+
+$$
+E^{-1}=\begin{bmatrix}1&0&-3\\0&1&0\\0&0&1\end{bmatrix}.
+$$
+
+
+
+**b.** $R_1\leftrightarrow R_3$; tự đảo;
+
+$$
+E^{-1}=\begin{bmatrix}0&0&1\\0&1&0\\1&0&0\end{bmatrix}.
+$$
+
+
+
+**c.** $R_2\leftarrow R_2/2$; đảo bằng nhân 2;
+
+$$
+E^{-1}=\begin{bmatrix}1&0&0\\0&2&0\\0&0&1\end{bmatrix}.
+$$
+
+
+
+**d.** $R_2\leftarrow R_2-2R_1$; đảo bằng cộng $2R_1$;
+
+$$
+E^{-1}=\begin{bmatrix}1&0&0\\2&1&0\\0&0&1\end{bmatrix}.
+$$
+
+
+
+**e.** $R_1\leftrightarrow R_2$; tự đảo;
+
+$$
+E^{-1}=\begin{bmatrix}0&1&0\\1&0&0\\0&0&1\end{bmatrix}.
+$$
+
+
+
+**f.** $R_3\leftarrow5R_3$; đảo bằng chia 5;
+
+$$
+E^{-1}=\begin{bmatrix}1&0&0\\0&1&0\\0&0&\frac{1}{5}\end{bmatrix}.
+$$
+
+Nghịch đảo của mỗi phép hàng là phép hàng hoàn tác nó; nhân hai ma trận kiểm tra được I.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phép thực hiện sau nằm bên trái trong tích ma trận sơ cấp dùng cho khử hàng.
+
+</LoiHayMac>

@@ -1,0 +1,54 @@
+---
+so: "2.9.5"
+muc: "2.9"
+do_kho: vua
+tieu_de: "Ứng dụng: xích Markov — bài 5"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.9.5"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.9.5 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-9-5-1" moTa="Đề gốc Nicholson bài 2.9.5, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.9.5  The prime minister says she will call
+an election. This gossip is passed from person to person
+with a probability p̸ = 0 that the information is passed in-correctly at any stage. Assume that when a person hears
+the gossip he or she passes it to one person who does not
+know. Find the long-term probability that a person will
+hear that there is going to be an election.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Xếp rõ thứ tự trạng thái; cột j mô tả xác suất rời trạng thái j.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Sau k lần chuyển dùng lũy thừa thứ k; phân bố dừng thỏa Ps = s và tổng thành phần bằng 1.
+
+</GoiY>
+
+<LoiGiai>
+
+Hai trạng thái là “có bầu cử” và “không bầu cử”. Ma trận chuyển là $P=\begin{bmatrix}1-p&p\\p&1-p\end{bmatrix}$. Với $0<p<1$, $P$ toàn dương; giải $Ps=s$ cho $s=(1/2,1/2)^T$. Do đó xác suất dài hạn nghe “có bầu cử” là $1/2$. Có thể thấy rõ từ xác suất sau $m$ người: $[1+(1-2p)^m]/2\to1/2$. Nếu cho phép $p=1$ (đề chỉ ghi $p\ne0$), tin bị đảo ở mọi bước, xác suất luân phiên 0 và 1 nên không có giới hạn; cần nêu ngoại lệ này.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phân bố sau hữu hạn bước khác phân bố dài hạn. Regular đòi một lũy thừa có mọi ô dương.
+
+</LoiHayMac>

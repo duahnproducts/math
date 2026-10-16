@@ -1,29 +1,186 @@
 ---
 so: "3.1.1"
 muc: "3.1"
-do_kho: de
-nen_lam: true
-tu_soan: true
-tieu_de: "Định thức hai chiều"
-can_dung: ["dinh-ly-3.1.1"]
+do_kho: vua
+tieu_de: "Khai triển theo phần bù đại số — bài 1"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.1.1"
 ---
 
 <De>
-Tính $\det\begin{bmatrix}2&1\\3&4\end{bmatrix}$ và định thức sau khi đổi hai hàng.
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.1.1 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-1-1-1" moTa="Đề gốc Nicholson bài 3.1.1, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.1.1 Compute the determinants of the follow-
+ing matrices.
+
+       2                      6   9   a.     −1                  b.       3   2                 8  12
+        a2  ab            a+1   a
+   c.                             d.
+       ab  b2                  a  a−1
+                              2  0       cosθ                   −3   e.        −sinθ           f.    1  2   5        sinθ   cosθ                                             0  3   0       1  2  3           0  a  0  
+   g.   4  5  6               h.   b  c  d                                7  8  9                0  e  0     1  b  c           0  a  b 
+    i.    b  c  1                     j.    a  0  c                                 c  1  b                b  c  0     0  1    0         1  0  3  1          −1       3  0   0  2             2  2   6  0   k.                   l.            
+       0  1   2  1         −1  0 −3  1       5  0   0  7             4  1  12  0            3  1        2                 4        3                  −5             −1     −1       1  3   0   1          3   1   0   2  m.                n.                    1  0   5   2          0   1   2   2
+       1  1   2 −1          1   2 −1   1             1      5   5              0  0  0  a             −1         3   1  2   4         0  0  b  p   o.               p.          
+      −1 −3  8   0         0  c  q  k
+         1   1  2 −1         d   s    t  u                                                                                  
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </De>
 
 <GoiY so={1}>
-Dùng ad−bc.
+
+Chọn hàng hoặc cột nhiều số 0 để khai triển định thức.
+
 </GoiY>
 
 <GoiY so={2}>
-Định thức mới là số đối của định thức cũ.
+
+Cộng bội một hàng vào hàng khác giữ định thức; đổi hai hàng đổi dấu; nhân một hàng nhân định thức với cùng hệ số.
+
 </GoiY>
 
 <LoiGiai>
-Đề cho ma trận 2×2; cần hai định thức. Dùng ad−bc: $2\cdot4-1\cdot3=5$. Đổi hàng được $3\cdot1-4\cdot2=-5$. Hai giá trị đối nhau, kiểm tra đúng quy tắc đổi hàng. Lần sau tính một lần rồi đổi dấu.
+
+**a.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $4,\;3$. Cộng và rút gọn được
+
+$$
+\det A=7.
+$$
+
+
+
+**b.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $72,\;-72$. Cộng và rút gọn được
+
+$$
+\det A=0.
+$$
+
+
+
+**c.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $a^{2} b^{2},\;- a^{2} b^{2}$. Cộng và rút gọn được
+
+$$
+\det A=0.
+$$
+
+
+
+**d.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $a^{2} - 1,\;- a^{2}$. Cộng và rút gọn được
+
+$$
+\det A=-1.
+$$
+
+
+
+**e.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $\cos^{2}{\left(\theta \right)},\;\sin^{2}{\left(\theta \right)}$. Cộng và rút gọn được
+
+$$
+\det A=1.
+$$
+
+
+
+**f.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $-30,\;0,\;-9$. Cộng và rút gọn được
+
+$$
+\det A=-39.
+$$
+
+
+
+**g.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $-3,\;12,\;-9$. Cộng và rút gọn được
+
+$$
+\det A=0.
+$$
+
+
+
+**h.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $0,\;0,\;0$. Cộng và rút gọn được
+
+$$
+\det A=0.
+$$
+
+
+
+**i.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $b c - 1,\;b \left(- b^{2} + c\right),\;c \left(b - c^{2}\right)$. Cộng và rút gọn được
+
+$$
+\det A=- \left(b + c + 1\right) \left(b^{2} - b c - b + c^{2} - c + 1\right).
+$$
+
+
+
+**j.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $0,\;a b c,\;a b c$. Cộng và rút gọn được
+
+$$
+\det A=2 a b c.
+$$
+
+
+
+**k.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $0,\;-22,\;-11,\;0$. Cộng và rút gọn được
+
+$$
+\det A=-33.
+$$
+
+
+
+**l.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $-18,\;0,\;18,\;0$. Cộng và rút gọn được
+
+$$
+\det A=0.
+$$
+
+
+
+**m.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $-96,\;12,\;-40,\;-8$. Cộng và rút gọn được
+
+$$
+\det A=-132.
+$$
+
+
+
+**n.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $-24,\;8,\;-27,\;-13$. Cộng và rút gọn được
+
+$$
+\det A=-56.
+$$
+
+
+
+**o.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $-70,\;-66,\;80,\;140$. Cộng và rút gọn được
+
+$$
+\det A=84.
+$$
+
+
+
+**p.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $0,\;0,\;0,\;a b c d$. Cộng và rút gọn được
+
+$$
+\det A=a b c d.
+$$
+
 </LoiGiai>
 
 <LoiHayMac>
-Đổi hàng không giữ nguyên dấu.
+
+Dấu phần bù tại ô (i,j) là (−1) mũ i+j. Nhân cả ma trận cấp n với c nhân định thức với c mũ n.
+
 </LoiHayMac>

@@ -4,7 +4,7 @@ import Icon from '@/components/Icon.astro';
 import Khung from '@/layouts/Khung.astro';
 import { baiTapCoHuongDan, coNoiDung, layCacChuong, layChuong, layDanhSachMon } from '@/lib/du-lieu';
 import { slugChuong, soChuongTuSlug, taoDuongDan } from '@/lib/duong-dan';
-import { NHAN_DO_KHO } from '@/lib/noi-dung';
+import { NHAN_DO_KHO, nhanMuc, nhanBaiTap } from '@/lib/noi-dung';
 import { khoaBaiTap } from '@/lib/tien-do';
 
 export async function getStaticPaths() {
@@ -59,7 +59,7 @@ const coTuSoan = du.baiTap.some((b) => b.data.tu_soan);
               <button type="button" class="nut nho" data-loc-muc="" aria-pressed="true">Tất cả</button>
               {cacMuc.map((m) => (
                 <button type="button" class="nut nho" data-loc-muc={m.so} aria-pressed="false" title={m.ten}>
-                  §{m.so}
+                  {nhanMuc(m.so)}
                 </button>
               ))}
             </div>
@@ -96,26 +96,27 @@ const coTuSoan = du.baiTap.some((b) => b.data.tu_soan);
               <li
                 data-the-bai-tap
                 data-muc={b.data.muc}
-                data-do-kho={b.data.do_kho}
+                data-do-kho={b.data.de_goc_tieng_anh ? '' : b.data.do_kho}
                 data-nen-lam={String(b.data.nen_lam)}
                 data-ket-qua=""
               >
                 <a class="card the-nho" href={d.baiTap(mon, so, b.data.so)}>
                   <span class="dong">
-                    <span class="ten">Bài {b.data.so}</span>
+                    <span class="ten">{nhanBaiTap(b.data.so, b.data.tu_soan)}</span>
                     {b.data.nen_lam && (
                       <span class="sao" title="Nên làm bằng mọi giá">
                         ★
                       </span>
                     )}
-                    <span class="so-hieu">§{b.data.muc}</span>
-                    <span class={`pill ${b.data.do_kho === 'de' ? 'ok' : b.data.do_kho === 'vua' ? 'info' : 'warn'}`}>
-                      {NHAN_DO_KHO[b.data.do_kho]}
+                    <span class="so-hieu">{nhanMuc(b.data.muc)}</span>
+                    <span class={`pill ${b.data.de_goc_tieng_anh ? 'mo' : b.data.do_kho === 'de' ? 'ok' : b.data.do_kho === 'vua' ? 'info' : 'warn'}`}>
+                      {b.data.de_goc_tieng_anh ? 'Chưa xếp độ khó' : NHAN_DO_KHO[b.data.do_kho]}
                     </span>
                   </span>
                   {b.data.tieu_de && <span class="tom">{b.data.tieu_de}</span>}
                   <span class="dong">
                     {b.data.tu_soan && <span class="pill info" data-bai-tu-soan>Bài luyện tự soạn</span>}
+                    {b.data.de_goc_tieng_anh && <span class="pill info" data-de-goc-tieng-anh>Đề gốc tiếng Anh</span>}
                     {!baiTapCoHuongDan(b) && <span class="pill mo">Chưa có hướng dẫn</span>}
                     <span data-trang-thai-bai-tap={khoaBaiTap(mon, so, b.data.so)} class="pill trang-thai-bt" />
                   </span>

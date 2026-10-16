@@ -1,0 +1,66 @@
+---
+so: "3.6.12"
+muc: "3.6"
+do_kho: vua
+tieu_de: "Ứng dụng: hệ thức truy hồi tuyến tính — bài 12"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.6.12"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.6.12 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-6-12-1" moTa="Đề gốc Nicholson bài 3.6.12, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.6.12  Consider the recurrence
+
+                xk+2 = axk+1 +bxk +c
+
+where c may not be zero.
+
+    a.  If a + b̸ = 1 show that p can be found such that,
+         if we set yk = xk + p, then yk+2 = ayk+1 + byk.
+      [Hence, the sequence xk can be found provided yk
+      can be found by the methods of this section (or
+       otherwise).]
+
+    b. Use (a) to solve xk+2 = xk+1+6xk+5 where x0 = 1
+      and x1 = 1.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Lập phương trình đặc trưng hoặc phân loại đối tượng đếm theo bước cuối.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Dùng các điều kiện đầu để xác định hệ số trong nghiệm tổng quát; nghiệm đặc trưng bội cần thêm lũy thừa của chỉ số.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** Thay $x_k=y_k-p$ vào truy hồi, được $y_{k+2}=ay_{k+1}+by_k+c+(1-a-b)p$. Chọn $p=c/(a+b-1)$, hợp lệ vì $a+b\ne1$, để hạng hằng bằng 0. **b.** $a=1,b=6,c=5$ nên $p=5/6$. Khi đó $y_0=y_1=11/6$ và $y_{k+2}=y_{k+1}+6y_k$. Hai nghiệm đặc trưng là 3,-2; giải hệ số cho $y_k=(11/10)3^k+(11/15)(-2)^k$. Do đó
+
+$$
+x_k=\frac{11}{10}3^k+\frac{11}{15}(-2)^k-\frac56.
+$$
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Ghi rõ các giá trị đầu, kể cả cách đếm độ dài 0. Đừng áp dụng công thức cho nghiệm phân biệt vào trường hợp nghiệm bội.
+
+</LoiHayMac>

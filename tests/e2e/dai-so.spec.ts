@@ -76,10 +76,10 @@ test('Chương 2: đủ §2.1–§2.9 có trang dịch, mục lục đủ 9 mụ
   await expect(page.locator('a[href$="tai-ve/dai-so-chuong-2-ban-dich.pdf"]')).toBeVisible();
 });
 
-test('bài tập Chương 2: 47 bài của §2.1–§2.2 đều có lời giải, "Cần dùng" trỏ về §2.1, thuật ngữ mới có trong bảng', async ({ page }) => {
+test('bài tập Chương 2: đủ 220 đề, 47 bài §2.1–§2.2 giữ lời giải và liên kết kiến thức', async ({ page }) => {
   await page.goto('dai-so/chuong-2/bai-tap/');
-  await expect(page.locator('[data-the-bai-tap]')).toHaveCount(47);
-  await expect(page.locator('.pill', { hasText: 'Chưa có hướng dẫn' })).toHaveCount(0);
+  await expect(page.locator('[data-the-bai-tap]')).toHaveCount(220);
+  await expect(page.locator('[data-de-goc-tieng-anh]')).toHaveCount(173);
 
   await page.goto('dai-so/chuong-2/bai-tap/2-1-18/');
   await expect(page.locator('details[data-tang="loi-giai"]')).toHaveCount(1);
@@ -123,13 +123,13 @@ test('Chương 3: 24 bài luyện tự soạn có gợi ý, lời giải, bộ l
   test.slow();
   await page.goto('dai-so/chuong-3/bai-tap/');
   await expect(page.getByRole('heading', { name: 'Bài tập và bài luyện' })).toBeVisible();
-  await expect(page.locator('[data-the-bai-tap]')).toHaveCount(24);
+  await expect(page.locator('[data-the-bai-tap]')).toHaveCount(148);
   await expect(page.locator('[data-bai-tu-soan]')).toHaveCount(24);
   await page.locator('[data-loc-muc="3.4"]').click();
-  await expect(page.locator('[data-the-bai-tap]:visible')).toHaveCount(3);
+  await expect(page.locator('[data-the-bai-tap]:visible')).toHaveCount(20);
   for (let i = 1; i <= 8; i++) {
     for (let j = 1; j <= 3; j++) {
-      await page.goto(`dai-so/chuong-3/bai-tap/3-${i}-${j}/`);
+      await page.goto(`dai-so/chuong-3/bai-tap/3-${i}-${1000+j}/`);
       await expect(page.locator('[data-bai-tu-soan]')).toBeVisible();
       await expect(page.locator('.ghi-cong')).toContainText('không phải số bài trong sách');
       await expect(page.locator('.katex-error')).toHaveCount(0);

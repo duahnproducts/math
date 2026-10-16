@@ -1,16 +1,15 @@
 import { expect, test } from '@playwright/test';
 
-test('Bài 8 Chương 2: nút cuối bài dẫn tới bài luyện ngay trong bài giảng', async ({ page }) => {
+test('Bài 8 Chương 2: nút cuối bài dẫn tới đủ bài gốc của mục 2.8', async ({ page }) => {
   await page.goto('dai-so/chuong-2/giang-day/bai-8/');
   const nut = page.locator('nav[aria-label="Bước tiếp theo"] [data-bai-tap-bai-nay]');
   await expect(nut).toHaveText('Làm bài tập bài này →');
-  const muc = page.locator('.bai-giang h2').filter({ hasText: /^Bài tập$/ });
-  const id = await muc.getAttribute('id');
-  expect(id).toBeTruthy();
-  await expect(nut).toHaveAttribute('href', `#${id}`);
+  await expect(nut).toHaveAttribute('href', '/math/dai-so/chuong-2/bai-tap/?muc=2.8');
   await nut.click();
-  await expect(muc).toBeInViewport();
-  expect(decodeURIComponent(new URL(page.url()).hash)).toBe(`#${id}`);
+  await expect(page.locator('[data-loc-muc="2.8"]')).toHaveAttribute('aria-pressed', 'true');
+  const baiTap = page.locator('[data-the-bai-tap]:visible');
+  await expect(baiTap).toHaveCount(12);
+  for (const bai of await baiTap.all()) await expect(bai).toHaveAttribute('data-muc', '2.8');
 });
 
 test('bài có kho bài tập: nút cuối bài lọc đúng mục của bài giảng', async ({ page }) => {

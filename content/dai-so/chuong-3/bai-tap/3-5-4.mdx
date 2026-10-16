@@ -1,0 +1,53 @@
+---
+so: "3.5.4"
+muc: "3.5"
+do_kho: vua
+tieu_de: "Hệ động lực tuyến tính — bài 4"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.5.4"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.5.4 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-5-4-1" moTa="Đề gốc Nicholson bài 3.5.4, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.5.4  In Example 3.3.1, keep the same repro-
+duction rate of 2 and the same adult survival rate of 12,
+but suppose that the juvenile survival rate is ρ. Deter-
+mine which values of ρ cause the population to become
+extinct or to become large.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Viết vector trạng thái sau k bước dưới dạng A mũ k nhân trạng thái ban đầu.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Khai triển trạng thái ban đầu theo cơ sở vector riêng, rồi so sánh môđun các trị riêng có hệ số khác 0.
+
+</GoiY>
+
+<LoiGiai>
+
+Ma trận là $M=\begin{bmatrix}1/2&\rho\\2&0\end{bmatrix}$, trị riêng dương $\lambda_+=(1/2+\sqrt{1/4+8\rho})/2$. Với $0\le\rho\le1$, so sánh $1/2+2\rho$ với 1: $\rho<1/4$ gây tuyệt chủng; $\rho=1/4$ quần thể ổn định; $\rho>1/4$ quần thể tăng không bị chặn, với quần thể ban đầu không âm khác 0 và $\rho>0$. Ở biên $\rho=0$, con non không sống thành con trưởng thành nên toàn bộ quần thể vẫn tiến về 0. Nếu ban đầu bằng 0 thì luôn bằng 0.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Trị riêng trội quyết định tốc độ khi hệ số tương ứng khác 0; giữ cả giả thiết về trạng thái ban đầu.
+
+</LoiHayMac>

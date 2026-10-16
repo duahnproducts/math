@@ -1,0 +1,80 @@
+---
+so: "2.9.4"
+muc: "2.9"
+do_kho: vua
+tieu_de: "Ứng dụng: xích Markov — bài 4"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.9.4"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.9.4 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-9-4-1" moTa="Đề gốc Nicholson bài 2.9.4, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.9.4   Assume  that there are three  social
+classes—upper, middle, and lower—and that social mo-
+bility behaves as follows:
+
+    1. Of the children of upper-class parents, 70% re-
+     main upper-class, whereas 10% become middle-
+       class and 20% become lower-class.
+
+    2. Of the children of middle-class parents, 80% re-
+     main middle-class, whereas the others are evenly
+        split between the upper class and the lower class.
+
+    3. For the children of lower-class parents, 60% re-
+     main lower-class, whereas 30% become middle-
+       class and 10% upper-class.
+
+           a. Find the probability that the grandchild of
+            lower-class parents becomes upper-class.
+           b. Find the long-term breakdown of society
+             into classes.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Xếp rõ thứ tự trạng thái; cột j mô tả xác suất rời trạng thái j.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Sau k lần chuyển dùng lũy thừa thứ k; phân bố dừng thỏa Ps = s và tổng thành phần bằng 1.
+
+</GoiY>
+
+<LoiGiai>
+
+Theo thứ tự thượng lưu, trung lưu, hạ lưu,
+
+$$
+P=\begin{bmatrix}\frac{7}{10}&\frac{1}{10}&\frac{1}{10}\\\frac{1}{10}&\frac{4}{5}&\frac{3}{10}\\\frac{1}{5}&\frac{1}{10}&\frac{3}{5}\end{bmatrix}.
+$$
+
+ **a.** Ô $(1,3)$ của $P^2$ bằng $\frac{4}{25}$: xác suất cháu thuộc thượng lưu khi ông bà thuộc hạ lưu. Có thể tính trực tiếp $0.7(0.1)+0.1(0.3)+0.1(0.6)=0.16$. **b.** Giải $Ps=s$, tổng bằng 1, cho
+
+$$
+s=\begin{bmatrix}\frac{1}{4}\\\frac{1}{2}\\\frac{1}{4}\end{bmatrix}.
+$$
+
+ Vì tất cả ô của $P$ dương, đây là phân bố dài hạn từ mọi phân bố ban đầu.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phân bố sau hữu hạn bước khác phân bố dài hạn. Regular đòi một lũy thừa có mọi ô dương.
+
+</LoiHayMac>

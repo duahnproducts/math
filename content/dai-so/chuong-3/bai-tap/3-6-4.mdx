@@ -1,0 +1,59 @@
+---
+so: "3.6.4"
+muc: "3.6"
+do_kho: vua
+tieu_de: "Ứng dụng: hệ thức truy hồi tuyến tính — bài 4"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.6.4"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.6.4 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-6-4-1" moTa="Đề gốc Nicholson bài 3.6.4, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.6.4 A man must climb a ﬂight of k steps.
+He always takes one or two steps at a time. Thus he can
+climb 3 steps in the following ways: 1, 1, 1; 1, 2; or 2, 1.
+Find sk, the number of ways he can climb the ﬂight of k
+steps. [Hint: Fibonacci.]
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Lập phương trình đặc trưng hoặc phân loại đối tượng đếm theo bước cuối.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Dùng các điều kiện đầu để xác định hệ số trong nghiệm tổng quát; nghiệm đặc trưng bội cần thêm lũy thừa của chỉ số.
+
+</GoiY>
+
+<LoiGiai>
+
+Bước đầu có thể đi 1 bậc hoặc 2 bậc, nên $s_k=s_{k-1}+s_{k-2}$ với $s_0=1$, $s_1=1$. Vậy $s_k=F_{k+1}$, nếu $F_0=0,F_1=1$. Công thức tường minh:
+
+$$
+s_k=\frac{\phi^{k+1}-\psi^{k+1}}{\sqrt5},\quad\phi=\frac{1+\sqrt5}2,\;\psi=\frac{1-\sqrt5}2.
+$$
+
+ Ví dụ $s_3=3$ khớp các cách trong đề.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Ghi rõ các giá trị đầu, kể cả cách đếm độ dài 0. Đừng áp dụng công thức cho nghiệm phân biệt vào trường hợp nghiệm bội.
+
+</LoiHayMac>

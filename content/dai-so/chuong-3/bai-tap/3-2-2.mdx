@@ -2,28 +2,63 @@
 so: "3.2.2"
 muc: "3.2"
 do_kho: vua
-nen_lam: true
-tu_soan: true
-tieu_de: "Giải bằng Cramer"
-can_dung: ["dinh-ly-3.2.5"]
+tieu_de: "Định thức và ma trận nghịch đảo — bài 2"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.2.2"
 ---
 
 <De>
-Giải $2x+y=7$, $x-y=2$ bằng Cramer.
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.2 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-2-2-1" moTa="Đề gốc Nicholson bài 3.2.2, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.2.2 Use determinants to ﬁnd which real val-
+ues of c make each of the following matrices invertible.
+       1   0  3                0    c  −c   a.    3       c              b.         2   1       −4           −1       
+       2   5  8                  c  −c    c       c  1  0         4  c  3    
+   c.     0  2  c             d.    c  2  c                         
+      −1  c  5              5  c  4     1   2           1  c              −1              −1   e.    0         c              f.    c  1   1       −1                         2    c   1             0  1    c                           
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </De>
 
 <GoiY so={1}>
-Lập A và b đúng thứ tự phương trình.
+
+Dùng định thức của tích và công thức nghịch đảo qua adjugate khi thích hợp.
+
 </GoiY>
 
 <GoiY so={2}>
-det A=−3; thay cột 1 cho det=−9.
+
+Ô (i,j) của nghịch đảo lấy phần bù tại (j,i), chia định thức; Cramer thay cột bằng vế phải.
+
 </GoiY>
 
 <LoiGiai>
-A có hai hàng (2,1),(1,−1), b=(7,2). det A=−3. A₁ có hai hàng (7,1),(2,−1), det=−9; A₂ có hai hàng (2,7),(1,2), det=−3. Vậy x=3,y=1. Thế lại: 6+1=7 và 3−1=2. Phương pháp là thay từng cột, chia cùng định thức gốc.
+
+**a.** Khai triển định thức và phân tích nhân tử cho $\det A=37 - 5 c$. Ma trận khả nghịch đúng khi biểu thức này khác 0, tức $c\in\mathbb R\setminus\{\frac{37}{5}\}$.
+
+**b.** Khai triển định thức và phân tích nhân tử cho $\det A=3 c^{2}$. Ma trận khả nghịch đúng khi biểu thức này khác 0, tức $c\in\mathbb R\setminus\{0\}$.
+
+**c.** Khai triển định thức và phân tích nhân tử cho $\det A=- c \left(c - 3\right) \left(c + 3\right)$. Ma trận khả nghịch đúng khi biểu thức này khác 0, tức $c\in\mathbb R\setminus\{-3,0,3\}$.
+
+**d.** Khai triển định thức và phân tích nhân tử cho $\det A=2$. Ma trận khả nghịch đúng khi biểu thức này khác 0, tức $c\in\mathbb R\setminus\{\}$.
+
+**e.** Khai triển định thức và phân tích nhân tử cho $\det A=- \left(c - 3\right) \left(c - 1\right)$. Ma trận khả nghịch đúng khi biểu thức này khác 0, tức $c\in\mathbb R\setminus\{1,3\}$.
+
+**f.** Khai triển định thức và phân tích nhân tử cho $\det A=- \left(c + 1\right) \left(c^{2} - c + 1\right)$. Ma trận khả nghịch đúng khi biểu thức này khác 0, tức $c\in\mathbb R\setminus\{-1\}$.
+
 </LoiGiai>
 
 <LoiHayMac>
-Mẫu của cả hai ẩn đều là det A, không đổi theo cột.
+
+Phải chuyển vị bảng phần bù để được adjugate, và chỉ chia cho định thức khi nó khác 0.
+
 </LoiHayMac>

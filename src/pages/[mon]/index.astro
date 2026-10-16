@@ -55,7 +55,7 @@ const tenSach = nhanLoaiSach(m.loai_sach);
                   )}
                   {du.sach.length > 0 ? (
                     <span class="pill info">
-                      {tenSach}: {du.sach.length}/{du.chuong.muc.length} mục
+                      {tenSach}: {du.sach.length}/{du.chuong.muc.filter((m) => !m.so.endsWith('.0')).length} mục
                     </span>
                   ) : (
                     <span class="pill mo">{tenSach}: chưa có</span>

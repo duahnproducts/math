@@ -1,29 +1,84 @@
 ---
 so: "3.6.1"
 muc: "3.6"
-do_kho: de
-nen_lam: true
-tu_soan: true
-tieu_de: "Lập ma trận truy hồi"
-can_dung: ["vi-du-3.6.2"]
+do_kho: vua
+tieu_de: "Ứng dụng: hệ thức truy hồi tuyến tính — bài 1"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.6.1"
 ---
 
 <De>
-Với $u_{k+2}=5u_{k+1}-6u_k$, $u_0=1,u_1=2$, lập A cho zₖ=(uₖ,uₖ₊₁) và tính z₁.
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.6.1 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-6-1-1" moTa="Đề gốc Nicholson bài 3.6.1, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.6.1  Solve the following linear recurrences.
+
+    a. xk+2 = 3xk +2xk+1, where x0 = 1 and x1 = 1.
+    b. xk+2 = 2xk −xk+1, where x0 = 1 and x1 = 2.
+    c. xk+2 = 2xk +xk+1, where x0 = 0 and x1 = 1.
+    d. xk+2 = 6xk −xk+1, where x0 = 1 and x1 = 1.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </De>
 
 <GoiY so={1}>
-Hàng đầu lấy tọa độ thứ hai.
+
+Lập phương trình đặc trưng hoặc phân loại đối tượng đếm theo bước cuối.
+
 </GoiY>
 
 <GoiY so={2}>
-Hàng sau có hệ số (−6,5).
+
+Dùng các điều kiện đầu để xác định hệ số trong nghiệm tổng quát; nghiệm đặc trưng bội cần thêm lũy thừa của chỉ số.
+
 </GoiY>
 
 <LoiGiai>
-A=[[0,1],[−6,5]],z₀=(1,2). Nhân cho z₁=(2,4). Kiểm tra u₂=5·2−6·1=4. Cách lập ma trận là đọc lần lượt công thức của từng tọa độ mới.
+
+**a.** Phương trình đặc trưng $\left(t - 3\right) \left(t + 1\right)=0$. Tổ hợp các nghiệm lũy thừa, rồi dùng các giá trị đầu để giải các hệ số, được
+
+$$
+x_k=\frac{\left(-1\right)^{k}}{2} + \frac{3^{k}}{2}.
+$$
+
+ Thế $k=0,\ldots,1$ cho đúng điều kiện đầu; thay vào truy hồi cho đồng nhất thức.
+
+**b.** Phương trình đặc trưng $\left(t - 1\right) \left(t + 2\right)=0$. Tổ hợp các nghiệm lũy thừa, rồi dùng các giá trị đầu để giải các hệ số, được
+
+$$
+x_k=\frac{4}{3} - \frac{\left(-2\right)^{k}}{3}.
+$$
+
+ Thế $k=0,\ldots,1$ cho đúng điều kiện đầu; thay vào truy hồi cho đồng nhất thức.
+
+**c.** Phương trình đặc trưng $\left(t - 2\right) \left(t + 1\right)=0$. Tổ hợp các nghiệm lũy thừa, rồi dùng các giá trị đầu để giải các hệ số, được
+
+$$
+x_k=- \frac{\left(-1\right)^{k}}{3} + \frac{2^{k}}{3}.
+$$
+
+ Thế $k=0,\ldots,1$ cho đúng điều kiện đầu; thay vào truy hồi cho đồng nhất thức.
+
+**d.** Phương trình đặc trưng $\left(t - 2\right) \left(t + 3\right)=0$. Tổ hợp các nghiệm lũy thừa, rồi dùng các giá trị đầu để giải các hệ số, được
+
+$$
+x_k=\frac{\left(-3\right)^{k}}{5} + \frac{4 \cdot 2^{k}}{5}.
+$$
+
+ Thế $k=0,\ldots,1$ cho đúng điều kiện đầu; thay vào truy hồi cho đồng nhất thức.
+
 </LoiGiai>
 
 <LoiHayMac>
-Không đổi chỗ 5 và −6.
+
+Ghi rõ các giá trị đầu, kể cả cách đếm độ dài 0. Đừng áp dụng công thức cho nghiệm phân biệt vào trường hợp nghiệm bội.
+
 </LoiHayMac>

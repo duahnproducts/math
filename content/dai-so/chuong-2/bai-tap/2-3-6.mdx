@@ -1,0 +1,65 @@
+---
+so: "2.3.6"
+muc: "2.3"
+do_kho: vua
+tieu_de: "Phép nhân ma trận — bài 6"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.3.6"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.6 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-3-6-1" moTa="Đề gốc Nicholson bài 2.3.6, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.3.6  Let A be a 2×2 matrix.
+                        0  1
+    a.  If A commutes with                 , show that
+                        0  0
+           a  b
+    A =           for some a and b.
+           0  a
+
+                        0  0
+    b.  If A commutes with                 , show that
+                        1  0
+           a  0
+    A =           for some a and c.
+            c  a
+    c. Show that A commutes with every 2×2 matrix                      a  0
+         if and only if A =           for some a.
+                      0  a
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Kiểm tra kích thước rồi dùng quy tắc hàng–cột cho tích ma trận.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự các thừa số khi khai triển.
+
+</GoiY>
+
+<LoiGiai>
+
+Đặt $A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$. **a.** Với $E=\begin{bmatrix}0&1\\0&0\end{bmatrix}$, $AE=\begin{bmatrix}0&a\\0&c\end{bmatrix}$, $EA=\begin{bmatrix}c&d\\0&0\end{bmatrix}$. Đồng nhất cho $c=0,d=a$. **b.** Với $F=E^T$, so sánh $AF=\begin{bmatrix}b&0\\d&0\end{bmatrix}$ và $FA=\begin{bmatrix}0&0\\a&b\end{bmatrix}$ cho $b=0,d=a$. **c.** Nếu giao hoán với mọi ma trận thì giao hoán với cả $E,F$, nên $A=aI$. Chiều ngược lại: $(aI)X=aX=X(aI)$ với mọi $X$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phép nhân ma trận không giao hoán; không dùng tính khử nếu chưa có điều kiện thích hợp.
+
+</LoiHayMac>

@@ -1,29 +1,64 @@
 ---
 so: "3.5.1"
 muc: "3.5"
-do_kho: de
-nen_lam: true
-tu_soan: true
-tieu_de: "Hai hướng co"
-can_dung: ["dinh-ly-3.5.1"]
+do_kho: vua
+tieu_de: "Hệ động lực tuyến tính — bài 1"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.5.1"
 ---
 
 <De>
-$A=\operatorname{diag}(1/2,1/4)$, $x_0=(4,8)^T$. Tìm x₂ và giới hạn xₖ.
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.5.1 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-5-1-1" moTa="Đề gốc Nicholson bài 3.5.1, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.5.1  Referring to the model in Example 3.3.1,
+determine if the population stabilizes, becomes extinct,
+or becomes large in each case. Denote the adult and ju-
+venile survival rates as A and J, and the reproduction rate
+as R.
+                R   A    J
+                     a.  2     1      1                                 2      2
+                     b.  3     14      41
+                       c.  2     1      1                                 4      3
+                   d.  3     35      51
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </De>
 
 <GoiY so={1}>
-Ma trận đã chéo.
+
+Viết vector trạng thái sau k bước dưới dạng A mũ k nhân trạng thái ban đầu.
+
 </GoiY>
 
 <GoiY so={2}>
-xₖ=(4·2⁻ᵏ,8·4⁻ᵏ).
+
+Khai triển trạng thái ban đầu theo cơ sở vector riêng, rồi so sánh môđun các trị riêng có hệ số khác 0.
+
 </GoiY>
 
 <LoiGiai>
-Đề cho A chéo, cần bước 2 và đích. Dùng xₖ=Aᵏx₀=(4(1/2)ᵏ,8(1/4)ᵏ). k=2 cho (1,1/2). Hai lũy thừa đều về 0 nên đích là (0,0). Nhân hai lần cho cùng kết quả. Khi A chéo chỉ nâng từng hệ số.
+
+**a.** Ma trận quần thể là $M=\begin{bmatrix}A&J\\R&0\end{bmatrix}$. Trị riêng trội $\lambda_+=(A+\sqrt{A^2+4RJ})/2=\frac{1}{4} + \frac{\sqrt{17}}{4}$. Vì $A+RJ=\frac{3}{2}$, quần thể tăng không bị chặn, với quần thể ban đầu không âm khác 0. Tiêu chuẩn tương ứng là $\lambda_+>1$, $<1$ hoặc $=1$.
+
+**b.** Ma trận quần thể là $M=\begin{bmatrix}A&J\\R&0\end{bmatrix}$. Trị riêng trội $\lambda_+=(A+\sqrt{A^2+4RJ})/2=1$. Vì $A+RJ=1$, quần thể ổn định về một cơ cấu quần thể hữu hạn khác 0, với quần thể ban đầu không âm khác 0. Tiêu chuẩn tương ứng là $\lambda_+>1$, $<1$ hoặc $=1$.
+
+**c.** Ma trận quần thể là $M=\begin{bmatrix}A&J\\R&0\end{bmatrix}$. Trị riêng trội $\lambda_+=(A+\sqrt{A^2+4RJ})/2=\frac{1}{8} + \frac{\sqrt{393}}{24}$. Vì $A+RJ=\frac{11}{12}$, quần thể tiến về 0 (tuyệt chủng), với quần thể ban đầu không âm khác 0. Tiêu chuẩn tương ứng là $\lambda_+>1$, $<1$ hoặc $=1$.
+
+**d.** Ma trận quần thể là $M=\begin{bmatrix}A&J\\R&0\end{bmatrix}$. Trị riêng trội $\lambda_+=(A+\sqrt{A^2+4RJ})/2=\frac{3}{10} + \frac{\sqrt{69}}{10}$. Vì $A+RJ=\frac{6}{5}$, quần thể tăng không bị chặn, với quần thể ban đầu không âm khác 0. Tiêu chuẩn tương ứng là $\lambda_+>1$, $<1$ hoặc $=1$.
+
 </LoiGiai>
 
 <LoiHayMac>
-Không nâng cả tọa độ ban đầu lên lũy thừa k.
+
+Trị riêng trội quyết định tốc độ khi hệ số tương ứng khác 0; giữ cả giả thiết về trạng thái ban đầu.
+
 </LoiHayMac>

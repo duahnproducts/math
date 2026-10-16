@@ -1,0 +1,58 @@
+---
+so: "2.8.8"
+muc: "2.8"
+do_kho: vua
+tieu_de: "Ứng dụng: mô hình kinh tế vào–ra — bài 8"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.8.8"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.8.8 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-8-8-1" moTa="Đề gốc Nicholson bài 2.8.8, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.8.8    If E  is a 2 × 2 matrix with entries
+between 0 and 1, show that  I −E  is invertible and
+(I −E)−1 ≥0 if and only if tr E < 1 + det E. Here, if      a  b
+E =                 , then tr E = a+d and det E = ad       c  d                             −bc.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Thiết lập phương trình cân bằng Ep = p hoặc kiểm tra tính không âm của nghịch đảo I − E.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Tổng cột của ma trận stochastic bằng 1. Để tìm giá tương đối, giải hệ thuần nhất rồi chuẩn hóa.
+
+</GoiY>
+
+<LoiGiai>
+
+Viết $E=\begin{bmatrix}a&b\\c&d\end{bmatrix}$ và $\Delta=\det(I-E)=1-\operatorname{tr}E+\det E$. Với các ô nằm giữa 0 và 1,
+
+$$
+(I-E)^{-1}=\Delta^{-1}\begin{bmatrix}1-d&b\\c&1-a\end{bmatrix}.
+$$
+
+ Nếu $\operatorname{tr}E<1+\det E$ thì $\Delta>0$, tử số không âm, nên nghịch đảo tồn tại và không âm. Ngược lại, nếu nghịch đảo tồn tại không âm mà $\Delta<0$, mọi ô của tử số phải bằng 0; điều này cho $I-E=0$, mâu thuẫn khả nghịch. Do đó $\Delta>0$, tương đương bất đẳng thức cần chứng minh.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Một vector cân bằng chỉ xác định tỷ lệ giá; phân biệt điều kiện không âm với dương và không mặc nhiên coi I − E khả nghịch.
+
+</LoiHayMac>

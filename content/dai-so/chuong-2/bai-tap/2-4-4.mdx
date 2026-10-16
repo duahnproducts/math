@@ -1,0 +1,57 @@
+---
+so: "2.4.4"
+muc: "2.4"
+do_kho: vua
+tieu_de: "Ma trận nghịch đảo — bài 4"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.4.4"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.4.4 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-4-4-1" moTa="Đề gốc Nicholson bài 2.4.4, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+1   1  3
+Exercise 2.4.4  Given A−1 =    2   0  5                           
+                     −1   1  0                              :
+                                      1
+    a. Solve the system of equations Ax =                           −1                                       3                               .
+    b. Find a matrix B such that
+            1 −1  2    AB =   0   1  1                            1   0  0                   .
+    c. Find a matrix C such that
+            1  2    CA =      −1    .            3  1   1
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Tìm cách biến đổi đẳng thức về một tích bằng ma trận đơn vị.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Khi tìm nghịch đảo bằng khử hàng, làm cùng phép biến đổi trên cả hai khối của [A | I].
+
+</GoiY>
+
+<LoiGiai>
+
+Nhân đúng phía với ma trận $A^{-1}$ đã cho. **a.** $x=A^{-1}b=\begin{bmatrix}11\\17\\-2\end{bmatrix}$. **b.** Từ $AB=C$ suy ra $B=A^{-1}C=\begin{bmatrix}4&-2&1\\7&-2&4\\-1&2&-1\end{bmatrix}$. **c.** Từ $CA=D$ suy ra $C=DA^{-1}=\begin{bmatrix}6&-2&13\\4&-2&14\end{bmatrix}$. Thế lại lần lượt vào $Ax=b$, $AB=C$, $CA=D$; dùng $AA^{-1}=A^{-1}A=I$ để xác nhận.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Chỉ nhân khử bằng nghịch đảo sau khi đã chứng minh nó tồn tại; phân biệt nhân bên trái và bên phải.
+
+</LoiHayMac>

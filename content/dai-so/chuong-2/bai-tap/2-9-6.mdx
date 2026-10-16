@@ -1,0 +1,67 @@
+---
+so: "2.9.6"
+muc: "2.9"
+do_kho: vua
+tieu_de: "Ứng dụng: xích Markov — bài 6"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.9.6"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.9.6 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-9-6-1" moTa="Đề gốc Nicholson bài 2.9.6, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.9.6  John makes it to work on time one Mon-
+day out of four. On other work days his behaviour is as
+follows: If he is late one day, he is twice as likely to come
+to work on time the next day as to be late. If he is on time
+one day, he is as likely to be late as not the next day. Find
+the probability of his being late and that of his being on
+time Wednesdays.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Xếp rõ thứ tự trạng thái; cột j mô tả xác suất rời trạng thái j.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Sau k lần chuyển dùng lũy thừa thứ k; phân bố dừng thỏa Ps = s và tổng thành phần bằng 1.
+
+</GoiY>
+
+<LoiGiai>
+
+Xếp trạng thái “đúng giờ, trễ”. Khi đó
+
+$$
+P=\begin{bmatrix}\frac{1}{2}&\frac{2}{3}\\\frac{1}{2}&\frac{1}{3}\end{bmatrix},\quad s_{\text{Hai}}=\begin{bmatrix}1/4\\3/4\end{bmatrix}.
+$$
+
+ Từ thứ Hai đến thứ Tư có hai lần chuyển, nên
+
+$$
+s_{\text{Tư}}=P^2s_{\text{Hai}}=\begin{bmatrix}\frac{9}{16}\\\frac{7}{16}\end{bmatrix}.
+$$
+
+ Xác suất trễ là $\frac{7}{16}$, đúng giờ là $\frac{9}{16}$. Không dùng phân bố dừng vì chỉ hỏi sau hai ngày.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phân bố sau hữu hạn bước khác phân bố dài hạn. Regular đòi một lũy thừa có mọi ô dương.
+
+</LoiHayMac>

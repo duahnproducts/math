@@ -1,0 +1,74 @@
+---
+so: "3.2.20"
+muc: "3.2"
+do_kho: vua
+tieu_de: "Định thức và ma trận nghịch đảo — bài 20"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.2.20"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.20 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-2-20-1" moTa="Đề gốc Nicholson bài 3.2.20, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.2.20  In each case either prove the statement
+or give an example showing that it is false:
+
+    a.  If adj A exists, then A is invertible.
+
+    b.  If A is invertible and adj A = A−1, then det A = 1.
+
+    c.  det (AB) = det (BTA).
+    d.  If det A̸ = 0 and AB = AC, then B = C.
+    e.  If AT = −A, then det A = −1.
+     f.  If adj A = 0, then A = 0.
+
+    g.  If A is invertible, then adj A is invertible.
+
+    h.  If A has a row of zeros, so also does adj A.
+
+      i.  det (ATA) > 0 for all square matrices A.
+
+      j.  det (I +A) = 1+ det A.
+
+    k.  If AB is invertible, then A and B are invertible.
+
+      l.  If det A = 1, then adj A = A.
+
+  m.  If A is invertible and det A = d, then adj A =
+      dA−1.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Dùng định thức của tích và công thức nghịch đảo qua adjugate khi thích hợp.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Ô (i,j) của nghịch đảo lấy phần bù tại (j,i), chia định thức; Cramer thay cột bằng vế phải.
+
+</GoiY>
+
+<LoiGiai>
+
+**a. Sai:** mọi ma trận vuông có adjugate, kể cả $0$. **b. Đúng:** $\operatorname{adj}A=(\det A)A^{-1}=A^{-1}$, nhân $A$ được $(\det A)I=I$. **c. Đúng:** hai vế cùng bằng $\det A\det B$. **d. Đúng:** $\det A\ne0$ nên nhân $A^{-1}$ khử $A$. **e. Sai:** $A=0$ phản đối xứng nhưng định thức 0. **f. Sai:** $A=\operatorname{diag}(1,0,0)$ có mọi minor cấp 2 bằng 0, nên adj bằng 0 nhưng $A\ne0$. **g. Đúng:** adj bằng số khác 0 nhân $A^{-1}$. **h. Sai:** $A=\begin{bmatrix}0&0\\1&1\end{bmatrix}$ có adj $\begin{bmatrix}1&0\\-1&0\end{bmatrix}$, không hàng nào toàn 0. **i. Sai:** $A=0$ cho định thức 0; công thức đúng là $\det(A^TA)=(\det A)^2\ge0$. **j. Sai:** $A=I_2$ cho 4 khác 2. **k. Đúng:** $\det A\det B\ne0$ nên cả hai khác 0. **l. Sai:** $A=\operatorname{diag}(2,1/2)$ có adj $\operatorname{diag}(1/2,2)\ne A$. **m. Đúng:** công thức nghịch đảo qua adjugate nhân với $d$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phải chuyển vị bảng phần bù để được adjugate, và chỉ chia cho định thức khi nó khác 0.
+
+</LoiHayMac>

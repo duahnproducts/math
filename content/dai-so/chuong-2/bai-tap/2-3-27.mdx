@@ -1,0 +1,72 @@
+---
+so: "2.3.27"
+muc: "2.3"
+do_kho: vua
+tieu_de: "Phép nhân ma trận — bài 27"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.3.27"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.27 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-3-27-1" moTa="Đề gốc Nicholson bài 2.3.27, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.3.27  In each case either show the statement
+is true, or give an example showing that it is false.
+
+    a.  If A2 = I, then A = I.
+
+    b.  If AJ = A, then J = I.
+
+    c.  If A is square, then (AT)3 = (A3)T.
+
+    d.  If A is symmetric, then I +A is symmetric.
+    e.  If AB = AC and A̸ = 0, then B = C.
+     f.  If = 0, then A2̸            A̸       = 0.
+    g.  If A has a row of zeros, so also does BA for all B.
+
+    h.  If A commutes with A+B, then A commutes with
+      B.
+
+      i.  If B has a column of zeros, so also does AB.
+
+      j.  If AB has a column of zeros, so also does B.
+
+    k.  If A has a row of zeros, so also does AB.
+
+      l.  If AB has a row of zeros, so also does A.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Kiểm tra kích thước rồi dùng quy tắc hàng–cột cho tích ma trận.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự các thừa số khi khai triển.
+
+</GoiY>
+
+<LoiGiai>
+
+Đặt $N=\begin{bmatrix}0&1\\0&0\end{bmatrix}$, $P=\operatorname{diag}(1,0)$, $Q=\operatorname{diag}(0,1)$, $S=\begin{bmatrix}0&1\\1&0\end{bmatrix}$. **a Sai:** $A=-I$. **b Sai:** $A=0,J=0$. **c Đúng:** chuyển vị tích đảo thứ tự, nhưng ba thừa số đều là $A$. **d Đúng:** $(I+A)^T=I+A$. **e Sai:** $A=P,B=0,C=Q$. **f Sai:** $N\ne0$ nhưng $N^2=0$. **g Sai:** $A=Q,B=S$, hàng đầu của $BA$ khác 0. **h Đúng:** $A(A+B)=(A+B)A$ rút gọn thành $AB=BA$. **i Đúng:** cột 0 của $B$ được $A$ đưa thành cột 0. **j Sai:** $A=0,B=I$. **k Đúng:** hàng 0 nhân với mọi cột cho 0. **l Sai:** $A=I,B=0$. Mỗi phản ví dụ đều có kích thước $2\times2$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Phép nhân ma trận không giao hoán; không dùng tính khử nếu chưa có điều kiện thích hợp.
+
+</LoiHayMac>

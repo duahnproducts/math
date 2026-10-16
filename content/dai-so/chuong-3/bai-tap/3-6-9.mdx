@@ -1,0 +1,60 @@
+---
+so: "3.6.9"
+muc: "3.6"
+do_kho: vua
+tieu_de: "Ứng dụng: hệ thức truy hồi tuyến tính — bài 9"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.6.9"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.6.9 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-6-9-1" moTa="Đề gốc Nicholson bài 3.6.9, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 3.6.9  The annual yield of wheat in a certain
+country has been found to equal the average of the yield
+in the previous two years. If the yields in 1990 and 1991
+were 10 and 12 million tons respectively, ﬁnd a formula
+for the yield k years after 1990. What is the long-term
+average yield?
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Lập phương trình đặc trưng hoặc phân loại đối tượng đếm theo bước cuối.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Dùng các điều kiện đầu để xác định hệ số trong nghiệm tổng quát; nghiệm đặc trưng bội cần thêm lũy thừa của chỉ số.
+
+</GoiY>
+
+<LoiGiai>
+
+Gọi $x_k$ là sản lượng (triệu tấn) năm $1990+k$. Truy hồi $x_{k+2}=(x_{k+1}+x_k)/2$ có phương trình $2r^2-r-1=(r-1)(2r+1)=0$. Dùng $x_0=10,x_1=12$ cho
+
+$$
+x_k=\frac{34}3-\frac43\left(-\frac12\right)^k.
+$$
+
+ Khi $k\to\infty$, hạng dao động tắt dần; sản lượng giới hạn là $34/3$ triệu tấn, xấp xỉ $11.333$ triệu tấn.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Ghi rõ các giá trị đầu, kể cả cách đếm độ dài 0. Đừng áp dụng công thức cho nghiệm phân biệt vào trường hợp nghiệm bội.
+
+</LoiHayMac>

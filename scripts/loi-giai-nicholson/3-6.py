@@ -1,0 +1,26 @@
+from common import *
+k,t=S.symbols('k t',integer=True,nonnegative=True)
+def recurrence(coeff,initial):
+    # coeff lists a_0,...,a_(m-1) in x_(k+m)=sum a_j x_(k+j).
+    m=len(coeff);poly=t**m-sum(coeff[j]*t**j for j in range(m));roots=S.roots(poly,t);assert sum(roots.values())==m
+    terms=[k**j*r**k for r,mult in roots.items()for j in range(mult)];unknown=S.symbols('C:'+str(m));expr=sum(c*v for c,v in zip(unknown,terms));sol=S.solve([expr.subs(k,j)-initial[j]for j in range(m)],unknown);ans=S.expand(expr.subs(sol));assert S.simplify(ans.subs(k,k+m)-sum(coeff[j]*ans.subs(k,k+j)for j in range(m)))==0
+    return r'Phương trình đặc trưng $'+S.latex(S.factor(poly))+r'=0$. Tổ hợp các nghiệm lũy thừa'+(' (nhân thêm $k$ khi nghiệm bội)'if any(v>1 for v in roots.values())else '')+r', rồi dùng các giá trị đầu để giải các hệ số, được $$x_k='+S.latex(ans)+r'.$$ Thế $k=0,\ldots,'+str(m-1)+r'$ cho đúng điều kiện đầu; thay vào truy hồi cho đồng nhất thức.'
+add('3.6.1','\n\n'.join('**'+chr(97+i)+'.** '+recurrence(c,v)for i,(c,v)in enumerate([([3,2],[1,1]),([2,-1],[1,2]),([2,1],[0,1]),([6,-1],[1,1])])))
+add('3.6.2','**a.** '+recurrence([6,-11,6],[1,0,1])+'\n\n**b.** '+recurrence([2,1,-2],[1,0,1]))
+def parking(lengths):
+    seq=[1]
+    for i in range(1,11):seq.append(sum(seq[i-j]for j in lengths if j<=i))
+    return seq
+a,b=parking([1,2,3]),parking([1,2,4])
+add('3.6.3',r'Phân loại cách đỗ theo phương tiện đầu tiên; sau khi bỏ nó, phần còn lại là một cách đỗ trên số chỗ còn lại. Quy ước $x_0=1$, $x_j=0$ nếu $j<0$. **a.** Xe con, tải, buýt chiếm 1,2,3 chỗ, nên $x_{k+3}=x_{k+2}+x_{k+1}+x_k$. Tính lần lượt $x_0,\ldots,x_{10}$ được $'+','.join(map(str,a))+r'$, do đó $x_{10}='+str(a[-1])+r'$. **b.** Buýt chiếm 4 chỗ thì $x_{k+4}=x_{k+3}+x_{k+2}+x_k$. Dãy là $'+','.join(map(str,b))+r'$, nên $x_{10}='+str(b[-1])+r'$.')
+add('3.6.4',r'Bước đầu có thể đi 1 bậc hoặc 2 bậc, nên $s_k=s_{k-1}+s_{k-2}$ với $s_0=1$, $s_1=1$. Vậy $s_k=F_{k+1}$, nếu $F_0=0,F_1=1$. Công thức tường minh: $$s_k=\frac{\phi^{k+1}-\psi^{k+1}}{\sqrt5},\quad\phi=\frac{1+\sqrt5}2,\;\psi=\frac{1-\sqrt5}2.$$ Ví dụ $s_3=3$ khớp các cách trong đề.')
+add('3.6.5',r'Gọi số từ hợp lệ độ dài $k$ là $w_k$. Nếu ký tự cuối là $b$, bỏ nó còn $w_{k-1}$ cách; nếu là $a$ và $k\ge2$, ký tự trước buộc là $b$, bỏ cặp $ba$ còn $w_{k-2}$ cách. Do đó $w_k=w_{k-1}+w_{k-2}$, $w_0=1,w_1=2$. Suy ra $w_k=F_{k+2}=(\phi^{k+2}-\psi^{k+2})/\sqrt5$, với $\phi,\psi=(1\pm\sqrt5)/2$.')
+add('3.6.6',r'Đổi ký hiệu $H\leftrightarrow a$, $T\leftrightarrow b$ cho song ánh với các từ không có hai $a$ cạnh nhau. Hoặc phân loại theo kết thúc $T$ và $TH$ để được $u_k=u_{k-1}+u_{k-2}$, $u_0=1,u_1=2$. Vì vậy số chuỗi là $F_{k+2}$, tương đương công thức Binet ở bài trước. Đây là số chuỗi, không phải xác suất; nếu đồng xu cân bằng thì xác suất mới bằng $F_{k+2}/2^k$.')
+add('3.6.7',r'Phân loại theo đồng trên cùng: đỏ hoặc xanh cho $2x_{k+1}$ cách khi chồng cao $k+2$; vàng thì đồng ngay dưới phải đỏ/xanh, cho $2x_k$ cách. Vậy $x_{k+2}=2x_{k+1}+2x_k$, với $x_0=1,x_1=3$. '+recurrence([2,2],[1,3]))
+add('3.6.8',r'Gọi $x_k,y_k$ là số hạt $\alpha,\beta$. Mỗi $\beta$ sinh một $\alpha$, mỗi $\alpha$ sinh ba $\beta$, nên $x_{k+1}=y_k$, $y_{k+1}=3x_k+2y_k$. Suy ra $x_{k+2}=2x_{k+1}+3x_k$, $x_0=1,x_1=0$. Giải được $x_k=(3^k+3(-1)^k)/4$. Vì vậy $$x_{20}=\frac{3^{20}+3}{4}=871696101.$$ Kiểm tra những bước đầu: $x_0=1,x_1=0,x_2=3$.')
+add('3.6.9',r'Gọi $x_k$ là sản lượng (triệu tấn) năm $1990+k$. Truy hồi $x_{k+2}=(x_{k+1}+x_k)/2$ có phương trình $2r^2-r-1=(r-1)(2r+1)=0$. Dùng $x_0=10,x_1=12$ cho $$x_k=\frac{34}3-\frac43\left(-\frac12\right)^k.$$ Khi $k\to\infty$, hạng dao động tắt dần; sản lượng giới hạn là $34/3$ triệu tấn, xấp xỉ $11.333$ triệu tấn.')
+add('3.6.10',r'Lặp truy hồi được $x_k=r^kx_0+c\sum_{j=0}^{k-1}r^j$. Nếu $r=1$, tổng có $k$ số 1, nên $x_k=x_0+kc$. Nếu $r\ne1$, dùng tổng cấp số nhân: $$x_k=r^kx_0+c\frac{1-r^k}{1-r}.$$ Thế $k=0$ cho $x_0$ và tính $rx_k+c$ cho $x_{k+1}$, xác nhận công thức.')
+add('3.6.11',r'**a.** Nhân $Av_k$ cho $(x_{k+1},x_{k+2},ax_k+bx_{k+1}+cx_{k+2})^T=v_{k+1}$. **b.** Đa thức đặc trưng là $\lambda^3-c\lambda^2-b\lambda-a=0$. Vì thế $A(1,\lambda,\lambda^2)^T=(\lambda,\lambda^2,a+b\lambda+c\lambda^2)^T=(\lambda,\lambda^2,\lambda^3)^T$; vector có thành phần đầu 1 nên khác 0. **c.** Độ dài 4 dùng $v_k=(x_k,x_{k+1},x_{k+2},x_{k+3})^T$ và $$A=\begin{bmatrix}0&1&0&0\\0&0&1&0\\0&0&0&1\\a&b&c&d\end{bmatrix}.$$ Vector riêng tương ứng là $(1,\lambda,\lambda^2,\lambda^3)^T$ vì phương trình đặc trưng $\lambda^4-d\lambda^3-c\lambda^2-b\lambda-a=0$.')
+add('3.6.12',r'**a.** Thay $x_k=y_k-p$ vào truy hồi, được $y_{k+2}=ay_{k+1}+by_k+c+(1-a-b)p$. Chọn $p=c/(a+b-1)$, hợp lệ vì $a+b\ne1$, để hạng hằng bằng 0. **b.** $a=1,b=6,c=5$ nên $p=5/6$. Khi đó $y_0=y_1=11/6$ và $y_{k+2}=y_{k+1}+6y_k$. Hai nghiệm đặc trưng là 3,-2; giải hệ số cho $y_k=(11/10)3^k+(11/15)(-2)^k$. Do đó $$x_k=\frac{11}{10}3^k+\frac{11}{15}(-2)^k-\frac56.$$')
+add('3.6.13',r'**a.** Nếu $q_{k+2}=aq_{k+1}+bq_k$ và $p_{k+2}=ap_{k+1}+bp_k+c(k)$, cộng hai đẳng thức cho $(q+p)_{k+2}=a(q+p)_{k+1}+b(q+p)_k+c(k)$. **b.** Với nghiệm bất kỳ $x$ của hệ có vế phải, đặt $q=x-p$. Trừ hai truy hồi của $x,p$ cho $q_{k+2}=aq_{k+1}+bq_k$. Vậy $x=q+p$, chứng minh mọi nghiệm đều có dạng đã nêu. Điều kiện đầu của $q$ lấy bằng điều kiện đầu của $x$ trừ của $p$.')
+save()

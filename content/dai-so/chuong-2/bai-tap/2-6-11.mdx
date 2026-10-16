@@ -1,0 +1,61 @@
+---
+so: "2.6.11"
+muc: "2.6"
+do_kho: vua
+tieu_de: "Phép biến đổi tuyến tính — bài 11"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "2.6.11"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.6.11 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-2-6-11-1" moTa="Đề gốc Nicholson bài 2.6.11, phần 1; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+Exercise 2.6.11  Let Tθ : R2 →R2 denote reﬂection inthe line making an angle θ with the positive x axis.
+
+                             cos2θ    sin2θ
+    a. Show that the matrix of Tθ is
+                               sin2θ  −cos2θ       for all θ.
+
+    b. Show that Tθ ◦R2φ = Tθ−φ for all θ and φ.
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Dùng tính bảo toàn tổ hợp tuyến tính hoặc tìm ảnh của các vector đơn vị.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Cột thứ j của ma trận ánh xạ là ảnh của vector đơn vị thứ j; phép hợp thành đặt ma trận thực hiện sau ở bên trái.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** Quay đường đối xứng về trục $x$, đối xứng qua trục $x$, rồi quay lại: $T_\theta=R_\theta Q_0R_{-\theta}$. Nhân ba ma trận cho
+
+$$
+[T_\theta]=\begin{bmatrix}\cos2\theta&\sin2\theta\\\sin2\theta&-\cos2\theta\end{bmatrix}.
+$$
+
+ **b.** Nhân ma trận này với $R_{2\phi}$ và dùng công thức hiệu góc, thu ma trận có $\cos2(\theta-\phi)$, $\sin2(\theta-\phi)$ đúng vị trí như (a). Vì vậy $T_\theta\circ R_{2\phi}=T_{\theta-\phi}$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Vector đầu vào, đầu ra có thể khác kích thước. Khi dùng mô tả hình học, kiểm tra cả chiều quay và độ dài.
+
+</LoiHayMac>

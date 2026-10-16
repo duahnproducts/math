@@ -1,0 +1,76 @@
+---
+so: "3.0.6"
+muc: "3.0"
+do_kho: vua
+tieu_de: "Bài bổ sung 3.6"
+can_dung: []
+de_goc_tieng_anh: true
+so_sach: "3.6"
+---
+
+<De>
+Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.6 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+
+<HinhSach ten="ds-de-3-0-6-1" moTa="Đề gốc Nicholson bài 3.6, phần 1; xem bản văn bản bên dưới hình" />
+
+<HinhSach ten="ds-de-3-0-6-2" moTa="Đề gốc Nicholson bài 3.6, phần 2; xem bản văn bản bên dưới hình" />
+
+<HinhSach ten="ds-de-3-0-6-3" moTa="Đề gốc Nicholson bài 3.6, phần 3; xem bản văn bản bên dưới hình" />
+
+<details>
+<summary>Văn bản đề gốc để chọn và sao chép</summary>
+
+```text
+3Exercise 3.6  Let A =    −4   and let vk = Akv0 for
+                     2 −3
+each k ≥0.
+    a. Show that A has no dominant eigenvalue.
+
+b. Find vk if v0 equals:
+
+         1
+          i.
+         1
+
+     2
+ ii.
+     1
+
+      x      1       2
+iii.    =       or
+      y      1       1
+```
+
+Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
+</De>
+
+<GoiY so={1}>
+
+Đọc rõ giả thiết và xác định mệnh đề hoặc đại lượng cần tìm.
+
+</GoiY>
+
+<GoiY so={2}>
+
+Với đẳng thức tổng quát, khai triển có giữ thứ tự; với mệnh đề sai, tìm một phản ví dụ thỏa giả thiết.
+
+</GoiY>
+
+<LoiGiai>
+
+**a.** $c_A(x)=x^2-1$, hai trị riêng là 1 và -1 có cùng môđun, nên không có trị riêng trội duy nhất. Vector riêng tương ứng có thể chọn $u=(2,1)^T$, $w=(1,1)^T$. **b.i.** Nếu $v_0=w$, thì $v_k=(-1)^kw$. **b.ii.** Nếu $v_0=u$, thì $v_k=u$ với mọi $k$. **b.iii.** Với $v_0=(x,y)^T$, giải $v_0=\alpha u+\beta w$ cho $\alpha=x-y$, $\beta=2y-x$. Vì vậy
+
+$$
+v_k=(x-y)\begin{bmatrix}2\\1\end{bmatrix}+(2y-x)(-1)^k\begin{bmatrix}1\\1\end{bmatrix}.
+$$
+
+ Nếu vector ban đầu khác hai vector ở (i),(ii), công thức vẫn áp dụng; thông thường dãy dao động giữa hai vector vì $A^2=I$.
+
+</LoiGiai>
+
+<LoiHayMac>
+
+Kiểm tra các trường hợp suy biến và dữ kiện chưa được định nghĩa trước khi chia hoặc khử.
+
+</LoiHayMac>
