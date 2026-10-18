@@ -5,17 +5,17 @@ import { taoMayChu } from '../scripts/gia-su.ts';
 
 const cleanup: (() => Promise<unknown>)[] = [];
 afterEach(async () => { for (const fn of cleanup.splice(0).reverse()) await fn(); });
-async function setup(apiKey = 'server-secret-key', upstreamStatus = 200) {
+async function setup(apiKey = 'server-secret-key', upstreamStatus = 200, authMode: 'api' | 'chatgpt' = 'api') {
   const testRoot = join(process.cwd(), '.hochanh-local'); await mkdir(testRoot, { recursive: true });
   const dir = await mkdtemp(join(testRoot, 'test-')); cleanup.push(() => rm(dir, { recursive: true, force: true }));
   await mkdir(join(dir, 'dist')); await writeFile(join(dir, 'dist', 'index.html'), '<h1>Hochanh</h1>');
-  const request = vi.fn(async (_url: unknown, _init?: RequestInit) => upstreamStatus === 200
+  const request = vi.fn(async (_url: unknown, _init?: RequestInit) => String(_url).endsWith('/token') ? Response.json({ access_token: 'account-access', id_token: 'signed-id', refresh_token: 'account-refresh', scope: 'resource.invoke chatgpt.tokens.use.direct', expires_in: 3600 }) : String(_url).endsWith('/models') ? Response.json({ models: [{ slug: 'configured-model', display_name: 'Model', visibility: 'list' }] }) : upstreamStatus === 200
     ? new Response('data: {"type":"response.output_text.delta","delta":"Giải thích"}\n\ndata: {"type":"response.completed"}\n\n', { headers: { 'Content-Type': 'text/event-stream' } })
     : Response.json({ error: { message: 'private upstream details' } }, { status: upstreamStatus }));
   const { createServer } = await import('node:net'); const probe = createServer();
   await new Promise<void>(done => probe.listen(0, '127.0.0.1', done)); const port = (probe.address() as { port: number }).port;
   await new Promise<void>(done => probe.close(() => done()));
-  const server = await taoMayChu({ port, root: join(dir, 'dist'), request: request as typeof fetch, apiKey, model: 'configured-model' });
+  const server = await taoMayChu({ port, root: join(dir, 'dist'), request: request as typeof fetch, apiKey, model: 'configured-model', authMode, stateDir: join(dir, 'state'), verifyIdentity: async () => ({ sub: 'account', email: 'student@example.com' }) });
   await new Promise<void>(done => server.listen(port, '127.0.0.1', done));
   cleanup.push(() => new Promise<void>(done => { server.closeAllConnections(); server.close(() => done()); }));
   const base = `http://127.0.0.1:${port}`, page = await fetch(`${base}/math/`), cookie = page.headers.get('set-cookie')!.split(';')[0];
@@ -25,6 +25,19 @@ async function setup(apiKey = 'server-secret-key', upstreamStatus = 200) {
 }
 const question = { model: 'configured-model', messages: [{ role: 'user', content: 'Vì sao?' }], context: { tieuDe: 'Bài', duongDan: '/math/', noiDung: 'Dữ liệu', trichDan: '' } };
 describe('gia sư dùng khóa API máy chủ, không đăng nhập', () => {
+  it('đăng nhập ChatGPT, gọi đúng OAuth token và ngắt kết nối qua HTTP', async () => {
+    const app = await setup('unused-key', 200, 'chatgpt');
+    expect((await app.post('/api/gia-su/chat', question)).status).toBe(401);
+    const login = await app.post('/api/gia-su/login', { returnTo: '/math/dai-so/' }), url = new URL((await login.json()).url);
+    const callback = await app.get(`/auth/callback?state=${url.searchParams.get('state')}&code=valid&client_id=oaiapp_issued`);
+    expect(callback.status).toBe(303); expect(callback.headers.get('location')).toBe('/math/dai-so/?gia-su=connected');
+    expect((await (await app.get('/api/gia-su/status')).json()).email).toBe('student@example.com');
+    const result = await app.post('/api/gia-su/chat', question); expect(result.status).toBe(200); await result.text();
+    const call = app.request.mock.calls.find(call => String(call[0]).endsWith('/responses'))!;
+    expect(call[1]?.headers).toMatchObject({ Authorization: 'Bearer account-access' });
+    expect(JSON.parse(String(call[1]?.body))).not.toHaveProperty('max_output_tokens');
+    await app.post('/api/gia-su/logout'); expect((await (await app.get('/api/gia-su/status')).json()).connected).toBe(false);
+  });
   it('hỏi ngay sau khi mở trang, chỉ gửi khóa đến OpenAI', async () => {
     const app = await setup();
     expect((await (await app.get('/api/gia-su/status')).json()).connected).toBe(true);

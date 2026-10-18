@@ -11,8 +11,8 @@ thức dùng **KaTeX**, dựng sẵn lúc build. **React** chỉ dùng cho hình
 Test bằng **Vitest** và **Playwright**. Deploy lên **GitHub Pages**.
 
 Phần học tĩnh miễn phí, không backend. Ngoại lệ theo yêu cầu 18/10/2026:
-gia sư có máy chủ Node cục bộ, dùng khóa OpenAI API phía máy chủ, người học
-không cần đăng nhập. GitHub Pages tiếp tục phục vụ phần học tĩnh.
+gia sư có máy chủ Node cục bộ, đăng nhập và cấp quyền dùng gói ChatGPT qua OAuth;
+khóa OpenAI API là chế độ tùy chọn riêng. GitHub Pages tiếp tục phục vụ phần học tĩnh.
 Xem [gia-su.md](gia-su.md)
 cho kiến trúc, giới hạn triển khai và cách chạy.
 

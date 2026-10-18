@@ -11,6 +11,8 @@ export default function GiaSu({ tieuDe }: { tieuDe: string }) {
   const [messages, setMessages] = useState<TinNhan[]>([]), [draft, setDraft] = useState(''), [quote, setQuote] = useState('');
   const [busy, setBusy] = useState(false), [partial, setPartial] = useState(''), [error, setError] = useState('');
   const [includePage, setIncludePage] = useState(true);
+  const [mode, setMode] = useState<'chatgpt' | 'api'>('chatgpt'), [email, setEmail] = useState(''), [connecting, setConnecting] = useState(false);
+  const [localUrl, setLocalUrl] = useState('http://127.0.0.1:4325/math/?gia-su=open');
   const dialog = useRef<HTMLDialogElement>(null), launch = useRef<HTMLButtonElement>(null), input = useRef<HTMLTextAreaElement>(null);
   const abort = useRef<AbortController | null>(null), bottom = useRef<HTMLDivElement>(null);
   const api = async (path: string, body?: unknown) => {
@@ -20,24 +22,39 @@ export default function GiaSu({ tieuDe }: { tieuDe: string }) {
   };
   async function status() {
     try {
-      const data = await api('status'); setAvailable(data.available === true); setConnected(data.connected === true);
+      const data = await api('status'); setAvailable(data.available === true); setConnected(data.connected === true); setMode(data.mode ?? 'api'); setEmail(data.email ?? '');
       if (data.connected) {
         try {
           const list = await api('models'); setModels(list.models); setModel(current => list.models.some((m: { id: string }) => m.id === current) ? current : list.models[0]?.id ?? '');
-          if (!list.models.length) setError('Gia sư chưa có mô hình khả dụng. Vui lòng thử lại sau.');
+          if (!list.models.length) setError('Tài khoản chưa có mô hình khả dụng. Hãy kiểm tra quyền dùng gói ChatGPT.');
         } catch (e) { setError((e as Error).message); }
       }
     } catch (e) { setAvailable(false); setConnected(false); setError((e as Error).message); }
   }
   useEffect(() => {
     setReady(true);
+    const safePath = /^\/math\/[a-zA-Z0-9/_-]*$/.test(location.pathname) ? location.pathname : '/math/';
+    setLocalUrl(`http://127.0.0.1:4325${safePath}?gia-su=open`);
     const result = new URLSearchParams(location.search).get('gia-su');
     if (result) {
       setOpen(true);
+      if (result === 'denied') setError('Bạn chưa cấp quyền dùng gói ChatGPT. Có thể kết nối lại khi sẵn sàng.');
+      try { const saved = JSON.parse(sessionStorage.getItem('hochanh-chat-draft') ?? 'null'); if (saved?.path === location.pathname) { setDraft(saved.draft ?? ''); setQuote(saved.quote ?? ''); } sessionStorage.removeItem('hochanh-chat-draft'); } catch { /* Không bắt buộc có lưu trữ. */ }
       const url = new URL(location.href); url.searchParams.delete('gia-su'); history.replaceState(null, '', url);
     }
     return () => abort.current?.abort();
   }, []);
+  async function login() {
+    if (connecting) return;
+    setConnecting(true); setError('');
+    try {
+      try { sessionStorage.setItem('hochanh-chat-draft', JSON.stringify({ path: location.pathname, draft, quote })); } catch { /* Vẫn đăng nhập được khi lưu trữ bị chặn. */ }
+      const data = await api('login', { returnTo: location.pathname });
+      const url = new URL(data.url);
+      if (url.origin !== 'https://auth.openai.com' || url.pathname !== '/api/accounts/authorize') throw new Error('Địa chỉ đăng nhập không hợp lệ.');
+      location.assign(url.href);
+    } catch (e) { setError((e as Error).message); setConnecting(false); }
+  }
   useEffect(() => {
     if (open) { dialog.current?.showModal(); void status(); input.current?.focus(); }
     else dialog.current?.close();
@@ -75,8 +92,10 @@ export default function GiaSu({ tieuDe }: { tieuDe: string }) {
       <header className="gia-su-header"><div><h2 id="gia-su-title">Gia sư Hochanh</h2><p>Gỡ từng chỗ khó, hiểu từng bước.</p></div><button className="nut nhe nho" onClick={close} aria-label="Đóng gia sư">Đóng</button></header>
       <div className="gia-su-body">
         <p className="gia-su-topic">Đang học: <strong>{tieuDe}</strong></p>
-        {!available ? <div className="gia-su-notice"><p>Chưa kết nối được máy chủ gia sư. Vui lòng thử lại sau.</p><button className="nut nhe nho" onClick={() => void status()}>Kiểm tra kết nối</button></div>
+        {!available ? <div className="gia-su-notice"><p>Đăng nhập ChatGPT để dùng gói của bạn làm gia sư. Trên website này, kết nối cần bản Hochanh chạy trên máy của bạn.</p><a className="nut" href={localUrl}>Mở bản trên máy để đăng nhập ChatGPT</a><details><summary>Cách mở kết nối trên máy</summary><p>Trong thư mục Hochanh, chạy <code>npm run chat</code>, sau đó bấm nút ở trên. GitHub Pages không lưu tài khoản hay token ChatGPT.</p></details><button className="nut nhe nho" onClick={() => { setError(''); void status(); }}>Kiểm tra kết nối</button></div>
+          : !connected && mode === 'chatgpt' ? <div className="gia-su-notice"><p>Kết nối tài khoản ChatGPT và cấp quyền dùng gói cho Hochanh. Khả dụng tùy gói và quyền của tài khoản.</p><button className="nut" disabled={connecting} onClick={() => void login()}>{connecting ? 'Đang mở đăng nhập…' : 'Continue with ChatGPT'}</button></div>
           : !connected ? <div className="gia-su-notice"><p>Gia sư chưa được cấu hình. Chủ ứng dụng cần bật kết nối AI.</p><button className="nut nhe nho" onClick={() => void status()}>Kiểm tra kết nối</button></div>
+          : mode === 'chatgpt' ? <div className="gia-su-account"><span>ChatGPT · {email || 'Đã kết nối'}</span><a href="https://chatgpt.com/settings/usage" target="_blank" rel="noopener noreferrer">Quản lý hạn mức</a><button className="nut nhe nho" disabled={busy} onClick={async () => { try { await api('logout', {}); setConnected(false); setMessages([]); setModels([]); setError(''); } catch (e) { setError((e as Error).message); } }}>Ngắt kết nối trên máy</button></div>
           : <p className="gia-su-account">AI đã sẵn sàng · Bạn có thể hỏi ngay.</p>}
         {connected && <label className="gia-su-model">Mô hình <select value={model} disabled={busy} onChange={e => setModel(e.target.value)}>{models.map(m => <option key={m.id} value={m.id}>{m.name}</option>)}</select></label>}
         <div className="gia-su-messages" role="log" aria-label="Cuộc trò chuyện với gia sư" aria-live="polite" aria-busy={busy}>

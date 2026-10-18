@@ -36,11 +36,37 @@ test('hỏi theo đoạn trích, hiển thị công thức và giữ câu hỏi 
 test('web tĩnh hướng dẫn kết nối thay vì giả trả lời', async ({ page }) => {
   await page.route('**/api/gia-su/**', route => route.fulfill({ status: 404, body: 'Not found' }));
   await page.goto('./'); await page.getByRole('button', { name: 'Hỏi gia sư', exact: true }).click();
-  await expect(page.getByRole('dialog')).toContainText('Chưa kết nối được máy chủ gia sư');
+  await expect(page.getByRole('dialog')).toContainText('kết nối cần bản Hochanh chạy trên máy');
+  await expect(page.getByRole('link', { name: 'Mở bản trên máy để đăng nhập ChatGPT' })).toHaveAttribute('href', 'http://127.0.0.1:4325/math/?gia-su=open');
   await expect(page.getByRole('button', { name: 'Continue with ChatGPT' })).toHaveCount(0);
   await expect(page.getByRole('button', { name: 'Gửi câu hỏi' })).toBeDisabled();
   await page.setViewportSize({ width: 390, height: 844 });
   const size = await page.getByRole('dialog').boundingBox(); expect(size!.width).toBeLessThanOrEqual(390);
+});
+
+test('nút đăng nhập đi đến OpenAI, quay về khôi phục câu hỏi và đổi trạng thái tài khoản', async ({ page }) => {
+  let connected = false, returnTo = '';
+  await page.route('**/api/gia-su/**', async route => {
+    const path = new URL(route.request().url()).pathname;
+    if (path.endsWith('/status')) return route.fulfill({ json: { available: true, connected, mode: 'chatgpt', email: connected ? 'student@example.com' : undefined } });
+    if (path.endsWith('/models')) return route.fulfill({ json: { models: [{ id: 'account-model', name: 'Mô hình tài khoản' }] } });
+    if (path.endsWith('/login')) { returnTo = route.request().postDataJSON().returnTo; return route.fulfill({ json: { url: 'https://auth.openai.com/api/accounts/authorize?state=test' } }); }
+    if (path.endsWith('/logout')) { connected = false; return route.fulfill({ json: { ok: true } }); }
+    return route.abort();
+  });
+  await page.route('https://auth.openai.com/api/accounts/authorize**', route => route.fulfill({ contentType: 'text/html', body: '<h1>Đăng nhập OpenAI</h1>' }));
+  await page.goto('./giai-tich/chuong-1/giang-day/bai-1/');
+  await page.getByRole('button', { name: 'Hỏi gia sư', exact: true }).click();
+  await page.getByLabel('Bạn chưa hiểu chỗ nào?').fill('Giải thích quy nạp?');
+  await page.getByRole('button', { name: 'Continue with ChatGPT' }).click();
+  await expect(page).toHaveURL(/^https:\/\/auth\.openai\.com\/api\/accounts\/authorize/);
+  expect(returnTo).toBe('/math/giai-tich/chuong-1/giang-day/bai-1/'); connected = true;
+  await page.goto(`http://localhost:${new URL(test.info().project.use.baseURL!).port}${returnTo}?gia-su=connected`);
+  await expect(page.getByRole('dialog')).toContainText('student@example.com');
+  await expect(page.getByLabel('Bạn chưa hiểu chỗ nào?')).toHaveValue('Giải thích quy nạp?');
+  await expect(page.getByRole('button', { name: 'Gửi câu hỏi' })).toBeEnabled();
+  await page.getByRole('button', { name: 'Ngắt kết nối trên máy' }).click();
+  await expect(page.getByRole('button', { name: 'Continue with ChatGPT' })).toBeVisible();
 });
 
 test('chưa cấu hình AI thì báo rõ và không yêu cầu đăng nhập', async ({ page }) => {
