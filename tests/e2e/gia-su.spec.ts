@@ -36,8 +36,17 @@ test('hỏi theo đoạn trích, hiển thị công thức và giữ câu hỏi 
 test('web tĩnh hướng dẫn kết nối thay vì giả trả lời', async ({ page }) => {
   await page.route('**/api/gia-su/**', route => route.fulfill({ status: 404, body: 'Not found' }));
   await page.goto('./'); await page.getByRole('button', { name: 'Hỏi gia sư', exact: true }).click();
-  await expect(page.getByRole('dialog')).toContainText('npm run chat');
+  await expect(page.getByRole('dialog')).toContainText('Chưa kết nối được máy chủ gia sư');
+  await expect(page.getByRole('button', { name: 'Continue with ChatGPT' })).toHaveCount(0);
   await expect(page.getByRole('button', { name: 'Gửi câu hỏi' })).toBeDisabled();
   await page.setViewportSize({ width: 390, height: 844 });
   const size = await page.getByRole('dialog').boundingBox(); expect(size!.width).toBeLessThanOrEqual(390);
+});
+
+test('chưa cấu hình AI thì báo rõ và không yêu cầu đăng nhập', async ({ page }) => {
+  await page.route('**/api/gia-su/status', route => route.fulfill({ json: { available: true, connected: false, mode: 'api' } }));
+  await page.goto('./'); await page.getByRole('button', { name: 'Hỏi gia sư', exact: true }).click();
+  await expect(page.getByRole('dialog')).toContainText('Chủ ứng dụng cần bật kết nối AI');
+  await expect(page.getByRole('button', { name: 'Continue with ChatGPT' })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'Gửi câu hỏi' })).toBeDisabled();
 });

@@ -10,7 +10,7 @@ export default function GiaSu({ tieuDe }: { tieuDe: string }) {
   const [models, setModels] = useState<{ id: string; name: string }[]>([]), [model, setModel] = useState('');
   const [messages, setMessages] = useState<TinNhan[]>([]), [draft, setDraft] = useState(''), [quote, setQuote] = useState('');
   const [busy, setBusy] = useState(false), [partial, setPartial] = useState(''), [error, setError] = useState('');
-  const [includePage, setIncludePage] = useState(true), [email, setEmail] = useState('');
+  const [includePage, setIncludePage] = useState(true);
   const dialog = useRef<HTMLDialogElement>(null), launch = useRef<HTMLButtonElement>(null), input = useRef<HTMLTextAreaElement>(null);
   const abort = useRef<AbortController | null>(null), bottom = useRef<HTMLDivElement>(null);
   const api = async (path: string, body?: unknown) => {
@@ -20,11 +20,11 @@ export default function GiaSu({ tieuDe }: { tieuDe: string }) {
   };
   async function status() {
     try {
-      const data = await api('status'); setAvailable(data.available === true); setConnected(data.connected === true); setEmail(data.email ?? '');
+      const data = await api('status'); setAvailable(data.available === true); setConnected(data.connected === true);
       if (data.connected) {
         try {
           const list = await api('models'); setModels(list.models); setModel(current => list.models.some((m: { id: string }) => m.id === current) ? current : list.models[0]?.id ?? '');
-          if (!list.models.length) setError('Tài khoản chưa có mô hình khả dụng. Kiểm tra quyền dùng gói ChatGPT.');
+          if (!list.models.length) setError('Gia sư chưa có mô hình khả dụng. Vui lòng thử lại sau.');
         } catch (e) { setError((e as Error).message); }
       }
     } catch (e) { setAvailable(false); setConnected(false); setError((e as Error).message); }
@@ -34,8 +34,6 @@ export default function GiaSu({ tieuDe }: { tieuDe: string }) {
     const result = new URLSearchParams(location.search).get('gia-su');
     if (result) {
       setOpen(true);
-      if (result === 'denied') setError('Bạn chưa cấp quyền ChatGPT. Có thể kết nối lại khi sẵn sàng.');
-      try { const saved = JSON.parse(sessionStorage.getItem('hochanh-chat-draft') ?? 'null'); if (saved?.path === location.pathname) { setDraft(saved.draft); setQuote(saved.quote); } sessionStorage.removeItem('hochanh-chat-draft'); } catch { /* Trình duyệt có thể chặn lưu trữ. */ }
       const url = new URL(location.href); url.searchParams.delete('gia-su'); history.replaceState(null, '', url);
     }
     return () => abort.current?.abort();
@@ -77,9 +75,9 @@ export default function GiaSu({ tieuDe }: { tieuDe: string }) {
       <header className="gia-su-header"><div><h2 id="gia-su-title">Gia sư Hochanh</h2><p>Gỡ từng chỗ khó, hiểu từng bước.</p></div><button className="nut nhe nho" onClick={close} aria-label="Đóng gia sư">Đóng</button></header>
       <div className="gia-su-body">
         <p className="gia-su-topic">Đang học: <strong>{tieuDe}</strong></p>
-        {!available ? <div className="gia-su-notice"><p>Để dùng gói ChatGPT của bạn, mở bản Hochanh chạy trên máy:</p><code>npm run chat</code><p>Sau đó mở <strong>http://127.0.0.1:4325/math/</strong> và bấm Continue with ChatGPT. GitHub Pages chưa có máy chủ gia sư.</p><button className="nut nhe nho" onClick={() => void status()}>Kiểm tra kết nối</button></div>
-          : !connected ? <div className="gia-su-notice"><p>Đăng nhập tài khoản ChatGPT và cấp quyền dùng gói của bạn cho Hochanh. Khả dụng tùy gói và quyền của tài khoản.</p><button className="nut" onClick={async () => { try { setError(''); try { sessionStorage.setItem('hochanh-chat-draft', JSON.stringify({ path: location.pathname, draft, quote })); } catch { /* Đăng nhập vẫn hoạt động khi không lưu được bản nháp. */ } const data = await api('login', { returnTo: location.pathname }); location.assign(data.url); } catch (e) { setError((e as Error).message); } }}>Continue with ChatGPT</button></div>
-          : <div className="gia-su-account"><span>ChatGPT · {email || 'Đã kết nối'}</span><button className="nut nhe nho" disabled={busy} onClick={async () => { try { await api('logout', {}); setMessages([]); setConnected(false); setModels([]); setError(''); } catch (e) { setError((e as Error).message); } }}>Ngắt kết nối</button></div>}
+        {!available ? <div className="gia-su-notice"><p>Chưa kết nối được máy chủ gia sư. Vui lòng thử lại sau.</p><button className="nut nhe nho" onClick={() => void status()}>Kiểm tra kết nối</button></div>
+          : !connected ? <div className="gia-su-notice"><p>Gia sư chưa được cấu hình. Chủ ứng dụng cần bật kết nối AI.</p><button className="nut nhe nho" onClick={() => void status()}>Kiểm tra kết nối</button></div>
+          : <p className="gia-su-account">AI đã sẵn sàng · Bạn có thể hỏi ngay.</p>}
         {connected && <label className="gia-su-model">Mô hình <select value={model} disabled={busy} onChange={e => setModel(e.target.value)}>{models.map(m => <option key={m.id} value={m.id}>{m.name}</option>)}</select></label>}
         <div className="gia-su-messages" role="log" aria-label="Cuộc trò chuyện với gia sư" aria-live="polite" aria-busy={busy}>
           {!messages.length && !busy && <p className="gia-su-empty">Bạn vướng ở ý nào? Hãy hỏi bằng lời của mình, hoặc chọn một đoạn trong bài rồi bấm “Hỏi gia sư”.</p>}

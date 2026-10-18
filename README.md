@@ -56,10 +56,11 @@ khóa khi hết giờ hoặc kết thúc. Đáp án mở riêng, có lời giả
 
 ## Hỏi gia sư bằng ChatGPT
 
-Nút **Hỏi gia sư** mở chat giải đáp theo trang đang học, hỗ trợ đoạn trích và
-công thức. Chạy `npm run chat`, mở `http://127.0.0.1:4325/math/`, rồi chọn
-**Continue with ChatGPT** để cấp quyền dùng gói cá nhân. GitHub Pages hiện chỉ
-hiện giao diện và hướng dẫn chạy trên máy. Xem [docs/gia-su.md](docs/gia-su.md).
+Nút **Hỏi gia sư** giải đáp theo trang đang học, hỗ trợ đoạn trích và công thức,
+không yêu cầu người học đăng nhập. Chủ ứng dụng đặt `OPENAI_API_KEY` trong
+`.hochanh-local/.env` theo `.env.chat.example`, chạy `npm run chat` và mở
+`http://127.0.0.1:4325/math/`. GitHub Pages vẫn là web tĩnh, cần máy chủ riêng
+để gọi AI. Xem [docs/gia-su.md](docs/gia-su.md).
 
 ## Tự tạo bài giảng từ PDF (Claude)
 

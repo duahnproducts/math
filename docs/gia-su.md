@@ -1,61 +1,52 @@
-# Gia sư giải đáp trong Hochanh
+# Gia sư Hochanh — hỏi ngay, không đăng nhập
 
-Theo yêu cầu ngày 18/10/2026: chat bằng tài khoản ChatGPT, đọc ngữ cảnh bài học,
-gợi ý từng bước, hỏi tiếp, Markdown và KaTeX. Hộp chat mở từ nút **Hỏi gia sư**;
-bôi chọn trong bài trước khi mở để gửi đoạn trích. Có thể tắt gửi nội dung trang.
-Chỉ gửi khi bấm Gửi; không gửi lời giải trong thẻ details chưa mở. Không đọc PDF
-đính kèm hoặc tự tìm toàn bộ giáo trình. Hội thoại giữ trong bộ nhớ của trang,
-tối đa 10 lượt. Dừng hoặc lỗi giữ câu hỏi để gửi lại, không đưa câu trả lời dở
-dang vào lịch sử. Nội dung máy sinh được lọc qua bộ Markdown an toàn có sẵn.
+Cập nhật theo yêu cầu 18/10/2026: chỉ giữ thay đổi hỏi AI không cần đăng nhập.
+Repo `duahnproducts/math` tiếp tục công khai, GitHub Pages phục vụ phần học
+tĩnh. Máy chủ gia sư hiện tại chỉ nghe 127.0.0.1.
 
-## Chạy với gói ChatGPT cá nhân
+Người học bấm **Hỏi gia sư** và gửi câu hỏi trực tiếp. Đã bỏ OAuth, nút đăng nhập,
+callback và token ChatGPT. Máy chủ dùng `OPENAI_API_KEY` cấu hình một lần bởi
+chủ ứng dụng; không dùng gói/phiên ChatGPT của cuộc chat Codex. API có hạn mức và
+chi phí riêng. Thiếu khóa thì báo chưa cấu hình và không gọi mạng.
 
-```powershell
-npm install
-npm run chat
+## Cấu hình trên máy chủ
+
+Chép `.env.chat.example` vào `.hochanh-local/.env` (thư mục đã bị gitignore):
+
+```dotenv
+OPENAI_API_KEY=khóa_API_của_bạn
+OPENAI_MODEL=gpt-6.1-sol
 ```
 
-Mở `http://127.0.0.1:4325/math/`, chọn Hỏi gia sư → Continue with ChatGPT,
-đăng nhập đúng tài khoản muốn dùng và chấp thuận quyền tại OpenAI. Sau khi quay
-lại, chọn mô hình từ danh sách mà tài khoản được cấp. Nút Ngắt kết nối xoá
-đăng ký trên máy; có thể đăng ký lại tài khoản khác. Khởi động lại máy chủ cần
-đăng nhập lại (giữ client ID và host ID để dùng lại đăng ký cũ).
-Đổi cổng: đặt `HOCHANH_CHAT_PORT` trước khi chạy. Cần Node >=22.12 như dự án;
-lệnh chat bật sẵn chế độ chạy TypeScript của Node.
+Không gửi khóa qua chat hoặc đưa vào mã frontend, biến PUBLIC_/VITE_, Git,
+workflow build hay bản dist. Có thể đặt biến môi trường thay file .env.
+`npm run chat` dựng web và chạy máy chủ; `npm run chat:serve` chạy lại máy chủ
+trên bản đã build, nạp `.hochanh-local/.env`. Mở `http://127.0.0.1:4325/math/`.
+Đổi khóa/model cần khởi động lại máy chủ. Node >=22.12.
 
-## Kết nối và phạm vi triển khai
+Máy chủ gọi `POST https://api.openai.com/v1/responses`, `store:false`,
+`stream:true`. Model do chủ ứng dụng quyết định, frontend không được đổi sang
+model khác. Một câu hỏi tại một thời điểm, tối đa 10 câu/phút cho máy chủ và
+4.096 output token/câu, timeout 120 giây. Không lưu hội thoại vào đĩa.
+Cookie phiên tự tạo, HttpOnly, SameSite=Strict; không yêu cầu người học đăng nhập.
+Kiểm Host, Origin, custom header và cookie để chặn CSRF/DNS rebinding. Cookie
+này không thay thế xác thực khi triển khai trên Internet.
 
-Máy chủ Node chỉ nghe `127.0.0.1`, phục vụ bản `dist/` dưới `/math/` và API
-cùng origin. OAuth authorization code + PKCE, state gắn cookie trình duyệt,
-nonce, xác minh JWT bằng JWKS (jose), issuer/audience/expiry và subject khi
-đăng nhập lại. Refresh token chỉ ở RAM; refresh đồng thời bị chặn trong lượt
-chat. ID token, client ID, subject và email đăng ký nằm trong
-`.hochanh-local/registration.json` bị gitignore; không phục vụ thư mục này.
-Không sao chép file đăng nhập Codex, không đưa access/refresh token vào JS,
-localStorage hoặc Git. POST kiểm Origin, cookie và custom header; kiểm Host
-chống DNS rebinding. Máy chủ dành cho một người dùng/một trình duyệt, không
-đưa ra mạng LAN hoặc Internet. Đây là ngoại lệ có chủ đích cho ràng buộc web
-tĩnh tại `tech_stack.md`; website học gốc vẫn build tĩnh bình thường.
+Hỏi tiếp tối đa 10 lượt. Có gửi đoạn bôi chọn và tùy chọn gửi nội dung trang,
+loại thẻ details chưa mở để không tự gửi lời giải ẩn. Không tự đọc PDF hoặc tìm
+toàn giáo trình. Markdown được lọc an toàn, công thức qua KaTeX; lỗi/dừng giữ
+câu hỏi để thử lại. Bộ dựng Markdown chỉ nạp khi có câu trả lời.
 
-Gọi `https://api.openai.com/v1/models` lấy catalog tài khoản và
-`https://api.openai.com/v1/responses` với OAuth token, `store:false`,
-`stream:true`, truyền lại lịch sử mỗi lượt. Không dùng backend-api của ChatGPT.
-Không tự chuyển sang API tính tiền nếu hết hạn mức gói.
+## Giới hạn triển khai
 
-Bản GitHub Pages có giao diện và hướng dẫn chạy cục bộ, chưa có inference
-trên host công khai. Tài khoản đang dùng trong cuộc chat Codex không tự cấp
-quyền cho Hochanh. Luồng OpenAI đang trong preview, quyền dùng gói phụ thuộc
-tài khoản/workspace; chưa thể khẳng định hoạt động thật trước khi chủ tài khoản
-hoàn tất đăng nhập và thử một câu hỏi. Muốn phục vụ mọi học viên trên web cần
-backend triển khai riêng với xác thực/hạn mức và phương án tài khoản được OpenAI
-hỗ trợ; không chia sẻ đăng nhập cá nhân cho khách truy cập.
+Khóa API hiện chưa được cấu hình nên chưa xác minh inference thật. GitHub Pages
+chỉ host tĩnh, không giữ được secret và không chạy máy chủ Node. Muốn dùng qua
+mạng cần chọn host backend riêng, cấu hình khóa và quyền truy cập website;
+không mở máy chủ loopback này ra Internet. Repo private không tự làm website
+private và không làm AI miễn phí.
 
-Nguồn chính thức đã kiểm tra:
-- https://developers.openai.com/siwc/token-sharing-open-source
-- https://developers.openai.com/siwc/token-sharing-open-source/sign-in
-- https://developers.openai.com/siwc/token-sharing-open-source/models-and-inference
-- https://developers.openai.com/siwc/token-sharing-open-source/preview-limitations
+Kiểm thử: Vitest kiểm request API, thiếu khóa, CSRF, path traversal, model allowlist,
+lỗi hạn mức; Playwright kiểm hỏi trực tiếp, retry, công thức, thiếu cấu hình,
+điện thoại và bàn phím. Dùng API giả lập, không gửi khóa thật hoặc tính phí.
 
-Kiểm thử: Vitest cho validation, SSE và máy chủ với OAuth/API giả lập; Playwright
-cho hội thoại, đoạn trích, công thức, retry và màn hình điện thoại. Không dùng
-token thật hoặc phát sinh lượt inference trả phí trong kiểm thử.
+Nguồn: https://developers.openai.com/api/docs/quickstart

@@ -74,8 +74,8 @@ Từ đó rút ra ba quy tắc:
 - Đánh dấu đã học, tiến độ lưu ngay trên máy
 - Chế độ sáng/tối
 - Tải PDF bài giảng
-- Gia sư trò chuyện theo bài học, dùng gói ChatGPT cá nhân khi chạy trên máy
-  (xem `docs/gia-su.md`); bản web tĩnh có hướng dẫn kết nối.
+- Gia sư trò chuyện theo bài học, người học hỏi trực tiếp không đăng nhập;
+  khóa OpenAI API do chủ ứng dụng cấu hình phía máy chủ (`docs/gia-su.md`).
 - **Tự tạo bài giảng từ PDF** cho môn chưa có trên web — người học dùng khoá API
   Claude của chính mình (mục 15)
 
