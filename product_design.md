@@ -74,13 +74,15 @@ Từ đó rút ra ba quy tắc:
 - Đánh dấu đã học, tiến độ lưu ngay trên máy
 - Chế độ sáng/tối
 - Tải PDF bài giảng
+- Gia sư trò chuyện theo bài học, dùng gói ChatGPT cá nhân khi chạy trên máy
+  (xem `docs/gia-su.md`); bản web tĩnh có hướng dẫn kết nối.
 - **Tự tạo bài giảng từ PDF** cho môn chưa có trên web — người học dùng khoá API
   Claude của chính mình (mục 15)
 
 ### Chưa làm
 - Tài khoản, đăng nhập
 - Nộp bài làm để được chữa
-- AI gia sư trò chuyện, AI chấm bài
+- AI chấm bài; gia sư chạy trên máy chủ công khai cho mọi người học
 - XP, streak, thành tích
 - App mobile
 

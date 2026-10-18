@@ -10,7 +10,10 @@
 thức dùng **KaTeX**, dựng sẵn lúc build. **React** chỉ dùng cho hình tương tác.
 Test bằng **Vitest** và **Playwright**. Deploy lên **GitHub Pages**.
 
-Mọi thứ miễn phí: không backend, không dịch vụ trả phí.
+Phần học tĩnh miễn phí, không backend. Ngoại lệ theo yêu cầu 18/10/2026:
+gia sư ChatGPT có máy chủ Node cục bộ, dùng gói của chính người đăng nhập,
+không dùng tài khoản chung cho khách truy cập. Xem [gia-su.md](gia-su.md)
+cho kiến trúc, giới hạn triển khai và cách chạy.
 
 ## 1. Ràng buộc
 

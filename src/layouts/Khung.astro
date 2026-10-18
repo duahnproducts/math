@@ -16,6 +16,7 @@ import DuongDanTrang from '@/components/DuongDanTrang.astro';
 import Icon from '@/components/Icon.astro';
 import MucLucChuong from '@/components/MucLucChuong.astro';
 import NutGiaoDien from '@/components/NutGiaoDien.astro';
+import GiaSu from '@/components/GiaSu';
 import { APPLE_TOUCH_ICON, FAVICON, docFilePublic, kemPhienBan } from '@/lib/bieu-tuong';
 import type { DuLieuChuongWeb } from '@/lib/du-lieu';
 import { taoDuongDan, type MatXich } from '@/lib/duong-dan';
@@ -129,6 +130,7 @@ const chiSoTab = chiSoTabDuoi(tabDuoi);
         ))
       }
     </nav>
+    <GiaSu tieuDe={tieuDe} client:idle />
     <script is:inline set:html={SCRIPT_BONG_THANH_DUOI} />
 
     <script>
