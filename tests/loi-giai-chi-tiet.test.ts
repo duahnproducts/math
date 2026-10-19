@@ -108,6 +108,28 @@ test('hệ có chỉ số x1…x4 được khử theo bốn ẩn riêng, không 
   expect(text).not.toContain('\\begin{bmatrix}51&-1\\\\17&1\\end{bmatrix}');
 });
 
+test('Cayley–Hamilton: các lũy thừa và tổng ma trận của cả hai ví dụ khớp dữ kiện',()=>{
+  const cases=[{a:[[3,2],[1,-1]],coeff:[1,-2,-5]},{a:[[1,-1,1],[0,1,0],[8,2,2]],coeff:[1,-4,-3,6]}];
+  cases.forEach(({a,coeff},index)=>{
+    const block=bank['3.1.27'].loi_giai.split(`**a.${index+1}.**`)[1].split(/\*\*(?:a\.\d+|b)\.\*\*/)[0];
+    expect(block).toContain('B=xI-A');
+    const matrices=numericMatrices(block);
+    expect(matrices[0]).toEqual(nhanMaTran(a,a));
+    const n=a.length;
+    const identity=a.map((r,i)=>r.map((_,j)=>i===j?1:0));
+    let value=a.map(r=>r.map(()=>0));
+    for(const coefficient of coeff){
+      value=nhanMaTran(value,a).map((r,i)=>r.map((v,j)=>v+coefficient*identity[i][j]));
+    }
+    expect(value).toEqual(a.map(r=>r.map(()=>0)));
+    expect(matrices.at(-1)).toEqual(value);
+    for(const x of [-2,0,2]){
+      expect(dinhThuc(a.map((r,i)=>r.map((v,j)=>(i===j?x:0)-v)))).toBeCloseTo(coeff.reduce((v,c)=>v*x+c,0));
+    }
+    expect(matrices[0]).toHaveLength(n);
+  });
+});
+
 test('nhãn năm ngăn mê cung tương phản với nút ở cả hai giao diện',()=>{
   const svg=readFileSync('src/figures/sach/ds-do-thi-2-9-8.svg','utf8');
   for(const n of ['1','2','3','4','5'])expect(svg).toContain(`data-text="${n}" fill="var(--paper)"`);

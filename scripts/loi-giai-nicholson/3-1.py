@@ -100,7 +100,7 @@ for i,A in enumerate(aa):
     assert val==S.zeros(A.rows)
     powers='\n\n'.join('$$A^{'+str(j)+'}='+tex(A**j)+r'.$$' for j in range(2,A.rows+1))
     terms='\n\n'.join('$$('+S.latex(coeff)+')A^{'+str(degree)+'}='+tex(coeff*A**degree)+r'.$$' for (degree,),coeff in S.Poly(poly,x).terms())
-    out.append('**a.'+str(i+1)+r'.** Lập $c_A(x)=\det(xI-A)$. '+determinant_text(x*S.eye(A.rows)-A)+r' Do đó $c_A(x)='+S.latex(poly)+r'$. Tính từng lũy thừa cần dùng: '+powers+r' Nhân mỗi lũy thừa với hệ số tương ứng; hạng hằng nhân với $I$: '+terms+r' Cộng các ô cùng vị trí được $$c_A(A)='+tex(val)+r'.$$ Điều này xác nhận định lý cho ma trận đã cho.')
+    out.append('**a.'+str(i+1)+r'.** Đặt $B=xI-A$ để tính $c_A(x)=\det B$. '+determinant_text(x*S.eye(A.rows)-A).replace('A','B')+r' Do đó $c_A(x)='+S.latex(poly)+r'$. Tính từng lũy thừa cần dùng: '+powers+r' Nhân mỗi lũy thừa với hệ số tương ứng; hạng hằng nhân với $I$: '+terms+r' Cộng các ô cùng vị trí được $$c_A(A)='+tex(val)+r'.$$ Điều này xác nhận định lý cho ma trận đã cho.')
 
 add('3.1.27','\n\n'.join(out)+r' **b.** Với $A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$, $c_A(x)=x^2-(a+d)x+(ad-bc)$. Nhân $A^2$ cho các ô $a^2+bc$, $b(a+d)$, $c(a+d)$, $d^2+bc$. Trừ $(a+d)A$ rồi cộng $(ad-bc)I$, cả bốn ô đều bằng 0. Vì vậy $c_A(A)=0$.')
 save()
