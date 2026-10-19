@@ -1,0 +1,61 @@
+---
+so: "4.9"
+muc: "4"
+so_sach: "4.9"
+tieu_de: "Đổi dấu biến sup thành inf"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Cho $S\subseteq\mathbb R$ không rỗng, bị chặn dưới và $-S=\{-s:s\in S\}$. Chứng minh $\inf S=-\sup(-S)$ bằng cách kiểm tra cận dưới và tính lớn nhất.
+</De>
+
+<GoiY so={1}>
+Đổi dấu đảo chiều thứ tự.
+</GoiY>
+
+<GoiY so={2}>
+Nếu $M=\sup(-S)$ thì $-M$ chặn dưới $S$; mọi cận dưới $l$ của $S$ cho cận trên $-l$ của $-S$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Đổi dấu biến sup thành inf. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Đổi dấu đảo chiều thứ tự.
+
+**Bước 4. Giải từng bước.**
+
+$-S$ không rỗng và bị chặn trên. Đặt $M=\sup(-S)$. Với $s\in S$, $-s\le M$, nên $s\ge-M$; vậy $-M$ là cận dưới. Nếu $l$ là cận dưới bất kỳ của $S$, thì $l\le s$, nên $-s\le-l$ với mọi $s$. Do đó $M\le-l$, tức $l\le-M$. Vậy $-M$ lớn nhất trong các cận dưới, đúng là $\inf S$.
+
+**Bước 5. Kiểm tra.**
+
+Cần cả hai bước: là cận dưới và lớn hơn hoặc bằng mọi cận dưới khác.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Nếu $M=\sup(-S)$ thì $-M$ chặn dưới $S$; mọi cận dưới $l$ của $S$ cho cận trên $-l$ của $-S$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Đổi dấu phải đảo cả bất đẳng thức.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Tiên đề đầy đủ</span>
+
+<XemMuc bai={4} />
+</div>

@@ -1,0 +1,59 @@
+---
+so: "14.10"
+muc: "14"
+so_sach: "14.10"
+tieu_de: "Căn kết luận phân kỳ nhưng tỉ số không kết luận"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Tìm chuỗi mà tiêu chuẩn căn cho phân kỳ, còn tiêu chuẩn tỉ số theo liminf/limsup không quyết định được.
+</De>
+
+<GoiY so={1}>
+Tạo độ lớn hình học tăng nhưng nhân một yếu tố luân phiên để tỉ số vượt cả hai phía của 1.
+</GoiY>
+
+<GoiY so={2}>
+Lấy $a_n=2^{n+(-1)^n}$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Căn kết luận phân kỳ nhưng tỉ số không kết luận. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Tạo độ lớn hình học tăng nhưng nhân một yếu tố luân phiên để tỉ số vượt cả hai phía của 1.
+
+**Bước 4. Giải từng bước.**
+
+Căn bậc $n$ của $a_n$ là $2^{1+(-1)^n/n}\to2>1$, nên tiêu chuẩn căn cho chuỗi phân kỳ. Khi $n$ chẵn, $a_{n+1}/a_n=2^{-1}=1/2$; khi $n$ lẻ, tỉ số bằng $2^3=8$. Do đó liminf tỉ số $1/2<1$, limsup 8 lớn hơn 1, nên cả điều kiện hội tụ $\limsup<1$ lẫn phân kỳ $\liminf>1$ của tiêu chuẩn tỉ số đều không thỏa.
+
+**Bước 5. Kiểm tra.**
+
+Các số hạng dương và tăng vô hạn về độ lớn, phù hợp kết luận phân kỳ.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Lấy $a_n=2^{n+(-1)^n}$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Chỉ limsup tỉ số lớn hơn 1 chưa đủ để kết luận phân kỳ bằng phiên bản tỉ số này.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Chuỗi số</span>
+</div>

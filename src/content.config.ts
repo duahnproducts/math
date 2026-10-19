@@ -4,8 +4,8 @@ import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
 const mon = z.enum(['giai-tich', 'dai-so', 'vi-mo']);
-const soMuc = z.string().regex(/^\d+\.\d+$/, 'Số hiệu mục phải có dạng "1.3"');
-const soBaiTap = z.string().regex(/^\d+\.\d+\.\d+$/, 'Số hiệu bài tập phải có dạng "1.2.5"');
+const soMuc = z.string().regex(/^\d+(?:\.\d+)?$/, 'Số hiệu mục phải có dạng "1" (Ross) hoặc "1.3"');
+const soBaiTap = z.string().regex(/^\d+\.\d+(?:\.\d+)?$/, 'Số hiệu bài tập phải có dạng "1.2" (Ross) hoặc "1.2.5"');
 const maKhoi = z
   .string()
   .regex(/^(dinh-nghia|dinh-ly|bo-de|he-qua|tien-de|vi-du)-[a-z0-9.-]+$/, 'can_dung ghi loại kèm số hiệu, ví dụ "dinh-ly-1.4.3"');

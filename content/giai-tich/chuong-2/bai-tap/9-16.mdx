@@ -1,0 +1,65 @@
+---
+so: "9.16"
+muc: "9"
+so_sach: "9.16"
+tieu_de: "Ba dãy tiến đến dương vô cực"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Chứng minh (a) $(n^4+8n)/(n^2+9)\to+\infty$; (b) $2^n/n^2+(-1)^n\to+\infty$; (c) $3^n/n^3-3^n/n!\to+\infty$.
+</De>
+
+<GoiY so={1}>
+Tách phần chính tăng vô hạn và phần còn lại có cận dưới.
+</GoiY>
+
+<GoiY so={2}>
+Ở (c), số hạng trừ tiến về 0, còn số hạng đầu về $+\infty$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Ba dãy tiến đến dương vô cực. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Tách phần chính tăng vô hạn và phần còn lại có cận dưới.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Viết $n^2(1+8/n^3)/(1+9/n^2)$. Thừa số thứ hai về 1 nên cuối cùng lớn hơn $1/2$; tích ít nhất $n^2/2\to+\infty$.
+
+**b.** Bài 9.14 cho $2^n/n^2\to+\infty$, còn $(-1)^n\ge-1$, dùng 9.11.
+
+**c.** Bài 9.14 cho $3^n/n^3\to+\infty$; 9.15 cho $3^n/n!\to0$, nên phần bị trừ bị chặn. Dùng 9.11 lần nữa.
+
+**Bước 5. Kiểm tra.**
+
+Không có biểu thức $+\infty-(+\infty)$ ở (c): phần thứ hai về 0.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Ở (c), số hạng trừ tiến về 0, còn số hạng đầu về $+\infty$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Phải phân biệt mẫu $n^3$ và mẫu $n!$.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Các định lý giới hạn</span>
+
+<XemMuc bai={3} />
+</div>

@@ -1,0 +1,61 @@
+---
+so: "13.12"
+muc: "13"
+so_sach: "13.12"
+tieu_de: "Hai cách tạo tập compact"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Trong không gian metric $(S,d)$, chứng minh (a) nếu $E$ là tập con đóng của tập compact $F$ thì $E$ compact; (b) hợp hữu hạn các tập compact là compact.
+</De>
+
+<GoiY so={1}>
+Dùng định nghĩa phủ mở, không cần Heine–Borel.
+</GoiY>
+
+<GoiY so={2}>
+Ở (a), bổ sung $S\setminus E$ vào phủ của $E$ để phủ $F$; ở (b), chọn phủ con hữu hạn cho từng tập.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Hai cách tạo tập compact. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Dùng định nghĩa phủ mở, không cần Heine–Borel.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Nếu $E$ đóng trong $S$ và $\mathcal U$ phủ mở $E$, thêm tập mở $S\setminus E$ được phủ $F$. Compact của $F$ cho phủ con hữu hạn; bỏ $S\setminus E$ nếu có thì các tập còn lại vẫn phủ $E$. Nếu hiểu $E$ đóng tương đối trong $F$, có tập đóng $C$ của $S$ với $E=F\cap C$; dùng $S\setminus C$ thay thế cho cùng lập luận.
+
+**b.** Cho phủ mở của $K_1\cup\cdots\cup K_m$. Nó phủ từng $K_i$ nên có họ con hữu hạn phủ từng tập. Hợp $m$ họ con này vẫn hữu hạn và phủ toàn bộ hợp.
+
+**Bước 5. Kiểm tra.**
+
+Số tập compact trong (b) phải hữu hạn; $\bigcup_{n\ge1}\{n\}$ không compact trong $\mathbb R$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Ở (a), bổ sung $S\setminus E$ vào phủ của $E$ để phủ $F$; ở (b), chọn phủ con hữu hạn cho từng tập.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không giả sử tập compact có hữu hạn phần tử.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Không gian metric và compact</span>
+</div>

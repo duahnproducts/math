@@ -1,0 +1,61 @@
+---
+so: "5.7"
+muc: "5"
+so_sach: "5.7"
+tieu_de: "Inf của tổng hai tập không nhất thiết bị chặn"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Với $A,B\subseteq\mathbb R$ không rỗng, chứng minh $\inf(A+B)=\inf A+\inf B$, kể cả khi tập không bị chặn dưới; $A+B=\{a+b:a\in A,b\in B\}$.
+</De>
+
+<GoiY so={1}>
+Nếu cả hai cận dưới hữu hạn, dùng bài 4.14; nếu một tập không bị chặn dưới, giữ cố định một phần tử của tập kia.
+</GoiY>
+
+<GoiY so={2}>
+Khi $\inf A=-\infty$, chọn $b_0\in B$ rồi làm $a+b_0$ nhỏ hơn ngưỡng tùy ý.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Inf của tổng hai tập không nhất thiết bị chặn. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Nếu cả hai cận dưới hữu hạn, dùng bài 4.14; nếu một tập không bị chặn dưới, giữ cố định một phần tử của tập kia.
+
+**Bước 4. Giải từng bước.**
+
+Nếu cả hai inf hữu hạn, mọi tổng ít nhất là tổng hai inf; chọn hai phần tử cách inf dưới $\varepsilon/2$ cho chiều ngược như 4.14(b). Nếu $A$ không bị chặn dưới, với mỗi $M\in\mathbb R$ chọn $a<M-b_0$. Khi đó $a+b_0<M$, nên $A+B$ không bị chặn dưới và inf bằng $-\infty$. Tổng hai inf bên phải cũng bằng $-\infty$. Trường hợp $B$ không bị chặn dưới làm tương tự.
+
+**Bước 5. Kiểm tra.**
+
+Vì các tập không rỗng nên các inf không thể bằng $+\infty$; không xuất hiện tổng vô cực trái dấu.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Khi $\inf A=-\infty$, chọn $b_0\in B$ rồi làm $a+b_0$ nhỏ hơn ngưỡng tùy ý.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không giả sử một phần tử bằng inf của tập.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Các ký hiệu vô cực</span>
+
+<XemMuc bai={5} />
+</div>

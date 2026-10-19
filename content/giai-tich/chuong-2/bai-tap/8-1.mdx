@@ -1,0 +1,69 @@
+---
+so: "8.1"
+muc: "8"
+so_sach: "8.1"
+tieu_de: "Chọn N cho bốn giới hạn"
+do_kho: vua
+nen_lam: true
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Chứng minh bằng định nghĩa $\varepsilon$–$N$: (a) $(-1)^n/n\to0$; (b) $n^{-1/3}\to0$; (c) $(2n-1)/(3n+2)\to2/3$; (d) $(n+6)/(n^2-6)\to0$.
+</De>
+
+<GoiY so={1}>
+Ước lượng sai số bằng một biểu thức đơn giản theo $n$ rồi giải điều kiện nhỏ hơn $\varepsilon$.
+</GoiY>
+
+<GoiY so={2}>
+Có thể chọn lần lượt $N=1/\varepsilon$, $\varepsilon^{-3}$, $7/(9\varepsilon)$, $\max\{6,4/\varepsilon\}$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Chọn N cho bốn giới hạn. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Ước lượng sai số bằng một biểu thức đơn giản theo $n$ rồi giải điều kiện nhỏ hơn $\varepsilon$.
+
+**Bước 4. Giải từng bước.**
+
+Cho $\varepsilon>0$.
+
+**a.** $|(-1)^n/n|=1/n<\varepsilon$ khi $n>N=1/\varepsilon$.
+
+**b.** $n^{-1/3}<\varepsilon$ khi $n>\varepsilon^{-3}$.
+
+**c.** Sai số bằng $7/[3(3n+2)]\le7/(9n)$, nên chọn $N=7/(9\varepsilon)$.
+
+**d.** Với $n>6$, $n+6\le2n$ và $n^2-6\ge n^2/2$, nên sai số không vượt $4/n$. Chọn $N=\max\{6,4/\varepsilon\}$. Mỗi lựa chọn đều cho điều kiện với mọi $n>N$.
+
+**Bước 5. Kiểm tra.**
+
+$N$ được phép là số thực; nếu cần số nguyên, lấy phần nguyên cộng 1.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Có thể chọn lần lượt $N=1/\varepsilon$, $\varepsilon^{-3}$, $7/(9\varepsilon)$, $\max\{6,4/\varepsilon\}$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Phải chứng minh ước lượng đúng cho cả đuôi, không chỉ cho một chỉ số.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Chứng minh bằng định nghĩa giới hạn</span>
+
+<XemMuc bai={2} />
+</div>

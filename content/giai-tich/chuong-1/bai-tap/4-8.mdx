@@ -1,0 +1,67 @@
+---
+so: "4.8"
+muc: "4"
+so_sach: "4.8"
+tieu_de: "Hai tập nằm về hai phía"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Cho hai tập thực không rỗng $S,T$ với $s\le t$ cho mọi $s\in S,t\in T$. (a) Chỉ ra $S$ bị chặn trên, $T$ bị chặn dưới. (b) Chứng minh $\sup S\le\inf T$. (c) Cho ví dụ có giao không rỗng. (d) Cho ví dụ có hai cận bằng nhau nhưng giao rỗng.
+</De>
+
+<GoiY so={1}>
+Cố định một phần tử ở tập bên kia để tạo cận.
+</GoiY>
+
+<GoiY so={2}>
+Mỗi $t\in T$ là cận trên của $S$; do đó $\sup S$ là cận dưới của $T$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Hai tập nằm về hai phía. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Cố định một phần tử ở tập bên kia để tạo cận.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Chọn $s_0\in S,t_0\in T$. Có $s\le t_0$ và $s_0\le t$ cho mọi $s,t$ tương ứng.
+
+**b.** Vì mỗi $t$ là cận trên của $S$, $\sup S\le t$ với mọi $t\in T$. Do đó $\sup S\le\inf T$.
+
+**c.** Lấy $S=[0,1],T=[1,2]$, giao bằng $\{1\}$.
+
+**d.** Lấy $S=(0,1),T=(1,2)$, hai cận đều 1 nhưng giao rỗng.
+
+**Bước 5. Kiểm tra.**
+
+Cả hai ví dụ đều thỏa điều kiện mọi $s\le t$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Mỗi $t\in T$ là cận trên của $S$; do đó $\sup S$ là cận dưới của $T$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Hai cận bằng nhau không bắt buộc điểm chung thuộc cả hai tập.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Tiên đề đầy đủ</span>
+
+<XemMuc bai={4} />
+</div>

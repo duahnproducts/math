@@ -1,0 +1,61 @@
+---
+so: "4.11"
+muc: "4"
+so_sach: "4.11"
+tieu_de: "Vô hạn số hữu tỉ trong mỗi khoảng"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Với $a<b$, dùng tính trù mật của $\mathbb Q$ để chứng minh $(a,b)$ chứa vô hạn số hữu tỉ.
+</De>
+
+<GoiY so={1}>
+Sau khi chọn một số hữu tỉ, tiếp tục chọn trong khoảng còn lại bên phải.
+</GoiY>
+
+<GoiY so={2}>
+Dựng $a<r_1<r_2<\cdots<b$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Vô hạn số hữu tỉ trong mỗi khoảng. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Sau khi chọn một số hữu tỉ, tiếp tục chọn trong khoảng còn lại bên phải.
+
+**Bước 4. Giải từng bước.**
+
+Trù mật cho $r_1\in\mathbb Q\cap(a,b)$. Nếu đã có $r_n<b$, khoảng $(r_n,b)$ không rỗng nên lại có hữu tỉ $r_{n+1}$ bên trong. Do $r_{n+1}>r_n$, mọi số được chọn khác nhau; chúng đều ở $(a,b)$. Vì dựng được cho mọi $n$, khoảng chứa vô hạn số hữu tỉ.
+
+**Bước 5. Kiểm tra.**
+
+Tính tăng nghiêm bảo đảm không đếm lặp cùng một số.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Dựng $a<r_1<r_2<\cdots<b$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Tồn tại một số hữu tỉ không tự nó chứng minh tồn tại vô hạn số.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Tiên đề đầy đủ</span>
+
+<XemMuc bai={4} />
+</div>

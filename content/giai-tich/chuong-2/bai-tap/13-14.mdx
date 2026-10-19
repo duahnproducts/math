@@ -1,0 +1,59 @@
+---
+so: "13.14"
+muc: "13"
+so_sach: "13.14"
+tieu_de: "Đường kính của tập compact được đạt"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Cho $E\subseteq\mathbb R^k$ compact, không rỗng, $\delta=\sup\{d(x,y):x,y\in E\}$. Chứng minh tồn tại $x_0,y_0\in E$ với $d(x_0,y_0)=\delta$.
+</De>
+
+<GoiY so={1}>
+Chọn các cặp điểm có khoảng cách gần đường kính rồi chọn dãy con hội tụ cho từng tọa độ điểm.
+</GoiY>
+
+<GoiY so={2}>
+$|d(x_n,y_n)-d(x_0,y_0)|\le d(x_n,x_0)+d(y_n,y_0)$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Đường kính của tập compact được đạt. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Chọn các cặp điểm có khoảng cách gần đường kính rồi chọn dãy con hội tụ cho từng tọa độ điểm.
+
+**Bước 4. Giải từng bước.**
+
+$E$ bị chặn nên $\delta$ hữu hạn; tập khoảng cách không rỗng. Với mỗi $n$, chọn $x_n,y_n\in E$ có $\delta-1/n<d(x_n,y_n)\le\delta$. Compact cho dãy con $x_{n_j}\to x_0\in E$. Trong dãy tương ứng $y_{n_j}$, lại chọn dãy con $y_{n_{j_l}}\to y_0\in E$; dãy $x$ cùng chỉ số vẫn đến $x_0$. Bất đẳng thức gợi ý cho khoảng cách hội tụ tới $d(x_0,y_0)$, trong khi chặn sai số cho nó hội tụ tới $\delta$. Tính duy nhất giới hạn cho đẳng thức.
+
+**Bước 5. Kiểm tra.**
+
+Khi $E$ chỉ có một điểm, $\delta=0$ và chọn hai điểm trùng nhau.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+$|d(x_n,y_n)-d(x_0,y_0)|\le d(x_n,x_0)+d(y_n,y_0)$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Hai dãy con phải dùng cùng chỉ số cuối cùng; không chọn hai dãy con độc lập rồi ghép tùy ý.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Không gian metric và compact</span>
+</div>

@@ -1,0 +1,61 @@
+---
+so: "10.5"
+muc: "10"
+so_sach: "10.5"
+tieu_de: "Dãy giảm không bị chặn dưới"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Chứng minh Định lý 10.4(ii): nếu $(s_n)$ là dãy giảm không bị chặn dưới thì $s_n\to-\infty$.
+</De>
+
+<GoiY so={1}>
+Chọn một số hạng dưới ngưỡng; tất cả số hạng sau còn nhỏ hơn.
+</GoiY>
+
+<GoiY so={2}>
+Với $M\in\mathbb R$, chọn $N$ có $s_N<M$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Dãy giảm không bị chặn dưới. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Chọn một số hạng dưới ngưỡng; tất cả số hạng sau còn nhỏ hơn.
+
+**Bước 4. Giải từng bước.**
+
+Không bị chặn dưới có nghĩa là với mọi $M$ thực, có $N$ sao cho $s_N<M$. Tính giảm cho $n\ge N$ kéo theo $s_n\le s_N<M$. Đây là định nghĩa giới hạn $-\infty$.
+
+**Bước 5. Kiểm tra.**
+
+Cần giả thiết đơn điệu để từ một số hạng nhỏ suy ra toàn bộ đuôi nhỏ.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Với $M\in\mathbb R$, chọn $N$ có $s_N<M$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Một dãy không bị chặn dưới nhưng dao động có thể không tiến đến $-\infty$.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Dãy đơn điệu và Cauchy</span>
+
+<XemMuc bai={4} />
+</div>

@@ -1,0 +1,65 @@
+---
+so: "9.6"
+muc: "9"
+so_sach: "9.6"
+tieu_de: "Phương trình giới hạn không bảo đảm hội tụ"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Cho $x_1=1,x_{n+1}=3x_n^2$. (a) Nếu có giới hạn hữu hạn $a$, chứng minh $a=0$ hoặc $a=1/3$. (b) Dãy có hội tụ không? (c) Giải thích vì sao không mâu thuẫn.
+</De>
+
+<GoiY so={1}>
+Phân biệt mệnh đề có điều kiện với sự tồn tại thực tế của giới hạn.
+</GoiY>
+
+<GoiY so={2}>
+Công thức tường minh là $x_n=3^{2^{n-1}-1}$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Phương trình giới hạn không bảo đảm hội tụ. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Phân biệt mệnh đề có điều kiện với sự tồn tại thực tế của giới hạn.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Nếu hội tụ hữu hạn, lấy giới hạn cho $a=3a^2$, tức $a(3a-1)=0$.
+
+**b.** Quy nạp: công thức ở gợi ý đúng tại $n=1$; bình phương rồi nhân 3 cho số mũ $2(2^{n-1}-1)+1=2^n-1$. Vì số mũ tăng vô hạn, $x_n\to+\infty$; không hội tụ hữu hạn.
+
+**c.** Phần (a) chỉ nói điều xảy ra nếu có giới hạn hữu hạn; giả thiết này không được đáp ứng.
+
+**Bước 5. Kiểm tra.**
+
+$x_2=3,x_3=27$ phù hợp công thức.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Công thức tường minh là $x_n=3^{2^{n-1}-1}$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không chọn một nghiệm của phương trình giới hạn làm đáp án khi chưa biết dãy hội tụ.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Các định lý giới hạn</span>
+
+<XemMuc bai={3} />
+</div>

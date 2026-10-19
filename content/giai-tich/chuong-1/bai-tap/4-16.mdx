@@ -1,0 +1,61 @@
+---
+so: "4.16"
+muc: "4"
+so_sach: "4.16"
+tieu_de: "Mỗi số thực là sup của các số hữu tỉ nhỏ hơn nó"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Với $a\in\mathbb R$, chứng minh $\sup\{r\in\mathbb Q:r<a\}=a$.
+</De>
+
+<GoiY so={1}>
+Tính trù mật loại mọi ứng viên cận trên nhỏ hơn $a$.
+</GoiY>
+
+<GoiY so={2}>
+Với $c<a$, chọn hữu tỉ $r$ thỏa $c<r<a$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Mỗi số thực là sup của các số hữu tỉ nhỏ hơn nó. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Tính trù mật loại mọi ứng viên cận trên nhỏ hơn $a$.
+
+**Bước 4. Giải từng bước.**
+
+Đặt $S=\{r\in\mathbb Q:r<a\}$. Archimedes cho một số nguyên âm đủ nhỏ thuộc $S$, nên $S$ không rỗng. Mọi $r\in S$ nhỏ hơn $a$, nên $a$ là cận trên. Nếu $c<a$, tính trù mật cho $r\in S$ với $r>c$, nên $c$ không là cận trên. Vì thế $a$ là cận trên nhỏ nhất.
+
+**Bước 5. Kiểm tra.**
+
+Kết quả đúng dù $a$ hữu tỉ hay vô tỉ; $a$ không thuộc $S$ trong cả hai trường hợp.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Với $c<a$, chọn hữu tỉ $r$ thỏa $c<r<a$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không nhầm điều kiện $r<a$ với $r\le a$.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Tiên đề đầy đủ</span>
+
+<XemMuc bai={4} />
+</div>

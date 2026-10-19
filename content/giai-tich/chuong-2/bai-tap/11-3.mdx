@@ -1,0 +1,59 @@
+---
+so: "11.3"
+muc: "11"
+so_sach: "11.3"
+tieu_de: "Dãy con của các dãy dao động bị chặn"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Với $s_n=\cos(n\pi/3)$, $t_n=3/(4n+1)$, $u_n=(-1/2)^n$, $v_n=(-1)^n+1/n$, thực hiện đủ năm yêu cầu: dãy con đơn điệu; tập giới hạn dãy con mở rộng; limsup và liminf; hội tụ hoặc giới hạn vô hạn; bị chặn.
+</De>
+
+<GoiY so={1}>
+Tách lớp chỉ số để phần tuần hoàn trở thành hằng.
+</GoiY>
+
+<GoiY so={2}>
+Cos có chu kỳ 6; với $v_n$ xét $2k$ và $2k-1$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Dãy con của các dãy dao động bị chặn. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Tách lớp chỉ số để phần tuần hoàn trở thành hằng.
+
+**Bước 4. Giải từng bước.**
+
+$s_n$: chọn $s_{6k}=1$ hằng; tập giới hạn $\{-1,-1/2,1/2,1\}$, liminf $-1$, limsup 1, không hội tụ, bị chặn. Không có giới hạn khác vì mọi số hạng thuộc tập hữu hạn này. $t_n$: chính dãy giảm về 0, tập giới hạn $\{0\}$, hai cận 0, hội tụ và bị chặn. $u_n$: chọn $u_{2k}=4^{-k}$ giảm; toàn dãy về 0, nên tập $\{0\}$, hai cận 0, bị chặn. $v_n$: chọn $v_{2k}=1+1/(2k)$ giảm; hai đuôi chẵn/lẻ về $1,-1$, nên tập $\{-1,1\}$, liminf $-1$, limsup 1, không hội tụ nhưng bị chặn. Không dãy nào tiến tới vô cực.
+
+**Bước 5. Kiểm tra.**
+
+Cos tại bội $\pi/3$ không nhận giá trị 0.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Cos có chu kỳ 6; với $v_n$ xét $2k$ và $2k-1$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Một số giá trị lặp không đồng nghĩa mọi số ở giữa đều là giới hạn dãy con.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Dãy con</span>
+</div>

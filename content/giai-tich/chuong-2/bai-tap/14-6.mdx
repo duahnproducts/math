@@ -1,0 +1,61 @@
+---
+so: "14.6"
+muc: "14"
+so_sach: "14.6"
+tieu_de: "Chuỗi hội tụ tuyệt đối nhân dãy bị chặn"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+(a) Nếu $\sum|a_n|$ hội tụ và $(b_n)$ bị chặn, chứng minh $\sum a_nb_n$ hội tụ. (b) Giải thích Định lý 14.7 “hội tụ tuyệt đối kéo theo hội tụ” là trường hợp riêng.
+</De>
+
+<GoiY so={1}>
+Chặn $|a_nb_n|$ bằng một hằng số nhân $|a_n|$.
+</GoiY>
+
+<GoiY so={2}>
+Nếu $|b_n|\le M$, tổng trị tuyệt đối không vượt $M\sum|a_n|$; cho (b), lấy $b_n=1$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Chuỗi hội tụ tuyệt đối nhân dãy bị chặn. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Chặn $|a_nb_n|$ bằng một hằng số nhân $|a_n|$.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Từ chặn đều $|b_n|\le M$, với mọi $N>m$ có $|\sum_{n=m+1}^Na_nb_n|\le M\sum_{n=m+1}^N|a_n|$. Tiêu chuẩn Cauchy của chuỗi $\sum|a_n|$ làm vế phải nhỏ tùy ý, nên chuỗi tích hội tụ. Cũng suy ra hội tụ tuyệt đối bằng so sánh.
+
+**b.** Lấy $b_n=1$, khi đó tích là chính $a_n$, nên thu được 14.7.
+
+**Bước 5. Kiểm tra.**
+
+Nếu $M=0$, chuỗi tích bằng 0; nếu $M>0$ dùng sai số $\varepsilon/M$ cho đuôi.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Nếu $|b_n|\le M$, tổng trị tuyệt đối không vượt $M\sum|a_n|$; cho (b), lấy $b_n=1$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Hội tụ có điều kiện của $\sum a_n$ không đủ cho mọi dãy nhân bị chặn.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Chuỗi số</span>
+</div>

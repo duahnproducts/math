@@ -1,0 +1,63 @@
+---
+so: "7.4"
+muc: "7"
+so_sach: "7.4"
+tieu_de: "Hữu tỉ và vô tỉ không được bảo toàn qua giới hạn"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Cho ví dụ (a) dãy toàn số vô tỉ hội tụ đến số hữu tỉ; (b) dãy toàn số hữu tỉ hội tụ đến số vô tỉ.
+</De>
+
+<GoiY so={1}>
+Thu nhỏ một số vô tỉ và lấy các xấp xỉ thập phân hữu hạn.
+</GoiY>
+
+<GoiY so={2}>
+Dùng $x_n=\sqrt2/n$ và $r_n=\lfloor10^n\sqrt2\rfloor/10^n$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Hữu tỉ và vô tỉ không được bảo toàn qua giới hạn. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Thu nhỏ một số vô tỉ và lấy các xấp xỉ thập phân hữu hạn.
+
+**Bước 4. Giải từng bước.**
+
+**a.** $x_n$ vô tỉ: nếu hữu tỉ thì $nx_n=\sqrt2$ hữu tỉ. Vì $|x_n|=\sqrt2/n\to0$, giới hạn 0 hữu tỉ.
+
+**b.** Tử của $r_n$ nguyên nên $r_n$ hữu tỉ. Định nghĩa phần nguyên cho $0\le\sqrt2-r_n<10^{-n}$, nên $r_n\to\sqrt2$, là số vô tỉ.
+
+**Bước 5. Kiểm tra.**
+
+Mọi số hạng trong (b) là số hữu tỉ, kể cả khi biểu thức định nghĩa có chứa $\sqrt2$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Dùng $x_n=\sqrt2/n$ và $r_n=\lfloor10^n\sqrt2\rfloor/10^n$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Giới hạn không nhất thiết cùng loại hữu tỉ/vô tỉ với các số hạng.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Giới hạn dãy số</span>
+
+<XemMuc bai={1} />
+</div>

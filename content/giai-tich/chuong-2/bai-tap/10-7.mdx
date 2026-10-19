@@ -1,0 +1,61 @@
+---
+so: "10.7"
+muc: "10"
+so_sach: "10.7"
+tieu_de: "Xấp xỉ sup bằng dãy trong tập"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Cho $S\subseteq\mathbb R$ không rỗng, bị chặn, $M=\sup S\notin S$. Chứng minh tồn tại $s_n\in S$ với $s_n\to M$.
+</De>
+
+<GoiY so={1}>
+Đặc trưng sup cho phần tử sát cận trên với sai số $1/n$.
+</GoiY>
+
+<GoiY so={2}>
+Chọn $M-1/n<s_n\le M$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Xấp xỉ sup bằng dãy trong tập. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Đặc trưng sup cho phần tử sát cận trên với sai số $1/n$.
+
+**Bước 4. Giải từng bước.**
+
+Vì $M-1/n<M$, nó không thể là cận trên của $S$. Chọn $s_n\in S$ lớn hơn số đó. Vì $M$ là cận trên, $0\le M-s_n<1/n$. Với $\varepsilon>0$, lấy $N>1/\varepsilon$; $n>N$ cho $|s_n-M|<\varepsilon$. Vậy dãy hội tụ đến $M$.
+
+**Bước 5. Kiểm tra.**
+
+Giả thiết $M\notin S$ làm $s_n<M$; cách dựng vẫn dùng được nếu $M\in S$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Chọn $M-1/n<s_n\le M$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Dãy được dựng chưa chắc đơn điệu; đề ở đây chỉ yêu cầu hội tụ.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Dãy đơn điệu và Cauchy</span>
+
+<XemMuc bai={4} />
+</div>

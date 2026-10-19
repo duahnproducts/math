@@ -1,0 +1,63 @@
+---
+so: "1.8"
+muc: "1"
+so_sach: "1.8"
+tieu_de: "Quy nạp bắt đầu ở chỉ số khác 1"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Dùng quy nạp bắt đầu ở $m$: (a) $n^2>n+1$ với mọi số nguyên $n\ge2$; (b) $n!>n^2$ với mọi số nguyên $n\ge4$.
+</De>
+
+<GoiY so={1}>
+Chọn đúng điểm bắt đầu cho từng bất đẳng thức.
+</GoiY>
+
+<GoiY so={2}>
+Trong (b), từ $n!>n^2$ cần so sánh $(n+1)n^2$ với $(n+1)^2$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Quy nạp bắt đầu ở chỉ số khác 1. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Chọn đúng điểm bắt đầu cho từng bất đẳng thức.
+
+**Bước 4. Giải từng bước.**
+
+**a.** $2^2>3$. Nếu $n^2>n+1$, thì $(n+1)^2=n^2+2n+1>3n+2>n+2$ với $n\ge2$.
+
+**b.** $4!=24>16$. Nếu $n!>n^2$, thì $(n+1)!>(n+1)n^2>(n+1)^2$ vì $n^2>n+1$ với $n\ge4$ theo (a).
+
+**Bước 5. Kiểm tra.**
+
+Cả hai bước đầu phải được kiểm tra riêng; kết quả (b) không đúng tại $n=3$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Trong (b), từ $n!>n^2$ cần so sánh $(n+1)n^2$ với $(n+1)^2$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Quy nạp không bắt buộc bắt đầu tại 1.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Số tự nhiên và quy nạp</span>
+
+<XemMuc bai={1} />
+</div>

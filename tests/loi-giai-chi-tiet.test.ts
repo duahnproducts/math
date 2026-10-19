@@ -12,7 +12,8 @@ const originals=files.filter(f=>f.includes('bai-tap'));
 const solutions=(s:string)=>[...s.matchAll(/<LoiGiai>([\s\S]*?)<\/LoiGiai>/g)].map(m=>m[1]);
 
 test('mọi trang bài tập hiện có đều có lời giải chia bước, không mất đề và hai tầng gợi ý',()=>{
-  expect(originals).toHaveLength(434);
+  expect(originals.filter(f=>f.includes('dai-so'))).toHaveLength(434);
+  expect(originals.filter(f=>f.includes('giai-tich'))).toHaveLength(163);
   for(const file of originals){
     const text=readFileSync(file,'utf8');
     expect(text,file).toContain('<De>');

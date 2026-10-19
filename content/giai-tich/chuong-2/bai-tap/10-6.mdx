@@ -1,0 +1,63 @@
+---
+so: "10.6"
+muc: "10"
+so_sach: "10.6"
+tieu_de: "Sai khác liên tiếp và tính Cauchy"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+(a) Nếu $|s_{n+1}-s_n|<2^{-n}$, chứng minh dãy Cauchy và hội tụ. (b) Kết luận có còn đúng nếu chỉ có $|s_{n+1}-s_n|<1/n$?
+</De>
+
+<GoiY so={1}>
+Cộng các sai khác liên tiếp và chặn bằng đuôi một chuỗi hình học.
+</GoiY>
+
+<GoiY so={2}>
+Với $m>n$, $|s_m-s_n|<\sum_{j=n}^{m-1}2^{-j}<2^{1-n}$; còn điều kiện $1/n$ có phản ví dụ từ tổng điều hòa.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Sai khác liên tiếp và tính Cauchy. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Cộng các sai khác liên tiếp và chặn bằng đuôi một chuỗi hình học.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Bất đẳng thức ở gợi ý theo tam giác. Với $\varepsilon>0$, chọn $N$ sao cho $2^{1-N}<\varepsilon$; mọi $m,n>N$ có khoảng cách nhỏ hơn $\varepsilon$. Dãy Cauchy nên hội tụ trong $\mathbb R$.
+
+**b.** Không. Lấy $s_n=\sum_{j=1}^n1/j$. Khi đó $s_{n+1}-s_n=1/(n+1)<1/n$. Nhưng $s_{2n}-s_n=\sum_{j=n+1}^{2n}1/j\ge1/2$, nên dãy không Cauchy.
+
+**Bước 5. Kiểm tra.**
+
+Phản ví dụ đáp ứng dấu nghiêm $<$ trong giả thiết.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Với $m>n$, $|s_m-s_n|<\sum_{j=n}^{m-1}2^{-j}<2^{1-n}$; còn điều kiện $1/n$ có phản ví dụ từ tổng điều hòa.
+
+</LoiGiai>
+
+<LoiHayMac>
+Sai khác liên tiếp tiến về 0 chưa đủ cho Cauchy.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Dãy đơn điệu và Cauchy</span>
+
+<XemMuc bai={4} />
+</div>

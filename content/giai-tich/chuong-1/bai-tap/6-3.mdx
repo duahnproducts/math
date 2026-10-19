@@ -1,0 +1,63 @@
+---
+so: "6.3"
+muc: "6"
+so_sach: "6.3"
+tieu_de: "Phần tử 0 và số đối của lát cắt"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+(a) Chứng minh $\alpha+0^*=\alpha$. (b) Định nghĩa lát cắt $-\alpha$ sao cho $\alpha+(-\alpha)=0^*$; $0^*=\{q\in\mathbb Q:q<0\}$.
+</De>
+
+<GoiY so={1}>
+Số đối phải loại cả điểm biên để vẫn không có phần tử lớn nhất.
+</GoiY>
+
+<GoiY so={2}>
+Đặt $-\alpha=\{q\in\mathbb Q:\exists r\notin\alpha,\ q<-r\}$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Phần tử 0 và số đối của lát cắt. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Số đối phải loại cả điểm biên để vẫn không có phần tử lớn nhất.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Nếu $a\in\alpha$ và $q<0$, thì $a+q<a$ nên thuộc $\alpha$. Nếu $a\in\alpha$, chọn $a'>a$ trong $\alpha$; $a=a'+(a-a')$ thuộc $\alpha+0^*$.
+
+**b.** Tập ở gợi ý không rỗng (chọn $r\notin\alpha$, lấy $q=-r-1$), đóng xuống và không có max (giữa $q$ và $-r$ còn hữu tỉ). Nếu $a\in\alpha$, mọi phần tử của $-\alpha$ nhỏ hơn $-a$, nên tập khác $\mathbb Q$. Với $q<-r$, $a<r$ nên $a+q<0$. Ngược lại, cho $t<0$, đặt $h=-t/2>0$. Chọn $a\in\alpha$ với $a+h\notin\alpha$: nếu không có, từ một phần tử $a_0$ suy ra $a_0+nh\in\alpha$ với mọi $n$, trái cận trên và Archimedes. Đặt $r=a+h$, $q=t-a$; khi đó $q<-r$ vì $t<-h$, nên $t=a+q$ thuộc tổng. Vậy tổng đúng là $0^*$.
+
+**Bước 5. Kiểm tra.**
+
+Nếu $\alpha=s^*$ với $s$ hữu tỉ, định nghĩa cho $-\alpha=(-s)^*$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Đặt $-\alpha=\{q\in\mathbb Q:\exists r\notin\alpha,\ q<-r\}$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Tập $\{-a:a\in\alpha\}$ đóng lên, không phải lát cắt đóng xuống.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Lát cắt Dedekind</span>
+
+<XemMuc bai={6} />
+</div>

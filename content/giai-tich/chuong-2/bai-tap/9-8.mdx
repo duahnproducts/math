@@ -1,0 +1,69 @@
+---
+so: "9.8"
+muc: "9"
+so_sach: "9.8"
+tieu_de: "Năm giới hạn vô hạn hoặc dao động"
+do_kho: de
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Tính giới hạn mở rộng nếu tồn tại: (a) $n^3$; (b) $-n^3$; (c) $(-n)^n$; (d) $1.01^n$; (e) $n^n$.
+</De>
+
+<GoiY so={1}>
+Kiểm tra riêng dấu và độ lớn.
+</GoiY>
+
+<GoiY so={2}>
+Hàm mũ với cơ số lớn hơn 1 tăng vô hạn; dấu luân phiên có thể phá giới hạn mở rộng.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Năm giới hạn vô hạn hoặc dao động. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Kiểm tra riêng dấu và độ lớn.
+
+**Bước 4. Giải từng bước.**
+
+**a.** $+\infty$, vì $n>M^{1/3}$ làm $n^3>M$.
+
+**b.** $-\infty$ theo đổi dấu.
+
+**c.** Không tồn tại: chỉ số chẵn cho $n^n\to+\infty$, chỉ số lẻ cho $-n^n\to-\infty$.
+
+**d.** $+\infty$; Bernoulli cho $1.01^n\ge1+0.01n$.
+
+**e.** $+\infty$ vì $n^n\ge n$.
+
+**Bước 5. Kiểm tra.**
+
+$(-n)^n$ khác $-n^n$ ở các chỉ số chẵn.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Hàm mũ với cơ số lớn hơn 1 tăng vô hạn; dấu luân phiên có thể phá giới hạn mở rộng.
+
+</LoiGiai>
+
+<LoiHayMac>
+Độ lớn tiến đến vô cực chưa bảo đảm dãy tiến tới $+\infty$.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Các định lý giới hạn</span>
+
+<XemMuc bai={3} />
+</div>

@@ -1,0 +1,61 @@
+---
+so: "11.5"
+muc: "11"
+so_sach: "11.5"
+tieu_de: "Liệt kê hữu tỉ và các giới hạn dãy con"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Cho $(q_n)$ liệt kê tất cả số hữu tỉ trong $(0,1]$. (a) Tìm tập giới hạn dãy con. (b) Tìm limsup, liminf.
+</De>
+
+<GoiY so={1}>
+Mỗi khoảng nhỏ quanh một điểm của $[0,1]$ chứa vô hạn hữu tỉ trong $(0,1]$.
+</GoiY>
+
+<GoiY so={2}>
+Chọn tăng chỉ số $n_k$ với $|q_{n_k}-x|<1/k$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Liệt kê hữu tỉ và các giới hạn dãy con. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Mỗi khoảng nhỏ quanh một điểm của $[0,1]$ chứa vô hạn hữu tỉ trong $(0,1]$.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Mọi giới hạn dãy con nằm trong $[0,1]$ do các số hạng ở đó và đoạn đóng. Với $x\in[0,1]$, khoảng lân cận bán kính $1/k$ chứa vô hạn số hữu tỉ của $(0,1]$. Chỉ hữu hạn số xuất hiện trước hoặc tại $n_{k-1}$, nên chọn được một số phù hợp có chỉ số $n_k>n_{k-1}$. Khi đó $q_{n_k}\to x$. Vậy tập giới hạn là $[0,1]$.
+
+**b.** Limsup là 1, liminf là 0.
+
+**Bước 5. Kiểm tra.**
+
+Điểm 0 không được liệt kê nhưng vẫn là giới hạn dãy con.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Chọn tăng chỉ số $n_k$ với $|q_{n_k}-x|<1/k$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không cho tập giới hạn chỉ bằng tập các số được liệt kê.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Dãy con</span>
+</div>

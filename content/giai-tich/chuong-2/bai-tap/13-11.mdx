@@ -1,0 +1,59 @@
+---
+so: "13.11"
+muc: "13"
+so_sach: "13.11"
+tieu_de: "Compact và dãy con hội tụ trong Euclid"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Với $E\subseteq\mathbb R^k$, chứng minh $E$ compact khi và chỉ khi mọi dãy trong $E$ có một dãy con hội tụ tới một điểm của $E$.
+</De>
+
+<GoiY so={1}>
+Dùng Heine–Borel và Bolzano–Weierstrass ở chiều thuận; ở chiều ngược chứng minh đóng và bị chặn.
+</GoiY>
+
+<GoiY so={2}>
+Nếu không bị chặn, chọn $\|x_n\|>n$; nếu không đóng, chọn dãy trong $E$ tiến đến điểm biên bị thiếu.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Compact và dãy con hội tụ trong Euclid. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Dùng Heine–Borel và Bolzano–Weierstrass ở chiều thuận; ở chiều ngược chứng minh đóng và bị chặn.
+
+**Bước 4. Giải từng bước.**
+
+Nếu $E$ compact, Heine–Borel cho $E$ đóng và bị chặn. Mọi dãy trong $E$ bị chặn nên có dãy con hội tụ trong $\mathbb R^k$ theo Bolzano–Weierstrass; tính đóng bảo đảm giới hạn thuộc $E$. Ngược lại, nếu $E$ không bị chặn, chọn $x_n\in E$ với $\|x_n\|>n$; mọi dãy con có chuẩn tăng vô hạn nên không thể hội tụ tới điểm thực, mâu thuẫn. Nếu $E$ không đóng, có $x\in\overline E\setminus E$ và dãy trong $E$ tiến đến $x$. Mọi dãy con vẫn tiến đến $x$, nên tính duy nhất giới hạn bác khả năng dãy con có giới hạn trong $E$. Vậy $E$ đóng và bị chặn, do đó compact.
+
+**Bước 5. Kiểm tra.**
+
+Nếu $E$ rỗng, hai vế đều đúng theo quy ước, không cần dựng dãy.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Nếu không bị chặn, chọn $\|x_n\|>n$; nếu không đóng, chọn dãy trong $E$ tiến đến điểm biên bị thiếu.
+
+</LoiGiai>
+
+<LoiHayMac>
+Đặc trưng đóng và bị chặn cho compact không đúng trong mọi không gian metric.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Không gian metric và compact</span>
+</div>

@@ -1,0 +1,65 @@
+---
+so: "9.11"
+muc: "9"
+so_sach: "9.11"
+tieu_de: "Cộng một dãy không đi tới âm vô cực"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Giả sử $s_n\to+\infty$. Chứng minh $s_n+t_n\to+\infty$ nếu (a) $\inf\{t_n:n\ge1\}>-\infty$; (b) $\lim t_n> -\infty$ tồn tại trong số thực mở rộng; (c) $(t_n)$ bị chặn.
+</De>
+
+<GoiY so={1}>
+Một cận dưới cho $t_n$ đủ để bảo đảm tổng tăng vượt mọi ngưỡng.
+</GoiY>
+
+<GoiY so={2}>
+Nếu $t_n\ge m$, yêu cầu $s_n>M-m$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Cộng một dãy không đi tới âm vô cực. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Một cận dưới cho $t_n$ đủ để bảo đảm tổng tăng vượt mọi ngưỡng.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Lấy cận dưới thực $m$. Với ngưỡng $M$, đuôi có $s_n>M-m$, nên tổng lớn hơn $M$.
+
+**b.** Nếu giới hạn $t$ hữu hạn, đuôi có $t_n>t-1$; nếu bằng $+\infty$, đuôi có $t_n>0$. Dùng lập luận (a) cho đuôi đó, hữu hạn số hạng đầu không ảnh hưởng.
+
+**c.** Bị chặn kéo theo bị chặn dưới, nên áp dụng (a).
+
+**Bước 5. Kiểm tra.**
+
+Không áp dụng khi $t_n\to-\infty$; ví dụ $t_n=-s_n$ làm tổng bằng 0.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Nếu $t_n\ge m$, yêu cầu $s_n>M-m$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không thực hiện phép cộng vô cực trái dấu.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Các định lý giới hạn</span>
+
+<XemMuc bai={3} />
+</div>

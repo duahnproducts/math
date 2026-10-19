@@ -1,0 +1,61 @@
+---
+so: "8.3"
+muc: "8"
+so_sach: "8.3"
+tieu_de: "Căn của dãy không âm tiến về 0"
+do_kho: de
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Nếu $s_n\ge0$ và $s_n\to0$, chứng minh $\sqrt{s_n}\to0$ bằng định nghĩa.
+</De>
+
+<GoiY so={1}>
+Muốn căn nhỏ hơn $\varepsilon$, cần số dưới căn nhỏ hơn $\varepsilon^2$.
+</GoiY>
+
+<GoiY so={2}>
+Áp dụng hội tụ của $s_n$ với sai số $\varepsilon^2$, không phải $\varepsilon$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Căn của dãy không âm tiến về 0. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Muốn căn nhỏ hơn $\varepsilon$, cần số dưới căn nhỏ hơn $\varepsilon^2$.
+
+**Bước 4. Giải từng bước.**
+
+Cho $\varepsilon>0$. Vì $s_n\to0$, có $N$ sao cho $n>N$ kéo theo $|s_n|<\varepsilon^2$. Do $s_n\ge0$, suy ra $|\sqrt{s_n}-0|=\sqrt{s_n}<\varepsilon$. Đây là định nghĩa giới hạn cần chứng minh.
+
+**Bước 5. Kiểm tra.**
+
+$\varepsilon^2>0$ nên có thể dùng trong định nghĩa hội tụ.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Áp dụng hội tụ của $s_n$ với sai số $\varepsilon^2$, không phải $\varepsilon$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không chia cho $\sqrt0$ khi dùng liên hợp ở giới hạn 0.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Chứng minh bằng định nghĩa giới hạn</span>
+
+<XemMuc bai={2} />
+</div>

@@ -1,0 +1,63 @@
+---
+so: "15.6"
+muc: "15"
+so_sach: "15.6"
+tieu_de: "Hội tụ của chuỗi và chuỗi bình phương"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+(a) Cho chuỗi $\sum a_n$ phân kỳ nhưng $\sum a_n^2$ hội tụ. (b) Giải thích nếu $a_n\ge0$ và $\sum a_n$ hội tụ thì $\sum a_n^2$ hội tụ. (c) Cho chuỗi $\sum a_n$ hội tụ nhưng $\sum a_n^2$ phân kỳ.
+</De>
+
+<GoiY so={1}>
+Dùng chuỗi p và chuỗi đan dấu để tách hội tụ có điều kiện khỏi hội tụ không âm.
+</GoiY>
+
+<GoiY so={2}>
+(a) Lấy $a_n=1/n$; (c) lấy $a_n=(-1)^n/\sqrt n$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Hội tụ của chuỗi và chuỗi bình phương. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Dùng chuỗi p và chuỗi đan dấu để tách hội tụ có điều kiện khỏi hội tụ không âm.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Điều hòa $\sum1/n$ phân kỳ, nhưng bình phương cho $\sum1/n^2$ hội tụ.
+
+**b.** Bài 14.7 với $p=2$ áp dụng; cụ thể đuôi có $0\le a_n\le1$ nên $a_n^2\le a_n$.
+
+**c.** Leibniz cho $\sum(-1)^n/\sqrt n$ hội tụ vì độ lớn giảm về 0, nhưng bình phương số hạng cho chuỗi điều hòa phân kỳ.
+
+**Bước 5. Kiểm tra.**
+
+Ở (c), bình phương bỏ dấu đan, đó là lý do khác với trường hợp không âm của (b).
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+(a) Lấy $a_n=1/n$; (c) lấy $a_n=(-1)^n/\sqrt n$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không áp dụng (b) cho một chuỗi có số hạng âm.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Chuỗi đan dấu và tiêu chuẩn tích phân</span>
+</div>

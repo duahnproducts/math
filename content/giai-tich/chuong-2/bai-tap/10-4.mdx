@@ -1,0 +1,61 @@
+---
+so: "10.4"
+muc: "10"
+so_sach: "10.4"
+tieu_de: "Vì sao tính đầy đủ không đúng trong Q"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Giải thích vì sao định lý dãy đơn điệu bị chặn hội tụ (10.2) và dãy Cauchy hội tụ (10.11) không đúng nếu chỉ xét giới hạn trong $\mathbb Q$.
+</De>
+
+<GoiY so={1}>
+Dùng các cắt thập phân hữu tỉ của một số vô tỉ.
+</GoiY>
+
+<GoiY so={2}>
+$q_n=\lfloor10^n\sqrt2\rfloor/10^n$ tăng, bị chặn và tiến đến $\sqrt2$ trong $\mathbb R$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Vì sao tính đầy đủ không đúng trong Q. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Dùng các cắt thập phân hữu tỉ của một số vô tỉ.
+
+**Bước 4. Giải từng bước.**
+
+Mỗi $q_n$ hữu tỉ; các cắt thập phân tăng không nghiêm và bị chặn bởi 2. Chặn $0\le\sqrt2-q_n<10^{-n}$ cho $q_n\to\sqrt2$ trong $\mathbb R$, nên $(q_n)$ là Cauchy. Nếu có giới hạn hữu tỉ $q$, nó cũng là giới hạn thực; tính duy nhất buộc $q=\sqrt2$, mâu thuẫn. Vì vậy cùng một dãy bác cả hai định lý khi yêu cầu giới hạn phải thuộc $\mathbb Q$.
+
+**Bước 5. Kiểm tra.**
+
+Phản ví dụ không phủ nhận hội tụ trong $\mathbb R$; nó chỉ thiếu giới hạn thuộc $\mathbb Q$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+$q_n=\lfloor10^n\sqrt2\rfloor/10^n$ tăng, bị chặn và tiến đến $\sqrt2$ trong $\mathbb R$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Bị chặn bởi số hữu tỉ không bảo đảm giới hạn hữu tỉ.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Dãy đơn điệu và Cauchy</span>
+
+<XemMuc bai={4} />
+</div>

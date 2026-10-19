@@ -1,0 +1,61 @@
+---
+so: "10.3"
+muc: "10"
+so_sach: "10.3"
+tieu_de: "Chặn trên cho các cắt thập phân"
+do_kho: de
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Với chữ số $0\le d_j\le9$, đặt $s_n=K+\sum_{j=1}^nd_j/10^j$, là cắt thập phân của $K.d_1d_2\ldots$. Chứng minh $s_n<K+1$ với mọi $n\ge1$.
+</De>
+
+<GoiY so={1}>
+Thay mọi chữ số bằng 9 để chặn trên.
+</GoiY>
+
+<GoiY so={2}>
+$\sum_{j=1}^n9/10^j=1-10^{-n}<1$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Chặn trên cho các cắt thập phân. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Thay mọi chữ số bằng 9 để chặn trên.
+
+**Bước 4. Giải từng bước.**
+
+Vì mỗi $d_j\le9$, $s_n\le K+\sum_{j=1}^n9/10^j=K+1-10^{-n}<K+1$. Đẳng thức tổng hình học dùng tỉ số $1/10$.
+
+**Bước 5. Kiểm tra.**
+
+Dù tất cả chữ số đều 9, mọi tổng hữu hạn vẫn nhỏ hơn $K+1$; giới hạn có thể bằng $K+1$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+$\sum_{j=1}^n9/10^j=1-10^{-n}<1$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không suy ra giới hạn cũng nhỏ hơn nghiêm ngặt $K+1$.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Dãy đơn điệu và Cauchy</span>
+
+<XemMuc bai={4} />
+</div>

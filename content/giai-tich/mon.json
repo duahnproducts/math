@@ -11,8 +11,33 @@
       "so": 1,
       "ten": "Nền tảng số thực (§1–§6)",
       "ten_en": "The Real Number System",
-      "muc": [],
-      "ghi_chu": "6 bài giảng theo Ross. Bài tập tự soạn ở mục 8 của từng bài có lời giải chi tiết theo sáu bước. Phần Theo sách chưa có.",
+      "muc": [
+        {
+          "so": "1",
+          "ten": "Số tự nhiên và quy nạp"
+        },
+        {
+          "so": "2",
+          "ten": "Số hữu tỉ"
+        },
+        {
+          "so": "3",
+          "ten": "Số thực và thứ tự"
+        },
+        {
+          "so": "4",
+          "ten": "Tiên đề đầy đủ"
+        },
+        {
+          "so": "5",
+          "ten": "Các ký hiệu vô cực"
+        },
+        {
+          "so": "6",
+          "ten": "Lát cắt Dedekind"
+        }
+      ],
+      "ghi_chu": "6 bài giảng theo Ross §1–§6. Có 56 bài tập trong sách, đề diễn đạt lại, hai tầng gợi ý và lời giải sáu bước. Bài tự luyện cuối bài giảng được giữ riêng. Phần Theo sách chưa có trên web.",
       "tai_ve": [
         {
           "ten": "Bài giảng Ross §1–§10 (PDF, 37 trang)",
@@ -28,10 +53,47 @@
     },
     {
       "so": 2,
-      "ten": "Dãy số và giới hạn (§7–§10)",
-      "ten_en": "Sequences",
-      "muc": [],
-      "ghi_chu": "4 bài giảng theo Ross, mới phủ §7–§10 của Chương 2. Bài tập tự soạn ở mục 8 của từng bài có lời giải chi tiết theo sáu bước. Phần Theo sách chưa có.",
+      "ten": "Dãy số và chuỗi (§7–§15)",
+      "ten_en": "Sequences and Series",
+      "muc": [
+        {
+          "so": "7",
+          "ten": "Giới hạn dãy số"
+        },
+        {
+          "so": "8",
+          "ten": "Chứng minh bằng định nghĩa giới hạn"
+        },
+        {
+          "so": "9",
+          "ten": "Các định lý giới hạn"
+        },
+        {
+          "so": "10",
+          "ten": "Dãy đơn điệu và Cauchy"
+        },
+        {
+          "so": "11",
+          "ten": "Dãy con"
+        },
+        {
+          "so": "12",
+          "ten": "Giới hạn trên và giới hạn dưới"
+        },
+        {
+          "so": "13",
+          "ten": "Không gian metric và compact"
+        },
+        {
+          "so": "14",
+          "ten": "Chuỗi số"
+        },
+        {
+          "so": "15",
+          "ten": "Chuỗi đan dấu và tiêu chuẩn tích phân"
+        }
+      ],
+      "ghi_chu": "4 bài giảng theo Ross §7–§10; bài tập đã phủ §7–§15. Có 107 bài tập trong sách, đề diễn đạt lại, hai tầng gợi ý và lời giải sáu bước. Bài tự luyện cuối bài giảng được giữ riêng. Phần Theo sách chưa có trên web.",
       "tai_ve": [
         {
           "ten": "Bài giảng Ross §1–§10 (PDF, 37 trang)",

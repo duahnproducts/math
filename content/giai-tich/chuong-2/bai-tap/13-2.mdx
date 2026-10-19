@@ -1,0 +1,61 @@
+---
+so: "13.2"
+muc: "13"
+so_sach: "13.2"
+tieu_de: "Hội tụ tọa độ và hội tụ Euclid"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+(a) Chứng minh $|x_j-y_j|\le d(x,y)\le\sqrt k\max_i|x_i-y_i|$ cho metric Euclid $d$. (b) Chứng minh dãy trong $\mathbb R^k$ hội tụ khi và chỉ khi mọi tọa độ hội tụ.
+</De>
+
+<GoiY so={1}>
+So sánh tổng bình phương với một số hạng và với $k$ lần số hạng lớn nhất.
+</GoiY>
+
+<GoiY so={2}>
+Cho mỗi tọa độ sai dưới $\varepsilon/\sqrt k$ rồi dùng ngưỡng chung.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Hội tụ tọa độ và hội tụ Euclid. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+So sánh tổng bình phương với một số hạng và với $k$ lần số hạng lớn nhất.
+
+**Bước 4. Giải từng bước.**
+
+**a.** $|x_j-y_j|^2\le\sum_i|x_i-y_i|^2\le k\max_i|x_i-y_i|^2$. Lấy căn các lượng không âm được hai chặn.
+
+**b.** Nếu $d(x^{(n)},x)\to0$, chặn trái cho từng tọa độ hội tụ tới $x_j$. Ngược lại, nếu mỗi tọa độ hội tụ tới $x_j$, với $\varepsilon>0$ chọn $N_j$ cho sai số tọa độ dưới $\varepsilon/\sqrt k$. Với $n>\max_jN_j$, chặn phải cho $d(x^{(n)},x)<\varepsilon$.
+
+**Bước 5. Kiểm tra.**
+
+Điểm giới hạn được xác định bằng bộ $k$ giới hạn tọa độ.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Cho mỗi tọa độ sai dưới $\varepsilon/\sqrt k$ rồi dùng ngưỡng chung.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không bỏ hệ số $\sqrt k$ trong chặn trên Euclid.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Không gian metric và compact</span>
+</div>

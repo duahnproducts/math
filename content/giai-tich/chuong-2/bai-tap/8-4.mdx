@@ -1,0 +1,61 @@
+---
+so: "8.4"
+muc: "8"
+so_sach: "8.4"
+tieu_de: "Dãy bị chặn nhân dãy tiến về 0"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Cho $|t_n|\le M$ với mọi $n$ và $s_n\to0$. Chứng minh $s_nt_n\to0$ bằng định nghĩa.
+</De>
+
+<GoiY so={1}>
+Dùng chặn đều để loại sự phụ thuộc vào $t_n$.
+</GoiY>
+
+<GoiY so={2}>
+Lấy $B=\max\{1,M\}$ và yêu cầu $|s_n|<\varepsilon/B$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Dãy bị chặn nhân dãy tiến về 0. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Dùng chặn đều để loại sự phụ thuộc vào $t_n$.
+
+**Bước 4. Giải từng bước.**
+
+Chọn $B\ge1$ như trên. Cho $\varepsilon>0$, có $N$ sao cho $n>N$ kéo theo $|s_n|<\varepsilon/B$. Khi đó $|s_nt_n|\le B|s_n|<\varepsilon$. Vậy tích tiến về 0, kể cả khi $t_n$ không hội tụ.
+
+**Bước 5. Kiểm tra.**
+
+Chọn $B\ge1$ tránh chia cho 0 nếu tất cả $t_n=0$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Lấy $B=\max\{1,M\}$ và yêu cầu $|s_n|<\varepsilon/B$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Bị chặn không đồng nghĩa có giới hạn, nên không được dùng định lý tích hai giới hạn khi thiếu hội tụ của $t_n$.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Chứng minh bằng định nghĩa giới hạn</span>
+
+<XemMuc bai={2} />
+</div>

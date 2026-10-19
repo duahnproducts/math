@@ -1,0 +1,65 @@
+---
+so: "3.7"
+muc: "3"
+so_sach: "3.7"
+tieu_de: "Khoảng cách và khoảng trên trục số"
+do_kho: de
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Chứng minh: (a) $|b|<a\iff-a<b<a$; (b) $|a-b|<c\iff b-c<a<b+c$; (c) $|a-b|\le c\iff b-c\le a\le b+c$.
+</De>
+
+<GoiY so={1}>
+Trị tuyệt đối đo khoảng cách đến 0; trừ $b$ để chuyển tâm.
+</GoiY>
+
+<GoiY so={2}>
+Dùng $|u|=\max\{u,-u\}$, rồi cộng $b$ vào cả hai bất đẳng thức.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Khoảng cách và khoảng trên trục số. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Trị tuyệt đối đo khoảng cách đến 0; trừ $b$ để chuyển tâm.
+
+**Bước 4. Giải từng bước.**
+
+**a.** $|b|<a$ tương đương đồng thời $b<a$ và $-b<a$, tức $-a<b<a$.
+
+**b.** Thay $b$ trong (a) bằng $a-b$, ngưỡng bằng $c$: $-c<a-b<c$. Cộng $b$ cho kết quả.
+
+**c.** Làm tương tự với dấu không nghiêm, dựa vào 3.5(a).
+
+**Bước 5. Kiểm tra.**
+
+Với $c<0$, cả hai điều kiện ở (b), (c) đều không thể xảy ra.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Dùng $|u|=\max\{u,-u\}$, rồi cộng $b$ vào cả hai bất đẳng thức.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không đổi $<$ thành $\le$ khi chuyển biểu diễn khoảng.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Số thực và thứ tự</span>
+
+<XemMuc bai={3} />
+</div>

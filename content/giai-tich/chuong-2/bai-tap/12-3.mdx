@@ -1,0 +1,59 @@
+---
+so: "12.3"
+muc: "12"
+so_sach: "12.3"
+tieu_de: "Tính trên hai dãy tuần hoàn"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Cho $s_n$ lặp chu kỳ $(0,1,2,1)$ và $t_n$ lặp $(2,1,1,0)$. Tính (a) $\liminf s_n+\liminf t_n$; (b) $\liminf(s_n+t_n)$; (c) $\liminf s_n+\limsup t_n$; (d) $\limsup(s_n+t_n)$; (e) $\limsup s_n+\limsup t_n$; (f) $\liminf(s_nt_n)$; (g) $\limsup(s_nt_n)$.
+</De>
+
+<GoiY so={1}>
+Mỗi đuôi của một dãy tuần hoàn chứa đầy đủ các giá trị trong chu kỳ.
+</GoiY>
+
+<GoiY so={2}>
+Tổng có chu kỳ $(2,2,3,1)$, tích có chu kỳ $(0,1,2,0)$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Tính trên hai dãy tuần hoàn. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Mỗi đuôi của một dãy tuần hoàn chứa đầy đủ các giá trị trong chu kỳ.
+
+**Bước 4. Giải từng bước.**
+
+Cả $s,t$ có liminf 0 và limsup 2. Tổng có min 1 và max 3; tích có min 0 và max 2 trong chu kỳ. Suy ra **a** 0; **b** 1; **c** 2; **d** 3; **e** 4; **f** 0; **g** 2.
+
+**Bước 5. Kiểm tra.**
+
+Kết quả $\limsup(s+t)=3<4=\limsup s+\limsup t$ cho thấy bất đẳng thức có thể nghiêm.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Tổng có chu kỳ $(2,2,3,1)$, tích có chu kỳ $(0,1,2,0)$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không tự cộng hai limsup như quy tắc cộng giới hạn thường.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Giới hạn trên và giới hạn dưới</span>
+</div>

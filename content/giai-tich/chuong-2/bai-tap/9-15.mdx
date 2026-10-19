@@ -1,0 +1,61 @@
+---
+so: "9.15"
+muc: "9"
+so_sach: "9.15"
+tieu_de: "Giai thừa thắng hàm mũ cố định"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Chứng minh $a^n/n!\to0$ với mọi $a\in\mathbb R$.
+</De>
+
+<GoiY so={1}>
+Tỉ số độ lớn của hai số hạng liên tiếp có mẫu $n+1$.
+</GoiY>
+
+<GoiY so={2}>
+Với $a\ne0$, tỉ số bằng $|a|/(n+1)\to0<1$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Giai thừa thắng hàm mũ cố định. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Tỉ số độ lớn của hai số hạng liên tiếp có mẫu $n+1$.
+
+**Bước 4. Giải từng bước.**
+
+Nếu $a=0$, mọi số hạng bằng 0. Nếu $a\ne0$, đặt $s_n=a^n/n!\ne0$. Tính $|s_{n+1}/s_n|=|a|/(n+1)$, có giới hạn 0. Dùng 9.12(a) suy ra $s_n\to0$, kể cả khi $a$ âm.
+
+**Bước 5. Kiểm tra.**
+
+$a$ là hằng số không phụ thuộc $n$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Với $a\ne0$, tỉ số bằng $|a|/(n+1)\to0<1$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không áp dụng cho cơ số cũng thay đổi theo $n$ như $n^n/n!$.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Các định lý giới hạn</span>
+
+<XemMuc bai={3} />
+</div>

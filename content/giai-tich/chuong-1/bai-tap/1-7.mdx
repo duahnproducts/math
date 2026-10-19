@@ -1,0 +1,61 @@
+---
+so: "1.7"
+muc: "1"
+so_sach: "1.7"
+tieu_de: "Chia hết cho 36"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Chứng minh $7^n-6n-1$ chia hết cho 36 với $n\ge1$.
+</De>
+
+<GoiY so={1}>
+Giữ nguyên biểu thức quy nạp khi nhân với 7.
+</GoiY>
+
+<GoiY so={2}>
+$7^{n+1}-6(n+1)-1=7(7^n-6n-1)+36n$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Chia hết cho 36. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Giữ nguyên biểu thức quy nạp khi nhân với 7.
+
+**Bước 4. Giải từng bước.**
+
+Với $n=1$, biểu thức bằng 0. Nếu $7^n-6n-1=36m$, biểu thức ở $n+1$ bằng $36(7m+n)$. Vì $7m+n$ nguyên, mệnh đề truyền từ $n$ sang $n+1$.
+
+**Bước 5. Kiểm tra.**
+
+Khai triển vế phải: $7^{n+1}-42n-7+36n=7^{n+1}-6n-7$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+$7^{n+1}-6(n+1)-1=7(7^n-6n-1)+36n$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không được bỏ số hạng tuyến tính $6n$ khi quy nạp.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Số tự nhiên và quy nạp</span>
+
+<XemMuc bai={1} />
+</div>

@@ -1,0 +1,116 @@
+---
+so: "4.4"
+muc: "4"
+so_sach: "4.4"
+tieu_de: "Cận dưới đúng của từng tập"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Với mỗi tập sau, tìm $\inf$ trong $\mathbb R$ nếu có; nếu không, ghi không có inf thực.
+
+Các tập được xét (cùng ký hiệu với bài 4.1):
+
+| Ý | Tập |
+| --- | --- |
+| a | $[0,1]$ |
+| b | $(0,1)$ |
+| c | $\{2,7\}$ |
+| d | $\{\pi,e\}$ |
+| e | $\{1/n:n\ge1\}$ |
+| f | $\{0\}$ |
+| g | $[0,1]\cup[2,3]$ |
+| h | $\bigcup_{n\ge1}[2n,2n+1]$ |
+| i | $\bigcap_{n\ge1}[-1/n,1+1/n]$ |
+| j | $\{1-1/(3n):n\ge1\}$ |
+| k | $\{n+(-1)^n/n:n\ge1\}$ |
+| l | $\{r\in\mathbb Q:r<2\}$ |
+| m | $\{r\in\mathbb Q:r^2<4\}$ |
+| n | $\{r\in\mathbb Q:r^2<2\}$ |
+| o | $\{x\in\mathbb R:x<0\}$ |
+| p | $\{1,\pi/3,\pi^2,10\}$ |
+| q | $\{0,1,2,4,8,16\}$ |
+| r | $\bigcap_{n\ge1}(1-1/n,1+1/n)$ |
+| s | $\{1/p:p\in\mathbb P\}$, với $\mathbb P$ là tập số nguyên tố |
+| t | $\{x\in\mathbb R:x^3<8\}$ |
+| u | $\{x^2:x\in\mathbb R\}$ |
+| v | $\{\cos(n\pi/3):n\ge1\}$ |
+| w | $\{\sin(n\pi/3):n\ge1\}$ |
+</De>
+
+<GoiY so={1}>
+Cận dưới đúng là cận dưới lớn nhất.
+</GoiY>
+
+<GoiY so={2}>
+Muốn loại một số lớn hơn đầu mút dưới, tìm một phần tử nhỏ hơn số đó.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Cận dưới đúng của từng tập. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Cận dưới đúng là cận dưới lớn nhất.
+
+**Bước 4. Giải từng bước.**
+
+Dùng cột $\inf$ trong bảng:
+
+| Ý | $\inf$ | $\sup$ |
+| --- | --- | --- |
+| a, b | $0$ | $1$ |
+| c | $2$ | $7$ |
+| d | $e$ | $\pi$ |
+| e | $0$ | $1$ |
+| f | $0$ | $0$ |
+| g | $0$ | $3$ |
+| h | $2$ | $+\infty$ |
+| i | $0$ | $1$ |
+| j | $2/3$ | $1$ |
+| k | $0$ | $+\infty$ |
+| l | $-\infty$ | $2$ |
+| m | $-2$ | $2$ |
+| n | $-\sqrt2$ | $\sqrt2$ |
+| o | $-\infty$ | $0$ |
+| p | $1$ | $10$ |
+| q | $0$ | $16$ |
+| r | $1$ | $1$ |
+| s | $0$ | $1/2$ |
+| t | $-\infty$ | $2$ |
+| u | $0$ | $+\infty$ |
+| v | $-1$ | $1$ |
+| w | $-\sqrt3/2$ | $\sqrt3/2$ |
+
+Các ý l, o, t không có inf thực. Mọi đầu mút hữu hạn ở cột $\inf$ là đáp án. Với (e), $1/n$ gần 0 tùy ý; với (s), các số nguyên tố lớn tùy ý làm $1/p$ gần 0; do đó không có cận dưới dương. Với các tập hữu tỉ (m), (n), tính trù mật cho các điểm sát $-2$, $-\sqrt2$ từ bên phải. Với (b), mọi số dương đều có một phần tử trong $(0,1)$ nhỏ hơn nó. Các đầu mút dưới còn lại đều đạt được.
+
+**Bước 5. Kiểm tra.**
+
+$\inf(0,1)=0$ nhưng $0\notin(0,1)$; inf không đồng nghĩa min.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Muốn loại một số lớn hơn đầu mút dưới, tìm một phần tử nhỏ hơn số đó.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không viết $-\infty$ là một số thực trong §4.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Tiên đề đầy đủ</span>
+
+<XemMuc bai={4} />
+</div>

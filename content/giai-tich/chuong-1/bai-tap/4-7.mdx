@@ -1,0 +1,63 @@
+---
+so: "4.7"
+muc: "4"
+so_sach: "4.7"
+tieu_de: "Bao hàm và hợp của các tập bị chặn"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Cho $S,T\subseteq\mathbb R$ không rỗng, bị chặn. (a) Nếu $S\subseteq T$, chứng minh $\inf T\le\inf S\le\sup S\le\sup T$. (b) Không cần bao hàm, chứng minh $\sup(S\cup T)=\max\{\sup S,\sup T\}$.
+</De>
+
+<GoiY so={1}>
+Cận trên của tập lớn cũng là cận trên của tập con.
+</GoiY>
+
+<GoiY so={2}>
+Ở (b), chứng minh hai chiều bất đẳng thức với $M=\max\{\sup S,\sup T\}$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Bao hàm và hợp của các tập bị chặn. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Cận trên của tập lớn cũng là cận trên của tập con.
+
+**Bước 4. Giải từng bước.**
+
+**a.** $\sup T$ chặn mọi phần tử $S$, nên $\sup S\le\sup T$. Tương tự $\inf T$ là cận dưới của $S$, nên $\inf T\le\inf S$. Bất đẳng thức giữa do 4.6.
+
+**b.** Mọi phần tử của hợp không vượt $M$, nên $\sup(S\cup T)\le M$. Mặt khác hợp chứa cả $S,T$, nên sup hợp không nhỏ hơn từng sup. Vậy sup hợp ít nhất là $M$; hai chiều cho đẳng thức.
+
+**Bước 5. Kiểm tra.**
+
+Phần (b) không dùng $S\subseteq T$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Ở (b), chứng minh hai chiều bất đẳng thức với $M=\max\{\sup S,\sup T\}$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không cộng hai sup khi đang xét hợp.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Tiên đề đầy đủ</span>
+
+<XemMuc bai={4} />
+</div>

@@ -1,0 +1,61 @@
+---
+so: "13.3"
+muc: "13"
+so_sach: "13.3"
+tieu_de: "Metric sup trên không gian dãy bị chặn"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Gọi $B$ là tập các dãy thực bị chặn. (a) Chứng minh $d(x,y)=\sup_{j\ge1}|x_j-y_j|$ là metric trên $B$. (b) $d^*(x,y)=\sum_{j=1}^\infty|x_j-y_j|$ có là metric trên toàn bộ $B$ không?
+</De>
+
+<GoiY so={1}>
+Metric phải cho một khoảng cách thực hữu hạn cho mọi cặp điểm.
+</GoiY>
+
+<GoiY so={2}>
+Chặn hai dãy bảo đảm sup hữu hạn, nhưng không bảo đảm tổng vô hạn hữu hạn.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Metric sup trên không gian dãy bị chặn. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Metric phải cho một khoảng cách thực hữu hạn cho mọi cặp điểm.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Nếu $|x_j|\le M$, $|y_j|\le N$ thì $|x_j-y_j|\le M+N$, nên sup xác định hữu hạn. Đối xứng và không âm hiển nhiên; $d=0$ khi và chỉ khi mọi tọa độ bằng nhau. Với mỗi $j$, $|x_j-z_j|\le|x_j-y_j|+|y_j-z_j|\le d(x,y)+d(y,z)$; lấy sup cho tam giác.
+
+**b.** Không. Hai dãy bị chặn $x=(0,0,\ldots)$, $y=(1,1,\ldots)$ cho tổng khoảng cách $1+1+\cdots=+\infty$, không là một số thực.
+
+**Bước 5. Kiểm tra.**
+
+Sup không đòi đạt tại một chỉ số cụ thể.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Chặn hai dãy bảo đảm sup hữu hạn, nhưng không bảo đảm tổng vô hạn hữu hạn.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không coi metric mở rộng cho phép $+\infty$ là metric thông thường của đề.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Không gian metric và compact</span>
+</div>

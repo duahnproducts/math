@@ -1,0 +1,61 @@
+---
+so: "11.9"
+muc: "11"
+so_sach: "11.9"
+tieu_de: "Tập giới hạn dãy con phải đóng"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+(a) Chứng minh $[a,b]$ là tập đóng. (b) Có dãy số thực nào có tập tất cả giới hạn dãy con đúng bằng $(0,1)$ không? Giải thích.
+</De>
+
+<GoiY so={1}>
+Giới hạn của các điểm trong đoạn vẫn nằm trong đoạn; có thể chọn đường chéo giữa các dãy con.
+</GoiY>
+
+<GoiY so={2}>
+Nếu mỗi $1/k$ là giới hạn dãy con, chọn $n_k>n_{k-1}$ với $|s_{n_k}-1/k|<1/k$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Tập giới hạn dãy con phải đóng. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Giới hạn của các điểm trong đoạn vẫn nằm trong đoạn; có thể chọn đường chéo giữa các dãy con.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Nếu $x_n\in[a,b]$ và $x_n\to x$, bảo toàn thứ tự cho $a\le x\le b$. Vậy đoạn chứa mọi giới hạn của dãy trong nó, nên đóng.
+
+**b.** Không. Giả sử tập giới hạn đúng là $(0,1)$. Với $k\ge2$, $1/k$ là giới hạn dãy con, nên có số hạng gần $1/k$ tùy ý ở chỉ số lớn tùy ý. Chọn $n_k$ như gợi ý, được $|s_{n_k}|<2/k\to0$. Vậy 0 cũng là giới hạn dãy con, trái $0\notin(0,1)$.
+
+**Bước 5. Kiểm tra.**
+
+Lập luận chọn chỉ số tăng sử dụng “giới hạn dãy con”, không chỉ dùng sự có mặt của giá trị trong dãy.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Nếu mỗi $1/k$ là giới hạn dãy con, chọn $n_k>n_{k-1}$ với $|s_{n_k}-1/k|<1/k$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Tập giá trị và tập giới hạn dãy con là hai khái niệm khác nhau.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Dãy con</span>
+</div>

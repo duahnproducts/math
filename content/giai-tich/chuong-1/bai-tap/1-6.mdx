@@ -1,0 +1,61 @@
+---
+so: "1.6"
+muc: "1"
+so_sach: "1.6"
+tieu_de: "Chia hết cho 7"
+do_kho: de
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Chứng minh $11^n-4^n$ chia hết cho 7 với mọi $n\ge1$.
+</De>
+
+<GoiY so={1}>
+Viết biểu thức ở $n+1$ thành bội của biểu thức ở $n$ cộng một bội của 7.
+</GoiY>
+
+<GoiY so={2}>
+Dùng $11^{n+1}-4^{n+1}=11(11^n-4^n)+7\cdot4^n$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Chia hết cho 7. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Viết biểu thức ở $n+1$ thành bội của biểu thức ở $n$ cộng một bội của 7.
+
+**Bước 4. Giải từng bước.**
+
+Ở $n=1$, hiệu bằng 7. Giả sử $11^n-4^n=7m$ với $m$ nguyên. Đẳng thức ở gợi ý cho $11^{n+1}-4^{n+1}=7(11m+4^n)$, là bội của 7. Quy nạp hoàn tất.
+
+**Bước 5. Kiểm tra.**
+
+Cả $11m$ và $4^n$ đều nguyên.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Dùng $11^{n+1}-4^{n+1}=11(11^n-4^n)+7\cdot4^n$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Phải chứng minh thương là số nguyên, không chỉ viết phép chia.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Số tự nhiên và quy nạp</span>
+
+<XemMuc bai={1} />
+</div>

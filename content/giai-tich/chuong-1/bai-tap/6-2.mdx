@@ -1,0 +1,61 @@
+---
+so: "6.2"
+muc: "6"
+so_sach: "6.2"
+tieu_de: "Tổng hai lát cắt Dedekind"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Một lát cắt là tập hữu tỉ không rỗng, khác $\mathbb Q$, đóng xuống và không có phần tử lớn nhất. Chứng minh $\alpha+\beta=\{a+b:a\in\alpha,b\in\beta\}$ là lát cắt nếu $\alpha,\beta$ là các lát cắt.
+</De>
+
+<GoiY so={1}>
+Kiểm tra đủ bốn điều kiện theo định nghĩa.
+</GoiY>
+
+<GoiY so={2}>
+Để đóng xuống, từ $r<a+b$ viết $r=(r-b)+b$; để không có max, tăng $a$ trong $\alpha$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Tổng hai lát cắt Dedekind. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Kiểm tra đủ bốn điều kiện theo định nghĩa.
+
+**Bước 4. Giải từng bước.**
+
+Chọn $a\in\alpha,b\in\beta$ cho tổng không rỗng. Chọn $u\notin\alpha,v\notin\beta$; tính đóng xuống buộc mọi $a\in\alpha$ nhỏ hơn $u$ và mọi $b\in\beta$ nhỏ hơn $v$, nên $u+v$ không thuộc tổng. Nếu $r<a+b$, thì $r-b<a$ thuộc $\alpha$, nên $r$ thuộc tổng. Cuối cùng vì $\alpha$ không có max, có $a'>a$ trong $\alpha$; $a'+b>a+b$ vẫn thuộc tổng. Đủ các điều kiện.
+
+**Bước 5. Kiểm tra.**
+
+Điều kiện khác $\mathbb Q$ cần một cận trên hữu tỉ; $u+v$ cung cấp cận đó.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Để đóng xuống, từ $r<a+b$ viết $r=(r-b)+b$; để không có max, tăng $a$ trong $\alpha$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không chỉ kiểm tra tính đóng xuống rồi kết luận là lát cắt.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Lát cắt Dedekind</span>
+
+<XemMuc bai={6} />
+</div>

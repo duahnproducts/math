@@ -1,0 +1,63 @@
+---
+so: "3.5"
+muc: "3"
+so_sach: "3.5"
+tieu_de: "Trị tuyệt đối và bất đẳng thức tam giác đảo"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+(a) Chứng minh $|b|\le a\iff-a\le b\le a$. (b) Chứng minh $\big||a|-|b|\big|\le|a-b|$.
+</De>
+
+<GoiY so={1}>
+Dùng $-|b|\le b\le|b|$ và bất đẳng thức tam giác.
+</GoiY>
+
+<GoiY so={2}>
+Viết $a=(a-b)+b$, rồi hoán đổi $a,b$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Trị tuyệt đối và bất đẳng thức tam giác đảo. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Dùng $-|b|\le b\le|b|$ và bất đẳng thức tam giác.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Nếu $|b|\le a$, suy ra $-a\le-|b|\le b\le|b|\le a$. Ngược lại, $b\le a$ và $-b\le a$ nên $|b|=\max\{b,-b\}\le a$.
+
+**b.** Tam giác cho $|a|\le|a-b|+|b|$, tức $|a|-|b|\le|a-b|$. Đổi $a,b$ cho $|b|-|a|\le|a-b|$. Kết hợp hai chiều bằng (a) cho kết quả.
+
+**Bước 5. Kiểm tra.**
+
+Khi $a<0$ trong (a), cả hai vế tương đương đều sai; lập luận vẫn đúng.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Viết $a=(a-b)+b$, rồi hoán đổi $a,b$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không được bỏ trị tuyệt đối bên ngoài $|a|-|b|$ khi chưa xét cả hai chiều.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Số thực và thứ tự</span>
+
+<XemMuc bai={3} />
+</div>

@@ -1,0 +1,61 @@
+---
+so: "1.2"
+muc: "1"
+so_sach: "1.2"
+tieu_de: "Tổng cấp số cộng"
+do_kho: de
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Chứng minh $3+11+\cdots+(8n-5)=4n^2-n$ với $n\ge1$.
+</De>
+
+<GoiY so={1}>
+Tách số hạng mới trong bước quy nạp.
+</GoiY>
+
+<GoiY so={2}>
+Số hạng thứ $n+1$ là $8n+3$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Tổng cấp số cộng. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Tách số hạng mới trong bước quy nạp.
+
+**Bước 4. Giải từng bước.**
+
+Ở $n=1$, $3=4-1$. Nếu tổng đến $n$ là $4n^2-n$, thì tổng đến $n+1$ là $4n^2-n+8n+3=4n^2+7n+3=4(n+1)^2-(n+1)$. Vậy công thức đúng theo quy nạp.
+
+**Bước 5. Kiểm tra.**
+
+Khi $n=2$, $3+11=14=16-2$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Số hạng thứ $n+1$ là $8n+3$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không cộng thêm $8n-5$: số đó đã nằm trong tổng cũ.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Số tự nhiên và quy nạp</span>
+
+<XemMuc bai={1} />
+</div>

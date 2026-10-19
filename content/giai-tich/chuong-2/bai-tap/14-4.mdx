@@ -1,0 +1,63 @@
+---
+so: "14.4"
+muc: "14"
+so_sach: "14.4"
+tieu_de: "Ba chuỗi cần đổi cách nhìn"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Xét hội tụ của (a) $\sum_{n=2}^\infty1/[n+(-1)^n]^2$; (b) $\sum_{n=1}^\infty(\sqrt{n+1}-\sqrt n)$; (c) $\sum_{n=1}^\infty n!/n^n$.
+</De>
+
+<GoiY so={1}>
+So sánh ở (a), tổng rút gọn ở (b), tỉ số ở (c).
+</GoiY>
+
+<GoiY so={2}>
+(a), (c) hội tụ; tổng riêng của (b) bằng $\sqrt{N+1}-1$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Ba chuỗi cần đổi cách nhìn. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+So sánh ở (a), tổng rút gọn ở (b), tỉ số ở (c).
+
+**Bước 4. Giải từng bước.**
+
+**a.** Với $n\ge2$, $n+(-1)^n\ge n-1\ge n/2$, nên số hạng không vượt $4/n^2$, cho hội tụ.
+
+**b.** Các số hạng giữa triệt tiêu, tổng đến $N$ là $\sqrt{N+1}-1\to+\infty$, nên phân kỳ.
+
+**c.** Tỉ số số hạng kế tiếp là $(n/(n+1))^n\to1/e<1$, nên hội tụ.
+
+**Bước 5. Kiểm tra.**
+
+(b) có số hạng tiến về 0 nhưng chuỗi vẫn phân kỳ.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+(a), (c) hội tụ; tổng riêng của (b) bằng $\sqrt{N+1}-1$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không suy từ số hạng về 0 rằng tổng vô hạn hữu hạn.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Chuỗi số</span>
+</div>

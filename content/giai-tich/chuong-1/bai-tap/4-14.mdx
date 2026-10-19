@@ -1,0 +1,63 @@
+---
+so: "4.14"
+muc: "4"
+so_sach: "4.14"
+tieu_de: "Cận của tổng hai tập"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Cho $A,B\subseteq\mathbb R$ không rỗng, bị chặn; $A+B=\{a+b:a\in A,b\in B\}$. Chứng minh (a) $\sup(A+B)=\sup A+\sup B$; (b) $\inf(A+B)=\inf A+\inf B$.
+</De>
+
+<GoiY so={1}>
+Tạo cận bằng tổng hai cận; để có tính đúng, chọn các phần tử sát hai cận.
+</GoiY>
+
+<GoiY so={2}>
+Chia sai số $\varepsilon$ thành $\varepsilon/2$ cho mỗi tập.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Cận của tổng hai tập. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Tạo cận bằng tổng hai cận; để có tính đúng, chọn các phần tử sát hai cận.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Đặt $\alpha=\sup A,\beta=\sup B$. Mọi $a+b\le\alpha+\beta$, nên sup tổng không vượt $\alpha+\beta$. Với $\varepsilon>0$, chọn $a>\alpha-\varepsilon/2$, $b>\beta-\varepsilon/2$. Có $a+b>\alpha+\beta-\varepsilon$, nên không số nào nhỏ hơn $\alpha+\beta$ là cận trên.
+
+**b.** Đặt $u=\inf A,v=\inf B$. Mọi tổng ít nhất $u+v$. Chọn $a<u+\varepsilon/2$, $b<v+\varepsilon/2$ để tổng nhỏ hơn $u+v+\varepsilon$; không cận dưới nào lớn hơn $u+v$.
+
+**Bước 5. Kiểm tra.**
+
+Không cần sup hoặc inf đạt được trong các tập.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Chia sai số $\varepsilon$ thành $\varepsilon/2$ cho mỗi tập.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không chọn trực tiếp $a=\sup A$ khi chưa biết nó thuộc $A$.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Tiên đề đầy đủ</span>
+
+<XemMuc bai={4} />
+</div>

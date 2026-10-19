@@ -1,0 +1,63 @@
+---
+so: "12.12"
+muc: "12"
+so_sach: "12.12"
+tieu_de: "Trung bình Cesàro và các cận giới hạn"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Cho $s_n\ge0$, $\sigma_n=(s_1+\cdots+s_n)/n$. (a) Chứng minh $\liminf s_n\le\liminf\sigma_n\le\limsup\sigma_n\le\limsup s_n$. (b) Nếu $s_n$ có giới hạn mở rộng, chứng minh $\sigma_n$ cùng giới hạn. (c) Cho ví dụ trung bình hội tụ nhưng dãy gốc không hội tụ.
+</De>
+
+<GoiY so={1}>
+Tách tổng thành đoạn đầu hữu hạn và một đuôi có cận trên/cận dưới.
+</GoiY>
+
+<GoiY so={2}>
+Với $n>N$, nếu $l\le s_j\le u$ cho $j>N$, thì $[C_N+(n-N)l]/n\le\sigma_n\le[C_N+(n-N)u]/n$, với $C_N=\sum_{j=1}^Ns_j$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Trung bình Cesàro và các cận giới hạn. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Tách tổng thành đoạn đầu hữu hạn và một đuôi có cận trên/cận dưới.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Đặt $A=\limsup s_n$. Nếu $A=+\infty$ thì chặn trên tự đúng; nếu hữu hạn, với $u>A$ đuôi có $s_j\le u$. Công thức gợi ý cho limsup trung bình không vượt $u$; cho $u\downarrow A$. Với $B=\liminf s_n>0$, lấy $0<l<B$ và công thức chặn dưới để có liminf trung bình ít nhất $l$; cho $l\uparrow B$, hoặc cho $l$ lớn tùy ý nếu $B=+\infty$. Nếu $B=0$, chặn dưới theo tính không âm. Bất đẳng thức giữa luôn đúng.
+
+**b.** Khi hai cận của $s$ cùng bằng $L$, chuỗi bất đẳng thức ép hai cận trung bình cùng bằng $L$.
+
+**c.** $s_n=1+(-1)^n$ không hội tụ, nhưng tổng riêng của phần $(-1)^n$ bị chặn nên $\sigma_n\to1$.
+
+**Bước 5. Kiểm tra.**
+
+Không được bỏ $C_N/n$ trước khi lấy giới hạn; nó về 0 vì $N$ cố định.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Với $n>N$, nếu $l\le s_j\le u$ cho $j>N$, thì $[C_N+(n-N)l]/n\le\sigma_n\le[C_N+(n-N)u]/n$, với $C_N=\sum_{j=1}^Ns_j$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Hội tụ trung bình không suy ra hội tụ dãy gốc.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Giới hạn trên và giới hạn dưới</span>
+</div>

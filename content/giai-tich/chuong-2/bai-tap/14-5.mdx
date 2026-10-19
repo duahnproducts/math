@@ -1,0 +1,63 @@
+---
+so: "14.5"
+muc: "14"
+so_sach: "14.5"
+tieu_de: "Tổng, nhân hằng số và tích các chuỗi"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Giả sử $\sum a_n=A$, $\sum b_n=B$ hữu hạn. Chứng minh (a) $\sum(a_n+b_n)=A+B$; (b) $\sum ka_n=kA$ với $k\in\mathbb R$; (c) bàn luận dự đoán $\sum a_nb_n=AB$.
+</De>
+
+<GoiY so={1}>
+Chuỗi hội tụ nghĩa là dãy tổng riêng hội tụ.
+</GoiY>
+
+<GoiY so={2}>
+Tổng hai tổng riêng là tổng riêng của chuỗi cộng; tích hai tổng riêng có cả các tích chéo.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Tổng, nhân hằng số và tích các chuỗi. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Chuỗi hội tụ nghĩa là dãy tổng riêng hội tụ.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Đặt $A_N=\sum_{n=1}^Na_n\to A$, $B_N=\sum_{n=1}^Nb_n\to B$. Tổng riêng của chuỗi cộng là $A_N+B_N\to A+B$.
+
+**b.** Tổng riêng của chuỗi nhân $k$ là $kA_N\to kA$.
+
+**c.** Công thức tích theo từng chỉ số nói chung sai. Lấy $a_1=b_1=1$, $a_2=b_2=1$, và các số hạng sau bằng 0. Khi đó $A=B=2$, $AB=4$, nhưng $\sum a_nb_n=2$. Phép nhân tổng cần xét các tích chéo, không chỉ các cặp cùng chỉ số.
+
+**Bước 5. Kiểm tra.**
+
+Phản ví dụ dùng chuỗi hữu hạn nên chắc chắn thỏa giả thiết hội tụ.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Tổng hai tổng riêng là tổng riêng của chuỗi cộng; tích hai tổng riêng có cả các tích chéo.
+
+</LoiGiai>
+
+<LoiHayMac>
+Định lý tích giới hạn cho $A_NB_N$, không cho $\sum_{n=1}^Na_nb_n$.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Chuỗi số</span>
+</div>

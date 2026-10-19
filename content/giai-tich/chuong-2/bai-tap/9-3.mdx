@@ -1,0 +1,61 @@
+---
+so: "9.3"
+muc: "9"
+so_sach: "9.3"
+tieu_de: "Một giới hạn hữu tỉ của hai dãy"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Cho $a_n\to a,b_n\to b$. Chứng minh $s_n=(a_n^3+4a_n)/(b_n^2+1)\to(a^3+4a)/(b^2+1)$.
+</De>
+
+<GoiY so={1}>
+Xây giới hạn của tử và mẫu bằng định lý tích và tổng.
+</GoiY>
+
+<GoiY so={2}>
+$b^2+1\ge1$ nên không có nguy cơ giới hạn mẫu bằng 0.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Một giới hạn hữu tỉ của hai dãy. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Xây giới hạn của tử và mẫu bằng định lý tích và tổng.
+
+**Bước 4. Giải từng bước.**
+
+Tích ba dãy $a_n$ có giới hạn $a^3$; nhân hằng số cho $4a_n\to4a$, nên tử về $a^3+4a$. Tích hai dãy $b_n$ cho $b_n^2\to b^2$, rồi cộng 1 cho mẫu về $b^2+1>0$. Mọi mẫu ban đầu cũng ít nhất 1. Áp dụng định lý thương được kết quả.
+
+**Bước 5. Kiểm tra.**
+
+Kết luận đúng cả khi $b=0$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+$b^2+1\ge1$ nên không có nguy cơ giới hạn mẫu bằng 0.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không cần thêm giả thiết $b\ne0$ vì mẫu đã có $+1$.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Các định lý giới hạn</span>
+
+<XemMuc bai={3} />
+</div>

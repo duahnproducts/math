@@ -1,0 +1,67 @@
+---
+so: "13.6"
+muc: "13"
+so_sach: "13.6"
+tieu_de: "Bốn đặc trưng của bao đóng"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Chứng minh Mệnh đề 13.9 trong không gian metric: (a) $E$ đóng khi và chỉ khi $E=\overline E$; (b) $E$ đóng khi và chỉ khi chứa giới hạn mọi dãy hội tụ trong $E$; (c) $x\in\overline E$ khi và chỉ khi $x$ là giới hạn một dãy trong $E$; (d) $\partial E=\overline E\cap\overline{S\setminus E}$.
+</De>
+
+<GoiY so={1}>
+Một điểm thuộc bao đóng khi và chỉ khi mọi quả cầu quanh nó gặp $E$.
+</GoiY>
+
+<GoiY so={2}>
+Nếu mọi quả cầu gặp $E$, chọn $x_n\in E\cap B(x,1/n)$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Bốn đặc trưng của bao đóng. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Một điểm thuộc bao đóng khi và chỉ khi mọi quả cầu quanh nó gặp $E$.
+
+**Bước 4. Giải từng bước.**
+
+Trước hết, nếu một quả cầu quanh $x$ không gặp $E$, phần bù của quả cầu là tập đóng chứa $E$ mà không chứa $x$, nên $x\notin\overline E$. Ngược lại nếu $x\notin\overline E$, có tập đóng $F\supseteq E$ thiếu $x$; phần bù mở cho một quả cầu quanh $x$ không gặp $E$.
+
+**a.** Bao đóng là giao các tập đóng nên đóng; nếu $E$ đóng, chính nó có mặt trong giao định nghĩa, suy ra bằng nhau.
+
+**c.** Điều kiện quả cầu và cách chọn trong gợi ý cho dãy đến $x$; chiều ngược, mọi quả cầu gặp đuôi dãy.
+
+**b.** Nếu $E$ đóng thì (a),(c) cho mọi giới hạn thuộc $E$. Ngược lại nếu $E$ chứa mọi giới hạn, (c) cho $\overline E\subseteq E$, nên (a) cho đóng.
+
+**d.** $x$ không là điểm trong của $E$ khi và chỉ khi mọi quả cầu gặp phần bù, tức $x\in\overline{S\setminus E}$. Kết hợp với $\partial E=\overline E\setminus E^\circ$ cho công thức.
+
+**Bước 5. Kiểm tra.**
+
+Cách dựng $x_n$ dùng tính metric; không tự áp dụng sang một không gian tô pô tùy ý.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Nếu mọi quả cầu gặp $E$, chọn $x_n\in E\cap B(x,1/n)$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Bao đóng chứa cả điểm trong lẫn điểm biên.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Không gian metric và compact</span>
+</div>

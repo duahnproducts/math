@@ -1,0 +1,61 @@
+---
+so: "9.14"
+muc: "9"
+so_sach: "9.14"
+tieu_de: "So sánh hàm mũ với lũy thừa"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Cho $p>0$. Chứng minh $a^n/n^p\to0$ nếu $|a|\le1$; $\to+\infty$ nếu $a>1$; không có giới hạn mở rộng nếu $a<-1$.
+</De>
+
+<GoiY so={1}>
+Tỉ số độ lớn của hai số hạng liên tiếp tiến đến $|a|$.
+</GoiY>
+
+<GoiY so={2}>
+$\left|\frac{a^{n+1}/(n+1)^p}{a^n/n^p}\right|=|a|(n/(n+1))^p$ khi $a\ne0$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+So sánh hàm mũ với lũy thừa. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Tỉ số độ lớn của hai số hạng liên tiếp tiến đến $|a|$.
+
+**Bước 4. Giải từng bước.**
+
+Nếu $|a|\le1$, $|a^n/n^p|\le1/n^p\to0$. Nếu $|a|>1$, tỉ số ở gợi ý về $|a|>1$, nên 9.12(b) cho độ lớn tăng vô hạn. Khi $a>1$, các số hạng dương nên giới hạn $+\infty$. Khi $a<-1$, dãy chẵn dương và dãy lẻ âm có độ lớn tăng vô hạn, nên không có giới hạn mở rộng.
+
+**Bước 5. Kiểm tra.**
+
+Tại $a=-1$, kết quả là 0, vì còn mẫu $n^p$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+$\left|\frac{a^{n+1}/(n+1)^p}{a^n/n^p}\right|=|a|(n/(n+1))^p$ khi $a\ne0$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không nhầm kết quả với bài $a^n$ không có mẫu.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Các định lý giới hạn</span>
+
+<XemMuc bai={3} />
+</div>

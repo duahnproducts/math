@@ -1,0 +1,61 @@
+---
+so: "1.3"
+muc: "1"
+so_sach: "1.3"
+tieu_de: "Tổng các lập phương"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Chứng minh $\sum_{k=1}^n k^3=(1+2+\cdots+n)^2$ với $n\ge1$.
+</De>
+
+<GoiY so={1}>
+Dùng tổng $1+\cdots+n=n(n+1)/2$ rồi quy nạp.
+</GoiY>
+
+<GoiY so={2}>
+Khi cộng $(n+1)^3$, rút $(n+1)^2$ ra ngoài.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Tổng các lập phương. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Dùng tổng $1+\cdots+n=n(n+1)/2$ rồi quy nạp.
+
+**Bước 4. Giải từng bước.**
+
+Với $n=1$ đẳng thức đúng. Giả sử tổng lập phương đến $n$ là $n^2(n+1)^2/4$. Tổng đến $n+1$ bằng $(n+1)^2[n^2/4+n+1]=(n+1)^2(n+2)^2/4$. Đây là bình phương tổng $1+\cdots+(n+1)$, nên kết luận đúng với mọi $n$.
+
+**Bước 5. Kiểm tra.**
+
+$1^3+2^3=9=(1+2)^2$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Khi cộng $(n+1)^3$, rút $(n+1)^2$ ra ngoài.
+
+</LoiGiai>
+
+<LoiHayMac>
+Bình phương của một tổng có cả các tích chéo.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Số tự nhiên và quy nạp</span>
+
+<XemMuc bai={1} />
+</div>

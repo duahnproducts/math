@@ -1,0 +1,65 @@
+---
+so: "10.9"
+muc: "10"
+so_sach: "10.9"
+tieu_de: "Truy hồi bình phương giảm về 0"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Cho $s_1=1$, $s_{n+1}=\frac n{n+1}s_n^2$. (a) Tìm $s_2,s_3,s_4$. (b) Chứng minh giới hạn tồn tại. (c) Tìm giới hạn.
+</De>
+
+<GoiY so={1}>
+Chứng minh $0<s_n\le1$ và dãy giảm trước khi giải phương trình giới hạn.
+</GoiY>
+
+<GoiY so={2}>
+$s_2=1/2$ giúp loại nghiệm giới hạn bằng 1.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Truy hồi bình phương giảm về 0. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Chứng minh $0<s_n\le1$ và dãy giảm trước khi giải phương trình giới hạn.
+
+**Bước 4. Giải từng bước.**
+
+**a.** $s_2=1/2$, $s_3=(2/3)(1/4)=1/6$, $s_4=(3/4)(1/36)=1/48$.
+
+**b.** Nếu $0<s_n\le1$, thì $0<s_{n+1}=\frac n{n+1}s_n^2<s_n$. Quy nạp cho dãy dương giảm, nên hội tụ.
+
+**c.** Đặt giới hạn $L\in[0,1/2]$ vì từ số thứ hai trở đi không vượt $1/2$. Lấy giới hạn được $L=L^2$, nên $L=0$ hoặc 1. Chỉ 0 nằm trong đoạn đã biết.
+
+**Bước 5. Kiểm tra.**
+
+Dùng chặn $1/2$ để loại nghiệm 1, không chỉ dùng tính không âm.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+$s_2=1/2$ giúp loại nghiệm giới hạn bằng 1.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không kết luận giới hạn từ phương trình truy hồi trước khi chứng minh tồn tại.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Dãy đơn điệu và Cauchy</span>
+
+<XemMuc bai={4} />
+</div>

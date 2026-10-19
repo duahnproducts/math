@@ -1,0 +1,59 @@
+---
+so: "12.4"
+muc: "12"
+so_sach: "12.4"
+tieu_de: "Limsup của tổng"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Với hai dãy thực bị chặn, chứng minh $\limsup(s_n+t_n)\le\limsup s_n+\limsup t_n$.
+</De>
+
+<GoiY so={1}>
+Sup của tổng theo cùng chỉ số không vượt tổng hai sup.
+</GoiY>
+
+<GoiY so={2}>
+Đặt $A_N=\sup_{n>N}s_n$, $B_N=\sup_{n>N}t_n$; có $s_n+t_n\le A_N+B_N$ trên đuôi.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Limsup của tổng. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Sup của tổng theo cùng chỉ số không vượt tổng hai sup.
+
+**Bước 4. Giải từng bước.**
+
+Lấy sup theo $n>N$ trong bất đẳng thức gợi ý được $\sup_{n>N}(s_n+t_n)\le A_N+B_N$. Vì hai dãy bị chặn, các sup đuôi đều hữu hạn và hội tụ tới các limsup hữu hạn. Lấy giới hạn theo $N$ và dùng định lý tổng, bảo toàn thứ tự cho kết luận.
+
+**Bước 5. Kiểm tra.**
+
+Các phần tử đạt gần sup của hai dãy có thể ở những chỉ số khác nhau, nên không có lý do cho đẳng thức.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Đặt $A_N=\sup_{n>N}s_n$, $B_N=\sup_{n>N}t_n$; có $s_n+t_n\le A_N+B_N$ trên đuôi.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không đồng nhất $\sup_n(s_n+t_n)$ với $\sup_ns_n+\sup_nt_n$.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Giới hạn trên và giới hạn dưới</span>
+</div>

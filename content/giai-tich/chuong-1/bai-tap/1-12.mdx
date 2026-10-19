@@ -1,0 +1,65 @@
+---
+so: "1.12"
+muc: "1"
+so_sach: "1.12"
+tieu_de: "Định lý nhị thức"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Với $\binom nk=n!/[k!(n-k)!]$, $0!=1$: (a) kiểm tra $(a+b)^n=\sum_{k=0}^n\binom nk a^{n-k}b^k$ khi $n=1,2,3$; (b) chứng minh $\binom nk+\binom n{k-1}=\binom{n+1}k$ với $1\le k\le n$; (c) chứng minh công thức nhị thức bằng quy nạp.
+</De>
+
+<GoiY so={1}>
+Nhân khai triển ở $n$ với $a+b$, rồi ghép các đơn thức giống nhau.
+</GoiY>
+
+<GoiY so={2}>
+Công thức Pascal ghép hai hệ số của $a^{n+1-k}b^k$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Định lý nhị thức. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Nhân khai triển ở $n$ với $a+b$, rồi ghép các đơn thức giống nhau.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Ba khai triển là $a+b$; $a^2+2ab+b^2$; $a^3+3a^2b+3ab^2+b^3$.
+
+**b.** Quy đồng hai hệ số cho $n![(n-k+1)+k]/[k!(n-k+1)!]=(n+1)!/[k!(n+1-k)!]$.
+
+**c.** Bước đầu $n=1$ đã đúng. Nhân tổng ở $n$ với $a+b$. Hai hệ số giữa là $\binom nk$ và $\binom n{k-1}$, tổng bằng $\binom{n+1}k$ theo (b). Hai đơn thức biên $a^{n+1},b^{n+1}$ đều có hệ số 1. Thu được khai triển ở $n+1$.
+
+**Bước 5. Kiểm tra.**
+
+Không dùng giai thừa âm ở hai chỉ số biên; tách chúng trước khi áp dụng (b).
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Công thức Pascal ghép hai hệ số của $a^{n+1-k}b^k$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Phải đổi chỉ số ở tổng nhân với $b$ trước khi ghép hệ số.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Số tự nhiên và quy nạp</span>
+
+<XemMuc bai={1} />
+</div>

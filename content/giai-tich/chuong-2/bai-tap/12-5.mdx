@@ -1,0 +1,59 @@
+---
+so: "12.5"
+muc: "12"
+so_sach: "12.5"
+tieu_de: "Liminf của tổng"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Với hai dãy bị chặn, dùng phép đổi dấu để chứng minh $\liminf(s_n+t_n)\ge\liminf s_n+\liminf t_n$.
+</De>
+
+<GoiY so={1}>
+Áp dụng bất đẳng thức limsup cho $-s_n,-t_n$.
+</GoiY>
+
+<GoiY so={2}>
+Đổi dấu hai vế rồi dùng $\liminf u=-\limsup(-u)$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Liminf của tổng. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Áp dụng bất đẳng thức limsup cho $-s_n,-t_n$.
+
+**Bước 4. Giải từng bước.**
+
+Theo 12.4, $\limsup(-s_n-t_n)\le\limsup(-s_n)+\limsup(-t_n)$. Nhân với $-1$ đảo chiều: $-\limsup(-s_n-t_n)\ge-\limsup(-s_n)-\limsup(-t_n)$. Bài 11.8 biến từng số hạng thành liminf cần có.
+
+**Bước 5. Kiểm tra.**
+
+Tất cả các cận hữu hạn vì dãy bị chặn, nên phép cộng và đổi dấu không gặp vô định.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Đổi dấu hai vế rồi dùng $\liminf u=-\limsup(-u)$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Đổi dấu phải đảo chiều bất đẳng thức.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Giới hạn trên và giới hạn dưới</span>
+</div>

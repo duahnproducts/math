@@ -110,7 +110,7 @@ export function soSanhSo(a: string, b: string): number {
 
 /** '1.2.5' → '1.2' (mục § chứa nó). */
 export function mucCuaSo(so: string): string {
-  return so.split('.').slice(0, 2).join('.');
+  return so.split('.').slice(0, -1).join('.');
 }
 
 /** Nhóm .0 dành cho phần bổ sung không đánh số mục trong sách. */
@@ -126,8 +126,14 @@ export function nhanBaiTap(so: string, tuSoan = false): string {
 }
 
 /** '1.2' → 1 */
-export function chuongCuaMuc(muc: string): number {
+export function chuongCuaMuc(muc: string, mon?: string): number {
+  if (mon === 'giai-tich' && /^\d+$/.test(muc)) return Number(muc) <= 6 ? 1 : 2;
   return Number(muc.split('.')[0]);
+}
+
+/** Ross dùng §1–§6 ở chương 1, §7–§15 ở chương 2; các sách khác mã hóa chương trong số mục. */
+export function chuongCuaBaiTap(so: string, mon: string): number {
+  return chuongCuaMuc(mucCuaSo(so), mon);
 }
 
 // ---- khối có số hiệu (đích của liên kết chéo) ----
@@ -359,7 +365,7 @@ export function kiemTraChuong(du: DuLieuChuong, mon?: ChiMucMon): string[] {
     if (soBai.has(b.bai)) loi.push(`${b.tep}: trùng số bài ${b.bai}`);
     soBai.add(b.bai);
     for (const m of b.phu_muc) {
-      if (!mucCoSach.has(m)) loi.push(`${b.tep}: phu_muc "${m}" chưa có trang mục §`);
+      if (!mucCoSach.has(m) && !(du.mon === 'giai-tich' && /^\d+$/.test(m) && mucHopLe.has(m))) loi.push(`${b.tep}: phu_muc "${m}" chưa có trang mục §`);
     }
     for (const l of kiemTraTamMuc(trichTieuDeCap2(b.noiDung))) loi.push(`${b.tep}: ${l}`);
   }
@@ -383,7 +389,8 @@ export function kiemTraChuong(du: DuLieuChuong, mon?: ChiMucMon): string[] {
   for (const bt of du.baiTap) {
     if (soBaiTap.has(bt.so)) loi.push(`${bt.tep}: trùng số bài tập ${bt.so}`);
     soBaiTap.add(bt.so);
-    if (chuongCuaMuc(bt.so) !== du.chuong) loi.push(`${bt.tep}: bài ${bt.so} không thuộc chương ${du.chuong}`);
+    const chuongBaiTap = chuongCuaBaiTap(bt.so, du.mon);
+    if (chuongBaiTap !== du.chuong) loi.push(`${bt.tep}: bài ${bt.so} không thuộc chương ${du.chuong}`);
     if (mucCuaSo(bt.so) !== bt.muc) loi.push(`${bt.tep}: số ${bt.so} không khớp muc ${bt.muc}`);
     if (!mucHopLe.has(bt.muc)) loi.push(`${bt.tep}: mục ${bt.muc} không có trong chương`);
     for (const ma of bt.can_dung) {
@@ -407,7 +414,7 @@ export function kiemTraChuong(du: DuLieuChuong, mon?: ChiMucMon): string[] {
   for (const tep of cacTep) {
     for (const lk of trichXemMuc(tep.noiDung)) {
       if (lk.muc) {
-        const coThat = chuongCuaMuc(lk.muc) === du.chuong ? mucCoSach.has(lk.muc) : mon?.muc.has(lk.muc);
+        const coThat = chuongCuaMuc(lk.muc, du.mon) === du.chuong ? mucCoSach.has(lk.muc) : mon?.muc.has(lk.muc);
         if (!coThat) loi.push(`${tep.tep}: XemMuc tới §${lk.muc} chưa có trang`);
       }
       if (lk.bai) {
@@ -416,7 +423,7 @@ export function kiemTraChuong(du: DuLieuChuong, mon?: ChiMucMon): string[] {
         if (!coThat) loi.push(`${tep.tep}: XemMuc tới Bài ${lk.bai} (Chương ${chuong}) không có`);
       }
       if (lk.baiTap) {
-        const coThat = chuongCuaMuc(lk.baiTap) === du.chuong ? soBaiTap.has(lk.baiTap) : mon?.baiTap.has(lk.baiTap);
+        const coThat = chuongCuaBaiTap(lk.baiTap, du.mon) === du.chuong ? soBaiTap.has(lk.baiTap) : mon?.baiTap.has(lk.baiTap);
         if (!coThat) loi.push(`${tep.tep}: XemMuc tới bài tập ${lk.baiTap} không có`);
       }
     }

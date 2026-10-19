@@ -1,0 +1,59 @@
+---
+so: "12.8"
+muc: "12"
+so_sach: "12.8"
+tieu_de: "Limsup của tích hai dãy không âm"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Cho hai dãy bị chặn không âm $(s_n),(t_n)$. Chứng minh $\limsup(s_nt_n)\le(\limsup s_n)(\limsup t_n)$.
+</De>
+
+<GoiY so={1}>
+Nhân các cận trên của cùng một đuôi, dùng tính không âm.
+</GoiY>
+
+<GoiY so={2}>
+Với $A_N=\sup_{n>N}s_n$, $B_N=\sup_{n>N}t_n$, $0\le s_nt_n\le A_NB_N$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Limsup của tích hai dãy không âm. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Nhân các cận trên của cùng một đuôi, dùng tính không âm.
+
+**Bước 4. Giải từng bước.**
+
+Lấy sup theo $n>N$ được $\sup_{n>N}s_nt_n\le A_NB_N$. Hai dãy cận hữu hạn hội tụ lần lượt tới $A=\limsup s_n\ge0$, $B=\limsup t_n\ge0$. Định lý tích cho $A_NB_N\to AB$. Bảo toàn thứ tự cho bất đẳng thức cần chứng minh.
+
+**Bước 5. Kiểm tra.**
+
+Tính không âm cần thiết: nếu cả hai dãy lặp $(-2,-1)$, limsup của tích là 4 còn tích hai limsup là 1.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Với $A_N=\sup_{n>N}s_n$, $B_N=\sup_{n>N}t_n$, $0\le s_nt_n\le A_NB_N$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không nhân bất đẳng thức khi chưa kiểm tra dấu.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Giới hạn trên và giới hạn dưới</span>
+</div>

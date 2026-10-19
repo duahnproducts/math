@@ -1,0 +1,61 @@
+---
+so: "13.15"
+muc: "13"
+so_sach: "13.15"
+tieu_de: "Đóng và bị chặn nhưng không compact trong không gian dãy"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Trong $B$ gồm các dãy thực bị chặn với metric sup, đặt $F=\{x:\sup_j|x_j|\le1\}$. (a) Chứng minh $F$ đóng, bị chặn. (b) Chứng minh $F$ không compact bằng phủ $\{U(x):x\in F\}$, $U(x)=\{y:d(x,y)<1\}$. Xét $x^{(n)}$ có tọa độ thứ $n$ bằng $-1$, còn mọi tọa độ khác bằng 1.
+</De>
+
+<GoiY so={1}>
+Hai điểm $x^{(n)},x^{(m)}$ khác nhau có khoảng cách 2 nên không thể cùng thuộc một quả cầu mở bán kính 1.
+</GoiY>
+
+<GoiY so={2}>
+Mỗi tập trong phủ chứa nhiều nhất một điểm $x^{(n)}$, nên hữu hạn tập không thể phủ tất cả chúng.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Đóng và bị chặn nhưng không compact trong không gian dãy. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Hai điểm $x^{(n)},x^{(m)}$ khác nhau có khoảng cách 2 nên không thể cùng thuộc một quả cầu mở bán kính 1.
+
+**Bước 4. Giải từng bước.**
+
+**a.** $F$ nằm trong cầu đóng tâm 0 bán kính 1, nên bị chặn. Nếu $x^{(m)}\in F$ hội tụ theo metric sup tới $x$, với mỗi $j$, $|x_j|\le|x_j-x_j^{(m)}|+|x_j^{(m)}|\le d(x,x^{(m)})+1$. Lấy giới hạn cho $|x_j|\le1$ với mọi $j$, nên $x\in F$; vậy $F$ đóng.
+
+**b.** Mỗi $x\in F$ thuộc $U(x)$ nên họ là phủ mở. Nếu $n\ne m$, khoảng cách giữa hai điểm được đề chỉ ra bằng 2. Nếu cả hai thuộc một $U(x)$, tam giác cho khoảng cách nhỏ hơn $1+1=2$, mâu thuẫn. Vậy mỗi tập phủ chứa nhiều nhất một trong vô hạn điểm này. Không phủ con hữu hạn nào phủ $F$, nên không compact.
+
+**Bước 5. Kiểm tra.**
+
+Điều này không trái Heine–Borel vì $B$ không phải không gian Euclid hữu hạn chiều.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Mỗi tập trong phủ chứa nhiều nhất một điểm $x^{(n)}$, nên hữu hạn tập không thể phủ tất cả chúng.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không áp dụng “đóng và bị chặn thì compact” trong mọi không gian metric.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Không gian metric và compact</span>
+</div>

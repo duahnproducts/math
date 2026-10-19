@@ -1,0 +1,61 @@
+---
+so: "15.7"
+muc: "15"
+so_sach: "15.7"
+tieu_de: "Chuỗi giảm hội tụ thì n nhân số hạng về 0"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+(a) Nếu $(a_n)$ là dãy thực giảm và $\sum a_n$ hội tụ, chứng minh $na_n\to0$. (b) Dùng kết quả để chứng minh lại điều hòa phân kỳ.
+</De>
+
+<GoiY so={1}>
+Do hội tụ chuỗi, $a_n\to0$; tính giảm buộc $a_n\ge0$. Xét một khối đuôi dài khoảng $n/2$.
+</GoiY>
+
+<GoiY so={2}>
+Đặt $m=\lfloor n/2\rfloor$; $(n-m)a_n\le\sum_{k=m+1}^na_k$ và $n/(n-m)\le2$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Chuỗi giảm hội tụ thì n nhân số hạng về 0. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Do hội tụ chuỗi, $a_n\to0$; tính giảm buộc $a_n\ge0$. Xét một khối đuôi dài khoảng $n/2$.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Số hạng chuỗi hội tụ tiến về 0. Nếu dãy giảm có một số hạng âm, mọi số sau không lớn hơn số âm đó, không thể về 0; vậy $a_n\ge0$. Với $m$ như gợi ý, mỗi $a_k\ge a_n$ khi $m<k\le n$. Suy ra $0\le na_n\le2\sum_{k=m+1}^na_k$. Tổng đuôi này về 0 theo tiêu chuẩn Cauchy của chuỗi vì $m\to\infty$. Kẹp cho $na_n\to0$.
+
+**b.** Nếu điều hòa hội tụ, áp dụng (a) với $a_n=1/n$ sẽ cho $na_n=1\to0$, vô lý.
+
+**Bước 5. Kiểm tra.**
+
+Tính giảm là thiết yếu để chặn cả khối từ dưới bởi số hạng cuối.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Đặt $m=\lfloor n/2\rfloor$; $(n-m)a_n\le\sum_{k=m+1}^na_k$ và $n/(n-m)\le2$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Điều kiện $a_n\to0$ chỉ là điều kiện cần; định lý mạnh hơn ở đây còn dùng tính đơn điệu.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Chuỗi đan dấu và tiêu chuẩn tích phân</span>
+</div>

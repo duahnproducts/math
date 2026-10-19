@@ -1,0 +1,61 @@
+---
+so: "15.8"
+muc: "15"
+so_sach: "15.8"
+tieu_de: "Phát biểu và chứng minh tiêu chuẩn tích phân"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Phát biểu và chứng minh tiêu chuẩn tích phân tổng quát cho một hàm không âm, giảm trên $[m,+\infty)$ với $m\in\mathbb N$, và chuỗi có số hạng $a_n=f(n)$; giả sử $f$ khả tích trên mọi đoạn hữu hạn.
+</De>
+
+<GoiY so={1}>
+Trên mỗi đoạn đơn vị, đồ thị của hàm giảm nằm giữa hai hình chữ nhật đầu mút.
+</GoiY>
+
+<GoiY so={2}>
+$f(n+1)\le\int_n^{n+1}f(x)\,dx\le f(n)$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Phát biểu và chứng minh tiêu chuẩn tích phân. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Trên mỗi đoạn đơn vị, đồ thị của hàm giảm nằm giữa hai hình chữ nhật đầu mút.
+
+**Bước 4. Giải từng bước.**
+
+**Phát biểu:** $\sum_{n=m}^\infty f(n)$ hội tụ khi và chỉ khi tích phân suy rộng $\int_m^\infty f(x)\,dx$ hữu hạn; nếu không, cả hai phân kỳ tới $+\infty$.
+
+**Chứng minh:** cộng các chặn hình chữ nhật được $\int_m^{N+1}f\le\sum_{n=m}^Nf(n)\le f(m)+\int_m^Nf$. Nếu tích phân hữu hạn, các tổng riêng tăng không âm và bị chặn trên bởi $f(m)+\int_m^\infty f$, nên hội tụ. Nếu chuỗi hội tụ với tổng $A$, chặn trái cho mọi tích phân tới đầu mút nguyên không vượt $A$. Tính không âm cho tích phân theo đầu mút thực tăng và bị chặn bởi cùng $A$, nên có giới hạn hữu hạn. Do hai chiều tương đương, khi một bên không hữu hạn, cả hai bên tăng vô hạn.
+
+**Bước 5. Kiểm tra.**
+
+Giảm và không âm từ một ngưỡng trở đi là đủ; hữu hạn số hạng hoặc một đoạn đầu hữu hạn không thay đổi hội tụ.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+$f(n+1)\le\int_n^{n+1}f(x)\,dx\le f(n)$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Tiêu chuẩn cho cùng tính hội tụ, không khẳng định giá trị chuỗi bằng giá trị tích phân.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Chuỗi đan dấu và tiêu chuẩn tích phân</span>
+</div>

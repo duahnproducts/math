@@ -1,0 +1,63 @@
+---
+so: "6.4"
+muc: "6"
+so_sach: "6.4"
+tieu_de: "Vì sao tích ngây thơ của lát cắt sai"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Thử định nghĩa $\alpha\cdot\beta=\{ab:a\in\alpha,b\in\beta\}$. (a) Tính các tích dùng $0^*,1^*,(-1)^*$. (b) Giải thích vì sao định nghĩa này không dùng được làm phép nhân số thực.
+</De>
+
+<GoiY so={1}>
+Mọi lát cắt chứa các số âm có độ lớn tùy ý.
+</GoiY>
+
+<GoiY so={2}>
+Với $a,b$ âm đủ lớn về độ lớn, tích $ab$ dương lớn tùy ý.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Vì sao tích ngây thơ của lát cắt sai. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Mọi lát cắt chứa các số âm có độ lớn tùy ý.
+
+**Bước 4. Giải từng bước.**
+
+**a.** $0^*\cdot0^*=(0,+\infty)\cap\mathbb Q$; $0^*\cdot(-1)^*$ cũng là tập đó. $(-1)^*\cdot(-1)^*=(1,+\infty)\cap\mathbb Q$: mọi tích lớn hơn 1; với $q>1$ chọn hữu tỉ $u\in(1,q)$ và viết $q=(-u)(-q/u)$. $1^*\cdot1^*=\mathbb Q$: số dương là tích hai số âm; số âm $q$ có dạng $(q/v)v$ với $0<v<\min\{1,-q\}$; số 0 dùng một thừa số 0. Lập luận tương tự cho $1^*\cdot0^*=1^*\cdot(-1)^*=\mathbb Q$.
+
+**b.** Với hai lát cắt bất kỳ, chọn số âm trong mỗi tập có độ lớn tùy ý; các tích không bị chặn trên, nên tập tích không thể là lát cắt (mỗi lát cắt thực sự đều có cận trên hữu tỉ).
+
+**Bước 5. Kiểm tra.**
+
+$0^*\cdot0^*$ không bằng $0^*$ và cũng không đóng xuống.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Với $a,b$ âm đủ lớn về độ lớn, tích $ab$ dương lớn tùy ý.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không đồng nhất tích của mọi phần tử hai tập với phép nhân đúng của hai lát cắt.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Lát cắt Dedekind</span>
+
+<XemMuc bai={6} />
+</div>

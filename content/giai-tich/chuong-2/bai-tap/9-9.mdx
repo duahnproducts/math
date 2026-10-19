@@ -1,0 +1,65 @@
+---
+so: "9.9"
+muc: "9"
+so_sach: "9.9"
+tieu_de: "So sánh hai dãy ở đuôi"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Giả sử $s_n\le t_n$ với $n>N_0$. Chứng minh (a) $s_n\to+\infty\Rightarrow t_n\to+\infty$; (b) $t_n\to-\infty\Rightarrow s_n\to-\infty$; (c) nếu hai giới hạn mở rộng tồn tại thì $\lim s_n\le\lim t_n$.
+</De>
+
+<GoiY so={1}>
+Dùng định nghĩa vượt ngưỡng và bỏ hữu hạn số hạng đầu.
+</GoiY>
+
+<GoiY so={2}>
+Trong (c), nếu hai giới hạn sai thứ tự, chèn hai ngưỡng thực vào giữa chúng.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+So sánh hai dãy ở đuôi. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Dùng định nghĩa vượt ngưỡng và bỏ hữu hạn số hạng đầu.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Với ngưỡng thực $M$, đuôi $s_n>M$ kéo theo $t_n>M$.
+
+**b.** Với ngưỡng $m$, đuôi $t_n<m$ kéo theo $s_n<m$.
+
+**c.** Giả sử $S=\lim s_n>T=\lim t_n$, kể cả các trường hợp vô hạn. Chọn hai số thực $u,v$ với $T<u<v<S$. Tính hội tụ hữu hạn hoặc vô hạn đều cho $t_n<u<v<s_n$ khi $n$ đủ lớn, trái giả thiết.
+
+**Bước 5. Kiểm tra.**
+
+Trong mọi phần, lấy ngưỡng chỉ số vượt cả $N_0$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Trong (c), nếu hai giới hạn sai thứ tự, chèn hai ngưỡng thực vào giữa chúng.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không cần bất đẳng thức đúng tại mọi số hạng đầu.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Các định lý giới hạn</span>
+
+<XemMuc bai={3} />
+</div>

@@ -1,0 +1,65 @@
+---
+so: "6.1"
+muc: "6"
+so_sach: "6.1"
+tieu_de: "Thứ tự và tổng của lát cắt hữu tỉ"
+do_kho: kho
+nen_lam: true
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Với $s,t\in\mathbb Q$, đặt $s^*=\{r\in\mathbb Q:r<s\}$. Chứng minh (a) $s\le t\iff s^*\subseteq t^*$; (b) $s=t\iff s^*=t^*$; (c) $(s+t)^*=s^*+t^*$, với tổng lát cắt gồm mọi tổng của một phần tử mỗi tập.
+</De>
+
+<GoiY so={1}>
+Dùng trung điểm hữu tỉ để phân biệt hai lát cắt.
+</GoiY>
+
+<GoiY so={2}>
+Với $r<s+t$, đặt $\delta=(s+t-r)/2>0$; khi đó $r=(s-\delta)+(t-\delta)$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Thứ tự và tổng của lát cắt hữu tỉ. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Dùng trung điểm hữu tỉ để phân biệt hai lát cắt.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Nếu $s\le t$, $r<s$ kéo theo $r<t$. Ngược lại, nếu $s>t$, trung điểm $(s+t)/2$ thuộc $s^*$ nhưng không thuộc $t^*$, mâu thuẫn bao hàm.
+
+**b.** Dùng (a) hai chiều.
+
+**c.** Nếu $u<s,v<t$, thì $u+v<s+t$, nên tổng nằm trong $(s+t)^*$. Ngược lại với $r<s+t$, chọn $\delta$ như gợi ý; $s-\delta\in s^*$, $t-\delta\in t^*$ và tổng bằng $r$.
+
+**Bước 5. Kiểm tra.**
+
+$\delta$ hữu tỉ vì $s,t,r$ hữu tỉ.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Với $r<s+t$, đặt $\delta=(s+t-r)/2>0$; khi đó $r=(s-\delta)+(t-\delta)$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không chọn $s\in s^*$ vì lát cắt dùng bất đẳng thức nghiêm.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Lát cắt Dedekind</span>
+
+<XemMuc bai={6} />
+</div>

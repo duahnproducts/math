@@ -1,0 +1,61 @@
+---
+so: "1.5"
+muc: "1"
+so_sach: "1.5"
+tieu_de: "Tổng hình học hữu hạn"
+do_kho: de
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Chứng minh $1+1/2+1/4+\cdots+1/2^n=2-1/2^n$ với $n\ge1$.
+</De>
+
+<GoiY so={1}>
+Có thể quy nạp hoặc trừ một nửa tổng khỏi chính tổng.
+</GoiY>
+
+<GoiY so={2}>
+Số hạng mới là $2^{-(n+1)}$, còn tổng ban đầu có $n+1$ số hạng.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Tổng hình học hữu hạn. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Có thể quy nạp hoặc trừ một nửa tổng khỏi chính tổng.
+
+**Bước 4. Giải từng bước.**
+
+Với $n=1$, $1+1/2=2-1/2$. Nếu công thức đúng ở $n$, cộng $2^{-(n+1)}$ được $2-2^{-n}+2^{-(n+1)}=2-2^{-(n+1)}$. Do đó đúng với mọi $n\ge1$.
+
+**Bước 5. Kiểm tra.**
+
+Tổng nhỏ hơn 2 và tăng khi thêm số hạng dương.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Số hạng mới là $2^{-(n+1)}$, còn tổng ban đầu có $n+1$ số hạng.
+
+</LoiGiai>
+
+<LoiHayMac>
+Đừng nhầm số hạng cuối với $1/(2n)$.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Số tự nhiên và quy nạp</span>
+
+<XemMuc bai={1} />
+</div>

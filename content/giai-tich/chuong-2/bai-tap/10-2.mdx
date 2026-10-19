@@ -1,0 +1,61 @@
+---
+so: "10.2"
+muc: "10"
+so_sach: "10.2"
+tieu_de: "Dãy giảm bị chặn thì hội tụ"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Chứng minh phiên bản dãy giảm bị chặn của Định lý 10.2: nếu $s_{n+1}\le s_n$ và dãy bị chặn dưới thì $s_n\to\inf\{s_n:n\ge1\}$.
+</De>
+
+<GoiY so={1}>
+Dùng đặc trưng inf để chọn một số hạng gần inf, rồi dùng tính giảm cho cả đuôi.
+</GoiY>
+
+<GoiY so={2}>
+Với $l=\inf\{s_n\}$, chọn $s_N<l+\varepsilon$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Dãy giảm bị chặn thì hội tụ. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Dùng đặc trưng inf để chọn một số hạng gần inf, rồi dùng tính giảm cho cả đuôi.
+
+**Bước 4. Giải từng bước.**
+
+Tập giá trị không rỗng bị chặn dưới, nên có inf thực $l$. Với $\varepsilon>0$, $l+\varepsilon$ không là cận dưới, nên có $N$ với $s_N<l+\varepsilon$. Với $n\ge N$, tính giảm cho $l\le s_n\le s_N<l+\varepsilon$, tức $|s_n-l|<\varepsilon$. Vậy dãy hội tụ tới $l$.
+
+**Bước 5. Kiểm tra.**
+
+Chặn dưới là đủ; tính giảm tự cho chặn trên $s_1$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Với $l=\inf\{s_n\}$, chọn $s_N<l+\varepsilon$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Inf có thể không là một số hạng của dãy.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Dãy đơn điệu và Cauchy</span>
+
+<XemMuc bai={4} />
+</div>

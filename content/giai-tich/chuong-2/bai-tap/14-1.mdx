@@ -1,0 +1,69 @@
+---
+so: "14.1"
+muc: "14"
+so_sach: "14.1"
+tieu_de: "Sáu chuỗi đầu tiên"
+do_kho: vua
+nen_lam: true
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Xét hội tụ và giải thích cho các chuỗi (a) $\sum n^4/2^n$; (b) $\sum2^n/n!$; (c) $\sum n^2/3^n$; (d) $\sum n!/(n^4+3)$; (e) $\sum\cos^2n/n^2$; (f) $\sum_{n=2}^\infty1/\log n$. Các chuỗi không ghi cận bắt đầu ở $n=1$; log là log tự nhiên.
+</De>
+
+<GoiY so={1}>
+Tỉ số thích hợp cho mũ/giai thừa; so sánh thích hợp cho lượng giác bị chặn và log.
+</GoiY>
+
+<GoiY so={2}>
+Hội tụ ở a, b, c, e; phân kỳ ở d, f.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Sáu chuỗi đầu tiên. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Tỉ số thích hợp cho mũ/giai thừa; so sánh thích hợp cho lượng giác bị chặn và log.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Tỉ số $[(n+1)/n]^4/2\to1/2<1$, hội tụ.
+
+**b.** Tỉ số $2/(n+1)\to0$, hội tụ.
+
+**c.** Tỉ số $[(n+1)/n]^2/3\to1/3$, hội tụ.
+
+**d.** Tỉ số số hạng kế tiếp bằng $(n+1)(n^4+3)/((n+1)^4+3)\to+\infty$, nên số hạng không về 0, chuỗi phân kỳ.
+
+**e.** $0\le\cos^2n/n^2\le1/n^2$ và chuỗi bình phương nghịch đảo hội tụ, nên hội tụ.
+
+**f.** Với $n\ge2$, $0<\log n\le n$, nên $1/\log n\ge1/n$; so sánh chuỗi điều hòa cho phân kỳ.
+
+**Bước 5. Kiểm tra.**
+
+Các số hạng đều không âm, nên hội tụ cũng là hội tụ tuyệt đối.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Hội tụ ở a, b, c, e; phân kỳ ở d, f.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không dùng riêng điều kiện số hạng về 0 để khẳng định hội tụ.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Chuỗi số</span>
+</div>

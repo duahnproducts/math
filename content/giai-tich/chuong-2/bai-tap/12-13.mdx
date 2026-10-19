@@ -1,0 +1,59 @@
+---
+so: "12.13"
+muc: "12"
+so_sach: "12.13"
+tieu_de: "Đặc trưng cận giới hạn bằng bất đẳng thức cuối cùng"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Cho dãy thực bị chặn. Gọi $A$ gồm các $a\in\mathbb R$ sao cho tập $\{n:s_n<a\}$ hữu hạn, và $B$ gồm các $b\in\mathbb R$ sao cho tập $\{n:s_n>b\}$ hữu hạn. Chứng minh $\sup A=\liminf s_n$ và $\inf B=\limsup s_n$.
+</De>
+
+<GoiY so={1}>
+Các phần tử của $A$ là cận dưới đúng trên một đuôi; của $B$ là cận trên đúng trên một đuôi.
+</GoiY>
+
+<GoiY so={2}>
+Mọi $a<\liminf s_n$ thuộc $A$, và mọi $a\in A$ không vượt liminf; làm đối xứng cho $B$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Đặc trưng cận giới hạn bằng bất đẳng thức cuối cùng. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Các phần tử của $A$ là cận dưới đúng trên một đuôi; của $B$ là cận trên đúng trên một đuôi.
+
+**Bước 4. Giải từng bước.**
+
+Đặt $l=\liminf s_n,u=\limsup s_n$. Nếu $a\in A$, có $N$ sao cho $s_n\ge a$ với $n>N$, nên inf đuôi ít nhất $a$ và $l\ge a$. Nếu $a<l$, inf đuôi cuối cùng lớn hơn $a$, nên $a\in A$. Vì vậy $A$ có sup đúng là $l$. Tương tự, $b\in B$ cho $u\le b$; mọi $b>u$ thuộc $B$, nên $\inf B=u$. Bị chặn bảo đảm $l,u$ hữu hạn và hai tập không rỗng.
+
+**Bước 5. Kiểm tra.**
+
+Không cần $l\in A$ hoặc $u\in B$; chẳng hạn $s_n=l-1/n$ có vô hạn số hạng dưới $l$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Mọi $a<\liminf s_n$ thuộc $A$, và mọi $a\in A$ không vượt liminf; làm đối xứng cho $B$.
+
+</LoiGiai>
+
+<LoiHayMac>
+“Hữu hạn số hạng vi phạm” khác “không có số hạng vi phạm”.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Giới hạn trên và giới hạn dưới</span>
+</div>

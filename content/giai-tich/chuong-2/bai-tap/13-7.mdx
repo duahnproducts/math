@@ -1,0 +1,59 @@
+---
+so: "13.7"
+muc: "13"
+so_sach: "13.7"
+tieu_de: "Phân tích tập mở trên trục số"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Chứng minh mọi tập mở $U\subseteq\mathbb R$ là hợp của hữu hạn hoặc đếm được các khoảng mở đôi một rời nhau; cho phép khoảng không bị chặn và $\mathbb R$.
+</De>
+
+<GoiY so={1}>
+Gom các khoảng mở trong $U$ chứa cùng một điểm thành một khoảng tối đại.
+</GoiY>
+
+<GoiY so={2}>
+Hai khoảng tối đại giao nhau thì hợp của chúng vẫn là khoảng trong $U$, nên chúng phải bằng nhau; mỗi khoảng có một hữu tỉ riêng.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Phân tích tập mở trên trục số. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Gom các khoảng mở trong $U$ chứa cùng một điểm thành một khoảng tối đại.
+
+**Bước 4. Giải từng bước.**
+
+Với $x\in U$, đặt $I_x$ là hợp mọi khoảng mở chứa $x$ nằm trong $U$. Họ này không rỗng vì $U$ mở. Hợp các khoảng cùng chứa $x$ là một khoảng mở, nằm trong $U$, và tối đại theo cách dựng. Nếu $I_x\cap I_y\ne\varnothing$, hợp của hai khoảng là khoảng mở trong $U$ chứa cả $x,y$; tính tối đại cho $I_x=I_y$. Vì mỗi $x\in I_x$, các khoảng khác nhau phủ $U$ và đôi một rời nhau. Liệt kê $\mathbb Q$; gán cho mỗi khoảng số hữu tỉ đầu tiên trong nó. Các khoảng rời nhau nhận các số khác nhau, nên số khoảng nhiều nhất đếm được. Với $U=\varnothing$, dùng họ khoảng rỗng.
+
+**Bước 5. Kiểm tra.**
+
+Lập luận bao gồm cả khoảng có đầu mút $\pm\infty$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Hai khoảng tối đại giao nhau thì hợp của chúng vẫn là khoảng trong $U$, nên chúng phải bằng nhau; mỗi khoảng có một hữu tỉ riêng.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không khẳng định một tập mở chỉ là hợp hữu hạn các khoảng.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Không gian metric và compact</span>
+</div>

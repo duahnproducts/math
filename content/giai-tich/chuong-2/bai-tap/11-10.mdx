@@ -1,0 +1,61 @@
+---
+so: "11.10"
+muc: "11"
+so_sach: "11.10"
+tieu_de: "Bảng nghịch đảo đi theo đường chéo"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Bảng ở Hình 11.2 có mọi hàng giống nhau: $1,1/2,1/3,\ldots$; ô hàng $i$, cột $j$ bằng $1/j$. Liệt kê các ô theo các đường chéo hữu hạn $i+j=2,3,\ldots$, đổi chiều luân phiên, để mỗi ô được đi qua một lần. (a) Tìm tập giới hạn dãy con của dãy giá trị thu được. (b) Tìm limsup, liminf.
+</De>
+
+<GoiY so={1}>
+Mỗi giá trị $1/j$ xuất hiện ở vô hạn hàng, còn các cột tiến ra xa cho giá trị về 0.
+</GoiY>
+
+<GoiY so={2}>
+Tập ứng viên là $\{0\}\cup\{1/j:j\ge1\}$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Bảng nghịch đảo đi theo đường chéo. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Mỗi giá trị $1/j$ xuất hiện ở vô hạn hàng, còn các cột tiến ra xa cho giá trị về 0.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Với mỗi cột $j$ cố định, vô hạn ô của nó xuất hiện ở chỉ số tăng dần, tạo dãy con hằng $1/j$. Chọn lần lượt các ô nằm ở cột ngày càng lớn, đồng thời đi qua những đường chéo muộn hơn, cho một dãy con tiến về 0. Nếu $L>0$ là giới hạn bất kỳ, đuôi của dãy con có giá trị lớn hơn $L/2$, nên cột chỉ có thể nằm trong hữu hạn giá trị $1,1/2,\ldots,1/J$. Một dãy hội tụ trong tập hữu hạn buộc giới hạn là một giá trị của tập đó. Không có giới hạn âm hoặc vô hạn vì mọi số hạng trong $(0,1]$. Vậy tập đúng như gợi ý.
+
+**b.** Limsup 1, liminf 0.
+
+**Bước 5. Kiểm tra.**
+
+Đổi chiều trên mỗi đường chéo không làm thay đổi việc mỗi cột xuất hiện vô hạn lần.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Tập ứng viên là $\{0\}\cup\{1/j:j\ge1\}$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không nhầm bảng này với bảng liệt kê tất cả số hữu tỉ.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Dãy con</span>
+</div>

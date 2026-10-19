@@ -31,7 +31,7 @@ export function docBoLoc(search: string): BoLoc {
   const muc = q.get('muc');
   const doKho = q.get('do-kho');
   return {
-    muc: muc && /^\d+\.\d+$/.test(muc) ? muc : null,
+    muc: muc && /^\d+(?:\.\d+)?$/.test(muc) ? muc : null,
     doKho: doKho === 'de' || doKho === 'vua' || doKho === 'kho' ? doKho : null,
     nenLam: q.get('nen-lam') === '1',
     lamLai: q.get('lam-lai') === '1',

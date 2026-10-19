@@ -1,0 +1,59 @@
+---
+so: "13.13"
+muc: "13"
+so_sach: "13.13"
+tieu_de: "Compact đạt inf và sup"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Cho $E\subseteq\mathbb R$ compact, không rỗng. Chứng minh $\sup E,\inf E\in E$.
+</De>
+
+<GoiY so={1}>
+Compact trong $\mathbb R$ cho bị chặn và đóng.
+</GoiY>
+
+<GoiY so={2}>
+Chọn $x_n\in E$ với $\sup E-1/n<x_n\le\sup E$ rồi dùng tính đóng.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Compact đạt inf và sup. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Compact trong $\mathbb R$ cho bị chặn và đóng.
+
+**Bước 4. Giải từng bước.**
+
+Heine–Borel cho $E$ bị chặn, nên có hai cận thực $M=\sup E,m=\inf E$. Chọn $x_n\in E$ với $M-1/n<x_n\le M$; khi đó $x_n\to M$. Vì $E$ đóng, $M\in E$. Tương tự chọn $y_n\in E$ với $m\le y_n<m+1/n$, được $y_n\to m$ và $m\in E$.
+
+**Bước 5. Kiểm tra.**
+
+Nhờ không rỗng, hai cận và các dãy xấp xỉ tồn tại.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Chọn $x_n\in E$ với $\sup E-1/n<x_n\le\sup E$ rồi dùng tính đóng.
+
+</LoiGiai>
+
+<LoiHayMac>
+Một tập chỉ bị chặn có thể không đạt hai cận.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Không gian metric và compact</span>
+</div>

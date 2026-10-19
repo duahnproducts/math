@@ -1,0 +1,63 @@
+---
+so: "10.11"
+muc: "10"
+so_sach: "10.11"
+tieu_de: "Tích Wallis và giới hạn"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Cho $t_1=1$, $t_{n+1}=(1-1/(4n^2))t_n$. (a) Chứng minh giới hạn tồn tại. (b) Dự đoán giới hạn từ các số hạng.
+</De>
+
+<GoiY so={1}>
+Mỗi thừa số truy hồi nằm trong $(0,1)$.
+</GoiY>
+
+<GoiY so={2}>
+Tích $\prod_{k=1}^{n-1}(1-1/(4k^2))$ dương giảm; dự đoán số từ phép tính khác với chứng minh giá trị chính xác.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Tích Wallis và giới hạn. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Mỗi thừa số truy hồi nằm trong $(0,1)$.
+
+**Bước 4. Giải từng bước.**
+
+**a.** $0<1-1/(4n^2)<1$, nên quy nạp cho $0<t_{n+1}<t_n\le1$. Dãy giảm bị chặn dưới bởi 0 nên hội tụ.
+
+**b.** Các giá trị $t_2=0.75$, $t_3=0.703125$, $t_4=0.68359375$, $t_{10}\approx0.65359$, $t_{100}\approx0.63822$ gợi giới hạn khoảng $0.6366$. Giá trị dự đoán là $2/\pi$ theo tích Wallis; đây chỉ là nhận diện dự đoán, phần (a) đã chứng minh tồn tại mà không dùng công thức Wallis.
+
+**Bước 5. Kiểm tra.**
+
+Mỗi số hữu hạn trong danh sách chỉ gợi xấp xỉ; không phải chứng minh giới hạn bằng $2/\pi$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Tích $\prod_{k=1}^{n-1}(1-1/(4k^2))$ dương giảm; dự đoán số từ phép tính khác với chứng minh giá trị chính xác.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không khẳng định tích vô hạn bằng 0 chỉ vì mọi thừa số nhỏ hơn 1.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Dãy đơn điệu và Cauchy</span>
+
+<XemMuc bai={4} />
+</div>

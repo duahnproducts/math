@@ -1,0 +1,65 @@
+---
+so: "8.8"
+muc: "8"
+so_sach: "8.8"
+tieu_de: "Chứng minh giới hạn của hiệu hai căn"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Chứng minh bằng định nghĩa: (a) $\sqrt{n^2+1}-n\to0$; (b) $\sqrt{n^2+n}-n\to1/2$; (c) $\sqrt{4n^2+n}-2n\to1/4$.
+</De>
+
+<GoiY so={1}>
+Nhân liên hợp để biến thành sai số có chặn $C/n$.
+</GoiY>
+
+<GoiY so={2}>
+Với $u=\sqrt{1+1/n}$, $|1/(u+1)-1/2|=1/[2n(u+1)^2]$; làm tương tự với căn của $4+1/n$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Chứng minh giới hạn của hiệu hai căn. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Nhân liên hợp để biến thành sai số có chặn $C/n$.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Hiệu bằng $1/(\sqrt{n^2+1}+n)\le1/(2n)$, nên chọn $N=1/(2\varepsilon)$.
+
+**b.** Sau liên hợp, hiệu là $1/(u+1)$. Sai số với $1/2$ là $(u-1)/[2(u+1)]=1/[2n(u+1)^2]\le1/(8n)$. Chọn $N=1/(8\varepsilon)$.
+
+**c.** Đặt $v=\sqrt{4+1/n}$. Hiệu là $1/(v+2)$, sai số với $1/4$ bằng $(v-2)/[4(v+2)]=1/[4n(v+2)^2]\le1/(64n)$. Chọn $N=1/(64\varepsilon)$.
+
+**Bước 5. Kiểm tra.**
+
+$u\ge1,v\ge2$ bảo đảm các chặn mẫu được dùng đúng chiều.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Với $u=\sqrt{1+1/n}$, $|1/(u+1)-1/2|=1/[2n(u+1)^2]$; làm tương tự với căn của $4+1/n$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Viết giới hạn dự đoán không thay thế chứng minh $\varepsilon$–$N$.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Chứng minh bằng định nghĩa giới hạn</span>
+
+<XemMuc bai={2} />
+</div>

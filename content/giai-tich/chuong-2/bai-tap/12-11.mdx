@@ -1,0 +1,59 @@
+---
+so: "12.11"
+muc: "12"
+so_sach: "12.11"
+tieu_de: "Bất đẳng thức giữa tỉ số và căn"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Cho $s_n\ne0$. Chứng minh bất đẳng thức đầu trong Định lý 12.2: $\liminf|s_{n+1}/s_n|\le\liminf|s_n|^{1/n}$.
+</De>
+
+<GoiY so={1}>
+Một cận dưới dương cho tỉ số ở đuôi cho cận dưới hình học của độ lớn.
+</GoiY>
+
+<GoiY so={2}>
+Với $0<c<\liminf|s_{n+1}/s_n|$, có $|s_n|\ge|s_N|c^{n-N}$ trên đuôi.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Bất đẳng thức giữa tỉ số và căn. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Một cận dưới dương cho tỉ số ở đuôi cho cận dưới hình học của độ lớn.
+
+**Bước 4. Giải từng bước.**
+
+Đặt $L=\liminf|s_{n+1}/s_n|\ge0$. Nếu $L=0$, kết quả hiển nhiên vì căn không âm. Nếu $L>0$, chọn bất kỳ $c$ thực với $0<c<L$. Có $N$ sao cho mọi tỉ số từ $N$ trở đi lớn hơn $c$. Nhân chúng cho $|s_n|\ge|s_N|c^{n-N}$. Lấy căn bậc $n$ cho $|s_n|^{1/n}\ge c(|s_N|c^{-N})^{1/n}$. Thừa số trong ngoặc dương cố định nên căn tiến về 1. Suy ra liminf căn ít nhất $c$. Cho $c$ áp sát $L$ nếu $L$ hữu hạn; nếu $L=+\infty$, mọi $c>0$ đều hợp lệ nên liminf căn cũng vô hạn.
+
+**Bước 5. Kiểm tra.**
+
+Việc mọi $s_n\ne0$ bảo đảm các tỉ số và hằng số dương trong phép lấy căn đều xác định.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Với $0<c<\liminf|s_{n+1}/s_n|$, có $|s_n|\ge|s_N|c^{n-N}$ trên đuôi.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không suy ra có giới hạn tỉ số hoặc giới hạn căn chỉ từ liminf.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Giới hạn trên và giới hạn dưới</span>
+</div>

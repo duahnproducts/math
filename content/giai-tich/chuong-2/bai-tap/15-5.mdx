@@ -1,0 +1,59 @@
+---
+so: "15.5"
+muc: "15"
+so_sach: "15.5"
+tieu_de: "Cách dùng so sánh cho p lớn hơn 1"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Giải thích vì sao trong chứng minh Định lý 15.1 về $\sum1/n^p$, trường hợp $p>1$ không được kết luận hội tụ chỉ bằng phép so sánh với $\sum1/n$ đã dùng cho $0<p\le1$.
+</De>
+
+<GoiY so={1}>
+Một chuỗi nhỏ hơn một chuỗi phân kỳ có thể hội tụ hoặc phân kỳ.
+</GoiY>
+
+<GoiY so={2}>
+$1/n^p\le1/n$ với $p>1$ chỉ cho chặn trên bằng một tổng vô hạn, không cho chặn hữu hạn.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Cách dùng so sánh cho p lớn hơn 1. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Một chuỗi nhỏ hơn một chuỗi phân kỳ có thể hội tụ hoặc phân kỳ.
+
+**Bước 4. Giải từng bước.**
+
+Khi $0<p\le1$, $1/n^p\ge1/n$ nên so sánh từ dưới với điều hòa phân kỳ kết luận được phân kỳ. Khi $p>1$, chiều đảo lại: $1/n^p\le1/n$. Tổng riêng của điều hòa không có cận hữu hạn chung nên không giúp chứng minh hội tụ. Sách dùng tích phân để có cận cụ thể $\sum_{k=1}^N1/k^p\le1+1/(p-1)$. Điều này không có nghĩa so sánh là bất khả thi: gom các chỉ số $2^j\le n<2^{j+1}$ cho tổng nhóm không vượt $2^j2^{-jp}=2^{-j(p-1)}$, rồi so sánh các nhóm với một chuỗi hình học hội tụ cũng chứng minh được kết quả.
+
+**Bước 5. Kiểm tra.**
+
+Ý đúng là phép so sánh đơn giản với điều hòa không đủ, không phải mọi phương pháp so sánh đều thất bại.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+$1/n^p\le1/n$ với $p>1$ chỉ cho chặn trên bằng một tổng vô hạn, không cho chặn hữu hạn.
+
+</LoiGiai>
+
+<LoiHayMac>
+Từ $0\le a_n\le b_n$ và $\sum b_n$ phân kỳ không thể suy ra gì quyết định về hội tụ của $\sum a_n$.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Chuỗi đan dấu và tiêu chuẩn tích phân</span>
+</div>

@@ -1,0 +1,61 @@
+---
+so: "13.8"
+muc: "13"
+so_sach: "13.8"
+tieu_de: "Kiểm tra các ví dụ tập mở và tập đóng"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+(a) Với $a<b$, kiểm tra $(a,b)$ mở, $[a,b]$ đóng, $[a,b]^\circ=(a,b)$, và biên cả hai là $\{a,b\}$. (b) Trong Euclid, kiểm tra quả cầu mở/đóng có tính mở/đóng và biên là mặt cầu; trong $\mathbb R^2$, kiểm tra các tập $x_1>0$ và $x_1>0,x_2>0$ mở, thay $>$ bằng $\ge$ cho tập đóng; kiểm tra $[0,1)$ và $\{(x_1,x_2):x_1>0,x_2\ge0\}$ đều không mở cũng không đóng. Bán kính quả cầu $r>0$.
+</De>
+
+<GoiY so={1}>
+Tìm quả cầu nhỏ nằm trong tập; để bác đóng, cho một dãy trong tập tiến đến điểm thiếu.
+</GoiY>
+
+<GoiY so={2}>
+Bất đẳng thức $|d(x,c)-d(y,c)|\le d(x,y)$ kiểm soát khoảng cách đến tâm.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Kiểm tra các ví dụ tập mở và tập đóng. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Tìm quả cầu nhỏ nằm trong tập; để bác đóng, cho một dãy trong tập tiến đến điểm thiếu.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Với $x\in(a,b)$, bán kính nhỏ hơn $\min(x-a,b-x)$ nằm trong khoảng. Phần bù của $[a,b]$ là hai tia mở nên đoạn đóng. Hai đầu mút không có lân cận nằm trong đoạn, còn mọi điểm giữa có; do đó phần trong như đề. Bao đóng của khoảng là đoạn, nên biên cả hai là hai đầu mút.
+
+**b.** Nếu $d(x,c)<r$, quả cầu quanh $x$ bán kính $r-d(x,c)$ nằm trong quả cầu gốc theo tam giác. Nếu $d(x,c)>r$, bán kính $d(x,c)-r$ nằm ngoài cầu đóng, nên cầu đóng là đóng. Điểm mặt cầu được áp sát từ bên trong và bên ngoài theo phương bán kính; các điểm khác có lân cận nằm hẳn một phía, nên biên là $d(x,c)=r$. Với nửa mặt phẳng và góc phần tư mở, lấy bán kính nhỏ hơn mọi tọa độ dương đang bị ràng buộc; các bản đóng là giao của các nửa không gian đóng, hoặc dùng bảo toàn dấu qua giới hạn. $[0,1)$ không mở tại 0, không đóng vì $1-1/n\to1$ bị thiếu (lấy $n\ge2$). Tập cuối không mở tại $(1,0)$, không đóng vì $(1/n,0)\to(0,0)$ bị thiếu.
+
+**Bước 5. Kiểm tra.**
+
+Công thức biên mặt cầu nêu ở đây cho metric Euclid và $r>0$, không khẳng định cho mọi metric.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Bất đẳng thức $|d(x,c)-d(y,c)|\le d(x,y)$ kiểm soát khoảng cách đến tâm.
+
+</LoiGiai>
+
+<LoiHayMac>
+Một tập có thể không mở cũng không đóng.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Không gian metric và compact</span>
+</div>

@@ -1,0 +1,59 @@
+---
+so: "14.7"
+muc: "14"
+so_sach: "14.7"
+tieu_de: "Nâng lũy thừa các số hạng không âm"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Nếu $a_n\ge0$, $\sum a_n$ hội tụ và $p>1$, chứng minh $\sum a_n^p$ hội tụ.
+</De>
+
+<GoiY so={1}>
+Số hạng của một chuỗi hội tụ phải tiến về 0.
+</GoiY>
+
+<GoiY so={2}>
+Trên đuôi có $0\le a_n\le1$, nên $a_n^p\le a_n$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Nâng lũy thừa các số hạng không âm. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Số hạng của một chuỗi hội tụ phải tiến về 0.
+
+**Bước 4. Giải từng bước.**
+
+Vì chuỗi hội tụ, $a_n\to0$. Chọn $N$ sao cho $0\le a_n\le1$ khi $n>N$. Do $p-1>0$, $a_n^{p-1}\le1$ nên $a_n^p\le a_n$ ở đuôi. Chuỗi không âm $\sum_{n>N}a_n$ hội tụ, nên so sánh cho chuỗi lũy thừa hội tụ; cộng hữu hạn số hạng đầu không thay đổi điều đó.
+
+**Bước 5. Kiểm tra.**
+
+Số hạng đầu lớn hơn 1 không ảnh hưởng lập luận vì chỉ hữu hạn số.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Trên đuôi có $0\le a_n\le1$, nên $a_n^p\le a_n$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Với $0<p<1$, bất đẳng thức trên $(0,1)$ đổi chiều và kết luận có thể sai.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Chuỗi số</span>
+</div>

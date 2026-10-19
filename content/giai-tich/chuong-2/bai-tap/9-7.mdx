@@ -1,0 +1,61 @@
+---
+so: "9.7"
+muc: "9"
+so_sach: "9.7"
+tieu_de: "Chứng minh n mũ 1/n tiến đến 1"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Trong chứng minh Định lý 9.7(c), đặt $s_n=n^{1/n}-1\ge0$. Hoàn tất chứng minh $s_n\to0$, từ đó $n^{1/n}\to1$.
+</De>
+
+<GoiY so={1}>
+Nhị thức của $(1+s_n)^n=n$ chứa số hạng bậc hai không âm.
+</GoiY>
+
+<GoiY so={2}>
+Với $n\ge2$, $n\ge n(n-1)s_n^2/2$, nên $s_n\le\sqrt{2/(n-1)}$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Chứng minh n mũ 1/n tiến đến 1. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Nhị thức của $(1+s_n)^n=n$ chứa số hạng bậc hai không âm.
+
+**Bước 4. Giải từng bước.**
+
+Cho $\varepsilon>0$. Từ khai triển nhị thức, vì mọi số hạng không âm, $n=(1+s_n)^n\ge\binom n2s_n^2$. Suy ra $0\le s_n\le\sqrt{2/(n-1)}$. Chọn $N=\max\{2,1+2/\varepsilon^2\}$. Với $n>N$, chặn trên nhỏ hơn $\varepsilon$, nên $|s_n|<\varepsilon$. Vậy $s_n\to0$, cộng 1 cho $n^{1/n}\to1$.
+
+**Bước 5. Kiểm tra.**
+
+Cần $n\ge2$ để chia cho $n-1$; hữu hạn số hạng đầu không ảnh hưởng giới hạn.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Với $n\ge2$, $n\ge n(n-1)s_n^2/2$, nên $s_n\le\sqrt{2/(n-1)}$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không được dùng chính giới hạn $n^{1/n}\to1$ để chứng minh nó.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Các định lý giới hạn</span>
+
+<XemMuc bai={3} />
+</div>

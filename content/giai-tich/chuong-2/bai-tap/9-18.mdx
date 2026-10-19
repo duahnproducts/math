@@ -1,0 +1,67 @@
+---
+so: "9.18"
+muc: "9"
+so_sach: "9.18"
+tieu_de: "Tổng hình học và giới hạn"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+(a) Kiểm tra $1+a+\cdots+a^n=(1-a^{n+1})/(1-a)$ khi $a\ne1$. (b) Tìm giới hạn tổng khi $|a|<1$. (c) Tính giới hạn $1+1/3+\cdots+1/3^n$. (d) Tìm giới hạn khi $a\ge1$.
+</De>
+
+<GoiY so={1}>
+Nhân tổng với $a$ rồi trừ để các số hạng giữa triệt tiêu.
+</GoiY>
+
+<GoiY so={2}>
+$S_n-aS_n=1-a^{n+1}$; với $a\ge1$, $S_n\ge n+1$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Tổng hình học và giới hạn. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Nhân tổng với $a$ rồi trừ để các số hạng giữa triệt tiêu.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Lấy hiệu hai tổng cho $(1-a)S_n=1-a^{n+1}$, chia vì $a\ne1$.
+
+**b.** $a^{n+1}\to0$, nên $S_n\to1/(1-a)$.
+
+**c.** Thay $a=1/3$, được $3/2$.
+
+**d.** Với $a\ge1$, mọi số hạng ít nhất 1, nên $S_n\ge n+1\to+\infty$.
+
+**Bước 5. Kiểm tra.**
+
+$a=1$ phải xử lý riêng, công thức thương ở (a) không xác định.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+$S_n-aS_n=1-a^{n+1}$; với $a\ge1$, $S_n\ge n+1$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không dùng công thức tổng vô hạn khi $|a|\ge1$.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Các định lý giới hạn</span>
+
+<XemMuc bai={3} />
+</div>

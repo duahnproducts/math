@@ -1,0 +1,61 @@
+---
+so: "8.10"
+muc: "8"
+so_sach: "8.10"
+tieu_de: "Giới hạn lớn hơn a thì đuôi lớn hơn a"
+do_kho: de
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Nếu $s_n\to s>a$, chứng minh tồn tại $N$ sao cho $n>N$ kéo theo $s_n>a$.
+</De>
+
+<GoiY so={1}>
+Dùng khoảng cách dương giữa giới hạn và ngưỡng.
+</GoiY>
+
+<GoiY so={2}>
+Chọn $\varepsilon=(s-a)/2$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Giới hạn lớn hơn a thì đuôi lớn hơn a. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Dùng khoảng cách dương giữa giới hạn và ngưỡng.
+
+**Bước 4. Giải từng bước.**
+
+Với sai số dương trên, có $N$ sao cho $n>N$ kéo theo $|s_n-s|<\varepsilon$. Khi đó $s_n>s-\varepsilon=(s+a)/2>a$. Đây chính là điều cần chứng minh.
+
+**Bước 5. Kiểm tra.**
+
+Không yêu cầu các số hạng đầu cũng lớn hơn $a$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Chọn $\varepsilon=(s-a)/2$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Nếu chỉ biết $s=a$, kết luận có thể sai, chẳng hạn $s_n=a-1/n$.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Chứng minh bằng định nghĩa giới hạn</span>
+
+<XemMuc bai={2} />
+</div>

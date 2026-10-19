@@ -1,0 +1,67 @@
+---
+so: "10.10"
+muc: "10"
+so_sach: "10.10"
+tieu_de: "Truy hồi tuyến tính về 1/2"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Cho $s_1=1,s_{n+1}=(s_n+1)/3$. (a) Tìm $s_2,s_3,s_4$. (b) Chứng minh $s_n>1/2$. (c) Chứng minh dãy giảm. (d) Chứng minh hội tụ và tìm giới hạn.
+</De>
+
+<GoiY so={1}>
+Trừ điểm cố định $1/2$ để thấy sai số chia 3 sau mỗi bước.
+</GoiY>
+
+<GoiY so={2}>
+$s_{n+1}-1/2=(s_n-1/2)/3$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Truy hồi tuyến tính về 1/2. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Trừ điểm cố định $1/2$ để thấy sai số chia 3 sau mỗi bước.
+
+**Bước 4. Giải từng bước.**
+
+**a.** $s_2=2/3,s_3=5/9,s_4=14/27$.
+
+**b.** Cơ sở $1>1/2$; đẳng thức gợi ý truyền tính dương của $s_n-1/2$ sang chỉ số sau.
+
+**c.** $s_{n+1}-s_n=(1-2s_n)/3<0$.
+
+**d.** Dãy giảm bị chặn dưới bởi $1/2$, nên có giới hạn $L$. Từ $L=(L+1)/3$ suy ra $L=1/2$; cũng có công thức $s_n=1/2+(1/2)3^{1-n}$.
+
+**Bước 5. Kiểm tra.**
+
+Công thức tường minh cho $s_1=1$ đúng với dữ kiện.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+$s_{n+1}-1/2=(s_n-1/2)/3$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Dãy luôn lớn hơn $1/2$ nhưng giới hạn vẫn có thể bằng $1/2$.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Dãy đơn điệu và Cauchy</span>
+
+<XemMuc bai={4} />
+</div>

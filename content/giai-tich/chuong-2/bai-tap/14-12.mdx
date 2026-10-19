@@ -1,0 +1,59 @@
+---
+so: "14.12"
+muc: "14"
+so_sach: "14.12"
+tieu_de: "Chọn dãy con tạo chuỗi hội tụ"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Nếu $\liminf|a_n|=0$, chứng minh có dãy con $(a_{n_k})$ sao cho $\sum_{k=1}^\infty a_{n_k}$ hội tụ.
+</De>
+
+<GoiY so={1}>
+Chọn số hạng nhỏ rất nhanh, so sánh trị tuyệt đối với chuỗi hình học.
+</GoiY>
+
+<GoiY so={2}>
+Dựng tăng chỉ số $n_k$ sao cho $|a_{n_k}|<2^{-k}$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Chọn dãy con tạo chuỗi hội tụ. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Chọn số hạng nhỏ rất nhanh, so sánh trị tuyệt đối với chuỗi hình học.
+
+**Bước 4. Giải từng bước.**
+
+Vì liminf bằng 0, với mỗi ngưỡng chỉ số $N$ và mỗi $\delta>0$, có $n>N$ với $|a_n|<\delta$; nếu không một đuôi bị chặn dưới bởi $\delta>0$. Bắt đầu và lặp lại với $\delta=2^{-k}$, luôn lấy $n_k>n_{k-1}$. Khi đó $\sum_k|a_{n_k}|\le\sum_k2^{-k}=1$, nên chuỗi dãy con hội tụ tuyệt đối và do đó hội tụ.
+
+**Bước 5. Kiểm tra.**
+
+Chỉ cần liminf độ lớn bằng 0, không cần toàn dãy tiến về 0.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Dựng tăng chỉ số $n_k$ sao cho $|a_{n_k}|<2^{-k}$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Dãy con hội tụ về 0 chưa đủ làm chuỗi của nó hội tụ; cần chọn tốc độ đủ nhanh.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Chuỗi số</span>
+</div>

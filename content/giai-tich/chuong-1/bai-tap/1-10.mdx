@@ -1,0 +1,61 @@
+---
+so: "1.10"
+muc: "1"
+so_sach: "1.10"
+tieu_de: "Tổng các số lẻ từ 2n đến 4n"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Chứng minh $(2n+1)+(2n+3)+\cdots+(4n-1)=3n^2$ với $n\ge1$.
+</De>
+
+<GoiY so={1}>
+Viết tổng cần tìm bằng hiệu hai tổng số lẻ đầu tiên.
+</GoiY>
+
+<GoiY so={2}>
+Tổng $2n$ số lẻ đầu trừ tổng $n$ số lẻ đầu là $(2n)^2-n^2$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Tổng các số lẻ từ 2n đến 4n. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Viết tổng cần tìm bằng hiệu hai tổng số lẻ đầu tiên.
+
+**Bước 4. Giải từng bước.**
+
+Theo 1.4, $1+3+\cdots+(4n-1)=4n^2$ và $1+3+\cdots+(2n-1)=n^2$. Lấy hiệu, các số hạng còn lại chính là từ $2n+1$ đến $4n-1$. Tổng bằng $4n^2-n^2=3n^2$.
+
+**Bước 5. Kiểm tra.**
+
+Khi $n=1$, chỉ có số hạng 3. Tổng có $n$ số hạng.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Tổng $2n$ số lẻ đầu trừ tổng $n$ số lẻ đầu là $(2n)^2-n^2$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Khi thay $n$ bằng $n+1$, cả đầu lẫn cuối tổng đều thay đổi.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Số tự nhiên và quy nạp</span>
+
+<XemMuc bai={1} />
+</div>

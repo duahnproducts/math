@@ -1,0 +1,116 @@
+---
+so: "4.3"
+muc: "4"
+so_sach: "4.3"
+tieu_de: "Cận trên đúng của từng tập"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Với mỗi tập dưới đây, tìm $\sup$ trong $\mathbb R$ nếu tồn tại; nếu không, ghi không có sup thực.
+
+Các tập được xét (cùng ký hiệu với bài 4.1):
+
+| Ý | Tập |
+| --- | --- |
+| a | $[0,1]$ |
+| b | $(0,1)$ |
+| c | $\{2,7\}$ |
+| d | $\{\pi,e\}$ |
+| e | $\{1/n:n\ge1\}$ |
+| f | $\{0\}$ |
+| g | $[0,1]\cup[2,3]$ |
+| h | $\bigcup_{n\ge1}[2n,2n+1]$ |
+| i | $\bigcap_{n\ge1}[-1/n,1+1/n]$ |
+| j | $\{1-1/(3n):n\ge1\}$ |
+| k | $\{n+(-1)^n/n:n\ge1\}$ |
+| l | $\{r\in\mathbb Q:r<2\}$ |
+| m | $\{r\in\mathbb Q:r^2<4\}$ |
+| n | $\{r\in\mathbb Q:r^2<2\}$ |
+| o | $\{x\in\mathbb R:x<0\}$ |
+| p | $\{1,\pi/3,\pi^2,10\}$ |
+| q | $\{0,1,2,4,8,16\}$ |
+| r | $\bigcap_{n\ge1}(1-1/n,1+1/n)$ |
+| s | $\{1/p:p\in\mathbb P\}$, với $\mathbb P$ là tập số nguyên tố |
+| t | $\{x\in\mathbb R:x^3<8\}$ |
+| u | $\{x^2:x\in\mathbb R\}$ |
+| v | $\{\cos(n\pi/3):n\ge1\}$ |
+| w | $\{\sin(n\pi/3):n\ge1\}$ |
+</De>
+
+<GoiY so={1}>
+Phải kiểm tra vừa là cận trên vừa là cận trên nhỏ nhất.
+</GoiY>
+
+<GoiY so={2}>
+Với các đầu mút không đạt được, chọn phần tử gần đầu mút từ phía dưới.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Cận trên đúng của từng tập. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Phải kiểm tra vừa là cận trên vừa là cận trên nhỏ nhất.
+
+**Bước 4. Giải từng bước.**
+
+Dùng cột $\sup$ trong bảng:
+
+| Ý | $\inf$ | $\sup$ |
+| --- | --- | --- |
+| a, b | $0$ | $1$ |
+| c | $2$ | $7$ |
+| d | $e$ | $\pi$ |
+| e | $0$ | $1$ |
+| f | $0$ | $0$ |
+| g | $0$ | $3$ |
+| h | $2$ | $+\infty$ |
+| i | $0$ | $1$ |
+| j | $2/3$ | $1$ |
+| k | $0$ | $+\infty$ |
+| l | $-\infty$ | $2$ |
+| m | $-2$ | $2$ |
+| n | $-\sqrt2$ | $\sqrt2$ |
+| o | $-\infty$ | $0$ |
+| p | $1$ | $10$ |
+| q | $0$ | $16$ |
+| r | $1$ | $1$ |
+| s | $0$ | $1/2$ |
+| t | $-\infty$ | $2$ |
+| u | $0$ | $+\infty$ |
+| v | $-1$ | $1$ |
+| w | $-\sqrt3/2$ | $\sqrt3/2$ |
+
+Các ý h, k, u không có sup thực. Mọi giá trị hữu hạn trong cột còn lại là đáp án. Với tập hữu hạn hoặc khoảng đóng, đầu mút là giá trị lớn nhất. Với (b), (j), (l), (m), (n), (t), đầu mút không thuộc tập nhưng mọi số nhỏ hơn nó đều không phải cận trên: dùng số gần đầu mút, hoặc dùng tính trù mật của $\mathbb Q$. Ở (j), $1-1/(3n)>1-\varepsilon$ khi $n>1/(3\varepsilon)$. Ở (s), $1/2$ đạt được tại số nguyên tố 2.
+
+**Bước 5. Kiểm tra.**
+
+(n) có sup thực $\sqrt2$ dù tập chỉ gồm số hữu tỉ. Phải lấy sup trong không gian mà đề quy định là $\mathbb R$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Với các đầu mút không đạt được, chọn phần tử gần đầu mút từ phía dưới.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không kết luận không có sup chỉ vì tập không có phần tử lớn nhất.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Tiên đề đầy đủ</span>
+
+<XemMuc bai={4} />
+</div>

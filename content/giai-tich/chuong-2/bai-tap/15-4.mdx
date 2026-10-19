@@ -1,0 +1,65 @@
+---
+so: "15.4"
+muc: "15"
+so_sach: "15.4"
+tieu_de: "Bốn chuỗi chứa logarit"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Xét hội tụ: (a) $\sum_{n=2}^\infty1/(\sqrt n\log n)$; (b) $\sum_{n=2}^\infty(\log n)/n$; (c) $\sum_{n=4}^\infty1/[n(\log n)(\log\log n)]$; (d) $\sum_{n=2}^\infty(\log n)/n^2$.
+</De>
+
+<GoiY so={1}>
+So sánh để phân kỳ ở (a); dùng các tích phân log quen thuộc cho ba ý còn lại.
+</GoiY>
+
+<GoiY so={2}>
+Chỉ (d) hội tụ; các nguyên hàm ở (b),(c),(d) lần lượt là $(\log x)^2/2$, $\log\log\log x$, $-(\log x+1)/x$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Bốn chuỗi chứa logarit. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+So sánh để phân kỳ ở (a); dùng các tích phân log quen thuộc cho ba ý còn lại.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Cuối cùng $\log n\le\sqrt n$, nên $1/(\sqrt n\log n)\ge1/n$; phân kỳ. Có thể kiểm tra chặn log bằng đạo hàm của $\sqrt x-\log x$, dương từ $x=4$ và dương tại 4.
+
+**b.** $f(x)=\log x/x$ dương giảm với $x>e$; tích phân tăng như $(\log x)^2/2$, nên phân kỳ.
+
+**c.** Với $x\ge4$, các thừa số dương tăng, nên nghịch đảo giảm. Đổi biến liên tiếp cho tích phân $\log\log\log x+C\to+\infty$, nên phân kỳ.
+
+**d.** $\log x/x^2$ dương, giảm từ $x>\sqrt e$; nguyên hàm $-(\log x+1)/x$ có giới hạn 0, nên tích phân hữu hạn và chuỗi hội tụ.
+
+**Bước 5. Kiểm tra.**
+
+Bắt đầu (c) tại 4 bảo đảm $\log\log n>0$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Chỉ (d) hội tụ; các nguyên hàm ở (b),(c),(d) lần lượt là $(\log x)^2/2$, $\log\log\log x$, $-(\log x+1)/x$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Tăng chậm như log vẫn có thể làm một chuỗi tới hạn phân kỳ.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Chuỗi đan dấu và tiêu chuẩn tích phân</span>
+</div>

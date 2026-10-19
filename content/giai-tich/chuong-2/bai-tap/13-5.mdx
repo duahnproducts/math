@@ -1,0 +1,61 @@
+---
+so: "13.5"
+muc: "13"
+so_sach: "13.5"
+tieu_de: "Luật De Morgan và giao các tập đóng"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+(a) Với họ tập $\mathcal U$ trong $S$, chứng minh $\bigcap_{U\in\mathcal U}(S\setminus U)=S\setminus\bigcup_{U\in\mathcal U}U$. (b) Chứng minh giao tùy ý các tập đóng trong một không gian metric là đóng.
+</De>
+
+<GoiY so={1}>
+Chứng minh đẳng thức tập bằng điều kiện thuộc của một điểm.
+</GoiY>
+
+<GoiY so={2}>
+Phần bù của giao các tập đóng là hợp các phần bù mở.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Luật De Morgan và giao các tập đóng. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Chứng minh đẳng thức tập bằng điều kiện thuộc của một điểm.
+
+**Bước 4. Giải từng bước.**
+
+**a.** $x$ thuộc vế trái khi và chỉ khi $x\in S$ và $x$ không thuộc bất kỳ $U\in\mathcal U$ nào, tương đương $x$ không thuộc hợp, tức thuộc vế phải.
+
+**b.** Nếu $F_\lambda$ đóng thì $S\setminus F_\lambda$ mở. De Morgan cho $S\setminus\bigcap_\lambda F_\lambda=\bigcup_\lambda(S\setminus F_\lambda)$, là tập mở. Theo định nghĩa, giao là đóng.
+
+**Bước 5. Kiểm tra.**
+
+Với họ rỗng, giao là $S$, hợp rỗng là $\varnothing$, công thức vẫn đúng.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Phần bù của giao các tập đóng là hợp các phần bù mở.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không nhầm giao các phần bù với phần bù của giao.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Không gian metric và compact</span>
+</div>

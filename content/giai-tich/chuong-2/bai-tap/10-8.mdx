@@ -1,0 +1,61 @@
+---
+so: "10.8"
+muc: "10"
+so_sach: "10.8"
+tieu_de: "Trung bình cộng của dãy tăng"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Cho dãy tăng các số dương $s_n$ và $\sigma_n=(s_1+\cdots+s_n)/n$. Chứng minh $(\sigma_n)$ tăng.
+</De>
+
+<GoiY so={1}>
+So sánh số hạng mới với trung bình cũ.
+</GoiY>
+
+<GoiY so={2}>
+$\sigma_{n+1}-\sigma_n=(s_{n+1}-\sigma_n)/(n+1)$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Trung bình cộng của dãy tăng. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+So sánh số hạng mới với trung bình cũ.
+
+**Bước 4. Giải từng bước.**
+
+Tính tăng cho $s_j\le s_{n+1}$ với $j\le n$, nên $\sigma_n\le s_{n+1}$. Từ $\sigma_{n+1}=(n\sigma_n+s_{n+1})/(n+1)$, trừ $\sigma_n$ được biểu thức ở gợi ý, không âm. Vì vậy dãy trung bình tăng không nghiêm.
+
+**Bước 5. Kiểm tra.**
+
+Nếu dãy gốc tăng nghiêm, $s_{n+1}>\sigma_n$ và trung bình tăng nghiêm.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+$\sigma_{n+1}-\sigma_n=(s_{n+1}-\sigma_n)/(n+1)$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không chia tổng $n+1$ số hạng cho $n$.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Dãy đơn điệu và Cauchy</span>
+
+<XemMuc bai={4} />
+</div>

@@ -1,0 +1,59 @@
+---
+so: "12.1"
+muc: "12"
+so_sach: "12.1"
+tieu_de: "Thứ tự của liminf và limsup"
+do_kho: vua
+nen_lam: true
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Nếu $s_n\le t_n$ từ một chỉ số trở đi, chứng minh $\liminf s_n\le\liminf t_n$ và $\limsup s_n\le\limsup t_n$.
+</De>
+
+<GoiY so={1}>
+So sánh inf, sup của cùng một đuôi trước khi lấy giới hạn.
+</GoiY>
+
+<GoiY so={2}>
+Với $N$ đủ lớn, $\inf_{n>N}s_n\le\inf_{n>N}t_n$ và $\sup_{n>N}s_n\le\sup_{n>N}t_n$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Thứ tự của liminf và limsup. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+So sánh inf, sup của cùng một đuôi trước khi lấy giới hạn.
+
+**Bước 4. Giải từng bước.**
+
+Với đuôi sau ngưỡng giả thiết, mọi $s_n\le t_n$. Cận dưới của đuôi $s$ không vượt mọi $t_n$, nên không vượt inf của đuôi $t$. Mọi $s_n$ không vượt sup của đuôi $t$, nên sup đuôi $s$ cũng không vượt nó. Các bất đẳng thức đúng trong thứ tự mở rộng. Lấy giới hạn theo $N$ và dùng bảo toàn thứ tự của các giới hạn mở rộng được hai kết luận.
+
+**Bước 5. Kiểm tra.**
+
+Không cần hai dãy hội tụ; các cận đuôi luôn đơn điệu nên có giới hạn mở rộng.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Với $N$ đủ lớn, $\inf_{n>N}s_n\le\inf_{n>N}t_n$ và $\sup_{n>N}s_n\le\sup_{n>N}t_n$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không thay limsup bằng một giới hạn thường chưa tồn tại.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Giới hạn trên và giới hạn dưới</span>
+</div>

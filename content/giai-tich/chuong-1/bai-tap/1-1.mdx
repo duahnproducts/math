@@ -1,0 +1,61 @@
+---
+so: "1.1"
+muc: "1"
+so_sach: "1.1"
+tieu_de: "Tổng các bình phương"
+do_kho: de
+nen_lam: true
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Chứng minh $\sum_{k=1}^n k^2=n(n+1)(2n+1)/6$ với $n\ge1$.
+</De>
+
+<GoiY so={1}>
+Quy nạp: kiểm tra số đầu rồi cộng bình phương kế tiếp.
+</GoiY>
+
+<GoiY so={2}>
+Rút $(n+1)$ ra ngoài khi cộng $(n+1)^2$ vào tổng đến $n$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Tổng các bình phương. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Quy nạp: kiểm tra số đầu rồi cộng bình phương kế tiếp.
+
+**Bước 4. Giải từng bước.**
+
+Với $n=1$, hai vế đều bằng 1. Giả sử công thức đúng ở $n$. Khi đó tổng đến $n+1$ bằng $n(n+1)(2n+1)/6+(n+1)^2=(n+1)(2n^2+7n+6)/6=(n+1)(n+2)(2n+3)/6$. Đây đúng là công thức với $n$ thay bằng $n+1$, nên quy nạp hoàn tất.
+
+**Bước 5. Kiểm tra.**
+
+Với $n=2$, tổng là $1+4=5$; công thức cho $2\cdot3\cdot5/6=5$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Rút $(n+1)$ ra ngoài khi cộng $(n+1)^2$ vào tổng đến $n$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Chỉ kiểm tra vài số đầu chưa chứng minh được cho mọi $n$.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Số tự nhiên và quy nạp</span>
+
+<XemMuc bai={1} />
+</div>

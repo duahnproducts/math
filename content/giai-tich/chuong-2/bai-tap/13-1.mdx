@@ -1,0 +1,61 @@
+---
+so: "13.1"
+muc: "13"
+so_sach: "13.1"
+tieu_de: "Hai metric trên không gian hữu hạn chiều"
+do_kho: kho
+nen_lam: true
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Trên $\mathbb R^k$, đặt $d_1(x,y)=\max_j|x_j-y_j|$, $d_2(x,y)=\sum_{j=1}^k|x_j-y_j|$. (a) Chứng minh cả hai là metric. (b) Chứng minh cả hai không gian metric đều đầy đủ.
+</De>
+
+<GoiY so={1}>
+Dùng tam giác trên từng tọa độ và tính đầy đủ của $\mathbb R$.
+</GoiY>
+
+<GoiY so={2}>
+$d_1\le d_2\le k d_1$; dãy Cauchy cho mỗi tọa độ Cauchy.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Hai metric trên không gian hữu hạn chiều. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Dùng tam giác trên từng tọa độ và tính đầy đủ của $\mathbb R$.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Hai hàm không âm, bằng 0 đúng khi mọi tọa độ bằng nhau, và đối xứng. Với mỗi $j$, $|x_j-z_j|\le|x_j-y_j|+|y_j-z_j|$. Lấy max cho tam giác $d_1$; lấy tổng cho tam giác $d_2$.
+
+**b.** Nếu $(x^{(n)})$ Cauchy theo một trong hai metric, $|x_j^{(m)}-x_j^{(n)}|$ không vượt khoảng cách tương ứng, nên mỗi tọa độ Cauchy và hội tụ tới $x_j\in\mathbb R$. Đặt $x=(x_1,\ldots,x_k)$. Với $\varepsilon>0$, chọn một ngưỡng chung để mọi tọa độ sai dưới $\varepsilon/k$. Khi đó $d_2(x^{(n)},x)<\varepsilon$, đồng thời $d_1\le d_2<\varepsilon$. Vậy dãy hội tụ theo metric ban đầu.
+
+**Bước 5. Kiểm tra.**
+
+Chỉ có hữu hạn $k$ tọa độ nên chọn được ngưỡng chung bằng max của $k$ ngưỡng.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+$d_1\le d_2\le k d_1$; dãy Cauchy cho mỗi tọa độ Cauchy.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không dùng lập luận này cho vô hạn tọa độ mà thiếu kiểm soát đều.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Không gian metric và compact</span>
+</div>

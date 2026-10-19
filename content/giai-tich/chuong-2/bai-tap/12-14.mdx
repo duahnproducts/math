@@ -1,0 +1,61 @@
+---
+so: "12.14"
+muc: "12"
+so_sach: "12.14"
+tieu_de: "Căn bậc n của giai thừa"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Tính (a) $\lim(n!)^{1/n}$; (b) $\lim (n!)^{1/n}/n$.
+</De>
+
+<GoiY so={1}>
+Dùng hệ quả tỉ số–căn: nếu $|a_{n+1}/a_n|\to L$, thì $|a_n|^{1/n}\to L$, kể cả $L=+\infty$.
+</GoiY>
+
+<GoiY so={2}>
+Ở (b), đặt $a_n=n!/n^n$; tỉ số là $(n/(n+1))^n$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Căn bậc n của giai thừa. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Dùng hệ quả tỉ số–căn: nếu $|a_{n+1}/a_n|\to L$, thì $|a_n|^{1/n}\to L$, kể cả $L=+\infty$.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Với $a_n=n!$, tỉ số $a_{n+1}/a_n=n+1\to+\infty$. Hệ quả 12.3 cho $(n!)^{1/n}\to+\infty$.
+
+**b.** Với $a_n=n!/n^n$, tính $a_{n+1}/a_n=(n/(n+1))^n=(1+1/n)^{-n}\to1/e$, dùng giới hạn định nghĩa quen thuộc $(1+1/n)^n\to e$ đã nêu ở §7. Hệ quả 12.3 cho $a_n^{1/n}\to1/e$. Nhưng $a_n^{1/n}=(n!)^{1/n}/n$, nên đáp án $1/e$.
+
+**Bước 5. Kiểm tra.**
+
+Giới hạn $e$ ở đây là kết quả được sách nêu trước; không dùng công thức Stirling.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Ở (b), đặt $a_n=n!/n^n$; tỉ số là $(n/(n+1))^n$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Cả tử và mẫu ở (b) cùng tăng vô hạn, không thể chia các ký hiệu vô cực để lấy kết quả.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Giới hạn trên và giới hạn dưới</span>
+</div>

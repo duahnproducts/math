@@ -1,0 +1,59 @@
+---
+so: "12.2"
+muc: "12"
+so_sach: "12.2"
+tieu_de: "Tiêu chuẩn limsup của trị tuyệt đối"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Chứng minh $\limsup|s_n|=0$ khi và chỉ khi $s_n\to0$.
+</De>
+
+<GoiY so={1}>
+Với dãy không âm, liminf không âm; nếu limsup bằng 0 thì hai cận cùng bằng 0.
+</GoiY>
+
+<GoiY so={2}>
+Có thể dùng trực tiếp $\sup_{n>N}|s_n|\to0$ để có $|s_n|<\varepsilon$ trên một đuôi.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Tiêu chuẩn limsup của trị tuyệt đối. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Với dãy không âm, liminf không âm; nếu limsup bằng 0 thì hai cận cùng bằng 0.
+
+**Bước 4. Giải từng bước.**
+
+Nếu limsup trị tuyệt đối bằng 0, cho $\varepsilon>0$, chọn $N$ sao cho $\sup_{n>N}|s_n|<\varepsilon$. Khi đó mọi $n>N$ có $|s_n|<\varepsilon$, nên $s_n\to0$. Ngược lại, nếu $s_n\to0$, với mỗi $\varepsilon>0$ có đuôi $|s_n|<\varepsilon/2$, nên $0\le\sup_{n>N}|s_n|\le\varepsilon/2<\varepsilon$ khi $N$ đủ lớn. Do đó limsup bằng 0.
+
+**Bước 5. Kiểm tra.**
+
+Tách $\varepsilon/2$ trong chiều ngược tránh nhầm sup của các số nhỏ hơn $\varepsilon$ nhất thiết nhỏ hơn nghiêm $\varepsilon$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Có thể dùng trực tiếp $\sup_{n>N}|s_n|\to0$ để có $|s_n|<\varepsilon$ trên một đuôi.
+
+</LoiGiai>
+
+<LoiHayMac>
+Limsup không âm của trị tuyệt đối không tự bằng 0 nếu dãy chỉ bị chặn.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Giới hạn trên và giới hạn dưới</span>
+</div>

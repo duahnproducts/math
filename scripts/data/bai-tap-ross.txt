@@ -1,0 +1,1165 @@
+@@ 1.1 | Tổng các bình phương | de
+D: Chứng minh $\sum_{k=1}^n k^2=n(n+1)(2n+1)/6$ với $n\ge1$.
+H: Quy nạp: kiểm tra số đầu rồi cộng bình phương kế tiếp.
+K: Rút $(n+1)$ ra ngoài khi cộng $(n+1)^2$ vào tổng đến $n$.
+S: Với $n=1$, hai vế đều bằng 1. Giả sử công thức đúng ở $n$. Khi đó tổng đến $n+1$ bằng $n(n+1)(2n+1)/6+(n+1)^2=(n+1)(2n^2+7n+6)/6=(n+1)(n+2)(2n+3)/6$. Đây đúng là công thức với $n$ thay bằng $n+1$, nên quy nạp hoàn tất.
+C: Với $n=2$, tổng là $1+4=5$; công thức cho $2\cdot3\cdot5/6=5$.
+E: Chỉ kiểm tra vài số đầu chưa chứng minh được cho mọi $n$.
+@@ 1.2 | Tổng cấp số cộng | de
+D: Chứng minh $3+11+\cdots+(8n-5)=4n^2-n$ với $n\ge1$.
+H: Tách số hạng mới trong bước quy nạp.
+K: Số hạng thứ $n+1$ là $8n+3$.
+S: Ở $n=1$, $3=4-1$. Nếu tổng đến $n$ là $4n^2-n$, thì tổng đến $n+1$ là $4n^2-n+8n+3=4n^2+7n+3=4(n+1)^2-(n+1)$. Vậy công thức đúng theo quy nạp.
+C: Khi $n=2$, $3+11=14=16-2$.
+E: Không cộng thêm $8n-5$: số đó đã nằm trong tổng cũ.
+@@ 1.3 | Tổng các lập phương | vua
+D: Chứng minh $\sum_{k=1}^n k^3=(1+2+\cdots+n)^2$ với $n\ge1$.
+H: Dùng tổng $1+\cdots+n=n(n+1)/2$ rồi quy nạp.
+K: Khi cộng $(n+1)^3$, rút $(n+1)^2$ ra ngoài.
+S: Với $n=1$ đẳng thức đúng. Giả sử tổng lập phương đến $n$ là $n^2(n+1)^2/4$. Tổng đến $n+1$ bằng $(n+1)^2[n^2/4+n+1]=(n+1)^2(n+2)^2/4$. Đây là bình phương tổng $1+\cdots+(n+1)$, nên kết luận đúng với mọi $n$.
+C: $1^3+2^3=9=(1+2)^2$.
+E: Bình phương của một tổng có cả các tích chéo.
+@@ 1.4 | Tổng các số lẻ | de
+D: (a) Tính $1+3+\cdots+(2n-1)$ với $n=1,2,3,4$ và đoán công thức. (b) Chứng minh công thức bằng quy nạp.
+H: Các tổng đầu gợi ra các số chính phương.
+K: Dùng $n^2+(2n+1)=(n+1)^2$.
+S: **a.** Các tổng là $1,4,9,16$, nên đoán tổng bằng $n^2$. **b.** Với $n=1$ đúng. Nếu tổng $n$ số lẻ đầu bằng $n^2$, cộng số lẻ kế tiếp $2n+1$ cho $(n+1)^2$. Quy nạp chứng minh dự đoán.
+C: Tổng có đúng $n$ số hạng, số cuối là $2n-1$.
+E: Đoán công thức và chứng minh công thức là hai việc khác nhau.
+@@ 1.5 | Tổng hình học hữu hạn | de
+D: Chứng minh $1+1/2+1/4+\cdots+1/2^n=2-1/2^n$ với $n\ge1$.
+H: Có thể quy nạp hoặc trừ một nửa tổng khỏi chính tổng.
+K: Số hạng mới là $2^{-(n+1)}$, còn tổng ban đầu có $n+1$ số hạng.
+S: Với $n=1$, $1+1/2=2-1/2$. Nếu công thức đúng ở $n$, cộng $2^{-(n+1)}$ được $2-2^{-n}+2^{-(n+1)}=2-2^{-(n+1)}$. Do đó đúng với mọi $n\ge1$.
+C: Tổng nhỏ hơn 2 và tăng khi thêm số hạng dương.
+E: Đừng nhầm số hạng cuối với $1/(2n)$.
+@@ 1.6 | Chia hết cho 7 | de
+D: Chứng minh $11^n-4^n$ chia hết cho 7 với mọi $n\ge1$.
+H: Viết biểu thức ở $n+1$ thành bội của biểu thức ở $n$ cộng một bội của 7.
+K: Dùng $11^{n+1}-4^{n+1}=11(11^n-4^n)+7\cdot4^n$.
+S: Ở $n=1$, hiệu bằng 7. Giả sử $11^n-4^n=7m$ với $m$ nguyên. Đẳng thức ở gợi ý cho $11^{n+1}-4^{n+1}=7(11m+4^n)$, là bội của 7. Quy nạp hoàn tất.
+C: Cả $11m$ và $4^n$ đều nguyên.
+E: Phải chứng minh thương là số nguyên, không chỉ viết phép chia.
+@@ 1.7 | Chia hết cho 36 | vua
+D: Chứng minh $7^n-6n-1$ chia hết cho 36 với $n\ge1$.
+H: Giữ nguyên biểu thức quy nạp khi nhân với 7.
+K: $7^{n+1}-6(n+1)-1=7(7^n-6n-1)+36n$.
+S: Với $n=1$, biểu thức bằng 0. Nếu $7^n-6n-1=36m$, biểu thức ở $n+1$ bằng $36(7m+n)$. Vì $7m+n$ nguyên, mệnh đề truyền từ $n$ sang $n+1$.
+C: Khai triển vế phải: $7^{n+1}-42n-7+36n=7^{n+1}-6n-7$.
+E: Không được bỏ số hạng tuyến tính $6n$ khi quy nạp.
+@@ 1.8 | Quy nạp bắt đầu ở chỉ số khác 1 | vua
+D: Dùng quy nạp bắt đầu ở $m$: (a) $n^2>n+1$ với mọi số nguyên $n\ge2$; (b) $n!>n^2$ với mọi số nguyên $n\ge4$.
+H: Chọn đúng điểm bắt đầu cho từng bất đẳng thức.
+K: Trong (b), từ $n!>n^2$ cần so sánh $(n+1)n^2$ với $(n+1)^2$.
+S: **a.** $2^2>3$. Nếu $n^2>n+1$, thì $(n+1)^2=n^2+2n+1>3n+2>n+2$ với $n\ge2$. **b.** $4!=24>16$. Nếu $n!>n^2$, thì $(n+1)!>(n+1)n^2>(n+1)^2$ vì $n^2>n+1$ với $n\ge4$ theo (a).
+C: Cả hai bước đầu phải được kiểm tra riêng; kết quả (b) không đúng tại $n=3$.
+E: Quy nạp không bắt buộc bắt đầu tại 1.
+@@ 1.9 | Khi nào hàm mũ lớn hơn bình phương | vua
+D: (a) Tìm mọi số nguyên $n$ sao cho $2^n>n^2$. (b) Chứng minh đáp án bằng quy nạp khi cần.
+H: Xét riêng số nguyên âm, các giá trị nhỏ và đuôi $n\ge5$.
+K: Với $n\ge3$, $2n^2>(n+1)^2$.
+S: Với $n\le-1$, $2^n\le1/2<1\le n^2$, nên sai. Thử $n=0,1,2,3,4$ cho đúng tại $0,1$ và sai tại $2,3,4$. Tại $n=5$, $32>25$. Nếu $n\ge5$ và $2^n>n^2$, thì $2^{n+1}>2n^2>(n+1)^2$, vì $n^2-2n-1>0$. Vậy tập nghiệm là $\{0,1\}\cup\{n\in\mathbb Z:n\ge5\}$.
+C: $n=0$ là số nguyên và thỏa mãn, dù không thuộc quy ước số tự nhiên dương của sách.
+E: Đề hỏi số nguyên, không chỉ số nguyên dương.
+@@ 1.10 | Tổng các số lẻ từ 2n đến 4n | vua
+D: Chứng minh $(2n+1)+(2n+3)+\cdots+(4n-1)=3n^2$ với $n\ge1$.
+H: Viết tổng cần tìm bằng hiệu hai tổng số lẻ đầu tiên.
+K: Tổng $2n$ số lẻ đầu trừ tổng $n$ số lẻ đầu là $(2n)^2-n^2$.
+S: Theo 1.4, $1+3+\cdots+(4n-1)=4n^2$ và $1+3+\cdots+(2n-1)=n^2$. Lấy hiệu, các số hạng còn lại chính là từ $2n+1$ đến $4n-1$. Tổng bằng $4n^2-n^2=3n^2$.
+C: Khi $n=1$, chỉ có số hạng 3. Tổng có $n$ số hạng.
+E: Khi thay $n$ bằng $n+1$, cả đầu lẫn cuối tổng đều thay đổi.
+@@ 1.11 | Bước chuyển đúng nhưng mệnh đề vẫn sai | vua
+D: Đặt $P_n$: “$n^2+5n+1$ chẵn”. (a) Chứng minh $P_n\Rightarrow P_{n+1}$. (b) Xác định $n\in\mathbb N$ làm $P_n$ đúng và nêu bài học về quy nạp.
+H: Hiệu hai biểu thức liên tiếp là số chẵn.
+K: $[(n+1)^2+5(n+1)+1]-(n^2+5n+1)=2n+6$; kiểm tra cả bước đầu.
+S: **a.** Nếu biểu thức tại $n$ chẵn, cộng $2n+6$ vẫn chẵn, nên kéo theo đúng. **b.** $n^2+5n=n(n+5)$ luôn chẵn, vì hai thừa số khác tính chẵn lẻ. Vậy $n^2+5n+1$ luôn lẻ; không có $n$ nào thỏa $P_n$. $P_1$ sai. Quy nạp cần đồng thời cơ sở đúng và bước chuyển đúng.
+C: $P_1$ là phát biểu “7 chẵn”, rõ ràng sai.
+E: Một kéo theo đúng không bảo đảm tiền đề của nó đúng.
+@@ 1.12 | Định lý nhị thức | kho
+D: Với $\binom nk=n!/[k!(n-k)!]$, $0!=1$: (a) kiểm tra $(a+b)^n=\sum_{k=0}^n\binom nk a^{n-k}b^k$ khi $n=1,2,3$; (b) chứng minh $\binom nk+\binom n{k-1}=\binom{n+1}k$ với $1\le k\le n$; (c) chứng minh công thức nhị thức bằng quy nạp.
+H: Nhân khai triển ở $n$ với $a+b$, rồi ghép các đơn thức giống nhau.
+K: Công thức Pascal ghép hai hệ số của $a^{n+1-k}b^k$.
+S: **a.** Ba khai triển là $a+b$; $a^2+2ab+b^2$; $a^3+3a^2b+3ab^2+b^3$. **b.** Quy đồng hai hệ số cho $n![(n-k+1)+k]/[k!(n-k+1)!]=(n+1)!/[k!(n+1-k)!]$. **c.** Bước đầu $n=1$ đã đúng. Nhân tổng ở $n$ với $a+b$. Hai hệ số giữa là $\binom nk$ và $\binom n{k-1}$, tổng bằng $\binom{n+1}k$ theo (b). Hai đơn thức biên $a^{n+1},b^{n+1}$ đều có hệ số 1. Thu được khai triển ở $n+1$.
+C: Không dùng giai thừa âm ở hai chỉ số biên; tách chúng trước khi áp dụng (b).
+E: Phải đổi chỉ số ở tổng nhân với $b$ trước khi ghép hệ số.
+@@ 2.1 | Căn bậc hai không hữu tỉ | de
+D: Chứng minh $\sqrt3,\sqrt5,\sqrt7,\sqrt{24},\sqrt{31}$ đều vô tỉ.
+H: Nghiệm hữu tỉ của đa thức monic hệ số nguyên phải nguyên.
+K: Nếu $\sqrt m$ hữu tỉ thì phải là số nguyên có bình phương bằng $m$.
+S: Mỗi căn là nghiệm dương của $x^2-m=0$. Theo định lý nghiệm hữu tỉ, nếu hữu tỉ thì là số nguyên. Nhưng $1^2<3<2^2$; $2^2<5,7<3^2$; $4^2<24<5^2$; $5^2<31<6^2$. Không số nào có căn nguyên, nên cả năm căn vô tỉ.
+C: 24 không nguyên tố nhưng vẫn không phải số chính phương.
+E: Không thể chỉ dùng lý do “số dưới căn là số nguyên tố” cho cả danh sách.
+@@ 2.2 | Căn bậc cao không hữu tỉ | de
+D: Chứng minh $\sqrt[3]2$, $\sqrt[7]5$, $\sqrt[4]{13}$ đều vô tỉ.
+H: Áp dụng định lý nghiệm hữu tỉ cho $x^m-c$.
+K: Cả ba căn đều nằm giữa 1 và 2.
+S: Ba số là nghiệm dương của $x^3-2$, $x^7-5$, $x^4-13$. Nếu hữu tỉ thì phải nguyên, vì đa thức monic có hệ số nguyên. Nhưng $1<2<2^3$, $1<5<2^7$, $1<13<2^4$ nên cả ba nghiệm nằm nghiêm ngặt giữa 1 và 2. Không có số nguyên ở đó.
+C: Bậc căn lần lượt là 3, 7 và 4.
+E: Không đọc nhầm chỉ số căn thành hệ số nhân.
+@@ 2.3 | Căn lồng nhau | vua
+D: Chứng minh $x=\sqrt{2+\sqrt2}$ vô tỉ.
+H: Giả sử $x$ hữu tỉ rồi cô lập căn bên trong.
+K: $\sqrt2=x^2-2$.
+S: Nếu $x\in\mathbb Q$, tính đóng của $\mathbb Q$ dưới nhân và trừ cho $x^2-2\in\mathbb Q$. Nhưng bình phương đẳng thức định nghĩa cho $x^2-2=\sqrt2$, trái với tính vô tỉ của $\sqrt2$. Vậy $x$ vô tỉ.
+C: Mọi biểu thức đều xác định vì $2+\sqrt2>0$.
+E: Tổng hoặc căn của các số vô tỉ không tự động vô tỉ; cần lập luận cụ thể.
+@@ 2.4 | Căn bậc ba chứa căn bậc hai | vua
+D: Chứng minh $x=\sqrt[3]{5-\sqrt3}$ vô tỉ.
+H: Lũy thừa bậc ba để cô lập $\sqrt3$.
+K: Nếu $x$ hữu tỉ thì $5-x^3$ hữu tỉ.
+S: Từ $x^3=5-\sqrt3$ suy ra $\sqrt3=5-x^3$. Giả sử $x$ hữu tỉ sẽ làm vế phải hữu tỉ, mâu thuẫn với bài 2.1. Do đó $x$ vô tỉ.
+C: Dùng lũy thừa bậc ba, không phải bình phương.
+E: Không khai triển căn của hiệu thành hiệu hai căn.
+@@ 2.5 | Lũy thừa phân số vô tỉ | kho
+D: Chứng minh $x=(3+\sqrt2)^{2/3}$ vô tỉ.
+H: Lập phương để thu được một số có phần chứa $\sqrt2$ khác 0.
+K: $x^3=(3+\sqrt2)^2=11+6\sqrt2$.
+S: Giả sử $x$ hữu tỉ. Khi đó $x^3$ hữu tỉ. Mặt khác $x^3=9+6\sqrt2+2=11+6\sqrt2$, nên $\sqrt2=(x^3-11)/6$ hữu tỉ, mâu thuẫn. Vậy $x$ vô tỉ.
+C: Cơ số $3+\sqrt2$ dương nên phép lũy thừa phân số dùng ở đây hợp lệ.
+E: Không suy ra một số vô tỉ nâng lên lũy thừa bất kỳ vẫn vô tỉ.
+@@ 2.6 | Tính đóng của số hữu tỉ | de
+D: Giải thích vì sao $4-7b^2$ hữu tỉ nếu $b$ hữu tỉ; đây là bước dùng trong Ví dụ 6 của §2.
+H: Viết $b=p/q$ với $p,q$ nguyên, $q\ne0$.
+K: $4-7b^2=(4q^2-7p^2)/q^2$.
+S: Tử $4q^2-7p^2$ và mẫu $q^2$ đều nguyên; $q^2\ne0$. Vậy biểu thức là thương hai số nguyên với mẫu khác 0, đúng định nghĩa số hữu tỉ.
+C: Không cần phân số kết quả đã tối giản mới được gọi là hữu tỉ.
+E: Cần kiểm tra mẫu khác 0.
+@@ 2.7 | Biểu thức căn thực ra hữu tỉ | vua
+D: Chứng minh hai số sau hữu tỉ: (a) $\sqrt{4+2\sqrt3}-\sqrt3$; (b) $\sqrt{6+4\sqrt2}-\sqrt2$.
+H: Tìm một bình phương hoàn chỉnh trong mỗi căn lớn.
+K: $(1+\sqrt3)^2=4+2\sqrt3$ và $(2+\sqrt2)^2=6+4\sqrt2$.
+S: **a.** $1+\sqrt3>0$, nên căn bậc hai chính của bình phương đó là $1+\sqrt3$. Trừ $\sqrt3$ được 1. **b.** Tương tự $2+\sqrt2>0$ nên căn lớn bằng $2+\sqrt2$; biểu thức bằng 2. Cả 1 lẫn 2 đều hữu tỉ.
+C: Dấu dương của hai biểu thức được bình phương xác định đúng căn chính.
+E: $\sqrt{u^2}=|u|$, không luôn bằng $u$.
+@@ 2.8 | Nghiệm hữu tỉ của đa thức | vua
+D: Tìm mọi nghiệm hữu tỉ của $P(x)=x^8-4x^5+13x^3-7x+1=0$.
+H: Hệ số đầu và hằng số đều bằng 1.
+K: Chỉ cần thử hai ứng viên $1,-1$.
+S: Định lý nghiệm hữu tỉ cho biết mọi nghiệm hữu tỉ phải là ước nguyên của 1, tức $1$ hoặc $-1$. Tính $P(1)=1-4+13-7+1=4$ và $P(-1)=1+4-13+7+1=0$. Vậy nghiệm hữu tỉ duy nhất là $-1$.
+C: Danh sách ứng viên đã vét hết theo định lý, nên không bỏ sót nghiệm hữu tỉ khác.
+E: Một ứng viên chỉ là nghiệm sau khi thay vào đa thức cho 0.
+@@ 3.1 | Tiên đề nào không đúng trên N và Z | vua
+D: Trong A1–A4 (cộng), M1–M4 (nhân), DL (phân phối), O1–O5 (thứ tự), xác định các tính chất không đúng khi làm việc trên (a) $\mathbb N=\{1,2,\ldots\}$; (b) $\mathbb Z$. A3 đòi phần tử 0, A4 đòi số đối, M4 đòi nghịch đảo của mọi số khác 0.
+H: Kiểm tra phần tử trung hòa và khả năng giải $a+x=0$, $ax=1$ ngay trong tập đang xét.
+K: Dùng $a=1$ cho số đối và $a=2$ cho nghịch đảo.
+S: **a.** Trên $\mathbb N$ dương, A3 không có phần tử 0; A4 không có $-1$ là số đối của 1; M4 không có $1/2$ là nghịch đảo của 2. Các luật kết hợp, giao hoán, đơn vị nhân, phân phối và thứ tự còn lại vẫn đúng. **b.** Trên $\mathbb Z$, có 0 và số đối của mỗi số; chỉ M4 sai vì $1/2\notin\mathbb Z$.
+C: Quy ước $\mathbb N$ trong sách không chứa 0; nếu đổi quy ước thì kết luận về A3 thay đổi.
+E: Không lấy nghịch đảo ở ngoài tập rồi nói tiên đề đúng trong tập.
+@@ 3.2 | Vai trò của giao hoán trong chứng minh trường | vua
+D: Trong chứng minh Định lý 3.1: (ii) $a0=0$; (iii) $(-a)b=-(ab)$. Chỉ ra chỗ dùng luật giao hoán cộng A2 ở (a) phần (ii); (b) phần (iii), khi luật khử (i) đang viết dưới dạng $u+c=v+c\Rightarrow u=v$.
+H: Luật khử đã chứng minh chỉ khử số hạng bên phải.
+K: Đổi chỗ số hạng để biến một số hạng chung bên trái thành số hạng chung bên phải.
+S: **a.** Từ $a0=a0+a0$, viết $0+a0=a0+a0$ rồi khử $a0$ ở bên phải. Việc viết $0+a0=a0$ dùng $0+a0=a0+0$ theo A2 và A3. **b.** Từ $ab+(-a)b=ab+[-(ab)]$, đổi hai tổng thành $(-a)b+ab=-(ab)+ab$ bằng A2, sau đó khử $ab$ bên phải.
+C: Chỉ rõ số hạng chung được khử ở mỗi phép biến đổi; không gọi nhầm giao hoán nhân M2.
+E: Không âm thầm dùng luật khử bên trái trước khi chứng minh được nó từ các tiên đề.
+@@ 3.3 | Hai hệ quả của tiên đề trường | vua
+D: Chứng minh (iv) $(-a)(-b)=ab$ và (v) nếu $ac=bc$, $c\ne0$, thì $a=b$ trong Định lý 3.1.
+H: Dùng tính duy nhất của số đối và nghịch đảo nhân.
+K: Phần (v) nhân hai vế với $c^{-1}$; phần (iv) áp dụng $(-u)v=-(uv)$ hai lần.
+S: **iv.** $(-a)(-b)=-[a(-b)]=-[-(ab)]=ab$, dùng giao hoán nhân để suy ra $a(-b)=-(ab)$. Đẳng thức $-(-x)=x$ do $x$ là số đối của $-x$. **v.** Nhân bên phải với $c^{-1}$: $(ac)c^{-1}=(bc)c^{-1}$. Kết hợp lại cho $a(cc^{-1})=b(cc^{-1})$, tức $a=b$.
+C: Điều kiện $c\ne0$ cần thiết để tồn tại $c^{-1}$.
+E: Không khử một thừa số có thể bằng 0.
+@@ 3.4 | Số 1 dương và đảo chiều nghịch đảo | vua
+D: Chứng minh (v) $0<1$; (vii) $0<a<b\Rightarrow0<b^{-1}<a^{-1}$ trong Định lý 3.2.
+H: Bình phương không âm; nhân bất đẳng thức với số dương giữ chiều.
+K: $1=1^2\ge0$, $1\ne0$; sau đó nhân $a<b$ với $a^{-1}b^{-1}>0$.
+S: **v.** Mọi bình phương không âm, nên $1=1^2\ge0$. Tiên đề trường yêu cầu $1\ne0$, do đó $1>0$. **vii.** Nghịch đảo của một số dương là dương: nếu $a^{-1}\le0$, thì $1=aa^{-1}\le0$, mâu thuẫn. Tương tự $b^{-1}>0$. Nhân $a<b$ với $a^{-1}b^{-1}>0$ cho $b^{-1}<a^{-1}$.
+C: Phần nghịch đảo dùng kết quả $1>0$ vừa chứng minh.
+E: Lấy nghịch đảo đảo chiều khi cả hai số đều dương; không áp dụng thiếu điều kiện.
+@@ 3.5 | Trị tuyệt đối và bất đẳng thức tam giác đảo | vua
+D: (a) Chứng minh $|b|\le a\iff-a\le b\le a$. (b) Chứng minh $\big||a|-|b|\big|\le|a-b|$.
+H: Dùng $-|b|\le b\le|b|$ và bất đẳng thức tam giác.
+K: Viết $a=(a-b)+b$, rồi hoán đổi $a,b$.
+S: **a.** Nếu $|b|\le a$, suy ra $-a\le-|b|\le b\le|b|\le a$. Ngược lại, $b\le a$ và $-b\le a$ nên $|b|=\max\{b,-b\}\le a$. **b.** Tam giác cho $|a|\le|a-b|+|b|$, tức $|a|-|b|\le|a-b|$. Đổi $a,b$ cho $|b|-|a|\le|a-b|$. Kết hợp hai chiều bằng (a) cho kết quả.
+C: Khi $a<0$ trong (a), cả hai vế tương đương đều sai; lập luận vẫn đúng.
+E: Không được bỏ trị tuyệt đối bên ngoài $|a|-|b|$ khi chưa xét cả hai chiều.
+@@ 3.6 | Bất đẳng thức tam giác cho nhiều số | de
+D: (a) Chứng minh $|a+b+c|\le|a|+|b|+|c|$. (b) Mở rộng bằng quy nạp: $|a_1+\cdots+a_n|\le\sum_{j=1}^n|a_j|$.
+H: Nhóm tất cả trừ số cuối làm một số hạng.
+K: $|u+v|\le|u|+|v|$ áp dụng lặp lại, không cần xét mọi tổ hợp dấu.
+S: **a.** $|a+b+c|\le|a+b|+|c|\le|a|+|b|+|c|$. **b.** Với $n=1$ là đẳng thức. Nếu đúng cho $n$, thì $|\sum_{j=1}^{n+1}a_j|\le|\sum_{j=1}^na_j|+|a_{n+1}|\le\sum_{j=1}^{n+1}|a_j|$. Quy nạp hoàn tất.
+C: Trường hợp $n=2$ khôi phục đúng bất đẳng thức tam giác ban đầu.
+E: Không cần xét $2^n$ trường hợp dấu.
+@@ 3.7 | Khoảng cách và khoảng trên trục số | de
+D: Chứng minh: (a) $|b|<a\iff-a<b<a$; (b) $|a-b|<c\iff b-c<a<b+c$; (c) $|a-b|\le c\iff b-c\le a\le b+c$.
+H: Trị tuyệt đối đo khoảng cách đến 0; trừ $b$ để chuyển tâm.
+K: Dùng $|u|=\max\{u,-u\}$, rồi cộng $b$ vào cả hai bất đẳng thức.
+S: **a.** $|b|<a$ tương đương đồng thời $b<a$ và $-b<a$, tức $-a<b<a$. **b.** Thay $b$ trong (a) bằng $a-b$, ngưỡng bằng $c$: $-c<a-b<c$. Cộng $b$ cho kết quả. **c.** Làm tương tự với dấu không nghiêm, dựa vào 3.5(a).
+C: Với $c<0$, cả hai điều kiện ở (b), (c) đều không thể xảy ra.
+E: Không đổi $<$ thành $\le$ khi chuyển biểu diễn khoảng.
+@@ 3.8 | Nhỏ hơn mọi số lớn hơn b | vua
+D: Cho $a,b\in\mathbb R$. Nếu $a\le b_1$ với mọi $b_1>b$, chứng minh $a\le b$.
+H: Phản chứng bằng trung điểm của hai số khác nhau.
+K: Nếu $a>b$, chọn $b_1=(a+b)/2$.
+S: Giả sử $a>b$. Trung điểm $b_1$ thỏa $b<b_1<a$, vì $b_1-b=(a-b)/2>0$ và $a-b_1=(a-b)/2>0$. Giả thiết áp dụng cho $b_1$ lại cho $a\le b_1$, mâu thuẫn. Vì vậy $a\le b$.
+C: Giả thiết không yêu cầu bất đẳng thức tại $b_1=b$, nên phải chọn một số lớn hơn $b$.
+E: Không được thế thẳng $b_1=b$ vào giả thiết.
+@@ 4.1 | Ba cận trên của từng tập | vua
+D: Với mỗi tập sau, cho ba cận trên nếu có; nếu không, kết luận không bị chặn trên.
+
+@SETS4@
+H: Cận trên không cần thuộc tập. Nếu $M$ là cận trên thì $M+1,M+2$ cũng là cận trên.
+K: Tìm đầu mút trên trước. Phân biệt hợp ở (h) với giao ở (i), (r).
+S: Bảng dưới ghi đầu mút của từng tập để kiểm tra cận:
+
+@EXTREMA4@
+
+Với mỗi hàng có $\sup=M$ hữu hạn, ba cận trên là $M,M+1,M+2$. Các ý **h, k, u** không bị chặn trên: (h) chứa $2n$; (k) có $n+(-1)^n/n\ge n-1$; (u) chứa mọi bình phương $n^2$. Để xác định các hàng khó: (i) bằng $[0,1]$ vì điểm ngoài bị loại khi $n$ đủ lớn; (r) bằng $\{1\}$ vì $|x-1|<1/n$ với mọi $n$ buộc $x=1$. Tính trù mật cho các cận ở (l), (m), (n); (s) có số nguyên tố nhỏ nhất là 2. Giá trị sin/cos ở (v), (w) lặp theo chu kỳ 6.
+C: Ở §4, $+\infty$ trong bảng chỉ ghi nhận không bị chặn trên, không phải một cận trên thực. Ví dụ (n) có ba cận $\sqrt2,\sqrt2+1,\sqrt2+2$.
+E: Không chọn ba phần tử bất kỳ của tập rồi gọi là cận trên.
+@@ 4.2 | Ba cận dưới của từng tập | vua
+D: Với mỗi tập sau (danh sách bài 4.1), cho ba cận dưới nếu có; nếu không, kết luận không bị chặn dưới.
+
+@SETS4@
+H: Nếu $m$ là cận dưới thì $m-1,m-2$ cũng là cận dưới.
+K: Tập có các số âm với độ lớn tùy ý không có cận dưới thực.
+S: Các đầu mút là:
+
+@EXTREMA4@
+
+Với mỗi hàng có $\inf=m$ hữu hạn, ba cận dưới là $m,m-1,m-2$. Các ý **l, o, t** không bị chặn dưới vì chứa các số nguyên âm nhỏ tùy ý. Ở (k), số đầu là 0 và với $n\ge2$ ta có $n-1/n>0$, nên cận dưới 0 đúng. Ở (s), mọi số dương nên 0 là cận dưới; không có cận dưới dương vì số nguyên tố lớn tùy ý (nếu chỉ có hữu hạn, tích của chúng cộng 1 có ước nguyên tố mới). Các giao ở (i), (r) lần lượt là $[0,1]$ và $\{1\}$.
+C: $-\infty$ không là cận dưới thực; nó biểu thị không bị chặn dưới. Ví dụ (d) có ba cận dưới $e,e-1,e-2$.
+E: Cận dưới không nhất thiết là phần tử nhỏ nhất của tập.
+@@ 4.3 | Cận trên đúng của từng tập | vua
+D: Với mỗi tập dưới đây, tìm $\sup$ trong $\mathbb R$ nếu tồn tại; nếu không, ghi không có sup thực.
+
+@SETS4@
+H: Phải kiểm tra vừa là cận trên vừa là cận trên nhỏ nhất.
+K: Với các đầu mút không đạt được, chọn phần tử gần đầu mút từ phía dưới.
+S: Dùng cột $\sup$ trong bảng:
+
+@EXTREMA4@
+
+Các ý h, k, u không có sup thực. Mọi giá trị hữu hạn trong cột còn lại là đáp án. Với tập hữu hạn hoặc khoảng đóng, đầu mút là giá trị lớn nhất. Với (b), (j), (l), (m), (n), (t), đầu mút không thuộc tập nhưng mọi số nhỏ hơn nó đều không phải cận trên: dùng số gần đầu mút, hoặc dùng tính trù mật của $\mathbb Q$. Ở (j), $1-1/(3n)>1-\varepsilon$ khi $n>1/(3\varepsilon)$. Ở (s), $1/2$ đạt được tại số nguyên tố 2.
+C: (n) có sup thực $\sqrt2$ dù tập chỉ gồm số hữu tỉ. Phải lấy sup trong không gian mà đề quy định là $\mathbb R$.
+E: Không kết luận không có sup chỉ vì tập không có phần tử lớn nhất.
+@@ 4.4 | Cận dưới đúng của từng tập | vua
+D: Với mỗi tập sau, tìm $\inf$ trong $\mathbb R$ nếu có; nếu không, ghi không có inf thực.
+
+@SETS4@
+H: Cận dưới đúng là cận dưới lớn nhất.
+K: Muốn loại một số lớn hơn đầu mút dưới, tìm một phần tử nhỏ hơn số đó.
+S: Dùng cột $\inf$ trong bảng:
+
+@EXTREMA4@
+
+Các ý l, o, t không có inf thực. Mọi đầu mút hữu hạn ở cột $\inf$ là đáp án. Với (e), $1/n$ gần 0 tùy ý; với (s), các số nguyên tố lớn tùy ý làm $1/p$ gần 0; do đó không có cận dưới dương. Với các tập hữu tỉ (m), (n), tính trù mật cho các điểm sát $-2$, $-\sqrt2$ từ bên phải. Với (b), mọi số dương đều có một phần tử trong $(0,1)$ nhỏ hơn nó. Các đầu mút dưới còn lại đều đạt được.
+C: $\inf(0,1)=0$ nhưng $0\notin(0,1)$; inf không đồng nghĩa min.
+E: Không viết $-\infty$ là một số thực trong §4.
+@@ 4.5 | Khi sup thuộc tập | de
+D: Cho $S\subseteq\mathbb R$ không rỗng, bị chặn trên. Chứng minh nếu $\sup S\in S$ thì $\sup S=\max S$.
+H: Phần tử lớn nhất là một phần tử của tập lớn hơn hoặc bằng tất cả phần tử khác.
+K: Hai điều kiện của max đã có ngay trong giả thiết và định nghĩa sup.
+S: Đặt $M=\sup S$. Vì $M$ là cận trên, $s\le M$ với mọi $s\in S$. Giả thiết cho $M\in S$. Vì thế $M$ thỏa định nghĩa phần tử lớn nhất, tức $M=\max S$.
+C: Không cần điều kiện tập đóng; chỉ cần chính sup thuộc tập.
+E: Không bỏ điều kiện $\sup S\in S$.
+@@ 4.6 | Quan hệ giữa inf và sup | de
+D: Cho $S\subseteq\mathbb R$ không rỗng, bị chặn. (a) Chứng minh $\inf S\le\sup S$. (b) Mô tả $S$ nếu $\inf S=\sup S$.
+H: Chọn một phần tử của tập không rỗng rồi kẹp giữa hai cận.
+K: Nếu hai cận cùng bằng $c$, mọi phần tử đều bằng $c$.
+S: **a.** Chọn $s\in S$; định nghĩa cho $\inf S\le s\le\sup S$. **b.** Nếu hai cận bằng $c$, thì $c\le s\le c$ với mọi $s\in S$, nên mọi $s=c$. Vì $S$ không rỗng, $S=\{c\}$. Ngược lại một tập một phần tử hiển nhiên có inf và sup bằng phần tử đó.
+C: Không thể chọn phần tử nếu bỏ giả thiết không rỗng.
+E: Inf bằng sup buộc tập chỉ có một giá trị, không phải một khoảng có độ dài dương.
+@@ 4.7 | Bao hàm và hợp của các tập bị chặn | vua
+D: Cho $S,T\subseteq\mathbb R$ không rỗng, bị chặn. (a) Nếu $S\subseteq T$, chứng minh $\inf T\le\inf S\le\sup S\le\sup T$. (b) Không cần bao hàm, chứng minh $\sup(S\cup T)=\max\{\sup S,\sup T\}$.
+H: Cận trên của tập lớn cũng là cận trên của tập con.
+K: Ở (b), chứng minh hai chiều bất đẳng thức với $M=\max\{\sup S,\sup T\}$.
+S: **a.** $\sup T$ chặn mọi phần tử $S$, nên $\sup S\le\sup T$. Tương tự $\inf T$ là cận dưới của $S$, nên $\inf T\le\inf S$. Bất đẳng thức giữa do 4.6. **b.** Mọi phần tử của hợp không vượt $M$, nên $\sup(S\cup T)\le M$. Mặt khác hợp chứa cả $S,T$, nên sup hợp không nhỏ hơn từng sup. Vậy sup hợp ít nhất là $M$; hai chiều cho đẳng thức.
+C: Phần (b) không dùng $S\subseteq T$.
+E: Không cộng hai sup khi đang xét hợp.
+@@ 4.8 | Hai tập nằm về hai phía | vua
+D: Cho hai tập thực không rỗng $S,T$ với $s\le t$ cho mọi $s\in S,t\in T$. (a) Chỉ ra $S$ bị chặn trên, $T$ bị chặn dưới. (b) Chứng minh $\sup S\le\inf T$. (c) Cho ví dụ có giao không rỗng. (d) Cho ví dụ có hai cận bằng nhau nhưng giao rỗng.
+H: Cố định một phần tử ở tập bên kia để tạo cận.
+K: Mỗi $t\in T$ là cận trên của $S$; do đó $\sup S$ là cận dưới của $T$.
+S: **a.** Chọn $s_0\in S,t_0\in T$. Có $s\le t_0$ và $s_0\le t$ cho mọi $s,t$ tương ứng. **b.** Vì mỗi $t$ là cận trên của $S$, $\sup S\le t$ với mọi $t\in T$. Do đó $\sup S\le\inf T$. **c.** Lấy $S=[0,1],T=[1,2]$, giao bằng $\{1\}$. **d.** Lấy $S=(0,1),T=(1,2)$, hai cận đều 1 nhưng giao rỗng.
+C: Cả hai ví dụ đều thỏa điều kiện mọi $s\le t$.
+E: Hai cận bằng nhau không bắt buộc điểm chung thuộc cả hai tập.
+@@ 4.9 | Đổi dấu biến sup thành inf | vua
+D: Cho $S\subseteq\mathbb R$ không rỗng, bị chặn dưới và $-S=\{-s:s\in S\}$. Chứng minh $\inf S=-\sup(-S)$ bằng cách kiểm tra cận dưới và tính lớn nhất.
+H: Đổi dấu đảo chiều thứ tự.
+K: Nếu $M=\sup(-S)$ thì $-M$ chặn dưới $S$; mọi cận dưới $l$ của $S$ cho cận trên $-l$ của $-S$.
+S: $-S$ không rỗng và bị chặn trên. Đặt $M=\sup(-S)$. Với $s\in S$, $-s\le M$, nên $s\ge-M$; vậy $-M$ là cận dưới. Nếu $l$ là cận dưới bất kỳ của $S$, thì $l\le s$, nên $-s\le-l$ với mọi $s$. Do đó $M\le-l$, tức $l\le-M$. Vậy $-M$ lớn nhất trong các cận dưới, đúng là $\inf S$.
+C: Cần cả hai bước: là cận dưới và lớn hơn hoặc bằng mọi cận dưới khác.
+E: Đổi dấu phải đảo cả bất đẳng thức.
+@@ 4.10 | Một số tự nhiên chặn cả a và nghịch đảo | de
+D: Cho $a>0$. Chứng minh có $n\in\mathbb N$ sao cho $1/n<a<n$.
+H: Dùng tính Archimedes cho một ngưỡng duy nhất.
+K: Chọn $n>\max\{a,1/a\}$.
+S: Số $\max\{a,1/a\}$ là số thực vì $a>0$. Archimedes cho số tự nhiên $n$ lớn hơn nó. Khi đó $a<n$ và $1/a<n$. Nhân bất đẳng thức sau với $a/n>0$ cho $1/n<a$.
+C: Hai bất đẳng thức phải dùng cùng một số $n$.
+E: Chọn riêng hai số tự nhiên rồi quên lấy số lớn hơn cả hai.
+@@ 4.11 | Vô hạn số hữu tỉ trong mỗi khoảng | vua
+D: Với $a<b$, dùng tính trù mật của $\mathbb Q$ để chứng minh $(a,b)$ chứa vô hạn số hữu tỉ.
+H: Sau khi chọn một số hữu tỉ, tiếp tục chọn trong khoảng còn lại bên phải.
+K: Dựng $a<r_1<r_2<\cdots<b$.
+S: Trù mật cho $r_1\in\mathbb Q\cap(a,b)$. Nếu đã có $r_n<b$, khoảng $(r_n,b)$ không rỗng nên lại có hữu tỉ $r_{n+1}$ bên trong. Do $r_{n+1}>r_n$, mọi số được chọn khác nhau; chúng đều ở $(a,b)$. Vì dựng được cho mọi $n$, khoảng chứa vô hạn số hữu tỉ.
+C: Tính tăng nghiêm bảo đảm không đếm lặp cùng một số.
+E: Tồn tại một số hữu tỉ không tự nó chứng minh tồn tại vô hạn số.
+@@ 4.12 | Tính trù mật của số vô tỉ | vua
+D: Chứng minh với $a<b$ tồn tại số vô tỉ $x$ sao cho $a<x<b$; dùng tập $\{r+\sqrt2:r\in\mathbb Q\}$.
+H: Tịnh tiến khoảng bởi $-\sqrt2$ rồi dùng trù mật của hữu tỉ.
+K: Chọn $r\in\mathbb Q\cap(a-\sqrt2,b-\sqrt2)$ và đặt $x=r+\sqrt2$.
+S: Khoảng tịnh tiến có hai đầu đúng thứ tự, nên tồn tại $r$ hữu tỉ bên trong. Cộng $\sqrt2$ cho $a<r+\sqrt2<b$. Nếu $r+\sqrt2$ hữu tỉ, trừ $r$ sẽ làm $\sqrt2$ hữu tỉ, mâu thuẫn. Do đó $x=r+\sqrt2$ là số vô tỉ cần tìm; lập luận cũng chứng minh toàn bộ tập gợi ý gồm các số vô tỉ.
+C: Không cần hai đầu mút $a,b$ hữu tỉ.
+E: Không khẳng định mọi tổng hai số vô tỉ đều vô tỉ.
+@@ 4.13 | Ba cách nói về một khoảng cách | de
+D: Chứng minh tương đương: (i) $|a-b|<c$; (ii) $b-c<a<b+c$; (iii) $a\in(b-c,b+c)$.
+H: Dùng tính chất trị tuyệt đối và định nghĩa khoảng mở.
+K: $|a-b|<c\iff-c<a-b<c$.
+S: Bài 3.7(a) cho (i) tương đương $-c<a-b<c$. Cộng $b$ vào cả ba vế được (ii). Theo định nghĩa khoảng mở, (ii) chính là (iii). Mỗi phép chuyển đều là tương đương, nên ba điều kiện cùng đúng hoặc cùng sai.
+C: Khi $c\le0$, không có $a$ thỏa điều kiện nào; tương đương vẫn đúng.
+E: Không thay khoảng mở bằng đoạn đóng.
+@@ 4.14 | Cận của tổng hai tập | kho
+D: Cho $A,B\subseteq\mathbb R$ không rỗng, bị chặn; $A+B=\{a+b:a\in A,b\in B\}$. Chứng minh (a) $\sup(A+B)=\sup A+\sup B$; (b) $\inf(A+B)=\inf A+\inf B$.
+H: Tạo cận bằng tổng hai cận; để có tính đúng, chọn các phần tử sát hai cận.
+K: Chia sai số $\varepsilon$ thành $\varepsilon/2$ cho mỗi tập.
+S: **a.** Đặt $\alpha=\sup A,\beta=\sup B$. Mọi $a+b\le\alpha+\beta$, nên sup tổng không vượt $\alpha+\beta$. Với $\varepsilon>0$, chọn $a>\alpha-\varepsilon/2$, $b>\beta-\varepsilon/2$. Có $a+b>\alpha+\beta-\varepsilon$, nên không số nào nhỏ hơn $\alpha+\beta$ là cận trên. **b.** Đặt $u=\inf A,v=\inf B$. Mọi tổng ít nhất $u+v$. Chọn $a<u+\varepsilon/2$, $b<v+\varepsilon/2$ để tổng nhỏ hơn $u+v+\varepsilon$; không cận dưới nào lớn hơn $u+v$.
+C: Không cần sup hoặc inf đạt được trong các tập.
+E: Không chọn trực tiếp $a=\sup A$ khi chưa biết nó thuộc $A$.
+@@ 4.15 | Bất đẳng thức với sai số 1/n | vua
+D: Cho $a,b\in\mathbb R$ với $a\le b+1/n$ cho mọi $n\in\mathbb N$. Chứng minh $a\le b$.
+H: Nếu $a>b$ thì có một khoảng cách dương cố định giữa chúng.
+K: Chọn $n>1/(a-b)$ bằng Archimedes.
+S: Giả sử $d=a-b>0$. Chọn $n>1/d$. Khi ấy $1/n<d$ nên $b+1/n<b+d=a$, trái với $a\le b+1/n$. Vậy $a\le b$.
+C: Số $n$ được chọn tùy theo khoảng cách $a-b$, không chọn tùy theo một $a$ chưa cố định.
+E: Không được thay $n=\infty$ như một số tự nhiên.
+@@ 4.16 | Mỗi số thực là sup của các số hữu tỉ nhỏ hơn nó | vua
+D: Với $a\in\mathbb R$, chứng minh $\sup\{r\in\mathbb Q:r<a\}=a$.
+H: Tính trù mật loại mọi ứng viên cận trên nhỏ hơn $a$.
+K: Với $c<a$, chọn hữu tỉ $r$ thỏa $c<r<a$.
+S: Đặt $S=\{r\in\mathbb Q:r<a\}$. Archimedes cho một số nguyên âm đủ nhỏ thuộc $S$, nên $S$ không rỗng. Mọi $r\in S$ nhỏ hơn $a$, nên $a$ là cận trên. Nếu $c<a$, tính trù mật cho $r\in S$ với $r>c$, nên $c$ không là cận trên. Vì thế $a$ là cận trên nhỏ nhất.
+C: Kết quả đúng dù $a$ hữu tỉ hay vô tỉ; $a$ không thuộc $S$ trong cả hai trường hợp.
+E: Không nhầm điều kiện $r<a$ với $r\le a$.
+@@ 5.1 | Viết tập bằng ký hiệu khoảng | de
+D: Viết dưới dạng khoảng: (a) $\{x\in\mathbb R:x<0\}$; (b) $\{x\in\mathbb R:x^3\le8\}$; (c) $\{x^2:x\in\mathbb R\}$; (d) $\{x\in\mathbb R:x^2<8\}$.
+H: Xác định các giá trị thực được phép và xem đầu mút có thuộc tập hay không.
+K: Hàm lập phương tăng; bình phương luôn không âm; $x^2<8\iff|x|<2\sqrt2$.
+S: **a.** $(-\infty,0)$. **b.** Vì lập phương tăng, $x^3\le8$ tương đương $x\le2$, nên $(-\infty,2]$. **c.** Mọi bình phương không âm và mỗi $y\ge0$ bằng bình phương của $\sqrt y$, nên tập là $[0,+\infty)$. **d.** $(-2\sqrt2,2\sqrt2)$.
+C: Vô cực không là phần tử của khoảng; luôn dùng ngoặc tròn tại vô cực.
+E: Ở (c) tập gồm giá trị bình phương, không phải tập các $x$ thỏa một phương trình.
+@@ 5.2 | Sup và inf của các khoảng | de
+D: Tìm inf và sup trong số thực mở rộng của (a) $(-\infty,0)$; (b) $(-\infty,2]$; (c) $[0,+\infty)$; (d) $(-2\sqrt2,2\sqrt2)$, các tập trong bài 5.1.
+H: Đầu mút vô hạn ghi nhận tập không bị chặn về phía đó.
+K: Việc bỏ hoặc giữ một đầu mút hữu hạn không làm thay đổi sup, inf của khoảng có độ dài dương.
+S: Các cặp $(\inf,\sup)$ lần lượt là **a.** $(-\infty,0)$; **b.** $(-\infty,2)$; **c.** $(0,+\infty)$; **d.** $(-2\sqrt2,2\sqrt2)$. Mỗi cận hữu hạn được áp sát từ trong khoảng; các phía vô hạn có phần tử vượt mọi ngưỡng thực tương ứng.
+C: 0 trong (a) là sup dù không thuộc tập; 2 trong (b) vừa là sup vừa là max.
+E: Không đồng nhất ký hiệu cặp cận với cách mở hay đóng của tập ban đầu.
+@@ 5.3 | Cận mở rộng của các tập không bị chặn | vua
+D: Tìm inf và sup của những tập không bị chặn trong danh sách bài 4.1: (h) $\bigcup_{n\ge1}[2n,2n+1]$; (k) $\{n+(-1)^n/n:n\ge1\}$; (l) $\{r\in\mathbb Q:r<2\}$; (o) $(-\infty,0)$; (t) $\{x:x^3<8\}$; (u) $\{x^2:x\in\mathbb R\}$.
+H: Dùng cận thực ở phía bị chặn và vô cực ở phía không bị chặn.
+K: Các cặp cận tương ứng là $(2,+\infty),(0,+\infty),(-\infty,2),(-\infty,0),(-\infty,2),(0,+\infty)$.
+S: **h.** Giá trị nhỏ nhất 2 và chứa $2n\to+\infty$. **k.** Giá trị đầu 0, các giá trị sau dương; $n-1/n\to+\infty$. **l.** Tập chứa mọi số nguyên nhỏ hơn 2 và có hữu tỉ sát 2 từ dưới, nên inf $-\infty$, sup 2. **o.** Số âm nhỏ tùy ý và sát 0. **t.** Điều kiện tương đương $x<2$, nên giống (l) về cận. **u.** Là $[0,+\infty)$.
+C: Chỉ sáu tập h, k, l, o, t, u không bị chặn ít nhất một phía.
+E: Không ghi cả hai cận vô hạn chỉ vì một phía không bị chặn.
+@@ 5.4 | Đổi dấu cận khi có vô cực | vua
+D: Với mọi tập thực không rỗng $S$, chứng minh $\inf S=-\sup(-S)$ trong số thực mở rộng.
+H: Tách trường hợp $S$ bị chặn dưới và không bị chặn dưới.
+K: $S$ không bị chặn dưới khi và chỉ khi $-S$ không bị chặn trên.
+S: Nếu $S$ bị chặn dưới, chứng minh hai cận như bài 4.9 cho đẳng thức. Nếu không, với mỗi $M>0$ có $s\in S$ nhỏ hơn $-M$. Khi đó $-s>M$ thuộc $-S$, nên $\sup(-S)=+\infty$. Đồng thời $\inf S=-\infty$, đúng bằng $-(+\infty)$.
+C: Một tập thực không rỗng không thể có inf bằng $+\infty$.
+E: Không dùng phép toán không xác định như $+\infty-\infty$.
+@@ 5.5 | Inf không vượt sup trong số thực mở rộng | de
+D: Chứng minh $\inf S\le\sup S$ cho mọi $\varnothing\ne S\subseteq\mathbb R$, không cần bị chặn.
+H: Một phần tử thực của $S$ nằm giữa hai cận mở rộng.
+K: Chọn $s\in S$ rồi viết $\inf S\le s\le\sup S$.
+S: Nếu cận hữu hạn, bất đẳng thức với $s$ do định nghĩa cận. Nếu $S$ không bị chặn dưới thì $\inf S=-\infty\le s$ theo thứ tự mở rộng; tương tự nếu không bị chặn trên thì $s\le+\infty=\sup S$. Tính bắc cầu cho kết luận trong mọi trường hợp.
+C: Không cần cộng hoặc trừ vô cực trong chứng minh.
+E: Không áp dụng cho tập rỗng khi đề chưa định nghĩa các cận của nó.
+@@ 5.6 | Bao hàm và cận mở rộng | vua
+D: Cho $\varnothing\ne S\subseteq T\subseteq\mathbb R$. Chứng minh $\inf T\le\inf S\le\sup S\le\sup T$ không cần các tập bị chặn.
+H: Bao hàm giữ quan hệ giữa các cận cả khi một cận vô hạn.
+K: Với sup, xét riêng $T$ bị chặn trên; với inf, xét riêng $T$ bị chặn dưới.
+S: Nếu $T$ bị chặn trên, $\sup T$ cũng chặn $S$, nên $\sup S\le\sup T$. Nếu không, $\sup T=+\infty$ và bất đẳng thức tự đúng. Nếu $T$ bị chặn dưới, $\inf T$ chặn dưới $S$, nên $\inf T\le\inf S$; nếu không, vế trái bằng $-\infty$. Bất đẳng thức giữa là bài 5.5.
+C: Nếu tập con không bị chặn trên thì tập lớn cũng không bị chặn trên, phù hợp kết quả.
+E: Không đảo chiều hai bất đẳng thức ngoài cùng.
+@@ 5.7 | Inf của tổng hai tập không nhất thiết bị chặn | kho
+D: Với $A,B\subseteq\mathbb R$ không rỗng, chứng minh $\inf(A+B)=\inf A+\inf B$, kể cả khi tập không bị chặn dưới; $A+B=\{a+b:a\in A,b\in B\}$.
+H: Nếu cả hai cận dưới hữu hạn, dùng bài 4.14; nếu một tập không bị chặn dưới, giữ cố định một phần tử của tập kia.
+K: Khi $\inf A=-\infty$, chọn $b_0\in B$ rồi làm $a+b_0$ nhỏ hơn ngưỡng tùy ý.
+S: Nếu cả hai inf hữu hạn, mọi tổng ít nhất là tổng hai inf; chọn hai phần tử cách inf dưới $\varepsilon/2$ cho chiều ngược như 4.14(b). Nếu $A$ không bị chặn dưới, với mỗi $M\in\mathbb R$ chọn $a<M-b_0$. Khi đó $a+b_0<M$, nên $A+B$ không bị chặn dưới và inf bằng $-\infty$. Tổng hai inf bên phải cũng bằng $-\infty$. Trường hợp $B$ không bị chặn dưới làm tương tự.
+C: Vì các tập không rỗng nên các inf không thể bằng $+\infty$; không xuất hiện tổng vô cực trái dấu.
+E: Không giả sử một phần tử bằng inf của tập.
+@@ 6.1 | Thứ tự và tổng của lát cắt hữu tỉ | kho
+D: Với $s,t\in\mathbb Q$, đặt $s^*=\{r\in\mathbb Q:r<s\}$. Chứng minh (a) $s\le t\iff s^*\subseteq t^*$; (b) $s=t\iff s^*=t^*$; (c) $(s+t)^*=s^*+t^*$, với tổng lát cắt gồm mọi tổng của một phần tử mỗi tập.
+H: Dùng trung điểm hữu tỉ để phân biệt hai lát cắt.
+K: Với $r<s+t$, đặt $\delta=(s+t-r)/2>0$; khi đó $r=(s-\delta)+(t-\delta)$.
+S: **a.** Nếu $s\le t$, $r<s$ kéo theo $r<t$. Ngược lại, nếu $s>t$, trung điểm $(s+t)/2$ thuộc $s^*$ nhưng không thuộc $t^*$, mâu thuẫn bao hàm. **b.** Dùng (a) hai chiều. **c.** Nếu $u<s,v<t$, thì $u+v<s+t$, nên tổng nằm trong $(s+t)^*$. Ngược lại với $r<s+t$, chọn $\delta$ như gợi ý; $s-\delta\in s^*$, $t-\delta\in t^*$ và tổng bằng $r$.
+C: $\delta$ hữu tỉ vì $s,t,r$ hữu tỉ.
+E: Không chọn $s\in s^*$ vì lát cắt dùng bất đẳng thức nghiêm.
+@@ 6.2 | Tổng hai lát cắt Dedekind | kho
+D: Một lát cắt là tập hữu tỉ không rỗng, khác $\mathbb Q$, đóng xuống và không có phần tử lớn nhất. Chứng minh $\alpha+\beta=\{a+b:a\in\alpha,b\in\beta\}$ là lát cắt nếu $\alpha,\beta$ là các lát cắt.
+H: Kiểm tra đủ bốn điều kiện theo định nghĩa.
+K: Để đóng xuống, từ $r<a+b$ viết $r=(r-b)+b$; để không có max, tăng $a$ trong $\alpha$.
+S: Chọn $a\in\alpha,b\in\beta$ cho tổng không rỗng. Chọn $u\notin\alpha,v\notin\beta$; tính đóng xuống buộc mọi $a\in\alpha$ nhỏ hơn $u$ và mọi $b\in\beta$ nhỏ hơn $v$, nên $u+v$ không thuộc tổng. Nếu $r<a+b$, thì $r-b<a$ thuộc $\alpha$, nên $r$ thuộc tổng. Cuối cùng vì $\alpha$ không có max, có $a'>a$ trong $\alpha$; $a'+b>a+b$ vẫn thuộc tổng. Đủ các điều kiện.
+C: Điều kiện khác $\mathbb Q$ cần một cận trên hữu tỉ; $u+v$ cung cấp cận đó.
+E: Không chỉ kiểm tra tính đóng xuống rồi kết luận là lát cắt.
+@@ 6.3 | Phần tử 0 và số đối của lát cắt | kho
+D: (a) Chứng minh $\alpha+0^*=\alpha$. (b) Định nghĩa lát cắt $-\alpha$ sao cho $\alpha+(-\alpha)=0^*$; $0^*=\{q\in\mathbb Q:q<0\}$.
+H: Số đối phải loại cả điểm biên để vẫn không có phần tử lớn nhất.
+K: Đặt $-\alpha=\{q\in\mathbb Q:\exists r\notin\alpha,\ q<-r\}$.
+S: **a.** Nếu $a\in\alpha$ và $q<0$, thì $a+q<a$ nên thuộc $\alpha$. Nếu $a\in\alpha$, chọn $a'>a$ trong $\alpha$; $a=a'+(a-a')$ thuộc $\alpha+0^*$. **b.** Tập ở gợi ý không rỗng (chọn $r\notin\alpha$, lấy $q=-r-1$), đóng xuống và không có max (giữa $q$ và $-r$ còn hữu tỉ). Nếu $a\in\alpha$, mọi phần tử của $-\alpha$ nhỏ hơn $-a$, nên tập khác $\mathbb Q$. Với $q<-r$, $a<r$ nên $a+q<0$. Ngược lại, cho $t<0$, đặt $h=-t/2>0$. Chọn $a\in\alpha$ với $a+h\notin\alpha$: nếu không có, từ một phần tử $a_0$ suy ra $a_0+nh\in\alpha$ với mọi $n$, trái cận trên và Archimedes. Đặt $r=a+h$, $q=t-a$; khi đó $q<-r$ vì $t<-h$, nên $t=a+q$ thuộc tổng. Vậy tổng đúng là $0^*$.
+C: Nếu $\alpha=s^*$ với $s$ hữu tỉ, định nghĩa cho $-\alpha=(-s)^*$.
+E: Tập $\{-a:a\in\alpha\}$ đóng lên, không phải lát cắt đóng xuống.
+@@ 6.4 | Vì sao tích ngây thơ của lát cắt sai | vua
+D: Thử định nghĩa $\alpha\cdot\beta=\{ab:a\in\alpha,b\in\beta\}$. (a) Tính các tích dùng $0^*,1^*,(-1)^*$. (b) Giải thích vì sao định nghĩa này không dùng được làm phép nhân số thực.
+H: Mọi lát cắt chứa các số âm có độ lớn tùy ý.
+K: Với $a,b$ âm đủ lớn về độ lớn, tích $ab$ dương lớn tùy ý.
+S: **a.** $0^*\cdot0^*=(0,+\infty)\cap\mathbb Q$; $0^*\cdot(-1)^*$ cũng là tập đó. $(-1)^*\cdot(-1)^*=(1,+\infty)\cap\mathbb Q$: mọi tích lớn hơn 1; với $q>1$ chọn hữu tỉ $u\in(1,q)$ và viết $q=(-u)(-q/u)$. $1^*\cdot1^*=\mathbb Q$: số dương là tích hai số âm; số âm $q$ có dạng $(q/v)v$ với $0<v<\min\{1,-q\}$; số 0 dùng một thừa số 0. Lập luận tương tự cho $1^*\cdot0^*=1^*\cdot(-1)^*=\mathbb Q$. **b.** Với hai lát cắt bất kỳ, chọn số âm trong mỗi tập có độ lớn tùy ý; các tích không bị chặn trên, nên tập tích không thể là lát cắt (mỗi lát cắt thực sự đều có cận trên hữu tỉ).
+C: $0^*\cdot0^*$ không bằng $0^*$ và cũng không đóng xuống.
+E: Không đồng nhất tích của mọi phần tử hai tập với phép nhân đúng của hai lát cắt.
+@@ 6.5 | Lát cắt cho căn bậc ba và căn bậc hai | kho
+D: (a) Chứng minh $A=\{r\in\mathbb Q:r^3<2\}$ là lát cắt, còn $B=\{r\in\mathbb Q:r^2<2\}$ không phải. (b) $A$ có biểu diễn số hữu tỉ không? (c) Chứng minh $C=0^*\cup\{r\in\mathbb Q:r\ge0,r^2<2\}$ là lát cắt và xác định nó có biểu diễn số hữu tỉ không.
+H: Điều kiện đóng xuống phân biệt $B$ với $C$; đừng chỉ xét gần điểm biên dương.
+K: Để chứng minh không có max, tăng $r$ một lượng hữu tỉ dương đủ nhỏ sao cho lũy thừa vẫn nhỏ hơn 2.
+S: **a.** $0\in A$, $2\notin A$; lập phương tăng nên $A$ đóng xuống. Với $r\in A$, chọn hữu tỉ $h>0$ nhỏ hơn $1$ và $(2-r^3)/[3(|r|+1)^2+3(|r|+1)+1]$; khai triển cho $(r+h)^3<2$, nên không có max. Nhưng $0\in B$ còn $-2<0$ không thuộc $B$, nên $B$ không đóng xuống. **b.** $A$ biểu diễn $\sqrt[3]2$, là vô tỉ theo 2.2, nên không phải $s^*$ với $s$ hữu tỉ. **c.** $C$ chứa mọi số âm, chứa 0, không chứa 2 và đóng xuống. Với $r<0$, có phần tử lớn hơn là 0. Với $r\ge0$, chọn hữu tỉ $0<h<\min\{1,(2-r^2)/(2r+1)\}$; khi đó $(r+h)^2<2$. Vậy $C$ không có max và là lát cắt biểu diễn $\sqrt2$, không hữu tỉ.
+C: Nếu muốn xác định biên mà không dùng số thực xây dựng sẵn, giả sử $A=s^*$ hoặc $C=s^*$ sẽ buộc $s^3=2$ hoặc $s^2=2$ bằng cách dịch $s$ một lượng hữu tỉ nhỏ; các phương trình đều không có nghiệm hữu tỉ.
+E: Tập $r^2<2$ thiếu các số âm đủ nhỏ, nên không là lát cắt.
+@@ 7.1 | Năm số hạng đầu của dãy | de
+D: Viết năm số hạng đầu, bắt đầu $n=1$, của (a) $1/(3n+1)$; (b) $(3n+1)/(4n-1)$; (c) $n/3^n$; (d) $\sin(n\pi/4)$.
+H: Thế lần lượt $n=1,2,3,4,5$.
+K: Giữ đúng thứ tự phép tính ở mẫu và dùng bảng lượng giác.
+S: **a.** $1/4,1/7,1/10,1/13,1/16$. **b.** $4/3,1,10/11,13/15,16/19$. **c.** $1/3,2/9,1/9,4/81,5/243$. **d.** $\sqrt2/2,1,\sqrt2/2,0,-\sqrt2/2$.
+C: Số hạng thứ ba ở (c) là $3/27=1/9$.
+E: Không bắt đầu ở $n=0$ khi đề dùng $n\in\mathbb N$ dương.
+@@ 7.2 | Giới hạn của bốn dãy mẫu | de
+D: Xác định hội tụ và giới hạn nếu có của (a) $1/(3n+1)$; (b) $(3n+1)/(4n-1)$; (c) $n/3^n$; (d) $\sin(n\pi/4)$. Không bắt buộc chứng minh bằng định nghĩa.
+H: So sánh tốc độ tăng và nhận biết dãy tuần hoàn.
+K: Hai phân thức đầu có giới hạn 0 và $3/4$; hàm mũ thắng $n$.
+S: **a.** Hội tụ đến 0 vì mẫu tăng vô hạn. **b.** Chia tử và mẫu cho $n$: $(3+1/n)/(4-1/n)\to3/4$. **c.** Hội tụ đến 0; tỉ số hai số hạng kế tiếp là $(n+1)/(3n)\to1/3<1$. **d.** Không hội tụ vì $n=8k+2$ cho giá trị 1, còn $n=8k+6$ cho $-1$.
+C: Chỉ cần một cặp dãy con có hai giới hạn khác nhau để loại hội tụ ở (d).
+E: Bị chặn không có nghĩa là hội tụ.
+@@ 7.3 | Hai mươi giới hạn cơ bản | vua
+D: Xác định hội tụ và giới hạn của: (a) $n/(n+1)$; (b) $(n^2+3)/(n^2-3)$; (c) $2^{-n}$; (d) $1+2/n$; (e) $73+(-1)^n$; (f) $2^{1/n}$; (g) $n!$; (h) $(-1)^n n$; (i) $(-1)^n/n$; (j) $(7n^3+8n)/(2n^3-3)$; (k) $(9n^2-18)/(6n+18)$; (l) $\sin(n\pi/2)$; (m) $\sin(n\pi)$; (n) $\sin(2n\pi/3)$; (o) $(\sin n)/n$; (p) $(2^{n+1}+5)/(2^n-7)$; (q) $3^n/n!$; (r) $(1+1/n)^2$; (s) $(4n^2+3)/(3n^2-2)$; (t) $(6n+4)/(9n^2+7)$.
+H: Phân loại thành phân thức, lũy thừa, giai thừa và dao động.
+K: Chia theo bậc cao nhất, kẹp phần dao động chia $n$, và xét các lớp chỉ số của dãy tuần hoàn.
+S: Các giới hạn hữu hạn là **a** 1, **b** 1, **c** 0, **d** 1, **f** 1, **i** 0, **j** $7/2$, **m** 0, **o** 0, **p** 2, **q** 0, **r** 1, **s** $4/3$, **t** 0. Với các phân thức, chia tử và mẫu cho lũy thừa cao nhất ở mẫu; (p) chia cho $2^n$. Với (i), (o), trị tuyệt đối không vượt $1/n$. Với (q), tỉ số bằng $3/(n+1)\to0$. **g, k** tăng vô hạn nên không hội tụ hữu hạn, có giới hạn mở rộng $+\infty$. **e** có hai giá trị 72,74; **h** có dãy chẵn đến $+\infty$, lẻ đến $-\infty$; **l** lặp $1,0,-1,0$; **n** lặp $\sqrt3/2,-\sqrt3/2,0$. Bốn dãy này không có giới hạn, kể cả mở rộng.
+C: (d) là $1+2/n$, không phải $(1+2/n)^n$. Ở (m), mọi số hạng đều 0.
+E: Dãy phân kỳ có thể đi tới vô cực hoặc dao động; cần phân biệt.
+@@ 7.4 | Hữu tỉ và vô tỉ không được bảo toàn qua giới hạn | vua
+D: Cho ví dụ (a) dãy toàn số vô tỉ hội tụ đến số hữu tỉ; (b) dãy toàn số hữu tỉ hội tụ đến số vô tỉ.
+H: Thu nhỏ một số vô tỉ và lấy các xấp xỉ thập phân hữu hạn.
+K: Dùng $x_n=\sqrt2/n$ và $r_n=\lfloor10^n\sqrt2\rfloor/10^n$.
+S: **a.** $x_n$ vô tỉ: nếu hữu tỉ thì $nx_n=\sqrt2$ hữu tỉ. Vì $|x_n|=\sqrt2/n\to0$, giới hạn 0 hữu tỉ. **b.** Tử của $r_n$ nguyên nên $r_n$ hữu tỉ. Định nghĩa phần nguyên cho $0\le\sqrt2-r_n<10^{-n}$, nên $r_n\to\sqrt2$, là số vô tỉ.
+C: Mọi số hạng trong (b) là số hữu tỉ, kể cả khi biểu thức định nghĩa có chứa $\sqrt2$.
+E: Giới hạn không nhất thiết cùng loại hữu tỉ/vô tỉ với các số hạng.
+@@ 7.5 | Khử hiệu hai căn lớn | vua
+D: Tìm giới hạn và trình bày biến đổi: (a) $\sqrt{n^2+1}-n$; (b) $\sqrt{n^2+n}-n$; (c) $\sqrt{4n^2+n}-2n$.
+H: Nhân liên hợp trước khi lấy giới hạn.
+K: Sau khi nhân liên hợp, chia cả tử và mẫu cho $n$ khi cần.
+S: **a.** Hiệu bằng $1/(\sqrt{n^2+1}+n)$, nằm giữa 0 và $1/(2n)$ nên đến 0. **b.** Hiệu bằng $n/(\sqrt{n^2+n}+n)=1/(\sqrt{1+1/n}+1)\to1/2$. **c.** Hiệu bằng $n/(\sqrt{4n^2+n}+2n)=1/(\sqrt{4+1/n}+2)\to1/4$.
+C: Cả ba hiệu dương và mẫu sau liên hợp không bằng 0.
+E: Không trừ riêng hai giới hạn đều bằng $+\infty$.
+@@ 8.1 | Chọn N cho bốn giới hạn | vua
+D: Chứng minh bằng định nghĩa $\varepsilon$–$N$: (a) $(-1)^n/n\to0$; (b) $n^{-1/3}\to0$; (c) $(2n-1)/(3n+2)\to2/3$; (d) $(n+6)/(n^2-6)\to0$.
+H: Ước lượng sai số bằng một biểu thức đơn giản theo $n$ rồi giải điều kiện nhỏ hơn $\varepsilon$.
+K: Có thể chọn lần lượt $N=1/\varepsilon$, $\varepsilon^{-3}$, $7/(9\varepsilon)$, $\max\{6,4/\varepsilon\}$.
+S: Cho $\varepsilon>0$. **a.** $|(-1)^n/n|=1/n<\varepsilon$ khi $n>N=1/\varepsilon$. **b.** $n^{-1/3}<\varepsilon$ khi $n>\varepsilon^{-3}$. **c.** Sai số bằng $7/[3(3n+2)]\le7/(9n)$, nên chọn $N=7/(9\varepsilon)$. **d.** Với $n>6$, $n+6\le2n$ và $n^2-6\ge n^2/2$, nên sai số không vượt $4/n$. Chọn $N=\max\{6,4/\varepsilon\}$. Mỗi lựa chọn đều cho điều kiện với mọi $n>N$.
+C: $N$ được phép là số thực; nếu cần số nguyên, lấy phần nguyên cộng 1.
+E: Phải chứng minh ước lượng đúng cho cả đuôi, không chỉ cho một chỉ số.
+@@ 8.2 | Năm chứng minh giới hạn phân thức | vua
+D: Tìm giới hạn rồi chứng minh bằng định nghĩa cho (a) $n/(n^2+1)$; (b) $(7n-19)/(3n+7)$; (c) $(4n+3)/(7n-5)$; (d) $(2n+4)/(5n+2)$; (e) $(\sin n)/n$.
+H: Trừ giới hạn dự đoán trước khi ước lượng.
+K: Các giới hạn lần lượt là $0,7/3,4/7,2/5,0$.
+S: Cho $\varepsilon>0$. **a.** Sai số $n/(n^2+1)\le1/n$; chọn $N=1/\varepsilon$. **b.** Sai số $106/[3(3n+7)]\le106/(9n)$; chọn $N=106/(9\varepsilon)$. **c.** Sai số $41/[7(7n-5)]$; với $n\ge2$, $7n-5\ge(7/2)n$, nên không vượt $82/(49n)$. Chọn $N=\max\{2,82/(49\varepsilon)\}$. **d.** Sai số $16/[5(5n+2)]\le16/(25n)$; chọn $N=16/(25\varepsilon)$. **e.** $|\sin n|/n\le1/n$; chọn $N=1/\varepsilon$. Mọi sai số đều nhỏ hơn $\varepsilon$ khi $n>N$.
+C: Các hằng số 106,41,16 thu được bằng quy đồng chính xác trước khi lấy trị tuyệt đối.
+E: Không thay trực tiếp $n$ bằng vô cực vào một phân thức.
+@@ 8.3 | Căn của dãy không âm tiến về 0 | de
+D: Nếu $s_n\ge0$ và $s_n\to0$, chứng minh $\sqrt{s_n}\to0$ bằng định nghĩa.
+H: Muốn căn nhỏ hơn $\varepsilon$, cần số dưới căn nhỏ hơn $\varepsilon^2$.
+K: Áp dụng hội tụ của $s_n$ với sai số $\varepsilon^2$, không phải $\varepsilon$.
+S: Cho $\varepsilon>0$. Vì $s_n\to0$, có $N$ sao cho $n>N$ kéo theo $|s_n|<\varepsilon^2$. Do $s_n\ge0$, suy ra $|\sqrt{s_n}-0|=\sqrt{s_n}<\varepsilon$. Đây là định nghĩa giới hạn cần chứng minh.
+C: $\varepsilon^2>0$ nên có thể dùng trong định nghĩa hội tụ.
+E: Không chia cho $\sqrt0$ khi dùng liên hợp ở giới hạn 0.
+@@ 8.4 | Dãy bị chặn nhân dãy tiến về 0 | vua
+D: Cho $|t_n|\le M$ với mọi $n$ và $s_n\to0$. Chứng minh $s_nt_n\to0$ bằng định nghĩa.
+H: Dùng chặn đều để loại sự phụ thuộc vào $t_n$.
+K: Lấy $B=\max\{1,M\}$ và yêu cầu $|s_n|<\varepsilon/B$.
+S: Chọn $B\ge1$ như trên. Cho $\varepsilon>0$, có $N$ sao cho $n>N$ kéo theo $|s_n|<\varepsilon/B$. Khi đó $|s_nt_n|\le B|s_n|<\varepsilon$. Vậy tích tiến về 0, kể cả khi $t_n$ không hội tụ.
+C: Chọn $B\ge1$ tránh chia cho 0 nếu tất cả $t_n=0$.
+E: Bị chặn không đồng nghĩa có giới hạn, nên không được dùng định lý tích hai giới hạn khi thiếu hội tụ của $t_n$.
+@@ 8.5 | Bổ đề kẹp | vua
+D: (a) Nếu $a_n\le s_n\le b_n$ và $a_n,b_n\to s$, chứng minh $s_n\to s$. (b) Nếu $|s_n|\le t_n$, $t_n\to0$, chứng minh $s_n\to0$.
+H: Sau một chỉ số chung, cả hai biên đều nằm trong khoảng sai số cho phép.
+K: Lấy $N$ bằng giá trị lớn hơn trong hai ngưỡng của hai dãy biên.
+S: **a.** Với $\varepsilon>0$, chọn $N_1,N_2$ sao cho $n>N_1$ cho $a_n>s-\varepsilon$ và $n>N_2$ cho $b_n<s+\varepsilon$. Với $n>\max\{N_1,N_2\}$, $s-\varepsilon<s_n<s+\varepsilon$, tức $|s_n-s|<\varepsilon$. **b.** Khi $n$ đủ lớn, $0\le|s_n|\le t_n<\varepsilon$, nên trực tiếp có định nghĩa giới hạn 0.
+C: Ở (b), giả thiết tự buộc $t_n\ge0$.
+E: Hai dãy biên phải có cùng giới hạn.
+@@ 8.6 | Hội tụ về 0 và trị tuyệt đối | de
+D: (a) Chứng minh $s_n\to0\iff|s_n|\to0$. (b) Với $s_n=(-1)^n$, kiểm tra $|s_n|$ có giới hạn nhưng $s_n$ không có giới hạn.
+H: Hai sai số đối với giới hạn 0 hoàn toàn bằng nhau.
+K: $\big||s_n|-0\big|=|s_n-0|$.
+S: **a.** Với mỗi $\varepsilon>0$, bất đẳng thức sai số nhỏ hơn $\varepsilon$ cho hai dãy là cùng một điều kiện. Vì vậy cùng một $N$ chứng minh cả hai chiều. **b.** $|s_n|=1$ nên giới hạn bằng 1. Nhưng $s_{2k}=1$, $s_{2k-1}=-1$, nên dãy gốc không hội tụ.
+C: Tương đương ở (a) dùng đích 0, không mở rộng tùy tiện sang đích khác 0.
+E: Hội tụ của trị tuyệt đối tới số dương không quyết định dấu của dãy gốc.
+@@ 8.7 | Ba dãy không hội tụ | vua
+D: Chứng minh không hội tụ: (a) $\cos(n\pi/3)$; (b) $(-1)^n n$; (c) $\sin(n\pi/3)$.
+H: Tìm hai lớp chỉ số xuất hiện vô hạn lần có giá trị cách xa nhau.
+K: Dãy hội tụ buộc hai số hạng đủ xa ở đuôi có khoảng cách nhỏ tùy ý.
+S: **a.** Tại $n=6k$ giá trị 1, tại $n=6k+3$ giá trị $-1$. Nếu cùng tiến đến $L$, chọn sai số $1/2$ cho cả hai; tam giác buộc $2<1$, vô lý. **b.** Với chỉ số chẵn lớn, giá trị dương tùy ý; với chỉ số lẻ lớn, âm tùy ý. Dãy không bị chặn nên không thể hội tụ hữu hạn; cũng không tiến đến một vô cực cố định. **c.** Tại $6k+1$ và $6k+4$ giá trị lần lượt $\sqrt3/2,-\sqrt3/2$. Chọn sai số $\sqrt3/4$ đối với giới hạn giả định dẫn đến $\sqrt3<\sqrt3/2$.
+C: Các chỉ số được chọn có thể vượt mọi $N$.
+E: Không chỉ nêu “dao động” mà không chỉ ra dao động tồn tại ở mọi đuôi.
+@@ 8.8 | Chứng minh giới hạn của hiệu hai căn | vua
+D: Chứng minh bằng định nghĩa: (a) $\sqrt{n^2+1}-n\to0$; (b) $\sqrt{n^2+n}-n\to1/2$; (c) $\sqrt{4n^2+n}-2n\to1/4$.
+H: Nhân liên hợp để biến thành sai số có chặn $C/n$.
+K: Với $u=\sqrt{1+1/n}$, $|1/(u+1)-1/2|=1/[2n(u+1)^2]$; làm tương tự với căn của $4+1/n$.
+S: **a.** Hiệu bằng $1/(\sqrt{n^2+1}+n)\le1/(2n)$, nên chọn $N=1/(2\varepsilon)$. **b.** Sau liên hợp, hiệu là $1/(u+1)$. Sai số với $1/2$ là $(u-1)/[2(u+1)]=1/[2n(u+1)^2]\le1/(8n)$. Chọn $N=1/(8\varepsilon)$. **c.** Đặt $v=\sqrt{4+1/n}$. Hiệu là $1/(v+2)$, sai số với $1/4$ bằng $(v-2)/[4(v+2)]=1/[4n(v+2)^2]\le1/(64n)$. Chọn $N=1/(64\varepsilon)$.
+C: $u\ge1,v\ge2$ bảo đảm các chặn mẫu được dùng đúng chiều.
+E: Viết giới hạn dự đoán không thay thế chứng minh $\varepsilon$–$N$.
+@@ 8.9 | Bảo toàn thứ tự qua giới hạn | vua
+D: Cho $s_n\to s$. (a) Nếu $s_n\ge a$ trừ hữu hạn chỉ số, chứng minh $s\ge a$. (b) Nếu $s_n\le b$ trừ hữu hạn chỉ số, chứng minh $s\le b$. (c) Suy ra đuôi ở $[a,b]$ thì $s\in[a,b]$.
+H: Nếu giới hạn nằm sai phía, lấy sai số bằng nửa khoảng cách đến đầu mút.
+K: Chọn một chỉ số vượt cả ngưỡng hội tụ và mọi chỉ số ngoại lệ.
+S: **a.** Nếu $s<a$, đặt $\varepsilon=(a-s)/2$. Với $n$ đủ lớn, $s_n<s+\varepsilon=(a+s)/2<a$, trái điều kiện đuôi. **b.** Nếu $s>b$, đặt $\varepsilon=(s-b)/2$; đuôi có $s_n>s-\varepsilon=(s+b)/2>b$, mâu thuẫn. **c.** Áp dụng đồng thời (a),(b) cho $a\le s\le b$.
+C: Phải kết luận dấu không nghiêm; $s_n=1/n>0$ nhưng giới hạn bằng 0.
+E: Không bảo toàn bất đẳng thức nghiêm khi lấy giới hạn.
+@@ 8.10 | Giới hạn lớn hơn a thì đuôi lớn hơn a | de
+D: Nếu $s_n\to s>a$, chứng minh tồn tại $N$ sao cho $n>N$ kéo theo $s_n>a$.
+H: Dùng khoảng cách dương giữa giới hạn và ngưỡng.
+K: Chọn $\varepsilon=(s-a)/2$.
+S: Với sai số dương trên, có $N$ sao cho $n>N$ kéo theo $|s_n-s|<\varepsilon$. Khi đó $s_n>s-\varepsilon=(s+a)/2>a$. Đây chính là điều cần chứng minh.
+C: Không yêu cầu các số hạng đầu cũng lớn hơn $a$.
+E: Nếu chỉ biết $s=a$, kết luận có thể sai, chẳng hạn $s_n=a-1/n$.
+@@ 9.1 | Áp dụng định lý giới hạn cho phân thức | de
+D: Dùng các định lý giới hạn và giải thích: (a) $(n+1)/n\to1$; (b) $(3n+7)/(6n-5)\to1/2$; (c) $(17n^5+73n^4-18n^2+3)/(23n^5+13n^3)\to17/23$.
+H: Chia tử và mẫu cho cùng lũy thừa của $n$.
+K: Các dãy $1/n^p$ với $p>0$ về 0; mẫu giới hạn khác 0 cho phép dùng định lý thương.
+S: **a.** $(n+1)/n=1+1/n\to1$. **b.** Viết $(3+7/n)/(6-5/n)$; tử về 3, mẫu về 6 khác 0 nên giới hạn $3/6=1/2$. **c.** Chia cho $n^5$ được $(17+73/n-18/n^3+3/n^5)/(23+13/n^2)$; giới hạn tử 17, mẫu 23 khác 0 nên thương về $17/23$.
+C: Các mẫu ban đầu đều khác 0 tại chỉ số nguyên dương.
+E: Chỉ dùng định lý thương sau khi kiểm tra giới hạn mẫu khác 0.
+@@ 9.2 | Tính với hai giới hạn đã biết | de
+D: Cho $x_n\to3,y_n\to7$, mọi $y_n\ne0$. Tính (a) $\lim(x_n+y_n)$; (b) $\lim(3y_n-x_n)/y_n^2$.
+H: Dùng định lý tổng, tích, thương theo thứ tự.
+K: Mẫu ở (b) tiến đến $7^2=49\ne0$.
+S: **a.** Định lý tổng cho $3+7=10$. **b.** Tử tiến đến $3\cdot7-3=18$; mẫu là tích $y_ny_n$ tiến đến 49. Do giới hạn mẫu khác 0, định lý thương cho $18/49$.
+C: Điều kiện mọi $y_n\ne0$ bảo đảm thương xác định ở từng chỉ số.
+E: Không thay $y_n^2$ bằng $2y_n$.
+@@ 9.3 | Một giới hạn hữu tỉ của hai dãy | vua
+D: Cho $a_n\to a,b_n\to b$. Chứng minh $s_n=(a_n^3+4a_n)/(b_n^2+1)\to(a^3+4a)/(b^2+1)$.
+H: Xây giới hạn của tử và mẫu bằng định lý tích và tổng.
+K: $b^2+1\ge1$ nên không có nguy cơ giới hạn mẫu bằng 0.
+S: Tích ba dãy $a_n$ có giới hạn $a^3$; nhân hằng số cho $4a_n\to4a$, nên tử về $a^3+4a$. Tích hai dãy $b_n$ cho $b_n^2\to b^2$, rồi cộng 1 cho mẫu về $b^2+1>0$. Mọi mẫu ban đầu cũng ít nhất 1. Áp dụng định lý thương được kết quả.
+C: Kết luận đúng cả khi $b=0$.
+E: Không cần thêm giả thiết $b\ne0$ vì mẫu đã có $+1$.
+@@ 9.4 | Dãy căn truy hồi và số vàng | vua
+D: Cho $s_1=1,s_{n+1}=\sqrt{s_n+1}$. (a) Viết bốn số hạng đầu. (b) Giả sử dãy hội tụ, tìm giới hạn.
+H: Giới hạn của dãy dịch chỉ số bằng giới hạn dãy gốc.
+K: Nếu giới hạn là $L$, thì $L^2=L+1$ và $L\ge1$.
+S: **a.** $1,\sqrt2,\sqrt{1+\sqrt2},\sqrt{1+\sqrt{1+\sqrt2}}$. **b.** Quy nạp cho $s_n\ge1$. Giả sử $s_n\to L$, thì $s_{n+1}^2=s_n+1$ và định lý tích/tổng cho $L^2=L+1$. Hai nghiệm là $(1\pm\sqrt5)/2$; chỉ nghiệm dương thỏa $L\ge1$, nên $L=(1+\sqrt5)/2$.
+C: Đề cho phép giả sử hội tụ; giải phương trình giới hạn chỉ tìm ứng viên, không tự chứng minh hội tụ.
+E: Không đọc sai truy hồi thành $\sqrt{s_n}+1$.
+@@ 9.5 | Truy hồi Newton cho căn 2 | vua
+D: Cho $t_1=1$, $t_{n+1}=(t_n^2+2)/(2t_n)$. Giả sử dãy hội tụ; tìm giới hạn.
+H: Trước khi dùng định lý thương, chứng minh giới hạn không thể bằng 0.
+K: $t_{n+1}-\sqrt2=(t_n-\sqrt2)^2/(2t_n)\ge0$ khi $t_n>0$.
+S: Quy nạp cho $t_n>0$; đẳng thức gợi ý cho $t_n\ge\sqrt2$ với $n\ge2$. Nếu $t_n\to L$, bảo toàn thứ tự cho $L\ge\sqrt2>0$. Do đó lấy giới hạn trong truy hồi hợp lệ: $L=(L^2+2)/(2L)$, suy ra $L^2=2$. Vì $L>0$, $L=\sqrt2$.
+C: $t_2=3/2>\sqrt2$; không chọn nghiệm $-\sqrt2$.
+E: Không chia cho giới hạn trước khi chứng minh nó khác 0.
+@@ 9.6 | Phương trình giới hạn không bảo đảm hội tụ | vua
+D: Cho $x_1=1,x_{n+1}=3x_n^2$. (a) Nếu có giới hạn hữu hạn $a$, chứng minh $a=0$ hoặc $a=1/3$. (b) Dãy có hội tụ không? (c) Giải thích vì sao không mâu thuẫn.
+H: Phân biệt mệnh đề có điều kiện với sự tồn tại thực tế của giới hạn.
+K: Công thức tường minh là $x_n=3^{2^{n-1}-1}$.
+S: **a.** Nếu hội tụ hữu hạn, lấy giới hạn cho $a=3a^2$, tức $a(3a-1)=0$. **b.** Quy nạp: công thức ở gợi ý đúng tại $n=1$; bình phương rồi nhân 3 cho số mũ $2(2^{n-1}-1)+1=2^n-1$. Vì số mũ tăng vô hạn, $x_n\to+\infty$; không hội tụ hữu hạn. **c.** Phần (a) chỉ nói điều xảy ra nếu có giới hạn hữu hạn; giả thiết này không được đáp ứng.
+C: $x_2=3,x_3=27$ phù hợp công thức.
+E: Không chọn một nghiệm của phương trình giới hạn làm đáp án khi chưa biết dãy hội tụ.
+@@ 9.7 | Chứng minh n mũ 1/n tiến đến 1 | kho
+D: Trong chứng minh Định lý 9.7(c), đặt $s_n=n^{1/n}-1\ge0$. Hoàn tất chứng minh $s_n\to0$, từ đó $n^{1/n}\to1$.
+H: Nhị thức của $(1+s_n)^n=n$ chứa số hạng bậc hai không âm.
+K: Với $n\ge2$, $n\ge n(n-1)s_n^2/2$, nên $s_n\le\sqrt{2/(n-1)}$.
+S: Cho $\varepsilon>0$. Từ khai triển nhị thức, vì mọi số hạng không âm, $n=(1+s_n)^n\ge\binom n2s_n^2$. Suy ra $0\le s_n\le\sqrt{2/(n-1)}$. Chọn $N=\max\{2,1+2/\varepsilon^2\}$. Với $n>N$, chặn trên nhỏ hơn $\varepsilon$, nên $|s_n|<\varepsilon$. Vậy $s_n\to0$, cộng 1 cho $n^{1/n}\to1$.
+C: Cần $n\ge2$ để chia cho $n-1$; hữu hạn số hạng đầu không ảnh hưởng giới hạn.
+E: Không được dùng chính giới hạn $n^{1/n}\to1$ để chứng minh nó.
+@@ 9.8 | Năm giới hạn vô hạn hoặc dao động | de
+D: Tính giới hạn mở rộng nếu tồn tại: (a) $n^3$; (b) $-n^3$; (c) $(-n)^n$; (d) $1.01^n$; (e) $n^n$.
+H: Kiểm tra riêng dấu và độ lớn.
+K: Hàm mũ với cơ số lớn hơn 1 tăng vô hạn; dấu luân phiên có thể phá giới hạn mở rộng.
+S: **a.** $+\infty$, vì $n>M^{1/3}$ làm $n^3>M$. **b.** $-\infty$ theo đổi dấu. **c.** Không tồn tại: chỉ số chẵn cho $n^n\to+\infty$, chỉ số lẻ cho $-n^n\to-\infty$. **d.** $+\infty$; Bernoulli cho $1.01^n\ge1+0.01n$. **e.** $+\infty$ vì $n^n\ge n$.
+C: $(-n)^n$ khác $-n^n$ ở các chỉ số chẵn.
+E: Độ lớn tiến đến vô cực chưa bảo đảm dãy tiến tới $+\infty$.
+@@ 9.9 | So sánh hai dãy ở đuôi | vua
+D: Giả sử $s_n\le t_n$ với $n>N_0$. Chứng minh (a) $s_n\to+\infty\Rightarrow t_n\to+\infty$; (b) $t_n\to-\infty\Rightarrow s_n\to-\infty$; (c) nếu hai giới hạn mở rộng tồn tại thì $\lim s_n\le\lim t_n$.
+H: Dùng định nghĩa vượt ngưỡng và bỏ hữu hạn số hạng đầu.
+K: Trong (c), nếu hai giới hạn sai thứ tự, chèn hai ngưỡng thực vào giữa chúng.
+S: **a.** Với ngưỡng thực $M$, đuôi $s_n>M$ kéo theo $t_n>M$. **b.** Với ngưỡng $m$, đuôi $t_n<m$ kéo theo $s_n<m$. **c.** Giả sử $S=\lim s_n>T=\lim t_n$, kể cả các trường hợp vô hạn. Chọn hai số thực $u,v$ với $T<u<v<S$. Tính hội tụ hữu hạn hoặc vô hạn đều cho $t_n<u<v<s_n$ khi $n$ đủ lớn, trái giả thiết.
+C: Trong mọi phần, lấy ngưỡng chỉ số vượt cả $N_0$.
+E: Không cần bất đẳng thức đúng tại mọi số hạng đầu.
+@@ 9.10 | Nhân hằng số và đổi dấu giới hạn vô hạn | de
+D: Chứng minh (a) $s_n\to+\infty$, $k>0\Rightarrow ks_n\to+\infty$; (b) $s_n\to+\infty\iff-s_n\to-\infty$; (c) $s_n\to+\infty$, $k<0\Rightarrow ks_n\to-\infty$.
+H: Biến đổi điều kiện vượt một ngưỡng thành điều kiện cho $s_n$.
+K: Khi nhân hoặc chia với $k<0$, đảo chiều bất đẳng thức.
+S: **a.** Với $M\in\mathbb R$, chọn đuôi $s_n>M/k$, khi đó $ks_n>M$. **b.** $s_n>M$ tương đương $-s_n<-M$; các ngưỡng thực $M$ và $-M$ chạy hết $\mathbb R$, nên đúng cả hai chiều. **c.** Viết $ks_n=-[(-k)s_n]$; $-k>0$, dùng (a) rồi (b).
+C: Trường hợp $k=0$ không thuộc (a) hoặc (c); tích khi đó luôn 0.
+E: Không giữ nguyên chiều bất đẳng thức khi chia cho số âm.
+@@ 9.11 | Cộng một dãy không đi tới âm vô cực | vua
+D: Giả sử $s_n\to+\infty$. Chứng minh $s_n+t_n\to+\infty$ nếu (a) $\inf\{t_n:n\ge1\}>-\infty$; (b) $\lim t_n> -\infty$ tồn tại trong số thực mở rộng; (c) $(t_n)$ bị chặn.
+H: Một cận dưới cho $t_n$ đủ để bảo đảm tổng tăng vượt mọi ngưỡng.
+K: Nếu $t_n\ge m$, yêu cầu $s_n>M-m$.
+S: **a.** Lấy cận dưới thực $m$. Với ngưỡng $M$, đuôi có $s_n>M-m$, nên tổng lớn hơn $M$. **b.** Nếu giới hạn $t$ hữu hạn, đuôi có $t_n>t-1$; nếu bằng $+\infty$, đuôi có $t_n>0$. Dùng lập luận (a) cho đuôi đó, hữu hạn số hạng đầu không ảnh hưởng. **c.** Bị chặn kéo theo bị chặn dưới, nên áp dụng (a).
+C: Không áp dụng khi $t_n\to-\infty$; ví dụ $t_n=-s_n$ làm tổng bằng 0.
+E: Không thực hiện phép cộng vô cực trái dấu.
+@@ 9.12 | Tiêu chuẩn tỉ số cho dãy | kho
+D: Giả sử $s_n\ne0$ và $L=\lim|s_{n+1}/s_n|$ tồn tại. (a) Nếu $L<1$, chứng minh $s_n\to0$. (b) Nếu $L>1$ (kể cả $+\infty$), chứng minh $|s_n|\to+\infty$.
+H: So sánh đuôi với cấp số nhân có cơ số nằm giữa $L$ và 1.
+K: Với $L<q<1$, có $|s_n|\le q^{n-N}|s_N|$ trên một đuôi.
+S: **a.** Chọn $0<q<1$ với $L<q$. Có $N$ sao cho $|s_{n+1}|\le q|s_n|$ khi $n\ge N$. Quy nạp được chặn trong gợi ý. Vì $q^{n-N}\to0$, kẹp cho $s_n\to0$. **b.** Đặt $u_n=1/|s_n|>0$. Tỉ số $u_{n+1}/u_n=1/|s_{n+1}/s_n|$ về $1/L<1$ (bằng 0 khi $L=+\infty$). Phần (a) cho $u_n\to0$, nên $|s_n|\to+\infty$ theo định lý nghịch đảo dãy dương.
+C: $L=1$ không được kết luận: $1/n$, $n$, và 1 đều có tỉ số tiến đến 1.
+E: Tiêu chuẩn áp dụng cho độ lớn; $L>1$ không cho dấu của $s_n$.
+@@ 9.13 | Giới hạn của lũy thừa a mũ n | vua
+D: Chứng minh $a^n\to0$ nếu $|a|<1$; $a^n\to1$ nếu $a=1$; $a^n\to+\infty$ nếu $a>1$; không có giới hạn mở rộng nếu $a\le-1$.
+H: Xét dấu của $a$ và độ lớn $|a|$.
+K: Dùng cấp số nhân và hai dãy con chẵn, lẻ.
+S: Nếu $a=0$, dãy bằng 0. Nếu $0<|a|<1$, tỉ số độ lớn bằng $|a|<1$, dùng 9.12(a). Nếu $a=1$ dãy hằng 1. Nếu $a>1$, Bernoulli cho $a^n=(1+(a-1))^n\ge1+n(a-1)\to+\infty$. Nếu $a=-1$ dãy luân phiên $\pm1$. Nếu $a<-1$, dãy con chẵn đến $+\infty$, lẻ đến $-\infty$, nên không có giới hạn mở rộng.
+C: Bốn trường hợp bao phủ toàn bộ $a\in\mathbb R$.
+E: Không dùng $a^n\to0$ chỉ vì $a<1$; phải có $|a|<1$.
+@@ 9.14 | So sánh hàm mũ với lũy thừa | kho
+D: Cho $p>0$. Chứng minh $a^n/n^p\to0$ nếu $|a|\le1$; $\to+\infty$ nếu $a>1$; không có giới hạn mở rộng nếu $a<-1$.
+H: Tỉ số độ lớn của hai số hạng liên tiếp tiến đến $|a|$.
+K: $\left|\frac{a^{n+1}/(n+1)^p}{a^n/n^p}\right|=|a|(n/(n+1))^p$ khi $a\ne0$.
+S: Nếu $|a|\le1$, $|a^n/n^p|\le1/n^p\to0$. Nếu $|a|>1$, tỉ số ở gợi ý về $|a|>1$, nên 9.12(b) cho độ lớn tăng vô hạn. Khi $a>1$, các số hạng dương nên giới hạn $+\infty$. Khi $a<-1$, dãy chẵn dương và dãy lẻ âm có độ lớn tăng vô hạn, nên không có giới hạn mở rộng.
+C: Tại $a=-1$, kết quả là 0, vì còn mẫu $n^p$.
+E: Không nhầm kết quả với bài $a^n$ không có mẫu.
+@@ 9.15 | Giai thừa thắng hàm mũ cố định | vua
+D: Chứng minh $a^n/n!\to0$ với mọi $a\in\mathbb R$.
+H: Tỉ số độ lớn của hai số hạng liên tiếp có mẫu $n+1$.
+K: Với $a\ne0$, tỉ số bằng $|a|/(n+1)\to0<1$.
+S: Nếu $a=0$, mọi số hạng bằng 0. Nếu $a\ne0$, đặt $s_n=a^n/n!\ne0$. Tính $|s_{n+1}/s_n|=|a|/(n+1)$, có giới hạn 0. Dùng 9.12(a) suy ra $s_n\to0$, kể cả khi $a$ âm.
+C: $a$ là hằng số không phụ thuộc $n$.
+E: Không áp dụng cho cơ số cũng thay đổi theo $n$ như $n^n/n!$.
+@@ 9.16 | Ba dãy tiến đến dương vô cực | vua
+D: Chứng minh (a) $(n^4+8n)/(n^2+9)\to+\infty$; (b) $2^n/n^2+(-1)^n\to+\infty$; (c) $3^n/n^3-3^n/n!\to+\infty$.
+H: Tách phần chính tăng vô hạn và phần còn lại có cận dưới.
+K: Ở (c), số hạng trừ tiến về 0, còn số hạng đầu về $+\infty$.
+S: **a.** Viết $n^2(1+8/n^3)/(1+9/n^2)$. Thừa số thứ hai về 1 nên cuối cùng lớn hơn $1/2$; tích ít nhất $n^2/2\to+\infty$. **b.** Bài 9.14 cho $2^n/n^2\to+\infty$, còn $(-1)^n\ge-1$, dùng 9.11. **c.** Bài 9.14 cho $3^n/n^3\to+\infty$; 9.15 cho $3^n/n!\to0$, nên phần bị trừ bị chặn. Dùng 9.11 lần nữa.
+C: Không có biểu thức $+\infty-(+\infty)$ ở (c): phần thứ hai về 0.
+E: Phải phân biệt mẫu $n^3$ và mẫu $n!$.
+@@ 9.17 | Chứng minh n bình phương tiến đến vô cực | de
+D: Chỉ dùng định nghĩa giới hạn vô hạn để chứng minh $n^2\to+\infty$.
+H: Với một ngưỡng thực $M$, tìm ngưỡng chỉ số để bình phương vượt $M$.
+K: Chọn $N=\sqrt{\max\{M,0\}}$.
+S: Cho $M\in\mathbb R$. Nếu $n>N$ với $N$ như gợi ý, $n^2>\max\{M,0\}\ge M$. Vì làm được cho mọi ngưỡng $M$, định nghĩa cho $n^2\to+\infty$.
+C: Lựa chọn cũng hợp lệ với $M$ âm.
+E: Trong định nghĩa vô cực, ngưỡng là $M$, không phải một sai số quanh một giới hạn hữu hạn.
+@@ 9.18 | Tổng hình học và giới hạn | vua
+D: (a) Kiểm tra $1+a+\cdots+a^n=(1-a^{n+1})/(1-a)$ khi $a\ne1$. (b) Tìm giới hạn tổng khi $|a|<1$. (c) Tính giới hạn $1+1/3+\cdots+1/3^n$. (d) Tìm giới hạn khi $a\ge1$.
+H: Nhân tổng với $a$ rồi trừ để các số hạng giữa triệt tiêu.
+K: $S_n-aS_n=1-a^{n+1}$; với $a\ge1$, $S_n\ge n+1$.
+S: **a.** Lấy hiệu hai tổng cho $(1-a)S_n=1-a^{n+1}$, chia vì $a\ne1$. **b.** $a^{n+1}\to0$, nên $S_n\to1/(1-a)$. **c.** Thay $a=1/3$, được $3/2$. **d.** Với $a\ge1$, mọi số hạng ít nhất 1, nên $S_n\ge n+1\to+\infty$.
+C: $a=1$ phải xử lý riêng, công thức thương ở (a) không xác định.
+E: Không dùng công thức tổng vô hạn khi $|a|\ge1$.
+@@ 10.1 | Phân loại đơn điệu và bị chặn | vua
+D: Xác định dãy nào tăng, giảm, bị chặn: (a) $1/n$; (b) $(-1)^n/n^2$; (c) $n^5$; (d) $\sin(n\pi/7)$; (e) $(-2)^n$; (f) $n/3^n$.
+H: So sánh số hạng liên tiếp hoặc xét các lớp chỉ số dao động.
+K: Với dãy dương (f), tỉ số kế tiếp là $(n+1)/(3n)<1$.
+S: **a.** Giảm nghiêm và bị chặn trong $(0,1]$. **b.** Không tăng cũng không giảm vì luân phiên dấu; bị chặn trong $[-1,1]$. **c.** Tăng nghiêm, không bị chặn trên. **d.** Không đơn điệu vì tuần hoàn không hằng; bị chặn bởi $-1,1$. **e.** Không đơn điệu và không bị chặn cả hai phía. **f.** Giảm nghiêm vì $(n+1)/(3n)\le2/3<1$; nằm trong $(0,1/3]$.
+C: Bị chặn ở đây nghĩa là bị chặn cả trên và dưới.
+E: Dãy giảm không nhất thiết âm hoặc phân kỳ.
+@@ 10.2 | Dãy giảm bị chặn thì hội tụ | vua
+D: Chứng minh phiên bản dãy giảm bị chặn của Định lý 10.2: nếu $s_{n+1}\le s_n$ và dãy bị chặn dưới thì $s_n\to\inf\{s_n:n\ge1\}$.
+H: Dùng đặc trưng inf để chọn một số hạng gần inf, rồi dùng tính giảm cho cả đuôi.
+K: Với $l=\inf\{s_n\}$, chọn $s_N<l+\varepsilon$.
+S: Tập giá trị không rỗng bị chặn dưới, nên có inf thực $l$. Với $\varepsilon>0$, $l+\varepsilon$ không là cận dưới, nên có $N$ với $s_N<l+\varepsilon$. Với $n\ge N$, tính giảm cho $l\le s_n\le s_N<l+\varepsilon$, tức $|s_n-l|<\varepsilon$. Vậy dãy hội tụ tới $l$.
+C: Chặn dưới là đủ; tính giảm tự cho chặn trên $s_1$.
+E: Inf có thể không là một số hạng của dãy.
+@@ 10.3 | Chặn trên cho các cắt thập phân | de
+D: Với chữ số $0\le d_j\le9$, đặt $s_n=K+\sum_{j=1}^nd_j/10^j$, là cắt thập phân của $K.d_1d_2\ldots$. Chứng minh $s_n<K+1$ với mọi $n\ge1$.
+H: Thay mọi chữ số bằng 9 để chặn trên.
+K: $\sum_{j=1}^n9/10^j=1-10^{-n}<1$.
+S: Vì mỗi $d_j\le9$, $s_n\le K+\sum_{j=1}^n9/10^j=K+1-10^{-n}<K+1$. Đẳng thức tổng hình học dùng tỉ số $1/10$.
+C: Dù tất cả chữ số đều 9, mọi tổng hữu hạn vẫn nhỏ hơn $K+1$; giới hạn có thể bằng $K+1$.
+E: Không suy ra giới hạn cũng nhỏ hơn nghiêm ngặt $K+1$.
+@@ 10.4 | Vì sao tính đầy đủ không đúng trong Q | vua
+D: Giải thích vì sao định lý dãy đơn điệu bị chặn hội tụ (10.2) và dãy Cauchy hội tụ (10.11) không đúng nếu chỉ xét giới hạn trong $\mathbb Q$.
+H: Dùng các cắt thập phân hữu tỉ của một số vô tỉ.
+K: $q_n=\lfloor10^n\sqrt2\rfloor/10^n$ tăng, bị chặn và tiến đến $\sqrt2$ trong $\mathbb R$.
+S: Mỗi $q_n$ hữu tỉ; các cắt thập phân tăng không nghiêm và bị chặn bởi 2. Chặn $0\le\sqrt2-q_n<10^{-n}$ cho $q_n\to\sqrt2$ trong $\mathbb R$, nên $(q_n)$ là Cauchy. Nếu có giới hạn hữu tỉ $q$, nó cũng là giới hạn thực; tính duy nhất buộc $q=\sqrt2$, mâu thuẫn. Vì vậy cùng một dãy bác cả hai định lý khi yêu cầu giới hạn phải thuộc $\mathbb Q$.
+C: Phản ví dụ không phủ nhận hội tụ trong $\mathbb R$; nó chỉ thiếu giới hạn thuộc $\mathbb Q$.
+E: Bị chặn bởi số hữu tỉ không bảo đảm giới hạn hữu tỉ.
+@@ 10.5 | Dãy giảm không bị chặn dưới | vua
+D: Chứng minh Định lý 10.4(ii): nếu $(s_n)$ là dãy giảm không bị chặn dưới thì $s_n\to-\infty$.
+H: Chọn một số hạng dưới ngưỡng; tất cả số hạng sau còn nhỏ hơn.
+K: Với $M\in\mathbb R$, chọn $N$ có $s_N<M$.
+S: Không bị chặn dưới có nghĩa là với mọi $M$ thực, có $N$ sao cho $s_N<M$. Tính giảm cho $n\ge N$ kéo theo $s_n\le s_N<M$. Đây là định nghĩa giới hạn $-\infty$.
+C: Cần giả thiết đơn điệu để từ một số hạng nhỏ suy ra toàn bộ đuôi nhỏ.
+E: Một dãy không bị chặn dưới nhưng dao động có thể không tiến đến $-\infty$.
+@@ 10.6 | Sai khác liên tiếp và tính Cauchy | kho
+D: (a) Nếu $|s_{n+1}-s_n|<2^{-n}$, chứng minh dãy Cauchy và hội tụ. (b) Kết luận có còn đúng nếu chỉ có $|s_{n+1}-s_n|<1/n$?
+H: Cộng các sai khác liên tiếp và chặn bằng đuôi một chuỗi hình học.
+K: Với $m>n$, $|s_m-s_n|<\sum_{j=n}^{m-1}2^{-j}<2^{1-n}$; còn điều kiện $1/n$ có phản ví dụ từ tổng điều hòa.
+S: **a.** Bất đẳng thức ở gợi ý theo tam giác. Với $\varepsilon>0$, chọn $N$ sao cho $2^{1-N}<\varepsilon$; mọi $m,n>N$ có khoảng cách nhỏ hơn $\varepsilon$. Dãy Cauchy nên hội tụ trong $\mathbb R$. **b.** Không. Lấy $s_n=\sum_{j=1}^n1/j$. Khi đó $s_{n+1}-s_n=1/(n+1)<1/n$. Nhưng $s_{2n}-s_n=\sum_{j=n+1}^{2n}1/j\ge1/2$, nên dãy không Cauchy.
+C: Phản ví dụ đáp ứng dấu nghiêm $<$ trong giả thiết.
+E: Sai khác liên tiếp tiến về 0 chưa đủ cho Cauchy.
+@@ 10.7 | Xấp xỉ sup bằng dãy trong tập | vua
+D: Cho $S\subseteq\mathbb R$ không rỗng, bị chặn, $M=\sup S\notin S$. Chứng minh tồn tại $s_n\in S$ với $s_n\to M$.
+H: Đặc trưng sup cho phần tử sát cận trên với sai số $1/n$.
+K: Chọn $M-1/n<s_n\le M$.
+S: Vì $M-1/n<M$, nó không thể là cận trên của $S$. Chọn $s_n\in S$ lớn hơn số đó. Vì $M$ là cận trên, $0\le M-s_n<1/n$. Với $\varepsilon>0$, lấy $N>1/\varepsilon$; $n>N$ cho $|s_n-M|<\varepsilon$. Vậy dãy hội tụ đến $M$.
+C: Giả thiết $M\notin S$ làm $s_n<M$; cách dựng vẫn dùng được nếu $M\in S$.
+E: Dãy được dựng chưa chắc đơn điệu; đề ở đây chỉ yêu cầu hội tụ.
+@@ 10.8 | Trung bình cộng của dãy tăng | vua
+D: Cho dãy tăng các số dương $s_n$ và $\sigma_n=(s_1+\cdots+s_n)/n$. Chứng minh $(\sigma_n)$ tăng.
+H: So sánh số hạng mới với trung bình cũ.
+K: $\sigma_{n+1}-\sigma_n=(s_{n+1}-\sigma_n)/(n+1)$.
+S: Tính tăng cho $s_j\le s_{n+1}$ với $j\le n$, nên $\sigma_n\le s_{n+1}$. Từ $\sigma_{n+1}=(n\sigma_n+s_{n+1})/(n+1)$, trừ $\sigma_n$ được biểu thức ở gợi ý, không âm. Vì vậy dãy trung bình tăng không nghiêm.
+C: Nếu dãy gốc tăng nghiêm, $s_{n+1}>\sigma_n$ và trung bình tăng nghiêm.
+E: Không chia tổng $n+1$ số hạng cho $n$.
+@@ 10.9 | Truy hồi bình phương giảm về 0 | vua
+D: Cho $s_1=1$, $s_{n+1}=\frac n{n+1}s_n^2$. (a) Tìm $s_2,s_3,s_4$. (b) Chứng minh giới hạn tồn tại. (c) Tìm giới hạn.
+H: Chứng minh $0<s_n\le1$ và dãy giảm trước khi giải phương trình giới hạn.
+K: $s_2=1/2$ giúp loại nghiệm giới hạn bằng 1.
+S: **a.** $s_2=1/2$, $s_3=(2/3)(1/4)=1/6$, $s_4=(3/4)(1/36)=1/48$. **b.** Nếu $0<s_n\le1$, thì $0<s_{n+1}=\frac n{n+1}s_n^2<s_n$. Quy nạp cho dãy dương giảm, nên hội tụ. **c.** Đặt giới hạn $L\in[0,1/2]$ vì từ số thứ hai trở đi không vượt $1/2$. Lấy giới hạn được $L=L^2$, nên $L=0$ hoặc 1. Chỉ 0 nằm trong đoạn đã biết.
+C: Dùng chặn $1/2$ để loại nghiệm 1, không chỉ dùng tính không âm.
+E: Không kết luận giới hạn từ phương trình truy hồi trước khi chứng minh tồn tại.
+@@ 10.10 | Truy hồi tuyến tính về 1/2 | vua
+D: Cho $s_1=1,s_{n+1}=(s_n+1)/3$. (a) Tìm $s_2,s_3,s_4$. (b) Chứng minh $s_n>1/2$. (c) Chứng minh dãy giảm. (d) Chứng minh hội tụ và tìm giới hạn.
+H: Trừ điểm cố định $1/2$ để thấy sai số chia 3 sau mỗi bước.
+K: $s_{n+1}-1/2=(s_n-1/2)/3$.
+S: **a.** $s_2=2/3,s_3=5/9,s_4=14/27$. **b.** Cơ sở $1>1/2$; đẳng thức gợi ý truyền tính dương của $s_n-1/2$ sang chỉ số sau. **c.** $s_{n+1}-s_n=(1-2s_n)/3<0$. **d.** Dãy giảm bị chặn dưới bởi $1/2$, nên có giới hạn $L$. Từ $L=(L+1)/3$ suy ra $L=1/2$; cũng có công thức $s_n=1/2+(1/2)3^{1-n}$.
+C: Công thức tường minh cho $s_1=1$ đúng với dữ kiện.
+E: Dãy luôn lớn hơn $1/2$ nhưng giới hạn vẫn có thể bằng $1/2$.
+@@ 10.11 | Tích Wallis và giới hạn | kho
+D: Cho $t_1=1$, $t_{n+1}=(1-1/(4n^2))t_n$. (a) Chứng minh giới hạn tồn tại. (b) Dự đoán giới hạn từ các số hạng.
+H: Mỗi thừa số truy hồi nằm trong $(0,1)$.
+K: Tích $\prod_{k=1}^{n-1}(1-1/(4k^2))$ dương giảm; dự đoán số từ phép tính khác với chứng minh giá trị chính xác.
+S: **a.** $0<1-1/(4n^2)<1$, nên quy nạp cho $0<t_{n+1}<t_n\le1$. Dãy giảm bị chặn dưới bởi 0 nên hội tụ. **b.** Các giá trị $t_2=0.75$, $t_3=0.703125$, $t_4=0.68359375$, $t_{10}\approx0.65359$, $t_{100}\approx0.63822$ gợi giới hạn khoảng $0.6366$. Giá trị dự đoán là $2/\pi$ theo tích Wallis; đây chỉ là nhận diện dự đoán, phần (a) đã chứng minh tồn tại mà không dùng công thức Wallis.
+C: Mỗi số hữu hạn trong danh sách chỉ gợi xấp xỉ; không phải chứng minh giới hạn bằng $2/\pi$.
+E: Không khẳng định tích vô hạn bằng 0 chỉ vì mọi thừa số nhỏ hơn 1.
+@@ 10.12 | Tích truy hồi có công thức tường minh | vua
+D: Cho $t_1=1$, $t_{n+1}=(1-1/(n+1)^2)t_n$. (a) Chứng minh hội tụ. (b) Dự đoán giới hạn. (c) Quy nạp chứng minh $t_n=(n+1)/(2n)$. (d) Xác định lại giới hạn.
+H: Nhân tử hóa $1-1/(n+1)^2=n(n+2)/(n+1)^2$.
+K: Thay công thức ở $n$ vào truy hồi để thu $(n+2)/(2(n+1))$.
+S: **a.** Các thừa số nằm trong $(0,1)$, nên dãy dương giảm và hội tụ. **b.** $1,3/4,2/3,5/8,\ldots$ gợi giới hạn $1/2$. **c.** Tại $n=1$, $(1+1)/2=1$. Nếu đúng tại $n$, thì $t_{n+1}=\frac{n(n+2)}{(n+1)^2}\frac{n+1}{2n}=\frac{n+2}{2(n+1)}$, hoàn tất quy nạp. **d.** $t_n=1/2+1/(2n)\to1/2$.
+C: Khác truy hồi 10.11 ở mẫu $(n+1)^2$, không phải $4n^2$.
+E: Không nhầm dự đoán số với bước chứng minh công thức.
+@@ 11.1 | Chọn một dãy con hằng | de
+D: Cho $a_n=3+2(-1)^n$. (a) Viết tám số hạng đầu. (b) Cho một dãy con hằng và hàm chọn chỉ số $\sigma$ tăng nghiêm.
+H: Chỉ số chẵn và lẻ cho hai giá trị cố định.
+K: Chọn $\sigma(k)=2k$ hoặc $2k-1$.
+S: **a.** Tám số hạng là $1,5,1,5,1,5,1,5$. **b.** Với $\sigma(k)=2k$, có $a_{\sigma(k)}=5$ cho mọi $k$. Hàm chọn tăng nghiêm vì $2(k+1)>2k$. Cũng có thể chọn $\sigma(k)=2k-1$ cho dãy hằng 1.
+C: Chỉ số đầu tiên phải là số nguyên dương; cả hai hàm chọn đều hợp lệ.
+E: Một dãy con giữ thứ tự xuất hiện trong dãy gốc, không được xáo trộn tùy ý.
+@@ 11.2 | Dãy con và cận giới hạn của bốn dãy | vua
+D: Với mỗi dãy $a_n=(-1)^n$, $b_n=1/n$, $c_n=n^2$, $d_n=(6n+4)/(7n-3)$: (a) cho một dãy con đơn điệu; (b) tìm tập các giới hạn dãy con trong $\mathbb R\cup\{\pm\infty\}$; (c) tìm limsup, liminf; (d) xét hội tụ hoặc tiến tới vô cực; (e) xét bị chặn.
+H: Dãy đã hội tụ chỉ có một giới hạn dãy con; dãy luân phiên cần tách chẵn lẻ.
+K: $d_n=6/7+46/[7(7n-3)]$ giảm về $6/7$.
+S: **a.** Với $a_n$, chọn $a_{2k}=1$ là hằng; ba dãy còn lại tự đơn điệu: $b_n$ giảm, $c_n$ tăng, $d_n$ giảm, nên chính dãy gốc là một dãy con. **b–e.** $a_n$: tập giới hạn $\{-1,1\}$, liminf $-1$, limsup 1, không hội tụ hay đi tới vô cực, bị chặn. $b_n$: tập $\{0\}$, hai cận đều 0, hội tụ 0, bị chặn. $c_n$: tập $\{+\infty\}$, hai cận $+\infty$, đi tới $+\infty$, không bị chặn. $d_n$: tập $\{6/7\}$, hai cận $6/7$, hội tụ $6/7$, bị chặn. Các kết luận về tập giới hạn theo tính mọi dãy con của dãy hội tụ (hữu hạn hoặc vô hạn) giữ giới hạn đó.
+C: Dãy gốc ứng với hàm chọn $\sigma(k)=k$, nên hợp lệ làm dãy con.
+E: Nêu rõ đang cho phép giới hạn dãy con vô hạn.
+@@ 11.3 | Dãy con của các dãy dao động bị chặn | vua
+D: Với $s_n=\cos(n\pi/3)$, $t_n=3/(4n+1)$, $u_n=(-1/2)^n$, $v_n=(-1)^n+1/n$, thực hiện đủ năm yêu cầu: dãy con đơn điệu; tập giới hạn dãy con mở rộng; limsup và liminf; hội tụ hoặc giới hạn vô hạn; bị chặn.
+H: Tách lớp chỉ số để phần tuần hoàn trở thành hằng.
+K: Cos có chu kỳ 6; với $v_n$ xét $2k$ và $2k-1$.
+S: $s_n$: chọn $s_{6k}=1$ hằng; tập giới hạn $\{-1,-1/2,1/2,1\}$, liminf $-1$, limsup 1, không hội tụ, bị chặn. Không có giới hạn khác vì mọi số hạng thuộc tập hữu hạn này. $t_n$: chính dãy giảm về 0, tập giới hạn $\{0\}$, hai cận 0, hội tụ và bị chặn. $u_n$: chọn $u_{2k}=4^{-k}$ giảm; toàn dãy về 0, nên tập $\{0\}$, hai cận 0, bị chặn. $v_n$: chọn $v_{2k}=1+1/(2k)$ giảm; hai đuôi chẵn/lẻ về $1,-1$, nên tập $\{-1,1\}$, liminf $-1$, limsup 1, không hội tụ nhưng bị chặn. Không dãy nào tiến tới vô cực.
+C: Cos tại bội $\pi/3$ không nhận giá trị 0.
+E: Một số giá trị lặp không đồng nghĩa mọi số ở giữa đều là giới hạn dãy con.
+@@ 11.4 | Dãy con có giới hạn vô hạn | vua
+D: Với $w_n=(-2)^n$, $x_n=5(-1)^n$, $y_n=1+(-1)^n$, $z_n=n\cos(n\pi/4)$, tìm dãy con đơn điệu, tập giới hạn dãy con mở rộng, limsup/liminf, tính hội tụ hoặc tiến tới vô cực, và tính bị chặn.
+H: Với $z_n$, xét tám lớp chỉ số theo modulo 8.
+K: $z_{8k}=8k$, $z_{8k+4}=-(8k+4)$, còn $z_{4k+2}=0$.
+S: $w_n$: chọn $w_{2k}=4^k$ tăng; tập giới hạn $\{-\infty,+\infty\}$, liminf $-\infty$, limsup $+\infty$, không có giới hạn, không bị chặn. $x_n$: chọn dãy chẵn hằng 5; tập $\{-5,5\}$, hai cận $-5,5$, không hội tụ, bị chặn. $y_n$: chọn dãy chẵn hằng 2; tập $\{0,2\}$, hai cận 0,2, không hội tụ, bị chặn. $z_n$: dãy con $z_{8k}$ tăng; tập $\{-\infty,0,+\infty\}$, hai cận vô hạn trái dấu, không có giới hạn, không bị chặn. Thật vậy ngoài các vị trí cos bằng 0, độ lớn ít nhất $n/\sqrt2$ nên không thể có giới hạn hữu hạn khác 0.
+C: Không dãy nào trong bốn dãy có giới hạn chung, kể cả giới hạn vô hạn.
+E: Không thêm các số hữu hạn tùy ý vào tập giới hạn của $z_n$.
+@@ 11.5 | Liệt kê hữu tỉ và các giới hạn dãy con | kho
+D: Cho $(q_n)$ liệt kê tất cả số hữu tỉ trong $(0,1]$. (a) Tìm tập giới hạn dãy con. (b) Tìm limsup, liminf.
+H: Mỗi khoảng nhỏ quanh một điểm của $[0,1]$ chứa vô hạn hữu tỉ trong $(0,1]$.
+K: Chọn tăng chỉ số $n_k$ với $|q_{n_k}-x|<1/k$.
+S: **a.** Mọi giới hạn dãy con nằm trong $[0,1]$ do các số hạng ở đó và đoạn đóng. Với $x\in[0,1]$, khoảng lân cận bán kính $1/k$ chứa vô hạn số hữu tỉ của $(0,1]$. Chỉ hữu hạn số xuất hiện trước hoặc tại $n_{k-1}$, nên chọn được một số phù hợp có chỉ số $n_k>n_{k-1}$. Khi đó $q_{n_k}\to x$. Vậy tập giới hạn là $[0,1]$. **b.** Limsup là 1, liminf là 0.
+C: Điểm 0 không được liệt kê nhưng vẫn là giới hạn dãy con.
+E: Không cho tập giới hạn chỉ bằng tập các số được liệt kê.
+@@ 11.6 | Dãy con của dãy con | de
+D: Chứng minh mọi dãy con của một dãy con đều là dãy con của dãy gốc.
+H: Hợp thành hai hàm chọn chỉ số tăng nghiêm.
+K: Nếu $t_k=s_{\sigma(k)}$ và $u_j=t_{\tau(j)}$, thì $u_j=s_{\sigma(\tau(j))}$.
+S: Các hàm $\sigma,\tau:\mathbb N\to\mathbb N$ đều tăng nghiêm. Nếu $j<j'$, thì $\tau(j)<\tau(j')$, kéo theo $\sigma(\tau(j))<\sigma(\tau(j'))$. Vì vậy hợp $\sigma\circ\tau$ cũng là hàm chọn tăng nghiêm; công thức ở gợi ý chứng minh $u$ là dãy con của $s$.
+C: Thứ tự hợp là $\sigma\circ\tau$, không phải $\tau\circ\sigma$.
+E: Không chỉ nói các phần tử cùng thuộc dãy; thứ tự chỉ số cũng phải đúng.
+@@ 11.7 | Một dãy con hữu tỉ đi tới vô cực | vua
+D: Cho $(r_n)$ liệt kê toàn bộ $\mathbb Q$. Chứng minh có dãy con $r_{n_k}\to+\infty$.
+H: Sau khi bỏ một đoạn đầu hữu hạn, vẫn còn hữu tỉ lớn hơn ngưỡng tùy ý.
+K: Chọn $n_k>n_{k-1}$ với $r_{n_k}>k$.
+S: Sau hữu hạn chỉ số đầu chỉ có hữu hạn giá trị đã xuất hiện, còn vô hạn hữu tỉ lớn hơn $k$. Vì toàn bộ $\mathbb Q$ được liệt kê, tồn tại một chỉ số chưa dùng lớn hơn $n_{k-1}$ có $r_{n_k}>k$. Dựng như vậy cho mọi $k$. Với ngưỡng $M$, $k>M$ cho $r_{n_k}>M$, nên dãy con đi tới $+\infty$.
+C: Chọn chỉ số tăng nghiêm, không đơn thuần chọn các giá trị $1,2,3,\ldots$ theo thứ tự tùy ý trong bảng liệt kê.
+E: Thứ tự liệt kê các số hữu tỉ không nhất thiết tăng.
+@@ 11.8 | Đổi dấu liminf thành limsup | vua
+D: Dùng định nghĩa qua cận các đuôi để chứng minh $\liminf s_n=-\limsup(-s_n)$ cho mọi dãy số thực, kể cả cận vô hạn.
+H: Đổi dấu biến inf của mỗi đuôi thành đối của sup.
+K: $\inf\{s_n:n>N\}=-\sup\{-s_n:n>N\}$.
+S: Đặt $l_N=\inf_{n>N}s_n$, $u_N=\sup_{n>N}(-s_n)$. Đẳng thức gợi ý là bài 5.4 áp dụng cho tập đuôi không rỗng. Theo định nghĩa, $l_N\to\liminf s_n$ và $u_N\to\limsup(-s_n)$. Vì $l_N=-u_N$, lấy giới hạn và dùng quy tắc đổi dấu (kể cả vô cực) được kết quả.
+C: Các tập đuôi luôn không rỗng và có cận mở rộng.
+E: Đổi dấu hoán đổi liminf và limsup, không giữ nguyên loại cận.
+@@ 11.9 | Tập giới hạn dãy con phải đóng | kho
+D: (a) Chứng minh $[a,b]$ là tập đóng. (b) Có dãy số thực nào có tập tất cả giới hạn dãy con đúng bằng $(0,1)$ không? Giải thích.
+H: Giới hạn của các điểm trong đoạn vẫn nằm trong đoạn; có thể chọn đường chéo giữa các dãy con.
+K: Nếu mỗi $1/k$ là giới hạn dãy con, chọn $n_k>n_{k-1}$ với $|s_{n_k}-1/k|<1/k$.
+S: **a.** Nếu $x_n\in[a,b]$ và $x_n\to x$, bảo toàn thứ tự cho $a\le x\le b$. Vậy đoạn chứa mọi giới hạn của dãy trong nó, nên đóng. **b.** Không. Giả sử tập giới hạn đúng là $(0,1)$. Với $k\ge2$, $1/k$ là giới hạn dãy con, nên có số hạng gần $1/k$ tùy ý ở chỉ số lớn tùy ý. Chọn $n_k$ như gợi ý, được $|s_{n_k}|<2/k\to0$. Vậy 0 cũng là giới hạn dãy con, trái $0\notin(0,1)$.
+C: Lập luận chọn chỉ số tăng sử dụng “giới hạn dãy con”, không chỉ dùng sự có mặt của giá trị trong dãy.
+E: Tập giá trị và tập giới hạn dãy con là hai khái niệm khác nhau.
+@@ 11.10 | Bảng nghịch đảo đi theo đường chéo | vua
+D: Bảng ở Hình 11.2 có mọi hàng giống nhau: $1,1/2,1/3,\ldots$; ô hàng $i$, cột $j$ bằng $1/j$. Liệt kê các ô theo các đường chéo hữu hạn $i+j=2,3,\ldots$, đổi chiều luân phiên, để mỗi ô được đi qua một lần. (a) Tìm tập giới hạn dãy con của dãy giá trị thu được. (b) Tìm limsup, liminf.
+H: Mỗi giá trị $1/j$ xuất hiện ở vô hạn hàng, còn các cột tiến ra xa cho giá trị về 0.
+K: Tập ứng viên là $\{0\}\cup\{1/j:j\ge1\}$.
+S: **a.** Với mỗi cột $j$ cố định, vô hạn ô của nó xuất hiện ở chỉ số tăng dần, tạo dãy con hằng $1/j$. Chọn lần lượt các ô nằm ở cột ngày càng lớn, đồng thời đi qua những đường chéo muộn hơn, cho một dãy con tiến về 0. Nếu $L>0$ là giới hạn bất kỳ, đuôi của dãy con có giá trị lớn hơn $L/2$, nên cột chỉ có thể nằm trong hữu hạn giá trị $1,1/2,\ldots,1/J$. Một dãy hội tụ trong tập hữu hạn buộc giới hạn là một giá trị của tập đó. Không có giới hạn âm hoặc vô hạn vì mọi số hạng trong $(0,1]$. Vậy tập đúng như gợi ý. **b.** Limsup 1, liminf 0.
+C: Đổi chiều trên mỗi đường chéo không làm thay đổi việc mỗi cột xuất hiện vô hạn lần.
+E: Không nhầm bảng này với bảng liệt kê tất cả số hữu tỉ.
+@@ 11.11 | Dãy tăng trong tập tiến tới sup | kho
+D: Cho $S\subseteq\mathbb R$ không rỗng, bị chặn. Chứng minh có dãy tăng không nghiêm $(s_n)$ trong $S$ hội tụ tới $M=\sup S$; nếu $M\in S$ có thể dùng dãy hằng.
+H: Kết hợp độ gần sup với yêu cầu phần tử mới không nhỏ hơn phần tử cũ.
+K: Nếu $M\notin S$, chọn $s_{n+1}>\max\{s_n,M-1/(n+1)\}$ trong $S$.
+S: Nếu $M\in S$, đặt $s_n=M$. Nếu không, chọn $s_1>M-1$ trong $S$. Giả sử đã chọn $s_n<M$. Số $c=\max\{s_n,M-1/(n+1)\}$ vẫn nhỏ hơn $M$, nên không là cận trên; chọn $s_{n+1}\in S$ lớn hơn $c$. Dãy tăng nghiêm và có $0<M-s_n<1/n$, nên hội tụ tới $M$.
+C: Từ “tăng” ở đây cho phép hằng, phù hợp trường hợp $S=\{M\}$.
+E: Chọn tùy ý $s_n>M-1/n$ chưa đủ bảo đảm tính tăng.
+@@ 12.1 | Thứ tự của liminf và limsup | vua
+D: Nếu $s_n\le t_n$ từ một chỉ số trở đi, chứng minh $\liminf s_n\le\liminf t_n$ và $\limsup s_n\le\limsup t_n$.
+H: So sánh inf, sup của cùng một đuôi trước khi lấy giới hạn.
+K: Với $N$ đủ lớn, $\inf_{n>N}s_n\le\inf_{n>N}t_n$ và $\sup_{n>N}s_n\le\sup_{n>N}t_n$.
+S: Với đuôi sau ngưỡng giả thiết, mọi $s_n\le t_n$. Cận dưới của đuôi $s$ không vượt mọi $t_n$, nên không vượt inf của đuôi $t$. Mọi $s_n$ không vượt sup của đuôi $t$, nên sup đuôi $s$ cũng không vượt nó. Các bất đẳng thức đúng trong thứ tự mở rộng. Lấy giới hạn theo $N$ và dùng bảo toàn thứ tự của các giới hạn mở rộng được hai kết luận.
+C: Không cần hai dãy hội tụ; các cận đuôi luôn đơn điệu nên có giới hạn mở rộng.
+E: Không thay limsup bằng một giới hạn thường chưa tồn tại.
+@@ 12.2 | Tiêu chuẩn limsup của trị tuyệt đối | vua
+D: Chứng minh $\limsup|s_n|=0$ khi và chỉ khi $s_n\to0$.
+H: Với dãy không âm, liminf không âm; nếu limsup bằng 0 thì hai cận cùng bằng 0.
+K: Có thể dùng trực tiếp $\sup_{n>N}|s_n|\to0$ để có $|s_n|<\varepsilon$ trên một đuôi.
+S: Nếu limsup trị tuyệt đối bằng 0, cho $\varepsilon>0$, chọn $N$ sao cho $\sup_{n>N}|s_n|<\varepsilon$. Khi đó mọi $n>N$ có $|s_n|<\varepsilon$, nên $s_n\to0$. Ngược lại, nếu $s_n\to0$, với mỗi $\varepsilon>0$ có đuôi $|s_n|<\varepsilon/2$, nên $0\le\sup_{n>N}|s_n|\le\varepsilon/2<\varepsilon$ khi $N$ đủ lớn. Do đó limsup bằng 0.
+C: Tách $\varepsilon/2$ trong chiều ngược tránh nhầm sup của các số nhỏ hơn $\varepsilon$ nhất thiết nhỏ hơn nghiêm $\varepsilon$.
+E: Limsup không âm của trị tuyệt đối không tự bằng 0 nếu dãy chỉ bị chặn.
+@@ 12.3 | Tính trên hai dãy tuần hoàn | vua
+D: Cho $s_n$ lặp chu kỳ $(0,1,2,1)$ và $t_n$ lặp $(2,1,1,0)$. Tính (a) $\liminf s_n+\liminf t_n$; (b) $\liminf(s_n+t_n)$; (c) $\liminf s_n+\limsup t_n$; (d) $\limsup(s_n+t_n)$; (e) $\limsup s_n+\limsup t_n$; (f) $\liminf(s_nt_n)$; (g) $\limsup(s_nt_n)$.
+H: Mỗi đuôi của một dãy tuần hoàn chứa đầy đủ các giá trị trong chu kỳ.
+K: Tổng có chu kỳ $(2,2,3,1)$, tích có chu kỳ $(0,1,2,0)$.
+S: Cả $s,t$ có liminf 0 và limsup 2. Tổng có min 1 và max 3; tích có min 0 và max 2 trong chu kỳ. Suy ra **a** 0; **b** 1; **c** 2; **d** 3; **e** 4; **f** 0; **g** 2.
+C: Kết quả $\limsup(s+t)=3<4=\limsup s+\limsup t$ cho thấy bất đẳng thức có thể nghiêm.
+E: Không tự cộng hai limsup như quy tắc cộng giới hạn thường.
+@@ 12.4 | Limsup của tổng | vua
+D: Với hai dãy thực bị chặn, chứng minh $\limsup(s_n+t_n)\le\limsup s_n+\limsup t_n$.
+H: Sup của tổng theo cùng chỉ số không vượt tổng hai sup.
+K: Đặt $A_N=\sup_{n>N}s_n$, $B_N=\sup_{n>N}t_n$; có $s_n+t_n\le A_N+B_N$ trên đuôi.
+S: Lấy sup theo $n>N$ trong bất đẳng thức gợi ý được $\sup_{n>N}(s_n+t_n)\le A_N+B_N$. Vì hai dãy bị chặn, các sup đuôi đều hữu hạn và hội tụ tới các limsup hữu hạn. Lấy giới hạn theo $N$ và dùng định lý tổng, bảo toàn thứ tự cho kết luận.
+C: Các phần tử đạt gần sup của hai dãy có thể ở những chỉ số khác nhau, nên không có lý do cho đẳng thức.
+E: Không đồng nhất $\sup_n(s_n+t_n)$ với $\sup_ns_n+\sup_nt_n$.
+@@ 12.5 | Liminf của tổng | vua
+D: Với hai dãy bị chặn, dùng phép đổi dấu để chứng minh $\liminf(s_n+t_n)\ge\liminf s_n+\liminf t_n$.
+H: Áp dụng bất đẳng thức limsup cho $-s_n,-t_n$.
+K: Đổi dấu hai vế rồi dùng $\liminf u=-\limsup(-u)$.
+S: Theo 12.4, $\limsup(-s_n-t_n)\le\limsup(-s_n)+\limsup(-t_n)$. Nhân với $-1$ đảo chiều: $-\limsup(-s_n-t_n)\ge-\limsup(-s_n)-\limsup(-t_n)$. Bài 11.8 biến từng số hạng thành liminf cần có.
+C: Tất cả các cận hữu hạn vì dãy bị chặn, nên phép cộng và đổi dấu không gặp vô định.
+E: Đổi dấu phải đảo chiều bất đẳng thức.
+@@ 12.6 | Nhân hằng số với limsup và liminf | vua
+D: Với dãy bị chặn $(s_n)$: (a) chứng minh $\limsup(ks_n)=k\limsup s_n$ khi $k\ge0$; (b) kết quả tương tự cho liminf; (c) nêu công thức đúng khi $k<0$.
+H: Nhân số âm đổi vai trò cận trên và cận dưới.
+K: Khi $k<0$, $\limsup(ks_n)=k\liminf s_n$, $\liminf(ks_n)=k\limsup s_n$.
+S: **a,b.** Nếu $k=0$, mọi số hạng bằng 0. Nếu $k>0$, trên mỗi đuôi $\sup ks_n=k\sup s_n$ và $\inf ks_n=k\inf s_n$ vì phép nhân giữ thứ tự và các phần tử áp sát cận vẫn áp sát sau nhân. Lấy giới hạn được hai công thức. **c.** Viết $k=-h$, $h>0$. Dùng $\limsup(-u_n)=-\liminf u_n$ và hai công thức vừa chứng minh cho $h$, suy ra hai công thức trong gợi ý.
+C: Dãy $s_n=(-1)^n$ và $k=-2$ có hai cận $-2,2$, phù hợp công thức.
+E: Không giữ nguyên limsup khi nhân hằng số âm.
+@@ 12.7 | Limsup vô hạn nhân hằng số dương | vua
+D: Nếu $\limsup s_n=+\infty$ và $k>0$, chứng minh $\limsup(ks_n)=+\infty$.
+H: Mọi đuôi của $s_n$ đều không bị chặn trên.
+K: Trên mỗi đuôi, ngưỡng $M/k$ cho một số hạng có $ks_n>M$.
+S: Vì các sup đuôi giảm tới $+\infty$, mỗi sup đuôi phải bằng $+\infty$. Với mỗi $N$ và mỗi ngưỡng thực $M$, chọn $n>N$ sao cho $s_n>M/k$. Khi ấy $ks_n>M$, nên sup đuôi của $ks_n$ bằng $+\infty$. Giới hạn các sup đuôi cũng bằng $+\infty$.
+C: Không cần $s_n\to+\infty$; limsup vô hạn chỉ đòi số hạng lớn tùy ý ở mọi đuôi.
+E: Không biến giả thiết về limsup thành hội tụ toàn dãy.
+@@ 12.8 | Limsup của tích hai dãy không âm | kho
+D: Cho hai dãy bị chặn không âm $(s_n),(t_n)$. Chứng minh $\limsup(s_nt_n)\le(\limsup s_n)(\limsup t_n)$.
+H: Nhân các cận trên của cùng một đuôi, dùng tính không âm.
+K: Với $A_N=\sup_{n>N}s_n$, $B_N=\sup_{n>N}t_n$, $0\le s_nt_n\le A_NB_N$.
+S: Lấy sup theo $n>N$ được $\sup_{n>N}s_nt_n\le A_NB_N$. Hai dãy cận hữu hạn hội tụ lần lượt tới $A=\limsup s_n\ge0$, $B=\limsup t_n\ge0$. Định lý tích cho $A_NB_N\to AB$. Bảo toàn thứ tự cho bất đẳng thức cần chứng minh.
+C: Tính không âm cần thiết: nếu cả hai dãy lặp $(-2,-1)$, limsup của tích là 4 còn tích hai limsup là 1.
+E: Không nhân bất đẳng thức khi chưa kiểm tra dấu.
+@@ 12.9 | Tích với dãy có liminf dương | kho
+D: Giả sử $\liminf t_n>0$. Chứng minh (a) $s_n\to+\infty\Rightarrow s_nt_n\to+\infty$; (b) $\limsup s_n=+\infty\Rightarrow\limsup(s_nt_n)=+\infty$; (c) giải thích bài 12.7 là trường hợp riêng.
+H: Liminf dương cho cận dưới dương trên một đuôi.
+K: Chọn số thực $m>0$ nhỏ hơn $\liminf t_n$, rồi có $t_n>m$ khi $n$ đủ lớn.
+S: **a.** Với $M>0$, đuôi có $s_n>M/m>0$, nên $s_nt_n>M$. Đủ để chứng minh giới hạn $+\infty$. **b.** Với mỗi $N$ và $M>0$, limsup vô hạn cho một $n$ vượt cả $N$ và ngưỡng cận dưới của $t$, với $s_n>M/m$. Khi đó tích vượt $M$, nên mọi đuôi tích không bị chặn trên. **c.** Đặt $t_n=k>0$ thì liminf $t_n=k$, và (b) đúng là 12.7.
+C: Khi liminf $t_n=+\infty$, vẫn chọn được một cận dưới thực dương, chẳng hạn $m=1$.
+E: Không suy ra toàn bộ tích hội tụ ở (b); chỉ kết luận limsup vô hạn.
+@@ 12.10 | Bị chặn qua limsup trị tuyệt đối | vua
+D: Chứng minh $(s_n)$ bị chặn khi và chỉ khi $\limsup|s_n|<+\infty$.
+H: Một cận cho đuôi kết hợp hữu hạn số hạng đầu cho cận toàn dãy.
+K: Nếu $L=\limsup|s_n|$ hữu hạn, đuôi có $|s_n|<L+1$.
+S: Nếu $|s_n|\le M$ cho mọi $n$, mọi sup đuôi không vượt $M$, nên limsup hữu hạn. Ngược lại, giả sử $L<+\infty$. Vì trị tuyệt đối không âm nên $L\ge0$. Chọn $N$ có $|s_n|<L+1$ với $n>N$. Đặt $B=\max\{L+1,|s_1|,\ldots,|s_N|\}$. Khi đó $|s_n|\le B$ cho mọi $n$, đúng nghĩa bị chặn.
+C: Không thể có limsup trị tuyệt đối bằng $-\infty$.
+E: Bỏ qua các số hạng đầu khi tìm cận toàn dãy là thiếu một bước.
+@@ 12.11 | Bất đẳng thức giữa tỉ số và căn | kho
+D: Cho $s_n\ne0$. Chứng minh bất đẳng thức đầu trong Định lý 12.2: $\liminf|s_{n+1}/s_n|\le\liminf|s_n|^{1/n}$.
+H: Một cận dưới dương cho tỉ số ở đuôi cho cận dưới hình học của độ lớn.
+K: Với $0<c<\liminf|s_{n+1}/s_n|$, có $|s_n|\ge|s_N|c^{n-N}$ trên đuôi.
+S: Đặt $L=\liminf|s_{n+1}/s_n|\ge0$. Nếu $L=0$, kết quả hiển nhiên vì căn không âm. Nếu $L>0$, chọn bất kỳ $c$ thực với $0<c<L$. Có $N$ sao cho mọi tỉ số từ $N$ trở đi lớn hơn $c$. Nhân chúng cho $|s_n|\ge|s_N|c^{n-N}$. Lấy căn bậc $n$ cho $|s_n|^{1/n}\ge c(|s_N|c^{-N})^{1/n}$. Thừa số trong ngoặc dương cố định nên căn tiến về 1. Suy ra liminf căn ít nhất $c$. Cho $c$ áp sát $L$ nếu $L$ hữu hạn; nếu $L=+\infty$, mọi $c>0$ đều hợp lệ nên liminf căn cũng vô hạn.
+C: Việc mọi $s_n\ne0$ bảo đảm các tỉ số và hằng số dương trong phép lấy căn đều xác định.
+E: Không suy ra có giới hạn tỉ số hoặc giới hạn căn chỉ từ liminf.
+@@ 12.12 | Trung bình Cesàro và các cận giới hạn | kho
+D: Cho $s_n\ge0$, $\sigma_n=(s_1+\cdots+s_n)/n$. (a) Chứng minh $\liminf s_n\le\liminf\sigma_n\le\limsup\sigma_n\le\limsup s_n$. (b) Nếu $s_n$ có giới hạn mở rộng, chứng minh $\sigma_n$ cùng giới hạn. (c) Cho ví dụ trung bình hội tụ nhưng dãy gốc không hội tụ.
+H: Tách tổng thành đoạn đầu hữu hạn và một đuôi có cận trên/cận dưới.
+K: Với $n>N$, nếu $l\le s_j\le u$ cho $j>N$, thì $[C_N+(n-N)l]/n\le\sigma_n\le[C_N+(n-N)u]/n$, với $C_N=\sum_{j=1}^Ns_j$.
+S: **a.** Đặt $A=\limsup s_n$. Nếu $A=+\infty$ thì chặn trên tự đúng; nếu hữu hạn, với $u>A$ đuôi có $s_j\le u$. Công thức gợi ý cho limsup trung bình không vượt $u$; cho $u\downarrow A$. Với $B=\liminf s_n>0$, lấy $0<l<B$ và công thức chặn dưới để có liminf trung bình ít nhất $l$; cho $l\uparrow B$, hoặc cho $l$ lớn tùy ý nếu $B=+\infty$. Nếu $B=0$, chặn dưới theo tính không âm. Bất đẳng thức giữa luôn đúng. **b.** Khi hai cận của $s$ cùng bằng $L$, chuỗi bất đẳng thức ép hai cận trung bình cùng bằng $L$. **c.** $s_n=1+(-1)^n$ không hội tụ, nhưng tổng riêng của phần $(-1)^n$ bị chặn nên $\sigma_n\to1$.
+C: Không được bỏ $C_N/n$ trước khi lấy giới hạn; nó về 0 vì $N$ cố định.
+E: Hội tụ trung bình không suy ra hội tụ dãy gốc.
+@@ 12.13 | Đặc trưng cận giới hạn bằng bất đẳng thức cuối cùng | kho
+D: Cho dãy thực bị chặn. Gọi $A$ gồm các $a\in\mathbb R$ sao cho tập $\{n:s_n<a\}$ hữu hạn, và $B$ gồm các $b\in\mathbb R$ sao cho tập $\{n:s_n>b\}$ hữu hạn. Chứng minh $\sup A=\liminf s_n$ và $\inf B=\limsup s_n$.
+H: Các phần tử của $A$ là cận dưới đúng trên một đuôi; của $B$ là cận trên đúng trên một đuôi.
+K: Mọi $a<\liminf s_n$ thuộc $A$, và mọi $a\in A$ không vượt liminf; làm đối xứng cho $B$.
+S: Đặt $l=\liminf s_n,u=\limsup s_n$. Nếu $a\in A$, có $N$ sao cho $s_n\ge a$ với $n>N$, nên inf đuôi ít nhất $a$ và $l\ge a$. Nếu $a<l$, inf đuôi cuối cùng lớn hơn $a$, nên $a\in A$. Vì vậy $A$ có sup đúng là $l$. Tương tự, $b\in B$ cho $u\le b$; mọi $b>u$ thuộc $B$, nên $\inf B=u$. Bị chặn bảo đảm $l,u$ hữu hạn và hai tập không rỗng.
+C: Không cần $l\in A$ hoặc $u\in B$; chẳng hạn $s_n=l-1/n$ có vô hạn số hạng dưới $l$.
+E: “Hữu hạn số hạng vi phạm” khác “không có số hạng vi phạm”.
+@@ 12.14 | Căn bậc n của giai thừa | kho
+D: Tính (a) $\lim(n!)^{1/n}$; (b) $\lim (n!)^{1/n}/n$.
+H: Dùng hệ quả tỉ số–căn: nếu $|a_{n+1}/a_n|\to L$, thì $|a_n|^{1/n}\to L$, kể cả $L=+\infty$.
+K: Ở (b), đặt $a_n=n!/n^n$; tỉ số là $(n/(n+1))^n$.
+S: **a.** Với $a_n=n!$, tỉ số $a_{n+1}/a_n=n+1\to+\infty$. Hệ quả 12.3 cho $(n!)^{1/n}\to+\infty$. **b.** Với $a_n=n!/n^n$, tính $a_{n+1}/a_n=(n/(n+1))^n=(1+1/n)^{-n}\to1/e$, dùng giới hạn định nghĩa quen thuộc $(1+1/n)^n\to e$ đã nêu ở §7. Hệ quả 12.3 cho $a_n^{1/n}\to1/e$. Nhưng $a_n^{1/n}=(n!)^{1/n}/n$, nên đáp án $1/e$.
+C: Giới hạn $e$ ở đây là kết quả được sách nêu trước; không dùng công thức Stirling.
+E: Cả tử và mẫu ở (b) cùng tăng vô hạn, không thể chia các ký hiệu vô cực để lấy kết quả.
+@@ 13.1 | Hai metric trên không gian hữu hạn chiều | kho
+D: Trên $\mathbb R^k$, đặt $d_1(x,y)=\max_j|x_j-y_j|$, $d_2(x,y)=\sum_{j=1}^k|x_j-y_j|$. (a) Chứng minh cả hai là metric. (b) Chứng minh cả hai không gian metric đều đầy đủ.
+H: Dùng tam giác trên từng tọa độ và tính đầy đủ của $\mathbb R$.
+K: $d_1\le d_2\le k d_1$; dãy Cauchy cho mỗi tọa độ Cauchy.
+S: **a.** Hai hàm không âm, bằng 0 đúng khi mọi tọa độ bằng nhau, và đối xứng. Với mỗi $j$, $|x_j-z_j|\le|x_j-y_j|+|y_j-z_j|$. Lấy max cho tam giác $d_1$; lấy tổng cho tam giác $d_2$. **b.** Nếu $(x^{(n)})$ Cauchy theo một trong hai metric, $|x_j^{(m)}-x_j^{(n)}|$ không vượt khoảng cách tương ứng, nên mỗi tọa độ Cauchy và hội tụ tới $x_j\in\mathbb R$. Đặt $x=(x_1,\ldots,x_k)$. Với $\varepsilon>0$, chọn một ngưỡng chung để mọi tọa độ sai dưới $\varepsilon/k$. Khi đó $d_2(x^{(n)},x)<\varepsilon$, đồng thời $d_1\le d_2<\varepsilon$. Vậy dãy hội tụ theo metric ban đầu.
+C: Chỉ có hữu hạn $k$ tọa độ nên chọn được ngưỡng chung bằng max của $k$ ngưỡng.
+E: Không dùng lập luận này cho vô hạn tọa độ mà thiếu kiểm soát đều.
+@@ 13.2 | Hội tụ tọa độ và hội tụ Euclid | vua
+D: (a) Chứng minh $|x_j-y_j|\le d(x,y)\le\sqrt k\max_i|x_i-y_i|$ cho metric Euclid $d$. (b) Chứng minh dãy trong $\mathbb R^k$ hội tụ khi và chỉ khi mọi tọa độ hội tụ.
+H: So sánh tổng bình phương với một số hạng và với $k$ lần số hạng lớn nhất.
+K: Cho mỗi tọa độ sai dưới $\varepsilon/\sqrt k$ rồi dùng ngưỡng chung.
+S: **a.** $|x_j-y_j|^2\le\sum_i|x_i-y_i|^2\le k\max_i|x_i-y_i|^2$. Lấy căn các lượng không âm được hai chặn. **b.** Nếu $d(x^{(n)},x)\to0$, chặn trái cho từng tọa độ hội tụ tới $x_j$. Ngược lại, nếu mỗi tọa độ hội tụ tới $x_j$, với $\varepsilon>0$ chọn $N_j$ cho sai số tọa độ dưới $\varepsilon/\sqrt k$. Với $n>\max_jN_j$, chặn phải cho $d(x^{(n)},x)<\varepsilon$.
+C: Điểm giới hạn được xác định bằng bộ $k$ giới hạn tọa độ.
+E: Không bỏ hệ số $\sqrt k$ trong chặn trên Euclid.
+@@ 13.3 | Metric sup trên không gian dãy bị chặn | kho
+D: Gọi $B$ là tập các dãy thực bị chặn. (a) Chứng minh $d(x,y)=\sup_{j\ge1}|x_j-y_j|$ là metric trên $B$. (b) $d^*(x,y)=\sum_{j=1}^\infty|x_j-y_j|$ có là metric trên toàn bộ $B$ không?
+H: Metric phải cho một khoảng cách thực hữu hạn cho mọi cặp điểm.
+K: Chặn hai dãy bảo đảm sup hữu hạn, nhưng không bảo đảm tổng vô hạn hữu hạn.
+S: **a.** Nếu $|x_j|\le M$, $|y_j|\le N$ thì $|x_j-y_j|\le M+N$, nên sup xác định hữu hạn. Đối xứng và không âm hiển nhiên; $d=0$ khi và chỉ khi mọi tọa độ bằng nhau. Với mỗi $j$, $|x_j-z_j|\le|x_j-y_j|+|y_j-z_j|\le d(x,y)+d(y,z)$; lấy sup cho tam giác. **b.** Không. Hai dãy bị chặn $x=(0,0,\ldots)$, $y=(1,1,\ldots)$ cho tổng khoảng cách $1+1+\cdots=+\infty$, không là một số thực.
+C: Sup không đòi đạt tại một chỉ số cụ thể.
+E: Không coi metric mở rộng cho phép $+\infty$ là metric thông thường của đề.
+@@ 13.4 | Hợp mở và giao hữu hạn tập mở | vua
+D: Trong không gian metric, chứng minh (iii) hợp tùy ý các tập mở là mở; (iv) giao hữu hạn các tập mở là mở.
+H: Một điểm trong hợp thuộc ít nhất một tập; một điểm trong giao hữu hạn cần một bán kính chung.
+K: Với giao $U_1\cap\cdots\cap U_m$, lấy $r=\min(r_1,\ldots,r_m)>0$.
+S: **iii.** Nếu $x\in\bigcup_\lambda U_\lambda$, có một $\lambda_0$ với $x\in U_{\lambda_0}$. Vì tập đó mở, một quả cầu tâm $x$ nằm trong nó và do đó nằm trong hợp. **iv.** Nếu $x$ thuộc mọi $U_i$, chọn $r_i>0$ với $B(x,r_i)\subseteq U_i$. Bán kính min dương cho quả cầu nằm trong toàn bộ giao. Giao rỗng số lượng tập được hiểu là cả không gian, cũng mở.
+C: Giao vô hạn không nhất thiết mở: $\bigcap_{n\ge1}(-1/n,1/n)=\{0\}$.
+E: Min của vô hạn bán kính dương có thể bằng 0.
+@@ 13.5 | Luật De Morgan và giao các tập đóng | vua
+D: (a) Với họ tập $\mathcal U$ trong $S$, chứng minh $\bigcap_{U\in\mathcal U}(S\setminus U)=S\setminus\bigcup_{U\in\mathcal U}U$. (b) Chứng minh giao tùy ý các tập đóng trong một không gian metric là đóng.
+H: Chứng minh đẳng thức tập bằng điều kiện thuộc của một điểm.
+K: Phần bù của giao các tập đóng là hợp các phần bù mở.
+S: **a.** $x$ thuộc vế trái khi và chỉ khi $x\in S$ và $x$ không thuộc bất kỳ $U\in\mathcal U$ nào, tương đương $x$ không thuộc hợp, tức thuộc vế phải. **b.** Nếu $F_\lambda$ đóng thì $S\setminus F_\lambda$ mở. De Morgan cho $S\setminus\bigcap_\lambda F_\lambda=\bigcup_\lambda(S\setminus F_\lambda)$, là tập mở. Theo định nghĩa, giao là đóng.
+C: Với họ rỗng, giao là $S$, hợp rỗng là $\varnothing$, công thức vẫn đúng.
+E: Không nhầm giao các phần bù với phần bù của giao.
+@@ 13.6 | Bốn đặc trưng của bao đóng | kho
+D: Chứng minh Mệnh đề 13.9 trong không gian metric: (a) $E$ đóng khi và chỉ khi $E=\overline E$; (b) $E$ đóng khi và chỉ khi chứa giới hạn mọi dãy hội tụ trong $E$; (c) $x\in\overline E$ khi và chỉ khi $x$ là giới hạn một dãy trong $E$; (d) $\partial E=\overline E\cap\overline{S\setminus E}$.
+H: Một điểm thuộc bao đóng khi và chỉ khi mọi quả cầu quanh nó gặp $E$.
+K: Nếu mọi quả cầu gặp $E$, chọn $x_n\in E\cap B(x,1/n)$.
+S: Trước hết, nếu một quả cầu quanh $x$ không gặp $E$, phần bù của quả cầu là tập đóng chứa $E$ mà không chứa $x$, nên $x\notin\overline E$. Ngược lại nếu $x\notin\overline E$, có tập đóng $F\supseteq E$ thiếu $x$; phần bù mở cho một quả cầu quanh $x$ không gặp $E$. **a.** Bao đóng là giao các tập đóng nên đóng; nếu $E$ đóng, chính nó có mặt trong giao định nghĩa, suy ra bằng nhau. **c.** Điều kiện quả cầu và cách chọn trong gợi ý cho dãy đến $x$; chiều ngược, mọi quả cầu gặp đuôi dãy. **b.** Nếu $E$ đóng thì (a),(c) cho mọi giới hạn thuộc $E$. Ngược lại nếu $E$ chứa mọi giới hạn, (c) cho $\overline E\subseteq E$, nên (a) cho đóng. **d.** $x$ không là điểm trong của $E$ khi và chỉ khi mọi quả cầu gặp phần bù, tức $x\in\overline{S\setminus E}$. Kết hợp với $\partial E=\overline E\setminus E^\circ$ cho công thức.
+C: Cách dựng $x_n$ dùng tính metric; không tự áp dụng sang một không gian tô pô tùy ý.
+E: Bao đóng chứa cả điểm trong lẫn điểm biên.
+@@ 13.7 | Phân tích tập mở trên trục số | kho
+D: Chứng minh mọi tập mở $U\subseteq\mathbb R$ là hợp của hữu hạn hoặc đếm được các khoảng mở đôi một rời nhau; cho phép khoảng không bị chặn và $\mathbb R$.
+H: Gom các khoảng mở trong $U$ chứa cùng một điểm thành một khoảng tối đại.
+K: Hai khoảng tối đại giao nhau thì hợp của chúng vẫn là khoảng trong $U$, nên chúng phải bằng nhau; mỗi khoảng có một hữu tỉ riêng.
+S: Với $x\in U$, đặt $I_x$ là hợp mọi khoảng mở chứa $x$ nằm trong $U$. Họ này không rỗng vì $U$ mở. Hợp các khoảng cùng chứa $x$ là một khoảng mở, nằm trong $U$, và tối đại theo cách dựng. Nếu $I_x\cap I_y\ne\varnothing$, hợp của hai khoảng là khoảng mở trong $U$ chứa cả $x,y$; tính tối đại cho $I_x=I_y$. Vì mỗi $x\in I_x$, các khoảng khác nhau phủ $U$ và đôi một rời nhau. Liệt kê $\mathbb Q$; gán cho mỗi khoảng số hữu tỉ đầu tiên trong nó. Các khoảng rời nhau nhận các số khác nhau, nên số khoảng nhiều nhất đếm được. Với $U=\varnothing$, dùng họ khoảng rỗng.
+C: Lập luận bao gồm cả khoảng có đầu mút $\pm\infty$.
+E: Không khẳng định một tập mở chỉ là hợp hữu hạn các khoảng.
+@@ 13.8 | Kiểm tra các ví dụ tập mở và tập đóng | kho
+D: (a) Với $a<b$, kiểm tra $(a,b)$ mở, $[a,b]$ đóng, $[a,b]^\circ=(a,b)$, và biên cả hai là $\{a,b\}$. (b) Trong Euclid, kiểm tra quả cầu mở/đóng có tính mở/đóng và biên là mặt cầu; trong $\mathbb R^2$, kiểm tra các tập $x_1>0$ và $x_1>0,x_2>0$ mở, thay $>$ bằng $\ge$ cho tập đóng; kiểm tra $[0,1)$ và $\{(x_1,x_2):x_1>0,x_2\ge0\}$ đều không mở cũng không đóng. Bán kính quả cầu $r>0$.
+H: Tìm quả cầu nhỏ nằm trong tập; để bác đóng, cho một dãy trong tập tiến đến điểm thiếu.
+K: Bất đẳng thức $|d(x,c)-d(y,c)|\le d(x,y)$ kiểm soát khoảng cách đến tâm.
+S: **a.** Với $x\in(a,b)$, bán kính nhỏ hơn $\min(x-a,b-x)$ nằm trong khoảng. Phần bù của $[a,b]$ là hai tia mở nên đoạn đóng. Hai đầu mút không có lân cận nằm trong đoạn, còn mọi điểm giữa có; do đó phần trong như đề. Bao đóng của khoảng là đoạn, nên biên cả hai là hai đầu mút. **b.** Nếu $d(x,c)<r$, quả cầu quanh $x$ bán kính $r-d(x,c)$ nằm trong quả cầu gốc theo tam giác. Nếu $d(x,c)>r$, bán kính $d(x,c)-r$ nằm ngoài cầu đóng, nên cầu đóng là đóng. Điểm mặt cầu được áp sát từ bên trong và bên ngoài theo phương bán kính; các điểm khác có lân cận nằm hẳn một phía, nên biên là $d(x,c)=r$. Với nửa mặt phẳng và góc phần tư mở, lấy bán kính nhỏ hơn mọi tọa độ dương đang bị ràng buộc; các bản đóng là giao của các nửa không gian đóng, hoặc dùng bảo toàn dấu qua giới hạn. $[0,1)$ không mở tại 0, không đóng vì $1-1/n\to1$ bị thiếu (lấy $n\ge2$). Tập cuối không mở tại $(1,0)$, không đóng vì $(1/n,0)\to(0,0)$ bị thiếu.
+C: Công thức biên mặt cầu nêu ở đây cho metric Euclid và $r>0$, không khẳng định cho mọi metric.
+E: Một tập có thể không mở cũng không đóng.
+@@ 13.9 | Ba bao đóng trên trục số | vua
+D: Tìm bao đóng trong $\mathbb R$ của (a) $\{1/n:n\ge1\}$; (b) $\mathbb Q$; (c) $\{r\in\mathbb Q:r^2<2\}$.
+H: Bổ sung mọi điểm có thể được áp sát từ tập.
+K: Kết quả lần lượt là $\{0\}\cup\{1/n:n\ge1\}$, $\mathbb R$, $[-\sqrt2,\sqrt2]$.
+S: **a.** 0 là giới hạn của $1/n$; các phần tử của tập nằm trong bao đóng bằng dãy hằng. Ngoài tập đã bổ sung, một điểm khác 0 có lân cận tránh tập vì chỉ hữu hạn $1/n$ cách 0 hơn một ngưỡng dương. **b.** Mọi quả cầu thực chứa hữu tỉ nhờ trù mật, nên bao đóng là $\mathbb R$. **c.** Tập là hữu tỉ trong $(-\sqrt2,\sqrt2)$. Mọi điểm của đoạn đóng được áp sát bằng hữu tỉ bên trong; các điểm ngoài đoạn có khoảng cách dương đến tập. Vậy bao đóng là đoạn đã nêu.
+C: Hai đầu mút vô tỉ ở (c) vẫn thuộc bao đóng.
+E: Bao đóng không chỉ thêm những đầu mút hữu tỉ.
+@@ 13.10 | Ba tập có phần trong rỗng | kho
+D: Chứng minh các tập sau có phần trong rỗng: (a) $\{1/n:n\ge1\}$; (b) $\mathbb Q$; (c) tập Cantor thu được bằng cách liên tiếp bỏ một phần ba mở ở giữa mỗi đoạn còn lại của $[0,1]$.
+H: Muốn phần trong không rỗng, tập phải chứa một khoảng mở có độ dài dương.
+K: Ở bước $m$ của Cantor, mọi đoạn thành phần có độ dài $3^{-m}$.
+S: **a.** Mỗi khoảng mở chứa một số vô tỉ, trong khi tập chỉ gồm hữu tỉ, nên không khoảng nào nằm trong tập. **b.** Tương tự, tính trù mật của số vô tỉ bác mọi lân cận nằm trọn trong $\mathbb Q$. **c.** Giả sử Cantor chứa khoảng $(a,b)$ với $b-a>0$. Chọn $m$ sao cho $3^{-m}<b-a$. Cantor nằm trong hợp các đoạn rời nhau ở bước $m$, mỗi đoạn dài $3^{-m}$. Một khoảng liên thông không thể vượt qua khoảng trống giữa hai đoạn, nên phải nằm trong một đoạn, mâu thuẫn độ dài. Vì vậy phần trong rỗng.
+C: Tập Cantor vẫn đóng và không rỗng; phần trong rỗng không có nghĩa tập rỗng.
+E: Không suy ra một tập không đếm được phải có phần trong khác rỗng.
+@@ 13.11 | Compact và dãy con hội tụ trong Euclid | kho
+D: Với $E\subseteq\mathbb R^k$, chứng minh $E$ compact khi và chỉ khi mọi dãy trong $E$ có một dãy con hội tụ tới một điểm của $E$.
+H: Dùng Heine–Borel và Bolzano–Weierstrass ở chiều thuận; ở chiều ngược chứng minh đóng và bị chặn.
+K: Nếu không bị chặn, chọn $\|x_n\|>n$; nếu không đóng, chọn dãy trong $E$ tiến đến điểm biên bị thiếu.
+S: Nếu $E$ compact, Heine–Borel cho $E$ đóng và bị chặn. Mọi dãy trong $E$ bị chặn nên có dãy con hội tụ trong $\mathbb R^k$ theo Bolzano–Weierstrass; tính đóng bảo đảm giới hạn thuộc $E$. Ngược lại, nếu $E$ không bị chặn, chọn $x_n\in E$ với $\|x_n\|>n$; mọi dãy con có chuẩn tăng vô hạn nên không thể hội tụ tới điểm thực, mâu thuẫn. Nếu $E$ không đóng, có $x\in\overline E\setminus E$ và dãy trong $E$ tiến đến $x$. Mọi dãy con vẫn tiến đến $x$, nên tính duy nhất giới hạn bác khả năng dãy con có giới hạn trong $E$. Vậy $E$ đóng và bị chặn, do đó compact.
+C: Nếu $E$ rỗng, hai vế đều đúng theo quy ước, không cần dựng dãy.
+E: Đặc trưng đóng và bị chặn cho compact không đúng trong mọi không gian metric.
+@@ 13.12 | Hai cách tạo tập compact | kho
+D: Trong không gian metric $(S,d)$, chứng minh (a) nếu $E$ là tập con đóng của tập compact $F$ thì $E$ compact; (b) hợp hữu hạn các tập compact là compact.
+H: Dùng định nghĩa phủ mở, không cần Heine–Borel.
+K: Ở (a), bổ sung $S\setminus E$ vào phủ của $E$ để phủ $F$; ở (b), chọn phủ con hữu hạn cho từng tập.
+S: **a.** Nếu $E$ đóng trong $S$ và $\mathcal U$ phủ mở $E$, thêm tập mở $S\setminus E$ được phủ $F$. Compact của $F$ cho phủ con hữu hạn; bỏ $S\setminus E$ nếu có thì các tập còn lại vẫn phủ $E$. Nếu hiểu $E$ đóng tương đối trong $F$, có tập đóng $C$ của $S$ với $E=F\cap C$; dùng $S\setminus C$ thay thế cho cùng lập luận. **b.** Cho phủ mở của $K_1\cup\cdots\cup K_m$. Nó phủ từng $K_i$ nên có họ con hữu hạn phủ từng tập. Hợp $m$ họ con này vẫn hữu hạn và phủ toàn bộ hợp.
+C: Số tập compact trong (b) phải hữu hạn; $\bigcup_{n\ge1}\{n\}$ không compact trong $\mathbb R$.
+E: Không giả sử tập compact có hữu hạn phần tử.
+@@ 13.13 | Compact đạt inf và sup | vua
+D: Cho $E\subseteq\mathbb R$ compact, không rỗng. Chứng minh $\sup E,\inf E\in E$.
+H: Compact trong $\mathbb R$ cho bị chặn và đóng.
+K: Chọn $x_n\in E$ với $\sup E-1/n<x_n\le\sup E$ rồi dùng tính đóng.
+S: Heine–Borel cho $E$ bị chặn, nên có hai cận thực $M=\sup E,m=\inf E$. Chọn $x_n\in E$ với $M-1/n<x_n\le M$; khi đó $x_n\to M$. Vì $E$ đóng, $M\in E$. Tương tự chọn $y_n\in E$ với $m\le y_n<m+1/n$, được $y_n\to m$ và $m\in E$.
+C: Nhờ không rỗng, hai cận và các dãy xấp xỉ tồn tại.
+E: Một tập chỉ bị chặn có thể không đạt hai cận.
+@@ 13.14 | Đường kính của tập compact được đạt | kho
+D: Cho $E\subseteq\mathbb R^k$ compact, không rỗng, $\delta=\sup\{d(x,y):x,y\in E\}$. Chứng minh tồn tại $x_0,y_0\in E$ với $d(x_0,y_0)=\delta$.
+H: Chọn các cặp điểm có khoảng cách gần đường kính rồi chọn dãy con hội tụ cho từng tọa độ điểm.
+K: $|d(x_n,y_n)-d(x_0,y_0)|\le d(x_n,x_0)+d(y_n,y_0)$.
+S: $E$ bị chặn nên $\delta$ hữu hạn; tập khoảng cách không rỗng. Với mỗi $n$, chọn $x_n,y_n\in E$ có $\delta-1/n<d(x_n,y_n)\le\delta$. Compact cho dãy con $x_{n_j}\to x_0\in E$. Trong dãy tương ứng $y_{n_j}$, lại chọn dãy con $y_{n_{j_l}}\to y_0\in E$; dãy $x$ cùng chỉ số vẫn đến $x_0$. Bất đẳng thức gợi ý cho khoảng cách hội tụ tới $d(x_0,y_0)$, trong khi chặn sai số cho nó hội tụ tới $\delta$. Tính duy nhất giới hạn cho đẳng thức.
+C: Khi $E$ chỉ có một điểm, $\delta=0$ và chọn hai điểm trùng nhau.
+E: Hai dãy con phải dùng cùng chỉ số cuối cùng; không chọn hai dãy con độc lập rồi ghép tùy ý.
+@@ 13.15 | Đóng và bị chặn nhưng không compact trong không gian dãy | kho
+D: Trong $B$ gồm các dãy thực bị chặn với metric sup, đặt $F=\{x:\sup_j|x_j|\le1\}$. (a) Chứng minh $F$ đóng, bị chặn. (b) Chứng minh $F$ không compact bằng phủ $\{U(x):x\in F\}$, $U(x)=\{y:d(x,y)<1\}$. Xét $x^{(n)}$ có tọa độ thứ $n$ bằng $-1$, còn mọi tọa độ khác bằng 1.
+H: Hai điểm $x^{(n)},x^{(m)}$ khác nhau có khoảng cách 2 nên không thể cùng thuộc một quả cầu mở bán kính 1.
+K: Mỗi tập trong phủ chứa nhiều nhất một điểm $x^{(n)}$, nên hữu hạn tập không thể phủ tất cả chúng.
+S: **a.** $F$ nằm trong cầu đóng tâm 0 bán kính 1, nên bị chặn. Nếu $x^{(m)}\in F$ hội tụ theo metric sup tới $x$, với mỗi $j$, $|x_j|\le|x_j-x_j^{(m)}|+|x_j^{(m)}|\le d(x,x^{(m)})+1$. Lấy giới hạn cho $|x_j|\le1$ với mọi $j$, nên $x\in F$; vậy $F$ đóng. **b.** Mỗi $x\in F$ thuộc $U(x)$ nên họ là phủ mở. Nếu $n\ne m$, khoảng cách giữa hai điểm được đề chỉ ra bằng 2. Nếu cả hai thuộc một $U(x)$, tam giác cho khoảng cách nhỏ hơn $1+1=2$, mâu thuẫn. Vậy mỗi tập phủ chứa nhiều nhất một trong vô hạn điểm này. Không phủ con hữu hạn nào phủ $F$, nên không compact.
+C: Điều này không trái Heine–Borel vì $B$ không phải không gian Euclid hữu hạn chiều.
+E: Không áp dụng “đóng và bị chặn thì compact” trong mọi không gian metric.
+@@ 14.1 | Sáu chuỗi đầu tiên | vua
+D: Xét hội tụ và giải thích cho các chuỗi (a) $\sum n^4/2^n$; (b) $\sum2^n/n!$; (c) $\sum n^2/3^n$; (d) $\sum n!/(n^4+3)$; (e) $\sum\cos^2n/n^2$; (f) $\sum_{n=2}^\infty1/\log n$. Các chuỗi không ghi cận bắt đầu ở $n=1$; log là log tự nhiên.
+H: Tỉ số thích hợp cho mũ/giai thừa; so sánh thích hợp cho lượng giác bị chặn và log.
+K: Hội tụ ở a, b, c, e; phân kỳ ở d, f.
+S: **a.** Tỉ số $[(n+1)/n]^4/2\to1/2<1$, hội tụ. **b.** Tỉ số $2/(n+1)\to0$, hội tụ. **c.** Tỉ số $[(n+1)/n]^2/3\to1/3$, hội tụ. **d.** Tỉ số số hạng kế tiếp bằng $(n+1)(n^4+3)/((n+1)^4+3)\to+\infty$, nên số hạng không về 0, chuỗi phân kỳ. **e.** $0\le\cos^2n/n^2\le1/n^2$ và chuỗi bình phương nghịch đảo hội tụ, nên hội tụ. **f.** Với $n\ge2$, $0<\log n\le n$, nên $1/\log n\ge1/n$; so sánh chuỗi điều hòa cho phân kỳ.
+C: Các số hạng đều không âm, nên hội tụ cũng là hội tụ tuyệt đối.
+E: Không dùng riêng điều kiện số hạng về 0 để khẳng định hội tụ.
+@@ 14.2 | Bảy chuỗi với mũ và giai thừa | vua
+D: Xét hội tụ của (a) $\sum(n-1)/n^2$; (b) $\sum(-1)^n$; (c) $\sum3^n/n^3$; (d) $\sum n^3/3^n$; (e) $\sum n^2/n!$; (f) $\sum1/n^n$; (g) $\sum n/2^n$.
+H: Trước hết kiểm tra số hạng có về 0; sau đó dùng so sánh, căn hoặc tỉ số.
+K: Ba chuỗi a, b, c phân kỳ; bốn chuỗi d, e, f, g hội tụ.
+S: **a.** Với $n\ge2$, $(n-1)/n^2\ge1/(2n)$, nên phân kỳ. **b.** Số hạng luân phiên $\pm1$ không về 0. **c.** Tỉ số số hạng về 3, nên số hạng tăng vô hạn và chuỗi phân kỳ. **d.** Tỉ số về $1/3<1$. **e.** Tỉ số $(n+1)/n^2\to0$. **f.** Căn bậc $n$ của số hạng bằng $1/n\to0<1$. **g.** Tỉ số $(n+1)/(2n)\to1/2<1$. Các tiêu chuẩn tương ứng cho hội tụ tuyệt đối ở bốn ý cuối.
+C: Ở (a), số hạng đầu bằng 0 không ảnh hưởng phân kỳ của đuôi.
+E: Không đảo tử và mẫu khi áp dụng tiêu chuẩn tỉ số.
+@@ 14.3 | Sáu chuỗi có nhân tử bị chặn | vua
+D: Xét hội tụ của (a) $\sum1/\sqrt{n!}$; (b) $\sum(2+\cos n)/3^n$; (c) $\sum1/(2^n+n)$; (d) $\sum(1/2)^n(50+2/n)$; (e) $\sum\sin(n\pi/9)$; (f) $\sum100^n/n!$.
+H: So sánh với chuỗi hình học hoặc dùng tỉ số cho giai thừa.
+K: Chỉ ý e phân kỳ; các ý còn lại hội tụ.
+S: **a.** Tỉ số bằng $1/\sqrt{n+1}\to0$. **b.** $0\le(2+\cos n)/3^n\le3/3^n$, chuỗi hình học hội tụ. **c.** $0<1/(2^n+n)\le2^{-n}$. **d.** $0<(1/2)^n(50+2/n)\le52\cdot2^{-n}$. **e.** Số hạng không về 0: tại $n=18k+1$, nó luôn bằng $\sin(\pi/9)>0$. **f.** Tỉ số $100/(n+1)\to0$. Các so sánh/tỉ số cho năm chuỗi còn lại hội tụ.
+C: Trong (e), chỉ cần một dãy con số hạng không tiến về 0 để bác điều kiện cần.
+E: Lượng giác bị chặn chỉ giúp hội tụ nếu có nhân tử giảm đủ nhanh đi kèm.
+@@ 14.4 | Ba chuỗi cần đổi cách nhìn | vua
+D: Xét hội tụ của (a) $\sum_{n=2}^\infty1/[n+(-1)^n]^2$; (b) $\sum_{n=1}^\infty(\sqrt{n+1}-\sqrt n)$; (c) $\sum_{n=1}^\infty n!/n^n$.
+H: So sánh ở (a), tổng rút gọn ở (b), tỉ số ở (c).
+K: (a), (c) hội tụ; tổng riêng của (b) bằng $\sqrt{N+1}-1$.
+S: **a.** Với $n\ge2$, $n+(-1)^n\ge n-1\ge n/2$, nên số hạng không vượt $4/n^2$, cho hội tụ. **b.** Các số hạng giữa triệt tiêu, tổng đến $N$ là $\sqrt{N+1}-1\to+\infty$, nên phân kỳ. **c.** Tỉ số số hạng kế tiếp là $(n/(n+1))^n\to1/e<1$, nên hội tụ.
+C: (b) có số hạng tiến về 0 nhưng chuỗi vẫn phân kỳ.
+E: Không suy từ số hạng về 0 rằng tổng vô hạn hữu hạn.
+@@ 14.5 | Tổng, nhân hằng số và tích các chuỗi | vua
+D: Giả sử $\sum a_n=A$, $\sum b_n=B$ hữu hạn. Chứng minh (a) $\sum(a_n+b_n)=A+B$; (b) $\sum ka_n=kA$ với $k\in\mathbb R$; (c) bàn luận dự đoán $\sum a_nb_n=AB$.
+H: Chuỗi hội tụ nghĩa là dãy tổng riêng hội tụ.
+K: Tổng hai tổng riêng là tổng riêng của chuỗi cộng; tích hai tổng riêng có cả các tích chéo.
+S: **a.** Đặt $A_N=\sum_{n=1}^Na_n\to A$, $B_N=\sum_{n=1}^Nb_n\to B$. Tổng riêng của chuỗi cộng là $A_N+B_N\to A+B$. **b.** Tổng riêng của chuỗi nhân $k$ là $kA_N\to kA$. **c.** Công thức tích theo từng chỉ số nói chung sai. Lấy $a_1=b_1=1$, $a_2=b_2=1$, và các số hạng sau bằng 0. Khi đó $A=B=2$, $AB=4$, nhưng $\sum a_nb_n=2$. Phép nhân tổng cần xét các tích chéo, không chỉ các cặp cùng chỉ số.
+C: Phản ví dụ dùng chuỗi hữu hạn nên chắc chắn thỏa giả thiết hội tụ.
+E: Định lý tích giới hạn cho $A_NB_N$, không cho $\sum_{n=1}^Na_nb_n$.
+@@ 14.6 | Chuỗi hội tụ tuyệt đối nhân dãy bị chặn | vua
+D: (a) Nếu $\sum|a_n|$ hội tụ và $(b_n)$ bị chặn, chứng minh $\sum a_nb_n$ hội tụ. (b) Giải thích Định lý 14.7 “hội tụ tuyệt đối kéo theo hội tụ” là trường hợp riêng.
+H: Chặn $|a_nb_n|$ bằng một hằng số nhân $|a_n|$.
+K: Nếu $|b_n|\le M$, tổng trị tuyệt đối không vượt $M\sum|a_n|$; cho (b), lấy $b_n=1$.
+S: **a.** Từ chặn đều $|b_n|\le M$, với mọi $N>m$ có $|\sum_{n=m+1}^Na_nb_n|\le M\sum_{n=m+1}^N|a_n|$. Tiêu chuẩn Cauchy của chuỗi $\sum|a_n|$ làm vế phải nhỏ tùy ý, nên chuỗi tích hội tụ. Cũng suy ra hội tụ tuyệt đối bằng so sánh. **b.** Lấy $b_n=1$, khi đó tích là chính $a_n$, nên thu được 14.7.
+C: Nếu $M=0$, chuỗi tích bằng 0; nếu $M>0$ dùng sai số $\varepsilon/M$ cho đuôi.
+E: Hội tụ có điều kiện của $\sum a_n$ không đủ cho mọi dãy nhân bị chặn.
+@@ 14.7 | Nâng lũy thừa các số hạng không âm | vua
+D: Nếu $a_n\ge0$, $\sum a_n$ hội tụ và $p>1$, chứng minh $\sum a_n^p$ hội tụ.
+H: Số hạng của một chuỗi hội tụ phải tiến về 0.
+K: Trên đuôi có $0\le a_n\le1$, nên $a_n^p\le a_n$.
+S: Vì chuỗi hội tụ, $a_n\to0$. Chọn $N$ sao cho $0\le a_n\le1$ khi $n>N$. Do $p-1>0$, $a_n^{p-1}\le1$ nên $a_n^p\le a_n$ ở đuôi. Chuỗi không âm $\sum_{n>N}a_n$ hội tụ, nên so sánh cho chuỗi lũy thừa hội tụ; cộng hữu hạn số hạng đầu không thay đổi điều đó.
+C: Số hạng đầu lớn hơn 1 không ảnh hưởng lập luận vì chỉ hữu hạn số.
+E: Với $0<p<1$, bất đẳng thức trên $(0,1)$ đổi chiều và kết luận có thể sai.
+@@ 14.8 | Trung bình hình học của hai chuỗi không âm | vua
+D: Nếu $a_n,b_n\ge0$ và $\sum a_n$, $\sum b_n$ hội tụ, chứng minh $\sum\sqrt{a_nb_n}$ hội tụ.
+H: Bất đẳng thức trung bình cộng–trung bình nhân tạo một chuỗi chặn.
+K: $2\sqrt{ab}\le a+b$ theo $(\sqrt a-\sqrt b)^2\ge0$.
+S: Với mỗi $n$, khai triển bình phương không âm cho $a_n+b_n-2\sqrt{a_nb_n}\ge0$. Vì thế $0\le\sqrt{a_nb_n}\le(a_n+b_n)/2$. Chuỗi bên phải hội tụ theo tính tuyến tính, nên so sánh cho chuỗi cần xét hội tụ.
+C: Nếu một số hạng bằng 0, bất đẳng thức vẫn đúng.
+E: Không dùng căn thực cho số hạng âm khi giả thiết không cho phép.
+@@ 14.9 | Thay đổi hữu hạn số hạng | de
+D: Nếu $\{n:a_n\ne b_n\}$ hữu hạn, chứng minh $\sum a_n$ và $\sum b_n$ cùng hội tụ hoặc cùng phân kỳ; tổng nếu có có thể khác nhau.
+H: Hai dãy tổng riêng khác nhau một hằng số từ một chỉ số trở đi.
+K: Chọn $N_0$ sau mọi vị trí khác nhau, đặt $C=\sum_{n=1}^{N_0}(a_n-b_n)$.
+S: Với $N\ge N_0$, $\sum_{n=1}^Na_n-\sum_{n=1}^Nb_n=C$. Vì cộng hoặc trừ một hằng số bảo toàn hội tụ hữu hạn, hai dãy tổng riêng cùng hội tụ hoặc cùng phân kỳ. Nếu tổng tồn tại, chúng lệch nhau đúng $C$.
+C: Thay một số hạng đầu bằng giá trị khác thường làm tổng thay đổi.
+E: Không kết luận hai tổng bằng nhau chỉ vì hai chuỗi cùng đuôi.
+@@ 14.10 | Căn kết luận phân kỳ nhưng tỉ số không kết luận | kho
+D: Tìm chuỗi mà tiêu chuẩn căn cho phân kỳ, còn tiêu chuẩn tỉ số theo liminf/limsup không quyết định được.
+H: Tạo độ lớn hình học tăng nhưng nhân một yếu tố luân phiên để tỉ số vượt cả hai phía của 1.
+K: Lấy $a_n=2^{n+(-1)^n}$.
+S: Căn bậc $n$ của $a_n$ là $2^{1+(-1)^n/n}\to2>1$, nên tiêu chuẩn căn cho chuỗi phân kỳ. Khi $n$ chẵn, $a_{n+1}/a_n=2^{-1}=1/2$; khi $n$ lẻ, tỉ số bằng $2^3=8$. Do đó liminf tỉ số $1/2<1$, limsup 8 lớn hơn 1, nên cả điều kiện hội tụ $\limsup<1$ lẫn phân kỳ $\liminf>1$ của tiêu chuẩn tỉ số đều không thỏa.
+C: Các số hạng dương và tăng vô hạn về độ lớn, phù hợp kết luận phân kỳ.
+E: Chỉ limsup tỉ số lớn hơn 1 chưa đủ để kết luận phân kỳ bằng phiên bản tỉ số này.
+@@ 14.11 | Tỉ số không đổi tạo chuỗi hình học | de
+D: Cho dãy số thực khác 0 có $a_{n+1}/a_n=r$ không phụ thuộc $n$. Chứng minh $\sum a_n$ là chuỗi hình học.
+H: Viết truy hồi $a_{n+1}=ra_n$ rồi quy nạp.
+K: $a_n=a_1r^{n-1}$ với mọi $n\ge1$.
+S: Tại $n=1$ công thức hiển nhiên. Nếu $a_n=a_1r^{n-1}$, truy hồi cho $a_{n+1}=ra_n=a_1r^n$. Quy nạp chứng minh công thức cho mọi chỉ số. Vì vậy chuỗi là $a_1+a_1r+a_1r^2+\cdots$, đúng dạng chuỗi hình học với số hạng đầu $a_1$ và công bội $r$.
+C: Do mọi $a_n\ne0$, công bội $r$ cũng khác 0.
+E: Tỉ số có giới hạn không đổi khác với tỉ số bằng chính một hằng số ở mọi chỉ số.
+@@ 14.12 | Chọn dãy con tạo chuỗi hội tụ | kho
+D: Nếu $\liminf|a_n|=0$, chứng minh có dãy con $(a_{n_k})$ sao cho $\sum_{k=1}^\infty a_{n_k}$ hội tụ.
+H: Chọn số hạng nhỏ rất nhanh, so sánh trị tuyệt đối với chuỗi hình học.
+K: Dựng tăng chỉ số $n_k$ sao cho $|a_{n_k}|<2^{-k}$.
+S: Vì liminf bằng 0, với mỗi ngưỡng chỉ số $N$ và mỗi $\delta>0$, có $n>N$ với $|a_n|<\delta$; nếu không một đuôi bị chặn dưới bởi $\delta>0$. Bắt đầu và lặp lại với $\delta=2^{-k}$, luôn lấy $n_k>n_{k-1}$. Khi đó $\sum_k|a_{n_k}|\le\sum_k2^{-k}=1$, nên chuỗi dãy con hội tụ tuyệt đối và do đó hội tụ.
+C: Chỉ cần liminf độ lớn bằng 0, không cần toàn dãy tiến về 0.
+E: Dãy con hội tụ về 0 chưa đủ làm chuỗi của nó hội tụ; cần chọn tốc độ đủ nhanh.
+@@ 14.13 | Bốn phép tính tổng vô hạn | kho
+D: (a) Tính $\sum_{n=1}^\infty(2/3)^n$ và $\sum_{n=1}^\infty(-2/3)^n$. (b) Chứng minh $\sum1/[n(n+1)]=1$. (c) Chứng minh $\sum(n-1)/2^{n+1}=1/2$. (d) Dùng (c) tính $\sum n/2^n$.
+H: Dùng công thức hình học và viết số hạng dưới dạng hiệu triệt tiêu.
+K: $(k-1)/2^{k+1}=k/2^k-(k+1)/2^{k+1}$.
+S: **a.** Tổng bắt đầu từ $n=1$ là $r/(1-r)$: cho $r=2/3$ được 2, cho $r=-2/3$ được $-2/5$. **b.** $1/[n(n+1)]=1/n-1/(n+1)$, nên tổng đến $N$ bằng $1-1/(N+1)\to1$. **c.** Dùng hiệu trong gợi ý, tổng đến $N$ bằng $1/2-(N+1)/2^{N+1}\to1/2$. **d.** Viết $n/2^n=2(n-1)/2^{n+1}+1/2^n$. Hai chuỗi bên phải hội tụ, tổng bằng $2(1/2)+1=2$.
+C: Khi $n=1$, số hạng ở (c) bằng 0; công thức rút gọn vẫn đúng.
+E: Chuỗi hình học bắt đầu từ 1 có tổng $r/(1-r)$, không phải $1/(1-r)$.
+@@ 14.14 | Chứng minh chuỗi điều hòa phân kỳ bằng nhóm nhị phân | vua
+D: So sánh $\sum_{n=1}^\infty1/n$ với $\sum_{n=2}^\infty a_n$, trong đó $a_n=2^{-k}$ khi $2^{k-1}<n\le2^k$ ($k\ge1$); dãy so sánh bắt đầu $a_2=1/2$, $a_3=a_4=1/4$, $a_5=\cdots=a_8=1/8$, v.v. Chứng minh chuỗi điều hòa phân kỳ.
+H: Mỗi nhóm có $2^{k-1}$ số hạng bằng $2^{-k}$.
+K: Tổng mỗi nhóm bằng $1/2$, và $a_n\le1/n$.
+S: Nếu $2^{k-1}<n\le2^k$, thì $1/n\ge2^{-k}=a_n$. Nhóm từ $2^{k-1}+1$ tới $2^k$ có $2^{k-1}$ số hạng, nên tổng $a_n$ của nhóm bằng $1/2$. Sau $K$ nhóm tổng so sánh bằng $K/2\to+\infty$. Vì các số hạng không âm và $1/n\ge a_n$, chuỗi điều hòa cũng phân kỳ tới $+\infty$.
+C: Số hạng $1$ đầu tiên không ảnh hưởng kết luận phân kỳ.
+E: Không nhầm độ dài nhóm với $2^k$; nhóm thứ $k$ có $2^{k-1}$ số hạng.
+@@ 15.1 | Chuỗi đan dấu và điều kiện cần | vua
+D: Xét hội tụ (a) $\sum(-1)^n/n$; (b) $\sum(-1)^n n!/2^n$.
+H: Chuỗi đan dấu hội tụ nếu độ lớn giảm về 0; trước tiên luôn kiểm tra số hạng về 0.
+K: Chuỗi (a) hội tụ có điều kiện; (b) số hạng không về 0.
+S: **a.** $1/n$ giảm về 0, nên Leibniz cho hội tụ. Chuỗi trị tuyệt đối là điều hòa, phân kỳ; vì vậy hội tụ có điều kiện. **b.** Độ lớn có tỉ số $(n+1)/2\to+\infty$, nên $n!/2^n\to+\infty$. Số hạng không tiến về 0, vì vậy chuỗi phân kỳ dù dấu luân phiên.
+C: Ở (a), dấu bắt đầu âm chỉ đổi dấu tổng, không ảnh hưởng hội tụ.
+E: Dấu luân phiên tự nó không đủ để chuỗi hội tụ.
+@@ 15.2 | Hai chuỗi lũy thừa của sin | kho
+D: Xét hội tụ của (a) $\sum[\sin(n\pi/6)]^n$; (b) $\sum[\sin(n\pi/7)]^n$.
+H: Kiểm tra liệu giá trị tuyệt đối của sin có đạt 1 trên các chỉ số nguyên không.
+K: Ở (a), $n=12k+3$ cho số hạng 1; ở (b), sin chỉ nhận hữu hạn giá trị với độ lớn nhỏ hơn 1.
+S: **a.** Với $n=12k+3$, $\sin(n\pi/6)=1$, nên số hạng bằng 1. Điều kiện số hạng về 0 thất bại, chuỗi phân kỳ. **b.** Giá trị sin có chu kỳ 14 theo $n$. Không giá trị nào bằng $\pm1$, vì $n\pi/7=\pi/2+j\pi$ sẽ buộc $n=7/2+7j$, không nguyên. Đặt $q=\max_{1\le r\le14}|\sin(r\pi/7)|<1$. Khi đó độ lớn số hạng không vượt $q^n$, nên chuỗi hội tụ tuyệt đối theo so sánh hình học.
+C: Tính hữu hạn của tập giá trị giúp có một $q<1$ chung cho mọi chỉ số.
+E: Mỗi số $|\sin(n\theta)|<1$ riêng lẻ chưa luôn cho chặn đều nhỏ hơn 1 nếu không có tính tuần hoàn hữu hạn.
+@@ 15.3 | Chuỗi logarit tới hạn | kho
+D: Với $p\in\mathbb R$, chứng minh $\sum_{n=2}^\infty1/[n(\log n)^p]$ hội tụ khi và chỉ khi $p>1$.
+H: Tiêu chuẩn tích phân với đổi biến $u=\log x$.
+K: $\int dx/[x(\log x)^p]=\int u^{-p}\,du$; hàm cần giảm chỉ trên một đuôi.
+S: Hàm $f(x)=1/[x(\log x)^p]$ dương trên $x>1$. Đạo hàm log của nó là $-(1+p/\log x)/x$, âm khi $\log x>\max\{0,-p\}$, nên giảm trên một đuôi. Đổi biến $u=\log x$ biến tích phân đuôi thành $\int u^{-p}du$. Nếu $p\ne1$, nguyên hàm $u^{1-p}/(1-p)$ có giới hạn hữu hạn ở vô cực đúng khi $p>1$; nếu $p=1$ nguyên hàm $\log u\to+\infty$. Tiêu chuẩn tích phân cho điều kiện hội tụ chính xác $p>1$.
+C: Với $p<0$, hàm có thể chưa giảm từ $x=2$, nhưng cuối cùng giảm là đủ.
+E: Không kết luận chỉ từ số hạng tiến về 0, điều vẫn xảy ra cả khi $p=1$.
+@@ 15.4 | Bốn chuỗi chứa logarit | kho
+D: Xét hội tụ: (a) $\sum_{n=2}^\infty1/(\sqrt n\log n)$; (b) $\sum_{n=2}^\infty(\log n)/n$; (c) $\sum_{n=4}^\infty1/[n(\log n)(\log\log n)]$; (d) $\sum_{n=2}^\infty(\log n)/n^2$.
+H: So sánh để phân kỳ ở (a); dùng các tích phân log quen thuộc cho ba ý còn lại.
+K: Chỉ (d) hội tụ; các nguyên hàm ở (b),(c),(d) lần lượt là $(\log x)^2/2$, $\log\log\log x$, $-(\log x+1)/x$.
+S: **a.** Cuối cùng $\log n\le\sqrt n$, nên $1/(\sqrt n\log n)\ge1/n$; phân kỳ. Có thể kiểm tra chặn log bằng đạo hàm của $\sqrt x-\log x$, dương từ $x=4$ và dương tại 4. **b.** $f(x)=\log x/x$ dương giảm với $x>e$; tích phân tăng như $(\log x)^2/2$, nên phân kỳ. **c.** Với $x\ge4$, các thừa số dương tăng, nên nghịch đảo giảm. Đổi biến liên tiếp cho tích phân $\log\log\log x+C\to+\infty$, nên phân kỳ. **d.** $\log x/x^2$ dương, giảm từ $x>\sqrt e$; nguyên hàm $-(\log x+1)/x$ có giới hạn 0, nên tích phân hữu hạn và chuỗi hội tụ.
+C: Bắt đầu (c) tại 4 bảo đảm $\log\log n>0$.
+E: Tăng chậm như log vẫn có thể làm một chuỗi tới hạn phân kỳ.
+@@ 15.5 | Cách dùng so sánh cho p lớn hơn 1 | vua
+D: Giải thích vì sao trong chứng minh Định lý 15.1 về $\sum1/n^p$, trường hợp $p>1$ không được kết luận hội tụ chỉ bằng phép so sánh với $\sum1/n$ đã dùng cho $0<p\le1$.
+H: Một chuỗi nhỏ hơn một chuỗi phân kỳ có thể hội tụ hoặc phân kỳ.
+K: $1/n^p\le1/n$ với $p>1$ chỉ cho chặn trên bằng một tổng vô hạn, không cho chặn hữu hạn.
+S: Khi $0<p\le1$, $1/n^p\ge1/n$ nên so sánh từ dưới với điều hòa phân kỳ kết luận được phân kỳ. Khi $p>1$, chiều đảo lại: $1/n^p\le1/n$. Tổng riêng của điều hòa không có cận hữu hạn chung nên không giúp chứng minh hội tụ. Sách dùng tích phân để có cận cụ thể $\sum_{k=1}^N1/k^p\le1+1/(p-1)$. Điều này không có nghĩa so sánh là bất khả thi: gom các chỉ số $2^j\le n<2^{j+1}$ cho tổng nhóm không vượt $2^j2^{-jp}=2^{-j(p-1)}$, rồi so sánh các nhóm với một chuỗi hình học hội tụ cũng chứng minh được kết quả.
+C: Ý đúng là phép so sánh đơn giản với điều hòa không đủ, không phải mọi phương pháp so sánh đều thất bại.
+E: Từ $0\le a_n\le b_n$ và $\sum b_n$ phân kỳ không thể suy ra gì quyết định về hội tụ của $\sum a_n$.
+@@ 15.6 | Hội tụ của chuỗi và chuỗi bình phương | vua
+D: (a) Cho chuỗi $\sum a_n$ phân kỳ nhưng $\sum a_n^2$ hội tụ. (b) Giải thích nếu $a_n\ge0$ và $\sum a_n$ hội tụ thì $\sum a_n^2$ hội tụ. (c) Cho chuỗi $\sum a_n$ hội tụ nhưng $\sum a_n^2$ phân kỳ.
+H: Dùng chuỗi p và chuỗi đan dấu để tách hội tụ có điều kiện khỏi hội tụ không âm.
+K: (a) Lấy $a_n=1/n$; (c) lấy $a_n=(-1)^n/\sqrt n$.
+S: **a.** Điều hòa $\sum1/n$ phân kỳ, nhưng bình phương cho $\sum1/n^2$ hội tụ. **b.** Bài 14.7 với $p=2$ áp dụng; cụ thể đuôi có $0\le a_n\le1$ nên $a_n^2\le a_n$. **c.** Leibniz cho $\sum(-1)^n/\sqrt n$ hội tụ vì độ lớn giảm về 0, nhưng bình phương số hạng cho chuỗi điều hòa phân kỳ.
+C: Ở (c), bình phương bỏ dấu đan, đó là lý do khác với trường hợp không âm của (b).
+E: Không áp dụng (b) cho một chuỗi có số hạng âm.
+@@ 15.7 | Chuỗi giảm hội tụ thì n nhân số hạng về 0 | kho
+D: (a) Nếu $(a_n)$ là dãy thực giảm và $\sum a_n$ hội tụ, chứng minh $na_n\to0$. (b) Dùng kết quả để chứng minh lại điều hòa phân kỳ.
+H: Do hội tụ chuỗi, $a_n\to0$; tính giảm buộc $a_n\ge0$. Xét một khối đuôi dài khoảng $n/2$.
+K: Đặt $m=\lfloor n/2\rfloor$; $(n-m)a_n\le\sum_{k=m+1}^na_k$ và $n/(n-m)\le2$.
+S: **a.** Số hạng chuỗi hội tụ tiến về 0. Nếu dãy giảm có một số hạng âm, mọi số sau không lớn hơn số âm đó, không thể về 0; vậy $a_n\ge0$. Với $m$ như gợi ý, mỗi $a_k\ge a_n$ khi $m<k\le n$. Suy ra $0\le na_n\le2\sum_{k=m+1}^na_k$. Tổng đuôi này về 0 theo tiêu chuẩn Cauchy của chuỗi vì $m\to\infty$. Kẹp cho $na_n\to0$. **b.** Nếu điều hòa hội tụ, áp dụng (a) với $a_n=1/n$ sẽ cho $na_n=1\to0$, vô lý.
+C: Tính giảm là thiết yếu để chặn cả khối từ dưới bởi số hạng cuối.
+E: Điều kiện $a_n\to0$ chỉ là điều kiện cần; định lý mạnh hơn ở đây còn dùng tính đơn điệu.
+@@ 15.8 | Phát biểu và chứng minh tiêu chuẩn tích phân | kho
+D: Phát biểu và chứng minh tiêu chuẩn tích phân tổng quát cho một hàm không âm, giảm trên $[m,+\infty)$ với $m\in\mathbb N$, và chuỗi có số hạng $a_n=f(n)$; giả sử $f$ khả tích trên mọi đoạn hữu hạn.
+H: Trên mỗi đoạn đơn vị, đồ thị của hàm giảm nằm giữa hai hình chữ nhật đầu mút.
+K: $f(n+1)\le\int_n^{n+1}f(x)\,dx\le f(n)$.
+S: **Phát biểu:** $\sum_{n=m}^\infty f(n)$ hội tụ khi và chỉ khi tích phân suy rộng $\int_m^\infty f(x)\,dx$ hữu hạn; nếu không, cả hai phân kỳ tới $+\infty$. **Chứng minh:** cộng các chặn hình chữ nhật được $\int_m^{N+1}f\le\sum_{n=m}^Nf(n)\le f(m)+\int_m^Nf$. Nếu tích phân hữu hạn, các tổng riêng tăng không âm và bị chặn trên bởi $f(m)+\int_m^\infty f$, nên hội tụ. Nếu chuỗi hội tụ với tổng $A$, chặn trái cho mọi tích phân tới đầu mút nguyên không vượt $A$. Tính không âm cho tích phân theo đầu mút thực tăng và bị chặn bởi cùng $A$, nên có giới hạn hữu hạn. Do hai chiều tương đương, khi một bên không hữu hạn, cả hai bên tăng vô hạn.
+C: Giảm và không âm từ một ngưỡng trở đi là đủ; hữu hạn số hạng hoặc một đoạn đầu hữu hạn không thay đổi hội tụ.
+E: Tiêu chuẩn cho cùng tính hội tụ, không khẳng định giá trị chuỗi bằng giá trị tích phân.

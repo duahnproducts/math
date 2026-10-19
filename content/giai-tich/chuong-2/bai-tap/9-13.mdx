@@ -1,0 +1,61 @@
+---
+so: "9.13"
+muc: "9"
+so_sach: "9.13"
+tieu_de: "Giới hạn của lũy thừa a mũ n"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Chứng minh $a^n\to0$ nếu $|a|<1$; $a^n\to1$ nếu $a=1$; $a^n\to+\infty$ nếu $a>1$; không có giới hạn mở rộng nếu $a\le-1$.
+</De>
+
+<GoiY so={1}>
+Xét dấu của $a$ và độ lớn $|a|$.
+</GoiY>
+
+<GoiY so={2}>
+Dùng cấp số nhân và hai dãy con chẵn, lẻ.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Giới hạn của lũy thừa a mũ n. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Xét dấu của $a$ và độ lớn $|a|$.
+
+**Bước 4. Giải từng bước.**
+
+Nếu $a=0$, dãy bằng 0. Nếu $0<|a|<1$, tỉ số độ lớn bằng $|a|<1$, dùng 9.12(a). Nếu $a=1$ dãy hằng 1. Nếu $a>1$, Bernoulli cho $a^n=(1+(a-1))^n\ge1+n(a-1)\to+\infty$. Nếu $a=-1$ dãy luân phiên $\pm1$. Nếu $a<-1$, dãy con chẵn đến $+\infty$, lẻ đến $-\infty$, nên không có giới hạn mở rộng.
+
+**Bước 5. Kiểm tra.**
+
+Bốn trường hợp bao phủ toàn bộ $a\in\mathbb R$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Dùng cấp số nhân và hai dãy con chẵn, lẻ.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không dùng $a^n\to0$ chỉ vì $a<1$; phải có $|a|<1$.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Các định lý giới hạn</span>
+
+<XemMuc bai={3} />
+</div>

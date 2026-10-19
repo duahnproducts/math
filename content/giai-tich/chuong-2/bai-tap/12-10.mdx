@@ -1,0 +1,59 @@
+---
+so: "12.10"
+muc: "12"
+so_sach: "12.10"
+tieu_de: "Bị chặn qua limsup trị tuyệt đối"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Chứng minh $(s_n)$ bị chặn khi và chỉ khi $\limsup|s_n|<+\infty$.
+</De>
+
+<GoiY so={1}>
+Một cận cho đuôi kết hợp hữu hạn số hạng đầu cho cận toàn dãy.
+</GoiY>
+
+<GoiY so={2}>
+Nếu $L=\limsup|s_n|$ hữu hạn, đuôi có $|s_n|<L+1$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Bị chặn qua limsup trị tuyệt đối. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Một cận cho đuôi kết hợp hữu hạn số hạng đầu cho cận toàn dãy.
+
+**Bước 4. Giải từng bước.**
+
+Nếu $|s_n|\le M$ cho mọi $n$, mọi sup đuôi không vượt $M$, nên limsup hữu hạn. Ngược lại, giả sử $L<+\infty$. Vì trị tuyệt đối không âm nên $L\ge0$. Chọn $N$ có $|s_n|<L+1$ với $n>N$. Đặt $B=\max\{L+1,|s_1|,\ldots,|s_N|\}$. Khi đó $|s_n|\le B$ cho mọi $n$, đúng nghĩa bị chặn.
+
+**Bước 5. Kiểm tra.**
+
+Không thể có limsup trị tuyệt đối bằng $-\infty$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Nếu $L=\limsup|s_n|$ hữu hạn, đuôi có $|s_n|<L+1$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Bỏ qua các số hạng đầu khi tìm cận toàn dãy là thiếu một bước.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Giới hạn trên và giới hạn dưới</span>
+</div>

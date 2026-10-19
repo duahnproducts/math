@@ -1,0 +1,59 @@
+---
+so: "14.11"
+muc: "14"
+so_sach: "14.11"
+tieu_de: "Tỉ số không đổi tạo chuỗi hình học"
+do_kho: de
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Cho dãy số thực khác 0 có $a_{n+1}/a_n=r$ không phụ thuộc $n$. Chứng minh $\sum a_n$ là chuỗi hình học.
+</De>
+
+<GoiY so={1}>
+Viết truy hồi $a_{n+1}=ra_n$ rồi quy nạp.
+</GoiY>
+
+<GoiY so={2}>
+$a_n=a_1r^{n-1}$ với mọi $n\ge1$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Tỉ số không đổi tạo chuỗi hình học. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Viết truy hồi $a_{n+1}=ra_n$ rồi quy nạp.
+
+**Bước 4. Giải từng bước.**
+
+Tại $n=1$ công thức hiển nhiên. Nếu $a_n=a_1r^{n-1}$, truy hồi cho $a_{n+1}=ra_n=a_1r^n$. Quy nạp chứng minh công thức cho mọi chỉ số. Vì vậy chuỗi là $a_1+a_1r+a_1r^2+\cdots$, đúng dạng chuỗi hình học với số hạng đầu $a_1$ và công bội $r$.
+
+**Bước 5. Kiểm tra.**
+
+Do mọi $a_n\ne0$, công bội $r$ cũng khác 0.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+$a_n=a_1r^{n-1}$ với mọi $n\ge1$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Tỉ số có giới hạn không đổi khác với tỉ số bằng chính một hằng số ở mọi chỉ số.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Chuỗi số</span>
+</div>

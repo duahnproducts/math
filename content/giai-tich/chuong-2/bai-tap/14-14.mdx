@@ -1,0 +1,59 @@
+---
+so: "14.14"
+muc: "14"
+so_sach: "14.14"
+tieu_de: "Chứng minh chuỗi điều hòa phân kỳ bằng nhóm nhị phân"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+So sánh $\sum_{n=1}^\infty1/n$ với $\sum_{n=2}^\infty a_n$, trong đó $a_n=2^{-k}$ khi $2^{k-1}<n\le2^k$ ($k\ge1$); dãy so sánh bắt đầu $a_2=1/2$, $a_3=a_4=1/4$, $a_5=\cdots=a_8=1/8$, v.v. Chứng minh chuỗi điều hòa phân kỳ.
+</De>
+
+<GoiY so={1}>
+Mỗi nhóm có $2^{k-1}$ số hạng bằng $2^{-k}$.
+</GoiY>
+
+<GoiY so={2}>
+Tổng mỗi nhóm bằng $1/2$, và $a_n\le1/n$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Chứng minh chuỗi điều hòa phân kỳ bằng nhóm nhị phân. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Mỗi nhóm có $2^{k-1}$ số hạng bằng $2^{-k}$.
+
+**Bước 4. Giải từng bước.**
+
+Nếu $2^{k-1}<n\le2^k$, thì $1/n\ge2^{-k}=a_n$. Nhóm từ $2^{k-1}+1$ tới $2^k$ có $2^{k-1}$ số hạng, nên tổng $a_n$ của nhóm bằng $1/2$. Sau $K$ nhóm tổng so sánh bằng $K/2\to+\infty$. Vì các số hạng không âm và $1/n\ge a_n$, chuỗi điều hòa cũng phân kỳ tới $+\infty$.
+
+**Bước 5. Kiểm tra.**
+
+Số hạng $1$ đầu tiên không ảnh hưởng kết luận phân kỳ.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Tổng mỗi nhóm bằng $1/2$, và $a_n\le1/n$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không nhầm độ dài nhóm với $2^k$; nhóm thứ $k$ có $2^{k-1}$ số hạng.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Chuỗi số</span>
+</div>

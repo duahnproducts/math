@@ -1,0 +1,61 @@
+---
+so: "12.6"
+muc: "12"
+so_sach: "12.6"
+tieu_de: "Nhân hằng số với limsup và liminf"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Với dãy bị chặn $(s_n)$: (a) chứng minh $\limsup(ks_n)=k\limsup s_n$ khi $k\ge0$; (b) kết quả tương tự cho liminf; (c) nêu công thức đúng khi $k<0$.
+</De>
+
+<GoiY so={1}>
+Nhân số âm đổi vai trò cận trên và cận dưới.
+</GoiY>
+
+<GoiY so={2}>
+Khi $k<0$, $\limsup(ks_n)=k\liminf s_n$, $\liminf(ks_n)=k\limsup s_n$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Nhân hằng số với limsup và liminf. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Nhân số âm đổi vai trò cận trên và cận dưới.
+
+**Bước 4. Giải từng bước.**
+
+**a,b.** Nếu $k=0$, mọi số hạng bằng 0. Nếu $k>0$, trên mỗi đuôi $\sup ks_n=k\sup s_n$ và $\inf ks_n=k\inf s_n$ vì phép nhân giữ thứ tự và các phần tử áp sát cận vẫn áp sát sau nhân. Lấy giới hạn được hai công thức.
+
+**c.** Viết $k=-h$, $h>0$. Dùng $\limsup(-u_n)=-\liminf u_n$ và hai công thức vừa chứng minh cho $h$, suy ra hai công thức trong gợi ý.
+
+**Bước 5. Kiểm tra.**
+
+Dãy $s_n=(-1)^n$ và $k=-2$ có hai cận $-2,2$, phù hợp công thức.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Khi $k<0$, $\limsup(ks_n)=k\liminf s_n$, $\liminf(ks_n)=k\limsup s_n$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không giữ nguyên limsup khi nhân hằng số âm.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Giới hạn trên và giới hạn dưới</span>
+</div>

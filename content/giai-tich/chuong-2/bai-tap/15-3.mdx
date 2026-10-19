@@ -1,0 +1,59 @@
+---
+so: "15.3"
+muc: "15"
+so_sach: "15.3"
+tieu_de: "Chuỗi logarit tới hạn"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Với $p\in\mathbb R$, chứng minh $\sum_{n=2}^\infty1/[n(\log n)^p]$ hội tụ khi và chỉ khi $p>1$.
+</De>
+
+<GoiY so={1}>
+Tiêu chuẩn tích phân với đổi biến $u=\log x$.
+</GoiY>
+
+<GoiY so={2}>
+$\int dx/[x(\log x)^p]=\int u^{-p}\,du$; hàm cần giảm chỉ trên một đuôi.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Chuỗi logarit tới hạn. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Tiêu chuẩn tích phân với đổi biến $u=\log x$.
+
+**Bước 4. Giải từng bước.**
+
+Hàm $f(x)=1/[x(\log x)^p]$ dương trên $x>1$. Đạo hàm log của nó là $-(1+p/\log x)/x$, âm khi $\log x>\max\{0,-p\}$, nên giảm trên một đuôi. Đổi biến $u=\log x$ biến tích phân đuôi thành $\int u^{-p}du$. Nếu $p\ne1$, nguyên hàm $u^{1-p}/(1-p)$ có giới hạn hữu hạn ở vô cực đúng khi $p>1$; nếu $p=1$ nguyên hàm $\log u\to+\infty$. Tiêu chuẩn tích phân cho điều kiện hội tụ chính xác $p>1$.
+
+**Bước 5. Kiểm tra.**
+
+Với $p<0$, hàm có thể chưa giảm từ $x=2$, nhưng cuối cùng giảm là đủ.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+$\int dx/[x(\log x)^p]=\int u^{-p}\,du$; hàm cần giảm chỉ trên một đuôi.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không kết luận chỉ từ số hạng tiến về 0, điều vẫn xảy ra cả khi $p=1$.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Chuỗi đan dấu và tiêu chuẩn tích phân</span>
+</div>

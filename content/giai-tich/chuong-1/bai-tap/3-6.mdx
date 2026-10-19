@@ -1,0 +1,63 @@
+---
+so: "3.6"
+muc: "3"
+so_sach: "3.6"
+tieu_de: "Bất đẳng thức tam giác cho nhiều số"
+do_kho: de
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+(a) Chứng minh $|a+b+c|\le|a|+|b|+|c|$. (b) Mở rộng bằng quy nạp: $|a_1+\cdots+a_n|\le\sum_{j=1}^n|a_j|$.
+</De>
+
+<GoiY so={1}>
+Nhóm tất cả trừ số cuối làm một số hạng.
+</GoiY>
+
+<GoiY so={2}>
+$|u+v|\le|u|+|v|$ áp dụng lặp lại, không cần xét mọi tổ hợp dấu.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Bất đẳng thức tam giác cho nhiều số. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Nhóm tất cả trừ số cuối làm một số hạng.
+
+**Bước 4. Giải từng bước.**
+
+**a.** $|a+b+c|\le|a+b|+|c|\le|a|+|b|+|c|$.
+
+**b.** Với $n=1$ là đẳng thức. Nếu đúng cho $n$, thì $|\sum_{j=1}^{n+1}a_j|\le|\sum_{j=1}^na_j|+|a_{n+1}|\le\sum_{j=1}^{n+1}|a_j|$. Quy nạp hoàn tất.
+
+**Bước 5. Kiểm tra.**
+
+Trường hợp $n=2$ khôi phục đúng bất đẳng thức tam giác ban đầu.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+$|u+v|\le|u|+|v|$ áp dụng lặp lại, không cần xét mọi tổ hợp dấu.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không cần xét $2^n$ trường hợp dấu.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Số thực và thứ tự</span>
+
+<XemMuc bai={3} />
+</div>

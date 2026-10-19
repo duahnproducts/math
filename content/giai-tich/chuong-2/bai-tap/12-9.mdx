@@ -1,0 +1,63 @@
+---
+so: "12.9"
+muc: "12"
+so_sach: "12.9"
+tieu_de: "Tích với dãy có liminf dương"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Giả sử $\liminf t_n>0$. Chứng minh (a) $s_n\to+\infty\Rightarrow s_nt_n\to+\infty$; (b) $\limsup s_n=+\infty\Rightarrow\limsup(s_nt_n)=+\infty$; (c) giải thích bài 12.7 là trường hợp riêng.
+</De>
+
+<GoiY so={1}>
+Liminf dương cho cận dưới dương trên một đuôi.
+</GoiY>
+
+<GoiY so={2}>
+Chọn số thực $m>0$ nhỏ hơn $\liminf t_n$, rồi có $t_n>m$ khi $n$ đủ lớn.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Tích với dãy có liminf dương. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Liminf dương cho cận dưới dương trên một đuôi.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Với $M>0$, đuôi có $s_n>M/m>0$, nên $s_nt_n>M$. Đủ để chứng minh giới hạn $+\infty$.
+
+**b.** Với mỗi $N$ và $M>0$, limsup vô hạn cho một $n$ vượt cả $N$ và ngưỡng cận dưới của $t$, với $s_n>M/m$. Khi đó tích vượt $M$, nên mọi đuôi tích không bị chặn trên.
+
+**c.** Đặt $t_n=k>0$ thì liminf $t_n=k$, và (b) đúng là 12.7.
+
+**Bước 5. Kiểm tra.**
+
+Khi liminf $t_n=+\infty$, vẫn chọn được một cận dưới thực dương, chẳng hạn $m=1$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Chọn số thực $m>0$ nhỏ hơn $\liminf t_n$, rồi có $t_n>m$ khi $n$ đủ lớn.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không suy ra toàn bộ tích hội tụ ở (b); chỉ kết luận limsup vô hạn.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Giới hạn trên và giới hạn dưới</span>
+</div>

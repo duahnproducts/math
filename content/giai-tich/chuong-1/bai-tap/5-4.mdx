@@ -1,0 +1,61 @@
+---
+so: "5.4"
+muc: "5"
+so_sach: "5.4"
+tieu_de: "Đổi dấu cận khi có vô cực"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Với mọi tập thực không rỗng $S$, chứng minh $\inf S=-\sup(-S)$ trong số thực mở rộng.
+</De>
+
+<GoiY so={1}>
+Tách trường hợp $S$ bị chặn dưới và không bị chặn dưới.
+</GoiY>
+
+<GoiY so={2}>
+$S$ không bị chặn dưới khi và chỉ khi $-S$ không bị chặn trên.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Đổi dấu cận khi có vô cực. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Tách trường hợp $S$ bị chặn dưới và không bị chặn dưới.
+
+**Bước 4. Giải từng bước.**
+
+Nếu $S$ bị chặn dưới, chứng minh hai cận như bài 4.9 cho đẳng thức. Nếu không, với mỗi $M>0$ có $s\in S$ nhỏ hơn $-M$. Khi đó $-s>M$ thuộc $-S$, nên $\sup(-S)=+\infty$. Đồng thời $\inf S=-\infty$, đúng bằng $-(+\infty)$.
+
+**Bước 5. Kiểm tra.**
+
+Một tập thực không rỗng không thể có inf bằng $+\infty$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+$S$ không bị chặn dưới khi và chỉ khi $-S$ không bị chặn trên.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không dùng phép toán không xác định như $+\infty-\infty$.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Các ký hiệu vô cực</span>
+
+<XemMuc bai={5} />
+</div>

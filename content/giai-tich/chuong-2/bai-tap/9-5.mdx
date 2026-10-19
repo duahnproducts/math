@@ -1,0 +1,61 @@
+---
+so: "9.5"
+muc: "9"
+so_sach: "9.5"
+tieu_de: "Truy hồi Newton cho căn 2"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Cho $t_1=1$, $t_{n+1}=(t_n^2+2)/(2t_n)$. Giả sử dãy hội tụ; tìm giới hạn.
+</De>
+
+<GoiY so={1}>
+Trước khi dùng định lý thương, chứng minh giới hạn không thể bằng 0.
+</GoiY>
+
+<GoiY so={2}>
+$t_{n+1}-\sqrt2=(t_n-\sqrt2)^2/(2t_n)\ge0$ khi $t_n>0$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Truy hồi Newton cho căn 2. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Trước khi dùng định lý thương, chứng minh giới hạn không thể bằng 0.
+
+**Bước 4. Giải từng bước.**
+
+Quy nạp cho $t_n>0$; đẳng thức gợi ý cho $t_n\ge\sqrt2$ với $n\ge2$. Nếu $t_n\to L$, bảo toàn thứ tự cho $L\ge\sqrt2>0$. Do đó lấy giới hạn trong truy hồi hợp lệ: $L=(L^2+2)/(2L)$, suy ra $L^2=2$. Vì $L>0$, $L=\sqrt2$.
+
+**Bước 5. Kiểm tra.**
+
+$t_2=3/2>\sqrt2$; không chọn nghiệm $-\sqrt2$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+$t_{n+1}-\sqrt2=(t_n-\sqrt2)^2/(2t_n)\ge0$ khi $t_n>0$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không chia cho giới hạn trước khi chứng minh nó khác 0.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Các định lý giới hạn</span>
+
+<XemMuc bai={3} />
+</div>

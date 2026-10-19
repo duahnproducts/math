@@ -1,0 +1,71 @@
+---
+so: "8.2"
+muc: "8"
+so_sach: "8.2"
+tieu_de: "Năm chứng minh giới hạn phân thức"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Tìm giới hạn rồi chứng minh bằng định nghĩa cho (a) $n/(n^2+1)$; (b) $(7n-19)/(3n+7)$; (c) $(4n+3)/(7n-5)$; (d) $(2n+4)/(5n+2)$; (e) $(\sin n)/n$.
+</De>
+
+<GoiY so={1}>
+Trừ giới hạn dự đoán trước khi ước lượng.
+</GoiY>
+
+<GoiY so={2}>
+Các giới hạn lần lượt là $0,7/3,4/7,2/5,0$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Năm chứng minh giới hạn phân thức. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Trừ giới hạn dự đoán trước khi ước lượng.
+
+**Bước 4. Giải từng bước.**
+
+Cho $\varepsilon>0$.
+
+**a.** Sai số $n/(n^2+1)\le1/n$; chọn $N=1/\varepsilon$.
+
+**b.** Sai số $106/[3(3n+7)]\le106/(9n)$; chọn $N=106/(9\varepsilon)$.
+
+**c.** Sai số $41/[7(7n-5)]$; với $n\ge2$, $7n-5\ge(7/2)n$, nên không vượt $82/(49n)$. Chọn $N=\max\{2,82/(49\varepsilon)\}$.
+
+**d.** Sai số $16/[5(5n+2)]\le16/(25n)$; chọn $N=16/(25\varepsilon)$.
+
+**e.** $|\sin n|/n\le1/n$; chọn $N=1/\varepsilon$. Mọi sai số đều nhỏ hơn $\varepsilon$ khi $n>N$.
+
+**Bước 5. Kiểm tra.**
+
+Các hằng số 106,41,16 thu được bằng quy đồng chính xác trước khi lấy trị tuyệt đối.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Các giới hạn lần lượt là $0,7/3,4/7,2/5,0$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không thay trực tiếp $n$ bằng vô cực vào một phân thức.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Chứng minh bằng định nghĩa giới hạn</span>
+
+<XemMuc bai={2} />
+</div>

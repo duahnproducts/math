@@ -1,0 +1,63 @@
+---
+so: "9.12"
+muc: "9"
+so_sach: "9.12"
+tieu_de: "Tiêu chuẩn tỉ số cho dãy"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Giả sử $s_n\ne0$ và $L=\lim|s_{n+1}/s_n|$ tồn tại. (a) Nếu $L<1$, chứng minh $s_n\to0$. (b) Nếu $L>1$ (kể cả $+\infty$), chứng minh $|s_n|\to+\infty$.
+</De>
+
+<GoiY so={1}>
+So sánh đuôi với cấp số nhân có cơ số nằm giữa $L$ và 1.
+</GoiY>
+
+<GoiY so={2}>
+Với $L<q<1$, có $|s_n|\le q^{n-N}|s_N|$ trên một đuôi.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Tiêu chuẩn tỉ số cho dãy. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+So sánh đuôi với cấp số nhân có cơ số nằm giữa $L$ và 1.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Chọn $0<q<1$ với $L<q$. Có $N$ sao cho $|s_{n+1}|\le q|s_n|$ khi $n\ge N$. Quy nạp được chặn trong gợi ý. Vì $q^{n-N}\to0$, kẹp cho $s_n\to0$.
+
+**b.** Đặt $u_n=1/|s_n|>0$. Tỉ số $u_{n+1}/u_n=1/|s_{n+1}/s_n|$ về $1/L<1$ (bằng 0 khi $L=+\infty$). Phần (a) cho $u_n\to0$, nên $|s_n|\to+\infty$ theo định lý nghịch đảo dãy dương.
+
+**Bước 5. Kiểm tra.**
+
+$L=1$ không được kết luận: $1/n$, $n$, và 1 đều có tỉ số tiến đến 1.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Với $L<q<1$, có $|s_n|\le q^{n-N}|s_N|$ trên một đuôi.
+
+</LoiGiai>
+
+<LoiHayMac>
+Tiêu chuẩn áp dụng cho độ lớn; $L>1$ không cho dấu của $s_n$.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Các định lý giới hạn</span>
+
+<XemMuc bai={3} />
+</div>

@@ -1,0 +1,61 @@
+---
+so: "1.9"
+muc: "1"
+so_sach: "1.9"
+tieu_de: "Khi nào hàm mũ lớn hơn bình phương"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+(a) Tìm mọi số nguyên $n$ sao cho $2^n>n^2$. (b) Chứng minh đáp án bằng quy nạp khi cần.
+</De>
+
+<GoiY so={1}>
+Xét riêng số nguyên âm, các giá trị nhỏ và đuôi $n\ge5$.
+</GoiY>
+
+<GoiY so={2}>
+Với $n\ge3$, $2n^2>(n+1)^2$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Khi nào hàm mũ lớn hơn bình phương. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Xét riêng số nguyên âm, các giá trị nhỏ và đuôi $n\ge5$.
+
+**Bước 4. Giải từng bước.**
+
+Với $n\le-1$, $2^n\le1/2<1\le n^2$, nên sai. Thử $n=0,1,2,3,4$ cho đúng tại $0,1$ và sai tại $2,3,4$. Tại $n=5$, $32>25$. Nếu $n\ge5$ và $2^n>n^2$, thì $2^{n+1}>2n^2>(n+1)^2$, vì $n^2-2n-1>0$. Vậy tập nghiệm là $\{0,1\}\cup\{n\in\mathbb Z:n\ge5\}$.
+
+**Bước 5. Kiểm tra.**
+
+$n=0$ là số nguyên và thỏa mãn, dù không thuộc quy ước số tự nhiên dương của sách.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Với $n\ge3$, $2n^2>(n+1)^2$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Đề hỏi số nguyên, không chỉ số nguyên dương.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Số tự nhiên và quy nạp</span>
+
+<XemMuc bai={1} />
+</div>

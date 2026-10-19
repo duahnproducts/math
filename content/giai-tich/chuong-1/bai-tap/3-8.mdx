@@ -1,0 +1,61 @@
+---
+so: "3.8"
+muc: "3"
+so_sach: "3.8"
+tieu_de: "Nhỏ hơn mọi số lớn hơn b"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Cho $a,b\in\mathbb R$. Nếu $a\le b_1$ với mọi $b_1>b$, chứng minh $a\le b$.
+</De>
+
+<GoiY so={1}>
+Phản chứng bằng trung điểm của hai số khác nhau.
+</GoiY>
+
+<GoiY so={2}>
+Nếu $a>b$, chọn $b_1=(a+b)/2$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Nhỏ hơn mọi số lớn hơn b. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Phản chứng bằng trung điểm của hai số khác nhau.
+
+**Bước 4. Giải từng bước.**
+
+Giả sử $a>b$. Trung điểm $b_1$ thỏa $b<b_1<a$, vì $b_1-b=(a-b)/2>0$ và $a-b_1=(a-b)/2>0$. Giả thiết áp dụng cho $b_1$ lại cho $a\le b_1$, mâu thuẫn. Vì vậy $a\le b$.
+
+**Bước 5. Kiểm tra.**
+
+Giả thiết không yêu cầu bất đẳng thức tại $b_1=b$, nên phải chọn một số lớn hơn $b$.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Nếu $a>b$, chọn $b_1=(a+b)/2$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không được thế thẳng $b_1=b$ vào giả thiết.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Số thực và thứ tự</span>
+
+<XemMuc bai={3} />
+</div>

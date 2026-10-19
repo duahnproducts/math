@@ -1,0 +1,61 @@
+---
+so: "4.15"
+muc: "4"
+so_sach: "4.15"
+tieu_de: "Bất đẳng thức với sai số 1/n"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Cho $a,b\in\mathbb R$ với $a\le b+1/n$ cho mọi $n\in\mathbb N$. Chứng minh $a\le b$.
+</De>
+
+<GoiY so={1}>
+Nếu $a>b$ thì có một khoảng cách dương cố định giữa chúng.
+</GoiY>
+
+<GoiY so={2}>
+Chọn $n>1/(a-b)$ bằng Archimedes.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Bất đẳng thức với sai số 1/n. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Nếu $a>b$ thì có một khoảng cách dương cố định giữa chúng.
+
+**Bước 4. Giải từng bước.**
+
+Giả sử $d=a-b>0$. Chọn $n>1/d$. Khi ấy $1/n<d$ nên $b+1/n<b+d=a$, trái với $a\le b+1/n$. Vậy $a\le b$.
+
+**Bước 5. Kiểm tra.**
+
+Số $n$ được chọn tùy theo khoảng cách $a-b$, không chọn tùy theo một $a$ chưa cố định.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Chọn $n>1/(a-b)$ bằng Archimedes.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không được thay $n=\infty$ như một số tự nhiên.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Tiên đề đầy đủ</span>
+
+<XemMuc bai={4} />
+</div>

@@ -1,0 +1,63 @@
+---
+so: "9.4"
+muc: "9"
+so_sach: "9.4"
+tieu_de: "Dãy căn truy hồi và số vàng"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Cho $s_1=1,s_{n+1}=\sqrt{s_n+1}$. (a) Viết bốn số hạng đầu. (b) Giả sử dãy hội tụ, tìm giới hạn.
+</De>
+
+<GoiY so={1}>
+Giới hạn của dãy dịch chỉ số bằng giới hạn dãy gốc.
+</GoiY>
+
+<GoiY so={2}>
+Nếu giới hạn là $L$, thì $L^2=L+1$ và $L\ge1$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Dãy căn truy hồi và số vàng. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Giới hạn của dãy dịch chỉ số bằng giới hạn dãy gốc.
+
+**Bước 4. Giải từng bước.**
+
+**a.** $1,\sqrt2,\sqrt{1+\sqrt2},\sqrt{1+\sqrt{1+\sqrt2}}$.
+
+**b.** Quy nạp cho $s_n\ge1$. Giả sử $s_n\to L$, thì $s_{n+1}^2=s_n+1$ và định lý tích/tổng cho $L^2=L+1$. Hai nghiệm là $(1\pm\sqrt5)/2$; chỉ nghiệm dương thỏa $L\ge1$, nên $L=(1+\sqrt5)/2$.
+
+**Bước 5. Kiểm tra.**
+
+Đề cho phép giả sử hội tụ; giải phương trình giới hạn chỉ tìm ứng viên, không tự chứng minh hội tụ.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Nếu giới hạn là $L$, thì $L^2=L+1$ và $L\ge1$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không đọc sai truy hồi thành $\sqrt{s_n}+1$.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Các định lý giới hạn</span>
+
+<XemMuc bai={3} />
+</div>

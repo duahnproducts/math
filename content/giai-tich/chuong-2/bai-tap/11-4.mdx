@@ -1,0 +1,59 @@
+---
+so: "11.4"
+muc: "11"
+so_sach: "11.4"
+tieu_de: "Dãy con có giới hạn vô hạn"
+do_kho: vua
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Với $w_n=(-2)^n$, $x_n=5(-1)^n$, $y_n=1+(-1)^n$, $z_n=n\cos(n\pi/4)$, tìm dãy con đơn điệu, tập giới hạn dãy con mở rộng, limsup/liminf, tính hội tụ hoặc tiến tới vô cực, và tính bị chặn.
+</De>
+
+<GoiY so={1}>
+Với $z_n$, xét tám lớp chỉ số theo modulo 8.
+</GoiY>
+
+<GoiY so={2}>
+$z_{8k}=8k$, $z_{8k+4}=-(8k+4)$, còn $z_{4k+2}=0$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Dãy con có giới hạn vô hạn. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Với $z_n$, xét tám lớp chỉ số theo modulo 8.
+
+**Bước 4. Giải từng bước.**
+
+$w_n$: chọn $w_{2k}=4^k$ tăng; tập giới hạn $\{-\infty,+\infty\}$, liminf $-\infty$, limsup $+\infty$, không có giới hạn, không bị chặn. $x_n$: chọn dãy chẵn hằng 5; tập $\{-5,5\}$, hai cận $-5,5$, không hội tụ, bị chặn. $y_n$: chọn dãy chẵn hằng 2; tập $\{0,2\}$, hai cận 0,2, không hội tụ, bị chặn. $z_n$: dãy con $z_{8k}$ tăng; tập $\{-\infty,0,+\infty\}$, hai cận vô hạn trái dấu, không có giới hạn, không bị chặn. Thật vậy ngoài các vị trí cos bằng 0, độ lớn ít nhất $n/\sqrt2$ nên không thể có giới hạn hữu hạn khác 0.
+
+**Bước 5. Kiểm tra.**
+
+Không dãy nào trong bốn dãy có giới hạn chung, kể cả giới hạn vô hạn.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+$z_{8k}=8k$, $z_{8k+4}=-(8k+4)$, còn $z_{4k+2}=0$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không thêm các số hữu hạn tùy ý vào tập giới hạn của $z_n$.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Dãy con</span>
+</div>

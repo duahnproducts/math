@@ -1,0 +1,63 @@
+---
+so: "13.10"
+muc: "13"
+so_sach: "13.10"
+tieu_de: "Ba tập có phần trong rỗng"
+do_kho: kho
+nen_lam: false
+de_tom_tat: true
+can_dung: []
+---
+
+<De>
+Chứng minh các tập sau có phần trong rỗng: (a) $\{1/n:n\ge1\}$; (b) $\mathbb Q$; (c) tập Cantor thu được bằng cách liên tiếp bỏ một phần ba mở ở giữa mỗi đoạn còn lại của $[0,1]$.
+</De>
+
+<GoiY so={1}>
+Muốn phần trong không rỗng, tập phải chứa một khoảng mở có độ dài dương.
+</GoiY>
+
+<GoiY so={2}>
+Ở bước $m$ của Cantor, mọi đoạn thành phần có độ dài $3^{-m}$.
+</GoiY>
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số nguyên dương nếu không ghi khác.
+
+**Bước 2. Xác định yêu cầu.**
+
+Ba tập có phần trong rỗng. Cần xử lý từng ý trong đề.
+
+**Bước 3. Chọn kiến thức.**
+
+Muốn phần trong không rỗng, tập phải chứa một khoảng mở có độ dài dương.
+
+**Bước 4. Giải từng bước.**
+
+**a.** Mỗi khoảng mở chứa một số vô tỉ, trong khi tập chỉ gồm hữu tỉ, nên không khoảng nào nằm trong tập.
+
+**b.** Tương tự, tính trù mật của số vô tỉ bác mọi lân cận nằm trọn trong $\mathbb Q$.
+
+**c.** Giả sử Cantor chứa khoảng $(a,b)$ với $b-a>0$. Chọn $m$ sao cho $3^{-m}<b-a$. Cantor nằm trong hợp các đoạn rời nhau ở bước $m$, mỗi đoạn dài $3^{-m}$. Một khoảng liên thông không thể vượt qua khoảng trống giữa hai đoạn, nên phải nằm trong một đoạn, mâu thuẫn độ dài. Vì vậy phần trong rỗng.
+
+**Bước 5. Kiểm tra.**
+
+Tập Cantor vẫn đóng và không rỗng; phần trong rỗng không có nghĩa tập rỗng.
+
+**Bước 6. Cách tự làm bài tương tự.**
+
+Ở bước $m$ của Cantor, mọi đoạn thành phần có độ dài $3^{-m}$.
+
+</LoiGiai>
+
+<LoiHayMac>
+Không suy ra một tập không đếm được phải có phần trong khác rỗng.
+</LoiHayMac>
+
+<div class="can-dung" data-kien-thuc-ross>
+<b>Cần dùng</b>
+<span>Không gian metric và compact</span>
+</div>
