@@ -5,11 +5,43 @@ do_kho: vua
 tieu_de: "Phép nhân ma trận — bài 27"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.3.27"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.27 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Trong mỗi trường hợp, hãy chứng minh mệnh đề đúng hoặc đưa ra một ví dụ cho thấy mệnh đề sai.
+
+**a.** Nếu $A^{2} = I$ thì $A = I$.
+
+**b.** Nếu $AJ = A$ thì $J = I$.
+
+**c.** Nếu $A$ là ma trận vuông thì $(A^{T})^{3} = (A^{3})^{T}$.
+
+**d.** Nếu $A$ đối xứng thì $I + A$ đối xứng.
+
+**e.** Nếu $AB = AC$ và $A \neq 0$ thì $B = C$.
+
+**f.** Nếu $A \neq 0$ thì $A^{2} \neq 0$.
+
+**g.** Nếu $A$ có một hàng toàn số 0 thì $BA$ cũng có một hàng như vậy với mọi $B$.
+
+**h.** Nếu $A$ giao hoán với $A + B$ thì $A$ giao hoán với $B$.
+
+**i.** Nếu $B$ có một cột toàn số 0 thì $AB$ cũng có một cột như vậy.
+
+**j.** Nếu $AB$ có một cột toàn số 0 thì $B$ cũng có một cột như vậy.
+
+**k.** Nếu $A$ có một hàng toàn số 0 thì $AB$ cũng có một hàng như vậy.
+
+**l.** Nếu $AB$ có một hàng toàn số 0 thì $A$ cũng có một hàng như vậy.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-3-27-1" moTa="Đề gốc Nicholson bài 2.3.27, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -45,6 +77,7 @@ is true, or give an example showing that it is false.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -61,7 +94,153 @@ Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự 
 
 <LoiGiai>
 
-Đặt $N=\begin{bmatrix}0&1\\0&0\end{bmatrix}$, $P=\operatorname{diag}(1,0)$, $Q=\operatorname{diag}(0,1)$, $S=\begin{bmatrix}0&1\\1&0\end{bmatrix}$. **a Sai:** $A=-I$. **b Sai:** $A=0,J=0$. **c Đúng:** chuyển vị tích đảo thứ tự, nhưng ba thừa số đều là $A$. **d Đúng:** $(I+A)^T=I+A$. **e Sai:** $A=P,B=0,C=Q$. **f Sai:** $N\ne0$ nhưng $N^2=0$. **g Sai:** $A=Q,B=S$, hàng đầu của $BA$ khác 0. **h Đúng:** $A(A+B)=(A+B)A$ rút gọn thành $AB=BA$. **i Đúng:** cột 0 của $B$ được $A$ đưa thành cột 0. **j Sai:** $A=0,B=I$. **k Đúng:** hàng 0 nhân với mọi cột cho 0. **l Sai:** $A=I,B=0$. Mỗi phản ví dụ đều có kích thước $2\times2$.
+**Cách làm.** Với $A$ cỡ $m\times n$, $B$ cỡ $n\times p$, tích $AB$ có cỡ $m\times p$ và $(AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$. Khi khai triển, giữ nguyên thứ tự các thừa số.
+
+**Bước 1. Lập luận và tính toán.**
+
+Với mệnh đề đúng, chứng minh từ giả thiết.
+
+**Bước 2. Lập luận và tính toán.**
+
+Với mệnh đề sai, kiểm tra phản ví dụ vừa thỏa giả thiết vừa vi phạm kết luận.
+
+**a. Sai.**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Lấy $A=-I_2$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Khi đó $A^2=(-I_2)(-I_2)=I_2$, nhưng $A\ne I_2$.
+
+**b. Sai.**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Lấy $A=0$, $J=0$ cùng cỡ $2\times2$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Có $AJ=0=A$ nhưng $J\ne I_2$.
+
+**c. Đúng.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$(A^3)^T=(AAA)^T=A^TA^TA^T=(A^T)^3$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Công thức chuyển vị đảo thứ tự; ở đây ba thừa số giống nhau nên tích sau khi đảo vẫn là ba bản $A^T$.
+
+**d. Đúng.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Từ $A^T=A$, suy ra $(I+A)^T=I^T+A^T=I+A$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Đó là định nghĩa đối xứng.
+
+**e. Sai.**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Chọn $A=\operatorname{diag}(1,0)\ne0$, $B=0$, $C=\operatorname{diag}(0,1)$.
+
+**Bước 2. Thực hiện phép biến đổi.**
+
+Nhân trực tiếp được $AB=0=AC$, nhưng $B\ne C$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Giả thiết $A\ne0$ không đủ để khử $A$.
+
+**f. Sai.**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Lấy $N=\begin{bmatrix}0&1\\0&0\end{bmatrix}\ne0$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Cả bốn ô của $N^2$ đều bằng 0 theo quy tắc hàng–cột, nên $N^2=0$.
+
+**g. Sai.**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Lấy $A=\begin{bmatrix}0&0\\0&1\end{bmatrix}$, $B=\begin{bmatrix}1&1\\1&1\end{bmatrix}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+$A$ có hàng đầu toàn 0, nhưng
+
+
+
+$$
+BA=\begin{bmatrix}0&1\\0&1\end{bmatrix}
+$$
+
+
+
+ không có hàng nào toàn 0.
+
+**Bước 3. Lập luận và tính toán.**
+
+Cần kiểm tra **mọi** hàng của tích để có đúng phản ví dụ.
+
+**h. Đúng.**
+
+**Bước 1. Thực hiện phép biến đổi.**
+
+Khai triển giả thiết $A(A+B)=(A+B)A$: $A^2+AB=A^2+BA$.
+
+**Bước 2. Thực hiện phép biến đổi.**
+
+Trừ $A^2$ ở hai vế được $AB=BA$.
+
+**i. Đúng.**
+
+**Bước 1. Xét giả thiết.**
+
+Nếu cột $j$ của $B$ bằng 0, thì $Be_j=0$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Cột $j$ của $AB$ là $ABe_j=A0=0$.
+
+**j. Sai.**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Chọn $A=0$, $B=I_2$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Tích $AB=0$ có các cột toàn 0, nhưng không cột nào của $B$ toàn 0.
+
+**k. Đúng.**
+
+**Bước 1. Xét giả thiết.**
+
+Nếu hàng $i$ của $A$ toàn 0, thì với mọi cột $j$, $(AB)_{ij}=\sum_k0\cdot b_{kj}=0$.
+
+**Bước 2. Rút ra kết luận.**
+
+Vậy hàng $i$ của tích cũng toàn 0.
+
+**l. Sai.**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Chọn $A=I_2$, $B=0$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Tích $AB=0$ có hàng toàn 0 nhưng không hàng nào của $A$ toàn 0.
 
 </LoiGiai>
 

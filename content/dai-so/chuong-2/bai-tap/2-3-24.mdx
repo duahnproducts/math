@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Phép nhân ma trận — bài 24"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.3.24"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.24 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $B$ là ma trận $n \times n$. Giả sử $AB = 0$ với một ma trận $m \times n$ khác 0, ký hiệu là $A$. Chứng minh rằng không tồn tại ma trận $n \times n$, ký hiệu là $C$, sao cho $BC = I$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-3-24-1" moTa="Đề gốc Nicholson bài 2.3.24, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -23,6 +31,7 @@ no n×n matrix C exists such that BC = I.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -40,7 +49,21 @@ Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự 
 
 <LoiGiai>
 
-Giả sử tồn tại $C$ sao cho $BC=I_n$. Khi đó $A=AI_n=A(BC)=(AB)C=0C=0$, mâu thuẫn $A\ne0$. Vậy $B$ không có nghịch đảo phải như trong đề.
+**Cách làm.** Với $A$ cỡ $m\times n$, $B$ cỡ $n\times p$, tích $AB$ có cỡ $m\times p$ và $(AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$. Khi khai triển, giữ nguyên thứ tự các thừa số.
+
+Ta không khử $B$ từ $AB=0$. Thay vào đó, giả sử có **nghịch đảo phải** $C$ với $BC=I$, rồi dùng tính kết hợp để đưa $BC$ về cùng một cặp. Kết quả trái với giả thiết $A\ne0$, nên giả sử ấy sai.
+
+**Bước 1. Xét giả thiết.**
+
+Giả sử tồn tại $C$ sao cho $BC=I_n$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Khi đó $A=AI_n=A(BC)=(AB)C=0C=0$, mâu thuẫn $A\ne0$.
+
+**Bước 3. Rút ra kết luận.**
+
+Vậy $B$ không có nghịch đảo phải như trong đề.
 
 </LoiGiai>
 

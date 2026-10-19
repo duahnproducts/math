@@ -5,11 +5,33 @@ do_kho: vua
 tieu_de: "Bài bổ sung 2.6"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.6"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.6 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Ký hiệu $I_{pq}$ là ma trận $n \times n$ có phần tử ở vị trí $(p, q)$ bằng $1$ và mọi phần tử khác bằng $0$. Chứng minh rằng:
+
+**a.** $I_{n} = I_{11} + I_{22} + \cdots + I_{nn}$.
+
+**b.**
+
+$$
+I_{pq}I_{rs} = \left\lbrace \begin{array}{cl} I_{ps} & \mbox{if } q = r \\ 0 & \mbox{if } q \neq r \end{array} \right.
+$$
+
+.
+
+**c.** Nếu $A = \left[ a_{ij} \right]$ có kích thước $n \times n$ thì $A = \sum_{i=1}^{n} \sum_{j=1}^{n} a_{ij}I_{ij}$.
+
+**d.** Nếu $A = \left[ a_{ij} \right]$ thì $I_{pq}AI_{rs} = a_{qr}I_{ps}$ với mọi $p$, $q$, $r$ và $s$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-0-6-1" moTa="Đề gốc Nicholson bài 2.6, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -32,6 +54,7 @@ d.  If A = [aij], then IpqAIrs = aqrIps for all p, q, r, and
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -48,7 +71,33 @@ Với đẳng thức tổng quát, khai triển có giữ thứ tự; với mệ
 
 <LoiGiai>
 
-Dùng ký hiệu $I_{pq}=e_pe_q^T$. **a.** Tổng $\sum_i e_ie_i^T$ có đường chéo toàn 1, ngoài chéo bằng 0, nên bằng $I_n$. **b.** $I_{pq}I_{rs}=e_p(e_q^Te_r)e_s^T=\delta_{qr}I_{ps}$, cho hai trường hợp đề nêu. **c.** Tổng $\sum_{ij}a_{ij}I_{ij}$ có đúng ô $(i,j)$ là $a_{ij}$, nên bằng $A$. **d.** $I_{pq}AI_{rs}=e_p(e_q^TAe_r)e_s^T=a_{qr}I_{ps}$.
+**Bước 1. Lập luận và tính toán.**
+
+Dùng ký hiệu $I_{pq}=e_pe_q^T$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Tổng $\sum_i e_ie_i^T$ có đường chéo toàn 1, ngoài chéo bằng 0, nên bằng $I_n$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$I_{pq}I_{rs}=e_p(e_q^Te_r)e_s^T=\delta_{qr}I_{ps}$, cho hai trường hợp đề nêu.
+
+**c.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Tổng $\sum_{ij}a_{ij}I_{ij}$ có đúng ô $(i,j)$ là $a_{ij}$, nên bằng $A$.
+
+**d.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$I_{pq}AI_{rs}=e_p(e_q^TAe_r)e_s^T=a_{qr}I_{ps}$.
 
 </LoiGiai>
 

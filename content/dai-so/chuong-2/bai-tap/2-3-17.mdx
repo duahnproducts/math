@@ -5,11 +5,31 @@ do_kho: vua
 tieu_de: "Phép nhân ma trận — bài 17"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.3.17"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.17 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu
+
+$$
+A = \left[ \begin{array}{cc} a & b \\ c & d \end{array} \right]
+$$
+
+, trong đó $a \neq 0$, hãy chứng minh rằng $A$ phân tích được dưới dạng
+
+$$
+A = \left[ \begin{array}{cc} 1 & 0 \\ x & 1 \end{array} \right] \left[ \begin{array}{cc} y & z \\ 0 & w \end{array} \right]
+$$
+
+.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-3-17-1" moTa="Đề gốc Nicholson bài 2.3.17, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -25,6 +45,7 @@ that A factors in the form A =                                 .
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -42,7 +63,25 @@ Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự 
 
 <LoiGiai>
 
-Nhân hai khối trong đề được $\begin{bmatrix}y&z\\xy&xz+w\end{bmatrix}$. So sánh với $A$ cho $y=a,z=b,x=c/a,w=d-cb/a$. Điều kiện $a\ne0$ bảo đảm phép chia xác định. Thay lại cho hàng dưới $(c,d)$, nên phân tích đúng.
+**Cách làm.** Với $A$ cỡ $m\times n$, $B$ cỡ $n\times p$, tích $AB$ có cỡ $m\times p$ và $(AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$. Khi khai triển, giữ nguyên thứ tự các thừa số.
+
+Từ $\begin{bmatrix}1&0\\x&1\end{bmatrix}\begin{bmatrix}y&z\\0&w\end{bmatrix}=\begin{bmatrix}y&z\\xy&xz+w\end{bmatrix}$, giải theo thứ tự: $y=a$, $z=b$, rồi $xa=c$ cho $x=c/a$, cuối cùng $w=d-xb$. Chỉ phép tìm $x$ đòi $a\ne0$.
+
+**Bước 1. Thực hiện phép biến đổi.**
+
+Nhân hai khối trong đề được $\begin{bmatrix}y&z\\xy&xz+w\end{bmatrix}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+So sánh với $A$ cho $y=a,z=b,x=c/a,w=d-cb/a$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Điều kiện $a\ne0$ bảo đảm phép chia xác định.
+
+**Bước 4. Thay vào để tính và kiểm tra.**
+
+Thay lại cho hàng dưới $(c,d)$, nên phân tích đúng.
 
 </LoiGiai>
 

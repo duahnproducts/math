@@ -5,11 +5,29 @@ do_kho: vua
 tieu_de: "Khai triển theo phần bù đại số — bài 22"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.1.22"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.1.22 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh rằng
+
+
+
+$$
+\det \left[ \begin{array}{ccccc} 0 & 0 & \cdots & 0 & a_1 \\ 0 & 0 & \cdots & a_2 & * \\ \vdots & \vdots & & \vdots & \vdots \\ 0 & a_{n-1} & \cdots & * & * \\ a_n & * & \cdots & * & * \end{array} \right] = (-1)^k a_1a_2 \cdots a_n
+$$
+
+
+
+trong đó $n = 2k$ hoặc $n = 2k + 1$, còn các phần tử đánh dấu $*$ là tùy ý.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-1-22-1" moTa="Đề gốc Nicholson bài 3.1.22, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -28,6 +46,7 @@ where either n = 2k or n = 2k+1, and ∗-entries are arbi-trary.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -44,7 +63,21 @@ Cộng bội một hàng vào hàng khác giữ định thức; đổi hai hàng
 
 <LoiGiai>
 
-Đảo ngược thứ tự $n$ cột để biến ma trận thành tam giác dưới, đường chéo $a_1,\ldots,a_n$. Hoán vị đảo cần $n(n-1)/2$ lần đổi chỗ, nên định thức ban đầu là $(-1)^{n(n-1)/2}\prod_i a_i$. Khi $n=2k$ hoặc $2k+1$, số $n(n-1)/2$ có cùng tính chẵn lẻ với $k$, cho công thức $(-1)^ka_1\cdots a_n$.
+**Cách làm.** Cộng bội hàng khác giữ nguyên định thức; đổi hai hàng đổi dấu; rút hệ số $c$ từ một hàng đưa $c$ ra ngoài. Với khai triển, $C_{ij}=(-1)^{i+j}\det M_{ij}$.
+
+Để đảo $n$ cột, cột đầu phải đi qua $n-1$ cột, cột tiếp theo qua $n-2$ cột, rồi tiếp tục đến 1. Tổng số lần đổi kề là $(n-1)+\cdots+1=n(n-1)/2$. Chỉ tính chẵn lẻ của số này mới quyết định dấu.
+
+**Bước 1. Lập luận và tính toán.**
+
+Đảo ngược thứ tự $n$ cột để biến ma trận thành tam giác dưới, đường chéo $a_1,\ldots,a_n$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Hoán vị đảo cần $n(n-1)/2$ lần đổi chỗ, nên định thức ban đầu là $(-1)^{n(n-1)/2}\prod_i a_i$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Khi $n=2k$ hoặc $2k+1$, số $n(n-1)/2$ có cùng tính chẵn lẻ với $k$, cho công thức $(-1)^ka_1\cdots a_n$.
 
 </LoiGiai>
 

@@ -4,7 +4,7 @@ aa=[[[.1,.2,.3],[.6,.2,.3],[.3,.6,.4]],[[.5,0,.5],[.1,.9,.2],[.4,.1,.3]],[[.3,.1
 out=[]
 for i,a in enumerate(aa):
     e=decimal(a);v=(e-S.eye(e.rows)).nullspace()[0];v=S.simplify(v/sum(v));assert e*v==v and all(x>0 for x in v)
-    out.append('**'+chr(97+i)+r'.** Cân bằng đòi hỏi $(I-E)p=0$. Khử hệ này, rồi chọn tổng các giá bằng 1 cho $$p_0='+tex(v)+r'.$$ Mọi cơ cấu giá dương là $p=tp_0$, $t>0$; thế trực tiếp cho $Ep_0=p_0$. Nếu cho phép cơ cấu giá không âm bằng 0, thêm $t=0$.')
+    out.append('**'+chr(97+i)+r'.** '+steady_text(e)+r' Ký hiệu phân bố vừa tìm là $p_0$. Mọi giá cân bằng theo tỷ lệ ấy: $$p_0='+tex(v)+r'.$$ Mọi cơ cấu giá dương là $p=tp_0$, $t>0$; thế trực tiếp cho $Ep_0=p_0$. Nếu cho phép cơ cấu giá không âm bằng 0, thêm $t=0$.')
 add('2.8.1','\n\n'.join(out))
 add('2.8.2',r'Theo thứ tự $A,B,C$, các cột biểu diễn đầu ra của từng ngành, nên $$E=\begin{bmatrix}0&0&1\\1&0&0\\0&1&0\end{bmatrix}.$$ Hệ $Ep=p$ là $p_C=p_A$, $p_A=p_B$, $p_B=p_C$. Vì vậy $p=t(1,1,1)^T$, $t>0$ (hoặc $t\ge0$ nếu cho phép cơ cấu bằng 0). Ba ngành phải có cùng giá trị sản lượng.')
 add('2.8.3',r'Hệ $Ep=p$ cho $p_1=p_1$, $p_3=p_2$, $p_2=p_3$. Do đó $$p=(s,t,t)^T,\quad s,t>0.$$ Có hai tham số vì ngành 1 hoàn toàn tự dùng đầu ra của mình, độc lập với nhóm ngành 2 và 3 trao đổi với nhau. Hệ chỉ buộc giá trị hai ngành sau bằng nhau; không có phương trình ràng buộc tỷ lệ giữa hai nhóm.')
@@ -17,7 +17,7 @@ aa=[[[.6,.5,.1],[.1,.3,.3],[.2,.1,.4]],[[.7,.1,.3],[.2,.5,.2],[.1,.1,.4]],[[.6,.
 out=[]
 for i,a in enumerate(aa):
     e=decimal(a);k=S.eye(3)-e;inv=k.inv();assert all(v>=0 for v in inv)
-    out.append('**'+chr(97+i)+r'.** Lập $I-E$, khử Gauss–Jordan trên $[I-E\mid I]$ cho $$\det(I-E)='+S.latex(k.det())+r',\quad (I-E)^{-1}='+tex(inv)+r'.$$ Định thức khác 0 và tất cả ô của ma trận vừa tính không âm. Nhân với $I-E$ cho $I$, xác nhận cả hai yêu cầu.')
+    out.append('**'+chr(97+i)+r'.** Đặt $K=I-E$. '+inverse_case(k).replace('A','K')+r' Vì vậy $$\det(I-E)='+S.latex(k.det())+r',\quad (I-E)^{-1}='+tex(inv)+r'.$$ Định thức khác 0 và tất cả ô của ma trận vừa tính không âm. Nhân với $I-E$ cho $I$, xác nhận cả hai yêu cầu.')
 add('2.8.9','\n\n'.join(out))
 add('2.8.10',r'Nếu tổng mỗi cột của $E$ nhỏ hơn 1, thì tổng mỗi hàng của $E^T$ nhỏ hơn 1. Áp dụng (1) cho $E^T$: $I-E^T$ khả nghịch và $(I-E^T)^{-1}\ge0$. Chuyển vị cho $(I-E)^{-1}=((I-E^T)^{-1})^T\ge0$; tính khả nghịch cũng được bảo toàn khi chuyển vị. Đây chính là (2).')
 add('2.8.11',r'Đặt $\mathbf1=(1,\ldots,1)^T$ và $p=(I-E)^{-1}\mathbf1$. Khi $E\ge0$ và nghịch đảo không âm, có $p\ge0$ và $(I-E)p=\mathbf1$. Suy ra $p=\mathbf1+Ep\ge\mathbf1>0$, đồng thời $p-Ep=\mathbf1>0$. Vậy vector xây dựng được thỏa cả $p>0$ và $p>Ep$.')

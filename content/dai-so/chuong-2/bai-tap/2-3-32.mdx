@@ -5,11 +5,49 @@ do_kho: vua
 tieu_de: "Phép nhân ma trận — bài 32"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.3.32"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.32 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Ma trận vuông $P$ được gọi là lũy đẳng nếu $P^{2} = P$. Chứng minh rằng:
+
+**a.** $0$ và $I$ là các ma trận lũy đẳng.
+
+**b.**
+
+$$
+\left[ \begin{array}{rr} 1 & 1 \\ 0 & 0 \end{array} \right]
+$$
+
+,
+
+$$
+\left[ \begin{array}{rr} 1 & 0 \\ 1 & 0 \end{array} \right]
+$$
+
+ và
+
+$$
+\frac{1}{2} \left[ \begin{array}{rr} 1 & 1 \\ 1 & 1 \end{array} \right]
+$$
+
+ là các ma trận lũy đẳng.
+
+**c.** Nếu $P$ lũy đẳng thì $I - P$ cũng lũy đẳng. Chứng minh thêm rằng $P(I - P) = 0$.
+
+**d.** Nếu $P$ lũy đẳng thì $P^{T}$ cũng lũy đẳng.
+
+**e.** Nếu $P$ lũy đẳng thì $Q = P + AP - PAP$ cũng lũy đẳng với mọi ma trận vuông $A$ (cùng kích thước với $P$).
+
+**f.** Nếu $A$ có kích thước $n \times m$, $B$ có kích thước $m \times n$ và $AB = I_{n}$ thì $BA$ là ma trận lũy đẳng.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-3-32-1" moTa="Đề gốc Nicholson bài 2.3.32, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -34,6 +72,7 @@ idempotent if P2 = P. Show that:
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -50,7 +89,55 @@ Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự 
 
 <LoiGiai>
 
-**a.** $0^2=0,I^2=I$. **b.** Nhân trực tiếp từng ma trận. Với $J$ là ma trận $2\times2$ toàn 1, $J^2=2J$, nên $(J/2)^2=J/2$; hai ma trận còn lại bình phương cũng giữ nguyên từng hàng. **c.** $(I-P)^2=I-2P+P^2=I-P$ và $P(I-P)=P-P^2=0$. **d.** $(P^T)^2=(P^2)^T=P^T$. **e.** Đặt $Z=(I-P)AP$. Khi đó $PZ=0,ZP=Z,Z^2=0$. Vì $Q=P+Z$, $Q^2=P+Z=Q$. **f.** $(BA)^2=B(AB)A=BI_nA=BA$.
+**Cách làm.** Với $A$ cỡ $m\times n$, $B$ cỡ $n\times p$, tích $AB$ có cỡ $m\times p$ và $(AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$. Khi khai triển, giữ nguyên thứ tự các thừa số.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$0^2=0,I^2=I$.
+
+**b.**
+
+**Bước 1. Thực hiện phép biến đổi.**
+
+Nhân trực tiếp từng ma trận.
+
+**Bước 2. Lập luận và tính toán.**
+
+Với $J$ là ma trận $2\times2$ toàn 1, $J^2=2J$, nên $(J/2)^2=J/2$; hai ma trận còn lại bình phương cũng giữ nguyên từng hàng.
+
+**c.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$(I-P)^2=I-2P+P^2=I-P$ và $P(I-P)=P-P^2=0$.
+
+**d.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$(P^T)^2=(P^2)^T=P^T$.
+
+**e.**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Đặt $Z=(I-P)AP$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Khi đó $PZ=0,ZP=Z,Z^2=0$.
+
+**Bước 3. Giải thích điều kiện sử dụng.**
+
+Vì $Q=P+Z$, $Q^2=P+Z=Q$.
+
+**f.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$(BA)^2=B(AB)A=BI_nA=BA$.
 
 </LoiGiai>
 

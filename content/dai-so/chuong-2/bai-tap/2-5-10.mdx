@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Ma trận sơ cấp — bài 10"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.5.10"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.5.10 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh rằng mọi ma trận $A$ đều phân tích được thành $A = UR$, trong đó $U$ khả nghịch và $R$ có dạng bậc thang hàng rút gọn.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-5-10-1" moTa="Đề gốc Nicholson bài 2.5.10, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -23,6 +31,7 @@ row-echelon form.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -40,7 +49,25 @@ Một phép hàng là nhân trái; một phép cột là nhân phải. Ghi thứ
 
 <LoiGiai>
 
-Khử hàng $A$ về RREF $R$, được $E_k\cdots E_1A=R$. Đặt $U=(E_k\cdots E_1)^{-1}$. Vì mọi $E_j$ khả nghịch nên $U$ khả nghịch, và nhân trái cho $A=UR$. Lập luận áp dụng cả ma trận chữ nhật và ma trận suy biến.
+**Cách làm.** Ma trận sơ cấp $E$ nhận từ $I$ bằng một phép hàng. $EA$ làm phép đó lên các hàng của $A$. Trong chuỗi $E_k\cdots E_1A$, phép $E_1$ được thực hiện trước.
+
+Từ $EA=R$ với $E=E_k\cdots E_1$, nhân trái với $E^{-1}$ cho $A=E^{-1}R$. $E$ luôn khả nghịch dù $A$ có thể suy biến; tính khả nghịch cần dùng nằm ở các phép hàng, không nằm ở $A$.
+
+**Bước 1. Lập luận và tính toán.**
+
+Khử hàng $A$ về RREF $R$, được $E_k\cdots E_1A=R$.
+
+**Bước 2. Thiết lập biểu thức.**
+
+Đặt $U=(E_k\cdots E_1)^{-1}$.
+
+**Bước 3. Giải thích điều kiện sử dụng.**
+
+Vì mọi $E_j$ khả nghịch nên $U$ khả nghịch, và nhân trái cho $A=UR$.
+
+**Bước 4. Lập luận và tính toán.**
+
+Lập luận áp dụng cả ma trận chữ nhật và ma trận suy biến.
 
 </LoiGiai>
 

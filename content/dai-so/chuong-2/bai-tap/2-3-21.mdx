@@ -5,11 +5,25 @@ do_kho: vua
 tieu_de: "Phép nhân ma trận — bài 21"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.3.21"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.21 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu $A$ là ma trận $2 \times 2$, hãy chứng minh rằng $A^{T}A = AA^{T}$ khi và chỉ khi $A$ đối xứng hoặc
+
+$$
+A = \left[ \begin{array}{cc} a & b \\ -b & a \end{array} \right]
+$$
+
+ với các số $a$ và $b$ nào đó.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-3-21-1" moTa="Đề gốc Nicholson bài 2.3.21, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -24,6 +38,7 @@ A =             for some a and b.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -41,7 +56,29 @@ Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự 
 
 <LoiGiai>
 
-Đặt $A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$. Đồng nhất $A^TA=AA^T$ cho $b^2=c^2$ và $(a-d)(b-c)=0$. Nếu $b=c$, $A$ đối xứng. Nếu $b\ne c$, từ $b^2=c^2$ suy ra $c=-b$, rồi $a=d$, nên $A=\begin{bmatrix}a&b\\-b&a\end{bmatrix}$. Ngược lại, ma trận đối xứng hoặc ma trận dạng sau đều thỏa hai đẳng thức, nên thỏa điều kiện ban đầu.
+**Cách làm.** Với $A$ cỡ $m\times n$, $B$ cỡ $n\times p$, tích $AB$ có cỡ $m\times p$ và $(AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$. Khi khai triển, giữ nguyên thứ tự các thừa số.
+
+Tính riêng $A^TA=\begin{bmatrix}a^2+c^2&ab+cd\\ab+cd&b^2+d^2\end{bmatrix}$ và $AA^T=\begin{bmatrix}a^2+b^2&ac+bd\\ac+bd&c^2+d^2\end{bmatrix}$. So ô đường chéo cho $b^2=c^2$; so ô ngoài đường chéo cho $ab+cd-ac-bd=(a-d)(b-c)=0$.
+
+**Bước 1. Thiết lập biểu thức.**
+
+Đặt $A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Đồng nhất $A^TA=AA^T$ cho $b^2=c^2$ và $(a-d)(b-c)=0$.
+
+**Bước 3. Xét giả thiết.**
+
+Nếu $b=c$, $A$ đối xứng.
+
+**Bước 4. Xét giả thiết.**
+
+Nếu $b\ne c$, từ $b^2=c^2$ suy ra $c=-b$, rồi $a=d$, nên $A=\begin{bmatrix}a&b\\-b&a\end{bmatrix}$.
+
+**Bước 5. Kiểm tra chiều ngược.**
+
+Ngược lại, ma trận đối xứng hoặc ma trận dạng sau đều thỏa hai đẳng thức, nên thỏa điều kiện ban đầu.
 
 </LoiGiai>
 

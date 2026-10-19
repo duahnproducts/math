@@ -81,12 +81,112 @@ Hai dấu gạch ngoài ở công thức cuối lấy giá trị tuyệt đối 
 
 Tính $|-7|$, $|2-(-4)|$ và tìm x thỏa $|x+1|\leq2$. **Gợi ý:** tâm của |x+1| là −1.
 
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Giá trị tuyệt đối đo khoảng cách tới 0; $|x+1|$ đo khoảng cách từ $x$ tới $-1$.
+
+**Bước 2. Xác định điều cần tìm.**
+
+Tính hai khoảng cách và giải điều kiện khoảng cách không quá 2.
+
+**Bước 3. Chọn kiến thức và lý do.**
+
+$|u|\le c$ với $c\ge0$ tương đương $-c\le u\le c$.
+
+**Bước 4. Giải từng bước.**
+
+$|-7|=7$. $|2-(-4)|=|6|=6$. Với bất phương trình:
+
+$$
+|x+1|\le2\iff-2\le x+1\le2\iff-3\le x\le1.
+$$
+
+ Tập nghiệm là $[-3,1]$.
+
+**Bước 5. Kiểm tra kết quả.**
+
+Hai đầu mút cho $|-3+1|=|1+1|=2$; điểm giữa $-1$ cho khoảng cách 0. Dấu $\le$ nên lấy cả hai đầu mút.
+
+**Bước 6. Cách tự làm lại.**
+
+Đọc đúng tâm, chuyển về bất phương trình kép, rồi kiểm tra hai biên.
+
+</LoiGiai>
+
 ### VỪA - Ghép hai sai số
 
 Biết $|x-4|<0,01$, $|y+2|<0,02$. Chứng minh $|(x-y)-6|<0,03$. **Gợi ý:** viết $(x-y)-6=(x-4)-(y+2)$.
 
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+$|x-4|<0{,}01$ và $|y+2|<0{,}02$.
+
+**Bước 2. Xác định điều cần tìm.**
+
+Chặn sai số của $x-y$ so với $6$.
+
+**Bước 3. Chọn kiến thức và lý do.**
+
+Viết sai số cần chặn thành tổng hoặc hiệu hai sai số đã biết, rồi dùng bất đẳng thức tam giác.
+
+**Bước 4. Giải từng bước.**
+
+Ta có $(x-y)-6=(x-4)-(y+2)$. Vì vậy
+
+$$
+|(x-y)-6|\le|x-4|+|y+2|<0{,}01+0{,}02=0{,}03.
+$$
+
+**Bước 5. Kiểm tra kết quả.**
+
+Điểm tham chiếu là $4-(-2)=6$, nên dấu trước $y+2$ phải là dấu trừ. Cận cuối nghiêm vì hai cận đầu đều nghiêm.
+
+**Bước 6. Cách tự làm lại.**
+
+Tách biểu thức thành các sai số đã được đề khống chế; cộng các cận tuyệt đối.
+
+</LoiGiai>
+
 ### KHÓ - Tam giác ngược
 
 Chứng minh $||a|-|b||\leq|a-b|$ với mọi a,b thực. **Gợi ý:** viết $a=(a-b)+b$ để chặn |a|−|b|; đổi vai a,b để chặn theo chiều còn lại.
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+$a,b$ là hai số thực bất kỳ.
+
+**Bước 2. Xác định điều cần tìm.**
+
+Chứng minh $\bigl||a|-|b|\bigr|\le|a-b|$.
+
+**Bước 3. Chọn kiến thức và lý do.**
+
+Bất đẳng thức có giá trị tuyệt đối ngoài tương đương hai bất đẳng thức một phía.
+
+**Bước 4. Giải từng bước.**
+
+Viết $a=(a-b)+b$. Tam giác cho $|a|\le|a-b|+|b|$, nên $|a|-|b|\le|a-b|$. Đổi vai $a,b$: $|b|-|a|\le|b-a|=|a-b|$. Ghép lại:
+
+$$
+-|a-b|\le|a|-|b|\le|a-b|.
+$$
+
+ Đó là điều phải chứng minh.
+
+**Bước 5. Kiểm tra kết quả.**
+
+Khi $a=3,b=1$, hai vế cùng bằng 2. Lập luận không giả sử dấu của $a,b$, nên bao phủ cả số âm và 0.
+
+**Bước 6. Cách tự làm lại.**
+
+Muốn chặn $|u|$, hãy chặn cả $u$ và $-u$ bằng cùng một số không âm.
+
+</LoiGiai>
 
 Nguồn kiến thức: Kenneth A. Ross, *Elementary Analysis: The Theory of Calculus*, ấn bản thứ hai, 2013, §3. Bài giảng diễn đạt bằng lời riêng; ví dụ và bài tập do người biên soạn bổ sung.

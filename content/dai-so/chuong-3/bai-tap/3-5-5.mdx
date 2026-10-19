@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Hệ động lực tuyến tính — bài 5"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.5.5"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.5.5 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Trong Ví dụ 3.3.1, cho tỷ lệ sống của con non bằng $\frac{2}{5}$ và tỷ lệ sinh sản bằng 2. Những giá trị nào của tỷ lệ sống cá thể trưởng thành $\alpha$ bảo đảm quần thể ổn định?
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-5-5-1" moTa="Đề gốc Nicholson bài 3.5.5, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -24,6 +32,7 @@ population stabilizes?
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -41,7 +50,29 @@ Khai triển trạng thái ban đầu theo cơ sở vector riêng, rồi so sán
 
 <LoiGiai>
 
-Ma trận là $M=\begin{bmatrix}\alpha&2/5\\2&0\end{bmatrix}$. Muốn ổn định với ban đầu không âm khác 0, trị riêng trội phải bằng 1. Thay $\lambda=1$ vào $\lambda^2-\alpha\lambda-4/5=0$ cho $\alpha=1/5$. Trị riêng còn lại là $-4/5$, có môđun nhỏ hơn 1 nên hạng đó tắt dần. Vì vậy tỷ lệ sống trưởng thành cần là $\alpha=1/5=20\%$.
+**Cách làm.** Mô hình tuyến tính có $v_{k+1}=Mv_k$, nên $v_k=M^kv_0$. Nếu $v_0=\sum_i c_iv_i$ theo vector riêng, thì $v_k=\sum_i c_i\lambda_i^kv_i$.
+
+Thử $\lambda=1$ vào $\lambda^2-\alpha\lambda-4/5=0$ cho $1-\alpha-4/5=0$, nên $\alpha=1/5$. Trị riêng còn lại là $-4/5$, có môđun nhỏ hơn 1, nên phần dao động tắt dần.
+
+**Bước 1. Lập luận và tính toán.**
+
+Ma trận là $M=\begin{bmatrix}\alpha&2/5\\2&0\end{bmatrix}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Muốn ổn định với ban đầu không âm khác 0, trị riêng trội phải bằng 1.
+
+**Bước 3. Thay vào để tính và kiểm tra.**
+
+Thay $\lambda=1$ vào $\lambda^2-\alpha\lambda-4/5=0$ cho $\alpha=1/5$.
+
+**Bước 4. Lập luận và tính toán.**
+
+Trị riêng còn lại là $-4/5$, có môđun nhỏ hơn 1 nên hạng đó tắt dần.
+
+**Bước 5. Giải thích điều kiện sử dụng.**
+
+Vì vậy tỷ lệ sống trưởng thành cần là $\alpha=1/5=20\%$.
 
 </LoiGiai>
 

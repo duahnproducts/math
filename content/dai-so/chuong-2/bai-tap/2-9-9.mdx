@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Ứng dụng: xích Markov — bài 9"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.9.9"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.9.9 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu ma trận ngẫu nhiên có một phần tử $1$ trên đường chéo chính, hãy chứng minh nó không thể chính quy. Giả sử ma trận không có kích thước $1 \times 1$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-9-9-1" moTa="Đề gốc Nicholson bài 2.9.9, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -23,6 +31,7 @@ diagonal, show that it cannot be regular. Assume it is not
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -40,7 +49,29 @@ Sau k lần chuyển dùng lũy thừa thứ k; phân bố dừng thỏa Ps = s 
 
 <LoiGiai>
 
-Giả sử $p_{jj}=1$. Do mọi ô không âm và tổng cột $j$ bằng 1, các ô còn lại của cột ấy bằng 0; do đó $Pe_j=e_j$. Quy nạp cho $P^me_j=e_j$ với mọi $m\ge1$. Vì kích thước lớn hơn 1, cột ấy luôn chứa ít nhất một số 0, nên $P^m$ không thể toàn dương. Vậy $P$ không regular.
+**Cách làm.** Ta dùng vector cột: ô $p_{ij}$ là xác suất từ trạng thái $j$ tới $i$. Sau $k$ bước, $s_k=P^ks_0$. Phân bố dừng phải thỏa đồng thời $Ps=s$, $s_i\ge0$ và $\sum_i s_i=1$.
+
+Các ô trong một cột đều không âm. Nếu một ô đã bằng 1 và tổng cột bằng 1, tất cả ô còn lại buộc bằng 0. Cột đơn vị ấy tiếp tục giữ nguyên khi nhân thêm $P$, nên không thể biến thành cột toàn dương.
+
+**Bước 1. Xét giả thiết.**
+
+Giả sử $p_{jj}=1$.
+
+**Bước 2. Giải thích điều kiện sử dụng.**
+
+Do mọi ô không âm và tổng cột $j$ bằng 1, các ô còn lại của cột ấy bằng 0; do đó $Pe_j=e_j$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Quy nạp cho $P^me_j=e_j$ với mọi $m\ge1$.
+
+**Bước 4. Giải thích điều kiện sử dụng.**
+
+Vì kích thước lớn hơn 1, cột ấy luôn chứa ít nhất một số 0, nên $P^m$ không thể toàn dương.
+
+**Bước 5. Rút ra kết luận.**
+
+Vậy $P$ không regular.
 
 </LoiGiai>
 

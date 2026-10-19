@@ -5,11 +5,45 @@ do_kho: vua
 tieu_de: "Ma trận sơ cấp — bài 17"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.5.17"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.5.17 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Hai ma trận $A$ và $B$ được gọi là tương đương hàng (viết $A \overset{r}{\sim} B$) nếu có một dãy các phép biến đổi hàng sơ cấp đưa $A$ thành $B$.
+
+**a.** Chứng minh rằng $A \overset{r}{\sim} B$ khi và chỉ khi $A = UB$ với một ma trận khả nghịch $U$ nào đó.
+
+**b.** Chứng minh rằng:
+
+**i.** $A \overset{r}{\sim} A$ với mọi ma trận $A$.
+
+**ii.** Nếu $A \overset{r}{\sim} B$ thì $B \overset{r}{\sim} A$.
+
+**iii.** Nếu $A \overset{r}{\sim} B$ và $B \overset{r}{\sim} C$ thì $A \overset{r}{\sim} C$.
+
+**c.** Chứng minh rằng nếu cả $A$ và $B$ đều tương đương hàng với cùng một ma trận thứ ba thì $A \overset{r}{\sim} B$.
+
+**d.** Chứng minh rằng
+
+$$
+\left[ \begin{array}{rrrr} 1 & -1 & 3 & 2 \\ 0 & 1 & 4 & 1 \\ 1 & 0 & 8 & 6 \end{array} \right]
+$$
+
+ và
+
+$$
+\left[ \begin{array}{rrrr} 1 & -1 & 4 & 5 \\ -2 & 1 & -11 & -8 \\ -1 & 2 & 2 & 2 \end{array} \right]
+$$
+
+ tương đương hàng. [Gợi ý: Xét ý (c) và Định lý 1.2.1.]
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-5-17-1" moTa="Đề gốc Nicholson bài 2.5.17, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -34,6 +68,7 @@ equivalent (written A r∼B) if there is a sequence of ele-mentary row operation
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -50,11 +85,55 @@ Một phép hàng là nhân trái; một phép cột là nhân phải. Ghi thứ
 
 <LoiGiai>
 
-**a.** Chuỗi phép hàng từ $B$ tới $A$ cho $A=UB$ với $U$ là tích sơ cấp, khả nghịch. Ngược lại, mọi ma trận khả nghịch $U$ là tích sơ cấp, nên $A=UB$ cho một chuỗi phép hàng. **b(i).** Dùng $I$. **b(ii).** Nếu $A=UB$, thì $B=U^{-1}A$. **b(iii).** Nếu $A=UB,B=VC$, thì $A=(UV)C$. **c.** Nếu cả $A,B$ tương đương hàng với $C$, dùng tính đối xứng rồi bắc cầu. **d.** Khử từng ma trận trong đề cho cùng RREF
+**Cách làm.** Ma trận sơ cấp $E$ nhận từ $I$ bằng một phép hàng. $EA$ làm phép đó lên các hàng của $A$. Trong chuỗi $E_k\cdots E_1A$, phép $E_1$ được thực hiện trước.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Chuỗi phép hàng từ $B$ tới $A$ cho $A=UB$ với $U$ là tích sơ cấp, khả nghịch.
+
+**Bước 2. Kiểm tra chiều ngược.**
+
+Ngược lại, mọi ma trận khả nghịch $U$ là tích sơ cấp, nên $A=UB$ cho một chuỗi phép hàng.
+
+**b(i).**
+
+**Bước 1. Lập luận và tính toán.**
+
+Dùng $I$.
+
+**b(ii).**
+
+**Bước 1. Xét giả thiết.**
+
+Nếu $A=UB$, thì $B=U^{-1}A$.
+
+**b(iii).**
+
+**Bước 1. Xét giả thiết.**
+
+Nếu $A=UB,B=VC$, thì $A=(UV)C$.
+
+**c.**
+
+**Bước 1. Xét giả thiết.**
+
+Nếu cả $A,B$ tương đương hàng với $C$, dùng tính đối xứng rồi bắc cầu.
+
+**d.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Khử từng ma trận trong đề cho cùng RREF
+
+
 
 $$
 \begin{bmatrix}1&0&0&-18\\0&1&0&-11\\0&0&1&3\end{bmatrix},
 $$
+
+
 
  nên chúng tương đương hàng theo (c).
 

@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Phép biến đổi tuyến tính — bài 5"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.6.5"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.6.5 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $T : \mathbb{R}^n \to \mathbb{R}^m$ là một phép biến đổi tuyến tính.
+
+**a.** Nếu $\mathbf{x}$ thuộc $\mathbb{R}^n$, ta nói $\mathbf{x}$ thuộc hạt nhân của $T$ nếu $T(\mathbf{x}) = \mathbf{0}$. Nếu cả $\mathbf{x}_{1}$ và $\mathbf{x}_{2}$ đều thuộc hạt nhân của $T$, hãy chứng minh rằng $a\mathbf{x}_{1} + b\mathbf{x}_{2}$ cũng thuộc hạt nhân của $T$ với mọi vô hướng $a$ và $b$.
+
+**b.** Nếu $\mathbf{y}$ thuộc $\mathbb{R}^n$, ta nói $\mathbf{y}$ thuộc ảnh của $T$ nếu $\mathbf{y} = T(\mathbf{x})$ với một $\mathbf{x}$ nào đó thuộc $\mathbb{R}^n$. Nếu cả $\mathbf{y}_{1}$ và $\mathbf{y}_{2}$ đều thuộc ảnh của $T$, hãy chứng minh rằng $a\mathbf{y}_{1} + b\mathbf{y}_{2}$ cũng thuộc ảnh của $T$ với mọi vô hướng $a$ và $b$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-6-5-1" moTa="Đề gốc Nicholson bài 2.6.5, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -32,6 +44,7 @@ Exercise 2.6.5  Let T : Rn →Rm be a linear transforma-tion.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -48,7 +61,33 @@ Cột thứ j của ma trận ánh xạ là ảnh của vector đơn vị thứ 
 
 <LoiGiai>
 
-**a.** Nếu $T(x_1)=T(x_2)=0$, thì $T(ax_1+bx_2)=aT(x_1)+bT(x_2)=0$. Vậy tổ hợp vẫn thuộc hạt nhân. **b.** Viết $y_1=T(x_1),y_2=T(x_2)$. Khi đó $ay_1+by_2=T(ax_1+bx_2)$, nên thuộc ảnh. Các vector trong ảnh nằm ở không gian đích $\mathbb R^m$; ký hiệu $\mathbb R^n$ ở câu mô tả ảnh của bản in là lỗi kích thước nếu $m\ne n$.
+**Cách làm.** Tuyến tính nghĩa là $T(au+bv)=aT(u)+bT(v)$. Với vector cột, ma trận của $T$ là $[T(e_1)\ \cdots\ T(e_n)]$; ma trận của $S\circ T$ là $[S][T]$.
+
+Một tập con là không gian con nếu chứa 0 và đóng với mọi tổ hợp tuyến tính. Hạt nhân chứa $0$ vì $T(0)=0$; ảnh chứa $0$ vì $0=T(0)$. Các đẳng thức dưới đây kiểm tra phần đóng với tổ hợp tuyến tính.
+
+**a.**
+
+**Bước 1. Xét giả thiết.**
+
+Nếu $T(x_1)=T(x_2)=0$, thì $T(ax_1+bx_2)=aT(x_1)+bT(x_2)=0$.
+
+**Bước 2. Rút ra kết luận.**
+
+Vậy tổ hợp vẫn thuộc hạt nhân.
+
+**b.**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Viết $y_1=T(x_1),y_2=T(x_2)$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Khi đó $ay_1+by_2=T(ax_1+bx_2)$, nên thuộc ảnh.
+
+**Bước 3. Lập luận và tính toán.**
+
+Các vector trong ảnh nằm ở không gian đích $\mathbb R^m$; ký hiệu $\mathbb R^n$ ở câu mô tả ảnh của bản in là lỗi kích thước nếu $m\ne n$.
 
 </LoiGiai>
 

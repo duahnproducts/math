@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Chéo hoá — bài 4"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.4.4"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.4.4 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu $A$ là ma trận $n \times n$, hãy chứng minh rằng $A$ chéo hóa được khi và chỉ khi $A^{T}$ chéo hóa được.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-4-4-1" moTa="Đề gốc Nicholson bài 3.4.4, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -21,6 +29,7 @@ Exercise 3.4.4   If A is an n × n matrix, show that A isdiagonalizable if and o
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -38,7 +47,21 @@ Ghép các vector riêng độc lập thành cột của P, rồi kiểm tra AP 
 
 <LoiGiai>
 
-Nếu $A=PDP^{-1}$ với $D$ chéo, chuyển vị cho $A^T=(P^{-1})^TDP^T$. Đặt $Q=(P^{-1})^T$, thì $Q^{-1}=P^T$ và $A^T=QDQ^{-1}$, nên chéo hóa được. Chiều ngược áp dụng kết quả cho $A^T$, vì $(A^T)^T=A$.
+**Cách làm.** Chéo hóa $A=PDP^{-1}$ nghĩa là các cột của $P$ là một cơ sở vector riêng. Trị riêng của cột thứ $j$ phải nằm ở ô $d_{jj}$, và có thể kiểm tra bằng $AP=PD$.
+
+Chuyển vị tích ba thừa số đảo toàn bộ thứ tự: $(PDP^{-1})^T=(P^{-1})^TD^TP^T$. Vì $D$ chéo, $D^T=D$. Ta chọn $Q=(P^{-1})^T$ để hai thừa số ngoài đúng dạng $Q,Q^{-1}$.
+
+**Bước 1. Xét giả thiết.**
+
+Nếu $A=PDP^{-1}$ với $D$ chéo, chuyển vị cho $A^T=(P^{-1})^TDP^T$.
+
+**Bước 2. Thiết lập biểu thức.**
+
+Đặt $Q=(P^{-1})^T$, thì $Q^{-1}=P^T$ và $A^T=QDQ^{-1}$, nên chéo hóa được.
+
+**Bước 3. Kiểm tra chiều ngược.**
+
+Chiều ngược áp dụng kết quả cho $A^T$, vì $(A^T)^T=A$.
 
 </LoiGiai>
 

@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Ứng dụng: hệ thức truy hồi tuyến tính — bài 6"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.6.6"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.6.6 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Có bao nhiêu chuỗi kết quả của $k$ lần tung đồng xu mà không xuất hiện HH (hai mặt ngửa liên tiếp)?
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-6-6-1" moTa="Đề gốc Nicholson bài 3.6.6, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ are there with no HH?
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +48,25 @@ Dùng các điều kiện đầu để xác định hệ số trong nghiệm t�
 
 <LoiGiai>
 
-Đổi ký hiệu $H\leftrightarrow a$, $T\leftrightarrow b$ cho song ánh với các từ không có hai $a$ cạnh nhau. Hoặc phân loại theo kết thúc $T$ và $TH$ để được $u_k=u_{k-1}+u_{k-2}$, $u_0=1,u_1=2$. Vì vậy số chuỗi là $F_{k+2}$, tương đương công thức Binet ở bài trước. Đây là số chuỗi, không phải xác suất; nếu đồng xu cân bằng thì xác suất mới bằng $F_{k+2}/2^k$.
+**Cách làm.** Với truy hồi tuyến tính, thử $x_k=r^k$ để tìm phương trình đặc trưng. Các điều kiện đầu quyết định hệ số; với bài đếm, cần phân loại các trường hợp rời nhau và đếm hết mọi khả năng.
+
+Phép đổi ký hiệu là song ánh: mỗi chuỗi tung xu cho đúng một từ và có thể đổi ngược lại. Điều kiện không có hai mặt $H$ liền nhau chuyển đúng thành không có hai chữ $a$ liền nhau, nên số cách bằng nhau.
+
+**Bước 1. Lập luận và tính toán.**
+
+Đổi ký hiệu $H\leftrightarrow a$, $T\leftrightarrow b$ cho song ánh với các từ không có hai $a$ cạnh nhau.
+
+**Bước 2. Lập luận và tính toán.**
+
+Hoặc phân loại theo kết thúc $T$ và $TH$ để được $u_k=u_{k-1}+u_{k-2}$, $u_0=1,u_1=2$.
+
+**Bước 3. Giải thích điều kiện sử dụng.**
+
+Vì vậy số chuỗi là $F_{k+2}$, tương đương công thức Binet ở bài trước.
+
+**Bước 4. Lập luận và tính toán.**
+
+Đây là số chuỗi, không phải xác suất; nếu đồng xu cân bằng thì xác suất mới bằng $F_{k+2}/2^k$.
 
 </LoiGiai>
 

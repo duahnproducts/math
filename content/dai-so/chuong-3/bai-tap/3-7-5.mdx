@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Ứng dụng: hệ phương trình vi phân — bài 5"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.7.5"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.7.5 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $A$ là ma trận khả nghịch, chéo hóa được, có kích thước $n \times n$, và $\mathbf{b}$ là một cột gồm $n$ hàm hằng. Có thể giải hệ $\mathbf{f}^{\prime} = A\mathbf{f} + \mathbf{b}$ như sau:
+
+**a.** Nếu $\mathbf{g}$ thỏa mãn $\mathbf{g}^{\prime} = A\mathbf{g}$ (dùng Định lý 3.7.2), hãy chứng minh rằng $\mathbf{f} = \mathbf{g} - A^{-1}\mathbf{b}$ là nghiệm của $\mathbf{f}^{\prime} = A\mathbf{f} + \mathbf{b}$.
+
+**b.** Chứng minh rằng mọi nghiệm của $\mathbf{f}^{\prime} = A\mathbf{f} + \mathbf{b}$ đều có dạng ở ý (a), với một nghiệm $\mathbf{g}$ nào đó của $\mathbf{g}^{\prime} = A\mathbf{g}$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-7-5-1" moTa="Đề gốc Nicholson bài 3.7.5, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -28,6 +40,7 @@ n× n matrix and let b be an n-column of constant func-tions. We can solve the s
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -44,7 +57,37 @@ Mỗi vector riêng v với trị riêng λ cho nghiệm v nhân exp(λx); giả
 
 <LoiGiai>
 
-**a.** Đặt $f=g-A^{-1}b$. Vì $b$ không đổi, $f\prime=g\prime=Ag=A(f+A^{-1}b)=Af+b$. **b.** Với nghiệm $f$ bất kỳ, đặt $g=f+A^{-1}b$. Khi đó $g\prime=f\prime=Af+b=A(f+A^{-1}b)=Ag$. Vì vậy mọi nghiệm không thuần nhất nhận được từ nghiệm thuần nhất bằng phép tịnh tiến này. Điều kiện khả nghịch bảo đảm $A^{-1}b$ xác định; chéo hóa dùng để tìm $g$.
+**Cách làm.** Nếu $Av=\lambda v$ thì $f(x)=e^{\lambda x}v$ thỏa $f\prime=Af$, vì $f\prime=\lambda e^{\lambda x}v=Af$. Điều kiện đầu dùng để xác định các hệ số còn lại.
+
+Tìm nghiệm riêng hằng $f_p$ bằng cách cho đạo hàm bằng 0: $Af_p+b=0$, nên $f_p=-A^{-1}b$. Khi đặt $f=g+f_p$, đạo hàm của $f_p$ bằng 0 và hạng hằng trong phương trình triệt tiêu.
+
+**a.**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Đặt $f=g-A^{-1}b$.
+
+**Bước 2. Giải thích điều kiện sử dụng.**
+
+Vì $b$ không đổi, $f\prime=g\prime=Ag=A(f+A^{-1}b)=Af+b$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Với nghiệm $f$ bất kỳ, đặt $g=f+A^{-1}b$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Khi đó $g\prime=f\prime=Af+b=A(f+A^{-1}b)=Ag$.
+
+**Bước 3. Giải thích điều kiện sử dụng.**
+
+Vì vậy mọi nghiệm không thuần nhất nhận được từ nghiệm thuần nhất bằng phép tịnh tiến này.
+
+**Bước 4. Lập luận và tính toán.**
+
+Điều kiện khả nghịch bảo đảm $A^{-1}b$ xác định; chéo hóa dùng để tìm $g$.
 
 </LoiGiai>
 

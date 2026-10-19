@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Ma trận nghịch đảo — bài 32"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.4.32"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.4.32 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $A$, $B$ và $C$ là các ma trận $n \times n$, trong đó $A$ và $B$ khả nghịch. Chứng minh rằng
+
+**a.** Nếu $A$ giao hoán với $C$ thì $A^{-1}$ giao hoán với $C$.
+
+**b.** Nếu $A$ giao hoán với $B$ thì $A^{-1}$ giao hoán với $B^{-1}$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-4-32-1" moTa="Đề gốc Nicholson bài 2.4.32, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -28,6 +40,7 @@ Exercise 2.4.32  Let A, B, and C be n×n matrices, withA and B invertible. Show 
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -44,7 +57,25 @@ Khi tìm nghịch đảo bằng khử hàng, làm cùng phép biến đổi trê
 
 <LoiGiai>
 
-**a.** Từ $AC=CA$, nhân trái rồi phải với $A^{-1}$ cho $CA^{-1}=A^{-1}C$. **b.** Áp dụng (a) suy ra $A^{-1}B=BA^{-1}$. Lại áp dụng tính chất ấy cho $B$ và $A^{-1}$, được $B^{-1}A^{-1}=A^{-1}B^{-1}$.
+**Cách làm.** Theo định nghĩa, $B=A^{-1}$ khi $AB=BA=I$. Muốn khử $A$ ở bên trái thì nhân trái với $A^{-1}$; muốn khử ở bên phải thì nhân phải. Nghịch đảo tích đảo thứ tự: $(AB)^{-1}=B^{-1}A^{-1}$.
+
+Từ $AC=CA$, nhân trái với $A^{-1}$ cho $C=A^{-1}CA$. Tiếp tục nhân phải với $A^{-1}$ cho $CA^{-1}=A^{-1}C$. Không có bước đổi chỗ hai thừa số tùy ý; việc đổi chỗ được chứng minh từ chính giả thiết giao hoán.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Từ $AC=CA$, nhân trái rồi phải với $A^{-1}$ cho $CA^{-1}=A^{-1}C$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Áp dụng (a) suy ra $A^{-1}B=BA^{-1}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Lại áp dụng tính chất ấy cho $B$ và $A^{-1}$, được $B^{-1}A^{-1}=A^{-1}B^{-1}$.
 
 </LoiGiai>
 

@@ -3,8 +3,7 @@ a,b,c,d,e,p,q,k,s,t,u,x,y,z,theta=S.symbols('a b c d e p q k s t u x y z theta',
 aa=[[[2,-1],[3,2]],[[6,9],[8,12]],[[a*a,a*b],[a*b,b*b]],[[a+1,a],[a,a-1]],[[S.cos(theta),-S.sin(theta)],[S.sin(theta),S.cos(theta)]],[[2,0,-3],[1,2,5],[0,3,0]],[[1,2,3],[4,5,6],[7,8,9]],[[0,a,0],[b,c,d],[0,e,0]],[[1,b,c],[b,c,1],[c,1,b]],[[0,a,b],[a,0,c],[b,c,0]],[[0,1,-1,0],[3,0,0,2],[0,1,2,1],[5,0,0,7]],[[1,0,3,1],[2,2,6,0],[-1,0,-3,1],[4,1,12,0]],[[3,1,-5,2],[1,3,0,1],[1,0,5,2],[1,1,2,-1]],[[4,-1,3,-1],[3,1,0,2],[0,1,2,2],[1,2,-1,1]],[[1,-1,5,5],[3,1,2,4],[-1,-3,8,0],[1,1,2,-1]],[[0,0,0,a],[0,0,b,p],[0,c,q,k],[d,s,t,u]]]
 out=[]
 for i,A in enumerate(aa):
-    A=M(A);terms=[S.simplify((-1)**j*A[0,j]*A.minor_submatrix(0,j).det())for j in range(A.cols)]
-    out.append('**'+chr(97+i)+r'.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $'+r',\;'.join(S.latex(v)for v in terms)+r'$. Cộng và rút gọn được $$\det A='+S.latex(S.factor(S.trigsimp(A.det())))+r'.$$')
+    out.append('**'+chr(97+i)+'.**\n\n'+determinant_text(A))
 add('3.1.1','\n\n'.join(out))
 add('3.1.2',r'Khai triển theo hàng toàn 0: $\det A=\sum_j0\cdot C_{ij}=0$. Nếu là cột toàn 0, khai triển theo cột ấy cũng được tổng các số 0. Không cần tính các phần bù đại số.')
 add('3.1.3',r'Ô ở hàng cuối, cột cuối có chỉ số $(n,n)$. Dấu trong khai triển là $(-1)^{n+n}=(-1)^{2n}=1$, vì $2n$ luôn chẵn. Điều này đúng cho mọi cấp $n\ge1$.')
@@ -12,12 +11,65 @@ add('3.1.4',r'Khai triển $\det I_n$ theo hàng đầu: chỉ ô (1,1) khác 0,
 aa=[[[1,-1,2],[3,1,1],[2,-1,3]],[[-1,3,1],[2,5,3],[1,-2,1]],[[-1,-1,1,0],[2,1,1,3],[0,1,1,2],[1,3,-1,2]],[[2,3,1,1],[0,2,-1,3],[0,5,1,1],[1,1,2,5]]]
 out=[]
 for i,A in enumerate(aa):
-    A=M(A);l,v,sw=A.LUdecomposition();sgn=(-1)**len(sw);assert A.det()==sgn*S.prod(v[j,j]for j in range(A.rows))
-    out.append('**'+chr(97+i)+r'.** Khử bằng cộng bội hàng, đổi hàng khi pivot bằng 0. Thu ma trận tam giác trên $$U='+tex(v)+r'.$$ Số lần đổi hàng là $'+str(len(sw))+r'$, nên $\det A=(-1)^{'+str(len(sw))+r'}\prod_j u_{jj}='+S.latex(A.det())+r'$. Các phép cộng bội hàng không đổi định thức.')
+    out.append('**'+chr(97+i)+'.**\n\n'+elimination_text(A))
 add('3.1.5','\n\n'.join(out))
 add('3.1.6',r'**a.** Hàng 2 cộng hàng 3 bằng hai lần hàng 1. Các hàng phụ thuộc nên định thức bằng 0. **b.** Hàng 2 trừ hàng 1 bằng $(b,b,b)$, là $b/2$ lần hàng 3. Trừ bội hàng ấy làm xuất hiện hàng 0, nên định thức bằng 0, kể cả khi $b=0$.')
 base=M([[a,b,c],[p,q,s],[x,y,z]])
-add('3.1.7',r'Gọi ba hàng gốc là $r_1,r_2,r_3$, $D=-1$. Dùng tính tuyến tính theo từng hàng và định thức bằng 0 nếu hai hàng tỷ lệ. **a.** $\det[-r_3;3r_2+r_1;2r_2]=-2\det[r_3;r_1;r_2]=-2D=2$ (phép xoay vòng ba hàng có dấu dương). **b.** $\det[-2r_1;2r_2+r_3;3r_3]=-12D=12$.')
+add('3.1.7',r'''
+Gọi ba hàng của ma trận ban đầu là $r_1=(a,b,c)$, $r_2=(p,q,r)$, $r_3=(x,y,z)$.
+Ký hiệu $\det[r_1;r_2;r_3]$ là định thức của ma trận có ba hàng ấy. Đề cho giá trị $D=-1$.
+
+**a.**
+
+**Bước 1. Nhận ra ba hàng mới.**
+
+Các hàng lần lượt là $-r_3$, $3r_2+r_1$, $2r_2$. Ta cần tính $D_a=\det[-r_3;3r_2+r_1;2r_2]$.
+
+**Bước 2. Loại phần $3r_2$ ở hàng giữa.**
+
+Hàng 3 hiện là $2r_2$. Muốn trừ $3r_2$ khỏi hàng 2, chọn hệ số $3/2$, vì $(3/2)(2r_2)=3r_2$.
+Làm $R_2\leftarrow R_2-\frac32R_3$. Hàng 2 trở thành
+$$
+(3r_2+r_1)-\frac32(2r_2)=r_1.
+$$
+Đây là cộng bội **một hàng khác**, nên định thức giữ nguyên: $D_a=\det[-r_3;r_1;2r_2]$.
+
+**Bước 3. Rút hệ số của từng hàng.**
+
+Rút $-1$ từ hàng đầu, rút 2 từ hàng cuối:
+$$D_a=(-1)\cdot2\det[r_3;r_1;r_2]=-2\det[r_3;r_1;r_2].$$
+Mỗi hệ số chỉ được rút từ một hàng nên xuất hiện đúng một lần.
+
+**Bước 4. Đưa hàng về đúng thứ tự ban đầu.**
+
+Đổi hàng 1 và 2: $(r_3,r_1,r_2)\mapsto(r_1,r_3,r_2)$, định thức đổi dấu một lần.
+Đổi hàng 2 và 3: $(r_1,r_3,r_2)\mapsto(r_1,r_2,r_3)$, đổi dấu lần thứ hai.
+Hai dấu âm nhân nhau thành dương, nên $\det[r_3;r_1;r_2]=D$.
+
+**Bước 5. Thay dữ kiện và kết luận.**
+
+$$D_a=-2D=-2(-1)=\boxed{2}.$$
+
+**b.**
+
+**Bước 1. Nhận ra ba hàng mới.**
+
+Các hàng là $-2r_1$, $2r_2+r_3$, $3r_3$. Do đó $D_b=\det[-2r_1;2r_2+r_3;3r_3]$.
+
+**Bước 2. Loại phần $r_3$ trong hàng giữa.**
+
+Vì hàng cuối là $3r_3$, cần trừ $\frac13$ hàng cuối để trừ đúng $r_3$.
+Làm $R_2\leftarrow R_2-\frac13R_3$:
+$$ (2r_2+r_3)-\frac13(3r_3)=2r_2.$$
+Định thức giữ nguyên, nên $D_b=\det[-2r_1;2r_2;3r_3]$.
+
+**Bước 3. Rút hệ số và thay dữ kiện.**
+
+Ba hàng đã theo thứ tự $r_1,r_2,r_3$ nên không cần đổi hàng. Rút hệ số $-2$, 2, 3:
+$$D_b=(-2)\cdot2\cdot3\det[r_1;r_2;r_3]=-12D=-12(-1)=\boxed{12}.$$
+
+**Tự kiểm tra.** Ý a có hai lần đổi hàng nên không thêm dấu âm. Ý b không đổi hàng; dấu âm duy nhất trong hệ số đến từ $-2r_1$.
+''',h1='Gọi ba hàng gốc là r₁, r₂, r₃. Viết từng hàng mới dưới dạng tổ hợp của chúng.',h2='Ý a: làm R₂ ← R₂ − (3/2)R₃. Ý b: làm R₂ ← R₂ − (1/3)R₃. Cả hai phép đều giữ định thức.',error='Rút hệ số của từng hàng rồi nhân các hệ số, không cộng chúng. Ở ý a, hoán vị (3,1,2) cần hai lần đổi chỗ nên có dấu dương.')
 add('3.1.8',r'Viết ma trận mới là $CB$ với $B$ chứa ba hàng gốc. **a.** $C=\begin{bmatrix}0&1&1\\1&0&1\\1&1&0\end{bmatrix}$ có định thức 2. Do đó $\det(CB)=2\det B$. Có thể khai triển tuyến tính từng hàng để không dùng định lý tích. **b.** $C=\begin{bmatrix}2&1&0\\0&2&1\\1&0&2\end{bmatrix}$ có định thức $8+1=9$, nên $\det(CB)=9\det B$.')
 add('3.1.9',r'**a. Sai:** $A=B=I_2$, $\det(A+B)=4\ne2$. **b. Sai:** $\operatorname{diag}(1,0)$ suy biến nhưng hai hàng khác nhau. **c. Đúng:** với $A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$, cả hai định thức đều $ad-bc$. **d. Sai:** $A=2I_2$ có định thức 4, RREF là $I_2$ có định thức 1. **e. Đúng:** nhân cả hai hàng với 7 nhân định thức với $7^2=49$. **f. Sai:** lấy $A=I$ thì $1\ne-1$. **g. Sai trong cấp chẵn:** $A=I_2$ cho 1 thay vì -1; công thức đúng là $\det(-A)=(-1)^n\det A$. **h. Sai:** $I_2$ và $\operatorname{diag}(2,1/2)$ có cùng định thức 1 nhưng khác nhau.')
 aa=[[[1,-1,2,0,-2],[0,1,0,4,1],[1,1,5,0,0],[0,0,0,3,-1],[0,0,0,1,1]],[[1,2,0,3,0],[-1,3,1,4,0],[0,0,2,1,1],[0,0,-1,0,2],[0,0,3,0,1]]]
@@ -30,7 +82,7 @@ add('3.1.14','\n\n'.join('**'+chr(97+i)+r'.** Cộng hai hàng dưới vào hàn
 add('3.1.15',r'**a.** Hệ số của $y$ là phần bù đại số $C_{23}=-\det\begin{bmatrix}5&-1\\-5&4\end{bmatrix}=-(20-5)=-15$, nên $b=-15$. **b.** Hệ số của $z$ là $C_{32}=-\det\begin{bmatrix}2&-1\\1&3\end{bmatrix}=-(6+1)=-7$, nên $c=-7$. Phần bù không chứa biến ở ô đang khai triển.')
 aa=[[[0,x,y],[y,0,x],[x,y,0]],[[1,x,x],[-x,-2,x],[-x,-x,-3]],[[1,x,x*x,x**3],[x,x*x,x**3,1],[x*x,x**3,1,x],[x**3,1,x,x*x]],[[x,y,0,0],[0,x,y,0],[0,0,x,y],[y,0,0,x]]]
 dets=[S.factor(M(A).det())for A in aa]
-add('3.1.16',r'Tính định thức rồi phân tích nhân tử: '+ '\n\n'+cases([S.latex(v)for v in dets])+r'Vì $x,y$ thực: **a.** $x^3+y^3=0\Leftrightarrow y=-x$. **b.** $6-4x^2=0\Leftrightarrow x=\pm\sqrt6/2$. **c.** Các nghiệm thực là $x=\pm1$. **d.** $x^4-y^4=0\Leftrightarrow y=x$ hoặc $y=-x$; các thừa số tổng bình phương không thêm nghiệm ngoài gốc tọa độ đã có.')
+add('3.1.16','\n\n'.join('**'+chr(97+i)+'.**\n\n'+determinant_text(A) for i,A in enumerate(aa))+r' Tiếp theo giải điều kiện định thức bằng 0: '+ '\n\n'+cases([S.latex(v)for v in dets])+r'Vì $x,y$ thực: **a.** $x^3+y^3=0\Leftrightarrow y=-x$. **b.** $6-4x^2=0\Leftrightarrow x=\pm\sqrt6/2$. **c.** Các nghiệm thực là $x=\pm1$. **d.** $x^4-y^4=0\Leftrightarrow y=x$ hoặc $y=-x$; các thừa số tổng bình phương không thêm nghiệm ngoài gốc tọa độ đã có.')
 add('3.1.17',r'Trừ hàng 2 khỏi hàng 3 và 4: hai hàng cuối trở thành $(0,x,-x,0)$, $(0,x,0,-x)$. Rút $x$ từ mỗi hàng được nhân tử $x^2$. Định thức còn lại, khai triển theo cột đầu rồi tính hai định thức cấp 3, bằng $-3$. Vậy định thức ban đầu bằng $-3x^2$. Lập luận không chia cho $x$, nên đúng cả $x=0$.')
 add('3.1.18',r'Thực hiện các phép cột theo thứ tự từ phải sang trái: $C_4\leftarrow C_4-xC_3$, $C_3\leftarrow C_3-xC_2$, $C_2\leftarrow C_2-xC_1$. Hàng đầu trở thành $(1,0,0,0)$; ba hàng dưới trong ba cột cuối tạo ma trận tam giác dưới với đường chéo $1-ax,1-bx,1-cx$. Khai triển hàng đầu rồi lấy tích đường chéo cho $(1-ax)(1-bx)(1-cx)$.')
 add('3.1.19',r'Lập $$xI-C=\begin{bmatrix}x&-1&0&0\\0&x&-1&0\\0&0&x&-1\\a&b&c&x+d\end{bmatrix}.$$ Khai triển theo hàng cuối: các phần bù lần lượt cho $a$, $bx$, $cx^2$, $(x+d)x^3$. Cộng được $a+bx+cx^2+dx^3+x^4=p(x)$. Dấu âm trên siêu đường chéo đã được tính cùng dấu phần bù.')
@@ -46,6 +98,9 @@ for i,A in enumerate(aa):
     cp=A.charpoly();poly=cp.as_expr().subs(cp.gen,x);val=S.zeros(A.rows)
     for (degree,),coeff in S.Poly(poly,x).terms():val+=coeff*A**degree
     assert val==S.zeros(A.rows)
-    out.append('**a.'+str(i+1)+r'.** $c_A(x)='+S.latex(poly)+r'$. Thay $x$ bởi $A$ (hệ số hằng nhân với $I$), tính các lũy thừa rồi cộng được $c_A(A)='+tex(val)+r'$, xác nhận định lý.')
+    powers='\n\n'.join('$$A^{'+str(j)+'}='+tex(A**j)+r'.$$' for j in range(2,A.rows+1))
+    terms='\n\n'.join('$$('+S.latex(coeff)+')A^{'+str(degree)+'}='+tex(coeff*A**degree)+r'.$$' for (degree,),coeff in S.Poly(poly,x).terms())
+    out.append('**a.'+str(i+1)+r'.** Lập $c_A(x)=\det(xI-A)$. '+determinant_text(x*S.eye(A.rows)-A)+r' Do đó $c_A(x)='+S.latex(poly)+r'$. Tính từng lũy thừa cần dùng: '+powers+r' Nhân mỗi lũy thừa với hệ số tương ứng; hạng hằng nhân với $I$: '+terms+r' Cộng các ô cùng vị trí được $$c_A(A)='+tex(val)+r'.$$ Điều này xác nhận định lý cho ma trận đã cho.')
+
 add('3.1.27','\n\n'.join(out)+r' **b.** Với $A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$, $c_A(x)=x^2-(a+d)x+(ad-bc)$. Nhân $A^2$ cho các ô $a^2+bc$, $b(a+d)$, $c(a+d)$, $d^2+bc$. Trừ $(a+d)A$ rồi cộng $(ad-bc)I$, cả bốn ô đều bằng 0. Vì vậy $c_A(A)=0$.')
 save()

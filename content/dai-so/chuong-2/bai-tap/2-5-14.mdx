@@ -5,11 +5,31 @@ do_kho: vua
 tieu_de: "Ma trận sơ cấp — bài 14"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.5.14"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.5.14 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Trong quá trình tìm nghịch đảo của $A$, ma trận ghép
+
+$$
+\left[ \begin{array}{cc} A & I \end{array} \right]
+$$
+
+ được biến đổi thành
+
+$$
+\left[ \begin{array}{cc} P & Q \end{array} \right]
+$$
+
+ bằng các phép biến đổi hàng. Chứng minh rằng $P = QA$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-5-14-1" moTa="Đề gốc Nicholson bài 2.5.14, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -23,6 +43,7 @@ P = QA.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -40,7 +61,25 @@ Một phép hàng là nhân trái; một phép cột là nhân phải. Ghi thứ
 
 <LoiGiai>
 
-Gọi $U$ là tích các ma trận sơ cấp dùng trong quá trình. Toàn bộ ma trận ghép biến thành $[UA\mid U]$. So sánh với $[P\mid Q]$ được $P=UA$, $Q=U$; vì vậy $P=QA$. Phải thực hiện cùng phép hàng trên cả hai khối.
+**Cách làm.** Ma trận sơ cấp $E$ nhận từ $I$ bằng một phép hàng. $EA$ làm phép đó lên các hàng của $A$. Trong chuỗi $E_k\cdots E_1A$, phép $E_1$ được thực hiện trước.
+
+Một phép hàng tác động cùng lúc lên mọi cột của ma trận ghép. Vì vậy, nếu toàn bộ chuỗi là nhân trái với $U$, khối trái thành $UA$ và khối phải từ $I$ thành $UI=U$. Hai khối không được dùng hai chuỗi phép hàng khác nhau.
+
+**Bước 1. Thiết lập biểu thức.**
+
+Gọi $U$ là tích các ma trận sơ cấp dùng trong quá trình.
+
+**Bước 2. Lập luận và tính toán.**
+
+Toàn bộ ma trận ghép biến thành $[UA\mid U]$.
+
+**Bước 3. Lập luận và tính toán.**
+
+So sánh với $[P\mid Q]$ được $P=UA$, $Q=U$; vì vậy $P=QA$.
+
+**Bước 4. Lập luận và tính toán.**
+
+Phải thực hiện cùng phép hàng trên cả hai khối.
 
 </LoiGiai>
 

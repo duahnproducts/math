@@ -5,11 +5,27 @@ do_kho: vua
 tieu_de: "Định thức và ma trận nghịch đảo — bài 26"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.2.26"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.26 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+**a.** Chứng minh rằng
+
+$$
+A = \left[ \begin{array}{rrr} a & p & q \\ 0 & b & r \\ 0 & 0 & c \end{array} \right]
+$$
+
+ có nghịch đảo khi và chỉ khi $abc \neq 0$, rồi tìm $A^{-1}$ trong trường hợp đó.
+
+**b.** Chứng minh rằng nếu một ma trận tam giác trên khả nghịch thì nghịch đảo của nó cũng là ma trận tam giác trên.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-2-26-1" moTa="Đề gốc Nicholson bài 3.2.26, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -28,6 +44,7 @@ Exercise 3.2.26
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -44,13 +61,39 @@ Dùng định thức của tích và công thức nghịch đảo qua adjugate k
 
 <LoiGiai>
 
-**a.** Ma trận tam giác có $\det A=abc$, nên khả nghịch đúng khi $abc\ne0$. Giải $AX=I$ bằng thế ngược được
+**Cách làm.** Dùng $\det(AB)=\det A\det B$, $\det A^T=\det A$, $\det(cA)=c^n\det A$ ở cấp $n$. Khi $\det A\ne0$, $A^{-1}=\operatorname{adj}A/\det A$; adjugate là bảng phần bù đã chuyển vị.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Ma trận tam giác có $\det A=abc$, nên khả nghịch đúng khi $abc\ne0$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Giải $AX=I$ bằng thế ngược được
+
+
 
 $$
 A^{-1}=\begin{bmatrix}\frac{1}{a}&- \frac{p}{a b}&\frac{- b q + p r}{a b c}\\0&\frac{1}{b}&- \frac{r}{b c}\\0&0&\frac{1}{c}\end{bmatrix}.
 $$
 
- **b.** Cột $j$ của $A^{-1}$ là nghiệm $Ax=e_j$. Thế ngược từ hàng $n$ về hàng $j+1$ cho các thành phần $x_n,\ldots,x_{j+1}$ đều bằng 0. Do đó các ô dưới đường chéo của nghịch đảo bằng 0; nghịch đảo tam giác trên.
+
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Cột $j$ của $A^{-1}$ là nghiệm $Ax=e_j$.
+
+**Bước 2. Thay vào để tính và kiểm tra.**
+
+Thế ngược từ hàng $n$ về hàng $j+1$ cho các thành phần $x_n,\ldots,x_{j+1}$ đều bằng 0.
+
+**Bước 3. Rút ra kết luận.**
+
+Do đó các ô dưới đường chéo của nghịch đảo bằng 0; nghịch đảo tam giác trên.
 
 </LoiGiai>
 

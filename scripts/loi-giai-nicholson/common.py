@@ -1,6 +1,8 @@
 from pathlib import Path
 import json,re
 import sympy as S
+from chi_tiet import inverse_text, product_text, determinant_text, elimination_text, cofactor_text, eigen_text, cramer_text, reduction_trace, step, lu_text, triangular_text, steady_text, evolution_text
+from trinh_bay import present
 
 ROOT=Path(__file__).resolve().parents[2]
 DB=ROOT/'scripts/data/loi-giai-nicholson.json'
@@ -33,34 +35,14 @@ def add(number,solution,h1=None,h2=None,error=None):
     section='.'.join(number.split('.')[:2]) if number.count('.')==2 else 'supplement'
     defaults=HINTS.get(section,('Đọc rõ giả thiết và xác định mệnh đề hoặc đại lượng cần tìm.','Với đẳng thức tổng quát, khai triển có giữ thứ tự; với mệnh đề sai, tìm một phản ví dụ thỏa giả thiết.','Kiểm tra các trường hợp suy biến và dữ kiện chưa được định nghĩa trước khi chia hoặc khử.'))
     h1,h2,error=h1 or defaults[0],h2 or defaults[1],error or defaults[2]
-    DATA[number]={'loi_giai':solution.replace(r'\n\n','\n\n'),'goi_y_1':h1,'goi_y_2':h2,'loi_hay_mac':error}
+    DATA[number]={'loi_giai':present(number,solution),'goi_y_1':h1,'goi_y_2':h2,'loi_hay_mac':error}
 def save():
     DB.parent.mkdir(exist_ok=True)
     DB.write_text(json.dumps(DATA,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print('Solutions:',len(DATA))
 
 def inverse_case(a):
-    a=M(a);det=S.factor(a.det())
-    if det==0:
-        v=a.nullspace()[0]
-        assert a*v==S.zeros(a.rows,1)
-        return r'$\det A=0$. Cụ thể $v='+tex(v)+r'\ne0$ nhưng $Av=0$, nên $A$ không có nghịch đảo.'
-    inv=S.simplify(a.inv());assert S.simplify(a*inv)==S.eye(a.rows)and S.simplify(inv*a)==S.eye(a.rows)
-    if any(v.free_symbols for v in a):return r'$\det A='+S.latex(det)+r'$. Khi định thức khác 0, dùng $A^{-1}=\operatorname{adj}(A)/\det A$ được $$A^{-1}='+tex(inv)+r'.$$ Nhân hai chiều cho $AA^{-1}=A^{-1}A=I$, xác nhận công thức và điều kiện tồn tại.'
-    aug=a.row_join(S.eye(a.rows));steps=[]
-    for j in range(a.rows):
-        pivot=next(i for i in range(j,a.rows)if aug[i,j]!=0)
-        if pivot!=j:
-            aug.row_swap(pivot,j);steps.append(f'$R_{j+1}\\leftrightarrow R_{pivot+1}$')
-        scale=aug[j,j]
-        if scale!=1:
-            aug.row_op(j,lambda v,k:v/scale);steps.append(f'$R_{j+1}\\leftarrow({S.latex(1/scale)})R_{j+1}$')
-        for i in range(a.rows):
-            if i==j or aug[i,j]==0:continue
-            coefficient=-aug[i,j]
-            aug.row_op(i,lambda v,k:v+coefficient*aug[j,k]);steps.append(f'$R_{i+1}\\leftarrow R_{i+1}+({S.latex(coefficient)})R_{j+1}$')
-    assert aug==S.eye(a.rows).row_join(inv)
-    return r'Lập $[A\mid I]$, thực hiện lần lượt: '+ '; '.join(steps)+r'. Khối trái trở thành $I$, nên khối phải là $$A^{-1}='+tex(inv)+r'.$$ Kiểm tra bằng nhân hai chiều: $AA^{-1}=A^{-1}A=I$.'
+    return inverse_text(a)
 
 def inverse_cases(matrices):
     return '\n\n'.join('**'+chr(97+i)+'.** '+inverse_case(A)for i,A in enumerate(matrices))
@@ -89,4 +71,6 @@ def row_reduce(a):
 
 def reduction_text(a):
     r,u,ops,es=row_reduce(a)
-    return ('Các phép hàng theo thứ tự: '+ '; '.join('$'+v+'$'for v in ops)+r'. Nếu $E_j$ là ma trận nhận từ $I$ bằng phép hàng thứ $j$ vừa ghi, thì $U=E_k\cdots E_1$. Tính được $$U='+tex(u)+r',\qquad UA=R='+tex(r)+r'.$$ Mỗi $E_j$ khả nghịch nên $U$ khả nghịch; nhân $UA$ xác nhận đúng RREF.' )
+    reduced,trace=reduction_trace(a)
+    assert reduced==r
+    return (r'Bắt đầu từ $A='+tex(a)+r'$. Mục tiêu là đưa mỗi trụ về 1 rồi khử mọi ô còn lại trong cột trụ.\n\n'+trace+r'Với mỗi phép hàng vừa ghi, làm cùng phép lên $I$ để có $E_j$. Phép thực hiện sau nhân ở bên trái: $U=E_k\cdots E_1$. Tính được $$U='+tex(u)+r',\qquad UA=R='+tex(r)+r'.$$ Mỗi $E_j$ khả nghịch nên $U$ khả nghịch. Kết quả $R$ có các cột trụ là cột đơn vị và các hàng 0 nằm dưới, nên đúng là RREF.').replace(r'\n\n','\n\n')

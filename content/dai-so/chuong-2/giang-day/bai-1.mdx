@@ -152,16 +152,90 @@ Chuyển vị là lật qua **đường chéo chính**: hàng 1 thành cột 1, 
 Với $A$ và $B$ trong ví dụ mẫu, tính $3A - 2B$ và $A^T$.
 
 <GoiYNho>Đáp số để kiểm tra: ô góc trên trái của $3A - 2B$ bằng $6 - 2 = 4$. Luyện thêm: <XemMuc bai-tap="2.1.2" chu="Bài 2.1.2" /> trong sách.</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Dùng $A=\begin{bmatrix}2&-1\\0&3\end{bmatrix}$, $B=\begin{bmatrix}1&4\\-2&5\end{bmatrix}$ trong ví dụ; nhân vô hướng theo từng ô.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+$$
+3A-2B=\begin{bmatrix}6&-3\\0&9\end{bmatrix}-\begin{bmatrix}2&8\\-4&10\end{bmatrix}=\begin{bmatrix}4&-11\\4&-1\end{bmatrix}.
+$$
+
+ Chuyển hàng thành cột:
+
+$$
+A^T=\begin{bmatrix}2&0\\-1&3\end{bmatrix}.
+$$
+
+**Bước 3. Kiểm tra và kết luận.**
+
+Ô $(2,1)$ của hiệu bằng $0-(-4)=4$. Chuyển vị lần nữa trả lại $A$.
+
+**Bước 4. Cách tự làm lại.**
+
+Cộng/trừ các ô cùng vị trí; chuyển vị đổi vị trí ô, không đổi dấu tùy ý.
+
+</LoiGiai>
 </BaiLuyen>
 
 <BaiLuyen do_kho="vua" so="1.2">
 Cho $A = \begin{bmatrix} 1 & 2 & 0 \\ -1 & 3 & 4 \end{bmatrix}$. Tính $A + A^T$ nếu được. Nếu không được, giải thích vì sao, rồi kiểm tra rằng $A^T + B$ có nghĩa khi $B$ có cỡ bao nhiêu.
 
 <GoiYNho>So cỡ của $A$ và $A^T$.</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Kiểm kích thước trước khi cộng.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+$A$ cỡ $2\times3$ nên $A^T$ cỡ $3\times2$. Vì khác kích thước, $A+A^T$ không xác định. Với $A^T+B$, ma trận $B$ phải cùng cỡ $3\times2$.
+
+**Bước 3. Kiểm tra và kết luận.**
+
+Cả hai ma trận đầu có 6 ô nhưng số hàng và cột khác nhau, nên không có cách ghép ô tương ứng để cộng.
+
+**Bước 4. Cách tự làm lại.**
+
+Phép cộng đòi cùng số hàng và cùng số cột, không chỉ cùng số ô.
+
+</LoiGiai>
 </BaiLuyen>
 
 <BaiLuyen do_kho="kho" so="1.3">
 Chứng minh rằng với mọi ma trận vuông $A$, ma trận $A + A^T$ luôn đối xứng. Thử trước với một ma trận $2 \times 2$ cụ thể, rồi mới viết lập luận chung.
 
 <GoiYNho tieuDe="Bạn sẽ cần">Tính $(A + A^T)^T$ bằng hai quy tắc $(A + B)^T = A^T + B^T$ và $(A^T)^T = A$. Bài này chính là <XemMuc bai-tap="2.1.17" chu="Bài 2.1.17" /> trong sách; làm tiếp <XemMuc bai-tap="2.1.20" chu="Bài 2.1.20" /> (phản đối xứng).</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Chứng minh đối xứng bằng cách tính chuyển vị của tổng.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+Thử $A=\begin{bmatrix}1&2\\3&4\end{bmatrix}$ cho $A+A^T=\begin{bmatrix}2&5\\5&8\end{bmatrix}$. Với $A$ vuông bất kỳ,
+
+$$
+(A+A^T)^T=A^T+(A^T)^T=A^T+A=A+A^T.
+$$
+
+ Theo định nghĩa, tổng đối xứng.
+
+**Bước 3. Kiểm tra và kết luận.**
+
+Giả thiết vuông bảo đảm phép cộng xác định. Ví dụ chỉ minh họa; đẳng thức tổng quát mới chứng minh mọi trường hợp.
+
+**Bước 4. Cách tự làm lại.**
+
+Để chứng minh một biểu thức đối xứng, chuyển vị toàn biểu thức rồi đưa về chính nó.
+
+</LoiGiai>
 </BaiLuyen>

@@ -5,11 +5,29 @@ do_kho: vua
 tieu_de: "Ứng dụng: mô hình kinh tế vào–ra — bài 6"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.8.6"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.8.6 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho
+
+$$
+W = \left[ \begin{array}{ccccc} 1 & 1 & 1 & \cdots & 1 \end{array} \right]
+$$
+
+. Cho $E$ và $F$ là các ma trận $n \times n$ có các phần tử không âm.
+
+**a.** Chứng minh rằng $E$ là ma trận ngẫu nhiên khi và chỉ khi $WE = W$.
+
+**b.** Dùng ý (a) để suy ra rằng nếu cả $E$ và $F$ là các ma trận ngẫu nhiên thì $EF$ cũng là ma trận ngẫu nhiên.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-8-6-1" moTa="Đề gốc Nicholson bài 2.8.6, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -29,6 +47,7 @@ and F denote n×n matrices with nonnegative entries.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -45,7 +64,33 @@ Tổng cột của ma trận stochastic bằng 1. Để tìm giá tương đối
 
 <LoiGiai>
 
-**a.** Ô thứ $j$ của hàng $WE$ bằng $\sum_i e_{ij}$. Vì $E\ge0$ đã được giả thiết, điều kiện $WE=W$ tương đương mọi tổng cột bằng 1, tức $E$ stochastic. **b.** $EF\ge0$ vì mỗi ô là tổng các tích không âm. Đồng thời $W(EF)=(WE)F=WF=W$. Theo (a), $EF$ stochastic.
+**Cách làm.** Cơ cấu giá cân bằng thỏa $Ep=p$, tức $(I-E)p=0$. Với mô hình mở, điều kiện cần kiểm tra là $I-E$ khả nghịch và $(I-E)^{-1}$ có các ô không âm.
+
+Đẳng thức về tổng cột chỉ kiểm tra tổng bằng 1. Định nghĩa stochastic còn yêu cầu mọi ô không âm; với tích $EF$, tính không âm phải được kiểm tra riêng trước khi dùng đẳng thức $W(EF)=W$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Ô thứ $j$ của hàng $WE$ bằng $\sum_i e_{ij}$.
+
+**Bước 2. Giải thích điều kiện sử dụng.**
+
+Vì $E\ge0$ đã được giả thiết, điều kiện $WE=W$ tương đương mọi tổng cột bằng 1, tức $E$ stochastic.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$EF\ge0$ vì mỗi ô là tổng các tích không âm.
+
+**Bước 2. Lập luận và tính toán.**
+
+Đồng thời $W(EF)=(WE)F=WF=W$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Theo (a), $EF$ stochastic.
 
 </LoiGiai>
 

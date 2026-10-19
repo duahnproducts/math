@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Phép biến đổi tuyến tính — bài 25"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.6.25"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.6.25 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $\mathbb{R}^n \xrightarrow{T} \mathbb{R}^m \xrightarrow{S} \mathbb{R}^k \xrightarrow{R} \mathbb{R}^k$ là các phép biến đổi tuyến tính. Chứng minh rằng $R \circ (S \circ T) = (R \circ S) \circ T$ bằng cách kiểm tra trực tiếp $[R \circ (S \circ T)](\mathbf{x}) = [(R \circ S) \circ T)](\mathbf{x})$ đúng với mỗi vector $\mathbf{x}$ thuộc $\mathbb{R}^n$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-6-25-1" moTa="Đề gốc Nicholson bài 2.6.25, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -23,6 +31,7 @@ that [R◦(S◦T)](x) = [(R◦S)◦T)](x) holds for each vec-tor x in Rn.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -40,7 +49,19 @@ Cột thứ j của ma trận ánh xạ là ảnh của vector đơn vị thứ 
 
 <LoiGiai>
 
-Với mọi $x$, $[R\circ(S\circ T)](x)=R(S(T(x)))=[(R\circ S)\circ T](x)$. Hai ánh xạ có cùng giá trị trên mọi vector nên bằng nhau. Đây là tính kết hợp của hợp thành, không phải tính giao hoán; không đổi thứ tự $R,S,T$.
+**Cách làm.** Tuyến tính nghĩa là $T(au+bv)=aT(u)+bT(v)$. Với vector cột, ma trận của $T$ là $[T(e_1)\ \cdots\ T(e_n)]$; ma trận của $S\circ T$ là $[S][T]$.
+
+**Bước 1. Lập luận và tính toán.**
+
+Với mọi $x$, $[R\circ(S\circ T)](x)=R(S(T(x)))=[(R\circ S)\circ T](x)$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Hai ánh xạ có cùng giá trị trên mọi vector nên bằng nhau.
+
+**Bước 3. Lập luận và tính toán.**
+
+Đây là tính kết hợp của hợp thành, không phải tính giao hoán; không đổi thứ tự $R,S,T$.
 
 </LoiGiai>
 

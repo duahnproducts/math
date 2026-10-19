@@ -19,7 +19,8 @@ add('2.5.7','\n\n'.join('**'+chr(97+i)+'.** '+v for i,v in enumerate(ans)))
 ans=[]
 for a in [[[1,1],[2,1]],[[2,3],[1,2]],[[1,0,2],[0,1,1],[2,1,6]],[[1,0,-3],[0,1,4],[-2,2,15]]]:
     A=M(a);r,u,ops,es=row_reduce(A);assert r==S.eye(A.rows)
-    ans.append('Dùng các phép hàng '+ '; '.join('$'+v+'$'for v in ops)+r' đưa $A$ về $I$. Nếu $E_j$ tương ứng phép thứ $j$, thì $$A=E_1^{-1}\cdots E_k^{-1}.$$ Nghịch đảo đổi dấu hệ số cộng hàng, đảo hệ số nhân hàng, giữ nguyên phép đổi hàng. Đây là phân tích yêu cầu; nhân các thừa số theo thứ tự vừa ghi sẽ khôi phục $A$.')
+    ans.append(reduction_text(A)+r' Vì $R=I$, ta có $E_k\cdots E_1A=I$. Nhân các nghịch đảo theo thứ tự ngược để giải ra $A$: $$A=E_1^{-1}\cdots E_k^{-1}.$$ Các ma trận cụ thể theo đúng thứ tự tích này là $$'+''.join(tex(e.inv()) for e in es)+r'.$$ Nhân lại các ma trận trên cho đúng $A='+tex(A)+r'$.')
+
 add('2.5.8','\n\n'.join('**'+chr(97+i)+'.** '+v for i,v in enumerate(ans)))
 add('2.5.9',r'**a.** Loại I là ma trận đổi hai hàng của $I$, chuyển vị vẫn chính nó. Loại II là ma trận chéo chỉ thay một ô đường chéo bởi $k\ne0$, cũng bằng chuyển vị. Loại III có dạng $E=I+ke_ie_j^T$ với $i\ne j$; chuyển vị là $I+ke_je_i^T$, vẫn loại III, đổi vai hai chỉ số. **b.** Hai lập luận đầu cho ngay $E^T=E$ ở loại I và II.')
 add('2.5.10',r'Khử hàng $A$ về RREF $R$, được $E_k\cdots E_1A=R$. Đặt $U=(E_k\cdots E_1)^{-1}$. Vì mọi $E_j$ khả nghịch nên $U$ khả nghịch, và nhân trái cho $A=UR$. Lập luận áp dụng cả ma trận chữ nhật và ma trận suy biến.')

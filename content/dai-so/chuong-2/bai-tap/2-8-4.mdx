@@ -5,11 +5,25 @@ do_kho: vua
 tieu_de: "Ứng dụng: mô hình kinh tế vào–ra — bài 4"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.8.4"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.8.4 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh Định lý 2.8.1 cho ma trận ngẫu nhiên $2 \times 2$, ký hiệu là $E$, bằng cách trước hết viết nó dưới dạng
+
+$$
+E = \left[ \begin{array}{cc} a & b \\ 1 - a & 1 - b \end{array} \right]
+$$
+
+, trong đó $0 \leq a \leq 1$ và $0 \leq b \leq 1$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-8-4-1" moTa="Đề gốc Nicholson bài 2.8.4, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -23,6 +37,7 @@ Exercise  2.8.4   Prove Theorem  2.8.1  for a 2 × 2stochastic matrix E by ﬁrs
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -40,7 +55,29 @@ Tổng cột của ma trận stochastic bằng 1. Để tìm giá tương đối
 
 <LoiGiai>
 
-Với $E=\begin{bmatrix}a&b\\1-a&1-b\end{bmatrix}$, hệ $Ep=p$ rút còn $(1-a)p_1=bp_2$. Nếu $b+1-a>0$, chọn $p=(b,1-a)^T$; vector không âm, khác 0 và $Ep=p$. Chuẩn hóa bằng cách chia cho $b+1-a$. Nếu $b=0,a=1$, thì $E=I$ và mọi vector đều là vector cân bằng, chẳng hạn $(1,1)^T$. Như vậy luôn có vector cân bằng không âm khác 0, đúng định lý.
+**Cách làm.** Cơ cấu giá cân bằng thỏa $Ep=p$, tức $(I-E)p=0$. Với mô hình mở, điều kiện cần kiểm tra là $I-E$ khả nghịch và $(I-E)^{-1}$ có các ô không âm.
+
+Phương trình thứ hai là đối của phương trình thứ nhất, nên chỉ cần giải $(1-a)p_1=bp_2$. Phải tách trường hợp cả $b$ và $1-a$ bằng 0 trước khi chuẩn hóa; nếu không sẽ chia cho 0.
+
+**Bước 1. Lập luận và tính toán.**
+
+Với $E=\begin{bmatrix}a&b\\1-a&1-b\end{bmatrix}$, hệ $Ep=p$ rút còn $(1-a)p_1=bp_2$.
+
+**Bước 2. Xét giả thiết.**
+
+Nếu $b+1-a>0$, chọn $p=(b,1-a)^T$; vector không âm, khác 0 và $Ep=p$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Chuẩn hóa bằng cách chia cho $b+1-a$.
+
+**Bước 4. Xét giả thiết.**
+
+Nếu $b=0,a=1$, thì $E=I$ và mọi vector đều là vector cân bằng, chẳng hạn $(1,1)^T$.
+
+**Bước 5. Lập luận và tính toán.**
+
+Như vậy luôn có vector cân bằng không âm khác 0, đúng định lý.
 
 </LoiGiai>
 

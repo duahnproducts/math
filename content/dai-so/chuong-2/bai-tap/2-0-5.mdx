@@ -5,11 +5,21 @@ do_kho: vua
 tieu_de: "Bài bổ sung 2.5"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.5"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.5 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+**a.** Cho $A$ là ma trận $3 \times 3$ có mọi phần tử trên đường chéo chính và phía dưới đường chéo chính đều bằng 0. Chứng minh rằng $A^{3} = 0$.
+
+**b.** Khái quát sang trường hợp $n \times n$ và chứng minh kết quả.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-0-5-1" moTa="Đề gốc Nicholson bài 2.5, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -25,6 +35,7 @@ Exercise 2.5
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -42,7 +53,25 @@ Với đẳng thức tổng quát, khai triển có giữ thứ tự; với mệ
 
 <LoiGiai>
 
-**a.** Ma trận có dạng $A=\begin{bmatrix}0&a&b\\0&0&c\\0&0&0\end{bmatrix}$, nên $A^2=\begin{bmatrix}0&0&ac\\0&0&0\\0&0&0\end{bmatrix}$ và $A^3=0$. **b.** Với ma trận tam giác trên nghiêm ngặt cấp $n$, một số hạng trong $(A^k)_{ij}$ chỉ khác 0 khi có chuỗi chỉ số $i<i_1<\cdots<i_{k-1}<j$, suy ra $j-i\ge k$. Khi $k=n$ không cặp $i,j$ nào thỏa, vì $j-i\le n-1$. Do đó $A^n=0$.
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Ma trận có dạng $A=\begin{bmatrix}0&a&b\\0&0&c\\0&0&0\end{bmatrix}$, nên $A^2=\begin{bmatrix}0&0&ac\\0&0&0\\0&0&0\end{bmatrix}$ và $A^3=0$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Với ma trận tam giác trên nghiêm ngặt cấp $n$, một số hạng trong $(A^k)_{ij}$ chỉ khác 0 khi có chuỗi chỉ số $i<i_1<\cdots<i_{k-1}<j$, suy ra $j-i\ge k$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Khi $k=n$ không cặp $i,j$ nào thỏa, vì $j-i\le n-1$.
+
+**Bước 3. Rút ra kết luận.**
+
+Do đó $A^n=0$.
 
 </LoiGiai>
 

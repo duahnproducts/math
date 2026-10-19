@@ -145,16 +145,88 @@ $T(x, y) = (x + 1,\ y)$ dời mọi thứ sang phải 1 bước. Đường thẳ
 Viết ma trận của phép quay $180°$. Nó đưa điểm $(3, -2)$ tới đâu? Kiểm tra bằng hình vẽ.
 
 <GoiYNho>$\cos 180° = -1$, $\sin 180° = 0$.</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Quay nửa vòng đưa mỗi vector sang vector đối.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+$\cos\pi=-1$, $\sin\pi=0$, nên
+
+$$
+R_\pi=\begin{bmatrix}-1&0\\0&-1\end{bmatrix}.
+$$
+
+ Nhân với $(3,-2)^T$ cho $(-3,2)^T$.
+
+**Bước 3. Kiểm tra và kết luận.**
+
+Trung điểm của $(3,-2)$ và $(-3,2)$ là gốc; hai điểm cách gốc cùng khoảng cách $\sqrt{13}$. Đó là kiểm tra hình học của phép quay 180°.
+
+**Bước 4. Cách tự làm lại.**
+
+Dùng ảnh của hai vector đơn vị hoặc công thức sin/cos để dựng ma trận quay.
+
+</LoiGiai>
 </BaiLuyen>
 
 <BaiLuyen do_kho="vua" so="6.2">
 $T(x, y) = (2x - y,\ x + 3y)$ có tuyến tính không? Nếu có, tìm ma trận của nó bằng cách tính $T(\mathbf{e}_1)$ và $T(\mathbf{e}_2)$. Còn $S(x, y) = (xy,\ y)$ thì sao?
 
 <GoiYNho>Với $S$, thử $S(2\mathbf{x})$ và $2S(\mathbf{x})$ với $\mathbf{x} = (1, 1)$.</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Tìm ảnh hai vector đơn vị cho $T$; tìm một phản ví dụ cho $S$ nếu nghi ngờ không tuyến tính.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+$T(1,0)=(2,1)$ và $T(0,1)=(-1,3)$, nên $T(x,y)=\begin{bmatrix}2&-1\\1&3\end{bmatrix}(x,y)^T$, do đó tuyến tính. Với $S$, chọn $u=(1,1)$: $S(2u)=S(2,2)=(4,2)$ nhưng $2S(u)=(2,2)$.
+
+**Bước 3. Kiểm tra và kết luận.**
+
+Hai kết quả khác nhau nên $S$ vi phạm tính nhân vô hướng, không tuyến tính. Với $T$, phép nhân ma trận xác nhận công thức trên mọi $(x,y)$.
+
+**Bước 4. Cách tự làm lại.**
+
+Đối với ánh xạ nghi tuyến tính, viết dưới dạng ma trận; để bác, chỉ cần một vi phạm tính cộng hoặc nhân vô hướng.
+
+</LoiGiai>
 </BaiLuyen>
 
 <BaiLuyen do_kho="kho" so="6.3">
 Tìm ma trận của phép "chiếu xuống trục $x$ rồi quay $90°$". Phép này có khả nghịch không? Giải thích bằng hình (thông tin nào bị mất?) và bằng định thức $ad - bc$ ở <XemMuc bai={4} />.
 
 <GoiYNho tieuDe="Bạn sẽ cần">Phép chiếu làm mọi điểm trên trục $y$ dồn về gốc. Hai điểm khác nhau nào cho cùng một ảnh?</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Chiếu trước nên ma trận chiếu đứng bên phải trong tích.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+$P=\begin{bmatrix}1&0\\0&0\end{bmatrix}$, $R_{\pi/2}=\begin{bmatrix}0&-1\\1&0\end{bmatrix}$. Do đó
+
+$$
+RP=\begin{bmatrix}0&0\\1&0\end{bmatrix},\qquad(x,y)\mapsto(0,x).
+$$
+
+ Định thức bằng $0\cdot0-0\cdot1=0$, nên không khả nghịch.
+
+**Bước 3. Kiểm tra và kết luận.**
+
+Hai điểm $(1,0)$ và $(1,7)$ cùng thành $(0,1)$: thông tin về tung độ mất ở bước chiếu và phép quay không khôi phục được.
+
+**Bước 4. Cách tự làm lại.**
+
+Lập tích theo thứ tự hợp thành, rồi kiểm tra mất thông tin bằng hai đầu vào khác nhau cùng ảnh.
+
+</LoiGiai>
 </BaiLuyen>

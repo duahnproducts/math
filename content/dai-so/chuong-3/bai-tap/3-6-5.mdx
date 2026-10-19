@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Ứng dụng: hệ thức truy hồi tuyến tính — bài 5"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.6.5"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.6.5 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Có bao nhiêu “từ” gồm $k$ chữ cái được tạo từ các chữ cái $\{a, b\}$ nếu không có hai chữ $a$ đứng cạnh nhau?
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-6-5-1" moTa="Đề gốc Nicholson bài 3.6.5, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ made from the letters {a, b} if there are no adjacent a’s?
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +48,25 @@ Dùng các điều kiện đầu để xác định hệ số trong nghiệm t�
 
 <LoiGiai>
 
-Gọi số từ hợp lệ độ dài $k$ là $w_k$. Nếu ký tự cuối là $b$, bỏ nó còn $w_{k-1}$ cách; nếu là $a$ và $k\ge2$, ký tự trước buộc là $b$, bỏ cặp $ba$ còn $w_{k-2}$ cách. Do đó $w_k=w_{k-1}+w_{k-2}$, $w_0=1,w_1=2$. Suy ra $w_k=F_{k+2}=(\phi^{k+2}-\psi^{k+2})/\sqrt5$, với $\phi,\psi=(1\pm\sqrt5)/2$.
+**Cách làm.** Với truy hồi tuyến tính, thử $x_k=r^k$ để tìm phương trình đặc trưng. Các điều kiện đầu quyết định hệ số; với bài đếm, cần phân loại các trường hợp rời nhau và đếm hết mọi khả năng.
+
+Hai nhóm từ kết thúc bằng $b$ và bằng $a$ rời nhau. Với nhóm thứ hai và độ dài ít nhất 2, ký tự trước $a$ phải là $b$, nên bỏ **hai** ký tự $ba$. Từ rỗng tính là một từ hợp lệ, và độ dài 1 có hai từ $a,b$.
+
+**Bước 1. Thiết lập biểu thức.**
+
+Gọi số từ hợp lệ độ dài $k$ là $w_k$.
+
+**Bước 2. Xét giả thiết.**
+
+Nếu ký tự cuối là $b$, bỏ nó còn $w_{k-1}$ cách; nếu là $a$ và $k\ge2$, ký tự trước buộc là $b$, bỏ cặp $ba$ còn $w_{k-2}$ cách.
+
+**Bước 3. Rút ra kết luận.**
+
+Do đó $w_k=w_{k-1}+w_{k-2}$, $w_0=1,w_1=2$.
+
+**Bước 4. Rút ra kết luận.**
+
+Suy ra $w_k=F_{k+2}=(\phi^{k+2}-\psi^{k+2})/\sqrt5$, với $\phi,\psi=(1\pm\sqrt5)/2$.
 
 </LoiGiai>
 

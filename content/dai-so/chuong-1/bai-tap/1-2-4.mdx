@@ -21,6 +21,9 @@ Viết ma trận bổ sung, khử $x$ ở hàng 2. Sắp lại ẩn cho đúng t
 </GoiY>
 
 <LoiGiai>
+
+**Cách làm.** Trụ là phần tử đầu tiên khác 0 của một hàng sau khi khử. Theo quy ước sách, trụ trong dạng bậc thang được chuẩn hóa bằng 1. Hàng $0=c\ne0$ cho vô nghiệm; nếu không có mâu thuẫn, cột ẩn không có trụ cho ẩn tự do.
+
 **a.** $R_2 + R_1$: $2y = -1$, nên $y = -\tfrac{1}{2}$, $x = 1 + 2y = 0$.
 
 **b.** Từ $3x - y = 0$: $y = 3x$; thay vào: $2x - 9x = 1$, nên $x = -\tfrac{1}{7}$, $y = -\tfrac{3}{7}$.
@@ -32,6 +35,293 @@ Viết ma trận bổ sung, khử $x$ ở hàng 2. Sắp lại ẩn cho đúng t
 **e.** $R_2 + 2R_1$: $0 = 1 + 8 = 9$. **Vô nghiệm.**
 
 **f.** $R_2 + R_1$: $0 = 7$. **Vô nghiệm.**
+
+**Chi tiết phép khử để làm lại.**
+
+Theo thứ tự ẩn $(x,y)$, các phép khử cụ thể là:
+
+Đưa về $Ax=b$, rồi ghép vế phải thành cột cuối:
+
+$$
+[A\mid b]=\begin{bmatrix}1&-2&1\\-1&4&-2\end{bmatrix}.
+$$
+
+**Bước 1. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+$$
+\begin{bmatrix}1&-2&1\\0&2&-1\end{bmatrix}.
+$$
+
+**Bước 2. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $2$, được
+
+$$
+\begin{bmatrix}1&-2&1\\0&1&- \frac{1}{2}\end{bmatrix}.
+$$
+
+**Bước 3. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(2)R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+$$
+\begin{bmatrix}1&0&0\\0&1&- \frac{1}{2}\end{bmatrix}.
+$$
+
+**Bước 4. Đọc nghiệm duy nhất.**
+
+Mỗi cột ẩn đều có trụ nên không có ẩn tự do:
+
+$$
+x=\begin{bmatrix}0\\- \frac{1}{2}\end{bmatrix}.
+$$
+
+**Bước 5. Thay lại để kiểm tra.**
+
+$Ax_p=\begin{bmatrix}1\\-2\end{bmatrix}=b$; như vậy nghiệm thỏa toàn bộ hệ.
+
+Theo thứ tự ẩn $(x,y)$, các phép khử cụ thể là:
+
+Đưa về $Ax=b$, rồi ghép vế phải thành cột cuối:
+
+$$
+[A\mid b]=\begin{bmatrix}3&-1&0\\2&-3&1\end{bmatrix}.
+$$
+
+**Bước 6. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 1 cho $3$, được
+
+$$
+\begin{bmatrix}1&- \frac{1}{3}&0\\2&-3&1\end{bmatrix}.
+$$
+
+**Bước 7. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-2)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+$$
+\begin{bmatrix}1&- \frac{1}{3}&0\\0&- \frac{7}{3}&1\end{bmatrix}.
+$$
+
+**Bước 8. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $- \frac{7}{3}$, được
+
+$$
+\begin{bmatrix}1&- \frac{1}{3}&0\\0&1&- \frac{3}{7}\end{bmatrix}.
+$$
+
+**Bước 9. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(\frac{1}{3})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+$$
+\begin{bmatrix}1&0&- \frac{1}{7}\\0&1&- \frac{3}{7}\end{bmatrix}.
+$$
+
+**Bước 10. Đọc nghiệm duy nhất.**
+
+Mỗi cột ẩn đều có trụ nên không có ẩn tự do:
+
+$$
+x=\begin{bmatrix}- \frac{1}{7}\\- \frac{3}{7}\end{bmatrix}.
+$$
+
+**Bước 11. Thay lại để kiểm tra.**
+
+$Ax_p=\begin{bmatrix}0\\1\end{bmatrix}=b$; như vậy nghiệm thỏa toàn bộ hệ.
+
+Theo thứ tự ẩn $(x,y)$, các phép khử cụ thể là:
+
+Đưa về $Ax=b$, rồi ghép vế phải thành cột cuối:
+
+$$
+[A\mid b]=\begin{bmatrix}2&1&5\\3&2&6\end{bmatrix}.
+$$
+
+**Bước 12. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 1 cho $2$, được
+
+$$
+\begin{bmatrix}1&\frac{1}{2}&\frac{5}{2}\\3&2&6\end{bmatrix}.
+$$
+
+**Bước 13. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-3)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+$$
+\begin{bmatrix}1&\frac{1}{2}&\frac{5}{2}\\0&\frac{1}{2}&- \frac{3}{2}\end{bmatrix}.
+$$
+
+**Bước 14. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $\frac{1}{2}$, được
+
+$$
+\begin{bmatrix}1&\frac{1}{2}&\frac{5}{2}\\0&1&-3\end{bmatrix}.
+$$
+
+**Bước 15. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(- \frac{1}{2})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+$$
+\begin{bmatrix}1&0&4\\0&1&-3\end{bmatrix}.
+$$
+
+**Bước 16. Đọc nghiệm duy nhất.**
+
+Mỗi cột ẩn đều có trụ nên không có ẩn tự do:
+
+$$
+x=\begin{bmatrix}4\\-3\end{bmatrix}.
+$$
+
+**Bước 17. Thay lại để kiểm tra.**
+
+$Ax_p=\begin{bmatrix}5\\6\end{bmatrix}=b$; như vậy nghiệm thỏa toàn bộ hệ.
+
+Theo thứ tự ẩn $(x,y)$, các phép khử cụ thể là:
+
+Đưa về $Ax=b$, rồi ghép vế phải thành cột cuối:
+
+$$
+[A\mid b]=\begin{bmatrix}3&-1&2\\-6&2&-4\end{bmatrix}.
+$$
+
+**Bước 18. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 1 cho $3$, được
+
+$$
+\begin{bmatrix}1&- \frac{1}{3}&\frac{2}{3}\\-6&2&-4\end{bmatrix}.
+$$
+
+**Bước 19. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(6)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+$$
+\begin{bmatrix}1&- \frac{1}{3}&\frac{2}{3}\\0&0&0\end{bmatrix}.
+$$
+
+**Bước 20. Đọc ẩn trụ và ẩn tự do.**
+
+Đọc từng hàng khác 0 của RREF để biểu diễn ẩn trụ theo các ẩn tự do. Đặt các ẩn tự do bằng tham số thực, được
+
+$$
+x=\begin{bmatrix}\frac{\tau_{0}}{3} + \frac{2}{3}\\\tau_{0}\end{bmatrix}.
+$$
+
+ Các ký hiệu $\tau_i$ là tham số tự do, không phải các hằng số đã được xác định.
+
+**Bước 21. Tách phần hằng và phần thuần nhất.**
+
+Cho các tham số bằng 0 để lấy $x_p=\begin{bmatrix}\frac{2}{3}\\0\end{bmatrix}$. Nghiệm tổng quát là
+
+$$
+x=x_p+t_{1}\begin{bmatrix}\frac{1}{3}\\1\end{bmatrix},
+$$
+
+ với các $t_i$ tùy ý. Các vector đứng sau tham số tạo cơ sở của hệ thuần nhất.
+
+**Bước 22. Thay lại để kiểm tra.**
+
+$Ax_p=\begin{bmatrix}2\\-4\end{bmatrix}=b$; với mỗi vector cơ sở $v_i$ vừa ghi, $Av_i=0$, nên $A(x_p+\sum_i t_iv_i)=b$.
+
+Theo thứ tự ẩn $(x,y)$, các phép khử cụ thể là:
+
+Đưa về $Ax=b$, rồi ghép vế phải thành cột cuối:
+
+$$
+[A\mid b]=\begin{bmatrix}3&-1&4\\-6&2&1\end{bmatrix}.
+$$
+
+**Bước 23. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 1 cho $3$, được
+
+$$
+\begin{bmatrix}1&- \frac{1}{3}&\frac{4}{3}\\-6&2&1\end{bmatrix}.
+$$
+
+**Bước 24. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(6)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+$$
+\begin{bmatrix}1&- \frac{1}{3}&\frac{4}{3}\\0&0&9\end{bmatrix}.
+$$
+
+**Bước 25. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $9$, được
+
+$$
+\begin{bmatrix}1&- \frac{1}{3}&\frac{4}{3}\\0&0&1\end{bmatrix}.
+$$
+
+**Bước 26. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(- \frac{4}{3})R_2$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+$$
+\begin{bmatrix}1&- \frac{1}{3}&0\\0&0&1\end{bmatrix}.
+$$
+
+**Bước 27. Đọc hàng mâu thuẫn.**
+
+Hàng 2 cho $0=1$, vô lý. Vì mọi phép hàng giữ nguyên tập nghiệm, hệ ban đầu vô nghiệm. Do đó $b$ không là tổ hợp tuyến tính của các cột của $A$.
+
+Theo thứ tự ẩn $(x,y)$, các phép khử cụ thể là:
+
+Đưa về $Ax=b$, rồi ghép vế phải thành cột cuối:
+
+$$
+[A\mid b]=\begin{bmatrix}2&-3&5\\-2&3&2\end{bmatrix}.
+$$
+
+**Bước 28. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 1 cho $2$, được
+
+$$
+\begin{bmatrix}1&- \frac{3}{2}&\frac{5}{2}\\-2&3&2\end{bmatrix}.
+$$
+
+**Bước 29. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(2)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+$$
+\begin{bmatrix}1&- \frac{3}{2}&\frac{5}{2}\\0&0&7\end{bmatrix}.
+$$
+
+**Bước 30. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $7$, được
+
+$$
+\begin{bmatrix}1&- \frac{3}{2}&\frac{5}{2}\\0&0&1\end{bmatrix}.
+$$
+
+**Bước 31. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(- \frac{5}{2})R_2$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+$$
+\begin{bmatrix}1&- \frac{3}{2}&0\\0&0&1\end{bmatrix}.
+$$
+
+**Bước 32. Đọc hàng mâu thuẫn.**
+
+Hàng 2 cho $0=1$, vô lý. Vì mọi phép hàng giữ nguyên tập nghiệm, hệ ban đầu vô nghiệm. Do đó $b$ không là tổ hợp tuyến tính của các cột của $A$.
+
 </LoiGiai>
 
 <LoiHayMac>

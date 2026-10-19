@@ -5,11 +5,25 @@ do_kho: vua
 tieu_de: "Ma trận nghịch đảo — bài 21"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.4.21"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.4.21 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Giả sử $AB = 0$, trong đó $A$ và $B$ là các ma trận vuông. Chứng minh rằng:
+
+**a.** Nếu một trong hai ma trận $A$ và $B$ có nghịch đảo thì ma trận còn lại bằng 0.
+
+**b.** Không thể đồng thời cả $A$ và $B$ đều có nghịch đảo.
+
+**c.** $(BA)^{2} = 0$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-4-21-1" moTa="Đề gốc Nicholson bài 2.4.21, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -29,6 +43,7 @@ square matrices. Show that:
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -45,7 +60,33 @@ Khi tìm nghịch đảo bằng khử hàng, làm cùng phép biến đổi trê
 
 <LoiGiai>
 
-**a.** Nếu $A$ khả nghịch, $B=A^{-1}(AB)=0$. Nếu $B$ khả nghịch, $A=(AB)B^{-1}=0$. **b.** Nếu cả hai khả nghịch thì $AB$ khả nghịch, trong khi $AB=0$; mâu thuẫn. **c.** $(BA)^2=B(AB)A=B0A=0$. Kết luận này không cần giả thiết khả nghịch.
+**Cách làm.** Theo định nghĩa, $B=A^{-1}$ khi $AB=BA=I$. Muốn khử $A$ ở bên trái thì nhân trái với $A^{-1}$; muốn khử ở bên phải thì nhân phải. Nghịch đảo tích đảo thứ tự: $(AB)^{-1}=B^{-1}A^{-1}$.
+
+**a.**
+
+**Bước 1. Xét giả thiết.**
+
+Nếu $A$ khả nghịch, $B=A^{-1}(AB)=0$.
+
+**Bước 2. Xét giả thiết.**
+
+Nếu $B$ khả nghịch, $A=(AB)B^{-1}=0$.
+
+**b.**
+
+**Bước 1. Xét giả thiết.**
+
+Nếu cả hai khả nghịch thì $AB$ khả nghịch, trong khi $AB=0$; mâu thuẫn.
+
+**c.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$(BA)^2=B(AB)A=B0A=0$.
+
+**Bước 2. Rút ra kết luận.**
+
+Kết luận này không cần giả thiết khả nghịch.
 
 </LoiGiai>
 

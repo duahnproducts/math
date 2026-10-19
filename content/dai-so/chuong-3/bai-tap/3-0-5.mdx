@@ -5,11 +5,35 @@ do_kho: vua
 tieu_de: "Bài bổ sung 3.5"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.5"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.5 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho
+
+$$
+A = \left[ \begin{array}{c} R_1 \\ R_2 \end{array}\right]
+$$
+
+ là ma trận $2\times2$ có các hàng $R_{1}$ và $R_{2}$. Nếu $\det A = 5$, tìm $\det B$, trong đó
+
+
+
+$$
+B = \left[ \begin{array}{c} 3R_1 + 2R_3 \\ 2R_1 + 5R_2 \end{array}\right]
+$$
+
+
+
+.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-0-5-1" moTa="Đề gốc Nicholson bài 3.5, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -25,6 +49,7 @@ rows R1 and R2. If det A = 5, ﬁnd det B where
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -42,13 +67,31 @@ Với đẳng thức tổng quát, khai triển có giữ thứ tự; với mệ
 
 <LoiGiai>
 
-**Lỗi dữ kiện:** $A$ chỉ có hai hàng $R_1,R_2$, nhưng hàng đầu của $B$ trong bản in ghi $3R_1+2R_3$; $R_3$ không được định nghĩa. Với đúng dữ kiện in như vậy, không thể xác định duy nhất $\det B$. Nếu ý định là $3R_1+2R_2$, thì
+**Bước 1. Lập luận và tính toán.**
+
+**Lỗi dữ kiện:** $A$ chỉ có hai hàng $R_1,R_2$, nhưng hàng đầu của $B$ trong bản in ghi $3R_1+2R_3$; $R_3$ không được định nghĩa.
+
+**Bước 2. Lập luận và tính toán.**
+
+Với đúng dữ kiện in như vậy, không thể xác định duy nhất $\det B$.
+
+**Bước 3. Xét giả thiết.**
+
+Nếu ý định là $3R_1+2R_2$, thì
+
+
 
 $$
 B=\begin{bmatrix}3&2\\2&5\end{bmatrix}A,
 $$
 
- nên $\det B=(15-4)\det A=11\cdot5=55$. Đây là kết quả sau khi sửa $R_3$ thành $R_2$, không phải kết quả suy ra từ dữ kiện thiếu ban đầu.
+
+
+ nên $\det B=(15-4)\det A=11\cdot5=55$.
+
+**Bước 4. Lập luận và tính toán.**
+
+Đây là kết quả sau khi sửa $R_3$ thành $R_2$, không phải kết quả suy ra từ dữ kiện thiếu ban đầu.
 
 </LoiGiai>
 

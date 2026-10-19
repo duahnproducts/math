@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Phép biến đổi tuyến tính — bài 13"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.6.13"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.6.13 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $R$ và $S$ là các phép biến đổi ma trận $\mathbb{R}^n \to \mathbb{R}^m$ được xác định lần lượt bởi các ma trận $A$ và $B$. Trong mỗi trường hợp, chứng minh rằng $T$ là phép biến đổi ma trận và mô tả ma trận của nó theo $A$ và $B$.
+
+**a.** $T(\mathbf{x}) = R(\mathbf{x}) + S(\mathbf{x})$ với mọi $\mathbf{x}$ thuộc $\mathbb{R}^n$.
+
+**b.** $T(\mathbf{x}) = aR(\mathbf{x})$ với mọi $\mathbf{x}$ thuộc $\mathbb{R}^n$ (trong đó $a$ là một số thực cố định).
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-6-13-1" moTa="Đề gốc Nicholson bài 2.6.13, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -29,6 +41,7 @@ describe its matrix in terms of A and B.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -45,7 +58,23 @@ Cột thứ j của ma trận ánh xạ là ảnh của vector đơn vị thứ 
 
 <LoiGiai>
 
-**a.** $T(x)=Ax+Bx=(A+B)x$ nên ma trận là $A+B$. **b.** $T(x)=a(Ax)=(aA)x$ nên ma trận là $aA$. Cả hai đều là ánh xạ ma trận, do đó tuyến tính; các kích thước bằng nhau bảo đảm phép cộng được xác định.
+**Cách làm.** Tuyến tính nghĩa là $T(au+bv)=aT(u)+bT(v)$. Với vector cột, ma trận của $T$ là $[T(e_1)\ \cdots\ T(e_n)]$; ma trận của $S\circ T$ là $[S][T]$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$T(x)=Ax+Bx=(A+B)x$ nên ma trận là $A+B$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$T(x)=a(Ax)=(aA)x$ nên ma trận là $aA$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Cả hai đều là ánh xạ ma trận, do đó tuyến tính; các kích thước bằng nhau bảo đảm phép cộng được xác định.
 
 </LoiGiai>
 

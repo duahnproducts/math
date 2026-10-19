@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Phép nhân ma trận — bài 35"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.3.35"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.35 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Trong Định lý 2.3.3, hãy chứng minh:
+
+**a.** tính chất 3;
+
+**b.** tính chất 5.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-3-35-1" moTa="Đề gốc Nicholson bài 2.3.35, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -23,6 +35,7 @@ Exercise 2.3.35  In Theorem 2.3.3, prove
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -40,7 +53,23 @@ Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự 
 
 <LoiGiai>
 
-**a.** Ô $(i,j)$ của $A(B+C)$ là $\sum_k a_{ik}(b_{kj}+c_{kj})=\sum_k a_{ik}b_{kj}+\sum_k a_{ik}c_{kj}$, chính là ô $(i,j)$ của $AB+AC$. **b.** Ô $(i,j)$ của $r(AB)$ là $r\sum_k a_{ik}b_{kj}=\sum_k(ra_{ik})b_{kj}=\sum_k a_{ik}(rb_{kj})$. Do đó $r(AB)=(rA)B=A(rB)$.
+**Cách làm.** Với $A$ cỡ $m\times n$, $B$ cỡ $n\times p$, tích $AB$ có cỡ $m\times p$ và $(AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$. Khi khai triển, giữ nguyên thứ tự các thừa số.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Ô $(i,j)$ của $A(B+C)$ là $\sum_k a_{ik}(b_{kj}+c_{kj})=\sum_k a_{ik}b_{kj}+\sum_k a_{ik}c_{kj}$, chính là ô $(i,j)$ của $AB+AC$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Ô $(i,j)$ của $r(AB)$ là $r\sum_k a_{ik}b_{kj}=\sum_k(ra_{ik})b_{kj}=\sum_k a_{ik}(rb_{kj})$.
+
+**Bước 2. Rút ra kết luận.**
+
+Do đó $r(AB)=(rA)B=A(rB)$.
 
 </LoiGiai>
 

@@ -5,11 +5,21 @@ do_kho: vua
 tieu_de: "Phân tích LU — bài 6"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.7.6"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.7.6 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+**a.** Cho $L$ và $L_{1}$ là các ma trận tam giác dưới khả nghịch, $U$ và $U_{1}$ là các ma trận tam giác trên khả nghịch. Chứng minh rằng $LU = L_{1}U_{1}$ khi và chỉ khi tồn tại ma trận chéo khả nghịch $D$ sao cho $L_{1} = LD$ và $U_{1} = D^{-1}U$. [Gợi ý: Xét kỹ $L^{-1}L_{1} = UU_{1}^{-1}$.]
+
+**b.** Dùng ý (a) để chứng minh Định lý 2.7.3 trong trường hợp $A$ khả nghịch.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-7-6-1" moTa="Đề gốc Nicholson bài 2.7.6, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -32,6 +42,7 @@ Exercise 2.7.6
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -48,7 +59,41 @@ Với PA = LU, giải Ly = Pb trước rồi giải Ux = y; phân biệt L đơn
 
 <LoiGiai>
 
-**a.** Từ $LU=L_1U_1$ suy ra $L^{-1}L_1=UU_1^{-1}$. Vế trái tam giác dưới, vế phải tam giác trên; do đó ma trận chung là ma trận chéo khả nghịch $D$. Suy ra $L_1=LD$, $U_1=D^{-1}U$. Chiều đảo: $(LD)(D^{-1}U)=LU$. **b.** Nếu $U,U_1$ đều có các phần tử dẫn đầu bằng 1 và $A$ khả nghịch, chúng là tam giác trên với đường chéo toàn 1. Từ $U_1=D^{-1}U$ suy ra từng phần tử đường chéo của $D$ bằng 1. Vậy $D=I$, $L_1=L$, $U_1=U$.
+**Cách làm.** Phân tích $PA=LU$ tách việc giải $Ax=b$ thành $Ly=Pb$ (thế tiến) và $Ux=y$ (thế ngược). Phải giữ đúng quy ước chuẩn hóa $L,U$ của đề.
+
+Một ma trận vừa tam giác dưới vừa tam giác trên phải chéo: các ô trên đường chéo bằng 0 bởi tính tam giác dưới, các ô dưới đường chéo bằng 0 bởi tính tam giác trên. Đây là lý do hai phân tích LU chỉ có thể khác nhau bởi một ma trận chéo.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Từ $LU=L_1U_1$ suy ra $L^{-1}L_1=UU_1^{-1}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Vế trái tam giác dưới, vế phải tam giác trên; do đó ma trận chung là ma trận chéo khả nghịch $D$.
+
+**Bước 3. Rút ra kết luận.**
+
+Suy ra $L_1=LD$, $U_1=D^{-1}U$.
+
+**Bước 4. Lập luận và tính toán.**
+
+Chiều đảo: $(LD)(D^{-1}U)=LU$.
+
+**b.**
+
+**Bước 1. Xét giả thiết.**
+
+Nếu $U,U_1$ đều có các phần tử dẫn đầu bằng 1 và $A$ khả nghịch, chúng là tam giác trên với đường chéo toàn 1.
+
+**Bước 2. Lập luận và tính toán.**
+
+Từ $U_1=D^{-1}U$ suy ra từng phần tử đường chéo của $D$ bằng 1.
+
+**Bước 3. Rút ra kết luận.**
+
+Vậy $D=I$, $L_1=L$, $U_1=U$.
 
 </LoiGiai>
 

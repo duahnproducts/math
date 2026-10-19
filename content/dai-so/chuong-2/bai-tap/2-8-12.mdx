@@ -5,11 +5,21 @@ do_kho: vua
 tieu_de: "Ứng dụng: mô hình kinh tế vào–ra — bài 12"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.8.12"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.8.12 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu $E\mathbf{p} < \mathbf{p}$, trong đó $E \geq 0$ và $\mathbf{p} > 0$, hãy tìm số $\mu$ sao cho $E\mathbf{p} < \mu\mathbf{p}$ và $0 < \mu < 1$.
+
+[Gợi ý: Nếu $E\mathbf{p} = (q_{1}, \dots, q_{n})^{T}$ và $\mathbf{p} = (p_{1}, \dots, p_{n})^{T}$, lấy một số $\mu$ bất kỳ thỏa mãn $\text{max}\left\lbrace \frac{q_{1}}{p_{1}}, \dots, \frac{q_{n}}{p_{n}} \right\rbrace < \mu < 1$.]
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-8-12-1" moTa="Đề gốc Nicholson bài 2.8.12, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -23,6 +33,7 @@ take any number µ where max   q1 , ...,  qn < µ < 1.]                         
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -40,7 +51,25 @@ Tổng cột của ma trận stochastic bằng 1. Để tìm giá tương đối
 
 <LoiGiai>
 
-Đặt $r=\max_i (Ep)_i/p_i$. Vì $p_i>0$, $E\ge0$ và $Ep<p$, ta có $0\le r<1$. Chọn $\mu=(1+r)/2$, khi đó $0<\mu<1$ và $(Ep)_i/p_i\le r<\mu$ với mọi $i$. Nhân với $p_i>0$ cho $Ep<\mu p$, đúng yêu cầu.
+**Cách làm.** Cơ cấu giá cân bằng thỏa $Ep=p$, tức $(I-E)p=0$. Với mô hình mở, điều kiện cần kiểm tra là $I-E$ khả nghịch và $(I-E)^{-1}$ có các ô không âm.
+
+Có hữu hạn tỷ số $(Ep)_i/p_i$ và mỗi tỷ số nhỏ hơn 1, nên giá trị lớn nhất $r$ cũng nhỏ hơn 1. Chọn trung điểm của $r$ và 1 bảo đảm một hệ số $\mu$ dùng được cho **tất cả** thành phần.
+
+**Bước 1. Thiết lập biểu thức.**
+
+Đặt $r=\max_i (Ep)_i/p_i$.
+
+**Bước 2. Giải thích điều kiện sử dụng.**
+
+Vì $p_i>0$, $E\ge0$ và $Ep<p$, ta có $0\le r<1$.
+
+**Bước 3. Thiết lập biểu thức.**
+
+Chọn $\mu=(1+r)/2$, khi đó $0<\mu<1$ và $(Ep)_i/p_i\le r<\mu$ với mọi $i$.
+
+**Bước 4. Thực hiện phép biến đổi.**
+
+Nhân với $p_i>0$ cho $Ep<\mu p$, đúng yêu cầu.
 
 </LoiGiai>
 

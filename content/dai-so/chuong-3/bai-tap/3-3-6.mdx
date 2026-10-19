@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Giá trị riêng và vector riêng — bài 6"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.3.6"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.3.6 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $A$ là ma trận $n \times n$ bất kỳ và $r \neq 0$ là một số thực.
+
+**a.** Chứng minh rằng các trị riêng của $rA$ chính là các số $r\lambda$, trong đó $\lambda$ là một trị riêng của $A$.
+
+**b.** Chứng minh rằng $c_{rA}(x) = r^n c_A\left( \frac{x}{r} \right)$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-3-6-1" moTa="Đề gốc Nicholson bài 3.3.6, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -27,6 +39,7 @@ Exercise 3.3.6  Let A be any n × n matrix and  r̸ = 0 areal number.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -43,7 +56,29 @@ Không gian riêng là hạt nhân của A − λI; đa thức của ma trận t
 
 <LoiGiai>
 
-**a.** $Av=\lambda v\Leftrightarrow(rA)v=(r\lambda)v$ vì $r\ne0$; các vector riêng tương ứng giống nhau. **b.** $xI-rA=r((x/r)I-A)$. Lấy định thức cấp $n$ được $c_{rA}(x)=r^nc_A(x/r)$. Điều kiện $r\ne0$ bảo đảm phép chia hợp lệ.
+**Cách làm.** Trị riêng $\lambda$ cần có vector $v\ne0$ thỏa $Av=\lambda v$. Tương đương $(A-\lambda I)v=0$ có nghiệm khác 0, nên $\det(\lambda I-A)=0$.
+
+Chiều đi nhân đẳng thức vector với $r$; chiều về chia cho $r$. Điều kiện $r\ne0$ là cần thiết cho chiều về. Nếu $r=0$ thì ma trận mới bằng 0, mọi vector khác 0 đều là vector riêng, nên kết luận về vector riêng không còn đúng như cũ.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$Av=\lambda v\Leftrightarrow(rA)v=(r\lambda)v$ vì $r\ne0$; các vector riêng tương ứng giống nhau.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$xI-rA=r((x/r)I-A)$.
+
+**Bước 2. Thiết lập biểu thức.**
+
+Lấy định thức cấp $n$ được $c_{rA}(x)=r^nc_A(x/r)$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Điều kiện $r\ne0$ bảo đảm phép chia hợp lệ.
 
 </LoiGiai>
 

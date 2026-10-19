@@ -5,11 +5,29 @@ do_kho: vua
 tieu_de: "Phép biến đổi tuyến tính — bài 11"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.6.11"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.6.11 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Ký hiệu $T_{\theta} : \mathbb{R}^2 \to \mathbb{R}^2$ là phép đối xứng qua đường thẳng tạo một góc $\theta$ với nửa trục $x$ dương.
+
+**a.** Chứng minh rằng ma trận của $T_{\theta}$ là
+
+$$
+\left[ \begin{array}{rr} \cos 2\theta & \sin 2\theta \\ \sin 2\theta & -\cos 2\theta \end{array} \right]
+$$
+
+ với mọi $\theta$.
+
+**b.** Chứng minh rằng $T_{\theta} \circ R_{2\phi} = T_{\theta - \phi}$ với mọi $\theta$ và $\phi$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-6-11-1" moTa="Đề gốc Nicholson bài 2.6.11, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -28,6 +46,7 @@ Exercise 2.6.11  Let Tθ : R2 →R2 denote reﬂection inthe line making an angl
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -44,13 +63,37 @@ Cột thứ j của ma trận ánh xạ là ảnh của vector đơn vị thứ 
 
 <LoiGiai>
 
-**a.** Quay đường đối xứng về trục $x$, đối xứng qua trục $x$, rồi quay lại: $T_\theta=R_\theta Q_0R_{-\theta}$. Nhân ba ma trận cho
+**Cách làm.** Tuyến tính nghĩa là $T(au+bv)=aT(u)+bT(v)$. Với vector cột, ma trận của $T$ là $[T(e_1)\ \cdots\ T(e_n)]$; ma trận của $S\circ T$ là $[S][T]$.
+
+Với vector cột, thao tác thực hiện trước đứng bên phải. Muốn đối xứng qua đường góc $\theta$, ta quay $-\theta$ về trục $x$, đổi dấu tung độ, rồi quay lại $\theta$. Đó là nguồn gốc thứ tự $R_\theta Q_0R_{-\theta}$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Quay đường đối xứng về trục $x$, đối xứng qua trục $x$, rồi quay lại: $T_\theta=R_\theta Q_0R_{-\theta}$.
+
+**Bước 2. Thực hiện phép biến đổi.**
+
+Nhân ba ma trận cho
+
+
 
 $$
 [T_\theta]=\begin{bmatrix}\cos2\theta&\sin2\theta\\\sin2\theta&-\cos2\theta\end{bmatrix}.
 $$
 
- **b.** Nhân ma trận này với $R_{2\phi}$ và dùng công thức hiệu góc, thu ma trận có $\cos2(\theta-\phi)$, $\sin2(\theta-\phi)$ đúng vị trí như (a). Vì vậy $T_\theta\circ R_{2\phi}=T_{\theta-\phi}$.
+
+
+**b.**
+
+**Bước 1. Thực hiện phép biến đổi.**
+
+Nhân ma trận này với $R_{2\phi}$ và dùng công thức hiệu góc, thu ma trận có $\cos2(\theta-\phi)$, $\sin2(\theta-\phi)$ đúng vị trí như (a).
+
+**Bước 2. Giải thích điều kiện sử dụng.**
+
+Vì vậy $T_\theta\circ R_{2\phi}=T_{\theta-\phi}$.
 
 </LoiGiai>
 

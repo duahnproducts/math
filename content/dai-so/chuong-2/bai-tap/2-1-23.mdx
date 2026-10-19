@@ -23,11 +23,35 @@ Quy nạp: bước cơ sở $n = 1$ (hiển nhiên) hoặc $n = 2$ (chính là t
 </GoiY>
 
 <LoiGiai>
-**a.** Với $n = 1$: $kA_1 = kA_1$. Giả sử đúng với $n - 1$. Khi đó
-$$k(A_1 + \cdots + A_n) = k\big[(A_1 + \cdots + A_{n-1}) + A_n\big] = k(A_1 + \cdots + A_{n-1}) + kA_n = kA_1 + \cdots + kA_{n-1} + kA_n,$$
+
+**Cách làm.** Hai ma trận bằng nhau khi cùng kích thước và từng ô tương ứng bằng nhau. Cộng và nhân vô hướng thực hiện theo từng ô; một ẩn tự do phải được giữ lại bằng tham số.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Với $n = 1$: $kA_1 = kA_1$.
+
+**Bước 2. Xét giả thiết.**
+
+Giả sử đúng với $n - 1$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Khi đó
+
+$$
+k(A_1 + \cdots + A_n) = k\big[(A_1 + \cdots + A_{n-1}) + A_n\big] = k(A_1 + \cdots + A_{n-1}) + kA_n = kA_1 + \cdots + kA_{n-1} + kA_n,
+$$
+
 đẳng thức thứ hai theo tính chất 5, thứ ba theo giả thiết quy nạp.
 
-**b.** Tương tự: $(k_1 + \cdots + k_n)A = \big[(k_1 + \cdots + k_{n-1}) + k_n\big]A = (k_1 + \cdots + k_{n-1})A + k_nA$ theo tính chất 6, rồi dùng giả thiết quy nạp cho số hạng đầu.
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Tương tự: $(k_1 + \cdots + k_n)A = \big[(k_1 + \cdots + k_{n-1}) + k_n\big]A = (k_1 + \cdots + k_{n-1})A + k_nA$ theo tính chất 6, rồi dùng giả thiết quy nạp cho số hạng đầu.
+
 </LoiGiai>
 
 <LoiHayMac>

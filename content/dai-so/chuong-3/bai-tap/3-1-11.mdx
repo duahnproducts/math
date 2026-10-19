@@ -5,11 +5,51 @@ do_kho: vua
 tieu_de: "Khai triển theo phần bù đại số — bài 11"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.1.11"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.1.11 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu $\det A = 2, \det B = -1$ và $\det C = 3$, hãy tìm:
+
+**a.**
+
+$$
+\det \left[ \begin{array}{ccc} A & X & Y \\ 0 & B & Z \\ 0 & 0 & C \end{array}\right]
+$$
+
+
+
+**b.**
+
+$$
+\det \left[ \begin{array}{ccc} A & 0 & 0 \\ X & B & 0 \\ Y & Z & C \end{array}\right]
+$$
+
+
+
+**c.**
+
+$$
+\det \left[ \begin{array}{ccc} A & X & Y \\ 0 & B & 0 \\ 0 & Z & C \end{array}\right]
+$$
+
+
+
+**d.**
+
+$$
+\det \left[ \begin{array}{ccc} A & X & 0 \\ 0 & B & 0 \\ Y & Z & C \end{array}\right]
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-1-11-1" moTa="Đề gốc Nicholson bài 3.1.11, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -25,6 +65,7 @@ Exercise 3.1.11  If det A = 2, det B = −1, and det C =3, ﬁnd:
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -42,7 +83,39 @@ Cộng bội một hàng vào hàng khác giữ định thức; đổi hai hàng
 
 <LoiGiai>
 
-Cả bốn ma trận đều tính được bằng cách tách các khối tam giác liên tiếp. **a.** Tam giác khối trên: $\det A\det B\det C=-6$. **b.** Tam giác khối dưới: cũng bằng $-6$. **c.** Tách khối đầu $A$ và khối dưới phải $\begin{bmatrix}B&0\\Z&C\end{bmatrix}$, được $-6$. **d.** Tách khối dưới phải $C$ và khối trên trái $\begin{bmatrix}A&X\\0&B\end{bmatrix}$, cũng được $-6$. Các khối ngoài đường chéo không ảnh hưởng trong các dạng tam giác khối này.
+**Cách làm.** Cộng bội hàng khác giữ nguyên định thức; đổi hai hàng đổi dấu; rút hệ số $c$ từ một hàng đưa $c$ ra ngoài. Với khai triển, $C_{ij}=(-1)^{i+j}\det M_{ij}$.
+
+**Bước 1. Lập luận và tính toán.**
+
+Cả bốn ma trận đều tính được bằng cách tách các khối tam giác liên tiếp.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Tam giác khối trên: $\det A\det B\det C=-6$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Tam giác khối dưới: cũng bằng $-6$.
+
+**c.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Tách khối đầu $A$ và khối dưới phải $\begin{bmatrix}B&0\\Z&C\end{bmatrix}$, được $-6$.
+
+**d.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Tách khối dưới phải $C$ và khối trên trái $\begin{bmatrix}A&X\\0&B\end{bmatrix}$, cũng được $-6$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Các khối ngoài đường chéo không ảnh hưởng trong các dạng tam giác khối này.
 
 </LoiGiai>
 

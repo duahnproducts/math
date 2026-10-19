@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Giá trị riêng và vector riêng — bài 2"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.3.2"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.3.2 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $A$ là ma trận $n \times n$ và đặt $A_{1} = A - \alpha I$, $\alpha$ thuộc $\mathbb{R}$. Chứng minh rằng $\lambda$ là trị riêng của $A$ khi và chỉ khi $\lambda -\alpha$ là trị riêng của $A_{1}$. (Do đó các trị riêng của $A_{1}$ chính là các trị riêng của $A$ được “dịch” đi $\alpha$.) Các vector riêng tương ứng có quan hệ thế nào?
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-3-2-1" moTa="Đề gốc Nicholson bài 3.3.2, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -24,6 +32,7 @@ How do the eigenvectors compare?
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -41,7 +50,21 @@ Không gian riêng là hạt nhân của A − λI; đa thức của ma trận t
 
 <LoiGiai>
 
-Nếu $Av=\lambda v$ với $v\ne0$, thì $(A-\alpha I)v=(\lambda-\alpha)v$. Ngược lại, $(A-\alpha I)v=\mu v$ cho $Av=(\mu+\alpha)v$. Do đó các trị riêng dịch đi $-\alpha$, còn không gian riêng được giữ nguyên: $E_{\lambda-\alpha}(A-\alpha I)=E_\lambda(A)$.
+**Cách làm.** Trị riêng $\lambda$ cần có vector $v\ne0$ thỏa $Av=\lambda v$. Tương đương $(A-\lambda I)v=0$ có nghiệm khác 0, nên $\det(\lambda I-A)=0$.
+
+Ma trận $\alpha I$ tác động lên mọi vector bằng nhân với $\alpha$. Bởi vậy trừ $\alpha I$ chỉ dịch hệ số của $v$ từ $\lambda$ sang $\lambda-\alpha$; vector $v$ không đổi. Cần viết cả chiều ngược để khẳng định các tập trị riêng đúng bằng nhau sau phép dịch.
+
+**Bước 1. Xét giả thiết.**
+
+Nếu $Av=\lambda v$ với $v\ne0$, thì $(A-\alpha I)v=(\lambda-\alpha)v$.
+
+**Bước 2. Kiểm tra chiều ngược.**
+
+Ngược lại, $(A-\alpha I)v=\mu v$ cho $Av=(\mu+\alpha)v$.
+
+**Bước 3. Rút ra kết luận.**
+
+Do đó các trị riêng dịch đi $-\alpha$, còn không gian riêng được giữ nguyên: $E_{\lambda-\alpha}(A-\alpha I)=E_\lambda(A)$.
 
 </LoiGiai>
 

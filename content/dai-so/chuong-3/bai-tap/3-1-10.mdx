@@ -5,11 +5,35 @@ do_kho: vua
 tieu_de: "Khai triển theo phần bù đại số — bài 10"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.1.10"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.1.10 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Dùng Định lý 3.1.5 để tính định thức của mỗi ma trận.
+
+**a.**
+
+$$
+\left[ \begin{array}{rrrrr} 1 & -1 & 2 & 0 & -2 \\ 0 & 1 & 0 & 4 & 1 \\ 1 & 1 & 5 & 0 & 0 \\ 0 & 0 & 0 & 3 & -1 \\ 0 & 0 & 0 & 1 & 1 \end{array} \right]
+$$
+
+
+
+**b.**
+
+$$
+\left[ \begin{array}{rrrrr} 1 & 2 & 0 & 3 & 0 \\ -1 & 3 & 1 & 4 & 0 \\ 0 & 0 & 2 & 1 & 1 \\ 0 & 0 & -1 & 0 & 2 \\ 0 & 0 & 3 & 0 & 1 \end{array} \right]
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-1-10-1" moTa="Đề gốc Nicholson bài 3.1.10, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -29,6 +53,7 @@ trix, using Theorem 3.1.5.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -45,9 +70,29 @@ Cộng bội một hàng vào hàng khác giữ định thức; đổi hai hàng
 
 <LoiGiai>
 
-**a.** Ma trận có khối 0 ở góc dưới trái. Tách khối $3\times3$ ở góc trên trái; định thức bằng tích định thức hai khối đường chéo: $3\cdot(4)=12$.
+**Cách làm.** Cộng bội hàng khác giữ nguyên định thức; đổi hai hàng đổi dấu; rút hệ số $c$ từ một hàng đưa $c$ ra ngoài. Với khai triển, $C_{ij}=(-1)^{i+j}\det M_{ij}$.
 
-**b.** Ma trận có khối 0 ở góc dưới trái. Tách khối $2\times2$ ở góc trên trái; định thức bằng tích định thức hai khối đường chéo: $5\cdot(7)=35$.
+Với ma trận $\begin{bmatrix}B&C\\0&D\end{bmatrix}$, định thức bằng $\det B\det D$. Khối 0 dưới trái bảo đảm đây là dạng tam giác khối; không yêu cầu khối $C$ bằng 0. Hai khối đường chéo phải vuông.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Ma trận có khối 0 ở góc dưới trái.
+
+**Bước 2. Lập luận và tính toán.**
+
+Tách khối $3\times3$ ở góc trên trái; định thức bằng tích định thức hai khối đường chéo: $3\cdot(4)=12$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Ma trận có khối 0 ở góc dưới trái.
+
+**Bước 2. Lập luận và tính toán.**
+
+Tách khối $2\times2$ ở góc trên trái; định thức bằng tích định thức hai khối đường chéo: $5\cdot(7)=35$.
 
 </LoiGiai>
 

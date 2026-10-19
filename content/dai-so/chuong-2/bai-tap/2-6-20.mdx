@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Phép biến đổi tuyến tính — bài 20"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.6.20"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.6.20 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Định nghĩa $T : \mathbb{R}^n \to \mathbb{R}$ bởi $T(x_{1}, x_{2}, \dots, x_{n}) = x_{1} + x_{2} + \cdots + x_{n}$. Chứng minh rằng $T$ là phép biến đổi tuyến tính và tìm ma trận của nó.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-6-20-1" moTa="Đề gốc Nicholson bài 2.6.20, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ T(x1,  x2,  ..., xn) = x1 + x2 + ··· + xn.  Show that Tis a linear transforma
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +48,15 @@ Cột thứ j của ma trận ánh xạ là ảnh của vector đơn vị thứ 
 
 <LoiGiai>
 
-Với $T(x)=x_1+\cdots+x_n$, cộng hai vector rồi cộng các thành phần cho $T(x+y)=T(x)+T(y)$; nhân vô hướng cho $T(cx)=cT(x)$. Ảnh của mỗi $e_j$ là số 1, nên ma trận $1\times n$ là $[1\ 1\ \cdots\ 1]$.
+**Cách làm.** Tuyến tính nghĩa là $T(au+bv)=aT(u)+bT(v)$. Với vector cột, ma trận của $T$ là $[T(e_1)\ \cdots\ T(e_n)]$; ma trận của $S\circ T$ là $[S][T]$.
+
+**Bước 1. Lập luận và tính toán.**
+
+Với $T(x)=x_1+\cdots+x_n$, cộng hai vector rồi cộng các thành phần cho $T(x+y)=T(x)+T(y)$; nhân vô hướng cho $T(cx)=cT(x)$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Ảnh của mỗi $e_j$ là số 1, nên ma trận $1\times n$ là $[1\ 1\ \cdots\ 1]$.
 
 </LoiGiai>
 

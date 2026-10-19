@@ -5,11 +5,35 @@ do_kho: vua
 tieu_de: "Phép biến đổi tuyến tính — bài 7"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.6.7"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.6.7 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Trong mỗi trường hợp, chứng minh rằng $T : \mathbb{R}^2 \to \mathbb{R}^2$ không phải là phép biến đổi tuyến tính.
+
+**a.**
+
+$$
+T \left[ \begin{array}{c} x \\ y \end{array} \right] = \left[ \begin{array}{c} xy \\ 0 \end{array} \right]
+$$
+
+
+
+**b.**
+
+$$
+T \left[ \begin{array}{c} x \\ y \end{array} \right] = \left[ \begin{array}{c} 0 \\ y^2 \end{array} \right]
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-6-7-1" moTa="Đề gốc Nicholson bài 2.6.7, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -24,6 +48,7 @@ Exercise 2.6.7  In each case show that T : R2 →R2 isnot a linear transformatio
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -41,7 +66,29 @@ Cột thứ j của ma trận ánh xạ là ảnh của vector đơn vị thứ 
 
 <LoiGiai>
 
-**a.** Lấy $u=(1,0)$, $v=(0,1)$. $T(u)=T(v)=0$ nhưng $T(u+v)=(1,0)\ne0$, vi phạm tính cộng. **b.** $T(0,2)=(0,4)$ trong khi $2T(0,1)=(0,2)$, vi phạm tính đồng nhất bậc một. Chỉ một phản ví dụ đã đủ bác tính tuyến tính.
+**Cách làm.** Tuyến tính nghĩa là $T(au+bv)=aT(u)+bT(v)$. Với vector cột, ma trận của $T$ là $[T(e_1)\ \cdots\ T(e_n)]$; ma trận của $S\circ T$ là $[S][T]$.
+
+Muốn bác tuyến tính chỉ cần một cặp vector vi phạm tính cộng, hoặc một vector và một hệ số vi phạm tính nhân vô hướng. Sau khi có phản ví dụ, không cần xét tất cả đầu vào còn lại.
+
+**a.**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Lấy $u=(1,0)$, $v=(0,1)$.
+
+**Bước 2. Lập luận và tính toán.**
+
+$T(u)=T(v)=0$ nhưng $T(u+v)=(1,0)\ne0$, vi phạm tính cộng.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$T(0,2)=(0,4)$ trong khi $2T(0,1)=(0,2)$, vi phạm tính đồng nhất bậc một.
+
+**Bước 2. Lập luận và tính toán.**
+
+Chỉ một phản ví dụ đã đủ bác tính tuyến tính.
 
 </LoiGiai>
 

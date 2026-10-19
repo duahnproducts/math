@@ -5,11 +5,99 @@ do_kho: vua
 tieu_de: "Phép nhân ma trận — bài 1"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.3.1"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.1 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Tính các tích ma trận sau.
+
+**a.**
+
+$$
+\left[ \begin{array}{rr} 1 & 3 \\ 0 & -2 \end{array} \right] \left[ \begin{array}{rr} 2 & -1 \\ 0 & 1 \end{array} \right]
+$$
+
+
+
+**b.**
+
+$$
+\left[ \begin{array}{rrr} 1 & -1 & 2 \\ 2 & 0 & 4 \end{array} \right] \left[ \begin{array}{rrr} 2 & 3 & 1 \\ 1 & 9 & 7 \\ -1 & 0 & 2 \end{array} \right]
+$$
+
+
+
+**c.**
+
+$$
+\left[ \begin{array}{rrr} 5 & 0 & -7 \\ 1 & 5 & 9 \end{array} \right] \left[ \begin{array}{r} 3 \\ 1 \\ -1 \end{array} \right]
+$$
+
+
+
+**d.**
+
+$$
+\left[ \begin{array}{rrr} 1 & 3 & -3 \end{array} \right] \left[ \begin{array}{rr} 3 & 0 \\ -2 & 1 \\ 0 & 6 \end{array} \right]
+$$
+
+
+
+**e.**
+
+$$
+\left[ \begin{array}{rrr} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{array} \right] \left[ \begin{array}{rr} 3 & -2 \\ 5 & -7 \\ 9 & 7 \end{array} \right]
+$$
+
+
+
+**f.**
+
+$$
+\left[ \begin{array}{rrr} 1 & -1 & 3 \end{array} \right] \left[ \begin{array}{r} 2 \\ 1 \\ -8 \end{array} \right]
+$$
+
+
+
+**g.**
+
+$$
+\left[ \begin{array}{r} 2 \\ 1 \\ -7 \end{array} \right] \left[ \begin{array}{rrr} 1 & -1 & 3 \end{array} \right]
+$$
+
+
+
+**h.**
+
+$$
+\left[ \begin{array}{rr} 3 & 1 \\ 5 & 2 \end{array} \right] \left[ \begin{array}{rr} 2 & -1 \\ -5 & 3 \end{array} \right]
+$$
+
+
+
+**i.**
+
+$$
+\left[ \begin{array}{rrr} 2 & 3 & 1 \\ 5 & 7 & 4 \end{array} \right] \left[ \begin{array}{ccc} a & 0 & 0 \\ 0 & b & 0 \\ 0 & 0 & c \end{array} \right]
+$$
+
+
+
+**j.**
+
+$$
+\left[ \begin{array}{ccc} a & 0 & 0 \\ 0 & b & 0 \\ 0 & 0 & c \end{array} \right] \left[ \begin{array}{ccc} a^\prime & 0 & 0 \\ 0 & b^\prime & 0 \\ 0 & 0 & c^\prime \end{array} \right]
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-3-1-1" moTa="Đề gốc Nicholson bài 2.3.1, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -40,6 +128,7 @@ Exercise 2.3.1 Compute the following matrix products.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -50,33 +139,603 @@ Kiểm tra kích thước rồi dùng quy tắc hàng–cột cho tích ma trậ
 
 <GoiY so={2}>
 
-Ở mỗi ý, số cột của ma trận trái bằng số hàng của ma trận phải. Kích thước kết quả là số hàng bên trái nhân số cột bên phải.
+Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự các thừa số khi khai triển.
 
 </GoiY>
 
 <LoiGiai>
 
-Dùng $(AB)_{ij}=\sum_k a_{ik}b_{kj}$: lấy hàng thứ $i$ của ma trận trái nhân vô hướng với cột thứ $j$ của ma trận phải. Ví dụ ở (a), ô $(1,2)$ bằng $1(-1)+3(1)=2$. Kết quả đầy đủ:
+**Cách làm.** Với $A$ cỡ $m\times n$, $B$ cỡ $n\times p$, tích $AB$ có cỡ $m\times p$ và $(AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$. Khi khai triển, giữ nguyên thứ tự các thừa số.
 
-**a.** $\begin{bmatrix}2&2\\0&-2\end{bmatrix}$.
+**a.**
 
-**b.** $\begin{bmatrix}-1&-6&-2\\0&6&10\end{bmatrix}$.
+**Bước 1. Kiểm tra kích thước.**
 
-**c.** $\begin{bmatrix}22\\-1\end{bmatrix}$.
+$A$ có kích thước $2\times 2$, $B$ có kích thước $2\times 2$. Kích thước trong bằng nhau; tích có kích thước $2\times 2$.
 
-**d.** $\begin{bmatrix}-3&-15\end{bmatrix}$.
+**Bước 2. Lấy từng hàng nhân từng cột.**
 
-**e.** $\begin{bmatrix}3&-2\\5&-7\\9&7\end{bmatrix}$.
+Ô $(i,j)$ là tổng các tích của hàng $i$ bên trái với cột $j$ bên phải. Các phép tính cụ thể:
 
-**f.** $\begin{bmatrix}-23\end{bmatrix}$.
 
-**g.** $\begin{bmatrix}2&-2&6\\1&-1&3\\-7&7&-21\end{bmatrix}$.
 
-**h.** $\begin{bmatrix}1&0\\0&1\end{bmatrix}$.
+$$
+(AB)_{11}=\left(1\right)\left(2\right)+\left(3\right)\left(0\right)=2.
+$$
 
-**i.** $\begin{bmatrix}2 a&3 b&c\\5 a&7 b&4 c\end{bmatrix}$.
 
-**j.** $\begin{bmatrix}a a_{p}&0&0\\0&b b_{p}&0\\0&0&c c_{p}\end{bmatrix}$.
+
+
+
+$$
+(AB)_{12}=\left(1\right)\left(-1\right)+\left(3\right)\left(1\right)=2.
+$$
+
+
+
+
+
+$$
+(AB)_{21}=\left(0\right)\left(2\right)+\left(-2\right)\left(0\right)=0.
+$$
+
+
+
+
+
+$$
+(AB)_{22}=\left(0\right)\left(-1\right)+\left(-2\right)\left(1\right)=-2.
+$$
+
+
+
+**Bước 3. Ghép các ô đúng vị trí.**
+
+
+
+$$
+AB=\begin{bmatrix}2&2\\0&-2\end{bmatrix}.
+$$
+
+
+
+**b.**
+
+**Bước 1. Kiểm tra kích thước.**
+
+$A$ có kích thước $2\times 3$, $B$ có kích thước $3\times 3$. Kích thước trong bằng nhau; tích có kích thước $2\times 3$.
+
+**Bước 2. Lấy từng hàng nhân từng cột.**
+
+Ô $(i,j)$ là tổng các tích của hàng $i$ bên trái với cột $j$ bên phải. Các phép tính cụ thể:
+
+
+
+$$
+(AB)_{11}=\left(1\right)\left(2\right)+\left(-1\right)\left(1\right)+\left(2\right)\left(-1\right)=-1.
+$$
+
+
+
+
+
+$$
+(AB)_{12}=\left(1\right)\left(3\right)+\left(-1\right)\left(9\right)+\left(2\right)\left(0\right)=-6.
+$$
+
+
+
+
+
+$$
+(AB)_{13}=\left(1\right)\left(1\right)+\left(-1\right)\left(7\right)+\left(2\right)\left(2\right)=-2.
+$$
+
+
+
+
+
+$$
+(AB)_{21}=\left(2\right)\left(2\right)+\left(0\right)\left(1\right)+\left(4\right)\left(-1\right)=0.
+$$
+
+
+
+
+
+$$
+(AB)_{22}=\left(2\right)\left(3\right)+\left(0\right)\left(9\right)+\left(4\right)\left(0\right)=6.
+$$
+
+
+
+
+
+$$
+(AB)_{23}=\left(2\right)\left(1\right)+\left(0\right)\left(7\right)+\left(4\right)\left(2\right)=10.
+$$
+
+
+
+**Bước 3. Ghép các ô đúng vị trí.**
+
+
+
+$$
+AB=\begin{bmatrix}-1&-6&-2\\0&6&10\end{bmatrix}.
+$$
+
+
+
+**c.**
+
+**Bước 1. Kiểm tra kích thước.**
+
+$A$ có kích thước $2\times 3$, $B$ có kích thước $3\times 1$. Kích thước trong bằng nhau; tích có kích thước $2\times 1$.
+
+**Bước 2. Lấy từng hàng nhân từng cột.**
+
+Ô $(i,j)$ là tổng các tích của hàng $i$ bên trái với cột $j$ bên phải. Các phép tính cụ thể:
+
+
+
+$$
+(AB)_{11}=\left(5\right)\left(3\right)+\left(0\right)\left(1\right)+\left(-7\right)\left(-1\right)=22.
+$$
+
+
+
+
+
+$$
+(AB)_{21}=\left(1\right)\left(3\right)+\left(5\right)\left(1\right)+\left(9\right)\left(-1\right)=-1.
+$$
+
+
+
+**Bước 3. Ghép các ô đúng vị trí.**
+
+
+
+$$
+AB=\begin{bmatrix}22\\-1\end{bmatrix}.
+$$
+
+
+
+**d.**
+
+**Bước 1. Kiểm tra kích thước.**
+
+$A$ có kích thước $1\times 3$, $B$ có kích thước $3\times 2$. Kích thước trong bằng nhau; tích có kích thước $1\times 2$.
+
+**Bước 2. Lấy từng hàng nhân từng cột.**
+
+Ô $(i,j)$ là tổng các tích của hàng $i$ bên trái với cột $j$ bên phải. Các phép tính cụ thể:
+
+
+
+$$
+(AB)_{11}=\left(1\right)\left(3\right)+\left(3\right)\left(-2\right)+\left(-3\right)\left(0\right)=-3.
+$$
+
+
+
+
+
+$$
+(AB)_{12}=\left(1\right)\left(0\right)+\left(3\right)\left(1\right)+\left(-3\right)\left(6\right)=-15.
+$$
+
+
+
+**Bước 3. Ghép các ô đúng vị trí.**
+
+
+
+$$
+AB=\begin{bmatrix}-3&-15\end{bmatrix}.
+$$
+
+
+
+**e.**
+
+**Bước 1. Kiểm tra kích thước.**
+
+$A$ có kích thước $3\times 3$, $B$ có kích thước $3\times 2$. Kích thước trong bằng nhau; tích có kích thước $3\times 2$.
+
+**Bước 2. Lấy từng hàng nhân từng cột.**
+
+Ô $(i,j)$ là tổng các tích của hàng $i$ bên trái với cột $j$ bên phải. Các phép tính cụ thể:
+
+
+
+$$
+(AB)_{11}=\left(1\right)\left(3\right)+\left(0\right)\left(5\right)+\left(0\right)\left(9\right)=3.
+$$
+
+
+
+
+
+$$
+(AB)_{12}=\left(1\right)\left(-2\right)+\left(0\right)\left(-7\right)+\left(0\right)\left(7\right)=-2.
+$$
+
+
+
+
+
+$$
+(AB)_{21}=\left(0\right)\left(3\right)+\left(1\right)\left(5\right)+\left(0\right)\left(9\right)=5.
+$$
+
+
+
+
+
+$$
+(AB)_{22}=\left(0\right)\left(-2\right)+\left(1\right)\left(-7\right)+\left(0\right)\left(7\right)=-7.
+$$
+
+
+
+
+
+$$
+(AB)_{31}=\left(0\right)\left(3\right)+\left(0\right)\left(5\right)+\left(1\right)\left(9\right)=9.
+$$
+
+
+
+
+
+$$
+(AB)_{32}=\left(0\right)\left(-2\right)+\left(0\right)\left(-7\right)+\left(1\right)\left(7\right)=7.
+$$
+
+
+
+**Bước 3. Ghép các ô đúng vị trí.**
+
+
+
+$$
+AB=\begin{bmatrix}3&-2\\5&-7\\9&7\end{bmatrix}.
+$$
+
+
+
+**f.**
+
+**Bước 1. Kiểm tra kích thước.**
+
+$A$ có kích thước $1\times 3$, $B$ có kích thước $3\times 1$. Kích thước trong bằng nhau; tích có kích thước $1\times 1$.
+
+**Bước 2. Lấy từng hàng nhân từng cột.**
+
+Ô $(i,j)$ là tổng các tích của hàng $i$ bên trái với cột $j$ bên phải. Các phép tính cụ thể:
+
+
+
+$$
+(AB)_{11}=\left(1\right)\left(2\right)+\left(-1\right)\left(1\right)+\left(3\right)\left(-8\right)=-23.
+$$
+
+
+
+**Bước 3. Ghép các ô đúng vị trí.**
+
+
+
+$$
+AB=\begin{bmatrix}-23\end{bmatrix}.
+$$
+
+
+
+**g.**
+
+**Bước 1. Kiểm tra kích thước.**
+
+$A$ có kích thước $3\times 1$, $B$ có kích thước $1\times 3$. Kích thước trong bằng nhau; tích có kích thước $3\times 3$.
+
+**Bước 2. Lấy từng hàng nhân từng cột.**
+
+Ô $(i,j)$ là tổng các tích của hàng $i$ bên trái với cột $j$ bên phải. Các phép tính cụ thể:
+
+
+
+$$
+(AB)_{11}=\left(2\right)\left(1\right)=2.
+$$
+
+
+
+
+
+$$
+(AB)_{12}=\left(2\right)\left(-1\right)=-2.
+$$
+
+
+
+
+
+$$
+(AB)_{13}=\left(2\right)\left(3\right)=6.
+$$
+
+
+
+
+
+$$
+(AB)_{21}=\left(1\right)\left(1\right)=1.
+$$
+
+
+
+
+
+$$
+(AB)_{22}=\left(1\right)\left(-1\right)=-1.
+$$
+
+
+
+
+
+$$
+(AB)_{23}=\left(1\right)\left(3\right)=3.
+$$
+
+
+
+
+
+$$
+(AB)_{31}=\left(-7\right)\left(1\right)=-7.
+$$
+
+
+
+
+
+$$
+(AB)_{32}=\left(-7\right)\left(-1\right)=7.
+$$
+
+
+
+
+
+$$
+(AB)_{33}=\left(-7\right)\left(3\right)=-21.
+$$
+
+
+
+**Bước 3. Ghép các ô đúng vị trí.**
+
+
+
+$$
+AB=\begin{bmatrix}2&-2&6\\1&-1&3\\-7&7&-21\end{bmatrix}.
+$$
+
+
+
+**h.**
+
+**Bước 1. Kiểm tra kích thước.**
+
+$A$ có kích thước $2\times 2$, $B$ có kích thước $2\times 2$. Kích thước trong bằng nhau; tích có kích thước $2\times 2$.
+
+**Bước 2. Lấy từng hàng nhân từng cột.**
+
+Ô $(i,j)$ là tổng các tích của hàng $i$ bên trái với cột $j$ bên phải. Các phép tính cụ thể:
+
+
+
+$$
+(AB)_{11}=\left(3\right)\left(2\right)+\left(1\right)\left(-5\right)=1.
+$$
+
+
+
+
+
+$$
+(AB)_{12}=\left(3\right)\left(-1\right)+\left(1\right)\left(3\right)=0.
+$$
+
+
+
+
+
+$$
+(AB)_{21}=\left(5\right)\left(2\right)+\left(2\right)\left(-5\right)=0.
+$$
+
+
+
+
+
+$$
+(AB)_{22}=\left(5\right)\left(-1\right)+\left(2\right)\left(3\right)=1.
+$$
+
+
+
+**Bước 3. Ghép các ô đúng vị trí.**
+
+
+
+$$
+AB=\begin{bmatrix}1&0\\0&1\end{bmatrix}.
+$$
+
+
+
+**i.**
+
+**Bước 1. Kiểm tra kích thước.**
+
+$A$ có kích thước $2\times 3$, $B$ có kích thước $3\times 3$. Kích thước trong bằng nhau; tích có kích thước $2\times 3$.
+
+**Bước 2. Lấy từng hàng nhân từng cột.**
+
+Ô $(i,j)$ là tổng các tích của hàng $i$ bên trái với cột $j$ bên phải. Các phép tính cụ thể:
+
+
+
+$$
+(AB)_{11}=\left(2\right)\left(a\right)+\left(3\right)\left(0\right)+\left(1\right)\left(0\right)=2 a.
+$$
+
+
+
+
+
+$$
+(AB)_{12}=\left(2\right)\left(0\right)+\left(3\right)\left(b\right)+\left(1\right)\left(0\right)=3 b.
+$$
+
+
+
+
+
+$$
+(AB)_{13}=\left(2\right)\left(0\right)+\left(3\right)\left(0\right)+\left(1\right)\left(c\right)=c.
+$$
+
+
+
+
+
+$$
+(AB)_{21}=\left(5\right)\left(a\right)+\left(7\right)\left(0\right)+\left(4\right)\left(0\right)=5 a.
+$$
+
+
+
+
+
+$$
+(AB)_{22}=\left(5\right)\left(0\right)+\left(7\right)\left(b\right)+\left(4\right)\left(0\right)=7 b.
+$$
+
+
+
+
+
+$$
+(AB)_{23}=\left(5\right)\left(0\right)+\left(7\right)\left(0\right)+\left(4\right)\left(c\right)=4 c.
+$$
+
+
+
+**Bước 3. Ghép các ô đúng vị trí.**
+
+
+
+$$
+AB=\begin{bmatrix}2 a&3 b&c\\5 a&7 b&4 c\end{bmatrix}.
+$$
+
+
+
+**j.**
+
+**Bước 1. Kiểm tra kích thước.**
+
+$A$ có kích thước $3\times 3$, $B$ có kích thước $3\times 3$. Kích thước trong bằng nhau; tích có kích thước $3\times 3$.
+
+**Bước 2. Lấy từng hàng nhân từng cột.**
+
+Ô $(i,j)$ là tổng các tích của hàng $i$ bên trái với cột $j$ bên phải. Các phép tính cụ thể:
+
+
+
+$$
+(AB)_{11}=\left(a\right)\left(a_{p}\right)+\left(0\right)\left(0\right)+\left(0\right)\left(0\right)=a a_{p}.
+$$
+
+
+
+
+
+$$
+(AB)_{12}=\left(a\right)\left(0\right)+\left(0\right)\left(b_{p}\right)+\left(0\right)\left(0\right)=0.
+$$
+
+
+
+
+
+$$
+(AB)_{13}=\left(a\right)\left(0\right)+\left(0\right)\left(0\right)+\left(0\right)\left(c_{p}\right)=0.
+$$
+
+
+
+
+
+$$
+(AB)_{21}=\left(0\right)\left(a_{p}\right)+\left(b\right)\left(0\right)+\left(0\right)\left(0\right)=0.
+$$
+
+
+
+
+
+$$
+(AB)_{22}=\left(0\right)\left(0\right)+\left(b\right)\left(b_{p}\right)+\left(0\right)\left(0\right)=b b_{p}.
+$$
+
+
+
+
+
+$$
+(AB)_{23}=\left(0\right)\left(0\right)+\left(b\right)\left(0\right)+\left(0\right)\left(c_{p}\right)=0.
+$$
+
+
+
+
+
+$$
+(AB)_{31}=\left(0\right)\left(a_{p}\right)+\left(0\right)\left(0\right)+\left(c\right)\left(0\right)=0.
+$$
+
+
+
+
+
+$$
+(AB)_{32}=\left(0\right)\left(0\right)+\left(0\right)\left(b_{p}\right)+\left(c\right)\left(0\right)=0.
+$$
+
+
+
+
+
+$$
+(AB)_{33}=\left(0\right)\left(0\right)+\left(0\right)\left(0\right)+\left(c\right)\left(c_{p}\right)=c c_{p}.
+$$
+
+
+
+**Bước 3. Ghép các ô đúng vị trí.**
+
+
+
+$$
+AB=\begin{bmatrix}a a_{p}&0&0\\0&b b_{p}&0\\0&0&c c_{p}\end{bmatrix}.
+$$
 
 </LoiGiai>
 

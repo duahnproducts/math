@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Ứng dụng: hệ thức truy hồi tuyến tính — bài 8"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.6.8"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.6.8 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Một lò phản ứng hạt nhân chứa các hạt $\alpha$ và $\beta$. Mỗi giây, mỗi hạt $\alpha$ tách thành ba hạt $\beta$, còn mỗi hạt $\beta$ tách thành một hạt $\alpha$ và hai hạt $\beta$. Nếu ban đầu lò chỉ có một hạt $\alpha$ ở thời điểm $t = 0$, có bao nhiêu hạt $\alpha$ tại $t = 20$ giây? [Gợi ý: Gọi $x_{k}$ và $y_{k}$ lần lượt là số hạt $\alpha$ và $\beta$ tại thời điểm $t = k$ giây. Tìm $x_{k+1}$ và $y_{k+1}$ theo $x_{k}$ và $y_{k}$.]
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-6-8-1" moTa="Đề gốc Nicholson bài 3.6.8, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -29,6 +37,7 @@ and yk+1 in terms of xk and yk.]
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -45,11 +54,37 @@ Dùng các điều kiện đầu để xác định hệ số trong nghiệm t�
 
 <LoiGiai>
 
-Gọi $x_k,y_k$ là số hạt $\alpha,\beta$. Mỗi $\beta$ sinh một $\alpha$, mỗi $\alpha$ sinh ba $\beta$, nên $x_{k+1}=y_k$, $y_{k+1}=3x_k+2y_k$. Suy ra $x_{k+2}=2x_{k+1}+3x_k$, $x_0=1,x_1=0$. Giải được $x_k=(3^k+3(-1)^k)/4$. Vì vậy
+**Cách làm.** Với truy hồi tuyến tính, thử $x_k=r^k$ để tìm phương trình đặc trưng. Các điều kiện đầu quyết định hệ số; với bài đếm, cần phân loại các trường hợp rời nhau và đếm hết mọi khả năng.
+
+Từ $x_{k+1}=y_k$, dịch chỉ số cho $x_{k+2}=y_{k+1}=3x_k+2y_k=3x_k+2x_{k+1}$. Phương trình đặc trưng $(r-3)(r+1)=0$ cho $x_k=C3^k+D(-1)^k$. Điều kiện $C+D=1$, $3C-D=0$ cho $C=1/4,D=3/4$.
+
+**Bước 1. Thiết lập biểu thức.**
+
+Gọi $x_k,y_k$ là số hạt $\alpha,\beta$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Mỗi $\beta$ sinh một $\alpha$, mỗi $\alpha$ sinh ba $\beta$, nên $x_{k+1}=y_k$, $y_{k+1}=3x_k+2y_k$.
+
+**Bước 3. Rút ra kết luận.**
+
+Suy ra $x_{k+2}=2x_{k+1}+3x_k$, $x_0=1,x_1=0$.
+
+**Bước 4. Lập luận và tính toán.**
+
+Giải được $x_k=(3^k+3(-1)^k)/4$.
+
+**Bước 5. Giải thích điều kiện sử dụng.**
+
+Vì vậy
+
+
 
 $$
 x_{20}=\frac{3^{20}+3}{4}=871696101.
 $$
+
+
 
  Kiểm tra những bước đầu: $x_0=1,x_1=0,x_2=3$.
 

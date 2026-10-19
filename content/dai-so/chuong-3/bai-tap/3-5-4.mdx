@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Hệ động lực tuyến tính — bài 4"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.5.4"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.5.4 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Trong Ví dụ 3.3.1, giữ tỷ lệ sinh sản bằng 2 và tỷ lệ sống của cá thể trưởng thành bằng $\frac{1}{2}$, nhưng giả sử tỷ lệ sống của con non là $\rho$. Xác định các giá trị của $\rho$ khiến quần thể tuyệt chủng hoặc tăng lớn.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-5-4-1" moTa="Đề gốc Nicholson bài 3.5.4, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -25,6 +33,7 @@ extinct or to become large.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -42,7 +51,25 @@ Khai triển trạng thái ban đầu theo cơ sở vector riêng, rồi so sán
 
 <LoiGiai>
 
-Ma trận là $M=\begin{bmatrix}1/2&\rho\\2&0\end{bmatrix}$, trị riêng dương $\lambda_+=(1/2+\sqrt{1/4+8\rho})/2$. Với $0\le\rho\le1$, so sánh $1/2+2\rho$ với 1: $\rho<1/4$ gây tuyệt chủng; $\rho=1/4$ quần thể ổn định; $\rho>1/4$ quần thể tăng không bị chặn, với quần thể ban đầu không âm khác 0 và $\rho>0$. Ở biên $\rho=0$, con non không sống thành con trưởng thành nên toàn bộ quần thể vẫn tiến về 0. Nếu ban đầu bằng 0 thì luôn bằng 0.
+**Cách làm.** Mô hình tuyến tính có $v_{k+1}=Mv_k$, nên $v_k=M^kv_0$. Nếu $v_0=\sum_i c_iv_i$ theo vector riêng, thì $v_k=\sum_i c_i\lambda_i^kv_i$.
+
+Tại ngưỡng ổn định, thử $\lambda=1$ vào $\lambda^2-\lambda/2-2\rho=0$, được $1/2-2\rho=0$, nên $\rho=1/4$. Công thức nghiệm dương tăng theo $\rho$, nên phía dưới ngưỡng có $\lambda_+<1$, phía trên có $\lambda_+>1$.
+
+**Bước 1. Lập luận và tính toán.**
+
+Ma trận là $M=\begin{bmatrix}1/2&\rho\\2&0\end{bmatrix}$, trị riêng dương $\lambda_+=(1/2+\sqrt{1/4+8\rho})/2$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Với $0\le\rho\le1$, so sánh $1/2+2\rho$ với 1: $\rho<1/4$ gây tuyệt chủng; $\rho=1/4$ quần thể ổn định; $\rho>1/4$ quần thể tăng không bị chặn, với quần thể ban đầu không âm khác 0 và $\rho>0$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Ở biên $\rho=0$, con non không sống thành con trưởng thành nên toàn bộ quần thể vẫn tiến về 0.
+
+**Bước 4. Xét giả thiết.**
+
+Nếu ban đầu bằng 0 thì luôn bằng 0.
 
 </LoiGiai>
 

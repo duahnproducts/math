@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Phép biến đổi tuyến tính — bài 6"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.6.6"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.6.6 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Dùng Định lý 2.6.2 để tìm ma trận của phép biến đổi đồng nhất $1_{\mathbb{R}^n} : \mathbb{R}^n \to \mathbb{R}^n$, được định nghĩa bởi $1_{\mathbb{R}^n}(\mathbf{x}) = \mathbf{x}$ với mọi $\mathbf{x}$ thuộc $\mathbb{R}^n$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-6-6-1" moTa="Đề gốc Nicholson bài 2.6.6, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ the identity transformation 1Rn : Rn →Rn deﬁned by1Rn(x) = x for each x in R
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +48,19 @@ Cột thứ j của ma trận ánh xạ là ảnh của vector đơn vị thứ 
 
 <LoiGiai>
 
-Ánh xạ đồng nhất có $T(e_j)=e_j$. Theo định lý ma trận của ánh xạ tuyến tính, $A=[T(e_1)\ \cdots\ T(e_n)]=[e_1\ \cdots\ e_n]=I_n$. Nhân $I_nx=x$ xác nhận trên mọi vector.
+**Cách làm.** Tuyến tính nghĩa là $T(au+bv)=aT(u)+bT(v)$. Với vector cột, ma trận của $T$ là $[T(e_1)\ \cdots\ T(e_n)]$; ma trận của $S\circ T$ là $[S][T]$.
+
+**Bước 1. Lập luận và tính toán.**
+
+Ánh xạ đồng nhất có $T(e_j)=e_j$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Theo định lý ma trận của ánh xạ tuyến tính, $A=[T(e_1)\ \cdots\ T(e_n)]=[e_1\ \cdots\ e_n]=I_n$.
+
+**Bước 3. Thực hiện phép biến đổi.**
+
+Nhân $I_nx=x$ xác nhận trên mọi vector.
 
 </LoiGiai>
 

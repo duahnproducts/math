@@ -5,11 +5,35 @@ do_kho: vua
 tieu_de: "Khai triển theo phần bù đại số — bài 14"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.1.14"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.1.14 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Tính bằng cách trước hết cộng tất cả các hàng còn lại vào hàng đầu.
+
+**a.**
+
+$$
+\det \left[ \begin{array}{ccc} x-1 & 2 & 3 \\ 2 & -3 & x-2 \\ -2 & x & -2 \end{array}\right]
+$$
+
+
+
+**b.**
+
+$$
+\det \left[ \begin{array}{ccc} x-1 & -3 & 1 \\ 2 & -1 & x-1 \\ -3 & x+2 & -2 \end{array}\right]
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-1-14-1" moTa="Đề gốc Nicholson bài 3.1.14, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -28,6 +52,7 @@ to the ﬁrst row.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -44,7 +69,19 @@ Cộng bội một hàng vào hàng khác giữ định thức; đổi hai hàng
 
 <LoiGiai>
 
-**a.** Cộng hai hàng dưới vào hàng đầu được $\begin{bmatrix}x - 1&x - 1&x - 1\end{bmatrix}$. Rút nhân tử chung của hàng này, rồi khai triển định thức theo hàng/cột thuận tiện, thu
+**Cách làm.** Cộng bội hàng khác giữ nguyên định thức; đổi hai hàng đổi dấu; rút hệ số $c$ từ một hàng đưa $c$ ra ngoài. Với khai triển, $C_{ij}=(-1)^{i+j}\det M_{ij}$.
+
+**a.**
+
+**Bước 1. Thực hiện phép biến đổi.**
+
+Cộng hai hàng dưới vào hàng đầu được $\begin{bmatrix}x - 1&x - 1&x - 1\end{bmatrix}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Rút nhân tử chung của hàng này, rồi khai triển định thức theo hàng/cột thuận tiện, thu
+
+
 
 $$
 \det A=- \left(x - 4\right) \left(x - 1\right) \left(x + 2\right).
@@ -52,7 +89,17 @@ $$
 
 
 
-**b.** Cộng hai hàng dưới vào hàng đầu được $\begin{bmatrix}x - 2&x - 2&x - 2\end{bmatrix}$. Rút nhân tử chung của hàng này, rồi khai triển định thức theo hàng/cột thuận tiện, thu
+**b.**
+
+**Bước 1. Thực hiện phép biến đổi.**
+
+Cộng hai hàng dưới vào hàng đầu được $\begin{bmatrix}x - 2&x - 2&x - 2\end{bmatrix}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Rút nhân tử chung của hàng này, rồi khai triển định thức theo hàng/cột thuận tiện, thu
+
+
 
 $$
 \det A=- \left(x - 2\right) \left(x^{2} + 2 x - 12\right).

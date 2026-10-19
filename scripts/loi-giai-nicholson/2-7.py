@@ -15,23 +15,18 @@ aa=[[[2,6,-2,0,2],[3,9,-3,3,1],[-1,-3,1,-3,1]],[[2,4,2],[1,-1,3],[-1,7,-7]],[[2,
 out=[]
 for i,a in enumerate(aa):
     p,l,u=lu(a);assert p==S.eye(len(a))
-    out.append('**'+chr(97+i)+r'.** Khử các phần tử dưới pivot bằng cộng bội hàng, rồi chia hàng pivot để hệ số dẫn đầu bằng 1. Ghi các hệ số khử và hệ số chia vào $L$, được $$L='+tex(l)+r',\quad U='+tex(u)+r'.$$ Nhân từng hàng của $L$ với các cột của $U$ cho đúng $A$; $L$ tam giác dưới khả nghịch, $U$ bậc thang có pivot 1.')
+    out.append('**'+chr(97+i)+'.**\n\n'+lu_text(a,p,l,u))
 add('2.7.1','\n\n'.join(out))
 aa=[[[0,0,2],[0,-1,4],[3,5,1]],[[0,-1,2],[0,0,4],[-1,2,1]],[[0,-1,2,1,3],[-1,1,3,1,4],[1,-1,-3,6,2],[2,-2,-4,1,0]],[[-1,-2,3,0],[2,4,-6,5],[1,1,-1,3],[2,5,-10,1]]]
 out=[]
 for i,a in enumerate(aa):
     p,l,u=lu(a)
-    out.append('**'+chr(97+i)+r'.** Đổi hàng theo $P$, sau đó khử dưới pivot và chuẩn hóa hàng pivot: $$P='+tex(p)+r',\quad L='+tex(l)+r',\quad U='+tex(u)+r'.$$ Kiểm tra trực tiếp $PA=LU$. Các hàng của $P$ cho biết thứ tự các hàng ban đầu sau khi hoán vị.')
+    out.append('**'+chr(97+i)+'.**\n\n'+lu_text(a,p,l,u))
 add('2.7.2','\n\n'.join(out))
-triples=[([[2,0,0],[0,-1,0],[1,1,3]],[[1,0,1],[0,1,2],[0,0,1]],[1,-1,2]),([[2,0,0],[1,3,0],[-1,2,1]],[[1,1,-1],[0,1,1],[0,0,0]],[-2,-1,1]),([[-2,0,0,0],[1,-1,0,0],[-1,0,2,0],[0,1,0,2]],[[1,-1,2,1],[0,1,1,-4],[0,0,1,-S.Rational(1,2)],[0,0,0,1]],[1,-1,2,0]),([[2,0,0,0],[0,-1,0,0],[-1,1,2,0],[3,0,1,-1]],[[1,-1,0,1],[0,1,-2,-1],[0,0,1,1],[0,0,0,0]],[4,-6,4,5])]
+triples=[([[2,0,0],[0,-1,0],[1,1,3]],[[1,0,0,1],[0,0,1,2],[0,0,0,1]],[1,-1,2]),([[2,0,0],[1,3,0],[-1,2,1]],[[1,1,0,-1],[0,1,0,1],[0,0,0,0]],[-2,-1,1]),([[-2,0,0,0],[1,-1,0,0],[-1,0,2,0],[0,1,0,2]],[[1,-1,2,1],[0,1,1,-4],[0,0,1,-S.Rational(1,2)],[0,0,0,1]],[1,-1,2,0]),([[2,0,0,0],[1,-1,0,0],[-1,1,2,0],[3,0,1,-1]],[[1,-1,0,1],[0,1,-2,-1],[0,0,1,1],[0,0,0,0]],[4,-6,4,5])]
 out=[]
 for i,(l,u,b) in enumerate(triples):
-    l,u,b=M(l),M(u),M(b);y=l.inv()*b
-    intro='**'+chr(97+i)+r'.** Đặt $y=Ux$. Thế tiến trong $Ly=b$ cho $$y='+tex(y)+r'.$$ '
-    if u.rank()!=u.row_join(y).rank():out.append(intro+'Hàng cuối của $Ux=y$ có vế trái bằng 0 nhưng vế phải khác 0, nên hệ vô nghiệm.')
-    else:
-        x,params=u.gauss_jordan_solve(y);assert l*u*x==b
-        out.append(intro+r'Thế ngược từ hàng dưới lên trong $Ux=y$ được $$x='+tex(x)+r'.$$ '+(r'Các ký hiệu $\tau_i$ là tham số thực tự do. 'if params.rows else '')+r'Thế lại cho $LUx=b$, xác nhận mọi nghiệm.')
+    out.append('**'+chr(97+i)+'.**\n\n'+triangular_text(l,u,b))
 add('2.7.3','\n\n'.join(out))
 add('2.7.4',r'Giả sử $A=LU$ với $L=\begin{bmatrix}a&0\\b&c\end{bmatrix}$, $U=\begin{bmatrix}d&e\\0&f\end{bmatrix}$. Ô (1,2) cho $ae=1$, nên $a\ne0$. Ô (1,1) cho $ad=0$, suy ra $d=0$. Nhưng ô (2,1) là $bd=0$, trái với $A_{21}=1$. Vì vậy không có phân tích như vậy nếu không hoán vị hàng.')
 add('2.7.5',r'Gọi hai hàng ban đầu là $u,v$. Thực hiện theo thứ tự $R_i\leftarrow R_i+R_j$, $R_j\leftarrow-R_j$, $R_j\leftarrow R_j+R_i$, $R_i\leftarrow R_i-R_j$. Hai hàng lần lượt thành $(u+v,v)$, $(u+v,-v)$, $(u+v,u)$, $(v,u)$. Chỉ dùng cộng bội hàng và nhân hàng với số khác 0, nên đã biểu diễn phép đổi hàng bằng hai loại còn lại.')

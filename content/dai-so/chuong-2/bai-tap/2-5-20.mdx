@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Ma trận sơ cấp — bài 20"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.5.20"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.5.20 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $A$ và $B$ lần lượt là các ma trận $m \times n$ và $n \times m$. Nếu $m > n$, hãy chứng minh rằng $AB$ không khả nghịch. [Gợi ý: Dùng Định lý 1.3.1 để tìm $\mathbf{x} \neq \mathbf{0}$ thỏa mãn $B\mathbf{x} = \mathbf{0}$.]
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-5-20-1" moTa="Đề gốc Nicholson bài 2.5.20, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ Exercise 2.5.20  Let A and B be m×n and n×m matri-ces, respectively. If m > n,
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +48,21 @@ Một phép hàng là nhân trái; một phép cột là nhân phải. Ghi thứ
 
 <LoiGiai>
 
-$B$ có $n$ phương trình và $m>n$ ẩn nên hệ thuần nhất $Bx=0$ có nghiệm $x\ne0$. Khi đó $(AB)x=A(Bx)=0$, nên ma trận vuông $AB$ có hạt nhân khác không và không khả nghịch. Không cần biết cụ thể các phần tử của $A,B$.
+**Cách làm.** Ma trận sơ cấp $E$ nhận từ $I$ bằng một phép hàng. $EA$ làm phép đó lên các hàng của $A$. Trong chuỗi $E_k\cdots E_1A$, phép $E_1$ được thực hiện trước.
+
+Có $m$ ẩn nhưng chỉ $n<m$ phương trình nên ít nhất một ẩn tự do; vì thế $Bx=0$ có nghiệm $x\ne0$. Dùng chính vector ấy để chứng minh $AB$ có hạt nhân khác 0, thay vì đoán một quan hệ hàng của $AB$.
+
+**Bước 1. Lập luận và tính toán.**
+
+$B$ có $n$ phương trình và $m>n$ ẩn nên hệ thuần nhất $Bx=0$ có nghiệm $x\ne0$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Khi đó $(AB)x=A(Bx)=0$, nên ma trận vuông $AB$ có hạt nhân khác không và không khả nghịch.
+
+**Bước 3. Lập luận và tính toán.**
+
+Không cần biết cụ thể các phần tử của $A,B$.
 
 </LoiGiai>
 

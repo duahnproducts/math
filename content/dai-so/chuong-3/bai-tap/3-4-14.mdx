@@ -5,11 +5,31 @@ do_kho: vua
 tieu_de: "Chéo hoá — bài 14"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.4.14"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.4.14 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho
+
+$$
+A = \left[ \begin{array}{rrr} 2 & 3 & -3 \\ 1 & 0 & -1 \\ 1 & 1 & -2 \end{array} \right]
+$$
+
+ và
+
+$$
+B = \left[ \begin{array}{rrr} 0 & 1 & 0 \\ 3 & 0 & 1 \\ 2 & 0 & 0 \end{array} \right]
+$$
+
+. Chứng minh rằng $c_{A}(x) = c_{B}(x) = (x + 1)^{2} (x - 2)$, nhưng $A$ chéo hóa được còn $B$ không chéo hóa được.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-4-14-1" moTa="Đề gốc Nicholson bài 3.4.14, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -23,6 +43,7 @@ Exercise 3.4.14   Let A =      0          B =                       −1 
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -40,15 +61,183 @@ Ghép các vector riêng độc lập thành cột của P, rồi kiểm tra AP 
 
 <LoiGiai>
 
-**A.** $c_A(x)=\left(x - 2\right) \left(x + 1\right)^{2}$. Giải $(A-\lambda I)v=0$ cho từng nghiệm: $\lambda=-1$ (bội đại số 2), $E_\lambda=\operatorname{span}\{\begin{bmatrix}-1\\1\\0\end{bmatrix},\begin{bmatrix}1\\0\\1\end{bmatrix}\}$; $\lambda=2$ (bội đại số 1), $E_\lambda=\operatorname{span}\{\begin{bmatrix}3\\1\\1\end{bmatrix}\}$. Vector riêng là mọi vector khác 0 trong các không gian vừa ghi. Ghép các vector cơ sở theo thứ tự trên:
+**Cách làm.** Chéo hóa $A=PDP^{-1}$ nghĩa là các cột của $P$ là một cơ sở vector riêng. Trị riêng của cột thứ $j$ phải nằm ở ô $d_{jj}$, và có thể kiểm tra bằng $AP=PD$.
+
+**A.** **Bước 1. Tìm trị riêng.**
+
+Lập
+
+
 
 $$
-P=\begin{bmatrix}-1&1&3\\1&0&1\\0&1&1\end{bmatrix},\qquad P^{-1}AP=D=\begin{bmatrix}-1&0&0\\0&-1&0\\0&0&2\end{bmatrix}.
+xI-A=\begin{bmatrix}x - 2&-3&3\\-1&x&1\\-1&-1&x + 2\end{bmatrix}.
 $$
 
- Kiểm tra $AP=PD$ và $\det P\ne0$.
 
-**B.** $c_A(x)=x^{2} \left(x - 1\right)$. Giải $(A-\lambda I)v=0$ cho từng nghiệm: $\lambda=0$ (bội đại số 2), $E_\lambda=\operatorname{span}\{\begin{bmatrix}0\\1\\0\end{bmatrix}\}$; $\lambda=1$ (bội đại số 1), $E_\lambda=\operatorname{span}\{\begin{bmatrix}\frac{1}{2}\\\frac{5}{2}\\1\end{bmatrix}\}$. Vector riêng là mọi vector khác 0 trong các không gian vừa ghi. Tổng số vector cơ sở độc lập chỉ là 2, nhỏ hơn cấp 3, nên không chéo hóa được. **Chú ý dữ kiện:** với đúng $B$ được in trong đề, đa thức đặc trưng là $x^2(x-1)$, không phải $(x+1)^2(x-2)$. Khẳng định hai đa thức bằng nhau là lỗi bản in; kết luận $B$ không chéo hóa được vẫn đúng vì không gian riêng 0 chỉ một chiều.
+
+ Khai triển định thức rồi phân tích nhân tử:
+
+
+
+$$
+c_A(x)=\det(xI-A)=x^{3} - 3 x - 2=\left(x - 2\right) \left(x + 1\right)^{2}.
+$$
+
+
+
+ Các trị riêng là nghiệm của $c_A(x)=0$.
+
+**Với $\lambda=-1$ (bội đại số 2).** Giải $(A-\lambda I)v=0$:
+
+
+
+$$
+A-\lambda I=\begin{bmatrix}3&3&-3\\1&1&-1\\1&1&-1\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&1&-1\\0&0&0\\0&0&0\end{bmatrix}.
+$$
+
+
+
+Hàng 1 cho $(1)v_{1}+(1)v_{2}+(-1)v_{3}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{-1}=\operatorname{span}\{\begin{bmatrix}-1\\1\\0\end{bmatrix},\begin{bmatrix}1\\0\\1\end{bmatrix}\}.
+$$
+
+
+
+**Với $\lambda=2$ (bội đại số 1).** Giải $(A-\lambda I)v=0$:
+
+
+
+$$
+A-\lambda I=\begin{bmatrix}0&3&-3\\1&-2&-1\\1&1&-4\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&0&-3\\0&1&-1\\0&0&0\end{bmatrix}.
+$$
+
+
+
+Hàng 1 cho $(1)v_{1}+(-3)v_{3}=0$.
+
+Hàng 2 cho $(1)v_{2}+(-1)v_{3}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{2}=\operatorname{span}\{\begin{bmatrix}3\\1\\1\end{bmatrix}\}.
+$$
+
+
+
+**Bước 2. Ghép cơ sở vector riêng theo đúng thứ tự.**
+
+Có đủ 3 vector độc lập. Đặt các vector ấy làm cột của $P$, và đặt trị riêng tương ứng cùng thứ tự trên đường chéo của $D$:
+
+
+
+$$
+P=\begin{bmatrix}-1&1&3\\1&0&1\\0&1&1\end{bmatrix},\quad D=\begin{bmatrix}-1&0&0\\0&-1&0\\0&0&2\end{bmatrix}.
+$$
+
+
+
+**Bước 3. Kiểm tra phép chéo hóa.**
+
+$\det P=3\ne0$, nên $P$ khả nghịch. Nhân từng cột cho
+
+
+
+$$
+AP=PD=\begin{bmatrix}1&-1&6\\-1&0&2\\0&-1&2\end{bmatrix}.
+$$
+
+
+
+ Nhân trái với $P^{-1}$ thu được $P^{-1}AP=D$.
+
+Vector riêng là các vector **khác 0** trong từng không gian riêng vừa ghi; vector 0 chỉ thuộc không gian riêng.
+
+**B.** **Bước 1. Tìm trị riêng.**
+
+Lập
+
+
+
+$$
+xI-B=\begin{bmatrix}x&-1&0\\-3&x&-1\\-2&0&x\end{bmatrix}.
+$$
+
+
+
+ Khai triển định thức rồi phân tích nhân tử:
+
+
+
+$$
+c_B(x)=\det(xI-B)=x^{3} - 3 x - 2=\left(x - 2\right) \left(x + 1\right)^{2}.
+$$
+
+
+
+ Các trị riêng là nghiệm của $c_B(x)=0$.
+
+**Với $\lambda=-1$ (bội đại số 2).** Giải $(B-\lambda I)v=0$:
+
+
+
+$$
+B-\lambda I=\begin{bmatrix}1&1&0\\3&1&1\\2&0&1\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&0&\frac{1}{2}\\0&1&- \frac{1}{2}\\0&0&0\end{bmatrix}.
+$$
+
+
+
+Hàng 1 cho $(1)v_{1}+(\frac{1}{2})v_{3}=0$.
+
+Hàng 2 cho $(1)v_{2}+(- \frac{1}{2})v_{3}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{-1}=\operatorname{span}\{\begin{bmatrix}- \frac{1}{2}\\\frac{1}{2}\\1\end{bmatrix}\}.
+$$
+
+
+
+**Với $\lambda=2$ (bội đại số 1).** Giải $(B-\lambda I)v=0$:
+
+
+
+$$
+B-\lambda I=\begin{bmatrix}-2&1&0\\3&-2&1\\2&0&-2\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&0&-1\\0&1&-2\\0&0&0\end{bmatrix}.
+$$
+
+
+
+Hàng 1 cho $(1)v_{1}+(-1)v_{3}=0$.
+
+Hàng 2 cho $(1)v_{2}+(-2)v_{3}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{2}=\operatorname{span}\{\begin{bmatrix}1\\2\\1\end{bmatrix}\}.
+$$
+
+
+
+**Bước 2. Đếm số vector riêng độc lập.**
+
+Tổng số vector trong các cơ sở vừa tìm là 2, nhỏ hơn cấp 3. Vì vậy không thể lập ma trận khả nghịch bằng các vector riêng, nên ma trận không chéo hóa được.
+
+Vector riêng là các vector **khác 0** trong từng không gian riêng vừa ghi; vector 0 chỉ thuộc không gian riêng.
 
 </LoiGiai>
 

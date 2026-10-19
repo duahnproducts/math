@@ -5,11 +5,25 @@ do_kho: vua
 tieu_de: "Ứng dụng: mô hình kinh tế vào–ra — bài 8"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.8.8"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.8.8 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu $E$ là ma trận $2 \times 2$ có các phần tử nằm giữa $0$ và $1$, hãy chứng minh rằng $I - E$ khả nghịch và $(I - E)^{-1} \geq 0$ khi và chỉ khi $tr \;E < 1 + \det E$. Ở đây, nếu
+
+$$
+E = \left[ \begin{array}{rr} a & b \\ c & d \end{array} \right]
+$$
+
+ thì $tr \;E = a + d$ và $\det E = ad - bc$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-8-8-1" moTa="Đề gốc Nicholson bài 2.8.8, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -24,6 +38,7 @@ E =                 , then tr E = a+d and det E = ad       c  d                 
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -41,13 +56,35 @@ Tổng cột của ma trận stochastic bằng 1. Để tìm giá tương đối
 
 <LoiGiai>
 
-Viết $E=\begin{bmatrix}a&b\\c&d\end{bmatrix}$ và $\Delta=\det(I-E)=1-\operatorname{tr}E+\det E$. Với các ô nằm giữa 0 và 1,
+**Cách làm.** Cơ cấu giá cân bằng thỏa $Ep=p$, tức $(I-E)p=0$. Với mô hình mở, điều kiện cần kiểm tra là $I-E$ khả nghịch và $(I-E)^{-1}$ có các ô không âm.
+
+Vì $0\le a,b,c,d\le1$, các tử số $1-d,b,c,1-a$ không âm. Dấu của nghịch đảo do dấu $\Delta$ quyết định. Nếu $\Delta<0$, một ô tử dương sẽ cho ô nghịch đảo âm; nếu mọi tử bằng 0 thì $I-E=0$, cũng không khả nghịch.
+
+**Bước 1. Thiết lập biểu thức.**
+
+Viết $E=\begin{bmatrix}a&b\\c&d\end{bmatrix}$ và $\Delta=\det(I-E)=1-\operatorname{tr}E+\det E$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Với các ô nằm giữa 0 và 1,
+
+
 
 $$
 (I-E)^{-1}=\Delta^{-1}\begin{bmatrix}1-d&b\\c&1-a\end{bmatrix}.
 $$
 
- Nếu $\operatorname{tr}E<1+\det E$ thì $\Delta>0$, tử số không âm, nên nghịch đảo tồn tại và không âm. Ngược lại, nếu nghịch đảo tồn tại không âm mà $\Delta<0$, mọi ô của tử số phải bằng 0; điều này cho $I-E=0$, mâu thuẫn khả nghịch. Do đó $\Delta>0$, tương đương bất đẳng thức cần chứng minh.
+
+
+ Nếu $\operatorname{tr}E<1+\det E$ thì $\Delta>0$, tử số không âm, nên nghịch đảo tồn tại và không âm.
+
+**Bước 3. Kiểm tra chiều ngược.**
+
+Ngược lại, nếu nghịch đảo tồn tại không âm mà $\Delta<0$, mọi ô của tử số phải bằng 0; điều này cho $I-E=0$, mâu thuẫn khả nghịch.
+
+**Bước 4. Rút ra kết luận.**
+
+Do đó $\Delta>0$, tương đương bất đẳng thức cần chứng minh.
 
 </LoiGiai>
 

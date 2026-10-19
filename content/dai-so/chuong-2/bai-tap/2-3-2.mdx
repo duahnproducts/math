@@ -5,11 +5,59 @@ do_kho: vua
 tieu_de: "Phép nhân ma trận — bài 2"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.3.2"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.2 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Trong mỗi trường hợp sau, hãy tìm tất cả các tích xác định được: $A^{2}$, $AB$, $AC$, v.v.
+
+**a.**
+
+$$
+A = \left[ \begin{array}{rrr} 1 & 2 & 3 \\ -1 & 0 & 0 \end{array} \right]
+$$
+
+,
+
+$$
+B = \left[ \begin{array}{rr} 1 & -2 \\ \frac{1}{2} & 3 \end{array} \right]
+$$
+
+,
+
+$$
+C = \left[ \begin{array}{rr} -1 & 0 \\ 2 & 5 \\ 0 & 3 \end{array} \right]
+$$
+
+
+
+**b.**
+
+$$
+A = \left[ \begin{array}{rrr} 1 & 2 & 4 \\ 0 & 1 & -1 \end{array} \right]
+$$
+
+,
+
+$$
+B = \left[ \begin{array}{rr} -1 & 6 \\ 1 & 0 \end{array} \right]
+$$
+
+,
+
+$$
+C = \left[ \begin{array}{rr} 2 & 0 \\ -1 & 1 \\ 1 & 2 \end{array} \right]
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-3-2-1" moTa="Đề gốc Nicholson bài 2.3.2, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -33,6 +81,7 @@ C =       1    −1           1  2        
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -49,9 +98,655 @@ Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự 
 
 <LoiGiai>
 
-**a.** Các tích xác định là $B^2=\begin{bmatrix}0&-8\\2&8\end{bmatrix}$, $BA=\begin{bmatrix}3&2&3\\- \frac{5}{2}&1&\frac{3}{2}\end{bmatrix}$, $CB=\begin{bmatrix}-1&2\\\frac{9}{2}&11\\\frac{3}{2}&9\end{bmatrix}$, $AC=\begin{bmatrix}3&19\\1&0\end{bmatrix}$, $CA=\begin{bmatrix}-1&-2&-3\\-3&4&6\\-3&0&0\end{bmatrix}$. Các tích còn lại không xác định vì kích thước trong không khớp.
+**Cách làm.** Với $A$ cỡ $m\times n$, $B$ cỡ $n\times p$, tích $AB$ có cỡ $m\times p$ và $(AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$. Khi khai triển, giữ nguyên thứ tự các thừa số.
 
-**b.** Các tích xác định là $B^2=\begin{bmatrix}7&-6\\-1&6\end{bmatrix}$, $BA=\begin{bmatrix}-1&4&-10\\1&2&4\end{bmatrix}$, $CB=\begin{bmatrix}-2&12\\2&-6\\1&6\end{bmatrix}$, $AC=\begin{bmatrix}4&10\\-2&-1\end{bmatrix}$, $CA=\begin{bmatrix}2&4&8\\-1&-1&-5\\1&4&2\end{bmatrix}$. Các tích còn lại không xác định vì kích thước trong không khớp.
+**a.** **Bước 1. Kiểm tra kích thước.**
+
+$B$ có kích thước $2\times 2$, $B$ có kích thước $2\times 2$. Kích thước trong bằng nhau; tích có kích thước $2\times 2$.
+
+**Bước 2. Lấy từng hàng nhân từng cột.**
+
+Ô $(i,j)$ là tổng các tích của hàng $i$ bên trái với cột $j$ bên phải. Các phép tính cụ thể:
+
+
+
+$$
+(BB)_{11}=\left(1\right)\left(1\right)+\left(-2\right)\left(\frac{1}{2}\right)=0.
+$$
+
+
+
+
+
+$$
+(BB)_{12}=\left(1\right)\left(-2\right)+\left(-2\right)\left(3\right)=-8.
+$$
+
+
+
+
+
+$$
+(BB)_{21}=\left(\frac{1}{2}\right)\left(1\right)+\left(3\right)\left(\frac{1}{2}\right)=2.
+$$
+
+
+
+
+
+$$
+(BB)_{22}=\left(\frac{1}{2}\right)\left(-2\right)+\left(3\right)\left(3\right)=8.
+$$
+
+
+
+**Bước 3. Ghép các ô đúng vị trí.**
+
+
+
+$$
+BB=\begin{bmatrix}0&-8\\2&8\end{bmatrix}.
+$$
+
+
+
+**Bước 4. Kiểm tra kích thước.**
+
+$B$ có kích thước $2\times 2$, $A$ có kích thước $2\times 3$. Kích thước trong bằng nhau; tích có kích thước $2\times 3$.
+
+**Bước 5. Lấy từng hàng nhân từng cột.**
+
+Ô $(i,j)$ là tổng các tích của hàng $i$ bên trái với cột $j$ bên phải. Các phép tính cụ thể:
+
+
+
+$$
+(BA)_{11}=\left(1\right)\left(1\right)+\left(-2\right)\left(-1\right)=3.
+$$
+
+
+
+
+
+$$
+(BA)_{12}=\left(1\right)\left(2\right)+\left(-2\right)\left(0\right)=2.
+$$
+
+
+
+
+
+$$
+(BA)_{13}=\left(1\right)\left(3\right)+\left(-2\right)\left(0\right)=3.
+$$
+
+
+
+
+
+$$
+(BA)_{21}=\left(\frac{1}{2}\right)\left(1\right)+\left(3\right)\left(-1\right)=- \frac{5}{2}.
+$$
+
+
+
+
+
+$$
+(BA)_{22}=\left(\frac{1}{2}\right)\left(2\right)+\left(3\right)\left(0\right)=1.
+$$
+
+
+
+
+
+$$
+(BA)_{23}=\left(\frac{1}{2}\right)\left(3\right)+\left(3\right)\left(0\right)=\frac{3}{2}.
+$$
+
+
+
+**Bước 6. Ghép các ô đúng vị trí.**
+
+
+
+$$
+BA=\begin{bmatrix}3&2&3\\- \frac{5}{2}&1&\frac{3}{2}\end{bmatrix}.
+$$
+
+
+
+**Bước 7. Kiểm tra kích thước.**
+
+$C$ có kích thước $3\times 2$, $B$ có kích thước $2\times 2$. Kích thước trong bằng nhau; tích có kích thước $3\times 2$.
+
+**Bước 8. Lấy từng hàng nhân từng cột.**
+
+Ô $(i,j)$ là tổng các tích của hàng $i$ bên trái với cột $j$ bên phải. Các phép tính cụ thể:
+
+
+
+$$
+(CB)_{11}=\left(-1\right)\left(1\right)+\left(0\right)\left(\frac{1}{2}\right)=-1.
+$$
+
+
+
+
+
+$$
+(CB)_{12}=\left(-1\right)\left(-2\right)+\left(0\right)\left(3\right)=2.
+$$
+
+
+
+
+
+$$
+(CB)_{21}=\left(2\right)\left(1\right)+\left(5\right)\left(\frac{1}{2}\right)=\frac{9}{2}.
+$$
+
+
+
+
+
+$$
+(CB)_{22}=\left(2\right)\left(-2\right)+\left(5\right)\left(3\right)=11.
+$$
+
+
+
+
+
+$$
+(CB)_{31}=\left(0\right)\left(1\right)+\left(3\right)\left(\frac{1}{2}\right)=\frac{3}{2}.
+$$
+
+
+
+
+
+$$
+(CB)_{32}=\left(0\right)\left(-2\right)+\left(3\right)\left(3\right)=9.
+$$
+
+
+
+**Bước 9. Ghép các ô đúng vị trí.**
+
+
+
+$$
+CB=\begin{bmatrix}-1&2\\\frac{9}{2}&11\\\frac{3}{2}&9\end{bmatrix}.
+$$
+
+
+
+**Bước 10. Kiểm tra kích thước.**
+
+$A$ có kích thước $2\times 3$, $C$ có kích thước $3\times 2$. Kích thước trong bằng nhau; tích có kích thước $2\times 2$.
+
+**Bước 11. Lấy từng hàng nhân từng cột.**
+
+Ô $(i,j)$ là tổng các tích của hàng $i$ bên trái với cột $j$ bên phải. Các phép tính cụ thể:
+
+
+
+$$
+(AC)_{11}=\left(1\right)\left(-1\right)+\left(2\right)\left(2\right)+\left(3\right)\left(0\right)=3.
+$$
+
+
+
+
+
+$$
+(AC)_{12}=\left(1\right)\left(0\right)+\left(2\right)\left(5\right)+\left(3\right)\left(3\right)=19.
+$$
+
+
+
+
+
+$$
+(AC)_{21}=\left(-1\right)\left(-1\right)+\left(0\right)\left(2\right)+\left(0\right)\left(0\right)=1.
+$$
+
+
+
+
+
+$$
+(AC)_{22}=\left(-1\right)\left(0\right)+\left(0\right)\left(5\right)+\left(0\right)\left(3\right)=0.
+$$
+
+
+
+**Bước 12. Ghép các ô đúng vị trí.**
+
+
+
+$$
+AC=\begin{bmatrix}3&19\\1&0\end{bmatrix}.
+$$
+
+
+
+**Bước 13. Kiểm tra kích thước.**
+
+$C$ có kích thước $3\times 2$, $A$ có kích thước $2\times 3$. Kích thước trong bằng nhau; tích có kích thước $3\times 3$.
+
+**Bước 14. Lấy từng hàng nhân từng cột.**
+
+Ô $(i,j)$ là tổng các tích của hàng $i$ bên trái với cột $j$ bên phải. Các phép tính cụ thể:
+
+
+
+$$
+(CA)_{11}=\left(-1\right)\left(1\right)+\left(0\right)\left(-1\right)=-1.
+$$
+
+
+
+
+
+$$
+(CA)_{12}=\left(-1\right)\left(2\right)+\left(0\right)\left(0\right)=-2.
+$$
+
+
+
+
+
+$$
+(CA)_{13}=\left(-1\right)\left(3\right)+\left(0\right)\left(0\right)=-3.
+$$
+
+
+
+
+
+$$
+(CA)_{21}=\left(2\right)\left(1\right)+\left(5\right)\left(-1\right)=-3.
+$$
+
+
+
+
+
+$$
+(CA)_{22}=\left(2\right)\left(2\right)+\left(5\right)\left(0\right)=4.
+$$
+
+
+
+
+
+$$
+(CA)_{23}=\left(2\right)\left(3\right)+\left(5\right)\left(0\right)=6.
+$$
+
+
+
+
+
+$$
+(CA)_{31}=\left(0\right)\left(1\right)+\left(3\right)\left(-1\right)=-3.
+$$
+
+
+
+
+
+$$
+(CA)_{32}=\left(0\right)\left(2\right)+\left(3\right)\left(0\right)=0.
+$$
+
+
+
+
+
+$$
+(CA)_{33}=\left(0\right)\left(3\right)+\left(3\right)\left(0\right)=0.
+$$
+
+
+
+**Bước 15. Ghép các ô đúng vị trí.**
+
+
+
+$$
+CA=\begin{bmatrix}-1&-2&-3\\-3&4&6\\-3&0&0\end{bmatrix}.
+$$
+
+
+
+ Các tích còn lại không xác định vì số cột ma trận trái khác số hàng ma trận phải.
+
+**b.** **Bước 1. Kiểm tra kích thước.**
+
+$B$ có kích thước $2\times 2$, $B$ có kích thước $2\times 2$. Kích thước trong bằng nhau; tích có kích thước $2\times 2$.
+
+**Bước 2. Lấy từng hàng nhân từng cột.**
+
+Ô $(i,j)$ là tổng các tích của hàng $i$ bên trái với cột $j$ bên phải. Các phép tính cụ thể:
+
+
+
+$$
+(BB)_{11}=\left(-1\right)\left(-1\right)+\left(6\right)\left(1\right)=7.
+$$
+
+
+
+
+
+$$
+(BB)_{12}=\left(-1\right)\left(6\right)+\left(6\right)\left(0\right)=-6.
+$$
+
+
+
+
+
+$$
+(BB)_{21}=\left(1\right)\left(-1\right)+\left(0\right)\left(1\right)=-1.
+$$
+
+
+
+
+
+$$
+(BB)_{22}=\left(1\right)\left(6\right)+\left(0\right)\left(0\right)=6.
+$$
+
+
+
+**Bước 3. Ghép các ô đúng vị trí.**
+
+
+
+$$
+BB=\begin{bmatrix}7&-6\\-1&6\end{bmatrix}.
+$$
+
+
+
+**Bước 4. Kiểm tra kích thước.**
+
+$B$ có kích thước $2\times 2$, $A$ có kích thước $2\times 3$. Kích thước trong bằng nhau; tích có kích thước $2\times 3$.
+
+**Bước 5. Lấy từng hàng nhân từng cột.**
+
+Ô $(i,j)$ là tổng các tích của hàng $i$ bên trái với cột $j$ bên phải. Các phép tính cụ thể:
+
+
+
+$$
+(BA)_{11}=\left(-1\right)\left(1\right)+\left(6\right)\left(0\right)=-1.
+$$
+
+
+
+
+
+$$
+(BA)_{12}=\left(-1\right)\left(2\right)+\left(6\right)\left(1\right)=4.
+$$
+
+
+
+
+
+$$
+(BA)_{13}=\left(-1\right)\left(4\right)+\left(6\right)\left(-1\right)=-10.
+$$
+
+
+
+
+
+$$
+(BA)_{21}=\left(1\right)\left(1\right)+\left(0\right)\left(0\right)=1.
+$$
+
+
+
+
+
+$$
+(BA)_{22}=\left(1\right)\left(2\right)+\left(0\right)\left(1\right)=2.
+$$
+
+
+
+
+
+$$
+(BA)_{23}=\left(1\right)\left(4\right)+\left(0\right)\left(-1\right)=4.
+$$
+
+
+
+**Bước 6. Ghép các ô đúng vị trí.**
+
+
+
+$$
+BA=\begin{bmatrix}-1&4&-10\\1&2&4\end{bmatrix}.
+$$
+
+
+
+**Bước 7. Kiểm tra kích thước.**
+
+$C$ có kích thước $3\times 2$, $B$ có kích thước $2\times 2$. Kích thước trong bằng nhau; tích có kích thước $3\times 2$.
+
+**Bước 8. Lấy từng hàng nhân từng cột.**
+
+Ô $(i,j)$ là tổng các tích của hàng $i$ bên trái với cột $j$ bên phải. Các phép tính cụ thể:
+
+
+
+$$
+(CB)_{11}=\left(2\right)\left(-1\right)+\left(0\right)\left(1\right)=-2.
+$$
+
+
+
+
+
+$$
+(CB)_{12}=\left(2\right)\left(6\right)+\left(0\right)\left(0\right)=12.
+$$
+
+
+
+
+
+$$
+(CB)_{21}=\left(-1\right)\left(-1\right)+\left(1\right)\left(1\right)=2.
+$$
+
+
+
+
+
+$$
+(CB)_{22}=\left(-1\right)\left(6\right)+\left(1\right)\left(0\right)=-6.
+$$
+
+
+
+
+
+$$
+(CB)_{31}=\left(1\right)\left(-1\right)+\left(2\right)\left(1\right)=1.
+$$
+
+
+
+
+
+$$
+(CB)_{32}=\left(1\right)\left(6\right)+\left(2\right)\left(0\right)=6.
+$$
+
+
+
+**Bước 9. Ghép các ô đúng vị trí.**
+
+
+
+$$
+CB=\begin{bmatrix}-2&12\\2&-6\\1&6\end{bmatrix}.
+$$
+
+
+
+**Bước 10. Kiểm tra kích thước.**
+
+$A$ có kích thước $2\times 3$, $C$ có kích thước $3\times 2$. Kích thước trong bằng nhau; tích có kích thước $2\times 2$.
+
+**Bước 11. Lấy từng hàng nhân từng cột.**
+
+Ô $(i,j)$ là tổng các tích của hàng $i$ bên trái với cột $j$ bên phải. Các phép tính cụ thể:
+
+
+
+$$
+(AC)_{11}=\left(1\right)\left(2\right)+\left(2\right)\left(-1\right)+\left(4\right)\left(1\right)=4.
+$$
+
+
+
+
+
+$$
+(AC)_{12}=\left(1\right)\left(0\right)+\left(2\right)\left(1\right)+\left(4\right)\left(2\right)=10.
+$$
+
+
+
+
+
+$$
+(AC)_{21}=\left(0\right)\left(2\right)+\left(1\right)\left(-1\right)+\left(-1\right)\left(1\right)=-2.
+$$
+
+
+
+
+
+$$
+(AC)_{22}=\left(0\right)\left(0\right)+\left(1\right)\left(1\right)+\left(-1\right)\left(2\right)=-1.
+$$
+
+
+
+**Bước 12. Ghép các ô đúng vị trí.**
+
+
+
+$$
+AC=\begin{bmatrix}4&10\\-2&-1\end{bmatrix}.
+$$
+
+
+
+**Bước 13. Kiểm tra kích thước.**
+
+$C$ có kích thước $3\times 2$, $A$ có kích thước $2\times 3$. Kích thước trong bằng nhau; tích có kích thước $3\times 3$.
+
+**Bước 14. Lấy từng hàng nhân từng cột.**
+
+Ô $(i,j)$ là tổng các tích của hàng $i$ bên trái với cột $j$ bên phải. Các phép tính cụ thể:
+
+
+
+$$
+(CA)_{11}=\left(2\right)\left(1\right)+\left(0\right)\left(0\right)=2.
+$$
+
+
+
+
+
+$$
+(CA)_{12}=\left(2\right)\left(2\right)+\left(0\right)\left(1\right)=4.
+$$
+
+
+
+
+
+$$
+(CA)_{13}=\left(2\right)\left(4\right)+\left(0\right)\left(-1\right)=8.
+$$
+
+
+
+
+
+$$
+(CA)_{21}=\left(-1\right)\left(1\right)+\left(1\right)\left(0\right)=-1.
+$$
+
+
+
+
+
+$$
+(CA)_{22}=\left(-1\right)\left(2\right)+\left(1\right)\left(1\right)=-1.
+$$
+
+
+
+
+
+$$
+(CA)_{23}=\left(-1\right)\left(4\right)+\left(1\right)\left(-1\right)=-5.
+$$
+
+
+
+
+
+$$
+(CA)_{31}=\left(1\right)\left(1\right)+\left(2\right)\left(0\right)=1.
+$$
+
+
+
+
+
+$$
+(CA)_{32}=\left(1\right)\left(2\right)+\left(2\right)\left(1\right)=4.
+$$
+
+
+
+
+
+$$
+(CA)_{33}=\left(1\right)\left(4\right)+\left(2\right)\left(-1\right)=2.
+$$
+
+
+
+**Bước 15. Ghép các ô đúng vị trí.**
+
+
+
+$$
+CA=\begin{bmatrix}2&4&8\\-1&-1&-5\\1&4&2\end{bmatrix}.
+$$
+
+
+
+ Các tích còn lại không xác định vì số cột ma trận trái khác số hàng ma trận phải.
 
 </LoiGiai>
 

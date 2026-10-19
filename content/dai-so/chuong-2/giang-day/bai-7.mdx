@@ -149,16 +149,82 @@ Cột ghi vào $L$ là cột **trước khi** chia để tạo số 1 dẫn đ�
 Dùng lại $L$, $U$ trong ví dụ mẫu để giải $A\mathbf{x} = (2, 1, -1)$. **Không** khử lại $A$.
 
 <GoiYNho>Đáp số để kiểm tra: $\mathbf{x} = (1, 0, 0)$ — vì $\mathbf{b}$ chính là cột 1 của $A$.</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Dùng $Ly=b$ rồi $Ux=y$ với $L,U$ đã có, không khử lại $A$.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+$L=\begin{bmatrix}2&0&0\\1&1&0\\-1&3&1\end{bmatrix}$ cho $2y_1=2$, $y_1+y_2=1$, $-y_1+3y_2+y_3=-1$. Suy ra $y=(1,0,0)^T$. Với $U=\begin{bmatrix}1&2&1\\0&1&3\\0&0&1\end{bmatrix}$, thế ngược cho $x_3=0$, $x_2+3x_3=0$, $x_1+2x_2+x_3=1$, nên $x=(1,0,0)^T$.
+
+**Bước 3. Kiểm tra và kết luận.**
+
+$Ax$ là cột 1 của $A$, đúng bằng $(2,1,-1)^T$.
+
+**Bước 4. Cách tự làm lại.**
+
+Vế phải mới chỉ yêu cầu hai lượt thế tam giác; tái sử dụng phân tích đã tính.
+
+</LoiGiai>
 </BaiLuyen>
 
 <BaiLuyen do_kho="vua" so="7.2">
 Tìm phân tích LU của $A = \begin{bmatrix} 3 & 6 \\ 2 & 7 \end{bmatrix}$, kiểm tra $LU = A$, rồi giải $A\mathbf{x} = (9, 9)$.
 
 <GoiYNho>Ghi $\mathbf{c}_1 = (3, 2)$. Sau khi khử, phần còn lại ở hàng 2 cột 2 là $3$, nên $\mathbf{c}_2 = (3)$.</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Chuẩn hóa hàng trụ để $U$ có trụ bằng 1, theo quy ước của bài giảng.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+Chia hàng 1 cho 3 rồi làm $R_2\leftarrow R_2-2R_1$, được hàng 2 $(0,3)$. Chia hàng 2 cho 3:
+
+$$
+U=\begin{bmatrix}1&2\\0&1\end{bmatrix},\quad L=\begin{bmatrix}3&0\\2&3\end{bmatrix}.
+$$
+
+ Giải $Ly=(9,9)^T$: $3y_1=9$ nên $y_1=3$; $2y_1+3y_2=9$ nên $y_2=1$. Giải $Ux=y$: $x_2=1$, $x_1+2=3$, nên $x_1=1$.
+
+**Bước 3. Kiểm tra và kết luận.**
+
+$LU=\begin{bmatrix}3&6\\2&7\end{bmatrix}=A$; $A(1,1)^T=(9,9)^T$.
+
+**Bước 4. Cách tự làm lại.**
+
+Ghi hệ số chuẩn hóa và khử vào $L$, rồi kiểm tra tích trước khi giải hai hệ tam giác.
+
+</LoiGiai>
 </BaiLuyen>
 
 <BaiLuyen do_kho="kho" so="7.3">
 Ma trận $\begin{bmatrix} 0 & 1 \\ 1 & 1 \end{bmatrix}$ có phân tích $LU$ (không đổi chỗ hàng) không? Vì sao? Đổi chỗ hai hàng thì sao — tìm $P$, $L$, $U$ với $PA = LU$.
 
 <GoiYNho tieuDe="Bạn sẽ cần">Thử viết $L = \begin{bmatrix} a & 0 \\ b & c \end{bmatrix}$, $U = \begin{bmatrix} 1 & d \\ 0 & 1 \end{bmatrix}$ rồi so ô góc trên trái của $LU$ với $A$. Ma trận hoán vị $P$ là ma trận sơ cấp loại I ở <XemMuc bai={5} />.</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Thử dạng tam giác tổng quát để xét khả năng không đổi hàng.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+Giả sử $A=LU$ với $L=\begin{bmatrix}a&0\\b&c\end{bmatrix}$, $U=\begin{bmatrix}d&e\\0&f\end{bmatrix}$. Ô $(1,2)$ cho $ae=1$, nên $a\ne0$. Ô $(1,1)$ cho $ad=0$, nên $d=0$. Nhưng ô $(2,1)$ là $bd=0$, trái với 1 trong $A$. Vậy không có LU theo dạng ấy. Đổi hàng bằng $P=\begin{bmatrix}0&1\\1&0\end{bmatrix}$ cho $PA=\begin{bmatrix}1&1\\0&1\end{bmatrix}$. Chọn $L=I$, $U=PA$.
+
+**Bước 3. Kiểm tra và kết luận.**
+
+$LU=PA$ đúng; $P$ cũng khả nghịch vì $P^2=I$.
+
+**Bước 4. Cách tự làm lại.**
+
+Trụ 0 có thể buộc đổi hàng; ghi lại hoán vị bằng $P$ trong $PA=LU$.
+
+</LoiGiai>
 </BaiLuyen>

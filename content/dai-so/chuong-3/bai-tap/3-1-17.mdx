@@ -5,11 +5,25 @@ do_kho: vua
 tieu_de: "Khai triển theo phần bù đại số — bài 17"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.1.17"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.1.17 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh rằng
+
+$$
+\det \left[ \begin{array}{rrrr} 0 & 1 & 1 & 1 \\ 1 & 0 & x & x \\ 1 & x & 0 & x \\ 1 & x & x & 0 \end{array}\right] = -3x^2
+$$
+
+.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-1-17-1" moTa="Đề gốc Nicholson bài 3.1.17, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -24,6 +38,7 @@ Exercise 3.1.17 Show that
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -41,7 +56,27 @@ Cộng bội một hàng vào hàng khác giữ định thức; đổi hai hàng
 
 <LoiGiai>
 
-Trừ hàng 2 khỏi hàng 3 và 4: hai hàng cuối trở thành $(0,x,-x,0)$, $(0,x,0,-x)$. Rút $x$ từ mỗi hàng được nhân tử $x^2$. Định thức còn lại, khai triển theo cột đầu rồi tính hai định thức cấp 3, bằng $-3$. Vậy định thức ban đầu bằng $-3x^2$. Lập luận không chia cho $x$, nên đúng cả $x=0$.
+**Cách làm.** Cộng bội hàng khác giữ nguyên định thức; đổi hai hàng đổi dấu; rút hệ số $c$ từ một hàng đưa $c$ ra ngoài. Với khai triển, $C_{ij}=(-1)^{i+j}\det M_{ij}$.
+
+**Bước 1. Thực hiện phép biến đổi.**
+
+Trừ hàng 2 khỏi hàng 3 và 4: hai hàng cuối trở thành $(0,x,-x,0)$, $(0,x,0,-x)$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Rút $x$ từ mỗi hàng được nhân tử $x^2$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Định thức còn lại, khai triển theo cột đầu rồi tính hai định thức cấp 3, bằng $-3$.
+
+**Bước 4. Rút ra kết luận.**
+
+Vậy định thức ban đầu bằng $-3x^2$.
+
+**Bước 5. Lập luận và tính toán.**
+
+Lập luận không chia cho $x$, nên đúng cả $x=0$.
 
 </LoiGiai>
 

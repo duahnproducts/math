@@ -5,11 +5,27 @@ do_kho: vua
 tieu_de: "Khai triển theo phần bù đại số — bài 26"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.1.26"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.1.26 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh rằng đường thẳng qua hai điểm phân biệt $(x_{1}, y_{1})$ và $(x_{2}, y_{2})$ trong mặt phẳng có phương trình
+
+
+
+$$
+\det \left[ \begin{array}{ccc} x & y & 1 \\ x_1 & y_1 & 1 \\ x_2 & y_2 & 1 \end{array} \right] = 0
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-1-26-1" moTa="Đề gốc Nicholson bài 3.1.26, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -27,6 +43,7 @@ points (x1, y1) and (x2, y2) in the plane has equation
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -43,7 +60,25 @@ Cộng bội một hàng vào hàng khác giữ định thức; đổi hai hàng
 
 <LoiGiai>
 
-Khai triển hàng đầu được $x(y_1-y_2)-y(x_1-x_2)+x_1y_2-y_1x_2=0$. Đây là phương trình bậc nhất theo $x,y$; hai hệ số của $x,y$ không đồng thời bằng 0 vì hai điểm khác nhau. Thay mỗi điểm vào cho 0 (hai hàng của định thức trùng nhau). Vậy đây chính là đường thẳng qua hai điểm, kể cả trường hợp đường thẳng đứng.
+**Cách làm.** Cộng bội hàng khác giữ nguyên định thức; đổi hai hàng đổi dấu; rút hệ số $c$ từ một hàng đưa $c$ ra ngoài. Với khai triển, $C_{ij}=(-1)^{i+j}\det M_{ij}$.
+
+Định thức bằng 0 tạo phương trình tuyến tính theo $x,y$. Để đây là một đường thẳng thực sự, cần ít nhất một hệ số của $x,y$ khác 0; điều ấy đến từ giả thiết hai điểm phân biệt. Thay hai điểm vào cho hai hàng trùng nhau, xác nhận cả hai điểm nằm trên đường.
+
+**Bước 1. Thực hiện phép biến đổi.**
+
+Khai triển hàng đầu được $x(y_1-y_2)-y(x_1-x_2)+x_1y_2-y_1x_2=0$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Đây là phương trình bậc nhất theo $x,y$; hai hệ số của $x,y$ không đồng thời bằng 0 vì hai điểm khác nhau.
+
+**Bước 3. Thay vào để tính và kiểm tra.**
+
+Thay mỗi điểm vào cho 0 (hai hàng của định thức trùng nhau).
+
+**Bước 4. Rút ra kết luận.**
+
+Vậy đây chính là đường thẳng qua hai điểm, kể cả trường hợp đường thẳng đứng.
 
 </LoiGiai>
 

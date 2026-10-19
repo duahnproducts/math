@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Ứng dụng: xích Markov — bài 3"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.9.3"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.9.3 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Một con cáo săn mồi tại ba vùng $A$, $B$ và $C$. Nó không bao giờ săn ở cùng một vùng trong hai ngày liên tiếp. Nếu nó săn ở $A$ thì ngày hôm sau nó săn ở $C$. Nếu nó săn ở $B$ hoặc $C$ thì xác suất nó săn ở $A$ vào ngày hôm sau gấp đôi xác suất nó săn ở vùng còn lại.
+
+**a.** Tỷ lệ thời gian nó ở $A$, ở $B$ và ở $C$ là bao nhiêu?
+
+**b.** Nếu nó săn ở $A$ vào thứ Hai (hoặc ở $C$ vào thứ Hai), xác suất nó săn ở $B$ vào thứ Năm là bao nhiêu?
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-9-3-1" moTa="Đề gốc Nicholson bài 2.9.3, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -36,6 +48,7 @@ b.  If he hunts in A on Monday (C on Monday), what
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -52,13 +65,39 @@ Sau k lần chuyển dùng lũy thừa thứ k; phân bố dừng thỏa Ps = s 
 
 <LoiGiai>
 
+**Cách làm.** Ta dùng vector cột: ô $p_{ij}$ là xác suất từ trạng thái $j$ tới $i$. Sau $k$ bước, $s_k=P^ks_0$. Phân bố dừng phải thỏa đồng thời $Ps=s$, $s_i\ge0$ và $\sum_i s_i=1$.
+
+**Bước 1. Lập luận và tính toán.**
+
 Theo thứ tự $A,B,C$, cột là lãnh thổ hôm trước:
+
+
 
 $$
 P=\begin{bmatrix}0&\frac{2}{3}&\frac{2}{3}\\0&0&\frac{1}{3}\\1&\frac{1}{3}&0\end{bmatrix}.
 $$
 
- **a.** Giải $Ps=s$, tổng bằng 1, được $s=\begin{bmatrix}\frac{2}{5}\\\frac{3}{20}\\\frac{9}{20}\end{bmatrix}$. Đó là tỷ lệ thời gian ở từng lãnh thổ. **b.** Thứ Hai tới thứ Năm có ba lần chuyển. Xác suất ở $B$ lần lượt là $(P^3)_{BA}=0$ nếu xuất phát ở $A$, và $(P^3)_{BC}=\frac{7}{27}$ nếu xuất phát ở $C$.
+
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Giải $Ps=s$, tổng bằng 1, được $s=\begin{bmatrix}\frac{2}{5}\\\frac{3}{20}\\\frac{9}{20}\end{bmatrix}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Đó là tỷ lệ thời gian ở từng lãnh thổ.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Thứ Hai tới thứ Năm có ba lần chuyển.
+
+**Bước 2. Lập luận và tính toán.**
+
+Xác suất ở $B$ lần lượt là $(P^3)_{BA}=0$ nếu xuất phát ở $A$, và $(P^3)_{BC}=\frac{7}{27}$ nếu xuất phát ở $C$.
 
 </LoiGiai>
 

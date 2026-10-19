@@ -1,9 +1,10 @@
 from common import *
 a,b,c,p,q,r,x=S.symbols('a b c p q r x',real=True)
 aa=[M([[5,1,3],[-1,2,3],[1,4,8]]),M([[1,-1,2],[3,1,0],[0,-1,1]]),M([[1,0,-1],[-1,1,0],[0,-1,1]]),M([[-1,2,2],[2,-1,2],[2,2,-1]])/3]
-add('3.2.1','\n\n'.join('**'+chr(97+i)+r'.** Tính $C_{ij}=(-1)^{i+j}\det A_{ij}$ rồi chuyển vị bảng phần bù, được $$\operatorname{adj}A='+tex(A.adjugate())+r'.$$ Kiểm tra $A\operatorname{adj}A=(\det A)I$.'for i,A in enumerate(aa)))
+add('3.2.1','\n\n'.join('**'+chr(97+i)+'.**\n\n'+cofactor_text(A) for i,A in enumerate(aa)))
+
 aa=[M([[1,0,3],[3,-4,c],[2,5,8]]),M([[0,c,-c],[-1,2,1],[c,-c,c]]),M([[c,1,0],[0,2,c],[-1,c,5]]),M([[4,c,3],[c,2,c],[5,c,4]]),M([[1,2,-1],[0,-1,c],[2,c,1]]),M([[1,c,-1],[c,1,1],[0,1,c]])]
-add('3.2.2','\n\n'.join('**'+chr(97+i)+r'.** Khai triển định thức và phân tích nhân tử cho $\det A='+S.latex(S.factor(A.det()))+r'$. Ma trận khả nghịch đúng khi biểu thức này khác 0, tức $c\in\mathbb R\setminus\{'+','.join(S.latex(v)for v in S.solve(A.det(),c))+r'\}$.'for i,A in enumerate(aa)))
+add('3.2.2','\n\n'.join('**'+chr(97+i)+'.**\n\n'+determinant_text(A)+r' Ma trận khả nghịch đúng khi định thức khác 0. Giải phương trình định thức bằng 0 cho các giá trị phải loại: $c\in\{'+','.join(S.latex(v) for v in S.solve(A.det(),c))+r'\}$. Mọi số thực khác các giá trị đó đều cho ma trận khả nghịch.' for i,A in enumerate(aa)))
 add('3.2.3',r'Dùng định thức của tích bằng tích định thức, $\det C^T=\det C$, $\det B^{-1}=1/\det B$. **a.** $(-1)^3\cdot2\cdot3\cdot(1/2)=-3$. **b.** $2^2\cdot(1/3)\cdot(-1)\cdot(1/2)\cdot3=-2$. Các thừa số định thức là số thực nên được phép rút gọn.')
 add('3.2.4',r'**a.** $\det(B^{-1}AB)=(\det B)^{-1}\det A\det B=\det A$. **b.** $\det(A^{-1}B^{-1}AB)=(\det A)^{-1}(\det B)^{-1}\det A\det B=1$. Chỉ rút gọn các định thức vô hướng, không đổi thứ tự tích ma trận.')
 add('3.2.5',r'Đặt $d=\det A$, $e=\det B$. Vì cấp 3, $\det(2A^{-1})=8/d=-4$, nên $d=-2$. Tiếp theo $\det(A^3(B^{-1})^T)=d^3/e=-4$, nên $e=(-8)/(-4)=2$. Vậy $\det A=-2$, $\det B=2$.')
@@ -15,10 +16,7 @@ add('3.2.7',r'**a.** Khai triển hàng đầu: $2(-2b-4a)+2[2b(c+1)-2a(d-2)]$, 
 systems=[([[2,1],[3,7]],[1,-2]),([[3,4],[2,-1]],[9,-1]),([[5,1,-1],[2,-1,-2],[3,0,2]],[-7,6,-7]),([[4,-1,3],[6,2,-1],[3,3,2]],[1,0,-1])]
 out=[]
 for i,(A,B) in enumerate(systems):
- A=M(A);B=M(B);ds=[]
- for j in range(A.cols):C=A.copy();C[:,j]=B;ds.append(C.det())
- sol=M([v/A.det()for v in ds]);assert A*sol==B
- out.append('**'+chr(97+i)+r'.** Định thức hệ số $D='+S.latex(A.det())+r'\ne0$. Thay lần lượt từng cột bằng vế phải được $(D_1,\ldots,D_n)=('+','.join(map(S.latex,ds))+r')$. Theo Cramer, $$x='+tex(sol)+r'.$$ Thế lại $Ax=b$ kiểm tra cả hệ.')
+ out.append('**'+chr(97+i)+'.**\n\n'+cramer_text(A,B))
 add('3.2.8','\n\n'.join(out))
 aa9=[M([[3,2,1],[1,1,2],[-1,2,1]]),M([[1,2,-1],[3,1,1],[0,4,7]])]
 add('3.2.9','\n\n'.join('**'+chr(97+i)+r'.** $(A^{-1})_{23}=C_{32}/\det A$. Xóa hàng 3, cột 2 rồi nhân dấu $(-1)^5$ cho $C_{32}='+S.latex(A.cofactor(2,1))+r'$; $\det A='+S.latex(A.det())+r'$. Vậy ô cần tìm là $'+S.latex(A.inv()[1,2])+r'$.'for i,A in enumerate(aa9)))
@@ -31,13 +29,14 @@ add('3.2.15',r'Gọi $C$ là ma trận phần bù đại số, nên $C^T=\operat
 add('3.2.16',r'Nếu ma trận thực cấp 3 thỏa $A^2=-I_3$, thì $(\det A)^2=\det(-I_3)=-1$, không thể với số thực. Cấp 2 có ví dụ $$A=\begin{bmatrix}0&-1\\1&0\end{bmatrix},\quad A^2=-I_2.$$')
 add('3.2.17',r'Chuyển vị tổng: $(A+B^T)^T=A^T+B$. Vì định thức không đổi khi chuyển vị, $\det(A+B^T)=\det((A+B^T)^T)=\det(A^T+B)$. Không cần điều kiện nào ngoài cùng cấp vuông.')
 add('3.2.18',r'Nếu $\det A=\det B\ne0$, đặt $U=AB^{-1}$. Khi đó $A=UB$ và $\det U=\det A/\det B=1$. Ngược lại, nếu $A=UB$ với $\det U=1$, định thức của tích cho $\det A=\det U\det B=\det B$.')
-add('3.2.19','\n\n'.join('**'+chr(97+i)+r'.** Với điều kiện $\det A='+S.latex(S.factor(A.det()))+r'\ne0$ đã tìm ở bài 3.2.2, áp dụng $A^{-1}=\operatorname{adj}A/\det A$: $$A^{-1}=\frac1{'+S.latex(S.factor(A.det()))+r'}'+tex(A.adjugate())+r'.$$ Nhân với $A$ được $I$; ngoài điều kiện ấy không tồn tại nghịch đảo.'for i,A in enumerate(aa)))
+add('3.2.19','\n\n'.join('**'+chr(97+i)+'.**\n\n'+inverse_case(A) for i,A in enumerate(aa)))
 add('3.2.20',r'**a. Sai:** mọi ma trận vuông có adjugate, kể cả $0$. **b. Đúng:** $\operatorname{adj}A=(\det A)A^{-1}=A^{-1}$, nhân $A$ được $(\det A)I=I$. **c. Đúng:** hai vế cùng bằng $\det A\det B$. **d. Đúng:** $\det A\ne0$ nên nhân $A^{-1}$ khử $A$. **e. Sai:** $A=0$ phản đối xứng nhưng định thức 0. **f. Sai:** $A=\operatorname{diag}(1,0,0)$ có mọi minor cấp 2 bằng 0, nên adj bằng 0 nhưng $A\ne0$. **g. Đúng:** adj bằng số khác 0 nhân $A^{-1}$. **h. Sai:** $A=\begin{bmatrix}0&0\\1&1\end{bmatrix}$ có adj $\begin{bmatrix}1&0\\-1&0\end{bmatrix}$, không hàng nào toàn 0. **i. Sai:** $A=0$ cho định thức 0; công thức đúng là $\det(A^TA)=(\det A)^2\ge0$. **j. Sai:** $A=I_2$ cho 4 khác 2. **k. Đúng:** $\det A\det B\ne0$ nên cả hai khác 0. **l. Sai:** $A=\operatorname{diag}(2,1/2)$ có adj $\operatorname{diag}(1/2,2)\ne A$. **m. Đúng:** công thức nghịch đảo qua adjugate nhân với $d$.')
 add('3.2.21',r'Gọi hai cột là $u,v$. Định thức bằng 0 nên hệ $A(s,t)^T=0$ có nghiệm $(s,t)\ne(0,0)$, tức $su+tv=0$. Nếu $t\ne0$, $v=-(s/t)u$. Nếu $t=0$, thì $s\ne0$ và $u=0=0v$. Vậy trong mọi trường hợp một cột là bội vô hướng của cột kia, kể cả cột 0.')
 def interpolate_text(points):
     pts=[(S.Rational(str(a)),S.Rational(str(b)))for a,b in points];poly=S.interpolate(pts,x)
     assert all(poly.subs(x,a)==b for a,b in pts)
-    return r'Đặt $p(x)=\sum_{j=0}^{'+str(len(pts)-1)+r'}c_jx^j$, thay các điểm vào và giải hệ Vandermonde (các hoành độ khác nhau nên nghiệm duy nhất). Thu $$p(x)='+S.latex(poly)+r'.$$ Thế từng hoành độ cho lại đúng tung độ đã cho.'
+    a=M([[xi**j for j in range(len(pts))] for xi,yi in pts]);b=M([yi for xi,yi in pts]);aug=a.row_join(b);r,trace=reduction_trace(aug)
+    return step(1,'Đặt dạng đa thức',r'$p(x)=\sum_{j=0}^{'+str(len(pts)-1)+r'}c_jx^j$. Mỗi điểm $(x_i,y_i)$ cho phương trình $c_0+c_1x_i+\cdots+c_{n-1}x_i^{n-1}=y_i$.')+step(2,'Lập hệ từ từng điểm',r'Ma trận ghép các phương trình là $$'+tex(aug)+r'.$$ Mỗi hàng ứng với một điểm; các cột lần lượt là hệ số của $c_0,c_1,\ldots$.')+trace+step(3,'Đọc hệ số và kiểm tra',r'Khối phải của RREF cho các hệ số theo thứ tự, nên $$p(x)='+S.latex(poly)+r'.$$ Các hoành độ khác nhau nên ma trận Vandermonde khả nghịch; đa thức bậc không quá '+str(len(pts)-1)+r' này là duy nhất. Kiểm tra từng điểm: '+', '.join('$p('+S.latex(xi)+')='+S.latex(poly.subs(x,xi))+'$' for xi,yi in pts)+'.')
 add('3.2.22','**a.** '+interpolate_text([(0,2),(1,3),(3,8)])+'\n\n**b.** '+interpolate_text([(0,5),(1,3),(2,5)]))
 add('3.2.23','**a.** '+interpolate_text([(0,1),(1,1),(-1,4),(2,-5)])+'\n\n**b.** '+interpolate_text([(0,1),(1,1),(-1,2),(-2,-3)]))
 points=[[(0,1),(1,2),(2,5),(3,10)],[(0,1),(1,1.49),(2,-.42),(3,-11.33)],[(0,2),(1,2.03),(2,-.40),(-1,.89)]]

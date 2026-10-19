@@ -5,11 +5,41 @@ do_kho: vua
 tieu_de: "Khai triển theo phần bù đại số — bài 7"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.1.7"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.1.7 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu
+
+$$
+\det \left[ \begin{array}{rrr} a & b & c \\ p & q & r \\ x & y & z \end{array} \right] = -1
+$$
+
+, hãy tính:
+
+**a.**
+
+$$
+\det \left[ \begin{array}{ccc} -x & -y & -z \\ 3p+a & 3q+b & 3r+c \\ 2p & 2q & 2r \end{array} \right]
+$$
+
+
+
+**b.**
+
+$$
+\det \left[ \begin{array}{ccc} -2a & -2b & -2c \\ 2p+x & 2q+y & 2r+z \\ 3x & 3y & 3z \end{array} \right]
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-1-7-1" moTa="Đề gốc Nicholson bài 3.1.7, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -25,28 +55,118 @@ Exercise 3.1.7  If det      q  r        compute:                      −1
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
 
-Chọn hàng hoặc cột nhiều số 0 để khai triển định thức.
+Gọi ba hàng gốc là r₁, r₂, r₃. Viết từng hàng mới dưới dạng tổ hợp của chúng.
 
 </GoiY>
 
 <GoiY so={2}>
 
-Cộng bội một hàng vào hàng khác giữ định thức; đổi hai hàng đổi dấu; nhân một hàng nhân định thức với cùng hệ số.
+Ý a: làm R₂ ← R₂ − (3/2)R₃. Ý b: làm R₂ ← R₂ − (1/3)R₃. Cả hai phép đều giữ định thức.
 
 </GoiY>
 
 <LoiGiai>
 
-Gọi ba hàng gốc là $r_1,r_2,r_3$, $D=-1$. Dùng tính tuyến tính theo từng hàng và định thức bằng 0 nếu hai hàng tỷ lệ. **a.** $\det[-r_3;3r_2+r_1;2r_2]=-2\det[r_3;r_1;r_2]=-2D=2$ (phép xoay vòng ba hàng có dấu dương). **b.** $\det[-2r_1;2r_2+r_3;3r_3]=-12D=12$.
+**Cách làm.** Cộng bội hàng khác giữ nguyên định thức; đổi hai hàng đổi dấu; rút hệ số $c$ từ một hàng đưa $c$ ra ngoài. Với khai triển, $C_{ij}=(-1)^{i+j}\det M_{ij}$.
+
+Gọi ba hàng của ma trận ban đầu là $r_1=(a,b,c)$, $r_2=(p,q,r)$, $r_3=(x,y,z)$.
+Ký hiệu $\det[r_1;r_2;r_3]$ là định thức của ma trận có ba hàng ấy. Đề cho giá trị $D=-1$.
+
+**a.**
+
+**Bước 1. Nhận ra ba hàng mới.**
+
+Các hàng lần lượt là $-r_3$, $3r_2+r_1$, $2r_2$. Ta cần tính $D_a=\det[-r_3;3r_2+r_1;2r_2]$.
+
+**Bước 2. Loại phần $3r_2$ ở hàng giữa.**
+
+Hàng 3 hiện là $2r_2$. Muốn trừ $3r_2$ khỏi hàng 2, chọn hệ số $3/2$, vì $(3/2)(2r_2)=3r_2$.
+Làm $R_2\leftarrow R_2-\frac32R_3$. Hàng 2 trở thành
+
+
+
+$$
+(3r_2+r_1)-\frac32(2r_2)=r_1.
+$$
+
+
+
+Đây là cộng bội **một hàng khác**, nên định thức giữ nguyên: $D_a=\det[-r_3;r_1;2r_2]$.
+
+**Bước 3. Rút hệ số của từng hàng.**
+
+Rút $-1$ từ hàng đầu, rút 2 từ hàng cuối:
+
+
+
+$$
+D_a=(-1)\cdot2\det[r_3;r_1;r_2]=-2\det[r_3;r_1;r_2].
+$$
+
+
+
+Mỗi hệ số chỉ được rút từ một hàng nên xuất hiện đúng một lần.
+
+**Bước 4. Đưa hàng về đúng thứ tự ban đầu.**
+
+Đổi hàng 1 và 2: $(r_3,r_1,r_2)\mapsto(r_1,r_3,r_2)$, định thức đổi dấu một lần.
+Đổi hàng 2 và 3: $(r_1,r_3,r_2)\mapsto(r_1,r_2,r_3)$, đổi dấu lần thứ hai.
+Hai dấu âm nhân nhau thành dương, nên $\det[r_3;r_1;r_2]=D$.
+
+**Bước 5. Thay dữ kiện và kết luận.**
+
+
+
+$$
+D_a=-2D=-2(-1)=\boxed{2}.
+$$
+
+
+
+**b.**
+
+**Bước 1. Nhận ra ba hàng mới.**
+
+Các hàng là $-2r_1$, $2r_2+r_3$, $3r_3$. Do đó $D_b=\det[-2r_1;2r_2+r_3;3r_3]$.
+
+**Bước 2. Loại phần $r_3$ trong hàng giữa.**
+
+Vì hàng cuối là $3r_3$, cần trừ $\frac13$ hàng cuối để trừ đúng $r_3$.
+Làm $R_2\leftarrow R_2-\frac13R_3$:
+
+
+
+$$
+(2r_2+r_3)-\frac13(3r_3)=2r_2.
+$$
+
+
+
+Định thức giữ nguyên, nên $D_b=\det[-2r_1;2r_2;3r_3]$.
+
+**Bước 3. Rút hệ số và thay dữ kiện.**
+
+Ba hàng đã theo thứ tự $r_1,r_2,r_3$ nên không cần đổi hàng. Rút hệ số $-2$, 2, 3:
+
+
+
+$$
+D_b=(-2)\cdot2\cdot3\det[r_1;r_2;r_3]=-12D=-12(-1)=\boxed{12}.
+$$
+
+
+
+**Tự kiểm tra.** Ý a có hai lần đổi hàng nên không thêm dấu âm. Ý b không đổi hàng; dấu âm duy nhất trong hệ số đến từ $-2r_1$.
 
 </LoiGiai>
 
 <LoiHayMac>
 
-Dấu phần bù tại ô (i,j) là (−1) mũ i+j. Nhân cả ma trận cấp n với c nhân định thức với c mũ n.
+Rút hệ số của từng hàng rồi nhân các hệ số, không cộng chúng. Ở ý a, hoán vị (3,1,2) cần hai lần đổi chỗ nên có dấu dương.
 
 </LoiHayMac>

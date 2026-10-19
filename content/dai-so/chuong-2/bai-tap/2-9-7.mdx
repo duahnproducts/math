@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Ứng dụng: xích Markov — bài 7"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.9.7"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.9.7 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Giả sử bạn có $1$ và chơi trò tung đồng xu với một người bạn. Mỗi ván, bạn thắng hoặc thua $1$ với xác suất bằng nhau. Nếu bạn hết tiền hoặc đạt $4$ thì bạn dừng chơi. Giả sử người bạn không bao giờ dừng. Các trạng thái 0, 1, 2, 3, 4 biểu thị số tiền của bạn. Chứng minh ma trận chuyển tương ứng $P$ không chính quy. Tìm xác suất bạn hết tiền sau $3$ ván.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-9-7-1" moTa="Đề gốc Nicholson bài 2.9.7, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -28,6 +36,7 @@ the probability that you will go broke after 3 matches.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -44,19 +53,45 @@ Sau k lần chuyển dùng lũy thừa thứ k; phân bố dừng thỏa Ps = s 
 
 <LoiGiai>
 
+**Cách làm.** Ta dùng vector cột: ô $p_{ij}$ là xác suất từ trạng thái $j$ tới $i$. Sau $k$ bước, $s_k=P^ks_0$. Phân bố dừng phải thỏa đồng thời $Ps=s$, $s_i\ge0$ và $\sum_i s_i=1$.
+
+Tại 0 xu hoặc 4 xu, người chơi dừng lại, nên cột tương ứng là cột đơn vị. Việc dùng trạng thái hấp thụ giữ cả những người đã dừng từ ván trước trong phân bố của các ván sau; không được loại họ khi nhân tiếp.
+
+**Bước 1. Lập luận và tính toán.**
+
 Theo thứ tự số tiền $0,1,2,3,4$,
+
+
 
 $$
 P=\begin{bmatrix}1&\frac{1}{2}&0&0&0\\0&0&\frac{1}{2}&0&0\\0&\frac{1}{2}&0&\frac{1}{2}&0\\0&0&\frac{1}{2}&0&0\\0&0&0&\frac{1}{2}&1\end{bmatrix}.
 $$
 
- Trạng thái 0 và 4 hấp thụ; chẳng hạn $P^me_0=e_0$, nên không regular. Bắt đầu với 1 xu: $s_0=e_1$ (cột thứ hai trong thứ tự này). Sau ba ván
+
+
+ Trạng thái 0 và 4 hấp thụ; chẳng hạn $P^me_0=e_0$, nên không regular.
+
+**Bước 2. Lập luận và tính toán.**
+
+Bắt đầu với 1 xu: $s_0=e_1$ (cột thứ hai trong thứ tự này).
+
+**Bước 3. Lập luận và tính toán.**
+
+Sau ba ván
+
+
 
 $$
 s_3=P^3s_0=\begin{bmatrix}\frac{5}{8}\\0\\\frac{1}{4}\\0\\\frac{1}{8}\end{bmatrix}.
 $$
 
- Xác suất đã phá sản là ô đầu, $5/8$. Bao gồm cả trường hợp đã phá sản từ ván đầu, vì người chơi dừng lại ở trạng thái 0.
+
+
+ Xác suất đã phá sản là ô đầu, $5/8$.
+
+**Bước 4. Lập luận và tính toán.**
+
+Bao gồm cả trường hợp đã phá sản từ ván đầu, vì người chơi dừng lại ở trạng thái 0.
 
 </LoiGiai>
 

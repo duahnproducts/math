@@ -5,11 +5,39 @@ do_kho: vua
 tieu_de: "Chéo hoá — bài 3"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.4.3"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.4.3 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+**a.** Nếu
+
+$$
+A = \left[ \begin{array}{rr} 1 & 3 \\ 0 & 2 \end{array} \right]
+$$
+
+ và
+
+$$
+B = \left[ \begin{array}{rr} 2 & 0 \\ 0 & 1 \end{array}\right]
+$$
+
+, hãy kiểm tra rằng $A$ và $B$ chéo hóa được nhưng $AB$ không chéo hóa được.
+
+**b.** Nếu
+
+$$
+D = \left[ \begin{array}{rr} 1 & 0 \\ 0 & -1 \end{array}\right]
+$$
+
+, hãy tìm một ma trận chéo hóa được $A$ sao cho $D + A$ không chéo hóa được.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-4-3-1" moTa="Đề gốc Nicholson bài 3.4.3, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -31,6 +59,7 @@ Exercise 3.4.3
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -47,7 +76,27 @@ Ghép các vector riêng độc lập thành cột của P, rồi kiểm tra AP 
 
 <LoiGiai>
 
-**a.** $A$ có hai trị riêng phân biệt 1,2, nên chéo hóa được; $B$ đã chéo. Nhưng $AB=\begin{bmatrix}2&3\\0&2\end{bmatrix}$ chỉ có trị riêng 2, không phải $2I$, nên không chéo hóa được (không gian riêng chỉ một chiều). **b.** Chọn $A=\begin{bmatrix}0&1\\0&2\end{bmatrix}$, có hai trị riêng phân biệt 0,2. Khi đó $D+A=\begin{bmatrix}1&1\\0&1\end{bmatrix}$ chỉ có trị riêng 1 và một vector riêng độc lập, nên không chéo hóa được.
+**Cách làm.** Chéo hóa $A=PDP^{-1}$ nghĩa là các cột của $P$ là một cơ sở vector riêng. Trị riêng của cột thứ $j$ phải nằm ở ô $d_{jj}$, và có thể kiểm tra bằng $AP=PD$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$A$ có hai trị riêng phân biệt 1,2, nên chéo hóa được; $B$ đã chéo.
+
+**Bước 2. Lập luận và tính toán.**
+
+Nhưng $AB=\begin{bmatrix}2&3\\0&2\end{bmatrix}$ chỉ có trị riêng 2, không phải $2I$, nên không chéo hóa được (không gian riêng chỉ một chiều).
+
+**b.**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Chọn $A=\begin{bmatrix}0&1\\0&2\end{bmatrix}$, có hai trị riêng phân biệt 0,2.
+
+**Bước 2. Lập luận và tính toán.**
+
+Khi đó $D+A=\begin{bmatrix}1&1\\0&1\end{bmatrix}$ chỉ có trị riêng 1 và một vector riêng độc lập, nên không chéo hóa được.
 
 </LoiGiai>
 

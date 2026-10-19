@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Ma trận nghịch đảo — bài 34"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.4.34"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.4.34 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $A$ và $B$ là các ma trận $n \times n$ sao cho $AB$ khả nghịch. Chứng minh rằng cả $A$ và $B$ đều khả nghịch.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-4-34-1" moTa="Đề gốc Nicholson bài 2.4.34, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -23,6 +31,7 @@ Exercise 2.4.34  Let A and B be n×n matrices for whichAB is invertible. Show th
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -40,7 +49,23 @@ Khi tìm nghịch đảo bằng khử hàng, làm cùng phép biến đổi trê
 
 <LoiGiai>
 
-Gọi $D=(AB)^{-1}$. Nếu $Bx=0$, $ABx=0$ nên $x=0$: $B$ vuông có hạt nhân không, do đó khả nghịch. Từ $A=(AB)B^{-1}$ suy ra $A$ khả nghịch. Công thức nghịch đảo là $A^{-1}=BD$, $B^{-1}=DA$; kiểm tra bằng nhân và tính duy nhất nghịch đảo.
+**Cách làm.** Theo định nghĩa, $B=A^{-1}$ khi $AB=BA=I$. Muốn khử $A$ ở bên trái thì nhân trái với $A^{-1}$; muốn khử ở bên phải thì nhân phải. Nghịch đảo tích đảo thứ tự: $(AB)^{-1}=B^{-1}A^{-1}$.
+
+**Bước 1. Thiết lập biểu thức.**
+
+Gọi $D=(AB)^{-1}$.
+
+**Bước 2. Xét giả thiết.**
+
+Nếu $Bx=0$, $ABx=0$ nên $x=0$: $B$ vuông có hạt nhân không, do đó khả nghịch.
+
+**Bước 3. Lập luận và tính toán.**
+
+Từ $A=(AB)B^{-1}$ suy ra $A$ khả nghịch.
+
+**Bước 4. Lập luận và tính toán.**
+
+Công thức nghịch đảo là $A^{-1}=BD$, $B^{-1}=DA$; kiểm tra bằng nhân và tính duy nhất nghịch đảo.
 
 </LoiGiai>
 

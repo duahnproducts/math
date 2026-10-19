@@ -5,11 +5,41 @@ do_kho: vua
 tieu_de: "Giá trị riêng và vector riêng — bài 12"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.3.12"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.3.12 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho
+
+$$
+A = \left[ \begin{array}{cc} B & 0 \\ 0 & C \end{array}\right]
+$$
+
+, trong đó $B$ và $C$ là các ma trận vuông.
+
+**a.** Chứng minh rằng $c_{A}(x) = c_{B}(x)c_{C}(x)$.
+
+**b.** Nếu $\mathbf{x}$ và $\mathbf{y}$ lần lượt là các vector riêng của $B$ và $C$, hãy chứng minh rằng
+
+$$
+\left[ \begin{array}{c} \mathbf{x} \\ 0 \end{array}\right]
+$$
+
+ và
+
+$$
+\left[ \begin{array}{c} 0 \\ \mathbf{y} \end{array}\right]
+$$
+
+ là các vector riêng của $A$, và chỉ ra cách mọi vector riêng của $A$ được tạo từ các vector riêng như vậy.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-3-12-1" moTa="Đề gốc Nicholson bài 3.3.12, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -34,6 +64,7 @@ square matrices.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -50,7 +81,31 @@ Không gian riêng là hạt nhân của A − λI; đa thức của ma trận t
 
 <LoiGiai>
 
-**a.** $xI-A=\operatorname{diag}(xI-B,xI-C)$, nên định thức bằng $c_B(x)c_C(x)$. **b.** Nếu $Bx=\lambda x$, $x\ne0$, thì $A(x,0)^T=\lambda(x,0)^T$; tương tự cho $(0,y)^T$ từ $Cy=\lambda y$. Tổng quát, $(u,v)^T$ là vector riêng trị riêng $\lambda$ khi và chỉ khi $Bu=\lambda u$, $Cv=\lambda v$, và ít nhất một trong $u,v$ khác 0. Vì vậy $E_\lambda(A)=E_\lambda(B)\oplus E_\lambda(C)$, hiểu không gian riêng là $\{0\}$ nếu $\lambda$ không là trị riêng của khối tương ứng. Khi hai khối có chung trị riêng, vector riêng có thể có cả hai phần khác 0.
+**Cách làm.** Trị riêng $\lambda$ cần có vector $v\ne0$ thỏa $Av=\lambda v$. Tương đương $(A-\lambda I)v=0$ có nghiệm khác 0, nên $\det(\lambda I-A)=0$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$xI-A=\operatorname{diag}(xI-B,xI-C)$, nên định thức bằng $c_B(x)c_C(x)$.
+
+**b.**
+
+**Bước 1. Xét giả thiết.**
+
+Nếu $Bx=\lambda x$, $x\ne0$, thì $A(x,0)^T=\lambda(x,0)^T$; tương tự cho $(0,y)^T$ từ $Cy=\lambda y$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Tổng quát, $(u,v)^T$ là vector riêng trị riêng $\lambda$ khi và chỉ khi $Bu=\lambda u$, $Cv=\lambda v$, và ít nhất một trong $u,v$ khác 0.
+
+**Bước 3. Giải thích điều kiện sử dụng.**
+
+Vì vậy $E_\lambda(A)=E_\lambda(B)\oplus E_\lambda(C)$, hiểu không gian riêng là $\{0\}$ nếu $\lambda$ không là trị riêng của khối tương ứng.
+
+**Bước 4. Lập luận và tính toán.**
+
+Khi hai khối có chung trị riêng, vector riêng có thể có cả hai phần khác 0.
 
 </LoiGiai>
 

@@ -5,11 +5,43 @@ do_kho: vua
 tieu_de: "Ma trận nghịch đảo — bài 15"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.4.15"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.4.15 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Xét
+
+$$
+A = \left[ \begin{array}{rr} 1 & 1 \\ -1 & 0 \end{array} \right]
+$$
+
+,
+
+$$
+B = \left[ \begin{array}{rr} 0 & -1 \\ 1 & 0 \end{array} \right]
+$$
+
+,
+
+$$
+C = \left[ \begin{array}{rrr} 0 & 1 & 0 \\ 0 & 0 & 1 \\ 5 & 0 & 0 \end{array} \right]
+$$
+
+. Tìm các nghịch đảo bằng cách tính
+
+**a.** $A^{6}$;
+
+**b.** $B^{4}$; và
+
+**c.** $C^{3}$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-4-15-1" moTa="Đề gốc Nicholson bài 2.4.15, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -28,6 +60,7 @@ Exercise 2.4.15  Consider A =                    ,
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -44,7 +77,29 @@ Khi tìm nghịch đảo bằng khử hàng, làm cùng phép biến đổi trê
 
 <LoiGiai>
 
-**a.** $A^3=-I_2$, nên $A^6=I_2$ và $A^{-1}=A^5=\begin{bmatrix}0&-1\\1&1\end{bmatrix}$. **b.** $B^2=-I_2$, nên $B^4=I_2$, $B^{-1}=B^3=\begin{bmatrix}0&1\\-1&0\end{bmatrix}$. **c.** $C^3=5I_3$, nên $C^{-1}=C^2/5=\begin{bmatrix}0&0&\frac{1}{5}\\1&0&0\\0&1&0\end{bmatrix}$. Các biểu thức đều là đa thức của ma trận nên nhân trái hay phải cho cùng ma trận đơn vị.
+**Cách làm.** Theo định nghĩa, $B=A^{-1}$ khi $AB=BA=I$. Muốn khử $A$ ở bên trái thì nhân trái với $A^{-1}$; muốn khử ở bên phải thì nhân phải. Nghịch đảo tích đảo thứ tự: $(AB)^{-1}=B^{-1}A^{-1}$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$A^3=-I_2$, nên $A^6=I_2$ và $A^{-1}=A^5=\begin{bmatrix}0&-1\\1&1\end{bmatrix}$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$B^2=-I_2$, nên $B^4=I_2$, $B^{-1}=B^3=\begin{bmatrix}0&1\\-1&0\end{bmatrix}$.
+
+**c.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$C^3=5I_3$, nên $C^{-1}=C^2/5=\begin{bmatrix}0&0&\frac{1}{5}\\1&0&0\\0&1&0\end{bmatrix}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Các biểu thức đều là đa thức của ma trận nên nhân trái hay phải cho cùng ma trận đơn vị.
 
 </LoiGiai>
 

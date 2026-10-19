@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Ma trận nghịch đảo — bài 22"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.4.22"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.4.22 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Tìm phép nghịch đảo của phép giãn theo trục x trong Ví dụ 2.2.16 và mô tả nó về mặt hình học.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-4-22-1" moTa="Đề gốc Nicholson bài 2.4.22, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ Example 2.2.16 and describe it geometrically.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,13 +48,29 @@ Khi tìm nghịch đảo bằng khử hàng, làm cùng phép biến đổi trê
 
 <LoiGiai>
 
-Phép giãn theo trục $x$ có ma trận $E_k=\operatorname{diag}(k,1)$ với $k\ne0$. Đảo phép giãn bằng cách chia hoành độ cho $k$, giữ tung độ:
+**Cách làm.** Theo định nghĩa, $B=A^{-1}$ khi $AB=BA=I$. Muốn khử $A$ ở bên trái thì nhân trái với $A^{-1}$; muốn khử ở bên phải thì nhân phải. Nghịch đảo tích đảo thứ tự: $(AB)^{-1}=B^{-1}A^{-1}$.
+
+**Bước 1. Lập luận và tính toán.**
+
+Phép giãn theo trục $x$ có ma trận $E_k=\operatorname{diag}(k,1)$ với $k\ne0$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Đảo phép giãn bằng cách chia hoành độ cho $k$, giữ tung độ:
+
+
 
 $$
 E_k^{-1}=\operatorname{diag}(1/k,1).
 $$
 
- Vì $E_kE_{1/k}=I$, đây là phép co / giãn theo trục $x$ với hệ số nghịch đảo. Nếu hệ số bằng 0, hình bị ép xuống trục $y$ và không đảo được.
+
+
+ Vì $E_kE_{1/k}=I$, đây là phép co / giãn theo trục $x$ với hệ số nghịch đảo.
+
+**Bước 3. Xét giả thiết.**
+
+Nếu hệ số bằng 0, hình bị ép xuống trục $y$ và không đảo được.
 
 </LoiGiai>
 

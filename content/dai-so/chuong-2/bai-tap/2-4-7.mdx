@@ -5,11 +5,31 @@ do_kho: vua
 tieu_de: "Ma trận nghịch đảo — bài 7"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.4.7"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.4.7 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho
+
+$$
+\left[ \begin{array}{c} x_{1} \\ x_{2} \\ x_{3} \end{array} \right] = \left[ \begin{array}{rrr} 3 & -1 & 2 \\ 1 & 0 & 4 \\ 2 & 1 & 0 \end{array} \right] \left[ \begin{array}{c} y_{1} \\ y_{2} \\ y_{3} \end{array} \right]
+$$
+
+ và
+
+$$
+\left[ \begin{array}{c} z_{1} \\ z_{2} \\ z_{3} \end{array} \right] = \left[ \begin{array}{rrr} 1 & -1 & 1 \\ 2 & -3 & 0 \\ -1 & 1 & -2 \end{array} \right] \left[ \begin{array}{c} y_{1} \\ y_{2} \\ y_{3} \end{array} \right]
+$$
+
+, hãy biểu diễn các biến $x_{1}$, $x_{2}$ và $x_{3}$ theo $z_{1}$, $z_{2}$ và $z_{3}$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-4-7-1" moTa="Đề gốc Nicholson bài 2.4.7, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -24,6 +44,7 @@ Exercise 2.4.7 Given               0  4      y2                        
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -41,13 +62,31 @@ Khi tìm nghịch đảo bằng khử hàng, làm cùng phép biến đổi trê
 
 <LoiGiai>
 
-Từ $z=By$ suy ra $y=B^{-1}z$. Thế vào $x=Ay$, được
+**Cách làm.** Theo định nghĩa, $B=A^{-1}$ khi $AB=BA=I$. Muốn khử $A$ ở bên trái thì nhân trái với $A^{-1}$; muốn khử ở bên phải thì nhân phải. Nghịch đảo tích đảo thứ tự: $(AB)^{-1}=B^{-1}A^{-1}$.
+
+Ta cần biểu diễn $x$ theo $z$, nên phải loại biến trung gian $y$. Từ $z=By$ tìm $y$ trước, rồi thay vào $x=Ay$. Thứ tự $AB^{-1}$ được quyết định bởi phép hợp thành này.
+
+**Bước 1. Lập luận và tính toán.**
+
+Từ $z=By$ suy ra $y=B^{-1}z$.
+
+**Bước 2. Thay vào để tính và kiểm tra.**
+
+Thế vào $x=Ay$, được
+
+
 
 $$
 x=AB^{-1}z=\begin{bmatrix}\frac{24}{7}&- \frac{4}{7}&\frac{5}{7}\\\frac{26}{7}&- \frac{9}{7}&- \frac{1}{7}\\\frac{16}{7}&- \frac{5}{7}&\frac{8}{7}\end{bmatrix}\begin{bmatrix}z_1\\z_2\\z_3\end{bmatrix}.
 $$
 
- Mỗi hàng của ma trận trên cho lần lượt công thức $x_1,x_2,x_3$. Kiểm tra bằng cách nhân ma trận hệ số này với $B$, thu lại $A$.
+
+
+ Mỗi hàng của ma trận trên cho lần lượt công thức $x_1,x_2,x_3$.
+
+**Bước 3. Thay vào để tính và kiểm tra.**
+
+Kiểm tra bằng cách nhân ma trận hệ số này với $B$, thu lại $A$.
 
 </LoiGiai>
 

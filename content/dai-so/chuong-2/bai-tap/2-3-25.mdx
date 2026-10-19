@@ -5,11 +5,39 @@ do_kho: vua
 tieu_de: "Phép nhân ma trận — bài 25"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.3.25"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.25 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Một nhà sản xuất phụ tùng ô tô làm tấm chắn bùn, cửa xe và nắp ca-pô. Mỗi sản phẩm cần lắp ráp và đóng gói tại các nhà máy 1, 2 và 3. Ma trận $A$ dưới đây cho số giờ lắp ráp và đóng gói; ma trận $B$ cho đơn giá theo giờ tại ba nhà máy. Giải thích ý nghĩa phần tử ở vị trí $(3, 2)$ của ma trận $AB$. Nhà máy nào có chi phí vận hành thấp nhất? Giải thích lý do.
+
+Các hàng của $A$ lần lượt ứng với tấm chắn bùn, cửa xe và nắp ca-pô; các cột ứng với lắp ráp và đóng gói:
+
+
+
+$$
+A=\begin{bmatrix}12&2\\21&3\\10&2\end{bmatrix}.
+$$
+
+
+
+Các hàng của $B$ lần lượt ứng với lắp ráp và đóng gói; các cột ứng với nhà máy 1, 2 và 3:
+
+
+
+$$
+B=\begin{bmatrix}21&18&20\\14&10&13\end{bmatrix}.
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-3-25-1" moTa="Đề gốc Nicholson bài 2.3.25, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -36,6 +64,7 @@ operate? Give reasons.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -52,13 +81,25 @@ Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự 
 
 <LoiGiai>
 
+**Cách làm.** Với $A$ cỡ $m\times n$, $B$ cỡ $n\times p$, tích $AB$ có cỡ $m\times p$ và $(AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$. Khi khai triển, giữ nguyên thứ tự các thừa số.
+
+**Bước 1. Lập luận và tính toán.**
+
 Tích $AB$ lấy số giờ từng công đoạn nhân đơn giá tại từng nhà máy:
+
+
 
 $$
 AB=\begin{bmatrix}280&236&266\\483&408&459\\238&200&226\end{bmatrix}.
 $$
 
- Ô $(3,2)=10\cdot18+2\cdot10=200$ là chi phí làm một nắp ca-pô tại nhà máy 2. Cột 2 nhỏ nhất trên cả ba hàng (236, 408, 200), nên nhà máy 2 rẻ nhất cho từng loại sản phẩm và cho mọi hỗn hợp sản lượng không âm.
+
+
+ Ô $(3,2)=10\cdot18+2\cdot10=200$ là chi phí làm một nắp ca-pô tại nhà máy 2.
+
+**Bước 2. Lập luận và tính toán.**
+
+Cột 2 nhỏ nhất trên cả ba hàng (236, 408, 200), nên nhà máy 2 rẻ nhất cho từng loại sản phẩm và cho mọi hỗn hợp sản lượng không âm.
 
 </LoiGiai>
 

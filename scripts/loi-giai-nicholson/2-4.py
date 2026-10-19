@@ -2,8 +2,8 @@ from common import *
 I=S.eye(2)
 checks=[(M([[3,5],[1,2]]),M([[2,-5],[-1,3]])),(M([[3,0],[1,-4]]),M([[4,0],[1,-3]])/12),(M([[1,2,0],[0,2,3],[1,3,1]]),M([[7,2,-6],[-3,-1,3],[2,1,-2]])),(S.diag(3,5),S.diag(S.Rational(1,3),S.Rational(1,5)))]
 assert all(A*B==S.eye(A.rows)and B*A==S.eye(A.rows)for A,B in checks)
-add('2.4.1','Với mỗi cặp $(A,B)$, nhân cả $AB$ lẫn $BA$ theo hàng–cột.\n\n'+cases([r'AB=BA=I_'+str(A.rows)for A,B in checks])+r'Ví dụ (a), $AB=\begin{bmatrix}6-5&-15+15\\2-2&-5+6\end{bmatrix}=I_2$. Hai đẳng thức xác nhận mỗi ma trận là nghịch đảo của ma trận còn lại.')
-matrices=[[[1,-1],[-1,3]],[[4,1],[3,2]],[[1,0,-1],[3,2,0],[-1,-1,0]],[[1,-1,2],[-5,7,-11],[-2,3,-5]],[[3,5,0],[3,7,1],[1,2,1]],[[3,1,-1],[2,1,0],[1,5,-1]],[[2,4,1],[3,3,2],[4,1,4]],[[3,1,-1],[5,2,0],[1,1,-1]],[[3,1,2],[1,-1,3],[1,2,4]],[[-1,4,5,2],[0,0,0,-1],[1,2,-2,0],[0,-1,-1,0]],[[1,0,7,5],[0,1,3,6],[1,-1,5,2],[1,-1,5,1]],[[1,2,0,0,0],[0,1,3,0,0],[0,0,1,5,0],[0,0,0,1,7],[0,0,0,0,1]]]
+add('2.4.1',r'**a, c, d.** Nhân hai ma trận theo cả hai thứ tự được ma trận đơn vị tương ứng. Chẳng hạn ở (a), $AB=\begin{bmatrix}6-5&-15+15\\2-2&-5+6\end{bmatrix}=I_2$; nhân $BA$ cũng được $I_2$. **b. Lỗi hệ số trong đề.** Với đúng hệ số $1/2$ của bản in, hai tích đều bằng $6I_2$, nên hai ma trận không phải nghịch đảo của nhau. Hệ số đúng để được nghịch đảo là $1/12$: $\begin{bmatrix}3&0\\1&-4\end{bmatrix}\begin{bmatrix}4&0\\1&-3\end{bmatrix}=12I_2$. Chia ma trận thứ hai cho 12 mới cho tích bằng $I_2$.')
+matrices=[[[1,-1],[-1,3]],[[4,1],[3,2]],[[1,0,-1],[3,2,0],[-1,-1,0]],[[1,-1,2],[-5,7,-11],[-2,3,-5]],[[3,5,0],[3,7,1],[1,2,1]],[[3,1,-1],[2,1,0],[1,5,-1]],[[2,4,1],[3,3,2],[4,1,4]],[[3,1,-1],[5,2,0],[1,1,-1]],[[3,1,2],[1,-1,3],[1,2,4]],[[-1,4,5,2],[0,0,0,-1],[1,-2,-2,0],[0,-1,-1,0]],[[1,0,7,5],[0,1,3,6],[1,-1,5,2],[1,-1,5,1]],[[1,2,0,0,0],[0,1,3,0,0],[0,0,1,5,0],[0,0,0,1,7],[0,0,0,0,1]]]
 add('2.4.2',inverse_cases(matrices),h1='Dùng khử Gauss–Jordan trên ma trận ghép [A | I].',h2='Biến đổi hàng trên cả hai khối. Khi khối trái bằng I, khối phải chính là nghịch đảo.')
 systems=[(M([[3,-1],[2,2]]),M([5,1])),(M([[2,-3],[1,-4]]),M([0,1])),(M([[1,1,2],[1,1,1],[1,2,4]]),M([5,0,-2])),(M([[1,4,2],[2,3,3],[4,1,4]]),M([1,-1,0]))]
 ans=[]
@@ -14,12 +14,12 @@ add('2.4.3','\n\n'.join('**'+chr(97+i)+'.** '+v for i,v in enumerate(ans)))
 inv=M([[1,-1,3],[2,0,5],[-1,1,0]])
 add('2.4.4',r'Nhân đúng phía với ma trận $A^{-1}$ đã cho. **a.** $x=A^{-1}b='+tex(inv*M([1,-1,3]))+r'$. **b.** Từ $AB=C$ suy ra $B=A^{-1}C='+tex(inv*M([[1,-1,2],[0,1,1],[1,0,0]]))+r'$. **c.** Từ $CA=D$ suy ra $C=DA^{-1}='+tex(M([[1,2,-1],[3,1,1]])*inv)+r'$. Thế lại lần lượt vào $Ax=b$, $AB=C$, $CA=D$; dùng $AA^{-1}=A^{-1}A=I$ để xác nhận.')
 K=M([[1,-1],[0,1]]);L=M([[1,-1],[2,3]]);P=M([[2,0],[1,-1]]);Q=M([[2,1],[1,1]]);R=M([[2,3],[1,1]]);T=M([[1,0],[2,2]]);V=M([[1,1],[2,3]]);W=M([[1,1],[1,0]])
-values=[K.inv()/3,L.T/2,(P.inv()-I)/3,((I-Q.inv())/2).T,R.inv()*K.inv(),K.inv()*T*I,(2*I+(2*V).inv()).T,(2*I+(-2*W).T).inv()]
-equations=[r'$3A=K^{-1}$',r'$2A=L^T$',r'$I+3A=P^{-1}$',r'$I-2A^T=Q^{-1}$',r'$AK=R^{-1}$',r'$\begin{bmatrix}1&0\\2&1\end{bmatrix}A=T$',r'$A^T-2I=(2V)^{-1}$',r'$A^{-1}-2I=(-2W)^T$']
+values=[K.inv()/3,L.inv().T/2,(P.inv()-I)/3,((I-Q.inv())/2).T,R.inv()*K.inv(),K.inv()*T*I,(2*I+(2*V).inv()).T,(2*I+(-2*W).T).inv()]
+equations=[r'$3A=K^{-1}$',r'$2A=(L^{-1})^T$',r'$I+3A=P^{-1}$',r'$I-2A^T=Q^{-1}$',r'$AK=R^{-1}$',r'$\begin{bmatrix}1&0\\2&1\end{bmatrix}A=T^{-1}$',r'$A^T-2I=(2V)^{-1}$',r'$A^{-1}-2I=(-2W)^T$']
 # In part f the left factor is [[1,0],[2,1]], not the K of part a.
-values[5]=M([[1,0],[2,1]]).inv()*T
+values[5]=M([[1,0],[2,1]]).inv()*T.inv()
 add('2.4.5',r'Đặt $K='+tex(K)+r',L='+tex(L)+r',P='+tex(P)+r',Q='+tex(Q)+r',R='+tex(R)+r',T='+tex(T)+r',V='+tex(V)+r',W='+tex(W)+r'$. Dùng $(XY)^{-1}=Y^{-1}X^{-1}$ và $(X^T)^{-1}=(X^{-1})^T$.\n\n'+'\n\n'.join('**'+chr(97+i)+'.** '+eq+'; suy ra $$A='+tex(value)+'.$$'for i,(eq,value)in enumerate(zip(equations,values))))
-add('2.4.6',inverse_cases([[[1,-1,3],[2,1,1],[0,2,-2]],[[0,1,-1],[1,2,1],[1,0,1]]]))
+add('2.4.6','Gọi $M$ là ma trận ở vế phải của mỗi ý. Vì $A^{-1}=M$, cần tìm $A=M^{-1}$.\n\n'+'\n\n'.join('**'+chr(97+i)+'.** '+inverse_case(m).replace('A','M')for i,m in enumerate([[[1,-1,3],[2,1,1],[0,2,-2]],[[0,1,-1],[1,2,1],[1,0,1]]])))
 A=M([[3,-1,2],[1,0,4],[2,1,0]]);B=M([[1,-1,1],[2,-3,0],[1,1,-2]])
 add('2.4.7',r'Từ $z=By$ suy ra $y=B^{-1}z$. Thế vào $x=Ay$, được $$x=AB^{-1}z='+tex(A*B.inv())+r'\begin{bmatrix}z_1\\z_2\\z_3\end{bmatrix}.$$ Mỗi hàng của ma trận trên cho lần lượt công thức $x_1,x_2,x_3$. Kiểm tra bằng cách nhân ma trận hệ số này với $B$, thu lại $A$.')
 add('2.4.8',r'**a.** Thế $x=-5x^\prime+4y^\prime$, $y=4x^\prime-3y^\prime$ vào hai phương trình: vế trái lần lượt rút gọn thành $x^\prime,y^\prime$. Vậy $x^\prime=7,y^\prime=1$, nên $x=-31,y=25$. Thế lại: $-93+100=7$, $-124+125=1$. **b.** $A=\begin{bmatrix}3&4\\4&5\end{bmatrix}$, $B=\begin{bmatrix}-5&4\\4&-3\end{bmatrix}$; nhân được $AB=BA=I$, tức $B=A^{-1}$. Đổi biến đã biến hệ thành hệ có ma trận đơn vị.')
@@ -52,7 +52,7 @@ add('2.4.25',r'**a.** $B=A^{-1}(AB)$ là tích các ma trận khả nghịch, n�
 blocks=[M([[-1,1,2],[0,2,-1],[0,1,-1]]),M([[3,1,0],[5,2,0],[1,3,-1]]),M([[3,4,0,0],[2,3,0,0],[1,-1,1,3],[3,1,1,4]]),M([[2,1,5,2],[1,1,-1,0],[0,0,1,-1],[0,0,1,-2]])]
 add('2.4.26',r'Với khối tam giác, dùng $\begin{bmatrix}P&Q\\0&R\end{bmatrix}^{-1}=\begin{bmatrix}P^{-1}&-P^{-1}QR^{-1}\\0&R^{-1}\end{bmatrix}$; dạng tam giác dưới tương tự. Các bước khử dưới đây cũng kiểm chứng độc lập từng kết quả.\n\n'+inverse_cases(blocks))
 add('2.4.27',r'Chuyển vị nghịch đảo cho $(A^{-1})^T=(A^T)^{-1}=A^{-1}$; tương tự với $B^{-1}$. Từ $AB=BA$, nhân thích hợp với các nghịch đảo suy ra $A,B,A^{-1},B^{-1}$ giao hoán từng cặp cần dùng. Do đó $(AB)^T=BA=AB$, $(AB^{-1})^T=B^{-1}A=AB^{-1}$, $(A^{-1}B^{-1})^T=B^{-1}A^{-1}=A^{-1}B^{-1}$. Mỗi tích đều khả nghịch vì là tích các ma trận khả nghịch.')
-add('2.4.28',r'**a.** $(I-A)(I+A)=I-A^2=I$ và tích ngược cũng bằng $I$. **b.** $(I-A)(I+A+A^2)=I-A^3=I$. **c.** Đặt ma trận đề là $I-N$; khi đó $N^3=0$. Vậy nghịch đảo là $I+N+N^2=\begin{bmatrix}1&-1&-1\\0&1&3\\0&0&1\end{bmatrix}$. **d.** Tổng hình học hữu hạn cho $$ (I-A)^{-1}=I+A+\cdots+A^{n-1}\quad\text{khi }A^n=0.$$ Nhân hai phía rút gọn thành $I-A^n=I$.')
+add('2.4.28',r'**a.** $(I-A)(I+A)=I-A^2=I$ và tích ngược cũng bằng $I$. **b.** $(I-A)(I+A+A^2)=I-A^3=I$. **c.** Đặt ma trận đề là $I-N$; khi đó $N^3=0$. Vậy nghịch đảo là $I+N+N^2=\begin{bmatrix}1&-2&7\\0&1&-3\\0&0&1\end{bmatrix}$. **d.** Tổng hình học hữu hạn cho $$ (I-A)^{-1}=I+A+\cdots+A^{n-1}\quad\text{khi }A^n=0.$$ Nhân hai phía rút gọn thành $I-A^n=I$.')
 add('2.4.29',r'Đặt $B=(1/a)A^{-1}$. Khi $a\ne0$, $(aA)B=a(1/a)AA^{-1}=I$ và $B(aA)=I$. Theo định nghĩa, $aA$ khả nghịch và $(aA)^{-1}=(1/a)A^{-1}$.')
 add('2.4.30',r'**a.** $B=A^{-1}(ABC)C^{-1}$ là tích ba ma trận khả nghịch. Đảo thứ tự cho $B^{-1}=C(ABC)^{-1}A$. **b.** Đặt $L=(BA)^{-1}B$, $R=B(AB)^{-1}$. Khi đó $LA=I$, $AR=I$; suy ra $L=L(AR)=(LA)R=R$. Vậy $A$ có nghịch đảo hai phía. Đổi vai $A,B$ chứng minh tương tự cho $B$.')
 add('2.4.31',r'**a.** Có: lấy nghịch đảo hai vế $A^{-1}=B^{-1}$ được $A=B$, vì $(A^{-1})^{-1}=A$. **b.** Nếu $A=B$, $A^{-1}B=I$. Ngược lại, nhân trái $A^{-1}B=I$ với $A$ được $B=A$.')

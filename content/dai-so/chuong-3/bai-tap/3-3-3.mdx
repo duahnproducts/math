@@ -5,11 +5,25 @@ do_kho: vua
 tieu_de: "Giá trị riêng và vector riêng — bài 3"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.3.3"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.3.3 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh rằng các trị riêng của
+
+$$
+\left[ \begin{array}{cc} \cos \theta & -\sin \theta \\ \sin \theta & \cos \theta \end{array} \right]
+$$
+
+ là $e^{i\theta}$ và $e^{-i\theta}$. (Xem Phụ lục A.)
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-3-3-1" moTa="Đề gốc Nicholson bài 3.3.3, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -23,6 +37,7 @@ Exercise  3.3.3    Show  that  the  eigenvalues  of
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -40,7 +55,25 @@ Không gian riêng là hạt nhân của A − λI; đa thức của ma trận t
 
 <LoiGiai>
 
-Khai triển $c_A(x)=(x-\cos\theta)^2+\sin^2\theta=x^2-2\cos\theta\,x+1$. Hai nghiệm phức là $\cos\theta\pm i\sin\theta=e^{\pm i\theta}$. Nếu $\sin\theta=0$, hai nghiệm trùng nhau, ma trận là $I$ hoặc $-I$; công thức vẫn đúng. Khi $\sin\theta\ne0$, không có trị riêng thực.
+**Cách làm.** Trị riêng $\lambda$ cần có vector $v\ne0$ thỏa $Av=\lambda v$. Tương đương $(A-\lambda I)v=0$ có nghiệm khác 0, nên $\det(\lambda I-A)=0$.
+
+Với phép quay, $xI-A=\begin{bmatrix}x-\cos\theta&\sin\theta\\-\sin\theta&x-\cos\theta\end{bmatrix}$. Quy tắc cấp 2 cho dấu cộng trước $\sin^2\theta$ vì tích ngoài đường chéo mang dấu âm.
+
+**Bước 1. Thực hiện phép biến đổi.**
+
+Khai triển $c_A(x)=(x-\cos\theta)^2+\sin^2\theta=x^2-2\cos\theta\,x+1$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Hai nghiệm phức là $\cos\theta\pm i\sin\theta=e^{\pm i\theta}$.
+
+**Bước 3. Xét giả thiết.**
+
+Nếu $\sin\theta=0$, hai nghiệm trùng nhau, ma trận là $I$ hoặc $-I$; công thức vẫn đúng.
+
+**Bước 4. Lập luận và tính toán.**
+
+Khi $\sin\theta\ne0$, không có trị riêng thực.
 
 </LoiGiai>
 

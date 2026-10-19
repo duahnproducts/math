@@ -5,11 +5,27 @@ do_kho: vua
 tieu_de: "Chéo hoá — bài 13"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.4.13"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.4.13 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $A^{2} = I$, và giả sử $A \neq I$ và $A \neq -I$.
+
+**a.** Chứng minh rằng các trị riêng duy nhất của $A$ là $\lambda = 1$ và $\lambda = -1$.
+
+**b.** Chứng minh rằng $A$ chéo hóa được. [Gợi ý: Kiểm tra rằng $A(A + I) = A + I$ và $A(A - I) = -(A - I)$, rồi xét các cột khác 0 của $A + I$ và của $A - I$.]
+
+**c.** Nếu $Q_{m} : \mathbb{R}^2 \to \mathbb{R}^2$ là phép đối xứng qua đường thẳng $y = mx$, trong đó $m \neq 0$, hãy dùng ý (b) để chứng minh rằng ma trận của $Q_{m}$ chéo hóa được với mỗi $m$.
+
+**d.** Tiếp theo, chứng minh ý (c) bằng hình học, dùng Định lý 3.3.3.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-4-13-1" moTa="Đề gốc Nicholson bài 3.4.13, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -37,6 +53,7 @@ d. Now prove (c) geometrically using Theorem 3.3.3.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -53,7 +70,47 @@ Ghép các vector riêng độc lập thành cột của P, rồi kiểm tra AP 
 
 <LoiGiai>
 
-**a.** Từ $Av=\lambda v$, $A^2v=v$ cho $\lambda^2=1$, nên chỉ có thể là $\pm1$. Hai trị riêng đều thực sự xuất hiện: nếu $A-I\ne0$, một cột khác 0 của nó thỏa $A(A-I)=-(A-I)$; tương tự $A+I\ne0$ cho vector riêng 1. **b.** Mọi $v$ tách được $v=(v+Av)/2+(v-Av)/2$. Hai thành phần lần lượt thuộc $E_1,E_{-1}$. Giao hai không gian chỉ là 0, nên tổng trực tiếp bằng toàn không gian; ghép hai cơ sở cho cơ sở vector riêng. **c.** Đối xứng hai lần là đồng nhất, ma trận $Q_m^2=I$, nên dùng (b) chéo hóa được. **d.** Vector $(1,m)$ trên trục đối xứng có trị riêng 1; vector $(-m,1)$ vuông góc có trị riêng -1. Chọn $P=\begin{bmatrix}1&-m\\m&1\end{bmatrix}$, $\det P=1+m^2>0$, thì $P^{-1}Q_mP=\operatorname{diag}(1,-1)$.
+**Cách làm.** Chéo hóa $A=PDP^{-1}$ nghĩa là các cột của $P$ là một cơ sở vector riêng. Trị riêng của cột thứ $j$ phải nằm ở ô $d_{jj}$, và có thể kiểm tra bằng $AP=PD$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Từ $Av=\lambda v$, $A^2v=v$ cho $\lambda^2=1$, nên chỉ có thể là $\pm1$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Hai trị riêng đều thực sự xuất hiện: nếu $A-I\ne0$, một cột khác 0 của nó thỏa $A(A-I)=-(A-I)$; tương tự $A+I\ne0$ cho vector riêng 1.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Mọi $v$ tách được $v=(v+Av)/2+(v-Av)/2$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Hai thành phần lần lượt thuộc $E_1,E_{-1}$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Giao hai không gian chỉ là 0, nên tổng trực tiếp bằng toàn không gian; ghép hai cơ sở cho cơ sở vector riêng.
+
+**c.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Đối xứng hai lần là đồng nhất, ma trận $Q_m^2=I$, nên dùng (b) chéo hóa được.
+
+**d.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Vector $(1,m)$ trên trục đối xứng có trị riêng 1; vector $(-m,1)$ vuông góc có trị riêng -1.
+
+**Bước 2. Thiết lập biểu thức.**
+
+Chọn $P=\begin{bmatrix}1&-m\\m&1\end{bmatrix}$, $\det P=1+m^2>0$, thì $P^{-1}Q_mP=\operatorname{diag}(1,-1)$.
 
 </LoiGiai>
 

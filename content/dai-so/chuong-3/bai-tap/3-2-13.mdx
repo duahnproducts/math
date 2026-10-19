@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Định thức và ma trận nghịch đảo — bài 13"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.2.13"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.13 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh rằng $\det AB = \det BA$ đúng với mọi cặp ma trận $n \times n$, ký hiệu là $A$ và $B$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-2-13-1" moTa="Đề gốc Nicholson bài 3.2.13, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ any two n×n matrices A and B.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +48,19 @@ Dùng định thức của tích và công thức nghịch đảo qua adjugate k
 
 <LoiGiai>
 
-$\det(AB)=\det A\det B=\det B\det A=\det(BA)$. Tính giao hoán dùng cho hai số định thức, không suy ra $AB=BA$. Kết quả không cần giả thiết khả nghịch.
+**Cách làm.** Dùng $\det(AB)=\det A\det B$, $\det A^T=\det A$, $\det(cA)=c^n\det A$ ở cấp $n$. Khi $\det A\ne0$, $A^{-1}=\operatorname{adj}A/\det A$; adjugate là bảng phần bù đã chuyển vị.
+
+**Bước 1. Lập luận và tính toán.**
+
+$\det(AB)=\det A\det B=\det B\det A=\det(BA)$.
+
+**Bước 2. Thực hiện phép biến đổi.**
+
+Tính giao hoán dùng cho hai số định thức, không suy ra $AB=BA$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Kết quả không cần giả thiết khả nghịch.
 
 </LoiGiai>
 

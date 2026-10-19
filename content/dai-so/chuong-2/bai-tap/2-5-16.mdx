@@ -5,11 +5,31 @@ do_kho: vua
 tieu_de: "Ma trận sơ cấp — bài 16"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.5.16"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.5.16 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu $U$ khả nghịch, hãy chứng minh dạng bậc thang hàng rút gọn của ma trận
+
+$$
+\left[ \begin{array}{cc} U & A \end{array} \right]
+$$
+
+ là
+
+$$
+\left[ \begin{array}{cc} I & U^{-1}A \end{array} \right]
+$$
+
+.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-5-16-1" moTa="Đề gốc Nicholson bài 2.5.16, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +42,7 @@ row-echelon form of a matrix U  A   is   I  U−1A   .
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +60,25 @@ Một phép hàng là nhân trái; một phép cột là nhân phải. Ghi thứ
 
 <LoiGiai>
 
-Khử hàng đưa $U$ về $I$ tương đương nhân trái toàn bộ ma trận ghép với $U^{-1}$. Vì vậy $[U\mid A]$ đưa về $[I\mid U^{-1}A]$. Khối trái $I$ đã cung cấp một trụ đầu hàng cho mọi hàng; các ô còn lại không ảnh hưởng điều kiện RREF. Do tính duy nhất RREF, đây chính là dạng rút gọn yêu cầu.
+**Cách làm.** Ma trận sơ cấp $E$ nhận từ $I$ bằng một phép hàng. $EA$ làm phép đó lên các hàng của $A$. Trong chuỗi $E_k\cdots E_1A$, phép $E_1$ được thực hiện trước.
+
+$U$ khả nghịch nên chuỗi đưa $U$ về $I$ có tích bằng $U^{-1}$. Khi áp dụng chuỗi đó lên cả ma trận ghép, khối $A$ cũng bị nhân trái bởi $U^{-1}$. Mỗi hàng đã có trụ trong khối $I$, nên khối phải không làm thay đổi tính rút gọn.
+
+**Bước 1. Lập luận và tính toán.**
+
+Khử hàng đưa $U$ về $I$ tương đương nhân trái toàn bộ ma trận ghép với $U^{-1}$.
+
+**Bước 2. Giải thích điều kiện sử dụng.**
+
+Vì vậy $[U\mid A]$ đưa về $[I\mid U^{-1}A]$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Khối trái $I$ đã cung cấp một trụ đầu hàng cho mọi hàng; các ô còn lại không ảnh hưởng điều kiện RREF.
+
+**Bước 4. Giải thích điều kiện sử dụng.**
+
+Do tính duy nhất RREF, đây chính là dạng rút gọn yêu cầu.
 
 </LoiGiai>
 

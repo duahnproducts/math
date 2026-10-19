@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Phân tích LU — bài 5"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.7.5"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.7.5 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh rằng có thể thực hiện mọi phép đổi chỗ hai hàng bằng cách chỉ dùng các phép biến đổi hàng thuộc các loại còn lại.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-7-5-1" moTa="Đề gốc Nicholson bài 2.7.5, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ interchange by using only row operations of other types.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +48,23 @@ Với PA = LU, giải Ly = Pb trước rồi giải Ux = y; phân biệt L đơn
 
 <LoiGiai>
 
-Gọi hai hàng ban đầu là $u,v$. Thực hiện theo thứ tự $R_i\leftarrow R_i+R_j$, $R_j\leftarrow-R_j$, $R_j\leftarrow R_j+R_i$, $R_i\leftarrow R_i-R_j$. Hai hàng lần lượt thành $(u+v,v)$, $(u+v,-v)$, $(u+v,u)$, $(v,u)$. Chỉ dùng cộng bội hàng và nhân hàng với số khác 0, nên đã biểu diễn phép đổi hàng bằng hai loại còn lại.
+**Cách làm.** Phân tích $PA=LU$ tách việc giải $Ax=b$ thành $Ly=Pb$ (thế tiến) và $Ux=y$ (thế ngược). Phải giữ đúng quy ước chuẩn hóa $L,U$ của đề.
+
+**Bước 1. Thiết lập biểu thức.**
+
+Gọi hai hàng ban đầu là $u,v$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Thực hiện theo thứ tự $R_i\leftarrow R_i+R_j$, $R_j\leftarrow-R_j$, $R_j\leftarrow R_j+R_i$, $R_i\leftarrow R_i-R_j$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Hai hàng lần lượt thành $(u+v,v)$, $(u+v,-v)$, $(u+v,u)$, $(v,u)$.
+
+**Bước 4. Lập luận và tính toán.**
+
+Chỉ dùng cộng bội hàng và nhân hàng với số khác 0, nên đã biểu diễn phép đổi hàng bằng hai loại còn lại.
 
 </LoiGiai>
 

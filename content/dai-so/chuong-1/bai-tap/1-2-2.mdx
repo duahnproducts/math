@@ -31,19 +31,275 @@ Sau khi khử cột 2, cột 3 sẽ toàn 0 ở các hàng dưới (vì cột 3 
 </GoiY>
 
 <LoiGiai>
+
+**Cách làm.** Trụ là phần tử đầu tiên khác 0 của một hàng sau khi khử. Theo quy ước sách, trụ trong dạng bậc thang được chuẩn hóa bằng 1. Hàng $0=c\ne0$ cho vô nghiệm; nếu không có mâu thuẫn, cột ẩn không có trụ cho ẩn tự do.
+
 Khử từng cột từ trái sang phải, nhớ xoá cả **phía trên** số 1 dẫn đầu. Kết quả:
 
 **a.**
+
 $$
 \left[\begin{array}{rrrrrrr} 0 & 1 & -2 & 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 & 3 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 & 0 & 0 & 1 \end{array}\right]
 $$
 
 **b.**
+
 $$
 \left[\begin{array}{rrrrrrr} 0 & 1 & -3 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 & 0 & 0 & -1 \\ 0 & 0 & 0 & 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 1 & 1 \end{array}\right]
 $$
 
 Kiểm tra nhanh: dạng bậc thang rút gọn của một ma trận là **duy nhất**, nên đi đường nào cũng phải ra đúng các ma trận này. Mỗi ma trận có 4 số 1 dẫn đầu, hạng bằng 4.
+
+**Chi tiết phép khử để làm lại.**
+
+Với ma trận $\begin{bmatrix}0&-1&2&1&2&1&-1\\0&1&-2&2&7&2&4\\0&-2&4&3&7&1&0\\0&3&-6&1&6&4&1\end{bmatrix}$, khử lần lượt như sau:
+
+**Bước 1. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 1 cho $-1$, được
+
+$$
+\begin{bmatrix}0&1&-2&-1&-2&-1&1\\0&1&-2&2&7&2&4\\0&-2&4&3&7&1&0\\0&3&-6&1&6&4&1\end{bmatrix}.
+$$
+
+**Bước 2. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-1)R_1$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+$$
+\begin{bmatrix}0&1&-2&-1&-2&-1&1\\0&0&0&3&9&3&3\\0&-2&4&3&7&1&0\\0&3&-6&1&6&4&1\end{bmatrix}.
+$$
+
+**Bước 3. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(2)R_1$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+$$
+\begin{bmatrix}0&1&-2&-1&-2&-1&1\\0&0&0&3&9&3&3\\0&0&0&1&3&-1&2\\0&3&-6&1&6&4&1\end{bmatrix}.
+$$
+
+**Bước 4. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(-3)R_1$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+$$
+\begin{bmatrix}0&1&-2&-1&-2&-1&1\\0&0&0&3&9&3&3\\0&0&0&1&3&-1&2\\0&0&0&4&12&7&-2\end{bmatrix}.
+$$
+
+**Bước 5. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $3$, được
+
+$$
+\begin{bmatrix}0&1&-2&-1&-2&-1&1\\0&0&0&1&3&1&1\\0&0&0&1&3&-1&2\\0&0&0&4&12&7&-2\end{bmatrix}.
+$$
+
+**Bước 6. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(1)R_2$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+$$
+\begin{bmatrix}0&1&-2&0&1&0&2\\0&0&0&1&3&1&1\\0&0&0&1&3&-1&2\\0&0&0&4&12&7&-2\end{bmatrix}.
+$$
+
+**Bước 7. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-1)R_2$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+$$
+\begin{bmatrix}0&1&-2&0&1&0&2\\0&0&0&1&3&1&1\\0&0&0&0&0&-2&1\\0&0&0&4&12&7&-2\end{bmatrix}.
+$$
+
+**Bước 8. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(-4)R_2$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+$$
+\begin{bmatrix}0&1&-2&0&1&0&2\\0&0&0&1&3&1&1\\0&0&0&0&0&-2&1\\0&0&0&0&0&3&-6\end{bmatrix}.
+$$
+
+**Bước 9. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 3 cho $-2$, được
+
+$$
+\begin{bmatrix}0&1&-2&0&1&0&2\\0&0&0&1&3&1&1\\0&0&0&0&0&1&- \frac{1}{2}\\0&0&0&0&0&3&-6\end{bmatrix}.
+$$
+
+**Bước 10. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-1)R_3$. Hệ số được chọn để ô ở cột 6 bằng 0:
+
+$$
+\begin{bmatrix}0&1&-2&0&1&0&2\\0&0&0&1&3&0&\frac{3}{2}\\0&0&0&0&0&1&- \frac{1}{2}\\0&0&0&0&0&3&-6\end{bmatrix}.
+$$
+
+**Bước 11. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(-3)R_3$. Hệ số được chọn để ô ở cột 6 bằng 0:
+
+$$
+\begin{bmatrix}0&1&-2&0&1&0&2\\0&0&0&1&3&0&\frac{3}{2}\\0&0&0&0&0&1&- \frac{1}{2}\\0&0&0&0&0&0&- \frac{9}{2}\end{bmatrix}.
+$$
+
+**Bước 12. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 4 cho $- \frac{9}{2}$, được
+
+$$
+\begin{bmatrix}0&1&-2&0&1&0&2\\0&0&0&1&3&0&\frac{3}{2}\\0&0&0&0&0&1&- \frac{1}{2}\\0&0&0&0&0&0&1\end{bmatrix}.
+$$
+
+**Bước 13. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(-2)R_4$. Hệ số được chọn để ô ở cột 7 bằng 0:
+
+$$
+\begin{bmatrix}0&1&-2&0&1&0&0\\0&0&0&1&3&0&\frac{3}{2}\\0&0&0&0&0&1&- \frac{1}{2}\\0&0&0&0&0&0&1\end{bmatrix}.
+$$
+
+**Bước 14. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(- \frac{3}{2})R_4$. Hệ số được chọn để ô ở cột 7 bằng 0:
+
+$$
+\begin{bmatrix}0&1&-2&0&1&0&0\\0&0&0&1&3&0&0\\0&0&0&0&0&1&- \frac{1}{2}\\0&0&0&0&0&0&1\end{bmatrix}.
+$$
+
+**Bước 15. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(\frac{1}{2})R_4$. Hệ số được chọn để ô ở cột 7 bằng 0:
+
+$$
+\begin{bmatrix}0&1&-2&0&1&0&0\\0&0&0&1&3&0&0\\0&0&0&0&0&1&0\\0&0&0&0&0&0&1\end{bmatrix}.
+$$
+
+Đếm hàng khác 0 trong kết quả cho hạng $r=4$.
+
+Với ma trận $\begin{bmatrix}0&-1&3&1&3&2&1\\0&-2&6&1&-5&0&-1\\0&3&-9&2&4&1&-1\\0&1&-3&-1&3&0&1\end{bmatrix}$, khử lần lượt như sau:
+
+**Bước 16. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 1 cho $-1$, được
+
+$$
+\begin{bmatrix}0&1&-3&-1&-3&-2&-1\\0&-2&6&1&-5&0&-1\\0&3&-9&2&4&1&-1\\0&1&-3&-1&3&0&1\end{bmatrix}.
+$$
+
+**Bước 17. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(2)R_1$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+$$
+\begin{bmatrix}0&1&-3&-1&-3&-2&-1\\0&0&0&-1&-11&-4&-3\\0&3&-9&2&4&1&-1\\0&1&-3&-1&3&0&1\end{bmatrix}.
+$$
+
+**Bước 18. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-3)R_1$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+$$
+\begin{bmatrix}0&1&-3&-1&-3&-2&-1\\0&0&0&-1&-11&-4&-3\\0&0&0&5&13&7&2\\0&1&-3&-1&3&0&1\end{bmatrix}.
+$$
+
+**Bước 19. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(-1)R_1$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+$$
+\begin{bmatrix}0&1&-3&-1&-3&-2&-1\\0&0&0&-1&-11&-4&-3\\0&0&0&5&13&7&2\\0&0&0&0&6&2&2\end{bmatrix}.
+$$
+
+**Bước 20. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $-1$, được
+
+$$
+\begin{bmatrix}0&1&-3&-1&-3&-2&-1\\0&0&0&1&11&4&3\\0&0&0&5&13&7&2\\0&0&0&0&6&2&2\end{bmatrix}.
+$$
+
+**Bước 21. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(1)R_2$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+$$
+\begin{bmatrix}0&1&-3&0&8&2&2\\0&0&0&1&11&4&3\\0&0&0&5&13&7&2\\0&0&0&0&6&2&2\end{bmatrix}.
+$$
+
+**Bước 22. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-5)R_2$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+$$
+\begin{bmatrix}0&1&-3&0&8&2&2\\0&0&0&1&11&4&3\\0&0&0&0&-42&-13&-13\\0&0&0&0&6&2&2\end{bmatrix}.
+$$
+
+**Bước 23. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 3 cho $-42$, được
+
+$$
+\begin{bmatrix}0&1&-3&0&8&2&2\\0&0&0&1&11&4&3\\0&0&0&0&1&\frac{13}{42}&\frac{13}{42}\\0&0&0&0&6&2&2\end{bmatrix}.
+$$
+
+**Bước 24. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(-8)R_3$. Hệ số được chọn để ô ở cột 5 bằng 0:
+
+$$
+\begin{bmatrix}0&1&-3&0&0&- \frac{10}{21}&- \frac{10}{21}\\0&0&0&1&11&4&3\\0&0&0&0&1&\frac{13}{42}&\frac{13}{42}\\0&0&0&0&6&2&2\end{bmatrix}.
+$$
+
+**Bước 25. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-11)R_3$. Hệ số được chọn để ô ở cột 5 bằng 0:
+
+$$
+\begin{bmatrix}0&1&-3&0&0&- \frac{10}{21}&- \frac{10}{21}\\0&0&0&1&0&\frac{25}{42}&- \frac{17}{42}\\0&0&0&0&1&\frac{13}{42}&\frac{13}{42}\\0&0&0&0&6&2&2\end{bmatrix}.
+$$
+
+**Bước 26. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(-6)R_3$. Hệ số được chọn để ô ở cột 5 bằng 0:
+
+$$
+\begin{bmatrix}0&1&-3&0&0&- \frac{10}{21}&- \frac{10}{21}\\0&0&0&1&0&\frac{25}{42}&- \frac{17}{42}\\0&0&0&0&1&\frac{13}{42}&\frac{13}{42}\\0&0&0&0&0&\frac{1}{7}&\frac{1}{7}\end{bmatrix}.
+$$
+
+**Bước 27. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 4 cho $\frac{1}{7}$, được
+
+$$
+\begin{bmatrix}0&1&-3&0&0&- \frac{10}{21}&- \frac{10}{21}\\0&0&0&1&0&\frac{25}{42}&- \frac{17}{42}\\0&0&0&0&1&\frac{13}{42}&\frac{13}{42}\\0&0&0&0&0&1&1\end{bmatrix}.
+$$
+
+**Bước 28. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(\frac{10}{21})R_4$. Hệ số được chọn để ô ở cột 6 bằng 0:
+
+$$
+\begin{bmatrix}0&1&-3&0&0&0&0\\0&0&0&1&0&\frac{25}{42}&- \frac{17}{42}\\0&0&0&0&1&\frac{13}{42}&\frac{13}{42}\\0&0&0&0&0&1&1\end{bmatrix}.
+$$
+
+**Bước 29. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(- \frac{25}{42})R_4$. Hệ số được chọn để ô ở cột 6 bằng 0:
+
+$$
+\begin{bmatrix}0&1&-3&0&0&0&0\\0&0&0&1&0&0&-1\\0&0&0&0&1&\frac{13}{42}&\frac{13}{42}\\0&0&0&0&0&1&1\end{bmatrix}.
+$$
+
+**Bước 30. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(- \frac{13}{42})R_4$. Hệ số được chọn để ô ở cột 6 bằng 0:
+
+$$
+\begin{bmatrix}0&1&-3&0&0&0&0\\0&0&0&1&0&0&-1\\0&0&0&0&1&0&0\\0&0&0&0&0&1&1\end{bmatrix}.
+$$
+
+Đếm hàng khác 0 trong kết quả cho hạng $r=4$.
+
 </LoiGiai>
 
 <LoiHayMac>

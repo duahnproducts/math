@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Phép nhân ma trận — bài 14"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.3.14"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.14 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $A$ là ma trận $m \times n$.
+
+**a.** Nếu $AX = 0$ với mọi ma trận $n \times 1$, ký hiệu là $X$, hãy chứng minh rằng $A = 0$.
+
+**b.** Nếu $YA = 0$ với mọi ma trận $1 \times m$, ký hiệu là $Y$, hãy chứng minh rằng $A = 0$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-3-14-1" moTa="Đề gốc Nicholson bài 2.3.14, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -25,6 +37,7 @@ Exercise 2.3.14  Let A denote an m×n matrix.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -42,7 +55,29 @@ Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự 
 
 <LoiGiai>
 
-**a.** Lần lượt chọn $X=e_j$, vector cột đơn vị thứ $j$. Khi ấy $Ae_j$ là cột thứ $j$ của $A$, nên mọi cột đều bằng 0. **b.** Chọn $Y=e_i^T$: $e_i^TA$ là hàng thứ $i$ của $A$, nên mọi hàng bằng 0. Trong cả hai trường hợp suy ra $A=0$.
+**Cách làm.** Với $A$ cỡ $m\times n$, $B$ cỡ $n\times p$, tích $AB$ có cỡ $m\times p$ và $(AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$. Khi khai triển, giữ nguyên thứ tự các thừa số.
+
+Vector $e_j$ có đúng một ô 1, các ô khác bằng 0. Do đó $(Ae_j)_i=\sum_k a_{ik}(e_j)_k=a_{ij}$: phép chọn vector đơn vị tách riêng từng cột mà không trộn các cột với nhau.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Lần lượt chọn $X=e_j$, vector cột đơn vị thứ $j$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Khi ấy $Ae_j$ là cột thứ $j$ của $A$, nên mọi cột đều bằng 0.
+
+**b.**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Chọn $Y=e_i^T$: $e_i^TA$ là hàng thứ $i$ của $A$, nên mọi hàng bằng 0.
+
+**Bước 2. Lập luận và tính toán.**
+
+Trong cả hai trường hợp suy ra $A=0$.
 
 </LoiGiai>
 

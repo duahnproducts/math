@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Ứng dụng: mô hình kinh tế vào–ra — bài 7"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.8.7"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.8.7 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Tìm ma trận $2 \times 2$, ký hiệu là $E$, có các phần tử nằm giữa $0$ và $1$ sao cho:
+
+**a.** $I - E$ không có nghịch đảo.
+
+**b.** $I - E$ có nghịch đảo nhưng không phải mọi phần tử của $(I - E)^{-1}$ đều không âm.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-8-7-1" moTa="Đề gốc Nicholson bài 2.8.7, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -24,6 +36,7 @@ Exercise 2.8.7  Find a 2 × 2 matrix E with entries be-tween 0 and 1 such that:
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -41,11 +54,35 @@ Tổng cột của ma trận stochastic bằng 1. Để tìm giá tương đối
 
 <LoiGiai>
 
-**a.** Chọn $E=\frac12\begin{bmatrix}1&1\\1&1\end{bmatrix}$. Khi đó $(I-E)(1,1)^T=0$ nên không khả nghịch. **b.** Chọn $E=\begin{bmatrix}3/4&1/2\\1/2&3/4\end{bmatrix}$. Ta có $\det(I-E)=-3/16$ và
+**Cách làm.** Cơ cấu giá cân bằng thỏa $Ep=p$, tức $(I-E)p=0$. Với mô hình mở, điều kiện cần kiểm tra là $I-E$ khả nghịch và $(I-E)^{-1}$ có các ô không âm.
+
+**a.**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Chọn $E=\frac12\begin{bmatrix}1&1\\1&1\end{bmatrix}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Khi đó $(I-E)(1,1)^T=0$ nên không khả nghịch.
+
+**b.**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Chọn $E=\begin{bmatrix}3/4&1/2\\1/2&3/4\end{bmatrix}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Ta có $\det(I-E)=-3/16$ và
+
+
 
 $$
 (I-E)^{-1}=\begin{bmatrix}-4/3&-8/3\\-8/3&-4/3\end{bmatrix}.
 $$
+
+
 
  Tất cả ô của $E$ đều nằm giữa 0 và 1, nhưng nghịch đảo có các ô âm.
 

@@ -157,16 +157,88 @@ $(AB)^T = B^TA^T$. Viết $A^TB^T$ thường thậm chí không nhân được v
 Với $A$, $B$ trong phần Hình dung trực quan, tính $BA$. Nó có bằng $AB$ không? $BA$ có ý nghĩa gì trong câu chuyện quán nước không?
 
 <GoiYNho>$BA$ tính được (cả hai đều $2 \times 2$). Thử đọc tên hàng và cột: có khớp nhau không?</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Dùng ma trận quán nước ở phần trực quan: $B=\begin{bmatrix}2&3\\1&0\end{bmatrix}$ và $A=\begin{bmatrix}5&4\\6&2\end{bmatrix}$.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+$$
+BA=\begin{bmatrix}2\cdot5+3\cdot6&2\cdot4+3\cdot2\\1\cdot5+0\cdot6&1\cdot4+0\cdot2\end{bmatrix}=\begin{bmatrix}28&14\\5&4\end{bmatrix}.
+$$
+
+ Trong khi $AB=\begin{bmatrix}14&15\\14&18\end{bmatrix}$, nên hai tích khác nhau.
+
+**Bước 3. Kiểm tra và kết luận.**
+
+Về đại số, $BA$ hợp lệ vì kích thước khớp. Về câu chuyện, các cột của $B$ là món, còn các hàng của $A$ là nhà cung cấp; hai nhãn trung gian không khớp nên tích đảo không biểu diễn chi phí món theo mô hình ấy.
+
+**Bước 4. Cách tự làm lại.**
+
+Phân biệt tích có nghĩa về kích thước với tích có diễn giải đúng đơn vị trong mô hình.
+
+</LoiGiai>
 </BaiLuyen>
 
 <BaiLuyen do_kho="vua" so="3.2">
 Tìm mọi ma trận $X = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$ giao hoán với $D = \begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix}$, tức là $XD = DX$.
 
 <GoiYNho>Tính cả hai tích theo $a, b, c, d$ rồi cho các ô bằng nhau. Đáp số: $b = c = 0$.</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Viết cả $XD$ và $DX$ rồi so từng ô.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+$$
+XD=\begin{bmatrix}a&0\\c&0\end{bmatrix},\qquad DX=\begin{bmatrix}a&b\\0&0\end{bmatrix}.
+$$
+
+ Hai ma trận bằng nhau buộc $b=0,c=0$, còn $a,d$ tự do. Vậy mọi nghiệm là $X=\operatorname{diag}(a,d)$.
+
+**Bước 3. Kiểm tra và kết luận.**
+
+Nhân lại với $b=c=0$ cho $XD=DX=\operatorname{diag}(a,0)$, nên điều kiện vừa cần vừa đủ.
+
+**Bước 4. Cách tự làm lại.**
+
+Đẳng thức ma trận chuyển thành hệ các ô; phải kiểm tra cả chiều suy ra và chiều thế lại.
+
+</LoiGiai>
 </BaiLuyen>
 
 <BaiLuyen do_kho="kho" so="3.3">
 Tìm một ma trận $A$ cỡ $2 \times 2$, khác 0, sao cho $A^2 = 0$, và giải thích vì sao điều này không bao giờ xảy ra với số thường. Rồi chứng tỏ: nếu $A^2 = 0$ thì $(I + A)(I - A) = I$.
 
 <GoiYNho tieuDe="Bạn sẽ cần">Ma trận $C$ ở ví dụ mẫu. Khai triển $(I + A)(I - A)$ cẩn thận theo thứ tự. Phần sau dẫn sang ma trận nghịch đảo ở <XemMuc bai={4} />.</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Tìm ví dụ có một hàng và một cột làm tích bình phương triệt tiêu.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+Chọn $A=\begin{bmatrix}0&1\\0&0\end{bmatrix}\ne0$. Nhân theo hàng–cột cho $A^2=0$. Với số thực $a$, $a^2=0$ buộc $a=0$; tính chất này không áp dụng nguyên xi cho ma trận. Khai triển
+
+$$
+(I+A)(I-A)=I-A+A-A^2=I.
+$$
+
+**Bước 3. Kiểm tra và kết luận.**
+
+Tích ngược cũng bằng $I-A^2=I$, nên $I-A$ là nghịch đảo của $I+A$.
+
+**Bước 4. Cách tự làm lại.**
+
+Một đẳng thức đúng cho số không tự động đúng cho ma trận; kiểm tra phép nhân cụ thể.
+
+</LoiGiai>
 </BaiLuyen>

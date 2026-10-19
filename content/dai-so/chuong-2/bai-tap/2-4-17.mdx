@@ -5,11 +5,25 @@ do_kho: vua
 tieu_de: "Ma trận nghịch đảo — bài 17"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.4.17"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.4.17 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu $c \neq 0$, hãy tìm nghịch đảo của
+
+$$
+\left[ \begin{array}{rrr} 1 & -1 & 1 \\ 2 & -1 & 2 \\ 0 & 2 & c \end{array} \right]
+$$
+
+ theo $c$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-4-17-1" moTa="Đề gốc Nicholson bài 2.4.17, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +36,7 @@ Exercise  2.4.17     If   c̸ = 0,  ﬁnd  the  inverse  of
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,13 +54,197 @@ Khi tìm nghịch đảo bằng khử hàng, làm cùng phép biến đổi trê
 
 <LoiGiai>
 
-$\det A=c$. Khi định thức khác 0, dùng $A^{-1}=\operatorname{adj}(A)/\det A$ được
+**Cách làm.** Theo định nghĩa, $B=A^{-1}$ khi $AB=BA=I$. Muốn khử $A$ ở bên trái thì nhân trái với $A^{-1}$; muốn khử ở bên phải thì nhân phải. Nghịch đảo tích đảo thứ tự: $(AB)^{-1}=B^{-1}A^{-1}$.
+
+**Bước 1. Kiểm tra điều kiện tồn tại.**
+
+**Bước 2. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}1&-1&1\\2&-1&2\\0&2&c\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
 
 $$
-A^{-1}=\begin{bmatrix}\frac{- c - 4}{c}&\frac{c + 2}{c}&- \frac{1}{c}\\-2&1&0\\\frac{4}{c}&- \frac{2}{c}&\frac{1}{c}\end{bmatrix}.
+M_{11}=\begin{bmatrix}-1&2\\2&c\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=- c - 4.
 $$
 
- Nhân hai chiều cho $AA^{-1}=A^{-1}A=I$, xác nhận công thức và điều kiện tồn tại.Định thức bằng $c$, nên giả thiết $c\ne0$ chính là điều kiện đủ và cần.
+
+
+Với $M_{11}=\begin{bmatrix}-1&2\\2&c\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{11}=(-1)(c)-(2)(2)=- c - 4.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}2&2\\0&c\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=- 2 c.
+$$
+
+
+
+Với $M_{12}=\begin{bmatrix}2&2\\0&c\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{12}=(2)(c)-(2)(0)=2 c.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}2&-1\\0&2\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=4.
+$$
+
+
+
+Với $M_{13}=\begin{bmatrix}2&-1\\0&2\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{13}=(2)(2)-(-1)(0)=4.
+$$
+
+
+
+**Bước 3. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(1)(- c - 4)+(-1)(- 2 c)+(1)(4)=c.
+$$
+
+
+
+**Bước 4. Tính từng phần bù đại số.**
+
+Ta dùng $C_{ij}=(-1)^{i+j}\det M_{ij}$. Mỗi $M_{ij}$ được lập bằng cách xóa hàng $i$ và cột $j$ của $A$.
+
+
+
+$$
+C_{11}=(-1)^{2}\det\begin{bmatrix}-1&2\\2&c\end{bmatrix}=- c - 4.
+$$
+
+
+
+
+
+$$
+C_{12}=(-1)^{3}\det\begin{bmatrix}2&2\\0&c\end{bmatrix}=- 2 c.
+$$
+
+
+
+
+
+$$
+C_{13}=(-1)^{4}\det\begin{bmatrix}2&-1\\0&2\end{bmatrix}=4.
+$$
+
+
+
+
+
+$$
+C_{21}=(-1)^{3}\det\begin{bmatrix}-1&1\\2&c\end{bmatrix}=c + 2.
+$$
+
+
+
+
+
+$$
+C_{22}=(-1)^{4}\det\begin{bmatrix}1&1\\0&c\end{bmatrix}=c.
+$$
+
+
+
+
+
+$$
+C_{23}=(-1)^{5}\det\begin{bmatrix}1&-1\\0&2\end{bmatrix}=-2.
+$$
+
+
+
+
+
+$$
+C_{31}=(-1)^{4}\det\begin{bmatrix}-1&1\\-1&2\end{bmatrix}=-1.
+$$
+
+
+
+
+
+$$
+C_{32}=(-1)^{5}\det\begin{bmatrix}1&1\\2&2\end{bmatrix}=0.
+$$
+
+
+
+
+
+$$
+C_{33}=(-1)^{6}\det\begin{bmatrix}1&-1\\2&-1\end{bmatrix}=1.
+$$
+
+
+
+Ghép thành bảng phần bù $C$, rồi **chuyển vị** (hàng thành cột):
+
+
+
+$$
+C=\begin{bmatrix}- c - 4&- 2 c&4\\c + 2&c&-2\\-1&0&1\end{bmatrix},\qquad\operatorname{adj}A=C^T=\begin{bmatrix}- c - 4&c + 2&-1\\- 2 c&c&0\\4&-2&1\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Chia cho định thức.**
+
+Chỉ với các giá trị làm $\det A\ne0$, ta có
+
+
+
+$$
+A^{-1}=\frac{\operatorname{adj}A}{\det A}=\begin{bmatrix}\frac{- c - 4}{c}&\frac{c + 2}{c}&- \frac{1}{c}\\-2&1&0\\\frac{4}{c}&- \frac{2}{c}&\frac{1}{c}\end{bmatrix}.
+$$
+
+
+
+ Điều kiện này phải đi kèm công thức; ở giá trị làm mẫu bằng 0, nghịch đảo không tồn tại.
+
+**Bước 6. Kiểm tra hai chiều.**
+
+Nhân theo hàng–cột cho
+
+
+
+$$
+AA^{-1}=A^{-1}A=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}.
+$$
+
+
+
+Định thức bằng $c$, nên giả thiết $c\ne0$ chính là điều kiện đủ và cần.
 
 </LoiGiai>
 

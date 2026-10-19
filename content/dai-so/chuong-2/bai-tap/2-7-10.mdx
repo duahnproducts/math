@@ -5,11 +5,25 @@ do_kho: vua
 tieu_de: "Phân tích LU — bài 10"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.7.10"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.7.10 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $\mathbf{c}_{1}, \mathbf{c}_{2}, \dots, \mathbf{c}_{r}$ là các cột có độ dài $m, m - 1, \dots, m - r + 1$. Nếu $\mathbf{k}_{j}$ là cột $j$ của $I_{m}$, hãy chứng minh rằng $L^{(m)} \left[ \mathbf{c}_{1}, \mathbf{c}_{2}, \dots, \mathbf{c}_{r} \right] =$
+
+$$
+L^{(m)} \left[ \mathbf{c}_{1} \right] L^{(m)} \left[ \mathbf{k}_{1}, \mathbf{c}_{2} \right] L^{(m)} \left[ \mathbf{k}_{1}, \mathbf{k}_{2}, \mathbf{c}_{3} \right] \cdots L^{(m)} \left[ \mathbf{k}_{1}, \mathbf{k}_{2}, \dots, \mathbf{k}_{r-1}, \mathbf{c}_{r} \right]
+$$
+
+. Ký hiệu được dùng như trong chứng minh Định lý 2.7.2. [Gợi ý: Quy nạp theo $m$ và dùng phép nhân khối.]
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-7-10-1" moTa="Đề gốc Nicholson bài 2.7.10, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -27,6 +41,7 @@ block multiplication.]
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -43,7 +58,31 @@ Với PA = LU, giải Ly = Pb trước rồi giải Ux = y; phân biệt L đơn
 
 <LoiGiai>
 
-Chứng minh bằng quy nạp theo số cột đã thay. Sau $j-1$ thừa số, tích có các cột $c_1,\ldots,c_{j-1}$ đã cài vào phần dưới đường chéo, còn các cột $j,\ldots,m$ là cột đơn vị. Thừa số tiếp theo chỉ khác $I$ ở cột $j$: vector ấy bằng tổ hợp của $e_j,\ldots,e_m$, nên nhân bên trái bởi tích trước đó giữ nguyên nó. Mọi cột khác không đổi. Do đó tích mới chính là $L^{(m)}[c_1,\ldots,c_j]$. Bắt đầu $j=1$ hiển nhiên, kết thúc $j=r$ cho đẳng thức cần chứng minh.
+**Cách làm.** Phân tích $PA=LU$ tách việc giải $Ax=b$ thành $Ly=Pb$ (thế tiến) và $Ux=y$ (thế ngược). Phải giữ đúng quy ước chuẩn hóa $L,U$ của đề.
+
+**Bước 1. Lập luận và tính toán.**
+
+Chứng minh bằng quy nạp theo số cột đã thay.
+
+**Bước 2. Lập luận và tính toán.**
+
+Sau $j-1$ thừa số, tích có các cột $c_1,\ldots,c_{j-1}$ đã cài vào phần dưới đường chéo, còn các cột $j,\ldots,m$ là cột đơn vị.
+
+**Bước 3. Lập luận và tính toán.**
+
+Thừa số tiếp theo chỉ khác $I$ ở cột $j$: vector ấy bằng tổ hợp của $e_j,\ldots,e_m$, nên nhân bên trái bởi tích trước đó giữ nguyên nó.
+
+**Bước 4. Lập luận và tính toán.**
+
+Mọi cột khác không đổi.
+
+**Bước 5. Rút ra kết luận.**
+
+Do đó tích mới chính là $L^{(m)}[c_1,\ldots,c_j]$.
+
+**Bước 6. Lập luận và tính toán.**
+
+Bắt đầu $j=1$ hiển nhiên, kết thúc $j=r$ cho đẳng thức cần chứng minh.
 
 </LoiGiai>
 

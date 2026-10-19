@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Bài bổ sung 2.13"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.13"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.13 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh rằng các điều kiện sau tương đương đối với các ma trận $P$, $Q$:
+
+**1.** $P$, $Q$ và $P + Q$ đều khả nghịch và
+
+**2.** $P$ khả nghịch và $Q = PG$, trong đó $G^{2} + G + I = 0$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-0-13-1" moTa="Đề gốc Nicholson bài 2.13, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -29,6 +41,7 @@ for matrices P, Q:
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -45,7 +58,31 @@ Với đẳng thức tổng quát, khai triển có giữ thứ tự; với mệ
 
 <LoiGiai>
 
-**(1) ⇒ (2).** Đặt $G=P^{-1}Q$, nên $Q=PG$ và $P+Q=P(I+G)$. Đẳng thức nghịch đảo trở thành $(I+G)^{-1}=I+G^{-1}$. Nhân với $G(I+G)$ (các đa thức của $G$ giao hoán), được $G=(I+G)^2$, tức $G^2+G+I=0$. **(2) ⇒ (1).** Từ $G(G+I)=-I$, có $G^{-1}=-(G+I)$ và $(I+G)^{-1}=-G$. Do đó $Q=PG$ và $P+Q=P(I+G)$ đều khả nghịch;
+**(1) ⇒ (2).**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Đặt $G=P^{-1}Q$, nên $Q=PG$ và $P+Q=P(I+G)$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Đẳng thức nghịch đảo trở thành $(I+G)^{-1}=I+G^{-1}$.
+
+**Bước 3. Thực hiện phép biến đổi.**
+
+Nhân với $G(I+G)$ (các đa thức của $G$ giao hoán), được $G=(I+G)^2$, tức $G^2+G+I=0$.
+
+**(2) ⇒ (1).**
+
+**Bước 4. Lập luận và tính toán.**
+
+Từ $G(G+I)=-I$, có $G^{-1}=-(G+I)$ và $(I+G)^{-1}=-G$.
+
+**Bước 5. Rút ra kết luận.**
+
+Do đó $Q=PG$ và $P+Q=P(I+G)$ đều khả nghịch;
+
+
 
 $$
 P^{-1}+Q^{-1}=(I+G^{-1})P^{-1}=-GP^{-1}=(P+Q)^{-1}.

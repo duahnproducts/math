@@ -89,12 +89,114 @@ $$a_n\to L\quad\Longleftrightarrow\quad \forall\varepsilon>0,\ \exists N\in\math
 
 Viết năm số hạng đầu của aₙ=1/(n+1). Tìm N nguyên để n>N kéo theo |aₙ|&lt;0,01. **Gợi ý:** N=100 là một mốc an toàn, nhưng có thể chọn nhỏ hơn.
 
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+$a_n=1/(n+1)$, bắt đầu ở $n=1$.
+
+**Bước 2. Xác định điều cần tìm.**
+
+Viết 5 số hạng đầu và chọn $N$ sao cho mọi $n>N$ có $|a_n|<0{,}01$.
+
+**Bước 3. Chọn kiến thức và lý do.**
+
+Giải bất phương trình sai số rồi chú ý chỉ số nguyên và dấu $n>N$.
+
+**Bước 4. Giải từng bước.**
+
+Năm số hạng là $1/2,1/3,1/4,1/5,1/6$. Vì $a_n>0$,
+
+$$
+|a_n|<0{,}01\iff\frac1{n+1}<\frac1{100}\iff n+1>100\iff n>99.
+$$
+
+ Chọn $N=99$; chọn $N=100$ cũng đúng nhưng không nhỏ nhất.
+
+**Bước 5. Kiểm tra kết quả.**
+
+Với $n=100$, $1/101<1/100$. Nếu chọn $N=98$, thì $n=99>N$ nhưng $1/100$ chỉ bằng ngưỡng, nên chưa đạt dấu nghiêm.
+
+**Bước 6. Cách tự làm lại.**
+
+Giải sai số trước, sau đó kiểm tra chỉ số nguyên ngay sau mốc.
+
+</LoiGiai>
+
 ### VỪA - Một chứng minh ε–N
 
 Chứng minh $3+2/n\to3$ bằng định nghĩa. **Gợi ý:** sai số là 2/n; N có thể chọn ≥2/ε.
 
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+$a_n=3+2/n$ với $n\ge1$.
+
+**Bước 2. Xác định điều cần tìm.**
+
+Chứng minh $a_n\to3$ bằng định nghĩa.
+
+**Bước 3. Chọn kiến thức và lý do.**
+
+Muốn sai số $2/n$ nhỏ hơn $\varepsilon$, chỉ cần $n>2/\varepsilon$.
+
+**Bước 4. Giải từng bước.**
+
+Cho $\varepsilon>0$ bất kỳ. Chọn số nguyên $N\ge2/\varepsilon$ bằng tính Archimedes. Nếu $n>N$, thì $n>2/\varepsilon$ và
+
+$$
+|a_n-3|=\left|\frac2n\right|=\frac2n<\varepsilon.
+$$
+
+ Vì điều này đúng cho mọi $n>N$ và mọi $\varepsilon>0$, giới hạn bằng 3.
+
+**Bước 5. Kiểm tra kết quả.**
+
+$N$ phụ thuộc vào $\varepsilon$, không phụ thuộc vào $n$. Bất đẳng thức chứng minh toàn bộ đuôi dãy, không chỉ một số hạng.
+
+**Bước 6. Cách tự làm lại.**
+
+Viết sai số, chọn mốc theo sai số, rồi chứng minh lại theo chiều xuôi.
+
+</LoiGiai>
+
 ### KHÓ - Chứng minh duy nhất
 
 Giả sử aₙ→L và aₙ→K. Tự viết chứng minh L=K bằng phản chứng. **Gợi ý:** nếu hai đích khác nhau, dùng ε=|L−K|/3 và chọn mốc lớn hơn cả hai mốc.
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Cùng một dãy $a_n$ thỏa $a_n\to L$ và $a_n\to K$.
+
+**Bước 2. Xác định điều cần tìm.**
+
+Chứng minh hai giới hạn phải bằng nhau.
+
+**Bước 3. Chọn kiến thức và lý do.**
+
+Nếu hai đích cách nhau một khoảng dương, lấy sai số nhỏ hơn nửa khoảng cách để hai vùng quanh đích không thể cùng chứa đuôi dãy.
+
+**Bước 4. Giải từng bước.**
+
+Giả sử $L\ne K$ và đặt $d=|L-K|>0$, $\varepsilon=d/3$. Có $N_1,N_2$ sao cho $n>N_1$ thì $|a_n-L|<d/3$, còn $n>N_2$ thì $|a_n-K|<d/3$. Chọn $n>\max(N_1,N_2)$. Tam giác cho
+
+$$
+d=|L-K|\le|L-a_n|+|a_n-K|<\frac{2d}3<d,
+$$
+
+ mâu thuẫn. Vậy $L=K$.
+
+**Bước 5. Kiểm tra kết quả.**
+
+Mốc lớn nhất bảo đảm hai điều kiện cùng đúng cho cùng một $n$. Cần $d>0$ để chia khoảng cách thành ba phần.
+
+**Bước 6. Cách tự làm lại.**
+
+Khi một đối tượng có hai xấp xỉ, dùng tam giác nối hai đích qua cùng đối tượng ấy.
+
+</LoiGiai>
 
 Nguồn kiến thức: Kenneth A. Ross, *Elementary Analysis: The Theory of Calculus*, ấn bản thứ hai, 2013, §7. Bài giảng diễn đạt bằng lời riêng; ví dụ và bài tập do người biên soạn bổ sung.

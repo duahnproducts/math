@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Phép biến đổi tuyến tính — bài 10"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.6.10"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.6.10 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Tìm ma trận của $T : \mathbb{R}^3 \to \mathbb{R}^3$ trong mỗi trường hợp:
+
+**a.** $T$ là phép quay một góc $\theta$ quanh trục $x$ (theo hướng từ trục $y$ đến trục $z$).
+
+**b.** $T$ là phép quay một góc $\theta$ quanh trục $y$ (theo hướng từ trục $x$ đến trục $z$).
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-6-10-1" moTa="Đề gốc Nicholson bài 2.6.10, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -30,6 +42,7 @@ b. T is rotation through θ about the y axis (from the
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -46,17 +59,37 @@ Cột thứ j của ma trận ánh xạ là ảnh của vector đơn vị thứ 
 
 <LoiGiai>
 
-**a.** Giữ $e_1$, quay trong mặt phẳng $yz$ đưa $e_2$ về $(0,\cos\theta,\sin\theta)$ và $e_3$ về $(0,-\sin\theta,\cos\theta)$:
+**Cách làm.** Tuyến tính nghĩa là $T(au+bv)=aT(u)+bT(v)$. Với vector cột, ma trận của $T$ là $[T(e_1)\ \cdots\ T(e_n)]$; ma trận của $S\circ T$ là $[S][T]$.
+
+Giữ nguyên trục quay nghĩa là vector đơn vị trên trục đó giữ nguyên. Hai cột còn lại được đọc từ ảnh của hai vector đơn vị trong mặt phẳng quay; dấu của sin được quyết định bởi chiều quay trong đề.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Giữ $e_1$, quay trong mặt phẳng $yz$ đưa $e_2$ về $(0,\cos\theta,\sin\theta)$ và $e_3$ về $(0,-\sin\theta,\cos\theta)$:
+
+
 
 $$
 A=\begin{bmatrix}1&0&0\\0&\cos\theta&-\sin\theta\\0&\sin\theta&\cos\theta\end{bmatrix}.
 $$
 
- **b.** Theo chiều đề quy định từ trục $x$ tới trục $z$, giữ $e_2$, được
+
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Theo chiều đề quy định từ trục $x$ tới trục $z$, giữ $e_2$, được
+
+
 
 $$
 A=\begin{bmatrix}\cos\theta&0&-\sin\theta\\0&1&0\\\sin\theta&0&\cos\theta\end{bmatrix}.
 $$
+
+
 
  Thế $\theta=0$ cho $I$, thế $\theta=\pi/2$ kiểm tra hướng quay.
 

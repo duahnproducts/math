@@ -5,11 +5,35 @@ do_kho: vua
 tieu_de: "Ma trận nghịch đảo — bài 35"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.4.35"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.4.35 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Xét
+
+$$
+A = \left[ \begin{array}{rrr} 1 & 3 & -1 \\ 2 & 1 & 5 \\ 1 & -7 & 13 \end{array} \right]
+$$
+
+,
+
+$$
+B = \left[ \begin{array}{rrr} 1 & 1 & 2 \\ 3 & 0 & -3 \\ -2 & 5 & 17 \end{array} \right]
+$$
+
+.
+
+**a.** Chứng minh rằng $A$ không khả nghịch bằng cách tìm một ma trận $1 times 3$ khác 0, ký hiệu là $Y$, sao cho $YA = 0$. [Gợi ý: Hàng 3 của $A$ bằng $2\mbox{(row 2) }- 3\mbox{(row 1)}$.]
+
+**b.** Chứng minh rằng $B$ không khả nghịch. [Gợi ý: Cột 3 $= 3\mbox{(column 2) } - \mbox{ column 1}$.]
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-4-35-1" moTa="Đề gốc Nicholson bài 2.4.35, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -30,6 +54,7 @@ B =    3  0         −3 
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -46,7 +71,31 @@ Khi tìm nghịch đảo bằng khử hàng, làm cùng phép biến đổi trê
 
 <LoiGiai>
 
-**a.** Hàng 3 bằng 2 lần hàng 2 trừ 3 lần hàng 1. Do đó $Y=(3,-2,1)\ne0$ thỏa $YA=0$, loại khả nghịch. **b.** Cột 3 bằng 3 lần cột 2 trừ cột 1. Vì vậy $B(1,-3,1)^T=0$ với vector khác 0, nên $B$ không khả nghịch. Đây là kiểm tra phụ thuộc hàng / cột, không cần khử toàn ma trận.
+**Cách làm.** Theo định nghĩa, $B=A^{-1}$ khi $AB=BA=I$. Muốn khử $A$ ở bên trái thì nhân trái với $A^{-1}$; muốn khử ở bên phải thì nhân phải. Nghịch đảo tích đảo thứ tự: $(AB)^{-1}=B^{-1}A^{-1}$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Hàng 3 bằng 2 lần hàng 2 trừ 3 lần hàng 1.
+
+**Bước 2. Rút ra kết luận.**
+
+Do đó $Y=(3,-2,1)\ne0$ thỏa $YA=0$, loại khả nghịch.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Cột 3 bằng 3 lần cột 2 trừ cột 1.
+
+**Bước 2. Giải thích điều kiện sử dụng.**
+
+Vì vậy $B(1,-3,1)^T=0$ với vector khác 0, nên $B$ không khả nghịch.
+
+**Bước 3. Lập luận và tính toán.**
+
+Đây là kiểm tra phụ thuộc hàng / cột, không cần khử toàn ma trận.
 
 </LoiGiai>
 

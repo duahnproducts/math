@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Ma trận sơ cấp — bài 15"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.5.15"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.5.15 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu $A$ và $B$ là các ma trận $n \times n$ và $AB$ là tích các ma trận sơ cấp, hãy chứng minh rằng $A$ cũng là tích các ma trận sơ cấp.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-5-15-1" moTa="Đề gốc Nicholson bài 2.5.15, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ true of A.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +48,23 @@ Một phép hàng là nhân trái; một phép cột là nhân phải. Ghi thứ
 
 <LoiGiai>
 
-$AB$ là tích sơ cấp nên khả nghịch. Vì $A,B$ đều vuông, tiêu chuẩn nghịch đảo tích cho $A$ khả nghịch. Khử hàng $A$ về $I$ được $E_k\cdots E_1A=I$, nên $A=E_1^{-1}\cdots E_k^{-1}$; mỗi thừa số là ma trận sơ cấp. Vậy $A$ cũng là tích sơ cấp.
+**Cách làm.** Ma trận sơ cấp $E$ nhận từ $I$ bằng một phép hàng. $EA$ làm phép đó lên các hàng của $A$. Trong chuỗi $E_k\cdots E_1A$, phép $E_1$ được thực hiện trước.
+
+**Bước 1. Lập luận và tính toán.**
+
+$AB$ là tích sơ cấp nên khả nghịch.
+
+**Bước 2. Giải thích điều kiện sử dụng.**
+
+Vì $A,B$ đều vuông, tiêu chuẩn nghịch đảo tích cho $A$ khả nghịch.
+
+**Bước 3. Lập luận và tính toán.**
+
+Khử hàng $A$ về $I$ được $E_k\cdots E_1A=I$, nên $A=E_1^{-1}\cdots E_k^{-1}$; mỗi thừa số là ma trận sơ cấp.
+
+**Bước 4. Rút ra kết luận.**
+
+Vậy $A$ cũng là tích sơ cấp.
 
 </LoiGiai>
 

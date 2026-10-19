@@ -5,11 +5,25 @@ do_kho: vua
 tieu_de: "Phân tích LU — bài 4"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.7.4"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.7.4 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh rằng
+
+$$
+\left[ \begin{array}{rr} 0 & 1 \\ 1 & 0 \end{array} \right] = LU
+$$
+
+ là không thể xảy ra, trong đó $L$ là ma trận tam giác dưới và $U$ là ma trận tam giác trên.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-7-4-1" moTa="Đề gốc Nicholson bài 2.7.4, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -24,6 +38,7 @@ where L is lower triangular and U is upper triangular.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -41,7 +56,29 @@ Với PA = LU, giải Ly = Pb trước rồi giải Ux = y; phân biệt L đơn
 
 <LoiGiai>
 
-Giả sử $A=LU$ với $L=\begin{bmatrix}a&0\\b&c\end{bmatrix}$, $U=\begin{bmatrix}d&e\\0&f\end{bmatrix}$. Ô (1,2) cho $ae=1$, nên $a\ne0$. Ô (1,1) cho $ad=0$, suy ra $d=0$. Nhưng ô (2,1) là $bd=0$, trái với $A_{21}=1$. Vì vậy không có phân tích như vậy nếu không hoán vị hàng.
+**Cách làm.** Phân tích $PA=LU$ tách việc giải $Ax=b$ thành $Ly=Pb$ (thế tiến) và $Ux=y$ (thế ngược). Phải giữ đúng quy ước chuẩn hóa $L,U$ của đề.
+
+Một cách chứng minh không tồn tại phân tích là đặt các phần tử tổng quát của $L,U$, nhân hai ma trận rồi tìm hai ô có điều kiện xung đột. Không tìm được bằng một thuật toán cụ thể chưa đủ chứng minh mọi phân tích đều không tồn tại.
+
+**Bước 1. Xét giả thiết.**
+
+Giả sử $A=LU$ với $L=\begin{bmatrix}a&0\\b&c\end{bmatrix}$, $U=\begin{bmatrix}d&e\\0&f\end{bmatrix}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Ô (1,2) cho $ae=1$, nên $a\ne0$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Ô (1,1) cho $ad=0$, suy ra $d=0$.
+
+**Bước 4. Lập luận và tính toán.**
+
+Nhưng ô (2,1) là $bd=0$, trái với $A_{21}=1$.
+
+**Bước 5. Giải thích điều kiện sử dụng.**
+
+Vì vậy không có phân tích như vậy nếu không hoán vị hàng.
 
 </LoiGiai>
 

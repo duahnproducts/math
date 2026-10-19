@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Ma trận nghịch đảo — bài 23"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.4.23"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.4.23 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Tìm phép nghịch đảo của phép trượt trong Ví dụ 2.2.17 và mô tả nó về mặt hình học.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-4-23-1" moTa="Đề gốc Nicholson bài 2.4.23, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ mation in Example 2.2.17 and describe it geometrically.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,11 +48,23 @@ Khi tìm nghịch đảo bằng khử hàng, làm cùng phép biến đổi trê
 
 <LoiGiai>
 
-Với phép trượt ngang $T(x,y)=(x+ky,y)$ trong ví dụ, ma trận là $S_k=\begin{bmatrix}1&k\\0&1\end{bmatrix}$. Từ $u=x+ky,v=y$ suy ra $x=u-kv,y=v$, nên
+**Cách làm.** Theo định nghĩa, $B=A^{-1}$ khi $AB=BA=I$. Muốn khử $A$ ở bên trái thì nhân trái với $A^{-1}$; muốn khử ở bên phải thì nhân phải. Nghịch đảo tích đảo thứ tự: $(AB)^{-1}=B^{-1}A^{-1}$.
+
+**Bước 1. Lập luận và tính toán.**
+
+Với phép trượt ngang $T(x,y)=(x+ky,y)$ trong ví dụ, ma trận là $S_k=\begin{bmatrix}1&k\\0&1\end{bmatrix}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Từ $u=x+ky,v=y$ suy ra $x=u-kv,y=v$, nên
+
+
 
 $$
 S_k^{-1}=\begin{bmatrix}1&-k\\0&1\end{bmatrix}.
 $$
+
+
 
  Hình học: trượt ngang cùng độ lớn theo chiều ngược lại; $S_kS_{-k}=I$ kiểm tra kết quả.
 

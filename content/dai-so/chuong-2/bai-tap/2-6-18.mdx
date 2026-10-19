@@ -5,11 +5,27 @@ do_kho: vua
 tieu_de: "Phép biến đổi tuyến tính — bài 18"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.6.18"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.6.18 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $Q_{0} : \mathbb{R}^2 \to \mathbb{R}^2$ là phép đối xứng qua trục $x$, $Q_{1} : \mathbb{R}^2 \to \mathbb{R}^2$ là phép đối xứng qua đường thẳng $y = x$, $Q_{-1} : \mathbb{R}^2 \to \mathbb{R}^2$ là phép đối xứng qua đường thẳng $y = -x$ và $R_{\frac{\pi}{2}} : \mathbb{R}^2 \to \mathbb{R}^2$ là phép quay ngược chiều kim đồng hồ một góc $\frac{\pi}{2}$.
+
+**a.** Chứng minh rằng $Q_{1} \circ R_{\frac{\pi}{2}} = Q_{0}$.
+
+**b.** Chứng minh rằng $Q_{1} \circ Q_{0} = R_{\frac{\pi}{2}}$.
+
+**c.** Chứng minh rằng $R_{\frac{\pi}{2}} \circ Q_{0} = Q_{1}$.
+
+**d.** Chứng minh rằng $Q_{0} \circ R_{\frac{\pi}{2}} = Q_{-1}$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-6-18-1" moTa="Đề gốc Nicholson bài 2.6.18, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -30,6 +46,7 @@ Q−1 : R2 →R2 be reﬂection in the line y = −x, andπletR π : R2      be 
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -46,7 +63,43 @@ Cột thứ j của ma trận ánh xạ là ảnh của vector đơn vị thứ 
 
 <LoiGiai>
 
-Dùng $Q_0=\begin{bmatrix}1&0\\0&-1\end{bmatrix}$, $Q_1=\begin{bmatrix}0&1\\1&0\end{bmatrix}$, $Q_{-1}=\begin{bmatrix}0&-1\\-1&0\end{bmatrix}$, $R=\begin{bmatrix}0&-1\\1&0\end{bmatrix}$. Nhân trực tiếp: **a.** $Q_1R=Q_0$. **b.** $Q_1Q_0=R$. **c.** $RQ_0=Q_1$. **d.** $Q_0R=Q_{-1}$. Tính duy nhất ma trận của ánh xạ chứng minh các đẳng thức hợp thành tương ứng.
+**Cách làm.** Tuyến tính nghĩa là $T(au+bv)=aT(u)+bT(v)$. Với vector cột, ma trận của $T$ là $[T(e_1)\ \cdots\ T(e_n)]$; ma trận của $S\circ T$ là $[S][T]$.
+
+**Bước 1. Lập luận và tính toán.**
+
+Dùng $Q_0=\begin{bmatrix}1&0\\0&-1\end{bmatrix}$, $Q_1=\begin{bmatrix}0&1\\1&0\end{bmatrix}$, $Q_{-1}=\begin{bmatrix}0&-1\\-1&0\end{bmatrix}$, $R=\begin{bmatrix}0&-1\\1&0\end{bmatrix}$.
+
+**Bước 2. Thực hiện phép biến đổi.**
+
+Nhân trực tiếp:
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$Q_1R=Q_0$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$Q_1Q_0=R$.
+
+**c.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$RQ_0=Q_1$.
+
+**d.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$Q_0R=Q_{-1}$.
+
+**Bước 2. Thực hiện phép biến đổi.**
+
+Tính duy nhất ma trận của ánh xạ chứng minh các đẳng thức hợp thành tương ứng.
 
 </LoiGiai>
 

@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Chéo hoá — bài 12"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.4.12"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.4.12 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $A$ chéo hóa được với các trị riêng thực, và giả sử $A^{m} = I$ với một $m \geq 1$ nào đó.
+
+**a.** Chứng minh rằng $A^{2} = I$.
+
+**b.** Nếu $m$ là số lẻ, hãy chứng minh rằng $A = I$. [Gợi ý: Định lý A.3.]
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-4-12-1" moTa="Đề gốc Nicholson bài 3.4.12, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -27,6 +39,7 @@ values and assume that Am = I for some m ≥1.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -43,7 +56,33 @@ Ghép các vector riêng độc lập thành cột của P, rồi kiểm tra AP 
 
 <LoiGiai>
 
-Viết $A=PDP^{-1}$. Điều kiện $A^m=I$ cho từng trị riêng thực $\lambda_i^m=1$. **a.** Nghiệm thực của phương trình này chỉ có 1 (và -1 khi $m$ chẵn), nên $\lambda_i^2=1$; suy ra $A^2=I$. **b.** Nếu $m$ lẻ, chỉ có $\lambda_i=1$, nên $D=I$ và $A=I$. Giả thiết trị riêng thực loại các nghiệm đơn vị phức khác.
+**Cách làm.** Chéo hóa $A=PDP^{-1}$ nghĩa là các cột của $P$ là một cơ sở vector riêng. Trị riêng của cột thứ $j$ phải nằm ở ô $d_{jj}$, và có thể kiểm tra bằng $AP=PD$.
+
+Trên số thực, $\lambda^m=1$ cho $\lambda=1$ nếu $m$ lẻ, và $\lambda\in\{-1,1\}$ nếu $m$ chẵn. Chuyển điều kiện đó sang từng ô của $D$, rồi chuyển lại bằng $A=PDP^{-1}$.
+
+**Bước 1. Thiết lập biểu thức.**
+
+Viết $A=PDP^{-1}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Điều kiện $A^m=I$ cho từng trị riêng thực $\lambda_i^m=1$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Nghiệm thực của phương trình này chỉ có 1 (và -1 khi $m$ chẵn), nên $\lambda_i^2=1$; suy ra $A^2=I$.
+
+**b.**
+
+**Bước 1. Xét giả thiết.**
+
+Nếu $m$ lẻ, chỉ có $\lambda_i=1$, nên $D=I$ và $A=I$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Giả thiết trị riêng thực loại các nghiệm đơn vị phức khác.
 
 </LoiGiai>
 

@@ -155,16 +155,84 @@ Với $P$ chính quy, xuất phát nắng hay mưa đều dồn về cùng $\lef
 Với $P$ trong ví dụ mẫu, nếu hôm nay **mưa** ($\mathbf{s}_0 = (0, 1)$), tính xác suất nắng vào ngày mai và ngày kia.
 
 <GoiYNho>$\mathbf{s}_1$ chính là cột 2 của $P$. Đáp số để kiểm tra: ngày kia nắng với xác suất $0{,}56$.</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Thứ tự trạng thái là nắng, mưa; dùng cột ứng với trạng thái ban đầu.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+$P=\begin{bmatrix}0{,}8&0{,}4\\0{,}2&0{,}6\end{bmatrix}$. Hôm nay mưa nên $s_0=(0,1)^T$. Ngày mai $s_1=Ps_0=(0{,}4,0{,}6)^T$. Ngày kia
+
+$$
+s_2=Ps_1=\begin{bmatrix}0{,}8(0{,}4)+0{,}4(0{,}6)\\0{,}2(0{,}4)+0{,}6(0{,}6)\end{bmatrix}=\begin{bmatrix}0{,}56\\0{,}44\end{bmatrix}.
+$$
+
+**Bước 3. Kiểm tra và kết luận.**
+
+Xác suất nắng là $0{,}4$ ngày mai và $0{,}56$ ngày kia. Mỗi vector đều không âm và có tổng 1.
+
+**Bước 4. Cách tự làm lại.**
+
+Nhân từng bước thời gian; cột xuất phát quyết định bước đầu.
+
+</LoiGiai>
 </BaiLuyen>
 
 <BaiLuyen do_kho="vua" so="9.2">
 Một người đi làm bằng xe buýt hoặc xe máy. Hôm nay đi xe buýt thì mai đi xe buýt với xác suất 0,7; hôm nay đi xe máy thì mai đi xe buýt với xác suất 0,5. Lập $P$ và tìm trạng thái dừng.
 
 <GoiYNho>Cột 1 (từ xe buýt): $(0{,}7;\ 0{,}3)$. Đáp số để kiểm tra: lâu dài đi xe buýt $\tfrac{5}{8}$ số ngày.</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Xếp xe buýt trước, xe máy sau; mỗi cột mô tả chuyển từ phương tiện hiện tại.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+$$
+P=\begin{bmatrix}0{,}7&0{,}5\\0{,}3&0{,}5\end{bmatrix}.
+$$
+
+ Gọi phân bố dừng $(u,v)^T$. Phương trình $u=0{,}7u+0{,}5v$ cho $3u=5v$. Cùng $u+v=1$ suy ra $u=5/8$, $v=3/8$.
+
+**Bước 3. Kiểm tra và kết luận.**
+
+$P(5/8,3/8)^T=(5/8,3/8)^T$. Tất cả ô của $P$ dương nên chuỗi regular và phân bố từ mọi trạng thái ban đầu tiến tới vector này.
+
+**Bước 4. Cách tự làm lại.**
+
+Giải $Ps=s$ và chuẩn hóa; kiểm tra regular trước khi gọi nó là giới hạn dài hạn từ mọi khởi đầu.
+
+</LoiGiai>
 </BaiLuyen>
 
 <BaiLuyen do_kho="kho" so="9.3">
 Cho $P = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}$. Tính $\mathbf{s}_1, \mathbf{s}_2, \mathbf{s}_3$ khi $\mathbf{s}_0 = (1, 0)$. Dãy có dồn về đâu không? Trạng thái dừng có tồn tại không? Điều gì trong định nghĩa "chính quy" bị vi phạm?
 
 <GoiYNho tieuDe="Bạn sẽ cần">Tính vài luỹ thừa $P^2, P^3$: có luỹ thừa nào có mọi phần tử dương không? Xem thêm ví dụ hai nhà hàng có hình hội tụ ở <XemMuc muc="2.9" chu="Mục 2.9" />.</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Ma trận $P$ đổi hai tọa độ và $P^2=I$.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+Từ $s_0=(1,0)^T$, lần lượt $s_1=(0,1)^T$, $s_2=(1,0)^T$, $s_3=(0,1)^T$. Dãy luân phiên nên không hội tụ. Trạng thái dừng thỏa $u=v$ và $u+v=1$, nên là $(1/2,1/2)^T$.
+
+**Bước 3. Kiểm tra và kết luận.**
+
+Lũy thừa chẵn bằng $I$, lũy thừa lẻ bằng $P$; cả hai luôn có ô 0. Không có lũy thừa nào toàn dương, nên $P$ không regular. Có phân bố dừng không đồng nghĩa mọi khởi đầu hội tụ về nó.
+
+**Bước 4. Cách tự làm lại.**
+
+Tách ba câu hỏi: trạng thái sau hữu hạn bước, phân bố dừng, và tính hội tụ của chuỗi.
+
+</LoiGiai>
 </BaiLuyen>

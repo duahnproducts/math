@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Chứng minh Định lý khai triển theo phần bù đại số — bài 2"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.8.2"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.8.2 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Kiểm tra rằng có thể đổi chỗ các hàng $p$ và $q$ $(q > p)$ bằng $2(q - p) - 1$ phép đổi chỗ hai hàng kề nhau.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-8-2-1" moTa="Đề gốc Nicholson bài 3.8.2, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ Exercise 3.8.2  Verify that interchanging rows p and q
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +48,23 @@ Tách trường hợp hàng/cột đang xét bị xóa khỏi minor và trườn
 
 <LoiGiai>
 
-Đưa hàng ở vị trí $q$ lên vị trí $p$ bằng $q-p$ lần đổi hai hàng kề: đổi $(q-1,q),(q-2,q-1),\ldots,(p,p+1)$. Hàng ban đầu ở $p$ lúc này ở vị trí $p+1$; đưa nó xuống vị trí $q$ bằng $q-p-1$ lần đổi kề. Các hàng ở giữa trở lại vị trí cũ, hai hàng đầu cuối đã đổi cho nhau. Tổng số đổi là $(q-p)+(q-p-1)=2(q-p)-1$, luôn lẻ.
+**Cách làm.** Đề yêu cầu chứng minh từ định nghĩa: khai triển theo cột đầu, đưa về định thức cấp nhỏ hơn rồi áp dụng giả thiết quy nạp. Không lấy tính chất đang chứng minh làm giả thiết.
+
+**Bước 1. Lập luận và tính toán.**
+
+Đưa hàng ở vị trí $q$ lên vị trí $p$ bằng $q-p$ lần đổi hai hàng kề: đổi $(q-1,q),(q-2,q-1),\ldots,(p,p+1)$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Hàng ban đầu ở $p$ lúc này ở vị trí $p+1$; đưa nó xuống vị trí $q$ bằng $q-p-1$ lần đổi kề.
+
+**Bước 3. Lập luận và tính toán.**
+
+Các hàng ở giữa trở lại vị trí cũ, hai hàng đầu cuối đã đổi cho nhau.
+
+**Bước 4. Lập luận và tính toán.**
+
+Tổng số đổi là $(q-p)+(q-p-1)=2(q-p)-1$, luôn lẻ.
 
 </LoiGiai>
 

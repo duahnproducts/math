@@ -5,11 +5,49 @@ do_kho: vua
 tieu_de: "Ứng dụng: hệ phương trình vi phân — bài 6"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.7.6"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.7.6 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Ký hiệu đạo hàm bậc hai của $f$ là $f^{\prime \prime} = (f^{\prime})^{\prime}$. Xét phương trình vi phân bậc hai
+
+
+
+$$
+f^{\prime \prime} - a_1 f^{\prime}-a_2 f = 0, \quad a_1 \text{ và } a_2 \text{ là các số thực}
+$$
+
+
+
+**a.** Nếu $f$ là nghiệm của Phương trình (3.15), đặt $f_1 = f$ và $f_2 = f^{\prime} − a_1f$. Chứng minh rằng
+
+$$
+\left\lbrace \begin{array}{l} f_1^{\prime} = a_1f_1 + f_2 \\ f_2^{\prime} = a_2f_1 \end{array}, \right.
+$$
+
+, tức là
+
+$$
+\left. \left[ \ \begin{array}{c} f_1^{\prime} \\ f_2^{\prime} \end{array}\right] = \left[ \ \begin{array}{cc} a_1 & 1 \\ a_2 & 0 \end{array}\right] \left[ \ \begin{array}{c} f_1 \\ f_2 \end{array}\right] \right.
+$$
+
+.
+
+**b.** Ngược lại, nếu
+
+$$
+\left[ \begin{array}{c} f_1 \\ f_2 \end{array}\right]
+$$
+
+ là nghiệm của hệ ở ý (a), hãy chứng minh rằng $f_{1}$ là nghiệm của Phương trình (3.15).
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-7-6-1" moTa="Đề gốc Nicholson bài 3.7.6, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -36,6 +74,7 @@ tion
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -52,7 +91,37 @@ Mỗi vector riêng v với trị riêng λ cho nghiệm v nhân exp(λx); giả
 
 <LoiGiai>
 
-**a.** Đặt $f_1=f$, $f_2=f\prime-a_1f$. Khi đó $f_1\prime=a_1f_1+f_2$. Mặt khác $f_2\prime=f\prime\prime-a_1f\prime=a_2f=a_2f_1$ theo phương trình đã cho. Vậy thu đúng hệ ma trận đề nêu. **b.** Nếu hệ đúng, đạo hàm $f_1\prime=a_1f_1+f_2$ cho $f_1\prime\prime=a_1f_1\prime+f_2\prime=a_1f_1\prime+a_2f_1$. Chuyển vế cho phương trình bậc hai ban đầu.
+**Cách làm.** Nếu $Av=\lambda v$ thì $f(x)=e^{\lambda x}v$ thỏa $f\prime=Af$, vì $f\prime=\lambda e^{\lambda x}v=Af$. Điều kiện đầu dùng để xác định các hệ số còn lại.
+
+Định nghĩa $f_2=f\prime-a_1f$ được chọn để cô lập đạo hàm đầu: $f\prime=a_1f+f_2$. Đạo hàm $f_2$ rồi dùng phương trình bậc hai sẽ thay $f\prime\prime-a_1f\prime$ bằng $a_2f$, tạo một hệ chỉ có đạo hàm bậc nhất.
+
+**a.**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Đặt $f_1=f$, $f_2=f\prime-a_1f$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Khi đó $f_1\prime=a_1f_1+f_2$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Mặt khác $f_2\prime=f\prime\prime-a_1f\prime=a_2f=a_2f_1$ theo phương trình đã cho.
+
+**Bước 4. Rút ra kết luận.**
+
+Vậy thu đúng hệ ma trận đề nêu.
+
+**b.**
+
+**Bước 1. Xét giả thiết.**
+
+Nếu hệ đúng, đạo hàm $f_1\prime=a_1f_1+f_2$ cho $f_1\prime\prime=a_1f_1\prime+f_2\prime=a_1f_1\prime+a_2f_1$.
+
+**Bước 2. Thực hiện phép biến đổi.**
+
+Chuyển vế cho phương trình bậc hai ban đầu.
 
 </LoiGiai>
 

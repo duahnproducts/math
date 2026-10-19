@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Phép nhân ma trận — bài 22"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.3.22"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.22 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+**a.** Tìm tất cả các ma trận đối xứng $2 \times 2$, ký hiệu là $A$, sao cho $A^{2} = 0$.
+
+**b.** Làm lại ý (a) khi $A$ có kích thước $3 \times 3$.
+
+**c.** Làm lại ý (a) khi $A$ có kích thước $n \times n$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-3-22-1" moTa="Đề gốc Nicholson bài 2.3.22, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -28,6 +40,7 @@ Exercise 2.3.22
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -44,7 +57,25 @@ Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự 
 
 <LoiGiai>
 
-Cả (a), (b), (c) chỉ có nghiệm $A=0$. Thật vậy, vì $A$ đối xứng thực, ô $(i,i)$ của $A^2$ là $\sum_j a_{ij}a_{ji}=\sum_j a_{ij}^2$. Nếu $A^2=0$ thì mỗi tổng bình phương bằng 0, nên mọi $a_{ij}=0$. Ma trận không hiển nhiên thỏa đề ở mọi kích thước.
+**Cách làm.** Với $A$ cỡ $m\times n$, $B$ cỡ $n\times p$, tích $AB$ có cỡ $m\times p$ và $(AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$. Khi khai triển, giữ nguyên thứ tự các thừa số.
+
+Mỗi $a_{ij}^2\ge0$ vì phần tử thực. Một tổng hữu hạn các số không âm chỉ có thể bằng 0 nếu **từng** số hạng bằng 0. Lập luận này dùng cả giả thiết đối xứng (đổi $a_{ji}$ thành $a_{ij}$) và giả thiết số thực.
+
+**Bước 1. Lập luận và tính toán.**
+
+Cả (a), (b), (c) chỉ có nghiệm $A=0$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Thật vậy, vì $A$ đối xứng thực, ô $(i,i)$ của $A^2$ là $\sum_j a_{ij}a_{ji}=\sum_j a_{ij}^2$.
+
+**Bước 3. Xét giả thiết.**
+
+Nếu $A^2=0$ thì mỗi tổng bình phương bằng 0, nên mọi $a_{ij}=0$.
+
+**Bước 4. Lập luận và tính toán.**
+
+Ma trận không hiển nhiên thỏa đề ở mọi kích thước.
 
 </LoiGiai>
 

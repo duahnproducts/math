@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Ứng dụng: mô hình kinh tế vào–ra — bài 5"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.8.5"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.8.5 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu $E$ là ma trận ngẫu nhiên cấp $n \times n$ và $\mathbf{c}$ là ma trận $n \times 1$, hãy chứng minh tổng các phần tử của $\mathbf{c}$ bằng tổng các phần tử của ma trận $n \times 1$, ký hiệu là $E\mathbf{c}$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-8-5-1" moTa="Đề gốc Nicholson bài 2.8.5, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -23,6 +31,7 @@ equals the sum of the entries of the n×1 matrix Ec.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -40,13 +49,25 @@ Tổng cột của ma trận stochastic bằng 1. Để tìm giá tương đối
 
 <LoiGiai>
 
+**Cách làm.** Cơ cấu giá cân bằng thỏa $Ep=p$, tức $(I-E)p=0$. Với mô hình mở, điều kiện cần kiểm tra là $I-E$ khả nghịch và $(I-E)^{-1}$ có các ô không âm.
+
+**Bước 1. Lập luận và tính toán.**
+
 Đổi thứ tự hai tổng hữu hạn:
+
+
 
 $$
 \sum_i(Ec)_i=\sum_i\sum_j e_{ij}c_j=\sum_jc_j\left(\sum_i e_{ij}\right)=\sum_jc_j,
 $$
 
- vì tổng mỗi cột của ma trận stochastic bằng 1. Kết quả đúng cho mọi $c$, không cần các thành phần của $c$ dương.
+
+
+ vì tổng mỗi cột của ma trận stochastic bằng 1.
+
+**Bước 2. Lập luận và tính toán.**
+
+Kết quả đúng cho mọi $c$, không cần các thành phần của $c$ dương.
 
 </LoiGiai>
 

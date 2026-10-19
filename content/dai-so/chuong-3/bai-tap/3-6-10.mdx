@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Ứng dụng: hệ thức truy hồi tuyến tính — bài 10"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.6.10"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.6.10 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Tìm nghiệm tổng quát của hệ thức truy hồi $x_{k+1} = rx_{k} + c$, trong đó $r$ và $c$ là các hằng số. [Gợi ý: Xét riêng các trường hợp $r = 1$ và $r \neq 1$. Nếu $r \neq 1$, cần dùng đẳng thức $1 + r + r^2 + \cdots + r^{n-1} = \frac{1 - r^n}{1-r}$ với $n \geq 1$.]
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-6-10-1" moTa="Đề gốc Nicholson bài 3.6.10, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -24,6 +32,7 @@ for n ≥1.]
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -41,11 +50,29 @@ Dùng các điều kiện đầu để xác định hệ số trong nghiệm t�
 
 <LoiGiai>
 
-Lặp truy hồi được $x_k=r^kx_0+c\sum_{j=0}^{k-1}r^j$. Nếu $r=1$, tổng có $k$ số 1, nên $x_k=x_0+kc$. Nếu $r\ne1$, dùng tổng cấp số nhân:
+**Cách làm.** Với truy hồi tuyến tính, thử $x_k=r^k$ để tìm phương trình đặc trưng. Các điều kiện đầu quyết định hệ số; với bài đếm, cần phân loại các trường hợp rời nhau và đếm hết mọi khả năng.
+
+Viết các bước đầu: $x_1=rx_0+c$, $x_2=r^2x_0+rc+c$, $x_3=r^3x_0+r^2c+rc+c$. Mỗi bước nhân các hạng cũ với $r$ rồi thêm một $c$, dẫn tới tổng cấp số nhân. Trường hợp $r=1$ phải tách trước khi chia cho $1-r$.
+
+**Bước 1. Lập luận và tính toán.**
+
+Lặp truy hồi được $x_k=r^kx_0+c\sum_{j=0}^{k-1}r^j$.
+
+**Bước 2. Xét giả thiết.**
+
+Nếu $r=1$, tổng có $k$ số 1, nên $x_k=x_0+kc$.
+
+**Bước 3. Xét giả thiết.**
+
+Nếu $r\ne1$, dùng tổng cấp số nhân:
+
+
 
 $$
 x_k=r^kx_0+c\frac{1-r^k}{1-r}.
 $$
+
+
 
  Thế $k=0$ cho $x_0$ và tính $rx_k+c$ cho $x_{k+1}$, xác nhận công thức.
 

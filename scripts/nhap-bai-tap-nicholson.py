@@ -9,6 +9,17 @@ import pymupdf
 
 ROOT=Path(__file__).resolve().parents[1]
 
+def format_math(text):
+    """Dành dòng riêng cho ma trận/công thức dài để cuộn ngang trên điện thoại."""
+    def replace(match):
+        formula=match[0]
+        display=formula.startswith('$$')
+        inner=formula[2:-2]if display else formula[1:-1]
+        if display or r'\begin{array}'in inner or len(inner)>180:
+            return '\n\n$$\n'+inner.strip()+'\n$$\n\n'
+        return formula
+    return re.sub(r'\$\$.*?\$\$|\$[^$]*\$',replace,text,flags=re.S)
+
 def optimize_svg(svg, name, width, height):
     ns='http://www.w3.org/2000/svg';link='http://www.w3.org/1999/xlink'
     ET.register_namespace('',ns);ET.register_namespace('xlink',link)
@@ -44,6 +55,7 @@ def main():
     doc=pymupdf.open(args.source)
     inventory=json.loads(Path(args.inventory).read_text(encoding='utf-8'))
     solutions=json.loads((ROOT/'scripts/data/loi-giai-nicholson.json').read_text(encoding='utf-8'))
+    translations=json.loads((ROOT/'scripts/data/de-bai-nicholson-tieng-viet.json').read_text(encoding='utf-8'))
     figures=ROOT/'src/figures/sach'
     credits=json.loads((figures/'nguon.json').read_text(encoding='utf-8'))
     book=next(key for key,value in credits['sach'].items() if 'Nicholson' in value)
@@ -74,6 +86,10 @@ def main():
             svg=re.sub(r'(fill|stroke)="#(?:000000|000)"',r'\1="currentColor"',svg)
             svg=re.sub(r'(fill|stroke)="#[0-9a-fA-F]{3,6}"',r'\1="currentColor"',svg)
             svg=optimize_svg(svg,name,rect.width,rect.height)
+            if internal=='2.9.8':
+                # Các nhãn nằm trên nút tô kín: màu chữ phải tương phản với nút.
+                svg=re.sub(r'<use data-text="[1-5]"(?=[^>]*transform="matrix\(9\.962)',
+                           lambda m:m[0]+' fill="var(--paper)"',svg)
             (figures/f'{name}.svg').write_text(svg,encoding='utf-8')
             credits['hinh'][name]={'sach':book,'trang':piece['page'],'hop':piece['rect']}
             tags.append(f'<HinhSach ten="{name}" moTa="Đề gốc Nicholson bài {number}, phần {i}; xem bản văn bản bên dưới hình" />')
@@ -88,11 +104,19 @@ do_kho: vua
 tieu_de: {json.dumps(title,ensure_ascii=False)}
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "{number}"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài {number} trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+{format_math(translations[number])}
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 {(chr(10)*2).join(tags)}
 
@@ -105,13 +129,14 @@ so_sach: "{number}"
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 '''
         answer=solutions[number]
         for tag,key in [('<GoiY so={1}>','goi_y_1'),('<GoiY so={2}>','goi_y_2'),('<LoiGiai>','loi_giai'),('<LoiHayMac>','loi_hay_mac')]:
             end='GoiY'if tag.startswith('<GoiY')else tag[1:-1]
-            text=re.sub(r'\$\$(.+?)\$\$',lambda m:'\n\n$$\n'+m[1].strip()+'\n$$\n\n',answer[key],flags=re.S)
+            text=format_math(answer[key])
             body+=tag+'\n\n'+text.strip()+'\n\n</'+end+'>\n\n'
         exists.parent.mkdir(parents=True,exist_ok=True)
         body='\n'.join(line.rstrip()for line in body.splitlines()).rstrip()+'\n'

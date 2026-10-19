@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Khai triển theo phần bù đại số — bài 24"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.1.24"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.1.24 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Lập ma trận $B$ từ ma trận $A$ bằng cách viết các cột của $A$ theo thứ tự ngược lại. Biểu diễn $\det B$ theo $\det A$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-1-24-1" moTa="Đề gốc Nicholson bài 3.1.24, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -23,6 +31,7 @@ terms of det A.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -40,11 +49,25 @@ Cộng bội một hàng vào hàng khác giữ định thức; đổi hai hàng
 
 <LoiGiai>
 
-Đảo thứ tự các cột là hoán vị có $n(n-1)/2$ nghịch thế. Mỗi đổi hai cột đổi dấu định thức, nên
+**Cách làm.** Cộng bội hàng khác giữ nguyên định thức; đổi hai hàng đổi dấu; rút hệ số $c$ từ một hàng đưa $c$ ra ngoài. Với khai triển, $C_{ij}=(-1)^{i+j}\det M_{ij}$.
+
+Mỗi cặp cột đổi thứ tự đúng một lần khi đảo toàn bộ danh sách. Có $\binom n2=n(n-1)/2$ cặp như vậy. Do hai lần đổi dấu triệt tiêu, chỉ phần dư chẵn lẻ của số cặp là cần thiết.
+
+**Bước 1. Lập luận và tính toán.**
+
+Đảo thứ tự các cột là hoán vị có $n(n-1)/2$ nghịch thế.
+
+**Bước 2. Lập luận và tính toán.**
+
+Mỗi đổi hai cột đổi dấu định thức, nên
+
+
 
 $$
 \det B=(-1)^{n(n-1)/2}\det A.
 $$
+
+
 
  Hệ số dương khi $n\equiv0,1\pmod4$, âm khi $n\equiv2,3\pmod4$.
 

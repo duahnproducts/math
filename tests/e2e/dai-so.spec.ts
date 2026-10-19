@@ -79,7 +79,7 @@ test('Chương 2: đủ §2.1–§2.9 có trang dịch, mục lục đủ 9 mụ
 test('bài tập Chương 2: đủ 220 đề, 47 bài §2.1–§2.2 giữ lời giải và liên kết kiến thức', async ({ page }) => {
   await page.goto('dai-so/chuong-2/bai-tap/');
   await expect(page.locator('[data-the-bai-tap]')).toHaveCount(220);
-  await expect(page.locator('[data-de-goc-tieng-anh]')).toHaveCount(173);
+  await expect(page.locator('[data-de-da-dich]')).toHaveCount(173);
 
   await page.goto('dai-so/chuong-2/bai-tap/2-1-18/');
   await expect(page.locator('details[data-tang="loi-giai"]')).toHaveCount(1);

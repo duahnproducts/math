@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Chứng minh Định lý khai triển theo phần bù đại số — bài 1"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.8.1"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.8.1 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh Bổ đề 3.8.1 cho các cột.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-8-1-1" moTa="Đề gốc Nicholson bài 3.8.1, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -21,6 +29,7 @@ Exercise 3.8.1  Prove Lemma 3.8.1 for columns.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -38,7 +47,35 @@ Tách trường hợp hàng/cột đang xét bị xóa khỏi minor và trườn
 
 <LoiGiai>
 
-Chứng minh theo định nghĩa khai triển ở cột đầu, quy nạp theo cấp $n$. Cấp 1 là tính cộng của số thực. Giả sử $A,B,C$ giống nhau ngoài cột $p$, với cột $p$ của $A$ bằng tổng hai cột tương ứng. Nếu $p=1$, các minor ở cột đầu giống nhau và $a_{i1}=b_{i1}+c_{i1}$; tách tổng khai triển cho $\det A=\det B+\det C$. Nếu $p>1$, các hệ số ở cột đầu giống nhau, còn mỗi bộ ba minor cấp $n-1$ thỏa giả thiết cộng ở một cột. Áp dụng quy nạp cho các minor rồi tách tổng khai triển cũng cho kết quả. Không dùng tính tuyến tính đang cần chứng minh làm giả thiết.
+**Cách làm.** Đề yêu cầu chứng minh từ định nghĩa: khai triển theo cột đầu, đưa về định thức cấp nhỏ hơn rồi áp dụng giả thiết quy nạp. Không lấy tính chất đang chứng minh làm giả thiết.
+
+**Bước 1. Lập luận và tính toán.**
+
+Chứng minh theo định nghĩa khai triển ở cột đầu, quy nạp theo cấp $n$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Cấp 1 là tính cộng của số thực.
+
+**Bước 3. Xét giả thiết.**
+
+Giả sử $A,B,C$ giống nhau ngoài cột $p$, với cột $p$ của $A$ bằng tổng hai cột tương ứng.
+
+**Bước 4. Xét giả thiết.**
+
+Nếu $p=1$, các minor ở cột đầu giống nhau và $a_{i1}=b_{i1}+c_{i1}$; tách tổng khai triển cho $\det A=\det B+\det C$.
+
+**Bước 5. Xét giả thiết.**
+
+Nếu $p>1$, các hệ số ở cột đầu giống nhau, còn mỗi bộ ba minor cấp $n-1$ thỏa giả thiết cộng ở một cột.
+
+**Bước 6. Lập luận và tính toán.**
+
+Áp dụng quy nạp cho các minor rồi tách tổng khai triển cũng cho kết quả.
+
+**Bước 7. Lập luận và tính toán.**
+
+Không dùng tính tuyến tính đang cần chứng minh làm giả thiết.
 
 </LoiGiai>
 

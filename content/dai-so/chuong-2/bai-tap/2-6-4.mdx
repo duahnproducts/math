@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Phép biến đổi tuyến tính — bài 4"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.6.4"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.6.4 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Trong mỗi trường hợp, dùng Định lý 2.6.2 để tìm ma trận $A$ của phép biến đổi $T$. Có thể giả sử $T$ tuyến tính trong mỗi trường hợp.
+
+**a.** $T : \mathbb{R}^3 \to \mathbb{R}^3$ là phép đối xứng qua mặt phẳng $x-z$.
+
+**b.** $T : \mathbb{R}^3 \to \mathbb{R}^3$ là phép đối xứng qua mặt phẳng $y-z$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-6-4-1" moTa="Đề gốc Nicholson bài 2.6.4, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -29,6 +41,7 @@ b. T : R3 →R3 is reﬂection in the y−z plane.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -45,7 +58,23 @@ Cột thứ j của ma trận ánh xạ là ảnh của vector đơn vị thứ 
 
 <LoiGiai>
 
-**a.** Đối xứng qua mặt phẳng $xz$ giữ $x,z$ và đổi dấu $y$: $A=\operatorname{diag}(1,-1,1)$. **b.** Qua mặt phẳng $yz$ giữ $y,z$ và đổi dấu $x$: $A=\operatorname{diag}(-1,1,1)$. Các cột lần lượt là ảnh của ba vector đơn vị; bình phương mỗi ma trận bằng $I_3$ phù hợp với việc đối xứng hai lần.
+**Cách làm.** Tuyến tính nghĩa là $T(au+bv)=aT(u)+bT(v)$. Với vector cột, ma trận của $T$ là $[T(e_1)\ \cdots\ T(e_n)]$; ma trận của $S\circ T$ là $[S][T]$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Đối xứng qua mặt phẳng $xz$ giữ $x,z$ và đổi dấu $y$: $A=\operatorname{diag}(1,-1,1)$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Qua mặt phẳng $yz$ giữ $y,z$ và đổi dấu $x$: $A=\operatorname{diag}(-1,1,1)$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Các cột lần lượt là ảnh của ba vector đơn vị; bình phương mỗi ma trận bằng $I_3$ phù hợp với việc đối xứng hai lần.
 
 </LoiGiai>
 

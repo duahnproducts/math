@@ -23,15 +23,107 @@ Ba biểu thức không tính được: a, d, h.
 </GoiY>
 
 <LoiGiai>
-- **a.** $3A - 2B$: $2 \times 2$ trừ $2 \times 3$ — **không tính được**.
-- **b.** $5C = \begin{bmatrix} 15 & -5 \\ 10 & 0 \end{bmatrix}$
-- **c.** $3E^T = \begin{bmatrix} 3 & 0 \\ 0 & 3 \\ 3 & 0 \end{bmatrix}$
-- **d.** $B + D$: $2 \times 3$ cộng $3 \times 2$ — **không tính được**.
-- **e.** $4A^T - 3C = \begin{bmatrix} -1 & 3 \\ -2 & -4 \end{bmatrix}$
-- **f.** $(A + C)^T = \begin{bmatrix} 5 & 2 \\ 0 & -1 \end{bmatrix}$
-- **g.** $2B - 3E = \begin{bmatrix} 3 & -2 & 1 \\ 0 & -1 & 8 \end{bmatrix}$
-- **h.** $A - D$: $2 \times 2$ trừ $3 \times 2$ — **không tính được**.
-- **i.** $(B - 2E)^T = \begin{bmatrix} 1 & 0 \\ -1 & -1 \\ 0 & 4 \end{bmatrix}$
+
+**Cách làm.** Hai ma trận bằng nhau khi cùng kích thước và từng ô tương ứng bằng nhau. Cộng và nhân vô hướng thực hiện theo từng ô; một ẩn tự do phải được giữ lại bằng tham số.
+
+**a.** $3A$ cỡ $2\times2$ và $2B$ cỡ $2\times3$, nên không trừ được.
+
+**b.**
+
+**Bước 1. Chọn cách giải.**
+
+Thực hiện nhân vô hướng trước, rồi cộng các ô cùng vị trí.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+Các phép tính theo từng ô là
+
+$$
+\begin{bmatrix}(5)(3)&(5)(-1)\\(5)(2)&(5)(0)\end{bmatrix}=\begin{bmatrix}15&-5\\10&0\end{bmatrix}.
+$$
+
+**Bước 3. Kiểm tra và kết luận.**
+
+Kết quả có kích thước $2\times 2$, giống các ma trận ban đầu; dấu trừ được nhân vào từng ô.
+
+**Bước 4. Cách tự làm lại.**
+
+Mỗi ô kết quả dùng đúng các ô cùng chỉ số của các ma trận đầu vào.
+
+**c.** Chuyển vị $E$ thành $E^T=\begin{bmatrix}1&0\\0&1\\1&0\end{bmatrix}$, rồi nhân từng ô với 3:
+
+**Bước 1. Chọn cách giải.**
+
+Thực hiện nhân vô hướng trước, rồi cộng các ô cùng vị trí.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+Các phép tính theo từng ô là
+
+$$
+\begin{bmatrix}(3)(1)&(3)(0)\\(3)(0)&(3)(1)\\(3)(1)&(3)(0)\end{bmatrix}=\begin{bmatrix}3&0\\0&3\\3&0\end{bmatrix}.
+$$
+
+**Bước 3. Kiểm tra và kết luận.**
+
+Kết quả có kích thước $3\times 2$, giống các ma trận ban đầu; dấu trừ được nhân vào từng ô.
+
+**Bước 4. Cách tự làm lại.**
+
+Mỗi ô kết quả dùng đúng các ô cùng chỉ số của các ma trận đầu vào.
+
+**d.** $B$ cỡ $2\times3$, $D$ cỡ $3\times2$, nên không cộng được.
+
+**e.** Chuyển vị $A$ thành $A^T=\begin{bmatrix}2&0\\1&-1\end{bmatrix}$, rồi tính:
+
+**Bước 1. Chọn cách giải.**
+
+Thực hiện nhân vô hướng trước, rồi cộng các ô cùng vị trí.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+Các phép tính theo từng ô là
+
+$$
+\begin{bmatrix}(4)(2)+(-3)(3)&(4)(0)+(-3)(-1)\\(4)(1)+(-3)(2)&(4)(-1)+(-3)(0)\end{bmatrix}=\begin{bmatrix}-1&3\\-2&-4\end{bmatrix}.
+$$
+
+**Bước 3. Kiểm tra và kết luận.**
+
+Kết quả có kích thước $2\times 2$, giống các ma trận ban đầu; dấu trừ được nhân vào từng ô.
+
+**Bước 4. Cách tự làm lại.**
+
+Mỗi ô kết quả dùng đúng các ô cùng chỉ số của các ma trận đầu vào.
+
+**f.** Cộng trước: $A+C=\begin{bmatrix}5&0\\2&-1\end{bmatrix}$. Sau đó đổi hàng thành cột: $(A+C)^T=\begin{bmatrix}5&2\\0&-1\end{bmatrix}$. Kiểm tra $(A+C)^T=A^T+C^T$.
+
+**g.**
+
+**Bước 1. Chọn cách giải.**
+
+Thực hiện nhân vô hướng trước, rồi cộng các ô cùng vị trí.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+Các phép tính theo từng ô là
+
+$$
+\begin{bmatrix}(2)(3)+(-3)(1)&(2)(-1)+(-3)(0)&(2)(2)+(-3)(1)\\(2)(0)+(-3)(0)&(2)(1)+(-3)(1)&(2)(4)+(-3)(0)\end{bmatrix}=\begin{bmatrix}3&-2&1\\0&-1&8\end{bmatrix}.
+$$
+
+**Bước 3. Kiểm tra và kết luận.**
+
+Kết quả có kích thước $2\times 3$, giống các ma trận ban đầu; dấu trừ được nhân vào từng ô.
+
+**Bước 4. Cách tự làm lại.**
+
+Mỗi ô kết quả dùng đúng các ô cùng chỉ số của các ma trận đầu vào.
+
+**h.** $A$ cỡ $2\times2$, $D$ cỡ $3\times2$, nên không trừ được.
+
+**i.** Tính $B-2E=\begin{bmatrix}1&-1&0\\0&-1&4\end{bmatrix}$, rồi chuyển vị: $(B-2E)^T=\begin{bmatrix}1&0\\-1&-1\\0&4\end{bmatrix}$. Kích thước đổi từ $2\times3$ sang $3\times2$.
+
 </LoiGiai>
 
 <LoiHayMac>

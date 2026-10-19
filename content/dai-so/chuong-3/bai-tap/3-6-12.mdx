@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Ứng dụng: hệ thức truy hồi tuyến tính — bài 12"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.6.12"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.6.12 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Xét hệ thức truy hồi $x_{k+2} = ax_{k+1} + bx_{k} + c  $, trong đó $c$ có thể khác 0.
+
+**a.** Nếu $a + b \neq 1$, hãy chứng minh có thể chọn $p$ sao cho khi đặt $y_{k} = x_{k} + p$ thì $y_{k+2} = ay_{k+1} + by_{k}$. [Do đó có thể tìm dãy $x_{k}$ nếu tìm được $y_{k}$ bằng các phương pháp trong mục này hoặc bằng cách khác.]
+
+**b.** Dùng ý (a) để giải $x_{k+2} = x_{k+1} + 6x_{k} + 5$, trong đó $x_{0} = 1$ và $x_{1} = 1$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-6-12-1" moTa="Đề gốc Nicholson bài 3.6.12, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -35,6 +47,7 @@ where c may not be zero.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -51,7 +64,39 @@ Dùng các điều kiện đầu để xác định hệ số trong nghiệm t�
 
 <LoiGiai>
 
-**a.** Thay $x_k=y_k-p$ vào truy hồi, được $y_{k+2}=ay_{k+1}+by_k+c+(1-a-b)p$. Chọn $p=c/(a+b-1)$, hợp lệ vì $a+b\ne1$, để hạng hằng bằng 0. **b.** $a=1,b=6,c=5$ nên $p=5/6$. Khi đó $y_0=y_1=11/6$ và $y_{k+2}=y_{k+1}+6y_k$. Hai nghiệm đặc trưng là 3,-2; giải hệ số cho $y_k=(11/10)3^k+(11/15)(-2)^k$. Do đó
+**Cách làm.** Với truy hồi tuyến tính, thử $x_k=r^k$ để tìm phương trình đặc trưng. Các điều kiện đầu quyết định hệ số; với bài đếm, cần phân loại các trường hợp rời nhau và đếm hết mọi khả năng.
+
+Thay $x_k=y_k-p$ phải thay ở **mọi** chỉ số: $y_{k+2}-p=a(y_{k+1}-p)+b(y_k-p)+c$. Gom hằng số về phải cho $c+(1-a-b)p$. Đặt hạng này bằng 0 để thu một truy hồi thuần nhất.
+
+**a.**
+
+**Bước 1. Thay vào để tính và kiểm tra.**
+
+Thay $x_k=y_k-p$ vào truy hồi, được $y_{k+2}=ay_{k+1}+by_k+c+(1-a-b)p$.
+
+**Bước 2. Thiết lập biểu thức.**
+
+Chọn $p=c/(a+b-1)$, hợp lệ vì $a+b\ne1$, để hạng hằng bằng 0.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$a=1,b=6,c=5$ nên $p=5/6$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Khi đó $y_0=y_1=11/6$ và $y_{k+2}=y_{k+1}+6y_k$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Hai nghiệm đặc trưng là 3,-2; giải hệ số cho $y_k=(11/10)3^k+(11/15)(-2)^k$.
+
+**Bước 4. Rút ra kết luận.**
+
+Do đó
+
+
 
 $$
 x_k=\frac{11}{10}3^k+\frac{11}{15}(-2)^k-\frac56.

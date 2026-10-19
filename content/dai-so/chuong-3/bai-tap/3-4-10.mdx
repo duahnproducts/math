@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Chéo hoá — bài 10"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.4.10"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.4.10 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu cả $P^{-1}AP$ và $P^{-1}BP$ đều là ma trận chéo, hãy chứng minh rằng $AB = BA$. [Gợi ý: Các ma trận chéo giao hoán.]
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-4-10-1" moTa="Đề gốc Nicholson bài 3.4.10, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -23,6 +31,7 @@ mute.]
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -40,7 +49,25 @@ Ghép các vector riêng độc lập thành cột của P, rồi kiểm tra AP 
 
 <LoiGiai>
 
-Đặt $D=P^{-1}AP$, $E=P^{-1}BP$, đều chéo. Ma trận chéo giao hoán nên $DE=ED$. Nhân $P$ bên trái và $P^{-1}$ bên phải: $AB=PDEP^{-1}=PEDP^{-1}=BA$. Cần cùng một ma trận $P$ cho cả hai phép chéo hóa.
+**Cách làm.** Chéo hóa $A=PDP^{-1}$ nghĩa là các cột của $P$ là một cơ sở vector riêng. Trị riêng của cột thứ $j$ phải nằm ở ô $d_{jj}$, và có thể kiểm tra bằng $AP=PD$.
+
+Điểm quyết định là **cùng một** cơ sở làm cả $A,B$ thành ma trận chéo. Khi viết tích, hai cặp $P^{-1}P$ triệt tiêu, nên $AB=PDEP^{-1}$. Tính giao hoán của hai ma trận chéo $D,E$ mới cho phép đổi thứ tự ở giữa.
+
+**Bước 1. Thiết lập biểu thức.**
+
+Đặt $D=P^{-1}AP$, $E=P^{-1}BP$, đều chéo.
+
+**Bước 2. Lập luận và tính toán.**
+
+Ma trận chéo giao hoán nên $DE=ED$.
+
+**Bước 3. Thực hiện phép biến đổi.**
+
+Nhân $P$ bên trái và $P^{-1}$ bên phải: $AB=PDEP^{-1}=PEDP^{-1}=BA$.
+
+**Bước 4. Lập luận và tính toán.**
+
+Cần cùng một ma trận $P$ cho cả hai phép chéo hóa.
 
 </LoiGiai>
 

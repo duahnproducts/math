@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Ứng dụng: hệ thức truy hồi tuyến tính — bài 7"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.6.7"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.6.7 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Tìm $x_{k}$, số cách xếp một chồng gồm $k$ phỉnh poker, chỉ dùng các phỉnh đỏ, xanh và vàng, sao cho không có hai phỉnh vàng cạnh nhau. [Gợi ý: Chứng minh rằng $x_{k+2} = 2x_{k+1} + 2x_{k}$ bằng cách xét số chồng có phỉnh trên cùng màu đỏ, xanh hoặc vàng.]
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-6-7-1" moTa="Đề gốc Nicholson bài 3.6.7, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -25,6 +33,7 @@ have a red, blue, or gold chip on top.]
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -42,13 +51,97 @@ Dùng các điều kiện đầu để xác định hệ số trong nghiệm t�
 
 <LoiGiai>
 
-Phân loại theo đồng trên cùng: đỏ hoặc xanh cho $2x_{k+1}$ cách khi chồng cao $k+2$; vàng thì đồng ngay dưới phải đỏ/xanh, cho $2x_k$ cách. Vậy $x_{k+2}=2x_{k+1}+2x_k$, với $x_0=1,x_1=3$. Phương trình đặc trưng $t^{2} - 2 t - 2=0$. Tổ hợp các nghiệm lũy thừa, rồi dùng các giá trị đầu để giải các hệ số, được
+**Cách làm.** Với truy hồi tuyến tính, thử $x_k=r^k$ để tìm phương trình đặc trưng. Các điều kiện đầu quyết định hệ số; với bài đếm, cần phân loại các trường hợp rời nhau và đếm hết mọi khả năng.
+
+Phân loại theo đồng trên cùng: đỏ hoặc xanh cho $2x_{k+1}$ cách khi chồng cao $k+2$; vàng thì đồng ngay dưới phải đỏ/xanh, cho $2x_k$ cách. Vậy $x_{k+2}=2x_{k+1}+2x_k$, với $x_0=1,x_1=3$. **Bước 1. Lập phương trình đặc trưng.**
+
+Thử $x_k=t^k$ trong truy hồi và thu đa thức
+
+
+
+$$
+t^{2} - 2 t - 2=t^{2} - 2 t - 2=0.
+$$
+
+
+
+ Các nghiệm và bội tương ứng: $1 - \sqrt{3}$ (bội 1), $1 + \sqrt{3}$ (bội 1).
+
+**Bước 2. Viết dạng nghiệm tổng quát.**
+
+
+
+$$
+x_k=C_{0} \left(1 - \sqrt{3}\right)^{k} + C_{1} \left(1 + \sqrt{3}\right)^{k}.
+$$
+
+
+
+ Mỗi nghiệm đặc trưng phân biệt đóng góp một hạng lũy thừa.
+
+**Bước 3. Dùng từng điều kiện đầu.**
+
+Thay $k=0,\ldots,1$ vào biểu thức trên. Ma trận ghép của hệ tìm $C_0,\ldots$ là
+
+
+
+$$
+\begin{bmatrix}1&1&1\\1 - \sqrt{3}&1 + \sqrt{3}&3\end{bmatrix}.
+$$
+
+
+
+**Bước 4. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-1 + \sqrt{3})R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&1&1\\0&2 \sqrt{3}&\sqrt{3} + 2\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $2 \sqrt{3}$, được
+
+
+
+$$
+\begin{bmatrix}1&1&1\\0&1&\frac{1}{2} + \frac{\sqrt{3}}{3}\end{bmatrix}.
+$$
+
+
+
+**Bước 6. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(-1)R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&\frac{1}{2} - \frac{\sqrt{3}}{3}\\0&1&\frac{1}{2} + \frac{\sqrt{3}}{3}\end{bmatrix}.
+$$
+
+
+
+**Bước 7. Thế hệ số vào công thức.**
+
+Hệ số là $\left\{ C_{0} : \frac{1}{2} - \frac{\sqrt{3}}{3}, \  C_{1} : \frac{1}{2} + \frac{\sqrt{3}}{3}\right\}$, nên
+
+
 
 $$
 x_k=- \frac{\sqrt{3} \left(1 - \sqrt{3}\right)^{k}}{3} + \frac{\left(1 - \sqrt{3}\right)^{k}}{2} + \frac{\left(1 + \sqrt{3}\right)^{k}}{2} + \frac{\sqrt{3} \left(1 + \sqrt{3}\right)^{k}}{3}.
 $$
 
- Thế $k=0,\ldots,1$ cho đúng điều kiện đầu; thay vào truy hồi cho đồng nhất thức.
+
+
+**Bước 8. Kiểm tra điều kiện đầu và truy hồi.**
+
+$x_{0}=1$, $x_{1}=- \frac{\sqrt{3} \left(1 - \sqrt{3}\right)}{3} + 1 + \frac{\sqrt{3} \left(1 + \sqrt{3}\right)}{3}$ khớp dữ kiện. Khi thay biểu thức vào $x_{k+m}-\sum_j a_jx_{k+j}$, mỗi hạng chứa $r^k$ triệt tiêu theo phương trình đặc trưng, nên hiệu bằng 0.
 
 </LoiGiai>
 

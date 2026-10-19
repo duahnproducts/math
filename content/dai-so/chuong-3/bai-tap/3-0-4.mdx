@@ -5,11 +5,29 @@ do_kho: vua
 tieu_de: "Bài bổ sung 3.4"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.4"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.4 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh rằng
+
+
+
+$$
+\det \left[ \begin{array}{rrr} 1 & a & a^3 \\ 1 & b & b^3 \\ 1 & c & c^3 \end{array}\right] = (b-a)(c-a)(c-b)(a+b+c)
+$$
+
+
+
+.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-0-4-1" moTa="Đề gốc Nicholson bài 3.4, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -23,6 +41,7 @@ Exercise 3.4 Show that
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -40,13 +59,27 @@ Với đẳng thức tổng quát, khai triển có giữ thứ tự; với mệ
 
 <LoiGiai>
 
+**Bước 1. Thực hiện phép biến đổi.**
+
 Trừ hàng đầu khỏi hai hàng sau rồi khai triển cột đầu:
+
+
 
 $$
 D=(b-a)(c^3-a^3)-(c-a)(b^3-a^3).
 $$
 
- Phân tích hiệu lập phương, rút $(b-a)(c-a)$, trong ngoặc còn $(c^2+ac+a^2)-(b^2+ab+a^2)=(c-b)(a+b+c)$. Vậy $D=(b-a)(c-a)(c-b)(a+b+c)$. Không chia cho hiệu nên đúng cả khi hai giá trị trùng nhau.
+
+
+ Phân tích hiệu lập phương, rút $(b-a)(c-a)$, trong ngoặc còn $(c^2+ac+a^2)-(b^2+ab+a^2)=(c-b)(a+b+c)$.
+
+**Bước 2. Rút ra kết luận.**
+
+Vậy $D=(b-a)(c-a)(c-b)(a+b+c)$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Không chia cho hiệu nên đúng cả khi hai giá trị trùng nhau.
 
 </LoiGiai>
 

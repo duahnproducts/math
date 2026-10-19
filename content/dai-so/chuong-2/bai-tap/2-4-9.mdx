@@ -5,11 +5,37 @@ do_kho: vua
 tieu_de: "Ma trận nghịch đảo — bài 9"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.4.9"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.4.9 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Trong mỗi trường hợp, hãy chứng minh khẳng định hoặc đưa ra một ví dụ cho thấy khẳng định sai.
+
+**a.** Nếu $A \neq 0$ là ma trận vuông thì $A$ khả nghịch.
+
+**b.** Nếu $A$ và $B$ đều khả nghịch thì $A + B$ khả nghịch.
+
+**c.** Nếu $A$ và $B$ đều khả nghịch thì $(A^{-1}B)^{T}$ khả nghịch.
+
+**d.** Nếu $A^{4} = 3I$ thì $A$ khả nghịch.
+
+**e.** Nếu $A^{2} = A$ và $A \neq 0$ thì $A$ khả nghịch.
+
+**f.** Nếu $AB = B$ với một $B \neq 0$ nào đó thì $A$ khả nghịch.
+
+**g.** Nếu $A$ khả nghịch và phản đối xứng ($A^{T} = -A$) thì $A^{-1}$ cũng có các tính chất đó.
+
+**h.** Nếu $A^{2}$ khả nghịch thì $A$ khả nghịch.
+
+**i.** Nếu $AB = I$ thì $A$ và $B$ giao hoán.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-4-9-1" moTa="Đề gốc Nicholson bài 2.4.9, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -41,6 +67,7 @@ h.  If A2 is invertible, then A is invertible.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -57,7 +84,61 @@ Khi tìm nghịch đảo bằng khử hàng, làm cùng phép biến đổi trê
 
 <LoiGiai>
 
-**a Sai:** $\operatorname{diag}(1,0)$ khác 0 nhưng suy biến. **b Sai:** $A=I,B=-I$ thì tổng bằng 0. **c Đúng:** $A^{-1}B$ là tích hai ma trận khả nghịch và chuyển vị vẫn khả nghịch; nghịch đảo là $(B^{-1}A)^T$. **d Đúng:** $A^{-1}=A^3/3$. **e Sai:** $P=\operatorname{diag}(1,0)$ lũy đẳng nhưng suy biến. **f Sai:** lấy $A=B=P$. **g Đúng:** $(A^{-1})^T=(A^T)^{-1}=(-A)^{-1}=-A^{-1}$. **h Đúng:** $Ax=0$ kéo theo $A^2x=0$, nên $x=0$; ma trận vuông $A$ khả nghịch. **i Đúng:** ma trận vuông có $AB=I$ thì $B=A^{-1}$, nên $BA=I=AB$.
+**Cách làm.** Theo định nghĩa, $B=A^{-1}$ khi $AB=BA=I$. Muốn khử $A$ ở bên trái thì nhân trái với $A^{-1}$; muốn khử ở bên phải thì nhân phải. Nghịch đảo tích đảo thứ tự: $(AB)^{-1}=B^{-1}A^{-1}$.
+
+**a Sai:**
+
+**Bước 1. Lập luận và tính toán.**
+
+$\operatorname{diag}(1,0)$ khác 0 nhưng suy biến.
+
+**b Sai:**
+
+**Bước 2. Lập luận và tính toán.**
+
+$A=I,B=-I$ thì tổng bằng 0.
+
+**c Đúng:**
+
+**Bước 3. Lập luận và tính toán.**
+
+$A^{-1}B$ là tích hai ma trận khả nghịch và chuyển vị vẫn khả nghịch; nghịch đảo là $(B^{-1}A)^T$.
+
+**d Đúng:**
+
+**Bước 4. Lập luận và tính toán.**
+
+$A^{-1}=A^3/3$.
+
+**e Sai:**
+
+**Bước 5. Lập luận và tính toán.**
+
+$P=\operatorname{diag}(1,0)$ lũy đẳng nhưng suy biến.
+
+**f Sai:**
+
+**Bước 6. Lập luận và tính toán.**
+
+lấy $A=B=P$.
+
+**g Đúng:**
+
+**Bước 7. Lập luận và tính toán.**
+
+$(A^{-1})^T=(A^T)^{-1}=(-A)^{-1}=-A^{-1}$.
+
+**h Đúng:**
+
+**Bước 8. Lập luận và tính toán.**
+
+$Ax=0$ kéo theo $A^2x=0$, nên $x=0$; ma trận vuông $A$ khả nghịch.
+
+**i Đúng:**
+
+**Bước 9. Lập luận và tính toán.**
+
+ma trận vuông có $AB=I$ thì $B=A^{-1}$, nên $BA=I=AB$.
 
 </LoiGiai>
 

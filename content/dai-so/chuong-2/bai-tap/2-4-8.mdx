@@ -5,11 +5,45 @@ do_kho: vua
 tieu_de: "Ma trận nghịch đảo — bài 8"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.4.8"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.4.8 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+**a.** Trong hệ
+
+$$
+\begin{array}{rrrrr} 3x & + & 4y & = & 7 \\ 4x & + & 5y & = & 1 \end{array}
+$$
+
+, thay các biến mới $x^\prime$ và $y^\prime$ được cho bởi
+
+$$
+\begin{array}{rrrrr} x & = & -5x^\prime & + & 4y^\prime \\ y & = & 4x^\prime & - & 3y^\prime \end{array}
+$$
+
+. Sau đó tìm $x$ và $y$.
+
+**b.** Giải thích ý (a) bằng cách viết các phương trình thành
+
+$$
+A \left[ \begin{array}{c} x \\ y \end{array} \right] = \left[ \begin{array}{r} 7 \\ 1 \end{array} \right]
+$$
+
+ và
+
+$$
+\left[ \begin{array}{r} x \\ y \end{array} \right] = B \left[ \begin{array}{c} x^\prime \\ y^\prime \end{array} \right]
+$$
+
+. Giữa $A$ và $B$ có quan hệ gì?
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-4-8-1" moTa="Đề gốc Nicholson bài 2.4.8, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -32,6 +66,7 @@ Exercise 2.4.8
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -48,7 +83,31 @@ Khi tìm nghịch đảo bằng khử hàng, làm cùng phép biến đổi trê
 
 <LoiGiai>
 
-**a.** Thế $x=-5x^\prime+4y^\prime$, $y=4x^\prime-3y^\prime$ vào hai phương trình: vế trái lần lượt rút gọn thành $x^\prime,y^\prime$. Vậy $x^\prime=7,y^\prime=1$, nên $x=-31,y=25$. Thế lại: $-93+100=7$, $-124+125=1$. **b.** $A=\begin{bmatrix}3&4\\4&5\end{bmatrix}$, $B=\begin{bmatrix}-5&4\\4&-3\end{bmatrix}$; nhân được $AB=BA=I$, tức $B=A^{-1}$. Đổi biến đã biến hệ thành hệ có ma trận đơn vị.
+**Cách làm.** Theo định nghĩa, $B=A^{-1}$ khi $AB=BA=I$. Muốn khử $A$ ở bên trái thì nhân trái với $A^{-1}$; muốn khử ở bên phải thì nhân phải. Nghịch đảo tích đảo thứ tự: $(AB)^{-1}=B^{-1}A^{-1}$.
+
+**a.**
+
+**Bước 1. Thay vào để tính và kiểm tra.**
+
+Thế $x=-5x^\prime+4y^\prime$, $y=4x^\prime-3y^\prime$ vào hai phương trình: vế trái lần lượt rút gọn thành $x^\prime,y^\prime$.
+
+**Bước 2. Rút ra kết luận.**
+
+Vậy $x^\prime=7,y^\prime=1$, nên $x=-31,y=25$.
+
+**Bước 3. Thay vào để tính và kiểm tra.**
+
+Thế lại: $-93+100=7$, $-124+125=1$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$A=\begin{bmatrix}3&4\\4&5\end{bmatrix}$, $B=\begin{bmatrix}-5&4\\4&-3\end{bmatrix}$; nhân được $AB=BA=I$, tức $B=A^{-1}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Đổi biến đã biến hệ thành hệ có ma trận đơn vị.
 
 </LoiGiai>
 

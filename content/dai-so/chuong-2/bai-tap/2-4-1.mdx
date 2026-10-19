@@ -5,11 +5,75 @@ do_kho: vua
 tieu_de: "Ma trận nghịch đảo — bài 1"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.4.1"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.4.1 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Trong mỗi trường hợp, hãy chứng minh rằng hai ma trận là nghịch đảo của nhau.
+
+**a.**
+
+$$
+\left[ \begin{array}{rr} 3 & 5 \\ 1 & 2 \end{array} \right]
+$$
+
+,
+
+$$
+\left[ \begin{array}{rr} 2 & -5 \\ -1 & 3 \end{array} \right]
+$$
+
+
+
+**b.**
+
+$$
+\left[ \begin{array}{rr} 3 & 0 \\ 1 & -4 \end{array} \right]
+$$
+
+,
+
+$$
+\frac{1}{2}\left[ \begin{array}{rr} 4 & 0 \\ 1 & -3 \end{array} \right]
+$$
+
+
+
+**c.**
+
+$$
+\left[ \begin{array}{rrr} 1 & 2 & 0 \\ 0 & 2 & 3 \\ 1 & 3 & 1 \end{array} \right]
+$$
+
+,
+
+$$
+\left[ \begin{array}{rrr} 7 & 2 & -6 \\ -3 & -1 & 3 \\ 2 & 1 & -2 \end{array} \right]
+$$
+
+
+
+**d.**
+
+$$
+\left[ \begin{array}{rr} 3 & 0 \\ 0 & 5 \end{array} \right]
+$$
+
+,
+
+$$
+\left[ \begin{array}{rr} \frac{1}{3} & 0 \\ 0 & \frac{1}{5} \end{array} \right]
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-4-1-1" moTa="Đề gốc Nicholson bài 2.4.1, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -35,6 +99,7 @@ d.                  ,    3   1     0  5     0                       5
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -51,17 +116,31 @@ Khi tìm nghịch đảo bằng khử hàng, làm cùng phép biến đổi trê
 
 <LoiGiai>
 
-Với mỗi cặp $(A,B)$, nhân cả $AB$ lẫn $BA$ theo hàng–cột.
+**Cách làm.** Theo định nghĩa, $B=A^{-1}$ khi $AB=BA=I$. Muốn khử $A$ ở bên trái thì nhân trái với $A^{-1}$; muốn khử ở bên phải thì nhân phải. Nghịch đảo tích đảo thứ tự: $(AB)^{-1}=B^{-1}A^{-1}$.
 
-**a.** $AB=BA=I_2$.
+**a, c, d.**
 
-**b.** $AB=BA=I_2$.
+**Bước 1. Thực hiện phép biến đổi.**
 
-**c.** $AB=BA=I_3$.
+Nhân hai ma trận theo cả hai thứ tự được ma trận đơn vị tương ứng.
 
-**d.** $AB=BA=I_2$.
+**Bước 2. Lập luận và tính toán.**
 
-Ví dụ (a), $AB=\begin{bmatrix}6-5&-15+15\\2-2&-5+6\end{bmatrix}=I_2$. Hai đẳng thức xác nhận mỗi ma trận là nghịch đảo của ma trận còn lại.
+Chẳng hạn ở (a), $AB=\begin{bmatrix}6-5&-15+15\\2-2&-5+6\end{bmatrix}=I_2$; nhân $BA$ cũng được $I_2$.
+
+**b. Lỗi hệ số trong đề.**
+
+**Bước 3. Lập luận và tính toán.**
+
+Với đúng hệ số $1/2$ của bản in, hai tích đều bằng $6I_2$, nên hai ma trận không phải nghịch đảo của nhau.
+
+**Bước 4. Lập luận và tính toán.**
+
+Hệ số đúng để được nghịch đảo là $1/12$: $\begin{bmatrix}3&0\\1&-4\end{bmatrix}\begin{bmatrix}4&0\\1&-3\end{bmatrix}=12I_2$.
+
+**Bước 5. Thực hiện phép biến đổi.**
+
+Chia ma trận thứ hai cho 12 mới cho tích bằng $I_2$.
 
 </LoiGiai>
 

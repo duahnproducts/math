@@ -5,11 +5,25 @@ do_kho: vua
 tieu_de: "Giá trị riêng và vector riêng — bài 9"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.3.9"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.3.9 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Giả sử $\lambda$ là một trị riêng của ma trận vuông $A$ với vector riêng $\mathbf{x} \neq \mathbf{0}$.
+
+**a.** Chứng minh rằng $\lambda^{2}$ là trị riêng của $A^{2}$ (với cùng vector $\mathbf{x}$).
+
+**b.** Chứng minh rằng $\lambda^{3} - 2 \lambda + 3$ là trị riêng của $A^{3} - 2A + 3I$.
+
+**c.** Chứng minh rằng $p(\lambda)$ là trị riêng của $p(A)$ với mọi đa thức khác 0, ký hiệu là $p(x)$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-3-9-1" moTa="Đề gốc Nicholson bài 3.3.9, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -30,6 +44,7 @@ matrix A with eigenvector x̸ = 0.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -46,7 +61,35 @@ Không gian riêng là hạt nhân của A − λI; đa thức của ma trận t
 
 <LoiGiai>
 
-Quy nạp từ $Av=\lambda v$ được $A^kv=\lambda^kv$ với mọi $k\ge0$. **a.** Lấy $k=2$, $A^2v=\lambda^2v$. **b.** $(A^3-2A+3I)v=(\lambda^3-2\lambda+3)v$. **c.** Nếu $p(t)=\sum_ka_kt^k$, thì $p(A)v=\sum_ka_k\lambda^kv=p(\lambda)v$. Vì $v\ne0$, đây là vector riêng cho trị riêng $p(\lambda)$, kể cả khi giá trị đó bằng 0.
+**Cách làm.** Trị riêng $\lambda$ cần có vector $v\ne0$ thỏa $Av=\lambda v$. Tương đương $(A-\lambda I)v=0$ có nghiệm khác 0, nên $\det(\lambda I-A)=0$.
+
+Bước quy nạp là $A^{k+1}v=A(A^kv)=A(\lambda^kv)=\lambda^kAv=\lambda^{k+1}v$. Áp dụng lần lượt cho từng lũy thừa của đa thức rồi cộng, vì nhân ma trận phân phối qua tổng.
+
+**Bước 1. Lập luận và tính toán.**
+
+Quy nạp từ $Av=\lambda v$ được $A^kv=\lambda^kv$ với mọi $k\ge0$.
+
+**a.**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Lấy $k=2$, $A^2v=\lambda^2v$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$(A^3-2A+3I)v=(\lambda^3-2\lambda+3)v$.
+
+**c.**
+
+**Bước 1. Xét giả thiết.**
+
+Nếu $p(t)=\sum_ka_kt^k$, thì $p(A)v=\sum_ka_k\lambda^kv=p(\lambda)v$.
+
+**Bước 2. Giải thích điều kiện sử dụng.**
+
+Vì $v\ne0$, đây là vector riêng cho trị riêng $p(\lambda)$, kể cả khi giá trị đó bằng 0.
 
 </LoiGiai>
 

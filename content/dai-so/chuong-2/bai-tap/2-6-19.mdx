@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Phép biến đổi tuyến tính — bài 19"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.6.19"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.6.19 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Với hệ số góc $m$ bất kỳ, hãy chứng minh rằng:
+
+**a.** $Q_{m} \circ P_{m} = P_{m}$
+
+**b.** $P_{m} \circ Q_{m} = P_{m}$
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-6-19-1" moTa="Đề gốc Nicholson bài 2.6.19, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -23,6 +35,7 @@ Exercise 2.6.19  For any slope m, show that:
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -40,7 +53,35 @@ Cột thứ j của ma trận ánh xạ là ảnh của vector đơn vị thứ 
 
 <LoiGiai>
 
-Gọi $P_m$ là phép chiếu lên đường $y=mx$ và $Q_m$ là đối xứng qua đường ấy. Ma trận của chúng thỏa $Q_m=2P_m-I$, $P_m^2=P_m$. Vì vậy **a.** $Q_mP_m=(2P_m-I)P_m=P_m$; **b.** $P_mQ_m=P_m(2P_m-I)=P_m$. Hình học: vector đã chiếu lên đường thì đối xứng qua đường không đổi nó; phần vuông góc đổi dấu nhưng bị phép chiếu loại đi.
+**Cách làm.** Tuyến tính nghĩa là $T(au+bv)=aT(u)+bT(v)$. Với vector cột, ma trận của $T$ là $[T(e_1)\ \cdots\ T(e_n)]$; ma trận của $S\circ T$ là $[S][T]$.
+
+**Bước 1. Thiết lập biểu thức.**
+
+Gọi $P_m$ là phép chiếu lên đường $y=mx$ và $Q_m$ là đối xứng qua đường ấy.
+
+**Bước 2. Lập luận và tính toán.**
+
+Ma trận của chúng thỏa $Q_m=2P_m-I$, $P_m^2=P_m$.
+
+**Bước 3. Giải thích điều kiện sử dụng.**
+
+Vì vậy
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$Q_mP_m=(2P_m-I)P_m=P_m$;
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$P_mQ_m=P_m(2P_m-I)=P_m$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Hình học: vector đã chiếu lên đường thì đối xứng qua đường không đổi nó; phần vuông góc đổi dấu nhưng bị phép chiếu loại đi.
 
 </LoiGiai>
 

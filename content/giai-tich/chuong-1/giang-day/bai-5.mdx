@@ -80,12 +80,100 @@ a,b là số thực chỉ đầu mút hữu hạn. Ngoặc cạnh vô cực luô
 
 Viết $\{x\in\mathbb{R}:x\leq5\}$ bằng ký hiệu khoảng; tìm sup, inf, max và min. **Gợi ý:** tập kéo dài mãi về bên trái, nhưng chứa 5.
 
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Tập gồm mọi số thực không vượt quá 5.
+
+**Bước 2. Xác định điều cần tìm.**
+
+Viết ký hiệu khoảng và xác định các biên, cực trị.
+
+**Bước 3. Chọn kiến thức và lý do.**
+
+Vô cực mô tả không bị chặn; nó không phải một phần tử thực của tập.
+
+**Bước 4. Giải từng bước.**
+
+Tập là $(-\infty,5]$. Mọi phần tử không vượt 5 và 5 thuộc tập, nên $\sup=\max=5$. Với mọi cận dưới thực $m$, số $\min(m-1,4)$ thuộc tập và nhỏ hơn $m$, nên tập không bị chặn dưới. Trong hệ mở rộng, $\inf=-\infty$; trong $\mathbb R$ không có inf hữu hạn. Không có min vì với mỗi $x$ trong tập, $x-1$ cũng ở trong tập và nhỏ hơn.
+
+**Bước 5. Kiểm tra kết quả.**
+
+Dấu ngoặc cạnh $-\infty$ luôn mở; không viết min bằng $-\infty$ vì đó không phải số thực trong tập.
+
+**Bước 6. Cách tự làm lại.**
+
+Phân biệt cận mở rộng với phần tử lớn nhất hoặc nhỏ nhất.
+
+</LoiGiai>
+
 ### VỪA - Hai phía
 
 Với $S=\{(-1)^n n:n\in\mathbb{N}\}$, tìm sup và inf trong hệ mở rộng. **Gợi ý:** n chẵn tạo số dương lớn tùy ý; n lẻ tạo số âm có độ lớn tùy ý.
 
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+$S=\{(-1)^n n:n\ge1\}$ gồm các số $-1,2,-3,4,\ldots$.
+
+**Bước 2. Xác định điều cần tìm.**
+
+Tìm sup và inf trong hệ số thực mở rộng.
+
+**Bước 3. Chọn kiến thức và lý do.**
+
+Tách chỉ số chẵn và lẻ để xét riêng hai phía không bị chặn.
+
+**Bước 4. Giải từng bước.**
+
+Khi $n=2k$, phần tử là $2k$, lớn tùy ý khi $k$ tăng; không có cận trên thực. Khi $n=2k-1$, phần tử là $-(2k-1)$, âm có độ lớn tùy ý; không có cận dưới thực. Vì vậy
+
+$$
+\sup S=+\infty,\qquad\inf S=-\infty.
+$$
+
+**Bước 5. Kiểm tra kết quả.**
+
+Không có max hay min: có thể chọn phần tử chẵn lớn hơn, hoặc phần tử lẻ âm nhỏ hơn mọi phần tử đã cho.
+
+**Bước 6. Cách tự làm lại.**
+
+Dãy đổi dấu không tự chứng minh không bị chặn; phải chỉ ra các phần tử tiến tùy ý xa theo từng phía.
+
+</LoiGiai>
+
 ### KHÓ - Phép đối của tập không bị chặn
 
 Cho S⊆R không rỗng, chứng minh inf S=−sup(−S), kể cả trường hợp S không bị chặn dưới. **Gợi ý:** trường hợp hữu hạn dùng §4; nếu S không bị chặn dưới thì −S không bị chặn trên.
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+$S\subseteq\mathbb R$ không rỗng; $-S=\{-s:s\in S\}$.
+
+**Bước 2. Xác định điều cần tìm.**
+
+Chứng minh $\inf S=-\sup(-S)$ cả trong trường hợp không bị chặn dưới.
+
+**Bước 3. Chọn kiến thức và lý do.**
+
+Phép lấy số đối đảo chiều bất đẳng thức, nên đổi cận dưới thành cận trên.
+
+**Bước 4. Giải từng bước.**
+
+Nếu $m=\inf S$ hữu hạn thì $m\le s$ với mọi $s$, do đó $-s\le-m$: $-m$ là cận trên của $-S$. Với $\varepsilon>0$, tồn tại $s<m+\varepsilon$, nên $-s>-m-\varepsilon$. Vậy $-m=\sup(-S)$. Nếu $S$ không bị chặn dưới, với mọi $M>0$ chọn $s<-M$; khi ấy $-s>M$, nên $-S$ không bị chặn trên. Do đó $\inf S=-\infty=-\sup(-S)$.
+
+**Bước 5. Kiểm tra kết quả.**
+
+Đã tách hết hai khả năng vì tập không rỗng. Trong trường hợp vô hạn, dùng quy ước $-(+\infty)=-\infty$.
+
+**Bước 6. Cách tự làm lại.**
+
+Đổi dấu cả phần tử và chiều bất đẳng thức; xử lý trường hợp vô cực bằng định nghĩa không bị chặn.
+
+</LoiGiai>
 
 Nguồn kiến thức: Kenneth A. Ross, *Elementary Analysis: The Theory of Calculus*, ấn bản thứ hai, 2013, §5. Bài giảng diễn đạt bằng lời riêng; ví dụ và bài tập do người biên soạn bổ sung.

@@ -5,11 +5,25 @@ do_kho: vua
 tieu_de: "Khai triển theo phần bù đại số — bài 19"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.1.19"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.1.19 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho đa thức $p(x) = a + bx + cx^2 + dx^3 + x^4$. Ma trận
+
+$$
+C = \left[ \begin{array}{rrrr} 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ -a & -b & -c & -d \end{array}\right]
+$$
+
+ được gọi là ma trận đồng hành của $p(x)$. Chứng minh rằng $\det (xI - C) = p(x)$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-1-19-1" moTa="Đề gốc Nicholson bài 3.1.19, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -25,6 +39,7 @@ Given the polynomial p(x) = a+bx+cx2 +dx3 +x4, the
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -42,13 +57,29 @@ Cộng bội một hàng vào hàng khác giữ định thức; đổi hai hàng
 
 <LoiGiai>
 
+**Cách làm.** Cộng bội hàng khác giữ nguyên định thức; đổi hai hàng đổi dấu; rút hệ số $c$ từ một hàng đưa $c$ ra ngoài. Với khai triển, $C_{ij}=(-1)^{i+j}\det M_{ij}$.
+
+**Bước 1. Lập luận và tính toán.**
+
 Lập
+
+
 
 $$
 xI-C=\begin{bmatrix}x&-1&0&0\\0&x&-1&0\\0&0&x&-1\\a&b&c&x+d\end{bmatrix}.
 $$
 
- Khai triển theo hàng cuối: các phần bù lần lượt cho $a$, $bx$, $cx^2$, $(x+d)x^3$. Cộng được $a+bx+cx^2+dx^3+x^4=p(x)$. Dấu âm trên siêu đường chéo đã được tính cùng dấu phần bù.
+
+
+ Khai triển theo hàng cuối: các phần bù lần lượt cho $a$, $bx$, $cx^2$, $(x+d)x^3$.
+
+**Bước 2. Thực hiện phép biến đổi.**
+
+Cộng được $a+bx+cx^2+dx^3+x^4=p(x)$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Dấu âm trên siêu đường chéo đã được tính cùng dấu phần bù.
 
 </LoiGiai>
 

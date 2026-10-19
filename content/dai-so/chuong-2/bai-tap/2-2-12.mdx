@@ -20,8 +20,21 @@ Tìm $A$ sao cho $A(x, y, z) = (x, y)$: hàng 1 chấm $(x, y, z)$ phải ra $x$
 </GoiY>
 
 <LoiGiai>
-$$P\begin{bmatrix} x \\ y \\ z \end{bmatrix} = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}\begin{bmatrix} x \\ y \\ z \end{bmatrix}.$$
-Vậy $P$ là phép nhân với ma trận $\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}$. Cột của nó chính là $P(1,0,0) = (1,0)$, $P(0,1,0) = (0,1)$, $P(0,0,1) = (0,0)$.
+
+**Cách làm.** Nếu $A=[a_1\ \cdots\ a_n]$, thì $Ax=x_1a_1+\cdots+x_na_n$. Thành phần thứ $i$ cũng bằng tích vô hướng của hàng $i$ với $x$. Vì vậy viết $b$ thành tổ hợp các cột tương đương giải $Ax=b$.
+
+**Bước 1. Lập luận và tính toán.**
+
+$$
+P\begin{bmatrix} x \\ y \\ z \end{bmatrix} = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}\begin{bmatrix} x \\ y \\ z \end{bmatrix}.
+$$
+
+Vậy $P$ là phép nhân với ma trận $\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Cột của nó chính là $P(1,0,0) = (1,0)$, $P(0,1,0) = (0,1)$, $P(0,0,1) = (0,0)$.
+
 </LoiGiai>
 
 <LoiHayMac>

@@ -5,11 +5,51 @@ do_kho: vua
 tieu_de: "Ứng dụng: mô hình kinh tế vào–ra — bài 9"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.8.9"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.8.9 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Trong mỗi trường hợp, chứng minh rằng $I - E$ khả nghịch và $(I - E)^{-1} \geq 0$.
+
+**a.**
+
+$$
+\left[ \begin{array}{rrr} 0.6 & 0.5 & 0.1 \\ 0.1 & 0.3 & 0.3 \\ 0.2 & 0.1 & 0.4 \end{array} \right]
+$$
+
+
+
+**b.**
+
+$$
+\left[ \begin{array}{rrr} 0.7 & 0.1 & 0.3 \\ 0.2 & 0.5 & 0.2 \\ 0.1 & 0.1 & 0.4 \end{array} \right]
+$$
+
+
+
+**c.**
+
+$$
+\left[ \begin{array}{rrr} 0.6 & 0.2 & 0.1 \\ 0.3 & 0.4 & 0.2 \\ 0.2 & 0.5 & 0.1 \end{array} \right]
+$$
+
+
+
+**d.**
+
+$$
+\left[ \begin{array}{rrr} 0.8 & 0.1 & 0.1 \\ 0.3 & 0.1 & 0.2 \\ 0.3 & 0.3 & 0.2 \end{array} \right]
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-8-9-1" moTa="Đề gốc Nicholson bài 2.8.9, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -29,6 +69,7 @@ c.    0.3  0.4  0.2         d.    0.3  0.1  0.2                        
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -45,35 +86,917 @@ Tổng cột của ma trận stochastic bằng 1. Để tìm giá tương đối
 
 <LoiGiai>
 
-**a.** Lập $I-E$, khử Gauss–Jordan trên $[I-E\mid I]$ cho
+**Cách làm.** Cơ cấu giá cân bằng thỏa $Ep=p$, tức $(I-E)p=0$. Với mô hình mở, điều kiện cần kiểm tra là $I-E$ khả nghịch và $(I-E)^{-1}$ có các ô không âm.
+
+**a.** Đặt $K=I-E$. **Bước 1. Kiểm tra điều kiện tồn tại.**
+
+**Bước 2. Chọn cách khai triển.**
+
+Với $K=\begin{bmatrix}\frac{2}{5}&- \frac{1}{2}&- \frac{1}{10}\\- \frac{1}{10}&\frac{7}{10}&- \frac{3}{10}\\- \frac{1}{5}&- \frac{1}{10}&\frac{3}{5}\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}\frac{7}{10}&- \frac{3}{10}\\- \frac{1}{10}&\frac{3}{5}\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=\frac{39}{100}.
+$$
+
+
+
+Với $M_{11}=\begin{bmatrix}\frac{7}{10}&- \frac{3}{10}\\- \frac{1}{10}&\frac{3}{5}\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{11}=(\frac{7}{10})(\frac{3}{5})-(- \frac{3}{10})(- \frac{1}{10})=\frac{39}{100}.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}- \frac{1}{10}&- \frac{3}{10}\\- \frac{1}{5}&\frac{3}{5}\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=\frac{3}{25}.
+$$
+
+
+
+Với $M_{12}=\begin{bmatrix}- \frac{1}{10}&- \frac{3}{10}\\- \frac{1}{5}&\frac{3}{5}\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{12}=(- \frac{1}{10})(\frac{3}{5})-(- \frac{3}{10})(- \frac{1}{5})=- \frac{3}{25}.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}- \frac{1}{10}&\frac{7}{10}\\- \frac{1}{5}&- \frac{1}{10}\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=\frac{3}{20}.
+$$
+
+
+
+Với $M_{13}=\begin{bmatrix}- \frac{1}{10}&\frac{7}{10}\\- \frac{1}{5}&- \frac{1}{10}\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{13}=(- \frac{1}{10})(- \frac{1}{10})-(\frac{7}{10})(- \frac{1}{5})=\frac{3}{20}.
+$$
+
+
+
+**Bước 3. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det K=(\frac{2}{5})(\frac{39}{100})+(- \frac{1}{2})(\frac{3}{25})+(- \frac{1}{10})(\frac{3}{20})=\frac{81}{1000}.
+$$
+
+
+
+Lập ma trận ghép. Mọi phép hàng phải làm trên **cả hai khối**:
+
+
+
+$$
+[K\mid I]=\begin{bmatrix}\frac{2}{5}&- \frac{1}{2}&- \frac{1}{10}&1&0&0\\- \frac{1}{10}&\frac{7}{10}&- \frac{3}{10}&0&1&0\\- \frac{1}{5}&- \frac{1}{10}&\frac{3}{5}&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 4. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 1 cho $\frac{2}{5}$, được
+
+
+
+$$
+\begin{bmatrix}1&- \frac{5}{4}&- \frac{1}{4}&\frac{5}{2}&0&0\\- \frac{1}{10}&\frac{7}{10}&- \frac{3}{10}&0&1&0\\- \frac{1}{5}&- \frac{1}{10}&\frac{3}{5}&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(\frac{1}{10})R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&- \frac{5}{4}&- \frac{1}{4}&\frac{5}{2}&0&0\\0&\frac{23}{40}&- \frac{13}{40}&\frac{1}{4}&1&0\\- \frac{1}{5}&- \frac{1}{10}&\frac{3}{5}&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 6. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(\frac{1}{5})R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&- \frac{5}{4}&- \frac{1}{4}&\frac{5}{2}&0&0\\0&\frac{23}{40}&- \frac{13}{40}&\frac{1}{4}&1&0\\0&- \frac{7}{20}&\frac{11}{20}&\frac{1}{2}&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 7. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $\frac{23}{40}$, được
+
+
+
+$$
+\begin{bmatrix}1&- \frac{5}{4}&- \frac{1}{4}&\frac{5}{2}&0&0\\0&1&- \frac{13}{23}&\frac{10}{23}&\frac{40}{23}&0\\0&- \frac{7}{20}&\frac{11}{20}&\frac{1}{2}&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 8. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(\frac{5}{4})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{22}{23}&\frac{70}{23}&\frac{50}{23}&0\\0&1&- \frac{13}{23}&\frac{10}{23}&\frac{40}{23}&0\\0&- \frac{7}{20}&\frac{11}{20}&\frac{1}{2}&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 9. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(\frac{7}{20})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{22}{23}&\frac{70}{23}&\frac{50}{23}&0\\0&1&- \frac{13}{23}&\frac{10}{23}&\frac{40}{23}&0\\0&0&\frac{81}{230}&\frac{15}{23}&\frac{14}{23}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 10. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 3 cho $\frac{81}{230}$, được
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{22}{23}&\frac{70}{23}&\frac{50}{23}&0\\0&1&- \frac{13}{23}&\frac{10}{23}&\frac{40}{23}&0\\0&0&1&\frac{50}{27}&\frac{140}{81}&\frac{230}{81}\end{bmatrix}.
+$$
+
+
+
+**Bước 11. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(\frac{22}{23})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&\frac{130}{27}&\frac{310}{81}&\frac{220}{81}\\0&1&- \frac{13}{23}&\frac{10}{23}&\frac{40}{23}&0\\0&0&1&\frac{50}{27}&\frac{140}{81}&\frac{230}{81}\end{bmatrix}.
+$$
+
+
+
+**Bước 12. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(\frac{13}{23})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&\frac{130}{27}&\frac{310}{81}&\frac{220}{81}\\0&1&0&\frac{40}{27}&\frac{220}{81}&\frac{130}{81}\\0&0&1&\frac{50}{27}&\frac{140}{81}&\frac{230}{81}\end{bmatrix}.
+$$
+
+
+
+**Bước 13. Đọc khối phải và kiểm tra.**
+
+Khối trái đã thành $I$, nên khối phải là
+
+
+
+$$
+K^{-1}=\begin{bmatrix}\frac{130}{27}&\frac{310}{81}&\frac{220}{81}\\\frac{40}{27}&\frac{220}{81}&\frac{130}{81}\\\frac{50}{27}&\frac{140}{81}&\frac{230}{81}\end{bmatrix}.
+$$
+
+
+
+ Nhân lại cho
+
+
+
+$$
+KK^{-1}=K^{-1}K=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}.
+$$
+
+
+
+ Vì vậy
+
+
 
 $$
 \det(I-E)=\frac{81}{1000},\quad (I-E)^{-1}=\begin{bmatrix}\frac{130}{27}&\frac{310}{81}&\frac{220}{81}\\\frac{40}{27}&\frac{220}{81}&\frac{130}{81}\\\frac{50}{27}&\frac{140}{81}&\frac{230}{81}\end{bmatrix}.
 $$
 
+
+
  Định thức khác 0 và tất cả ô của ma trận vừa tính không âm. Nhân với $I-E$ cho $I$, xác nhận cả hai yêu cầu.
 
-**b.** Lập $I-E$, khử Gauss–Jordan trên $[I-E\mid I]$ cho
+**b.** Đặt $K=I-E$. **Bước 1. Kiểm tra điều kiện tồn tại.**
+
+**Bước 2. Chọn cách khai triển.**
+
+Với $K=\begin{bmatrix}\frac{3}{10}&- \frac{1}{10}&- \frac{3}{10}\\- \frac{1}{5}&\frac{1}{2}&- \frac{1}{5}\\- \frac{1}{10}&- \frac{1}{10}&\frac{3}{5}\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}\frac{1}{2}&- \frac{1}{5}\\- \frac{1}{10}&\frac{3}{5}\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=\frac{7}{25}.
+$$
+
+
+
+Với $M_{11}=\begin{bmatrix}\frac{1}{2}&- \frac{1}{5}\\- \frac{1}{10}&\frac{3}{5}\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{11}=(\frac{1}{2})(\frac{3}{5})-(- \frac{1}{5})(- \frac{1}{10})=\frac{7}{25}.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}- \frac{1}{5}&- \frac{1}{5}\\- \frac{1}{10}&\frac{3}{5}\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=\frac{7}{50}.
+$$
+
+
+
+Với $M_{12}=\begin{bmatrix}- \frac{1}{5}&- \frac{1}{5}\\- \frac{1}{10}&\frac{3}{5}\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{12}=(- \frac{1}{5})(\frac{3}{5})-(- \frac{1}{5})(- \frac{1}{10})=- \frac{7}{50}.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}- \frac{1}{5}&\frac{1}{2}\\- \frac{1}{10}&- \frac{1}{10}\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=\frac{7}{100}.
+$$
+
+
+
+Với $M_{13}=\begin{bmatrix}- \frac{1}{5}&\frac{1}{2}\\- \frac{1}{10}&- \frac{1}{10}\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{13}=(- \frac{1}{5})(- \frac{1}{10})-(\frac{1}{2})(- \frac{1}{10})=\frac{7}{100}.
+$$
+
+
+
+**Bước 3. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det K=(\frac{3}{10})(\frac{7}{25})+(- \frac{1}{10})(\frac{7}{50})+(- \frac{3}{10})(\frac{7}{100})=\frac{49}{1000}.
+$$
+
+
+
+Lập ma trận ghép. Mọi phép hàng phải làm trên **cả hai khối**:
+
+
+
+$$
+[K\mid I]=\begin{bmatrix}\frac{3}{10}&- \frac{1}{10}&- \frac{3}{10}&1&0&0\\- \frac{1}{5}&\frac{1}{2}&- \frac{1}{5}&0&1&0\\- \frac{1}{10}&- \frac{1}{10}&\frac{3}{5}&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 4. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 1 cho $\frac{3}{10}$, được
+
+
+
+$$
+\begin{bmatrix}1&- \frac{1}{3}&-1&\frac{10}{3}&0&0\\- \frac{1}{5}&\frac{1}{2}&- \frac{1}{5}&0&1&0\\- \frac{1}{10}&- \frac{1}{10}&\frac{3}{5}&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(\frac{1}{5})R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&- \frac{1}{3}&-1&\frac{10}{3}&0&0\\0&\frac{13}{30}&- \frac{2}{5}&\frac{2}{3}&1&0\\- \frac{1}{10}&- \frac{1}{10}&\frac{3}{5}&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 6. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(\frac{1}{10})R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&- \frac{1}{3}&-1&\frac{10}{3}&0&0\\0&\frac{13}{30}&- \frac{2}{5}&\frac{2}{3}&1&0\\0&- \frac{2}{15}&\frac{1}{2}&\frac{1}{3}&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 7. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $\frac{13}{30}$, được
+
+
+
+$$
+\begin{bmatrix}1&- \frac{1}{3}&-1&\frac{10}{3}&0&0\\0&1&- \frac{12}{13}&\frac{20}{13}&\frac{30}{13}&0\\0&- \frac{2}{15}&\frac{1}{2}&\frac{1}{3}&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 8. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(\frac{1}{3})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{17}{13}&\frac{50}{13}&\frac{10}{13}&0\\0&1&- \frac{12}{13}&\frac{20}{13}&\frac{30}{13}&0\\0&- \frac{2}{15}&\frac{1}{2}&\frac{1}{3}&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 9. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(\frac{2}{15})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{17}{13}&\frac{50}{13}&\frac{10}{13}&0\\0&1&- \frac{12}{13}&\frac{20}{13}&\frac{30}{13}&0\\0&0&\frac{49}{130}&\frac{7}{13}&\frac{4}{13}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 10. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 3 cho $\frac{49}{130}$, được
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{17}{13}&\frac{50}{13}&\frac{10}{13}&0\\0&1&- \frac{12}{13}&\frac{20}{13}&\frac{30}{13}&0\\0&0&1&\frac{10}{7}&\frac{40}{49}&\frac{130}{49}\end{bmatrix}.
+$$
+
+
+
+**Bước 11. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(\frac{17}{13})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&\frac{40}{7}&\frac{90}{49}&\frac{170}{49}\\0&1&- \frac{12}{13}&\frac{20}{13}&\frac{30}{13}&0\\0&0&1&\frac{10}{7}&\frac{40}{49}&\frac{130}{49}\end{bmatrix}.
+$$
+
+
+
+**Bước 12. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(\frac{12}{13})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&\frac{40}{7}&\frac{90}{49}&\frac{170}{49}\\0&1&0&\frac{20}{7}&\frac{150}{49}&\frac{120}{49}\\0&0&1&\frac{10}{7}&\frac{40}{49}&\frac{130}{49}\end{bmatrix}.
+$$
+
+
+
+**Bước 13. Đọc khối phải và kiểm tra.**
+
+Khối trái đã thành $I$, nên khối phải là
+
+
+
+$$
+K^{-1}=\begin{bmatrix}\frac{40}{7}&\frac{90}{49}&\frac{170}{49}\\\frac{20}{7}&\frac{150}{49}&\frac{120}{49}\\\frac{10}{7}&\frac{40}{49}&\frac{130}{49}\end{bmatrix}.
+$$
+
+
+
+ Nhân lại cho
+
+
+
+$$
+KK^{-1}=K^{-1}K=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}.
+$$
+
+
+
+ Vì vậy
+
+
 
 $$
 \det(I-E)=\frac{49}{1000},\quad (I-E)^{-1}=\begin{bmatrix}\frac{40}{7}&\frac{90}{49}&\frac{170}{49}\\\frac{20}{7}&\frac{150}{49}&\frac{120}{49}\\\frac{10}{7}&\frac{40}{49}&\frac{130}{49}\end{bmatrix}.
 $$
 
+
+
  Định thức khác 0 và tất cả ô của ma trận vừa tính không âm. Nhân với $I-E$ cho $I$, xác nhận cả hai yêu cầu.
 
-**c.** Lập $I-E$, khử Gauss–Jordan trên $[I-E\mid I]$ cho
+**c.** Đặt $K=I-E$. **Bước 1. Kiểm tra điều kiện tồn tại.**
+
+**Bước 2. Chọn cách khai triển.**
+
+Với $K=\begin{bmatrix}\frac{2}{5}&- \frac{1}{5}&- \frac{1}{10}\\- \frac{3}{10}&\frac{3}{5}&- \frac{1}{5}\\- \frac{1}{5}&- \frac{1}{2}&\frac{9}{10}\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}\frac{3}{5}&- \frac{1}{5}\\- \frac{1}{2}&\frac{9}{10}\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=\frac{11}{25}.
+$$
+
+
+
+Với $M_{11}=\begin{bmatrix}\frac{3}{5}&- \frac{1}{5}\\- \frac{1}{2}&\frac{9}{10}\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{11}=(\frac{3}{5})(\frac{9}{10})-(- \frac{1}{5})(- \frac{1}{2})=\frac{11}{25}.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}- \frac{3}{10}&- \frac{1}{5}\\- \frac{1}{5}&\frac{9}{10}\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=\frac{31}{100}.
+$$
+
+
+
+Với $M_{12}=\begin{bmatrix}- \frac{3}{10}&- \frac{1}{5}\\- \frac{1}{5}&\frac{9}{10}\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{12}=(- \frac{3}{10})(\frac{9}{10})-(- \frac{1}{5})(- \frac{1}{5})=- \frac{31}{100}.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}- \frac{3}{10}&\frac{3}{5}\\- \frac{1}{5}&- \frac{1}{2}\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=\frac{27}{100}.
+$$
+
+
+
+Với $M_{13}=\begin{bmatrix}- \frac{3}{10}&\frac{3}{5}\\- \frac{1}{5}&- \frac{1}{2}\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{13}=(- \frac{3}{10})(- \frac{1}{2})-(\frac{3}{5})(- \frac{1}{5})=\frac{27}{100}.
+$$
+
+
+
+**Bước 3. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det K=(\frac{2}{5})(\frac{11}{25})+(- \frac{1}{5})(\frac{31}{100})+(- \frac{1}{10})(\frac{27}{100})=\frac{87}{1000}.
+$$
+
+
+
+Lập ma trận ghép. Mọi phép hàng phải làm trên **cả hai khối**:
+
+
+
+$$
+[K\mid I]=\begin{bmatrix}\frac{2}{5}&- \frac{1}{5}&- \frac{1}{10}&1&0&0\\- \frac{3}{10}&\frac{3}{5}&- \frac{1}{5}&0&1&0\\- \frac{1}{5}&- \frac{1}{2}&\frac{9}{10}&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 4. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 1 cho $\frac{2}{5}$, được
+
+
+
+$$
+\begin{bmatrix}1&- \frac{1}{2}&- \frac{1}{4}&\frac{5}{2}&0&0\\- \frac{3}{10}&\frac{3}{5}&- \frac{1}{5}&0&1&0\\- \frac{1}{5}&- \frac{1}{2}&\frac{9}{10}&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(\frac{3}{10})R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&- \frac{1}{2}&- \frac{1}{4}&\frac{5}{2}&0&0\\0&\frac{9}{20}&- \frac{11}{40}&\frac{3}{4}&1&0\\- \frac{1}{5}&- \frac{1}{2}&\frac{9}{10}&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 6. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(\frac{1}{5})R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&- \frac{1}{2}&- \frac{1}{4}&\frac{5}{2}&0&0\\0&\frac{9}{20}&- \frac{11}{40}&\frac{3}{4}&1&0\\0&- \frac{3}{5}&\frac{17}{20}&\frac{1}{2}&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 7. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $\frac{9}{20}$, được
+
+
+
+$$
+\begin{bmatrix}1&- \frac{1}{2}&- \frac{1}{4}&\frac{5}{2}&0&0\\0&1&- \frac{11}{18}&\frac{5}{3}&\frac{20}{9}&0\\0&- \frac{3}{5}&\frac{17}{20}&\frac{1}{2}&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 8. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(\frac{1}{2})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{5}{9}&\frac{10}{3}&\frac{10}{9}&0\\0&1&- \frac{11}{18}&\frac{5}{3}&\frac{20}{9}&0\\0&- \frac{3}{5}&\frac{17}{20}&\frac{1}{2}&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 9. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(\frac{3}{5})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{5}{9}&\frac{10}{3}&\frac{10}{9}&0\\0&1&- \frac{11}{18}&\frac{5}{3}&\frac{20}{9}&0\\0&0&\frac{29}{60}&\frac{3}{2}&\frac{4}{3}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 10. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 3 cho $\frac{29}{60}$, được
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{5}{9}&\frac{10}{3}&\frac{10}{9}&0\\0&1&- \frac{11}{18}&\frac{5}{3}&\frac{20}{9}&0\\0&0&1&\frac{90}{29}&\frac{80}{29}&\frac{60}{29}\end{bmatrix}.
+$$
+
+
+
+**Bước 11. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(\frac{5}{9})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&\frac{440}{87}&\frac{230}{87}&\frac{100}{87}\\0&1&- \frac{11}{18}&\frac{5}{3}&\frac{20}{9}&0\\0&0&1&\frac{90}{29}&\frac{80}{29}&\frac{60}{29}\end{bmatrix}.
+$$
+
+
+
+**Bước 12. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(\frac{11}{18})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&\frac{440}{87}&\frac{230}{87}&\frac{100}{87}\\0&1&0&\frac{310}{87}&\frac{340}{87}&\frac{110}{87}\\0&0&1&\frac{90}{29}&\frac{80}{29}&\frac{60}{29}\end{bmatrix}.
+$$
+
+
+
+**Bước 13. Đọc khối phải và kiểm tra.**
+
+Khối trái đã thành $I$, nên khối phải là
+
+
+
+$$
+K^{-1}=\begin{bmatrix}\frac{440}{87}&\frac{230}{87}&\frac{100}{87}\\\frac{310}{87}&\frac{340}{87}&\frac{110}{87}\\\frac{90}{29}&\frac{80}{29}&\frac{60}{29}\end{bmatrix}.
+$$
+
+
+
+ Nhân lại cho
+
+
+
+$$
+KK^{-1}=K^{-1}K=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}.
+$$
+
+
+
+ Vì vậy
+
+
 
 $$
 \det(I-E)=\frac{87}{1000},\quad (I-E)^{-1}=\begin{bmatrix}\frac{440}{87}&\frac{230}{87}&\frac{100}{87}\\\frac{310}{87}&\frac{340}{87}&\frac{110}{87}\\\frac{90}{29}&\frac{80}{29}&\frac{60}{29}\end{bmatrix}.
 $$
 
+
+
  Định thức khác 0 và tất cả ô của ma trận vừa tính không âm. Nhân với $I-E$ cho $I$, xác nhận cả hai yêu cầu.
 
-**d.** Lập $I-E$, khử Gauss–Jordan trên $[I-E\mid I]$ cho
+**d.** Đặt $K=I-E$. **Bước 1. Kiểm tra điều kiện tồn tại.**
+
+**Bước 2. Chọn cách khai triển.**
+
+Với $K=\begin{bmatrix}\frac{1}{5}&- \frac{1}{10}&- \frac{1}{10}\\- \frac{3}{10}&\frac{9}{10}&- \frac{1}{5}\\- \frac{3}{10}&- \frac{3}{10}&\frac{4}{5}\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}\frac{9}{10}&- \frac{1}{5}\\- \frac{3}{10}&\frac{4}{5}\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=\frac{33}{50}.
+$$
+
+
+
+Với $M_{11}=\begin{bmatrix}\frac{9}{10}&- \frac{1}{5}\\- \frac{3}{10}&\frac{4}{5}\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{11}=(\frac{9}{10})(\frac{4}{5})-(- \frac{1}{5})(- \frac{3}{10})=\frac{33}{50}.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}- \frac{3}{10}&- \frac{1}{5}\\- \frac{3}{10}&\frac{4}{5}\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=\frac{3}{10}.
+$$
+
+
+
+Với $M_{12}=\begin{bmatrix}- \frac{3}{10}&- \frac{1}{5}\\- \frac{3}{10}&\frac{4}{5}\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{12}=(- \frac{3}{10})(\frac{4}{5})-(- \frac{1}{5})(- \frac{3}{10})=- \frac{3}{10}.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}- \frac{3}{10}&\frac{9}{10}\\- \frac{3}{10}&- \frac{3}{10}\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=\frac{9}{25}.
+$$
+
+
+
+Với $M_{13}=\begin{bmatrix}- \frac{3}{10}&\frac{9}{10}\\- \frac{3}{10}&- \frac{3}{10}\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{13}=(- \frac{3}{10})(- \frac{3}{10})-(\frac{9}{10})(- \frac{3}{10})=\frac{9}{25}.
+$$
+
+
+
+**Bước 3. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det K=(\frac{1}{5})(\frac{33}{50})+(- \frac{1}{10})(\frac{3}{10})+(- \frac{1}{10})(\frac{9}{25})=\frac{33}{500}.
+$$
+
+
+
+Lập ma trận ghép. Mọi phép hàng phải làm trên **cả hai khối**:
+
+
+
+$$
+[K\mid I]=\begin{bmatrix}\frac{1}{5}&- \frac{1}{10}&- \frac{1}{10}&1&0&0\\- \frac{3}{10}&\frac{9}{10}&- \frac{1}{5}&0&1&0\\- \frac{3}{10}&- \frac{3}{10}&\frac{4}{5}&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 4. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 1 cho $\frac{1}{5}$, được
+
+
+
+$$
+\begin{bmatrix}1&- \frac{1}{2}&- \frac{1}{2}&5&0&0\\- \frac{3}{10}&\frac{9}{10}&- \frac{1}{5}&0&1&0\\- \frac{3}{10}&- \frac{3}{10}&\frac{4}{5}&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(\frac{3}{10})R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&- \frac{1}{2}&- \frac{1}{2}&5&0&0\\0&\frac{3}{4}&- \frac{7}{20}&\frac{3}{2}&1&0\\- \frac{3}{10}&- \frac{3}{10}&\frac{4}{5}&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 6. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(\frac{3}{10})R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&- \frac{1}{2}&- \frac{1}{2}&5&0&0\\0&\frac{3}{4}&- \frac{7}{20}&\frac{3}{2}&1&0\\0&- \frac{9}{20}&\frac{13}{20}&\frac{3}{2}&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 7. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $\frac{3}{4}$, được
+
+
+
+$$
+\begin{bmatrix}1&- \frac{1}{2}&- \frac{1}{2}&5&0&0\\0&1&- \frac{7}{15}&2&\frac{4}{3}&0\\0&- \frac{9}{20}&\frac{13}{20}&\frac{3}{2}&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 8. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(\frac{1}{2})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{11}{15}&6&\frac{2}{3}&0\\0&1&- \frac{7}{15}&2&\frac{4}{3}&0\\0&- \frac{9}{20}&\frac{13}{20}&\frac{3}{2}&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 9. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(\frac{9}{20})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{11}{15}&6&\frac{2}{3}&0\\0&1&- \frac{7}{15}&2&\frac{4}{3}&0\\0&0&\frac{11}{25}&\frac{12}{5}&\frac{3}{5}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 10. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 3 cho $\frac{11}{25}$, được
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{11}{15}&6&\frac{2}{3}&0\\0&1&- \frac{7}{15}&2&\frac{4}{3}&0\\0&0&1&\frac{60}{11}&\frac{15}{11}&\frac{25}{11}\end{bmatrix}.
+$$
+
+
+
+**Bước 11. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(\frac{11}{15})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&10&\frac{5}{3}&\frac{5}{3}\\0&1&- \frac{7}{15}&2&\frac{4}{3}&0\\0&0&1&\frac{60}{11}&\frac{15}{11}&\frac{25}{11}\end{bmatrix}.
+$$
+
+
+
+**Bước 12. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(\frac{7}{15})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&10&\frac{5}{3}&\frac{5}{3}\\0&1&0&\frac{50}{11}&\frac{65}{33}&\frac{35}{33}\\0&0&1&\frac{60}{11}&\frac{15}{11}&\frac{25}{11}\end{bmatrix}.
+$$
+
+
+
+**Bước 13. Đọc khối phải và kiểm tra.**
+
+Khối trái đã thành $I$, nên khối phải là
+
+
+
+$$
+K^{-1}=\begin{bmatrix}10&\frac{5}{3}&\frac{5}{3}\\\frac{50}{11}&\frac{65}{33}&\frac{35}{33}\\\frac{60}{11}&\frac{15}{11}&\frac{25}{11}\end{bmatrix}.
+$$
+
+
+
+ Nhân lại cho
+
+
+
+$$
+KK^{-1}=K^{-1}K=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}.
+$$
+
+
+
+ Vì vậy
+
+
 
 $$
 \det(I-E)=\frac{33}{500},\quad (I-E)^{-1}=\begin{bmatrix}10&\frac{5}{3}&\frac{5}{3}\\\frac{50}{11}&\frac{65}{33}&\frac{35}{33}\\\frac{60}{11}&\frac{15}{11}&\frac{25}{11}\end{bmatrix}.
 $$
+
+
 
  Định thức khác 0 và tất cả ô của ma trận vừa tính không âm. Nhân với $I-E$ cho $I$, xác nhận cả hai yêu cầu.
 

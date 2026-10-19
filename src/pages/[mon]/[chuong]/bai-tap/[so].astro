@@ -65,7 +65,7 @@ const lopDoKho = { de: 'ok', vua: 'info', kho: 'warn' }[bt.data.do_kho];
           <span class={`pill ${bt.data.de_goc_tieng_anh ? 'mo' : lopDoKho}`}>{bt.data.de_goc_tieng_anh ? 'Chưa xếp độ khó' : NHAN_DO_KHO[bt.data.do_kho]}</span>
           {bt.data.nen_lam && <span class="pill warn">★ Nên làm</span>}
           {bt.data.tu_soan && <span class="pill info" data-bai-tu-soan>Bài luyện tự soạn</span>}
-          {bt.data.de_goc_tieng_anh && <span class="pill info" data-de-goc-tieng-anh>Đề gốc tiếng Anh</span>}
+          {bt.data.de_dich_tieng_viet ? <span class="pill info" data-de-da-dich>Đề dịch tiếng Việt</span> : bt.data.de_goc_tieng_anh && <span class="pill info" data-de-goc-tieng-anh>Đề gốc tiếng Anh</span>}
           {!coHuongDan && <span class="pill mo">Chưa có hướng dẫn</span>}
         </p>
         <h1>{bt.data.tieu_de ?? `Bài ${bt.data.so}`}</h1>
@@ -182,6 +182,8 @@ const lopDoKho = { de: 'ok', vua: 'info', kho: 'warn' }[bt.data.do_kho];
         {
           bt.data.tu_soan
             ? `Bài luyện tự soạn theo chủ đề §${bt.data.muc} của ${du.mon.giao_trinh}. Số hiệu thuộc bộ bài luyện của website, không phải số bài trong sách. Đề, gợi ý và lời giải do người biên soạn viết; phát hành theo CC BY-NC-SA 4.0.`
+            : bt.data.de_dich_tieng_viet
+            ? `Đề bài dịch đầy đủ từ ${du.mon.giao_trinh}, bài ${bt.data.so_sach ?? bt.data.so}; giữ bản gốc tiếng Anh để đối chiếu. Bản dịch, gợi ý và lời giải tiếng Việt phát hành theo CC BY-NC-SA 4.0.`
             : bt.data.de_goc_tieng_anh
             ? `Đề gốc tiếng Anh trích từ ${du.mon.giao_trinh}, bài ${bt.data.so_sach ?? bt.data.so}. ${du.mon.giay_phep} Gợi ý và lời giải tiếng Việt do người biên soạn viết, phát hành theo CC BY-NC-SA 4.0.`
             : du.loaiSach === 'theo-sach'

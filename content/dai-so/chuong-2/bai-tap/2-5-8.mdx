@@ -5,11 +5,51 @@ do_kho: vua
 tieu_de: "Ma trận sơ cấp — bài 8"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.5.8"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.5.8 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Trong mỗi trường hợp, phân tích $A$ thành tích các ma trận sơ cấp.
+
+**a.**
+
+$$
+A = \left[ \begin{array}{rr} 1 & 1 \\ 2 & 1 \end{array} \right]
+$$
+
+
+
+**b.**
+
+$$
+A = \left[ \begin{array}{rr} 2 & 3 \\ 1 & 2 \end{array} \right]
+$$
+
+
+
+**c.**
+
+$$
+A = \left[ \begin{array}{rrr} 1 & 0 & 2 \\ 0 & 1 & 1 \\ 2 & 1 & 6 \end{array} \right]
+$$
+
+
+
+**d.**
+
+$$
+A = \left[ \begin{array}{rrr} 1 & 0 & -3 \\ 0 & 1 & 4 \\ -2 & 2 & 15 \end{array} \right]
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-5-8-1" moTa="Đề gốc Nicholson bài 2.5.8, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -29,6 +69,7 @@ ementary matrices.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -45,37 +86,323 @@ Một phép hàng là nhân trái; một phép cột là nhân phải. Ghi thứ
 
 <LoiGiai>
 
-**a.** Dùng các phép hàng $R_2\leftarrow R_2+(-2)R_1$; $R_2\leftarrow(-1)R_2$; $R_1\leftarrow R_1+(-1)R_2$ đưa $A$ về $I$. Nếu $E_j$ tương ứng phép thứ $j$, thì
+**Cách làm.** Ma trận sơ cấp $E$ nhận từ $I$ bằng một phép hàng. $EA$ làm phép đó lên các hàng của $A$. Trong chuỗi $E_k\cdots E_1A$, phép $E_1$ được thực hiện trước.
+
+**a.** Bắt đầu từ $A=\begin{bmatrix}1&1\\2&1\end{bmatrix}$. Mục tiêu là đưa mỗi trụ về 1 rồi khử mọi ô còn lại trong cột trụ.
+
+**Bước 1. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-2)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&1\\0&-1\end{bmatrix}.
+$$
+
+
+
+**Bước 2. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $-1$, được
+
+
+
+$$
+\begin{bmatrix}1&1\\0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 3. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(-1)R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0\\0&1\end{bmatrix}.
+$$
+
+
+
+Với mỗi phép hàng vừa ghi, làm cùng phép lên $I$ để có $E_j$. Phép thực hiện sau nhân ở bên trái: $U=E_k\cdots E_1$. Tính được
+
+
+
+$$
+U=\begin{bmatrix}-1&1\\2&-1\end{bmatrix},\qquad UA=R=\begin{bmatrix}1&0\\0&1\end{bmatrix}.
+$$
+
+
+
+ Mỗi $E_j$ khả nghịch nên $U$ khả nghịch. Kết quả $R$ có các cột trụ là cột đơn vị và các hàng 0 nằm dưới, nên đúng là RREF. Vì $R=I$, ta có $E_k\cdots E_1A=I$. Nhân các nghịch đảo theo thứ tự ngược để giải ra $A$:
+
+
 
 $$
 A=E_1^{-1}\cdots E_k^{-1}.
 $$
 
- Nghịch đảo đổi dấu hệ số cộng hàng, đảo hệ số nhân hàng, giữ nguyên phép đổi hàng. Đây là phân tích yêu cầu; nhân các thừa số theo thứ tự vừa ghi sẽ khôi phục $A$.
 
-**b.** Dùng các phép hàng $R_1\leftarrow(\frac{1}{2})R_1$; $R_2\leftarrow R_2+(-1)R_1$; $R_2\leftarrow(2)R_2$; $R_1\leftarrow R_1+(- \frac{3}{2})R_2$ đưa $A$ về $I$. Nếu $E_j$ tương ứng phép thứ $j$, thì
+
+ Các ma trận cụ thể theo đúng thứ tự tích này là
+
+
+
+$$
+\begin{bmatrix}1&0\\2&1\end{bmatrix}\begin{bmatrix}1&0\\0&-1\end{bmatrix}\begin{bmatrix}1&1\\0&1\end{bmatrix}.
+$$
+
+
+
+ Nhân lại các ma trận trên cho đúng $A=\begin{bmatrix}1&1\\2&1\end{bmatrix}$.
+
+**b.** Bắt đầu từ $A=\begin{bmatrix}2&3\\1&2\end{bmatrix}$. Mục tiêu là đưa mỗi trụ về 1 rồi khử mọi ô còn lại trong cột trụ.
+
+**Bước 1. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 1 cho $2$, được
+
+
+
+$$
+\begin{bmatrix}1&\frac{3}{2}\\1&2\end{bmatrix}.
+$$
+
+
+
+**Bước 2. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&\frac{3}{2}\\0&\frac{1}{2}\end{bmatrix}.
+$$
+
+
+
+**Bước 3. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $\frac{1}{2}$, được
+
+
+
+$$
+\begin{bmatrix}1&\frac{3}{2}\\0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 4. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(- \frac{3}{2})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0\\0&1\end{bmatrix}.
+$$
+
+
+
+Với mỗi phép hàng vừa ghi, làm cùng phép lên $I$ để có $E_j$. Phép thực hiện sau nhân ở bên trái: $U=E_k\cdots E_1$. Tính được
+
+
+
+$$
+U=\begin{bmatrix}2&-3\\-1&2\end{bmatrix},\qquad UA=R=\begin{bmatrix}1&0\\0&1\end{bmatrix}.
+$$
+
+
+
+ Mỗi $E_j$ khả nghịch nên $U$ khả nghịch. Kết quả $R$ có các cột trụ là cột đơn vị và các hàng 0 nằm dưới, nên đúng là RREF. Vì $R=I$, ta có $E_k\cdots E_1A=I$. Nhân các nghịch đảo theo thứ tự ngược để giải ra $A$:
+
+
 
 $$
 A=E_1^{-1}\cdots E_k^{-1}.
 $$
 
- Nghịch đảo đổi dấu hệ số cộng hàng, đảo hệ số nhân hàng, giữ nguyên phép đổi hàng. Đây là phân tích yêu cầu; nhân các thừa số theo thứ tự vừa ghi sẽ khôi phục $A$.
 
-**c.** Dùng các phép hàng $R_3\leftarrow R_3+(-2)R_1$; $R_3\leftarrow R_3+(-1)R_2$; $R_1\leftarrow R_1+(-2)R_3$; $R_2\leftarrow R_2+(-1)R_3$ đưa $A$ về $I$. Nếu $E_j$ tương ứng phép thứ $j$, thì
+
+ Các ma trận cụ thể theo đúng thứ tự tích này là
+
+
+
+$$
+\begin{bmatrix}2&0\\0&1\end{bmatrix}\begin{bmatrix}1&0\\1&1\end{bmatrix}\begin{bmatrix}1&0\\0&\frac{1}{2}\end{bmatrix}\begin{bmatrix}1&\frac{3}{2}\\0&1\end{bmatrix}.
+$$
+
+
+
+ Nhân lại các ma trận trên cho đúng $A=\begin{bmatrix}2&3\\1&2\end{bmatrix}$.
+
+**c.** Bắt đầu từ $A=\begin{bmatrix}1&0&2\\0&1&1\\2&1&6\end{bmatrix}$. Mục tiêu là đưa mỗi trụ về 1 rồi khử mọi ô còn lại trong cột trụ.
+
+**Bước 1. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-2)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&2\\0&1&1\\0&1&2\end{bmatrix}.
+$$
+
+
+
+**Bước 2. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-1)R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&2\\0&1&1\\0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 3. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(-2)R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0\\0&1&1\\0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 4. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-1)R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}.
+$$
+
+
+
+Với mỗi phép hàng vừa ghi, làm cùng phép lên $I$ để có $E_j$. Phép thực hiện sau nhân ở bên trái: $U=E_k\cdots E_1$. Tính được
+
+
+
+$$
+U=\begin{bmatrix}5&2&-2\\2&2&-1\\-2&-1&1\end{bmatrix},\qquad UA=R=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}.
+$$
+
+
+
+ Mỗi $E_j$ khả nghịch nên $U$ khả nghịch. Kết quả $R$ có các cột trụ là cột đơn vị và các hàng 0 nằm dưới, nên đúng là RREF. Vì $R=I$, ta có $E_k\cdots E_1A=I$. Nhân các nghịch đảo theo thứ tự ngược để giải ra $A$:
+
+
 
 $$
 A=E_1^{-1}\cdots E_k^{-1}.
 $$
 
- Nghịch đảo đổi dấu hệ số cộng hàng, đảo hệ số nhân hàng, giữ nguyên phép đổi hàng. Đây là phân tích yêu cầu; nhân các thừa số theo thứ tự vừa ghi sẽ khôi phục $A$.
 
-**d.** Dùng các phép hàng $R_3\leftarrow R_3+(2)R_1$; $R_3\leftarrow R_3+(-2)R_2$; $R_1\leftarrow R_1+(3)R_3$; $R_2\leftarrow R_2+(-4)R_3$ đưa $A$ về $I$. Nếu $E_j$ tương ứng phép thứ $j$, thì
+
+ Các ma trận cụ thể theo đúng thứ tự tích này là
+
+
+
+$$
+\begin{bmatrix}1&0&0\\0&1&0\\2&0&1\end{bmatrix}\begin{bmatrix}1&0&0\\0&1&0\\0&1&1\end{bmatrix}\begin{bmatrix}1&0&2\\0&1&0\\0&0&1\end{bmatrix}\begin{bmatrix}1&0&0\\0&1&1\\0&0&1\end{bmatrix}.
+$$
+
+
+
+ Nhân lại các ma trận trên cho đúng $A=\begin{bmatrix}1&0&2\\0&1&1\\2&1&6\end{bmatrix}$.
+
+**d.** Bắt đầu từ $A=\begin{bmatrix}1&0&-3\\0&1&4\\-2&2&15\end{bmatrix}$. Mục tiêu là đưa mỗi trụ về 1 rồi khử mọi ô còn lại trong cột trụ.
+
+**Bước 1. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(2)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&-3\\0&1&4\\0&2&9\end{bmatrix}.
+$$
+
+
+
+**Bước 2. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-2)R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&-3\\0&1&4\\0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 3. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(3)R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0\\0&1&4\\0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 4. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-4)R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}.
+$$
+
+
+
+Với mỗi phép hàng vừa ghi, làm cùng phép lên $I$ để có $E_j$. Phép thực hiện sau nhân ở bên trái: $U=E_k\cdots E_1$. Tính được
+
+
+
+$$
+U=\begin{bmatrix}7&-6&3\\-8&9&-4\\2&-2&1\end{bmatrix},\qquad UA=R=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}.
+$$
+
+
+
+ Mỗi $E_j$ khả nghịch nên $U$ khả nghịch. Kết quả $R$ có các cột trụ là cột đơn vị và các hàng 0 nằm dưới, nên đúng là RREF. Vì $R=I$, ta có $E_k\cdots E_1A=I$. Nhân các nghịch đảo theo thứ tự ngược để giải ra $A$:
+
+
 
 $$
 A=E_1^{-1}\cdots E_k^{-1}.
 $$
 
- Nghịch đảo đổi dấu hệ số cộng hàng, đảo hệ số nhân hàng, giữ nguyên phép đổi hàng. Đây là phân tích yêu cầu; nhân các thừa số theo thứ tự vừa ghi sẽ khôi phục $A$.
+
+
+ Các ma trận cụ thể theo đúng thứ tự tích này là
+
+
+
+$$
+\begin{bmatrix}1&0&0\\0&1&0\\-2&0&1\end{bmatrix}\begin{bmatrix}1&0&0\\0&1&0\\0&2&1\end{bmatrix}\begin{bmatrix}1&0&-3\\0&1&0\\0&0&1\end{bmatrix}\begin{bmatrix}1&0&0\\0&1&4\\0&0&1\end{bmatrix}.
+$$
+
+
+
+ Nhân lại các ma trận trên cho đúng $A=\begin{bmatrix}1&0&-3\\0&1&4\\-2&2&15\end{bmatrix}$.
 
 </LoiGiai>
 

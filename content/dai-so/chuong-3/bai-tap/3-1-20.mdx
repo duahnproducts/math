@@ -5,11 +5,27 @@ do_kho: vua
 tieu_de: "Khai triển theo phần bù đại số — bài 20"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.1.20"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.1.20 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh rằng
+
+
+
+$$
+\det \left[ \begin{array}{rrr} a+x & b+x & c+x \\ b+x & c+x & a+x \\ c+x & a+x & b+x \end{array}\right] \\ = (a+b+c+3x)[(ab+ac+bc)-(a^2+b^2+c^2)].
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-1-20-1" moTa="Đề gốc Nicholson bài 3.1.20, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -24,6 +40,7 @@ det  b+x c+x a+x               
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -41,7 +58,27 @@ Cộng bội một hàng vào hàng khác giữ định thức; đổi hai hàng
 
 <LoiGiai>
 
-Cộng hàng 2 và 3 vào hàng đầu: hàng mới có ba ô cùng bằng $a+b+c+3x$. Rút nhân tử ấy ra, hàng đầu còn $(1,1,1)$. Trừ cột đầu khỏi cột 2 và cột 3 rồi khai triển theo hàng đầu. Định thức cấp 2 còn lại rút gọn thành $ab+ac+bc-a^2-b^2-c^2$. Nhân lại được đúng biểu thức cần chứng minh; do không chia cho nhân tử nên đúng cả khi nó bằng 0.
+**Cách làm.** Cộng bội hàng khác giữ nguyên định thức; đổi hai hàng đổi dấu; rút hệ số $c$ từ một hàng đưa $c$ ra ngoài. Với khai triển, $C_{ij}=(-1)^{i+j}\det M_{ij}$.
+
+**Bước 1. Thực hiện phép biến đổi.**
+
+Cộng hàng 2 và 3 vào hàng đầu: hàng mới có ba ô cùng bằng $a+b+c+3x$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Rút nhân tử ấy ra, hàng đầu còn $(1,1,1)$.
+
+**Bước 3. Thực hiện phép biến đổi.**
+
+Trừ cột đầu khỏi cột 2 và cột 3 rồi khai triển theo hàng đầu.
+
+**Bước 4. Lập luận và tính toán.**
+
+Định thức cấp 2 còn lại rút gọn thành $ab+ac+bc-a^2-b^2-c^2$.
+
+**Bước 5. Thực hiện phép biến đổi.**
+
+Nhân lại được đúng biểu thức cần chứng minh; do không chia cho nhân tử nên đúng cả khi nó bằng 0.
 
 </LoiGiai>
 

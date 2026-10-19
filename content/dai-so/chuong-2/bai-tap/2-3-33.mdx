@@ -5,11 +5,25 @@ do_kho: vua
 tieu_de: "Phép nhân ma trận — bài 33"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.3.33"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.33 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $A$ và $B$ là các ma trận chéo $n \times n$ (mọi phần tử ngoài đường chéo chính đều bằng 0).
+
+**a.** Chứng minh rằng $AB$ là ma trận chéo và $AB = BA$.
+
+**b.** Phát biểu quy tắc tính $XA$ khi $X$ có kích thước $m \times n$.
+
+**c.** Phát biểu quy tắc tính $AY$ khi $Y$ có kích thước $n \times k$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-3-33-1" moTa="Đề gốc Nicholson bài 2.3.33, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -29,6 +43,7 @@ c. Formulate a rule for calculating AY if Y is n×k.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -45,7 +60,33 @@ Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự 
 
 <LoiGiai>
 
-Viết $A=\operatorname{diag}(a_1,\ldots,a_n)$, $B=\operatorname{diag}(b_1,\ldots,b_n)$. **a.** $(AB)_{ij}=0$ khi $i\ne j$, còn $(AB)_{ii}=a_ib_i=b_ia_i$, nên $AB=BA$ và tích vẫn chéo. **b.** Cột $j$ của $XA$ là $a_j$ lần cột $j$ của $X$. **c.** Hàng $i$ của $AY$ là $a_i$ lần hàng $i$ của $Y$. Hai kết luận cuối theo công thức tổng phần tử của tích.
+**Cách làm.** Với $A$ cỡ $m\times n$, $B$ cỡ $n\times p$, tích $AB$ có cỡ $m\times p$ và $(AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$. Khi khai triển, giữ nguyên thứ tự các thừa số.
+
+**Bước 1. Thiết lập biểu thức.**
+
+Viết $A=\operatorname{diag}(a_1,\ldots,a_n)$, $B=\operatorname{diag}(b_1,\ldots,b_n)$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$(AB)_{ij}=0$ khi $i\ne j$, còn $(AB)_{ii}=a_ib_i=b_ia_i$, nên $AB=BA$ và tích vẫn chéo.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Cột $j$ của $XA$ là $a_j$ lần cột $j$ của $X$.
+
+**c.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Hàng $i$ của $AY$ là $a_i$ lần hàng $i$ của $Y$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Hai kết luận cuối theo công thức tổng phần tử của tích.
 
 </LoiGiai>
 

@@ -93,12 +93,108 @@ Vì √(n²+4)≥n, mẫu ≥2n. Cho ε>0, chọn N nguyên ≥2/ε. n>N kéo th
 
 Chứng minh 1/n²→0 bằng ε–N. **Gợi ý:** n>1/√ε là đủ; chọn số nguyên lớn hơn ngưỡng.
 
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+$a_n=1/n^2$.
+
+**Bước 2. Xác định điều cần tìm.**
+
+Chứng minh giới hạn bằng 0 bằng $\varepsilon$–$N$.
+
+**Bước 3. Chọn kiến thức và lý do.**
+
+Sai số $1/n^2<\varepsilon$ tương đương $n>1/\sqrt\varepsilon$ vì các số dương.
+
+**Bước 4. Giải từng bước.**
+
+Cho $\varepsilon>0$. Chọn số nguyên $N\ge1/\sqrt\varepsilon$. Khi $n>N$, $n>1/\sqrt\varepsilon$; bình phương rồi lấy nghịch đảo cho
+
+$$
+|a_n-0|=1/n^2<\varepsilon.
+$$
+
+ Do đó $a_n\to0$.
+
+**Bước 5. Kiểm tra kết quả.**
+
+Mẫu luôn dương với $n\ge1$. Khi lấy nghịch đảo hai số dương, phải đảo chiều bất đẳng thức.
+
+**Bước 6. Cách tự làm lại.**
+
+Từ sai số dạng $n^{-p}$, giải ra một ngưỡng cho $n$ rồi chọn mốc nguyên.
+
+</LoiGiai>
+
 ### VỪA - Tìm cận đơn giản
 
 Chứng minh $(5n+2)/(n+3)\to5$. **Gợi ý:** sai số chính xác là 13/(n+3), có thể chặn bởi 13/n.
 
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+$a_n=(5n+2)/(n+3)$.
+
+**Bước 2. Xác định điều cần tìm.**
+
+Chứng minh $a_n\to5$.
+
+**Bước 3. Chọn kiến thức và lý do.**
+
+Tính chính xác sai số; nếu ngưỡng thu được phức tạp, chặn nó bằng một biểu thức đơn giản hơn.
+
+**Bước 4. Giải từng bước.**
+
+Với $n\ge1$,
+
+$$
+|a_n-5|=\left|\frac{5n+2-5(n+3)}{n+3}\right|=\frac{13}{n+3}\le\frac{13}{n}.
+$$
+
+ Cho $\varepsilon>0$, chọn số nguyên $N\ge13/\varepsilon$. Khi $n>N$, sai số không quá $13/n<\varepsilon$. Vậy giới hạn bằng 5.
+
+**Bước 5. Kiểm tra kết quả.**
+
+Tử sai số là $2-15=-13$, nên trị tuyệt đối là 13. Không bỏ quên dấu trừ trước cả ngoặc $5(n+3)$.
+
+**Bước 6. Cách tự làm lại.**
+
+Chặn sai số bởi $C/n$ là đủ; không cần tìm mốc nhỏ nhất.
+
+</LoiGiai>
+
 ### KHÓ - Đúng miền của giới hạn
 
 Giả sử aₙ→L và 2≤aₙ≤7 với mọi n. Chứng minh 2≤L≤7 bằng định nghĩa, rồi cho ví dụ aₙ>2 nhưng L=2. **Gợi ý:** phản chứng từng phía; dùng 2+1/n cho ví dụ.
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+$a_n\to L$ và $2\le a_n\le7$ với mọi $n$.
+
+**Bước 2. Xác định điều cần tìm.**
+
+Chứng minh $2\le L\le7$ và nêu ví dụ giới hạn chạm biên.
+
+**Bước 3. Chọn kiến thức và lý do.**
+
+Phản chứng từng phía bằng cách chọn sai số nhỏ hơn khoảng cách từ giới hạn giả định đến biên.
+
+**Bước 4. Giải từng bước.**
+
+Nếu $L<2$, đặt $\varepsilon=(2-L)/2>0$. Từ một mốc trở đi, $a_n<L+\varepsilon=(L+2)/2<2$, mâu thuẫn. Nếu $L>7$, đặt $\varepsilon=(L-7)/2>0$. Khi $n$ đủ lớn, $a_n>L-\varepsilon=(L+7)/2>7$, cũng mâu thuẫn. Vậy $2\le L\le7$. Ví dụ $a_n=2+1/n>2$ nhưng $a_n\to2$.
+
+**Bước 5. Kiểm tra kết quả.**
+
+Ví dụ còn thỏa $a_n\le3\le7$ với $n\ge1$. Dấu nghiêm của số hạng có thể trở thành dấu bằng ở giới hạn.
+
+**Bước 6. Cách tự làm lại.**
+
+Giới hạn giữ cận đóng; muốn giữ dấu nghiêm cần thêm giả thiết khác.
+
+</LoiGiai>
 
 Nguồn kiến thức: Kenneth A. Ross, *Elementary Analysis: The Theory of Calculus*, ấn bản thứ hai, 2013, §8. Bài giảng diễn đạt bằng lời riêng; ví dụ và bài tập do người biên soạn bổ sung.

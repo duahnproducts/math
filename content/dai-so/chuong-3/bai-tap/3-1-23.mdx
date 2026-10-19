@@ -5,11 +5,29 @@ do_kho: vua
 tieu_de: "Khai triển theo phần bù đại số — bài 23"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.1.23"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.1.23 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Bằng cách khai triển theo cột đầu, hãy chứng minh rằng:
+
+
+
+$$
+\det \left[ \begin{array}{ccccccc} 1 & 1 & 0 & 0 & \cdots & 0 & 0 \\ 0 & 1 & 1 & 0 & \cdots & 0 & 0 \\ 0 & 0 & 1 & 1 & \cdots & 0 & 0 \\ \vdots & \vdots & \vdots & \vdots & & \vdots & \vdots \\ 0 & 0 & 0 & 0 & \cdots & 1 & 1 \\ 1 & 0 & 0 & 0 & \cdots & 0 & 1 \end{array} \right] = 1 + (-1)^{n+1}
+$$
+
+
+
+nếu ma trận có kích thước $n \times n, n \geq 2$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-1-23-1" moTa="Đề gốc Nicholson bài 3.1.23, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -31,6 +49,7 @@ show that:
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -47,7 +66,27 @@ Cộng bội một hàng vào hàng khác giữ định thức; đổi hai hàng
 
 <LoiGiai>
 
-Cột đầu chỉ có hai ô 1: ở hàng 1 và hàng $n$. Xóa hàng 1, cột 1 cho ma trận tam giác trên đường chéo toàn 1, định thức 1. Xóa hàng $n$, cột 1 cho ma trận tam giác dưới đường chéo toàn 1, cũng định thức 1. Dấu hai phần bù là $+1$ và $(-1)^{n+1}$, nên tổng bằng $1+(-1)^{n+1}$. Với $n=2$ hai hàng trùng nhau, công thức cũng cho 0.
+**Cách làm.** Cộng bội hàng khác giữ nguyên định thức; đổi hai hàng đổi dấu; rút hệ số $c$ từ một hàng đưa $c$ ra ngoài. Với khai triển, $C_{ij}=(-1)^{i+j}\det M_{ij}$.
+
+**Bước 1. Lập luận và tính toán.**
+
+Cột đầu chỉ có hai ô 1: ở hàng 1 và hàng $n$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Xóa hàng 1, cột 1 cho ma trận tam giác trên đường chéo toàn 1, định thức 1.
+
+**Bước 3. Lập luận và tính toán.**
+
+Xóa hàng $n$, cột 1 cho ma trận tam giác dưới đường chéo toàn 1, cũng định thức 1.
+
+**Bước 4. Lập luận và tính toán.**
+
+Dấu hai phần bù là $+1$ và $(-1)^{n+1}$, nên tổng bằng $1+(-1)^{n+1}$.
+
+**Bước 5. Lập luận và tính toán.**
+
+Với $n=2$ hai hàng trùng nhau, công thức cũng cho 0.
 
 </LoiGiai>
 

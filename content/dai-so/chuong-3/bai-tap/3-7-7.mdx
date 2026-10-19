@@ -5,11 +5,65 @@ do_kho: vua
 tieu_de: "Ứng dụng: hệ phương trình vi phân — bài 7"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.7.7"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.7.7 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Viết $f^{\prime \prime \prime} = (f^{\prime \prime})^{\prime}$, xét phương trình vi phân bậc ba
+
+
+
+$$
+f^{\prime \prime\prime} - a_1 f^{\prime \prime} - a_2 f^{\prime} - a_3 f = 0
+$$
+
+
+
+trong đó $a_{1}$, $a_{2}$ và $a_{3}$ là các số thực. Đặt $f_{1} = f$, $f_{2} = f^{\prime}- a_{1}f$ và $f_{3} = f^{\prime \prime} - a_{1}f{}^{\prime} - a_{2}f^{\prime \prime}$.
+
+**a.** Chứng minh rằng
+
+$$
+\left[ \begin{array}{c} f_1 \\ f_2 \\ f_3 \end{array}\right]
+$$
+
+ là một nghiệm của hệ
+
+
+
+$$
+\left \lbrace \begin{array}{l} f_1^{\prime} = a_1f_1 + f_2 \\ f_2^{\prime} = a_2f_1 + f_3 \\ f_3^{\prime} = a_3f_1 \end{array}, \right.
+$$
+
+
+
+, tức là
+
+
+
+$$
+\left[ \begin{array}{c} f_1^{\prime} \\ f_2^{\prime} \\ f_3^{\prime} \end{array}\right] = \left[ \begin{array}{ccc} a_1 & 1 & 0 \\ a_2 & 0 & 1 \\ a_3 & 0 & 0 \end{array}\right] \left[ \begin{array}{c} f_1 \\ f_2 \\ f_3 \end{array}\right]
+$$
+
+
+
+.
+
+**b.** Chứng minh thêm rằng nếu
+
+$$
+\left[ \begin{array}{c} f_1 \\ f_2 \\ f_3 \end{array}\right]
+$$
+
+ là nghiệm bất kỳ của hệ này thì $f = f_{1}$ là nghiệm của phương trình bậc ba đang xét. Nhận xét: Cách xây dựng tương tự đưa mọi phương trình vi phân tuyến tính bậc $n$ với hệ số hằng về một hệ tuyến tính $n \times n$ gồm các phương trình bậc nhất. Tuy nhiên, ma trận có thể không chéo hóa được, nên cần phát triển những phương pháp khác.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-7-7-1" moTa="Đề gốc Nicholson bài 3.7.7, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -44,6 +98,7 @@ have been developed.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -60,7 +115,35 @@ Mỗi vector riêng v với trị riêng λ cho nghiệm v nhân exp(λx); giả
 
 <LoiGiai>
 
-**Sửa lỗi ký hiệu bản in:** cần đặt $f_3=f\prime\prime-a_1f\prime-a_2f$, thay vì hạng cuối $-a_2f\prime\prime$ được in trong đề. **a.** Với định nghĩa đúng, $f_1\prime=a_1f_1+f_2$; $f_2\prime=f\prime\prime-a_1f\prime=a_2f_1+f_3$; $f_3\prime=f\prime\prime\prime-a_1f\prime\prime-a_2f\prime=a_3f_1$. Đó là ba hàng của hệ. **b.** Từ hai phương trình đầu suy ra $f_1\prime\prime=a_1f_1\prime+a_2f_1+f_3$. Đạo hàm rồi dùng $f_3\prime=a_3f_1$ cho $f_1\prime\prime\prime-a_1f_1\prime\prime-a_2f_1\prime-a_3f_1=0$, là phương trình bậc ba của bài này. Tham chiếu “Equation 3.15” trong câu (b) cũng là lỗi đánh số, vì 3.15 là phương trình bậc hai của bài trước.
+**Cách làm.** Nếu $Av=\lambda v$ thì $f(x)=e^{\lambda x}v$ thỏa $f\prime=Af$, vì $f\prime=\lambda e^{\lambda x}v=Af$. Điều kiện đầu dùng để xác định các hệ số còn lại.
+
+**Bước 1. Lập luận và tính toán.**
+
+**Sửa lỗi ký hiệu bản in:** cần đặt $f_3=f\prime\prime-a_1f\prime-a_2f$, thay vì hạng cuối $-a_2f\prime\prime$ được in trong đề.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Với định nghĩa đúng, $f_1\prime=a_1f_1+f_2$; $f_2\prime=f\prime\prime-a_1f\prime=a_2f_1+f_3$; $f_3\prime=f\prime\prime\prime-a_1f\prime\prime-a_2f\prime=a_3f_1$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Đó là ba hàng của hệ.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Từ hai phương trình đầu suy ra $f_1\prime\prime=a_1f_1\prime+a_2f_1+f_3$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Đạo hàm rồi dùng $f_3\prime=a_3f_1$ cho $f_1\prime\prime\prime-a_1f_1\prime\prime-a_2f_1\prime-a_3f_1=0$, là phương trình bậc ba của bài này.
+
+**Bước 3. Lập luận và tính toán.**
+
+Tham chiếu “Equation 3.15” trong câu (b) cũng là lỗi đánh số, vì 3.15 là phương trình bậc hai của bài trước.
 
 </LoiGiai>
 

@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Ứng dụng: mô hình kinh tế vào–ra — bài 11"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.8.11"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.8.11 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu $(I - E)^{-1} \geq 0$, hãy tìm $\mathbf{p} > 0$ sao cho $\mathbf{p} > E\mathbf{p}$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-8-11-1" moTa="Đề gốc Nicholson bài 2.8.11, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -21,6 +29,7 @@ Exercise 2.8.11  If (I −E)−1 ≥0, ﬁnd p > 0 such thatp > Ep.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -38,7 +47,25 @@ Tổng cột của ma trận stochastic bằng 1. Để tìm giá tương đối
 
 <LoiGiai>
 
-Đặt $\mathbf1=(1,\ldots,1)^T$ và $p=(I-E)^{-1}\mathbf1$. Khi $E\ge0$ và nghịch đảo không âm, có $p\ge0$ và $(I-E)p=\mathbf1$. Suy ra $p=\mathbf1+Ep\ge\mathbf1>0$, đồng thời $p-Ep=\mathbf1>0$. Vậy vector xây dựng được thỏa cả $p>0$ và $p>Ep$.
+**Cách làm.** Cơ cấu giá cân bằng thỏa $Ep=p$, tức $(I-E)p=0$. Với mô hình mở, điều kiện cần kiểm tra là $I-E$ khả nghịch và $(I-E)^{-1}$ có các ô không âm.
+
+Không thể chỉ nói nghịch đảo không âm nên $p>0$: điều đó mới trực tiếp cho $p\ge0$. Bước $p=\mathbf1+Ep\ge\mathbf1$ mới chứng minh chặt chẽ mọi thành phần của $p$ dương.
+
+**Bước 1. Thiết lập biểu thức.**
+
+Đặt $\mathbf1=(1,\ldots,1)^T$ và $p=(I-E)^{-1}\mathbf1$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Khi $E\ge0$ và nghịch đảo không âm, có $p\ge0$ và $(I-E)p=\mathbf1$.
+
+**Bước 3. Rút ra kết luận.**
+
+Suy ra $p=\mathbf1+Ep\ge\mathbf1>0$, đồng thời $p-Ep=\mathbf1>0$.
+
+**Bước 4. Rút ra kết luận.**
+
+Vậy vector xây dựng được thỏa cả $p>0$ và $p>Ep$.
 
 </LoiGiai>
 

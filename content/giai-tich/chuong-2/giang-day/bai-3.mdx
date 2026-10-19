@@ -101,12 +101,120 @@ Tử →2, mẫu →5≠0; với n≥1 mẫu gốc ≥3n³+4>0 vì 2n²≤2n³. 
 
 Tính giới hạn $(7n^2+2)/(3n^2+n+1)$, nêu vì sao quy tắc thương hợp lệ. **Gợi ý:** chia n²; mẫu giới hạn là 3.
 
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+$a_n=(7n^2+2)/(3n^2+n+1)$.
+
+**Bước 2. Xác định điều cần tìm.**
+
+Tính giới hạn và kiểm tra điều kiện quy tắc thương.
+
+**Bước 3. Chọn kiến thức và lý do.**
+
+Chia cả tử và mẫu cho lũy thừa cao nhất $n^2$ để được các dãy có giới hạn hữu hạn.
+
+**Bước 4. Giải từng bước.**
+
+Viết
+
+$$
+a_n=\frac{7+2/n^2}{3+1/n+1/n^2}.
+$$
+
+ Vì $1/n\to0$, $1/n^2\to0$, tử tiến đến 7 và mẫu tiến đến 3. Mẫu giới hạn khác 0 nên quy tắc thương cho $a_n\to7/3$.
+
+**Bước 5. Kiểm tra kết quả.**
+
+Mẫu ban đầu dương với mọi $n\ge1$. Điều kiện quan trọng của quy tắc giới hạn thương là giới hạn mẫu bằng 3, khác 0.
+
+**Bước 6. Cách tự làm lại.**
+
+Chuẩn hóa theo bậc cao nhất rồi kiểm tra giới hạn mẫu trước khi chia.
+
+</LoiGiai>
+
 ### VỪA - Kẹp
 
 Chứng minh $(-1)^n/(n+2)\to0$ và $\cos(n)/(n^2+1)\to0$. **Gợi ý:** lấy giá trị tuyệt đối và chặn bởi 1/(n+2), 1/(n²+1).
 
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Hai dãy là $u_n=(-1)^n/(n+2)$ và $v_n=\cos n/(n^2+1)$.
+
+**Bước 2. Xác định điều cần tìm.**
+
+Chứng minh cả hai tiến đến 0.
+
+**Bước 3. Chọn kiến thức và lý do.**
+
+Lấy giá trị tuyệt đối để bỏ dấu dao động, rồi dùng nguyên lý kẹp.
+
+**Bước 4. Giải từng bước.**
+
+Vì $|(-1)^n|=1$,
+
+$$
+0\le|u_n|=\frac1{n+2}\le\frac1n\to0.
+$$
+
+ Vì $|\cos n|\le1$,
+
+$$
+0\le|v_n|\le\frac1{n^2+1}\le\frac1{n^2}\to0.
+$$
+
+ Kẹp cho $|u_n|,|v_n|\to0$, tức $u_n,v_n\to0$.
+
+**Bước 5. Kiểm tra kết quả.**
+
+Dãy tử dao động không cản trở hội tụ khi độ lớn của toàn phân thức bị chặn bởi một dãy tiến về 0.
+
+**Bước 6. Cách tự làm lại.**
+
+Với tử dao động nhưng bị chặn, xét độ lớn thay vì tìm giới hạn riêng của tử.
+
+</LoiGiai>
+
 ### KHÓ - Định nghĩa vô cực
 
 Chứng minh $(n^3+2)/(n^2+1)\to+\infty$ bằng M–N. **Gợi ý:** n²+1≤2n² khi n≥1, nên phân thức ≥n/2.
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+$a_n=(n^3+2)/(n^2+1)$ với $n\ge1$.
+
+**Bước 2. Xác định điều cần tìm.**
+
+Chứng minh $a_n\to+\infty$ theo định nghĩa $M$–$N$.
+
+**Bước 3. Chọn kiến thức và lý do.**
+
+Cần một cận dưới tăng vô hạn. Với $n\ge1$, mẫu không quá $2n^2$, còn tử ít nhất $n^3$.
+
+**Bước 4. Giải từng bước.**
+
+Ta có
+
+$$
+a_n\ge\frac{n^3}{2n^2}=\frac n2.
+$$
+
+ Cho $M\in\mathbb R$ bất kỳ. Chọn số nguyên $N\ge\max(1,2M)$. Nếu $n>N$ thì $a_n\ge n/2>M$. Đây là đúng điều kiện của giới hạn $+\infty$.
+
+**Bước 5. Kiểm tra kết quả.**
+
+Khi chặn phân thức từ dưới, giảm tử và tăng mẫu (đều dương). Mốc đã chọn cũng dùng được khi $M$ âm.
+
+**Bước 6. Cách tự làm lại.**
+
+Để chứng minh tiến đến $+\infty$, tìm cận dưới đơn giản rồi vượt mọi ngưỡng $M$.
+
+</LoiGiai>
 
 Nguồn kiến thức: Kenneth A. Ross, *Elementary Analysis: The Theory of Calculus*, ấn bản thứ hai, 2013, §9. Bài giảng diễn đạt bằng lời riêng; ví dụ và bài tập do người biên soạn bổ sung.

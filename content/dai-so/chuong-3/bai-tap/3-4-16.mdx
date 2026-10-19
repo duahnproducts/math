@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Chéo hoá — bài 16"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.4.16"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.4.16 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Mô tả các ma trận chéo hóa được $n \times n$, ký hiệu là $A$, thỏa mãn $A^{2} - 3A + 2I = 0$ theo các trị riêng của chúng. [Gợi ý: Định lý 3.3.1.]
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-4-16-1" moTa="Đề gốc Nicholson bài 3.4.16, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ matrices A such that A2 −3A + 2I = 0 in terms of theireigenvalues. [Hint: Theo
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +48,25 @@ Ghép các vector riêng độc lập thành cột của P, rồi kiểm tra AP 
 
 <LoiGiai>
 
-Với $A=PDP^{-1}$, $A^2-3A+2I=0$ tương đương $D^2-3D+2I=0$. Trên từng ô đường chéo: $(\lambda-1)(\lambda-2)=0$, tức mọi trị riêng thuộc $\{1,2\}$. Ngược lại nếu ma trận chéo hóa được có các trị riêng chỉ là 1 hoặc 2, đa thức ấy triệt tiêu từng ô của $D$, nên triệt tiêu $A$. Không bắt buộc cả hai giá trị đều xuất hiện.
+**Cách làm.** Chéo hóa $A=PDP^{-1}$ nghĩa là các cột của $P$ là một cơ sở vector riêng. Trị riêng của cột thứ $j$ phải nằm ở ô $d_{jj}$, và có thể kiểm tra bằng $AP=PD$.
+
+Với $A=PDP^{-1}$, đa thức $p(A)=Pp(D)P^{-1}$. Vì $p(D)$ chéo với các ô $p(\lambda_i)$, đẳng thức $p(A)=0$ tương đương từng $p(\lambda_i)=0$. Ở đây $p(t)=(t-1)(t-2)$.
+
+**Bước 1. Lập luận và tính toán.**
+
+Với $A=PDP^{-1}$, $A^2-3A+2I=0$ tương đương $D^2-3D+2I=0$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Trên từng ô đường chéo: $(\lambda-1)(\lambda-2)=0$, tức mọi trị riêng thuộc $\{1,2\}$.
+
+**Bước 3. Kiểm tra chiều ngược.**
+
+Ngược lại nếu ma trận chéo hóa được có các trị riêng chỉ là 1 hoặc 2, đa thức ấy triệt tiêu từng ô của $D$, nên triệt tiêu $A$.
+
+**Bước 4. Lập luận và tính toán.**
+
+Không bắt buộc cả hai giá trị đều xuất hiện.
 
 </LoiGiai>
 

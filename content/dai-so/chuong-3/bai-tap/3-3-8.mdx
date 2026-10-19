@@ -5,11 +5,25 @@ do_kho: vua
 tieu_de: "Giá trị riêng và vector riêng — bài 8"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.3.8"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.3.8 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $A$ là ma trận khả nghịch $n \times n$.
+
+**a.** Chứng minh rằng các trị riêng của $A$ đều khác 0.
+
+**b.** Chứng minh rằng các trị riêng của $A^{-1}$ chính là các số $1/\lambda$, trong đó $\lambda$ là một trị riêng của $A$.
+
+**c.** Chứng minh rằng $c_{A^{-1}}(x) = \frac{(-x)^n}{\det A} c_A \left( \frac{1}{x} \right)$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-3-8-1" moTa="Đề gốc Nicholson bài 3.3.8, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -31,6 +45,7 @@ b. Show that the eigenvalues of A−1 are precisely the
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -47,11 +62,33 @@ Không gian riêng là hạt nhân của A − λI; đa thức của ma trận t
 
 <LoiGiai>
 
-**a.** Trị riêng 0 sẽ kéo theo $Av=0$ với $v\ne0$, trái với khả nghịch. **b.** Từ $Av=\lambda v$, nhân $A^{-1}$ và chia $\lambda\ne0$ được $A^{-1}v=\lambda^{-1}v$; chiều ngược tương tự. **c.** Với $x\ne0$,
+**Cách làm.** Trị riêng $\lambda$ cần có vector $v\ne0$ thỏa $Av=\lambda v$. Tương đương $(A-\lambda I)v=0$ có nghiệm khác 0, nên $\det(\lambda I-A)=0$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Trị riêng 0 sẽ kéo theo $Av=0$ với $v\ne0$, trái với khả nghịch.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Từ $Av=\lambda v$, nhân $A^{-1}$ và chia $\lambda\ne0$ được $A^{-1}v=\lambda^{-1}v$; chiều ngược tương tự.
+
+**c.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Với $x\ne0$,
+
+
 
 $$
 \det(xI-A^{-1})=\det(-A^{-1})\det(I-xA)=\frac{(-x)^n}{\det A}c_A(1/x).
 $$
+
+
 
  Hai vế sau khi nhân/rút các lũy thừa là đa thức bằng nhau trên vô hạn điểm, nên đồng nhất và công thức còn đúng tại $x=0$ theo dạng đa thức đã rút gọn.
 

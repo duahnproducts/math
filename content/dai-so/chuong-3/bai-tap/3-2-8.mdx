@@ -5,11 +5,51 @@ do_kho: vua
 tieu_de: "Định thức và ma trận nghịch đảo — bài 8"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.2.8"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.8 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Giải từng hệ sau bằng quy tắc Cramer:
+
+**a.**
+
+$$
+\begin{array}{rrrrr} 2x & + & y & = & 1\\ 3x & + & 7y & = & -2 \end{array}
+$$
+
+
+
+**b.**
+
+$$
+\begin{array}{rrrrr} 3x & + & 4y & = & 9 \\ 2x & - & y & = & -1 \end{array}
+$$
+
+
+
+**c.**
+
+$$
+\begin{array}{rrrrrrr} 5x & + & y & - & z & = & -7 \\ 2x & - & y & - & 2z & = & 6 \\ 3x & & & + & 2z & = & -7 \end{array}
+$$
+
+
+
+**d.**
+
+$$
+\begin{array}{rrrrrrr} 4x & - & y & + & 3z & = & 1 \\ 6x & + & 2y & - & z & = & 0 \\ 3x & + & 3y & + & 2z & = & -1 \end{array}
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-2-8-1" moTa="Đề gốc Nicholson bài 3.2.8, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -30,6 +70,7 @@ rule:
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -46,37 +87,465 @@ Dùng định thức của tích và công thức nghịch đảo qua adjugate k
 
 <LoiGiai>
 
-**a.** Định thức hệ số $D=11\ne0$. Thay lần lượt từng cột bằng vế phải được $(D_1,\ldots,D_n)=(9,-7)$. Theo Cramer,
+**Cách làm.** Dùng $\det(AB)=\det A\det B$, $\det A^T=\det A$, $\det(cA)=c^n\det A$ ở cấp $n$. Khi $\det A\ne0$, $A^{-1}=\operatorname{adj}A/\det A$; adjugate là bảng phần bù đã chuyển vị.
+
+**a.**
+
+**Bước 1. Lập ma trận hệ số và kiểm tra điều kiện.**
+
+$A=\begin{bmatrix}2&1\\3&7\end{bmatrix}$, $b=\begin{bmatrix}1\\-2\end{bmatrix}$. Với $A=\begin{bmatrix}2&1\\3&7\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
 
 $$
-x=\begin{bmatrix}\frac{9}{11}\\- \frac{7}{11}\end{bmatrix}.
+\det A=(2)(7)-(1)(3)=11.
 $$
 
- Thế lại $Ax=b$ kiểm tra cả hệ.
 
-**b.** Định thức hệ số $D=-11\ne0$. Thay lần lượt từng cột bằng vế phải được $(D_1,\ldots,D_n)=(-5,-21)$. Theo Cramer,
 
-$$
-x=\begin{bmatrix}\frac{5}{11}\\\frac{21}{11}\end{bmatrix}.
-$$
+ Vì $D=\det A\ne0$, hệ có nghiệm duy nhất và được dùng quy tắc Cramer.
 
- Thế lại $Ax=b$ kiểm tra cả hệ.
+**Bước 2. Tìm ẩn thứ 1.**
 
-**c.** Định thức hệ số $D=-23\ne0$. Thay lần lượt từng cột bằng vế phải được $(D_1,\ldots,D_n)=(23,92,46)$. Theo Cramer,
+Thay **cột 1** của $A$ bằng $b$, giữ nguyên mọi cột khác:
+
+
 
 $$
-x=\begin{bmatrix}-1\\-4\\-2\end{bmatrix}.
+A_{1}=\begin{bmatrix}1&1\\-2&7\end{bmatrix},\quad D_{1}=\det A_{1}=9.
 $$
 
- Thế lại $Ax=b$ kiểm tra cả hệ.
 
-**d.** Định thức hệ số $D=79\ne0$. Thay lần lượt từng cột bằng vế phải được $(D_1,\ldots,D_n)=(12,-37,-2)$. Theo Cramer,
+
+ Vì vậy
+
+
 
 $$
-x=\begin{bmatrix}\frac{12}{79}\\- \frac{37}{79}\\- \frac{2}{79}\end{bmatrix}.
+x_{1}=\frac{D_{1}}D=\frac{9}{11}=\frac{9}{11}.
 $$
 
- Thế lại $Ax=b$ kiểm tra cả hệ.
+
+
+**Bước 3. Tìm ẩn thứ 2.**
+
+Thay **cột 2** của $A$ bằng $b$, giữ nguyên mọi cột khác:
+
+
+
+$$
+A_{2}=\begin{bmatrix}2&1\\3&-2\end{bmatrix},\quad D_{2}=\det A_{2}=-7.
+$$
+
+
+
+ Vì vậy
+
+
+
+$$
+x_{2}=\frac{D_{2}}D=\frac{-7}{11}=- \frac{7}{11}.
+$$
+
+
+
+**Bước 4. Kiểm tra lại toàn bộ hệ.**
+
+Ghép các ẩn thành $x=\begin{bmatrix}\frac{9}{11}\\- \frac{7}{11}\end{bmatrix}$. Thay lại:
+
+
+
+$$
+Ax=\begin{bmatrix}1\\-2\end{bmatrix}=\begin{bmatrix}1\\-2\end{bmatrix}=b.
+$$
+
+
+
+**b.**
+
+**Bước 1. Lập ma trận hệ số và kiểm tra điều kiện.**
+
+$A=\begin{bmatrix}3&4\\2&-1\end{bmatrix}$, $b=\begin{bmatrix}9\\-1\end{bmatrix}$. Với $A=\begin{bmatrix}3&4\\2&-1\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det A=(3)(-1)-(4)(2)=-11.
+$$
+
+
+
+ Vì $D=\det A\ne0$, hệ có nghiệm duy nhất và được dùng quy tắc Cramer.
+
+**Bước 2. Tìm ẩn thứ 1.**
+
+Thay **cột 1** của $A$ bằng $b$, giữ nguyên mọi cột khác:
+
+
+
+$$
+A_{1}=\begin{bmatrix}9&4\\-1&-1\end{bmatrix},\quad D_{1}=\det A_{1}=-5.
+$$
+
+
+
+ Vì vậy
+
+
+
+$$
+x_{1}=\frac{D_{1}}D=\frac{-5}{-11}=\frac{5}{11}.
+$$
+
+
+
+**Bước 3. Tìm ẩn thứ 2.**
+
+Thay **cột 2** của $A$ bằng $b$, giữ nguyên mọi cột khác:
+
+
+
+$$
+A_{2}=\begin{bmatrix}3&9\\2&-1\end{bmatrix},\quad D_{2}=\det A_{2}=-21.
+$$
+
+
+
+ Vì vậy
+
+
+
+$$
+x_{2}=\frac{D_{2}}D=\frac{-21}{-11}=\frac{21}{11}.
+$$
+
+
+
+**Bước 4. Kiểm tra lại toàn bộ hệ.**
+
+Ghép các ẩn thành $x=\begin{bmatrix}\frac{5}{11}\\\frac{21}{11}\end{bmatrix}$. Thay lại:
+
+
+
+$$
+Ax=\begin{bmatrix}9\\-1\end{bmatrix}=\begin{bmatrix}9\\-1\end{bmatrix}=b.
+$$
+
+
+
+**c.**
+
+**Bước 1. Lập ma trận hệ số và kiểm tra điều kiện.**
+
+$A=\begin{bmatrix}5&1&-1\\2&-1&-2\\3&0&2\end{bmatrix}$, $b=\begin{bmatrix}-7\\6\\-7\end{bmatrix}$. **Bước 2. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}5&1&-1\\2&-1&-2\\3&0&2\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}-1&-2\\0&2\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=-2.
+$$
+
+
+
+Với $M_{11}=\begin{bmatrix}-1&-2\\0&2\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{11}=(-1)(2)-(-2)(0)=-2.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}2&-2\\3&2\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=-10.
+$$
+
+
+
+Với $M_{12}=\begin{bmatrix}2&-2\\3&2\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{12}=(2)(2)-(-2)(3)=10.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}2&-1\\3&0\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=3.
+$$
+
+
+
+Với $M_{13}=\begin{bmatrix}2&-1\\3&0\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{13}=(2)(0)-(-1)(3)=3.
+$$
+
+
+
+**Bước 3. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(5)(-2)+(1)(-10)+(-1)(3)=-23.
+$$
+
+
+
+ Vì $D=\det A\ne0$, hệ có nghiệm duy nhất và được dùng quy tắc Cramer.
+
+**Bước 4. Tìm ẩn thứ 1.**
+
+Thay **cột 1** của $A$ bằng $b$, giữ nguyên mọi cột khác:
+
+
+
+$$
+A_{1}=\begin{bmatrix}-7&1&-1\\6&-1&-2\\-7&0&2\end{bmatrix},\quad D_{1}=\det A_{1}=23.
+$$
+
+
+
+ Vì vậy
+
+
+
+$$
+x_{1}=\frac{D_{1}}D=\frac{23}{-23}=-1.
+$$
+
+
+
+**Bước 5. Tìm ẩn thứ 2.**
+
+Thay **cột 2** của $A$ bằng $b$, giữ nguyên mọi cột khác:
+
+
+
+$$
+A_{2}=\begin{bmatrix}5&-7&-1\\2&6&-2\\3&-7&2\end{bmatrix},\quad D_{2}=\det A_{2}=92.
+$$
+
+
+
+ Vì vậy
+
+
+
+$$
+x_{2}=\frac{D_{2}}D=\frac{92}{-23}=-4.
+$$
+
+
+
+**Bước 6. Tìm ẩn thứ 3.**
+
+Thay **cột 3** của $A$ bằng $b$, giữ nguyên mọi cột khác:
+
+
+
+$$
+A_{3}=\begin{bmatrix}5&1&-7\\2&-1&6\\3&0&-7\end{bmatrix},\quad D_{3}=\det A_{3}=46.
+$$
+
+
+
+ Vì vậy
+
+
+
+$$
+x_{3}=\frac{D_{3}}D=\frac{46}{-23}=-2.
+$$
+
+
+
+**Bước 7. Kiểm tra lại toàn bộ hệ.**
+
+Ghép các ẩn thành $x=\begin{bmatrix}-1\\-4\\-2\end{bmatrix}$. Thay lại:
+
+
+
+$$
+Ax=\begin{bmatrix}-7\\6\\-7\end{bmatrix}=\begin{bmatrix}-7\\6\\-7\end{bmatrix}=b.
+$$
+
+
+
+**d.**
+
+**Bước 1. Lập ma trận hệ số và kiểm tra điều kiện.**
+
+$A=\begin{bmatrix}4&-1&3\\6&2&-1\\3&3&2\end{bmatrix}$, $b=\begin{bmatrix}1\\0\\-1\end{bmatrix}$. **Bước 2. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}4&-1&3\\6&2&-1\\3&3&2\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}2&-1\\3&2\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=7.
+$$
+
+
+
+Với $M_{11}=\begin{bmatrix}2&-1\\3&2\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{11}=(2)(2)-(-1)(3)=7.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}6&-1\\3&2\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=-15.
+$$
+
+
+
+Với $M_{12}=\begin{bmatrix}6&-1\\3&2\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{12}=(6)(2)-(-1)(3)=15.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}6&2\\3&3\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=12.
+$$
+
+
+
+Với $M_{13}=\begin{bmatrix}6&2\\3&3\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{13}=(6)(3)-(2)(3)=12.
+$$
+
+
+
+**Bước 3. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(4)(7)+(-1)(-15)+(3)(12)=79.
+$$
+
+
+
+ Vì $D=\det A\ne0$, hệ có nghiệm duy nhất và được dùng quy tắc Cramer.
+
+**Bước 4. Tìm ẩn thứ 1.**
+
+Thay **cột 1** của $A$ bằng $b$, giữ nguyên mọi cột khác:
+
+
+
+$$
+A_{1}=\begin{bmatrix}1&-1&3\\0&2&-1\\-1&3&2\end{bmatrix},\quad D_{1}=\det A_{1}=12.
+$$
+
+
+
+ Vì vậy
+
+
+
+$$
+x_{1}=\frac{D_{1}}D=\frac{12}{79}=\frac{12}{79}.
+$$
+
+
+
+**Bước 5. Tìm ẩn thứ 2.**
+
+Thay **cột 2** của $A$ bằng $b$, giữ nguyên mọi cột khác:
+
+
+
+$$
+A_{2}=\begin{bmatrix}4&1&3\\6&0&-1\\3&-1&2\end{bmatrix},\quad D_{2}=\det A_{2}=-37.
+$$
+
+
+
+ Vì vậy
+
+
+
+$$
+x_{2}=\frac{D_{2}}D=\frac{-37}{79}=- \frac{37}{79}.
+$$
+
+
+
+**Bước 6. Tìm ẩn thứ 3.**
+
+Thay **cột 3** của $A$ bằng $b$, giữ nguyên mọi cột khác:
+
+
+
+$$
+A_{3}=\begin{bmatrix}4&-1&1\\6&2&0\\3&3&-1\end{bmatrix},\quad D_{3}=\det A_{3}=-2.
+$$
+
+
+
+ Vì vậy
+
+
+
+$$
+x_{3}=\frac{D_{3}}D=\frac{-2}{79}=- \frac{2}{79}.
+$$
+
+
+
+**Bước 7. Kiểm tra lại toàn bộ hệ.**
+
+Ghép các ẩn thành $x=\begin{bmatrix}\frac{12}{79}\\- \frac{37}{79}\\- \frac{2}{79}\end{bmatrix}$. Thay lại:
+
+
+
+$$
+Ax=\begin{bmatrix}1\\0\\-1\end{bmatrix}=\begin{bmatrix}1\\0\\-1\end{bmatrix}=b.
+$$
 
 </LoiGiai>
 

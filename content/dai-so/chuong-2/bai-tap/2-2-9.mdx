@@ -20,11 +20,23 @@ Khử $[\,\mathbf{a}_1\ \mathbf{a}_2\ \mathbf{a}_3 \mid \mathbf{b}\,]$ với $\m
 </GoiY>
 
 <LoiGiai>
+
+**Cách làm.** Nếu $A=[a_1\ \cdots\ a_n]$, thì $Ax=x_1a_1+\cdots+x_na_n$. Thành phần thứ $i$ cũng bằng tích vô hướng của hàng $i$ với $x$. Vì vậy viết $b$ thành tổ hợp các cột tương đương giải $Ax=b$.
+
+**Bước 1. Lập luận và tính toán.**
+
 Khử ma trận bổ sung với $\mathbf{b} = (b_1, b_2, b_3)$:
-$$\left[\begin{array}{rrr|c} 1 & 1 & 0 & b_1 \\ 0 & 1 & -1 & b_2 \\ 1 & 0 & 1 & b_3 \end{array}\right] \to \left[\begin{array}{rrr|c} 1 & 1 & 0 & b_1 \\ 0 & 1 & -1 & b_2 \\ 0 & 0 & 0 & b_3 - b_1 + b_2 \end{array}\right]$$
+
+$$
+\left[\begin{array}{rrr|c} 1 & 1 & 0 & b_1 \\ 0 & 1 & -1 & b_2 \\ 1 & 0 & 1 & b_3 \end{array}\right] \to \left[\begin{array}{rrr|c} 1 & 1 & 0 & b_1 \\ 0 & 1 & -1 & b_2 \\ 0 & 0 & 0 & b_3 - b_1 + b_2 \end{array}\right]
+$$
+
 Hệ có nghiệm khi và chỉ khi $b_3 - b_1 + b_2 = 0$.
 
+**Bước 2. Thiết lập biểu thức.**
+
 Chọn $\mathbf{b} = (0, 0, 1)$: $1 - 0 + 0 = 1 \ne 0$, nên hệ vô nghiệm và theo Định lý 2.2.1(2), $\mathbf{b}$ không là tổ hợp tuyến tính của $\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}_3$.
+
 </LoiGiai>
 
 <LoiHayMac>

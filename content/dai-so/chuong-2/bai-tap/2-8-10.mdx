@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Ứng dụng: mô hình kinh tế vào–ra — bài 10"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.8.10"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.8.10 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh rằng (1) kéo theo (2) trong Hệ quả của Định lý 2.8.2.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-8-10-1" moTa="Đề gốc Nicholson bài 2.8.10, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ lary to Theorem 2.8.2.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +48,23 @@ Tổng cột của ma trận stochastic bằng 1. Để tìm giá tương đối
 
 <LoiGiai>
 
-Nếu tổng mỗi cột của $E$ nhỏ hơn 1, thì tổng mỗi hàng của $E^T$ nhỏ hơn 1. Áp dụng (1) cho $E^T$: $I-E^T$ khả nghịch và $(I-E^T)^{-1}\ge0$. Chuyển vị cho $(I-E)^{-1}=((I-E^T)^{-1})^T\ge0$; tính khả nghịch cũng được bảo toàn khi chuyển vị. Đây chính là (2).
+**Cách làm.** Cơ cấu giá cân bằng thỏa $Ep=p$, tức $(I-E)p=0$. Với mô hình mở, điều kiện cần kiểm tra là $I-E$ khả nghịch và $(I-E)^{-1}$ có các ô không âm.
+
+**Bước 1. Xét giả thiết.**
+
+Nếu tổng mỗi cột của $E$ nhỏ hơn 1, thì tổng mỗi hàng của $E^T$ nhỏ hơn 1.
+
+**Bước 2. Lập luận và tính toán.**
+
+Áp dụng (1) cho $E^T$: $I-E^T$ khả nghịch và $(I-E^T)^{-1}\ge0$.
+
+**Bước 3. Thực hiện phép biến đổi.**
+
+Chuyển vị cho $(I-E)^{-1}=((I-E^T)^{-1})^T\ge0$; tính khả nghịch cũng được bảo toàn khi chuyển vị.
+
+**Bước 4. Lập luận và tính toán.**
+
+Đây chính là (2).
 
 </LoiGiai>
 

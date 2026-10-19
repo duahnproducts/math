@@ -5,11 +5,35 @@ do_kho: vua
 tieu_de: "Phép nhân ma trận — bài 3"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.3.3"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.3 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Tìm $a$, $b$, $a_{1}$ và $b_{1}$ nếu:
+
+**a.**
+
+$$
+\left[ \begin{array}{cc} a & b \\ a_{1} & b_{1} \end{array} \right] \left[ \begin{array}{rr} 3 & -5 \\ -1 & 2 \end{array} \right] = \left[ \begin{array}{rr} 1 & -1 \\ 2 & 0 \end{array} \right]
+$$
+
+
+
+**b.**
+
+$$
+\left[ \begin{array}{rr} 2 & 1 \\ -1 & 2 \end{array} \right] \left[ \begin{array}{cc} a & b \\ a_{1} & b_{1} \end{array} \right] = \left[ \begin{array}{rr} 7 & 2 \\ -1 & 4 \end{array} \right]
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-3-3-1" moTa="Đề gốc Nicholson bài 2.3.3, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -28,6 +52,7 @@ Exercise 2.3.3  Find a, b, a1, and b1 if:
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -44,7 +69,31 @@ Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự 
 
 <LoiGiai>
 
-Gọi $X=\begin{bmatrix}a&b\\a_1&b_1\end{bmatrix}$. **a.** $X=C B^{-1}=\begin{bmatrix}1&2\\4&10\end{bmatrix}$, nên $(a,b,a_1,b_1)=(1,2,4,10)$. **b.** $X=B^{-1}C=\begin{bmatrix}3&0\\1&2\end{bmatrix}$, nên $(a,b,a_1,b_1)=(3,0,1,2)$. Thế các ma trận vào đẳng thức ban đầu để kiểm tra. Có thể giải tương đương bằng cách đồng nhất từng ô của tích.
+**Cách làm.** Với $A$ cỡ $m\times n$, $B$ cỡ $n\times p$, tích $AB$ có cỡ $m\times p$ và $(AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$. Khi khai triển, giữ nguyên thứ tự các thừa số.
+
+**Bước 1. Thiết lập biểu thức.**
+
+Gọi $X=\begin{bmatrix}a&b\\a_1&b_1\end{bmatrix}$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$X=C B^{-1}=\begin{bmatrix}1&2\\4&10\end{bmatrix}$, nên $(a,b,a_1,b_1)=(1,2,4,10)$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$X=B^{-1}C=\begin{bmatrix}3&0\\1&2\end{bmatrix}$, nên $(a,b,a_1,b_1)=(3,0,1,2)$.
+
+**Bước 2. Thay vào để tính và kiểm tra.**
+
+Thế các ma trận vào đẳng thức ban đầu để kiểm tra.
+
+**Bước 3. Lập luận và tính toán.**
+
+Có thể giải tương đương bằng cách đồng nhất từng ô của tích.
 
 </LoiGiai>
 

@@ -5,11 +5,29 @@ do_kho: vua
 tieu_de: "Giá trị riêng và vector riêng — bài 5"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.3.5"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.3.5 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho
+
+$$
+A = \left[ \begin{array}{rr} a & b \\ c & d \end{array} \right]
+$$
+
+. Chứng minh rằng:
+
+**a.** $c_{A}(x) = x^{2} - tr \; Ax + \det A$, trong đó $tr \; A = a + d$ được gọi là vết của $A$.
+
+**b.** Các trị riêng là $\frac{1}{2} \left[ (a+d) \pm \sqrt{(a-b)^2 + 4bc}\right]$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-3-5-1" moTa="Đề gốc Nicholson bài 3.3.5, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -28,6 +46,7 @@ Exercise 3.3.5  Given A =        show that:
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -44,13 +63,33 @@ Không gian riêng là hạt nhân của A − λI; đa thức của ma trận t
 
 <LoiGiai>
 
-**a.** $c_A(x)=(x-a)(x-d)-bc=x^2-(a+d)x+(ad-bc)=x^2-(\operatorname{tr}A)x+\det A$. **b.** Công thức nghiệm bậc hai cho
+**Cách làm.** Trị riêng $\lambda$ cần có vector $v\ne0$ thỏa $Av=\lambda v$. Tương đương $(A-\lambda I)v=0$ có nghiệm khác 0, nên $\det(\lambda I-A)=0$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$c_A(x)=(x-a)(x-d)-bc=x^2-(a+d)x+(ad-bc)=x^2-(\operatorname{tr}A)x+\det A$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Công thức nghiệm bậc hai cho
+
+
 
 $$
 \lambda=\frac{a+d\pm\sqrt{(a-d)^2+4bc}}2.
 $$
 
- Bản in ghi $(a-b)^2$ trong căn là lỗi đánh máy; phải là $(a-d)^2$, vì biệt thức $(a+d)^2-4(ad-bc)=(a-d)^2+4bc$. Các nghiệm có thể phức nếu biệt thức âm.
+
+
+ Bản in ghi $(a-b)^2$ trong căn là lỗi đánh máy; phải là $(a-d)^2$, vì biệt thức $(a+d)^2-4(ad-bc)=(a-d)^2+4bc$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Các nghiệm có thể phức nếu biệt thức âm.
 
 </LoiGiai>
 

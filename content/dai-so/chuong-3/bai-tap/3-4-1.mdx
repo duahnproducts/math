@@ -5,11 +5,91 @@ do_kho: vua
 tieu_de: "Chéo hoá — bài 1"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.4.1"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.4.1 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Trong mỗi trường hợp, tìm đa thức đặc trưng, các trị riêng, các vector riêng và, nếu có thể, một ma trận khả nghịch $P$ sao cho $P^{-1}AP$ là ma trận chéo.
+
+**a.**
+
+$$
+A = \left[ \begin{array}{rr} 1 & 2 \\ 3 & 2 \end{array}\right]
+$$
+
+
+
+**b.**
+
+$$
+A = \left[ \begin{array}{rr} 2 & -4 \\ -1 & -1 \end{array}\right]
+$$
+
+
+
+**c.**
+
+$$
+A = \left[ \begin{array}{rrr} 7 & 0 & -4 \\ 0 & 5 & 0 \\ 5 & 0 & -2 \end{array}\right]
+$$
+
+
+
+**d.**
+
+$$
+A = \left[ \begin{array}{rrr} 1 & 1 & -3 \\ 2 & 0 & 6 \\ 1 & -1 & 5 \end{array}\right]
+$$
+
+
+
+**e.**
+
+$$
+A = \left[ \begin{array}{rrr} 1 & -2 & 3 \\ 2 & 6 &-6 \\ 1 & 2 & -1 \end{array}\right]
+$$
+
+
+
+**f.**
+
+$$
+A = \left[ \begin{array}{rrr} 0 & 1 & 0 \\ 3 & 0 & 1 \\ 2 & 0 & 0 \end{array}\right]
+$$
+
+
+
+**g.**
+
+$$
+A = \left[ \begin{array}{rrr} 3 & 1 & 1 \\ -4 & -2 & -5 \\ 2 & 2 & 5 \end{array}\right]
+$$
+
+
+
+**h.**
+
+$$
+A = \left[ \begin{array}{rrr} 2 & 1 & 1 \\ 0 & 1 & 0 \\ 1 & -1 & 2 \end{array}\right]
+$$
+
+
+
+**i.**
+
+$$
+A = \left[ \begin{array}{rrr} \lambda & 0 & 0 \\ 0 & \lambda & 0 \\ 0 & 0 & \mu \end{array}\right]
+$$
+
+, $\lambda \neq \mu$
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-4-1-1" moTa="Đề gốc Nicholson bài 3.4.1, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -33,6 +113,7 @@ vertible matrix P such that P−1AP is diagonal.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -49,45 +130,707 @@ Ghép các vector riêng độc lập thành cột của P, rồi kiểm tra AP 
 
 <LoiGiai>
 
-**a.** $c_A(x)=\left(x - 4\right) \left(x + 1\right)$. Giải $(A-\lambda I)v=0$ cho từng nghiệm: $\lambda=-1$ (bội đại số 1), $E_\lambda=\operatorname{span}\{\begin{bmatrix}-1\\1\end{bmatrix}\}$; $\lambda=4$ (bội đại số 1), $E_\lambda=\operatorname{span}\{\begin{bmatrix}\frac{2}{3}\\1\end{bmatrix}\}$. Vector riêng là mọi vector khác 0 trong các không gian vừa ghi. Ghép các vector cơ sở theo thứ tự trên:
+**Cách làm.** Chéo hóa $A=PDP^{-1}$ nghĩa là các cột của $P$ là một cơ sở vector riêng. Trị riêng của cột thứ $j$ phải nằm ở ô $d_{jj}$, và có thể kiểm tra bằng $AP=PD$.
+
+**a.** **Bước 1. Tìm trị riêng.**
+
+Lập
+
+
 
 $$
-P=\begin{bmatrix}-1&\frac{2}{3}\\1&1\end{bmatrix},\qquad P^{-1}AP=D=\begin{bmatrix}-1&0\\0&4\end{bmatrix}.
+xI-A=\begin{bmatrix}x - 1&-2\\-3&x - 2\end{bmatrix}.
 $$
 
- Kiểm tra $AP=PD$ và $\det P\ne0$.
 
-**b.** $c_A(x)=\left(x - 3\right) \left(x + 2\right)$. Giải $(A-\lambda I)v=0$ cho từng nghiệm: $\lambda=-2$ (bội đại số 1), $E_\lambda=\operatorname{span}\{\begin{bmatrix}1\\1\end{bmatrix}\}$; $\lambda=3$ (bội đại số 1), $E_\lambda=\operatorname{span}\{\begin{bmatrix}-4\\1\end{bmatrix}\}$. Vector riêng là mọi vector khác 0 trong các không gian vừa ghi. Ghép các vector cơ sở theo thứ tự trên:
 
-$$
-P=\begin{bmatrix}1&-4\\1&1\end{bmatrix},\qquad P^{-1}AP=D=\begin{bmatrix}-2&0\\0&3\end{bmatrix}.
-$$
+ Khai triển định thức rồi phân tích nhân tử:
 
- Kiểm tra $AP=PD$ và $\det P\ne0$.
 
-**c.** $c_A(x)=\left(x - 5\right) \left(x - 3\right) \left(x - 2\right)$. Giải $(A-\lambda I)v=0$ cho từng nghiệm: $\lambda=2$ (bội đại số 1), $E_\lambda=\operatorname{span}\{\begin{bmatrix}\frac{4}{5}\\0\\1\end{bmatrix}\}$; $\lambda=3$ (bội đại số 1), $E_\lambda=\operatorname{span}\{\begin{bmatrix}1\\0\\1\end{bmatrix}\}$; $\lambda=5$ (bội đại số 1), $E_\lambda=\operatorname{span}\{\begin{bmatrix}0\\1\\0\end{bmatrix}\}$. Vector riêng là mọi vector khác 0 trong các không gian vừa ghi. Ghép các vector cơ sở theo thứ tự trên:
 
 $$
-P=\begin{bmatrix}\frac{4}{5}&1&0\\0&0&1\\1&1&0\end{bmatrix},\qquad P^{-1}AP=D=\begin{bmatrix}2&0&0\\0&3&0\\0&0&5\end{bmatrix}.
+c_A(x)=\det(xI-A)=x^{2} - 3 x - 4=\left(x - 4\right) \left(x + 1\right).
 $$
 
- Kiểm tra $AP=PD$ và $\det P\ne0$.
 
-**d.** $c_A(x)=\left(x - 2\right)^{3}$. Giải $(A-\lambda I)v=0$ cho từng nghiệm: $\lambda=2$ (bội đại số 3), $E_\lambda=\operatorname{span}\{\begin{bmatrix}1\\1\\0\end{bmatrix},\begin{bmatrix}-3\\0\\1\end{bmatrix}\}$. Vector riêng là mọi vector khác 0 trong các không gian vừa ghi. Tổng số vector cơ sở độc lập chỉ là 2, nhỏ hơn cấp 3, nên không chéo hóa được.
 
-**e.** $c_A(x)=\left(x - 2\right)^{3}$. Giải $(A-\lambda I)v=0$ cho từng nghiệm: $\lambda=2$ (bội đại số 3), $E_\lambda=\operatorname{span}\{\begin{bmatrix}-2\\1\\0\end{bmatrix},\begin{bmatrix}3\\0\\1\end{bmatrix}\}$. Vector riêng là mọi vector khác 0 trong các không gian vừa ghi. Tổng số vector cơ sở độc lập chỉ là 2, nhỏ hơn cấp 3, nên không chéo hóa được.
+ Các trị riêng là nghiệm của $c_A(x)=0$.
 
-**f.** $c_A(x)=\left(x - 2\right) \left(x + 1\right)^{2}$. Giải $(A-\lambda I)v=0$ cho từng nghiệm: $\lambda=-1$ (bội đại số 2), $E_\lambda=\operatorname{span}\{\begin{bmatrix}- \frac{1}{2}\\\frac{1}{2}\\1\end{bmatrix}\}$; $\lambda=2$ (bội đại số 1), $E_\lambda=\operatorname{span}\{\begin{bmatrix}1\\2\\1\end{bmatrix}\}$. Vector riêng là mọi vector khác 0 trong các không gian vừa ghi. Tổng số vector cơ sở độc lập chỉ là 2, nhỏ hơn cấp 3, nên không chéo hóa được.
+**Với $\lambda=-1$ (bội đại số 1).** Giải $(A-\lambda I)v=0$:
 
-**g.** $c_A(x)=\left(x - 3\right) \left(x - 2\right) \left(x - 1\right)$. Giải $(A-\lambda I)v=0$ cho từng nghiệm: $\lambda=1$ (bội đại số 1), $E_\lambda=\operatorname{span}\{\begin{bmatrix}1\\-3\\1\end{bmatrix}\}$; $\lambda=2$ (bội đại số 1), $E_\lambda=\operatorname{span}\{\begin{bmatrix}-1\\1\\0\end{bmatrix}\}$; $\lambda=3$ (bội đại số 1), $E_\lambda=\operatorname{span}\{\begin{bmatrix}0\\-1\\1\end{bmatrix}\}$. Vector riêng là mọi vector khác 0 trong các không gian vừa ghi. Ghép các vector cơ sở theo thứ tự trên:
+
 
 $$
-P=\begin{bmatrix}1&-1&0\\-3&1&-1\\1&0&1\end{bmatrix},\qquad P^{-1}AP=D=\begin{bmatrix}1&0&0\\0&2&0\\0&0&3\end{bmatrix}.
+A-\lambda I=\begin{bmatrix}2&2\\3&3\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&1\\0&0\end{bmatrix}.
 $$
 
- Kiểm tra $AP=PD$ và $\det P\ne0$.
 
-**h.** $c_A(x)=\left(x - 3\right) \left(x - 1\right)^{2}$. Giải $(A-\lambda I)v=0$ cho từng nghiệm: $\lambda=1$ (bội đại số 2), $E_\lambda=\operatorname{span}\{\begin{bmatrix}-1\\0\\1\end{bmatrix}\}$; $\lambda=3$ (bội đại số 1), $E_\lambda=\operatorname{span}\{\begin{bmatrix}1\\0\\1\end{bmatrix}\}$. Vector riêng là mọi vector khác 0 trong các không gian vừa ghi. Tổng số vector cơ sở độc lập chỉ là 2, nhỏ hơn cấp 3, nên không chéo hóa được. **i.** Với $A=\operatorname{diag}(\lambda,\lambda,\mu)$, $\lambda\ne\mu$, đa thức đặc trưng là $(x-\lambda)^2(x-\mu)$. $E_\lambda=\operatorname{span}\{e_1,e_2\}$, $E_\mu=\operatorname{span}\{e_3\}$. Chọn $P=I$, ma trận đã chéo; vector riêng là mọi vector khác 0 thuộc một trong hai không gian này.
+
+Hàng 1 cho $(1)v_{1}+(1)v_{2}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{-1}=\operatorname{span}\{\begin{bmatrix}-1\\1\end{bmatrix}\}.
+$$
+
+
+
+**Với $\lambda=4$ (bội đại số 1).** Giải $(A-\lambda I)v=0$:
+
+
+
+$$
+A-\lambda I=\begin{bmatrix}-3&2\\3&-2\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&- \frac{2}{3}\\0&0\end{bmatrix}.
+$$
+
+
+
+Hàng 1 cho $(1)v_{1}+(- \frac{2}{3})v_{2}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{4}=\operatorname{span}\{\begin{bmatrix}\frac{2}{3}\\1\end{bmatrix}\}.
+$$
+
+
+
+**Bước 2. Ghép cơ sở vector riêng theo đúng thứ tự.**
+
+Có đủ 2 vector độc lập. Đặt các vector ấy làm cột của $P$, và đặt trị riêng tương ứng cùng thứ tự trên đường chéo của $D$:
+
+
+
+$$
+P=\begin{bmatrix}-1&\frac{2}{3}\\1&1\end{bmatrix},\quad D=\begin{bmatrix}-1&0\\0&4\end{bmatrix}.
+$$
+
+
+
+**Bước 3. Kiểm tra phép chéo hóa.**
+
+$\det P=- \frac{5}{3}\ne0$, nên $P$ khả nghịch. Nhân từng cột cho
+
+
+
+$$
+AP=PD=\begin{bmatrix}1&\frac{8}{3}\\-1&4\end{bmatrix}.
+$$
+
+
+
+ Nhân trái với $P^{-1}$ thu được $P^{-1}AP=D$.
+
+Vector riêng là các vector **khác 0** trong từng không gian riêng vừa ghi; vector 0 chỉ thuộc không gian riêng.
+
+**b.** **Bước 1. Tìm trị riêng.**
+
+Lập
+
+
+
+$$
+xI-A=\begin{bmatrix}x - 2&4\\1&x + 1\end{bmatrix}.
+$$
+
+
+
+ Khai triển định thức rồi phân tích nhân tử:
+
+
+
+$$
+c_A(x)=\det(xI-A)=x^{2} - x - 6=\left(x - 3\right) \left(x + 2\right).
+$$
+
+
+
+ Các trị riêng là nghiệm của $c_A(x)=0$.
+
+**Với $\lambda=-2$ (bội đại số 1).** Giải $(A-\lambda I)v=0$:
+
+
+
+$$
+A-\lambda I=\begin{bmatrix}4&-4\\-1&1\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&-1\\0&0\end{bmatrix}.
+$$
+
+
+
+Hàng 1 cho $(1)v_{1}+(-1)v_{2}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{-2}=\operatorname{span}\{\begin{bmatrix}1\\1\end{bmatrix}\}.
+$$
+
+
+
+**Với $\lambda=3$ (bội đại số 1).** Giải $(A-\lambda I)v=0$:
+
+
+
+$$
+A-\lambda I=\begin{bmatrix}-1&-4\\-1&-4\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&4\\0&0\end{bmatrix}.
+$$
+
+
+
+Hàng 1 cho $(1)v_{1}+(4)v_{2}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{3}=\operatorname{span}\{\begin{bmatrix}-4\\1\end{bmatrix}\}.
+$$
+
+
+
+**Bước 2. Ghép cơ sở vector riêng theo đúng thứ tự.**
+
+Có đủ 2 vector độc lập. Đặt các vector ấy làm cột của $P$, và đặt trị riêng tương ứng cùng thứ tự trên đường chéo của $D$:
+
+
+
+$$
+P=\begin{bmatrix}1&-4\\1&1\end{bmatrix},\quad D=\begin{bmatrix}-2&0\\0&3\end{bmatrix}.
+$$
+
+
+
+**Bước 3. Kiểm tra phép chéo hóa.**
+
+$\det P=5\ne0$, nên $P$ khả nghịch. Nhân từng cột cho
+
+
+
+$$
+AP=PD=\begin{bmatrix}-2&-12\\-2&3\end{bmatrix}.
+$$
+
+
+
+ Nhân trái với $P^{-1}$ thu được $P^{-1}AP=D$.
+
+Vector riêng là các vector **khác 0** trong từng không gian riêng vừa ghi; vector 0 chỉ thuộc không gian riêng.
+
+**c.** **Bước 1. Tìm trị riêng.**
+
+Lập
+
+
+
+$$
+xI-A=\begin{bmatrix}x - 7&0&4\\0&x - 5&0\\-5&0&x + 2\end{bmatrix}.
+$$
+
+
+
+ Khai triển định thức rồi phân tích nhân tử:
+
+
+
+$$
+c_A(x)=\det(xI-A)=x^{3} - 10 x^{2} + 31 x - 30=\left(x - 5\right) \left(x - 3\right) \left(x - 2\right).
+$$
+
+
+
+ Các trị riêng là nghiệm của $c_A(x)=0$.
+
+**Với $\lambda=2$ (bội đại số 1).** Giải $(A-\lambda I)v=0$:
+
+
+
+$$
+A-\lambda I=\begin{bmatrix}5&0&-4\\0&3&0\\5&0&-4\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&0&- \frac{4}{5}\\0&1&0\\0&0&0\end{bmatrix}.
+$$
+
+
+
+Hàng 1 cho $(1)v_{1}+(- \frac{4}{5})v_{3}=0$.
+
+Hàng 2 cho $(1)v_{2}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{2}=\operatorname{span}\{\begin{bmatrix}\frac{4}{5}\\0\\1\end{bmatrix}\}.
+$$
+
+
+
+**Với $\lambda=3$ (bội đại số 1).** Giải $(A-\lambda I)v=0$:
+
+
+
+$$
+A-\lambda I=\begin{bmatrix}4&0&-4\\0&2&0\\5&0&-5\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&0&-1\\0&1&0\\0&0&0\end{bmatrix}.
+$$
+
+
+
+Hàng 1 cho $(1)v_{1}+(-1)v_{3}=0$.
+
+Hàng 2 cho $(1)v_{2}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{3}=\operatorname{span}\{\begin{bmatrix}1\\0\\1\end{bmatrix}\}.
+$$
+
+
+
+**Với $\lambda=5$ (bội đại số 1).** Giải $(A-\lambda I)v=0$:
+
+
+
+$$
+A-\lambda I=\begin{bmatrix}2&0&-4\\0&0&0\\5&0&-7\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&0&0\\0&0&1\\0&0&0\end{bmatrix}.
+$$
+
+
+
+Hàng 1 cho $(1)v_{1}=0$.
+
+Hàng 2 cho $(1)v_{3}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{5}=\operatorname{span}\{\begin{bmatrix}0\\1\\0\end{bmatrix}\}.
+$$
+
+
+
+**Bước 2. Ghép cơ sở vector riêng theo đúng thứ tự.**
+
+Có đủ 3 vector độc lập. Đặt các vector ấy làm cột của $P$, và đặt trị riêng tương ứng cùng thứ tự trên đường chéo của $D$:
+
+
+
+$$
+P=\begin{bmatrix}\frac{4}{5}&1&0\\0&0&1\\1&1&0\end{bmatrix},\quad D=\begin{bmatrix}2&0&0\\0&3&0\\0&0&5\end{bmatrix}.
+$$
+
+
+
+**Bước 3. Kiểm tra phép chéo hóa.**
+
+$\det P=\frac{1}{5}\ne0$, nên $P$ khả nghịch. Nhân từng cột cho
+
+
+
+$$
+AP=PD=\begin{bmatrix}\frac{8}{5}&3&0\\0&0&5\\2&3&0\end{bmatrix}.
+$$
+
+
+
+ Nhân trái với $P^{-1}$ thu được $P^{-1}AP=D$.
+
+Vector riêng là các vector **khác 0** trong từng không gian riêng vừa ghi; vector 0 chỉ thuộc không gian riêng.
+
+**d.** **Bước 1. Tìm trị riêng.**
+
+Lập
+
+
+
+$$
+xI-A=\begin{bmatrix}x - 1&-1&3\\-2&x&-6\\-1&1&x - 5\end{bmatrix}.
+$$
+
+
+
+ Khai triển định thức rồi phân tích nhân tử:
+
+
+
+$$
+c_A(x)=\det(xI-A)=x^{3} - 6 x^{2} + 12 x - 8=\left(x - 2\right)^{3}.
+$$
+
+
+
+ Các trị riêng là nghiệm của $c_A(x)=0$.
+
+**Với $\lambda=2$ (bội đại số 3).** Giải $(A-\lambda I)v=0$:
+
+
+
+$$
+A-\lambda I=\begin{bmatrix}-1&1&-3\\2&-2&6\\1&-1&3\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&-1&3\\0&0&0\\0&0&0\end{bmatrix}.
+$$
+
+
+
+Hàng 1 cho $(1)v_{1}+(-1)v_{2}+(3)v_{3}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{2}=\operatorname{span}\{\begin{bmatrix}1\\1\\0\end{bmatrix},\begin{bmatrix}-3\\0\\1\end{bmatrix}\}.
+$$
+
+
+
+**Bước 2. Đếm số vector riêng độc lập.**
+
+Tổng số vector trong các cơ sở vừa tìm là 2, nhỏ hơn cấp 3. Vì vậy không thể lập ma trận khả nghịch bằng các vector riêng, nên ma trận không chéo hóa được.
+
+Vector riêng là các vector **khác 0** trong từng không gian riêng vừa ghi; vector 0 chỉ thuộc không gian riêng.
+
+**e.** **Bước 1. Tìm trị riêng.**
+
+Lập
+
+
+
+$$
+xI-A=\begin{bmatrix}x - 1&2&-3\\-2&x - 6&6\\-1&-2&x + 1\end{bmatrix}.
+$$
+
+
+
+ Khai triển định thức rồi phân tích nhân tử:
+
+
+
+$$
+c_A(x)=\det(xI-A)=x^{3} - 6 x^{2} + 12 x - 8=\left(x - 2\right)^{3}.
+$$
+
+
+
+ Các trị riêng là nghiệm của $c_A(x)=0$.
+
+**Với $\lambda=2$ (bội đại số 3).** Giải $(A-\lambda I)v=0$:
+
+
+
+$$
+A-\lambda I=\begin{bmatrix}-1&-2&3\\2&4&-6\\1&2&-3\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&2&-3\\0&0&0\\0&0&0\end{bmatrix}.
+$$
+
+
+
+Hàng 1 cho $(1)v_{1}+(2)v_{2}+(-3)v_{3}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{2}=\operatorname{span}\{\begin{bmatrix}-2\\1\\0\end{bmatrix},\begin{bmatrix}3\\0\\1\end{bmatrix}\}.
+$$
+
+
+
+**Bước 2. Đếm số vector riêng độc lập.**
+
+Tổng số vector trong các cơ sở vừa tìm là 2, nhỏ hơn cấp 3. Vì vậy không thể lập ma trận khả nghịch bằng các vector riêng, nên ma trận không chéo hóa được.
+
+Vector riêng là các vector **khác 0** trong từng không gian riêng vừa ghi; vector 0 chỉ thuộc không gian riêng.
+
+**f.** **Bước 1. Tìm trị riêng.**
+
+Lập
+
+
+
+$$
+xI-A=\begin{bmatrix}x&-1&0\\-3&x&-1\\-2&0&x\end{bmatrix}.
+$$
+
+
+
+ Khai triển định thức rồi phân tích nhân tử:
+
+
+
+$$
+c_A(x)=\det(xI-A)=x^{3} - 3 x - 2=\left(x - 2\right) \left(x + 1\right)^{2}.
+$$
+
+
+
+ Các trị riêng là nghiệm của $c_A(x)=0$.
+
+**Với $\lambda=-1$ (bội đại số 2).** Giải $(A-\lambda I)v=0$:
+
+
+
+$$
+A-\lambda I=\begin{bmatrix}1&1&0\\3&1&1\\2&0&1\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&0&\frac{1}{2}\\0&1&- \frac{1}{2}\\0&0&0\end{bmatrix}.
+$$
+
+
+
+Hàng 1 cho $(1)v_{1}+(\frac{1}{2})v_{3}=0$.
+
+Hàng 2 cho $(1)v_{2}+(- \frac{1}{2})v_{3}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{-1}=\operatorname{span}\{\begin{bmatrix}- \frac{1}{2}\\\frac{1}{2}\\1\end{bmatrix}\}.
+$$
+
+
+
+**Với $\lambda=2$ (bội đại số 1).** Giải $(A-\lambda I)v=0$:
+
+
+
+$$
+A-\lambda I=\begin{bmatrix}-2&1&0\\3&-2&1\\2&0&-2\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&0&-1\\0&1&-2\\0&0&0\end{bmatrix}.
+$$
+
+
+
+Hàng 1 cho $(1)v_{1}+(-1)v_{3}=0$.
+
+Hàng 2 cho $(1)v_{2}+(-2)v_{3}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{2}=\operatorname{span}\{\begin{bmatrix}1\\2\\1\end{bmatrix}\}.
+$$
+
+
+
+**Bước 2. Đếm số vector riêng độc lập.**
+
+Tổng số vector trong các cơ sở vừa tìm là 2, nhỏ hơn cấp 3. Vì vậy không thể lập ma trận khả nghịch bằng các vector riêng, nên ma trận không chéo hóa được.
+
+Vector riêng là các vector **khác 0** trong từng không gian riêng vừa ghi; vector 0 chỉ thuộc không gian riêng.
+
+**g.** **Bước 1. Tìm trị riêng.**
+
+Lập
+
+
+
+$$
+xI-A=\begin{bmatrix}x - 3&-1&-1\\4&x + 2&5\\-2&-2&x - 5\end{bmatrix}.
+$$
+
+
+
+ Khai triển định thức rồi phân tích nhân tử:
+
+
+
+$$
+c_A(x)=\det(xI-A)=x^{3} - 6 x^{2} + 11 x - 6=\left(x - 3\right) \left(x - 2\right) \left(x - 1\right).
+$$
+
+
+
+ Các trị riêng là nghiệm của $c_A(x)=0$.
+
+**Với $\lambda=1$ (bội đại số 1).** Giải $(A-\lambda I)v=0$:
+
+
+
+$$
+A-\lambda I=\begin{bmatrix}2&1&1\\-4&-3&-5\\2&2&4\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&0&-1\\0&1&3\\0&0&0\end{bmatrix}.
+$$
+
+
+
+Hàng 1 cho $(1)v_{1}+(-1)v_{3}=0$.
+
+Hàng 2 cho $(1)v_{2}+(3)v_{3}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{1}=\operatorname{span}\{\begin{bmatrix}1\\-3\\1\end{bmatrix}\}.
+$$
+
+
+
+**Với $\lambda=2$ (bội đại số 1).** Giải $(A-\lambda I)v=0$:
+
+
+
+$$
+A-\lambda I=\begin{bmatrix}1&1&1\\-4&-4&-5\\2&2&3\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&1&0\\0&0&1\\0&0&0\end{bmatrix}.
+$$
+
+
+
+Hàng 1 cho $(1)v_{1}+(1)v_{2}=0$.
+
+Hàng 2 cho $(1)v_{3}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{2}=\operatorname{span}\{\begin{bmatrix}-1\\1\\0\end{bmatrix}\}.
+$$
+
+
+
+**Với $\lambda=3$ (bội đại số 1).** Giải $(A-\lambda I)v=0$:
+
+
+
+$$
+A-\lambda I=\begin{bmatrix}0&1&1\\-4&-5&-5\\2&2&2\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&0&0\\0&1&1\\0&0&0\end{bmatrix}.
+$$
+
+
+
+Hàng 1 cho $(1)v_{1}=0$.
+
+Hàng 2 cho $(1)v_{2}+(1)v_{3}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{3}=\operatorname{span}\{\begin{bmatrix}0\\-1\\1\end{bmatrix}\}.
+$$
+
+
+
+**Bước 2. Ghép cơ sở vector riêng theo đúng thứ tự.**
+
+Có đủ 3 vector độc lập. Đặt các vector ấy làm cột của $P$, và đặt trị riêng tương ứng cùng thứ tự trên đường chéo của $D$:
+
+
+
+$$
+P=\begin{bmatrix}1&-1&0\\-3&1&-1\\1&0&1\end{bmatrix},\quad D=\begin{bmatrix}1&0&0\\0&2&0\\0&0&3\end{bmatrix}.
+$$
+
+
+
+**Bước 3. Kiểm tra phép chéo hóa.**
+
+$\det P=-1\ne0$, nên $P$ khả nghịch. Nhân từng cột cho
+
+
+
+$$
+AP=PD=\begin{bmatrix}1&-2&0\\-3&2&-3\\1&0&3\end{bmatrix}.
+$$
+
+
+
+ Nhân trái với $P^{-1}$ thu được $P^{-1}AP=D$.
+
+Vector riêng là các vector **khác 0** trong từng không gian riêng vừa ghi; vector 0 chỉ thuộc không gian riêng.
+
+**h.** **Bước 1. Tìm trị riêng.**
+
+Lập
+
+
+
+$$
+xI-A=\begin{bmatrix}x - 2&-1&-1\\0&x - 1&0\\-1&1&x - 2\end{bmatrix}.
+$$
+
+
+
+ Khai triển định thức rồi phân tích nhân tử:
+
+
+
+$$
+c_A(x)=\det(xI-A)=x^{3} - 5 x^{2} + 7 x - 3=\left(x - 3\right) \left(x - 1\right)^{2}.
+$$
+
+
+
+ Các trị riêng là nghiệm của $c_A(x)=0$.
+
+**Với $\lambda=1$ (bội đại số 2).** Giải $(A-\lambda I)v=0$:
+
+
+
+$$
+A-\lambda I=\begin{bmatrix}1&1&1\\0&0&0\\1&-1&1\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&0&1\\0&1&0\\0&0&0\end{bmatrix}.
+$$
+
+
+
+Hàng 1 cho $(1)v_{1}+(1)v_{3}=0$.
+
+Hàng 2 cho $(1)v_{2}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{1}=\operatorname{span}\{\begin{bmatrix}-1\\0\\1\end{bmatrix}\}.
+$$
+
+
+
+**Với $\lambda=3$ (bội đại số 1).** Giải $(A-\lambda I)v=0$:
+
+
+
+$$
+A-\lambda I=\begin{bmatrix}-1&1&1\\0&-2&0\\1&-1&-1\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&0&-1\\0&1&0\\0&0&0\end{bmatrix}.
+$$
+
+
+
+Hàng 1 cho $(1)v_{1}+(-1)v_{3}=0$.
+
+Hàng 2 cho $(1)v_{2}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{3}=\operatorname{span}\{\begin{bmatrix}1\\0\\1\end{bmatrix}\}.
+$$
+
+
+
+**Bước 2. Đếm số vector riêng độc lập.**
+
+Tổng số vector trong các cơ sở vừa tìm là 2, nhỏ hơn cấp 3. Vì vậy không thể lập ma trận khả nghịch bằng các vector riêng, nên ma trận không chéo hóa được.
+
+Vector riêng là các vector **khác 0** trong từng không gian riêng vừa ghi; vector 0 chỉ thuộc không gian riêng. **i.** Với $A=\operatorname{diag}(\lambda,\lambda,\mu)$, $\lambda\ne\mu$, đa thức đặc trưng là $(x-\lambda)^2(x-\mu)$. $E_\lambda=\operatorname{span}\{e_1,e_2\}$, $E_\mu=\operatorname{span}\{e_3\}$. Chọn $P=I$, ma trận đã chéo; vector riêng là mọi vector khác 0 thuộc một trong hai không gian này.
 
 </LoiGiai>
 

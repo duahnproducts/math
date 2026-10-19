@@ -5,11 +5,25 @@ do_kho: vua
 tieu_de: "Giá trị riêng và vector riêng — bài 11"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.3.11"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.3.11 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Ma trận $n \times n$, ký hiệu là $A$, được gọi là lũy linh nếu $A^{m} = 0$ với một $m \geq 1$ nào đó.
+
+**a.** Chứng minh rằng mọi ma trận tam giác có các phần tử trên đường chéo chính bằng 0 đều lũy linh.
+
+**b.** Nếu $A$ lũy linh, hãy chứng minh rằng $\lambda = 0$ là trị riêng duy nhất (kể cả khi xét số phức) của $A$.
+
+**c.** Suy ra rằng $c_{A}(x) = x^{n}$ nếu $A$ là ma trận $n \times n$ và lũy linh.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-3-11-1" moTa="Đề gốc Nicholson bài 3.3.11, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -31,6 +45,7 @@ Am = 0 for some m ≥1.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -47,7 +62,39 @@ Không gian riêng là hạt nhân của A − λI; đa thức của ma trận t
 
 <LoiGiai>
 
-**a.** Với tam giác trên nghiêm ngặt, $(A^k)_{ij}$ chỉ có thể khác 0 khi $j-i\ge k$; do đó $A^n=0$. Tam giác dưới dùng chuyển vị. **b.** Nếu $Av=\lambda v$ và $A^m=0$, thì $0=A^mv=\lambda^mv$. Vì $v\ne0$, $\lambda=0$, kể cả khi xét số phức. **c.** Đa thức đặc trưng đơn thức đầu hệ số 1, bậc $n$, có $n$ nghiệm phức kể bội. Theo (b) tất cả đều bằng 0, nên $c_A(x)=x^n$.
+**Cách làm.** Trị riêng $\lambda$ cần có vector $v\ne0$ thỏa $Av=\lambda v$. Tương đương $(A-\lambda I)v=0$ có nghiệm khác 0, nên $\det(\lambda I-A)=0$.
+
+Mỗi lần nhân thêm một ma trận tam giác trên nghiêm ngặt, vị trí có thể khác 0 phải dịch ít nhất một cột về phải. Sau $n$ lần, khoảng cách cần ít nhất $n$ trong khi lớn nhất chỉ $n-1$, nên không còn ô nào khác 0.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Với tam giác trên nghiêm ngặt, $(A^k)_{ij}$ chỉ có thể khác 0 khi $j-i\ge k$; do đó $A^n=0$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Tam giác dưới dùng chuyển vị.
+
+**b.**
+
+**Bước 1. Xét giả thiết.**
+
+Nếu $Av=\lambda v$ và $A^m=0$, thì $0=A^mv=\lambda^mv$.
+
+**Bước 2. Giải thích điều kiện sử dụng.**
+
+Vì $v\ne0$, $\lambda=0$, kể cả khi xét số phức.
+
+**c.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Đa thức đặc trưng đơn thức đầu hệ số 1, bậc $n$, có $n$ nghiệm phức kể bội.
+
+**Bước 2. Lập luận và tính toán.**
+
+Theo (b) tất cả đều bằng 0, nên $c_A(x)=x^n$.
 
 </LoiGiai>
 

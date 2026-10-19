@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Bài bổ sung 2.7"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.7"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.7 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Ma trận có dạng $aI_{n}$, trong đó $a$ là một số, được gọi là ma trận vô hướng cấp $n \times n$.
+
+**a.** Chứng minh rằng mỗi ma trận vô hướng cấp $n \times n$ đều giao hoán với mọi ma trận $n \times n$.
+
+**b.** Chứng minh rằng $A$ là ma trận vô hướng nếu nó giao hoán với mọi ma trận $n \times n$. [Gợi ý: Xem ý (d) của Bài bổ sung 2.6.]
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-0-7-1" moTa="Đề gốc Nicholson bài 2.7, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -28,6 +40,7 @@ number, is called an n×n scalar matrix.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -44,7 +57,33 @@ Với đẳng thức tổng quát, khai triển có giữ thứ tự; với mệ
 
 <LoiGiai>
 
-**a.** $(aI)B=aB=B(aI)$ với mọi $B$. **b.** Giả sử $A$ giao hoán với mọi ma trận. Đặc biệt $AI_{jj}=I_{jj}A$. So sánh cột $j$ và hàng $j$ cho $a_{ij}=a_{ji}=0$ khi $i\ne j$, nên $A$ chéo. Tiếp theo $AI_{pq}=a_{pp}I_{pq}$, $I_{pq}A=a_{qq}I_{pq}$; giao hoán cho $a_{pp}=a_{qq}$ với mọi $p,q$. Vậy $A=aI$.
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$(aI)B=aB=B(aI)$ với mọi $B$.
+
+**b.**
+
+**Bước 1. Xét giả thiết.**
+
+Giả sử $A$ giao hoán với mọi ma trận.
+
+**Bước 2. Lập luận và tính toán.**
+
+Đặc biệt $AI_{jj}=I_{jj}A$.
+
+**Bước 3. Lập luận và tính toán.**
+
+So sánh cột $j$ và hàng $j$ cho $a_{ij}=a_{ji}=0$ khi $i\ne j$, nên $A$ chéo.
+
+**Bước 4. Lập luận và tính toán.**
+
+Tiếp theo $AI_{pq}=a_{pp}I_{pq}$, $I_{pq}A=a_{qq}I_{pq}$; giao hoán cho $a_{pp}=a_{qq}$ với mọi $p,q$.
+
+**Bước 5. Rút ra kết luận.**
+
+Vậy $A=aI$.
 
 </LoiGiai>
 

@@ -5,11 +5,115 @@ do_kho: vua
 tieu_de: "Ma trận nghịch đảo — bài 2"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.4.2"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.4.2 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Tìm nghịch đảo của mỗi ma trận sau.
+
+**a.**
+
+$$
+\left[ \begin{array}{rr} 1 & -1 \\ -1 & 3 \end{array} \right]
+$$
+
+
+
+**b.**
+
+$$
+\left[ \begin{array}{rr} 4 & 1 \\ 3 & 2 \end{array} \right]
+$$
+
+
+
+**c.**
+
+$$
+\left[ \begin{array}{rrr} 1 & 0 & -1 \\ 3 & 2 & 0 \\ -1 & -1 & 0 \end{array} \right]
+$$
+
+
+
+**d.**
+
+$$
+\left[ \begin{array}{rrr} 1 & -1 & 2 \\ -5 & 7 & -11 \\ -2 & 3 & -5 \end{array} \right]
+$$
+
+
+
+**e.**
+
+$$
+\left[ \begin{array}{rrr} 3 & 5 & 0 \\ 3 & 7 & 1 \\ 1 & 2 & 1 \end{array} \right]
+$$
+
+
+
+**f.**
+
+$$
+\left[ \begin{array}{rrr} 3 & 1 & -1 \\ 2 & 1 & 0 \\ 1 & 5 & -1 \end{array} \right]
+$$
+
+
+
+**g.**
+
+$$
+\left[ \begin{array}{rrr} 2 & 4 & 1 \\ 3 & 3 & 2 \\ 4 & 1 & 4 \end{array} \right]
+$$
+
+
+
+**h.**
+
+$$
+\left[ \begin{array}{rrr} 3 & 1 & -1 \\ 5 & 2 & 0 \\ 1 & 1 & -1 \end{array} \right]
+$$
+
+
+
+**i.**
+
+$$
+\left[ \begin{array}{rrr} 3 & 1 & 2 \\ 1 & -1 & 3 \\ 1 & 2 & 4 \end{array} \right]
+$$
+
+
+
+**j.**
+
+$$
+\left[ \begin{array}{rrrr} -1 & 4 & 5 & 2 \\ 0 & 0 & 0 & -1 \\ 1 & -2 & -2 & 0 \\ 0 & -1 & -1 & 0 \end{array} \right]
+$$
+
+
+
+**k.**
+
+$$
+\left[ \begin{array}{rrrr} 1 & 0 & 7 & 5 \\ 0 & 1 & 3 & 6 \\ 1 & -1 & 5 & 2 \\ 1 & -1 & 5 & 1 \end{array} \right]
+$$
+
+
+
+**l.**
+
+$$
+\left[ \begin{array}{rrrrr} 1 & 2 & 0 & 0 & 0 \\ 0 & 1 & 3 & 0 & 0 \\ 0 & 0 & 1 & 5 & 0 \\ 0 & 0 & 0 & 1 & 7 \\ 0 & 0 & 0 & 0 & 1 \end{array} \right]
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-4-2-1" moTa="Đề gốc Nicholson bài 2.4.2, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -38,6 +142,7 @@ matrices.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -54,101 +159,2325 @@ Biến đổi hàng trên cả hai khối. Khi khối trái bằng I, khối ph�
 
 <LoiGiai>
 
-**a.** Lập $[A\mid I]$, thực hiện lần lượt: $R_2\leftarrow R_2+(1)R_1$; $R_2\leftarrow(\frac{1}{2})R_2$; $R_1\leftarrow R_1+(1)R_2$. Khối trái trở thành $I$, nên khối phải là
+**Cách làm.** Theo định nghĩa, $B=A^{-1}$ khi $AB=BA=I$. Muốn khử $A$ ở bên trái thì nhân trái với $A^{-1}$; muốn khử ở bên phải thì nhân phải. Nghịch đảo tích đảo thứ tự: $(AB)^{-1}=B^{-1}A^{-1}$.
+
+**a.** **Bước 1. Kiểm tra điều kiện tồn tại.**
+
+Với $A=\begin{bmatrix}1&-1\\-1&3\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det A=(1)(3)-(-1)(-1)=2.
+$$
+
+
+
+Lập ma trận ghép. Mọi phép hàng phải làm trên **cả hai khối**:
+
+
+
+$$
+[A\mid I]=\begin{bmatrix}1&-1&1&0\\-1&3&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 2. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&-1&1&0\\0&2&1&1\end{bmatrix}.
+$$
+
+
+
+**Bước 3. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $2$, được
+
+
+
+$$
+\begin{bmatrix}1&-1&1&0\\0&1&\frac{1}{2}&\frac{1}{2}\end{bmatrix}.
+$$
+
+
+
+**Bước 4. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(1)R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&\frac{3}{2}&\frac{1}{2}\\0&1&\frac{1}{2}&\frac{1}{2}\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Đọc khối phải và kiểm tra.**
+
+Khối trái đã thành $I$, nên khối phải là
+
+
 
 $$
 A^{-1}=\begin{bmatrix}\frac{3}{2}&\frac{1}{2}\\\frac{1}{2}&\frac{1}{2}\end{bmatrix}.
 $$
 
- Kiểm tra bằng nhân hai chiều: $AA^{-1}=A^{-1}A=I$.
 
-**b.** Lập $[A\mid I]$, thực hiện lần lượt: $R_1\leftarrow(\frac{1}{4})R_1$; $R_2\leftarrow R_2+(-3)R_1$; $R_2\leftarrow(\frac{4}{5})R_2$; $R_1\leftarrow R_1+(- \frac{1}{4})R_2$. Khối trái trở thành $I$, nên khối phải là
+
+ Nhân lại cho
+
+
+
+$$
+AA^{-1}=A^{-1}A=\begin{bmatrix}1&0\\0&1\end{bmatrix}.
+$$
+
+
+
+**b.** **Bước 1. Kiểm tra điều kiện tồn tại.**
+
+Với $A=\begin{bmatrix}4&1\\3&2\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det A=(4)(2)-(1)(3)=5.
+$$
+
+
+
+Lập ma trận ghép. Mọi phép hàng phải làm trên **cả hai khối**:
+
+
+
+$$
+[A\mid I]=\begin{bmatrix}4&1&1&0\\3&2&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 2. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 1 cho $4$, được
+
+
+
+$$
+\begin{bmatrix}1&\frac{1}{4}&\frac{1}{4}&0\\3&2&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 3. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-3)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&\frac{1}{4}&\frac{1}{4}&0\\0&\frac{5}{4}&- \frac{3}{4}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 4. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $\frac{5}{4}$, được
+
+
+
+$$
+\begin{bmatrix}1&\frac{1}{4}&\frac{1}{4}&0\\0&1&- \frac{3}{5}&\frac{4}{5}\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(- \frac{1}{4})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&\frac{2}{5}&- \frac{1}{5}\\0&1&- \frac{3}{5}&\frac{4}{5}\end{bmatrix}.
+$$
+
+
+
+**Bước 6. Đọc khối phải và kiểm tra.**
+
+Khối trái đã thành $I$, nên khối phải là
+
+
 
 $$
 A^{-1}=\begin{bmatrix}\frac{2}{5}&- \frac{1}{5}\\- \frac{3}{5}&\frac{4}{5}\end{bmatrix}.
 $$
 
- Kiểm tra bằng nhân hai chiều: $AA^{-1}=A^{-1}A=I$.
 
-**c.** Lập $[A\mid I]$, thực hiện lần lượt: $R_2\leftarrow R_2+(-3)R_1$; $R_3\leftarrow R_3+(1)R_1$; $R_2\leftarrow(\frac{1}{2})R_2$; $R_3\leftarrow R_3+(1)R_2$; $R_3\leftarrow(2)R_3$; $R_1\leftarrow R_1+(1)R_3$; $R_2\leftarrow R_2+(- \frac{3}{2})R_3$. Khối trái trở thành $I$, nên khối phải là
+
+ Nhân lại cho
+
+
+
+$$
+AA^{-1}=A^{-1}A=\begin{bmatrix}1&0\\0&1\end{bmatrix}.
+$$
+
+
+
+**c.** **Bước 1. Kiểm tra điều kiện tồn tại.**
+
+**Bước 2. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}1&0&-1\\3&2&0\\-1&-1&0\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}2&0\\-1&0\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=0.
+$$
+
+
+
+Với $M_{11}=\begin{bmatrix}2&0\\-1&0\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{11}=(2)(0)-(0)(-1)=0.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}3&2\\-1&-1\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=-1.
+$$
+
+
+
+Với $M_{13}=\begin{bmatrix}3&2\\-1&-1\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{13}=(3)(-1)-(2)(-1)=-1.
+$$
+
+
+
+**Bước 3. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(1)(0)+(-1)(-1)=1.
+$$
+
+
+
+Lập ma trận ghép. Mọi phép hàng phải làm trên **cả hai khối**:
+
+
+
+$$
+[A\mid I]=\begin{bmatrix}1&0&-1&1&0&0\\3&2&0&0&1&0\\-1&-1&0&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 4. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-3)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&-1&1&0&0\\0&2&3&-3&1&0\\-1&-1&0&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&-1&1&0&0\\0&2&3&-3&1&0\\0&-1&-1&1&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 6. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $2$, được
+
+
+
+$$
+\begin{bmatrix}1&0&-1&1&0&0\\0&1&\frac{3}{2}&- \frac{3}{2}&\frac{1}{2}&0\\0&-1&-1&1&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 7. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(1)R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&-1&1&0&0\\0&1&\frac{3}{2}&- \frac{3}{2}&\frac{1}{2}&0\\0&0&\frac{1}{2}&- \frac{1}{2}&\frac{1}{2}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 8. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 3 cho $\frac{1}{2}$, được
+
+
+
+$$
+\begin{bmatrix}1&0&-1&1&0&0\\0&1&\frac{3}{2}&- \frac{3}{2}&\frac{1}{2}&0\\0&0&1&-1&1&2\end{bmatrix}.
+$$
+
+
+
+**Bước 9. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(1)R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&1&2\\0&1&\frac{3}{2}&- \frac{3}{2}&\frac{1}{2}&0\\0&0&1&-1&1&2\end{bmatrix}.
+$$
+
+
+
+**Bước 10. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(- \frac{3}{2})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&1&2\\0&1&0&0&-1&-3\\0&0&1&-1&1&2\end{bmatrix}.
+$$
+
+
+
+**Bước 11. Đọc khối phải và kiểm tra.**
+
+Khối trái đã thành $I$, nên khối phải là
+
+
 
 $$
 A^{-1}=\begin{bmatrix}0&1&2\\0&-1&-3\\-1&1&2\end{bmatrix}.
 $$
 
- Kiểm tra bằng nhân hai chiều: $AA^{-1}=A^{-1}A=I$.
 
-**d.** Lập $[A\mid I]$, thực hiện lần lượt: $R_2\leftarrow R_2+(5)R_1$; $R_3\leftarrow R_3+(2)R_1$; $R_2\leftarrow(\frac{1}{2})R_2$; $R_1\leftarrow R_1+(1)R_2$; $R_3\leftarrow R_3+(-1)R_2$; $R_3\leftarrow(-2)R_3$; $R_1\leftarrow R_1+(- \frac{3}{2})R_3$; $R_2\leftarrow R_2+(\frac{1}{2})R_3$. Khối trái trở thành $I$, nên khối phải là
+
+ Nhân lại cho
+
+
+
+$$
+AA^{-1}=A^{-1}A=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}.
+$$
+
+
+
+**d.** **Bước 1. Kiểm tra điều kiện tồn tại.**
+
+**Bước 2. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}1&-1&2\\-5&7&-11\\-2&3&-5\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}7&-11\\3&-5\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=-2.
+$$
+
+
+
+Với $M_{11}=\begin{bmatrix}7&-11\\3&-5\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{11}=(7)(-5)-(-11)(3)=-2.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}-5&-11\\-2&-5\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=-3.
+$$
+
+
+
+Với $M_{12}=\begin{bmatrix}-5&-11\\-2&-5\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{12}=(-5)(-5)-(-11)(-2)=3.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}-5&7\\-2&3\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=-1.
+$$
+
+
+
+Với $M_{13}=\begin{bmatrix}-5&7\\-2&3\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{13}=(-5)(3)-(7)(-2)=-1.
+$$
+
+
+
+**Bước 3. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(1)(-2)+(-1)(-3)+(2)(-1)=-1.
+$$
+
+
+
+Lập ma trận ghép. Mọi phép hàng phải làm trên **cả hai khối**:
+
+
+
+$$
+[A\mid I]=\begin{bmatrix}1&-1&2&1&0&0\\-5&7&-11&0&1&0\\-2&3&-5&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 4. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(5)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&-1&2&1&0&0\\0&2&-1&5&1&0\\-2&3&-5&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(2)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&-1&2&1&0&0\\0&2&-1&5&1&0\\0&1&-1&2&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 6. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $2$, được
+
+
+
+$$
+\begin{bmatrix}1&-1&2&1&0&0\\0&1&- \frac{1}{2}&\frac{5}{2}&\frac{1}{2}&0\\0&1&-1&2&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 7. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(1)R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&\frac{3}{2}&\frac{7}{2}&\frac{1}{2}&0\\0&1&- \frac{1}{2}&\frac{5}{2}&\frac{1}{2}&0\\0&1&-1&2&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 8. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-1)R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&\frac{3}{2}&\frac{7}{2}&\frac{1}{2}&0\\0&1&- \frac{1}{2}&\frac{5}{2}&\frac{1}{2}&0\\0&0&- \frac{1}{2}&- \frac{1}{2}&- \frac{1}{2}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 9. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 3 cho $- \frac{1}{2}$, được
+
+
+
+$$
+\begin{bmatrix}1&0&\frac{3}{2}&\frac{7}{2}&\frac{1}{2}&0\\0&1&- \frac{1}{2}&\frac{5}{2}&\frac{1}{2}&0\\0&0&1&1&1&-2\end{bmatrix}.
+$$
+
+
+
+**Bước 10. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(- \frac{3}{2})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&2&-1&3\\0&1&- \frac{1}{2}&\frac{5}{2}&\frac{1}{2}&0\\0&0&1&1&1&-2\end{bmatrix}.
+$$
+
+
+
+**Bước 11. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(\frac{1}{2})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&2&-1&3\\0&1&0&3&1&-1\\0&0&1&1&1&-2\end{bmatrix}.
+$$
+
+
+
+**Bước 12. Đọc khối phải và kiểm tra.**
+
+Khối trái đã thành $I$, nên khối phải là
+
+
 
 $$
 A^{-1}=\begin{bmatrix}2&-1&3\\3&1&-1\\1&1&-2\end{bmatrix}.
 $$
 
- Kiểm tra bằng nhân hai chiều: $AA^{-1}=A^{-1}A=I$.
 
-**e.** Lập $[A\mid I]$, thực hiện lần lượt: $R_1\leftarrow(\frac{1}{3})R_1$; $R_2\leftarrow R_2+(-3)R_1$; $R_3\leftarrow R_3+(-1)R_1$; $R_2\leftarrow(\frac{1}{2})R_2$; $R_1\leftarrow R_1+(- \frac{5}{3})R_2$; $R_3\leftarrow R_3+(- \frac{1}{3})R_2$; $R_3\leftarrow(\frac{6}{5})R_3$; $R_1\leftarrow R_1+(\frac{5}{6})R_3$; $R_2\leftarrow R_2+(- \frac{1}{2})R_3$. Khối trái trở thành $I$, nên khối phải là
+
+ Nhân lại cho
+
+
+
+$$
+AA^{-1}=A^{-1}A=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}.
+$$
+
+
+
+**e.** **Bước 1. Kiểm tra điều kiện tồn tại.**
+
+**Bước 2. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}3&5&0\\3&7&1\\1&2&1\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}7&1\\2&1\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=5.
+$$
+
+
+
+Với $M_{11}=\begin{bmatrix}7&1\\2&1\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{11}=(7)(1)-(1)(2)=5.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}3&1\\1&1\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=-2.
+$$
+
+
+
+Với $M_{12}=\begin{bmatrix}3&1\\1&1\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{12}=(3)(1)-(1)(1)=2.
+$$
+
+
+
+**Bước 3. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(3)(5)+(5)(-2)=5.
+$$
+
+
+
+Lập ma trận ghép. Mọi phép hàng phải làm trên **cả hai khối**:
+
+
+
+$$
+[A\mid I]=\begin{bmatrix}3&5&0&1&0&0\\3&7&1&0&1&0\\1&2&1&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 4. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 1 cho $3$, được
+
+
+
+$$
+\begin{bmatrix}1&\frac{5}{3}&0&\frac{1}{3}&0&0\\3&7&1&0&1&0\\1&2&1&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-3)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&\frac{5}{3}&0&\frac{1}{3}&0&0\\0&2&1&-1&1&0\\1&2&1&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 6. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&\frac{5}{3}&0&\frac{1}{3}&0&0\\0&2&1&-1&1&0\\0&\frac{1}{3}&1&- \frac{1}{3}&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 7. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $2$, được
+
+
+
+$$
+\begin{bmatrix}1&\frac{5}{3}&0&\frac{1}{3}&0&0\\0&1&\frac{1}{2}&- \frac{1}{2}&\frac{1}{2}&0\\0&\frac{1}{3}&1&- \frac{1}{3}&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 8. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(- \frac{5}{3})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{5}{6}&\frac{7}{6}&- \frac{5}{6}&0\\0&1&\frac{1}{2}&- \frac{1}{2}&\frac{1}{2}&0\\0&\frac{1}{3}&1&- \frac{1}{3}&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 9. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(- \frac{1}{3})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{5}{6}&\frac{7}{6}&- \frac{5}{6}&0\\0&1&\frac{1}{2}&- \frac{1}{2}&\frac{1}{2}&0\\0&0&\frac{5}{6}&- \frac{1}{6}&- \frac{1}{6}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 10. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 3 cho $\frac{5}{6}$, được
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{5}{6}&\frac{7}{6}&- \frac{5}{6}&0\\0&1&\frac{1}{2}&- \frac{1}{2}&\frac{1}{2}&0\\0&0&1&- \frac{1}{5}&- \frac{1}{5}&\frac{6}{5}\end{bmatrix}.
+$$
+
+
+
+**Bước 11. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(\frac{5}{6})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&1&-1&1\\0&1&\frac{1}{2}&- \frac{1}{2}&\frac{1}{2}&0\\0&0&1&- \frac{1}{5}&- \frac{1}{5}&\frac{6}{5}\end{bmatrix}.
+$$
+
+
+
+**Bước 12. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(- \frac{1}{2})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&1&-1&1\\0&1&0&- \frac{2}{5}&\frac{3}{5}&- \frac{3}{5}\\0&0&1&- \frac{1}{5}&- \frac{1}{5}&\frac{6}{5}\end{bmatrix}.
+$$
+
+
+
+**Bước 13. Đọc khối phải và kiểm tra.**
+
+Khối trái đã thành $I$, nên khối phải là
+
+
 
 $$
 A^{-1}=\begin{bmatrix}1&-1&1\\- \frac{2}{5}&\frac{3}{5}&- \frac{3}{5}\\- \frac{1}{5}&- \frac{1}{5}&\frac{6}{5}\end{bmatrix}.
 $$
 
- Kiểm tra bằng nhân hai chiều: $AA^{-1}=A^{-1}A=I$.
 
-**f.** Lập $[A\mid I]$, thực hiện lần lượt: $R_1\leftarrow(\frac{1}{3})R_1$; $R_2\leftarrow R_2+(-2)R_1$; $R_3\leftarrow R_3+(-1)R_1$; $R_2\leftarrow(3)R_2$; $R_1\leftarrow R_1+(- \frac{1}{3})R_2$; $R_3\leftarrow R_3+(- \frac{14}{3})R_2$; $R_3\leftarrow(- \frac{1}{10})R_3$; $R_1\leftarrow R_1+(1)R_3$; $R_2\leftarrow R_2+(-2)R_3$. Khối trái trở thành $I$, nên khối phải là
+
+ Nhân lại cho
+
+
+
+$$
+AA^{-1}=A^{-1}A=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}.
+$$
+
+
+
+**f.** **Bước 1. Kiểm tra điều kiện tồn tại.**
+
+**Bước 2. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}3&1&-1\\2&1&0\\1&5&-1\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}1&0\\5&-1\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=-1.
+$$
+
+
+
+Với $M_{11}=\begin{bmatrix}1&0\\5&-1\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{11}=(1)(-1)-(0)(5)=-1.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}2&0\\1&-1\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=2.
+$$
+
+
+
+Với $M_{12}=\begin{bmatrix}2&0\\1&-1\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{12}=(2)(-1)-(0)(1)=-2.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}2&1\\1&5\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=9.
+$$
+
+
+
+Với $M_{13}=\begin{bmatrix}2&1\\1&5\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{13}=(2)(5)-(1)(1)=9.
+$$
+
+
+
+**Bước 3. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(3)(-1)+(1)(2)+(-1)(9)=-10.
+$$
+
+
+
+Lập ma trận ghép. Mọi phép hàng phải làm trên **cả hai khối**:
+
+
+
+$$
+[A\mid I]=\begin{bmatrix}3&1&-1&1&0&0\\2&1&0&0&1&0\\1&5&-1&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 4. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 1 cho $3$, được
+
+
+
+$$
+\begin{bmatrix}1&\frac{1}{3}&- \frac{1}{3}&\frac{1}{3}&0&0\\2&1&0&0&1&0\\1&5&-1&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-2)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&\frac{1}{3}&- \frac{1}{3}&\frac{1}{3}&0&0\\0&\frac{1}{3}&\frac{2}{3}&- \frac{2}{3}&1&0\\1&5&-1&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 6. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&\frac{1}{3}&- \frac{1}{3}&\frac{1}{3}&0&0\\0&\frac{1}{3}&\frac{2}{3}&- \frac{2}{3}&1&0\\0&\frac{14}{3}&- \frac{2}{3}&- \frac{1}{3}&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 7. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $\frac{1}{3}$, được
+
+
+
+$$
+\begin{bmatrix}1&\frac{1}{3}&- \frac{1}{3}&\frac{1}{3}&0&0\\0&1&2&-2&3&0\\0&\frac{14}{3}&- \frac{2}{3}&- \frac{1}{3}&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 8. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(- \frac{1}{3})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&-1&1&-1&0\\0&1&2&-2&3&0\\0&\frac{14}{3}&- \frac{2}{3}&- \frac{1}{3}&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 9. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(- \frac{14}{3})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&-1&1&-1&0\\0&1&2&-2&3&0\\0&0&-10&9&-14&1\end{bmatrix}.
+$$
+
+
+
+**Bước 10. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 3 cho $-10$, được
+
+
+
+$$
+\begin{bmatrix}1&0&-1&1&-1&0\\0&1&2&-2&3&0\\0&0&1&- \frac{9}{10}&\frac{7}{5}&- \frac{1}{10}\end{bmatrix}.
+$$
+
+
+
+**Bước 11. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(1)R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&\frac{1}{10}&\frac{2}{5}&- \frac{1}{10}\\0&1&2&-2&3&0\\0&0&1&- \frac{9}{10}&\frac{7}{5}&- \frac{1}{10}\end{bmatrix}.
+$$
+
+
+
+**Bước 12. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-2)R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&\frac{1}{10}&\frac{2}{5}&- \frac{1}{10}\\0&1&0&- \frac{1}{5}&\frac{1}{5}&\frac{1}{5}\\0&0&1&- \frac{9}{10}&\frac{7}{5}&- \frac{1}{10}\end{bmatrix}.
+$$
+
+
+
+**Bước 13. Đọc khối phải và kiểm tra.**
+
+Khối trái đã thành $I$, nên khối phải là
+
+
 
 $$
 A^{-1}=\begin{bmatrix}\frac{1}{10}&\frac{2}{5}&- \frac{1}{10}\\- \frac{1}{5}&\frac{1}{5}&\frac{1}{5}\\- \frac{9}{10}&\frac{7}{5}&- \frac{1}{10}\end{bmatrix}.
 $$
 
- Kiểm tra bằng nhân hai chiều: $AA^{-1}=A^{-1}A=I$.
 
-**g.** Lập $[A\mid I]$, thực hiện lần lượt: $R_1\leftarrow(\frac{1}{2})R_1$; $R_2\leftarrow R_2+(-3)R_1$; $R_3\leftarrow R_3+(-4)R_1$; $R_2\leftarrow(- \frac{1}{3})R_2$; $R_1\leftarrow R_1+(-2)R_2$; $R_3\leftarrow R_3+(7)R_2$; $R_3\leftarrow(\frac{6}{5})R_3$; $R_1\leftarrow R_1+(- \frac{5}{6})R_3$; $R_2\leftarrow R_2+(\frac{1}{6})R_3$. Khối trái trở thành $I$, nên khối phải là
+
+ Nhân lại cho
+
+
+
+$$
+AA^{-1}=A^{-1}A=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}.
+$$
+
+
+
+**g.** **Bước 1. Kiểm tra điều kiện tồn tại.**
+
+**Bước 2. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}2&4&1\\3&3&2\\4&1&4\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}3&2\\1&4\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=10.
+$$
+
+
+
+Với $M_{11}=\begin{bmatrix}3&2\\1&4\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{11}=(3)(4)-(2)(1)=10.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}3&2\\4&4\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=-4.
+$$
+
+
+
+Với $M_{12}=\begin{bmatrix}3&2\\4&4\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{12}=(3)(4)-(2)(4)=4.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}3&3\\4&1\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=-9.
+$$
+
+
+
+Với $M_{13}=\begin{bmatrix}3&3\\4&1\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{13}=(3)(1)-(3)(4)=-9.
+$$
+
+
+
+**Bước 3. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(2)(10)+(4)(-4)+(1)(-9)=-5.
+$$
+
+
+
+Lập ma trận ghép. Mọi phép hàng phải làm trên **cả hai khối**:
+
+
+
+$$
+[A\mid I]=\begin{bmatrix}2&4&1&1&0&0\\3&3&2&0&1&0\\4&1&4&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 4. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 1 cho $2$, được
+
+
+
+$$
+\begin{bmatrix}1&2&\frac{1}{2}&\frac{1}{2}&0&0\\3&3&2&0&1&0\\4&1&4&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-3)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&2&\frac{1}{2}&\frac{1}{2}&0&0\\0&-3&\frac{1}{2}&- \frac{3}{2}&1&0\\4&1&4&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 6. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-4)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&2&\frac{1}{2}&\frac{1}{2}&0&0\\0&-3&\frac{1}{2}&- \frac{3}{2}&1&0\\0&-7&2&-2&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 7. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $-3$, được
+
+
+
+$$
+\begin{bmatrix}1&2&\frac{1}{2}&\frac{1}{2}&0&0\\0&1&- \frac{1}{6}&\frac{1}{2}&- \frac{1}{3}&0\\0&-7&2&-2&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 8. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(-2)R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&\frac{5}{6}&- \frac{1}{2}&\frac{2}{3}&0\\0&1&- \frac{1}{6}&\frac{1}{2}&- \frac{1}{3}&0\\0&-7&2&-2&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 9. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(7)R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&\frac{5}{6}&- \frac{1}{2}&\frac{2}{3}&0\\0&1&- \frac{1}{6}&\frac{1}{2}&- \frac{1}{3}&0\\0&0&\frac{5}{6}&\frac{3}{2}&- \frac{7}{3}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 10. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 3 cho $\frac{5}{6}$, được
+
+
+
+$$
+\begin{bmatrix}1&0&\frac{5}{6}&- \frac{1}{2}&\frac{2}{3}&0\\0&1&- \frac{1}{6}&\frac{1}{2}&- \frac{1}{3}&0\\0&0&1&\frac{9}{5}&- \frac{14}{5}&\frac{6}{5}\end{bmatrix}.
+$$
+
+
+
+**Bước 11. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(- \frac{5}{6})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&-2&3&-1\\0&1&- \frac{1}{6}&\frac{1}{2}&- \frac{1}{3}&0\\0&0&1&\frac{9}{5}&- \frac{14}{5}&\frac{6}{5}\end{bmatrix}.
+$$
+
+
+
+**Bước 12. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(\frac{1}{6})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&-2&3&-1\\0&1&0&\frac{4}{5}&- \frac{4}{5}&\frac{1}{5}\\0&0&1&\frac{9}{5}&- \frac{14}{5}&\frac{6}{5}\end{bmatrix}.
+$$
+
+
+
+**Bước 13. Đọc khối phải và kiểm tra.**
+
+Khối trái đã thành $I$, nên khối phải là
+
+
 
 $$
 A^{-1}=\begin{bmatrix}-2&3&-1\\\frac{4}{5}&- \frac{4}{5}&\frac{1}{5}\\\frac{9}{5}&- \frac{14}{5}&\frac{6}{5}\end{bmatrix}.
 $$
 
- Kiểm tra bằng nhân hai chiều: $AA^{-1}=A^{-1}A=I$.
 
-**h.** Lập $[A\mid I]$, thực hiện lần lượt: $R_1\leftarrow(\frac{1}{3})R_1$; $R_2\leftarrow R_2+(-5)R_1$; $R_3\leftarrow R_3+(-1)R_1$; $R_2\leftarrow(3)R_2$; $R_1\leftarrow R_1+(- \frac{1}{3})R_2$; $R_3\leftarrow R_3+(- \frac{2}{3})R_2$; $R_3\leftarrow(- \frac{1}{4})R_3$; $R_1\leftarrow R_1+(2)R_3$; $R_2\leftarrow R_2+(-5)R_3$. Khối trái trở thành $I$, nên khối phải là
+
+ Nhân lại cho
+
+
+
+$$
+AA^{-1}=A^{-1}A=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}.
+$$
+
+
+
+**h.** **Bước 1. Kiểm tra điều kiện tồn tại.**
+
+**Bước 2. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}3&1&-1\\5&2&0\\1&1&-1\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}2&0\\1&-1\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=-2.
+$$
+
+
+
+Với $M_{11}=\begin{bmatrix}2&0\\1&-1\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{11}=(2)(-1)-(0)(1)=-2.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}5&0\\1&-1\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=5.
+$$
+
+
+
+Với $M_{12}=\begin{bmatrix}5&0\\1&-1\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{12}=(5)(-1)-(0)(1)=-5.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}5&2\\1&1\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=3.
+$$
+
+
+
+Với $M_{13}=\begin{bmatrix}5&2\\1&1\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{13}=(5)(1)-(2)(1)=3.
+$$
+
+
+
+**Bước 3. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(3)(-2)+(1)(5)+(-1)(3)=-4.
+$$
+
+
+
+Lập ma trận ghép. Mọi phép hàng phải làm trên **cả hai khối**:
+
+
+
+$$
+[A\mid I]=\begin{bmatrix}3&1&-1&1&0&0\\5&2&0&0&1&0\\1&1&-1&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 4. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 1 cho $3$, được
+
+
+
+$$
+\begin{bmatrix}1&\frac{1}{3}&- \frac{1}{3}&\frac{1}{3}&0&0\\5&2&0&0&1&0\\1&1&-1&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-5)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&\frac{1}{3}&- \frac{1}{3}&\frac{1}{3}&0&0\\0&\frac{1}{3}&\frac{5}{3}&- \frac{5}{3}&1&0\\1&1&-1&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 6. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&\frac{1}{3}&- \frac{1}{3}&\frac{1}{3}&0&0\\0&\frac{1}{3}&\frac{5}{3}&- \frac{5}{3}&1&0\\0&\frac{2}{3}&- \frac{2}{3}&- \frac{1}{3}&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 7. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $\frac{1}{3}$, được
+
+
+
+$$
+\begin{bmatrix}1&\frac{1}{3}&- \frac{1}{3}&\frac{1}{3}&0&0\\0&1&5&-5&3&0\\0&\frac{2}{3}&- \frac{2}{3}&- \frac{1}{3}&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 8. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(- \frac{1}{3})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&-2&2&-1&0\\0&1&5&-5&3&0\\0&\frac{2}{3}&- \frac{2}{3}&- \frac{1}{3}&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 9. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(- \frac{2}{3})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&-2&2&-1&0\\0&1&5&-5&3&0\\0&0&-4&3&-2&1\end{bmatrix}.
+$$
+
+
+
+**Bước 10. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 3 cho $-4$, được
+
+
+
+$$
+\begin{bmatrix}1&0&-2&2&-1&0\\0&1&5&-5&3&0\\0&0&1&- \frac{3}{4}&\frac{1}{2}&- \frac{1}{4}\end{bmatrix}.
+$$
+
+
+
+**Bước 11. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(2)R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&\frac{1}{2}&0&- \frac{1}{2}\\0&1&5&-5&3&0\\0&0&1&- \frac{3}{4}&\frac{1}{2}&- \frac{1}{4}\end{bmatrix}.
+$$
+
+
+
+**Bước 12. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-5)R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&\frac{1}{2}&0&- \frac{1}{2}\\0&1&0&- \frac{5}{4}&\frac{1}{2}&\frac{5}{4}\\0&0&1&- \frac{3}{4}&\frac{1}{2}&- \frac{1}{4}\end{bmatrix}.
+$$
+
+
+
+**Bước 13. Đọc khối phải và kiểm tra.**
+
+Khối trái đã thành $I$, nên khối phải là
+
+
 
 $$
 A^{-1}=\begin{bmatrix}\frac{1}{2}&0&- \frac{1}{2}\\- \frac{5}{4}&\frac{1}{2}&\frac{5}{4}\\- \frac{3}{4}&\frac{1}{2}&- \frac{1}{4}\end{bmatrix}.
 $$
 
- Kiểm tra bằng nhân hai chiều: $AA^{-1}=A^{-1}A=I$.
 
-**i.** Lập $[A\mid I]$, thực hiện lần lượt: $R_1\leftarrow(\frac{1}{3})R_1$; $R_2\leftarrow R_2+(-1)R_1$; $R_3\leftarrow R_3+(-1)R_1$; $R_2\leftarrow(- \frac{3}{4})R_2$; $R_1\leftarrow R_1+(- \frac{1}{3})R_2$; $R_3\leftarrow R_3+(- \frac{5}{3})R_2$; $R_3\leftarrow(\frac{4}{25})R_3$; $R_1\leftarrow R_1+(- \frac{5}{4})R_3$; $R_2\leftarrow R_2+(\frac{7}{4})R_3$. Khối trái trở thành $I$, nên khối phải là
+
+ Nhân lại cho
+
+
+
+$$
+AA^{-1}=A^{-1}A=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}.
+$$
+
+
+
+**i.** **Bước 1. Kiểm tra điều kiện tồn tại.**
+
+**Bước 2. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}3&1&2\\1&-1&3\\1&2&4\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}-1&3\\2&4\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=-10.
+$$
+
+
+
+Với $M_{11}=\begin{bmatrix}-1&3\\2&4\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{11}=(-1)(4)-(3)(2)=-10.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}1&3\\1&4\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=-1.
+$$
+
+
+
+Với $M_{12}=\begin{bmatrix}1&3\\1&4\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{12}=(1)(4)-(3)(1)=1.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}1&-1\\1&2\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=3.
+$$
+
+
+
+Với $M_{13}=\begin{bmatrix}1&-1\\1&2\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{13}=(1)(2)-(-1)(1)=3.
+$$
+
+
+
+**Bước 3. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(3)(-10)+(1)(-1)+(2)(3)=-25.
+$$
+
+
+
+Lập ma trận ghép. Mọi phép hàng phải làm trên **cả hai khối**:
+
+
+
+$$
+[A\mid I]=\begin{bmatrix}3&1&2&1&0&0\\1&-1&3&0&1&0\\1&2&4&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 4. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 1 cho $3$, được
+
+
+
+$$
+\begin{bmatrix}1&\frac{1}{3}&\frac{2}{3}&\frac{1}{3}&0&0\\1&-1&3&0&1&0\\1&2&4&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&\frac{1}{3}&\frac{2}{3}&\frac{1}{3}&0&0\\0&- \frac{4}{3}&\frac{7}{3}&- \frac{1}{3}&1&0\\1&2&4&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 6. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&\frac{1}{3}&\frac{2}{3}&\frac{1}{3}&0&0\\0&- \frac{4}{3}&\frac{7}{3}&- \frac{1}{3}&1&0\\0&\frac{5}{3}&\frac{10}{3}&- \frac{1}{3}&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 7. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $- \frac{4}{3}$, được
+
+
+
+$$
+\begin{bmatrix}1&\frac{1}{3}&\frac{2}{3}&\frac{1}{3}&0&0\\0&1&- \frac{7}{4}&\frac{1}{4}&- \frac{3}{4}&0\\0&\frac{5}{3}&\frac{10}{3}&- \frac{1}{3}&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 8. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(- \frac{1}{3})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&\frac{5}{4}&\frac{1}{4}&\frac{1}{4}&0\\0&1&- \frac{7}{4}&\frac{1}{4}&- \frac{3}{4}&0\\0&\frac{5}{3}&\frac{10}{3}&- \frac{1}{3}&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 9. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(- \frac{5}{3})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&\frac{5}{4}&\frac{1}{4}&\frac{1}{4}&0\\0&1&- \frac{7}{4}&\frac{1}{4}&- \frac{3}{4}&0\\0&0&\frac{25}{4}&- \frac{3}{4}&\frac{5}{4}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 10. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 3 cho $\frac{25}{4}$, được
+
+
+
+$$
+\begin{bmatrix}1&0&\frac{5}{4}&\frac{1}{4}&\frac{1}{4}&0\\0&1&- \frac{7}{4}&\frac{1}{4}&- \frac{3}{4}&0\\0&0&1&- \frac{3}{25}&\frac{1}{5}&\frac{4}{25}\end{bmatrix}.
+$$
+
+
+
+**Bước 11. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(- \frac{5}{4})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&\frac{2}{5}&0&- \frac{1}{5}\\0&1&- \frac{7}{4}&\frac{1}{4}&- \frac{3}{4}&0\\0&0&1&- \frac{3}{25}&\frac{1}{5}&\frac{4}{25}\end{bmatrix}.
+$$
+
+
+
+**Bước 12. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(\frac{7}{4})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&\frac{2}{5}&0&- \frac{1}{5}\\0&1&0&\frac{1}{25}&- \frac{2}{5}&\frac{7}{25}\\0&0&1&- \frac{3}{25}&\frac{1}{5}&\frac{4}{25}\end{bmatrix}.
+$$
+
+
+
+**Bước 13. Đọc khối phải và kiểm tra.**
+
+Khối trái đã thành $I$, nên khối phải là
+
+
 
 $$
 A^{-1}=\begin{bmatrix}\frac{2}{5}&0&- \frac{1}{5}\\\frac{1}{25}&- \frac{2}{5}&\frac{7}{25}\\- \frac{3}{25}&\frac{1}{5}&\frac{4}{25}\end{bmatrix}.
 $$
 
- Kiểm tra bằng nhân hai chiều: $AA^{-1}=A^{-1}A=I$.
 
-**j.** Lập $[A\mid I]$, thực hiện lần lượt: $R_1\leftarrow(-1)R_1$; $R_3\leftarrow R_3+(-1)R_1$; $R_2\leftrightarrow R_3$; $R_2\leftarrow(\frac{1}{6})R_2$; $R_1\leftarrow R_1+(4)R_2$; $R_4\leftarrow R_4+(1)R_2$; $R_3\leftrightarrow R_4$; $R_3\leftarrow(-2)R_3$; $R_1\leftarrow R_1+(3)R_3$; $R_2\leftarrow R_2+(- \frac{1}{2})R_3$; $R_4\leftarrow(-1)R_4$; $R_1\leftarrow R_1+(\frac{8}{3})R_4$; $R_2\leftarrow R_2+(- \frac{2}{3})R_4$; $R_3\leftarrow R_3+(\frac{2}{3})R_4$. Khối trái trở thành $I$, nên khối phải là
+
+ Nhân lại cho
+
+
 
 $$
-A^{-1}=\begin{bmatrix}- \frac{4}{3}&- \frac{8}{3}&- \frac{1}{3}&-6\\\frac{1}{3}&\frac{2}{3}&\frac{1}{3}&1\\- \frac{1}{3}&- \frac{2}{3}&- \frac{1}{3}&-2\\0&-1&0&0\end{bmatrix}.
+AA^{-1}=A^{-1}A=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}.
 $$
 
- Kiểm tra bằng nhân hai chiều: $AA^{-1}=A^{-1}A=I$.
 
-**k.** Lập $[A\mid I]$, thực hiện lần lượt: $R_3\leftarrow R_3+(-1)R_1$; $R_4\leftarrow R_4+(-1)R_1$; $R_3\leftarrow R_3+(1)R_2$; $R_4\leftarrow R_4+(1)R_2$; $R_1\leftarrow R_1+(-7)R_3$; $R_2\leftarrow R_2+(-3)R_3$; $R_4\leftarrow R_4+(-1)R_3$; $R_4\leftarrow(-1)R_4$; $R_1\leftarrow R_1+(16)R_4$; $R_2\leftarrow R_2+(3)R_4$; $R_3\leftarrow R_3+(-3)R_4$. Khối trái trở thành $I$, nên khối phải là
+
+**j.** **Bước 1. Kiểm tra điều kiện tồn tại.**
+
+**Bước 2. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}-1&4&5&2\\0&0&0&-1\\1&-2&-2&0\\0&-1&-1&0\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}0&0&-1\\-2&-2&0\\-1&-1&0\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=0.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{11}=(-1)\bigl[(-2)(-1)-(-2)(-1)\bigr]=0.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}0&0&-1\\1&-2&0\\0&-1&0\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=-1.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{12}=(-1)\bigl[(1)(-1)-(-2)(0)\bigr]=1.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}0&0&-1\\1&-2&0\\0&-1&0\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=1.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{13}=(-1)\bigl[(1)(-1)-(-2)(0)\bigr]=1.
+$$
+
+
+
+Xóa hàng 1, cột 4:
+
+
+
+$$
+M_{14}=\begin{bmatrix}0&0&0\\1&-2&-2\\0&-1&-1\end{bmatrix},\qquad C_{14}=(-1)^{1+4}\det M_{14}=0.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{14}==0.
+$$
+
+
+
+**Bước 3. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(-1)(0)+(4)(-1)+(5)(1)+(2)(0)=1.
+$$
+
+
+
+Lập ma trận ghép. Mọi phép hàng phải làm trên **cả hai khối**:
+
+
+
+$$
+[A\mid I]=\begin{bmatrix}-1&4&5&2&1&0&0&0\\0&0&0&-1&0&1&0&0\\1&-2&-2&0&0&0&1&0\\0&-1&-1&0&0&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 4. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 1 cho $-1$, được
+
+
+
+$$
+\begin{bmatrix}1&-4&-5&-2&-1&0&0&0\\0&0&0&-1&0&1&0&0\\1&-2&-2&0&0&0&1&0\\0&-1&-1&0&0&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&-4&-5&-2&-1&0&0&0\\0&0&0&-1&0&1&0&0\\0&2&3&2&1&0&1&0\\0&-1&-1&0&0&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 6. Đưa trụ khác 0 lên.**
+
+$R_2\leftrightarrow R_3$:
+
+
+
+$$
+\begin{bmatrix}1&-4&-5&-2&-1&0&0&0\\0&2&3&2&1&0&1&0\\0&0&0&-1&0&1&0&0\\0&-1&-1&0&0&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 7. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $2$, được
+
+
+
+$$
+\begin{bmatrix}1&-4&-5&-2&-1&0&0&0\\0&1&\frac{3}{2}&1&\frac{1}{2}&0&\frac{1}{2}&0\\0&0&0&-1&0&1&0&0\\0&-1&-1&0&0&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 8. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(4)R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&1&2&1&0&2&0\\0&1&\frac{3}{2}&1&\frac{1}{2}&0&\frac{1}{2}&0\\0&0&0&-1&0&1&0&0\\0&-1&-1&0&0&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 9. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(1)R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&1&2&1&0&2&0\\0&1&\frac{3}{2}&1&\frac{1}{2}&0&\frac{1}{2}&0\\0&0&0&-1&0&1&0&0\\0&0&\frac{1}{2}&1&\frac{1}{2}&0&\frac{1}{2}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 10. Đưa trụ khác 0 lên.**
+
+$R_3\leftrightarrow R_4$:
+
+
+
+$$
+\begin{bmatrix}1&0&1&2&1&0&2&0\\0&1&\frac{3}{2}&1&\frac{1}{2}&0&\frac{1}{2}&0\\0&0&\frac{1}{2}&1&\frac{1}{2}&0&\frac{1}{2}&1\\0&0&0&-1&0&1&0&0\end{bmatrix}.
+$$
+
+
+
+**Bước 11. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 3 cho $\frac{1}{2}$, được
+
+
+
+$$
+\begin{bmatrix}1&0&1&2&1&0&2&0\\0&1&\frac{3}{2}&1&\frac{1}{2}&0&\frac{1}{2}&0\\0&0&1&2&1&0&1&2\\0&0&0&-1&0&1&0&0\end{bmatrix}.
+$$
+
+
+
+**Bước 12. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(-1)R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&0&0&1&-2\\0&1&\frac{3}{2}&1&\frac{1}{2}&0&\frac{1}{2}&0\\0&0&1&2&1&0&1&2\\0&0&0&-1&0&1&0&0\end{bmatrix}.
+$$
+
+
+
+**Bước 13. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(- \frac{3}{2})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&0&0&1&-2\\0&1&0&-2&-1&0&-1&-3\\0&0&1&2&1&0&1&2\\0&0&0&-1&0&1&0&0\end{bmatrix}.
+$$
+
+
+
+**Bước 14. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 4 cho $-1$, được
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&0&0&1&-2\\0&1&0&-2&-1&0&-1&-3\\0&0&1&2&1&0&1&2\\0&0&0&1&0&-1&0&0\end{bmatrix}.
+$$
+
+
+
+**Bước 15. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(2)R_4$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&0&0&1&-2\\0&1&0&0&-1&-2&-1&-3\\0&0&1&2&1&0&1&2\\0&0&0&1&0&-1&0&0\end{bmatrix}.
+$$
+
+
+
+**Bước 16. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-2)R_4$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&0&0&1&-2\\0&1&0&0&-1&-2&-1&-3\\0&0&1&0&1&2&1&2\\0&0&0&1&0&-1&0&0\end{bmatrix}.
+$$
+
+
+
+**Bước 17. Đọc khối phải và kiểm tra.**
+
+Khối trái đã thành $I$, nên khối phải là
+
+
+
+$$
+A^{-1}=\begin{bmatrix}0&0&1&-2\\-1&-2&-1&-3\\1&2&1&2\\0&-1&0&0\end{bmatrix}.
+$$
+
+
+
+ Nhân lại cho
+
+
+
+$$
+AA^{-1}=A^{-1}A=\begin{bmatrix}1&0&0&0\\0&1&0&0\\0&0&1&0\\0&0&0&1\end{bmatrix}.
+$$
+
+
+
+**k.** **Bước 1. Kiểm tra điều kiện tồn tại.**
+
+**Bước 2. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}1&0&7&5\\0&1&3&6\\1&-1&5&2\\1&-1&5&1\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}1&3&6\\-1&5&2\\-1&5&1\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=-8.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{11}=(1)\bigl[(5)(1)-(2)(5)\bigr]+(-3)\bigl[(-1)(1)-(2)(-1)\bigr]+(6)\bigl[(-1)(5)-(5)(-1)\bigr]=-8.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}0&1&6\\1&-1&2\\1&-1&1\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=1.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{13}=(-1)\bigl[(1)(1)-(2)(1)\bigr]+(6)\bigl[(1)(-1)-(-1)(1)\bigr]=1.
+$$
+
+
+
+Xóa hàng 1, cột 4:
+
+
+
+$$
+M_{14}=\begin{bmatrix}0&1&3\\1&-1&5\\1&-1&5\end{bmatrix},\qquad C_{14}=(-1)^{1+4}\det M_{14}=0.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{14}=(-1)\bigl[(1)(5)-(5)(1)\bigr]+(3)\bigl[(1)(-1)-(-1)(1)\bigr]=0.
+$$
+
+
+
+**Bước 3. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(1)(-8)+(7)(1)+(5)(0)=-1.
+$$
+
+
+
+Lập ma trận ghép. Mọi phép hàng phải làm trên **cả hai khối**:
+
+
+
+$$
+[A\mid I]=\begin{bmatrix}1&0&7&5&1&0&0&0\\0&1&3&6&0&1&0&0\\1&-1&5&2&0&0&1&0\\1&-1&5&1&0&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 4. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&7&5&1&0&0&0\\0&1&3&6&0&1&0&0\\0&-1&-2&-3&-1&0&1&0\\1&-1&5&1&0&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(-1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&7&5&1&0&0&0\\0&1&3&6&0&1&0&0\\0&-1&-2&-3&-1&0&1&0\\0&-1&-2&-4&-1&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 6. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(1)R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&7&5&1&0&0&0\\0&1&3&6&0&1&0&0\\0&0&1&3&-1&1&1&0\\0&-1&-2&-4&-1&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 7. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(1)R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&7&5&1&0&0&0\\0&1&3&6&0&1&0&0\\0&0&1&3&-1&1&1&0\\0&0&1&2&-1&1&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 8. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(-7)R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&-16&8&-7&-7&0\\0&1&3&6&0&1&0&0\\0&0&1&3&-1&1&1&0\\0&0&1&2&-1&1&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 9. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-3)R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&-16&8&-7&-7&0\\0&1&0&-3&3&-2&-3&0\\0&0&1&3&-1&1&1&0\\0&0&1&2&-1&1&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 10. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(-1)R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&-16&8&-7&-7&0\\0&1&0&-3&3&-2&-3&0\\0&0&1&3&-1&1&1&0\\0&0&0&-1&0&0&-1&1\end{bmatrix}.
+$$
+
+
+
+**Bước 11. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 4 cho $-1$, được
+
+
+
+$$
+\begin{bmatrix}1&0&0&-16&8&-7&-7&0\\0&1&0&-3&3&-2&-3&0\\0&0&1&3&-1&1&1&0\\0&0&0&1&0&0&1&-1\end{bmatrix}.
+$$
+
+
+
+**Bước 12. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(16)R_4$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&8&-7&9&-16\\0&1&0&-3&3&-2&-3&0\\0&0&1&3&-1&1&1&0\\0&0&0&1&0&0&1&-1\end{bmatrix}.
+$$
+
+
+
+**Bước 13. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(3)R_4$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&8&-7&9&-16\\0&1&0&0&3&-2&0&-3\\0&0&1&3&-1&1&1&0\\0&0&0&1&0&0&1&-1\end{bmatrix}.
+$$
+
+
+
+**Bước 14. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-3)R_4$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&8&-7&9&-16\\0&1&0&0&3&-2&0&-3\\0&0&1&0&-1&1&-2&3\\0&0&0&1&0&0&1&-1\end{bmatrix}.
+$$
+
+
+
+**Bước 15. Đọc khối phải và kiểm tra.**
+
+Khối trái đã thành $I$, nên khối phải là
+
+
 
 $$
 A^{-1}=\begin{bmatrix}8&-7&9&-16\\3&-2&0&-3\\-1&1&-2&3\\0&0&1&-1\end{bmatrix}.
 $$
 
- Kiểm tra bằng nhân hai chiều: $AA^{-1}=A^{-1}A=I$.
 
-**l.** Lập $[A\mid I]$, thực hiện lần lượt: $R_1\leftarrow R_1+(-2)R_2$; $R_1\leftarrow R_1+(6)R_3$; $R_2\leftarrow R_2+(-3)R_3$; $R_1\leftarrow R_1+(-30)R_4$; $R_2\leftarrow R_2+(15)R_4$; $R_3\leftarrow R_3+(-5)R_4$; $R_1\leftarrow R_1+(210)R_5$; $R_2\leftarrow R_2+(-105)R_5$; $R_3\leftarrow R_3+(35)R_5$; $R_4\leftarrow R_4+(-7)R_5$. Khối trái trở thành $I$, nên khối phải là
+
+ Nhân lại cho
+
+
+
+$$
+AA^{-1}=A^{-1}A=\begin{bmatrix}1&0&0&0\\0&1&0&0\\0&0&1&0\\0&0&0&1\end{bmatrix}.
+$$
+
+
+
+**l.** **Bước 1. Kiểm tra điều kiện tồn tại.**
+
+**Bước 2. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}1&2&0&0&0\\0&1&3&0&0\\0&0&1&5&0\\0&0&0&1&7\\0&0&0&0&1\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}1&3&0&0\\0&1&5&0\\0&0&1&7\\0&0&0&1\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=1.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}0&3&0&0\\0&1&5&0\\0&0&1&7\\0&0&0&1\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=0.
+$$
+
+
+
+**Bước 3. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(1)(1)+(2)(0)=1.
+$$
+
+
+
+Lập ma trận ghép. Mọi phép hàng phải làm trên **cả hai khối**:
+
+
+
+$$
+[A\mid I]=\begin{bmatrix}1&2&0&0&0&1&0&0&0&0\\0&1&3&0&0&0&1&0&0&0\\0&0&1&5&0&0&0&1&0&0\\0&0&0&1&7&0&0&0&1&0\\0&0&0&0&1&0&0&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 4. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(-2)R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&-6&0&0&1&-2&0&0&0\\0&1&3&0&0&0&1&0&0&0\\0&0&1&5&0&0&0&1&0&0\\0&0&0&1&7&0&0&0&1&0\\0&0&0&0&1&0&0&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(6)R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&30&0&1&-2&6&0&0\\0&1&3&0&0&0&1&0&0&0\\0&0&1&5&0&0&0&1&0&0\\0&0&0&1&7&0&0&0&1&0\\0&0&0&0&1&0&0&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 6. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-3)R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&30&0&1&-2&6&0&0\\0&1&0&-15&0&0&1&-3&0&0\\0&0&1&5&0&0&0&1&0&0\\0&0&0&1&7&0&0&0&1&0\\0&0&0&0&1&0&0&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 7. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(-30)R_4$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&-210&1&-2&6&-30&0\\0&1&0&-15&0&0&1&-3&0&0\\0&0&1&5&0&0&0&1&0&0\\0&0&0&1&7&0&0&0&1&0\\0&0&0&0&1&0&0&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 8. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(15)R_4$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&-210&1&-2&6&-30&0\\0&1&0&0&105&0&1&-3&15&0\\0&0&1&5&0&0&0&1&0&0\\0&0&0&1&7&0&0&0&1&0\\0&0&0&0&1&0&0&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 9. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-5)R_4$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&-210&1&-2&6&-30&0\\0&1&0&0&105&0&1&-3&15&0\\0&0&1&0&-35&0&0&1&-5&0\\0&0&0&1&7&0&0&0&1&0\\0&0&0&0&1&0&0&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 10. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(210)R_5$. Hệ số được chọn để ô ở cột 5 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&0&1&-2&6&-30&210\\0&1&0&0&105&0&1&-3&15&0\\0&0&1&0&-35&0&0&1&-5&0\\0&0&0&1&7&0&0&0&1&0\\0&0&0&0&1&0&0&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 11. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-105)R_5$. Hệ số được chọn để ô ở cột 5 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&0&1&-2&6&-30&210\\0&1&0&0&0&0&1&-3&15&-105\\0&0&1&0&-35&0&0&1&-5&0\\0&0&0&1&7&0&0&0&1&0\\0&0&0&0&1&0&0&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 12. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(35)R_5$. Hệ số được chọn để ô ở cột 5 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&0&1&-2&6&-30&210\\0&1&0&0&0&0&1&-3&15&-105\\0&0&1&0&0&0&0&1&-5&35\\0&0&0&1&7&0&0&0&1&0\\0&0&0&0&1&0&0&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 13. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(-7)R_5$. Hệ số được chọn để ô ở cột 5 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&0&1&-2&6&-30&210\\0&1&0&0&0&0&1&-3&15&-105\\0&0&1&0&0&0&0&1&-5&35\\0&0&0&1&0&0&0&0&1&-7\\0&0&0&0&1&0&0&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 14. Đọc khối phải và kiểm tra.**
+
+Khối trái đã thành $I$, nên khối phải là
+
+
 
 $$
 A^{-1}=\begin{bmatrix}1&-2&6&-30&210\\0&1&-3&15&-105\\0&0&1&-5&35\\0&0&0&1&-7\\0&0&0&0&1\end{bmatrix}.
 $$
 
- Kiểm tra bằng nhân hai chiều: $AA^{-1}=A^{-1}A=I$.
+
+
+ Nhân lại cho
+
+
+
+$$
+AA^{-1}=A^{-1}A=\begin{bmatrix}1&0&0&0&0\\0&1&0&0&0\\0&0&1&0&0\\0&0&0&1&0\\0&0&0&0&1\end{bmatrix}.
+$$
 
 </LoiGiai>
 

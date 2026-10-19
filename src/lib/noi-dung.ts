@@ -32,6 +32,7 @@ export interface ThongTinBaiTap {
   can_dung: string[];
   tieu_de?: string;
   de_goc_tieng_anh?: boolean;
+  de_dich_tieng_viet?: boolean;
 }
 
 export interface MucTrongChuong {

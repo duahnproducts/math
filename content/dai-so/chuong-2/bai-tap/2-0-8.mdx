@@ -5,11 +5,33 @@ do_kho: vua
 tieu_de: "Bài bổ sung 2.8"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.8"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.8 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho
+
+$$
+M = \left[ \begin{array}{rr} A & B \\ C & D \end{array} \right]
+$$
+
+, trong đó $A$, $B$, $C$ và $D$ đều có kích thước $n \times n$ và giao hoán từng đôi một. Nếu $M^{2} = 0$, hãy chứng minh rằng $(A + D)^{3} = 0$. [Gợi ý: Trước hết chứng minh rằng $A^{2} = -BC = D^{2}$ và rằng
+
+
+
+$$
+B(A + D) = 0 = C(A + D).]
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-0-8-1" moTa="Đề gốc Nicholson bài 2.8, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -27,6 +49,7 @@ A2 = −BC = D2 and that
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -43,13 +66,39 @@ Với đẳng thức tổng quát, khai triển có giữ thứ tự; với mệ
 
 <LoiGiai>
 
-Từ $M^2=0$ và sự giao hoán, có $A^2+BC=0$, $D^2+BC=0$, $B(A+D)=C(A+D)=0$. Đặt $S=A+D$. Khi đó
+**Bước 1. Lập luận và tính toán.**
+
+Từ $M^2=0$ và sự giao hoán, có $A^2+BC=0$, $D^2+BC=0$, $B(A+D)=C(A+D)=0$.
+
+**Bước 2. Thiết lập biểu thức.**
+
+Đặt $S=A+D$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Khi đó
+
+
 
 $$
 S^3=(A^2+D^2+2AD)S=2(AD-BC)S.
 $$
 
- Mặt khác $(A-D)^2=A^2+D^2-2AD=-2(AD+BC)$, nhưng cách trực tiếp hơn là $A^2S=-BCS=0$ và $D^2S=-BCS=0$. Do đó $AS^2=A(A+D)S=(A^2+AD)S=ADS$, và $S^3=2ADS$. Vì $A^2=D^2$, $ADS=AD(A+D)=A^2D+AD^2=-BCD-ABC=-BCS=0$. Vậy $S^3=0$.
+
+
+ Mặt khác $(A-D)^2=A^2+D^2-2AD=-2(AD+BC)$, nhưng cách trực tiếp hơn là $A^2S=-BCS=0$ và $D^2S=-BCS=0$.
+
+**Bước 4. Rút ra kết luận.**
+
+Do đó $AS^2=A(A+D)S=(A^2+AD)S=ADS$, và $S^3=2ADS$.
+
+**Bước 5. Giải thích điều kiện sử dụng.**
+
+Vì $A^2=D^2$, $ADS=AD(A+D)=A^2D+AD^2=-BCD-ABC=-BCS=0$.
+
+**Bước 6. Rút ra kết luận.**
+
+Vậy $S^3=0$.
 
 </LoiGiai>
 

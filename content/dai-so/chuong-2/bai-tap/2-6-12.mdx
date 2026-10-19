@@ -5,11 +5,31 @@ do_kho: vua
 tieu_de: "Phép biến đổi tuyến tính — bài 12"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.6.12"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.6.12 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Trong mỗi trường hợp, tìm một phép quay hoặc phép đối xứng bằng với phép biến đổi đã cho.
+
+**a.** Đối xứng qua trục $y$ rồi quay một góc $\frac{\pi}{2}$.
+
+**b.** Quay một góc $\pi$ rồi đối xứng qua trục $x$.
+
+**c.** Quay một góc $\frac{\pi}{2}$ rồi đối xứng qua đường thẳng $y = x$.
+
+**d.** Đối xứng qua trục $x$ rồi quay một góc $\frac{\pi}{2}$.
+
+**e.** Đối xứng qua đường thẳng $y = x$ rồi đối xứng qua trục $x$.
+
+**f.** Đối xứng qua trục $x$ rồi đối xứng qua đường thẳng $y = x$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-6-12-1" moTa="Đề gốc Nicholson bài 2.6.12, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -41,6 +61,7 @@ that equals the given transformation.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -57,7 +78,319 @@ Cột thứ j của ma trận ánh xạ là ảnh của vector đơn vị thứ 
 
 <LoiGiai>
 
-Viết ma trận của phép thực hiện sau ở bên trái rồi nhân. **a.** Đối xứng qua $y=-x$. **b.** Đối xứng qua trục $y$. **c.** Đối xứng qua trục $x$. **d.** Đối xứng qua $y=x$. **e.** Quay $-\pi/2$. **f.** Quay $\pi/2$. Chẳng hạn (e), $Q_0Q_1=\begin{bmatrix}0&1\\-1&0\end{bmatrix}=R_{-\pi/2}$; (f) đảo thứ tự cho góc quay ngược dấu.
+**Cách làm.** Tuyến tính nghĩa là $T(au+bv)=aT(u)+bT(v)$. Với vector cột, ma trận của $T$ là $[T(e_1)\ \cdots\ T(e_n)]$; ma trận của $S\circ T$ là $[S][T]$.
+
+**a.** Phép thực hiện sau đứng bên trái. **Bước 1. Kiểm tra kích thước.**
+
+$M_2$ có kích thước $2\times 2$, $M_1$ có kích thước $2\times 2$. Kích thước trong bằng nhau; tích có kích thước $2\times 2$.
+
+**Bước 2. Lấy từng hàng nhân từng cột.**
+
+Ô $(i,j)$ là tổng các tích của hàng $i$ bên trái với cột $j$ bên phải. Các phép tính cụ thể:
+
+
+
+$$
+(M_2M_1)_{11}=\left(0\right)\left(-1\right)+\left(-1\right)\left(0\right)=0.
+$$
+
+
+
+
+
+$$
+(M_2M_1)_{12}=\left(0\right)\left(0\right)+\left(-1\right)\left(1\right)=-1.
+$$
+
+
+
+
+
+$$
+(M_2M_1)_{21}=\left(1\right)\left(-1\right)+\left(0\right)\left(0\right)=-1.
+$$
+
+
+
+
+
+$$
+(M_2M_1)_{22}=\left(1\right)\left(0\right)+\left(0\right)\left(1\right)=0.
+$$
+
+
+
+**Bước 3. Ghép các ô đúng vị trí.**
+
+
+
+$$
+M_2M_1=\begin{bmatrix}0&-1\\-1&0\end{bmatrix}.
+$$
+
+
+
+ Đối chiếu ảnh hai vector đơn vị (hai cột của tích) với ma trận quay/đối xứng: kết quả là đối xứng qua $y=-x$.
+
+**b.** Phép thực hiện sau đứng bên trái. **Bước 1. Kiểm tra kích thước.**
+
+$M_2$ có kích thước $2\times 2$, $M_1$ có kích thước $2\times 2$. Kích thước trong bằng nhau; tích có kích thước $2\times 2$.
+
+**Bước 2. Lấy từng hàng nhân từng cột.**
+
+Ô $(i,j)$ là tổng các tích của hàng $i$ bên trái với cột $j$ bên phải. Các phép tính cụ thể:
+
+
+
+$$
+(M_2M_1)_{11}=\left(1\right)\left(-1\right)+\left(0\right)\left(0\right)=-1.
+$$
+
+
+
+
+
+$$
+(M_2M_1)_{12}=\left(1\right)\left(0\right)+\left(0\right)\left(-1\right)=0.
+$$
+
+
+
+
+
+$$
+(M_2M_1)_{21}=\left(0\right)\left(-1\right)+\left(-1\right)\left(0\right)=0.
+$$
+
+
+
+
+
+$$
+(M_2M_1)_{22}=\left(0\right)\left(0\right)+\left(-1\right)\left(-1\right)=1.
+$$
+
+
+
+**Bước 3. Ghép các ô đúng vị trí.**
+
+
+
+$$
+M_2M_1=\begin{bmatrix}-1&0\\0&1\end{bmatrix}.
+$$
+
+
+
+ Đối chiếu ảnh hai vector đơn vị (hai cột của tích) với ma trận quay/đối xứng: kết quả là đối xứng qua trục $y$.
+
+**c.** Phép thực hiện sau đứng bên trái. **Bước 1. Kiểm tra kích thước.**
+
+$M_2$ có kích thước $2\times 2$, $M_1$ có kích thước $2\times 2$. Kích thước trong bằng nhau; tích có kích thước $2\times 2$.
+
+**Bước 2. Lấy từng hàng nhân từng cột.**
+
+Ô $(i,j)$ là tổng các tích của hàng $i$ bên trái với cột $j$ bên phải. Các phép tính cụ thể:
+
+
+
+$$
+(M_2M_1)_{11}=\left(0\right)\left(0\right)+\left(1\right)\left(1\right)=1.
+$$
+
+
+
+
+
+$$
+(M_2M_1)_{12}=\left(0\right)\left(-1\right)+\left(1\right)\left(0\right)=0.
+$$
+
+
+
+
+
+$$
+(M_2M_1)_{21}=\left(1\right)\left(0\right)+\left(0\right)\left(1\right)=0.
+$$
+
+
+
+
+
+$$
+(M_2M_1)_{22}=\left(1\right)\left(-1\right)+\left(0\right)\left(0\right)=-1.
+$$
+
+
+
+**Bước 3. Ghép các ô đúng vị trí.**
+
+
+
+$$
+M_2M_1=\begin{bmatrix}1&0\\0&-1\end{bmatrix}.
+$$
+
+
+
+ Đối chiếu ảnh hai vector đơn vị (hai cột của tích) với ma trận quay/đối xứng: kết quả là đối xứng qua trục $x$.
+
+**d.** Phép thực hiện sau đứng bên trái. **Bước 1. Kiểm tra kích thước.**
+
+$M_2$ có kích thước $2\times 2$, $M_1$ có kích thước $2\times 2$. Kích thước trong bằng nhau; tích có kích thước $2\times 2$.
+
+**Bước 2. Lấy từng hàng nhân từng cột.**
+
+Ô $(i,j)$ là tổng các tích của hàng $i$ bên trái với cột $j$ bên phải. Các phép tính cụ thể:
+
+
+
+$$
+(M_2M_1)_{11}=\left(0\right)\left(1\right)+\left(-1\right)\left(0\right)=0.
+$$
+
+
+
+
+
+$$
+(M_2M_1)_{12}=\left(0\right)\left(0\right)+\left(-1\right)\left(-1\right)=1.
+$$
+
+
+
+
+
+$$
+(M_2M_1)_{21}=\left(1\right)\left(1\right)+\left(0\right)\left(0\right)=1.
+$$
+
+
+
+
+
+$$
+(M_2M_1)_{22}=\left(1\right)\left(0\right)+\left(0\right)\left(-1\right)=0.
+$$
+
+
+
+**Bước 3. Ghép các ô đúng vị trí.**
+
+
+
+$$
+M_2M_1=\begin{bmatrix}0&1\\1&0\end{bmatrix}.
+$$
+
+
+
+ Đối chiếu ảnh hai vector đơn vị (hai cột của tích) với ma trận quay/đối xứng: kết quả là đối xứng qua $y=x$.
+
+**e.** Phép thực hiện sau đứng bên trái. **Bước 1. Kiểm tra kích thước.**
+
+$M_2$ có kích thước $2\times 2$, $M_1$ có kích thước $2\times 2$. Kích thước trong bằng nhau; tích có kích thước $2\times 2$.
+
+**Bước 2. Lấy từng hàng nhân từng cột.**
+
+Ô $(i,j)$ là tổng các tích của hàng $i$ bên trái với cột $j$ bên phải. Các phép tính cụ thể:
+
+
+
+$$
+(M_2M_1)_{11}=\left(1\right)\left(0\right)+\left(0\right)\left(1\right)=0.
+$$
+
+
+
+
+
+$$
+(M_2M_1)_{12}=\left(1\right)\left(1\right)+\left(0\right)\left(0\right)=1.
+$$
+
+
+
+
+
+$$
+(M_2M_1)_{21}=\left(0\right)\left(0\right)+\left(-1\right)\left(1\right)=-1.
+$$
+
+
+
+
+
+$$
+(M_2M_1)_{22}=\left(0\right)\left(1\right)+\left(-1\right)\left(0\right)=0.
+$$
+
+
+
+**Bước 3. Ghép các ô đúng vị trí.**
+
+
+
+$$
+M_2M_1=\begin{bmatrix}0&1\\-1&0\end{bmatrix}.
+$$
+
+
+
+ Đối chiếu ảnh hai vector đơn vị (hai cột của tích) với ma trận quay/đối xứng: kết quả là quay $-\pi/2$.
+
+**f.** Phép thực hiện sau đứng bên trái. **Bước 1. Kiểm tra kích thước.**
+
+$M_2$ có kích thước $2\times 2$, $M_1$ có kích thước $2\times 2$. Kích thước trong bằng nhau; tích có kích thước $2\times 2$.
+
+**Bước 2. Lấy từng hàng nhân từng cột.**
+
+Ô $(i,j)$ là tổng các tích của hàng $i$ bên trái với cột $j$ bên phải. Các phép tính cụ thể:
+
+
+
+$$
+(M_2M_1)_{11}=\left(0\right)\left(1\right)+\left(1\right)\left(0\right)=0.
+$$
+
+
+
+
+
+$$
+(M_2M_1)_{12}=\left(0\right)\left(0\right)+\left(1\right)\left(-1\right)=-1.
+$$
+
+
+
+
+
+$$
+(M_2M_1)_{21}=\left(1\right)\left(1\right)+\left(0\right)\left(0\right)=1.
+$$
+
+
+
+
+
+$$
+(M_2M_1)_{22}=\left(1\right)\left(0\right)+\left(0\right)\left(-1\right)=0.
+$$
+
+
+
+**Bước 3. Ghép các ô đúng vị trí.**
+
+
+
+$$
+M_2M_1=\begin{bmatrix}0&-1\\1&0\end{bmatrix}.
+$$
+
+
+
+ Đối chiếu ảnh hai vector đơn vị (hai cột của tích) với ma trận quay/đối xứng: kết quả là quay $\pi/2$.
 
 </LoiGiai>
 

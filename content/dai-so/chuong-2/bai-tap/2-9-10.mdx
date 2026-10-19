@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Ứng dụng: xích Markov — bài 10"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.9.10"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.9.10 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu $\mathbf{s}_{m}$ là vector trạng thái ở bước $m$ của một xích Markov, hãy chứng minh rằng $\mathbf{s}_{m+k} = P^{k}\mathbf{s}_{m}$ đúng với mọi $m \geq 1$ và $k \geq 1$ (trong đó $P$ là ma trận chuyển).
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-9-10-1" moTa="Đề gốc Nicholson bài 2.9.10, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -23,6 +31,7 @@ and k ≥1 (where P is the transition matrix).
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -40,7 +49,23 @@ Sau k lần chuyển dùng lũy thừa thứ k; phân bố dừng thỏa Ps = s 
 
 <LoiGiai>
 
-Từ định nghĩa $s_{r+1}=Ps_r$, với $k=1$ công thức đúng. Nếu $s_{m+k}=P^ks_m$, thì $s_{m+k+1}=Ps_{m+k}=P(P^ks_m)=P^{k+1}s_m$. Quy nạp theo $k$ chứng minh $s_{m+k}=P^ks_m$ cho mọi chỉ số được nêu. Tính chất chỉ phụ thuộc trạng thái hiện tại bảo đảm dùng cùng một $P$ ở mỗi bước.
+**Cách làm.** Ta dùng vector cột: ô $p_{ij}$ là xác suất từ trạng thái $j$ tới $i$. Sau $k$ bước, $s_k=P^ks_0$. Phân bố dừng phải thỏa đồng thời $Ps=s$, $s_i\ge0$ và $\sum_i s_i=1$.
+
+**Bước 1. Lập luận và tính toán.**
+
+Từ định nghĩa $s_{r+1}=Ps_r$, với $k=1$ công thức đúng.
+
+**Bước 2. Xét giả thiết.**
+
+Nếu $s_{m+k}=P^ks_m$, thì $s_{m+k+1}=Ps_{m+k}=P(P^ks_m)=P^{k+1}s_m$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Quy nạp theo $k$ chứng minh $s_{m+k}=P^ks_m$ cho mọi chỉ số được nêu.
+
+**Bước 4. Thực hiện phép biến đổi.**
+
+Tính chất chỉ phụ thuộc trạng thái hiện tại bảo đảm dùng cùng một $P$ ở mỗi bước.
 
 </LoiGiai>
 

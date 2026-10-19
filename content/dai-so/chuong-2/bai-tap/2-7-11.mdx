@@ -5,11 +5,25 @@ do_kho: vua
 tieu_de: "Phân tích LU — bài 11"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.7.11"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.7.11 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh Bổ đề 2.7.2. [Gợi ý: $P_{k}^{-1} = P_{k}$. Viết
+
+$$
+P_{k} = \left[ \begin{array}{cc} I_{k} & 0 \\ 0 & P_{0} \end{array} \right]
+$$
+
+ dưới dạng khối, trong đó $P_{0}$ là ma trận hoán vị $(m - k) \times (m - k)$.]
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-7-11-1" moTa="Đề gốc Nicholson bài 2.7.11, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -25,6 +39,7 @@ Write Pk =              in block form where P0  is an
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -42,13 +57,37 @@ Với PA = LU, giải Ly = Pb trước rồi giải Ux = y; phân biệt L đơn
 
 <LoiGiai>
 
-Gọi $P$ là ma trận đổi hàng $k$ với một hàng phía dưới, $j<k$. Khi đó $P^2=I$ và $Pe_i=e_i$ với $i\le j$. Viết ma trận cần xét là $L=I+ve_j^T$, trong đó $v$ chỉ có thể khác 0 từ vị trí $j$ trở xuống (lấy cột đã thay trừ $e_j$). Ta có
+**Cách làm.** Phân tích $PA=LU$ tách việc giải $Ax=b$ thành $Ly=Pb$ (thế tiến) và $Ux=y$ (thế ngược). Phải giữ đúng quy ước chuẩn hóa $L,U$ của đề.
+
+**Bước 1. Thiết lập biểu thức.**
+
+Gọi $P$ là ma trận đổi hàng $k$ với một hàng phía dưới, $j<k$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Khi đó $P^2=I$ và $Pe_i=e_i$ với $i\le j$.
+
+**Bước 3. Thiết lập biểu thức.**
+
+Viết ma trận cần xét là $L=I+ve_j^T$, trong đó $v$ chỉ có thể khác 0 từ vị trí $j$ trở xuống (lấy cột đã thay trừ $e_j$).
+
+**Bước 4. Lập luận và tính toán.**
+
+Ta có
+
+
 
 $$
 PLP=I+(Pv)e_j^T=L_1.
 $$
 
- $Pv$ chỉ hoán vị hai thành phần của phần đuôi, nên $L_1$ đúng dạng thay một cột như trong bổ đề. Nhân bên phải với $P$ cho $PL=L_1P$, là điều phải chứng minh.
+
+
+ $Pv$ chỉ hoán vị hai thành phần của phần đuôi, nên $L_1$ đúng dạng thay một cột như trong bổ đề.
+
+**Bước 5. Thực hiện phép biến đổi.**
+
+Nhân bên phải với $P$ cho $PL=L_1P$, là điều phải chứng minh.
 
 </LoiGiai>
 

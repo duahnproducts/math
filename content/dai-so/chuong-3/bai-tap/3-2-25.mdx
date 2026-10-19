@@ -5,11 +5,25 @@ do_kho: vua
 tieu_de: "Định thức và ma trận nghịch đảo — bài 25"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.2.25"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.25 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu
+
+$$
+A = \left[ \begin{array}{rrr} 1 & a & b \\ -a & 1 & c \\ -b & -c & 1 \end{array} \right]
+$$
+
+, hãy chứng minh rằng $\det A = 1 + a^{2} + b^{2} + c^{2}$. Từ đó tìm $A^{-1}$ với mọi $a$, $b$ và $c$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-2-25-1" moTa="Đề gốc Nicholson bài 3.2.25, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -23,6 +37,7 @@ and c.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -40,11 +55,27 @@ Dùng định thức của tích và công thức nghịch đảo qua adjugate k
 
 <LoiGiai>
 
-Khai triển hàng đầu: $\det A=(1+c^2)-a(-a+bc)+b(ac+b)=1+a^2+b^2+c^2>0$. Vì vậy luôn khả nghịch với mọi $a,b,c$ thực. Tính bảng phần bù rồi chuyển vị cho
+**Cách làm.** Dùng $\det(AB)=\det A\det B$, $\det A^T=\det A$, $\det(cA)=c^n\det A$ ở cấp $n$. Khi $\det A\ne0$, $A^{-1}=\operatorname{adj}A/\det A$; adjugate là bảng phần bù đã chuyển vị.
+
+**Bước 1. Thực hiện phép biến đổi.**
+
+Khai triển hàng đầu: $\det A=(1+c^2)-a(-a+bc)+b(ac+b)=1+a^2+b^2+c^2>0$.
+
+**Bước 2. Giải thích điều kiện sử dụng.**
+
+Vì vậy luôn khả nghịch với mọi $a,b,c$ thực.
+
+**Bước 3. Thực hiện phép biến đổi.**
+
+Tính bảng phần bù rồi chuyển vị cho
+
+
 
 $$
 A^{-1}=\frac1{1+a^2+b^2+c^2}\begin{bmatrix}c^{2} + 1&- a - b c&a c - b\\a - b c&b^{2} + 1&- a b - c\\a c + b&- a b + c&a^{2} + 1\end{bmatrix}.
 $$
+
+
 
  Nhân hai chiều xác nhận bằng $I$.
 

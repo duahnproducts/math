@@ -5,11 +5,35 @@ do_kho: vua
 tieu_de: "Phép nhân ma trận — bài 12"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.3.12"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.12 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Trong mỗi trường hợp, hãy cho công thức của mọi lũy thừa $A, A^{2}, A^{3}, \dots$ của $A$ bằng cách phân khối đã chỉ ra.
+
+**a.**
+
+$$
+A = \left[ \begin{array}{r|rr} 1 & 0 & 0 \\ \hline 1 & 1 & -1\\ 1 & -1 & 1 \end{array} \right]
+$$
+
+
+
+**b.**
+
+$$
+A = \left[ \begin{array}{rr|rr} 1 & -1 & 2 & -1 \\ 0 & 1 & 0 & 0 \\ \hline 0 & 0 & -1 & 1 \\ 0 & 0 & 0 & 1 \end{array} \right]
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-3-12-1" moTa="Đề gốc Nicholson bài 2.3.12, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -30,6 +54,7 @@ indicated.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -46,17 +71,39 @@ Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự 
 
 <LoiGiai>
 
-**a.** Khối dưới phải $H=\begin{bmatrix}1&-1\\-1&1\end{bmatrix}$ thỏa $H^2=2H$, còn $H(1,1)^T=0$. Do đó, với $n\ge1$,
+**Cách làm.** Với $A$ cỡ $m\times n$, $B$ cỡ $n\times p$, tích $AB$ có cỡ $m\times p$ và $(AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$. Khi khai triển, giữ nguyên thứ tự các thừa số.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Khối dưới phải $H=\begin{bmatrix}1&-1\\-1&1\end{bmatrix}$ thỏa $H^2=2H$, còn $H(1,1)^T=0$.
+
+**Bước 2. Rút ra kết luận.**
+
+Do đó, với $n\ge1$,
+
+
 
 $$
 A^n=\begin{bmatrix}1&0&0\\1&2^{n-1}&-2^{n-1}\\1&-2^{n-1}&2^{n-1}\end{bmatrix}.
 $$
 
- **b.** Dùng quy nạp theo phép nhân khối (hoặc nhân $A^nA$) cho
+
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Dùng quy nạp theo phép nhân khối (hoặc nhân $A^nA$) cho
+
+
 
 $$
 A^n=\begin{bmatrix}1&- n&1 - \left(-1\right)^{n}&\frac{\left(-1\right)^{n}}{2} - \frac{1}{2}\\0&1&0&0\\0&0&\left(-1\right)^{n}&\frac{1}{2} - \frac{\left(-1\right)^{n}}{2}\\0&0&0&1\end{bmatrix}.
 $$
+
+
 
  Kiểm tra $n=1$ khôi phục đúng ma trận đề; nhân thêm $A$ kiểm tra bước chuyển từ $n$ sang $n+1$.
 

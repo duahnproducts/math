@@ -5,11 +5,147 @@ do_kho: vua
 tieu_de: "Khai triển theo phần bù đại số — bài 1"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.1.1"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.1.1 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Tính định thức của các ma trận sau.
+
+**a.**
+
+$$
+\left[ \begin{array}{rr} 2 & -1 \\ 3 & 2 \end{array} \right]
+$$
+
+
+
+**b.**
+
+$$
+\left[ \begin{array}{rr} 6 & 9 \\ 8 & 12 \end{array} \right]
+$$
+
+
+
+**c.**
+
+$$
+\left[ \begin{array}{rr} a^2 & ab \\ ab & b^2 \end{array} \right]
+$$
+
+
+
+**d.**
+
+$$
+\left[ \begin{array}{cc} a+1 & a \\ a & a-1 \end{array} \right]
+$$
+
+
+
+**e.**
+
+$$
+\left[ \begin{array}{rr} \cos \theta & -\sin \theta \\ \sin \theta & \cos \theta \end{array} \right]
+$$
+
+
+
+**f.**
+
+$$
+\left[ \begin{array}{rrr} 2 & 0 & -3 \\ 1 & 2 & 5 \\ 0 & 3 & 0 \end{array} \right]
+$$
+
+
+
+**g.**
+
+$$
+\left[ \begin{array}{rrr} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{array} \right]
+$$
+
+
+
+**h.**
+
+$$
+\left[ \begin{array}{rrr} 0 & a & 0 \\ b & c & d \\ 0 & e & 0 \end{array} \right]
+$$
+
+
+
+**i.**
+
+$$
+\left[ \begin{array}{rrr} 1 & b & c \\ b & c & 1 \\ c & 1 & b \end{array} \right]
+$$
+
+
+
+**j.**
+
+$$
+\left[ \begin{array}{rrr} 0 & a & b \\ a & 0 & c \\ b & c & 0 \end{array} \right]
+$$
+
+
+
+**k.**
+
+$$
+\left[ \begin{array}{rrrr} 0 & 1 & -1 & 0 \\ 3 & 0 & 0 & 2 \\ 0 & 1 & 2 & 1 \\ 5 & 0 & 0 & 7 \end{array} \right]
+$$
+
+
+
+**l.**
+
+$$
+\left[ \begin{array}{rrrr} 1 & 0 & 3 & 1 \\ 2 & 2 & 6 & 0 \\ -1 & 0 & -3 & 1 \\ 4 & 1 & 12 & 0 \end{array} \right]
+$$
+
+
+
+**m.**
+
+$$
+\left[ \begin{array}{rrrr} 3 & 1 & -5 & 2 \\ 1 & 3 & 0 & 1 \\ 1 & 0 & 5 & 2 \\ 1 & 1 & 2 & -1 \end{array} \right]
+$$
+
+
+
+**n.**
+
+$$
+\left[ \begin{array}{rrrr} 4 & -1 & 3 & -1 \\ 3 & 1 & 0 & 2 \\ 0 & 1 & 2 & 2 \\ 1 & 2 & -1 & 1 \end{array} \right]
+$$
+
+
+
+**o.**
+
+$$
+\left[ \begin{array}{rrrr} 1 & -1 & 5 & 5 \\ 3 & 1 & 2 & 4 \\ -1 & -3 & 8 & 0 \\ 1 & 1 & 2 & -1 \end{array} \right]
+$$
+
+
+
+**p.**
+
+$$
+\left[ \begin{array}{rrrr} 0 & 0 & 0 & a \\ 0 & 0 & b & p \\ 0 & c & q & k \\ d & s & t & u \end{array} \right]
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-1-1-1" moTa="Đề gốc Nicholson bài 3.1.1, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -35,6 +171,7 @@ ing matrices.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -51,130 +188,820 @@ Cộng bội một hàng vào hàng khác giữ định thức; đổi hai hàng
 
 <LoiGiai>
 
-**a.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $4,\;3$. Cộng và rút gọn được
+**Cách làm.** Cộng bội hàng khác giữ nguyên định thức; đổi hai hàng đổi dấu; rút hệ số $c$ từ một hàng đưa $c$ ra ngoài. Với khai triển, $C_{ij}=(-1)^{i+j}\det M_{ij}$.
+
+**a.**
+
+Với $A=\begin{bmatrix}2&-1\\3&2\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
 
 $$
-\det A=7.
-$$
-
-
-
-**b.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $72,\;-72$. Cộng và rút gọn được
-
-$$
-\det A=0.
+\det A=(2)(2)-(-1)(3)=7.
 $$
 
 
 
-**c.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $a^{2} b^{2},\;- a^{2} b^{2}$. Cộng và rút gọn được
+**b.**
+
+Với $A=\begin{bmatrix}6&9\\8&12\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
 
 $$
-\det A=0.
-$$
-
-
-
-**d.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $a^{2} - 1,\;- a^{2}$. Cộng và rút gọn được
-
-$$
-\det A=-1.
+\det A=(6)(12)-(9)(8)=0.
 $$
 
 
 
-**e.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $\cos^{2}{\left(\theta \right)},\;\sin^{2}{\left(\theta \right)}$. Cộng và rút gọn được
+**c.**
+
+Với $A=\begin{bmatrix}a^{2}&a b\\a b&b^{2}\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
 
 $$
-\det A=1.
-$$
-
-
-
-**f.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $-30,\;0,\;-9$. Cộng và rút gọn được
-
-$$
-\det A=-39.
+\det A=(a^{2})(b^{2})-(a b)(a b)=0.
 $$
 
 
 
-**g.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $-3,\;12,\;-9$. Cộng và rút gọn được
+**d.**
+
+Với $A=\begin{bmatrix}a + 1&a\\a&a - 1\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
 
 $$
-\det A=0.
-$$
-
-
-
-**h.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $0,\;0,\;0$. Cộng và rút gọn được
-
-$$
-\det A=0.
+\det A=(a + 1)(a - 1)-(a)(a)=-1.
 $$
 
 
 
-**i.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $b c - 1,\;b \left(- b^{2} + c\right),\;c \left(b - c^{2}\right)$. Cộng và rút gọn được
+**e.**
+
+Với $A=\begin{bmatrix}\cos{\left(\theta \right)}&- \sin{\left(\theta \right)}\\\sin{\left(\theta \right)}&\cos{\left(\theta \right)}\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
 
 $$
-\det A=- \left(b + c + 1\right) \left(b^{2} - b c - b + c^{2} - c + 1\right).
-$$
-
-
-
-**j.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $0,\;a b c,\;a b c$. Cộng và rút gọn được
-
-$$
-\det A=2 a b c.
+\det A=(\cos{\left(\theta \right)})(\cos{\left(\theta \right)})-(- \sin{\left(\theta \right)})(\sin{\left(\theta \right)})=1.
 $$
 
 
 
-**k.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $0,\;-22,\;-11,\;0$. Cộng và rút gọn được
+**f.**
+
+**Bước 1. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}2&0&-3\\1&2&5\\0&3&0\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
 
 $$
-\det A=-33.
-$$
-
-
-
-**l.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $-18,\;0,\;18,\;0$. Cộng và rút gọn được
-
-$$
-\det A=0.
-$$
-
-
-
-**m.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $-96,\;12,\;-40,\;-8$. Cộng và rút gọn được
-
-$$
-\det A=-132.
+M_{11}=\begin{bmatrix}2&5\\3&0\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=-15.
 $$
 
 
 
-**n.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $-24,\;8,\;-27,\;-13$. Cộng và rút gọn được
+Với $M_{11}=\begin{bmatrix}2&5\\3&0\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
 
 $$
-\det A=-56.
-$$
-
-
-
-**o.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $-70,\;-66,\;80,\;140$. Cộng và rút gọn được
-
-$$
-\det A=84.
+\det M_{11}=(2)(0)-(5)(3)=-15.
 $$
 
 
 
-**p.** Khai triển hàng đầu, các hạng $a_{1j}C_{1j}$ lần lượt là $0,\;0,\;0,\;a b c d$. Cộng và rút gọn được
+Xóa hàng 1, cột 3:
+
+
 
 $$
-\det A=a b c d.
+M_{13}=\begin{bmatrix}1&2\\0&3\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=3.
+$$
+
+
+
+Với $M_{13}=\begin{bmatrix}1&2\\0&3\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{13}=(1)(3)-(2)(0)=3.
+$$
+
+
+
+**Bước 2. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(2)(-15)+(-3)(3)=-39.
+$$
+
+
+
+**g.**
+
+**Bước 1. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}1&2&3\\4&5&6\\7&8&9\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}5&6\\8&9\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=-3.
+$$
+
+
+
+Với $M_{11}=\begin{bmatrix}5&6\\8&9\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{11}=(5)(9)-(6)(8)=-3.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}4&6\\7&9\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=6.
+$$
+
+
+
+Với $M_{12}=\begin{bmatrix}4&6\\7&9\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{12}=(4)(9)-(6)(7)=-6.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}4&5\\7&8\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=-3.
+$$
+
+
+
+Với $M_{13}=\begin{bmatrix}4&5\\7&8\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{13}=(4)(8)-(5)(7)=-3.
+$$
+
+
+
+**Bước 2. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(1)(-3)+(2)(6)+(3)(-3)=0.
+$$
+
+
+
+**h.**
+
+**Bước 1. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}0&a&0\\b&c&d\\0&e&0\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}b&d\\0&0\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=0.
+$$
+
+
+
+Với $M_{12}=\begin{bmatrix}b&d\\0&0\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{12}=(b)(0)-(d)(0)=0.
+$$
+
+
+
+**Bước 2. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(a)(0)=0.
+$$
+
+
+
+**i.**
+
+**Bước 1. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}1&b&c\\b&c&1\\c&1&b\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}c&1\\1&b\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=b c - 1.
+$$
+
+
+
+Với $M_{11}=\begin{bmatrix}c&1\\1&b\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{11}=(c)(b)-(1)(1)=b c - 1.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}b&1\\c&b\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=- b^{2} + c.
+$$
+
+
+
+Với $M_{12}=\begin{bmatrix}b&1\\c&b\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{12}=(b)(b)-(1)(c)=b^{2} - c.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}b&c\\c&1\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=b - c^{2}.
+$$
+
+
+
+Với $M_{13}=\begin{bmatrix}b&c\\c&1\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{13}=(b)(1)-(c)(c)=b - c^{2}.
+$$
+
+
+
+**Bước 2. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(1)(b c - 1)+(b)(- b^{2} + c)+(c)(b - c^{2})=- \left(b + c + 1\right) \left(b^{2} - b c - b + c^{2} - c + 1\right).
+$$
+
+
+
+**j.**
+
+**Bước 1. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}0&a&b\\a&0&c\\b&c&0\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}a&c\\b&0\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=b c.
+$$
+
+
+
+Với $M_{12}=\begin{bmatrix}a&c\\b&0\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{12}=(a)(0)-(c)(b)=- b c.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}a&0\\b&c\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=a c.
+$$
+
+
+
+Với $M_{13}=\begin{bmatrix}a&0\\b&c\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{13}=(a)(c)-(0)(b)=a c.
+$$
+
+
+
+**Bước 2. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(a)(b c)+(b)(a c)=2 a b c.
+$$
+
+
+
+**k.**
+
+**Bước 1. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}0&1&-1&0\\3&0&0&2\\0&1&2&1\\5&0&0&7\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}3&0&2\\0&2&1\\5&0&7\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=-22.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{12}=(3)\bigl[(2)(7)-(1)(0)\bigr]+(2)\bigl[(0)(0)-(2)(5)\bigr]=22.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}3&0&2\\0&1&1\\5&0&7\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=11.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{13}=(3)\bigl[(1)(7)-(1)(0)\bigr]+(2)\bigl[(0)(0)-(1)(5)\bigr]=11.
+$$
+
+
+
+**Bước 2. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(1)(-22)+(-1)(11)=-33.
+$$
+
+
+
+**l.**
+
+**Bước 1. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}1&0&3&1\\2&2&6&0\\-1&0&-3&1\\4&1&12&0\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}2&6&0\\0&-3&1\\1&12&0\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=-18.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{11}=(2)\bigl[(-3)(0)-(1)(12)\bigr]+(-6)\bigl[(0)(0)-(1)(1)\bigr]=-18.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}2&2&0\\-1&0&1\\4&1&0\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=6.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{13}=(2)\bigl[(0)(0)-(1)(1)\bigr]+(-2)\bigl[(-1)(0)-(1)(4)\bigr]=6.
+$$
+
+
+
+Xóa hàng 1, cột 4:
+
+
+
+$$
+M_{14}=\begin{bmatrix}2&2&6\\-1&0&-3\\4&1&12\end{bmatrix},\qquad C_{14}=(-1)^{1+4}\det M_{14}=0.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{14}=(2)\bigl[(0)(12)-(-3)(1)\bigr]+(-2)\bigl[(-1)(12)-(-3)(4)\bigr]+(6)\bigl[(-1)(1)-(0)(4)\bigr]=0.
+$$
+
+
+
+**Bước 2. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(1)(-18)+(3)(6)+(1)(0)=0.
+$$
+
+
+
+**m.**
+
+**Bước 1. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}3&1&-5&2\\1&3&0&1\\1&0&5&2\\1&1&2&-1\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}3&0&1\\0&5&2\\1&2&-1\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=-32.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{11}=(3)\bigl[(5)(-1)-(2)(2)\bigr]+(1)\bigl[(0)(2)-(5)(1)\bigr]=-32.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}1&0&1\\1&5&2\\1&2&-1\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=12.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{12}=(1)\bigl[(5)(-1)-(2)(2)\bigr]+(1)\bigl[(1)(2)-(5)(1)\bigr]=-12.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}1&3&1\\1&0&2\\1&1&-1\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=8.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{13}=(1)\bigl[(0)(-1)-(2)(1)\bigr]+(-3)\bigl[(1)(-1)-(2)(1)\bigr]+(1)\bigl[(1)(1)-(0)(1)\bigr]=8.
+$$
+
+
+
+Xóa hàng 1, cột 4:
+
+
+
+$$
+M_{14}=\begin{bmatrix}1&3&0\\1&0&5\\1&1&2\end{bmatrix},\qquad C_{14}=(-1)^{1+4}\det M_{14}=-4.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{14}=(1)\bigl[(0)(2)-(5)(1)\bigr]+(-3)\bigl[(1)(2)-(5)(1)\bigr]=4.
+$$
+
+
+
+**Bước 2. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(3)(-32)+(1)(12)+(-5)(8)+(2)(-4)=-132.
+$$
+
+
+
+**n.**
+
+**Bước 1. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}4&-1&3&-1\\3&1&0&2\\0&1&2&2\\1&2&-1&1\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}1&0&2\\1&2&2\\2&-1&1\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=-6.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{11}=(1)\bigl[(2)(1)-(2)(-1)\bigr]+(2)\bigl[(1)(-1)-(2)(2)\bigr]=-6.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}3&0&2\\0&2&2\\1&-1&1\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=-8.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{12}=(3)\bigl[(2)(1)-(2)(-1)\bigr]+(2)\bigl[(0)(-1)-(2)(1)\bigr]=8.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}3&1&2\\0&1&2\\1&2&1\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=-9.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{13}=(3)\bigl[(1)(1)-(2)(2)\bigr]+(-1)\bigl[(0)(1)-(2)(1)\bigr]+(2)\bigl[(0)(2)-(1)(1)\bigr]=-9.
+$$
+
+
+
+Xóa hàng 1, cột 4:
+
+
+
+$$
+M_{14}=\begin{bmatrix}3&1&0\\0&1&2\\1&2&-1\end{bmatrix},\qquad C_{14}=(-1)^{1+4}\det M_{14}=13.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{14}=(3)\bigl[(1)(-1)-(2)(2)\bigr]+(-1)\bigl[(0)(-1)-(2)(1)\bigr]=-13.
+$$
+
+
+
+**Bước 2. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(4)(-6)+(-1)(-8)+(3)(-9)+(-1)(13)=-56.
+$$
+
+
+
+**o.**
+
+**Bước 1. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}1&-1&5&5\\3&1&2&4\\-1&-3&8&0\\1&1&2&-1\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}1&2&4\\-3&8&0\\1&2&-1\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=-70.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{11}=(1)\bigl[(8)(-1)-(0)(2)\bigr]+(-2)\bigl[(-3)(-1)-(0)(1)\bigr]+(4)\bigl[(-3)(2)-(8)(1)\bigr]=-70.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}3&2&4\\-1&8&0\\1&2&-1\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=66.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{12}=(3)\bigl[(8)(-1)-(0)(2)\bigr]+(-2)\bigl[(-1)(-1)-(0)(1)\bigr]+(4)\bigl[(-1)(2)-(8)(1)\bigr]=-66.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}3&1&4\\-1&-3&0\\1&1&-1\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=16.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{13}=(3)\bigl[(-3)(-1)-(0)(1)\bigr]+(-1)\bigl[(-1)(-1)-(0)(1)\bigr]+(4)\bigl[(-1)(1)-(-3)(1)\bigr]=16.
+$$
+
+
+
+Xóa hàng 1, cột 4:
+
+
+
+$$
+M_{14}=\begin{bmatrix}3&1&2\\-1&-3&8\\1&1&2\end{bmatrix},\qquad C_{14}=(-1)^{1+4}\det M_{14}=28.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{14}=(3)\bigl[(-3)(2)-(8)(1)\bigr]+(-1)\bigl[(-1)(2)-(8)(1)\bigr]+(2)\bigl[(-1)(1)-(-3)(1)\bigr]=-28.
+$$
+
+
+
+**Bước 2. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(1)(-70)+(-1)(66)+(5)(16)+(5)(28)=84.
+$$
+
+
+
+**p.**
+
+**Bước 1. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}0&0&0&a\\0&0&b&p\\0&c&q&k\\d&s&t&u\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 4:
+
+
+
+$$
+M_{14}=\begin{bmatrix}0&0&b\\0&c&q\\d&s&t\end{bmatrix},\qquad C_{14}=(-1)^{1+4}\det M_{14}=b c d.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{14}=(b)\bigl[(0)(s)-(c)(d)\bigr]=- b c d.
+$$
+
+
+
+**Bước 2. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(a)(b c d)=a b c d.
 $$
 
 </LoiGiai>

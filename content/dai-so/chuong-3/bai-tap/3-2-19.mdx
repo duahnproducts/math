@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Định thức và ma trận nghịch đảo — bài 19"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.2.19"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.19 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Với mỗi ma trận trong Bài 3.2.2, hãy tìm nghịch đảo ứng với các giá trị $c$ mà nghịch đảo tồn tại.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-2-19-1" moTa="Đề gốc Nicholson bài 3.2.19, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ Exercise 3.2.19  For each of the matrices in Exercise 2,
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,53 +48,1085 @@ Dùng định thức của tích và công thức nghịch đảo qua adjugate k
 
 <LoiGiai>
 
-**a.** Với điều kiện $\det A=37 - 5 c\ne0$ đã tìm ở bài 3.2.2, áp dụng $A^{-1}=\operatorname{adj}A/\det A$:
+**Cách làm.** Dùng $\det(AB)=\det A\det B$, $\det A^T=\det A$, $\det(cA)=c^n\det A$ ở cấp $n$. Khi $\det A\ne0$, $A^{-1}=\operatorname{adj}A/\det A$; adjugate là bảng phần bù đã chuyển vị.
+
+**a.**
+
+**Bước 1. Kiểm tra điều kiện tồn tại.**
+
+**Bước 2. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}1&0&3\\3&-4&c\\2&5&8\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
 
 $$
-A^{-1}=\frac1{37 - 5 c}\begin{bmatrix}- 5 c - 32&15&12\\2 c - 24&2&9 - c\\23&-5&-4\end{bmatrix}.
+M_{11}=\begin{bmatrix}-4&c\\5&8\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=- 5 c - 32.
 $$
 
- Nhân với $A$ được $I$; ngoài điều kiện ấy không tồn tại nghịch đảo.
 
-**b.** Với điều kiện $\det A=3 c^{2}\ne0$ đã tìm ở bài 3.2.2, áp dụng $A^{-1}=\operatorname{adj}A/\det A$:
 
-$$
-A^{-1}=\frac1{3 c^{2}}\begin{bmatrix}3 c&0&3 c\\2 c&c^{2}&c\\- c&c^{2}&c\end{bmatrix}.
-$$
+Với $M_{11}=\begin{bmatrix}-4&c\\5&8\end{bmatrix}$, dùng quy tắc tích chéo:
 
- Nhân với $A$ được $I$; ngoài điều kiện ấy không tồn tại nghịch đảo.
 
-**c.** Với điều kiện $\det A=- c \left(c - 3\right) \left(c + 3\right)\ne0$ đã tìm ở bài 3.2.2, áp dụng $A^{-1}=\operatorname{adj}A/\det A$:
 
 $$
-A^{-1}=\frac1{- c \left(c - 3\right) \left(c + 3\right)}\begin{bmatrix}10 - c^{2}&-5&c\\- c&5 c&- c^{2}\\2&- c^{2} - 1&2 c\end{bmatrix}.
+\det M_{11}=(-4)(8)-(c)(5)=- 5 c - 32.
 $$
 
- Nhân với $A$ được $I$; ngoài điều kiện ấy không tồn tại nghịch đảo.
 
-**d.** Với điều kiện $\det A=2\ne0$ đã tìm ở bài 3.2.2, áp dụng $A^{-1}=\operatorname{adj}A/\det A$:
 
-$$
-A^{-1}=\frac1{2}\begin{bmatrix}8 - c^{2}&- c&c^{2} - 6\\c&1&- c\\c^{2} - 10&c&8 - c^{2}\end{bmatrix}.
-$$
+Xóa hàng 1, cột 3:
 
- Nhân với $A$ được $I$; ngoài điều kiện ấy không tồn tại nghịch đảo.
 
-**e.** Với điều kiện $\det A=- \left(c - 3\right) \left(c - 1\right)\ne0$ đã tìm ở bài 3.2.2, áp dụng $A^{-1}=\operatorname{adj}A/\det A$:
 
 $$
-A^{-1}=\frac1{- \left(c - 3\right) \left(c - 1\right)}\begin{bmatrix}- c^{2} - 1&- c - 2&2 c - 1\\2 c&3&- c\\2&4 - c&-1\end{bmatrix}.
+M_{13}=\begin{bmatrix}3&-4\\2&5\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=23.
 $$
 
- Nhân với $A$ được $I$; ngoài điều kiện ấy không tồn tại nghịch đảo.
 
-**f.** Với điều kiện $\det A=- \left(c + 1\right) \left(c^{2} - c + 1\right)\ne0$ đã tìm ở bài 3.2.2, áp dụng $A^{-1}=\operatorname{adj}A/\det A$:
+
+Với $M_{13}=\begin{bmatrix}3&-4\\2&5\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
 
 $$
-A^{-1}=\frac1{- \left(c + 1\right) \left(c^{2} - c + 1\right)}\begin{bmatrix}c - 1&- c^{2} - 1&c + 1\\- c^{2}&c&- c - 1\\c&-1&1 - c^{2}\end{bmatrix}.
+\det M_{13}=(3)(5)-(-4)(2)=23.
 $$
 
- Nhân với $A$ được $I$; ngoài điều kiện ấy không tồn tại nghịch đảo.
+
+
+**Bước 3. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(1)(- 5 c - 32)+(3)(23)=37 - 5 c.
+$$
+
+
+
+**Bước 4. Tính từng phần bù đại số.**
+
+Ta dùng $C_{ij}=(-1)^{i+j}\det M_{ij}$. Mỗi $M_{ij}$ được lập bằng cách xóa hàng $i$ và cột $j$ của $A$.
+
+
+
+$$
+C_{11}=(-1)^{2}\det\begin{bmatrix}-4&c\\5&8\end{bmatrix}=- 5 c - 32.
+$$
+
+
+
+
+
+$$
+C_{12}=(-1)^{3}\det\begin{bmatrix}3&c\\2&8\end{bmatrix}=2 \left(c - 12\right).
+$$
+
+
+
+
+
+$$
+C_{13}=(-1)^{4}\det\begin{bmatrix}3&-4\\2&5\end{bmatrix}=23.
+$$
+
+
+
+
+
+$$
+C_{21}=(-1)^{3}\det\begin{bmatrix}0&3\\5&8\end{bmatrix}=15.
+$$
+
+
+
+
+
+$$
+C_{22}=(-1)^{4}\det\begin{bmatrix}1&3\\2&8\end{bmatrix}=2.
+$$
+
+
+
+
+
+$$
+C_{23}=(-1)^{5}\det\begin{bmatrix}1&0\\2&5\end{bmatrix}=-5.
+$$
+
+
+
+
+
+$$
+C_{31}=(-1)^{4}\det\begin{bmatrix}0&3\\-4&c\end{bmatrix}=12.
+$$
+
+
+
+
+
+$$
+C_{32}=(-1)^{5}\det\begin{bmatrix}1&3\\3&c\end{bmatrix}=9 - c.
+$$
+
+
+
+
+
+$$
+C_{33}=(-1)^{6}\det\begin{bmatrix}1&0\\3&-4\end{bmatrix}=-4.
+$$
+
+
+
+Ghép thành bảng phần bù $C$, rồi **chuyển vị** (hàng thành cột):
+
+
+
+$$
+C=\begin{bmatrix}- 5 c - 32&2 c - 24&23\\15&2&-5\\12&9 - c&-4\end{bmatrix},\qquad\operatorname{adj}A=C^T=\begin{bmatrix}- 5 c - 32&15&12\\2 c - 24&2&9 - c\\23&-5&-4\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Chia cho định thức.**
+
+Chỉ với các giá trị làm $\det A\ne0$, ta có
+
+
+
+$$
+A^{-1}=\frac{\operatorname{adj}A}{\det A}=\begin{bmatrix}\frac{5 c + 32}{5 c - 37}&- \frac{15}{5 c - 37}&- \frac{12}{5 c - 37}\\\frac{2 \left(12 - c\right)}{5 c - 37}&- \frac{2}{5 c - 37}&\frac{c - 9}{5 c - 37}\\- \frac{23}{5 c - 37}&\frac{5}{5 c - 37}&\frac{4}{5 c - 37}\end{bmatrix}.
+$$
+
+
+
+ Điều kiện này phải đi kèm công thức; ở giá trị làm mẫu bằng 0, nghịch đảo không tồn tại.
+
+**Bước 6. Kiểm tra hai chiều.**
+
+Nhân theo hàng–cột cho
+
+
+
+$$
+AA^{-1}=A^{-1}A=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}.
+$$
+
+
+
+**b.**
+
+**Bước 1. Kiểm tra điều kiện tồn tại.**
+
+**Bước 2. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}0&c&- c\\-1&2&1\\c&- c&c\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}-1&1\\c&c\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=2 c.
+$$
+
+
+
+Với $M_{12}=\begin{bmatrix}-1&1\\c&c\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{12}=(-1)(c)-(1)(c)=- 2 c.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}-1&2\\c&- c\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=- c.
+$$
+
+
+
+Với $M_{13}=\begin{bmatrix}-1&2\\c&- c\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{13}=(-1)(- c)-(2)(c)=- c.
+$$
+
+
+
+**Bước 3. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(c)(2 c)+(- c)(- c)=3 c^{2}.
+$$
+
+
+
+**Bước 4. Tính từng phần bù đại số.**
+
+Ta dùng $C_{ij}=(-1)^{i+j}\det M_{ij}$. Mỗi $M_{ij}$ được lập bằng cách xóa hàng $i$ và cột $j$ của $A$.
+
+
+
+$$
+C_{11}=(-1)^{2}\det\begin{bmatrix}2&1\\- c&c\end{bmatrix}=3 c.
+$$
+
+
+
+
+
+$$
+C_{12}=(-1)^{3}\det\begin{bmatrix}-1&1\\c&c\end{bmatrix}=2 c.
+$$
+
+
+
+
+
+$$
+C_{13}=(-1)^{4}\det\begin{bmatrix}-1&2\\c&- c\end{bmatrix}=- c.
+$$
+
+
+
+
+
+$$
+C_{21}=(-1)^{3}\det\begin{bmatrix}c&- c\\- c&c\end{bmatrix}=0.
+$$
+
+
+
+
+
+$$
+C_{22}=(-1)^{4}\det\begin{bmatrix}0&- c\\c&c\end{bmatrix}=c^{2}.
+$$
+
+
+
+
+
+$$
+C_{23}=(-1)^{5}\det\begin{bmatrix}0&c\\c&- c\end{bmatrix}=c^{2}.
+$$
+
+
+
+
+
+$$
+C_{31}=(-1)^{4}\det\begin{bmatrix}c&- c\\2&1\end{bmatrix}=3 c.
+$$
+
+
+
+
+
+$$
+C_{32}=(-1)^{5}\det\begin{bmatrix}0&- c\\-1&1\end{bmatrix}=c.
+$$
+
+
+
+
+
+$$
+C_{33}=(-1)^{6}\det\begin{bmatrix}0&c\\-1&2\end{bmatrix}=c.
+$$
+
+
+
+Ghép thành bảng phần bù $C$, rồi **chuyển vị** (hàng thành cột):
+
+
+
+$$
+C=\begin{bmatrix}3 c&2 c&- c\\0&c^{2}&c^{2}\\3 c&c&c\end{bmatrix},\qquad\operatorname{adj}A=C^T=\begin{bmatrix}3 c&0&3 c\\2 c&c^{2}&c\\- c&c^{2}&c\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Chia cho định thức.**
+
+Chỉ với các giá trị làm $\det A\ne0$, ta có
+
+
+
+$$
+A^{-1}=\frac{\operatorname{adj}A}{\det A}=\begin{bmatrix}\frac{1}{c}&0&\frac{1}{c}\\\frac{2}{3 c}&\frac{1}{3}&\frac{1}{3 c}\\- \frac{1}{3 c}&\frac{1}{3}&\frac{1}{3 c}\end{bmatrix}.
+$$
+
+
+
+ Điều kiện này phải đi kèm công thức; ở giá trị làm mẫu bằng 0, nghịch đảo không tồn tại.
+
+**Bước 6. Kiểm tra hai chiều.**
+
+Nhân theo hàng–cột cho
+
+
+
+$$
+AA^{-1}=A^{-1}A=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}.
+$$
+
+
+
+**c.**
+
+**Bước 1. Kiểm tra điều kiện tồn tại.**
+
+**Bước 2. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}c&1&0\\0&2&c\\-1&c&5\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}2&c\\c&5\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=10 - c^{2}.
+$$
+
+
+
+Với $M_{11}=\begin{bmatrix}2&c\\c&5\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{11}=(2)(5)-(c)(c)=10 - c^{2}.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}0&c\\-1&5\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=- c.
+$$
+
+
+
+Với $M_{12}=\begin{bmatrix}0&c\\-1&5\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{12}=(0)(5)-(c)(-1)=c.
+$$
+
+
+
+**Bước 3. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(c)(10 - c^{2})+(1)(- c)=- c \left(c - 3\right) \left(c + 3\right).
+$$
+
+
+
+**Bước 4. Tính từng phần bù đại số.**
+
+Ta dùng $C_{ij}=(-1)^{i+j}\det M_{ij}$. Mỗi $M_{ij}$ được lập bằng cách xóa hàng $i$ và cột $j$ của $A$.
+
+
+
+$$
+C_{11}=(-1)^{2}\det\begin{bmatrix}2&c\\c&5\end{bmatrix}=10 - c^{2}.
+$$
+
+
+
+
+
+$$
+C_{12}=(-1)^{3}\det\begin{bmatrix}0&c\\-1&5\end{bmatrix}=- c.
+$$
+
+
+
+
+
+$$
+C_{13}=(-1)^{4}\det\begin{bmatrix}0&2\\-1&c\end{bmatrix}=2.
+$$
+
+
+
+
+
+$$
+C_{21}=(-1)^{3}\det\begin{bmatrix}1&0\\c&5\end{bmatrix}=-5.
+$$
+
+
+
+
+
+$$
+C_{22}=(-1)^{4}\det\begin{bmatrix}c&0\\-1&5\end{bmatrix}=5 c.
+$$
+
+
+
+
+
+$$
+C_{23}=(-1)^{5}\det\begin{bmatrix}c&1\\-1&c\end{bmatrix}=- c^{2} - 1.
+$$
+
+
+
+
+
+$$
+C_{31}=(-1)^{4}\det\begin{bmatrix}1&0\\2&c\end{bmatrix}=c.
+$$
+
+
+
+
+
+$$
+C_{32}=(-1)^{5}\det\begin{bmatrix}c&0\\0&c\end{bmatrix}=- c^{2}.
+$$
+
+
+
+
+
+$$
+C_{33}=(-1)^{6}\det\begin{bmatrix}c&1\\0&2\end{bmatrix}=2 c.
+$$
+
+
+
+Ghép thành bảng phần bù $C$, rồi **chuyển vị** (hàng thành cột):
+
+
+
+$$
+C=\begin{bmatrix}10 - c^{2}&- c&2\\-5&5 c&- c^{2} - 1\\c&- c^{2}&2 c\end{bmatrix},\qquad\operatorname{adj}A=C^T=\begin{bmatrix}10 - c^{2}&-5&c\\- c&5 c&- c^{2}\\2&- c^{2} - 1&2 c\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Chia cho định thức.**
+
+Chỉ với các giá trị làm $\det A\ne0$, ta có
+
+
+
+$$
+A^{-1}=\frac{\operatorname{adj}A}{\det A}=\begin{bmatrix}\frac{c^{2} - 10}{c \left(c^{2} - 9\right)}&\frac{5}{c \left(c^{2} - 9\right)}&- \frac{1}{c^{2} - 9}\\\frac{1}{c^{2} - 9}&- \frac{5}{c^{2} - 9}&\frac{c}{c^{2} - 9}\\- \frac{2}{c \left(c^{2} - 9\right)}&\frac{c^{2} + 1}{c \left(c^{2} - 9\right)}&- \frac{2}{c^{2} - 9}\end{bmatrix}.
+$$
+
+
+
+ Điều kiện này phải đi kèm công thức; ở giá trị làm mẫu bằng 0, nghịch đảo không tồn tại.
+
+**Bước 6. Kiểm tra hai chiều.**
+
+Nhân theo hàng–cột cho
+
+
+
+$$
+AA^{-1}=A^{-1}A=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}.
+$$
+
+
+
+**d.**
+
+**Bước 1. Kiểm tra điều kiện tồn tại.**
+
+**Bước 2. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}4&c&3\\c&2&c\\5&c&4\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}2&c\\c&4\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=8 - c^{2}.
+$$
+
+
+
+Với $M_{11}=\begin{bmatrix}2&c\\c&4\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{11}=(2)(4)-(c)(c)=8 - c^{2}.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}c&c\\5&4\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=c.
+$$
+
+
+
+Với $M_{12}=\begin{bmatrix}c&c\\5&4\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{12}=(c)(4)-(c)(5)=- c.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}c&2\\5&c\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=c^{2} - 10.
+$$
+
+
+
+Với $M_{13}=\begin{bmatrix}c&2\\5&c\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{13}=(c)(c)-(2)(5)=c^{2} - 10.
+$$
+
+
+
+**Bước 3. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(4)(8 - c^{2})+(c)(c)+(3)(c^{2} - 10)=2.
+$$
+
+
+
+**Bước 4. Tính từng phần bù đại số.**
+
+Ta dùng $C_{ij}=(-1)^{i+j}\det M_{ij}$. Mỗi $M_{ij}$ được lập bằng cách xóa hàng $i$ và cột $j$ của $A$.
+
+
+
+$$
+C_{11}=(-1)^{2}\det\begin{bmatrix}2&c\\c&4\end{bmatrix}=8 - c^{2}.
+$$
+
+
+
+
+
+$$
+C_{12}=(-1)^{3}\det\begin{bmatrix}c&c\\5&4\end{bmatrix}=c.
+$$
+
+
+
+
+
+$$
+C_{13}=(-1)^{4}\det\begin{bmatrix}c&2\\5&c\end{bmatrix}=c^{2} - 10.
+$$
+
+
+
+
+
+$$
+C_{21}=(-1)^{3}\det\begin{bmatrix}c&3\\c&4\end{bmatrix}=- c.
+$$
+
+
+
+
+
+$$
+C_{22}=(-1)^{4}\det\begin{bmatrix}4&3\\5&4\end{bmatrix}=1.
+$$
+
+
+
+
+
+$$
+C_{23}=(-1)^{5}\det\begin{bmatrix}4&c\\5&c\end{bmatrix}=c.
+$$
+
+
+
+
+
+$$
+C_{31}=(-1)^{4}\det\begin{bmatrix}c&3\\2&c\end{bmatrix}=c^{2} - 6.
+$$
+
+
+
+
+
+$$
+C_{32}=(-1)^{5}\det\begin{bmatrix}4&3\\c&c\end{bmatrix}=- c.
+$$
+
+
+
+
+
+$$
+C_{33}=(-1)^{6}\det\begin{bmatrix}4&c\\c&2\end{bmatrix}=8 - c^{2}.
+$$
+
+
+
+Ghép thành bảng phần bù $C$, rồi **chuyển vị** (hàng thành cột):
+
+
+
+$$
+C=\begin{bmatrix}8 - c^{2}&c&c^{2} - 10\\- c&1&c\\c^{2} - 6&- c&8 - c^{2}\end{bmatrix},\qquad\operatorname{adj}A=C^T=\begin{bmatrix}8 - c^{2}&- c&c^{2} - 6\\c&1&- c\\c^{2} - 10&c&8 - c^{2}\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Chia cho định thức.**
+
+Chỉ với các giá trị làm $\det A\ne0$, ta có
+
+
+
+$$
+A^{-1}=\frac{\operatorname{adj}A}{\det A}=\begin{bmatrix}4 - \frac{c^{2}}{2}&- \frac{c}{2}&\frac{c^{2}}{2} - 3\\\frac{c}{2}&\frac{1}{2}&- \frac{c}{2}\\\frac{c^{2}}{2} - 5&\frac{c}{2}&4 - \frac{c^{2}}{2}\end{bmatrix}.
+$$
+
+
+
+ Điều kiện này phải đi kèm công thức; ở giá trị làm mẫu bằng 0, nghịch đảo không tồn tại.
+
+**Bước 6. Kiểm tra hai chiều.**
+
+Nhân theo hàng–cột cho
+
+
+
+$$
+AA^{-1}=A^{-1}A=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}.
+$$
+
+
+
+**e.**
+
+**Bước 1. Kiểm tra điều kiện tồn tại.**
+
+**Bước 2. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}1&2&-1\\0&-1&c\\2&c&1\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}-1&c\\c&1\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=- c^{2} - 1.
+$$
+
+
+
+Với $M_{11}=\begin{bmatrix}-1&c\\c&1\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{11}=(-1)(1)-(c)(c)=- c^{2} - 1.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}0&c\\2&1\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=2 c.
+$$
+
+
+
+Với $M_{12}=\begin{bmatrix}0&c\\2&1\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{12}=(0)(1)-(c)(2)=- 2 c.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}0&-1\\2&c\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=2.
+$$
+
+
+
+Với $M_{13}=\begin{bmatrix}0&-1\\2&c\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{13}=(0)(c)-(-1)(2)=2.
+$$
+
+
+
+**Bước 3. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(1)(- c^{2} - 1)+(2)(2 c)+(-1)(2)=- \left(c - 3\right) \left(c - 1\right).
+$$
+
+
+
+**Bước 4. Tính từng phần bù đại số.**
+
+Ta dùng $C_{ij}=(-1)^{i+j}\det M_{ij}$. Mỗi $M_{ij}$ được lập bằng cách xóa hàng $i$ và cột $j$ của $A$.
+
+
+
+$$
+C_{11}=(-1)^{2}\det\begin{bmatrix}-1&c\\c&1\end{bmatrix}=- c^{2} - 1.
+$$
+
+
+
+
+
+$$
+C_{12}=(-1)^{3}\det\begin{bmatrix}0&c\\2&1\end{bmatrix}=2 c.
+$$
+
+
+
+
+
+$$
+C_{13}=(-1)^{4}\det\begin{bmatrix}0&-1\\2&c\end{bmatrix}=2.
+$$
+
+
+
+
+
+$$
+C_{21}=(-1)^{3}\det\begin{bmatrix}2&-1\\c&1\end{bmatrix}=- c - 2.
+$$
+
+
+
+
+
+$$
+C_{22}=(-1)^{4}\det\begin{bmatrix}1&-1\\2&1\end{bmatrix}=3.
+$$
+
+
+
+
+
+$$
+C_{23}=(-1)^{5}\det\begin{bmatrix}1&2\\2&c\end{bmatrix}=4 - c.
+$$
+
+
+
+
+
+$$
+C_{31}=(-1)^{4}\det\begin{bmatrix}2&-1\\-1&c\end{bmatrix}=2 c - 1.
+$$
+
+
+
+
+
+$$
+C_{32}=(-1)^{5}\det\begin{bmatrix}1&-1\\0&c\end{bmatrix}=- c.
+$$
+
+
+
+
+
+$$
+C_{33}=(-1)^{6}\det\begin{bmatrix}1&2\\0&-1\end{bmatrix}=-1.
+$$
+
+
+
+Ghép thành bảng phần bù $C$, rồi **chuyển vị** (hàng thành cột):
+
+
+
+$$
+C=\begin{bmatrix}- c^{2} - 1&2 c&2\\- c - 2&3&4 - c\\2 c - 1&- c&-1\end{bmatrix},\qquad\operatorname{adj}A=C^T=\begin{bmatrix}- c^{2} - 1&- c - 2&2 c - 1\\2 c&3&- c\\2&4 - c&-1\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Chia cho định thức.**
+
+Chỉ với các giá trị làm $\det A\ne0$, ta có
+
+
+
+$$
+A^{-1}=\frac{\operatorname{adj}A}{\det A}=\begin{bmatrix}\frac{c^{2} + 1}{c^{2} - 4 c + 3}&\frac{c + 2}{c^{2} - 4 c + 3}&\frac{1 - 2 c}{c^{2} - 4 c + 3}\\- \frac{2 c}{c^{2} - 4 c + 3}&- \frac{3}{c^{2} - 4 c + 3}&\frac{c}{c^{2} - 4 c + 3}\\- \frac{2}{c^{2} - 4 c + 3}&\frac{c - 4}{c^{2} - 4 c + 3}&\frac{1}{c^{2} - 4 c + 3}\end{bmatrix}.
+$$
+
+
+
+ Điều kiện này phải đi kèm công thức; ở giá trị làm mẫu bằng 0, nghịch đảo không tồn tại.
+
+**Bước 6. Kiểm tra hai chiều.**
+
+Nhân theo hàng–cột cho
+
+
+
+$$
+AA^{-1}=A^{-1}A=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}.
+$$
+
+
+
+**f.**
+
+**Bước 1. Kiểm tra điều kiện tồn tại.**
+
+**Bước 2. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}1&c&-1\\c&1&1\\0&1&c\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}1&1\\1&c\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=c - 1.
+$$
+
+
+
+Với $M_{11}=\begin{bmatrix}1&1\\1&c\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{11}=(1)(c)-(1)(1)=c - 1.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}c&1\\0&c\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=- c^{2}.
+$$
+
+
+
+Với $M_{12}=\begin{bmatrix}c&1\\0&c\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{12}=(c)(c)-(1)(0)=c^{2}.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}c&1\\0&1\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=c.
+$$
+
+
+
+Với $M_{13}=\begin{bmatrix}c&1\\0&1\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{13}=(c)(1)-(1)(0)=c.
+$$
+
+
+
+**Bước 3. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(1)(c - 1)+(c)(- c^{2})+(-1)(c)=- \left(c + 1\right) \left(c^{2} - c + 1\right).
+$$
+
+
+
+**Bước 4. Tính từng phần bù đại số.**
+
+Ta dùng $C_{ij}=(-1)^{i+j}\det M_{ij}$. Mỗi $M_{ij}$ được lập bằng cách xóa hàng $i$ và cột $j$ của $A$.
+
+
+
+$$
+C_{11}=(-1)^{2}\det\begin{bmatrix}1&1\\1&c\end{bmatrix}=c - 1.
+$$
+
+
+
+
+
+$$
+C_{12}=(-1)^{3}\det\begin{bmatrix}c&1\\0&c\end{bmatrix}=- c^{2}.
+$$
+
+
+
+
+
+$$
+C_{13}=(-1)^{4}\det\begin{bmatrix}c&1\\0&1\end{bmatrix}=c.
+$$
+
+
+
+
+
+$$
+C_{21}=(-1)^{3}\det\begin{bmatrix}c&-1\\1&c\end{bmatrix}=- c^{2} - 1.
+$$
+
+
+
+
+
+$$
+C_{22}=(-1)^{4}\det\begin{bmatrix}1&-1\\0&c\end{bmatrix}=c.
+$$
+
+
+
+
+
+$$
+C_{23}=(-1)^{5}\det\begin{bmatrix}1&c\\0&1\end{bmatrix}=-1.
+$$
+
+
+
+
+
+$$
+C_{31}=(-1)^{4}\det\begin{bmatrix}c&-1\\1&1\end{bmatrix}=c + 1.
+$$
+
+
+
+
+
+$$
+C_{32}=(-1)^{5}\det\begin{bmatrix}1&-1\\c&1\end{bmatrix}=- c - 1.
+$$
+
+
+
+
+
+$$
+C_{33}=(-1)^{6}\det\begin{bmatrix}1&c\\c&1\end{bmatrix}=- \left(c - 1\right) \left(c + 1\right).
+$$
+
+
+
+Ghép thành bảng phần bù $C$, rồi **chuyển vị** (hàng thành cột):
+
+
+
+$$
+C=\begin{bmatrix}c - 1&- c^{2}&c\\- c^{2} - 1&c&-1\\c + 1&- c - 1&1 - c^{2}\end{bmatrix},\qquad\operatorname{adj}A=C^T=\begin{bmatrix}c - 1&- c^{2} - 1&c + 1\\- c^{2}&c&- c - 1\\c&-1&1 - c^{2}\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Chia cho định thức.**
+
+Chỉ với các giá trị làm $\det A\ne0$, ta có
+
+
+
+$$
+A^{-1}=\frac{\operatorname{adj}A}{\det A}=\begin{bmatrix}\frac{1 - c}{c^{3} + 1}&\frac{c^{2} + 1}{c^{3} + 1}&- \frac{1}{c^{2} - c + 1}\\\frac{c^{2}}{c^{3} + 1}&- \frac{c}{c^{3} + 1}&\frac{1}{c^{2} - c + 1}\\- \frac{c}{c^{3} + 1}&\frac{1}{c^{3} + 1}&\frac{c - 1}{c^{2} - c + 1}\end{bmatrix}.
+$$
+
+
+
+ Điều kiện này phải đi kèm công thức; ở giá trị làm mẫu bằng 0, nghịch đảo không tồn tại.
+
+**Bước 6. Kiểm tra hai chiều.**
+
+Nhân theo hàng–cột cho
+
+
+
+$$
+AA^{-1}=A^{-1}A=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}.
+$$
 
 </LoiGiai>
 

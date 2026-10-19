@@ -21,14 +21,35 @@ Chú ý: nguồn 5 V đẩy dòng từ trái lên đỉnh trên, **ngược** ch
 </GoiY>
 
 <LoiGiai>
+
+**Cách làm.** Định luật nút: tổng dòng điện vào bằng tổng dòng ra. Định luật vòng: tổng biến thiên điện thế bằng 0. Trên điện trở, sụt áp theo chiều dòng điện là $RI$; dòng âm nghĩa là chiều thật ngược mũi tên đã chọn.
+
+**Bước 1. Lập luận và tính toán.**
+
 - Nút trái: $I_3 = I_1 + I_2$.
 - Vòng trên (trái → đỉnh trên → phải → giữa → trái): nguồn 5 V cùng chiều đi; nhánh trên đi ngược $I_1$, nhánh giữa cùng chiều $I_2$: $5 = -5I_1 + 10I_2$.
 - Vòng dưới (trái → đỉnh dưới → phải → giữa → trái): $10 = 5I_3 + 10I_2$.
 
-Thay $I_3$: $5I_1 + 15I_2 = 10$ và $-5I_1 + 10I_2 = 5$. Cộng lại: $25I_2 = 15$. Vậy
-$$I_1 = \tfrac{1}{5}, \quad I_2 = \tfrac{3}{5}, \quad I_3 = \tfrac{4}{5} \ (\text{A}).$$
+**Bước 2. Thay vào để tính và kiểm tra.**
+
+Thay $I_3$: $5I_1 + 15I_2 = 10$ và $-5I_1 + 10I_2 = 5$.
+
+**Bước 3. Thực hiện phép biến đổi.**
+
+Cộng lại: $25I_2 = 15$.
+
+**Bước 4. Rút ra kết luận.**
+
+Vậy
+
+$$
+I_1 = \tfrac{1}{5}, \quad I_2 = \tfrac{3}{5}, \quad I_3 = \tfrac{4}{5} \ (\text{A}).
+$$
+
+**Bước 5. Thay vào để tính và kiểm tra.**
 
 Kiểm tra vòng ngoài (trên rồi dưới): $10 - 5 = 5I_3 + 5I_1 = 4 + 1$ ✓.
+
 </LoiGiai>
 
 <LoiHayMac>

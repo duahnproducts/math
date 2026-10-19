@@ -25,18 +25,44 @@ Câu b: "đóng kênh $BC$" nghĩa là $f_3 = 0$. Thay vào, rồi viết điề
 </GoiY>
 
 <LoiGiai>
+
+**Cách làm.** Tại mỗi nút: tổng dòng vào bằng tổng dòng ra. Chiều mũi tên quyết định dấu và dòng một chiều phải không âm. Giải hệ rồi mới đặt điều kiện lên các tham số.
+
 **a.**
+
+**Bước 1. Lập luận và tính toán.**
+
 - $A$: $55 = f_1 + f_4$ · $B$: $f_1 = 20 + f_2 + f_3$ · $C$: $f_3 + f_5 = 15$ · $D$: $f_2 + f_4 = 20 + f_5$.
 
-Đặt $f_4 = t$, $f_5 = s$:
-$$f_1 = 55 - t, \quad f_2 = 20 - t + s, \quad f_3 = 15 - s, \quad f_4 = t, \quad f_5 = s.$$
+**Bước 2. Thiết lập biểu thức.**
 
-**b.** $f_3 = 0$ cho $s = 15$. Khi đó $f_1 = 55 - t$, $f_2 = 35 - t$, $f_5 = 15$, $f_4 = t$. Điều kiện mọi kênh từ 0 đến 30:
+Đặt $f_4 = t$, $f_5 = s$:
+
+$$
+f_1 = 55 - t, \quad f_2 = 20 - t + s, \quad f_3 = 15 - s, \quad f_4 = t, \quad f_5 = s.
+$$
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$f_3 = 0$ cho $s = 15$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Khi đó $f_1 = 55 - t$, $f_2 = 35 - t$, $f_5 = 15$, $f_4 = t$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Điều kiện mọi kênh từ 0 đến 30:
 - $f_1 = 55 - t \le 30$ cho $t \ge 25$;
 - $f_2 = 35 - t$ nằm trong $[0, 30]$ cho $5 \le t \le 35$;
 - $f_4 = t \le 30$.
 
+**Bước 4. Rút ra kết luận.**
+
 Vậy dòng chảy trên $AD$ phải nằm trong khoảng $25 \le f_4 \le 30$.
+
 </LoiGiai>
 
 <LoiHayMac>

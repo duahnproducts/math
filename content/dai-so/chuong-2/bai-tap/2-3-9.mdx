@@ -5,11 +5,29 @@ do_kho: vua
 tieu_de: "Phép nhân ma trận — bài 9"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.3.9"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.9 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Đặt
+
+$$
+P = \left[ \begin{array}{rrr} 1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 \end{array} \right]
+$$
+
+, và cho $A$ có kích thước $3 \times n$, $B$ có kích thước $m \times 3$.
+
+**a.** Mô tả $PA$ theo các hàng của $A$.
+
+**b.** Mô tả $BP$ theo các cột của $B$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-3-9-1" moTa="Đề gốc Nicholson bài 2.3.9, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -25,6 +43,7 @@ Exercise 2.3.9  Write P =      0  1    and let A be                       
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -42,7 +61,23 @@ Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự 
 
 <LoiGiai>
 
-$P$ thu được từ $I_3$ bằng đổi hàng 2 và 3. **a.** $(PA)_{1*}=A_{1*}$, $(PA)_{2*}=A_{3*}$, $(PA)_{3*}=A_{2*}$: đổi hàng 2,3 của $A$. **b.** $(BP)_{*1}=B_{*1}$, $(BP)_{*2}=B_{*3}$, $(BP)_{*3}=B_{*2}$: đổi cột 2,3 của $B$.
+**Cách làm.** Với $A$ cỡ $m\times n$, $B$ cỡ $n\times p$, tích $AB$ có cỡ $m\times p$ và $(AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$. Khi khai triển, giữ nguyên thứ tự các thừa số.
+
+**Bước 1. Lập luận và tính toán.**
+
+$P$ thu được từ $I_3$ bằng đổi hàng 2 và 3.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$(PA)_{1*}=A_{1*}$, $(PA)_{2*}=A_{3*}$, $(PA)_{3*}=A_{2*}$: đổi hàng 2,3 của $A$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$(BP)_{*1}=B_{*1}$, $(BP)_{*2}=B_{*3}$, $(BP)_{*3}=B_{*2}$: đổi cột 2,3 của $B$.
 
 </LoiGiai>
 

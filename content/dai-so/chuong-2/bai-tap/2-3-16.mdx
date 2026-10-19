@@ -5,11 +5,27 @@ do_kho: vua
 tieu_de: "Phép nhân ma trận — bài 16"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.3.16"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.16 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Rút gọn các biểu thức sau, trong đó $A$, $B$ và $C$ là các ma trận.
+
+**a.** $A(3B - C) + (A - 2B)C + 2B(C + 2A)$
+
+**b.** $A(B + C - D) + B(C - A + D) - (A + B)C \\ + (A - B)D$
+
+**c.** $AB(BC - CB) + (CA - AB)BC + CA(A - B)C$
+
+**d.** $(A - B)(C - A) + (C - B)(A - C) + (C - A)^{2}$
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-3-16-1" moTa="Đề gốc Nicholson bài 2.3.16, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -29,6 +45,7 @@ where A, B, and C represent matrices.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -45,7 +62,71 @@ Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự 
 
 <LoiGiai>
 
-Khai triển theo phân phối, rồi chỉ gộp những tích có đúng cùng thứ tự thừa số. **a.** $3AB+4BA$. **b.** $AB-BA$. **c.** $CA^2C-ABCB$. **d.** $0$. Ví dụ ở (c), $AB^2C$ xuất hiện với hai dấu đối nhau, $CABC$ cũng vậy, còn $CA^2C$ và $-ABCB$ không triệt tiêu.
+**Cách làm.** Với $A$ cỡ $m\times n$, $B$ cỡ $n\times p$, tích $AB$ có cỡ $m\times p$ và $(AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$. Khi khai triển, giữ nguyên thứ tự các thừa số.
+
+**Bước 1. Thực hiện phép biến đổi.**
+
+Khai triển từng ngoặc bằng tính phân phối.
+
+**Bước 2. Lập luận và tính toán.**
+
+Không đổi $BA$ thành $AB$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$A(3B-C)=3AB-AC$; $(A-2B)C=AC-2BC$; $2B(C+2A)=2BC+4BA$.
+
+**Bước 2. Thực hiện phép biến đổi.**
+
+Cộng lại: $3AB-AC+AC-2BC+2BC+4BA=3AB+4BA$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Các cặp $-AC,+AC$ và $-2BC,+2BC$ triệt tiêu.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Bốn phần lần lượt là $AB+AC-AD$, $BC-BA+BD$, $-AC-BC$, $AD-BD$.
+
+**Bước 2. Thực hiện phép biến đổi.**
+
+Cộng rồi ghép các hạng giống nhau: $AC-AC=0$, $-AD+AD=0$, $BC-BC=0$, $BD-BD=0$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Còn $AB-BA$.
+
+**c.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$AB(BC-CB)=AB^2C-ABCB$; $(CA-AB)BC=CABC-AB^2C$; $CA(A-B)C=CA^2C-CABC$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Hai hạng $AB^2C$ triệt tiêu, hai hạng $CABC$ cũng triệt tiêu.
+
+**Bước 3. Lập luận và tính toán.**
+
+Kết quả $CA^2C-ABCB$.
+
+**d.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Hai tích đầu là $AC-A^2-BC+BA$ và $CA-C^2-BA+BC$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Ngoặc cuối cho $(C-A)^2=C^2-CA-AC+A^2$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Khi cộng cả ba, mỗi tích xuất hiện đúng một lần dấu cộng và một lần dấu trừ, nên tổng bằng ma trận 0.
 
 </LoiGiai>
 

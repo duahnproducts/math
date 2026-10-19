@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Phép nhân ma trận — bài 7"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.3.7"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.7 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+**a.** Nếu tích $A^{2}$ xác định được thì có thể kết luận gì về kích thước của $A$?
+
+**b.** Nếu cả $AB$ và $BA$ đều xác định được, hãy mô tả kích thước của $A$ và $B$.
+
+**c.** Nếu tích $ABC$ xác định được, $A$ có kích thước $3 \times 3$ và $C$ có kích thước $5 \times 5$ thì $B$ có kích thước bao nhiêu?
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-3-7-1" moTa="Đề gốc Nicholson bài 2.3.7, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -32,6 +44,7 @@ c.  If ABC can be formed, A is 3× 3, and C is 5× 5,   what size is B?
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -48,7 +61,29 @@ Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự 
 
 <LoiGiai>
 
-**a.** Nếu $A$ cỡ $m\times n$ thì $A^2$ xác định khi và chỉ khi $n=m$: $A$ vuông. **b.** Nếu $A$ cỡ $m\times n$ thì $AB$ yêu cầu $B$ có $n$ hàng; $BA$ yêu cầu $B$ có $m$ cột. Vậy $B$ cỡ $n\times m$. **c.** Từ $A$ cỡ $3\times3$ và $C$ cỡ $5\times5$, $B$ phải có 3 hàng và 5 cột.
+**Cách làm.** Với $A$ cỡ $m\times n$, $B$ cỡ $n\times p$, tích $AB$ có cỡ $m\times p$ và $(AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$. Khi khai triển, giữ nguyên thứ tự các thừa số.
+
+**a.**
+
+**Bước 1. Xét giả thiết.**
+
+Nếu $A$ cỡ $m\times n$ thì $A^2$ xác định khi và chỉ khi $n=m$: $A$ vuông.
+
+**b.**
+
+**Bước 1. Xét giả thiết.**
+
+Nếu $A$ cỡ $m\times n$ thì $AB$ yêu cầu $B$ có $n$ hàng; $BA$ yêu cầu $B$ có $m$ cột.
+
+**Bước 2. Rút ra kết luận.**
+
+Vậy $B$ cỡ $n\times m$.
+
+**c.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Từ $A$ cỡ $3\times3$ và $C$ cỡ $5\times5$, $B$ phải có 3 hàng và 5 cột.
 
 </LoiGiai>
 

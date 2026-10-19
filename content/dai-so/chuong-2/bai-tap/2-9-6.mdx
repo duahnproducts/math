@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Ứng dụng: xích Markov — bài 6"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.9.6"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.9.6 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+John đi làm đúng giờ vào một trong bốn ngày thứ Hai. Vào các ngày làm việc khác, hành vi của anh như sau: Nếu hôm nay anh đi trễ thì xác suất ngày mai anh đến đúng giờ gấp đôi xác suất anh đi trễ. Nếu hôm nay anh đến đúng giờ thì ngày mai xác suất anh đi trễ và đúng giờ bằng nhau. Tìm xác suất anh đi trễ và xác suất anh đến đúng giờ vào thứ Tư.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-9-6-1" moTa="Đề gốc Nicholson bài 2.9.6, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -28,6 +36,7 @@ time Wednesdays.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -44,19 +53,39 @@ Sau k lần chuyển dùng lũy thừa thứ k; phân bố dừng thỏa Ps = s 
 
 <LoiGiai>
 
-Xếp trạng thái “đúng giờ, trễ”. Khi đó
+**Cách làm.** Ta dùng vector cột: ô $p_{ij}$ là xác suất từ trạng thái $j$ tới $i$. Sau $k$ bước, $s_k=P^ks_0$. Phân bố dừng phải thỏa đồng thời $Ps=s$, $s_i\ge0$ và $\sum_i s_i=1$.
+
+**Bước 1. Lập luận và tính toán.**
+
+Xếp trạng thái “đúng giờ, trễ”.
+
+**Bước 2. Lập luận và tính toán.**
+
+Khi đó
+
+
 
 $$
 P=\begin{bmatrix}\frac{1}{2}&\frac{2}{3}\\\frac{1}{2}&\frac{1}{3}\end{bmatrix},\quad s_{\text{Hai}}=\begin{bmatrix}1/4\\3/4\end{bmatrix}.
 $$
 
+
+
  Từ thứ Hai đến thứ Tư có hai lần chuyển, nên
+
+
 
 $$
 s_{\text{Tư}}=P^2s_{\text{Hai}}=\begin{bmatrix}\frac{9}{16}\\\frac{7}{16}\end{bmatrix}.
 $$
 
- Xác suất trễ là $\frac{7}{16}$, đúng giờ là $\frac{9}{16}$. Không dùng phân bố dừng vì chỉ hỏi sau hai ngày.
+
+
+ Xác suất trễ là $\frac{7}{16}$, đúng giờ là $\frac{9}{16}$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Không dùng phân bố dừng vì chỉ hỏi sau hai ngày.
 
 </LoiGiai>
 

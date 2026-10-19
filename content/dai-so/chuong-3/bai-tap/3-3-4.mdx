@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Giá trị riêng và vector riêng — bài 4"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.3.4"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.3.4 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Tìm đa thức đặc trưng của ma trận đơn vị cấp $n \times n$, ký hiệu là $I$. Chứng minh rằng $I$ có đúng một trị riêng và tìm các vector riêng.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-3-4-1" moTa="Đề gốc Nicholson bài 3.3.4, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ n×n identity matrix I. Show that I has exactly one eigen-value and ﬁnd the ei
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +48,25 @@ Không gian riêng là hạt nhân của A − λI; đa thức của ma trận t
 
 <LoiGiai>
 
-$c_I(x)=\det((x-1)I)=(x-1)^n$. Do đó trị riêng duy nhất là 1, bội đại số $n$. Vì $Iv=v$ với mọi $v$, mọi vector khác 0 là vector riêng, và không gian riêng bằng toàn bộ $\mathbb R^n$. Vector 0 thuộc không gian riêng nhưng không gọi là vector riêng.
+**Cách làm.** Trị riêng $\lambda$ cần có vector $v\ne0$ thỏa $Av=\lambda v$. Tương đương $(A-\lambda I)v=0$ có nghiệm khác 0, nên $\det(\lambda I-A)=0$.
+
+Từ $Iv=v=1v$, mọi vector khác 0 thỏa định nghĩa vector riêng của trị riêng 1. Nếu $Iv=\lambda v$ với $v\ne0$, thì $(1-\lambda)v=0$ buộc $\lambda=1$, nên không có trị riêng khác.
+
+**Bước 1. Lập luận và tính toán.**
+
+$c_I(x)=\det((x-1)I)=(x-1)^n$.
+
+**Bước 2. Rút ra kết luận.**
+
+Do đó trị riêng duy nhất là 1, bội đại số $n$.
+
+**Bước 3. Giải thích điều kiện sử dụng.**
+
+Vì $Iv=v$ với mọi $v$, mọi vector khác 0 là vector riêng, và không gian riêng bằng toàn bộ $\mathbb R^n$.
+
+**Bước 4. Lập luận và tính toán.**
+
+Vector 0 thuộc không gian riêng nhưng không gọi là vector riêng.
 
 </LoiGiai>
 

@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Phép biến đổi tuyến tính — bài 15"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.6.15"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.6.15 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Phép biến đổi $T : \mathbb{R}^n \to \mathbb{R}^m$, được định nghĩa bởi $T(\mathbf{x}) = \mathbf{0}$ với mọi $\mathbf{x}$ thuộc $\mathbb{R}^n$, được gọi là phép biến đổi không.
+
+**a.** Chứng minh rằng phép biến đổi không là tuyến tính và tìm ma trận của nó.
+
+**b.** Ký hiệu $\mathbf{e}_{1}, \mathbf{e}_{2}, \dots, \mathbf{e}_{n}$ là các cột của ma trận đơn vị cấp $n \times n$. Nếu $T : \mathbb{R}^n \to \mathbb{R}^m$ tuyến tính và $T(\mathbf{e}_{i}) = \mathbf{0}$ với mỗi $i$, hãy chứng minh rằng $T$ là phép biến đổi không. [Gợi ý: Định lý 2.6.1.]
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-6-15-1" moTa="Đề gốc Nicholson bài 2.6.15, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -31,6 +43,7 @@ formation.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -47,7 +60,31 @@ Cột thứ j của ma trận ánh xạ là ảnh của vector đơn vị thứ 
 
 <LoiGiai>
 
-**a.** $T(x+y)=0=0+0=T(x)+T(y)$ và $T(ax)=0=a0=aT(x)$. Mọi cột $T(e_j)$ bằng 0, nên ma trận là ma trận không $m\times n$. **b.** Mọi $x$ viết được $\sum_jx_je_j$. Do đó $T(x)=\sum_jx_jT(e_j)=0$ nếu ảnh của tất cả vector đơn vị đều bằng 0. Vậy $T$ là ánh xạ không.
+**Cách làm.** Tuyến tính nghĩa là $T(au+bv)=aT(u)+bT(v)$. Với vector cột, ma trận của $T$ là $[T(e_1)\ \cdots\ T(e_n)]$; ma trận của $S\circ T$ là $[S][T]$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$T(x+y)=0=0+0=T(x)+T(y)$ và $T(ax)=0=a0=aT(x)$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Mọi cột $T(e_j)$ bằng 0, nên ma trận là ma trận không $m\times n$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Mọi $x$ viết được $\sum_jx_je_j$.
+
+**Bước 2. Rút ra kết luận.**
+
+Do đó $T(x)=\sum_jx_jT(e_j)=0$ nếu ảnh của tất cả vector đơn vị đều bằng 0.
+
+**Bước 3. Rút ra kết luận.**
+
+Vậy $T$ là ánh xạ không.
 
 </LoiGiai>
 

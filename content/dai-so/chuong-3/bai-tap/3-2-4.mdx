@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Định thức và ma trận nghịch đảo — bài 4"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.2.4"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.4 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $A$ và $B$ là các ma trận khả nghịch $n \times n$. Tính:
+
+**a.** $\det (B^{-1}AB)$
+
+**b.** $\det (A^{-1}B^{-1}AB)$
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-2-4-1" moTa="Đề gốc Nicholson bài 3.2.4, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -23,6 +35,7 @@ Exercise 3.2.4  Let A and B be invertible n×n matrices.Evaluate:
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -40,7 +53,25 @@ Dùng định thức của tích và công thức nghịch đảo qua adjugate k
 
 <LoiGiai>
 
-**a.** $\det(B^{-1}AB)=(\det B)^{-1}\det A\det B=\det A$. **b.** $\det(A^{-1}B^{-1}AB)=(\det A)^{-1}(\det B)^{-1}\det A\det B=1$. Chỉ rút gọn các định thức vô hướng, không đổi thứ tự tích ma trận.
+**Cách làm.** Dùng $\det(AB)=\det A\det B$, $\det A^T=\det A$, $\det(cA)=c^n\det A$ ở cấp $n$. Khi $\det A\ne0$, $A^{-1}=\operatorname{adj}A/\det A$; adjugate là bảng phần bù đã chuyển vị.
+
+Các định thức là số thực nên được phép giao hoán khi rút gọn. Trong khi đó các ma trận ở bên trong định thức vẫn giữ thứ tự; công thức không cho phép viết $B^{-1}AB=A$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$\det(B^{-1}AB)=(\det B)^{-1}\det A\det B=\det A$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$\det(A^{-1}B^{-1}AB)=(\det A)^{-1}(\det B)^{-1}\det A\det B=1$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Chỉ rút gọn các định thức vô hướng, không đổi thứ tự tích ma trận.
 
 </LoiGiai>
 

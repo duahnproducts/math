@@ -5,11 +5,21 @@ do_kho: vua
 tieu_de: "Phép nhân ma trận — bài 31"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.3.31"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.31 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh rằng $AB - BA = I$ không thể xảy ra.
+
+[Gợi ý: Xem bài ngay trước.]
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-3-31-1" moTa="Đề gốc Nicholson bài 2.3.31, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +32,7 @@ Exercise 2.3.31 Show that AB−BA = I is impossible.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +50,21 @@ Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự 
 
 <LoiGiai>
 
-Nếu $A,B$ cỡ $n\times n$ và $AB-BA=I_n$, lấy vết hai vế cho $0=\operatorname{tr}(AB)-\operatorname{tr}(BA)=\operatorname{tr}I_n=n$. Vì $n\ge1$ trên trường số thực, đây là mâu thuẫn. Đẳng thức không thể xảy ra.
+**Cách làm.** Với $A$ cỡ $m\times n$, $B$ cỡ $n\times p$, tích $AB$ có cỡ $m\times p$ và $(AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$. Khi khai triển, giữ nguyên thứ tự các thừa số.
+
+Lấy vết là cộng các ô đường chéo. Từ $\operatorname{tr}(AB)=\operatorname{tr}(BA)$ suy ra vế trái có vết 0 với mọi $A,B$. Vế phải có đúng $n$ ô 1, nên có vết $n>0$; mâu thuẫn này loại mọi cặp $A,B$, không chỉ một ví dụ.
+
+**Bước 1. Xét giả thiết.**
+
+Nếu $A,B$ cỡ $n\times n$ và $AB-BA=I_n$, lấy vết hai vế cho $0=\operatorname{tr}(AB)-\operatorname{tr}(BA)=\operatorname{tr}I_n=n$.
+
+**Bước 2. Giải thích điều kiện sử dụng.**
+
+Vì $n\ge1$ trên trường số thực, đây là mâu thuẫn.
+
+**Bước 3. Lập luận và tính toán.**
+
+Đẳng thức không thể xảy ra.
 
 </LoiGiai>
 

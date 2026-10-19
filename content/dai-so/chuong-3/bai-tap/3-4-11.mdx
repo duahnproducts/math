@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Chéo hoá — bài 11"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.4.11"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.4.11 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Ma trận vuông $A$ được gọi là lũy linh nếu $A^{n} = 0$ với một $n \geq 1$ nào đó. Tìm tất cả các ma trận vừa lũy linh vừa chéo hóa được. [Gợi ý: Định lý 3.3.1.]
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-4-11-1" moTa="Đề gốc Nicholson bài 3.4.11, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ An = 0 for some n ≥1. Find all nilpotent diagonalizablematrices. [Hint: Theore
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +48,25 @@ Ghép các vector riêng độc lập thành cột của P, rồi kiểm tra AP 
 
 <LoiGiai>
 
-Nếu $A^m=0$ và $Av=\lambda v$, thì $0=A^mv=\lambda^mv$, nên $\lambda=0$. Nếu thêm chéo hóa được, $A=P\operatorname{diag}(0,\ldots,0)P^{-1}=0$. Ngược lại ma trận 0 vừa nilpotent vừa đã chéo. Vậy ma trận duy nhất là ma trận 0 ở mỗi cấp.
+**Cách làm.** Chéo hóa $A=PDP^{-1}$ nghĩa là các cột của $P$ là một cơ sở vector riêng. Trị riêng của cột thứ $j$ phải nằm ở ô $d_{jj}$, và có thể kiểm tra bằng $AP=PD$.
+
+$\lambda^mv=0$ với $v\ne0$ buộc $\lambda^m=0$, nên $\lambda=0$. Chỉ có trị riêng 0 chưa đủ để kết luận $A=0$; giả thiết chéo hóa được mới cho ma trận chéo $D=0$ và do đó $A=0$.
+
+**Bước 1. Xét giả thiết.**
+
+Nếu $A^m=0$ và $Av=\lambda v$, thì $0=A^mv=\lambda^mv$, nên $\lambda=0$.
+
+**Bước 2. Xét giả thiết.**
+
+Nếu thêm chéo hóa được, $A=P\operatorname{diag}(0,\ldots,0)P^{-1}=0$.
+
+**Bước 3. Kiểm tra chiều ngược.**
+
+Ngược lại ma trận 0 vừa nilpotent vừa đã chéo.
+
+**Bước 4. Rút ra kết luận.**
+
+Vậy ma trận duy nhất là ma trận 0 ở mỗi cấp.
 
 </LoiGiai>
 

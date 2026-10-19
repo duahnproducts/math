@@ -5,11 +5,51 @@ do_kho: vua
 tieu_de: "Ứng dụng: hệ phương trình vi phân — bài 1"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.7.1"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.7.1 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Dùng Định lý 3.7.1 để tìm nghiệm tổng quát của mỗi hệ sau. Sau đó tìm nghiệm cụ thể thỏa mãn điều kiện đã cho.
+
+**a.**
+
+$$
+\begin{array}{rrrl} f_1^{\prime} & = 2f_1 + 4f_2, && f_1(0)=0 \\ f_2^{\prime} & = 3f_1 + 3f_2, && f_2(0)=1 \end{array}
+$$
+
+
+
+**b.**
+
+$$
+\begin{array}{rrrlr} f_1^{\prime} & = -f_1 + 5f_2,& & f_1(0)=1 \\ f_2^{\prime} & = f_1 + 3f_2, && f_2(0)=&-1 \end{array}
+$$
+
+
+
+**c.**
+
+$$
+\begin{array}{rr} f_1^{\prime} = & 4f_2 + 4f_3 \\ f_2^{\prime} = & f_1 + f_2 -2f_3 \\ f_3^{\prime} = & -f_1 + f_2 +4f_3 \end{array}
+$$
+
+ $f_1(0) = f_2(0) = f_3(0)=1$
+
+**d.**
+
+$$
+\begin{array}{rlrr} f_1^{\prime} = & 2f_1 + &f_2 + &2f_3 \\ f_2^{\prime} = & 2f_1 + &2f_2 - &2f_3 \\ f_3^{\prime} = & 3f_1 + &f_2 + &f_3 \end{array}
+$$
+
+ $f_1(0) = f_2(0) = f_3(0)=1$
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-7-1-1" moTa="Đề gốc Nicholson bài 3.7.1, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -38,6 +78,7 @@ speciﬁc solution satisfying the given boundary condition.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -54,83 +95,565 @@ Mỗi vector riêng v với trị riêng λ cho nghiệm v nhân exp(λx); giả
 
 <LoiGiai>
 
-**a.** Giải các hệ $(A-\lambda I)v=0$ được các cột của
+**Cách làm.** Nếu $Av=\lambda v$ thì $f(x)=e^{\lambda x}v$ thỏa $f\prime=Af$, vì $f\prime=\lambda e^{\lambda x}v=Af$. Điều kiện đầu dùng để xác định các hệ số còn lại.
+
+**a.** **Bước 1. Tìm trị riêng.**
+
+Lập
+
+
+
+$$
+xI-A=\begin{bmatrix}x - 2&-4\\-3&x - 3\end{bmatrix}.
+$$
+
+
+
+ Khai triển định thức rồi phân tích nhân tử:
+
+
+
+$$
+c_A(x)=\det(xI-A)=x^{2} - 5 x - 6=\left(x - 6\right) \left(x + 1\right).
+$$
+
+
+
+ Các trị riêng là nghiệm của $c_A(x)=0$.
+
+**Với $\lambda=-1$ (bội đại số 1).** Giải $(A-\lambda I)v=0$:
+
+
+
+$$
+A-\lambda I=\begin{bmatrix}3&4\\3&4\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&\frac{4}{3}\\0&0\end{bmatrix}.
+$$
+
+
+
+Hàng 1 cho $(1)v_{1}+(\frac{4}{3})v_{2}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{-1}=\operatorname{span}\{\begin{bmatrix}- \frac{4}{3}\\1\end{bmatrix}\}.
+$$
+
+
+
+**Với $\lambda=6$ (bội đại số 1).** Giải $(A-\lambda I)v=0$:
+
+
+
+$$
+A-\lambda I=\begin{bmatrix}-4&4\\3&-3\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&-1\\0&0\end{bmatrix}.
+$$
+
+
+
+Hàng 1 cho $(1)v_{1}+(-1)v_{2}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{6}=\operatorname{span}\{\begin{bmatrix}1\\1\end{bmatrix}\}.
+$$
+
+
+
+**Bước 2. Ghép cơ sở vector riêng theo đúng thứ tự.**
+
+Có đủ 2 vector độc lập. Đặt các vector ấy làm cột của $P$, và đặt trị riêng tương ứng cùng thứ tự trên đường chéo của $D$:
+
+
+
+$$
+P=\begin{bmatrix}- \frac{4}{3}&1\\1&1\end{bmatrix},\quad D=\begin{bmatrix}-1&0\\0&6\end{bmatrix}.
+$$
+
+
+
+**Bước 3. Kiểm tra phép chéo hóa.**
+
+$\det P=- \frac{7}{3}\ne0$, nên $P$ khả nghịch. Nhân từng cột cho
+
+
+
+$$
+AP=PD=\begin{bmatrix}\frac{4}{3}&6\\-1&6\end{bmatrix}.
+$$
+
+
+
+ Nhân trái với $P^{-1}$ thu được $P^{-1}AP=D$.
+
+Vector riêng là các vector **khác 0** trong từng không gian riêng vừa ghi; vector 0 chỉ thuộc không gian riêng. Để giải hệ vi phân, chọn cơ sở riêng theo thứ tự
+
+
 
 $$
 P=\begin{bmatrix}-4&1\\3&1\end{bmatrix},\quad D=\begin{bmatrix}-1&0\\0&6\end{bmatrix}.
 $$
 
+
+
  Các cột độc lập vì $\det P\ne0$ và $AP=PD$. Nghiệm tổng quát theo định lý là
+
+
 
 $$
 f(x)=c_{1}e^{(-1)x}\begin{bmatrix}-4\\3\end{bmatrix}+c_{2}e^{(6)x}\begin{bmatrix}1\\1\end{bmatrix}.
 $$
 
- Điều kiện đầu cho $c=P^{-1}f(0)=\begin{bmatrix}\frac{1}{7}\\\frac{4}{7}\end{bmatrix}$, nên nghiệm cụ thể là
+
+
+ Điều kiện đầu cho $c=P^{-1}f(0)=\begin{bmatrix}\frac{1}{7}\\\frac{4}{7}\end{bmatrix}$. Cụ thể, từ $f=Pg$ và $AP=PD$, suy ra $Pg\prime=PDg$, nên $g\prime=Dg$. Mỗi tọa độ giải phương trình $g_j\prime=\lambda_j g_j$, cho $g_j=c_je^{\lambda_jx}$. Do đó nghiệm cụ thể là
+
+
 
 $$
 f(x)=\begin{bmatrix}\frac{\left(4 e^{7 x} - 4\right) e^{- x}}{7}\\\frac{\left(4 e^{7 x} + 3\right) e^{- x}}{7}\end{bmatrix}.
 $$
 
+
+
  Đạo hàm và nhân $A$ cho cùng vector; thế $x=0$ trả đúng điều kiện đầu.
 
-**b.** Giải các hệ $(A-\lambda I)v=0$ được các cột của
+**b.** **Bước 1. Tìm trị riêng.**
+
+Lập
+
+
+
+$$
+xI-A=\begin{bmatrix}x + 1&-5\\-1&x - 3\end{bmatrix}.
+$$
+
+
+
+ Khai triển định thức rồi phân tích nhân tử:
+
+
+
+$$
+c_A(x)=\det(xI-A)=x^{2} - 2 x - 8=\left(x - 4\right) \left(x + 2\right).
+$$
+
+
+
+ Các trị riêng là nghiệm của $c_A(x)=0$.
+
+**Với $\lambda=-2$ (bội đại số 1).** Giải $(A-\lambda I)v=0$:
+
+
+
+$$
+A-\lambda I=\begin{bmatrix}1&5\\1&5\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&5\\0&0\end{bmatrix}.
+$$
+
+
+
+Hàng 1 cho $(1)v_{1}+(5)v_{2}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{-2}=\operatorname{span}\{\begin{bmatrix}-5\\1\end{bmatrix}\}.
+$$
+
+
+
+**Với $\lambda=4$ (bội đại số 1).** Giải $(A-\lambda I)v=0$:
+
+
+
+$$
+A-\lambda I=\begin{bmatrix}-5&5\\1&-1\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&-1\\0&0\end{bmatrix}.
+$$
+
+
+
+Hàng 1 cho $(1)v_{1}+(-1)v_{2}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{4}=\operatorname{span}\{\begin{bmatrix}1\\1\end{bmatrix}\}.
+$$
+
+
+
+**Bước 2. Ghép cơ sở vector riêng theo đúng thứ tự.**
+
+Có đủ 2 vector độc lập. Đặt các vector ấy làm cột của $P$, và đặt trị riêng tương ứng cùng thứ tự trên đường chéo của $D$:
+
+
 
 $$
 P=\begin{bmatrix}-5&1\\1&1\end{bmatrix},\quad D=\begin{bmatrix}-2&0\\0&4\end{bmatrix}.
 $$
 
+
+
+**Bước 3. Kiểm tra phép chéo hóa.**
+
+$\det P=-6\ne0$, nên $P$ khả nghịch. Nhân từng cột cho
+
+
+
+$$
+AP=PD=\begin{bmatrix}10&4\\-2&4\end{bmatrix}.
+$$
+
+
+
+ Nhân trái với $P^{-1}$ thu được $P^{-1}AP=D$.
+
+Vector riêng là các vector **khác 0** trong từng không gian riêng vừa ghi; vector 0 chỉ thuộc không gian riêng. Để giải hệ vi phân, chọn cơ sở riêng theo thứ tự
+
+
+
+$$
+P=\begin{bmatrix}-5&1\\1&1\end{bmatrix},\quad D=\begin{bmatrix}-2&0\\0&4\end{bmatrix}.
+$$
+
+
+
  Các cột độc lập vì $\det P\ne0$ và $AP=PD$. Nghiệm tổng quát theo định lý là
+
+
 
 $$
 f(x)=c_{1}e^{(-2)x}\begin{bmatrix}-5\\1\end{bmatrix}+c_{2}e^{(4)x}\begin{bmatrix}1\\1\end{bmatrix}.
 $$
 
- Điều kiện đầu cho $c=P^{-1}f(0)=\begin{bmatrix}- \frac{1}{3}\\- \frac{2}{3}\end{bmatrix}$, nên nghiệm cụ thể là
+
+
+ Điều kiện đầu cho $c=P^{-1}f(0)=\begin{bmatrix}- \frac{1}{3}\\- \frac{2}{3}\end{bmatrix}$. Cụ thể, từ $f=Pg$ và $AP=PD$, suy ra $Pg\prime=PDg$, nên $g\prime=Dg$. Mỗi tọa độ giải phương trình $g_j\prime=\lambda_j g_j$, cho $g_j=c_je^{\lambda_jx}$. Do đó nghiệm cụ thể là
+
+
 
 $$
 f(x)=\begin{bmatrix}\frac{\left(5 - 2 e^{6 x}\right) e^{- 2 x}}{3}\\\frac{\left(- 2 e^{6 x} - 1\right) e^{- 2 x}}{3}\end{bmatrix}.
 $$
 
+
+
  Đạo hàm và nhân $A$ cho cùng vector; thế $x=0$ trả đúng điều kiện đầu.
 
-**c.** Giải các hệ $(A-\lambda I)v=0$ được các cột của
+**c.** **Bước 1. Tìm trị riêng.**
+
+Lập
+
+
+
+$$
+xI-A=\begin{bmatrix}x&-4&-4\\-1&x - 1&2\\1&-1&x - 4\end{bmatrix}.
+$$
+
+
+
+ Khai triển định thức rồi phân tích nhân tử:
+
+
+
+$$
+c_A(x)=\det(xI-A)=x^{3} - 5 x^{2} + 6 x=x \left(x - 3\right) \left(x - 2\right).
+$$
+
+
+
+ Các trị riêng là nghiệm của $c_A(x)=0$.
+
+**Với $\lambda=0$ (bội đại số 1).** Giải $(A-\lambda I)v=0$:
+
+
+
+$$
+A-\lambda I=\begin{bmatrix}0&4&4\\1&1&-2\\-1&1&4\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&0&-3\\0&1&1\\0&0&0\end{bmatrix}.
+$$
+
+
+
+Hàng 1 cho $(1)v_{1}+(-3)v_{3}=0$.
+
+Hàng 2 cho $(1)v_{2}+(1)v_{3}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{0}=\operatorname{span}\{\begin{bmatrix}3\\-1\\1\end{bmatrix}\}.
+$$
+
+
+
+**Với $\lambda=2$ (bội đại số 1).** Giải $(A-\lambda I)v=0$:
+
+
+
+$$
+A-\lambda I=\begin{bmatrix}-2&4&4\\1&-1&-2\\-1&1&2\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&0&-2\\0&1&0\\0&0&0\end{bmatrix}.
+$$
+
+
+
+Hàng 1 cho $(1)v_{1}+(-2)v_{3}=0$.
+
+Hàng 2 cho $(1)v_{2}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{2}=\operatorname{span}\{\begin{bmatrix}2\\0\\1\end{bmatrix}\}.
+$$
+
+
+
+**Với $\lambda=3$ (bội đại số 1).** Giải $(A-\lambda I)v=0$:
+
+
+
+$$
+A-\lambda I=\begin{bmatrix}-3&4&4\\1&-2&-2\\-1&1&1\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&0&0\\0&1&1\\0&0&0\end{bmatrix}.
+$$
+
+
+
+Hàng 1 cho $(1)v_{1}=0$.
+
+Hàng 2 cho $(1)v_{2}+(1)v_{3}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{3}=\operatorname{span}\{\begin{bmatrix}0\\-1\\1\end{bmatrix}\}.
+$$
+
+
+
+**Bước 2. Ghép cơ sở vector riêng theo đúng thứ tự.**
+
+Có đủ 3 vector độc lập. Đặt các vector ấy làm cột của $P$, và đặt trị riêng tương ứng cùng thứ tự trên đường chéo của $D$:
+
+
 
 $$
 P=\begin{bmatrix}3&2&0\\-1&0&-1\\1&1&1\end{bmatrix},\quad D=\begin{bmatrix}0&0&0\\0&2&0\\0&0&3\end{bmatrix}.
 $$
 
+
+
+**Bước 3. Kiểm tra phép chéo hóa.**
+
+$\det P=3\ne0$, nên $P$ khả nghịch. Nhân từng cột cho
+
+
+
+$$
+AP=PD=\begin{bmatrix}0&4&0\\0&0&-3\\0&2&3\end{bmatrix}.
+$$
+
+
+
+ Nhân trái với $P^{-1}$ thu được $P^{-1}AP=D$.
+
+Vector riêng là các vector **khác 0** trong từng không gian riêng vừa ghi; vector 0 chỉ thuộc không gian riêng. Để giải hệ vi phân, chọn cơ sở riêng theo thứ tự
+
+
+
+$$
+P=\begin{bmatrix}3&2&0\\-1&0&-1\\1&1&1\end{bmatrix},\quad D=\begin{bmatrix}0&0&0\\0&2&0\\0&0&3\end{bmatrix}.
+$$
+
+
+
  Các cột độc lập vì $\det P\ne0$ và $AP=PD$. Nghiệm tổng quát theo định lý là
+
+
 
 $$
 f(x)=c_{1}e^{(0)x}\begin{bmatrix}3\\-1\\1\end{bmatrix}+c_{2}e^{(2)x}\begin{bmatrix}2\\0\\1\end{bmatrix}+c_{3}e^{(3)x}\begin{bmatrix}0\\-1\\1\end{bmatrix}.
 $$
 
- Điều kiện đầu cho $c=P^{-1}f(0)=\begin{bmatrix}-1\\2\\0\end{bmatrix}$, nên nghiệm cụ thể là
+
+
+ Điều kiện đầu cho $c=P^{-1}f(0)=\begin{bmatrix}-1\\2\\0\end{bmatrix}$. Cụ thể, từ $f=Pg$ và $AP=PD$, suy ra $Pg\prime=PDg$, nên $g\prime=Dg$. Mỗi tọa độ giải phương trình $g_j\prime=\lambda_j g_j$, cho $g_j=c_je^{\lambda_jx}$. Do đó nghiệm cụ thể là
+
+
 
 $$
 f(x)=\begin{bmatrix}4 e^{2 x} - 3\\1\\2 e^{2 x} - 1\end{bmatrix}.
 $$
 
+
+
  Đạo hàm và nhân $A$ cho cùng vector; thế $x=0$ trả đúng điều kiện đầu.
 
-**d.** Giải các hệ $(A-\lambda I)v=0$ được các cột của
+**d.** **Bước 1. Tìm trị riêng.**
+
+Lập
+
+
+
+$$
+xI-A=\begin{bmatrix}x - 2&-1&-2\\-2&x - 2&2\\-3&-1&x - 1\end{bmatrix}.
+$$
+
+
+
+ Khai triển định thức rồi phân tích nhân tử:
+
+
+
+$$
+c_A(x)=\det(xI-A)=x^{3} - 5 x^{2} + 2 x + 8=\left(x - 4\right) \left(x - 2\right) \left(x + 1\right).
+$$
+
+
+
+ Các trị riêng là nghiệm của $c_A(x)=0$.
+
+**Với $\lambda=-1$ (bội đại số 1).** Giải $(A-\lambda I)v=0$:
+
+
+
+$$
+A-\lambda I=\begin{bmatrix}3&1&2\\2&3&-2\\3&1&2\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&0&\frac{8}{7}\\0&1&- \frac{10}{7}\\0&0&0\end{bmatrix}.
+$$
+
+
+
+Hàng 1 cho $(1)v_{1}+(\frac{8}{7})v_{3}=0$.
+
+Hàng 2 cho $(1)v_{2}+(- \frac{10}{7})v_{3}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{-1}=\operatorname{span}\{\begin{bmatrix}- \frac{8}{7}\\\frac{10}{7}\\1\end{bmatrix}\}.
+$$
+
+
+
+**Với $\lambda=2$ (bội đại số 1).** Giải $(A-\lambda I)v=0$:
+
+
+
+$$
+A-\lambda I=\begin{bmatrix}0&1&2\\2&0&-2\\3&1&-1\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&0&-1\\0&1&2\\0&0&0\end{bmatrix}.
+$$
+
+
+
+Hàng 1 cho $(1)v_{1}+(-1)v_{3}=0$.
+
+Hàng 2 cho $(1)v_{2}+(2)v_{3}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{2}=\operatorname{span}\{\begin{bmatrix}1\\-2\\1\end{bmatrix}\}.
+$$
+
+
+
+**Với $\lambda=4$ (bội đại số 1).** Giải $(A-\lambda I)v=0$:
+
+
+
+$$
+A-\lambda I=\begin{bmatrix}-2&1&2\\2&-2&-2\\3&1&-3\end{bmatrix}\;\longrightarrow\;\begin{bmatrix}1&0&-1\\0&1&0\\0&0&0\end{bmatrix}.
+$$
+
+
+
+Hàng 1 cho $(1)v_{1}+(-1)v_{3}=0$.
+
+Hàng 2 cho $(1)v_{2}=0$.
+
+Cho các ẩn tự do lần lượt bằng 1 và các ẩn tự do khác bằng 0, ta lấy được cơ sở:
+
+
+
+$$
+E_{4}=\operatorname{span}\{\begin{bmatrix}1\\0\\1\end{bmatrix}\}.
+$$
+
+
+
+**Bước 2. Ghép cơ sở vector riêng theo đúng thứ tự.**
+
+Có đủ 3 vector độc lập. Đặt các vector ấy làm cột của $P$, và đặt trị riêng tương ứng cùng thứ tự trên đường chéo của $D$:
+
+
+
+$$
+P=\begin{bmatrix}- \frac{8}{7}&1&1\\\frac{10}{7}&-2&0\\1&1&1\end{bmatrix},\quad D=\begin{bmatrix}-1&0&0\\0&2&0\\0&0&4\end{bmatrix}.
+$$
+
+
+
+**Bước 3. Kiểm tra phép chéo hóa.**
+
+$\det P=\frac{30}{7}\ne0$, nên $P$ khả nghịch. Nhân từng cột cho
+
+
+
+$$
+AP=PD=\begin{bmatrix}\frac{8}{7}&2&4\\- \frac{10}{7}&-4&0\\-1&2&4\end{bmatrix}.
+$$
+
+
+
+ Nhân trái với $P^{-1}$ thu được $P^{-1}AP=D$.
+
+Vector riêng là các vector **khác 0** trong từng không gian riêng vừa ghi; vector 0 chỉ thuộc không gian riêng. Để giải hệ vi phân, chọn cơ sở riêng theo thứ tự
+
+
 
 $$
 P=\begin{bmatrix}-8&1&1\\10&-2&0\\7&1&1\end{bmatrix},\quad D=\begin{bmatrix}-1&0&0\\0&2&0\\0&0&4\end{bmatrix}.
 $$
 
+
+
  Các cột độc lập vì $\det P\ne0$ và $AP=PD$. Nghiệm tổng quát theo định lý là
+
+
 
 $$
 f(x)=c_{1}e^{(-1)x}\begin{bmatrix}-8\\10\\7\end{bmatrix}+c_{2}e^{(2)x}\begin{bmatrix}1\\-2\\1\end{bmatrix}+c_{3}e^{(4)x}\begin{bmatrix}1\\0\\1\end{bmatrix}.
 $$
 
- Điều kiện đầu cho $c=P^{-1}f(0)=\begin{bmatrix}0\\- \frac{1}{2}\\\frac{3}{2}\end{bmatrix}$, nên nghiệm cụ thể là
+
+
+ Điều kiện đầu cho $c=P^{-1}f(0)=\begin{bmatrix}0\\- \frac{1}{2}\\\frac{3}{2}\end{bmatrix}$. Cụ thể, từ $f=Pg$ và $AP=PD$, suy ra $Pg\prime=PDg$, nên $g\prime=Dg$. Mỗi tọa độ giải phương trình $g_j\prime=\lambda_j g_j$, cho $g_j=c_je^{\lambda_jx}$. Do đó nghiệm cụ thể là
+
+
 
 $$
 f(x)=\begin{bmatrix}\frac{\left(3 e^{2 x} - 1\right) e^{2 x}}{2}\\e^{2 x}\\\frac{\left(3 e^{2 x} - 1\right) e^{2 x}}{2}\end{bmatrix}.
 $$
+
+
 
  Đạo hàm và nhân $A$ cho cùng vector; thế $x=0$ trả đúng điều kiện đầu.
 

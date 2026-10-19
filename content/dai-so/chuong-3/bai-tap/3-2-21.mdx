@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Định thức và ma trận nghịch đảo — bài 21"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.2.21"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.21 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu $A$ có kích thước $2 \times 2$ và $\det A = 0$, hãy chứng minh một cột của $A$ là bội vô hướng của cột còn lại. [Gợi ý: Định nghĩa 2.2.1 và phần (2) của Định lý 2.4.5.]
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-2-21-1" moTa="Đề gốc Nicholson bài 3.2.21, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ Deﬁnition 2.5 and Part (2) of Theorem 2.4.5.]
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +48,29 @@ Dùng định thức của tích và công thức nghịch đảo qua adjugate k
 
 <LoiGiai>
 
-Gọi hai cột là $u,v$. Định thức bằng 0 nên hệ $A(s,t)^T=0$ có nghiệm $(s,t)\ne(0,0)$, tức $su+tv=0$. Nếu $t\ne0$, $v=-(s/t)u$. Nếu $t=0$, thì $s\ne0$ và $u=0=0v$. Vậy trong mọi trường hợp một cột là bội vô hướng của cột kia, kể cả cột 0.
+**Cách làm.** Dùng $\det(AB)=\det A\det B$, $\det A^T=\det A$, $\det(cA)=c^n\det A$ ở cấp $n$. Khi $\det A\ne0$, $A^{-1}=\operatorname{adj}A/\det A$; adjugate là bảng phần bù đã chuyển vị.
+
+Nếu chia ngay cho $t$ thì có thể bỏ sót trường hợp $t=0$. Vì cặp $(s,t)$ khác $(0,0)$, khi $t=0$ thì $s\ne0$ và cột thứ nhất bằng 0. Cột 0 vẫn là bội (hệ số 0) của mọi cột khác.
+
+**Bước 1. Thiết lập biểu thức.**
+
+Gọi hai cột là $u,v$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Định thức bằng 0 nên hệ $A(s,t)^T=0$ có nghiệm $(s,t)\ne(0,0)$, tức $su+tv=0$.
+
+**Bước 3. Xét giả thiết.**
+
+Nếu $t\ne0$, $v=-(s/t)u$.
+
+**Bước 4. Xét giả thiết.**
+
+Nếu $t=0$, thì $s\ne0$ và $u=0=0v$.
+
+**Bước 5. Rút ra kết luận.**
+
+Vậy trong mọi trường hợp một cột là bội vô hướng của cột kia, kể cả cột 0.
 
 </LoiGiai>
 

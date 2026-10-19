@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Ứng dụng: mô hình kinh tế vào–ra — bài 2"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.8.2"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.8.2 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Ba ngành $A$, $B$ và $C$ có tính chất: toàn bộ đầu ra của $A$ được $B$ sử dụng, toàn bộ đầu ra của $B$ được $C$ sử dụng và toàn bộ đầu ra của $C$ được $A$ sử dụng. Tìm các cơ cấu giá cân bằng có thể có.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-8-2-1" moTa="Đề gốc Nicholson bài 2.8.2, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -24,6 +32,7 @@ possible equilibrium price structures.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -41,13 +50,29 @@ Tổng cột của ma trận stochastic bằng 1. Để tìm giá tương đối
 
 <LoiGiai>
 
+**Cách làm.** Cơ cấu giá cân bằng thỏa $Ep=p$, tức $(I-E)p=0$. Với mô hình mở, điều kiện cần kiểm tra là $I-E$ khả nghịch và $(I-E)^{-1}$ có các ô không âm.
+
+**Bước 1. Lập luận và tính toán.**
+
 Theo thứ tự $A,B,C$, các cột biểu diễn đầu ra của từng ngành, nên
+
+
 
 $$
 E=\begin{bmatrix}0&0&1\\1&0&0\\0&1&0\end{bmatrix}.
 $$
 
- Hệ $Ep=p$ là $p_C=p_A$, $p_A=p_B$, $p_B=p_C$. Vì vậy $p=t(1,1,1)^T$, $t>0$ (hoặc $t\ge0$ nếu cho phép cơ cấu bằng 0). Ba ngành phải có cùng giá trị sản lượng.
+
+
+ Hệ $Ep=p$ là $p_C=p_A$, $p_A=p_B$, $p_B=p_C$.
+
+**Bước 2. Giải thích điều kiện sử dụng.**
+
+Vì vậy $p=t(1,1,1)^T$, $t>0$ (hoặc $t\ge0$ nếu cho phép cơ cấu bằng 0).
+
+**Bước 3. Lập luận và tính toán.**
+
+Ba ngành phải có cùng giá trị sản lượng.
 
 </LoiGiai>
 

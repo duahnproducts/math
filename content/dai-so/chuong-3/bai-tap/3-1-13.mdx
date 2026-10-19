@@ -5,11 +5,21 @@ do_kho: vua
 tieu_de: "Khai triển theo phần bù đại số — bài 13"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.1.13"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.1.13 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+**a.** Tìm $\det A$ nếu $A$ có kích thước $3 \times 3$ và $\det (2A) = 6$.
+
+**b.** Trong những điều kiện nào thì $\det (-A) = \det A$?
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-1-13-1" moTa="Đề gốc Nicholson bài 3.1.13, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -25,6 +35,7 @@ Exercise 3.1.13
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -42,7 +53,29 @@ Cộng bội một hàng vào hàng khác giữ định thức; đổi hai hàng
 
 <LoiGiai>
 
-**a.** $\det(2A)=2^3\det A=6$, nên $\det A=3/4$. **b.** $\det(-A)=(-1)^n\det A$. Vì vậy bằng $\det A$ khi $n$ chẵn hoặc $\det A=0$. Nếu $n$ lẻ và $A$ khả nghịch thì hai định thức đối dấu, không bằng nhau.
+**Cách làm.** Cộng bội hàng khác giữ nguyên định thức; đổi hai hàng đổi dấu; rút hệ số $c$ từ một hàng đưa $c$ ra ngoài. Với khai triển, $C_{ij}=(-1)^{i+j}\det M_{ij}$.
+
+$2A$ nhân **cả ba hàng** với 2, nên định thức nhân $2\cdot2\cdot2=8$. Tương tự $-A$ nhân mỗi trong $n$ hàng với $-1$, nên hệ số là $(-1)^n$, không phải luôn bằng $-1$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$\det(2A)=2^3\det A=6$, nên $\det A=3/4$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$\det(-A)=(-1)^n\det A$.
+
+**Bước 2. Giải thích điều kiện sử dụng.**
+
+Vì vậy bằng $\det A$ khi $n$ chẵn hoặc $\det A=0$.
+
+**Bước 3. Xét giả thiết.**
+
+Nếu $n$ lẻ và $A$ khả nghịch thì hai định thức đối dấu, không bằng nhau.
 
 </LoiGiai>
 

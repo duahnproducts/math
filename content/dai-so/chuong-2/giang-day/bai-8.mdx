@@ -139,16 +139,88 @@ Một nghiệm có phần tử âm vẫn đúng về đại số, nhưng vô ngh
 Với cùng $E$ như ví dụ mẫu, nhu cầu đổi thành $\mathbf{d} = (30, 30)$. Tính $\mathbf{p}$ bằng $(I - E)^{-1}$ đã tìm.
 
 <GoiYNho>Đáp số để kiểm tra: $p_1 = 60$.</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Dùng nghịch đảo mô hình mở đã có: $(I-E)^{-1}=\begin{bmatrix}3/2&1/2\\2/3&4/3\end{bmatrix}$.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+$$
+p=(I-E)^{-1}\begin{bmatrix}30\\30\end{bmatrix}=\begin{bmatrix}45+15\\20+40\end{bmatrix}=\begin{bmatrix}60\\60\end{bmatrix}.
+$$
+
+**Bước 3. Kiểm tra và kết luận.**
+
+$Ep=(30,30)^T$ vì $0{,}2\cdot60+0{,}3\cdot60=30$, $0{,}4\cdot60+0{,}1\cdot60=30$. Vậy $p-Ep=(30,30)^T=d$.
+
+**Bước 4. Cách tự làm lại.**
+
+Nhân nghịch đảo với nhu cầu mới rồi trừ phần các ngành tự dùng để kiểm tra.
+
+</LoiGiai>
 </BaiLuyen>
 
 <BaiLuyen do_kho="vua" so="8.2">
 Nếu người dân cần thêm **1 đơn vị điện** (các nhu cầu khác giữ nguyên), mỗi ngành phải làm ra thêm bao nhiêu? Câu trả lời nằm ở cột nào của $(I - E)^{-1}$? Vì sao ngành nông nghiệp cũng phải làm thêm?
 
 <GoiYNho>$(I - E)^{-1}(\mathbf{d} + \mathbf{e}_2) = (I - E)^{-1}\mathbf{d} + (I - E)^{-1}\mathbf{e}_2$.</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Phần tăng sản lượng là ảnh của phần tăng nhu cầu qua cùng ma trận nghịch đảo.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+Vì $\Delta d=e_2=(0,1)^T$, nên
+
+$$
+\Delta p=(I-E)^{-1}e_2=\begin{bmatrix}1/2\\4/3\end{bmatrix}.
+$$
+
+ Đây là cột 2 của nghịch đảo. Nông nghiệp tăng $1/2$ đơn vị; điện tăng $4/3$ đơn vị.
+
+**Bước 3. Kiểm tra và kết luận.**
+
+$\Delta p-E\Delta p=(0,1)^T$. Các ngành dùng đầu vào của nhau nên tăng điện cũng kéo theo tăng nông sản để đáp ứng đầu vào gián tiếp.
+
+**Bước 4. Cách tự làm lại.**
+
+Cột thứ $j$ của nghịch đảo cho phản ứng sản lượng khi nhu cầu ngoài ngành $j$ tăng một đơn vị.
+
+</LoiGiai>
 </BaiLuyen>
 
 <BaiLuyen do_kho="kho" so="8.3">
 Mô hình đóng: $E = \begin{bmatrix} 0{,}6 & 0{,}3 \\ 0{,}4 & 0{,}7 \end{bmatrix}$ (tổng mỗi cột bằng 1). Tìm mọi $\mathbf{p} \ne \mathbf{0}$ với $E\mathbf{p} = \mathbf{p}$. Vì sao ở mô hình này $I - E$ **không** khả nghịch, và vì sao điều đó lại là điều tốt?
 
 <GoiYNho tieuDe="Bạn sẽ cần">$(I - E)\mathbf{p} = \mathbf{0}$ là hệ thuần nhất (<XemMuc chuong={1} bai={3} />). Hai hàng của $I - E$ có liên hệ gì với nhau?</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Mô hình đóng có $Ep=p$, không có nhu cầu bên ngoài; giải hệ thuần nhất.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+$$
+I-E=\begin{bmatrix}0{,}4&-0{,}3\\-0{,}4&0{,}3\end{bmatrix}.
+$$
+
+ Hai hàng đối nhau, chỉ còn $4p_1=3p_2$. Mọi nghiệm khác 0 là $p=t(3,4)^T$, $t\ne0$; cơ cấu kinh tế không âm khác 0 yêu cầu $t>0$.
+
+**Bước 3. Kiểm tra và kết luận.**
+
+$E(3,4)^T=(3,4)^T$. Định thức $I-E=0$ vì có nghiệm thuần nhất khác 0. Đây là điều cần cho cân bằng đóng với sản lượng dương; nếu khả nghịch thì chỉ có sản lượng 0.
+
+**Bước 4. Cách tự làm lại.**
+
+Mô hình đóng xác định tỷ lệ sản lượng; mô hình mở dùng nhu cầu ngoài để xác định quy mô.
+
+</LoiGiai>
 </BaiLuyen>

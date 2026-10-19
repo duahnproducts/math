@@ -5,11 +5,29 @@ do_kho: vua
 tieu_de: "Ma trận sơ cấp — bài 23"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.5.23"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.5.23 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Hai ma trận $m \times n$, ký hiệu là $A$ và $B$, được gọi là tương đương (viết $A \overset{e}{\sim} B$) nếu tồn tại các ma trận khả nghịch $U$ và $V$ (có kích thước $m \times m$ và $n \times n$) sao cho $A = UBV$.
+
+**a.** Chứng minh các tính chất sau của quan hệ tương đương.
+
+**i.** $A \overset{e}{\sim} A$ với mọi ma trận $m \times n$, ký hiệu là $A$.
+
+**ii.** Nếu $A \overset{e}{\sim} B$ thì $B \overset{e}{\sim} A$.
+
+**iii.** Nếu $A \overset{e}{\sim} B$ và $B \overset{e}{\sim} C$ thì $A \overset{e}{\sim} C$.
+
+**b.** Chứng minh rằng hai ma trận $m \times n$ tương đương nếu chúng có cùng $rank \;$. [Gợi ý: Dùng ý (a) và Định lý 2.5.3.]
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-5-23-1" moTa="Đề gốc Nicholson bài 2.5.23, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -32,6 +50,7 @@ ces U and V (sizes m×m and n×n) such that A = UBV.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -48,7 +67,39 @@ Một phép hàng là nhân trái; một phép cột là nhân phải. Ghi thứ
 
 <LoiGiai>
 
-**a(i).** $A=IAI$. **a(ii).** Nếu $A=UBV$, thì $B=U^{-1}AV^{-1}$. **a(iii).** Nếu $A=UBV$, $B=XCY$, thì $A=(UX)C(YV)$; các tích vẫn khả nghịch. **b.** Nếu $A,B$ cùng hạng $r$, đưa chúng về cùng khối chuẩn $K=\begin{bmatrix}I_r&0\\0&0\end{bmatrix}$: $U_AAV_A=K=U_BBV_B$. Suy ra $A=U_A^{-1}U_BB V_BV_A^{-1}$, nên tương đương. Ngược lại, nhân bởi ma trận khả nghịch giữ hạng, nên tương đương cũng kéo theo cùng hạng.
+**Cách làm.** Ma trận sơ cấp $E$ nhận từ $I$ bằng một phép hàng. $EA$ làm phép đó lên các hàng của $A$. Trong chuỗi $E_k\cdots E_1A$, phép $E_1$ được thực hiện trước.
+
+**a(i).**
+
+**Bước 1. Lập luận và tính toán.**
+
+$A=IAI$.
+
+**a(ii).**
+
+**Bước 1. Xét giả thiết.**
+
+Nếu $A=UBV$, thì $B=U^{-1}AV^{-1}$.
+
+**a(iii).**
+
+**Bước 1. Xét giả thiết.**
+
+Nếu $A=UBV$, $B=XCY$, thì $A=(UX)C(YV)$; các tích vẫn khả nghịch.
+
+**b.**
+
+**Bước 1. Xét giả thiết.**
+
+Nếu $A,B$ cùng hạng $r$, đưa chúng về cùng khối chuẩn $K=\begin{bmatrix}I_r&0\\0&0\end{bmatrix}$: $U_AAV_A=K=U_BBV_B$.
+
+**Bước 2. Rút ra kết luận.**
+
+Suy ra $A=U_A^{-1}U_BB V_BV_A^{-1}$, nên tương đương.
+
+**Bước 3. Kiểm tra chiều ngược.**
+
+Ngược lại, nhân bởi ma trận khả nghịch giữ hạng, nên tương đương cũng kéo theo cùng hạng.
 
 </LoiGiai>
 

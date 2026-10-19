@@ -5,11 +5,49 @@ do_kho: vua
 tieu_de: "Bài bổ sung 2.1"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.1"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.1 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Giải tìm ma trận $X$ nếu:
+
+**a.** $PXQ = R$
+
+**b.** $XP = S$
+
+trong đó
+
+$$
+P = \left[ \begin{array}{rr} 1 & 0 \\ 2 & -1 \\ 0 & 3 \end{array} \right]
+$$
+
+,
+
+$$
+Q = \left[ \begin{array}{rrr} 1 & 1 & -1 \\ 2 & 0 & 3 \end{array} \right]
+$$
+
+,
+
+$$
+R = \left[ \begin{array}{rrr} -1 & 1 & -4 \\ -4 & 0 & -6 \\ 6 & 6 & -6 \end{array} \right]
+$$
+
+ và
+
+$$
+S = \left[ \begin{array}{rr} 1 & 6\\ 3 & 1 \end{array} \right]
+$$
+
+.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-0-1-1" moTa="Đề gốc Nicholson bài 2.1, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -28,6 +66,7 @@ Exercise 2.1  Solve for the matrix X if:
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -44,17 +83,51 @@ Với đẳng thức tổng quát, khai triển có giữ thứ tự; với mệ
 
 <LoiGiai>
 
-**a.** Đặt $X=\begin{bmatrix}a&b\\c&d\end{bmatrix}$. Từ hàng đầu của $PXQ=R$ có $a+2b=-1$, $a=1$, $-a+3b=-4$, nên $a=1,b=-1$. Các hàng còn lại xác định $c,d$, cho
+**a.**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Đặt $X=\begin{bmatrix}a&b\\c&d\end{bmatrix}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Từ hàng đầu của $PXQ=R$ có $a+2b=-1$, $a=1$, $-a+3b=-4$, nên $a=1,b=-1$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Các hàng còn lại xác định $c,d$, cho
+
+
 
 $$
 X=\begin{bmatrix}1&-1\\2&0\end{bmatrix}.
 $$
 
- Nhân lại $PXQ$ cho đúng $R$. **b.** Hệ $XP=S$ tách thành hai hàng: nếu một hàng của $X$ là $(u,v,w)$ và hàng tương ứng của $S$ là $(s,t)$, thì $u+2v=s$, $-v+3w=t$. Vì vậy đặt $w$ tự do rồi $v=3w-t$, $u=s-2v$. Toàn bộ nghiệm là
+
+
+ Nhân lại $PXQ$ cho đúng $R$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Hệ $XP=S$ tách thành hai hàng: nếu một hàng của $X$ là $(u,v,w)$ và hàng tương ứng của $S$ là $(s,t)$, thì $u+2v=s$, $-v+3w=t$.
+
+**Bước 2. Giải thích điều kiện sử dụng.**
+
+Vì vậy đặt $w$ tự do rồi $v=3w-t$, $u=s-2v$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Toàn bộ nghiệm là
+
+
 
 $$
 X=\begin{bmatrix}13 - 6 y_{2}&3 y_{2} - 6&y_{2}\\5 - 6 y_{5}&3 y_{5} - 1&y_{5}\end{bmatrix}.
 $$
+
+
 
  Các ký hiệu còn tự do là tham số thực; nhân $XP$ kiểm tra.
 

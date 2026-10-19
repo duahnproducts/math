@@ -5,11 +5,21 @@ do_kho: vua
 tieu_de: "Giá trị riêng và vector riêng — bài 7"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.3.7"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.3.7 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+**a.** Nếu tổng mỗi hàng của $A$ đều bằng $s$, hãy chứng minh rằng $s$ là một trị riêng.
+
+**b.** Nếu tổng mỗi cột của $A$ đều bằng $s$, hãy chứng minh rằng $s$ là một trị riêng.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-3-7-1" moTa="Đề gốc Nicholson bài 3.3.7, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -28,6 +38,7 @@ Exercise 3.3.7
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -44,7 +55,33 @@ Không gian riêng là hạt nhân của A − λI; đa thức của ma trận t
 
 <LoiGiai>
 
-**a.** Đặt $\mathbf1=(1,\ldots,1)^T\ne0$. Mỗi ô của $A\mathbf1$ là tổng một hàng, nên $A\mathbf1=s\mathbf1$: $s$ là trị riêng. **b.** Nếu tổng cột bằng $s$, thì $A^T\mathbf1=s\mathbf1$. Ma trận chuyển vị có cùng đa thức đặc trưng vì $\det(xI-A^T)=\det((xI-A)^T)$. Do đó $s$ cũng là trị riêng của $A$, dù $\mathbf1$ không nhất thiết là vector riêng của $A$.
+**Cách làm.** Trị riêng $\lambda$ cần có vector $v\ne0$ thỏa $Av=\lambda v$. Tương đương $(A-\lambda I)v=0$ có nghiệm khác 0, nên $\det(\lambda I-A)=0$.
+
+Nhân một ma trận với cột toàn 1 tính tổng từng hàng. Muốn dùng giả thiết về tổng cột, áp dụng lập luận ấy cho $A^T$ trước. Sau đó dùng đa thức đặc trưng bằng nhau để chuyển kết quả về $A$.
+
+**a.**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Đặt $\mathbf1=(1,\ldots,1)^T\ne0$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Mỗi ô của $A\mathbf1$ là tổng một hàng, nên $A\mathbf1=s\mathbf1$: $s$ là trị riêng.
+
+**b.**
+
+**Bước 1. Xét giả thiết.**
+
+Nếu tổng cột bằng $s$, thì $A^T\mathbf1=s\mathbf1$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Ma trận chuyển vị có cùng đa thức đặc trưng vì $\det(xI-A^T)=\det((xI-A)^T)$.
+
+**Bước 3. Rút ra kết luận.**
+
+Do đó $s$ cũng là trị riêng của $A$, dù $\mathbf1$ không nhất thiết là vector riêng của $A$.
 
 </LoiGiai>
 

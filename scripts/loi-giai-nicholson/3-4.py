@@ -1,16 +1,8 @@
 from common import *
 x,n=S.symbols('x n',real=True)
 def diagonal_text(A):
-    A=M(A);cp=A.charpoly();poly=cp.as_expr().subs(cp.gen,x);groups=A.eigenvects();cols=[];terms=[];vals=[]
-    for value,mult,basis in groups:
-        terms.append(r'$\lambda='+S.latex(value)+r'$ (bội đại số '+str(mult)+r'), $E_\lambda=\operatorname{span}\{'+','.join(tex(v)for v in basis)+r'\}$')
-        cols.extend(basis);vals.extend([value]*len(basis))
-    result=r'$c_A(x)='+S.latex(S.factor(poly))+r'$. Giải $(A-\lambda I)v=0$ cho từng nghiệm: '+'; '.join(terms)+'. Vector riêng là mọi vector khác 0 trong các không gian vừa ghi. '
-    if len(cols)==A.rows:
-        P=M.hstack(*cols);D=S.diag(*vals);assert P.det()!=0 and A*P==P*D
-        result+=r'Ghép các vector cơ sở theo thứ tự trên: $$P='+tex(P)+r',\qquad P^{-1}AP=D='+tex(D)+r'.$$ Kiểm tra $AP=PD$ và $\det P\ne0$.'
-    else:result+=r'Tổng số vector cơ sở độc lập chỉ là '+str(len(cols))+r', nhỏ hơn cấp '+str(A.rows)+r', nên không chéo hóa được.'
-    return result
+    return eigen_text(A)
+
 aa=[[[1,2],[3,2]],[[2,-4],[-1,-1]],[[7,0,-4],[0,5,0],[5,0,-2]],[[1,1,-3],[2,0,6],[1,-1,5]],[[1,-2,3],[2,6,-6],[1,2,-1]],[[0,1,0],[3,0,1],[2,0,0]],[[3,1,1],[-4,-2,-5],[2,2,5]],[[2,1,1],[0,1,0],[1,-1,2]]]
 add('3.4.1','\n\n'.join('**'+chr(97+i)+'.** '+diagonal_text(A)for i,A in enumerate(aa))+r' **i.** Với $A=\operatorname{diag}(\lambda,\lambda,\mu)$, $\lambda\ne\mu$, đa thức đặc trưng là $(x-\lambda)^2(x-\mu)$. $E_\lambda=\operatorname{span}\{e_1,e_2\}$, $E_\mu=\operatorname{span}\{e_3\}$. Chọn $P=I$, ma trận đã chéo; vector riêng là mọi vector khác 0 thuộc một trong hai không gian này.')
 out=[]
@@ -33,8 +25,8 @@ add('3.4.10',r'Đặt $D=P^{-1}AP$, $E=P^{-1}BP$, đều chéo. Ma trận chéo 
 add('3.4.11',r'Nếu $A^m=0$ và $Av=\lambda v$, thì $0=A^mv=\lambda^mv$, nên $\lambda=0$. Nếu thêm chéo hóa được, $A=P\operatorname{diag}(0,\ldots,0)P^{-1}=0$. Ngược lại ma trận 0 vừa nilpotent vừa đã chéo. Vậy ma trận duy nhất là ma trận 0 ở mỗi cấp.')
 add('3.4.12',r'Viết $A=PDP^{-1}$. Điều kiện $A^m=I$ cho từng trị riêng thực $\lambda_i^m=1$. **a.** Nghiệm thực của phương trình này chỉ có 1 (và -1 khi $m$ chẵn), nên $\lambda_i^2=1$; suy ra $A^2=I$. **b.** Nếu $m$ lẻ, chỉ có $\lambda_i=1$, nên $D=I$ và $A=I$. Giả thiết trị riêng thực loại các nghiệm đơn vị phức khác.')
 add('3.4.13',r'**a.** Từ $Av=\lambda v$, $A^2v=v$ cho $\lambda^2=1$, nên chỉ có thể là $\pm1$. Hai trị riêng đều thực sự xuất hiện: nếu $A-I\ne0$, một cột khác 0 của nó thỏa $A(A-I)=-(A-I)$; tương tự $A+I\ne0$ cho vector riêng 1. **b.** Mọi $v$ tách được $v=(v+Av)/2+(v-Av)/2$. Hai thành phần lần lượt thuộc $E_1,E_{-1}$. Giao hai không gian chỉ là 0, nên tổng trực tiếp bằng toàn không gian; ghép hai cơ sở cho cơ sở vector riêng. **c.** Đối xứng hai lần là đồng nhất, ma trận $Q_m^2=I$, nên dùng (b) chéo hóa được. **d.** Vector $(1,m)$ trên trục đối xứng có trị riêng 1; vector $(-m,1)$ vuông góc có trị riêng -1. Chọn $P=\begin{bmatrix}1&-m\\m&1\end{bmatrix}$, $\det P=1+m^2>0$, thì $P^{-1}Q_mP=\operatorname{diag}(1,-1)$.')
-aa=[[[2,3,-3],[1,0,-1],[1,1,-2]],[[1,0,0],[3,0,1],[2,0,0]]]
-add('3.4.14','**A.** '+diagonal_text(aa[0])+'\n\n**B.** '+diagonal_text(aa[1])+r' **Chú ý dữ kiện:** với đúng $B$ được in trong đề, đa thức đặc trưng là $x^2(x-1)$, không phải $(x+1)^2(x-2)$. Khẳng định hai đa thức bằng nhau là lỗi bản in; kết luận $B$ không chéo hóa được vẫn đúng vì không gian riêng 0 chỉ một chiều.')
+aa=[[[2,3,-3],[1,0,-1],[1,1,-2]],[[0,1,0],[3,0,1],[2,0,0]]]
+add('3.4.14','**A.** '+diagonal_text(aa[0])+'\n\n**B.** '+diagonal_text(aa[1]).replace('A','B'))
 add('3.4.15',r'**a.** Nếu chỉ có một trị riêng $\lambda$ và chéo hóa được, mọi ô đường chéo của $D$ bằng $\lambda$, nên $A=P(\lambda I)P^{-1}=\lambda I$. Chiều ngược hiển nhiên. **b.** Ma trận có vết 2, định thức 1, nên đa thức $(x-1)^2$. Nó không bằng $I$, do (a) không chéo hóa được; cụ thể $A-I=\begin{bmatrix}2&-2\\2&-2\end{bmatrix}$ có hạt nhân một chiều.')
 add('3.4.16',r'Với $A=PDP^{-1}$, $A^2-3A+2I=0$ tương đương $D^2-3D+2I=0$. Trên từng ô đường chéo: $(\lambda-1)(\lambda-2)=0$, tức mọi trị riêng thuộc $\{1,2\}$. Ngược lại nếu ma trận chéo hóa được có các trị riêng chỉ là 1 hoặc 2, đa thức ấy triệt tiêu từng ô của $D$, nên triệt tiêu $A$. Không bắt buộc cả hai giá trị đều xuất hiện.')
 Q=M([[1,1],[1,-1]]);P=S.diag(Q,Q);A=S.diag(M([[5,3],[3,5]]),M([[7,-1],[-1,7]]));D=P.inv()*A*P;assert D.is_diagonal()

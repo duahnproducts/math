@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Ứng dụng: hệ thức truy hồi tuyến tính — bài 3"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.6.3"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.6.3 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Trong Ví dụ 3.6.1, giả sử xe buýt cũng được phép đỗ, và gọi $x_{k}$ là số cách lấp đầy một hàng gồm $k$ chỗ đỗ bằng xe con, xe tải và xe buýt.
+
+**a.** Nếu xe tải và xe buýt lần lượt chiếm 2 và 3 chỗ, hãy chứng minh rằng $x_{k+3} = x_{k} + x_{k+1} + x_{k+2}$ với mỗi $k$, rồi dùng hệ thức này để tính $x_{10}$. [Gợi ý: Các trị riêng ít giúp ích ở đây.]
+
+**b.** Nếu xe buýt chiếm 4 chỗ, hãy tìm hệ thức truy hồi cho $x_{k}$ và tính $x_{10}$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-6-3-1" moTa="Đề gốc Nicholson bài 3.6.3, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -36,6 +48,7 @@ and buses.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -52,7 +65,35 @@ Dùng các điều kiện đầu để xác định hệ số trong nghiệm t�
 
 <LoiGiai>
 
-Phân loại cách đỗ theo phương tiện đầu tiên; sau khi bỏ nó, phần còn lại là một cách đỗ trên số chỗ còn lại. Quy ước $x_0=1$, $x_j=0$ nếu $j<0$. **a.** Xe con, tải, buýt chiếm 1,2,3 chỗ, nên $x_{k+3}=x_{k+2}+x_{k+1}+x_k$. Tính lần lượt $x_0,\ldots,x_{10}$ được $1,1,2,4,7,13,24,44,81,149,274$, do đó $x_{10}=274$. **b.** Buýt chiếm 4 chỗ thì $x_{k+4}=x_{k+3}+x_{k+2}+x_k$. Dãy là $1,1,2,3,6,10,18,31,55,96,169$, nên $x_{10}=169$.
+**Cách làm.** Với truy hồi tuyến tính, thử $x_k=r^k$ để tìm phương trình đặc trưng. Các điều kiện đầu quyết định hệ số; với bài đếm, cần phân loại các trường hợp rời nhau và đếm hết mọi khả năng.
+
+**Bước 1. Lập luận và tính toán.**
+
+Phân loại cách đỗ theo phương tiện đầu tiên; sau khi bỏ nó, phần còn lại là một cách đỗ trên số chỗ còn lại.
+
+**Bước 2. Lập luận và tính toán.**
+
+Quy ước $x_0=1$, $x_j=0$ nếu $j<0$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Xe con, tải, buýt chiếm 1,2,3 chỗ, nên $x_{k+3}=x_{k+2}+x_{k+1}+x_k$.
+
+**Bước 2. Thực hiện phép biến đổi.**
+
+Tính lần lượt $x_0,\ldots,x_{10}$ được $1,1,2,4,7,13,24,44,81,149,274$, do đó $x_{10}=274$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Buýt chiếm 4 chỗ thì $x_{k+4}=x_{k+3}+x_{k+2}+x_k$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Dãy là $1,1,2,3,6,10,18,31,55,96,169$, nên $x_{10}=169$.
 
 </LoiGiai>
 

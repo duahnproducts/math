@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Định thức và ma trận nghịch đảo — bài 15"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.2.15"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.15 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu $A^{-1} = A^{T}$, hãy mô tả ma trận các phần bù đại số của $A$ theo $A$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-2-15-1" moTa="Đề gốc Nicholson bài 3.2.15, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ trix of A in terms of A.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,11 +48,25 @@ Dùng định thức của tích và công thức nghịch đảo qua adjugate k
 
 <LoiGiai>
 
-Gọi $C$ là ma trận phần bù đại số, nên $C^T=\operatorname{adj}A=(\det A)A^{-1}=(\det A)A^T$. Chuyển vị:
+**Cách làm.** Dùng $\det(AB)=\det A\det B$, $\det A^T=\det A$, $\det(cA)=c^n\det A$ ở cấp $n$. Khi $\det A\ne0$, $A^{-1}=\operatorname{adj}A/\det A$; adjugate là bảng phần bù đã chuyển vị.
+
+Với ma trận trực giao, $A^{-1}=A^T$. Do $\det(A^TA)=\det I=1$, ta có $(\det A)^2=1$, nên $\det A=\pm1$. Nhớ phân biệt bảng phần bù $C$ với adjugate $C^T$.
+
+**Bước 1. Thiết lập biểu thức.**
+
+Gọi $C$ là ma trận phần bù đại số, nên $C^T=\operatorname{adj}A=(\det A)A^{-1}=(\det A)A^T$.
+
+**Bước 2. Thực hiện phép biến đổi.**
+
+Chuyển vị:
+
+
 
 $$
 C=(\det A)A.
 $$
+
+
 
  Vì $A^{-1}=A^T$, $\det A=\pm1$, nên $C=A$ nếu định thức 1 và $C=-A$ nếu định thức -1.
 

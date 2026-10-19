@@ -89,12 +89,112 @@ Vậy P(n) kéo theo P(n+1). Theo quy nạp, công thức đúng với mọi n�
 
 Xét phát biểu $1+2+\cdots+n=n(n+1)/2$. Kiểm tra n=1, n=2 và viết chính xác phát biểu ở n+1. **Gợi ý:** thay tất cả n trong công thức bằng n+1; số hạng cuối mới là n+1.
 
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét tổng $1+2+\cdots+n$ và biểu thức $n(n+1)/2$.
+
+**Bước 2. Xác định điều cần tìm.**
+
+Kiểm tra hai trường hợp đầu và viết phát biểu cho chỉ số kế tiếp.
+
+**Bước 3. Chọn kiến thức và lý do.**
+
+Thay cùng một giá trị vào cả hai vế; khi đổi chỉ số phải thay mọi chỗ có $n$.
+
+**Bước 4. Giải từng bước.**
+
+Với $n=1$: vế trái bằng 1, vế phải $1(1+1)/2=1$. Với $n=2$: vế trái $1+2=3$, vế phải $2(2+1)/2=3$. Ở $n+1$, số hạng cuối là $n+1$, nên phát biểu là
+
+$$
+1+2+\cdots+n+(n+1)=\frac{(n+1)(n+2)}2.
+$$
+
+**Bước 5. Kiểm tra kết quả.**
+
+Thử chỉ số mới bằng 2, tức $n=1$, ta được $1+2=2\cdot3/2$. Hai phép thử không tự chứng minh công thức cho mọi $n$.
+
+**Bước 6. Cách tự làm lại.**
+
+Đổi chỉ số ở cả tổng lẫn công thức bên phải; phân biệt kiểm tra ví dụ với chứng minh tổng quát.
+
+</LoiGiai>
+
 ### VỪA - Tự viết quy nạp
 
 Chứng minh $2+4+\cdots+2n=n(n+1)$ với mọi n≥1. **Gợi ý:** số hạng mới là 2(n+1); sau khi thay giả thiết, đặt n+1 làm nhân tử chung.
 
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Tổng các số chẵn đầu tiên là $2+4+\cdots+2n$, với $n\ge1$.
+
+**Bước 2. Xác định điều cần tìm.**
+
+Chứng minh tổng bằng $n(n+1)$ cho mọi chỉ số đã cho.
+
+**Bước 3. Chọn kiến thức và lý do.**
+
+Quy nạp phù hợp vì tổng ở $n+1$ được tạo từ tổng ở $n$ bằng cách thêm đúng một số hạng.
+
+**Bước 4. Giải từng bước.**
+
+Khởi đầu $n=1$: $2=1\cdot2$. Giả sử $2+4+\cdots+2n=n(n+1)$. Thêm $2(n+1)$ vào hai vế:
+
+$$
+2+4+\cdots+2n+2(n+1)=n(n+1)+2(n+1)=(n+1)(n+2).
+$$
+
+ Đó là công thức cho $n+1$. Theo quy nạp, công thức đúng với mọi $n\ge1$.
+
+**Bước 5. Kiểm tra kết quả.**
+
+$n=3$ cho $2+4+6=12=3\cdot4$. Bước chuyển dùng đúng số hạng mới $2(n+1)$.
+
+**Bước 6. Cách tự làm lại.**
+
+Viết điểm bắt đầu, giả thiết, số hạng thêm vào, rồi đưa về công thức của chỉ số mới.
+
+</LoiGiai>
+
 ### KHÓ - Bước đầu khác 1
 
 Chứng minh $2^n>n^2$ với mọi số nguyên n≥5. **Gợi ý:** bắt đầu ở 5. Từ $2^{n+1}>2n^2$, cần kiểm tra $2n^2\geq(n+1)^2$ cho n≥5. Không thử bắt đầu ở 4 vì tại đó chỉ có dấu bằng.
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Cần xét $2^n$ và $n^2$ từ $n=5$.
+
+**Bước 2. Xác định điều cần tìm.**
+
+Chứng minh bất đẳng thức nghiêm $2^n>n^2$.
+
+**Bước 3. Chọn kiến thức và lý do.**
+
+Quy nạp: vế trái nhân 2 khi tăng chỉ số, nên so $2n^2$ với $(n+1)^2$.
+
+**Bước 4. Giải từng bước.**
+
+Ở $n=5$, $32>25$. Giả sử $2^n>n^2$ với $n\ge5$. Khi đó $2^{n+1}>2n^2$. Ta có
+
+$$
+2n^2-(n+1)^2=n^2-2n-1=(n-1)^2-2\ge16-2>0.
+$$
+
+ Vì vậy $2^{n+1}>2n^2>(n+1)^2$, hoàn tất bước chuyển.
+
+**Bước 5. Kiểm tra kết quả.**
+
+$n=4$ cho $16=16$ nên không thể chọn làm điểm bắt đầu cho mệnh đề dấu $>$. Từ $n\ge5$ ta mới dùng được $n-1\ge4$.
+
+**Bước 6. Cách tự làm lại.**
+
+Với quy nạp bất đẳng thức, sau giả thiết thường cần thêm một bất đẳng thức số học để tới đích mới.
+
+</LoiGiai>
 
 Nguồn kiến thức: Kenneth A. Ross, *Elementary Analysis: The Theory of Calculus*, ấn bản thứ hai, 2013, §1. Bài giảng diễn đạt bằng lời riêng; ví dụ và bài tập do người biên soạn bổ sung.

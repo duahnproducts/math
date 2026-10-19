@@ -8,6 +8,27 @@ import { mdSangHtml } from '../src/lib/tu-tao/hien-thi';
 const bank=JSON.parse(readFileSync('content/dai-so/bai-tap-goc.json','utf8')).bai_tap as {so:string;so_sach:string;muc:string;trang:number[]}[];
 const counts:Record<string,number>={'2.1':24,'2.2':23,'2.3':35,'2.4':42,'2.5':23,'2.6':25,'2.7':11,'2.8':12,'2.9':12,'2.0':13,'3.1':27,'3.2':34,'3.3':12,'3.4':17,'3.5':5,'3.6':13,'3.7':7,'3.8':3,'3.0':6};
 const solutions=JSON.parse(readFileSync('scripts/data/loi-giai-nicholson.json','utf8')) as Record<string,Record<string,string>>;
+const translations=JSON.parse(readFileSync('scripts/data/de-bai-nicholson-tieng-viet.json','utf8')) as Record<string,string>;
+
+test('297 bản dịch mới phủ đúng mọi đề còn lại, không có bản dịch mồ côi',()=>{
+  const expected=bank.filter(b=>!['2.1','2.2'].includes(b.muc)).map(b=>b.so_sach).sort();
+  expect(Object.keys(translations).sort()).toEqual(expected);
+});
+
+test.each(Object.entries(translations))('đề %s: tiếng Việt, chọn được văn bản, công thức dựng được',(number,text)=>{
+  expect(text,number).toMatch(/[\u00c0-\u024f\u1e00-\u1eff]/);
+  expect(text).not.toMatch(/\b(Find|Show that|Let|Suppose|Consider|where|Answer|Compute|Verify|Prove)\b/);
+  expect(text).not.toContain('§');
+  expect(text).not.toMatch(/[\x00-\x09\x0b-\x1f]/);
+  expect(mdSangHtml(text),number).not.toContain('katex-error');
+});
+
+test('các đề nhiều ý giữ đúng nhãn và không gộp ma trận của hai ý',()=>{
+  const cases:Record<string,number>={'2.3.1':10,'2.4.18':4,'2.4.26':4,'2.4.28':4,'2.4.30':2,'2.5.19':4,'2.6.11':2,'2.8.9':4,'3.1.1':16,'3.2.2':6,'3.2.8':4,'3.2.10':7,'3.2.26':2,'3.4.3':2};
+  for(const [number,count]of Object.entries(cases)){
+    expect([...translations[number].matchAll(/^\*\*([a-z])\.\*\*/gm)].map(m=>m[1]),number).toEqual(Array.from({length:count},(_,i)=>String.fromCharCode(97+i)));
+  }
+});
 
 test.each(Object.entries(solutions))('lời giải %s: đủ tầng, không lỗi công thức hay ký tự điều khiển',(number,answer)=>{
   expect(Object.keys(answer).sort()).toEqual(['goi_y_1','goi_y_2','loi_giai','loi_hay_mac']);
@@ -38,6 +59,10 @@ test.each(bank)('$so: trang đề tồn tại, đúng số sách, nguồn và d�
   expect(data.tu_soan).not.toBe(true);
   if(['2.1','2.2'].includes(b.muc))return;
   expect(data.de_goc_tieng_anh).toBe(true);
+  expect(data.de_dich_tieng_viet).toBe(true);
+  expect(text).toContain('<div data-de-tieng-viet>');
+  expect(text).toContain('<details data-de-goc>');
+  expect(text.indexOf('<div data-de-tieng-viet>')).toBeLessThan(text.indexOf('<details data-de-goc>'));
   expect(data.so_sach).toBe(b.so_sach);
   for(const tag of ['<GoiY so={1}>','<GoiY so={2}>','<LoiGiai>','<LoiHayMac>'])expect(text).toContain(tag);
   expect(text).not.toContain('chưa có bản dịch đề và hướng dẫn giải tiếng Việt');

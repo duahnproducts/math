@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Phân tích LU — bài 7"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.7.7"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.7.7 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh Bổ đề 2.7.1(1). [Gợi ý: Dùng phép nhân khối và quy nạp.]
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-7-7-1" moTa="Đề gốc Nicholson bài 2.7.7, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ multiplication and induction.]
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +48,29 @@ Với PA = LU, giải Ly = Pb trước rồi giải Ux = y; phân biệt L đơn
 
 <LoiGiai>
 
-Với $A,B$ tam giác dưới, xét ô $(i,j)$ của tích khi $i<j$: $(AB)_{ij}=\sum_k a_{ik}b_{kj}$. Một số hạng khác 0 đòi hỏi đồng thời $k\le i$ và $k\ge j$, điều không thể xảy ra. Vậy mọi ô trên đường chéo bằng 0, tức $AB$ tam giác dưới. Với tam giác trên, đổi hai bất đẳng thức: khi $i>j$ cần $k\ge i$ và $k\le j$, cũng vô lý. Quy nạp theo số thừa số chứng minh kết quả cho tích hữu hạn.
+**Cách làm.** Phân tích $PA=LU$ tách việc giải $Ax=b$ thành $Ly=Pb$ (thế tiến) và $Ux=y$ (thế ngược). Phải giữ đúng quy ước chuẩn hóa $L,U$ của đề.
+
+Với tam giác dưới, $a_{ik}=0$ nếu $k>i$, còn $b_{kj}=0$ nếu $k<j$. Khi $i<j$, không có chỉ số $k$ nào tránh được cả hai điều kiện bằng 0. Do đó **mỗi** số hạng của tổng bằng 0, chứ không phải các hạng tình cờ triệt tiêu.
+
+**Bước 1. Lập luận và tính toán.**
+
+Với $A,B$ tam giác dưới, xét ô $(i,j)$ của tích khi $i<j$: $(AB)_{ij}=\sum_k a_{ik}b_{kj}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Một số hạng khác 0 đòi hỏi đồng thời $k\le i$ và $k\ge j$, điều không thể xảy ra.
+
+**Bước 3. Rút ra kết luận.**
+
+Vậy mọi ô trên đường chéo bằng 0, tức $AB$ tam giác dưới.
+
+**Bước 4. Lập luận và tính toán.**
+
+Với tam giác trên, đổi hai bất đẳng thức: khi $i>j$ cần $k\ge i$ và $k\le j$, cũng vô lý.
+
+**Bước 5. Lập luận và tính toán.**
+
+Quy nạp theo số thừa số chứng minh kết quả cho tích hữu hạn.
 
 </LoiGiai>
 

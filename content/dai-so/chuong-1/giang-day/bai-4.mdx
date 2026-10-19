@@ -161,16 +161,82 @@ Với mạng kín, phương trình của nút cuối cùng luôn suy ra được
 Trong ví dụ mẫu, nếu muốn ống $f_2$ **không** dẫn nước ($f_2 = 0$), thì $f_1$ và $f_3$ bằng bao nhiêu? Kiểm tra ba nút.
 
 <GoiYNho>$f_2 = 20 - t = 0$ cho $t = 20$.</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Từ ví dụ, $f_1=30+t$, $f_2=20-t$, $f_3=t$. Dùng điều kiện đóng ống 2.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+$f_2=0$ cho $20-t=0$, nên $t=20$. Do đó $f_1=50$, $f_3=20$ lít/phút.
+
+**Bước 3. Kiểm tra và kết luận.**
+
+Ở $A$: $50=f_1+f_2=50+0$. Ở $B$: $f_1=30+f_3=30+20$. Ở $C$: $f_2+f_3=0+20=20$. Cả ba dòng đều không âm.
+
+**Bước 4. Cách tự làm lại.**
+
+Điều kiện vận hành bổ sung xác định tham số; sau đó kiểm tra từng nút.
+
+</LoiGiai>
 </BaiLuyen>
 
 <BaiLuyen do_kho="vua" so="4.2">
 Đổi đề: ở $C$ vòi lấy ra 25 lít/phút thay vì 20, các thứ khác giữ nguyên. Hệ còn có nghiệm không? Giải thích bằng cả phép khử Gauss **và** bằng lời.
 
 <GoiYNho>So tổng lượng đổ vào với tổng lượng lấy ra. Khi khử, hàng cuối sẽ thành $0 = c$ với $c$ bằng bao nhiêu?</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Ở mỗi nút tổng vào bằng tổng ra; cộng các phương trình nút sẽ triệt tiêu các dòng nội bộ.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+Hệ mới là $f_1+f_2=50$, $f_1-f_3=30$, $f_2+f_3=25$. Lấy phương trình đầu trừ phương trình thứ hai cho $f_2+f_3=20$. So với phương trình thứ ba cho $0=5$, mâu thuẫn.
+
+**Bước 3. Kiểm tra và kết luận.**
+
+Tổng ngoài vào 50 nhưng tổng ngoài ra $30+25=55$. Thiếu 5 lít/phút; đổi cách phân luồng nội bộ không tạo ra lượng nước thiếu.
+
+**Bước 4. Cách tự làm lại.**
+
+Kiểm tra bảo toàn toàn mạng trước; nếu tổng ngoài vào và ra khác nhau, hệ cân bằng không thể có nghiệm.
+
+</LoiGiai>
 </BaiLuyen>
 
 <BaiLuyen do_kho="kho" so="4.3">
 Thêm ống thứ tư $f_4$ chảy từ $C$ ngược về $A$ (vẫn 50 vào ở $A$, 30 ra ở $B$, 20 ra ở $C$). Lập hệ, tìm nghiệm có bao nhiêu tham số, rồi tìm điều kiện của các tham số để mọi $f_i \ge 0$. Ống $f_1$ còn bắt buộc mang ít nhất 30 lít/phút nữa không?
 
 <GoiYNho tieuDe="Bạn sẽ cần">Bốn ẩn, hạng vẫn bằng 2, nên có 2 tham số. Luyện thêm với mạng trong sách: <XemMuc bai-tap="1.4.1" chu="Bài 1.4.1" />.</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Thêm dòng $f_4$ từ $C$ về $A$; lập lại phương trình theo đúng chiều mũi tên.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+Ở $A$: $50+f_4=f_1+f_2$. Ở $B$: $f_1=30+f_3$. Ở $C$: $f_2+f_3=20+f_4$. Phương trình đầu bằng tổng hai phương trình độc lập còn lại. Đặt $f_3=s$, $f_4=t$, được $f_1=30+s$, $f_2=20+t-s$. Mọi dòng không âm đúng khi
+
+$$
+t\ge0,\quad0\le s\le20+t.
+$$
+
+ Có hai tham số.
+
+**Bước 3. Kiểm tra và kết luận.**
+
+Thế lại: $f_1+f_2=50+t$, $f_1-f_3=30$, $f_2+f_3=20+t$. Vẫn có $f_1=30+s\ge30$ vì nút $B$ phải cấp 30 ra ngoài và $f_3\ge0$.
+
+**Bước 4. Cách tự làm lại.**
+
+Giải hệ trước rồi áp dụng điều kiện không âm; thêm vòng có thể thêm tham số nhưng không xóa yêu cầu bảo toàn tại từng nút.
+
+</LoiGiai>
 </BaiLuyen>

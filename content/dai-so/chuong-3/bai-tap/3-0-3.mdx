@@ -5,11 +5,25 @@ do_kho: vua
 tieu_de: "Bài bổ sung 3.3"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.3"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.3 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh rằng
+
+$$
+\det \left[ \begin{array}{cc} 0 & I_n \\ I_m & 0 \end{array}\right] = (-1)^{nm}
+$$
+
+ với mọi $n \geq 1$ và $m \geq 1$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-0-3-1" moTa="Đề gốc Nicholson bài 3.3, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +36,7 @@ n ≥1 and m ≥1.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +54,21 @@ Với đẳng thức tổng quát, khai triển có giữ thứ tự; với mệ
 
 <LoiGiai>
 
-Ma trận gồm các cột đơn vị theo thứ tự khối $(n+1,\ldots,n+m,1,\ldots,n)$, với kích thước được hiểu theo hai khối $n,m$ của đề. Chuyển khối $n$ hàng qua khối $m$ hàng cần $nm$ lần đổi hai hàng để thành $I_{n+m}$. Mỗi đổi đổi dấu định thức, nên định thức ban đầu bằng $(-1)^{nm}\det I_{n+m}=(-1)^{nm}$. Có thể kiểm tra trực tiếp mỗi phần tử của khối này đi qua đúng $m$ phần tử của khối kia.
+**Bước 1. Lập luận và tính toán.**
+
+Ma trận gồm các cột đơn vị theo thứ tự khối $(n+1,\ldots,n+m,1,\ldots,n)$, với kích thước được hiểu theo hai khối $n,m$ của đề.
+
+**Bước 2. Thực hiện phép biến đổi.**
+
+Chuyển khối $n$ hàng qua khối $m$ hàng cần $nm$ lần đổi hai hàng để thành $I_{n+m}$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Mỗi đổi đổi dấu định thức, nên định thức ban đầu bằng $(-1)^{nm}\det I_{n+m}=(-1)^{nm}$.
+
+**Bước 4. Lập luận và tính toán.**
+
+Có thể kiểm tra trực tiếp mỗi phần tử của khối này đi qua đúng $m$ phần tử của khối kia.
 
 </LoiGiai>
 

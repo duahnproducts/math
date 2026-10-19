@@ -5,11 +5,49 @@ do_kho: vua
 tieu_de: "Bài bổ sung 2.12"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.12"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.12 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu $A$ là ma trận thực $2 \times 2$, $A^{2} = A$ và $A^{T} = A$, hãy chứng minh rằng hoặc $A$ là một trong các ma trận
+
+$$
+\left[ \begin{array}{rr} 0 & 0 \\ 0 & 0 \end{array} \right]
+$$
+
+,
+
+$$
+\left[ \begin{array}{rr} 1 & 0 \\ 0 & 0 \end{array} \right]
+$$
+
+,
+
+$$
+\left[ \begin{array}{rr} 0 & 0 \\ 0 & 1 \end{array} \right]
+$$
+
+,
+
+$$
+\left[ \begin{array}{rr} 1 & 0 \\ 0 & 1 \end{array} \right]
+$$
+
+, hoặc
+
+$$
+A = \left[ \begin{array}{cc} a & b \\ b & 1 - a \end{array} \right]
+$$
+
+, trong đó $a^{2} + b^{2} = a$, $-\frac{1}{2} \leq b \leq \frac{1}{2}$ và $b \neq 0$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-0-12-1" moTa="Đề gốc Nicholson bài 2.12, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -31,6 +69,7 @@ AT = A, show that either A is one of                 ,
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -47,7 +86,29 @@ Với đẳng thức tổng quát, khai triển có giữ thứ tự; với mệ
 
 <LoiGiai>
 
-Từ đối xứng viết $A=\begin{bmatrix}a&b\\b&d\end{bmatrix}$. Điều kiện $A^2=A$ cho $a^2+b^2=a$, $b(a+d)=b$, $d^2+b^2=d$. Nếu $b=0$, thì $a,d\in\{0,1\}$, được đúng bốn ma trận chéo đề liệt kê. Nếu $b\ne0$, chia phương trình giữa cho $b$ được $d=1-a$; hai phương trình còn lại cùng là $a^2+b^2=a$. Hoàn thành bình phương: $(a-1/2)^2+b^2=1/4$, suy ra $-1/2\le b\le1/2$. Ngược lại, thay các điều kiện này vào phép nhân cho ngay đối xứng và lũy đẳng.
+**Bước 1. Lập luận và tính toán.**
+
+Từ đối xứng viết $A=\begin{bmatrix}a&b\\b&d\end{bmatrix}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Điều kiện $A^2=A$ cho $a^2+b^2=a$, $b(a+d)=b$, $d^2+b^2=d$.
+
+**Bước 3. Xét giả thiết.**
+
+Nếu $b=0$, thì $a,d\in\{0,1\}$, được đúng bốn ma trận chéo đề liệt kê.
+
+**Bước 4. Xét giả thiết.**
+
+Nếu $b\ne0$, chia phương trình giữa cho $b$ được $d=1-a$; hai phương trình còn lại cùng là $a^2+b^2=a$.
+
+**Bước 5. Lập luận và tính toán.**
+
+Hoàn thành bình phương: $(a-1/2)^2+b^2=1/4$, suy ra $-1/2\le b\le1/2$.
+
+**Bước 6. Kiểm tra chiều ngược.**
+
+Ngược lại, thay các điều kiện này vào phép nhân cho ngay đối xứng và lũy đẳng.
 
 </LoiGiai>
 

@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Định thức và ma trận nghịch đảo — bài 27"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.2.27"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.27 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $A$ là ma trận có mọi phần tử là số nguyên. Chứng minh rằng mỗi điều kiện sau kéo theo điều kiện còn lại.
+
+**1.** $A$ khả nghịch và $A^{-1}$ có các phần tử nguyên.
+
+**2.** $\det A = 1$ hoặc $-1$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-2-27-1" moTa="Đề gốc Nicholson bài 3.2.27, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -33,6 +45,7 @@ implies the other.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -49,7 +62,29 @@ Dùng định thức của tích và công thức nghịch đảo qua adjugate k
 
 <LoiGiai>
 
-**(1) ⇒ (2).** Định thức của ma trận nguyên là số nguyên. Vì $A,A^{-1}$ đều nguyên, $\det A$ và $\det A^{-1}$ là hai số nguyên có tích 1, nên $\det A=\pm1$. **(2) ⇒ (1).** Định thức khác 0 nên $A$ khả nghịch; mọi ô của adjugate là định thức con có dấu, đều nguyên. Công thức $A^{-1}=\operatorname{adj}A/\det A=\pm\operatorname{adj}A$ cho nghịch đảo nguyên.
+**Cách làm.** Dùng $\det(AB)=\det A\det B$, $\det A^T=\det A$, $\det(cA)=c^n\det A$ ở cấp $n$. Khi $\det A\ne0$, $A^{-1}=\operatorname{adj}A/\det A$; adjugate là bảng phần bù đã chuyển vị.
+
+Định thức và mọi phần bù của ma trận nguyên đều là số nguyên vì chỉ dùng hữu hạn phép cộng, trừ và nhân số nguyên. Hai số nguyên có tích 1 chỉ có thể cùng là 1 hoặc cùng là $-1$.
+
+**(1) ⇒ (2).**
+
+**Bước 1. Lập luận và tính toán.**
+
+Định thức của ma trận nguyên là số nguyên.
+
+**Bước 2. Giải thích điều kiện sử dụng.**
+
+Vì $A,A^{-1}$ đều nguyên, $\det A$ và $\det A^{-1}$ là hai số nguyên có tích 1, nên $\det A=\pm1$.
+
+**(2) ⇒ (1).**
+
+**Bước 3. Lập luận và tính toán.**
+
+Định thức khác 0 nên $A$ khả nghịch; mọi ô của adjugate là định thức con có dấu, đều nguyên.
+
+**Bước 4. Lập luận và tính toán.**
+
+Công thức $A^{-1}=\operatorname{adj}A/\det A=\pm\operatorname{adj}A$ cho nghịch đảo nguyên.
 
 </LoiGiai>
 

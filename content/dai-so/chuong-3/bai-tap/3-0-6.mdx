@@ -5,11 +5,59 @@ do_kho: vua
 tieu_de: "Bài bổ sung 3.6"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.6"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.6 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho
+
+$$
+A = \left[ \begin{array}{rr} 3 & -4 \\ 2 & -3 \end{array}\right]
+$$
+
+ và đặt $\mathbf{v}_{k} = A^{k}\mathbf{v}_{0}$ với mỗi $k \geq 0$.
+
+**a.** Chứng minh rằng $A$ không có trị riêng trội.
+
+**b.** Tìm $\mathbf{v}_{k}$ nếu $\mathbf{v}_{0}$ bằng:
+
+**i.**
+
+$$
+\left[ \begin{array}{r} 1 \\ 1 \end{array}\right]
+$$
+
+
+
+**ii.**
+
+$$
+\left[ \begin{array}{r} 2 \\ 1 \end{array}\right]
+$$
+
+
+
+**iii.**
+
+$$
+\left[ \begin{array}{r} x \\ y \end{array}\right] \neq \left[ \begin{array}{r} 1 \\ 1 \end{array}\right]
+$$
+
+ hoặc
+
+$$
+\left[ \begin{array}{r} 2 \\ 1 \end{array}\right]
+$$
+
+.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-0-6-1" moTa="Đề gốc Nicholson bài 3.6, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -43,6 +91,7 @@ iii.    =       or
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -59,11 +108,45 @@ Với đẳng thức tổng quát, khai triển có giữ thứ tự; với mệ
 
 <LoiGiai>
 
-**a.** $c_A(x)=x^2-1$, hai trị riêng là 1 và -1 có cùng môđun, nên không có trị riêng trội duy nhất. Vector riêng tương ứng có thể chọn $u=(2,1)^T$, $w=(1,1)^T$. **b.i.** Nếu $v_0=w$, thì $v_k=(-1)^kw$. **b.ii.** Nếu $v_0=u$, thì $v_k=u$ với mọi $k$. **b.iii.** Với $v_0=(x,y)^T$, giải $v_0=\alpha u+\beta w$ cho $\alpha=x-y$, $\beta=2y-x$. Vì vậy
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$c_A(x)=x^2-1$, hai trị riêng là 1 và -1 có cùng môđun, nên không có trị riêng trội duy nhất.
+
+**Bước 2. Lập luận và tính toán.**
+
+Vector riêng tương ứng có thể chọn $u=(2,1)^T$, $w=(1,1)^T$.
+
+**b.i.**
+
+**Bước 3. Xét giả thiết.**
+
+Nếu $v_0=w$, thì $v_k=(-1)^kw$.
+
+**b.ii.**
+
+**Bước 4. Xét giả thiết.**
+
+Nếu $v_0=u$, thì $v_k=u$ với mọi $k$.
+
+**b.iii.**
+
+**Bước 5. Lập luận và tính toán.**
+
+Với $v_0=(x,y)^T$, giải $v_0=\alpha u+\beta w$ cho $\alpha=x-y$, $\beta=2y-x$.
+
+**Bước 6. Giải thích điều kiện sử dụng.**
+
+Vì vậy
+
+
 
 $$
 v_k=(x-y)\begin{bmatrix}2\\1\end{bmatrix}+(2y-x)(-1)^k\begin{bmatrix}1\\1\end{bmatrix}.
 $$
+
+
 
  Nếu vector ban đầu khác hai vector ở (i),(ii), công thức vẫn áp dụng; thông thường dãy dao động giữa hai vector vì $A^2=I$.
 

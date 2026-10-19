@@ -5,11 +5,33 @@ do_kho: vua
 tieu_de: "Khai triển theo phần bù đại số — bài 15"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.1.15"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.1.15 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+**a.** Tìm $b$ nếu
+
+$$
+\det \left[ \begin{array}{rrr} 5 & -1 & x \\ 2 & 6 & y \\ -5 & 4 & z \end{array}\right] = ax + by + cz
+$$
+
+.
+
+**b.** Tìm $c$ nếu
+
+$$
+\det \left[ \begin{array}{rrr} 2 & x & -1 \\ 1 & y & 3 \\ -3 & z & 4 \end{array}\right] = ax + by + cz
+$$
+
+.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-1-15-1" moTa="Đề gốc Nicholson bài 3.1.15, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -27,6 +49,7 @@ Exercise 3.1.15
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -43,7 +66,25 @@ Cộng bội một hàng vào hàng khác giữ định thức; đổi hai hàng
 
 <LoiGiai>
 
-**a.** Hệ số của $y$ là phần bù đại số $C_{23}=-\det\begin{bmatrix}5&-1\\-5&4\end{bmatrix}=-(20-5)=-15$, nên $b=-15$. **b.** Hệ số của $z$ là $C_{32}=-\det\begin{bmatrix}2&-1\\1&3\end{bmatrix}=-(6+1)=-7$, nên $c=-7$. Phần bù không chứa biến ở ô đang khai triển.
+**Cách làm.** Cộng bội hàng khác giữ nguyên định thức; đổi hai hàng đổi dấu; rút hệ số $c$ từ một hàng đưa $c$ ra ngoài. Với khai triển, $C_{ij}=(-1)^{i+j}\det M_{ij}$.
+
+Khi khai triển theo hàng chứa biến, phần bù của ô biến không chứa chính hàng ấy, nên không chứa biến đó. Vì vậy hệ số của biến chính là phần bù đại số tại ô của nó, bao gồm cả dấu $(-1)^{i+j}$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Hệ số của $y$ là phần bù đại số $C_{23}=-\det\begin{bmatrix}5&-1\\-5&4\end{bmatrix}=-(20-5)=-15$, nên $b=-15$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Hệ số của $z$ là $C_{32}=-\det\begin{bmatrix}2&-1\\1&3\end{bmatrix}=-(6+1)=-7$, nên $c=-7$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Phần bù không chứa biến ở ô đang khai triển.
 
 </LoiGiai>
 

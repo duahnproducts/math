@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Định thức và ma trận nghịch đảo — bài 18"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.2.18"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.18 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $A$ và $B$ là các ma trận khả nghịch $n \times n$. Chứng minh rằng $\det A = \det B$ khi và chỉ khi $A = UB$, trong đó $U$ là ma trận thỏa mãn $\det U = 1$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-2-18-1" moTa="Đề gốc Nicholson bài 3.2.18, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ is a matrix with det U = 1.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +48,21 @@ Dùng định thức của tích và công thức nghịch đảo qua adjugate k
 
 <LoiGiai>
 
-Nếu $\det A=\det B\ne0$, đặt $U=AB^{-1}$. Khi đó $A=UB$ và $\det U=\det A/\det B=1$. Ngược lại, nếu $A=UB$ với $\det U=1$, định thức của tích cho $\det A=\det U\det B=\det B$.
+**Cách làm.** Dùng $\det(AB)=\det A\det B$, $\det A^T=\det A$, $\det(cA)=c^n\det A$ ở cấp $n$. Khi $\det A\ne0$, $A^{-1}=\operatorname{adj}A/\det A$; adjugate là bảng phần bù đã chuyển vị.
+
+Muốn có $A=UB$, thử giải ra $U$ bằng cách nhân phải với $B^{-1}$. Chỉ làm được vì $\det B\ne0$. Sau đó kiểm tra riêng $\det U=1$, rồi chứng minh chiều ngược từ biểu thức $A=UB$.
+
+**Bước 1. Xét giả thiết.**
+
+Nếu $\det A=\det B\ne0$, đặt $U=AB^{-1}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Khi đó $A=UB$ và $\det U=\det A/\det B=1$.
+
+**Bước 3. Kiểm tra chiều ngược.**
+
+Ngược lại, nếu $A=UB$ với $\det U=1$, định thức của tích cho $\det A=\det U\det B=\det B$.
 
 </LoiGiai>
 

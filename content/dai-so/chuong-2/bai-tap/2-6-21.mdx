@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Phép biến đổi tuyến tính — bài 21"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.6.21"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.6.21 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $c$ thuộc $\mathbb{R}$, định nghĩa $T_{c} : \mathbb{R}^n \to \mathbb{R}$ bởi $T_{c}(\mathbf{x}) = c\mathbf{x}$ với mọi $\mathbf{x}$ thuộc $\mathbb{R}^n$. Chứng minh rằng $T_{c}$ là phép biến đổi tuyến tính và tìm ma trận của nó.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-6-21-1" moTa="Đề gốc Nicholson bài 2.6.21, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ formation and ﬁnd its matrix.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +48,23 @@ Cột thứ j của ma trận ánh xạ là ảnh của vector đơn vị thứ 
 
 <LoiGiai>
 
-$T_c(x+y)=c(x+y)=cx+cy$ và $T_c(ax)=c(ax)=a(cx)$. Do đó tuyến tính. Ảnh của $e_j$ là $ce_j$, nên ma trận là $cI_n$. Kết luận đúng cả khi $c=0$; lúc ấy ánh xạ là ánh xạ không.
+**Cách làm.** Tuyến tính nghĩa là $T(au+bv)=aT(u)+bT(v)$. Với vector cột, ma trận của $T$ là $[T(e_1)\ \cdots\ T(e_n)]$; ma trận của $S\circ T$ là $[S][T]$.
+
+**Bước 1. Lập luận và tính toán.**
+
+$T_c(x+y)=c(x+y)=cx+cy$ và $T_c(ax)=c(ax)=a(cx)$.
+
+**Bước 2. Rút ra kết luận.**
+
+Do đó tuyến tính.
+
+**Bước 3. Lập luận và tính toán.**
+
+Ảnh của $e_j$ là $ce_j$, nên ma trận là $cI_n$.
+
+**Bước 4. Rút ra kết luận.**
+
+Kết luận đúng cả khi $c=0$; lúc ấy ánh xạ là ánh xạ không.
 
 </LoiGiai>
 

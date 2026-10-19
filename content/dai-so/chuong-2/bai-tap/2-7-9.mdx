@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Phân tích LU — bài 9"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.7.9"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.7.9 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Ma trận tam giác được gọi là tam giác đơn vị nếu nó vuông và mọi phần tử trên đường chéo chính đều bằng $1$.
+
+**a.** Nếu có thể dùng thuật toán Gauss đưa $A$ về dạng bậc thang hàng mà không đổi chỗ hai hàng, hãy chứng minh rằng $A = LU$, trong đó $L$ là ma trận tam giác dưới đơn vị và $U$ là ma trận tam giác trên.
+
+**b.** Chứng minh rằng phân tích ở ý (a) là duy nhất.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-7-9-1" moTa="Đề gốc Nicholson bài 2.7.9, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -32,6 +44,7 @@ gular if it is square and every main diagonal element is a
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -48,7 +61,39 @@ Với PA = LU, giải Ly = Pb trước rồi giải Ux = y; phân biệt L đơn
 
 <LoiGiai>
 
-**a.** Các phép khử không đổi hàng có dạng $R_i\leftarrow R_i-m_{ij}R_j$, $i>j$. Ma trận sơ cấp tương ứng $E_k$ là tam giác dưới có đường chéo toàn 1. Nếu $E_s\cdots E_1A=U$, đặt $L=E_1^{-1}\cdots E_s^{-1}$; khi đó $A=LU$, $L$ tam giác dưới đơn vị và $U$ tam giác trên. **b.** Cần giả thiết $A$ khả nghịch để khẳng định duy nhất như cách phát biểu thông thường. Khi ấy $L^{-1}L_1=UU_1^{-1}$ vừa tam giác dưới đơn vị vừa tam giác trên, nên bằng $I$. Suy ra $L=L_1,U=U_1$. Nếu không có giả thiết khả nghịch thì câu (b) như bản in là sai: $A=0_{2\times2}$ có $U=0$ và mọi $L=\begin{bmatrix}1&0\\t&1\end{bmatrix}$, $t\in\mathbb R$, đều cho $A=LU$.
+**Cách làm.** Phân tích $PA=LU$ tách việc giải $Ax=b$ thành $Ly=Pb$ (thế tiến) và $Ux=y$ (thế ngược). Phải giữ đúng quy ước chuẩn hóa $L,U$ của đề.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Các phép khử không đổi hàng có dạng $R_i\leftarrow R_i-m_{ij}R_j$, $i>j$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Ma trận sơ cấp tương ứng $E_k$ là tam giác dưới có đường chéo toàn 1.
+
+**Bước 3. Xét giả thiết.**
+
+Nếu $E_s\cdots E_1A=U$, đặt $L=E_1^{-1}\cdots E_s^{-1}$; khi đó $A=LU$, $L$ tam giác dưới đơn vị và $U$ tam giác trên.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Cần giả thiết $A$ khả nghịch để khẳng định duy nhất như cách phát biểu thông thường.
+
+**Bước 2. Lập luận và tính toán.**
+
+Khi ấy $L^{-1}L_1=UU_1^{-1}$ vừa tam giác dưới đơn vị vừa tam giác trên, nên bằng $I$.
+
+**Bước 3. Rút ra kết luận.**
+
+Suy ra $L=L_1,U=U_1$.
+
+**Bước 4. Xét giả thiết.**
+
+Nếu không có giả thiết khả nghịch thì câu (b) như bản in là sai: $A=0_{2\times2}$ có $U=0$ và mọi $L=\begin{bmatrix}1&0\\t&1\end{bmatrix}$, $t\in\mathbb R$, đều cho $A=LU$.
 
 </LoiGiai>
 

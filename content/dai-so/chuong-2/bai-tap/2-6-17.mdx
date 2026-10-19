@@ -5,11 +5,27 @@ do_kho: vua
 tieu_de: "Phép biến đổi tuyến tính — bài 17"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.6.17"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.6.17 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $S : \mathbb{R}^n \to \mathbb{R}^n$ và $T : \mathbb{R}^n \to \mathbb{R}^n$ là các phép biến đổi tuyến tính có ma trận lần lượt là $A$ và $B$.
+
+**a.** Chứng minh rằng $B^{2} = B$ khi và chỉ khi $T^{2} = T$ (trong đó $T^{2}$ có nghĩa là $T \circ T$).
+
+**b.** Chứng minh rằng $B^{2} = I$ khi và chỉ khi $T^2 = 1_{\mathbb{R}^n}$.
+
+**c.** Chứng minh rằng $AB = BA$ khi và chỉ khi $S \circ T = T \circ S$.
+
+[Gợi ý: Định lý 2.6.3.]
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-6-17-1" moTa="Đề gốc Nicholson bài 2.6.17, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -28,6 +44,7 @@ Exercise 2.6.17 Let S : Rn →Rn and T : Rn →Rn be lin-ear transformations wit
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -44,7 +61,37 @@ Cột thứ j của ma trận ánh xạ là ảnh của vector đơn vị thứ 
 
 <LoiGiai>
 
-Theo định lý hợp thành, ma trận của $T\circ T$ là $B^2$, của $S\circ T$ là $AB$, của $T\circ S$ là $BA$, còn ánh xạ đồng nhất có ma trận $I$. Hai ánh xạ tuyến tính bằng nhau khi và chỉ khi các ma trận của chúng bằng nhau. Áp dụng lần lượt cho: **a.** $B^2=B\Leftrightarrow T^2=T$; **b.** $B^2=I\Leftrightarrow T^2=1$; **c.** $AB=BA\Leftrightarrow S\circ T=T\circ S$.
+**Cách làm.** Tuyến tính nghĩa là $T(au+bv)=aT(u)+bT(v)$. Với vector cột, ma trận của $T$ là $[T(e_1)\ \cdots\ T(e_n)]$; ma trận của $S\circ T$ là $[S][T]$.
+
+**Bước 1. Lập luận và tính toán.**
+
+Theo định lý hợp thành, ma trận của $T\circ T$ là $B^2$, của $S\circ T$ là $AB$, của $T\circ S$ là $BA$, còn ánh xạ đồng nhất có ma trận $I$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Hai ánh xạ tuyến tính bằng nhau khi và chỉ khi các ma trận của chúng bằng nhau.
+
+**Bước 3. Lập luận và tính toán.**
+
+Áp dụng lần lượt cho:
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$B^2=B\Leftrightarrow T^2=T$;
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$B^2=I\Leftrightarrow T^2=1$;
+
+**c.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$AB=BA\Leftrightarrow S\circ T=T\circ S$.
 
 </LoiGiai>
 

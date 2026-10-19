@@ -5,11 +5,25 @@ do_kho: vua
 tieu_de: "Định thức và ma trận nghịch đảo — bài 24"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.2.24"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.24 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Với các cặp dữ liệu sau, tìm đa thức nội suy bậc không quá $3$ và ước lượng giá trị $y$ ứng với $x = 1.5$.
+
+**a.** $(0, 1)$, $(1, 2)$, $(2, 5)$, $(3, 10)$
+
+**b.** $(0, 1)$, $(1, 1.49)$, $(2, -0.42)$, $(3, -11.33)$
+
+**c.** $(0, 2)$, $(1, 2.03)$, $(2, -0.40)$, $(-1, 0.89)$
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-2-24-1" moTa="Đề gốc Nicholson bài 3.2.24, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -34,6 +48,7 @@ the value of y corresponding to x = 1.5.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -50,29 +65,505 @@ Dùng định thức của tích và công thức nghịch đảo qua adjugate k
 
 <LoiGiai>
 
-**a.** Đặt $p(x)=\sum_{j=0}^{3}c_jx^j$, thay các điểm vào và giải hệ Vandermonde (các hoành độ khác nhau nên nghiệm duy nhất). Thu
+**Cách làm.** Dùng $\det(AB)=\det A\det B$, $\det A^T=\det A$, $\det(cA)=c^n\det A$ ở cấp $n$. Khi $\det A\ne0$, $A^{-1}=\operatorname{adj}A/\det A$; adjugate là bảng phần bù đã chuyển vị.
+
+**a.** **Bước 1. Đặt dạng đa thức.**
+
+$p(x)=\sum_{j=0}^{3}c_jx^j$. Mỗi điểm $(x_i,y_i)$ cho phương trình $c_0+c_1x_i+\cdots+c_{n-1}x_i^{n-1}=y_i$.
+
+**Bước 2. Lập hệ từ từng điểm.**
+
+Ma trận ghép các phương trình là
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&1\\1&1&1&1&2\\1&2&4&8&5\\1&3&9&27&10\end{bmatrix}.
+$$
+
+
+
+ Mỗi hàng ứng với một điểm; các cột lần lượt là hệ số của $c_0,c_1,\ldots$.
+
+**Bước 3. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&1\\0&1&1&1&1\\1&2&4&8&5\\1&3&9&27&10\end{bmatrix}.
+$$
+
+
+
+**Bước 4. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&1\\0&1&1&1&1\\0&2&4&8&4\\1&3&9&27&10\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(-1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&1\\0&1&1&1&1\\0&2&4&8&4\\0&3&9&27&9\end{bmatrix}.
+$$
+
+
+
+**Bước 6. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-2)R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&1\\0&1&1&1&1\\0&0&2&6&2\\0&3&9&27&9\end{bmatrix}.
+$$
+
+
+
+**Bước 7. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(-3)R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&1\\0&1&1&1&1\\0&0&2&6&2\\0&0&6&24&6\end{bmatrix}.
+$$
+
+
+
+**Bước 8. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 3 cho $2$, được
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&1\\0&1&1&1&1\\0&0&1&3&1\\0&0&6&24&6\end{bmatrix}.
+$$
+
+
+
+**Bước 9. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-1)R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&1\\0&1&0&-2&0\\0&0&1&3&1\\0&0&6&24&6\end{bmatrix}.
+$$
+
+
+
+**Bước 10. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(-6)R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&1\\0&1&0&-2&0\\0&0&1&3&1\\0&0&0&6&0\end{bmatrix}.
+$$
+
+
+
+**Bước 11. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 4 cho $6$, được
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&1\\0&1&0&-2&0\\0&0&1&3&1\\0&0&0&1&0\end{bmatrix}.
+$$
+
+
+
+**Bước 12. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(2)R_4$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&1\\0&1&0&0&0\\0&0&1&3&1\\0&0&0&1&0\end{bmatrix}.
+$$
+
+
+
+**Bước 13. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-3)R_4$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&1\\0&1&0&0&0\\0&0&1&0&1\\0&0&0&1&0\end{bmatrix}.
+$$
+
+
+
+**Bước 14. Đọc hệ số và kiểm tra.**
+
+Khối phải của RREF cho các hệ số theo thứ tự, nên
+
+
 
 $$
 p(x)=x^{2} + 1.
 $$
 
- Thế từng hoành độ cho lại đúng tung độ đã cho. Tại $x=1.5$, $y\approx p(1.5)=\frac{13}{4}$.
 
-**b.** Đặt $p(x)=\sum_{j=0}^{3}c_jx^j$, thay các điểm vào và giải hệ Vandermonde (các hoành độ khác nhau nên nghiệm duy nhất). Thu
+
+ Các hoành độ khác nhau nên ma trận Vandermonde khả nghịch; đa thức bậc không quá 3 này là duy nhất. Kiểm tra từng điểm: $p(0)=1$, $p(1)=2$, $p(2)=5$, $p(3)=10$.
+
+ Tại $x=1.5$, $y\approx p(1.5)=\frac{13}{4}$.
+
+**b.** **Bước 1. Đặt dạng đa thức.**
+
+$p(x)=\sum_{j=0}^{3}c_jx^j$. Mỗi điểm $(x_i,y_i)$ cho phương trình $c_0+c_1x_i+\cdots+c_{n-1}x_i^{n-1}=y_i$.
+
+**Bước 2. Lập hệ từ từng điểm.**
+
+Ma trận ghép các phương trình là
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&1\\1&1&1&1&\frac{149}{100}\\1&2&4&8&- \frac{21}{50}\\1&3&9&27&- \frac{1133}{100}\end{bmatrix}.
+$$
+
+
+
+ Mỗi hàng ứng với một điểm; các cột lần lượt là hệ số của $c_0,c_1,\ldots$.
+
+**Bước 3. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&1\\0&1&1&1&\frac{49}{100}\\1&2&4&8&- \frac{21}{50}\\1&3&9&27&- \frac{1133}{100}\end{bmatrix}.
+$$
+
+
+
+**Bước 4. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&1\\0&1&1&1&\frac{49}{100}\\0&2&4&8&- \frac{71}{50}\\1&3&9&27&- \frac{1133}{100}\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(-1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&1\\0&1&1&1&\frac{49}{100}\\0&2&4&8&- \frac{71}{50}\\0&3&9&27&- \frac{1233}{100}\end{bmatrix}.
+$$
+
+
+
+**Bước 6. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-2)R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&1\\0&1&1&1&\frac{49}{100}\\0&0&2&6&- \frac{12}{5}\\0&3&9&27&- \frac{1233}{100}\end{bmatrix}.
+$$
+
+
+
+**Bước 7. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(-3)R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&1\\0&1&1&1&\frac{49}{100}\\0&0&2&6&- \frac{12}{5}\\0&0&6&24&- \frac{69}{5}\end{bmatrix}.
+$$
+
+
+
+**Bước 8. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 3 cho $2$, được
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&1\\0&1&1&1&\frac{49}{100}\\0&0&1&3&- \frac{6}{5}\\0&0&6&24&- \frac{69}{5}\end{bmatrix}.
+$$
+
+
+
+**Bước 9. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-1)R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&1\\0&1&0&-2&\frac{169}{100}\\0&0&1&3&- \frac{6}{5}\\0&0&6&24&- \frac{69}{5}\end{bmatrix}.
+$$
+
+
+
+**Bước 10. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(-6)R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&1\\0&1&0&-2&\frac{169}{100}\\0&0&1&3&- \frac{6}{5}\\0&0&0&6&- \frac{33}{5}\end{bmatrix}.
+$$
+
+
+
+**Bước 11. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 4 cho $6$, được
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&1\\0&1&0&-2&\frac{169}{100}\\0&0&1&3&- \frac{6}{5}\\0&0&0&1&- \frac{11}{10}\end{bmatrix}.
+$$
+
+
+
+**Bước 12. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(2)R_4$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&1\\0&1&0&0&- \frac{51}{100}\\0&0&1&3&- \frac{6}{5}\\0&0&0&1&- \frac{11}{10}\end{bmatrix}.
+$$
+
+
+
+**Bước 13. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-3)R_4$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&1\\0&1&0&0&- \frac{51}{100}\\0&0&1&0&\frac{21}{10}\\0&0&0&1&- \frac{11}{10}\end{bmatrix}.
+$$
+
+
+
+**Bước 14. Đọc hệ số và kiểm tra.**
+
+Khối phải của RREF cho các hệ số theo thứ tự, nên
+
+
 
 $$
 p(x)=- \frac{11 x^{3}}{10} + \frac{21 x^{2}}{10} - \frac{51 x}{100} + 1.
 $$
 
- Thế từng hoành độ cho lại đúng tung độ đã cho. Tại $x=1.5$, $y\approx p(1.5)=\frac{499}{400}$.
 
-**c.** Đặt $p(x)=\sum_{j=0}^{3}c_jx^j$, thay các điểm vào và giải hệ Vandermonde (các hoành độ khác nhau nên nghiệm duy nhất). Thu
+
+ Các hoành độ khác nhau nên ma trận Vandermonde khả nghịch; đa thức bậc không quá 3 này là duy nhất. Kiểm tra từng điểm: $p(0)=1$, $p(1)=\frac{149}{100}$, $p(2)=- \frac{21}{50}$, $p(3)=- \frac{1133}{100}$.
+
+ Tại $x=1.5$, $y\approx p(1.5)=\frac{499}{400}$.
+
+**c.** **Bước 1. Đặt dạng đa thức.**
+
+$p(x)=\sum_{j=0}^{3}c_jx^j$. Mỗi điểm $(x_i,y_i)$ cho phương trình $c_0+c_1x_i+\cdots+c_{n-1}x_i^{n-1}=y_i$.
+
+**Bước 2. Lập hệ từ từng điểm.**
+
+Ma trận ghép các phương trình là
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&2\\1&1&1&1&\frac{203}{100}\\1&2&4&8&- \frac{2}{5}\\1&-1&1&-1&\frac{89}{100}\end{bmatrix}.
+$$
+
+
+
+ Mỗi hàng ứng với một điểm; các cột lần lượt là hệ số của $c_0,c_1,\ldots$.
+
+**Bước 3. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&2\\0&1&1&1&\frac{3}{100}\\1&2&4&8&- \frac{2}{5}\\1&-1&1&-1&\frac{89}{100}\end{bmatrix}.
+$$
+
+
+
+**Bước 4. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&2\\0&1&1&1&\frac{3}{100}\\0&2&4&8&- \frac{12}{5}\\1&-1&1&-1&\frac{89}{100}\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(-1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&2\\0&1&1&1&\frac{3}{100}\\0&2&4&8&- \frac{12}{5}\\0&-1&1&-1&- \frac{111}{100}\end{bmatrix}.
+$$
+
+
+
+**Bước 6. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-2)R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&2\\0&1&1&1&\frac{3}{100}\\0&0&2&6&- \frac{123}{50}\\0&-1&1&-1&- \frac{111}{100}\end{bmatrix}.
+$$
+
+
+
+**Bước 7. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(1)R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&2\\0&1&1&1&\frac{3}{100}\\0&0&2&6&- \frac{123}{50}\\0&0&2&0&- \frac{27}{25}\end{bmatrix}.
+$$
+
+
+
+**Bước 8. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 3 cho $2$, được
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&2\\0&1&1&1&\frac{3}{100}\\0&0&1&3&- \frac{123}{100}\\0&0&2&0&- \frac{27}{25}\end{bmatrix}.
+$$
+
+
+
+**Bước 9. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-1)R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&2\\0&1&0&-2&\frac{63}{50}\\0&0&1&3&- \frac{123}{100}\\0&0&2&0&- \frac{27}{25}\end{bmatrix}.
+$$
+
+
+
+**Bước 10. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(-2)R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&2\\0&1&0&-2&\frac{63}{50}\\0&0&1&3&- \frac{123}{100}\\0&0&0&-6&\frac{69}{50}\end{bmatrix}.
+$$
+
+
+
+**Bước 11. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 4 cho $-6$, được
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&2\\0&1&0&-2&\frac{63}{50}\\0&0&1&3&- \frac{123}{100}\\0&0&0&1&- \frac{23}{100}\end{bmatrix}.
+$$
+
+
+
+**Bước 12. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(2)R_4$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&2\\0&1&0&0&\frac{4}{5}\\0&0&1&3&- \frac{123}{100}\\0&0&0&1&- \frac{23}{100}\end{bmatrix}.
+$$
+
+
+
+**Bước 13. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-3)R_4$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&2\\0&1&0&0&\frac{4}{5}\\0&0&1&0&- \frac{27}{50}\\0&0&0&1&- \frac{23}{100}\end{bmatrix}.
+$$
+
+
+
+**Bước 14. Đọc hệ số và kiểm tra.**
+
+Khối phải của RREF cho các hệ số theo thứ tự, nên
+
+
 
 $$
 p(x)=- \frac{23 x^{3}}{100} - \frac{27 x^{2}}{50} + \frac{4 x}{5} + 2.
 $$
 
- Thế từng hoành độ cho lại đúng tung độ đã cho. Tại $x=1.5$, $y\approx p(1.5)=\frac{967}{800}$.
+
+
+ Các hoành độ khác nhau nên ma trận Vandermonde khả nghịch; đa thức bậc không quá 3 này là duy nhất. Kiểm tra từng điểm: $p(0)=2$, $p(1)=\frac{203}{100}$, $p(2)=- \frac{2}{5}$, $p(-1)=\frac{89}{100}$.
+
+ Tại $x=1.5$, $y\approx p(1.5)=\frac{967}{800}$.
 
 </LoiGiai>
 

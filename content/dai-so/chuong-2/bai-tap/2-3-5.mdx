@@ -5,11 +5,49 @@ do_kho: vua
 tieu_de: "Phép nhân ma trận — bài 5"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.3.5"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.5 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho
+
+$$
+A = \left[ \begin{array}{rr} 1 & -1 \\ 0 & 1 \end{array} \right]
+$$
+
+,
+
+$$
+B = \left[ \begin{array}{rrr} 1 & 0 & -2 \\ 3 & 1 & 0 \end{array} \right]
+$$
+
+,
+
+$$
+C = \left[ \begin{array}{rr} 1 & 0 \\ 2 & 1 \\ 5 & 8 \end{array} \right]
+$$
+
+ và
+
+$$
+D = \left[ \begin{array}{rrr} 3 & -1 & 2 \\ 1 & 0 & 5 \end{array} \right]
+$$
+
+. Hãy kiểm tra các tính chất sau trong Định lý 2.3.1.
+
+**a.** $A(B - D) = AB - AD$
+
+**b.** $A(BC) = (AB)C$
+
+**c.** $(CD)^{T} = D^{T}C^{T}$
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-3-5-1" moTa="Đề gốc Nicholson bài 2.3.5, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -25,6 +63,7 @@ Exercise 2.3.5
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -42,13 +81,31 @@ Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự 
 
 <LoiGiai>
 
+**Cách làm.** Với $A$ cỡ $m\times n$, $B$ cỡ $n\times p$, tích $AB$ có cỡ $m\times p$ và $(AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$. Khi khai triển, giữ nguyên thứ tự các thừa số.
+
+**Bước 1. Thực hiện phép biến đổi.**
+
 Tính hai vế riêng biệt theo quy tắc hàng–cột.
 
-**a.** $A(B-D)=AB-AD=\begin{bmatrix}-4&0&1\\2&1&-5\end{bmatrix}$.
+**a.**
 
-**b.** $A(BC)=(AB)C=\begin{bmatrix}-14&-17\\5&1\end{bmatrix}$.
+**Bước 1. Lập luận và tính toán.**
 
-**c.** $(CD)^T=D^TC^T=\begin{bmatrix}3&7&23\\-1&-2&-5\\2&9&50\end{bmatrix}$.
+$A(B-D)=AB-AD=\begin{bmatrix}-4&0&1\\2&1&-5\end{bmatrix}$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$A(BC)=(AB)C=\begin{bmatrix}-14&-17\\5&1\end{bmatrix}$.
+
+**c.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$(CD)^T=D^TC^T=\begin{bmatrix}3&7&23\\-1&-2&-5\\2&9&50\end{bmatrix}$.
+
+**Bước 2. Lập luận và tính toán.**
 
 Các kết quả bằng nhau xác nhận từng tính chất; ở (c) thứ tự thừa số sau chuyển vị phải đảo lại.
 

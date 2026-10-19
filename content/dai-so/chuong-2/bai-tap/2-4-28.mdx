@@ -5,11 +5,33 @@ do_kho: vua
 tieu_de: "Ma trận nghịch đảo — bài 28"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.4.28"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.4.28 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $A$ là ma trận $n \times n$ và $I$ là ma trận đơn vị cấp $n \times n$.
+
+**a.** Nếu $A^{2} = 0$, hãy kiểm tra rằng $(I - A)^{-1} = I + A$.
+
+**b.** Nếu $A^{3} = 0$, hãy kiểm tra rằng $(I - A)^{-1} = I + A + A^{2}$.
+
+**c.** Tìm nghịch đảo của
+
+$$
+\left[ \begin{array}{rrr} 1 & 2 & -1 \\ 0 & 1 & 3 \\ 0 & 0 & 1 \end{array} \right]
+$$
+
+.
+
+**d.** Nếu $A^{n} = 0$, hãy tìm công thức của $(I - A)^{-1}$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-4-28-1" moTa="Đề gốc Nicholson bài 2.4.28, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -27,6 +49,7 @@ n×n identity matrix.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -43,11 +66,45 @@ Khi tìm nghịch đảo bằng khử hàng, làm cùng phép biến đổi trê
 
 <LoiGiai>
 
-**a.** $(I-A)(I+A)=I-A^2=I$ và tích ngược cũng bằng $I$. **b.** $(I-A)(I+A+A^2)=I-A^3=I$. **c.** Đặt ma trận đề là $I-N$; khi đó $N^3=0$. Vậy nghịch đảo là $I+N+N^2=\begin{bmatrix}1&-1&-1\\0&1&3\\0&0&1\end{bmatrix}$. **d.** Tổng hình học hữu hạn cho
+**Cách làm.** Theo định nghĩa, $B=A^{-1}$ khi $AB=BA=I$. Muốn khử $A$ ở bên trái thì nhân trái với $A^{-1}$; muốn khử ở bên phải thì nhân phải. Nghịch đảo tích đảo thứ tự: $(AB)^{-1}=B^{-1}A^{-1}$.
+
+Khi khai triển $(I-A)(I+A+\cdots+A^{k-1})$, mỗi hạng $A^j$ xuất hiện một lần dấu cộng và một lần dấu trừ. Chỉ còn $I-A^k$. Nếu $A^k=0$ thì tích bằng $I$, và tích ngược cũng vậy vì tất cả thừa số đều là đa thức của $A$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$(I-A)(I+A)=I-A^2=I$ và tích ngược cũng bằng $I$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$(I-A)(I+A+A^2)=I-A^3=I$.
+
+**c.**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Đặt ma trận đề là $I-N$; khi đó $N^3=0$.
+
+**Bước 2. Rút ra kết luận.**
+
+Vậy nghịch đảo là $I+N+N^2=\begin{bmatrix}1&-2&7\\0&1&-3\\0&0&1\end{bmatrix}$.
+
+**d.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Tổng hình học hữu hạn cho
+
+
 
 $$
 (I-A)^{-1}=I+A+\cdots+A^{n-1}\quad\text{khi }A^n=0.
 $$
+
+
 
  Nhân hai phía rút gọn thành $I-A^n=I$.
 

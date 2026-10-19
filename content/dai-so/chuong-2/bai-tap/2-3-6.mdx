@@ -5,11 +5,55 @@ do_kho: vua
 tieu_de: "Phép nhân ma trận — bài 6"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.3.6"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.6 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $A$ là ma trận $2 \times 2$.
+
+**a.** Nếu $A$ giao hoán với
+
+$$
+\left[ \begin{array}{rr} 0 & 1 \\ 0 & 0 \end{array} \right]
+$$
+
+, hãy chứng minh rằng
+
+$$
+A = \left[ \begin{array}{rr} a & b \\ 0 & a \end{array} \right]
+$$
+
+ với các số $a$ và $b$ nào đó.
+
+**b.** Nếu $A$ giao hoán với
+
+$$
+\left[ \begin{array}{rr} 0 & 0 \\ 1 & 0 \end{array} \right]
+$$
+
+, hãy chứng minh rằng
+
+$$
+A = \left[ \begin{array}{rr} a & 0 \\ c & a \end{array} \right]
+$$
+
+ với các số $a$ và $c$ nào đó.
+
+**c.** Chứng minh rằng $A$ giao hoán với mọi ma trận $2 \times 2$ khi và chỉ khi
+
+$$
+A = \left[ \begin{array}{rr} a & 0 \\ 0 & a \end{array} \right]
+$$
+
+ với một số $a$ nào đó.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-3-6-1" moTa="Đề gốc Nicholson bài 2.3.6, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -38,6 +82,7 @@ Exercise 2.3.6  Let A be a 2×2 matrix.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -54,7 +99,39 @@ Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự 
 
 <LoiGiai>
 
-Đặt $A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$. **a.** Với $E=\begin{bmatrix}0&1\\0&0\end{bmatrix}$, $AE=\begin{bmatrix}0&a\\0&c\end{bmatrix}$, $EA=\begin{bmatrix}c&d\\0&0\end{bmatrix}$. Đồng nhất cho $c=0,d=a$. **b.** Với $F=E^T$, so sánh $AF=\begin{bmatrix}b&0\\d&0\end{bmatrix}$ và $FA=\begin{bmatrix}0&0\\a&b\end{bmatrix}$ cho $b=0,d=a$. **c.** Nếu giao hoán với mọi ma trận thì giao hoán với cả $E,F$, nên $A=aI$. Chiều ngược lại: $(aI)X=aX=X(aI)$ với mọi $X$.
+**Cách làm.** Với $A$ cỡ $m\times n$, $B$ cỡ $n\times p$, tích $AB$ có cỡ $m\times p$ và $(AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$. Khi khai triển, giữ nguyên thứ tự các thừa số.
+
+Vì đẳng thức phải đúng với **mọi** ma trận, ta được chọn riêng $E,F$ để ép từng phần tử của $A$. Sau khi tìm dạng $aI$, vẫn cần kiểm tra dạng ấy giao hoán với một ma trận tùy ý; chỉ thử $E,F$ chưa đủ cho chiều ngược.
+
+**Bước 1. Thiết lập biểu thức.**
+
+Đặt $A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Với $E=\begin{bmatrix}0&1\\0&0\end{bmatrix}$, $AE=\begin{bmatrix}0&a\\0&c\end{bmatrix}$, $EA=\begin{bmatrix}c&d\\0&0\end{bmatrix}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Đồng nhất cho $c=0,d=a$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Với $F=E^T$, so sánh $AF=\begin{bmatrix}b&0\\d&0\end{bmatrix}$ và $FA=\begin{bmatrix}0&0\\a&b\end{bmatrix}$ cho $b=0,d=a$.
+
+**c.**
+
+**Bước 1. Xét giả thiết.**
+
+Nếu giao hoán với mọi ma trận thì giao hoán với cả $E,F$, nên $A=aI$.
+
+**Bước 2. Kiểm tra chiều ngược.**
+
+Chiều ngược lại: $(aI)X=aX=X(aI)$ với mọi $X$.
 
 </LoiGiai>
 

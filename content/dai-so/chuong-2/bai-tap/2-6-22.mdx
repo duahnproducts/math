@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Phép biến đổi tuyến tính — bài 22"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.6.22"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.6.22 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho các vector $\mathbf{w}$ và $\mathbf{x}$ thuộc $\mathbb{R}^n$, ký hiệu tích vô hướng của chúng là $\mathbf{w} \cdot \mathbf{x}$.
+
+**a.** Cho $\mathbf{w}$ thuộc $\mathbb{R}^n$, định nghĩa $T_{\mathbf{w}} : \mathbb{R}^n \to \mathbb{R}$ bởi $T_{\mathbf{w}}(\mathbf{x}) = \mathbf{w} \cdot \mathbf{x}$ với mọi $\mathbf{x}$ thuộc $\mathbb{R}^n$. Chứng minh rằng $T_{\mathbf{w}}$ là phép biến đổi tuyến tính.
+
+**b.** Chứng minh rằng mọi phép biến đổi tuyến tính $T : \mathbb{R}^n \to \mathbb{R}$ đều có dạng như ở ý (a), tức là $T = T_{\mathbf{w}}$ với một $\mathbf{w}$ nào đó thuộc $\mathbb{R}^n$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-6-22-1" moTa="Đề gốc Nicholson bài 2.6.22, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -25,6 +37,7 @@ their dot product by w·x.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -42,7 +55,33 @@ Cột thứ j của ma trận ánh xạ là ảnh của vector đơn vị thứ 
 
 <LoiGiai>
 
-**a.** Tích vô hướng phân phối và đồng nhất: $w\cdot(x+y)=w\cdot x+w\cdot y$, $w\cdot(ax)=a(w\cdot x)$. Vì vậy $T_w$ tuyến tính, có ma trận hàng $w^T$. **b.** Với mọi $T:\mathbb R^n\to\mathbb R$ tuyến tính, đặt $w_j=T(e_j)$. Khi đó $T(x)=\sum_jx_jT(e_j)=\sum_jw_jx_j=w\cdot x$. Vậy $T=T_w$ với $w=(w_1,\ldots,w_n)$.
+**Cách làm.** Tuyến tính nghĩa là $T(au+bv)=aT(u)+bT(v)$. Với vector cột, ma trận của $T$ là $[T(e_1)\ \cdots\ T(e_n)]$; ma trận của $S\circ T$ là $[S][T]$.
+
+Mọi vector $x$ có biểu diễn $x=\sum_jx_je_j$. Khi $T$ tuyến tính và nhận giá trị vô hướng, $T(x)=\sum_jx_jT(e_j)$ là một tổng các số thực. Chọn $w_j=T(e_j)$ sẽ biến tổng ấy thành tích vô hướng.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Tích vô hướng phân phối và đồng nhất: $w\cdot(x+y)=w\cdot x+w\cdot y$, $w\cdot(ax)=a(w\cdot x)$.
+
+**Bước 2. Giải thích điều kiện sử dụng.**
+
+Vì vậy $T_w$ tuyến tính, có ma trận hàng $w^T$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Với mọi $T:\mathbb R^n\to\mathbb R$ tuyến tính, đặt $w_j=T(e_j)$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Khi đó $T(x)=\sum_jx_jT(e_j)=\sum_jw_jx_j=w\cdot x$.
+
+**Bước 3. Rút ra kết luận.**
+
+Vậy $T=T_w$ với $w=(w_1,\ldots,w_n)$.
 
 </LoiGiai>
 

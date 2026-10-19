@@ -5,11 +5,67 @@ do_kho: vua
 tieu_de: "Phép nhân ma trận — bài 13"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.3.13"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.13 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Tính các biểu thức sau bằng phép nhân khối (mọi khối đều có kích thước $k \times k$).
+
+**a.**
+
+$$
+\left[ \begin{array}{rr} I & X \\ -Y & I \end{array} \right] \left[ \begin{array}{rr} I & 0 \\ Y & I \end{array} \right]
+$$
+
+
+
+**b.**
+
+$$
+\left[ \begin{array}{rr} I & X \\ 0 & I \end{array} \right] \left[ \begin{array}{rr} I & -X \\ 0 & I \end{array} \right]
+$$
+
+
+
+**c.**
+
+$$
+\left[ \begin{array}{cc} I & X \end{array} \right] \left[ \begin{array}{cc} I & X \end{array} \right]^{T}
+$$
+
+
+
+**d.**
+
+$$
+\left[ \begin{array}{cc} I & X^{T} \end{array} \right] \left[ \begin{array}{cc} -X & I \end{array} \right]^{T}
+$$
+
+
+
+**e.**
+
+$$
+\left[ \begin{array}{cc} I & X \\ 0 & -I \end{array} \right]^{n}
+$$
+
+ với mọi số nguyên $n \geq 1$.
+
+**f.**
+
+$$
+\left[ \begin{array}{cc} 0 & X \\ I & 0 \end{array} \right]^{n}
+$$
+
+ với mọi số nguyên $n \geq 1$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-3-13-1" moTa="Đề gốc Nicholson bài 2.3.13, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -30,6 +86,7 @@ multiplication (all blocks are k×k).
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -46,7 +103,47 @@ Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự 
 
 <LoiGiai>
 
-Nhân theo hàng–cột khối, giữ thứ tự của $X,Y$. **a.** $\begin{bmatrix}I+XY&X\\0&I\end{bmatrix}$. **b.** $I_{2k}$. **c.** $I+XX^T$. **d.** $-X^T+X^T=0$. **e.** Bình phương ma trận đã cho bằng $I_{2k}$; lũy thừa chẵn là $I_{2k}$, lẻ là ma trận ban đầu. **f.** Nếu $F=\begin{bmatrix}0&X\\I&0\end{bmatrix}$ thì $F^2=\operatorname{diag}(X,X)$; do đó $F^{2r}=\operatorname{diag}(X^r,X^r)$ và $F^{2r+1}=\begin{bmatrix}0&X^{r+1}\\X^r&0\end{bmatrix}$.
+**Cách làm.** Với $A$ cỡ $m\times n$, $B$ cỡ $n\times p$, tích $AB$ có cỡ $m\times p$ và $(AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$. Khi khai triển, giữ nguyên thứ tự các thừa số.
+
+**Bước 1. Thực hiện phép biến đổi.**
+
+Nhân theo hàng–cột khối, giữ thứ tự của $X,Y$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$\begin{bmatrix}I+XY&X\\0&I\end{bmatrix}$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$I_{2k}$.
+
+**c.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$I+XX^T$.
+
+**d.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$-X^T+X^T=0$.
+
+**e.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Bình phương ma trận đã cho bằng $I_{2k}$; lũy thừa chẵn là $I_{2k}$, lẻ là ma trận ban đầu.
+
+**f.**
+
+**Bước 1. Xét giả thiết.**
+
+Nếu $F=\begin{bmatrix}0&X\\I&0\end{bmatrix}$ thì $F^2=\operatorname{diag}(X,X)$; do đó $F^{2r}=\operatorname{diag}(X^r,X^r)$ và $F^{2r+1}=\begin{bmatrix}0&X^{r+1}\\X^r&0\end{bmatrix}$.
 
 </LoiGiai>
 

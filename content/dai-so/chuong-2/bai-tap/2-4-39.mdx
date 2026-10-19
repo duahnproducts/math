@@ -5,11 +5,27 @@ do_kho: vua
 tieu_de: "Ma trận nghịch đảo — bài 39"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.4.39"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.4.39 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Ma trận $n \times n$, ký hiệu là $P$, được gọi là lũy đẳng nếu $P^{2} = P$. Chứng minh rằng:
+
+**a.** $I$ là ma trận lũy đẳng khả nghịch duy nhất.
+
+**b.** $P$ là ma trận lũy đẳng khi và chỉ khi $I - 2P$ là nghịch đảo của chính nó.
+
+**c.** $U$ là nghịch đảo của chính nó khi và chỉ khi $U = I - 2P$ với một ma trận lũy đẳng $P$ nào đó.
+
+**d.** $I - aP$ khả nghịch với mọi $a \neq 1$, và $(I - aP)^{-1} = I + \left(\frac{a}{1 - a}\right)^{P}$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-4-39-1" moTa="Đề gốc Nicholson bài 2.4.39, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -31,6 +47,7 @@ d.  I −aP is invertible fora  any a̸ = 1, and that
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -47,11 +64,39 @@ Khi tìm nghịch đảo bằng khử hàng, làm cùng phép biến đổi trê
 
 <LoiGiai>
 
-**a.** $P^2=P$ và $P$ khả nghịch cho $P=I$ sau khi nhân với $P^{-1}$; $I$ hiển nhiên lũy đẳng. **b.** $(I-2P)^2=I+4(P^2-P)$ bằng $I$ khi và chỉ khi $P^2=P$. **c.** Nếu $U^2=I$, đặt $P=(I-U)/2$ thì $P^2=P$; chiều ngược dùng (b). **d.** Với $a\ne1$, khai triển và dùng $P^2=P$ xác nhận
+**Cách làm.** Theo định nghĩa, $B=A^{-1}$ khi $AB=BA=I$. Muốn khử $A$ ở bên trái thì nhân trái với $A^{-1}$; muốn khử ở bên phải thì nhân phải. Nghịch đảo tích đảo thứ tự: $(AB)^{-1}=B^{-1}A^{-1}$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$P^2=P$ và $P$ khả nghịch cho $P=I$ sau khi nhân với $P^{-1}$; $I$ hiển nhiên lũy đẳng.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$(I-2P)^2=I+4(P^2-P)$ bằng $I$ khi và chỉ khi $P^2=P$.
+
+**c.**
+
+**Bước 1. Xét giả thiết.**
+
+Nếu $U^2=I$, đặt $P=(I-U)/2$ thì $P^2=P$; chiều ngược dùng (b).
+
+**d.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Với $a\ne1$, khai triển và dùng $P^2=P$ xác nhận
+
+
 
 $$
 (I-aP)\left(I+\frac{a}{1-a}P\right)=I.
 $$
+
+
 
  Tích theo thứ tự ngược cũng bằng $I$, nên đây là công thức nghịch đảo.
 

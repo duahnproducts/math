@@ -5,11 +5,25 @@ do_kho: vua
 tieu_de: "Bài bổ sung 2.4"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.4"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.4 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Giả sử hệ phương trình tuyến tính $A\mathbf{x} = \mathbf{b}$ có ít nhất hai nghiệm phân biệt $\mathbf{y}$ và $\mathbf{z}$.
+
+**a.** Chứng minh rằng $\mathbf{x}_{k} = \mathbf{y} + k(\mathbf{y} - \mathbf{z})$ là một nghiệm với mọi $k$.
+
+**b.** Chứng minh rằng $\mathbf{x}_{k} = \mathbf{x}_{m}$ kéo theo $k = m$. [Gợi ý: Xem Ví dụ 2.1.7.]
+
+**c.** Suy ra rằng $A\mathbf{x} = \mathbf{b}$ có vô hạn nghiệm.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-0-4-1" moTa="Đề gốc Nicholson bài 2.4, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -30,6 +44,7 @@ equations has at least two distinct solutions y and z.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -46,7 +61,31 @@ Với đẳng thức tổng quát, khai triển có giữ thứ tự; với mệ
 
 <LoiGiai>
 
-**a.** $Ax_k=Ay+k(Ay-Az)=b+k(b-b)=b$. **b.** Nếu $x_k=x_m$ thì $(k-m)(y-z)=0$. Vì $y\ne z$, một thành phần của $y-z$ khác 0, buộc $k=m$. **c.** Mỗi số thực $k$ cho một nghiệm, và (b) bảo đảm các nghiệm khác nhau. Vì có vô hạn số thực, hệ có vô hạn nghiệm.
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$Ax_k=Ay+k(Ay-Az)=b+k(b-b)=b$.
+
+**b.**
+
+**Bước 1. Xét giả thiết.**
+
+Nếu $x_k=x_m$ thì $(k-m)(y-z)=0$.
+
+**Bước 2. Giải thích điều kiện sử dụng.**
+
+Vì $y\ne z$, một thành phần của $y-z$ khác 0, buộc $k=m$.
+
+**c.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Mỗi số thực $k$ cho một nghiệm, và (b) bảo đảm các nghiệm khác nhau.
+
+**Bước 2. Giải thích điều kiện sử dụng.**
+
+Vì có vô hạn số thực, hệ có vô hạn nghiệm.
 
 </LoiGiai>
 

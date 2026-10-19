@@ -111,12 +111,108 @@ m,n là hai chỉ số bất kỳ trong đuôi, không chỉ hai chỉ số liê
 
 Phân loại đơn điệu, bị chặn và hội tụ của 1/n, 1−1/n, n và (−1)ⁿ/n. **Gợi ý:** dãy cuối hội tụ dù không đơn điệu.
 
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Xét $1/n$, $1-1/n$, $n$ và $(-1)^n/n$ với $n\ge1$.
+
+**Bước 2. Xác định điều cần tìm.**
+
+Phân loại đơn điệu, bị chặn và hội tụ.
+
+**Bước 3. Chọn kiến thức và lý do.**
+
+So hai số hạng liên tiếp để xét đơn điệu; tìm cận; dùng giới hạn đã biết để xét hội tụ.
+
+**Bước 4. Giải từng bước.**
+
+$1/n$ giảm nghiêm, $0<1/n\le1$, và tiến đến 0. $1-1/n$ tăng nghiêm, $0\le1-1/n<1$, và tiến đến 1. Dãy $n$ tăng nghiêm, có cận dưới 1 nhưng không bị chặn trên, nên không hội tụ hữu hạn (tiến tới $+\infty$). Dãy $(-1)^n/n$ không đơn điệu: $-1<1/2$ nhưng $1/2>-1/3$; nó nằm trong $[-1,1]$ và tiến đến 0 do độ lớn bằng $1/n$.
+
+**Bước 5. Kiểm tra kết quả.**
+
+“Bị chặn” cần cả cận trên và cận dưới. Ví dụ cuối cho thấy hội tụ không đòi đơn điệu.
+
+**Bước 6. Cách tự làm lại.**
+
+Kiểm ba tính chất độc lập; không suy ngược đơn điệu từ hội tụ.
+
+</LoiGiai>
+
 ### VỪA - Truy hồi
 
 Cho a₁=0 và $a_{n+1}=(a_n+3)/2$. Chứng minh 0≤aₙ&lt;3, dãy tăng, rồi tìm giới hạn. **Gợi ý:** hiệu là (3−aₙ)/2; không viết phương trình cho L trước khi chứng minh hội tụ.
 
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+$a_1=0$, $a_{n+1}=(a_n+3)/2$.
+
+**Bước 2. Xác định điều cần tìm.**
+
+Chứng minh $0\le a_n<3$, dãy tăng và tìm giới hạn.
+
+**Bước 3. Chọn kiến thức và lý do.**
+
+Chứng minh bị chặn và đơn điệu trước; định lý hội tụ đơn điệu mới cho phép đặt giới hạn $L$.
+
+**Bước 4. Giải từng bước.**
+
+Khởi đầu $0\le a_1<3$. Nếu $0\le a_n<3$, thì $3/2\le(a_n+3)/2<3$, nên tính chất đúng cho $n+1$. Mặt khác
+
+$$
+a_{n+1}-a_n=\frac{3-a_n}{2}>0.
+$$
+
+ Dãy tăng và bị chặn trên bởi 3, nên hội tụ đến một $L$. Lấy giới hạn trong truy hồi: $L=(L+3)/2$, suy ra $L=3$.
+
+**Bước 5. Kiểm tra kết quả.**
+
+Công thức kiểm tra độc lập là $a_n=3(1-2^{-(n-1)})$; ở $n=1$ bằng 0 và thỏa đúng truy hồi. Nó cũng tiến đến 3 từ phía dưới.
+
+**Bước 6. Cách tự làm lại.**
+
+Không giải phương trình cố định trước rồi coi đó là bằng chứng hội tụ; chứng minh tồn tại giới hạn trước.
+
+</LoiGiai>
+
 ### KHÓ - Một tiêu chuẩn Cauchy hữu ích
 
 Giả sử $|a_{n+1}-a_n|\leq2^{-n}$ với mọi n≥1. Chứng minh (aₙ) Cauchy, từ đó hội tụ trong R. **Gợi ý:** với m>n, dùng tam giác cho |aₘ−aₙ|≤∑ từ k=n đến m−1 của 2⁻ᵏ&lt;2¹⁻ⁿ. Tổng hữu hạn này tính được bằng công thức cấp số nhân; không cần lý thuyết chuỗi vô hạn.
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+$|a_{n+1}-a_n|\le2^{-n}$ với mọi $n\ge1$.
+
+**Bước 2. Xác định điều cần tìm.**
+
+Chứng minh dãy Cauchy và suy hội tụ trong $\mathbb R$.
+
+**Bước 3. Chọn kiến thức và lý do.**
+
+Khoảng cách giữa hai số hạng xa nhau bị chặn bởi tổng các bước nhảy liên tiếp.
+
+**Bước 4. Giải từng bước.**
+
+Với $m>n$, viết $a_m-a_n=\sum_{k=n}^{m-1}(a_{k+1}-a_k)$. Tam giác và tổng cấp số nhân hữu hạn cho
+
+$$
+|a_m-a_n|\le\sum_{k=n}^{m-1}2^{-k}=2^{1-n}(1-2^{-(m-n)})<2^{1-n}.
+$$
+
+ Cho $\varepsilon>0$, chọn số nguyên $N\ge1$ sao cho $2^{1-N}<\varepsilon$. Khi $m,n>N$, đổi vai nếu cần để $m>n$, rồi áp dụng cận trên; nếu $m=n$ thì khoảng cách bằng 0. Vậy dãy Cauchy. Tính đầy đủ của $\mathbb R$ cho dãy hội tụ.
+
+**Bước 5. Kiểm tra kết quả.**
+
+Cận $2^{1-n}$ không phụ thuộc $m$, nên khống chế cùng lúc mọi cặp chỉ số đủ lớn. Chỉ dùng tổng hữu hạn, không cần giả định trước chuỗi vô hạn hội tụ.
+
+**Bước 6. Cách tự làm lại.**
+
+Để chứng minh Cauchy từ cận bước nhảy, cộng dồn bằng tam giác rồi tìm cận chỉ phụ thuộc chỉ số nhỏ hơn.
+
+</LoiGiai>
 
 Nguồn kiến thức: Kenneth A. Ross, *Elementary Analysis: The Theory of Calculus*, ấn bản thứ hai, 2013, §10. Bài giảng diễn đạt bằng lời riêng; ví dụ và bài tập do người biên soạn bổ sung.

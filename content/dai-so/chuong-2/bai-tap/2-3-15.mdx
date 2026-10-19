@@ -5,11 +5,27 @@ do_kho: vua
 tieu_de: "Phép nhân ma trận — bài 15"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.3.15"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.15 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+**a.** Nếu
+
+$$
+U = \left[ \begin{array}{rr} 1 & 2 \\ 0 & -1 \end{array} \right]
+$$
+
+ và $AU = 0$, hãy chứng minh rằng $A = 0$.
+
+**b.** Cho $U$ có tính chất: $AU = 0$ kéo theo $A = 0$. Nếu $PU = QU$, hãy chứng minh rằng $P = Q$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-3-15-1" moTa="Đề gốc Nicholson bài 2.3.15, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -28,6 +44,7 @@ Exercise 2.3.15
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -44,7 +61,29 @@ Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự 
 
 <LoiGiai>
 
-**a.** Nhân trực tiếp thấy $U^2=I$. Từ $AU=0$, nhân phải với $U$ được $A=AU^2=0$. **b.** $PU=QU$ suy ra $(P-Q)U=0$. Áp dụng đúng giả thiết về $U$ cho ma trận $P-Q$, được $P-Q=0$, tức $P=Q$.
+**Cách làm.** Với $A$ cỡ $m\times n$, $B$ cỡ $n\times p$, tích $AB$ có cỡ $m\times p$ và $(AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$. Khi khai triển, giữ nguyên thứ tự các thừa số.
+
+Bước nhân thêm $U$ hợp lệ vì $U^2=I$ được kiểm tra từ dữ kiện cụ thể. Với ma trận bất kỳ, $AU=0$ không cho phép bỏ $U$; điều quyết định ở đây chính là có phép nhân hoàn tác.
+
+**a.**
+
+**Bước 1. Thực hiện phép biến đổi.**
+
+Nhân trực tiếp thấy $U^2=I$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Từ $AU=0$, nhân phải với $U$ được $A=AU^2=0$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$PU=QU$ suy ra $(P-Q)U=0$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Áp dụng đúng giả thiết về $U$ cho ma trận $P-Q$, được $P-Q=0$, tức $P=Q$.
 
 </LoiGiai>
 

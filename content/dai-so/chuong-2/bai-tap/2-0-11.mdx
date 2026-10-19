@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Bài bổ sung 2.11"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.11"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.11 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $E$ và $F$ là các ma trận sơ cấp thu được từ ma trận đơn vị bằng cách cộng các bội của hàng $k$ vào các hàng $p$ và $q$. Nếu $k \neq p$ và $k \neq q$, hãy chứng minh rằng $EF = FE$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-0-11-1" moTa="Đề gốc Nicholson bài 2.11, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -23,6 +31,7 @@ row k to rows p and q.  If  k̸ = p and  k̸ = q, show thatEF = FE.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -40,11 +49,25 @@ Với đẳng thức tổng quát, khai triển có giữ thứ tự; với mệ
 
 <LoiGiai>
 
-Viết $E=I+aI_{pk}$, $F=I+bI_{qk}$. Vì $k\ne p,q$, công thức nhân đơn vị ma trận cho $I_{pk}I_{qk}=0=I_{qk}I_{pk}$. Do đó
+**Bước 1. Thiết lập biểu thức.**
+
+Viết $E=I+aI_{pk}$, $F=I+bI_{qk}$.
+
+**Bước 2. Giải thích điều kiện sử dụng.**
+
+Vì $k\ne p,q$, công thức nhân đơn vị ma trận cho $I_{pk}I_{qk}=0=I_{qk}I_{pk}$.
+
+**Bước 3. Rút ra kết luận.**
+
+Do đó
+
+
 
 $$
 EF=I+aI_{pk}+bI_{qk}=FE.
 $$
+
+
 
  Kết quả vẫn đúng nếu $p=q$: khi ấy hai phép cộng bội cùng một hàng nguồn vào cùng một hàng đích chỉ cộng các hệ số.
 

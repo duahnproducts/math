@@ -5,11 +5,45 @@ do_kho: vua
 tieu_de: "Định thức và ma trận nghịch đảo — bài 20"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.2.20"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.20 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Trong mỗi trường hợp, chứng minh mệnh đề hoặc đưa ra một ví dụ cho thấy mệnh đề sai:
+
+**a.** Nếu $\text{adj} A$ tồn tại thì $A$ khả nghịch.
+
+**b.** Nếu $A$ khả nghịch và $\text{adj} A = A^{-1}$ thì $\det A = 1$.
+
+**c.** $\det (AB) = \det (B^{T}A)$.
+
+**d.** Nếu $\det A \neq 0$ và $AB = AC$ thì $B = C$.
+
+**e.** Nếu $A^{T} = -A$ thì $\det A = -1$.
+
+**f.** Nếu $\text{adj} A = 0$ thì $A = 0$.
+
+**g.** Nếu $A$ khả nghịch thì $\text{adj} A$ khả nghịch.
+
+**h.** Nếu $A$ có một hàng toàn số 0 thì $\text{adj} A$ cũng có một hàng như vậy.
+
+**i.** $\det (A^{T}A) > 0$ với mọi ma trận vuông $A$.
+
+**j.** $\det (I + A) = 1 + \det A$.
+
+**k.** Nếu $AB$ khả nghịch thì $A$ và $B$ khả nghịch.
+
+**l.** Nếu $\det A = 1$ thì $\text{adj} A = A$.
+
+**m.** Nếu $A$ khả nghịch và $\det A = d$ thì $\text{adj} A = d A^{-1}$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-2-20-1" moTa="Đề gốc Nicholson bài 3.2.20, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -47,6 +81,7 @@ or give an example showing that it is false:
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -63,7 +98,85 @@ Dùng định thức của tích và công thức nghịch đảo qua adjugate k
 
 <LoiGiai>
 
-**a. Sai:** mọi ma trận vuông có adjugate, kể cả $0$. **b. Đúng:** $\operatorname{adj}A=(\det A)A^{-1}=A^{-1}$, nhân $A$ được $(\det A)I=I$. **c. Đúng:** hai vế cùng bằng $\det A\det B$. **d. Đúng:** $\det A\ne0$ nên nhân $A^{-1}$ khử $A$. **e. Sai:** $A=0$ phản đối xứng nhưng định thức 0. **f. Sai:** $A=\operatorname{diag}(1,0,0)$ có mọi minor cấp 2 bằng 0, nên adj bằng 0 nhưng $A\ne0$. **g. Đúng:** adj bằng số khác 0 nhân $A^{-1}$. **h. Sai:** $A=\begin{bmatrix}0&0\\1&1\end{bmatrix}$ có adj $\begin{bmatrix}1&0\\-1&0\end{bmatrix}$, không hàng nào toàn 0. **i. Sai:** $A=0$ cho định thức 0; công thức đúng là $\det(A^TA)=(\det A)^2\ge0$. **j. Sai:** $A=I_2$ cho 4 khác 2. **k. Đúng:** $\det A\det B\ne0$ nên cả hai khác 0. **l. Sai:** $A=\operatorname{diag}(2,1/2)$ có adj $\operatorname{diag}(1/2,2)\ne A$. **m. Đúng:** công thức nghịch đảo qua adjugate nhân với $d$.
+**Cách làm.** Dùng $\det(AB)=\det A\det B$, $\det A^T=\det A$, $\det(cA)=c^n\det A$ ở cấp $n$. Khi $\det A\ne0$, $A^{-1}=\operatorname{adj}A/\det A$; adjugate là bảng phần bù đã chuyển vị.
+
+**a. Sai:**
+
+**Bước 1. Lập luận và tính toán.**
+
+mọi ma trận vuông có adjugate, kể cả $0$.
+
+**b. Đúng:**
+
+**Bước 1. Lập luận và tính toán.**
+
+$\operatorname{adj}A=(\det A)A^{-1}=A^{-1}$, nhân $A$ được $(\det A)I=I$.
+
+**c. Đúng:**
+
+**Bước 1. Lập luận và tính toán.**
+
+hai vế cùng bằng $\det A\det B$.
+
+**d. Đúng:**
+
+**Bước 1. Lập luận và tính toán.**
+
+$\det A\ne0$ nên nhân $A^{-1}$ khử $A$.
+
+**e. Sai:**
+
+**Bước 1. Lập luận và tính toán.**
+
+$A=0$ phản đối xứng nhưng định thức 0.
+
+**f. Sai:**
+
+**Bước 1. Lập luận và tính toán.**
+
+$A=\operatorname{diag}(1,0,0)$ có mọi minor cấp 2 bằng 0, nên adj bằng 0 nhưng $A\ne0$.
+
+**g. Đúng:**
+
+**Bước 1. Lập luận và tính toán.**
+
+adj bằng số khác 0 nhân $A^{-1}$.
+
+**h. Sai:**
+
+**Bước 1. Lập luận và tính toán.**
+
+$A=\begin{bmatrix}0&0\\1&1\end{bmatrix}$ có adj $\begin{bmatrix}1&0\\-1&0\end{bmatrix}$, không hàng nào toàn 0.
+
+**i. Sai:**
+
+**Bước 1. Lập luận và tính toán.**
+
+$A=0$ cho định thức 0; công thức đúng là $\det(A^TA)=(\det A)^2\ge0$.
+
+**j. Sai:**
+
+**Bước 1. Lập luận và tính toán.**
+
+$A=I_2$ cho 4 khác 2.
+
+**k. Đúng:**
+
+**Bước 1. Lập luận và tính toán.**
+
+$\det A\det B\ne0$ nên cả hai khác 0.
+
+**l. Sai:**
+
+**Bước 1. Lập luận và tính toán.**
+
+$A=\operatorname{diag}(2,1/2)$ có adj $\operatorname{diag}(1/2,2)\ne A$.
+
+**m. Đúng:**
+
+**Bước 1. Lập luận và tính toán.**
+
+công thức nghịch đảo qua adjugate nhân với $d$.
 
 </LoiGiai>
 

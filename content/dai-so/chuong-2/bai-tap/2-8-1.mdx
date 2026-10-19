@@ -5,11 +5,51 @@ do_kho: vua
 tieu_de: "Ứng dụng: mô hình kinh tế vào–ra — bài 1"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.8.1"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.8.1 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Tìm các cơ cấu giá cân bằng có thể có khi các ma trận đầu vào–đầu ra là:
+
+**a.**
+
+$$
+\left[ \begin{array}{rrr} 0.1 & 0.2 & 0.3 \\ 0.6 & 0.2 & 0.3 \\ 0.3 & 0.6 & 0.4 \end{array} \right]
+$$
+
+
+
+**b.**
+
+$$
+\left[ \begin{array}{rrr} 0.5 & 0 & 0.5 \\ 0.1 & 0.9 & 0.2 \\ 0.4 & 0.1 & 0.3 \end{array} \right]
+$$
+
+
+
+**c.**
+
+$$
+\left[ \begin{array}{rrrr} 0.3 & 0.1 & 0.1 & 0.2 \\ 0.2 & 0.3 & 0.1 & 0 \\ 0.3 & 0.3 & 0.2 & 0.3 \\ 0.2 & 0.3 & 0.6 & 0.5 \end{array} \right]
+$$
+
+
+
+**d.**
+
+$$
+\left[ \begin{array}{rrrr} 0.5 & 0 & 0.1 & 0.1 \\ 0.2 & 0.7 & 0 & 0.1 \\ 0.1 & 0.2 & 0.8 & 0.2 \\ 0.2 & 0.1 & 0.1 & 0.6 \end{array} \right]
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-8-1-1" moTa="Đề gốc Nicholson bài 2.8.1, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -30,6 +70,7 @@ tures when the input-output matrices are:
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -46,35 +87,925 @@ Tổng cột của ma trận stochastic bằng 1. Để tìm giá tương đối
 
 <LoiGiai>
 
-**a.** Cân bằng đòi hỏi $(I-E)p=0$. Khử hệ này, rồi chọn tổng các giá bằng 1 cho
+**Cách làm.** Cơ cấu giá cân bằng thỏa $Ep=p$, tức $(I-E)p=0$. Với mô hình mở, điều kiện cần kiểm tra là $I-E$ khả nghịch và $(I-E)^{-1}$ có các ô không âm.
+
+**a.** **Bước 1. Viết đủ điều kiện phân bố dừng.**
+
+Giải $Ps=s$, tức $(P-I)s=0$, kèm phương trình $s_1+\cdots+s_n=1$. Ma trận ghép của **cả hai** điều kiện:
+
+
+
+$$
+\begin{bmatrix}- \frac{9}{10}&\frac{1}{5}&\frac{3}{10}&0\\\frac{3}{5}&- \frac{4}{5}&\frac{3}{10}&0\\\frac{3}{10}&\frac{3}{5}&- \frac{3}{5}&0\\1&1&1&1\end{bmatrix}.
+$$
+
+
+
+**Bước 2. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 1 cho $- \frac{9}{10}$, được
+
+
+
+$$
+\begin{bmatrix}1&- \frac{2}{9}&- \frac{1}{3}&0\\\frac{3}{5}&- \frac{4}{5}&\frac{3}{10}&0\\\frac{3}{10}&\frac{3}{5}&- \frac{3}{5}&0\\1&1&1&1\end{bmatrix}.
+$$
+
+
+
+**Bước 3. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(- \frac{3}{5})R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&- \frac{2}{9}&- \frac{1}{3}&0\\0&- \frac{2}{3}&\frac{1}{2}&0\\\frac{3}{10}&\frac{3}{5}&- \frac{3}{5}&0\\1&1&1&1\end{bmatrix}.
+$$
+
+
+
+**Bước 4. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(- \frac{3}{10})R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&- \frac{2}{9}&- \frac{1}{3}&0\\0&- \frac{2}{3}&\frac{1}{2}&0\\0&\frac{2}{3}&- \frac{1}{2}&0\\1&1&1&1\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(-1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&- \frac{2}{9}&- \frac{1}{3}&0\\0&- \frac{2}{3}&\frac{1}{2}&0\\0&\frac{2}{3}&- \frac{1}{2}&0\\0&\frac{11}{9}&\frac{4}{3}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 6. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $- \frac{2}{3}$, được
+
+
+
+$$
+\begin{bmatrix}1&- \frac{2}{9}&- \frac{1}{3}&0\\0&1&- \frac{3}{4}&0\\0&\frac{2}{3}&- \frac{1}{2}&0\\0&\frac{11}{9}&\frac{4}{3}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 7. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(\frac{2}{9})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{1}{2}&0\\0&1&- \frac{3}{4}&0\\0&\frac{2}{3}&- \frac{1}{2}&0\\0&\frac{11}{9}&\frac{4}{3}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 8. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(- \frac{2}{3})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{1}{2}&0\\0&1&- \frac{3}{4}&0\\0&0&0&0\\0&\frac{11}{9}&\frac{4}{3}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 9. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(- \frac{11}{9})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{1}{2}&0\\0&1&- \frac{3}{4}&0\\0&0&0&0\\0&0&\frac{9}{4}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 10. Đưa trụ khác 0 lên.**
+
+$R_3\leftrightarrow R_4$:
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{1}{2}&0\\0&1&- \frac{3}{4}&0\\0&0&\frac{9}{4}&1\\0&0&0&0\end{bmatrix}.
+$$
+
+
+
+**Bước 11. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 3 cho $\frac{9}{4}$, được
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{1}{2}&0\\0&1&- \frac{3}{4}&0\\0&0&1&\frac{4}{9}\\0&0&0&0\end{bmatrix}.
+$$
+
+
+
+**Bước 12. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(\frac{1}{2})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&\frac{2}{9}\\0&1&- \frac{3}{4}&0\\0&0&1&\frac{4}{9}\\0&0&0&0\end{bmatrix}.
+$$
+
+
+
+**Bước 13. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(\frac{3}{4})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&\frac{2}{9}\\0&1&0&\frac{1}{3}\\0&0&1&\frac{4}{9}\\0&0&0&0\end{bmatrix}.
+$$
+
+
+
+**Bước 14. Đọc và kiểm tra phân bố.**
+
+
+
+$$
+s=\begin{bmatrix}\frac{2}{9}\\\frac{1}{3}\\\frac{4}{9}\end{bmatrix}.
+$$
+
+
+
+ Mọi thành phần không âm, tổng bằng 1; nhân trực tiếp cho
+
+
+
+$$
+Ps=\begin{bmatrix}\frac{2}{9}\\\frac{1}{3}\\\frac{4}{9}\end{bmatrix}=s.
+$$
+
+
+
+ Ký hiệu phân bố vừa tìm là $p_0$. Mọi giá cân bằng theo tỷ lệ ấy:
+
+
 
 $$
 p_0=\begin{bmatrix}\frac{2}{9}\\\frac{1}{3}\\\frac{4}{9}\end{bmatrix}.
 $$
 
+
+
  Mọi cơ cấu giá dương là $p=tp_0$, $t>0$; thế trực tiếp cho $Ep_0=p_0$. Nếu cho phép cơ cấu giá không âm bằng 0, thêm $t=0$.
 
-**b.** Cân bằng đòi hỏi $(I-E)p=0$. Khử hệ này, rồi chọn tổng các giá bằng 1 cho
+**b.** **Bước 1. Viết đủ điều kiện phân bố dừng.**
+
+Giải $Ps=s$, tức $(P-I)s=0$, kèm phương trình $s_1+\cdots+s_n=1$. Ma trận ghép của **cả hai** điều kiện:
+
+
+
+$$
+\begin{bmatrix}- \frac{1}{2}&0&\frac{1}{2}&0\\\frac{1}{10}&- \frac{1}{10}&\frac{1}{5}&0\\\frac{2}{5}&\frac{1}{10}&- \frac{7}{10}&0\\1&1&1&1\end{bmatrix}.
+$$
+
+
+
+**Bước 2. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 1 cho $- \frac{1}{2}$, được
+
+
+
+$$
+\begin{bmatrix}1&0&-1&0\\\frac{1}{10}&- \frac{1}{10}&\frac{1}{5}&0\\\frac{2}{5}&\frac{1}{10}&- \frac{7}{10}&0\\1&1&1&1\end{bmatrix}.
+$$
+
+
+
+**Bước 3. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(- \frac{1}{10})R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&-1&0\\0&- \frac{1}{10}&\frac{3}{10}&0\\\frac{2}{5}&\frac{1}{10}&- \frac{7}{10}&0\\1&1&1&1\end{bmatrix}.
+$$
+
+
+
+**Bước 4. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(- \frac{2}{5})R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&-1&0\\0&- \frac{1}{10}&\frac{3}{10}&0\\0&\frac{1}{10}&- \frac{3}{10}&0\\1&1&1&1\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(-1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&-1&0\\0&- \frac{1}{10}&\frac{3}{10}&0\\0&\frac{1}{10}&- \frac{3}{10}&0\\0&1&2&1\end{bmatrix}.
+$$
+
+
+
+**Bước 6. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $- \frac{1}{10}$, được
+
+
+
+$$
+\begin{bmatrix}1&0&-1&0\\0&1&-3&0\\0&\frac{1}{10}&- \frac{3}{10}&0\\0&1&2&1\end{bmatrix}.
+$$
+
+
+
+**Bước 7. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(- \frac{1}{10})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&-1&0\\0&1&-3&0\\0&0&0&0\\0&1&2&1\end{bmatrix}.
+$$
+
+
+
+**Bước 8. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(-1)R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&-1&0\\0&1&-3&0\\0&0&0&0\\0&0&5&1\end{bmatrix}.
+$$
+
+
+
+**Bước 9. Đưa trụ khác 0 lên.**
+
+$R_3\leftrightarrow R_4$:
+
+
+
+$$
+\begin{bmatrix}1&0&-1&0\\0&1&-3&0\\0&0&5&1\\0&0&0&0\end{bmatrix}.
+$$
+
+
+
+**Bước 10. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 3 cho $5$, được
+
+
+
+$$
+\begin{bmatrix}1&0&-1&0\\0&1&-3&0\\0&0&1&\frac{1}{5}\\0&0&0&0\end{bmatrix}.
+$$
+
+
+
+**Bước 11. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(1)R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&\frac{1}{5}\\0&1&-3&0\\0&0&1&\frac{1}{5}\\0&0&0&0\end{bmatrix}.
+$$
+
+
+
+**Bước 12. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(3)R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&\frac{1}{5}\\0&1&0&\frac{3}{5}\\0&0&1&\frac{1}{5}\\0&0&0&0\end{bmatrix}.
+$$
+
+
+
+**Bước 13. Đọc và kiểm tra phân bố.**
+
+
+
+$$
+s=\begin{bmatrix}\frac{1}{5}\\\frac{3}{5}\\\frac{1}{5}\end{bmatrix}.
+$$
+
+
+
+ Mọi thành phần không âm, tổng bằng 1; nhân trực tiếp cho
+
+
+
+$$
+Ps=\begin{bmatrix}\frac{1}{5}\\\frac{3}{5}\\\frac{1}{5}\end{bmatrix}=s.
+$$
+
+
+
+ Ký hiệu phân bố vừa tìm là $p_0$. Mọi giá cân bằng theo tỷ lệ ấy:
+
+
 
 $$
 p_0=\begin{bmatrix}\frac{1}{5}\\\frac{3}{5}\\\frac{1}{5}\end{bmatrix}.
 $$
 
+
+
  Mọi cơ cấu giá dương là $p=tp_0$, $t>0$; thế trực tiếp cho $Ep_0=p_0$. Nếu cho phép cơ cấu giá không âm bằng 0, thêm $t=0$.
 
-**c.** Cân bằng đòi hỏi $(I-E)p=0$. Khử hệ này, rồi chọn tổng các giá bằng 1 cho
+**c.** **Bước 1. Viết đủ điều kiện phân bố dừng.**
+
+Giải $Ps=s$, tức $(P-I)s=0$, kèm phương trình $s_1+\cdots+s_n=1$. Ma trận ghép của **cả hai** điều kiện:
+
+
+
+$$
+\begin{bmatrix}- \frac{7}{10}&\frac{1}{10}&\frac{1}{10}&\frac{1}{5}&0\\\frac{1}{5}&- \frac{7}{10}&\frac{1}{10}&0&0\\\frac{3}{10}&\frac{3}{10}&- \frac{4}{5}&\frac{3}{10}&0\\\frac{1}{5}&\frac{3}{10}&\frac{3}{5}&- \frac{1}{2}&0\\1&1&1&1&1\end{bmatrix}.
+$$
+
+
+
+**Bước 2. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 1 cho $- \frac{7}{10}$, được
+
+
+
+$$
+\begin{bmatrix}1&- \frac{1}{7}&- \frac{1}{7}&- \frac{2}{7}&0\\\frac{1}{5}&- \frac{7}{10}&\frac{1}{10}&0&0\\\frac{3}{10}&\frac{3}{10}&- \frac{4}{5}&\frac{3}{10}&0\\\frac{1}{5}&\frac{3}{10}&\frac{3}{5}&- \frac{1}{2}&0\\1&1&1&1&1\end{bmatrix}.
+$$
+
+
+
+**Bước 3. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(- \frac{1}{5})R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&- \frac{1}{7}&- \frac{1}{7}&- \frac{2}{7}&0\\0&- \frac{47}{70}&\frac{9}{70}&\frac{2}{35}&0\\\frac{3}{10}&\frac{3}{10}&- \frac{4}{5}&\frac{3}{10}&0\\\frac{1}{5}&\frac{3}{10}&\frac{3}{5}&- \frac{1}{2}&0\\1&1&1&1&1\end{bmatrix}.
+$$
+
+
+
+**Bước 4. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(- \frac{3}{10})R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&- \frac{1}{7}&- \frac{1}{7}&- \frac{2}{7}&0\\0&- \frac{47}{70}&\frac{9}{70}&\frac{2}{35}&0\\0&\frac{12}{35}&- \frac{53}{70}&\frac{27}{70}&0\\\frac{1}{5}&\frac{3}{10}&\frac{3}{5}&- \frac{1}{2}&0\\1&1&1&1&1\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(- \frac{1}{5})R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&- \frac{1}{7}&- \frac{1}{7}&- \frac{2}{7}&0\\0&- \frac{47}{70}&\frac{9}{70}&\frac{2}{35}&0\\0&\frac{12}{35}&- \frac{53}{70}&\frac{27}{70}&0\\0&\frac{23}{70}&\frac{22}{35}&- \frac{31}{70}&0\\1&1&1&1&1\end{bmatrix}.
+$$
+
+
+
+**Bước 6. Khử ô cùng cột trụ ở hàng 5.**
+
+$R_5\leftarrow R_5+(-1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&- \frac{1}{7}&- \frac{1}{7}&- \frac{2}{7}&0\\0&- \frac{47}{70}&\frac{9}{70}&\frac{2}{35}&0\\0&\frac{12}{35}&- \frac{53}{70}&\frac{27}{70}&0\\0&\frac{23}{70}&\frac{22}{35}&- \frac{31}{70}&0\\0&\frac{8}{7}&\frac{8}{7}&\frac{9}{7}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 7. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $- \frac{47}{70}$, được
+
+
+
+$$
+\begin{bmatrix}1&- \frac{1}{7}&- \frac{1}{7}&- \frac{2}{7}&0\\0&1&- \frac{9}{47}&- \frac{4}{47}&0\\0&\frac{12}{35}&- \frac{53}{70}&\frac{27}{70}&0\\0&\frac{23}{70}&\frac{22}{35}&- \frac{31}{70}&0\\0&\frac{8}{7}&\frac{8}{7}&\frac{9}{7}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 8. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(\frac{1}{7})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{8}{47}&- \frac{14}{47}&0\\0&1&- \frac{9}{47}&- \frac{4}{47}&0\\0&\frac{12}{35}&- \frac{53}{70}&\frac{27}{70}&0\\0&\frac{23}{70}&\frac{22}{35}&- \frac{31}{70}&0\\0&\frac{8}{7}&\frac{8}{7}&\frac{9}{7}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 9. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(- \frac{12}{35})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{8}{47}&- \frac{14}{47}&0\\0&1&- \frac{9}{47}&- \frac{4}{47}&0\\0&0&- \frac{65}{94}&\frac{39}{94}&0\\0&\frac{23}{70}&\frac{22}{35}&- \frac{31}{70}&0\\0&\frac{8}{7}&\frac{8}{7}&\frac{9}{7}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 10. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(- \frac{23}{70})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{8}{47}&- \frac{14}{47}&0\\0&1&- \frac{9}{47}&- \frac{4}{47}&0\\0&0&- \frac{65}{94}&\frac{39}{94}&0\\0&0&\frac{65}{94}&- \frac{39}{94}&0\\0&\frac{8}{7}&\frac{8}{7}&\frac{9}{7}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 11. Khử ô cùng cột trụ ở hàng 5.**
+
+$R_5\leftarrow R_5+(- \frac{8}{7})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{8}{47}&- \frac{14}{47}&0\\0&1&- \frac{9}{47}&- \frac{4}{47}&0\\0&0&- \frac{65}{94}&\frac{39}{94}&0\\0&0&\frac{65}{94}&- \frac{39}{94}&0\\0&0&\frac{64}{47}&\frac{65}{47}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 12. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 3 cho $- \frac{65}{94}$, được
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{8}{47}&- \frac{14}{47}&0\\0&1&- \frac{9}{47}&- \frac{4}{47}&0\\0&0&1&- \frac{3}{5}&0\\0&0&\frac{65}{94}&- \frac{39}{94}&0\\0&0&\frac{64}{47}&\frac{65}{47}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 13. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(\frac{8}{47})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&- \frac{2}{5}&0\\0&1&- \frac{9}{47}&- \frac{4}{47}&0\\0&0&1&- \frac{3}{5}&0\\0&0&\frac{65}{94}&- \frac{39}{94}&0\\0&0&\frac{64}{47}&\frac{65}{47}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 14. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(\frac{9}{47})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&- \frac{2}{5}&0\\0&1&0&- \frac{1}{5}&0\\0&0&1&- \frac{3}{5}&0\\0&0&\frac{65}{94}&- \frac{39}{94}&0\\0&0&\frac{64}{47}&\frac{65}{47}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 15. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(- \frac{65}{94})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&- \frac{2}{5}&0\\0&1&0&- \frac{1}{5}&0\\0&0&1&- \frac{3}{5}&0\\0&0&0&0&0\\0&0&\frac{64}{47}&\frac{65}{47}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 16. Khử ô cùng cột trụ ở hàng 5.**
+
+$R_5\leftarrow R_5+(- \frac{64}{47})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&- \frac{2}{5}&0\\0&1&0&- \frac{1}{5}&0\\0&0&1&- \frac{3}{5}&0\\0&0&0&0&0\\0&0&0&\frac{11}{5}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 17. Đưa trụ khác 0 lên.**
+
+$R_4\leftrightarrow R_5$:
+
+
+
+$$
+\begin{bmatrix}1&0&0&- \frac{2}{5}&0\\0&1&0&- \frac{1}{5}&0\\0&0&1&- \frac{3}{5}&0\\0&0&0&\frac{11}{5}&1\\0&0&0&0&0\end{bmatrix}.
+$$
+
+
+
+**Bước 18. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 4 cho $\frac{11}{5}$, được
+
+
+
+$$
+\begin{bmatrix}1&0&0&- \frac{2}{5}&0\\0&1&0&- \frac{1}{5}&0\\0&0&1&- \frac{3}{5}&0\\0&0&0&1&\frac{5}{11}\\0&0&0&0&0\end{bmatrix}.
+$$
+
+
+
+**Bước 19. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(\frac{2}{5})R_4$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&\frac{2}{11}\\0&1&0&- \frac{1}{5}&0\\0&0&1&- \frac{3}{5}&0\\0&0&0&1&\frac{5}{11}\\0&0&0&0&0\end{bmatrix}.
+$$
+
+
+
+**Bước 20. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(\frac{1}{5})R_4$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&\frac{2}{11}\\0&1&0&0&\frac{1}{11}\\0&0&1&- \frac{3}{5}&0\\0&0&0&1&\frac{5}{11}\\0&0&0&0&0\end{bmatrix}.
+$$
+
+
+
+**Bước 21. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(\frac{3}{5})R_4$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&\frac{2}{11}\\0&1&0&0&\frac{1}{11}\\0&0&1&0&\frac{3}{11}\\0&0&0&1&\frac{5}{11}\\0&0&0&0&0\end{bmatrix}.
+$$
+
+
+
+**Bước 22. Đọc và kiểm tra phân bố.**
+
+
+
+$$
+s=\begin{bmatrix}\frac{2}{11}\\\frac{1}{11}\\\frac{3}{11}\\\frac{5}{11}\end{bmatrix}.
+$$
+
+
+
+ Mọi thành phần không âm, tổng bằng 1; nhân trực tiếp cho
+
+
+
+$$
+Ps=\begin{bmatrix}\frac{2}{11}\\\frac{1}{11}\\\frac{3}{11}\\\frac{5}{11}\end{bmatrix}=s.
+$$
+
+
+
+ Ký hiệu phân bố vừa tìm là $p_0$. Mọi giá cân bằng theo tỷ lệ ấy:
+
+
 
 $$
 p_0=\begin{bmatrix}\frac{2}{11}\\\frac{1}{11}\\\frac{3}{11}\\\frac{5}{11}\end{bmatrix}.
 $$
 
+
+
  Mọi cơ cấu giá dương là $p=tp_0$, $t>0$; thế trực tiếp cho $Ep_0=p_0$. Nếu cho phép cơ cấu giá không âm bằng 0, thêm $t=0$.
 
-**d.** Cân bằng đòi hỏi $(I-E)p=0$. Khử hệ này, rồi chọn tổng các giá bằng 1 cho
+**d.** **Bước 1. Viết đủ điều kiện phân bố dừng.**
+
+Giải $Ps=s$, tức $(P-I)s=0$, kèm phương trình $s_1+\cdots+s_n=1$. Ma trận ghép của **cả hai** điều kiện:
+
+
+
+$$
+\begin{bmatrix}- \frac{1}{2}&0&\frac{1}{10}&\frac{1}{10}&0\\\frac{1}{5}&- \frac{3}{10}&0&\frac{1}{10}&0\\\frac{1}{10}&\frac{1}{5}&- \frac{1}{5}&\frac{1}{5}&0\\\frac{1}{5}&\frac{1}{10}&\frac{1}{10}&- \frac{2}{5}&0\\1&1&1&1&1\end{bmatrix}.
+$$
+
+
+
+**Bước 2. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 1 cho $- \frac{1}{2}$, được
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{1}{5}&- \frac{1}{5}&0\\\frac{1}{5}&- \frac{3}{10}&0&\frac{1}{10}&0\\\frac{1}{10}&\frac{1}{5}&- \frac{1}{5}&\frac{1}{5}&0\\\frac{1}{5}&\frac{1}{10}&\frac{1}{10}&- \frac{2}{5}&0\\1&1&1&1&1\end{bmatrix}.
+$$
+
+
+
+**Bước 3. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(- \frac{1}{5})R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{1}{5}&- \frac{1}{5}&0\\0&- \frac{3}{10}&\frac{1}{25}&\frac{7}{50}&0\\\frac{1}{10}&\frac{1}{5}&- \frac{1}{5}&\frac{1}{5}&0\\\frac{1}{5}&\frac{1}{10}&\frac{1}{10}&- \frac{2}{5}&0\\1&1&1&1&1\end{bmatrix}.
+$$
+
+
+
+**Bước 4. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(- \frac{1}{10})R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{1}{5}&- \frac{1}{5}&0\\0&- \frac{3}{10}&\frac{1}{25}&\frac{7}{50}&0\\0&\frac{1}{5}&- \frac{9}{50}&\frac{11}{50}&0\\\frac{1}{5}&\frac{1}{10}&\frac{1}{10}&- \frac{2}{5}&0\\1&1&1&1&1\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(- \frac{1}{5})R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{1}{5}&- \frac{1}{5}&0\\0&- \frac{3}{10}&\frac{1}{25}&\frac{7}{50}&0\\0&\frac{1}{5}&- \frac{9}{50}&\frac{11}{50}&0\\0&\frac{1}{10}&\frac{7}{50}&- \frac{9}{25}&0\\1&1&1&1&1\end{bmatrix}.
+$$
+
+
+
+**Bước 6. Khử ô cùng cột trụ ở hàng 5.**
+
+$R_5\leftarrow R_5+(-1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{1}{5}&- \frac{1}{5}&0\\0&- \frac{3}{10}&\frac{1}{25}&\frac{7}{50}&0\\0&\frac{1}{5}&- \frac{9}{50}&\frac{11}{50}&0\\0&\frac{1}{10}&\frac{7}{50}&- \frac{9}{25}&0\\0&1&\frac{6}{5}&\frac{6}{5}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 7. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $- \frac{3}{10}$, được
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{1}{5}&- \frac{1}{5}&0\\0&1&- \frac{2}{15}&- \frac{7}{15}&0\\0&\frac{1}{5}&- \frac{9}{50}&\frac{11}{50}&0\\0&\frac{1}{10}&\frac{7}{50}&- \frac{9}{25}&0\\0&1&\frac{6}{5}&\frac{6}{5}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 8. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(- \frac{1}{5})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{1}{5}&- \frac{1}{5}&0\\0&1&- \frac{2}{15}&- \frac{7}{15}&0\\0&0&- \frac{23}{150}&\frac{47}{150}&0\\0&\frac{1}{10}&\frac{7}{50}&- \frac{9}{25}&0\\0&1&\frac{6}{5}&\frac{6}{5}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 9. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(- \frac{1}{10})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{1}{5}&- \frac{1}{5}&0\\0&1&- \frac{2}{15}&- \frac{7}{15}&0\\0&0&- \frac{23}{150}&\frac{47}{150}&0\\0&0&\frac{23}{150}&- \frac{47}{150}&0\\0&1&\frac{6}{5}&\frac{6}{5}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 10. Khử ô cùng cột trụ ở hàng 5.**
+
+$R_5\leftarrow R_5+(-1)R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{1}{5}&- \frac{1}{5}&0\\0&1&- \frac{2}{15}&- \frac{7}{15}&0\\0&0&- \frac{23}{150}&\frac{47}{150}&0\\0&0&\frac{23}{150}&- \frac{47}{150}&0\\0&0&\frac{4}{3}&\frac{5}{3}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 11. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 3 cho $- \frac{23}{150}$, được
+
+
+
+$$
+\begin{bmatrix}1&0&- \frac{1}{5}&- \frac{1}{5}&0\\0&1&- \frac{2}{15}&- \frac{7}{15}&0\\0&0&1&- \frac{47}{23}&0\\0&0&\frac{23}{150}&- \frac{47}{150}&0\\0&0&\frac{4}{3}&\frac{5}{3}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 12. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(\frac{1}{5})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&- \frac{14}{23}&0\\0&1&- \frac{2}{15}&- \frac{7}{15}&0\\0&0&1&- \frac{47}{23}&0\\0&0&\frac{23}{150}&- \frac{47}{150}&0\\0&0&\frac{4}{3}&\frac{5}{3}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 13. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(\frac{2}{15})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&- \frac{14}{23}&0\\0&1&0&- \frac{17}{23}&0\\0&0&1&- \frac{47}{23}&0\\0&0&\frac{23}{150}&- \frac{47}{150}&0\\0&0&\frac{4}{3}&\frac{5}{3}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 14. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(- \frac{23}{150})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&- \frac{14}{23}&0\\0&1&0&- \frac{17}{23}&0\\0&0&1&- \frac{47}{23}&0\\0&0&0&0&0\\0&0&\frac{4}{3}&\frac{5}{3}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 15. Khử ô cùng cột trụ ở hàng 5.**
+
+$R_5\leftarrow R_5+(- \frac{4}{3})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&- \frac{14}{23}&0\\0&1&0&- \frac{17}{23}&0\\0&0&1&- \frac{47}{23}&0\\0&0&0&0&0\\0&0&0&\frac{101}{23}&1\end{bmatrix}.
+$$
+
+
+
+**Bước 16. Đưa trụ khác 0 lên.**
+
+$R_4\leftrightarrow R_5$:
+
+
+
+$$
+\begin{bmatrix}1&0&0&- \frac{14}{23}&0\\0&1&0&- \frac{17}{23}&0\\0&0&1&- \frac{47}{23}&0\\0&0&0&\frac{101}{23}&1\\0&0&0&0&0\end{bmatrix}.
+$$
+
+
+
+**Bước 17. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 4 cho $\frac{101}{23}$, được
+
+
+
+$$
+\begin{bmatrix}1&0&0&- \frac{14}{23}&0\\0&1&0&- \frac{17}{23}&0\\0&0&1&- \frac{47}{23}&0\\0&0&0&1&\frac{23}{101}\\0&0&0&0&0\end{bmatrix}.
+$$
+
+
+
+**Bước 18. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(\frac{14}{23})R_4$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&\frac{14}{101}\\0&1&0&- \frac{17}{23}&0\\0&0&1&- \frac{47}{23}&0\\0&0&0&1&\frac{23}{101}\\0&0&0&0&0\end{bmatrix}.
+$$
+
+
+
+**Bước 19. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(\frac{17}{23})R_4$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&\frac{14}{101}\\0&1&0&0&\frac{17}{101}\\0&0&1&- \frac{47}{23}&0\\0&0&0&1&\frac{23}{101}\\0&0&0&0&0\end{bmatrix}.
+$$
+
+
+
+**Bước 20. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(\frac{47}{23})R_4$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+
+
+$$
+\begin{bmatrix}1&0&0&0&\frac{14}{101}\\0&1&0&0&\frac{17}{101}\\0&0&1&0&\frac{47}{101}\\0&0&0&1&\frac{23}{101}\\0&0&0&0&0\end{bmatrix}.
+$$
+
+
+
+**Bước 21. Đọc và kiểm tra phân bố.**
+
+
+
+$$
+s=\begin{bmatrix}\frac{14}{101}\\\frac{17}{101}\\\frac{47}{101}\\\frac{23}{101}\end{bmatrix}.
+$$
+
+
+
+ Mọi thành phần không âm, tổng bằng 1; nhân trực tiếp cho
+
+
+
+$$
+Ps=\begin{bmatrix}\frac{14}{101}\\\frac{17}{101}\\\frac{47}{101}\\\frac{23}{101}\end{bmatrix}=s.
+$$
+
+
+
+ Ký hiệu phân bố vừa tìm là $p_0$. Mọi giá cân bằng theo tỷ lệ ấy:
+
+
 
 $$
 p_0=\begin{bmatrix}\frac{14}{101}\\\frac{17}{101}\\\frac{47}{101}\\\frac{23}{101}\end{bmatrix}.
 $$
+
+
 
  Mọi cơ cấu giá dương là $p=tp_0$, $t>0$; thế trực tiếp cho $Ep_0=p_0$. Nếu cho phép cơ cấu giá không âm bằng 0, thêm $t=0$.
 

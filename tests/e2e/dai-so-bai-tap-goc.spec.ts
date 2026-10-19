@@ -8,15 +8,20 @@ test('đủ đề ở từng mục, lọc được phần bổ sung, nhãn đề
     await expect(page.locator('[data-the-bai-tap]:visible')).toHaveCount(supp);
     await expect(page.locator('[data-the-bai-tap]:visible').first()).toContainText(`Bài bổ sung ${chapter}.1`);
     await page.locator('[data-the-bai-tap]:visible a').first().click();
-    await expect(page.locator('[data-de-goc-tieng-anh]')).toBeVisible();
+    await expect(page.locator('[data-de-da-dich]')).toBeVisible();
     await expect(page.locator('[data-tang="loi-giai"]')).toHaveCount(1);
-    await expect(page.locator('.ghi-cong')).toContainText('Đề gốc tiếng Anh');
+    await expect(page.locator('.ghi-cong')).toContainText('Đề bài dịch đầy đủ');
+    await expect(page.locator('[data-de-tieng-viet]')).toBeVisible();
+    await page.locator('[data-de-goc] > summary').click();
     await expect(page.locator('[data-hinh-sach]').first()).toBeVisible();
   }
 });
 
 test('đề nhiều phần qua cột / trang đủ hình, rõ trên điện thoại và đổi màu sáng tối',async({page},testInfo)=>{
   await page.goto('dai-so/chuong-2/bai-tap/2-3-2/');
+  await expect(page.locator('[data-de-tieng-viet]')).toBeVisible();
+  await expect(page.locator('[data-de-goc]')).not.toHaveAttribute('open','');
+  await page.locator('[data-de-goc] > summary').click();
   await expect(page.locator('[data-hinh-sach]')).toHaveCount(2);
   const svg=page.locator('[data-hinh-sach] svg').first();
   const color=await svg.evaluate(e=>getComputedStyle(e).fill);
@@ -38,7 +43,7 @@ test('số bài gốc và bài tự soạn độc lập; tiến độ được c
   await page.goto('./');
   await expect(page.locator('[data-hoc-tiep-link]')).toHaveAttribute('href','/math/dai-so/chuong-3/bai-tap/3-1-1001/');
   await page.goto('dai-so/chuong-3/bai-tap/3-1-1/');
-  await expect(page.locator('[data-de-goc-tieng-anh]')).toBeVisible();
+  await expect(page.locator('[data-de-da-dich]')).toBeVisible();
   await expect(page.getByRole('button',{name:'Làm được',exact:true})).not.toHaveAttribute('aria-pressed','true');
   await page.goto('dai-so/chuong-3/bai-tap/3-1-1001/');
   await expect(page.locator('[data-bai-tu-soan]')).toBeVisible();
@@ -64,4 +69,34 @@ test('lời giải mới mở được, công thức rõ, dữ kiện sai đư�
       await page.setViewportSize({width:1366,height:860});
     }
   }
+});
+
+test('đề tiếng Việt hiển thị trước, đủ ý và hình, bản tiếng Anh được thu gọn',async({page},testInfo)=>{
+  for(const [chapter,slug,phrase,count]of [
+    [2,'2-3-1','Tính các tích ma trận sau.',10],
+    [3,'3-1-1','Tính định thức của các ma trận sau.',16],
+    [3,'3-2-8','Giải từng hệ sau bằng quy tắc Cramer:',4],
+  ] as const){
+    await page.goto(`dai-so/chuong-${chapter}/bai-tap/${slug}/`);
+    const vietnamese=page.locator('[data-de-tieng-viet]');
+    await expect(vietnamese).toBeVisible();
+    await expect(vietnamese).toContainText(phrase);
+    await expect(vietnamese.locator('strong')).toHaveCount(count);
+    await expect(vietnamese.locator('.katex')).not.toHaveCount(0);
+    await expect(page.locator('.katex-error')).toHaveCount(0);
+    await expect(page.locator('[data-de-goc]')).not.toHaveAttribute('open','');
+    if(slug==='3-2-8'){
+      await page.setViewportSize({width:393,height:851});
+      expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+      await page.screenshot({path:testInfo.outputPath('de-tieng-viet-mobile.png'),fullPage:true});
+    }
+  }
+  await page.goto('dai-so/chuong-2/bai-tap/2-9-8/');
+  await expect(page.locator('[data-de-tieng-viet] [data-hinh-sach]')).toBeVisible();
+  await expect(page.locator('[data-de-tieng-viet]')).toContainText('Một con chuột');
+  await page.screenshot({path:testInfo.outputPath('de-me-cung-mobile.png'),fullPage:true});
+  await page.goto('dai-so/chuong-2/bai-tap/2-7-3/');
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  await expect(page.locator('[data-de-tieng-viet] .katex-display')).toHaveCount(8);
+  await page.screenshot({path:testInfo.outputPath('de-lu-mobile.png'),fullPage:true});
 });

@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Khai triển theo phần bù đại số — bài 12"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.1.12"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.1.12 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu $A$ có ba cột mà chỉ hai phần tử trên cùng có thể khác 0, hãy chứng minh rằng $\det A = 0$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-1-12-1" moTa="Đề gốc Nicholson bài 3.1.12, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ top two entries nonzero, show that det A = 0.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +48,21 @@ Cộng bội một hàng vào hàng khác giữ định thức; đổi hai hàng
 
 <LoiGiai>
 
-Ba cột ấy đều thuộc không gian sinh bởi $e_1,e_2$, nên phụ thuộc tuyến tính. Do đó toàn bộ các cột của $A$ phụ thuộc và $\det A=0$. Cũng có thể cộng bội ba cột để tạo cột 0 rồi khai triển theo cột ấy.
+**Cách làm.** Cộng bội hàng khác giữ nguyên định thức; đổi hai hàng đổi dấu; rút hệ số $c$ từ một hàng đưa $c$ ra ngoài. Với khai triển, $C_{ij}=(-1)^{i+j}\det M_{ij}$.
+
+Ba vector thuộc không gian sinh bởi hai vector thì phụ thuộc: hệ hai phương trình với ba hệ số của một tổ hợp bằng 0 có nghiệm hệ số khác 0. Chỉ cần một nhóm cột phụ thuộc thì toàn bộ hệ cột cũng phụ thuộc.
+
+**Bước 1. Lập luận và tính toán.**
+
+Ba cột ấy đều thuộc không gian sinh bởi $e_1,e_2$, nên phụ thuộc tuyến tính.
+
+**Bước 2. Rút ra kết luận.**
+
+Do đó toàn bộ các cột của $A$ phụ thuộc và $\det A=0$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Cũng có thể cộng bội ba cột để tạo cột 0 rồi khai triển theo cột ấy.
 
 </LoiGiai>
 

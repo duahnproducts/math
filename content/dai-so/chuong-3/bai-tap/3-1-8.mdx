@@ -5,11 +5,35 @@ do_kho: vua
 tieu_de: "Khai triển theo phần bù đại số — bài 8"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.1.8"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.1.8 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh rằng:
+
+**a.**
+
+$$
+\det \left[ \begin{array}{rrr} p+x & q+y & r+z \\ a+x & b+y & c+z \\ a+p & b+q & c+r \end{array} \right] = 2\det \left[ \begin{array}{rrr} a & b & c \\ p & q & r \\ x & y & z \end{array} \right]
+$$
+
+
+
+**b.**
+
+$$
+\det \left[ \begin{array}{rrr} 2a+p & 2b+q & 2c+r \\ 2p+x & 2q+y & 2r+z \\ 2x+a & 2y+b & 2z+c \end{array} \right] = 9\det \left[ \begin{array}{rrr} a & b & c \\ p & q & r \\ x & y & z \end{array} \right]
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-1-8-1" moTa="Đề gốc Nicholson bài 3.1.8, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -28,6 +52,7 @@ b.  det  2p+x  2q+y  2r +z    9 det   p  q  r                          
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -44,7 +69,31 @@ Cộng bội một hàng vào hàng khác giữ định thức; đổi hai hàng
 
 <LoiGiai>
 
-Viết ma trận mới là $CB$ với $B$ chứa ba hàng gốc. **a.** $C=\begin{bmatrix}0&1&1\\1&0&1\\1&1&0\end{bmatrix}$ có định thức 2. Do đó $\det(CB)=2\det B$. Có thể khai triển tuyến tính từng hàng để không dùng định lý tích. **b.** $C=\begin{bmatrix}2&1&0\\0&2&1\\1&0&2\end{bmatrix}$ có định thức $8+1=9$, nên $\det(CB)=9\det B$.
+**Cách làm.** Cộng bội hàng khác giữ nguyên định thức; đổi hai hàng đổi dấu; rút hệ số $c$ từ một hàng đưa $c$ ra ngoài. Với khai triển, $C_{ij}=(-1)^{i+j}\det M_{ij}$.
+
+**Bước 1. Thiết lập biểu thức.**
+
+Viết ma trận mới là $CB$ với $B$ chứa ba hàng gốc.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$C=\begin{bmatrix}0&1&1\\1&0&1\\1&1&0\end{bmatrix}$ có định thức 2.
+
+**Bước 2. Rút ra kết luận.**
+
+Do đó $\det(CB)=2\det B$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Có thể khai triển tuyến tính từng hàng để không dùng định lý tích.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$C=\begin{bmatrix}2&1&0\\0&2&1\\1&0&2\end{bmatrix}$ có định thức $8+1=9$, nên $\det(CB)=9\det B$.
 
 </LoiGiai>
 

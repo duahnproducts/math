@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Định thức và ma trận nghịch đảo — bài 12"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.2.12"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.12 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu $A$ và $B$ là các ma trận $n \times n$, $AB = -BA$ và $n$ là số lẻ, hãy chứng minh rằng ít nhất một trong hai ma trận $A$ hoặc $B$ không có nghịch đảo.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-2-12-1" moTa="Đề gốc Nicholson bài 3.2.12, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ Exercise 3.2.12   If A and B are n× n matrices, if AB =
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +48,21 @@ Dùng định thức của tích và công thức nghịch đảo qua adjugate k
 
 <LoiGiai>
 
-Lấy định thức hai vế: $\det A\det B=\det(-BA)=(-1)^n\det B\det A=-\det A\det B$ vì $n$ lẻ. Suy ra $2\det A\det B=0$, nên ít nhất một trong hai định thức bằng 0. Do đó ít nhất một ma trận không khả nghịch.
+**Cách làm.** Dùng $\det(AB)=\det A\det B$, $\det A^T=\det A$, $\det(cA)=c^n\det A$ ở cấp $n$. Khi $\det A\ne0$, $A^{-1}=\operatorname{adj}A/\det A$; adjugate là bảng phần bù đã chuyển vị.
+
+Từ $d=-d$ suy ra $2d=0$, nên $d=0$ trên số thực. Ở đây $d=\det A\det B$. Tích hai số thực bằng 0 thì ít nhất một thừa số bằng 0; chưa thể kết luận cả hai đều bằng 0.
+
+**Bước 1. Thiết lập biểu thức.**
+
+Lấy định thức hai vế: $\det A\det B=\det(-BA)=(-1)^n\det B\det A=-\det A\det B$ vì $n$ lẻ.
+
+**Bước 2. Rút ra kết luận.**
+
+Suy ra $2\det A\det B=0$, nên ít nhất một trong hai định thức bằng 0.
+
+**Bước 3. Rút ra kết luận.**
+
+Do đó ít nhất một ma trận không khả nghịch.
 
 </LoiGiai>
 

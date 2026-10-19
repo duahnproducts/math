@@ -24,13 +24,241 @@ Ma trận bổ sung $4 \times 6$. Cột 2 luôn bằng $-2$ lần cột 1, nên 
 </GoiY>
 
 <LoiGiai>
-**a.** Dạng rút gọn: $x_1 - 2x_2 + x_5 = -\tfrac{7}{3}$, $\ x_3 - 2x_5 = -\tfrac{1}{3}$, $\ x_4 = \tfrac{8}{3}$. Nên
-$$\mathbf{x} = \left(-\tfrac{7}{3}, 0, -\tfrac{1}{3}, \tfrac{8}{3}, 0\right) + s(2, 1, 0, 0, 0) + t(-1, 0, 2, 0, 1).$$
 
-**b.** Dạng rút gọn: $x_1 - 2x_2 + 5x_5 = -3$, $\ x_3 - 2x_5 = -1$, $\ x_4 = 0$. Nên
-$$\mathbf{x} = (-3, 0, -1, 0, 0) + s(2, 1, 0, 0, 0) + t(-5, 0, 2, 0, 1).$$
+**Cách làm.** Nếu $A=[a_1\ \cdots\ a_n]$, thì $Ax=x_1a_1+\cdots+x_na_n$. Thành phần thứ $i$ cũng bằng tích vô hướng của hàng $i$ với $x$. Vì vậy viết $b$ thành tổ hợp các cột tương đương giải $Ax=b$.
 
-Kiểm tra nghiệm riêng câu b, phương trình 1: $-3 - 1 = -4$ ✓.
+**a.**
+
+Đưa về $Ax=b$, rồi ghép vế phải thành cột cuối:
+
+$$
+[A\mid b]=\begin{bmatrix}1&-2&1&4&-1&8\\-2&4&1&-2&-4&-1\\3&-6&8&4&-13&1\\8&-16&7&12&-6&11\end{bmatrix}.
+$$
+
+**Bước 1. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(2)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+$$
+\begin{bmatrix}1&-2&1&4&-1&8\\0&0&3&6&-6&15\\3&-6&8&4&-13&1\\8&-16&7&12&-6&11\end{bmatrix}.
+$$
+
+**Bước 2. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-3)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+$$
+\begin{bmatrix}1&-2&1&4&-1&8\\0&0&3&6&-6&15\\0&0&5&-8&-10&-23\\8&-16&7&12&-6&11\end{bmatrix}.
+$$
+
+**Bước 3. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(-8)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+$$
+\begin{bmatrix}1&-2&1&4&-1&8\\0&0&3&6&-6&15\\0&0&5&-8&-10&-23\\0&0&-1&-20&2&-53\end{bmatrix}.
+$$
+
+**Bước 4. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $3$, được
+
+$$
+\begin{bmatrix}1&-2&1&4&-1&8\\0&0&1&2&-2&5\\0&0&5&-8&-10&-23\\0&0&-1&-20&2&-53\end{bmatrix}.
+$$
+
+**Bước 5. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(-1)R_2$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+$$
+\begin{bmatrix}1&-2&0&2&1&3\\0&0&1&2&-2&5\\0&0&5&-8&-10&-23\\0&0&-1&-20&2&-53\end{bmatrix}.
+$$
+
+**Bước 6. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-5)R_2$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+$$
+\begin{bmatrix}1&-2&0&2&1&3\\0&0&1&2&-2&5\\0&0&0&-18&0&-48\\0&0&-1&-20&2&-53\end{bmatrix}.
+$$
+
+**Bước 7. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(1)R_2$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+$$
+\begin{bmatrix}1&-2&0&2&1&3\\0&0&1&2&-2&5\\0&0&0&-18&0&-48\\0&0&0&-18&0&-48\end{bmatrix}.
+$$
+
+**Bước 8. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 3 cho $-18$, được
+
+$$
+\begin{bmatrix}1&-2&0&2&1&3\\0&0&1&2&-2&5\\0&0&0&1&0&\frac{8}{3}\\0&0&0&-18&0&-48\end{bmatrix}.
+$$
+
+**Bước 9. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(-2)R_3$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+$$
+\begin{bmatrix}1&-2&0&0&1&- \frac{7}{3}\\0&0&1&2&-2&5\\0&0&0&1&0&\frac{8}{3}\\0&0&0&-18&0&-48\end{bmatrix}.
+$$
+
+**Bước 10. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-2)R_3$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+$$
+\begin{bmatrix}1&-2&0&0&1&- \frac{7}{3}\\0&0&1&0&-2&- \frac{1}{3}\\0&0&0&1&0&\frac{8}{3}\\0&0&0&-18&0&-48\end{bmatrix}.
+$$
+
+**Bước 11. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(18)R_3$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+$$
+\begin{bmatrix}1&-2&0&0&1&- \frac{7}{3}\\0&0&1&0&-2&- \frac{1}{3}\\0&0&0&1&0&\frac{8}{3}\\0&0&0&0&0&0\end{bmatrix}.
+$$
+
+**Bước 12. Đọc ẩn trụ và ẩn tự do.**
+
+Đọc từng hàng khác 0 của RREF để biểu diễn ẩn trụ theo các ẩn tự do. Đặt các ẩn tự do bằng tham số thực, được
+
+$$
+x=\begin{bmatrix}2 \tau_{0} - \tau_{1} - \frac{7}{3}\\\tau_{0}\\2 \tau_{1} - \frac{1}{3}\\\frac{8}{3}\\\tau_{1}\end{bmatrix}.
+$$
+
+ Các ký hiệu $\tau_i$ là tham số tự do, không phải các hằng số đã được xác định.
+
+**Bước 13. Tách phần hằng và phần thuần nhất.**
+
+Cho các tham số bằng 0 để lấy $x_p=\begin{bmatrix}- \frac{7}{3}\\0\\- \frac{1}{3}\\\frac{8}{3}\\0\end{bmatrix}$. Nghiệm tổng quát là
+
+$$
+x=x_p+t_{1}\begin{bmatrix}2\\1\\0\\0\\0\end{bmatrix}+t_{2}\begin{bmatrix}-1\\0\\2\\0\\1\end{bmatrix},
+$$
+
+ với các $t_i$ tùy ý. Các vector đứng sau tham số tạo cơ sở của hệ thuần nhất.
+
+**Bước 14. Thay lại để kiểm tra.**
+
+$Ax_p=\begin{bmatrix}8\\-1\\1\\11\end{bmatrix}=b$; với mỗi vector cơ sở $v_i$ vừa ghi, $Av_i=0$, nên $A(x_p+\sum_i t_iv_i)=b$.
+
+**b.**
+
+Đưa về $Ax=b$, rồi ghép vế phải thành cột cuối:
+
+$$
+[A\mid b]=\begin{bmatrix}1&-2&1&2&3&-4\\-3&6&-2&-3&-11&11\\-2&4&-1&1&-8&7\\-1&2&0&3&-5&3\end{bmatrix}.
+$$
+
+**Bước 1. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(3)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+$$
+\begin{bmatrix}1&-2&1&2&3&-4\\0&0&1&3&-2&-1\\-2&4&-1&1&-8&7\\-1&2&0&3&-5&3\end{bmatrix}.
+$$
+
+**Bước 2. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(2)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+$$
+\begin{bmatrix}1&-2&1&2&3&-4\\0&0&1&3&-2&-1\\0&0&1&5&-2&-1\\-1&2&0&3&-5&3\end{bmatrix}.
+$$
+
+**Bước 3. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+$$
+\begin{bmatrix}1&-2&1&2&3&-4\\0&0&1&3&-2&-1\\0&0&1&5&-2&-1\\0&0&1&5&-2&-1\end{bmatrix}.
+$$
+
+**Bước 4. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(-1)R_2$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+$$
+\begin{bmatrix}1&-2&0&-1&5&-3\\0&0&1&3&-2&-1\\0&0&1&5&-2&-1\\0&0&1&5&-2&-1\end{bmatrix}.
+$$
+
+**Bước 5. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-1)R_2$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+$$
+\begin{bmatrix}1&-2&0&-1&5&-3\\0&0&1&3&-2&-1\\0&0&0&2&0&0\\0&0&1&5&-2&-1\end{bmatrix}.
+$$
+
+**Bước 6. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(-1)R_2$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+$$
+\begin{bmatrix}1&-2&0&-1&5&-3\\0&0&1&3&-2&-1\\0&0&0&2&0&0\\0&0&0&2&0&0\end{bmatrix}.
+$$
+
+**Bước 7. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 3 cho $2$, được
+
+$$
+\begin{bmatrix}1&-2&0&-1&5&-3\\0&0&1&3&-2&-1\\0&0&0&1&0&0\\0&0&0&2&0&0\end{bmatrix}.
+$$
+
+**Bước 8. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(1)R_3$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+$$
+\begin{bmatrix}1&-2&0&0&5&-3\\0&0&1&3&-2&-1\\0&0&0&1&0&0\\0&0&0&2&0&0\end{bmatrix}.
+$$
+
+**Bước 9. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-3)R_3$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+$$
+\begin{bmatrix}1&-2&0&0&5&-3\\0&0&1&0&-2&-1\\0&0&0&1&0&0\\0&0&0&2&0&0\end{bmatrix}.
+$$
+
+**Bước 10. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(-2)R_3$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+$$
+\begin{bmatrix}1&-2&0&0&5&-3\\0&0&1&0&-2&-1\\0&0&0&1&0&0\\0&0&0&0&0&0\end{bmatrix}.
+$$
+
+**Bước 11. Đọc ẩn trụ và ẩn tự do.**
+
+Đọc từng hàng khác 0 của RREF để biểu diễn ẩn trụ theo các ẩn tự do. Đặt các ẩn tự do bằng tham số thực, được
+
+$$
+x=\begin{bmatrix}2 \tau_{0} - 5 \tau_{1} - 3\\\tau_{0}\\2 \tau_{1} - 1\\0\\\tau_{1}\end{bmatrix}.
+$$
+
+ Các ký hiệu $\tau_i$ là tham số tự do, không phải các hằng số đã được xác định.
+
+**Bước 12. Tách phần hằng và phần thuần nhất.**
+
+Cho các tham số bằng 0 để lấy $x_p=\begin{bmatrix}-3\\0\\-1\\0\\0\end{bmatrix}$. Nghiệm tổng quát là
+
+$$
+x=x_p+t_{1}\begin{bmatrix}2\\1\\0\\0\\0\end{bmatrix}+t_{2}\begin{bmatrix}-5\\0\\2\\0\\1\end{bmatrix},
+$$
+
+ với các $t_i$ tùy ý. Các vector đứng sau tham số tạo cơ sở của hệ thuần nhất.
+
+**Bước 13. Thay lại để kiểm tra.**
+
+$Ax_p=\begin{bmatrix}-4\\11\\7\\3\end{bmatrix}=b$; với mỗi vector cơ sở $v_i$ vừa ghi, $Av_i=0$, nên $A(x_p+\sum_i t_iv_i)=b$.
+
 </LoiGiai>
 
 <LoiHayMac>

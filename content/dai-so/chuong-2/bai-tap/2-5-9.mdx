@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Ma trận sơ cấp — bài 9"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.5.9"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.5.9 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $E$ là một ma trận sơ cấp.
+
+**a.** Chứng minh rằng $E^{T}$ cũng là ma trận sơ cấp cùng loại.
+
+**b.** Chứng minh rằng $E^{T} = E$ nếu $E$ thuộc loại I hoặc II.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-5-9-1" moTa="Đề gốc Nicholson bài 2.5.9, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -25,6 +37,7 @@ Exercise 2.5.9  Let E be an elementary matrix.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -42,7 +55,27 @@ Một phép hàng là nhân trái; một phép cột là nhân phải. Ghi thứ
 
 <LoiGiai>
 
-**a.** Loại I là ma trận đổi hai hàng của $I$, chuyển vị vẫn chính nó. Loại II là ma trận chéo chỉ thay một ô đường chéo bởi $k\ne0$, cũng bằng chuyển vị. Loại III có dạng $E=I+ke_ie_j^T$ với $i\ne j$; chuyển vị là $I+ke_je_i^T$, vẫn loại III, đổi vai hai chỉ số. **b.** Hai lập luận đầu cho ngay $E^T=E$ ở loại I và II.
+**Cách làm.** Ma trận sơ cấp $E$ nhận từ $I$ bằng một phép hàng. $EA$ làm phép đó lên các hàng của $A$. Trong chuỗi $E_k\cdots E_1A$, phép $E_1$ được thực hiện trước.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Loại I là ma trận đổi hai hàng của $I$, chuyển vị vẫn chính nó.
+
+**Bước 2. Lập luận và tính toán.**
+
+Loại II là ma trận chéo chỉ thay một ô đường chéo bởi $k\ne0$, cũng bằng chuyển vị.
+
+**Bước 3. Lập luận và tính toán.**
+
+Loại III có dạng $E=I+ke_ie_j^T$ với $i\ne j$; chuyển vị là $I+ke_je_i^T$, vẫn loại III, đổi vai hai chỉ số.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Hai lập luận đầu cho ngay $E^T=E$ ở loại I và II.
 
 </LoiGiai>
 

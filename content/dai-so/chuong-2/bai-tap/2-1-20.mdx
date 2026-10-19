@@ -25,13 +25,39 @@ Câu c: giả sử $A = S + W = S' + W'$. Ma trận $S - S' = W' - W$ vừa đ�
 </GoiY>
 
 <LoiGiai>
-**a.** $(A - A^T)^T = A^T - A = -(A - A^T)$.
 
-**b.** $S = \tfrac{1}{2}(A + A^T)$ đối xứng (Bài 2.1.17), $W = \tfrac{1}{2}(A - A^T)$ phản đối xứng (câu a), và $S + W = \tfrac{1}{2}A + \tfrac{1}{2}A = A$.
+**Cách làm.** Hai ma trận bằng nhau khi cùng kích thước và từng ô tương ứng bằng nhau. Cộng và nhân vô hướng thực hiện theo từng ô; một ẩn tự do phải được giữ lại bằng tham số.
 
-**c.** Nếu $A = S + W = S' + W'$ thì $M = S - S' = W' - W$. Vì $M$ là hiệu hai ma trận đối xứng nên $M^T = M$; vì là hiệu hai ma trận phản đối xứng nên $M^T = -M$. Vậy $M = -M$, theo Bài 2.1.12 $M = 0$: $S = S'$, $W = W'$.
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$(A - A^T)^T = A^T - A = -(A - A^T)$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$S = \tfrac{1}{2}(A + A^T)$ đối xứng (Bài 2.1.17), $W = \tfrac{1}{2}(A - A^T)$ phản đối xứng (câu a), và $S + W = \tfrac{1}{2}A + \tfrac{1}{2}A = A$.
+
+**c.**
+
+**Bước 1. Xét giả thiết.**
+
+Nếu $A = S + W = S' + W'$ thì $M = S - S' = W' - W$.
+
+**Bước 2. Giải thích điều kiện sử dụng.**
+
+Vì $M$ là hiệu hai ma trận đối xứng nên $M^T = M$; vì là hiệu hai ma trận phản đối xứng nên $M^T = -M$.
+
+**Bước 3. Rút ra kết luận.**
+
+Vậy $M = -M$, theo Bài 2.1.12 $M = 0$: $S = S'$, $W = W'$.
+
+**Bước 4. Lập luận và tính toán.**
 
 Ví dụ: $A = \begin{bmatrix} 1 & 4 \\ 2 & 3 \end{bmatrix}$ cho $S = \begin{bmatrix} 1 & 3 \\ 3 & 3 \end{bmatrix}$, $W = \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix}$.
+
 </LoiGiai>
 
 <LoiHayMac>

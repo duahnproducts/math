@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Ứng dụng: xích Markov — bài 11"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.9.11"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.9.11 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Ma trận ngẫu nhiên được gọi là ngẫu nhiên kép nếu tổng mỗi hàng cũng bằng $1$. Tìm vector trạng thái dừng của một ma trận ngẫu nhiên kép.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-9-11-1" moTa="Đề gốc Nicholson bài 2.9.11, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -23,6 +31,7 @@ vector for a doubly stochastic matrix.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -40,7 +49,29 @@ Sau k lần chuyển dùng lũy thừa thứ k; phân bố dừng thỏa Ps = s 
 
 <LoiGiai>
 
-Đặt $s=\frac1n(1,\ldots,1)^T$. Vì tổng mỗi hàng bằng 1, $(Ps)_i=\frac1n\sum_jp_{ij}=1/n=s_i$; tổng các thành phần của $s$ bằng 1. Vậy vector đều là vector dừng. Nếu ma trận regular thì đó là vector dừng duy nhất và là giới hạn từ mọi phân bố ban đầu. Nếu không regular, không nhất thiết duy nhất; chẳng hạn $P=I$ giữ nguyên mọi phân bố.
+**Cách làm.** Ta dùng vector cột: ô $p_{ij}$ là xác suất từ trạng thái $j$ tới $i$. Sau $k$ bước, $s_k=P^ks_0$. Phân bố dừng phải thỏa đồng thời $Ps=s$, $s_i\ge0$ và $\sum_i s_i=1$.
+
+Chuẩn hóa $\mathbf1$ thành $s=\mathbf1/n$ bảo đảm tổng bằng 1. Điều kiện tổng **hàng** bằng 1 cho $Ps=s$; điều kiện tổng **cột** bằng 1 bảo đảm $P$ là ma trận chuyển theo quy ước vector cột.
+
+**Bước 1. Thiết lập biểu thức.**
+
+Đặt $s=\frac1n(1,\ldots,1)^T$.
+
+**Bước 2. Giải thích điều kiện sử dụng.**
+
+Vì tổng mỗi hàng bằng 1, $(Ps)_i=\frac1n\sum_jp_{ij}=1/n=s_i$; tổng các thành phần của $s$ bằng 1.
+
+**Bước 3. Rút ra kết luận.**
+
+Vậy vector đều là vector dừng.
+
+**Bước 4. Xét giả thiết.**
+
+Nếu ma trận regular thì đó là vector dừng duy nhất và là giới hạn từ mọi phân bố ban đầu.
+
+**Bước 5. Xét giả thiết.**
+
+Nếu không regular, không nhất thiết duy nhất; chẳng hạn $P=I$ giữ nguyên mọi phân bố.
 
 </LoiGiai>
 

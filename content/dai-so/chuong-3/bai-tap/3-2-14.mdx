@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Định thức và ma trận nghịch đảo — bài 14"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.2.14"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.14 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu $A^{k} = 0$ với một $k \geq 1$ nào đó, hãy chứng minh rằng $A$ không khả nghịch.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-2-14-1" moTa="Đề gốc Nicholson bài 3.2.14, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -21,6 +29,7 @@ Exercise 3.2.14   If Ak = 0 for some k ≥1, show that Ais not invertible.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -38,7 +47,17 @@ Dùng định thức của tích và công thức nghịch đảo qua adjugate k
 
 <LoiGiai>
 
-Từ $A^k=0$, lấy định thức được $(\det A)^k=0$, nên $\det A=0$ và $A$ không khả nghịch. Cách khác: nếu khả nghịch, nhân với $A^{-k}$ sẽ cho $I=0$, vô lý.
+**Cách làm.** Dùng $\det(AB)=\det A\det B$, $\det A^T=\det A$, $\det(cA)=c^n\det A$ ở cấp $n$. Khi $\det A\ne0$, $A^{-1}=\operatorname{adj}A/\det A$; adjugate là bảng phần bù đã chuyển vị.
+
+Định thức của ma trận không bằng 0 ở cấp dương. Lấy định thức của $A^k$ cho $(\det A)^k$, và một số thực có lũy thừa dương bằng 0 thì chính số đó bằng 0.
+
+**Bước 1. Lập luận và tính toán.**
+
+Từ $A^k=0$, lấy định thức được $(\det A)^k=0$, nên $\det A=0$ và $A$ không khả nghịch.
+
+**Bước 2. Lập luận và tính toán.**
+
+Cách khác: nếu khả nghịch, nhân với $A^{-k}$ sẽ cho $I=0$, vô lý.
 
 </LoiGiai>
 

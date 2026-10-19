@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Ứng dụng: hệ phương trình vi phân — bài 4"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.7.4"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.7.4 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Dân số $N(t)$ của một vùng tại thời điểm $t$ tăng với tốc độ tỷ lệ với dân số. Nếu dân số tăng gấp đôi sau mỗi 5 năm và ban đầu là 3 triệu, hãy tìm $N(t)$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-7-4-1" moTa="Đề gốc Nicholson bài 3.7.4, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -24,6 +32,7 @@ tially, ﬁnd N(t).
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -41,11 +50,29 @@ Mỗi vector riêng v với trị riêng λ cho nghiệm v nhân exp(λx); giả
 
 <LoiGiai>
 
-Mô hình $N\prime=rN$, $N(0)=3$ triệu, cho $N(t)=3e^{rt}$ triệu. Gấp đôi sau 5 năm: $e^{5r}=2$, nên $r=\ln2/5$. Vì vậy
+**Cách làm.** Nếu $Av=\lambda v$ thì $f(x)=e^{\lambda x}v$ thỏa $f\prime=Af$, vì $f\prime=\lambda e^{\lambda x}v=Af$. Điều kiện đầu dùng để xác định các hệ số còn lại.
+
+Đơn vị thời gian là năm và dân số tính bằng triệu. Điều kiện gấp đôi chỉ cho tỷ số $N(5)/N(0)=2$, nên $e^{5r}=2$. Viết $e^{rt}=e^{t\ln2/5}=2^{t/5}$ giúp đọc được ngay chu kỳ 5 năm.
+
+**Bước 1. Lập luận và tính toán.**
+
+Mô hình $N\prime=rN$, $N(0)=3$ triệu, cho $N(t)=3e^{rt}$ triệu.
+
+**Bước 2. Lập luận và tính toán.**
+
+Gấp đôi sau 5 năm: $e^{5r}=2$, nên $r=\ln2/5$.
+
+**Bước 3. Giải thích điều kiện sử dụng.**
+
+Vì vậy
+
+
 
 $$
 N(t)=3\cdot2^{t/5}\text{ triệu người}.
 $$
+
+
 
  Thế $t=0$ cho 3 triệu, $t=5$ cho 6 triệu.
 

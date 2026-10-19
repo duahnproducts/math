@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Ứng dụng: hệ phương trình vi phân — bài 2"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.7.2"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.7.2 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh rằng nghiệm của $f^{\prime}= af$ thỏa mãn $f(x_{0}) = k$ là $f(x) = ke^{a(x-x_0)}$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-7-2-1" moTa="Đề gốc Nicholson bài 3.7.2, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ fying f(x0) = k is f(x) = kea(x−x0).
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +48,25 @@ Mỗi vector riêng v với trị riêng λ cho nghiệm v nhân exp(λx); giả
 
 <LoiGiai>
 
-Nghiệm tổng quát của $f\prime=af$ là $Ce^{ax}$. Thay $f(x_0)=k$ cho $C=ke^{-ax_0}$, nên $f(x)=ke^{a(x-x_0)}$. Đạo hàm cho $f\prime=af$, và tại $x=x_0$ được $k$. Công thức bao gồm $a=0$ và $k=0$.
+**Cách làm.** Nếu $Av=\lambda v$ thì $f(x)=e^{\lambda x}v$ thỏa $f\prime=Af$, vì $f\prime=\lambda e^{\lambda x}v=Af$. Điều kiện đầu dùng để xác định các hệ số còn lại.
+
+Thay $x=x_0$ vào $Ce^{ax}$ cho $Ce^{ax_0}=k$. Vì hàm mũ luôn dương, ta chia được cho $e^{ax_0}$: $C=ke^{-ax_0}$. Gộp hai số mũ thành $a(x-x_0)$.
+
+**Bước 1. Lập luận và tính toán.**
+
+Nghiệm tổng quát của $f\prime=af$ là $Ce^{ax}$.
+
+**Bước 2. Thay vào để tính và kiểm tra.**
+
+Thay $f(x_0)=k$ cho $C=ke^{-ax_0}$, nên $f(x)=ke^{a(x-x_0)}$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Đạo hàm cho $f\prime=af$, và tại $x=x_0$ được $k$.
+
+**Bước 4. Lập luận và tính toán.**
+
+Công thức bao gồm $a=0$ và $k=0$.
 
 </LoiGiai>
 

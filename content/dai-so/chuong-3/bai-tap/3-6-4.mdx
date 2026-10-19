@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Ứng dụng: hệ thức truy hồi tuyến tính — bài 4"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.6.4"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.6.4 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Một người phải leo một cầu thang gồm $k$ bậc. Mỗi lần người ấy bước lên một hoặc hai bậc. Vì vậy có các cách leo 3 bậc là: 1, 1, 1; 1, 2; hoặc 2, 1. Tìm $s_{k}$, số cách leo hết cầu thang $k$ bậc. [Gợi ý: Fibonacci.]
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-6-4-1" moTa="Đề gốc Nicholson bài 3.6.4, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -25,6 +33,7 @@ steps. [Hint: Fibonacci.]
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -42,11 +51,29 @@ Dùng các điều kiện đầu để xác định hệ số trong nghiệm t�
 
 <LoiGiai>
 
-Bước đầu có thể đi 1 bậc hoặc 2 bậc, nên $s_k=s_{k-1}+s_{k-2}$ với $s_0=1$, $s_1=1$. Vậy $s_k=F_{k+1}$, nếu $F_0=0,F_1=1$. Công thức tường minh:
+**Cách làm.** Với truy hồi tuyến tính, thử $x_k=r^k$ để tìm phương trình đặc trưng. Các điều kiện đầu quyết định hệ số; với bài đếm, cần phân loại các trường hợp rời nhau và đếm hết mọi khả năng.
+
+Hai trường hợp bước đầu dài 1 hoặc 2 bậc không trùng nhau và bao hết mọi cách leo. Sau khi bỏ bước đầu, số bậc còn lại giảm tương ứng 1 hoặc 2. Quy ước có một cách leo 0 bậc (không bước) cho điều kiện $s_0=1$.
+
+**Bước 1. Lập luận và tính toán.**
+
+Bước đầu có thể đi 1 bậc hoặc 2 bậc, nên $s_k=s_{k-1}+s_{k-2}$ với $s_0=1$, $s_1=1$.
+
+**Bước 2. Rút ra kết luận.**
+
+Vậy $s_k=F_{k+1}$, nếu $F_0=0,F_1=1$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Công thức tường minh:
+
+
 
 $$
 s_k=\frac{\phi^{k+1}-\psi^{k+1}}{\sqrt5},\quad\phi=\frac{1+\sqrt5}2,\;\psi=\frac{1-\sqrt5}2.
 $$
+
+
 
  Ví dụ $s_3=3$ khớp các cách trong đề.
 

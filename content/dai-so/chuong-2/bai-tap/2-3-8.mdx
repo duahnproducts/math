@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Phép nhân ma trận — bài 8"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.3.8"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.8 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+**a.** Tìm hai ma trận $2 \times 2$, ký hiệu là $A$, sao cho $A^{2} = 0$.
+
+**b.** Tìm ba ma trận $2 \times 2$, ký hiệu là $A$, sao cho (i) $A^{2} = I$; (ii) $A^{2} = A$.
+
+**c.** Tìm các ma trận $2 \times 2$, ký hiệu là $A$ và $B$, sao cho $AB = 0$ nhưng $BA \neq 0$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-3-8-1" moTa="Đề gốc Nicholson bài 2.3.8, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -31,6 +43,7 @@ Exercise 2.3.8
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -47,7 +60,37 @@ Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự 
 
 <LoiGiai>
 
-Đặt $N=\begin{bmatrix}0&1\\0&0\end{bmatrix}$, $P=\operatorname{diag}(1,0)$, $Q=\operatorname{diag}(0,1)$. **a.** Chọn $N,N^T$: bình phương đều bằng 0. **b(i).** Chọn $I,-I,\begin{bmatrix}0&1\\1&0\end{bmatrix}$: bình phương đều bằng $I$. **b(ii).** Chọn $0,I,P$: bình phương bằng chính nó. **c.** Chọn $A=N,B=P$; nhân trực tiếp được $AB=0$ nhưng $BA=N\ne0$.
+**Cách làm.** Với $A$ cỡ $m\times n$, $B$ cỡ $n\times p$, tích $AB$ có cỡ $m\times p$ và $(AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$. Khi khai triển, giữ nguyên thứ tự các thừa số.
+
+Với $N$ ở dưới, $N^2=\begin{bmatrix}0&0\\0&0\end{bmatrix}$, $NP=0$ còn $PN=N$. Vì vậy tích bằng 0 không buộc từng thừa số bằng 0. Với $P,Q$, ta có $P^2=P$, $Q^2=Q$ do từng ô đường chéo là 0 hoặc 1.
+
+**Bước 1. Thiết lập biểu thức.**
+
+Đặt $N=\begin{bmatrix}0&1\\0&0\end{bmatrix}$, $P=\operatorname{diag}(1,0)$, $Q=\operatorname{diag}(0,1)$.
+
+**a.**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Chọn $N,N^T$: bình phương đều bằng 0.
+
+**b(i).**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Chọn $I,-I,\begin{bmatrix}0&1\\1&0\end{bmatrix}$: bình phương đều bằng $I$.
+
+**b(ii).**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Chọn $0,I,P$: bình phương bằng chính nó.
+
+**c.**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Chọn $A=N,B=P$; nhân trực tiếp được $AB=0$ nhưng $BA=N\ne0$.
 
 </LoiGiai>
 

@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Ứng dụng: hệ phương trình vi phân — bài 3"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.7.3"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.7.3 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Một nguyên tố phóng xạ phân rã với tốc độ tỷ lệ với lượng chất hiện có. Giả sử khối lượng ban đầu 10 g giảm còn 8 g sau 3 giờ.
+
+**a.** Tìm khối lượng sau $t$ giờ.
+
+**b.** Tìm chu kỳ bán rã của nguyên tố — thời gian để khối lượng giảm còn một nửa.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-7-3-1" moTa="Đề gốc Nicholson bài 3.7.3, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -29,6 +41,7 @@ mass of 10 g decays to 8 g in 3 hours.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -45,7 +58,35 @@ Mỗi vector riêng v với trị riêng λ cho nghiệm v nhân exp(λx); giả
 
 <LoiGiai>
 
-Gọi khối lượng $m(t)$. Định luật cho $m\prime=rm$, nên $m(t)=10e^{rt}$. Điều kiện $m(3)=8$ cho $e^{3r}=4/5$, $r=\ln(4/5)/3<0$. **a.** $m(t)=10(4/5)^{t/3}$ gram. **b.** Đặt $m(T)=5$: $(4/5)^{T/3}=1/2$, nên
+**Cách làm.** Nếu $Av=\lambda v$ thì $f(x)=e^{\lambda x}v$ thỏa $f\prime=Af$, vì $f\prime=\lambda e^{\lambda x}v=Af$. Điều kiện đầu dùng để xác định các hệ số còn lại.
+
+Tại $t=0$, $m(0)=10$ quyết định hệ số trước hàm mũ. Sau 3 giờ còn $8/10=4/5$ lượng đầu, nên $e^{3r}=4/5$. Lấy log hai vế cho $3r=\ln(4/5)$; log âm vì $4/5<1$, phù hợp sự phân rã.
+
+**Bước 1. Thiết lập biểu thức.**
+
+Gọi khối lượng $m(t)$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Định luật cho $m\prime=rm$, nên $m(t)=10e^{rt}$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Điều kiện $m(3)=8$ cho $e^{3r}=4/5$, $r=\ln(4/5)/3<0$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$m(t)=10(4/5)^{t/3}$ gram.
+
+**b.**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Đặt $m(T)=5$: $(4/5)^{T/3}=1/2$, nên
+
+
 
 $$
 T=\frac{3\ln(1/2)}{\ln(4/5)}\approx9.319\text{ giờ}.

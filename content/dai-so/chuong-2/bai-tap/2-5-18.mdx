@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Ma trận sơ cấp — bài 18"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.5.18"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.5.18 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu $U$ và $V$ là các ma trận khả nghịch $n \times n$, hãy chứng minh rằng $U \overset{r}{\sim} V$. (Xem Bài 2.5.17.)
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-5-18-1" moTa="Đề gốc Nicholson bài 2.5.18, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ show that U r∼V. (See Exercise 2.5.17.)
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +48,19 @@ Một phép hàng là nhân trái; một phép cột là nhân phải. Ghi thứ
 
 <LoiGiai>
 
-Vì $U,V$ khả nghịch, $VU^{-1}$ khả nghịch và là tích các ma trận sơ cấp. Đẳng thức $V=(VU^{-1})U$ cho một chuỗi phép hàng từ $U$ tới $V$. Do đó $U$ và $V$ tương đương hàng; cũng có thể nhận ra cả hai có RREF là $I_n$.
+**Cách làm.** Ma trận sơ cấp $E$ nhận từ $I$ bằng một phép hàng. $EA$ làm phép đó lên các hàng của $A$. Trong chuỗi $E_k\cdots E_1A$, phép $E_1$ được thực hiện trước.
+
+**Bước 1. Giải thích điều kiện sử dụng.**
+
+Vì $U,V$ khả nghịch, $VU^{-1}$ khả nghịch và là tích các ma trận sơ cấp.
+
+**Bước 2. Lập luận và tính toán.**
+
+Đẳng thức $V=(VU^{-1})U$ cho một chuỗi phép hàng từ $U$ tới $V$.
+
+**Bước 3. Rút ra kết luận.**
+
+Do đó $U$ và $V$ tương đương hàng; cũng có thể nhận ra cả hai có RREF là $I_n$.
 
 </LoiGiai>
 

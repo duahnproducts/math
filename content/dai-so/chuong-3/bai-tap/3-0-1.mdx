@@ -5,11 +5,27 @@ do_kho: vua
 tieu_de: "Bài bổ sung 3.1"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.1"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.1 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh rằng
+
+
+
+$$
+\det \left[ \begin{array}{ccc} a+px & b+qx & c+rx \\ p+ux & q+vx & r+wx \\ u+ax & v+bx & w+cx \end{array} \right] = (1+x^3) \det \left[ \begin{array}{ccc} a & b & c \\ p & q & r \\ u & v & w \end{array}\right]
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-0-1-1" moTa="Đề gốc Nicholson bài 3.1, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -23,6 +39,7 @@ det   p + ux  q + vx   r + wx    (1+x3) det   p  q   r                    
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -40,13 +57,31 @@ Với đẳng thức tổng quát, khai triển có giữ thứ tự; với mệ
 
 <LoiGiai>
 
-Gọi các hàng gốc là $r_1,r_2,r_3$. Ma trận mới bằng $CB$, với
+**Bước 1. Thiết lập biểu thức.**
+
+Gọi các hàng gốc là $r_1,r_2,r_3$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Ma trận mới bằng $CB$, với
+
+
 
 $$
 C=\begin{bmatrix}1&x&0\\0&1&x\\x&0&1\end{bmatrix}.
 $$
 
- Khai triển hàng đầu cho $\det C=1+x^3$. Bởi định thức của tích, định thức mới là $(1+x^3)\det B$. Cũng có thể khai triển đa tuyến tính: các hạng hỗn hợp có hai hàng trùng đều bằng 0, chỉ còn hạng không chứa $x$ và hạng chứa $x^3$, có cùng dấu do xoay vòng ba hàng.
+
+
+ Khai triển hàng đầu cho $\det C=1+x^3$.
+
+**Bước 3. Giải thích điều kiện sử dụng.**
+
+Bởi định thức của tích, định thức mới là $(1+x^3)\det B$.
+
+**Bước 4. Lập luận và tính toán.**
+
+Cũng có thể khai triển đa tuyến tính: các hạng hỗn hợp có hai hàng trùng đều bằng 0, chỉ còn hạng không chứa $x$ và hạng chứa $x^3$, có cùng dấu do xoay vòng ba hàng.
 
 </LoiGiai>
 

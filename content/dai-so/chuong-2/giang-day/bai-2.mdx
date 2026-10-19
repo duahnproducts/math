@@ -153,16 +153,84 @@ Theo quy tắc tích vô hướng, ta dùng **hàng** của $A$ chấm với $\m
 Tính $\begin{bmatrix} 2 & 1 \\ -1 & 3 \end{bmatrix}\begin{bmatrix} 4 \\ -2 \end{bmatrix}$ bằng cả hai cách.
 
 <GoiYNho>Đáp số để kiểm tra: phần tử đầu bằng $8 - 2 = 6$.</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Dùng cả cách trộn cột và cách hàng nhân vector.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+$$
+4\begin{bmatrix}2\\-1\end{bmatrix}-2\begin{bmatrix}1\\3\end{bmatrix}=\begin{bmatrix}8-2\\-4-6\end{bmatrix}=\begin{bmatrix}6\\-10\end{bmatrix}.
+$$
+
+ Cách hàng–cột: hàng 1 cho $2\cdot4+1(-2)=6$; hàng 2 cho $(-1)4+3(-2)=-10$.
+
+**Bước 3. Kiểm tra và kết luận.**
+
+Hai cách đều cho vector $(6,-10)^T$ cỡ $2\times1$.
+
+**Bước 4. Cách tự làm lại.**
+
+Hệ số đầu vào trộn các cột; mỗi hàng tính một tọa độ đầu ra.
+
+</LoiGiai>
 </BaiLuyen>
 
 <BaiLuyen do_kho="vua" so="2.2">
 Với $A$ trong ví dụ mẫu, viết vector $\mathbf{b} = (1, 3)$ thành tổ hợp tuyến tính các cột của $A$ (nghĩa là tìm một $\mathbf{x}$ với $A\mathbf{x} = \mathbf{b}$).
 
 <GoiYNho>Giải hệ $A\mathbf{x} = \mathbf{b}$ bằng phép khử Gauss (<XemMuc chuong={1} bai={2} />). Có vô số đáp án; một trong số đó có $x_3 = 0$.</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Từ $A=\begin{bmatrix}1&2&-1\\3&0&4\end{bmatrix}$, giải $Ax=(1,3)^T$.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+Hệ là $x_1+2x_2-x_3=1$, $3x_1+4x_3=3$. Đặt $x_3=t$, phương trình sau cho $x_1=1-4t/3$. Thế vào phương trình đầu: $2x_2=7t/3$, nên $x_2=7t/6$. Vì thế
+
+$$
+\begin{bmatrix}1\\3\end{bmatrix}=\left(1-\frac{4t}3\right)\begin{bmatrix}1\\3\end{bmatrix}+\frac{7t}6\begin{bmatrix}2\\0\end{bmatrix}+t\begin{bmatrix}-1\\4\end{bmatrix}.
+$$
+
+**Bước 3. Kiểm tra và kết luận.**
+
+Chọn $t=0$ cho cách viết đơn giản: $b$ chính là cột 1. Trong công thức tổng quát, các hệ số của $t$ triệt tiêu ở cả hai tọa độ.
+
+**Bước 4. Cách tự làm lại.**
+
+Tìm hệ số tổ hợp cột chính là giải hệ với các cột ấy làm ma trận hệ số.
+
+</LoiGiai>
 </BaiLuyen>
 
 <BaiLuyen do_kho="kho" so="2.3">
 Cho $\mathbf{x}_1$ là một nghiệm của $A\mathbf{x} = \mathbf{b}$ và $\mathbf{x}_0$ là một nghiệm của hệ thuần nhất $A\mathbf{x} = \mathbf{0}$. Chứng tỏ $\mathbf{x}_1 + t\mathbf{x}_0$ cũng là nghiệm của $A\mathbf{x} = \mathbf{b}$ với mọi số $t$. Điều này giải thích gì về hình dạng nghiệm tổng quát ở Chương 1?
 
 <GoiYNho tieuDe="Bạn sẽ cần">Hai tính chất $A(\mathbf{x} + \mathbf{y}) = A\mathbf{x} + A\mathbf{y}$ và $A(t\mathbf{x}) = t(A\mathbf{x})$. Sách gọi kết quả này là <XemMuc muc="2.2" chu="Định lý 2.2.3" />.</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Dùng tính tuyến tính của phép nhân ma trận.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+Ta có $A(x_1+tx_0)=Ax_1+tAx_0=b+t0=b$ với mọi $t$. Vì vậy cộng bất kỳ nghiệm thuần nhất nào vào một nghiệm riêng vẫn cho nghiệm của hệ ban đầu.
+
+**Bước 3. Kiểm tra và kết luận.**
+
+Nếu $x_0\ne0$, hai tham số $s\ne t$ cho hai nghiệm khác nhau vì hiệu bằng $(s-t)x_0\ne0$. Nếu $x_0=0$, công thức chỉ lặp lại cùng một nghiệm.
+
+**Bước 4. Cách tự làm lại.**
+
+Nghiệm tổng quát là một nghiệm riêng cộng toàn bộ nghiệm thuần nhất; muốn đủ mọi nghiệm cần dùng đủ cơ sở của hệ thuần nhất.
+
+</LoiGiai>
 </BaiLuyen>

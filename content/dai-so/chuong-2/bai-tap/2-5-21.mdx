@@ -5,11 +5,33 @@ do_kho: vua
 tieu_de: "Ma trận sơ cấp — bài 21"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.5.21"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.5.21 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Một phép biến đổi cột sơ cấp của ma trận được định nghĩa là một trong ba phép sau: (I) Đổi chỗ hai cột. (II) Nhân một cột với một vô hướng khác 0. (III) Cộng một bội của một cột vào cột khác. Chứng minh rằng:
+
+**a.** Nếu thực hiện một phép biến đổi cột sơ cấp trên ma trận $m \times n$, ký hiệu là $A$, thì kết quả có dạng $AF$, trong đó $F$ là ma trận sơ cấp cấp $n \times n$.
+
+**b.** Với ma trận $m \times n$ bất kỳ, ký hiệu là $A$, tồn tại $m \times m$ ma trận sơ cấp $E_{1}, \dots, E_{k}$ và $n \times n$ ma trận sơ cấp $F_{1}, \dots, F_{p}$ sao cho, dưới dạng khối,
+
+
+
+$$
+E_{k} \cdots E_{1}AF_{1} \cdots F_{p} = \left[ \begin{array}{cc} I_{r} & 0 \\ 0 & 0 \end{array} \right]
+$$
+
+
+
+.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-5-21-1" moTa="Đề gốc Nicholson bài 2.5.21, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -36,6 +58,7 @@ Show that:
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -52,7 +75,31 @@ Một phép hàng là nhân trái; một phép cột là nhân phải. Ghi thứ
 
 <LoiGiai>
 
-**a.** Chuyển vị một phép cột biến nó thành phép hàng trên $A^T$: nếu kết quả chuyển vị là $EA^T$, thì kết quả ban đầu là $AE^T$. Vì $E^T$ sơ cấp, lấy $F=E^T$. **b.** Khử hàng về RREF, đưa các cột trụ về trước bằng hoán vị cột, rồi dùng các cột đơn vị ấy khử mọi ô ngoài khối trụ. Kết quả là $\begin{bmatrix}I_r&0\\0&0\end{bmatrix}$, $r=\operatorname{rank}A$. Mỗi bước là một phép hàng hoặc cột sơ cấp nên cho đúng tích $E_k\cdots E_1AF_1\cdots F_p$ trong đề.
+**Cách làm.** Ma trận sơ cấp $E$ nhận từ $I$ bằng một phép hàng. $EA$ làm phép đó lên các hàng của $A$. Trong chuỗi $E_k\cdots E_1A$, phép $E_1$ được thực hiện trước.
+
+**a.**
+
+**Bước 1. Thực hiện phép biến đổi.**
+
+Chuyển vị một phép cột biến nó thành phép hàng trên $A^T$: nếu kết quả chuyển vị là $EA^T$, thì kết quả ban đầu là $AE^T$.
+
+**Bước 2. Giải thích điều kiện sử dụng.**
+
+Vì $E^T$ sơ cấp, lấy $F=E^T$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Khử hàng về RREF, đưa các cột trụ về trước bằng hoán vị cột, rồi dùng các cột đơn vị ấy khử mọi ô ngoài khối trụ.
+
+**Bước 2. Lập luận và tính toán.**
+
+Kết quả là $\begin{bmatrix}I_r&0\\0&0\end{bmatrix}$, $r=\operatorname{rank}A$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Mỗi bước là một phép hàng hoặc cột sơ cấp nên cho đúng tích $E_k\cdots E_1AF_1\cdots F_p$ trong đề.
 
 </LoiGiai>
 

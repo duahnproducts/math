@@ -5,11 +5,47 @@ do_kho: vua
 tieu_de: "Chéo hoá — bài 17"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.4.17"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.4.17 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho
+
+$$
+A = \left[ \begin{array}{cc} B & 0 \\ 0 & C \end{array}\right]
+$$
+
+, trong đó $B$ và $C$ là các ma trận vuông.
+
+**a.** Nếu $B$ và $C$ lần lượt chéo hóa được qua $Q$ và $R$ (tức là $Q^{-1}BQ$ và $R^{-1}CR$ là các ma trận chéo), hãy chứng minh rằng $A$ chéo hóa được qua
+
+$$
+\left[ \begin{array}{cc} Q & 0 \\ 0 & R \end{array}\right]
+$$
+
+.
+
+**b.** Dùng ý (a) để chéo hóa $A$ nếu
+
+$$
+B = \left[ \begin{array}{rr} 5 & 3 \\ 3 & 5 \end{array}\right]
+$$
+
+ và
+
+$$
+C = \left[ \begin{array}{rr} 7 & -1 \\ -1 & 7 \end{array}\right]
+$$
+
+.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-4-17-1" moTa="Đề gốc Nicholson bài 3.4.17, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -38,6 +74,7 @@ square matrices.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -54,11 +91,37 @@ Ghép các vector riêng độc lập thành cột của P, rồi kiểm tra AP 
 
 <LoiGiai>
 
-**a.** Đặt $P=\operatorname{diag}(Q,R)$, khi đó $P^{-1}=\operatorname{diag}(Q^{-1},R^{-1})$. Nhân khối cho $P^{-1}AP=\operatorname{diag}(Q^{-1}BQ,R^{-1}CR)$, là ma trận chéo. **b.** Cả hai khối có vector riêng $(1,1)^T,(1,-1)^T$. Chọn
+**Cách làm.** Chéo hóa $A=PDP^{-1}$ nghĩa là các cột của $P$ là một cơ sở vector riêng. Trị riêng của cột thứ $j$ phải nằm ở ô $d_{jj}$, và có thể kiểm tra bằng $AP=PD$.
+
+Các khối chéo tác động độc lập lên hai nhóm tọa độ. Chọn ma trận đổi cơ sở dạng khối chéo sẽ không tạo các ô ngoài khối mới; hai phép chéo hóa nhỏ có thể ghép thành một phép chéo hóa cho toàn bộ ma trận.
+
+**a.**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Đặt $P=\operatorname{diag}(Q,R)$, khi đó $P^{-1}=\operatorname{diag}(Q^{-1},R^{-1})$.
+
+**Bước 2. Thực hiện phép biến đổi.**
+
+Nhân khối cho $P^{-1}AP=\operatorname{diag}(Q^{-1}BQ,R^{-1}CR)$, là ma trận chéo.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Cả hai khối có vector riêng $(1,1)^T,(1,-1)^T$.
+
+**Bước 2. Thiết lập biểu thức.**
+
+Chọn
+
+
 
 $$
 P=\begin{bmatrix}1&1&0&0\\1&-1&0&0\\0&0&1&1\\0&0&1&-1\end{bmatrix},\qquad P^{-1}AP=\begin{bmatrix}8&0&0&0\\0&2&0&0\\0&0&6&0\\0&0&0&8\end{bmatrix}.
 $$
+
+
 
  Các trị riêng tương ứng là 8,2 cho $B$ và 6,8 cho $C$.
 

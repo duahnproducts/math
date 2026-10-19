@@ -5,11 +5,51 @@ do_kho: vua
 tieu_de: "Định thức và ma trận nghịch đảo — bài 1"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.2.1"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.1 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Tìm ma trận phụ hợp của mỗi ma trận sau.
+
+**a.**
+
+$$
+\left[ \begin{array}{rrr} 5 & 1 & 3 \\ -1 & 2 & 3 \\ 1 & 4 & 8 \end{array}\right]
+$$
+
+
+
+**b.**
+
+$$
+\left[ \begin{array}{rrr} 1 & -1 & 2 \\ 3 & 1 & 0 \\ 0 & -1 & 1 \end{array}\right]
+$$
+
+
+
+**c.**
+
+$$
+\left[ \begin{array}{rrr} 1 & 0 & -1 \\ -1 & 1 & 0 \\ 0 & -1 & 1 \end{array}\right]
+$$
+
+
+
+**d.**
+
+$$
+\frac{1}{3}\left[ \begin{array}{rrr} -1 & 2 & 2 \\ 2 & -1 & 2 \\ 2 & 2 & -1 \end{array}\right]
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-2-1-1" moTa="Đề gốc Nicholson bài 3.2.1, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -25,6 +65,7 @@ ing matrices.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -42,37 +83,453 @@ Dùng định thức của tích và công thức nghịch đảo qua adjugate k
 
 <LoiGiai>
 
-**a.** Tính $C_{ij}=(-1)^{i+j}\det A_{ij}$ rồi chuyển vị bảng phần bù, được
+**Cách làm.** Dùng $\det(AB)=\det A\det B$, $\det A^T=\det A$, $\det(cA)=c^n\det A$ ở cấp $n$. Khi $\det A\ne0$, $A^{-1}=\operatorname{adj}A/\det A$; adjugate là bảng phần bù đã chuyển vị.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Ta dùng $C_{ij}=(-1)^{i+j}\det M_{ij}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Mỗi $M_{ij}$ được lập bằng cách xóa hàng $i$ và cột $j$ của $A$.
+
+**Bước 3. Lập luận và tính toán.**
+
+
 
 $$
-\operatorname{adj}A=\begin{bmatrix}4&4&-3\\11&37&-18\\-6&-19&11\end{bmatrix}.
+C_{11}=(-1)^{2}\det\begin{bmatrix}2&3\\4&8\end{bmatrix}=4.
 $$
 
- Kiểm tra $A\operatorname{adj}A=(\det A)I$.
 
-**b.** Tính $C_{ij}=(-1)^{i+j}\det A_{ij}$ rồi chuyển vị bảng phần bù, được
 
-$$
-\operatorname{adj}A=\begin{bmatrix}1&-1&-2\\-3&1&6\\-3&1&4\end{bmatrix}.
-$$
+**Bước 4. Lập luận và tính toán.**
 
- Kiểm tra $A\operatorname{adj}A=(\det A)I$.
 
-**c.** Tính $C_{ij}=(-1)^{i+j}\det A_{ij}$ rồi chuyển vị bảng phần bù, được
 
 $$
-\operatorname{adj}A=\begin{bmatrix}1&1&1\\1&1&1\\1&1&1\end{bmatrix}.
+C_{12}=(-1)^{3}\det\begin{bmatrix}-1&3\\1&8\end{bmatrix}=11.
 $$
 
- Kiểm tra $A\operatorname{adj}A=(\det A)I$.
 
-**d.** Tính $C_{ij}=(-1)^{i+j}\det A_{ij}$ rồi chuyển vị bảng phần bù, được
+
+**Bước 5. Lập luận và tính toán.**
+
+
 
 $$
-\operatorname{adj}A=\begin{bmatrix}- \frac{1}{3}&\frac{2}{3}&\frac{2}{3}\\\frac{2}{3}&- \frac{1}{3}&\frac{2}{3}\\\frac{2}{3}&\frac{2}{3}&- \frac{1}{3}\end{bmatrix}.
+C_{13}=(-1)^{4}\det\begin{bmatrix}-1&2\\1&4\end{bmatrix}=-6.
 $$
 
- Kiểm tra $A\operatorname{adj}A=(\det A)I$.
+
+
+**Bước 6. Lập luận và tính toán.**
+
+
+
+$$
+C_{21}=(-1)^{3}\det\begin{bmatrix}1&3\\4&8\end{bmatrix}=4.
+$$
+
+
+
+**Bước 7. Lập luận và tính toán.**
+
+
+
+$$
+C_{22}=(-1)^{4}\det\begin{bmatrix}5&3\\1&8\end{bmatrix}=37.
+$$
+
+
+
+**Bước 8. Lập luận và tính toán.**
+
+
+
+$$
+C_{23}=(-1)^{5}\det\begin{bmatrix}5&1\\1&4\end{bmatrix}=-19.
+$$
+
+
+
+**Bước 9. Lập luận và tính toán.**
+
+
+
+$$
+C_{31}=(-1)^{4}\det\begin{bmatrix}1&3\\2&3\end{bmatrix}=-3.
+$$
+
+
+
+**Bước 10. Lập luận và tính toán.**
+
+
+
+$$
+C_{32}=(-1)^{5}\det\begin{bmatrix}5&3\\-1&3\end{bmatrix}=-18.
+$$
+
+
+
+**Bước 11. Lập luận và tính toán.**
+
+
+
+$$
+C_{33}=(-1)^{6}\det\begin{bmatrix}5&1\\-1&2\end{bmatrix}=11.
+$$
+
+
+
+**Bước 12. Lập luận và tính toán.**
+
+Ghép thành bảng phần bù $C$, rồi **chuyển vị** (hàng thành cột):
+
+
+
+$$
+C=\begin{bmatrix}4&11&-6\\4&37&-19\\-3&-18&11\end{bmatrix},\qquad\operatorname{adj}A=C^T=\begin{bmatrix}4&4&-3\\11&37&-18\\-6&-19&11\end{bmatrix}.
+$$
+
+
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Ta dùng $C_{ij}=(-1)^{i+j}\det M_{ij}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Mỗi $M_{ij}$ được lập bằng cách xóa hàng $i$ và cột $j$ của $A$.
+
+**Bước 3. Lập luận và tính toán.**
+
+
+
+$$
+C_{11}=(-1)^{2}\det\begin{bmatrix}1&0\\-1&1\end{bmatrix}=1.
+$$
+
+
+
+**Bước 4. Lập luận và tính toán.**
+
+
+
+$$
+C_{12}=(-1)^{3}\det\begin{bmatrix}3&0\\0&1\end{bmatrix}=-3.
+$$
+
+
+
+**Bước 5. Lập luận và tính toán.**
+
+
+
+$$
+C_{13}=(-1)^{4}\det\begin{bmatrix}3&1\\0&-1\end{bmatrix}=-3.
+$$
+
+
+
+**Bước 6. Lập luận và tính toán.**
+
+
+
+$$
+C_{21}=(-1)^{3}\det\begin{bmatrix}-1&2\\-1&1\end{bmatrix}=-1.
+$$
+
+
+
+**Bước 7. Lập luận và tính toán.**
+
+
+
+$$
+C_{22}=(-1)^{4}\det\begin{bmatrix}1&2\\0&1\end{bmatrix}=1.
+$$
+
+
+
+**Bước 8. Lập luận và tính toán.**
+
+
+
+$$
+C_{23}=(-1)^{5}\det\begin{bmatrix}1&-1\\0&-1\end{bmatrix}=1.
+$$
+
+
+
+**Bước 9. Lập luận và tính toán.**
+
+
+
+$$
+C_{31}=(-1)^{4}\det\begin{bmatrix}-1&2\\1&0\end{bmatrix}=-2.
+$$
+
+
+
+**Bước 10. Lập luận và tính toán.**
+
+
+
+$$
+C_{32}=(-1)^{5}\det\begin{bmatrix}1&2\\3&0\end{bmatrix}=6.
+$$
+
+
+
+**Bước 11. Lập luận và tính toán.**
+
+
+
+$$
+C_{33}=(-1)^{6}\det\begin{bmatrix}1&-1\\3&1\end{bmatrix}=4.
+$$
+
+
+
+**Bước 12. Lập luận và tính toán.**
+
+Ghép thành bảng phần bù $C$, rồi **chuyển vị** (hàng thành cột):
+
+
+
+$$
+C=\begin{bmatrix}1&-3&-3\\-1&1&1\\-2&6&4\end{bmatrix},\qquad\operatorname{adj}A=C^T=\begin{bmatrix}1&-1&-2\\-3&1&6\\-3&1&4\end{bmatrix}.
+$$
+
+
+
+**c.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Ta dùng $C_{ij}=(-1)^{i+j}\det M_{ij}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Mỗi $M_{ij}$ được lập bằng cách xóa hàng $i$ và cột $j$ của $A$.
+
+**Bước 3. Lập luận và tính toán.**
+
+
+
+$$
+C_{11}=(-1)^{2}\det\begin{bmatrix}1&0\\-1&1\end{bmatrix}=1.
+$$
+
+
+
+**Bước 4. Lập luận và tính toán.**
+
+
+
+$$
+C_{12}=(-1)^{3}\det\begin{bmatrix}-1&0\\0&1\end{bmatrix}=1.
+$$
+
+
+
+**Bước 5. Lập luận và tính toán.**
+
+
+
+$$
+C_{13}=(-1)^{4}\det\begin{bmatrix}-1&1\\0&-1\end{bmatrix}=1.
+$$
+
+
+
+**Bước 6. Lập luận và tính toán.**
+
+
+
+$$
+C_{21}=(-1)^{3}\det\begin{bmatrix}0&-1\\-1&1\end{bmatrix}=1.
+$$
+
+
+
+**Bước 7. Lập luận và tính toán.**
+
+
+
+$$
+C_{22}=(-1)^{4}\det\begin{bmatrix}1&-1\\0&1\end{bmatrix}=1.
+$$
+
+
+
+**Bước 8. Lập luận và tính toán.**
+
+
+
+$$
+C_{23}=(-1)^{5}\det\begin{bmatrix}1&0\\0&-1\end{bmatrix}=1.
+$$
+
+
+
+**Bước 9. Lập luận và tính toán.**
+
+
+
+$$
+C_{31}=(-1)^{4}\det\begin{bmatrix}0&-1\\1&0\end{bmatrix}=1.
+$$
+
+
+
+**Bước 10. Lập luận và tính toán.**
+
+
+
+$$
+C_{32}=(-1)^{5}\det\begin{bmatrix}1&-1\\-1&0\end{bmatrix}=1.
+$$
+
+
+
+**Bước 11. Lập luận và tính toán.**
+
+
+
+$$
+C_{33}=(-1)^{6}\det\begin{bmatrix}1&0\\-1&1\end{bmatrix}=1.
+$$
+
+
+
+**Bước 12. Lập luận và tính toán.**
+
+Ghép thành bảng phần bù $C$, rồi **chuyển vị** (hàng thành cột):
+
+
+
+$$
+C=\begin{bmatrix}1&1&1\\1&1&1\\1&1&1\end{bmatrix},\qquad\operatorname{adj}A=C^T=\begin{bmatrix}1&1&1\\1&1&1\\1&1&1\end{bmatrix}.
+$$
+
+
+
+**d.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Ta dùng $C_{ij}=(-1)^{i+j}\det M_{ij}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Mỗi $M_{ij}$ được lập bằng cách xóa hàng $i$ và cột $j$ của $A$.
+
+**Bước 3. Lập luận và tính toán.**
+
+
+
+$$
+C_{11}=(-1)^{2}\det\begin{bmatrix}- \frac{1}{3}&\frac{2}{3}\\\frac{2}{3}&- \frac{1}{3}\end{bmatrix}=- \frac{1}{3}.
+$$
+
+
+
+**Bước 4. Lập luận và tính toán.**
+
+
+
+$$
+C_{12}=(-1)^{3}\det\begin{bmatrix}\frac{2}{3}&\frac{2}{3}\\\frac{2}{3}&- \frac{1}{3}\end{bmatrix}=\frac{2}{3}.
+$$
+
+
+
+**Bước 5. Lập luận và tính toán.**
+
+
+
+$$
+C_{13}=(-1)^{4}\det\begin{bmatrix}\frac{2}{3}&- \frac{1}{3}\\\frac{2}{3}&\frac{2}{3}\end{bmatrix}=\frac{2}{3}.
+$$
+
+
+
+**Bước 6. Lập luận và tính toán.**
+
+
+
+$$
+C_{21}=(-1)^{3}\det\begin{bmatrix}\frac{2}{3}&\frac{2}{3}\\\frac{2}{3}&- \frac{1}{3}\end{bmatrix}=\frac{2}{3}.
+$$
+
+
+
+**Bước 7. Lập luận và tính toán.**
+
+
+
+$$
+C_{22}=(-1)^{4}\det\begin{bmatrix}- \frac{1}{3}&\frac{2}{3}\\\frac{2}{3}&- \frac{1}{3}\end{bmatrix}=- \frac{1}{3}.
+$$
+
+
+
+**Bước 8. Lập luận và tính toán.**
+
+
+
+$$
+C_{23}=(-1)^{5}\det\begin{bmatrix}- \frac{1}{3}&\frac{2}{3}\\\frac{2}{3}&\frac{2}{3}\end{bmatrix}=\frac{2}{3}.
+$$
+
+
+
+**Bước 9. Lập luận và tính toán.**
+
+
+
+$$
+C_{31}=(-1)^{4}\det\begin{bmatrix}\frac{2}{3}&\frac{2}{3}\\- \frac{1}{3}&\frac{2}{3}\end{bmatrix}=\frac{2}{3}.
+$$
+
+
+
+**Bước 10. Lập luận và tính toán.**
+
+
+
+$$
+C_{32}=(-1)^{5}\det\begin{bmatrix}- \frac{1}{3}&\frac{2}{3}\\\frac{2}{3}&\frac{2}{3}\end{bmatrix}=\frac{2}{3}.
+$$
+
+
+
+**Bước 11. Lập luận và tính toán.**
+
+
+
+$$
+C_{33}=(-1)^{6}\det\begin{bmatrix}- \frac{1}{3}&\frac{2}{3}\\\frac{2}{3}&- \frac{1}{3}\end{bmatrix}=- \frac{1}{3}.
+$$
+
+
+
+**Bước 12. Lập luận và tính toán.**
+
+Ghép thành bảng phần bù $C$, rồi **chuyển vị** (hàng thành cột):
+
+
+
+$$
+C=\begin{bmatrix}- \frac{1}{3}&\frac{2}{3}&\frac{2}{3}\\\frac{2}{3}&- \frac{1}{3}&\frac{2}{3}\\\frac{2}{3}&\frac{2}{3}&- \frac{1}{3}\end{bmatrix},\qquad\operatorname{adj}A=C^T=\begin{bmatrix}- \frac{1}{3}&\frac{2}{3}&\frac{2}{3}\\\frac{2}{3}&- \frac{1}{3}&\frac{2}{3}\\\frac{2}{3}&\frac{2}{3}&- \frac{1}{3}\end{bmatrix}.
+$$
 
 </LoiGiai>
 

@@ -5,11 +5,35 @@ do_kho: vua
 tieu_de: "Ma trận sơ cấp — bài 3"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.5.3"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.5.3 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho
+
+$$
+A = \left[ \begin{array}{rr} 1 & 2 \\ -1 & 1 \end{array} \right]
+$$
+
+ và
+
+$$
+C = \left[ \begin{array}{rr} -1 & 1 \\ 2 & 1 \end{array} \right]
+$$
+
+.
+
+**a.** Tìm các ma trận sơ cấp $E_{1}$ và $E_{2}$ sao cho $C = E_{2}E_{1}A$.
+
+**b.** Chứng minh rằng không có ma trận sơ cấp $E$ nào thỏa mãn $C = EA$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-5-3-1" moTa="Đề gốc Nicholson bài 2.5.3, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -31,6 +55,7 @@ Exercise 2.5.3  Let A =           and
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -47,13 +72,35 @@ Một phép hàng là nhân trái; một phép cột là nhân phải. Ghi thứ
 
 <LoiGiai>
 
-**a.** Đổi hai hàng, rồi trừ hàng 1 mới khỏi hàng 2:
+**Cách làm.** Ma trận sơ cấp $E$ nhận từ $I$ bằng một phép hàng. $EA$ làm phép đó lên các hàng của $A$. Trong chuỗi $E_k\cdots E_1A$, phép $E_1$ được thực hiện trước.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Đổi hai hàng, rồi trừ hàng 1 mới khỏi hàng 2:
+
+
 
 $$
 E_1=\begin{bmatrix}0&1\\1&0\end{bmatrix},\quad E_2=\begin{bmatrix}1&0\\-1&1\end{bmatrix},\quad E_2E_1A=C.
 $$
 
- **b.** Cả hai hàng của $C$ khác hàng cùng vị trí của $A$, nên phép nhân một hàng / cộng bội hàng không đủ. Phép đổi hai hàng cho hàng dưới $(1,2)$, khác $(2,1)$ của $C$. Ba loại phép hàng đều không thể thực hiện trong một bước.
+
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Cả hai hàng của $C$ khác hàng cùng vị trí của $A$, nên phép nhân một hàng / cộng bội hàng không đủ.
+
+**Bước 2. Lập luận và tính toán.**
+
+Phép đổi hai hàng cho hàng dưới $(1,2)$, khác $(2,1)$ của $C$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Ba loại phép hàng đều không thể thực hiện trong một bước.
 
 </LoiGiai>
 

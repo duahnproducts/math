@@ -5,11 +5,33 @@ do_kho: vua
 tieu_de: "Định thức và ma trận nghịch đảo — bài 10"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.2.10"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.10 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Có thể kết luận gì về $\det A$ nếu:
+
+**a.** $A^2=A$.
+
+**b.** $A^2=I$.
+
+**c.** $A^3=A$.
+
+**d.** $PA=P$ và $P$ khả nghịch.
+
+**e.** $A^2=uA$ và $A$ có kích thước $n\times n$.
+
+**f.** $A=-A^T$ và $A$ có kích thước $n\times n$.
+
+**g.** $A^2+I=0$ và $A$ có kích thước $n\times n$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-2-10-1" moTa="Đề gốc Nicholson bài 3.2.10, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -31,6 +53,7 @@ if:
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -47,7 +70,57 @@ Dùng định thức của tích và công thức nghịch đảo qua adjugate k
 
 <LoiGiai>
 
-Đặt $d=\det A$. **a.** $d^2=d$, nên $d\in\{0,1\}$. **b.** $d^2=1$, nên $d=\pm1$. **c.** $d^3=d$, nên $d\in\{-1,0,1\}$. **d.** Nhân $P^{-1}$ được $A=I$, nên $d=1$. **e.** $d^2=u^nd$, nên $d=0$ hoặc $d=u^n$; nếu $A$ khả nghịch thì $A=uI$. **f.** $d=\det(-A^T)=(-1)^nd$; nếu $n$ lẻ thì $d=0$, nếu $n$ chẵn thì không có ràng buộc từ riêng đẳng thức này (thực tế định thức phản đối xứng thực không âm). **g.** $A^2=-I$ cho $d^2=(-1)^n$. Không có ma trận thực khi $n$ lẻ; khi $n$ chẵn, thực tế $d=1$: các trị riêng phức đi theo cặp $i,-i$, mỗi cặp có tích 1.
+**Cách làm.** Dùng $\det(AB)=\det A\det B$, $\det A^T=\det A$, $\det(cA)=c^n\det A$ ở cấp $n$. Khi $\det A\ne0$, $A^{-1}=\operatorname{adj}A/\det A$; adjugate là bảng phần bù đã chuyển vị.
+
+**Bước 1. Thiết lập biểu thức.**
+
+Đặt $d=\det A$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$d^2=d$, nên $d\in\{0,1\}$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$d^2=1$, nên $d=\pm1$.
+
+**c.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$d^3=d$, nên $d\in\{-1,0,1\}$.
+
+**d.**
+
+**Bước 1. Thực hiện phép biến đổi.**
+
+Nhân $P^{-1}$ được $A=I$, nên $d=1$.
+
+**e.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$d^2=u^nd$, nên $d=0$ hoặc $d=u^n$; nếu $A$ khả nghịch thì $A=uI$.
+
+**f.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$d=\det(-A^T)=(-1)^nd$; nếu $n$ lẻ thì $d=0$, nếu $n$ chẵn thì không có ràng buộc từ riêng đẳng thức này (thực tế định thức phản đối xứng thực không âm).
+
+**g.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$A^2=-I$ cho $d^2=(-1)^n$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Không có ma trận thực khi $n$ lẻ; khi $n$ chẵn, thực tế $d=1$: các trị riêng phức đi theo cặp $i,-i$, mỗi cặp có tích 1.
 
 </LoiGiai>
 

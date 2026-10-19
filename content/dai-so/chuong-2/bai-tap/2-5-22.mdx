@@ -5,11 +5,27 @@ do_kho: vua
 tieu_de: "Ma trận sơ cấp — bài 22"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.5.22"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.5.22 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Giả sử $B$ thu được từ $A$ bằng cách:
+
+**a.** đổi chỗ các hàng $i$ và $j$;
+
+**b.** nhân hàng $i$ với $k \neq 0$;
+
+**c.** cộng $k$ lần hàng $i$ vào hàng $j\ (i \neq j)$.
+
+Trong mỗi trường hợp, mô tả cách thu được $B^{-1}$ từ $A^{-1}$. [Gợi ý: Xem ý (a) của bài ngay trước.]
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-5-22-1" moTa="Đề gốc Nicholson bài 2.5.22, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -29,6 +45,7 @@ Exercise 2.5.22  Suppose B is obtained from A by:
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -45,7 +62,35 @@ Một phép hàng là nhân trái; một phép cột là nhân phải. Ghi thứ
 
 <LoiGiai>
 
-Viết $B=EA$, suy ra $B^{-1}=A^{-1}E^{-1}$, tức làm phép cột tương ứng với nghịch đảo của phép hàng. **a.** Đổi cột $i,j$ của $A^{-1}$. **b.** Nhân cột $i$ với $1/k$. **c.** Với $R_j\leftarrow R_j+kR_i$, $E^{-1}=I-ke_je_i^T$, nên cột $i$ của $A^{-1}$ được thay bằng cột $i$ trừ $k$ lần cột $j$; các cột khác giữ nguyên. Chú ý cột đích là $i$, không phải $j$.
+**Cách làm.** Ma trận sơ cấp $E$ nhận từ $I$ bằng một phép hàng. $EA$ làm phép đó lên các hàng của $A$. Trong chuỗi $E_k\cdots E_1A$, phép $E_1$ được thực hiện trước.
+
+Đổi một hàng của $A$ không có nghĩa đổi cùng hàng của $A^{-1}$. Nghịch đảo của tích $EA$ là $A^{-1}E^{-1}$, tức ma trận sơ cấp chuyển sang **bên phải**; vì vậy nó tác động lên các cột của nghịch đảo.
+
+**Bước 1. Thiết lập biểu thức.**
+
+Viết $B=EA$, suy ra $B^{-1}=A^{-1}E^{-1}$, tức làm phép cột tương ứng với nghịch đảo của phép hàng.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Đổi cột $i,j$ của $A^{-1}$.
+
+**b.**
+
+**Bước 1. Thực hiện phép biến đổi.**
+
+Nhân cột $i$ với $1/k$.
+
+**c.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Với $R_j\leftarrow R_j+kR_i$, $E^{-1}=I-ke_je_i^T$, nên cột $i$ của $A^{-1}$ được thay bằng cột $i$ trừ $k$ lần cột $j$; các cột khác giữ nguyên.
+
+**Bước 2. Lập luận và tính toán.**
+
+Chú ý cột đích là $i$, không phải $j$.
 
 </LoiGiai>
 

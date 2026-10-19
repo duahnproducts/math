@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Khai triển theo phần bù đại số — bài 3"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.1.3"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.1.3 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh rằng dấu của vị trí ở hàng cuối và cột cuối của $A$ luôn là $+1$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-1-3-1" moTa="Đề gốc Nicholson bài 3.1.3, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -25,6 +33,7 @@ last row and the last column of A is always +1.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -42,7 +51,21 @@ Cộng bội một hàng vào hàng khác giữ định thức; đổi hai hàng
 
 <LoiGiai>
 
-Ô ở hàng cuối, cột cuối có chỉ số $(n,n)$. Dấu trong khai triển là $(-1)^{n+n}=(-1)^{2n}=1$, vì $2n$ luôn chẵn. Điều này đúng cho mọi cấp $n\ge1$.
+**Cách làm.** Cộng bội hàng khác giữ nguyên định thức; đổi hai hàng đổi dấu; rút hệ số $c$ từ một hàng đưa $c$ ra ngoài. Với khai triển, $C_{ij}=(-1)^{i+j}\det M_{ij}$.
+
+Dấu chỉ phụ thuộc tổng chỉ số hàng và cột. Ô cuối có chỉ số $(n,n)$, nên tổng luôn chẵn dù $n$ chẵn hay lẻ; đây là lý do dấu ở ô này luôn dương.
+
+**Bước 1. Lập luận và tính toán.**
+
+Ô ở hàng cuối, cột cuối có chỉ số $(n,n)$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Dấu trong khai triển là $(-1)^{n+n}=(-1)^{2n}=1$, vì $2n$ luôn chẵn.
+
+**Bước 3. Lập luận và tính toán.**
+
+Điều này đúng cho mọi cấp $n\ge1$.
 
 </LoiGiai>
 

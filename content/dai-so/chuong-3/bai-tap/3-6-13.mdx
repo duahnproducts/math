@@ -5,11 +5,43 @@ do_kho: vua
 tieu_de: "Ứng dụng: hệ thức truy hồi tuyến tính — bài 13"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.6.13"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.6.13 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Xét hệ thức truy hồi
+
+
+
+$$
+x_{k+2} = ax_{k+1} + bx_k + c(k)
+$$
+
+
+
+trong đó $c(k)$ là hàm của $k$, và xét hệ thức truy hồi liên quan
+
+
+
+$$
+x_{k+2} = ax_{k+1} + bx_k
+$$
+
+
+
+Giả sử $x_{k} = p_{k}$ là một nghiệm riêng của Phương trình (3.12).
+
+**a.** Nếu $q_{k}$ là nghiệm bất kỳ của Phương trình (3.13), hãy chứng minh rằng $q_{k} + p_{k}$ là nghiệm của Phương trình (3.12).
+
+**b.** Chứng minh rằng mọi nghiệm của Phương trình (3.12) đều có dạng ở ý (a), tức là tổng của một nghiệm Phương trình (3.13) và nghiệm riêng $p_{k}$ của Phương trình (3.12).
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-6-13-1" moTa="Đề gốc Nicholson bài 3.6.13, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -38,6 +70,7 @@ Suppose that xk = pk is a particular solution of Equation
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -54,7 +87,33 @@ Dùng các điều kiện đầu để xác định hệ số trong nghiệm t�
 
 <LoiGiai>
 
-**a.** Nếu $q_{k+2}=aq_{k+1}+bq_k$ và $p_{k+2}=ap_{k+1}+bp_k+c(k)$, cộng hai đẳng thức cho $(q+p)_{k+2}=a(q+p)_{k+1}+b(q+p)_k+c(k)$. **b.** Với nghiệm bất kỳ $x$ của hệ có vế phải, đặt $q=x-p$. Trừ hai truy hồi của $x,p$ cho $q_{k+2}=aq_{k+1}+bq_k$. Vậy $x=q+p$, chứng minh mọi nghiệm đều có dạng đã nêu. Điều kiện đầu của $q$ lấy bằng điều kiện đầu của $x$ trừ của $p$.
+**Cách làm.** Với truy hồi tuyến tính, thử $x_k=r^k$ để tìm phương trình đặc trưng. Các điều kiện đầu quyết định hệ số; với bài đếm, cần phân loại các trường hợp rời nhau và đếm hết mọi khả năng.
+
+Để tìm mọi nghiệm của phương trình có vế phải, trước hết chọn một nghiệm riêng $p$. Hiệu của một nghiệm bất kỳ với $p$ có vế phải triệt tiêu, nên là nghiệm thuần nhất. Ngược lại cộng một nghiệm thuần nhất với $p$ luôn khôi phục đúng vế phải.
+
+**a.**
+
+**Bước 1. Xét giả thiết.**
+
+Nếu $q_{k+2}=aq_{k+1}+bq_k$ và $p_{k+2}=ap_{k+1}+bp_k+c(k)$, cộng hai đẳng thức cho $(q+p)_{k+2}=a(q+p)_{k+1}+b(q+p)_k+c(k)$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Với nghiệm bất kỳ $x$ của hệ có vế phải, đặt $q=x-p$.
+
+**Bước 2. Thực hiện phép biến đổi.**
+
+Trừ hai truy hồi của $x,p$ cho $q_{k+2}=aq_{k+1}+bq_k$.
+
+**Bước 3. Rút ra kết luận.**
+
+Vậy $x=q+p$, chứng minh mọi nghiệm đều có dạng đã nêu.
+
+**Bước 4. Lập luận và tính toán.**
+
+Điều kiện đầu của $q$ lấy bằng điều kiện đầu của $x$ trừ của $p$.
 
 </LoiGiai>
 

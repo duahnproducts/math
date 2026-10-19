@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Định thức và ma trận nghịch đảo — bài 17"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.2.17"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.17 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh rằng $\det (A + B^{T}) = \det (A^{T} + B)$ với mọi ma trận $n \times n$, ký hiệu là $A$ và $B$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-2-17-1" moTa="Đề gốc Nicholson bài 3.2.17, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ for any n×n matrices A and B.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +48,21 @@ Dùng định thức của tích và công thức nghịch đảo qua adjugate k
 
 <LoiGiai>
 
-Chuyển vị tổng: $(A+B^T)^T=A^T+B$. Vì định thức không đổi khi chuyển vị, $\det(A+B^T)=\det((A+B^T)^T)=\det(A^T+B)$. Không cần điều kiện nào ngoài cùng cấp vuông.
+**Cách làm.** Dùng $\det(AB)=\det A\det B$, $\det A^T=\det A$, $\det(cA)=c^n\det A$ ở cấp $n$. Khi $\det A\ne0$, $A^{-1}=\operatorname{adj}A/\det A$; adjugate là bảng phần bù đã chuyển vị.
+
+Chuyển vị phân phối qua tổng: $(X+Y)^T=X^T+Y^T$. Đồng thời $(B^T)^T=B$. Hai công thức biến $A+B^T$ thành $A^T+B$ trong một phép chuyển vị, rồi tính bất biến của định thức hoàn tất chứng minh.
+
+**Bước 1. Thực hiện phép biến đổi.**
+
+Chuyển vị tổng: $(A+B^T)^T=A^T+B$.
+
+**Bước 2. Giải thích điều kiện sử dụng.**
+
+Vì định thức không đổi khi chuyển vị, $\det(A+B^T)=\det((A+B^T)^T)=\det(A^T+B)$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Không cần điều kiện nào ngoài cùng cấp vuông.
 
 </LoiGiai>
 

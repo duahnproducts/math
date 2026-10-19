@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Khai triển theo phần bù đại số — bài 4"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.1.4"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.1.4 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh rằng $\det I = 1$ với mọi ma trận đơn vị $I$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-1-4-1" moTa="Đề gốc Nicholson bài 3.1.4, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ trix I.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +48,21 @@ Cộng bội một hàng vào hàng khác giữ định thức; đổi hai hàng
 
 <LoiGiai>
 
-Khai triển $\det I_n$ theo hàng đầu: chỉ ô (1,1) khác 0, bằng 1 và có dấu dương; ma trận con là $I_{n-1}$. Vì vậy $\det I_n=\det I_{n-1}$. Lặp lại đến $I_1=[1]$, định thức bằng 1.
+**Cách làm.** Cộng bội hàng khác giữ nguyên định thức; đổi hai hàng đổi dấu; rút hệ số $c$ từ một hàng đưa $c$ ra ngoài. Với khai triển, $C_{ij}=(-1)^{i+j}\det M_{ij}$.
+
+Trong hàng đầu của $I_n$, ô đầu là 1 và các ô còn lại bằng 0. Xóa hàng đầu và cột đầu còn đúng $I_{n-1}$, không phải một ma trận mới cần tính riêng. Việc lặp phép khai triển kết thúc ở ma trận một ô $[1]$.
+
+**Bước 1. Thực hiện phép biến đổi.**
+
+Khai triển $\det I_n$ theo hàng đầu: chỉ ô (1,1) khác 0, bằng 1 và có dấu dương; ma trận con là $I_{n-1}$.
+
+**Bước 2. Giải thích điều kiện sử dụng.**
+
+Vì vậy $\det I_n=\det I_{n-1}$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Lặp lại đến $I_1=[1]$, định thức bằng 1.
 
 </LoiGiai>
 

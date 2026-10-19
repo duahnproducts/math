@@ -175,15 +175,15 @@
 <path transform="matrix(.24,0,0,-.24,-311,733)" stroke-width="6.64183" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="currentColor" d="M2013.47 2767.5 1803 2491.13" />
 <path transform="matrix(.24,0,0,-.24,-311,733)" stroke-width="6.64183" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="currentColor" d="M2020.91 2767.5 1792.37 2384.82" />
 <path transform="matrix(.24,0,0,-.24,-311,733)" d="M1612.82 2730.3C1612.82 2742.68 1602.78 2752.71 1590.4 2752.71 1578.02 2752.71 1567.98 2742.68 1567.98 2730.3 1567.98 2717.92 1578.02 2707.88 1590.4 2707.88 1602.78 2707.88 1612.82 2717.92 1612.82 2730.3ZM1590.4 2730.3" fill="currentColor" />
-<use data-text="1" xlink:href="#ds-de-2-9-8-2-font_4_68" transform="matrix(9.9626469,0,0,-9.9626469,68.20627,81.060489)" />
+<use data-text="1" fill="var(--paper)" xlink:href="#ds-de-2-9-8-2-font_4_68" transform="matrix(9.9626469,0,0,-9.9626469,68.20627,81.060489)" />
 <path transform="matrix(.24,0,0,-.24,-311,733)" d="M1825.41 2624C1825.41 2636.38 1815.38 2646.42 1803 2646.42 1790.62 2646.42 1780.58 2636.38 1780.58 2624 1780.58 2611.62 1790.62 2601.59 1803 2601.59 1815.38 2601.59 1825.41 2611.62 1825.41 2624ZM1803 2624" fill="currentColor" />
-<use data-text="2" xlink:href="#ds-de-2-9-8-2-font_4_71" transform="matrix(9.9626469,0,0,-9.9626469,119.22931,106.57257)" />
+<use data-text="2" fill="var(--paper)" xlink:href="#ds-de-2-9-8-2-font_4_71" transform="matrix(9.9626469,0,0,-9.9626469,119.22931,106.57257)" />
 <path transform="matrix(.24,0,0,-.24,-311,733)" d="M2038.02 2767.5C2038.02 2779.89 2027.98 2789.92 2015.6 2789.92 2003.22 2789.92 1993.18 2779.89 1993.18 2767.5 1993.18 2755.13 2003.22 2745.09 2015.6 2745.09 2027.98 2745.09 2038.02 2755.13 2038.02 2767.5ZM2015.6 2767.5" fill="currentColor" />
-<use data-text="3" xlink:href="#ds-de-2-9-8-2-font_4_74" transform="matrix(9.9626469,0,0,-9.9626469,170.25333,72.05353)" />
+<use data-text="3" fill="var(--paper)" xlink:href="#ds-de-2-9-8-2-font_4_74" transform="matrix(9.9626469,0,0,-9.9626469,170.25333,72.05353)" />
 <path transform="matrix(.24,0,0,-.24,-311,733)" d="M1825.41 2491.13C1825.41 2503.5 1815.38 2513.54 1803 2513.54 1790.62 2513.54 1780.58 2503.5 1780.58 2491.13 1780.58 2478.75 1790.62 2468.71 1803 2468.71 1815.38 2468.71 1825.41 2478.75 1825.41 2491.13ZM1803 2491.13" fill="currentColor" />
-<use data-text="4" xlink:href="#ds-de-2-9-8-2-font_4_75" transform="matrix(9.9626469,0,0,-9.9626469,119.22931,138.46259)" />
+<use data-text="4" fill="var(--paper)" xlink:href="#ds-de-2-9-8-2-font_4_75" transform="matrix(9.9626469,0,0,-9.9626469,119.22931,138.46259)" />
 <path transform="matrix(.24,0,0,-.24,-311,733)" d="M1814.79 2384.82C1814.79 2397.21 1804.75 2407.24 1792.37 2407.24 1779.99 2407.24 1769.95 2397.21 1769.95 2384.82 1769.95 2372.45 1779.99 2362.41 1792.37 2362.41 1804.75 2362.41 1814.79 2372.45 1814.79 2384.82ZM1792.37 2384.82" fill="currentColor" />
-<use data-text="5" xlink:href="#ds-de-2-9-8-2-font_4_76" transform="matrix(9.9626469,0,0,-9.9626469,116.678318,163.96656)" />
+<use data-text="5" fill="var(--paper)" xlink:href="#ds-de-2-9-8-2-font_4_76" transform="matrix(9.9626469,0,0,-9.9626469,116.678318,163.96656)" />
 <use data-text="a" xlink:href="#ds-de-2-9-8-2-font_4_23" transform="matrix(10.909107,0,0,-10.909107,15.880249,198.28003)" />
 <use data-text="." xlink:href="#ds-de-2-9-8-2-font_4_62" transform="matrix(10.909107,0,0,-10.909107,20.680268,198.28003)" />
 <use data-text="I" xlink:href="#ds-de-2-9-8-2-font_4_19" transform="matrix(10.909107,0,0,-10.909107,29.200257,198.28003)" />

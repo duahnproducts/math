@@ -149,16 +149,94 @@ Phép đầu tiên $E_1$ đứng sát $A$, tức là **bên phải nhất**: $E_
 Viết ma trận sơ cấp $3 \times 3$ ứng với phép $R_3 \to R_3 + 4R_1$, và ma trận nghịch đảo của nó.
 
 <GoiYNho>Làm phép đó lên $I_3$. Nghịch đảo: $R_3 \to R_3 - 4R_1$.</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Làm cùng phép hàng lên $I_3$, rồi viết phép hoàn tác.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+$$
+E=\begin{bmatrix}1&0&0\\0&1&0\\4&0&1\end{bmatrix},\quad E^{-1}=\begin{bmatrix}1&0&0\\0&1&0\\-4&0&1\end{bmatrix}.
+$$
+
+ Phép sau là $R_3\leftarrow R_3-4R_1$, hoàn tác phép trước.
+
+**Bước 3. Kiểm tra và kết luận.**
+
+Khi nhân hai phía, ô $(3,1)$ bằng $4-4=0$; các ô đường chéo giữ 1, nên $EE^{-1}=E^{-1}E=I$.
+
+**Bước 4. Cách tự làm lại.**
+
+Ma trận sơ cấp ghi phép hàng trên $I$; nghịch đảo ghi phép hàng hoàn tác.
+
+</LoiGiai>
 </BaiLuyen>
 
 <BaiLuyen do_kho="vua" so="5.2">
 Cho $A = \begin{bmatrix} 2 & 1 \\ 4 & 3 \end{bmatrix}$. Tìm các ma trận sơ cấp đưa $A$ về $I$ và viết $A$ thành tích của chúng (hoặc của nghịch đảo của chúng). Kiểm tra bằng cách nhân lại.
 
 <GoiYNho>Bắt đầu bằng $R_2 \to R_2 - 2R_1$. Bạn sẽ cần khoảng 4 bước.</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Khử $A$ về $I$ và ghi từng phép dưới dạng nhân trái.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+Lần lượt: $R_2\leftarrow R_2-2R_1$ cho $\begin{bmatrix}2&1\\0&1\end{bmatrix}$; $R_1\leftarrow R_1-R_2$ cho $\begin{bmatrix}2&0\\0&1\end{bmatrix}$; $R_1\leftarrow R_1/2$ cho $I$. Do đó
+
+$$
+E_1=\begin{bmatrix}1&0\\-2&1\end{bmatrix},\ E_2=\begin{bmatrix}1&-1\\0&1\end{bmatrix},\ E_3=\begin{bmatrix}1/2&0\\0&1\end{bmatrix}.
+$$
+
+ Từ $E_3E_2E_1A=I$, suy ra
+
+$$
+A=E_1^{-1}E_2^{-1}E_3^{-1}=\begin{bmatrix}1&0\\2&1\end{bmatrix}\begin{bmatrix}1&1\\0&1\end{bmatrix}\begin{bmatrix}2&0\\0&1\end{bmatrix}.
+$$
+
+**Bước 3. Kiểm tra và kết luận.**
+
+Hai thừa số đầu cho $\begin{bmatrix}1&1\\2&3\end{bmatrix}$, nhân thừa số cuối cho $\begin{bmatrix}2&1\\4&3\end{bmatrix}=A$. Chỉ cần ba bước ở lựa chọn này.
+
+**Bước 4. Cách tự làm lại.**
+
+Phép khử thực hiện sau đứng bên trái; khi giải ra $A$, đảo thứ tự rồi lấy nghịch đảo từng phép.
+
+</LoiGiai>
 </BaiLuyen>
 
 <BaiLuyen do_kho="kho" so="5.3">
 Tính $AE$ với $A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}$ và $E = \begin{bmatrix} 1 & 0 \\ -3 & 1 \end{bmatrix}$ (nhân bên **phải**). Phép biến đổi nào đã xảy ra với các **cột** của $A$? Giải thích bằng đẳng thức $AE = (E^TA^T)^T$ vì sao nhân bên phải lại tác động lên cột.
 
 <GoiYNho tieuDe="Bạn sẽ cần">Nhân bên trái tác động lên hàng; chuyển vị biến hàng thành cột. Nhớ $(XY)^T = Y^TX^T$ ở <XemMuc bai={3} />.</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Nhân bên phải bằng cách đọc cột của $E$.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+$$
+AE=\begin{bmatrix}1-6&2\\3-12&4\end{bmatrix}=\begin{bmatrix}-5&2\\-9&4\end{bmatrix}.
+$$
+
+ Cột 1 mới bằng cột 1 cũ trừ 3 lần cột 2; cột 2 giữ nguyên. Vì $(E^TA^T)^T=(A^T)^T(E^T)^T=AE$, phép hàng trên $A^T$ trở thành phép cột trên $A$.
+
+**Bước 3. Kiểm tra và kết luận.**
+
+$E^T=\begin{bmatrix}1&-3\\0&1\end{bmatrix}$ thực hiện $R_1\leftarrow R_1-3R_2$ trên $A^T$, đúng với phép cột vừa nhận ra.
+
+**Bước 4. Cách tự làm lại.**
+
+Nhân trái tác động lên hàng; nhân phải tác động lên cột, với chỉ số đọc từ cột của ma trận bên phải.
+
+</LoiGiai>
 </BaiLuyen>

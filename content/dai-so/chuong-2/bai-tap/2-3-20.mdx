@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Phép nhân ma trận — bài 20"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.3.20"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.20 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu $A$ và $B$ đối xứng, hãy chứng minh rằng $AB$ đối xứng khi và chỉ khi $AB = BA$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-3-20-1" moTa="Đề gốc Nicholson bài 2.3.20, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ is symmetric if and only if AB = BA.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +48,19 @@ Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự 
 
 <LoiGiai>
 
-Vì $A^T=A,B^T=B$, ta có $(AB)^T=B^TA^T=BA$. Do đó $(AB)^T=AB$ tương đương $BA=AB$. Điều này chứng minh cả hai chiều; tích hai ma trận đối xứng không tự động đối xứng nếu chúng không giao hoán.
+**Cách làm.** Với $A$ cỡ $m\times n$, $B$ cỡ $n\times p$, tích $AB$ có cỡ $m\times p$ và $(AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$. Khi khai triển, giữ nguyên thứ tự các thừa số.
+
+**Bước 1. Giải thích điều kiện sử dụng.**
+
+Vì $A^T=A,B^T=B$, ta có $(AB)^T=B^TA^T=BA$.
+
+**Bước 2. Rút ra kết luận.**
+
+Do đó $(AB)^T=AB$ tương đương $BA=AB$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Điều này chứng minh cả hai chiều; tích hai ma trận đối xứng không tự động đối xứng nếu chúng không giao hoán.
 
 </LoiGiai>
 

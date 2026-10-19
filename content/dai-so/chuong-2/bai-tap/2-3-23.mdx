@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Phép nhân ma trận — bài 23"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.3.23"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.23 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh rằng không tồn tại các ma trận $2 \times 2$, ký hiệu là $A$ và $B$, sao cho $AB - BA = I$. [Gợi ý: Xét các phần tử ở vị trí $(1, 1)$ và $(2, 2)$.]
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-3-23-1" moTa="Đề gốc Nicholson bài 2.3.23, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ ces A and B such that AB −BA = I. [Hint: Examine the(1, 1)- and (2, 2)-entries
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +48,25 @@ Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự 
 
 <LoiGiai>
 
-Giả sử $AB-BA=I_2$. Tổng hai ô đường chéo của $AB-BA$ bằng 0: các tích vô hướng $a_{ij}b_{ji}$ triệt tiêu từng cặp với $b_{ji}a_{ij}$. Nhưng tổng hai ô đường chéo của $I_2$ bằng 2. Mâu thuẫn $0=2$, nên không có cặp ma trận như vậy.
+**Cách làm.** Với $A$ cỡ $m\times n$, $B$ cỡ $n\times p$, tích $AB$ có cỡ $m\times p$ và $(AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$. Khi khai triển, giữ nguyên thứ tự các thừa số.
+
+Với ma trận cấp 2, $\operatorname{tr}(AB)=a_{11}b_{11}+a_{12}b_{21}+a_{21}b_{12}+a_{22}b_{22}$. Đổi thứ tự các số thực trong từng tích cho đúng tổng $\operatorname{tr}(BA)$. Vì vậy vết hiệu luôn bằng 0, trong khi vết $I_2$ bằng 2.
+
+**Bước 1. Xét giả thiết.**
+
+Giả sử $AB-BA=I_2$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Tổng hai ô đường chéo của $AB-BA$ bằng 0: các tích vô hướng $a_{ij}b_{ji}$ triệt tiêu từng cặp với $b_{ji}a_{ij}$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Nhưng tổng hai ô đường chéo của $I_2$ bằng 2.
+
+**Bước 4. Lập luận và tính toán.**
+
+Mâu thuẫn $0=2$, nên không có cặp ma trận như vậy.
 
 </LoiGiai>
 

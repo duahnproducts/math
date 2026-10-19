@@ -5,11 +5,67 @@ do_kho: vua
 tieu_de: "Định thức và ma trận nghịch đảo — bài 2"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.2.2"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.2 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Dùng định thức để tìm các giá trị thực của $c$ làm cho mỗi ma trận sau khả nghịch.
+
+**a.**
+
+$$
+\left[ \begin{array}{rrr} 1 & 0 & 3 \\ 3 & -4 & c \\ 2 & 5 & 8 \end{array}\right]
+$$
+
+
+
+**b.**
+
+$$
+\left[ \begin{array}{rrr} 0 & c & -c \\ -1 & 2 & 1 \\ c & -c & c \end{array}\right]
+$$
+
+
+
+**c.**
+
+$$
+\left[ \begin{array}{rrr} c & 1 & 0 \\ 0 & 2 & c \\ -1 & c & 5 \end{array}\right]
+$$
+
+
+
+**d.**
+
+$$
+\left[ \begin{array}{rrr} 4 & c & 3 \\ c & 2 & c \\ 5 & c & 4 \end{array}\right]
+$$
+
+
+
+**e.**
+
+$$
+\left[ \begin{array}{rrr} 1 & 2 & -1 \\ 0 & -1 & c \\ 2 & c & 1 \end{array}\right]
+$$
+
+
+
+**f.**
+
+$$
+\left[ \begin{array}{rrr} 1 & c & -1 \\ c & 1 & 1 \\ 0 & 1 & c \end{array}\right]
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-2-2-1" moTa="Đề gốc Nicholson bài 3.2.2, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -27,6 +83,7 @@ ues of c make each of the following matrices invertible.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -43,17 +100,415 @@ Dùng định thức của tích và công thức nghịch đảo qua adjugate k
 
 <LoiGiai>
 
-**a.** Khai triển định thức và phân tích nhân tử cho $\det A=37 - 5 c$. Ma trận khả nghịch đúng khi biểu thức này khác 0, tức $c\in\mathbb R\setminus\{\frac{37}{5}\}$.
+**Cách làm.** Dùng $\det(AB)=\det A\det B$, $\det A^T=\det A$, $\det(cA)=c^n\det A$ ở cấp $n$. Khi $\det A\ne0$, $A^{-1}=\operatorname{adj}A/\det A$; adjugate là bảng phần bù đã chuyển vị.
 
-**b.** Khai triển định thức và phân tích nhân tử cho $\det A=3 c^{2}$. Ma trận khả nghịch đúng khi biểu thức này khác 0, tức $c\in\mathbb R\setminus\{0\}$.
+**a.**
 
-**c.** Khai triển định thức và phân tích nhân tử cho $\det A=- c \left(c - 3\right) \left(c + 3\right)$. Ma trận khả nghịch đúng khi biểu thức này khác 0, tức $c\in\mathbb R\setminus\{-3,0,3\}$.
+**Bước 1. Chọn cách khai triển.**
 
-**d.** Khai triển định thức và phân tích nhân tử cho $\det A=2$. Ma trận khả nghịch đúng khi biểu thức này khác 0, tức $c\in\mathbb R\setminus\{\}$.
+Với $A=\begin{bmatrix}1&0&3\\3&-4&c\\2&5&8\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
 
-**e.** Khai triển định thức và phân tích nhân tử cho $\det A=- \left(c - 3\right) \left(c - 1\right)$. Ma trận khả nghịch đúng khi biểu thức này khác 0, tức $c\in\mathbb R\setminus\{1,3\}$.
+Xóa hàng 1, cột 1:
 
-**f.** Khai triển định thức và phân tích nhân tử cho $\det A=- \left(c + 1\right) \left(c^{2} - c + 1\right)$. Ma trận khả nghịch đúng khi biểu thức này khác 0, tức $c\in\mathbb R\setminus\{-1\}$.
+
+
+$$
+M_{11}=\begin{bmatrix}-4&c\\5&8\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=- 5 c - 32.
+$$
+
+
+
+Với $M_{11}=\begin{bmatrix}-4&c\\5&8\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{11}=(-4)(8)-(c)(5)=- 5 c - 32.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}3&-4\\2&5\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=23.
+$$
+
+
+
+Với $M_{13}=\begin{bmatrix}3&-4\\2&5\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{13}=(3)(5)-(-4)(2)=23.
+$$
+
+
+
+**Bước 2. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(1)(- 5 c - 32)+(3)(23)=37 - 5 c.
+$$
+
+
+
+ Ma trận khả nghịch đúng khi định thức khác 0. Giải phương trình định thức bằng 0 cho các giá trị phải loại: $c\in\{\frac{37}{5}\}$. Mọi số thực khác các giá trị đó đều cho ma trận khả nghịch.
+
+**b.**
+
+**Bước 1. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}0&c&- c\\-1&2&1\\c&- c&c\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}-1&1\\c&c\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=2 c.
+$$
+
+
+
+Với $M_{12}=\begin{bmatrix}-1&1\\c&c\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{12}=(-1)(c)-(1)(c)=- 2 c.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}-1&2\\c&- c\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=- c.
+$$
+
+
+
+Với $M_{13}=\begin{bmatrix}-1&2\\c&- c\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{13}=(-1)(- c)-(2)(c)=- c.
+$$
+
+
+
+**Bước 2. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(c)(2 c)+(- c)(- c)=3 c^{2}.
+$$
+
+
+
+ Ma trận khả nghịch đúng khi định thức khác 0. Giải phương trình định thức bằng 0 cho các giá trị phải loại: $c\in\{0\}$. Mọi số thực khác các giá trị đó đều cho ma trận khả nghịch.
+
+**c.**
+
+**Bước 1. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}c&1&0\\0&2&c\\-1&c&5\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}2&c\\c&5\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=10 - c^{2}.
+$$
+
+
+
+Với $M_{11}=\begin{bmatrix}2&c\\c&5\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{11}=(2)(5)-(c)(c)=10 - c^{2}.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}0&c\\-1&5\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=- c.
+$$
+
+
+
+Với $M_{12}=\begin{bmatrix}0&c\\-1&5\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{12}=(0)(5)-(c)(-1)=c.
+$$
+
+
+
+**Bước 2. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(c)(10 - c^{2})+(1)(- c)=- c \left(c - 3\right) \left(c + 3\right).
+$$
+
+
+
+ Ma trận khả nghịch đúng khi định thức khác 0. Giải phương trình định thức bằng 0 cho các giá trị phải loại: $c\in\{-3,0,3\}$. Mọi số thực khác các giá trị đó đều cho ma trận khả nghịch.
+
+**d.**
+
+**Bước 1. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}4&c&3\\c&2&c\\5&c&4\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}2&c\\c&4\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=8 - c^{2}.
+$$
+
+
+
+Với $M_{11}=\begin{bmatrix}2&c\\c&4\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{11}=(2)(4)-(c)(c)=8 - c^{2}.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}c&c\\5&4\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=c.
+$$
+
+
+
+Với $M_{12}=\begin{bmatrix}c&c\\5&4\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{12}=(c)(4)-(c)(5)=- c.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}c&2\\5&c\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=c^{2} - 10.
+$$
+
+
+
+Với $M_{13}=\begin{bmatrix}c&2\\5&c\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{13}=(c)(c)-(2)(5)=c^{2} - 10.
+$$
+
+
+
+**Bước 2. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(4)(8 - c^{2})+(c)(c)+(3)(c^{2} - 10)=2.
+$$
+
+
+
+ Ma trận khả nghịch đúng khi định thức khác 0. Giải phương trình định thức bằng 0 cho các giá trị phải loại: $c\in\{\}$. Mọi số thực khác các giá trị đó đều cho ma trận khả nghịch.
+
+**e.**
+
+**Bước 1. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}1&2&-1\\0&-1&c\\2&c&1\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}-1&c\\c&1\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=- c^{2} - 1.
+$$
+
+
+
+Với $M_{11}=\begin{bmatrix}-1&c\\c&1\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{11}=(-1)(1)-(c)(c)=- c^{2} - 1.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}0&c\\2&1\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=2 c.
+$$
+
+
+
+Với $M_{12}=\begin{bmatrix}0&c\\2&1\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{12}=(0)(1)-(c)(2)=- 2 c.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}0&-1\\2&c\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=2.
+$$
+
+
+
+Với $M_{13}=\begin{bmatrix}0&-1\\2&c\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{13}=(0)(c)-(-1)(2)=2.
+$$
+
+
+
+**Bước 2. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(1)(- c^{2} - 1)+(2)(2 c)+(-1)(2)=- \left(c - 3\right) \left(c - 1\right).
+$$
+
+
+
+ Ma trận khả nghịch đúng khi định thức khác 0. Giải phương trình định thức bằng 0 cho các giá trị phải loại: $c\in\{1,3\}$. Mọi số thực khác các giá trị đó đều cho ma trận khả nghịch.
+
+**f.**
+
+**Bước 1. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}1&c&-1\\c&1&1\\0&1&c\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}1&1\\1&c\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=c - 1.
+$$
+
+
+
+Với $M_{11}=\begin{bmatrix}1&1\\1&c\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{11}=(1)(c)-(1)(1)=c - 1.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}c&1\\0&c\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=- c^{2}.
+$$
+
+
+
+Với $M_{12}=\begin{bmatrix}c&1\\0&c\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{12}=(c)(c)-(1)(0)=c^{2}.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}c&1\\0&1\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=c.
+$$
+
+
+
+Với $M_{13}=\begin{bmatrix}c&1\\0&1\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{13}=(c)(1)-(1)(0)=c.
+$$
+
+
+
+**Bước 2. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(1)(c - 1)+(c)(- c^{2})+(-1)(c)=- \left(c + 1\right) \left(c^{2} - c + 1\right).
+$$
+
+
+
+ Ma trận khả nghịch đúng khi định thức khác 0. Giải phương trình định thức bằng 0 cho các giá trị phải loại: $c\in\{-1\}$. Mọi số thực khác các giá trị đó đều cho ma trận khả nghịch.
 
 </LoiGiai>
 

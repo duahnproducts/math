@@ -5,11 +5,103 @@ do_kho: vua
 tieu_de: "Ma trận sơ cấp — bài 2"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.5.2"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.5.2 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Trong mỗi trường hợp, tìm một ma trận sơ cấp $E$ sao cho $B = EA$.
+
+**a.**
+
+$$
+A = \left[ \begin{array}{rr} 2 & 1 \\ 3 & -1 \end{array} \right]
+$$
+
+,
+
+$$
+B = \left[ \begin{array}{rr} 2 & 1 \\ 1 & -2 \end{array} \right]
+$$
+
+
+
+**b.**
+
+$$
+A = \left[ \begin{array}{rr} -1 & 2 \\ 0 & 1 \end{array} \right]
+$$
+
+,
+
+$$
+B = \left[ \begin{array}{rr} 1 & -2 \\ 0 & 1 \end{array} \right]
+$$
+
+
+
+**c.**
+
+$$
+A = \left[ \begin{array}{rr} 1 & 1 \\ -1 & 2 \end{array} \right]
+$$
+
+,
+
+$$
+B = \left[ \begin{array}{rr} -1 & 2 \\ 1 & 1 \end{array} \right]
+$$
+
+
+
+**d.**
+
+$$
+A = \left[ \begin{array}{rr} 4 & 1 \\ 3 & 2 \end{array} \right]
+$$
+
+,
+
+$$
+B = \left[ \begin{array}{rr} 1 & -1 \\ 3 & 2 \end{array} \right]
+$$
+
+
+
+**e.**
+
+$$
+A = \left[ \begin{array}{rr} -1 & 1 \\ 1 & -1 \end{array} \right]
+$$
+
+,
+
+$$
+B = \left[ \begin{array}{rr} -1 & 1 \\ -1 & 1 \end{array} \right]
+$$
+
+
+
+**f.**
+
+$$
+A = \left[ \begin{array}{rr} 2 & 1 \\ -1 & 3 \end{array} \right]
+$$
+
+,
+
+$$
+B = \left[ \begin{array}{rr} -1 & 3 \\ 2 & 1 \end{array} \right]
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-5-2-1" moTa="Đề gốc Nicholson bài 2.5.2, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -39,6 +131,7 @@ E such that B = EA.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -55,19 +148,57 @@ Một phép hàng là nhân trái; một phép cột là nhân phải. Ghi thứ
 
 <LoiGiai>
 
-Nhận ra phép biến đổi hàng từ $A$ sang $B$, rồi làm cùng phép đó lên $I_2$. Các phép lần lượt là: (a) trừ hàng 1 khỏi hàng 2; (b) đổi dấu hàng 1; (c) đổi hai hàng; (d) trừ hàng 2 khỏi hàng 1; (e) đổi dấu hàng 2; (f) đổi hai hàng. Kết quả:
+**Cách làm.** Ma trận sơ cấp $E$ nhận từ $I$ bằng một phép hàng. $EA$ làm phép đó lên các hàng của $A$. Trong chuỗi $E_k\cdots E_1A$, phép $E_1$ được thực hiện trước.
 
-**a.** $\begin{bmatrix}1&0\\-1&1\end{bmatrix}$.
+**Bước 1. Lập luận và tính toán.**
 
-**b.** $\begin{bmatrix}-1&0\\0&1\end{bmatrix}$.
+Nhận ra phép biến đổi hàng từ $A$ sang $B$, rồi làm cùng phép đó lên $I_2$.
 
-**c.** $\begin{bmatrix}0&1\\1&0\end{bmatrix}$.
+**Bước 2. Lập luận và tính toán.**
 
-**d.** $\begin{bmatrix}1&-1\\0&1\end{bmatrix}$.
+Các phép lần lượt là: (a) trừ hàng 1 khỏi hàng 2; (b) đổi dấu hàng 1; (c) đổi hai hàng; (d) trừ hàng 2 khỏi hàng 1; (e) đổi dấu hàng 2; (f) đổi hai hàng.
 
-**e.** $\begin{bmatrix}1&0\\0&-1\end{bmatrix}$.
+**Bước 3. Lập luận và tính toán.**
 
-**f.** $\begin{bmatrix}0&1\\1&0\end{bmatrix}$.
+Kết quả:
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$\begin{bmatrix}1&0\\-1&1\end{bmatrix}$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$\begin{bmatrix}-1&0\\0&1\end{bmatrix}$.
+
+**c.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$\begin{bmatrix}0&1\\1&0\end{bmatrix}$.
+
+**d.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$\begin{bmatrix}1&-1\\0&1\end{bmatrix}$.
+
+**e.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$\begin{bmatrix}1&0\\0&-1\end{bmatrix}$.
+
+**f.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$\begin{bmatrix}0&1\\1&0\end{bmatrix}$.
+
+**Bước 2. Thực hiện phép biến đổi.**
 
 Nhân từng $E$ với $A$ kiểm tra được đúng $B$.
 

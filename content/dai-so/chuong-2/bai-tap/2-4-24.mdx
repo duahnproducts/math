@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Ma trận nghịch đảo — bài 24"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.4.24"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.4.24 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Trong mỗi trường hợp, giả sử $A$ là ma trận vuông thỏa mãn điều kiện đã cho. Chứng minh rằng $A$ khả nghịch và tìm công thức của $A^{-1}$ theo $A$.
+
+**a.** $A^{3} - 3A + 2I = 0$.
+
+**b.** $A^{4} + 2A^{3} - A - 4I = 0$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-4-24-1" moTa="Đề gốc Nicholson bài 2.4.24, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -29,6 +41,7 @@ b. A4 +2A3 −A−4I = 0.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -45,11 +58,29 @@ Khi tìm nghịch đảo bằng khử hàng, làm cùng phép biến đổi trê
 
 <LoiGiai>
 
-**a.** Từ $A^3-3A=-2I$ suy ra $A(3I-A^2)/2=I$ và chiều nhân ngược cũng vậy; do đó $A^{-1}=(3I-A^2)/2$. **b.** $A^4+2A^3-A=4I$, nên
+**Cách làm.** Theo định nghĩa, $B=A^{-1}$ khi $AB=BA=I$. Muốn khử $A$ ở bên trái thì nhân trái với $A^{-1}$; muốn khử ở bên phải thì nhân phải. Nghịch đảo tích đảo thứ tự: $(AB)^{-1}=B^{-1}A^{-1}$.
+
+Tách một thừa số $A$ khỏi từng hạng bậc dương; chuyển hạng hằng sang phía kia. Sau đó chia cho hệ số khác 0 của $I$ để có một tích bằng $I$. Thừa số còn lại là đa thức của $A$, nên giao hoán với $A$ và cho cả hai đẳng thức nghịch đảo.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Từ $A^3-3A=-2I$ suy ra $A(3I-A^2)/2=I$ và chiều nhân ngược cũng vậy; do đó $A^{-1}=(3I-A^2)/2$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$A^4+2A^3-A=4I$, nên
+
+
 
 $$
 A^{-1}=\tfrac14(A^3+2A^2-I).
 $$
+
+
 
  Trong mỗi ý, biểu thức là đa thức của $A$ và giao hoán với $A$, nên đã có nghịch đảo hai phía.
 

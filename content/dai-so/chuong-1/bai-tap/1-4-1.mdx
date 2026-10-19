@@ -27,19 +27,47 @@ Câu a có 4 nút, 5 ẩn: nghiệm có 2 tham số. Câu b có 5 nút, 7 ẩn: 
 </GoiY>
 
 <LoiGiai>
-**a.** Gọi các nút: trái, trên, phải, dưới.
+
+**Cách làm.** Tại mỗi nút: tổng dòng vào bằng tổng dòng ra. Chiều mũi tên quyết định dấu và dòng một chiều phải không âm. Giải hệ rồi mới đặt điều kiện lên các tham số.
+
+**a.**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Gọi các nút: trái, trên, phải, dưới.
 - Trái: $40 + f_3 = f_1 + f_4$ · Trên: $f_1 + f_2 = 50$ · Phải: $60 = f_2 + f_3 + f_5$ · Dưới: $f_4 + f_5 = 50$.
 
-Đặt $f_3 = t$, $f_5 = s$:
-$$f_1 = s + t - 10, \quad f_2 = 60 - s - t, \quad f_3 = t, \quad f_4 = 50 - s, \quad f_5 = s.$$
+**Bước 2. Thiết lập biểu thức.**
 
-**b.** Các nút: trái, trên, giữa (nút có 75 đổ vào), dưới, phải.
+Đặt $f_3 = t$, $f_5 = s$:
+
+$$
+f_1 = s + t - 10, \quad f_2 = 60 - s - t, \quad f_3 = t, \quad f_4 = 50 - s, \quad f_5 = s.
+$$
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Các nút: trái, trên, giữa (nút có 75 đổ vào), dưới, phải.
 - Trái: $50 = f_1 + f_3 + f_5$ · Trên: $f_1 = 25 + f_2$ · Giữa: $f_3 + 75 = f_4 + f_6$ · Dưới: $f_5 + f_6 = 40 + f_7$ · Phải: $f_2 + f_4 + f_7 = 60$.
 
-Đặt $f_4 = r$, $f_6 = s$, $f_7 = t$:
-$$f_1 = 85 - r - t, \quad f_2 = 60 - r - t, \quad f_3 = r + s - 75, \quad f_5 = 40 - s + t.$$
+**Bước 2. Thiết lập biểu thức.**
 
-Kiểm tra câu a với $s = 20$, $t = 10$: $(20, 30, 10, 30, 20)$; nút trái $40 + 10 = 20 + 30$ ✓, nút phải $60 = 30 + 10 + 20$ ✓. Nếu các ống chỉ chảy một chiều thì thêm điều kiện mọi $f_i \ge 0$.
+Đặt $f_4 = r$, $f_6 = s$, $f_7 = t$:
+
+$$
+f_1 = 85 - r - t, \quad f_2 = 60 - r - t, \quad f_3 = r + s - 75, \quad f_5 = 40 - s + t.
+$$
+
+**Bước 3. Thay vào để tính và kiểm tra.**
+
+Kiểm tra câu a với $s = 20$, $t = 10$: $(20, 30, 10, 30, 20)$; nút trái $40 + 10 = 20 + 30$ ✓, nút phải $60 = 30 + 10 + 20$ ✓.
+
+**Bước 4. Xét giả thiết.**
+
+Nếu các ống chỉ chảy một chiều thì thêm điều kiện mọi $f_i \ge 0$.
+
 </LoiGiai>
 
 <LoiHayMac>

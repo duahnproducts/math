@@ -5,11 +5,29 @@ do_kho: vua
 tieu_de: "Phép nhân ma trận — bài 30"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.3.30"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.30 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Vết của ma trận vuông $A$, ký hiệu là $tr \;A$, là tổng các phần tử trên đường chéo chính của $A$. Chứng minh rằng nếu $A$ và $B$ là các ma trận $n \times n$ thì:
+
+**a.** $tr(A + B) = tr A + tr B$.
+
+**b.** $tr(kA) = k tr(A)$ với mọi số $k$.
+
+**c.** $tr(A^{T}) = tr(A)$.
+
+**d.** $tr(AB) = tr(BA)$.
+
+**e.** $tr(AA^{T})$ là tổng bình phương của tất cả các phần tử của $A$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-3-30-1" moTa="Đề gốc Nicholson bài 2.3.30, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -29,6 +47,7 @@ A. Show that, if A and B are n×n matrices:
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -45,7 +64,37 @@ Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự 
 
 <LoiGiai>
 
-**a.** $\operatorname{tr}(A+B)=\sum_i(a_{ii}+b_{ii})=\operatorname{tr}A+\operatorname{tr}B$. **b.** $\operatorname{tr}(kA)=\sum_i ka_{ii}=k\operatorname{tr}A$. **c.** Chuyển vị giữ các ô đường chéo. **d.** $\operatorname{tr}(AB)=\sum_{i,j}a_{ij}b_{ji}=\sum_{j,i}b_{ji}a_{ij}=\operatorname{tr}(BA)$. **e.** Ô $(i,i)$ của $AA^T$ là $\sum_j a_{ij}^2$; cộng theo $i$ cho tổng bình phương tất cả phần tử.
+**Cách làm.** Với $A$ cỡ $m\times n$, $B$ cỡ $n\times p$, tích $AB$ có cỡ $m\times p$ và $(AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$. Khi khai triển, giữ nguyên thứ tự các thừa số.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$\operatorname{tr}(A+B)=\sum_i(a_{ii}+b_{ii})=\operatorname{tr}A+\operatorname{tr}B$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$\operatorname{tr}(kA)=\sum_i ka_{ii}=k\operatorname{tr}A$.
+
+**c.**
+
+**Bước 1. Thực hiện phép biến đổi.**
+
+Chuyển vị giữ các ô đường chéo.
+
+**d.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$\operatorname{tr}(AB)=\sum_{i,j}a_{ij}b_{ji}=\sum_{j,i}b_{ji}a_{ij}=\operatorname{tr}(BA)$.
+
+**e.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Ô $(i,i)$ của $AA^T$ là $\sum_j a_{ij}^2$; cộng theo $i$ cho tổng bình phương tất cả phần tử.
 
 </LoiGiai>
 

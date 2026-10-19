@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Khai triển theo phần bù đại số — bài 21"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.1.21"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.1.21 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh Định lý 3.1.6. [Gợi ý: Khai triển định thức theo cột j.]
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-1-21-1" moTa="Đề gốc Nicholson bài 3.1.21, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ the determinant along column j.]
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +48,25 @@ Cộng bội một hàng vào hàng khác giữ định thức; đổi hai hàng
 
 <LoiGiai>
 
-Khai triển theo cột $j$: $T(v)=\sum_i v_iC_{ij}$. Khi thay đổi riêng cột $j$, các phần bù $C_{ij}$ không đổi vì chúng được tính bằng cách xóa cột này. Do đó $T(x+y)=\sum_i(x_i+y_i)C_{ij}=T(x)+T(y)$ và $T(ax)=\sum_i ax_iC_{ij}=aT(x)$. Đây chính là tính tuyến tính theo một cột cố định.
+**Cách làm.** Cộng bội hàng khác giữ nguyên định thức; đổi hai hàng đổi dấu; rút hệ số $c$ từ một hàng đưa $c$ ra ngoài. Với khai triển, $C_{ij}=(-1)^{i+j}\det M_{ij}$.
+
+Phần bù $C_{ij}$ không chứa cột $j$ vì cột đó bị xóa. Do vậy khi thay riêng cột $j$ bằng $v$, các hệ số trong $T(v)=\sum_i v_iC_{ij}$ thật sự cố định, đúng dạng một ánh xạ tuyến tính.
+
+**Bước 1. Thực hiện phép biến đổi.**
+
+Khai triển theo cột $j$: $T(v)=\sum_i v_iC_{ij}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Khi thay đổi riêng cột $j$, các phần bù $C_{ij}$ không đổi vì chúng được tính bằng cách xóa cột này.
+
+**Bước 3. Rút ra kết luận.**
+
+Do đó $T(x+y)=\sum_i(x_i+y_i)C_{ij}=T(x)+T(y)$ và $T(ax)=\sum_i ax_iC_{ij}=aT(x)$.
+
+**Bước 4. Lập luận và tính toán.**
+
+Đây chính là tính tuyến tính theo một cột cố định.
 
 </LoiGiai>
 

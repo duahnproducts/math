@@ -27,14 +27,459 @@ Kết cục: a vô số nghiệm (2 tham số); b vô số nghiệm (1 tham số
 </GoiY>
 
 <LoiGiai>
+
+**Cách làm.** Trụ là phần tử đầu tiên khác 0 của một hàng sau khi khử. Theo quy ước sách, trụ trong dạng bậc thang được chuẩn hóa bằng 1. Hàng $0=c\ne0$ cho vô nghiệm; nếu không có mâu thuẫn, cột ẩn không có trụ cho ẩn tự do.
+
 **a.** Dạng rút gọn chỉ còn hai hàng khác 0: $x_1 + \tfrac{1}{7}x_3 + \tfrac{26}{7}x_4 = \tfrac{2}{7}$ và $x_2 - \tfrac{3}{7}x_3 - \tfrac{22}{7}x_4 = \tfrac{1}{7}$. Đặt $x_3 = s$, $x_4 = t$:
-$$x_1 = \tfrac{1}{7}(2 - s - 26t), \quad x_2 = \tfrac{1}{7}(1 + 3s + 22t).$$
+
+$$
+x_1 = \tfrac{1}{7}(2 - s - 26t), \quad x_2 = \tfrac{1}{7}(1 + 3s + 22t).
+$$
 
 **b.** Cộng PT 1 và PT 2: $2x_3 = 0$. Cộng PT 1 và PT 3: $2x_1 = 0$. Còn lại $x_2 + x_4 = 0$. Đặt $x_4 = t$: $(x_1, x_2, x_3, x_4) = (0, -t, 0, t)$.
 
 **c.** Nghiệm duy nhất $(4, 3, 0, 0)$. Kiểm tra: $4 - 3 = 1$ ✓, $-4 + 3 = -1$ ✓, $-4 + 6 = 2$ ✓, $4 - 3 = 1$ ✓.
 
 **d.** $x_1 = 1$, $x_2 = 1 - t$, $x_3 = 1 + t$, $x_4 = t$. Kiểm tra PT 2 với $t = 0$: $3 - 1 = 2$ ✓.
+
+**Chi tiết phép khử để làm lại.**
+
+Theo thứ tự ẩn $(x_{1},x_{2},x_{3},x_{4})$, các phép khử cụ thể là:
+
+Đưa về $Ax=b$, rồi ghép vế phải thành cột cuối:
+
+$$
+[A\mid b]=\begin{bmatrix}3&8&-3&-14&2\\2&3&-1&-2&1\\1&-2&1&10&0\\1&5&-2&-12&1\end{bmatrix}.
+$$
+
+**Bước 1. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 1 cho $3$, được
+
+$$
+\begin{bmatrix}1&\frac{8}{3}&-1&- \frac{14}{3}&\frac{2}{3}\\2&3&-1&-2&1\\1&-2&1&10&0\\1&5&-2&-12&1\end{bmatrix}.
+$$
+
+**Bước 2. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-2)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+$$
+\begin{bmatrix}1&\frac{8}{3}&-1&- \frac{14}{3}&\frac{2}{3}\\0&- \frac{7}{3}&1&\frac{22}{3}&- \frac{1}{3}\\1&-2&1&10&0\\1&5&-2&-12&1\end{bmatrix}.
+$$
+
+**Bước 3. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+$$
+\begin{bmatrix}1&\frac{8}{3}&-1&- \frac{14}{3}&\frac{2}{3}\\0&- \frac{7}{3}&1&\frac{22}{3}&- \frac{1}{3}\\0&- \frac{14}{3}&2&\frac{44}{3}&- \frac{2}{3}\\1&5&-2&-12&1\end{bmatrix}.
+$$
+
+**Bước 4. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(-1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+$$
+\begin{bmatrix}1&\frac{8}{3}&-1&- \frac{14}{3}&\frac{2}{3}\\0&- \frac{7}{3}&1&\frac{22}{3}&- \frac{1}{3}\\0&- \frac{14}{3}&2&\frac{44}{3}&- \frac{2}{3}\\0&\frac{7}{3}&-1&- \frac{22}{3}&\frac{1}{3}\end{bmatrix}.
+$$
+
+**Bước 5. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $- \frac{7}{3}$, được
+
+$$
+\begin{bmatrix}1&\frac{8}{3}&-1&- \frac{14}{3}&\frac{2}{3}\\0&1&- \frac{3}{7}&- \frac{22}{7}&\frac{1}{7}\\0&- \frac{14}{3}&2&\frac{44}{3}&- \frac{2}{3}\\0&\frac{7}{3}&-1&- \frac{22}{3}&\frac{1}{3}\end{bmatrix}.
+$$
+
+**Bước 6. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(- \frac{8}{3})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+$$
+\begin{bmatrix}1&0&\frac{1}{7}&\frac{26}{7}&\frac{2}{7}\\0&1&- \frac{3}{7}&- \frac{22}{7}&\frac{1}{7}\\0&- \frac{14}{3}&2&\frac{44}{3}&- \frac{2}{3}\\0&\frac{7}{3}&-1&- \frac{22}{3}&\frac{1}{3}\end{bmatrix}.
+$$
+
+**Bước 7. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(\frac{14}{3})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+$$
+\begin{bmatrix}1&0&\frac{1}{7}&\frac{26}{7}&\frac{2}{7}\\0&1&- \frac{3}{7}&- \frac{22}{7}&\frac{1}{7}\\0&0&0&0&0\\0&\frac{7}{3}&-1&- \frac{22}{3}&\frac{1}{3}\end{bmatrix}.
+$$
+
+**Bước 8. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(- \frac{7}{3})R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+$$
+\begin{bmatrix}1&0&\frac{1}{7}&\frac{26}{7}&\frac{2}{7}\\0&1&- \frac{3}{7}&- \frac{22}{7}&\frac{1}{7}\\0&0&0&0&0\\0&0&0&0&0\end{bmatrix}.
+$$
+
+**Bước 9. Đọc ẩn trụ và ẩn tự do.**
+
+Đọc từng hàng khác 0 của RREF để biểu diễn ẩn trụ theo các ẩn tự do. Đặt các ẩn tự do bằng tham số thực, được
+
+$$
+x=\begin{bmatrix}- \frac{\tau_{0}}{7} - \frac{26 \tau_{1}}{7} + \frac{2}{7}\\\frac{3 \tau_{0}}{7} + \frac{22 \tau_{1}}{7} + \frac{1}{7}\\\tau_{0}\\\tau_{1}\end{bmatrix}.
+$$
+
+ Các ký hiệu $\tau_i$ là tham số tự do, không phải các hằng số đã được xác định.
+
+**Bước 10. Tách phần hằng và phần thuần nhất.**
+
+Cho các tham số bằng 0 để lấy $x_p=\begin{bmatrix}\frac{2}{7}\\\frac{1}{7}\\0\\0\end{bmatrix}$. Nghiệm tổng quát là
+
+$$
+x=x_p+t_{1}\begin{bmatrix}- \frac{1}{7}\\\frac{3}{7}\\1\\0\end{bmatrix}+t_{2}\begin{bmatrix}- \frac{26}{7}\\\frac{22}{7}\\0\\1\end{bmatrix},
+$$
+
+ với các $t_i$ tùy ý. Các vector đứng sau tham số tạo cơ sở của hệ thuần nhất.
+
+**Bước 11. Thay lại để kiểm tra.**
+
+$Ax_p=\begin{bmatrix}2\\1\\0\\1\end{bmatrix}=b$; với mỗi vector cơ sở $v_i$ vừa ghi, $Av_i=0$, nên $A(x_p+\sum_i t_iv_i)=b$.
+
+Theo thứ tự ẩn $(x_{1},x_{2},x_{3},x_{4})$, các phép khử cụ thể là:
+
+Đưa về $Ax=b$, rồi ghép vế phải thành cột cuối:
+
+$$
+[A\mid b]=\begin{bmatrix}1&-1&1&-1&0\\-1&1&1&1&0\\1&1&-1&1&0\\1&1&1&1&0\end{bmatrix}.
+$$
+
+**Bước 12. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+$$
+\begin{bmatrix}1&-1&1&-1&0\\0&0&2&0&0\\1&1&-1&1&0\\1&1&1&1&0\end{bmatrix}.
+$$
+
+**Bước 13. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+$$
+\begin{bmatrix}1&-1&1&-1&0\\0&0&2&0&0\\0&2&-2&2&0\\1&1&1&1&0\end{bmatrix}.
+$$
+
+**Bước 14. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(-1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+$$
+\begin{bmatrix}1&-1&1&-1&0\\0&0&2&0&0\\0&2&-2&2&0\\0&2&0&2&0\end{bmatrix}.
+$$
+
+**Bước 15. Đưa trụ khác 0 lên.**
+
+$R_2\leftrightarrow R_3$:
+
+$$
+\begin{bmatrix}1&-1&1&-1&0\\0&2&-2&2&0\\0&0&2&0&0\\0&2&0&2&0\end{bmatrix}.
+$$
+
+**Bước 16. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $2$, được
+
+$$
+\begin{bmatrix}1&-1&1&-1&0\\0&1&-1&1&0\\0&0&2&0&0\\0&2&0&2&0\end{bmatrix}.
+$$
+
+**Bước 17. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(1)R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+$$
+\begin{bmatrix}1&0&0&0&0\\0&1&-1&1&0\\0&0&2&0&0\\0&2&0&2&0\end{bmatrix}.
+$$
+
+**Bước 18. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(-2)R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+$$
+\begin{bmatrix}1&0&0&0&0\\0&1&-1&1&0\\0&0&2&0&0\\0&0&2&0&0\end{bmatrix}.
+$$
+
+**Bước 19. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 3 cho $2$, được
+
+$$
+\begin{bmatrix}1&0&0&0&0\\0&1&-1&1&0\\0&0&1&0&0\\0&0&2&0&0\end{bmatrix}.
+$$
+
+**Bước 20. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(1)R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+$$
+\begin{bmatrix}1&0&0&0&0\\0&1&0&1&0\\0&0&1&0&0\\0&0&2&0&0\end{bmatrix}.
+$$
+
+**Bước 21. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(-2)R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+$$
+\begin{bmatrix}1&0&0&0&0\\0&1&0&1&0\\0&0&1&0&0\\0&0&0&0&0\end{bmatrix}.
+$$
+
+**Bước 22. Đọc ẩn trụ và ẩn tự do.**
+
+Đọc từng hàng khác 0 của RREF để biểu diễn ẩn trụ theo các ẩn tự do. Đặt các ẩn tự do bằng tham số thực, được
+
+$$
+x=\begin{bmatrix}0\\- \tau_{0}\\0\\\tau_{0}\end{bmatrix}.
+$$
+
+ Các ký hiệu $\tau_i$ là tham số tự do, không phải các hằng số đã được xác định.
+
+**Bước 23. Tách phần hằng và phần thuần nhất.**
+
+Cho các tham số bằng 0 để lấy $x_p=\begin{bmatrix}0\\0\\0\\0\end{bmatrix}$. Nghiệm tổng quát là
+
+$$
+x=x_p+t_{1}\begin{bmatrix}0\\-1\\0\\1\end{bmatrix},
+$$
+
+ với các $t_i$ tùy ý. Các vector đứng sau tham số tạo cơ sở của hệ thuần nhất.
+
+**Bước 24. Thay lại để kiểm tra.**
+
+$Ax_p=\begin{bmatrix}0\\0\\0\\0\end{bmatrix}=b$; với mỗi vector cơ sở $v_i$ vừa ghi, $Av_i=0$, nên $A(x_p+\sum_i t_iv_i)=b$.
+
+Theo thứ tự ẩn $(x_{1},x_{2},x_{3},x_{4})$, các phép khử cụ thể là:
+
+Đưa về $Ax=b$, rồi ghép vế phải thành cột cuối:
+
+$$
+[A\mid b]=\begin{bmatrix}1&-1&1&-2&1\\-1&1&1&1&-1\\-1&2&3&-1&2\\1&-1&2&1&1\end{bmatrix}.
+$$
+
+**Bước 25. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+$$
+\begin{bmatrix}1&-1&1&-2&1\\0&0&2&-1&0\\-1&2&3&-1&2\\1&-1&2&1&1\end{bmatrix}.
+$$
+
+**Bước 26. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+$$
+\begin{bmatrix}1&-1&1&-2&1\\0&0&2&-1&0\\0&1&4&-3&3\\1&-1&2&1&1\end{bmatrix}.
+$$
+
+**Bước 27. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(-1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+$$
+\begin{bmatrix}1&-1&1&-2&1\\0&0&2&-1&0\\0&1&4&-3&3\\0&0&1&3&0\end{bmatrix}.
+$$
+
+**Bước 28. Đưa trụ khác 0 lên.**
+
+$R_2\leftrightarrow R_3$:
+
+$$
+\begin{bmatrix}1&-1&1&-2&1\\0&1&4&-3&3\\0&0&2&-1&0\\0&0&1&3&0\end{bmatrix}.
+$$
+
+**Bước 29. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(1)R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+$$
+\begin{bmatrix}1&0&5&-5&4\\0&1&4&-3&3\\0&0&2&-1&0\\0&0&1&3&0\end{bmatrix}.
+$$
+
+**Bước 30. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 3 cho $2$, được
+
+$$
+\begin{bmatrix}1&0&5&-5&4\\0&1&4&-3&3\\0&0&1&- \frac{1}{2}&0\\0&0&1&3&0\end{bmatrix}.
+$$
+
+**Bước 31. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(-5)R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+$$
+\begin{bmatrix}1&0&0&- \frac{5}{2}&4\\0&1&4&-3&3\\0&0&1&- \frac{1}{2}&0\\0&0&1&3&0\end{bmatrix}.
+$$
+
+**Bước 32. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(-4)R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+$$
+\begin{bmatrix}1&0&0&- \frac{5}{2}&4\\0&1&0&-1&3\\0&0&1&- \frac{1}{2}&0\\0&0&1&3&0\end{bmatrix}.
+$$
+
+**Bước 33. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(-1)R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+$$
+\begin{bmatrix}1&0&0&- \frac{5}{2}&4\\0&1&0&-1&3\\0&0&1&- \frac{1}{2}&0\\0&0&0&\frac{7}{2}&0\end{bmatrix}.
+$$
+
+**Bước 34. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 4 cho $\frac{7}{2}$, được
+
+$$
+\begin{bmatrix}1&0&0&- \frac{5}{2}&4\\0&1&0&-1&3\\0&0&1&- \frac{1}{2}&0\\0&0&0&1&0\end{bmatrix}.
+$$
+
+**Bước 35. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(\frac{5}{2})R_4$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+$$
+\begin{bmatrix}1&0&0&0&4\\0&1&0&-1&3\\0&0&1&- \frac{1}{2}&0\\0&0&0&1&0\end{bmatrix}.
+$$
+
+**Bước 36. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(1)R_4$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+$$
+\begin{bmatrix}1&0&0&0&4\\0&1&0&0&3\\0&0&1&- \frac{1}{2}&0\\0&0&0&1&0\end{bmatrix}.
+$$
+
+**Bước 37. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(\frac{1}{2})R_4$. Hệ số được chọn để ô ở cột 4 bằng 0:
+
+$$
+\begin{bmatrix}1&0&0&0&4\\0&1&0&0&3\\0&0&1&0&0\\0&0&0&1&0\end{bmatrix}.
+$$
+
+**Bước 38. Đọc nghiệm duy nhất.**
+
+Mỗi cột ẩn đều có trụ nên không có ẩn tự do:
+
+$$
+x=\begin{bmatrix}4\\3\\0\\0\end{bmatrix}.
+$$
+
+**Bước 39. Thay lại để kiểm tra.**
+
+$Ax_p=\begin{bmatrix}1\\-1\\2\\1\end{bmatrix}=b$; như vậy nghiệm thỏa toàn bộ hệ.
+
+Theo thứ tự ẩn $(x_{1},x_{2},x_{3},x_{4})$, các phép khử cụ thể là:
+
+Đưa về $Ax=b$, rồi ghép vế phải thành cột cuối:
+
+$$
+[A\mid b]=\begin{bmatrix}1&1&2&-1&4\\0&3&-1&4&2\\1&2&-3&5&0\\1&1&-5&6&-3\end{bmatrix}.
+$$
+
+**Bước 40. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+$$
+\begin{bmatrix}1&1&2&-1&4\\0&3&-1&4&2\\0&1&-5&6&-4\\1&1&-5&6&-3\end{bmatrix}.
+$$
+
+**Bước 41. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(-1)R_1$. Hệ số được chọn để ô ở cột 1 bằng 0:
+
+$$
+\begin{bmatrix}1&1&2&-1&4\\0&3&-1&4&2\\0&1&-5&6&-4\\0&0&-7&7&-7\end{bmatrix}.
+$$
+
+**Bước 42. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 2 cho $3$, được
+
+$$
+\begin{bmatrix}1&1&2&-1&4\\0&1&- \frac{1}{3}&\frac{4}{3}&\frac{2}{3}\\0&1&-5&6&-4\\0&0&-7&7&-7\end{bmatrix}.
+$$
+
+**Bước 43. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(-1)R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+$$
+\begin{bmatrix}1&0&\frac{7}{3}&- \frac{7}{3}&\frac{10}{3}\\0&1&- \frac{1}{3}&\frac{4}{3}&\frac{2}{3}\\0&1&-5&6&-4\\0&0&-7&7&-7\end{bmatrix}.
+$$
+
+**Bước 44. Khử ô cùng cột trụ ở hàng 3.**
+
+$R_3\leftarrow R_3+(-1)R_2$. Hệ số được chọn để ô ở cột 2 bằng 0:
+
+$$
+\begin{bmatrix}1&0&\frac{7}{3}&- \frac{7}{3}&\frac{10}{3}\\0&1&- \frac{1}{3}&\frac{4}{3}&\frac{2}{3}\\0&0&- \frac{14}{3}&\frac{14}{3}&- \frac{14}{3}\\0&0&-7&7&-7\end{bmatrix}.
+$$
+
+**Bước 45. Chuẩn hóa trụ về 1.**
+
+Chia toàn bộ hàng 3 cho $- \frac{14}{3}$, được
+
+$$
+\begin{bmatrix}1&0&\frac{7}{3}&- \frac{7}{3}&\frac{10}{3}\\0&1&- \frac{1}{3}&\frac{4}{3}&\frac{2}{3}\\0&0&1&-1&1\\0&0&-7&7&-7\end{bmatrix}.
+$$
+
+**Bước 46. Khử ô cùng cột trụ ở hàng 1.**
+
+$R_1\leftarrow R_1+(- \frac{7}{3})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+$$
+\begin{bmatrix}1&0&0&0&1\\0&1&- \frac{1}{3}&\frac{4}{3}&\frac{2}{3}\\0&0&1&-1&1\\0&0&-7&7&-7\end{bmatrix}.
+$$
+
+**Bước 47. Khử ô cùng cột trụ ở hàng 2.**
+
+$R_2\leftarrow R_2+(\frac{1}{3})R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+$$
+\begin{bmatrix}1&0&0&0&1\\0&1&0&1&1\\0&0&1&-1&1\\0&0&-7&7&-7\end{bmatrix}.
+$$
+
+**Bước 48. Khử ô cùng cột trụ ở hàng 4.**
+
+$R_4\leftarrow R_4+(7)R_3$. Hệ số được chọn để ô ở cột 3 bằng 0:
+
+$$
+\begin{bmatrix}1&0&0&0&1\\0&1&0&1&1\\0&0&1&-1&1\\0&0&0&0&0\end{bmatrix}.
+$$
+
+**Bước 49. Đọc ẩn trụ và ẩn tự do.**
+
+Đọc từng hàng khác 0 của RREF để biểu diễn ẩn trụ theo các ẩn tự do. Đặt các ẩn tự do bằng tham số thực, được
+
+$$
+x=\begin{bmatrix}1\\1 - \tau_{0}\\\tau_{0} + 1\\\tau_{0}\end{bmatrix}.
+$$
+
+ Các ký hiệu $\tau_i$ là tham số tự do, không phải các hằng số đã được xác định.
+
+**Bước 50. Tách phần hằng và phần thuần nhất.**
+
+Cho các tham số bằng 0 để lấy $x_p=\begin{bmatrix}1\\1\\1\\0\end{bmatrix}$. Nghiệm tổng quát là
+
+$$
+x=x_p+t_{1}\begin{bmatrix}0\\-1\\1\\1\end{bmatrix},
+$$
+
+ với các $t_i$ tùy ý. Các vector đứng sau tham số tạo cơ sở của hệ thuần nhất.
+
+**Bước 51. Thay lại để kiểm tra.**
+
+$Ax_p=\begin{bmatrix}4\\2\\0\\-3\end{bmatrix}=b$; với mỗi vector cơ sở $v_i$ vừa ghi, $Av_i=0$, nên $A(x_p+\sum_i t_iv_i)=b$.
+
 </LoiGiai>
 
 <LoiHayMac>

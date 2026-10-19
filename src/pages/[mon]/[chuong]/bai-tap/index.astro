@@ -116,7 +116,7 @@ const coTuSoan = du.baiTap.some((b) => b.data.tu_soan);
                   {b.data.tieu_de && <span class="tom">{b.data.tieu_de}</span>}
                   <span class="dong">
                     {b.data.tu_soan && <span class="pill info" data-bai-tu-soan>Bài luyện tự soạn</span>}
-                    {b.data.de_goc_tieng_anh && <span class="pill info" data-de-goc-tieng-anh>Đề gốc tiếng Anh</span>}
+                    {b.data.de_dich_tieng_viet ? <span class="pill info" data-de-da-dich>Đề dịch tiếng Việt</span> : b.data.de_goc_tieng_anh && <span class="pill info" data-de-goc-tieng-anh>Đề gốc tiếng Anh</span>}
                     {!baiTapCoHuongDan(b) && <span class="pill mo">Chưa có hướng dẫn</span>}
                     <span data-trang-thai-bai-tap={khoaBaiTap(mon, so, b.data.so)} class="pill trang-thai-bt" />
                   </span>

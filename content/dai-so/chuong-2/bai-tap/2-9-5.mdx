@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Ứng dụng: xích Markov — bài 5"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.9.5"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.9.5 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Thủ tướng nói rằng bà sẽ tổ chức bầu cử. Tin này được truyền từ người này sang người khác, với xác suất $p \neq 0$ thông tin bị truyền sai ở mỗi lần truyền. Giả sử mỗi người nghe tin sẽ truyền cho một người chưa biết tin. Tìm xác suất dài hạn để một người nghe được tin rằng sẽ có bầu cử.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-9-5-1" moTa="Đề gốc Nicholson bài 2.9.5, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -27,6 +35,7 @@ hear that there is going to be an election.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -43,7 +52,33 @@ Sau k lần chuyển dùng lũy thừa thứ k; phân bố dừng thỏa Ps = s 
 
 <LoiGiai>
 
-Hai trạng thái là “có bầu cử” và “không bầu cử”. Ma trận chuyển là $P=\begin{bmatrix}1-p&p\\p&1-p\end{bmatrix}$. Với $0<p<1$, $P$ toàn dương; giải $Ps=s$ cho $s=(1/2,1/2)^T$. Do đó xác suất dài hạn nghe “có bầu cử” là $1/2$. Có thể thấy rõ từ xác suất sau $m$ người: $[1+(1-2p)^m]/2\to1/2$. Nếu cho phép $p=1$ (đề chỉ ghi $p\ne0$), tin bị đảo ở mọi bước, xác suất luân phiên 0 và 1 nên không có giới hạn; cần nêu ngoại lệ này.
+**Cách làm.** Ta dùng vector cột: ô $p_{ij}$ là xác suất từ trạng thái $j$ tới $i$. Sau $k$ bước, $s_k=P^ks_0$. Phân bố dừng phải thỏa đồng thời $Ps=s$, $s_i\ge0$ và $\sum_i s_i=1$.
+
+Từ xác suất hiện tại $q_m$, ta có $q_{m+1}=(1-p)q_m+p(1-q_m)=p+(1-2p)q_m$. Trừ $1/2$ hai vế cho $q_{m+1}-1/2=(1-2p)(q_m-1/2)$, nên sai lệch giảm theo lũy thừa khi $|1-2p|<1$.
+
+**Bước 1. Lập luận và tính toán.**
+
+Hai trạng thái là “có bầu cử” và “không bầu cử”.
+
+**Bước 2. Lập luận và tính toán.**
+
+Ma trận chuyển là $P=\begin{bmatrix}1-p&p\\p&1-p\end{bmatrix}$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Với $0<p<1$, $P$ toàn dương; giải $Ps=s$ cho $s=(1/2,1/2)^T$.
+
+**Bước 4. Rút ra kết luận.**
+
+Do đó xác suất dài hạn nghe “có bầu cử” là $1/2$.
+
+**Bước 5. Lập luận và tính toán.**
+
+Có thể thấy rõ từ xác suất sau $m$ người: $[1+(1-2p)^m]/2\to1/2$.
+
+**Bước 6. Xét giả thiết.**
+
+Nếu cho phép $p=1$ (đề chỉ ghi $p\ne0$), tin bị đảo ở mọi bước, xác suất luân phiên 0 và 1 nên không có giới hạn; cần nêu ngoại lệ này.
 
 </LoiGiai>
 

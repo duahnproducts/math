@@ -5,11 +5,41 @@ do_kho: vua
 tieu_de: "Bài bổ sung 2.9"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.9"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.9 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu $A$ có kích thước $2 \times 2$, hãy chứng minh rằng $A^{-1} = A^{T}$ khi và chỉ khi
+
+$$
+A = \left[ \begin{array}{rr} \cos \theta & \sin \theta \\ -\sin \theta & \cos \theta \end{array} \right]
+$$
+
+ với một $\theta$ nào đó, hoặc
+
+$$
+A = \left[ \begin{array}{rr} \cos \theta & \sin \theta \\ \sin \theta & -\cos \theta \end{array} \right]
+$$
+
+ với một $\theta$ nào đó.
+
+[Gợi ý: Nếu $a^{2} + b^{2} = 1$ thì $a = \cos \theta$, $b = \sin \theta$ với một $\theta$ nào đó. Dùng
+
+
+
+$$
+\cos(\theta - \phi) = \cos \theta \cos \phi + \sin \theta \sin \phi.]
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-0-9-1" moTa="Đề gốc Nicholson bài 2.9, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -31,6 +61,7 @@ some θ. Use
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -47,7 +78,21 @@ Với đẳng thức tổng quát, khai triển có giữ thứ tự; với mệ
 
 <LoiGiai>
 
-Điều kiện $A^{-1}=A^T$ tương đương hai hàng của $A$ là các vector đơn vị vuông góc. Hàng đầu $(a,b)$ thỏa $a^2+b^2=1$, nên viết được $(\cos\theta,\sin\theta)$. Vector đơn vị vuông góc với nó chỉ có hai lựa chọn $(-\sin\theta,\cos\theta)$ và $(\sin\theta,-\cos\theta)$, cho đúng hai dạng đề nêu. Chiều ngược: nhân mỗi ma trận với chuyển vị, dùng $\cos^2\theta+\sin^2\theta=1$, được $AA^T=A^TA=I$.
+**Bước 1. Lập luận và tính toán.**
+
+Điều kiện $A^{-1}=A^T$ tương đương hai hàng của $A$ là các vector đơn vị vuông góc.
+
+**Bước 2. Lập luận và tính toán.**
+
+Hàng đầu $(a,b)$ thỏa $a^2+b^2=1$, nên viết được $(\cos\theta,\sin\theta)$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Vector đơn vị vuông góc với nó chỉ có hai lựa chọn $(-\sin\theta,\cos\theta)$ và $(\sin\theta,-\cos\theta)$, cho đúng hai dạng đề nêu.
+
+**Bước 4. Kiểm tra chiều ngược.**
+
+Chiều ngược: nhân mỗi ma trận với chuyển vị, dùng $\cos^2\theta+\sin^2\theta=1$, được $AA^T=A^TA=I$.
 
 </LoiGiai>
 

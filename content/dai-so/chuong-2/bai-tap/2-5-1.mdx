@@ -5,11 +5,67 @@ do_kho: vua
 tieu_de: "Ma trận sơ cấp — bài 1"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.5.1"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.5.1 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Với mỗi ma trận sơ cấp sau, hãy mô tả phép biến đổi hàng sơ cấp tương ứng và viết nghịch đảo của nó.
+
+**a.**
+
+$$
+E = \left[ \begin{array}{rrr} 1 & 0 & 3 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{array} \right]
+$$
+
+
+
+**b.**
+
+$$
+E = \left[ \begin{array}{rrr} 0 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 0 & 0 \end{array} \right]
+$$
+
+
+
+**c.**
+
+$$
+E = \left[ \begin{array}{rrr} 1 & 0 & 0 \\ 0 & \frac{1}{2} & 0 \\ 0 & 0 & 1 \end{array} \right]
+$$
+
+
+
+**d.**
+
+$$
+E = \left[ \begin{array}{rrr} 1 & 0 & 0 \\ -2 & 1 & 0 \\ 0 & 0 & 1 \end{array} \right]
+$$
+
+
+
+**e.**
+
+$$
+E = \left[ \begin{array}{rrr} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{array} \right]
+$$
+
+
+
+**f.**
+
+$$
+E = \left[ \begin{array}{rrr} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 5 \end{array} \right]
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-5-1-1" moTa="Đề gốc Nicholson bài 2.5.1, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -29,6 +85,7 @@ eration and write the inverse.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -45,7 +102,15 @@ Một phép hàng là nhân trái; một phép cột là nhân phải. Ghi thứ
 
 <LoiGiai>
 
-**a.** $R_1\leftarrow R_1+3R_3$; đảo bằng trừ $3R_3$;
+**Cách làm.** Ma trận sơ cấp $E$ nhận từ $I$ bằng một phép hàng. $EA$ làm phép đó lên các hàng của $A$. Trong chuỗi $E_k\cdots E_1A$, phép $E_1$ được thực hiện trước.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$R_1\leftarrow R_1+3R_3$; đảo bằng trừ $3R_3$;
+
+
 
 $$
 E^{-1}=\begin{bmatrix}1&0&-3\\0&1&0\\0&0&1\end{bmatrix}.
@@ -53,7 +118,13 @@ $$
 
 
 
-**b.** $R_1\leftrightarrow R_3$; tự đảo;
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$R_1\leftrightarrow R_3$; tự đảo;
+
+
 
 $$
 E^{-1}=\begin{bmatrix}0&0&1\\0&1&0\\1&0&0\end{bmatrix}.
@@ -61,7 +132,13 @@ $$
 
 
 
-**c.** $R_2\leftarrow R_2/2$; đảo bằng nhân 2;
+**c.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$R_2\leftarrow R_2/2$; đảo bằng nhân 2;
+
+
 
 $$
 E^{-1}=\begin{bmatrix}1&0&0\\0&2&0\\0&0&1\end{bmatrix}.
@@ -69,7 +146,13 @@ $$
 
 
 
-**d.** $R_2\leftarrow R_2-2R_1$; đảo bằng cộng $2R_1$;
+**d.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$R_2\leftarrow R_2-2R_1$; đảo bằng cộng $2R_1$;
+
+
 
 $$
 E^{-1}=\begin{bmatrix}1&0&0\\2&1&0\\0&0&1\end{bmatrix}.
@@ -77,7 +160,13 @@ $$
 
 
 
-**e.** $R_1\leftrightarrow R_2$; tự đảo;
+**e.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$R_1\leftrightarrow R_2$; tự đảo;
+
+
 
 $$
 E^{-1}=\begin{bmatrix}0&1&0\\1&0&0\\0&0&1\end{bmatrix}.
@@ -85,11 +174,19 @@ $$
 
 
 
-**f.** $R_3\leftarrow5R_3$; đảo bằng chia 5;
+**f.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$R_3\leftarrow5R_3$; đảo bằng chia 5;
+
+
 
 $$
 E^{-1}=\begin{bmatrix}1&0&0\\0&1&0\\0&0&\frac{1}{5}\end{bmatrix}.
 $$
+
+
 
 Nghịch đảo của mỗi phép hàng là phép hàng hoàn tác nó; nhân hai ma trận kiểm tra được I.
 

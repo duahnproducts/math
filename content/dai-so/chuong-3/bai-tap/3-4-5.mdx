@@ -5,11 +5,29 @@ do_kho: vua
 tieu_de: "Chéo hoá — bài 5"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.4.5"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.4.5 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu $A$ chéo hóa được, hãy chứng minh rằng mỗi ma trận sau cũng chéo hóa được.
+
+**a.** $A^{n}$, $n \geq 1$
+
+**b.** $kA$, với $k$ là vô hướng bất kỳ.
+
+**c.** $p(A)$, với $p(x)$ là đa thức bất kỳ (Định lý 3.3.1).
+
+**d.** $U^{-1}AU$ với mọi ma trận khả nghịch $U$.
+
+**e.** $kI + A$ với mọi vô hướng $k$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-4-5-1" moTa="Đề gốc Nicholson bài 3.4.5, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -35,6 +53,7 @@ e. kI +A for any scalar k.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -51,7 +70,47 @@ Ghép các vector riêng độc lập thành cột của P, rồi kiểm tra AP 
 
 <LoiGiai>
 
-Viết $A=PDP^{-1}$ với $D$ chéo. **a.** $A^n=PD^nP^{-1}$, $D^n$ chéo. **b.** $kA=P(kD)P^{-1}$. **c.** $p(A)=Pp(D)P^{-1}$, $p(D)$ chéo. **d.** $U^{-1}AU=(U^{-1}P)D(U^{-1}P)^{-1}$. **e.** $kI+A=P(kI+D)P^{-1}$. Mỗi biểu thức cho trực tiếp một ma trận đổi cơ sở khả nghịch và ma trận chéo tương ứng.
+**Cách làm.** Chéo hóa $A=PDP^{-1}$ nghĩa là các cột của $P$ là một cơ sở vector riêng. Trị riêng của cột thứ $j$ phải nằm ở ô $d_{jj}$, và có thể kiểm tra bằng $AP=PD$.
+
+Khi nhân hai biểu thức $PDP^{-1}$, cặp ở giữa $P^{-1}P=I$ triệt tiêu. Vì thế $A^2=PD^2P^{-1}$, rồi quy nạp cho các lũy thừa. Nhân vô hướng và cộng đa thức cũng giữ hai thừa số ngoài $P,P^{-1}$.
+
+**Bước 1. Thiết lập biểu thức.**
+
+Viết $A=PDP^{-1}$ với $D$ chéo.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$A^n=PD^nP^{-1}$, $D^n$ chéo.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$kA=P(kD)P^{-1}$.
+
+**c.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$p(A)=Pp(D)P^{-1}$, $p(D)$ chéo.
+
+**d.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$U^{-1}AU=(U^{-1}P)D(U^{-1}P)^{-1}$.
+
+**e.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$kI+A=P(kI+D)P^{-1}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Mỗi biểu thức cho trực tiếp một ma trận đổi cơ sở khả nghịch và ma trận chéo tương ứng.
 
 </LoiGiai>
 

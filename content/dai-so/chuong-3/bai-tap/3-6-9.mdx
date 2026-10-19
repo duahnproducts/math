@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Ứng dụng: hệ thức truy hồi tuyến tính — bài 9"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.6.9"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.6.9 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Sản lượng lúa mì hằng năm của một quốc gia bằng trung bình sản lượng của hai năm trước. Nếu sản lượng năm 1990 và 1991 lần lượt là 10 và 12 triệu tấn, hãy tìm công thức sản lượng $k$ năm sau 1990. Sản lượng trung bình về dài hạn là bao nhiêu?
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-6-9-1" moTa="Đề gốc Nicholson bài 3.6.9, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -27,6 +35,7 @@ average yield?
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -43,11 +52,29 @@ Dùng các điều kiện đầu để xác định hệ số trong nghiệm t�
 
 <LoiGiai>
 
-Gọi $x_k$ là sản lượng (triệu tấn) năm $1990+k$. Truy hồi $x_{k+2}=(x_{k+1}+x_k)/2$ có phương trình $2r^2-r-1=(r-1)(2r+1)=0$. Dùng $x_0=10,x_1=12$ cho
+**Cách làm.** Với truy hồi tuyến tính, thử $x_k=r^k$ để tìm phương trình đặc trưng. Các điều kiện đầu quyết định hệ số; với bài đếm, cần phân loại các trường hợp rời nhau và đếm hết mọi khả năng.
+
+Đặt $x_k=C+D(-1/2)^k$ theo hai nghiệm đặc trưng. Điều kiện đầu cho $C+D=10$, $C-D/2=12$. Lấy phương trình sau trừ phương trình trước được $-3D/2=2$, nên $D=-4/3$, $C=34/3$.
+
+**Bước 1. Thiết lập biểu thức.**
+
+Gọi $x_k$ là sản lượng (triệu tấn) năm $1990+k$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Truy hồi $x_{k+2}=(x_{k+1}+x_k)/2$ có phương trình $2r^2-r-1=(r-1)(2r+1)=0$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Dùng $x_0=10,x_1=12$ cho
+
+
 
 $$
 x_k=\frac{34}3-\frac43\left(-\frac12\right)^k.
 $$
+
+
 
  Khi $k\to\infty$, hạng dao động tắt dần; sản lượng giới hạn là $34/3$ triệu tấn, xấp xỉ $11.333$ triệu tấn.
 

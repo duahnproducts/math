@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Chéo hoá — bài 9"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.4.9"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.4.9 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu $A$ chéo hóa được và $\lambda \geq 0$ với mỗi trị riêng của $A$, hãy chứng minh rằng $A = B^{2}$ với một ma trận $B$ nào đó.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-4-9-1" moTa="Đề gốc Nicholson bài 3.4.9, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -21,6 +29,7 @@ Exercise 3.4.9  If A is diagonalizable and λ ≥0 for eacheigenvalue of A, show
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -38,7 +47,29 @@ Ghép các vector riêng độc lập thành cột của P, rồi kiểm tra AP 
 
 <LoiGiai>
 
-Viết $D=\operatorname{diag}(\lambda_1,\ldots,\lambda_n)$ với $\lambda_i\ge0$. Đặt $C=\operatorname{diag}(\sqrt{\lambda_1},\ldots,\sqrt{\lambda_n})$, nên $C^2=D$. Chọn $B=PCP^{-1}$. Khi đó $B^2=PC^2P^{-1}=PDP^{-1}=A$. Căn chọn thực vì các trị riêng không âm, và được phép có trị riêng 0.
+**Cách làm.** Chéo hóa $A=PDP^{-1}$ nghĩa là các cột của $P$ là một cơ sở vector riêng. Trị riêng của cột thứ $j$ phải nằm ở ô $d_{jj}$, và có thể kiểm tra bằng $AP=PD$.
+
+Cần tìm một ma trận $B$ thỏa $B^2=A$. Làm việc trong cơ sở vector riêng biến bài toán thành lấy căn từng số không âm trên đường chéo. Sau đó dùng cùng $P$ chuyển ma trận căn về cơ sở ban đầu.
+
+**Bước 1. Thiết lập biểu thức.**
+
+Viết $D=\operatorname{diag}(\lambda_1,\ldots,\lambda_n)$ với $\lambda_i\ge0$.
+
+**Bước 2. Thiết lập biểu thức.**
+
+Đặt $C=\operatorname{diag}(\sqrt{\lambda_1},\ldots,\sqrt{\lambda_n})$, nên $C^2=D$.
+
+**Bước 3. Thiết lập biểu thức.**
+
+Chọn $B=PCP^{-1}$.
+
+**Bước 4. Lập luận và tính toán.**
+
+Khi đó $B^2=PC^2P^{-1}=PDP^{-1}=A$.
+
+**Bước 5. Lập luận và tính toán.**
+
+Căn chọn thực vì các trị riêng không âm, và được phép có trị riêng 0.
 
 </LoiGiai>
 

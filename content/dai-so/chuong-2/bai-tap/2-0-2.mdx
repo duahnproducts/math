@@ -5,11 +5,37 @@ do_kho: vua
 tieu_de: "Bài bổ sung 2.2"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.2"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.2 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Xét
+
+
+
+$$
+p(X) = X^{3} - 5X^{2} + 11X - 4I.
+$$
+
+
+
+**a.** Nếu
+
+$$
+p(U) = \left[ \begin{array}{rr} 1 & 3 \\ -1 & 0 \end{array} \right]
+$$
+
+, hãy tính $p(U^{T})$.
+
+**b.** Nếu $p(U) = 0$, trong đó $U$ có kích thước $n \times n$, hãy tìm $U^{-1}$ theo $U$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-0-2-1" moTa="Đề gốc Nicholson bài 2.2, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -28,6 +54,7 @@ Exercise 2.2  Consider
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -44,7 +71,25 @@ Với đẳng thức tổng quát, khai triển có giữ thứ tự; với mệ
 
 <LoiGiai>
 
-**a.** Đa thức có hệ số thực nên $p(U^T)=p(U)^T=\begin{bmatrix}1&-1\\3&0\end{bmatrix}$. **b.** Từ $U^3-5U^2+11U-4I=0$ suy ra $U(U^2-5U+11I)=4I$. Các đa thức của $U$ giao hoán với $U$, nên cũng có tích theo chiều ngược bằng $4I$. Do đó $U^{-1}=(U^2-5U+11I)/4$.
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Đa thức có hệ số thực nên $p(U^T)=p(U)^T=\begin{bmatrix}1&-1\\3&0\end{bmatrix}$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Từ $U^3-5U^2+11U-4I=0$ suy ra $U(U^2-5U+11I)=4I$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Các đa thức của $U$ giao hoán với $U$, nên cũng có tích theo chiều ngược bằng $4I$.
+
+**Bước 3. Rút ra kết luận.**
+
+Do đó $U^{-1}=(U^2-5U+11I)/4$.
 
 </LoiGiai>
 

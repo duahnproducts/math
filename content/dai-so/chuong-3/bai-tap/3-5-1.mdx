@@ -5,11 +5,27 @@ do_kho: vua
 tieu_de: "Hệ động lực tuyến tính — bài 1"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.5.1"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.5.1 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Xét mô hình trong Ví dụ 3.3.1. Trong mỗi trường hợp, xác định quần thể sẽ ổn định, tuyệt chủng hay tăng lớn. Ký hiệu các tỷ lệ sống của cá thể trưởng thành và con non lần lượt là $A$ và $J$, còn tỷ lệ sinh sản là $R$.
+
+
+
+$$
+\def\arraystretch{1.5} \begin{array}{c|ccccc} & R & & A & & J \\ a. & 2 & & \frac{1}{2} & &\frac{1}{2}\\ b. & 3 & &\frac{1}{4} & &\frac{1}{4}\\ c. & 2 & &\frac{1}{4} & &\frac{1}{3}\\ d. & 3 & &\frac{3}{5} & &\frac{1}{5} \end{array}
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-5-1-1" moTa="Đề gốc Nicholson bài 3.5.1, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -31,6 +47,7 @@ as R.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -47,13 +64,135 @@ Khai triển trạng thái ban đầu theo cơ sở vector riêng, rồi so sán
 
 <LoiGiai>
 
-**a.** Ma trận quần thể là $M=\begin{bmatrix}A&J\\R&0\end{bmatrix}$. Trị riêng trội $\lambda_+=(A+\sqrt{A^2+4RJ})/2=\frac{1}{4} + \frac{\sqrt{17}}{4}$. Vì $A+RJ=\frac{3}{2}$, quần thể tăng không bị chặn, với quần thể ban đầu không âm khác 0. Tiêu chuẩn tương ứng là $\lambda_+>1$, $<1$ hoặc $=1$.
+**Cách làm.** Mô hình tuyến tính có $v_{k+1}=Mv_k$, nên $v_k=M^kv_0$. Nếu $v_0=\sum_i c_iv_i$ theo vector riêng, thì $v_k=\sum_i c_i\lambda_i^kv_i$.
 
-**b.** Ma trận quần thể là $M=\begin{bmatrix}A&J\\R&0\end{bmatrix}$. Trị riêng trội $\lambda_+=(A+\sqrt{A^2+4RJ})/2=1$. Vì $A+RJ=1$, quần thể ổn định về một cơ cấu quần thể hữu hạn khác 0, với quần thể ban đầu không âm khác 0. Tiêu chuẩn tương ứng là $\lambda_+>1$, $<1$ hoặc $=1$.
+**a.**
 
-**c.** Ma trận quần thể là $M=\begin{bmatrix}A&J\\R&0\end{bmatrix}$. Trị riêng trội $\lambda_+=(A+\sqrt{A^2+4RJ})/2=\frac{1}{8} + \frac{\sqrt{393}}{24}$. Vì $A+RJ=\frac{11}{12}$, quần thể tiến về 0 (tuyệt chủng), với quần thể ban đầu không âm khác 0. Tiêu chuẩn tương ứng là $\lambda_+>1$, $<1$ hoặc $=1$.
+**Bước 1. Thay vào để tính và kiểm tra.**
 
-**d.** Ma trận quần thể là $M=\begin{bmatrix}A&J\\R&0\end{bmatrix}$. Trị riêng trội $\lambda_+=(A+\sqrt{A^2+4RJ})/2=\frac{3}{10} + \frac{\sqrt{69}}{10}$. Vì $A+RJ=\frac{6}{5}$, quần thể tăng không bị chặn, với quần thể ban đầu không âm khác 0. Tiêu chuẩn tương ứng là $\lambda_+>1$, $<1$ hoặc $=1$.
+Thay các tỷ lệ trong đề vào $M=\begin{bmatrix}A&J\\R&0\end{bmatrix}$, được
+
+
+
+$$
+M=\begin{bmatrix}\frac{1}{2}&\frac{1}{2}\\2&0\end{bmatrix}.
+$$
+
+
+
+ Lập $\det(\lambda I-M)=\lambda^2-A\lambda-RJ=0$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Công thức nghiệm bậc hai cho nghiệm dương (trội) và nghiệm âm còn lại.
+
+**Bước 3. Lập luận và tính toán.**
+
+Trị riêng trội $\lambda_+=(A+\sqrt{A^2+4RJ})/2=\frac{1}{4} + \frac{\sqrt{17}}{4}$.
+
+**Bước 4. Giải thích điều kiện sử dụng.**
+
+Vì $A+RJ=\frac{3}{2}$, quần thể tăng không bị chặn, với quần thể ban đầu không âm khác 0.
+
+**Bước 5. Lập luận và tính toán.**
+
+Tiêu chuẩn tương ứng là $\lambda_+>1$, $<1$ hoặc $=1$.
+
+**b.**
+
+**Bước 1. Thay vào để tính và kiểm tra.**
+
+Thay các tỷ lệ trong đề vào $M=\begin{bmatrix}A&J\\R&0\end{bmatrix}$, được
+
+
+
+$$
+M=\begin{bmatrix}\frac{1}{4}&\frac{1}{4}\\3&0\end{bmatrix}.
+$$
+
+
+
+ Lập $\det(\lambda I-M)=\lambda^2-A\lambda-RJ=0$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Công thức nghiệm bậc hai cho nghiệm dương (trội) và nghiệm âm còn lại.
+
+**Bước 3. Lập luận và tính toán.**
+
+Trị riêng trội $\lambda_+=(A+\sqrt{A^2+4RJ})/2=1$.
+
+**Bước 4. Giải thích điều kiện sử dụng.**
+
+Vì $A+RJ=1$, quần thể ổn định về một cơ cấu quần thể hữu hạn khác 0, với quần thể ban đầu không âm khác 0.
+
+**Bước 5. Lập luận và tính toán.**
+
+Tiêu chuẩn tương ứng là $\lambda_+>1$, $<1$ hoặc $=1$.
+
+**c.**
+
+**Bước 1. Thay vào để tính và kiểm tra.**
+
+Thay các tỷ lệ trong đề vào $M=\begin{bmatrix}A&J\\R&0\end{bmatrix}$, được
+
+
+
+$$
+M=\begin{bmatrix}\frac{1}{4}&\frac{1}{3}\\2&0\end{bmatrix}.
+$$
+
+
+
+ Lập $\det(\lambda I-M)=\lambda^2-A\lambda-RJ=0$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Công thức nghiệm bậc hai cho nghiệm dương (trội) và nghiệm âm còn lại.
+
+**Bước 3. Lập luận và tính toán.**
+
+Trị riêng trội $\lambda_+=(A+\sqrt{A^2+4RJ})/2=\frac{1}{8} + \frac{\sqrt{393}}{24}$.
+
+**Bước 4. Giải thích điều kiện sử dụng.**
+
+Vì $A+RJ=\frac{11}{12}$, quần thể tiến về 0 (tuyệt chủng), với quần thể ban đầu không âm khác 0.
+
+**Bước 5. Lập luận và tính toán.**
+
+Tiêu chuẩn tương ứng là $\lambda_+>1$, $<1$ hoặc $=1$.
+
+**d.**
+
+**Bước 1. Thay vào để tính và kiểm tra.**
+
+Thay các tỷ lệ trong đề vào $M=\begin{bmatrix}A&J\\R&0\end{bmatrix}$, được
+
+
+
+$$
+M=\begin{bmatrix}\frac{3}{5}&\frac{1}{5}\\3&0\end{bmatrix}.
+$$
+
+
+
+ Lập $\det(\lambda I-M)=\lambda^2-A\lambda-RJ=0$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Công thức nghiệm bậc hai cho nghiệm dương (trội) và nghiệm âm còn lại.
+
+**Bước 3. Lập luận và tính toán.**
+
+Trị riêng trội $\lambda_+=(A+\sqrt{A^2+4RJ})/2=\frac{3}{10} + \frac{\sqrt{69}}{10}$.
+
+**Bước 4. Giải thích điều kiện sử dụng.**
+
+Vì $A+RJ=\frac{6}{5}$, quần thể tăng không bị chặn, với quần thể ban đầu không âm khác 0.
+
+**Bước 5. Lập luận và tính toán.**
+
+Tiêu chuẩn tương ứng là $\lambda_+>1$, $<1$ hoặc $=1$.
 
 </LoiGiai>
 

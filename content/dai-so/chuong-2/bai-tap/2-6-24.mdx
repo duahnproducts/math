@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Phép biến đổi tuyến tính — bài 24"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.6.24"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.6.24 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $\mathbb{R}^n \xrightarrow{T} \mathbb{R}^m \xrightarrow{S} \mathbb{R}^k$ là hai phép biến đổi tuyến tính. Chứng minh trực tiếp rằng $S \circ T$ tuyến tính. Cụ thể:
+
+**a.** Chứng minh rằng $(S \circ T)(\mathbf{x} + \mathbf{y}) = (S \circ T)\mathbf{x} + (S \circ T)\mathbf{y}$ với mọi $\mathbf{x}$, $\mathbf{y}$ thuộc $\mathbb{R}^n$.
+
+**b.** Chứng minh rằng $(S \circ T)(a\mathbf{x}) = a[(S \circ T)\mathbf{x}]$ với mọi $\mathbf{x}$ thuộc $\mathbb{R}^n$ và mọi $a$ thuộc $\mathbb{R}$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-6-24-1" moTa="Đề gốc Nicholson bài 2.6.24, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -25,6 +37,7 @@ formations. Show directly that S◦T is linear. That is:
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -42,7 +55,27 @@ Cột thứ j của ma trận ánh xạ là ảnh của vector đơn vị thứ 
 
 <LoiGiai>
 
-**a.** $(S\circ T)(x+y)=S(Tx+Ty)=S(Tx)+S(Ty)$. **b.** $(S\circ T)(ax)=S(aTx)=aS(Tx)$. Cả hai đẳng thức lần lượt dùng tính tuyến tính của $T$ rồi của $S$, với các không gian đầu vào / đầu ra khớp nhau. Do đó hợp thành tuyến tính.
+**Cách làm.** Tuyến tính nghĩa là $T(au+bv)=aT(u)+bT(v)$. Với vector cột, ma trận của $T$ là $[T(e_1)\ \cdots\ T(e_n)]$; ma trận của $S\circ T$ là $[S][T]$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$(S\circ T)(x+y)=S(Tx+Ty)=S(Tx)+S(Ty)$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$(S\circ T)(ax)=S(aTx)=aS(Tx)$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Cả hai đẳng thức lần lượt dùng tính tuyến tính của $T$ rồi của $S$, với các không gian đầu vào / đầu ra khớp nhau.
+
+**Bước 3. Rút ra kết luận.**
+
+Do đó hợp thành tuyến tính.
 
 </LoiGiai>
 

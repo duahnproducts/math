@@ -5,11 +5,27 @@ do_kho: vua
 tieu_de: "Phép biến đổi tuyến tính — bài 3"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.6.3"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.6.3 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Trong mỗi trường hợp, giả sử phép biến đổi $T$ là tuyến tính; dùng Định lý 2.6.2 để tìm ma trận $A$ của $T$.
+
+**a.** $T : \mathbb{R}^2 \to \mathbb{R}^2$ là phép đối xứng qua đường thẳng $y = -x$.
+
+**b.** $T : \mathbb{R}^2 \to \mathbb{R}^2$ được cho bởi $T(\mathbf{x}) = -\mathbf{x}$ với mọi $\mathbf{x}$ thuộc $\mathbb{R}^2$.
+
+**c.** $T : \mathbb{R}^2 \to \mathbb{R}^2$ là phép quay theo chiều kim đồng hồ một góc $\frac{\pi}{4}$.
+
+**d.** $T : \mathbb{R}^2 \to \mathbb{R}^2$ là phép quay ngược chiều kim đồng hồ một góc $\frac{\pi}{4}$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-6-3-1" moTa="Đề gốc Nicholson bài 2.6.3, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -29,6 +45,7 @@ c. T : R2         is clockwise rotation through π .                            
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -45,15 +62,41 @@ Cột thứ j của ma trận ánh xạ là ảnh của vector đơn vị thứ 
 
 <LoiGiai>
 
-Ma trận có cột thứ $j$ là $T(e_j)$. Lần lượt biến đổi $e_1,e_2$ theo mô tả hình học, thu được:
+**Cách làm.** Tuyến tính nghĩa là $T(au+bv)=aT(u)+bT(v)$. Với vector cột, ma trận của $T$ là $[T(e_1)\ \cdots\ T(e_n)]$; ma trận của $S\circ T$ là $[S][T]$.
 
-**a.** $\begin{bmatrix}0&-1\\-1&0\end{bmatrix}$.
+**Bước 1. Lập luận và tính toán.**
 
-**b.** $\begin{bmatrix}-1&0\\0&-1\end{bmatrix}$.
+Ma trận có cột thứ $j$ là $T(e_j)$.
 
-**c.** $\begin{bmatrix}\frac{\sqrt{2}}{2}&\frac{\sqrt{2}}{2}\\- \frac{\sqrt{2}}{2}&\frac{\sqrt{2}}{2}\end{bmatrix}$.
+**Bước 2. Lập luận và tính toán.**
 
-**d.** $\begin{bmatrix}\frac{\sqrt{2}}{2}&- \frac{\sqrt{2}}{2}\\\frac{\sqrt{2}}{2}&\frac{\sqrt{2}}{2}\end{bmatrix}$.
+Lần lượt biến đổi $e_1,e_2$ theo mô tả hình học, thu được:
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$\begin{bmatrix}0&-1\\-1&0\end{bmatrix}$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$\begin{bmatrix}-1&0\\0&-1\end{bmatrix}$.
+
+**c.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$\begin{bmatrix}\frac{\sqrt{2}}{2}&\frac{\sqrt{2}}{2}\\- \frac{\sqrt{2}}{2}&\frac{\sqrt{2}}{2}\end{bmatrix}$.
+
+**d.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$\begin{bmatrix}\frac{\sqrt{2}}{2}&- \frac{\sqrt{2}}{2}\\\frac{\sqrt{2}}{2}&\frac{\sqrt{2}}{2}\end{bmatrix}$.
+
+**Bước 2. Lập luận và tính toán.**
 
 Ở (c), góc quay là $-\pi/4$; ở (d) là $\pi/4$, nên hai ma trận chỉ khác dấu của các ô sin.
 

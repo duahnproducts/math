@@ -87,12 +87,96 @@ Với hai lát cắt dương, phép nhân phải dựa vào các phần tử dư
 
 Chứng minh $\{r\in\mathbb{Q}:r<3/2\}$ là lát cắt. **Gợi ý:** chọn hai hữu tỉ hai phía; với r&lt;3/2, lấy trung điểm giữa r và 3/2.
 
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Đặt $C=\{r\in\mathbb Q:r<3/2\}$.
+
+**Bước 2. Xác định điều cần tìm.**
+
+Kiểm tra các điều kiện của một lát cắt Dedekind.
+
+**Bước 3. Chọn kiến thức và lý do.**
+
+Cần chứng minh không rỗng, khác toàn bộ $\mathbb Q$, đóng về phía dưới, và không có phần tử lớn nhất.
+
+**Bước 4. Giải từng bước.**
+
+$1\in C$ nên không rỗng; $2\notin C$ nên $C\ne\mathbb Q$. Nếu $r\in C$ và $q<r$ với $q$ hữu tỉ, thì $q<r<3/2$, nên $q\in C$. Cuối cùng, với $r\in C$, đặt $u=(r+3/2)/2$. Số $u$ hữu tỉ và $r<u<3/2$, nên $u\in C$ và lớn hơn $r$. Vậy $C$ không có phần tử lớn nhất và là lát cắt.
+
+**Bước 5. Kiểm tra kết quả.**
+
+Điểm biên $3/2$ không thuộc tập; mọi điểm bên trong đều có trung điểm hữu tỉ lớn hơn nó nhưng vẫn dưới biên.
+
+**Bước 6. Cách tự làm lại.**
+
+Kiểm từng điều kiện; dùng trung điểm để dựng phần tử lớn hơn.
+
+</LoiGiai>
+
 ### VỪA - Thứ tự
 
 Cho s,t hữu tỉ. Chứng minh s≤t khi và chỉ khi $s^*\subseteq t^*$. **Gợi ý:** chiều thuận theo dấu &lt;; chiều ngược, giả sử s>t rồi lấy r=(s+t)/2.
 
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+$s,t\in\mathbb Q$, $s^*=\{r\in\mathbb Q:r<s\}$ và tương tự cho $t^*$.
+
+**Bước 2. Xác định điều cần tìm.**
+
+Chứng minh $s\le t\iff s^*\subseteq t^*$.
+
+**Bước 3. Chọn kiến thức và lý do.**
+
+Chứng minh hai chiều; khi cần bác quan hệ chứa tập, dựng một phần tử nằm trong một tập mà không nằm trong tập kia.
+
+**Bước 4. Giải từng bước.**
+
+Chiều thuận: nếu $s\le t$ và $r\in s^*$, thì $r<s\le t$, nên $r<t$ và $r\in t^*$. Chiều ngược: giả sử $s^*\subseteq t^*$ mà $s>t$. Lấy $r=(s+t)/2\in\mathbb Q$. Khi ấy $t<r<s$, nên $r\in s^*$ nhưng $r\notin t^*$, mâu thuẫn. Do đó $s\le t$.
+
+**Bước 5. Kiểm tra kết quả.**
+
+Nếu $s=t$, hai lát cắt bằng nhau, phù hợp dấu $\le$ và quan hệ $\subseteq$.
+
+**Bước 6. Cách tự làm lại.**
+
+Chứng minh chiều thuận bằng một phần tử tùy ý; chiều ngược bằng phần tử nằm giữa hai biên.
+
+</LoiGiai>
+
 ### KHÓ - Sup bằng hợp
 
 Cho một họ không rỗng các lát cắt, có cận trên β theo quan hệ chứa tập. Chứng minh hợp γ của họ là lát cắt và là cận trên nhỏ nhất. **Gợi ý:** lấy r∈γ thì r nằm trong ít nhất một lát cắt của họ; dùng lát cắt ấy để tạo phần tử lớn hơn r.
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Họ $\mathcal F$ gồm các lát cắt, không rỗng và có cận trên là lát cắt $\beta$. Đặt $\gamma=\bigcup_{C\in\mathcal F}C$.
+
+**Bước 2. Xác định điều cần tìm.**
+
+Chứng minh $\gamma$ là lát cắt và là sup của họ theo quan hệ chứa tập.
+
+**Bước 3. Chọn kiến thức và lý do.**
+
+Hợp chứa mọi thành viên; các tính chất tại một phần tử của hợp có thể kiểm tra trong một lát cắt chứa phần tử ấy.
+
+**Bước 4. Giải từng bước.**
+
+Chọn $C_0\in\mathcal F$. Vì $C_0\ne\varnothing$, hợp $\gamma$ không rỗng. Mỗi $C\subseteq\beta$, nên $\gamma\subseteq\beta\ne\mathbb Q$; do đó hợp khác toàn bộ hữu tỉ. Nếu $r\in\gamma$, chọn $C$ chứa $r$. Với $q<r$, tính đóng dưới của $C$ cho $q\in C\subseteq\gamma$. Vì $C$ không có phần tử lớn nhất, có $u\in C$ với $u>r$, nên $\gamma$ cũng không có phần tử lớn nhất. Vậy $\gamma$ là lát cắt. Mỗi $C\subseteq\gamma$ nên nó là cận trên. Nếu $\eta$ là cận trên khác, mọi $C\subseteq\eta$, suy ra hợp $\gamma\subseteq\eta$. Vậy $\gamma$ là cận trên nhỏ nhất.
+
+**Bước 5. Kiểm tra kết quả.**
+
+Giả thiết có cận trên $\beta$ được dùng để bảo đảm hợp không bằng toàn bộ $\mathbb Q$. Giả thiết họ không rỗng bảo đảm hợp không rỗng.
+
+**Bước 6. Cách tự làm lại.**
+
+Tách hai việc: hợp còn là đối tượng hợp lệ, rồi chứng minh nó có tính chất tối ưu.
+
+</LoiGiai>
 
 Nguồn kiến thức: Kenneth A. Ross, *Elementary Analysis: The Theory of Calculus*, ấn bản thứ hai, 2013, §6. Bài giảng diễn đạt bằng lời riêng; ví dụ và bài tập do người biên soạn bổ sung.

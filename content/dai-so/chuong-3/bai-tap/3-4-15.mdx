@@ -5,11 +5,27 @@ do_kho: vua
 tieu_de: "Chéo hoá — bài 15"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.4.15"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.4.15 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+**a.** Chứng minh rằng ma trận chéo hóa được $A$ chỉ có một trị riêng $\lambda$ thì chỉ có thể là ma trận vô hướng $A = \lambda I$.
+
+**b.**
+
+$$
+\left[ \begin{array}{rr} 3 & -2 \\ 2 & -1 \end{array}\right]
+$$
+
+ có chéo hóa được không?
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-4-15-1" moTa="Đề gốc Nicholson bài 3.4.15, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -29,6 +45,7 @@ Exercise 3.4.15
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -45,7 +62,29 @@ Ghép các vector riêng độc lập thành cột của P, rồi kiểm tra AP 
 
 <LoiGiai>
 
-**a.** Nếu chỉ có một trị riêng $\lambda$ và chéo hóa được, mọi ô đường chéo của $D$ bằng $\lambda$, nên $A=P(\lambda I)P^{-1}=\lambda I$. Chiều ngược hiển nhiên. **b.** Ma trận có vết 2, định thức 1, nên đa thức $(x-1)^2$. Nó không bằng $I$, do (a) không chéo hóa được; cụ thể $A-I=\begin{bmatrix}2&-2\\2&-2\end{bmatrix}$ có hạt nhân một chiều.
+**Cách làm.** Chéo hóa $A=PDP^{-1}$ nghĩa là các cột của $P$ là một cơ sở vector riêng. Trị riêng của cột thứ $j$ phải nằm ở ô $d_{jj}$, và có thể kiểm tra bằng $AP=PD$.
+
+Nếu chéo hóa được mà chỉ có một trị riêng $\lambda$, ma trận chéo bắt buộc là $D=\lambda I$. Do $P(\lambda I)P^{-1}=\lambda I$, ma trận ban đầu cũng phải là ma trận vô hướng. Vì vậy chỉ cần chứng minh ma trận đã cho khác $\lambda I$ để bác chéo hóa.
+
+**a.**
+
+**Bước 1. Xét giả thiết.**
+
+Nếu chỉ có một trị riêng $\lambda$ và chéo hóa được, mọi ô đường chéo của $D$ bằng $\lambda$, nên $A=P(\lambda I)P^{-1}=\lambda I$.
+
+**Bước 2. Kiểm tra chiều ngược.**
+
+Chiều ngược hiển nhiên.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Ma trận có vết 2, định thức 1, nên đa thức $(x-1)^2$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Nó không bằng $I$, do (a) không chéo hóa được; cụ thể $A-I=\begin{bmatrix}2&-2\\2&-2\end{bmatrix}$ có hạt nhân một chiều.
 
 </LoiGiai>
 

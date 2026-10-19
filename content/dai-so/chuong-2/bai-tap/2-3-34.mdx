@@ -5,11 +5,43 @@ do_kho: vua
 tieu_de: "Phép nhân ma trận — bài 34"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.3.34"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.34 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu $A$ và $B$ là các ma trận $n \times n$, hãy chứng minh rằng:
+
+**a.** $AB = BA$ khi và chỉ khi
+
+
+
+$$
+(A + B)^{2} = A^{2} + 2AB + B^{2}
+$$
+
+
+
+.
+
+**b.** $AB = BA$ khi và chỉ khi
+
+
+
+$$
+(A + B)(A - B) = (A - B)(A + B)
+$$
+
+
+
+.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-3-34-1" moTa="Đề gốc Nicholson bài 2.3.34, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -31,6 +63,7 @@ Exercise 2.3.34  If A and B are n×n matrices, show that:
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -47,7 +80,29 @@ Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự 
 
 <LoiGiai>
 
-**a.** Khai triển $(A+B)^2=A^2+AB+BA+B^2$. Bằng $A^2+2AB+B^2$ khi và chỉ khi $BA=AB$. **b.** Hai vế lần lượt là $A^2-AB+BA-B^2$ và $A^2+AB-BA-B^2$; bằng nhau khi và chỉ khi $2(BA-AB)=0$, tức $AB=BA$ trên số thực. Mỗi phép rút gọn đều đảo ngược được nên đã chứng minh hai chiều.
+**Cách làm.** Với $A$ cỡ $m\times n$, $B$ cỡ $n\times p$, tích $AB$ có cỡ $m\times p$ và $(AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$. Khi khai triển, giữ nguyên thứ tự các thừa số.
+
+Không được tự gộp $AB+BA$ thành $2AB$. Chỉ sau khi chuyển các hạng giống nhau về một phía mới thu được điều kiện $AB-BA=0$. Chia cho 2 là phép chia số thực; đây không phải phép khử một ma trận.
+
+**a.**
+
+**Bước 1. Thực hiện phép biến đổi.**
+
+Khai triển $(A+B)^2=A^2+AB+BA+B^2$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Bằng $A^2+2AB+B^2$ khi và chỉ khi $BA=AB$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Hai vế lần lượt là $A^2-AB+BA-B^2$ và $A^2+AB-BA-B^2$; bằng nhau khi và chỉ khi $2(BA-AB)=0$, tức $AB=BA$ trên số thực.
+
+**Bước 2. Lập luận và tính toán.**
+
+Mỗi phép rút gọn đều đảo ngược được nên đã chứng minh hai chiều.
 
 </LoiGiai>
 

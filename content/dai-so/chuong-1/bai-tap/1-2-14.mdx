@@ -23,11 +23,51 @@ Câu b: $R_2 - R_1$ cho $(0,\ b - a,\ a - b) = (b - a)(0, 1, -1)$; tương tự 
 </GoiY>
 
 <LoiGiai>
-**a.** $R_1 \leftrightarrow R_2$, $R_1 \to \tfrac{1}{b}R_1$: hàng 1 là $(1, 0, 0)$. Khử cột 1: hàng 2 thành $(0, 0, a)$, hàng 3 thành $(0, c, r)$. Đổi chỗ hàng 2, 3; chia hàng 2 cho $c$, hàng 3 cho $a$: $(0, 1, \tfrac{r}{c})$, $(0, 0, 1)$. Cuối cùng $R_2 - \tfrac{r}{c}R_3$ ra $I$. Mọi phép chia đều hợp lệ vì $abc \ne 0$.
 
-**b.** Giả sử $b \ne a$ (trường hợp $c \ne a$ làm tương tự sau khi đổi chỗ hàng 2, 3). Chia $R_2$ cho $b - a$: $(0, 1, -1)$. Khi đó $R_3 - (c - a)R_2 = 0$ và $R_1 - aR_2 = (1, 0, a + b + c)$:
-$$\left[\begin{array}{rrc} 1 & 0 & a + b + c \\ 0 & 1 & -1 \\ 0 & 0 & 0 \end{array}\right]$$
+**Cách làm.** Trụ là phần tử đầu tiên khác 0 của một hàng sau khi khử. Theo quy ước sách, trụ trong dạng bậc thang được chuẩn hóa bằng 1. Hàng $0=c\ne0$ cho vô nghiệm; nếu không có mâu thuẫn, cột ẩn không có trụ cho ẩn tự do.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$R_1 \leftrightarrow R_2$, $R_1 \to \tfrac{1}{b}R_1$: hàng 1 là $(1, 0, 0)$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Khử cột 1: hàng 2 thành $(0, 0, a)$, hàng 3 thành $(0, c, r)$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Đổi chỗ hàng 2, 3; chia hàng 2 cho $c$, hàng 3 cho $a$: $(0, 1, \tfrac{r}{c})$, $(0, 0, 1)$.
+
+**Bước 4. Lập luận và tính toán.**
+
+Cuối cùng $R_2 - \tfrac{r}{c}R_3$ ra $I$.
+
+**Bước 5. Lập luận và tính toán.**
+
+Mọi phép chia đều hợp lệ vì $abc \ne 0$.
+
+**b.**
+
+**Bước 1. Xét giả thiết.**
+
+Giả sử $b \ne a$ (trường hợp $c \ne a$ làm tương tự sau khi đổi chỗ hàng 2, 3).
+
+**Bước 2. Thực hiện phép biến đổi.**
+
+Chia $R_2$ cho $b - a$: $(0, 1, -1)$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Khi đó $R_3 - (c - a)R_2 = 0$ và $R_1 - aR_2 = (1, 0, a + b + c)$:
+
+$$
+\left[\begin{array}{rrc} 1 & 0 & a + b + c \\ 0 & 1 & -1 \\ 0 & 0 & 0 \end{array}\right]
+$$
+
 đúng dạng đã cho, với $* = a + b + c$ và $-1$.
+
 </LoiGiai>
 
 <LoiHayMac>

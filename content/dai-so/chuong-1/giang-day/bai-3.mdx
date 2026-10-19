@@ -161,16 +161,82 @@ Với hệ có vế phải **khác 0**, cộng hai nghiệm **không** còn là 
 Không cần giải, cho biết hệ $x + 2y - z = 0$, $3x - y + 4z = 0$ có nghiệm khác 0 không. Vì sao?
 
 <GoiYNho>Đếm số ẩn và số phương trình.</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Hệ thuần nhất luôn có nghiệm 0; đếm số ẩn tự do để biết có nghiệm khác 0.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+Ma trận hệ số có 2 hàng, 3 cột nên hạng $r\le2$. Số ẩn tự do là $3-r\ge1$. Vì có ít nhất một tham số tự do trong hệ thuần nhất, cho tham số ấy khác 0 sẽ được nghiệm không tầm thường.
+
+**Bước 3. Kiểm tra và kết luận.**
+
+Ví dụ kiểm tra là $(-1,1,1)$: $-1+2-1=0$, $-3-1+4=0$. Không cần tìm ví dụ để dùng định lý nhưng ví dụ xác nhận kết luận.
+
+**Bước 4. Cách tự làm lại.**
+
+Với hệ thuần nhất, số ẩn lớn hơn số phương trình bảo đảm có nghiệm khác 0.
+
+</LoiGiai>
 </BaiLuyen>
 
 <BaiLuyen do_kho="vua" so="3.2">
 Tìm các nghiệm cơ bản của hệ một phương trình $x_1 + 2x_2 - 3x_3 = 0$. Có bao nhiêu nghiệm cơ bản? Kiểm tra từng nghiệm.
 
 <GoiYNho>Hạng bằng 1, ba ẩn, nên có $3 - 1 = 2$ nghiệm cơ bản. Đặt $x_2 = s$, $x_3 = t$.</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Giải ẩn trụ $x_1$ theo hai ẩn tự do $x_2,x_3$.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+$x_1=-2x_2+3x_3$. Đặt $x_2=s,x_3=t$:
+
+$$
+x=s\begin{bmatrix}-2\\1\\0\end{bmatrix}+t\begin{bmatrix}3\\0\\1\end{bmatrix}.
+$$
+
+ Hai vector là hai nghiệm cơ bản.
+
+**Bước 3. Kiểm tra và kết luận.**
+
+Vector đầu cho $-2+2=0$; vector sau cho $3-3=0$. Hai vector độc lập vì tọa độ thứ hai và ba lần lượt tách riêng hai hệ số.
+
+**Bước 4. Cách tự làm lại.**
+
+Mỗi ẩn tự do lần lượt bằng 1, các ẩn tự do khác bằng 0, tạo một nghiệm cơ bản.
+
+</LoiGiai>
 </BaiLuyen>
 
 <BaiLuyen do_kho="kho" so="3.3">
 Giả sử $\mathbf{u}$ và $\mathbf{v}$ đều là nghiệm của **cùng một** hệ thuần nhất. Giải thích bằng lời vì sao $2\mathbf{u} - 5\mathbf{v}$ cũng là nghiệm. Rồi cho một ví dụ cụ thể chứng tỏ điều này **sai** nếu hệ không thuần nhất.
 
 <GoiYNho tieuDe="Bạn sẽ cần">Thay $2\mathbf{u} - 5\mathbf{v}$ vào một phương trình $a_1x_1 + \cdots + a_nx_n = 0$ rồi gom theo $\mathbf{u}$ và $\mathbf{v}$. Luyện thêm: <XemMuc bai-tap="1.3.1" chu="Bài 1.3.1" /> và <XemMuc bai-tap="1.3.6" chu="Bài 1.3.6" /> trong sách.</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Dùng tính phân phối của phép nhân ma trận; vế phải thuần nhất bằng 0.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+Từ $Au=Av=0$, suy ra $A(2u-5v)=2Au-5Av=0$. Bằng lời: mỗi phương trình tính tổ hợp tuyến tính của các tọa độ, nên tổ hợp các nghiệm vẫn cho tổ hợp của hai số 0. Với hệ không thuần nhất $x=1$, lấy $u=v=1$; khi ấy $2u-5v=-3$ không thỏa $x=1$.
+
+**Bước 3. Kiểm tra và kết luận.**
+
+Trong hệ $Ax=b$, cùng phép tính cho $A(2u-5v)=-3b$, nhìn chung khác $b$.
+
+**Bước 4. Cách tự làm lại.**
+
+Kiểm tra vế phải sau khi tổ hợp; tính đóng đúng với hệ thuần nhất.
+
+</LoiGiai>
 </BaiLuyen>

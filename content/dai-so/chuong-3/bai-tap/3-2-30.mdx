@@ -5,11 +5,33 @@ do_kho: vua
 tieu_de: "Định thức và ma trận nghịch đảo — bài 30"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.2.30"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2.30 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh rằng
+
+$$
+\det \left[ \begin{array}{rr} 0 & A \\ B & X \end{array}\right] = \det A \det B
+$$
+
+ khi $A$ và $B$ có kích thước $2 \times 2$. Kết quả thế nào nếu $A$ và $B$ có kích thước $3 \times 3$?
+
+[Gợi ý: Nhân khối với
+
+$$
+\left[ \begin{array}{rr} 0 & I \\ I & 0 \end{array}\right]
+$$
+
+.]
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-2-30-1" moTa="Đề gốc Nicholson bài 3.2.30, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -27,6 +49,7 @@ when A and B are 2×2. What if A and B are 3×3?                          0   I
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -43,7 +66,25 @@ Dùng định thức của tích và công thức nghịch đảo qua adjugate k
 
 <LoiGiai>
 
-Đổi chỗ hai nhóm $n$ hàng, mỗi nhóm $n$ hàng, để được $\begin{bmatrix}B&X\\0&A\end{bmatrix}$. Có $n^2$ lần đổi hai hàng, nên định thức gốc là $(-1)^{n^2}\det B\det A=(-1)^n\det A\det B$. Với $n=2$ dấu dương như đề; với $n=3$ dấu âm. Công thức không phụ thuộc $X$.
+**Cách làm.** Dùng $\det(AB)=\det A\det B$, $\det A^T=\det A$, $\det(cA)=c^n\det A$ ở cấp $n$. Khi $\det A\ne0$, $A^{-1}=\operatorname{adj}A/\det A$; adjugate là bảng phần bù đã chuyển vị.
+
+Đưa một nhóm $n$ hàng qua nhóm kia cần mỗi hàng vượt qua $n$ hàng, tổng $n^2$ lần đổi. Vì $n^2-n=n(n-1)$ chẵn, $(-1)^{n^2}=(-1)^n$. Sau khi đổi nhóm, ma trận thành tam giác khối.
+
+**Bước 1. Lập luận và tính toán.**
+
+Đổi chỗ hai nhóm $n$ hàng, mỗi nhóm $n$ hàng, để được $\begin{bmatrix}B&X\\0&A\end{bmatrix}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Có $n^2$ lần đổi hai hàng, nên định thức gốc là $(-1)^{n^2}\det B\det A=(-1)^n\det A\det B$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Với $n=2$ dấu dương như đề; với $n=3$ dấu âm.
+
+**Bước 4. Lập luận và tính toán.**
+
+Công thức không phụ thuộc $X$.
 
 </LoiGiai>
 

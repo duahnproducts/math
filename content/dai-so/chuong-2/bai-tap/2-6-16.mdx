@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Phép biến đổi tuyến tính — bài 16"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.6.16"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.6.16 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Viết các phần tử của $\mathbb{R}^n$ và $\mathbb{R}^m$ dưới dạng hàng. Nếu $A$ là ma trận $m \times n$, định nghĩa $T : \mathbb{R}^m \to \mathbb{R}^n$ bởi $T(\mathbf{y}) = \mathbf{y}A$ với mọi hàng $\mathbf{y}$ thuộc $\mathbb{R}^m$. Chứng minh rằng:
+
+**a.** $T$ là phép biến đổi tuyến tính.
+
+**b.** các hàng của $A$ là $T(\mathbf{f}_{1}), T(\mathbf{f}_{2}), \dots, T(\mathbf{f}_{m})$, trong đó $\mathbf{f}_{i}$ là hàng $i$ của $I_{m}$. [Gợi ý: Chứng minh rằng $\mathbf{f}_{i} A$ là hàng $i$ của $A$.]
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-6-16-1" moTa="Đề gốc Nicholson bài 2.6.16, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -29,6 +41,7 @@ rows.  If A is an m × n matrix, deﬁne T : Rm →Rn byT(y) = yA for all rows y
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -45,7 +58,27 @@ Cột thứ j của ma trận ánh xạ là ảnh của vector đơn vị thứ 
 
 <LoiGiai>
 
-**a.** Với vector hàng, $T(y+z)=(y+z)A=yA+zA=T(y)+T(z)$ và $T(cy)=(cy)A=c(yA)$. **b.** Hàng đơn vị $f_i$ có 1 ở vị trí $i$; ô thứ $j$ của $f_iA$ là $\sum_k(f_i)_ka_{kj}=a_{ij}$. Do đó $T(f_i)$ chính là hàng $i$ của $A$. Chú ý đây là cách viết vector hàng, khác quy ước vector cột thường dùng.
+**Cách làm.** Tuyến tính nghĩa là $T(au+bv)=aT(u)+bT(v)$. Với vector cột, ma trận của $T$ là $[T(e_1)\ \cdots\ T(e_n)]$; ma trận của $S\circ T$ là $[S][T]$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Với vector hàng, $T(y+z)=(y+z)A=yA+zA=T(y)+T(z)$ và $T(cy)=(cy)A=c(yA)$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Hàng đơn vị $f_i$ có 1 ở vị trí $i$; ô thứ $j$ của $f_iA$ là $\sum_k(f_i)_ka_{kj}=a_{ij}$.
+
+**Bước 2. Rút ra kết luận.**
+
+Do đó $T(f_i)$ chính là hàng $i$ của $A$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Chú ý đây là cách viết vector hàng, khác quy ước vector cột thường dùng.
 
 </LoiGiai>
 

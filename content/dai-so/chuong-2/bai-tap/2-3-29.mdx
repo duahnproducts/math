@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Phép nhân ma trận — bài 29"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.3.29"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.3.29 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $A$ và $B$ là các ma trận $n \times n$ sao cho mỗi hệ $A\mathbf{x} = \mathbf{0}$ và $B\mathbf{x} = \mathbf{0}$ chỉ có nghiệm tầm thường $\mathbf{x} = \mathbf{0}$. Chứng minh rằng hệ $(AB)\mathbf{x} = \mathbf{0}$ chỉ có nghiệm tầm thường.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-3-29-1" moTa="Đề gốc Nicholson bài 2.3.29, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -23,6 +31,7 @@ only the trivial solution x = 0. Show that the system
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -40,7 +49,29 @@ Với đẳng thức tổng quát, so sánh từng ô; giữ nguyên thứ tự 
 
 <LoiGiai>
 
-Giả sử $(AB)x=0$. Đặt $y=Bx$ thì $Ay=0$. Vì hệ $Ay=0$ chỉ có nghiệm không nên $Bx=y=0$. Giả thiết tương tự với $B$ cho $x=0$. Do đó hệ $(AB)x=0$ chỉ có nghiệm tầm thường.
+**Cách làm.** Với $A$ cỡ $m\times n$, $B$ cỡ $n\times p$, tích $AB$ có cỡ $m\times p$ và $(AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$. Khi khai triển, giữ nguyên thứ tự các thừa số.
+
+Để chứng minh hệ thuần nhất chỉ có nghiệm 0, lấy một nghiệm bất kỳ $x$ rồi chứng minh nó bắt buộc bằng 0. Ta áp dụng giả thiết về $A$ cho vector $y=Bx$ trước, sau đó mới áp dụng giả thiết về $B$ cho $x$.
+
+**Bước 1. Xét giả thiết.**
+
+Giả sử $(AB)x=0$.
+
+**Bước 2. Thiết lập biểu thức.**
+
+Đặt $y=Bx$ thì $Ay=0$.
+
+**Bước 3. Giải thích điều kiện sử dụng.**
+
+Vì hệ $Ay=0$ chỉ có nghiệm không nên $Bx=y=0$.
+
+**Bước 4. Lập luận và tính toán.**
+
+Giả thiết tương tự với $B$ cho $x=0$.
+
+**Bước 5. Rút ra kết luận.**
+
+Do đó hệ $(AB)x=0$ chỉ có nghiệm tầm thường.
 
 </LoiGiai>
 

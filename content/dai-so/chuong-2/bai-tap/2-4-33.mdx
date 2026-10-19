@@ -5,11 +5,37 @@ do_kho: vua
 tieu_de: "Ma trận nghịch đảo — bài 33"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.4.33"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.4.33 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $A$ và $B$ là các ma trận vuông cùng kích thước.
+
+**a.** Chứng minh rằng $(AB)^{2} = A^{2}B^{2}$ nếu $AB = BA$.
+
+**b.** Nếu $A$ và $B$ khả nghịch và $(AB)^{2} = A^{2}B^{2}$, hãy chứng minh rằng $AB = BA$.
+
+**c.** Nếu
+
+$$
+A = \left[ \begin{array}{rr} 1 & 0 \\ 0 & 0 \end{array} \right]
+$$
+
+ và
+
+$$
+B = \left[ \begin{array}{rr} 1 & 1 \\ 0 & 0 \end{array} \right]
+$$
+
+, hãy chứng minh rằng $(AB)^{2} = A^{2}B^{2}$ nhưng $AB \neq BA$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-4-33-1" moTa="Đề gốc Nicholson bài 2.4.33, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -33,6 +59,7 @@ same size.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -49,7 +76,29 @@ Khi tìm nghịch đảo bằng khử hàng, làm cùng phép biến đổi trê
 
 <LoiGiai>
 
-**a.** $(AB)^2=ABAB=AABB=A^2B^2$ khi $BA=AB$. **b.** Từ $ABAB=AABB$, nhân trái với $A^{-1}$ và phải với $B^{-1}$ được $BA=AB$. **c.** Với hai ma trận đề, $AB=B$, $BA=A$, $A^2=A$, $B^2=B$; nên $(AB)^2=B=A^2B^2$, nhưng $A\ne B$ cho $AB\ne BA$. Giả thiết khả nghịch trong (b) là thiết yếu.
+**Cách làm.** Theo định nghĩa, $B=A^{-1}$ khi $AB=BA=I$. Muốn khử $A$ ở bên trái thì nhân trái với $A^{-1}$; muốn khử ở bên phải thì nhân phải. Nghịch đảo tích đảo thứ tự: $(AB)^{-1}=B^{-1}A^{-1}$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$(AB)^2=ABAB=AABB=A^2B^2$ khi $BA=AB$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Từ $ABAB=AABB$, nhân trái với $A^{-1}$ và phải với $B^{-1}$ được $BA=AB$.
+
+**c.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Với hai ma trận đề, $AB=B$, $BA=A$, $A^2=A$, $B^2=B$; nên $(AB)^2=B=A^2B^2$, nhưng $A\ne B$ cho $AB\ne BA$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Giả thiết khả nghịch trong (b) là thiết yếu.
 
 </LoiGiai>
 

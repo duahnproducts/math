@@ -188,12 +188,52 @@ $$
 $$
 
 <GoiYNho>Khoanh tròn các số 1 dẫn đầu. Luyện thêm: <XemMuc bai-tap="1.2.1" chu="Bài 1.2.1" /> và <XemMuc bai-tap="1.2.10" chu="Bài 1.2.10" /> trong sách.</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Tìm trụ của từng hàng và kiểm vị trí hàng 0.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+Các trụ là ô $(1,1)$ và $(2,3)$, đều bằng 1; trụ hàng sau nằm bên phải trụ hàng trước; hàng 0 nằm cuối. Ma trận ở dạng bậc thang, thậm chí đã rút gọn vì hai cột trụ không có ô khác 0 ở vị trí khác. Có hai hàng khác 0 nên hạng bằng 2. Cột 2 và 4 không có trụ nên $x_2,x_4$ tự do.
+
+**Bước 3. Kiểm tra và kết luận.**
+
+Đặt $x_2=s,x_4=t$: $x_1=2-3s+t$, $x_3=5-4t$. Hàng cuối cho $0=0$.
+
+**Bước 4. Cách tự làm lại.**
+
+Đếm trụ để biết hạng; chọn ẩn ở cột không có trụ làm tham số.
+
+</LoiGiai>
 </BaiLuyen>
 
 <BaiLuyen do_kho="vua" so="2.2">
 Giải hệ $x + y - z = 1$, $2x + 2y + z = 5$. Viết nghiệm theo tham số rồi tự kiểm tra bằng hai giá trị của tham số.
 
 <GoiYNho>Sau khi khử, cột 2 không có số 1 dẫn đầu, nên $y$ là ẩn tự do. Đáp số để kiểm tra: $z = 1$.</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Làm phương trình 2 trừ hai lần phương trình 1.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+Ta được $3z=3$, nên $z=1$. Phương trình đầu cho $x+y=2$. Đặt $y=t$, được $(x,y,z)=(2-t,t,1)$ với $t\in\mathbb R$.
+
+**Bước 3. Kiểm tra và kết luận.**
+
+$t=0$ cho $(2,0,1)$: $2+0-1=1$, $4+0+1=5$. $t=1$ cho $(1,1,1)$: $1+1-1=1$, $2+2+1=5$. Mọi tham số thỏa bằng cùng phép thế.
+
+**Bước 4. Cách tự làm lại.**
+
+Giữ ẩn không bị xác định làm tham số; kiểm tra cả dạng tổng quát và vài giá trị cụ thể.
+
+</LoiGiai>
 </BaiLuyen>
 
 <BaiLuyen do_kho="kho" so="2.3">
@@ -206,4 +246,24 @@ $$
 Tìm điều kiện của $a$ và $b$ để hệ có (1) đúng một nghiệm, (2) vô số nghiệm, (3) vô nghiệm.
 
 <GoiYNho tieuDe="Bạn sẽ cần">Khử như thường, coi $a$, $b$ là số. Hàng cuối sẽ có dạng $\left[\begin{array}{ccc|c} 0 & 0 & a - 4 & b - 3 \end{array}\right]$. Bây giờ xét $a - 4$ bằng 0 hay khác 0.</GoiYNho>
+
+<LoiGiai>
+
+**Bước 1. Chọn cách giải.**
+
+Khử để tham số chỉ còn ở hàng cuối, rồi xét hệ số ẩn và vế phải.
+
+**Bước 2. Thực hiện từng phép biến đổi.**
+
+Làm $R_2\leftarrow R_2-R_1$ cho $y+2z=1$. Làm $R_3\leftarrow R_3-2R_1$ cho $y+(a-2)z=b-2$. Trừ hàng 2 mới khỏi hàng 3: $(a-4)z=b-3$. Nếu $a\ne4$, $z=(b-3)/(a-4)$, $y=1-2z$, $x=z$: duy nhất. Nếu $a=4,b=3$, đặt $z=t$ được $(x,y,z)=(t,1-2t,t)$: vô số nghiệm. Nếu $a=4,b\ne3$, hàng cuối mâu thuẫn: vô nghiệm.
+
+**Bước 3. Kiểm tra và kết luận.**
+
+Thế nghiệm tham số ở trường hợp $a=4,b=3$: $2t+3(1-2t)+4t=3$. Không chia cho $a-4$ trước khi tách trường hợp bằng 0.
+
+**Bước 4. Cách tự làm lại.**
+
+Một phương trình $cz=d$ cho ba nhánh: $c\ne0$; $c=d=0$; $c=0,d\ne0$.
+
+</LoiGiai>
 </BaiLuyen>

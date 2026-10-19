@@ -5,11 +5,21 @@ do_kho: vua
 tieu_de: "Bài bổ sung 3.2"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.2"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.2 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+**a.** Chứng minh rằng $(A_{ij})^{T} = (A^{T})_{ji}$ với mọi $i$, $j$ và mọi ma trận vuông $A$.
+
+**b.** Dùng ý (a) để chứng minh rằng $\det A^{T} = \det A$. [Gợi ý: Quy nạp theo $n$, trong đó $A$ có kích thước $n \times n$.]
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-0-2-1" moTa="Đề gốc Nicholson bài 3.2, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -28,6 +38,7 @@ Exercise 3.2
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -44,7 +55,37 @@ Với đẳng thức tổng quát, khai triển có giữ thứ tự; với mệ
 
 <LoiGiai>
 
-**a.** Xóa hàng $i$, cột $j$ của $A$, rồi chuyển vị, tương đương chuyển vị $A$ trước rồi xóa hàng $j$, cột $i$. Các phần tử còn lại có cùng vị trí, nên $(A_{ij})^T=(A^T)_{ji}$. **b.** Quy nạp theo cấp. Cấp 1 hiển nhiên. Khai triển $\det A$ theo hàng đầu và $\det A^T$ theo cột đầu: hệ số tương ứng cùng là $a_{1j}$ và dấu cùng là $(-1)^{1+j}$. Theo (a) các minor tương ứng là chuyển vị của nhau; theo quy nạp định thức của chúng bằng nhau. Vì vậy hai tổng bằng nhau.
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Xóa hàng $i$, cột $j$ của $A$, rồi chuyển vị, tương đương chuyển vị $A$ trước rồi xóa hàng $j$, cột $i$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Các phần tử còn lại có cùng vị trí, nên $(A_{ij})^T=(A^T)_{ji}$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Quy nạp theo cấp.
+
+**Bước 2. Lập luận và tính toán.**
+
+Cấp 1 hiển nhiên.
+
+**Bước 3. Thực hiện phép biến đổi.**
+
+Khai triển $\det A$ theo hàng đầu và $\det A^T$ theo cột đầu: hệ số tương ứng cùng là $a_{1j}$ và dấu cùng là $(-1)^{1+j}$.
+
+**Bước 4. Lập luận và tính toán.**
+
+Theo (a) các minor tương ứng là chuyển vị của nhau; theo quy nạp định thức của chúng bằng nhau.
+
+**Bước 5. Giải thích điều kiện sử dụng.**
+
+Vì vậy hai tổng bằng nhau.
 
 </LoiGiai>
 

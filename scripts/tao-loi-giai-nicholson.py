@@ -1,11 +1,11 @@
 """Tái tạo lời giải có kiểm tra đại số chính xác; không gọi API bên ngoài."""
 from pathlib import Path
-import json,subprocess,sys
+import json,re,subprocess,sys
 
 root=Path(__file__).resolve().parents[1]
 folder=root/'scripts/loi-giai-nicholson'
 for script in sorted(folder.glob('*.py')):
-    if script.name!='common.py':subprocess.run([sys.executable,str(script)],check=True)
+    if re.fullmatch(r'[23]-\d+\.py',script.name):subprocess.run([sys.executable,str(script)],check=True)
 data=json.loads((root/'scripts/data/loi-giai-nicholson.json').read_text(encoding='utf-8'))
 inventory=json.loads((root/'scripts/data/nicholson-2023-exercise-clips.json').read_text(encoding='utf-8'))
 expected={v['number']for v in inventory if v['section']not in ['2.1','2.2']}

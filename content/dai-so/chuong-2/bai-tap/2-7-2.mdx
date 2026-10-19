@@ -5,11 +5,51 @@ do_kho: vua
 tieu_de: "Phân tích LU — bài 2"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.7.2"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.7.2 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Tìm một ma trận hoán vị $P$ và một phân tích LU của $PA$ nếu $A$ là:
+
+**a.**
+
+$$
+\left[ \begin{array}{rrr} 0 & 0 & 2 \\ 0 & -1 & 4 \\ 3 & 5 & 1 \end{array} \right]
+$$
+
+
+
+**b.**
+
+$$
+\left[ \begin{array}{rrr} 0 & -1 & 2 \\ 0 & 0 & 4 \\ -1 & 2 & 1 \end{array} \right]
+$$
+
+
+
+**c.**
+
+$$
+\left[ \begin{array}{rrrrr} 0 & -1 & 2 & 1 & 3\\ -1 & 1 & 3 & 1 & 4 \\ 1 & -1 & -3 & 6 & 2 \\ 2 & -2 & -4 & 1 & 0 \end{array} \right]
+$$
+
+
+
+**d.**
+
+$$
+\left[ \begin{array}{rrrr} -1 & -2 & 3 & 0 \\ 2 & 4 & -6 & 5 \\ 1 & 1 & -1 & 3 \\ 2 & 5 & -10 & 1 \end{array} \right]
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-7-2-1" moTa="Đề gốc Nicholson bài 2.7.2, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -29,6 +69,7 @@ factorization of PA if A is:
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -45,37 +86,331 @@ Với PA = LU, giải Ly = Pb trước rồi giải Ux = y; phân biệt L đơn
 
 <LoiGiai>
 
-**a.** Đổi hàng theo $P$, sau đó khử dưới pivot và chuẩn hóa hàng pivot:
+**Cách làm.** Phân tích $PA=LU$ tách việc giải $Ax=b$ thành $Ly=Pb$ (thế tiến) và $Ux=y$ (thế ngược). Phải giữ đúng quy ước chuẩn hóa $L,U$ của đề.
+
+**a.**
+
+**Bước 1. Sắp xếp hàng và bắt đầu khử.**
+
+Với
+
+
 
 $$
-P=\begin{bmatrix}0&0&1\\0&1&0\\1&0&0\end{bmatrix},\quad L=\begin{bmatrix}3&0&0\\0&-1&0\\0&0&2\end{bmatrix},\quad U=\begin{bmatrix}1&\frac{5}{3}&\frac{1}{3}\\0&1&-4\\0&0&1\end{bmatrix}.
+A=\begin{bmatrix}0&0&2\\0&-1&4\\3&5&1\end{bmatrix},\qquad P=\begin{bmatrix}0&0&1\\0&1&0\\1&0&0\end{bmatrix},
 $$
 
- Kiểm tra trực tiếp $PA=LU$. Các hàng của $P$ cho biết thứ tự các hàng ban đầu sau khi hoán vị.
 
-**b.** Đổi hàng theo $P$, sau đó khử dưới pivot và chuẩn hóa hàng pivot:
 
-$$
-P=\begin{bmatrix}0&0&1\\1&0&0\\0&1&0\end{bmatrix},\quad L=\begin{bmatrix}-1&0&0\\0&-1&0\\0&0&4\end{bmatrix},\quad U=\begin{bmatrix}1&-2&-1\\0&1&-2\\0&0&1\end{bmatrix}.
-$$
+ ta có
 
- Kiểm tra trực tiếp $PA=LU$. Các hàng của $P$ cho biết thứ tự các hàng ban đầu sau khi hoán vị.
 
-**c.** Đổi hàng theo $P$, sau đó khử dưới pivot và chuẩn hóa hàng pivot:
 
 $$
-P=\begin{bmatrix}0&1&0&0\\1&0&0&0\\0&0&0&1\\0&0&1&0\end{bmatrix},\quad L=\begin{bmatrix}-1&0&0&0\\0&-1&0&0\\2&0&2&0\\1&0&0&7\end{bmatrix},\quad U=\begin{bmatrix}1&-1&-3&-1&-4\\0&1&-2&-1&-3\\0&0&1&\frac{3}{2}&4\\0&0&0&1&\frac{6}{7}\end{bmatrix}.
+PA=\begin{bmatrix}3&5&1\\0&-1&4\\0&0&2\end{bmatrix}.
 $$
 
- Kiểm tra trực tiếp $PA=LU$. Các hàng của $P$ cho biết thứ tự các hàng ban đầu sau khi hoán vị.
 
-**d.** Đổi hàng theo $P$, sau đó khử dưới pivot và chuẩn hóa hàng pivot:
+
+ Các hàng của $P$ chỉ rõ hàng cũ nào được đưa lên trước.
+
+**Bước 2. Chuẩn hóa đúng quy ước của đề.**
+
+Đến đây $PA=L_0U_0$ với
+
+
 
 $$
-P=\begin{bmatrix}1&0&0&0\\0&0&1&0\\0&0&0&1\\0&1&0&0\end{bmatrix},\quad L=\begin{bmatrix}-1&0&0&0\\1&-1&0&0\\2&1&-2&0\\2&0&0&5\end{bmatrix},\quad U=\begin{bmatrix}1&2&-3&0\\0&1&-2&-3\\0&0&1&-2\\0&0&0&1\end{bmatrix}.
+L_0=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix},\quad U_0=\begin{bmatrix}3&5&1\\0&-1&4\\0&0&2\end{bmatrix}.
 $$
 
- Kiểm tra trực tiếp $PA=LU$. Các hàng của $P$ cho biết thứ tự các hàng ban đầu sau khi hoán vị.
+
+
+ Đặt $D=\begin{bmatrix}3&0&0\\0&-1&0\\0&0&2\end{bmatrix}$, gồm trụ đầu của từng hàng khác 0 (hàng 0 dùng hệ số 1). Chia hàng $i$ của $U_0$ cho $d_{ii}$ để trụ thành 1. Khi đó
+
+
+
+$$
+L=L_0D=\begin{bmatrix}3&0&0\\0&-1&0\\0&0&2\end{bmatrix},\quad U=D^{-1}U_0=\begin{bmatrix}1&\frac{5}{3}&\frac{1}{3}\\0&1&-4\\0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 3. Nhân lại để kiểm tra.**
+
+
+
+$$
+LU=\begin{bmatrix}3&5&1\\0&-1&4\\0&0&2\end{bmatrix}=PA.
+$$
+
+
+
+ $L$ tam giác dưới, khả nghịch, còn $U$ bậc thang có trụ 1; đây là đúng phân tích yêu cầu.
+
+**b.**
+
+**Bước 1. Sắp xếp hàng và bắt đầu khử.**
+
+Với
+
+
+
+$$
+A=\begin{bmatrix}0&-1&2\\0&0&4\\-1&2&1\end{bmatrix},\qquad P=\begin{bmatrix}0&0&1\\1&0&0\\0&1&0\end{bmatrix},
+$$
+
+
+
+ ta có
+
+
+
+$$
+PA=\begin{bmatrix}-1&2&1\\0&-1&2\\0&0&4\end{bmatrix}.
+$$
+
+
+
+ Các hàng của $P$ chỉ rõ hàng cũ nào được đưa lên trước.
+
+**Bước 2. Chuẩn hóa đúng quy ước của đề.**
+
+Đến đây $PA=L_0U_0$ với
+
+
+
+$$
+L_0=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix},\quad U_0=\begin{bmatrix}-1&2&1\\0&-1&2\\0&0&4\end{bmatrix}.
+$$
+
+
+
+ Đặt $D=\begin{bmatrix}-1&0&0\\0&-1&0\\0&0&4\end{bmatrix}$, gồm trụ đầu của từng hàng khác 0 (hàng 0 dùng hệ số 1). Chia hàng $i$ của $U_0$ cho $d_{ii}$ để trụ thành 1. Khi đó
+
+
+
+$$
+L=L_0D=\begin{bmatrix}-1&0&0\\0&-1&0\\0&0&4\end{bmatrix},\quad U=D^{-1}U_0=\begin{bmatrix}1&-2&-1\\0&1&-2\\0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 3. Nhân lại để kiểm tra.**
+
+
+
+$$
+LU=\begin{bmatrix}-1&2&1\\0&-1&2\\0&0&4\end{bmatrix}=PA.
+$$
+
+
+
+ $L$ tam giác dưới, khả nghịch, còn $U$ bậc thang có trụ 1; đây là đúng phân tích yêu cầu.
+
+**c.**
+
+**Bước 1. Sắp xếp hàng và bắt đầu khử.**
+
+Với
+
+
+
+$$
+A=\begin{bmatrix}0&-1&2&1&3\\-1&1&3&1&4\\1&-1&-3&6&2\\2&-2&-4&1&0\end{bmatrix},\qquad P=\begin{bmatrix}0&1&0&0\\1&0&0&0\\0&0&0&1\\0&0&1&0\end{bmatrix},
+$$
+
+
+
+ ta có
+
+
+
+$$
+PA=\begin{bmatrix}-1&1&3&1&4\\0&-1&2&1&3\\2&-2&-4&1&0\\1&-1&-3&6&2\end{bmatrix}.
+$$
+
+
+
+ Các hàng của $P$ chỉ rõ hàng cũ nào được đưa lên trước.
+
+**Bước 2. Khử phần tử dưới trụ ở hàng 3.**
+
+Lấy hệ số $m=-2$ bằng ô cần khử chia cho trụ. Làm $R_3\leftarrow R_3-(-2)R_1$:
+
+
+
+$$
+\begin{bmatrix}-1&1&3&1&4\\0&-1&2&1&3\\0&0&2&3&8\\1&-1&-3&6&2\end{bmatrix}.
+$$
+
+
+
+ Ghi $m$ vào ô $(3,1)$ của ma trận tam giác dưới đơn vị $L_0$.
+
+**Bước 3. Khử phần tử dưới trụ ở hàng 4.**
+
+Lấy hệ số $m=-1$ bằng ô cần khử chia cho trụ. Làm $R_4\leftarrow R_4-(-1)R_1$:
+
+
+
+$$
+\begin{bmatrix}-1&1&3&1&4\\0&-1&2&1&3\\0&0&2&3&8\\0&0&0&7&6\end{bmatrix}.
+$$
+
+
+
+ Ghi $m$ vào ô $(4,1)$ của ma trận tam giác dưới đơn vị $L_0$.
+
+**Bước 4. Chuẩn hóa đúng quy ước của đề.**
+
+Đến đây $PA=L_0U_0$ với
+
+
+
+$$
+L_0=\begin{bmatrix}1&0&0&0\\0&1&0&0\\-2&0&1&0\\-1&0&0&1\end{bmatrix},\quad U_0=\begin{bmatrix}-1&1&3&1&4\\0&-1&2&1&3\\0&0&2&3&8\\0&0&0&7&6\end{bmatrix}.
+$$
+
+
+
+ Đặt $D=\begin{bmatrix}-1&0&0&0\\0&-1&0&0\\0&0&2&0\\0&0&0&7\end{bmatrix}$, gồm trụ đầu của từng hàng khác 0 (hàng 0 dùng hệ số 1). Chia hàng $i$ của $U_0$ cho $d_{ii}$ để trụ thành 1. Khi đó
+
+
+
+$$
+L=L_0D=\begin{bmatrix}-1&0&0&0\\0&-1&0&0\\2&0&2&0\\1&0&0&7\end{bmatrix},\quad U=D^{-1}U_0=\begin{bmatrix}1&-1&-3&-1&-4\\0&1&-2&-1&-3\\0&0&1&\frac{3}{2}&4\\0&0&0&1&\frac{6}{7}\end{bmatrix}.
+$$
+
+
+
+**Bước 5. Nhân lại để kiểm tra.**
+
+
+
+$$
+LU=\begin{bmatrix}-1&1&3&1&4\\0&-1&2&1&3\\2&-2&-4&1&0\\1&-1&-3&6&2\end{bmatrix}=PA.
+$$
+
+
+
+ $L$ tam giác dưới, khả nghịch, còn $U$ bậc thang có trụ 1; đây là đúng phân tích yêu cầu.
+
+**d.**
+
+**Bước 1. Sắp xếp hàng và bắt đầu khử.**
+
+Với
+
+
+
+$$
+A=\begin{bmatrix}-1&-2&3&0\\2&4&-6&5\\1&1&-1&3\\2&5&-10&1\end{bmatrix},\qquad P=\begin{bmatrix}1&0&0&0\\0&0&1&0\\0&0&0&1\\0&1&0&0\end{bmatrix},
+$$
+
+
+
+ ta có
+
+
+
+$$
+PA=\begin{bmatrix}-1&-2&3&0\\1&1&-1&3\\2&5&-10&1\\2&4&-6&5\end{bmatrix}.
+$$
+
+
+
+ Các hàng của $P$ chỉ rõ hàng cũ nào được đưa lên trước.
+
+**Bước 2. Khử phần tử dưới trụ ở hàng 2.**
+
+Lấy hệ số $m=-1$ bằng ô cần khử chia cho trụ. Làm $R_2\leftarrow R_2-(-1)R_1$:
+
+
+
+$$
+\begin{bmatrix}-1&-2&3&0\\0&-1&2&3\\2&5&-10&1\\2&4&-6&5\end{bmatrix}.
+$$
+
+
+
+ Ghi $m$ vào ô $(2,1)$ của ma trận tam giác dưới đơn vị $L_0$.
+
+**Bước 3. Khử phần tử dưới trụ ở hàng 3.**
+
+Lấy hệ số $m=-2$ bằng ô cần khử chia cho trụ. Làm $R_3\leftarrow R_3-(-2)R_1$:
+
+
+
+$$
+\begin{bmatrix}-1&-2&3&0\\0&-1&2&3\\0&1&-4&1\\2&4&-6&5\end{bmatrix}.
+$$
+
+
+
+ Ghi $m$ vào ô $(3,1)$ của ma trận tam giác dưới đơn vị $L_0$.
+
+**Bước 4. Khử phần tử dưới trụ ở hàng 4.**
+
+Lấy hệ số $m=-2$ bằng ô cần khử chia cho trụ. Làm $R_4\leftarrow R_4-(-2)R_1$:
+
+
+
+$$
+\begin{bmatrix}-1&-2&3&0\\0&-1&2&3\\0&1&-4&1\\0&0&0&5\end{bmatrix}.
+$$
+
+
+
+ Ghi $m$ vào ô $(4,1)$ của ma trận tam giác dưới đơn vị $L_0$.
+
+**Bước 5. Khử phần tử dưới trụ ở hàng 3.**
+
+Lấy hệ số $m=-1$ bằng ô cần khử chia cho trụ. Làm $R_3\leftarrow R_3-(-1)R_2$:
+
+
+
+$$
+\begin{bmatrix}-1&-2&3&0\\0&-1&2&3\\0&0&-2&4\\0&0&0&5\end{bmatrix}.
+$$
+
+
+
+ Ghi $m$ vào ô $(3,2)$ của ma trận tam giác dưới đơn vị $L_0$.
+
+**Bước 6. Chuẩn hóa đúng quy ước của đề.**
+
+Đến đây $PA=L_0U_0$ với
+
+
+
+$$
+L_0=\begin{bmatrix}1&0&0&0\\-1&1&0&0\\-2&-1&1&0\\-2&0&0&1\end{bmatrix},\quad U_0=\begin{bmatrix}-1&-2&3&0\\0&-1&2&3\\0&0&-2&4\\0&0&0&5\end{bmatrix}.
+$$
+
+
+
+ Đặt $D=\begin{bmatrix}-1&0&0&0\\0&-1&0&0\\0&0&-2&0\\0&0&0&5\end{bmatrix}$, gồm trụ đầu của từng hàng khác 0 (hàng 0 dùng hệ số 1). Chia hàng $i$ của $U_0$ cho $d_{ii}$ để trụ thành 1. Khi đó
+
+
+
+$$
+L=L_0D=\begin{bmatrix}-1&0&0&0\\1&-1&0&0\\2&1&-2&0\\2&0&0&5\end{bmatrix},\quad U=D^{-1}U_0=\begin{bmatrix}1&2&-3&0\\0&1&-2&-3\\0&0&1&-2\\0&0&0&1\end{bmatrix}.
+$$
+
+
+
+**Bước 7. Nhân lại để kiểm tra.**
+
+
+
+$$
+LU=\begin{bmatrix}-1&-2&3&0\\1&1&-1&3\\2&5&-10&1\\2&4&-6&5\end{bmatrix}=PA.
+$$
+
+
+
+ $L$ tam giác dưới, khả nghịch, còn $U$ bậc thang có trụ 1; đây là đúng phân tích yêu cầu.
 
 </LoiGiai>
 

@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Ma trận nghịch đảo — bài 30"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.4.30"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.4.30 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Cho $A$, $B$ và $C$ là các ma trận $n \times n$. Chỉ dùng Định lý 2.4.4, hãy chứng minh rằng:
+
+**a.** Nếu $A$, $C$ và $ABC$ đều khả nghịch thì $B$ khả nghịch.
+
+**b.** Nếu $AB$ và $BA$ đều khả nghịch thì $A$ và $B$ đều khả nghịch.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-4-30-1" moTa="Đề gốc Nicholson bài 2.4.30, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -29,6 +41,7 @@ b.  If AB and BA are both invertible, A and B are both
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -45,7 +58,37 @@ Khi tìm nghịch đảo bằng khử hàng, làm cùng phép biến đổi trê
 
 <LoiGiai>
 
-**a.** $B=A^{-1}(ABC)C^{-1}$ là tích ba ma trận khả nghịch. Đảo thứ tự cho $B^{-1}=C(ABC)^{-1}A$. **b.** Đặt $L=(BA)^{-1}B$, $R=B(AB)^{-1}$. Khi đó $LA=I$, $AR=I$; suy ra $L=L(AR)=(LA)R=R$. Vậy $A$ có nghịch đảo hai phía. Đổi vai $A,B$ chứng minh tương tự cho $B$.
+**Cách làm.** Theo định nghĩa, $B=A^{-1}$ khi $AB=BA=I$. Muốn khử $A$ ở bên trái thì nhân trái với $A^{-1}$; muốn khử ở bên phải thì nhân phải. Nghịch đảo tích đảo thứ tự: $(AB)^{-1}=B^{-1}A^{-1}$.
+
+Để tách ma trận ở giữa tích $ABC$, nhân trái với $A^{-1}$ và nhân phải với $C^{-1}$. Khi đảo tích ba thừa số phải đảo toàn bộ thứ tự: $(XYZ)^{-1}=Z^{-1}Y^{-1}X^{-1}$.
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+$B=A^{-1}(ABC)C^{-1}$ là tích ba ma trận khả nghịch.
+
+**Bước 2. Lập luận và tính toán.**
+
+Đảo thứ tự cho $B^{-1}=C(ABC)^{-1}A$.
+
+**b.**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Đặt $L=(BA)^{-1}B$, $R=B(AB)^{-1}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Khi đó $LA=I$, $AR=I$; suy ra $L=L(AR)=(LA)R=R$.
+
+**Bước 3. Rút ra kết luận.**
+
+Vậy $A$ có nghịch đảo hai phía.
+
+**Bước 4. Lập luận và tính toán.**
+
+Đổi vai $A,B$ chứng minh tương tự cho $B$.
 
 </LoiGiai>
 

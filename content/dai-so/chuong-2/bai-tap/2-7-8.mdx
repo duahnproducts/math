@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Phân tích LU — bài 8"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.7.8"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.7.8 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh Bổ đề 2.7.1(2). [Gợi ý: Dùng phép nhân khối và quy nạp.]
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-7-8-1" moTa="Đề gốc Nicholson bài 2.7.8, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ multiplication and induction.]
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +48,25 @@ Với PA = LU, giải Ly = Pb trước rồi giải Ux = y; phân biệt L đơn
 
 <LoiGiai>
 
-Ma trận tam giác có định thức bằng tích các phần tử đường chéo, nên khả nghịch khi và chỉ khi tất cả các phần tử ấy khác 0. Để chứng minh nghịch đảo vẫn tam giác dưới, giải $Ax=e_j$ bằng thế tiến: các phương trình hàng $1,\ldots,j-1$ lần lượt cho $x_1=\cdots=x_{j-1}=0$. Vì nghiệm này là cột $j$ của $A^{-1}$, mọi ô phía trên đường chéo của nghịch đảo bằng 0. Trường hợp tam giác trên dùng thế ngược, hoặc chuyển vị kết quả vừa chứng minh.
+**Cách làm.** Phân tích $PA=LU$ tách việc giải $Ax=b$ thành $Ly=Pb$ (thế tiến) và $Ux=y$ (thế ngược). Phải giữ đúng quy ước chuẩn hóa $L,U$ của đề.
+
+Để biết hình dạng $A^{-1}$, xét từng cột bằng hệ $Ax=e_j$. Phía trước hàng $j$, vế phải bằng 0; thế tiến bắt buộc từng ẩn tương ứng bằng 0 vì phần tử đường chéo khác 0.
+
+**Bước 1. Lập luận và tính toán.**
+
+Ma trận tam giác có định thức bằng tích các phần tử đường chéo, nên khả nghịch khi và chỉ khi tất cả các phần tử ấy khác 0.
+
+**Bước 2. Lập luận và tính toán.**
+
+Để chứng minh nghịch đảo vẫn tam giác dưới, giải $Ax=e_j$ bằng thế tiến: các phương trình hàng $1,\ldots,j-1$ lần lượt cho $x_1=\cdots=x_{j-1}=0$.
+
+**Bước 3. Giải thích điều kiện sử dụng.**
+
+Vì nghiệm này là cột $j$ của $A^{-1}$, mọi ô phía trên đường chéo của nghịch đảo bằng 0.
+
+**Bước 4. Lập luận và tính toán.**
+
+Trường hợp tam giác trên dùng thế ngược, hoặc chuyển vị kết quả vừa chứng minh.
 
 </LoiGiai>
 

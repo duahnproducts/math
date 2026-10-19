@@ -5,11 +5,53 @@ do_kho: vua
 tieu_de: "Ứng dụng: xích Markov — bài 12"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.9.12"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.9.12 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Xét ma trận ngẫu nhiên $2 \times 2$, ký hiệu là
+
+$$
+P = \left[ \begin{array}{cc} 1 - p & q \\ p & 1 - q \end{array} \right]
+$$
+
+, trong đó $0 < p < 1$ và $0 < q < 1$.
+
+**a.** Chứng minh rằng
+
+$$
+\frac{1}{p + q} \left[ \begin{array}{r} q \\ p \end{array} \right]
+$$
+
+ là vector trạng thái dừng của $P$.
+
+**b.** Chứng minh rằng $P^{m}$ hội tụ đến ma trận
+
+$$
+\frac{1}{p + q} \left[ \begin{array}{cc} q & q \\ p & p \end{array} \right]
+$$
+
+ bằng cách trước hết kiểm tra bằng quy nạp rằng
+
+$$
+P^m = \frac{1}{p + q} \left[ \begin{array}{cc} q & q \\ p & p \end{array} \right]
+$$
+
+
+
+$$
++ \frac{(1 - p - q)^m}{p + q} \left[ \begin{array}{cc} p & -q \\ -p & q \end{array} \right]
+$$
+
+ với $m = 1, 2, \dots$. (Có thể chứng minh dãy các lũy thừa $P, P^{2}, P^{3}, \dots$ của một ma trận chuyển chính quy bất kỳ hội tụ đến ma trận có mỗi cột đều bằng vector trạng thái dừng của $P$.)
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-9-12-1" moTa="Đề gốc Nicholson bài 2.9.12, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -37,6 +79,7 @@ Exercise 2.9.12  Consider the 2×2 stochastic matrix
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -53,7 +96,35 @@ Sau k lần chuyển dùng lũy thừa thứ k; phân bố dừng thỏa Ps = s 
 
 <LoiGiai>
 
-**a.** Nhân trực tiếp với $s=(q,p)^T/(p+q)$ cho $Ps=s$; cả hai thành phần dương và tổng bằng 1. **b.** Đặt $J=\frac1{p+q}\begin{bmatrix}q&q\\p&p\end{bmatrix}$, $K=I-J=\frac1{p+q}\begin{bmatrix}p&-q\\-p&q\end{bmatrix}$. Ta có $J^2=J$, $K^2=K$, $JK=KJ=0$ và $P=J+(1-p-q)K$. Nhân hoặc quy nạp suy ra $P^m=J+(1-p-q)^mK$. Do $0<p,q<1$, $|1-p-q|<1$, nên hạng thứ hai tiến về 0 và $P^m\to J$. Các cột của giới hạn đều bằng $s$.
+**Cách làm.** Ta dùng vector cột: ô $p_{ij}$ là xác suất từ trạng thái $j$ tới $i$. Sau $k$ bước, $s_k=P^ks_0$. Phân bố dừng phải thỏa đồng thời $Ps=s$, $s_i\ge0$ và $\sum_i s_i=1$.
+
+**a.**
+
+**Bước 1. Thực hiện phép biến đổi.**
+
+Nhân trực tiếp với $s=(q,p)^T/(p+q)$ cho $Ps=s$; cả hai thành phần dương và tổng bằng 1.
+
+**b.**
+
+**Bước 1. Thiết lập biểu thức.**
+
+Đặt $J=\frac1{p+q}\begin{bmatrix}q&q\\p&p\end{bmatrix}$, $K=I-J=\frac1{p+q}\begin{bmatrix}p&-q\\-p&q\end{bmatrix}$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Ta có $J^2=J$, $K^2=K$, $JK=KJ=0$ và $P=J+(1-p-q)K$.
+
+**Bước 3. Thực hiện phép biến đổi.**
+
+Nhân hoặc quy nạp suy ra $P^m=J+(1-p-q)^mK$.
+
+**Bước 4. Giải thích điều kiện sử dụng.**
+
+Do $0<p,q<1$, $|1-p-q|<1$, nên hạng thứ hai tiến về 0 và $P^m\to J$.
+
+**Bước 5. Lập luận và tính toán.**
+
+Các cột của giới hạn đều bằng $s$.
 
 </LoiGiai>
 

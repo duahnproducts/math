@@ -5,11 +5,25 @@ do_kho: vua
 tieu_de: "Ứng dụng: xích Markov — bài 8"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.9.8"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.9.8 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Một con chuột được thả vào mê cung gồm các ngăn như trong hình. Giả sử nó luôn rời ngăn vừa đi vào và có xác suất như nhau khi chọn mỗi lối hầm ra.
+
+<HinhSach ten="ds-do-thi-2-9-8" moTa="Mê cung năm ngăn, các đường hầm nối ngăn; ngăn 3 và 4 có đường hầm vòng trở về chính ngăn đó" />
+
+**a.** Nếu bắt đầu ở ngăn 1, tìm xác suất nó trở lại ngăn 1 sau $3$ lần di chuyển.
+
+**b.** Tìm ngăn mà nó dành nhiều thời gian nhất nếu được để trong mê cung đủ lâu.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-9-8-1" moTa="Đề gốc Nicholson bài 2.9.8, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -46,6 +60,7 @@ to take any tunnel entry.
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -62,19 +77,53 @@ Sau k lần chuyển dùng lũy thừa thứ k; phân bố dừng thỏa Ps = s 
 
 <LoiGiai>
 
-Từ sơ đồ, các đường hầm là $1\! -\!2$, $1\! -\!3$, $1\! -\!5$, $2\! -\!4$, $3\! -\!4$, $3\! -\!5$. Chia mỗi cột của ma trận kề cho số đường ra khỏi ngăn tương ứng, được
+**Cách làm.** Ta dùng vector cột: ô $p_{ij}$ là xác suất từ trạng thái $j$ tới $i$. Sau $k$ bước, $s_k=P^ks_0$. Phân bố dừng phải thỏa đồng thời $Ps=s$, $s_i\ge0$ và $\sum_i s_i=1$.
+
+**Bước 1. Lập luận và tính toán.**
+
+Từ sơ đồ, các đường hầm là $1\! -\!2$, $1\! -\!3$, $1\! -\!5$, $2\! -\!4$, $3\! -\!4$, $3\! -\!5$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Ngăn 3 và ngăn 4 còn có đường hầm vòng trở lại chính ngăn ấy; mỗi vòng có hai cửa hầm nên được đếm hai lần.
+
+**Bước 3. Thực hiện phép biến đổi.**
+
+Chia mỗi cột của ma trận kề cho số cửa hầm ra khỏi ngăn tương ứng, được
+
+
 
 $$
-P=\begin{bmatrix}0&\frac{1}{2}&\frac{1}{3}&0&\frac{1}{2}\\\frac{1}{3}&0&0&\frac{1}{2}&0\\\frac{1}{3}&0&0&\frac{1}{2}&\frac{1}{2}\\0&\frac{1}{2}&\frac{1}{3}&0&0\\\frac{1}{3}&0&\frac{1}{3}&0&0\end{bmatrix}.
+P=\begin{bmatrix}0&\frac{1}{2}&\frac{1}{5}&0&\frac{1}{2}\\\frac{1}{3}&0&0&\frac{1}{4}&0\\\frac{1}{3}&0&\frac{2}{5}&\frac{1}{4}&\frac{1}{2}\\0&\frac{1}{2}&\frac{1}{5}&\frac{1}{2}&0\\\frac{1}{3}&0&\frac{1}{5}&0&0\end{bmatrix}.
 $$
 
- **a.** Xác suất quay lại 1 sau ba bước là $(P^3)_{11}=\frac{1}{9}$. **b.** Giải $Ps=s$ và chuẩn hóa cho
+
+
+**a.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Xác suất quay lại 1 sau ba bước là $(P^3)_{11}=\frac{7}{75}$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Giải $Ps=s$ và chuẩn hóa cho
+
+
 
 $$
-s=\begin{bmatrix}\frac{1}{4}\\\frac{1}{6}\\\frac{1}{4}\\\frac{1}{6}\\\frac{1}{6}\end{bmatrix}.
+s=\begin{bmatrix}\frac{3}{16}\\\frac{1}{8}\\\frac{5}{16}\\\frac{1}{4}\\\frac{1}{8}\end{bmatrix}.
 $$
 
- Hai ngăn 1 và 3 có xác suất lớn nhất bằng $1/4$ mỗi ngăn. Cũng có thể dùng tính chất bước đi đều trên đồ thị vô hướng: xác suất dừng tỷ lệ với bậc, ở đây các bậc là $(3,2,3,2,2)$.
+
+
+ Ngăn 3 có xác suất lớn nhất bằng $5/16$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Cũng có thể dùng tính chất bước đi đều trên đồ thị vô hướng: xác suất dừng tỷ lệ với bậc, ở đây các bậc là $(3,2,5,4,2)$.
 
 </LoiGiai>
 

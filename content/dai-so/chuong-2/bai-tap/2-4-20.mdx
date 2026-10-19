@@ -5,11 +5,23 @@ do_kho: vua
 tieu_de: "Ma trận nghịch đảo — bài 20"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.4.20"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.4.20 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu $A$ khả nghịch, hãy chứng minh rằng
+
+**a.** $A^{2} \neq 0$.
+
+**b.** $A^{k} \neq 0$ với mọi $k = 1, 2, \dots$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-4-20-1" moTa="Đề gốc Nicholson bài 2.4.20, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -24,6 +36,7 @@ Exercise 2.4.20  If A is invertible, show that
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -41,7 +54,17 @@ Khi tìm nghịch đảo bằng khử hàng, làm cùng phép biến đổi trê
 
 <LoiGiai>
 
-Nếu $A^k=0$ với $k\ge1$, nhân trái với $(A^{-1})^k$ cho $I=0$, mâu thuẫn. Do đó mọi lũy thừa dương của ma trận khả nghịch đều khác 0; (a) là trường hợp riêng $k=2$, (b) là lập luận tổng quát.
+**Cách làm.** Theo định nghĩa, $B=A^{-1}$ khi $AB=BA=I$. Muốn khử $A$ ở bên trái thì nhân trái với $A^{-1}$; muốn khử ở bên phải thì nhân phải. Nghịch đảo tích đảo thứ tự: $(AB)^{-1}=B^{-1}A^{-1}$.
+
+Nếu $A$ khả nghịch thì $(A^{-1})^kA^k=(A^{-1}A)^k=I$. Nếu đồng thời $A^k=0$, cùng tích ấy lại bằng 0. Vì ma trận đơn vị khác ma trận không ở mọi cấp dương, hai điều kiện không thể cùng đúng.
+
+**Bước 1. Xét giả thiết.**
+
+Nếu $A^k=0$ với $k\ge1$, nhân trái với $(A^{-1})^k$ cho $I=0$, mâu thuẫn.
+
+**Bước 2. Rút ra kết luận.**
+
+Do đó mọi lũy thừa dương của ma trận khả nghịch đều khác 0; (a) là trường hợp riêng $k=2$, (b) là lập luận tổng quát.
 
 </LoiGiai>
 

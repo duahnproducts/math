@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Chứng minh Định lý khai triển theo phần bù đại số — bài 3"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.8.3"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.8.3 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu $u$ là một số và $A$ là ma trận $n \times n$, hãy chứng minh rằng $\det (uA) = u^{n} \det A$ bằng quy nạp theo $n$, chỉ dùng định nghĩa của $\det A$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-8-3-1" moTa="Đề gốc Nicholson bài 3.8.3, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ only the deﬁnition of det A.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,13 +48,37 @@ Tách trường hợp hàng/cột đang xét bị xóa khỏi minor và trườn
 
 <LoiGiai>
 
-Cấp 1: $\det([ua])=ua=u\det([a])$. Giả sử công thức đúng cấp $n-1$. Theo định nghĩa khai triển cột đầu,
+**Cách làm.** Đề yêu cầu chứng minh từ định nghĩa: khai triển theo cột đầu, đưa về định thức cấp nhỏ hơn rồi áp dụng giả thiết quy nạp. Không lấy tính chất đang chứng minh làm giả thiết.
+
+**Bước 1. Lập luận và tính toán.**
+
+Cấp 1: $\det([ua])=ua=u\det([a])$.
+
+**Bước 2. Xét giả thiết.**
+
+Giả sử công thức đúng cấp $n-1$.
+
+**Bước 3. Lập luận và tính toán.**
+
+Theo định nghĩa khai triển cột đầu,
+
+
 
 $$
 \det(uA)=\sum_i(-1)^{i+1}(ua_{i1})\det(uA_{i1}).
 $$
 
- Dùng quy nạp cho từng minor: $\det(uA_{i1})=u^{n-1}\det A_{i1}$. Rút $u^n$ khỏi tổng, được $u^n\sum_i(-1)^{i+1}a_{i1}\det A_{i1}=u^n\det A$. Lập luận không chia cho $u$, nên đúng cả $u=0$.
+
+
+ Dùng quy nạp cho từng minor: $\det(uA_{i1})=u^{n-1}\det A_{i1}$.
+
+**Bước 4. Lập luận và tính toán.**
+
+Rút $u^n$ khỏi tổng, được $u^n\sum_i(-1)^{i+1}a_{i1}\det A_{i1}=u^n\det A$.
+
+**Bước 5. Lập luận và tính toán.**
+
+Lập luận không chia cho $u$, nên đúng cả $u=0$.
 
 </LoiGiai>
 

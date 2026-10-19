@@ -85,12 +85,96 @@ Khoảng (a,b) không chứa hai đầu; [a,b] chứa cả hai; [a,b) chứa a n
 
 Tìm sup, inf, max, min của &#123;−2,1,4&#125;, (−2,4] và [−2,4). **Gợi ý:** sup và inf nhìn vào hai biên; max/min kiểm tra dấu ngoặc.
 
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+Ba tập là $\{-2,1,4\}$, $(-2,4]$ và $[-2,4)$.
+
+**Bước 2. Xác định điều cần tìm.**
+
+Tìm cận trên nhỏ nhất, cận dưới lớn nhất, phần tử lớn nhất và nhỏ nhất.
+
+**Bước 3. Chọn kiến thức và lý do.**
+
+Sup/inf là các biên tối ưu; max/min còn yêu cầu biên đó thuộc tập.
+
+**Bước 4. Giải từng bước.**
+
+Với tập hữu hạn, $\inf=\min=-2$, $\sup=\max=4$. Với $(-2,4]$, $\inf=-2$ nhưng không có min vì $-2$ bị loại; $\sup=\max=4$. Với $[-2,4)$, $\inf=\min=-2$; $\sup=4$ nhưng không có max vì 4 bị loại.
+
+**Bước 5. Kiểm tra kết quả.**
+
+Trong khoảng mở ở biên, luôn chọn được một điểm gần biên hơn điểm đang xét, nên không có phần tử cực trị ở phía ấy.
+
+**Bước 6. Cách tự làm lại.**
+
+Xác định biên trước, rồi kiểm tra dấu ngoặc để quyết định max/min.
+
+</LoiGiai>
+
 ### VỪA - Chứng minh một inf
 
 Với $S=\{1/n:n\in\mathbb{N}\}$, chứng minh inf S=0, max S=1 và không có min. **Gợi ý:** mọi số hạng dương; dùng Archimedes để làm 1/n nhỏ hơn bất kỳ ε>0.
 
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+$S=\{1/n:n\in\mathbb N,\ n\ge1\}$.
+
+**Bước 2. Xác định điều cần tìm.**
+
+Chứng minh $\inf S=0$, $\max S=1$, và không có min.
+
+**Bước 3. Chọn kiến thức và lý do.**
+
+Để chứng minh inf, cần một cận dưới và các phần tử tiến sát cận ấy từ phía trên.
+
+**Bước 4. Giải từng bước.**
+
+Mọi $1/n>0$, nên 0 là cận dưới. Với $\varepsilon>0$, theo Archimedes chọn $n>1/\varepsilon$. Khi đó $0<1/n<\varepsilon$, nên không số dương nào là cận dưới. Vậy inf bằng 0. Vì $n\ge1$, $1/n\le1$, và $1=1/1\in S$, nên max bằng 1. Nếu $1/n$ là một phần tử bất kỳ, $1/(n+1)<1/n$ vẫn thuộc $S$, nên không có min.
+
+**Bước 5. Kiểm tra kết quả.**
+
+0 không thuộc tập nên không thể là min. 1 có thuộc tập nên sup đồng thời là max.
+
+**Bước 6. Cách tự làm lại.**
+
+Inf không nhất thiết là phần tử; dùng một phần tử nhỏ hơn để bác tính nhỏ nhất.
+
+</LoiGiai>
+
 ### KHÓ - Sup của một tổng tập
 
 Cho A,B không rỗng và bị chặn. Đặt $A+B=\{a+b:a\in A,b\in B\}$. Chứng minh sup(A+B)=sup A+sup B. **Gợi ý:** trước hết chứng minh là cận trên. Sau đó chọn a>sup A−ε/2 và b>sup B−ε/2.
+
+<LoiGiai>
+
+**Bước 1. Đọc dữ kiện.**
+
+$A,B$ không rỗng và bị chặn; đặt $\alpha=\sup A$, $\beta=\sup B$.
+
+**Bước 2. Xác định điều cần tìm.**
+
+Chứng minh $\sup(A+B)=\alpha+\beta$.
+
+**Bước 3. Chọn kiến thức và lý do.**
+
+Dùng hai điều kiện của supremum: là cận trên và có phần tử của tập sát tùy ý ở phía dưới.
+
+**Bước 4. Giải từng bước.**
+
+Với mọi $a\in A,b\in B$, $a\le\alpha,b\le\beta$, nên $a+b\le\alpha+\beta$. Đó là cận trên. Cho $\varepsilon>0$. Theo tính chất sup, chọn $a>\alpha-\varepsilon/2$ và $b>\beta-\varepsilon/2$. Khi ấy $a+b>\alpha+\beta-\varepsilon$. Vì $a+b\in A+B$, không thể hạ cận trên $\alpha+\beta$ xuống một lượng dương nào. Suy ra kết quả.
+
+**Bước 5. Kiểm tra kết quả.**
+
+$A+B$ không rỗng và có cận trên nên supremum hữu hạn tồn tại. Chọn $\varepsilon/2$ cho mỗi sai số để tổng sai số nhỏ hơn $\varepsilon$.
+
+**Bước 6. Cách tự làm lại.**
+
+Chứng minh cận trên, rồi dựng phần tử cách cận ấy ít hơn mọi sai số cho trước.
+
+</LoiGiai>
 
 Nguồn kiến thức: Kenneth A. Ross, *Elementary Analysis: The Theory of Calculus*, ấn bản thứ hai, 2013, §4. Bài giảng diễn đạt bằng lời riêng; ví dụ và bài tập do người biên soạn bổ sung.

@@ -5,11 +5,25 @@ do_kho: vua
 tieu_de: "Ứng dụng: mô hình kinh tế vào–ra — bài 3"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "2.8.3"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 2.8.3 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Tìm các cơ cấu giá cân bằng có thể có của ba ngành với ma trận đầu vào–đầu ra
+
+$$
+\left[ \begin{array}{rrr} 1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 \end{array} \right]
+$$
+
+. Giải thích vì sao ở đây có hai tham số.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-2-8-3-1" moTa="Đề gốc Nicholson bài 2.8.3, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -28,6 +42,7 @@ is   0  0  1    Discuss why there are two parameters           0  1  0here
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -44,13 +59,29 @@ Tổng cột của ma trận stochastic bằng 1. Để tìm giá tương đối
 
 <LoiGiai>
 
-Hệ $Ep=p$ cho $p_1=p_1$, $p_3=p_2$, $p_2=p_3$. Do đó
+**Cách làm.** Cơ cấu giá cân bằng thỏa $Ep=p$, tức $(I-E)p=0$. Với mô hình mở, điều kiện cần kiểm tra là $I-E$ khả nghịch và $(I-E)^{-1}$ có các ô không âm.
+
+**Bước 1. Lập luận và tính toán.**
+
+Hệ $Ep=p$ cho $p_1=p_1$, $p_3=p_2$, $p_2=p_3$.
+
+**Bước 2. Rút ra kết luận.**
+
+Do đó
+
+
 
 $$
 p=(s,t,t)^T,\quad s,t>0.
 $$
 
- Có hai tham số vì ngành 1 hoàn toàn tự dùng đầu ra của mình, độc lập với nhóm ngành 2 và 3 trao đổi với nhau. Hệ chỉ buộc giá trị hai ngành sau bằng nhau; không có phương trình ràng buộc tỷ lệ giữa hai nhóm.
+
+
+ Có hai tham số vì ngành 1 hoàn toàn tự dùng đầu ra của mình, độc lập với nhóm ngành 2 và 3 trao đổi với nhau.
+
+**Bước 3. Lập luận và tính toán.**
+
+Hệ chỉ buộc giá trị hai ngành sau bằng nhau; không có phương trình ràng buộc tỷ lệ giữa hai nhóm.
 
 </LoiGiai>
 

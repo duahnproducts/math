@@ -5,11 +5,51 @@ do_kho: vua
 tieu_de: "Khai triển theo phần bù đại số — bài 5"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.1.5"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.1.5 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Tính định thức của mỗi ma trận bằng cách đưa nó về dạng tam giác trên.
+
+**a.**
+
+$$
+\left[ \begin{array}{rrr} 1 & -1 & 2 \\ 3 & 1 & 1 \\ 2 & -1 & 3 \end{array} \right]
+$$
+
+
+
+**b.**
+
+$$
+\left[ \begin{array}{rrr} -1 & 3 & 1 \\ 2 & 5 & 3 \\ 1 & -2 & 1 \end{array} \right]
+$$
+
+
+
+**c.**
+
+$$
+\left[ \begin{array}{rrrr} -1 & -1 & 1 & 0 \\ 2 & 1 & 1 & 3 \\ 0 & 1 & 1 & 2 \\ 1 & 3 & -1 & 2 \end{array} \right]
+$$
+
+
+
+**d.**
+
+$$
+\left[ \begin{array}{rrrr} 2 & 3 & 1 & 1 \\ 0 & 2 & -1 & 3 \\ 0 & 5 & 1 & 1 \\ 1 & 1 & 2 & 5 \end{array} \right]
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-1-5-1" moTa="Đề gốc Nicholson bài 3.1.5, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -25,6 +65,7 @@ by reducing it to upper triangular form.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -42,37 +83,287 @@ Cộng bội một hàng vào hàng khác giữ định thức; đổi hai hàng
 
 <LoiGiai>
 
-**a.** Khử bằng cộng bội hàng, đổi hàng khi pivot bằng 0. Thu ma trận tam giác trên
+**Cách làm.** Cộng bội hàng khác giữ nguyên định thức; đổi hai hàng đổi dấu; rút hệ số $c$ từ một hàng đưa $c$ ra ngoài. Với khai triển, $C_{ij}=(-1)^{i+j}\det M_{ij}$.
+
+**a.**
+
+**Bước 1. Xác định phép biến đổi được phép dùng.**
+
+Bắt đầu từ $A=\begin{bmatrix}1&-1&2\\3&1&1\\2&-1&3\end{bmatrix}$. Cộng bội một hàng vào hàng khác giữ nguyên định thức. Đổi hai hàng đổi dấu. Ta không chia hàng để tránh phải bù thêm hệ số.
+
+**Bước 2. Khử ô ở hàng 2, cột 1.**
+
+Chọn hệ số $m=\dfrac{3}{1}=3$ để phần tử này thành 0. Thực hiện $R_2\leftarrow R_2-(3)R_1$ trên toàn bộ hàng, được
+
+
 
 $$
-U=\begin{bmatrix}1&-1&2\\0&4&-5\\0&0&\frac{1}{4}\end{bmatrix}.
+\begin{bmatrix}1&-1&2\\0&4&-5\\2&-1&3\end{bmatrix}.
 $$
 
- Số lần đổi hàng là $0$, nên $\det A=(-1)^{0}\prod_j u_{jj}=1$. Các phép cộng bội hàng không đổi định thức.
 
-**b.** Khử bằng cộng bội hàng, đổi hàng khi pivot bằng 0. Thu ma trận tam giác trên
 
-$$
-U=\begin{bmatrix}-1&3&1\\0&11&5\\0&0&\frac{17}{11}\end{bmatrix}.
-$$
+ Phép cộng bội hàng này không đổi định thức.
 
- Số lần đổi hàng là $0$, nên $\det A=(-1)^{0}\prod_j u_{jj}=-17$. Các phép cộng bội hàng không đổi định thức.
+**Bước 3. Khử ô ở hàng 3, cột 1.**
 
-**c.** Khử bằng cộng bội hàng, đổi hàng khi pivot bằng 0. Thu ma trận tam giác trên
+Chọn hệ số $m=\dfrac{2}{1}=2$ để phần tử này thành 0. Thực hiện $R_3\leftarrow R_3-(2)R_1$ trên toàn bộ hàng, được
+
+
 
 $$
-U=\begin{bmatrix}-1&-1&1&0\\0&-1&3&3\\0&0&4&5\\0&0&0&\frac{1}{2}\end{bmatrix}.
+\begin{bmatrix}1&-1&2\\0&4&-5\\0&1&-1\end{bmatrix}.
 $$
 
- Số lần đổi hàng là $0$, nên $\det A=(-1)^{0}\prod_j u_{jj}=2$. Các phép cộng bội hàng không đổi định thức.
 
-**d.** Khử bằng cộng bội hàng, đổi hàng khi pivot bằng 0. Thu ma trận tam giác trên
+
+ Phép cộng bội hàng này không đổi định thức.
+
+**Bước 4. Khử ô ở hàng 3, cột 2.**
+
+Chọn hệ số $m=\dfrac{1}{4}=\frac{1}{4}$ để phần tử này thành 0. Thực hiện $R_3\leftarrow R_3-(\frac{1}{4})R_2$ trên toàn bộ hàng, được
+
+
 
 $$
-U=\begin{bmatrix}2&3&1&1\\0&2&-1&3\\0&0&\frac{7}{2}&- \frac{13}{2}\\0&0&0&\frac{53}{7}\end{bmatrix}.
+\begin{bmatrix}1&-1&2\\0&4&-5\\0&0&\frac{1}{4}\end{bmatrix}.
 $$
 
- Số lần đổi hàng là $0$, nên $\det A=(-1)^{0}\prod_j u_{jj}=106$. Các phép cộng bội hàng không đổi định thức.
+
+
+ Phép cộng bội hàng này không đổi định thức.
+
+**Bước 5. Lấy tích đường chéo và theo dõi dấu.**
+
+Ma trận đã là tam giác trên. Có 0 lần đổi hàng, nên
+
+
+
+$$
+\det A=(-1)^{0}(1)\cdot(4)\cdot(\frac{1}{4})=1.
+$$
+
+
+
+**b.**
+
+**Bước 1. Xác định phép biến đổi được phép dùng.**
+
+Bắt đầu từ $A=\begin{bmatrix}-1&3&1\\2&5&3\\1&-2&1\end{bmatrix}$. Cộng bội một hàng vào hàng khác giữ nguyên định thức. Đổi hai hàng đổi dấu. Ta không chia hàng để tránh phải bù thêm hệ số.
+
+**Bước 2. Khử ô ở hàng 2, cột 1.**
+
+Chọn hệ số $m=\dfrac{2}{-1}=-2$ để phần tử này thành 0. Thực hiện $R_2\leftarrow R_2-(-2)R_1$ trên toàn bộ hàng, được
+
+
+
+$$
+\begin{bmatrix}-1&3&1\\0&11&5\\1&-2&1\end{bmatrix}.
+$$
+
+
+
+ Phép cộng bội hàng này không đổi định thức.
+
+**Bước 3. Khử ô ở hàng 3, cột 1.**
+
+Chọn hệ số $m=\dfrac{1}{-1}=-1$ để phần tử này thành 0. Thực hiện $R_3\leftarrow R_3-(-1)R_1$ trên toàn bộ hàng, được
+
+
+
+$$
+\begin{bmatrix}-1&3&1\\0&11&5\\0&1&2\end{bmatrix}.
+$$
+
+
+
+ Phép cộng bội hàng này không đổi định thức.
+
+**Bước 4. Khử ô ở hàng 3, cột 2.**
+
+Chọn hệ số $m=\dfrac{1}{11}=\frac{1}{11}$ để phần tử này thành 0. Thực hiện $R_3\leftarrow R_3-(\frac{1}{11})R_2$ trên toàn bộ hàng, được
+
+
+
+$$
+\begin{bmatrix}-1&3&1\\0&11&5\\0&0&\frac{17}{11}\end{bmatrix}.
+$$
+
+
+
+ Phép cộng bội hàng này không đổi định thức.
+
+**Bước 5. Lấy tích đường chéo và theo dõi dấu.**
+
+Ma trận đã là tam giác trên. Có 0 lần đổi hàng, nên
+
+
+
+$$
+\det A=(-1)^{0}(-1)\cdot(11)\cdot(\frac{17}{11})=-17.
+$$
+
+
+
+**c.**
+
+**Bước 1. Xác định phép biến đổi được phép dùng.**
+
+Bắt đầu từ $A=\begin{bmatrix}-1&-1&1&0\\2&1&1&3\\0&1&1&2\\1&3&-1&2\end{bmatrix}$. Cộng bội một hàng vào hàng khác giữ nguyên định thức. Đổi hai hàng đổi dấu. Ta không chia hàng để tránh phải bù thêm hệ số.
+
+**Bước 2. Khử ô ở hàng 2, cột 1.**
+
+Chọn hệ số $m=\dfrac{2}{-1}=-2$ để phần tử này thành 0. Thực hiện $R_2\leftarrow R_2-(-2)R_1$ trên toàn bộ hàng, được
+
+
+
+$$
+\begin{bmatrix}-1&-1&1&0\\0&-1&3&3\\0&1&1&2\\1&3&-1&2\end{bmatrix}.
+$$
+
+
+
+ Phép cộng bội hàng này không đổi định thức.
+
+**Bước 3. Khử ô ở hàng 4, cột 1.**
+
+Chọn hệ số $m=\dfrac{1}{-1}=-1$ để phần tử này thành 0. Thực hiện $R_4\leftarrow R_4-(-1)R_1$ trên toàn bộ hàng, được
+
+
+
+$$
+\begin{bmatrix}-1&-1&1&0\\0&-1&3&3\\0&1&1&2\\0&2&0&2\end{bmatrix}.
+$$
+
+
+
+ Phép cộng bội hàng này không đổi định thức.
+
+**Bước 4. Khử ô ở hàng 3, cột 2.**
+
+Chọn hệ số $m=\dfrac{1}{-1}=-1$ để phần tử này thành 0. Thực hiện $R_3\leftarrow R_3-(-1)R_2$ trên toàn bộ hàng, được
+
+
+
+$$
+\begin{bmatrix}-1&-1&1&0\\0&-1&3&3\\0&0&4&5\\0&2&0&2\end{bmatrix}.
+$$
+
+
+
+ Phép cộng bội hàng này không đổi định thức.
+
+**Bước 5. Khử ô ở hàng 4, cột 2.**
+
+Chọn hệ số $m=\dfrac{2}{-1}=-2$ để phần tử này thành 0. Thực hiện $R_4\leftarrow R_4-(-2)R_2$ trên toàn bộ hàng, được
+
+
+
+$$
+\begin{bmatrix}-1&-1&1&0\\0&-1&3&3\\0&0&4&5\\0&0&6&8\end{bmatrix}.
+$$
+
+
+
+ Phép cộng bội hàng này không đổi định thức.
+
+**Bước 6. Khử ô ở hàng 4, cột 3.**
+
+Chọn hệ số $m=\dfrac{6}{4}=\frac{3}{2}$ để phần tử này thành 0. Thực hiện $R_4\leftarrow R_4-(\frac{3}{2})R_3$ trên toàn bộ hàng, được
+
+
+
+$$
+\begin{bmatrix}-1&-1&1&0\\0&-1&3&3\\0&0&4&5\\0&0&0&\frac{1}{2}\end{bmatrix}.
+$$
+
+
+
+ Phép cộng bội hàng này không đổi định thức.
+
+**Bước 7. Lấy tích đường chéo và theo dõi dấu.**
+
+Ma trận đã là tam giác trên. Có 0 lần đổi hàng, nên
+
+
+
+$$
+\det A=(-1)^{0}(-1)\cdot(-1)\cdot(4)\cdot(\frac{1}{2})=2.
+$$
+
+
+
+**d.**
+
+**Bước 1. Xác định phép biến đổi được phép dùng.**
+
+Bắt đầu từ $A=\begin{bmatrix}2&3&1&1\\0&2&-1&3\\0&5&1&1\\1&1&2&5\end{bmatrix}$. Cộng bội một hàng vào hàng khác giữ nguyên định thức. Đổi hai hàng đổi dấu. Ta không chia hàng để tránh phải bù thêm hệ số.
+
+**Bước 2. Khử ô ở hàng 4, cột 1.**
+
+Chọn hệ số $m=\dfrac{1}{2}=\frac{1}{2}$ để phần tử này thành 0. Thực hiện $R_4\leftarrow R_4-(\frac{1}{2})R_1$ trên toàn bộ hàng, được
+
+
+
+$$
+\begin{bmatrix}2&3&1&1\\0&2&-1&3\\0&5&1&1\\0&- \frac{1}{2}&\frac{3}{2}&\frac{9}{2}\end{bmatrix}.
+$$
+
+
+
+ Phép cộng bội hàng này không đổi định thức.
+
+**Bước 3. Khử ô ở hàng 3, cột 2.**
+
+Chọn hệ số $m=\dfrac{5}{2}=\frac{5}{2}$ để phần tử này thành 0. Thực hiện $R_3\leftarrow R_3-(\frac{5}{2})R_2$ trên toàn bộ hàng, được
+
+
+
+$$
+\begin{bmatrix}2&3&1&1\\0&2&-1&3\\0&0&\frac{7}{2}&- \frac{13}{2}\\0&- \frac{1}{2}&\frac{3}{2}&\frac{9}{2}\end{bmatrix}.
+$$
+
+
+
+ Phép cộng bội hàng này không đổi định thức.
+
+**Bước 4. Khử ô ở hàng 4, cột 2.**
+
+Chọn hệ số $m=\dfrac{- \frac{1}{2}}{2}=- \frac{1}{4}$ để phần tử này thành 0. Thực hiện $R_4\leftarrow R_4-(- \frac{1}{4})R_2$ trên toàn bộ hàng, được
+
+
+
+$$
+\begin{bmatrix}2&3&1&1\\0&2&-1&3\\0&0&\frac{7}{2}&- \frac{13}{2}\\0&0&\frac{5}{4}&\frac{21}{4}\end{bmatrix}.
+$$
+
+
+
+ Phép cộng bội hàng này không đổi định thức.
+
+**Bước 5. Khử ô ở hàng 4, cột 3.**
+
+Chọn hệ số $m=\dfrac{\frac{5}{4}}{\frac{7}{2}}=\frac{5}{14}$ để phần tử này thành 0. Thực hiện $R_4\leftarrow R_4-(\frac{5}{14})R_3$ trên toàn bộ hàng, được
+
+
+
+$$
+\begin{bmatrix}2&3&1&1\\0&2&-1&3\\0&0&\frac{7}{2}&- \frac{13}{2}\\0&0&0&\frac{53}{7}\end{bmatrix}.
+$$
+
+
+
+ Phép cộng bội hàng này không đổi định thức.
+
+**Bước 6. Lấy tích đường chéo và theo dõi dấu.**
+
+Ma trận đã là tam giác trên. Có 0 lần đổi hàng, nên
+
+
+
+$$
+\det A=(-1)^{0}(2)\cdot(2)\cdot(\frac{7}{2})\cdot(\frac{53}{7})=106.
+$$
 
 </LoiGiai>
 

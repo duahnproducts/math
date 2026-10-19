@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Khai triển theo phần bù đại số — bài 2"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.1.2"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.1.2 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh rằng $\det A = 0$ nếu $A$ có một hàng hoặc một cột toàn số 0.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-1-2-1" moTa="Đề gốc Nicholson bài 3.1.2, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ column consisting of zeros.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +48,21 @@ Cộng bội một hàng vào hàng khác giữ định thức; đổi hai hàng
 
 <LoiGiai>
 
-Khai triển theo hàng toàn 0: $\det A=\sum_j0\cdot C_{ij}=0$. Nếu là cột toàn 0, khai triển theo cột ấy cũng được tổng các số 0. Không cần tính các phần bù đại số.
+**Cách làm.** Cộng bội hàng khác giữ nguyên định thức; đổi hai hàng đổi dấu; rút hệ số $c$ từ một hàng đưa $c$ ra ngoài. Với khai triển, $C_{ij}=(-1)^{i+j}\det M_{ij}$.
+
+Khai triển theo hàng hoặc cột toàn 0 là chọn đúng nơi có hệ số bằng 0 trước các phần bù. Dù phần bù lớn hay nhỏ, mỗi tích vẫn bằng 0; do đó không cần tính bất kỳ định thức con nào.
+
+**Bước 1. Thực hiện phép biến đổi.**
+
+Khai triển theo hàng toàn 0: $\det A=\sum_j0\cdot C_{ij}=0$.
+
+**Bước 2. Xét giả thiết.**
+
+Nếu là cột toàn 0, khai triển theo cột ấy cũng được tổng các số 0.
+
+**Bước 3. Lập luận và tính toán.**
+
+Không cần tính các phần bù đại số.
 
 </LoiGiai>
 

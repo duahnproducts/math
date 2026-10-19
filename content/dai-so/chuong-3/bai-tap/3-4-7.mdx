@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Chéo hoá — bài 7"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.4.7"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.4.7 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Nếu $A$ chéo hóa được và $1$, $-1$ là các trị riêng duy nhất, hãy chứng minh rằng $A^{-1} = A$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-4-7-1" moTa="Đề gốc Nicholson bài 3.4.7, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -21,6 +29,7 @@ Exercise 3.4.7   If A is diagonalizable and 1 and −1 arethe only eigenvalues, 
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -38,7 +47,21 @@ Ghép các vector riêng độc lập thành cột của P, rồi kiểm tra AP 
 
 <LoiGiai>
 
-Viết $A=PDP^{-1}$, đường chéo của $D$ chỉ chứa 1 hoặc -1. Khi đó $D^2=I$, nên $A^2=PD^2P^{-1}=I$. Do đó $A$ khả nghịch và $A^{-1}=A$.
+**Cách làm.** Chéo hóa $A=PDP^{-1}$ nghĩa là các cột của $P$ là một cơ sở vector riêng. Trị riêng của cột thứ $j$ phải nằm ở ô $d_{jj}$, và có thể kiểm tra bằng $AP=PD$.
+
+Mỗi ô đường chéo của $D$ là 1 hoặc $-1$, bình phương đều bằng 1. Vì vậy $D^2=I$, không phải $D$. Sau khi chuyển về $A$, đẳng thức $A^2=I$ chính là $AA=I$, cho nghịch đảo $A$ của chính nó.
+
+**Bước 1. Thiết lập biểu thức.**
+
+Viết $A=PDP^{-1}$, đường chéo của $D$ chỉ chứa 1 hoặc -1.
+
+**Bước 2. Lập luận và tính toán.**
+
+Khi đó $D^2=I$, nên $A^2=PD^2P^{-1}=I$.
+
+**Bước 3. Rút ra kết luận.**
+
+Do đó $A$ khả nghịch và $A^{-1}=A$.
 
 </LoiGiai>
 

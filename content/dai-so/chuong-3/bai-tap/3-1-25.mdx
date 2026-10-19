@@ -5,11 +5,19 @@ do_kho: vua
 tieu_de: "Khai triển theo phần bù đại số — bài 25"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.1.25"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.1.25 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Chứng minh tính chất 3 của Định lý 3.1.2 bằng cách khai triển theo hàng (hoặc cột) đang xét.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-1-25-1" moTa="Đề gốc Nicholson bài 3.1.25, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -22,6 +30,7 @@ expanding along the row (or column) in question.
 ```
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
+</details>
 </details>
 </De>
 
@@ -39,7 +48,29 @@ Cộng bội một hàng vào hàng khác giữ định thức; đổi hai hàng
 
 <LoiGiai>
 
-Khai triển theo hàng được nhân với $c$. Các phần bù đại số không đổi vì hàng ấy bị xóa khi lập ma trận con. Do đó $\det B=\sum_j(ca_{ij})C_{ij}=c\det A$. Lập luận theo cột hoàn toàn tương tự. Nhân cả ma trận với $c$ tức nhân cả $n$ hàng, cho hệ quả $\det(cA)=c^n\det A$.
+**Cách làm.** Cộng bội hàng khác giữ nguyên định thức; đổi hai hàng đổi dấu; rút hệ số $c$ từ một hàng đưa $c$ ra ngoài. Với khai triển, $C_{ij}=(-1)^{i+j}\det M_{ij}$.
+
+Khi nhân một hàng với $c$, các phần bù theo hàng đó giữ nguyên vì hàng bị xóa khi lập minor. Bởi vậy mỗi số hạng khai triển có đúng một thừa số $c$, có thể đưa ra ngoài tổng.
+
+**Bước 1. Thực hiện phép biến đổi.**
+
+Khai triển theo hàng được nhân với $c$.
+
+**Bước 2. Lập luận và tính toán.**
+
+Các phần bù đại số không đổi vì hàng ấy bị xóa khi lập ma trận con.
+
+**Bước 3. Rút ra kết luận.**
+
+Do đó $\det B=\sum_j(ca_{ij})C_{ij}=c\det A$.
+
+**Bước 4. Lập luận và tính toán.**
+
+Lập luận theo cột hoàn toàn tương tự.
+
+**Bước 5. Thực hiện phép biến đổi.**
+
+Nhân cả ma trận với $c$ tức nhân cả $n$ hàng, cho hệ quả $\det(cA)=c^n\det A$.
 
 </LoiGiai>
 

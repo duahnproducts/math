@@ -5,11 +5,43 @@ do_kho: vua
 tieu_de: "Ứng dụng: hệ thức truy hồi tuyến tính — bài 11"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.6.11"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.6.11 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Xét hệ thức truy hồi độ dài $3$: $x_{k+3} = ax_{k} + bx_{k+1} + cx_{k+2}$.
+
+**a.** Nếu
+
+$$
+\mathbf{v}_k = \left[ \begin{array}{c} x_k \\ x_{k+1} \\ x_{k+2} \end{array}\right]
+$$
+
+ và
+
+$$
+A = \left[ \begin{array}{rrr} 0 & 1 & 0 \\ 0 & 0 & 1 \\ a & b & c \end{array}\right]
+$$
+
+, hãy chứng minh rằng $\mathbf{v}_{k+1} = A\mathbf{v}_{k}$.
+
+**b.** Nếu $\lambda$ là một trị riêng bất kỳ của $A$, hãy chứng minh rằng
+
+$$
+\mathbf{x}= \left[\begin{array}{c}1 \\ \lambda \\ \lambda^2\end{array}\right]
+$$
+
+ là một vector riêng ứng với $\lambda$. [Gợi ý: Kiểm tra trực tiếp rằng $A\mathbf{x} = \lambda\mathbf{x}$.]
+
+**c.** Khái quát các ý (a) và (b) cho hệ thức truy hồi $x_{k+4}= a x_k+b x_{k+1}+c x_{k+2}+d x_{k+3}$ có độ dài $4$.
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-6-11-1" moTa="Đề gốc Nicholson bài 3.6.11, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -39,6 +71,7 @@ c. Generalize (a) and (b) to a recurrence
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -55,11 +88,37 @@ Dùng các điều kiện đầu để xác định hệ số trong nghiệm t�
 
 <LoiGiai>
 
-**a.** Nhân $Av_k$ cho $(x_{k+1},x_{k+2},ax_k+bx_{k+1}+cx_{k+2})^T=v_{k+1}$. **b.** Đa thức đặc trưng là $\lambda^3-c\lambda^2-b\lambda-a=0$. Vì thế $A(1,\lambda,\lambda^2)^T=(\lambda,\lambda^2,a+b\lambda+c\lambda^2)^T=(\lambda,\lambda^2,\lambda^3)^T$; vector có thành phần đầu 1 nên khác 0. **c.** Độ dài 4 dùng $v_k=(x_k,x_{k+1},x_{k+2},x_{k+3})^T$ và
+**Cách làm.** Với truy hồi tuyến tính, thử $x_k=r^k$ để tìm phương trình đặc trưng. Các điều kiện đầu quyết định hệ số; với bài đếm, cần phân loại các trường hợp rời nhau và đếm hết mọi khả năng.
+
+**a.**
+
+**Bước 1. Thực hiện phép biến đổi.**
+
+Nhân $Av_k$ cho $(x_{k+1},x_{k+2},ax_k+bx_{k+1}+cx_{k+2})^T=v_{k+1}$.
+
+**b.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Đa thức đặc trưng là $\lambda^3-c\lambda^2-b\lambda-a=0$.
+
+**Bước 2. Giải thích điều kiện sử dụng.**
+
+Vì thế $A(1,\lambda,\lambda^2)^T=(\lambda,\lambda^2,a+b\lambda+c\lambda^2)^T=(\lambda,\lambda^2,\lambda^3)^T$; vector có thành phần đầu 1 nên khác 0.
+
+**c.**
+
+**Bước 1. Lập luận và tính toán.**
+
+Độ dài 4 dùng $v_k=(x_k,x_{k+1},x_{k+2},x_{k+3})^T$ và
+
+
 
 $$
 A=\begin{bmatrix}0&1&0&0\\0&0&1&0\\0&0&0&1\\a&b&c&d\end{bmatrix}.
 $$
+
+
 
  Vector riêng tương ứng là $(1,\lambda,\lambda^2,\lambda^3)^T$ vì phương trình đặc trưng $\lambda^4-d\lambda^3-c\lambda^2-b\lambda-a=0$.
 

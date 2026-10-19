@@ -5,11 +5,51 @@ do_kho: vua
 tieu_de: "Khai triển theo phần bù đại số — bài 16"
 can_dung: []
 de_goc_tieng_anh: true
+de_dich_tieng_viet: true
 so_sach: "3.1.16"
 ---
 
 <De>
-Đề gốc tiếng Anh, giữ nguyên các ý và số liệu của bài 3.1.16 trong giáo trình Nicholson 2023. Hình bên dưới giữ đúng công thức, ma trận và sơ đồ của sách.
+<div data-de-tieng-viet>
+
+Tìm các số thực $x$ và $y$ để $\det A = 0$ nếu:
+
+**a.**
+
+$$
+A = \left[ \begin{array}{rrr} 0 & x & y \\ y & 0 & x \\ x & y & 0 \end{array}\right]
+$$
+
+
+
+**b.**
+
+$$
+A = \left[ \begin{array}{rrr} 1 & x & x \\ -x & -2 & x \\ -x & -x & -3 \end{array}\right]
+$$
+
+
+
+**c.**
+
+$$
+A = \left[ \begin{array}{rrrr} 1 & x & x^2 & x^3 \\ x & x^2 & x^3 & 1 \\ x^2 & x^3 & 1 & x \\ x^3 & 1 & x & x^2 \end{array}\right]
+$$
+
+
+
+**d.**
+
+$$
+A = \left[ \begin{array}{rrrr} x & y & 0 & 0 \\ 0 & x & y & 0 \\ 0 & 0 & x & y \\ y & 0 & 0 & x \end{array}\right]
+$$
+
+
+
+</div>
+
+<details data-de-goc>
+<summary>Đề gốc tiếng Anh để đối chiếu</summary>
 
 <HinhSach ten="ds-de-3-1-16-1" moTa="Đề gốc Nicholson bài 3.1.16, phần 1; xem bản văn bản bên dưới hình" />
 
@@ -31,6 +71,7 @@ det A = 0 if:
 
 Công thức và ma trận được trình bày đầy đủ trong hình đề gốc phía trên.
 </details>
+</details>
 </De>
 
 <GoiY so={1}>
@@ -47,7 +88,293 @@ Cộng bội một hàng vào hàng khác giữ định thức; đổi hai hàng
 
 <LoiGiai>
 
-Tính định thức rồi phân tích nhân tử:
+**Cách làm.** Cộng bội hàng khác giữ nguyên định thức; đổi hai hàng đổi dấu; rút hệ số $c$ từ một hàng đưa $c$ ra ngoài. Với khai triển, $C_{ij}=(-1)^{i+j}\det M_{ij}$.
+
+**a.**
+
+**Bước 1. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}0&x&y\\y&0&x\\x&y&0\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}y&x\\x&0\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=x^{2}.
+$$
+
+
+
+Với $M_{12}=\begin{bmatrix}y&x\\x&0\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{12}=(y)(0)-(x)(x)=- x^{2}.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}y&0\\x&y\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=y^{2}.
+$$
+
+
+
+Với $M_{13}=\begin{bmatrix}y&0\\x&y\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{13}=(y)(y)-(0)(x)=y^{2}.
+$$
+
+
+
+**Bước 2. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(x)(x^{2})+(y)(y^{2})=\left(x + y\right) \left(x^{2} - x y + y^{2}\right).
+$$
+
+
+
+**b.**
+
+**Bước 1. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}1&x&x\\- x&-2&x\\- x&- x&-3\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}-2&x\\- x&-3\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=x^{2} + 6.
+$$
+
+
+
+Với $M_{11}=\begin{bmatrix}-2&x\\- x&-3\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{11}=(-2)(-3)-(x)(- x)=x^{2} + 6.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}- x&x\\- x&-3\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=- x \left(x + 3\right).
+$$
+
+
+
+Với $M_{12}=\begin{bmatrix}- x&x\\- x&-3\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{12}=(- x)(-3)-(x)(- x)=x \left(x + 3\right).
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}- x&-2\\- x&- x\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=x \left(x - 2\right).
+$$
+
+
+
+Với $M_{13}=\begin{bmatrix}- x&-2\\- x&- x\end{bmatrix}$, dùng quy tắc tích chéo:
+
+
+
+$$
+\det M_{13}=(- x)(- x)-(-2)(- x)=x \left(x - 2\right).
+$$
+
+
+
+**Bước 2. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(1)(x^{2} + 6)+(x)(- x \left(x + 3\right))+(x)(x \left(x - 2\right))=- 2 \left(2 x^{2} - 3\right).
+$$
+
+
+
+**c.**
+
+**Bước 1. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}1&x&x^{2}&x^{3}\\x&x^{2}&x^{3}&1\\x^{2}&x^{3}&1&x\\x^{3}&1&x&x^{2}\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}x^{2}&x^{3}&1\\x^{3}&1&x\\1&x&x^{2}\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=- \left(x - 1\right)^{2} \left(x + 1\right)^{2} \left(x^{2} + 1\right)^{2}.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{11}=(x^{2})\bigl[(1)(x^{2})-(x)(x)\bigr]+(- x^{3})\bigl[(x^{3})(x^{2})-(x)(1)\bigr]+(1)\bigl[(x^{3})(x)-(1)(1)\bigr]=- \left(x - 1\right)^{2} \left(x + 1\right)^{2} \left(x^{2} + 1\right)^{2}.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}x&x^{3}&1\\x^{2}&1&x\\x^{3}&x&x^{2}\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=0.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{12}=(x)\bigl[(1)(x^{2})-(x)(x)\bigr]+(- x^{3})\bigl[(x^{2})(x^{2})-(x)(x^{3})\bigr]+(1)\bigl[(x^{2})(x)-(1)(x^{3})\bigr]=0.
+$$
+
+
+
+Xóa hàng 1, cột 3:
+
+
+
+$$
+M_{13}=\begin{bmatrix}x&x^{2}&1\\x^{2}&x^{3}&x\\x^{3}&1&x^{2}\end{bmatrix},\qquad C_{13}=(-1)^{1+3}\det M_{13}=0.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{13}=(x)\bigl[(x^{3})(x^{2})-(x)(1)\bigr]+(- x^{2})\bigl[(x^{2})(x^{2})-(x)(x^{3})\bigr]+(1)\bigl[(x^{2})(1)-(x^{3})(x^{3})\bigr]=0.
+$$
+
+
+
+Xóa hàng 1, cột 4:
+
+
+
+$$
+M_{14}=\begin{bmatrix}x&x^{2}&x^{3}\\x^{2}&x^{3}&1\\x^{3}&1&x\end{bmatrix},\qquad C_{14}=(-1)^{1+4}\det M_{14}=x \left(x - 1\right)^{2} \left(x + 1\right)^{2} \left(x^{2} + 1\right)^{2}.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{14}=(x)\bigl[(x^{3})(x)-(1)(1)\bigr]+(- x^{2})\bigl[(x^{2})(x)-(1)(x^{3})\bigr]+(x^{3})\bigl[(x^{2})(1)-(x^{3})(x^{3})\bigr]=- x \left(x - 1\right)^{2} \left(x + 1\right)^{2} \left(x^{2} + 1\right)^{2}.
+$$
+
+
+
+**Bước 2. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(1)(- \left(x - 1\right)^{2} \left(x + 1\right)^{2} \left(x^{2} + 1\right)^{2})+(x)(0)+(x^{2})(0)+(x^{3})(x \left(x - 1\right)^{2} \left(x + 1\right)^{2} \left(x^{2} + 1\right)^{2})=\left(x - 1\right)^{3} \left(x + 1\right)^{3} \left(x^{2} + 1\right)^{3}.
+$$
+
+
+
+**d.**
+
+**Bước 1. Chọn cách khai triển.**
+
+Với $A=\begin{bmatrix}x&y&0&0\\0&x&y&0\\0&0&x&y\\y&0&0&x\end{bmatrix}$, khai triển theo hàng 1. Dấu các ô hàng này lần lượt là $+,-,+,-,\ldots$. Ô bằng 0 đóng góp 0 nên được bỏ qua.
+
+Xóa hàng 1, cột 1:
+
+
+
+$$
+M_{11}=\begin{bmatrix}x&y&0\\0&x&y\\0&0&x\end{bmatrix},\qquad C_{11}=(-1)^{1+1}\det M_{11}=x^{3}.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{11}=(x)\bigl[(x)(x)-(y)(0)\bigr]+(- y)\bigl[(0)(x)-(y)(0)\bigr]=x^{3}.
+$$
+
+
+
+Xóa hàng 1, cột 2:
+
+
+
+$$
+M_{12}=\begin{bmatrix}0&y&0\\0&x&y\\y&0&x\end{bmatrix},\qquad C_{12}=(-1)^{1+2}\det M_{12}=- y^{3}.
+$$
+
+
+
+Định thức con cấp 3 được tính tiếp theo hàng đầu:
+
+
+
+$$
+\det M_{12}=(- y)\bigl[(0)(x)-(y)(y)\bigr]=y^{3}.
+$$
+
+
+
+**Bước 2. Nhân hệ số với phần bù rồi cộng.**
+
+
+
+$$
+\det A=(x)(x^{3})+(y)(- y^{3})=\left(x - y\right) \left(x + y\right) \left(x^{2} + y^{2}\right).
+$$
+
+
+
+ Tiếp theo giải điều kiện định thức bằng 0:
 
 **a.** $\left(x + y\right) \left(x^{2} - x y + y^{2}\right)$.
 
