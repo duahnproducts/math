@@ -2,7 +2,7 @@
 import Khung from '@/layouts/Khung.astro';
 import { DE_GIUA_KI } from '@/lib/de-giua-ki';
 import { taoDuongDan } from '@/lib/duong-dan';
-import { mdSangHtml } from '@/lib/tu-tao/hien-thi';
+import { mdHuongDanSangHtml, mdSangHtml } from '@/lib/tu-tao/hien-thi';
 const d = taoDuongDan(import.meta.env.BASE_URL);
 ---
 <Khung tieuDe="Kiểm tra giữa kì Đại số · 60 phút" moTa="Đề tự soạn Chương 1–3: 6 câu, 10 điểm, 60 phút, lời giải đầy đủ và thang điểm từng ý." duongDan={[{ten: 'Đại số tuyến tính', href: d.mon('dai-so')}, {ten: 'Kiểm tra giữa kì'}]} tabDuoi="mon">
@@ -53,7 +53,7 @@ const d = taoDuongDan(import.meta.env.BASE_URL);
         <p><strong>Cách tự chấm:</strong> cộng các ý làm đúng, tối đa 10 điểm. Mỗi dòng thang điểm cần cả kết quả và lập luận tương ứng; không trừ hai lần cho cùng một lỗi tính toán. Web không tự chấm phần tự luận.</p>
         {DE_GIUA_KI.map((c,i) => <details class="loi-giai-thi">
           <summary>Câu {i+1} · {c.ten} · {c.diem.toLocaleString('vi-VN')} điểm</summary>
-          <div set:html={mdSangHtml(c.loiGiai)} />
+          <div set:html={mdHuongDanSangHtml(c.loiGiai, { mon: 'dai-so' })} />
           <h3>Thang điểm câu {i+1}</h3>
           <ul>{c.cham.map(y => <li>{y.ten}: <strong>{y.diem.toLocaleString('vi-VN')} điểm</strong>.</li>)}</ul>
           <p>Ôn lại: {c.muc.map((m,j) => <>{j > 0 && ' · '}<a href={d.sach('dai-so', Number(m[0]), m)}>§{m}</a></>)}</p>

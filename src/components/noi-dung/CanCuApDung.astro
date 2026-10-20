@@ -1,0 +1,6 @@
+---
+import { canCuSangHtml } from '@/lib/can-cu/chu-thich';
+interface Props { ma: string; cau: string; }
+const { ma, cau } = Astro.props;
+---
+<Fragment set:html={canCuSangHtml(ma, cau)} />

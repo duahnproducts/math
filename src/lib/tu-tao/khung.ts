@@ -207,7 +207,7 @@ export const SCHEMA_BAI_GIANG: Schema = doiTuong({
       cho_gi: chuoi(`Bước 1 — Đề cho gì. ${MD}`),
       hoi_gi: chuoi(`Bước 2 — Đề hỏi gì. ${MD}`),
       chon_kien_thuc: chuoi(`Bước 3 — Chọn kiến thức, công thức nào và vì sao. ${MD}`),
-      giai: chuoi(`Bước 4 — Giải từng bước, không nhảy bước. ${MD}`),
+      giai: chuoi(`Bước 4 — Giải từng bước, không nhảy bước. Mỗi lần dùng công thức/định lý phải ghi tên, phát biểu hoặc công thức, điều kiện và lý do áp dụng ngay tại bước đó; dùng lại thì ghi lại. Không bịa số hiệu. ${MD}`),
       kiem_tra: chuoi(`Bước 5 — Kiểm tra kết quả. ${MD}`),
       tom_tat_cach_lam: chuoi(`Bước 6 — Tóm tắt cách làm để tự áp dụng cho bài khác. ${MD}`),
     },
@@ -228,7 +228,7 @@ export const SCHEMA_BAI_GIANG: Schema = doiTuong({
     doiTuong({
       do_kho: { type: 'string', enum: ['de', 'vua', 'kho'], description: 'de = dễ, vua = vừa, kho = khó.' },
       de: chuoi(`Đề bài. ${MD}`),
-      goi_y: chuoi(`Gợi ý hướng đi, không phải lời giải. ${MD}`),
+      goi_y: chuoi(`Gợi ý hướng đi, không phải lời giải. Ghi tên, công thức/phát biểu và điều kiện cần kiểm tra của mỗi căn cứ dùng tại đây; không chỉ dẫn sang danh sách chung. ${MD}`),
     }),
     'Mục 8 — Bài tập: đúng 3 bài theo thứ tự dễ, vừa, khó.',
   ),

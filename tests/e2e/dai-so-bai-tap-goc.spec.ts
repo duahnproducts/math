@@ -56,7 +56,7 @@ test('lời giải mới mở được, công thức rõ, dữ kiện sai đư�
   for(const [chapter,slug]of [[2,'2-7-3'],[2,'2-8-3'],[3,'3-4-2'],[3,'3-0-5']] as const){
     await page.goto(`dai-so/chuong-${chapter}/bai-tap/${slug}/`);
     const solution=page.locator('[data-tang="loi-giai"]');
-    await solution.locator('summary').click();
+    await solution.locator(':scope > summary').click();
     await page.getByRole('dialog',{name:/20 phút/}).getByRole('button',{name:/xem lời giải/}).click();
     await expect(solution).toHaveAttribute('open','');
     await expect(solution.locator('.ruot')).not.toBeEmpty();

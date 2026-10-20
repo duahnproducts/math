@@ -3,6 +3,27 @@
 Chạy scripts/cap-nhat-loi-giai-chi-tiet.py để đưa nội dung vào MDX.
 """
 
+MICRO_HINTS = {
+ '1/1-1/5': ('Dùng khái niệm nhu cầu thiết yếu: trước hết kể một nhu cầu sống cơ bản, rồi tìm hàng hóa hoặc dịch vụ đáp ứng nhu cầu đó.',
+             'Phân biệt hàng hóa là vật phẩm và dịch vụ là hoạt động; giải thích vì sao ví dụ đáp ứng nhu cầu trong hoàn cảnh đang xét. Bài này không cần công thức tính.'),
+ '1/1-4/22': ('Dùng khái niệm chuyên môn hóa và toàn cầu hóa: chọn một sản phẩm hoặc dịch vụ có các công đoạn ở nhiều quốc gia.',
+              'Tìm vai trò của thương mại, vận tải, thanh toán hoặc thông tin trong việc nối các công đoạn; không chỉ liệt kê tên sản phẩm.'),
+ '2/2-1/8': ('Dùng định nghĩa chi phí cơ hội: giá trị của phương án thay thế tốt nhất bị từ bỏ, không phải tổng giá trị của mọi phương án không chọn.',
+             'So sánh cùng thời hạn và điều kiện; ghi cả tiền và thời gian. Với đầu tư còn xét rủi ro, thanh khoản. Chưa đủ dữ kiện thì không gán một đáp số.'),
+ '3/3-3/27': ('Dùng mô hình cung–cầu, giữ các yếu tố khác không đổi: thời tiết thuận lợi tác động vào điều kiện sản xuất hay thị hiếu người mua?',
+              'Xác định đường cung dịch trái hay phải trước, giữ đường cầu cố định, rồi đọc giao điểm cân bằng mới. Không nhầm dịch chuyển đường với di chuyển dọc đường.'),
+ '3/3-3/28': ('Dùng khái niệm hàng thay thế và sự dịch chuyển đường cầu: thị trường cần xét là nguồn tin truyền thống, không phải tin số.',
+              'Giữ cung không đổi, xét người dùng muốn dùng nhiều hay ít tin truyền thống ở cùng mức giá. Số liệu 24% và 39% chưa đủ tính giá hoặc độ lớn dịch chuyển.'),
+ '3/3-3/29': ('Dùng so sánh tĩnh cung–cầu: tách chi phí lao động tăng và thay đổi nhu cầu do liên lạc số thành hai tác động riêng.',
+              'Lập hai hàng cho tác động lên giá và lượng. Chỉ kết luận một chiều khi hai tác động cùng hướng; nếu trái chiều thì cần biết độ lớn tương đối.'),
+}
+
+
+def goi_y_thao_luan(key):
+    hints=MICRO_HINTS[key]
+    return '\n\n'.join(f'<GoiY so={{{i}}}>\n\n{hint}\n\n</GoiY>' for i,hint in enumerate(hints,1))
+
+
 def six(given,ask,method,work,check,remember):
     return '\n\n'.join(f'**Bước {i}. {title}.**\n\n{text}' for i,(title,text) in enumerate(zip(
         ['Đọc dữ kiện','Xác định điều cần tìm','Chọn kiến thức và lý do','Giải từng bước','Kiểm tra kết quả','Cách tự làm lại'],

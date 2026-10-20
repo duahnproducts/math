@@ -6,7 +6,7 @@ from pathlib import Path
 import importlib.util,json,re,sys
 import sympy as S
 from sympy.parsing.sympy_parser import parse_expr,standard_transformations,implicit_multiplication_application
-from loi_giai_bien_soan import CALCULUS,ALGEBRA_INLINE,MICRO,four
+from loi_giai_bien_soan import CALCULUS,ALGEBRA_INLINE,MICRO,four,goi_y_thao_luan
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts/loi-giai-nicholson'))
@@ -164,7 +164,7 @@ def main():
             pattern=r'(<Slide so=\{'+str(slide)+r'\}[^>]*>.*?</Slide>)(?:\n\n(?:<!-- loi-giai-thao-luan-\d+ -->.*?<!-- /loi-giai-thao-luan -->|<div data-loi-giai-thao-luan="\d+">.*?</div>))?'
             def micro_body(m):
                 assert 'Câu hỏi thảo luận' in m[1],(p,slide)
-                return m[1]+f'\n\n<div data-loi-giai-thao-luan="{slide}">\n\n'+r'**Hướng dẫn thảo luận do người biên soạn bổ sung.**'+'\n\n<LoiGiai>\n\n'+format_math(answer).strip()+'\n\n</LoiGiai>\n\n</div>'
+                return m[1]+f'\n\n<div data-loi-giai-thao-luan="{slide}">\n\n'+r'**Hướng dẫn thảo luận do người biên soạn bổ sung.**'+'\n\n'+goi_y_thao_luan(f'{key}/{slide}')+'\n\n<LoiGiai>\n\n'+format_math(answer).strip()+'\n\n</LoiGiai>\n\n</div>'
             text,n=re.subn(pattern,micro_body,text,flags=re.S);assert n==1,(p,slide,n);count+=1
         write(p,text)
     print(f'Updated {count} existing/authored exercise solutions, including 30 calculus, 42 inline algebra and 6 microeconomics discussions.')

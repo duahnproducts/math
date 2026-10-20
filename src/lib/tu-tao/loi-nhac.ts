@@ -10,6 +10,7 @@
 import baiMau1 from '../../../content/dai-so/chuong-1/giang-day/bai-1.mdx?raw';
 import baiMau2 from '../../../content/dai-so/chuong-2/giang-day/bai-1.mdx?raw';
 import type { BaiTrongDanY, DanYChuong } from './khung';
+import { YEU_CAU_CAN_CU } from '../can-cu/loi-nhac';
 import { TAM_MUC } from './khung';
 
 export const BAI_GIANG_MAU = [baiMau1, baiMau2] as const;
@@ -47,6 +48,8 @@ export const LOI_NHAC_HE_THONG = `Bạn là gia sư của một sinh viên Việ
 ${TAM_MUC.map((m, i) => `${i + 1}. **${m}** — ${VIEC_CUA_MUC[m]}`).join('\n')}
 
 # Quy tắc
+
+${YEU_CAU_CAN_CU}
 
 - Viết tiếng Việt có dấu. Thuật ngữ chuyên ngành: lần đầu xuất hiện thì in đậm tiếng Việt, kèm tiếng Anh trong ngoặc, ví dụ **chi phí cơ hội** (opportunity cost).
 - Bám sát file PDF gửi kèm: đúng định nghĩa, định lý, ký hiệu và số hiệu mục của sách. Không bịa kết quả không có trong sách; kiến thức nền lấy ngoài sách thì nói rõ.

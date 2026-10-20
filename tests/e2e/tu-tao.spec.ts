@@ -124,6 +124,13 @@ test('tạo môn từ PDF, tạo bài giảng một chương, đọc bài, sao l
   await expect(page.locator('.bai-giang .bai-luyen')).toHaveCount(3);
   await expect(page.locator('[data-ghi-cong]')).toContainText('Claude Opus 5.5');
   await expect(page.locator('.muc-luc-trang a')).toHaveCount(8);
+  // Công thức khai báo trong bài đi cùng từng bước giải và gợi ý áp dụng.
+  expect(await page.locator('.bai-giang [data-can-cu]').count()).toBeGreaterThan(2);
+  await page.locator('.bai-luyen').first().locator(':scope > details > summary').click();
+  const canCu = page.locator('.bai-luyen').first().locator('[data-can-cu]').first();
+  await canCu.locator(':scope > summary').click();
+  await expect(canCu).toContainText('Khi đề cho các khoản chi.');
+  await expect(canCu.locator('[data-can-cu-ma="bai-tu-tao-1"]')).toBeVisible();
 
   // Bài 2 có nội dung cố chèn mã độc: bị lọc sạch
   await page.getByRole('link', { name: /Bài tiếp theo/ }).click();

@@ -137,7 +137,7 @@ test('Chương 3: 24 bài luyện tự soạn có gợi ý, lời giải, bộ l
       await expect(page.locator('.can-dung a').first()).toHaveAttribute('href', new RegExp(`sach/3-${i}/#`));
     }
   }
-  await page.locator('details[data-tang="goi-y-1"] summary').click();
+  await page.locator('details[data-tang="goi-y-1"] > summary').click();
   await expect(page.locator('details[data-tang="goi-y-1"]')).toHaveAttribute('open','');
 });
 

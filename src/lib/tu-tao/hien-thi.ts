@@ -14,6 +14,7 @@ import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import { unified } from 'unified';
 import { NHAN_DO_KHO, TAM_MUC, type BaiGiangTuTao } from './khung';
+import rehypeCanCu, { type TuyChonCanCu } from '../can-cu/chu-thich';
 
 const LOP_MATH = ['language-math', 'math-inline', 'math-display'];
 
@@ -42,15 +43,18 @@ function haCapTieuDe() {
   return (cay: NutMd) => duyet(cay);
 }
 
-const boXuLy = unified()
+function taoBoXuLy(canCu?: TuyChonCanCu) {
+  const processor = unified()
   .use(remarkParse)
   .use(remarkGfm)
   .use(remarkMath)
   .use(haCapTieuDe)
   .use(remarkRehype) // không bật allowDangerousHtml: HTML thô trong Markdown bị bỏ
-  .use(rehypeSanitize, SCHEMA_LOC)
-  .use(rehypeKatex, { strict: 'ignore', output: 'htmlAndMathml' })
-  .use(rehypeStringify);
+  .use(rehypeSanitize, SCHEMA_LOC);
+  if (canCu) processor.use(rehypeCanCu, { ...canCu, toanVan: true });
+  return processor.use(rehypeKatex, { strict: 'ignore', output: 'htmlAndMathml' }).use(rehypeStringify);
+}
+const boXuLy = taoBoXuLy();
 
 /**
  * Dòng chỉ có "$$…$$" là công thức riêng dòng. remark-math chỉ hiểu vậy khi $$ nằm
@@ -63,6 +67,11 @@ function tachCongThucRiengDong(md: string): string {
 /** Markdown (có công thức $…$) → HTML đã lọc sạch. */
 export function mdSangHtml(md: string): string {
   return String(boXuLy.processSync(tachCongThucRiengDong(md))).trim();
+}
+
+/** Chỉ gọi cho hướng dẫn; đề bài/bản dịch tiếp tục dùng mdSangHtml. */
+export function mdHuongDanSangHtml(md: string, options: TuyChonCanCu = {}): string {
+  return String(taoBoXuLy(options).processSync(tachCongThucRiengDong(md))).trim();
 }
 
 /** Như mdSangHtml, nhưng bỏ thẻ <p> bao ngoài khi chỉ có một đoạn — dùng trong tiêu đề, ô bảng. */
@@ -115,8 +124,11 @@ function hop(loai: string, noiDung: string, tieuDe?: string): string {
 }
 
 /** Một bài giảng 8 mục → HTML đặt trong <div class="van-ban bai-giang">. */
-export function baiGiangSangHtml(b: BaiGiangTuTao): string {
+export function baiGiangSangHtml(b: BaiGiangTuTao, tenMon = ''): string {
   const phan: string[] = [];
+  const normalized=tenMon.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replaceAll('đ','d').toLowerCase();
+  const mon=/dai so|linear algebra/.test(normalized)?'dai-so':/giai tich|analysis|calculus/.test(normalized)?'giai-tich':/kinh te|economics/.test(normalized)?'vi-mo':undefined;
+  const canCu={mon,congThuc:b.cong_thuc};
 
   phan.push(tieuDeMuc(0), hop('y-tuong', mdSangHtml(b.y_tuong)));
   phan.push(tieuDeMuc(1), mdSangHtml(b.hinh_dung));
@@ -140,7 +152,9 @@ export function baiGiangSangHtml(b: BaiGiangTuTao): string {
     const noiDung = b.vi_du_mau[khoa].trim();
     if (!noiDung) return;
     phan.push(`<h4>Bước ${i + 1} — ${ten}</h4>`);
-    phan.push(khoa === 'tom_tat_cach_lam' ? hop('tom-tat', mdSangHtml(noiDung)) : mdSangHtml(noiDung));
+    const html = khoa === 'cho_gi' || khoa === 'hoi_gi'
+      ? mdSangHtml(noiDung) : mdHuongDanSangHtml(noiDung, { ...canCu, nguCanh: b.vi_du_mau.de });
+    phan.push(khoa === 'tom_tat_cach_lam' ? hop('tom-tat', html) : html);
   });
 
   phan.push(tieuDeMuc(5));
@@ -157,7 +171,7 @@ export function baiGiangSangHtml(b: BaiGiangTuTao): string {
   // Luôn dễ → vừa → khó, kể cả bài nhập từ file .json xếp lộn
   const baiTap = [...b.bai_tap].sort((p, q) => THU_TU_DO_KHO[p.do_kho] - THU_TU_DO_KHO[q.do_kho]);
   baiTap.forEach((bt, i) => {
-    const goiY = bt.goi_y.trim() ? `<details><summary>Gợi ý</summary>${mdSangHtml(bt.goi_y)}</details>` : '';
+    const goiY = bt.goi_y.trim() ? `<details><summary>Gợi ý</summary>${mdHuongDanSangHtml(bt.goi_y, { ...canCu, nguCanh: bt.de })}</details>` : '';
     phan.push(
       `<div class="bai-luyen"><p class="dau"><span class="pill ${LOP_DO_KHO[bt.do_kho]}">${NHAN_DO_KHO[bt.do_kho]}</span> Bài ${b.so}.${i + 1}</p>${mdSangHtml(bt.de)}${goiY}</div>`,
     );

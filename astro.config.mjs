@@ -5,6 +5,7 @@ import react from '@astrojs/react';
 import { unified } from '@astrojs/markdown-remark';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import rehypeCanCu from './src/lib/can-cu/chu-thich.ts';
 
 // Web chạy ở https://duahnproducts.github.io/math/ (repo duahnproducts/math).
 // Mọi link nội bộ phải đi qua BASE_URL — dùng hàm trong src/lib/duong-dan.ts.
@@ -18,7 +19,7 @@ export default defineConfig({
     // Cần unified để KaTeX dựng công thức thành HTML lúc build.
     processor: unified({
       remarkPlugins: [remarkMath],
-      rehypePlugins: [[rehypeKatex, { strict: 'ignore', output: 'htmlAndMathml' }]],
+      rehypePlugins: [[rehypeCanCu, { dangMdx: true }], [rehypeKatex, { strict: 'ignore', output: 'htmlAndMathml' }]],
     }),
   },
   integrations: [mdx(), react()],

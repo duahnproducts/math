@@ -11,8 +11,8 @@ test('vòng học Đại số và Học tiếp lưu qua tải lại', async ({ p
   await danhDau.click();
   await expect(danhDau).toHaveAttribute('aria-pressed', 'true');
   await page.goto('dai-so/chuong-1/bai-tap/1-1-1/');
-  await page.locator('details[data-tang="goi-y-1"] summary').click();
-  await page.locator('details[data-tang="goi-y-2"] summary').click();
+  await page.locator('details[data-tang="goi-y-1"] > summary').click();
+  await page.locator('details[data-tang="goi-y-2"] > summary').click();
   await expect(page.locator('details[data-tang="goi-y-2"]')).toHaveAttribute('open', '');
   await page.getByRole('button', { name: 'Cần gợi ý' }).click();
   await page.reload();
@@ -28,12 +28,12 @@ test('vòng học Đại số và Học tiếp lưu qua tải lại', async ({ p
 test('lời giải vẫn hỏi xác nhận 20 phút', async ({ page }) => {
   await page.goto('dai-so/chuong-1/bai-tap/1-1-1/');
   const loiGiai = page.locator('details[data-tang="loi-giai"]');
-  await loiGiai.locator('summary').click();
+  await loiGiai.locator(':scope > summary').click();
   const hoi = page.getByRole('dialog', { name: /20 phút/ });
   await expect(hoi).toBeVisible();
   await hoi.getByRole('button', { name: /Chưa/ }).click();
   await expect(loiGiai).not.toHaveAttribute('open', '');
-  await loiGiai.locator('summary').click();
+  await loiGiai.locator(':scope > summary').click();
   await page.getByRole('dialog', { name: /20 phút/ }).getByRole('button', { name: /xem lời giải/ }).click();
   await expect(loiGiai).toHaveAttribute('open', '');
 });

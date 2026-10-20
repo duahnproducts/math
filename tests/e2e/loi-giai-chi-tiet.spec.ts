@@ -12,7 +12,7 @@ test('mở lời giải chi tiết trong bài giảng của cả ba môn, đọc
     await expect(answers).toHaveCount(total);
     for(const answer of await answers.all()){
       await expect(answer).not.toHaveAttribute('open','');
-      await answer.locator('summary').click();
+      await answer.locator(':scope > summary').click();
       const dialog=page.getByRole('dialog',{name:/20 phút/});
       if(await dialog.isVisible())await dialog.getByRole('button',{name:/xem lời giải/}).click();
       await expect(answer).toHaveAttribute('open','');
@@ -29,7 +29,7 @@ test('mở lời giải chi tiết trong bài giảng của cả ba môn, đọc
 test('bài 3.1.7 trình bày từng hệ số khử và giữ chức năng tự đánh giá',async({page})=>{
   await page.goto('dai-so/chuong-3/bai-tap/3-1-7/');
   const solution=page.locator('[data-tang="loi-giai"]');
-  await solution.locator('summary').click();
+  await solution.locator(':scope > summary').click();
   await page.getByRole('dialog',{name:/20 phút/}).getByRole('button',{name:/xem lời giải/}).click();
   await expect(solution).toContainText('Đổi hàng 1 và 2');
   await expect(solution).toContainText('Đổi hàng 2 và 3');

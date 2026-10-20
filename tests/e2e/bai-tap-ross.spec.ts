@@ -10,7 +10,7 @@ test('163 bài Ross đều có trang, công thức và đủ tầng hướng d�
     const response=await request.get(`giai-tich/chuong-${chuong}/bai-tap/${so.replaceAll('.','-')}/`);
     expect(response.ok(),so).toBe(true);
     const html=await response.text();
-    for(const marker of ['data-the-bai-tap-chi-tiet','data-tang="goi-y-1"','data-tang="goi-y-2"','data-tang="loi-giai"','Bước 6.'])expect(html,so).toContain(marker);
+    for(const marker of ['data-the-bai-tap-chi-tiet','data-tang="goi-y-1"','data-tang="goi-y-2"','data-tang="loi-giai"','Bước 6.','data-can-cu'])expect(html,so).toContain(marker);
     expect(html,so).not.toContain('katex-error');
     expect(html,so).not.toContain('Chưa có hướng dẫn');
     expect(html,so).toContain(`Bài ${so}`);
@@ -50,12 +50,12 @@ test('10 bài giảng và bảng đối chiếu nối tới bài Ross đúng m�
 test('gợi ý mở theo tầng, lời giải và tự đánh giá giữ sau tải lại, lọc bài cần làm lại',async({page})=>{
   await page.goto('giai-tich/chuong-2/bai-tap/15-8/');
   const first=page.locator('[data-tang="goi-y-1"]'),second=page.locator('[data-tang="goi-y-2"]'),answer=page.locator('[data-tang="loi-giai"]');
-  await second.locator('summary').click();
+  await second.locator(':scope > summary').click();
   await expect(first).toHaveAttribute('open','');
   await expect(second).not.toHaveAttribute('open','');
-  await second.locator('summary').click();
+  await second.locator(':scope > summary').click();
   await expect(second).toHaveAttribute('open','');
-  await answer.locator('summary').click();
+  await answer.locator(':scope > summary').click();
   await page.getByRole('dialog',{name:/20 phút/}).getByRole('button',{name:/xem lời giải/}).click();
   await expect(answer).toHaveAttribute('open','');
   for(let step=1;step<=6;step++)await expect(answer).toContainText(`Bước ${step}.`);
@@ -74,7 +74,7 @@ test('bài có bảng, chứng minh dài và công thức đọc được trên 
     const positions=await page.evaluate(()=>['.de','[data-kien-thuc-ross]','[data-tang="goi-y-1"]'].map(s=>document.querySelector(s)!.getBoundingClientRect().top));
     expect(positions[0]).toBeLessThan(positions[1]);
     expect(positions[1]).toBeLessThan(positions[2]);
-    await page.locator('[data-tang="loi-giai"] summary').click();
+    await page.locator('[data-tang="loi-giai"] > summary').click();
     await page.getByRole('dialog',{name:/20 phút/}).getByRole('button',{name:/xem lời giải/}).click();
     await expect(page.locator('.katex-error')).toHaveCount(0);
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);

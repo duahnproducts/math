@@ -5,6 +5,7 @@ import BaGoc from './noi-dung/BaGoc.astro';
 import BaiLuyen from './noi-dung/BaiLuyen.astro';
 import BoDe from './noi-dung/BoDe.astro';
 import De from './noi-dung/De.astro';
+import CanCuApDung from './noi-dung/CanCuApDung.astro';
 import DinhLy from './noi-dung/DinhLy.astro';
 import DinhNghia from './noi-dung/DinhNghia.astro';
 import GhiChu from './noi-dung/GhiChu.astro';
@@ -55,6 +56,7 @@ export const thanhPhanMdx = {
   BaiLuyen,
   BoDe,
   De,
+  CanCuApDung,
   DinhLy,
   DinhNghia,
   GhiChu,

@@ -755,6 +755,32 @@ section.phan > p.ghi {
   font-size: 1.06em;
 }
 
+/* Căn cứ nằm ngay cạnh lần áp dụng, đọc được khi không có JavaScript. */
+details.can-cu-ap-dung {
+  margin: 6px 0 14px;
+  padding: 8px 11px;
+  border-left: 3px solid var(--accent);
+  border-radius: var(--r-sm);
+  background: var(--surface-2);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.can-cu-ap-dung > summary {
+  cursor: pointer;
+  color: var(--text-2);
+  font-weight: 500;
+}
+.can-cu-ap-dung .noi-dung-can-cu { margin-top: 10px; max-width: 100%; overflow-x: auto; padding-bottom: 4px; }
+.can-cu-ap-dung p { margin: 5px 0; }
+.can-cu-ap-dung section + section { border-top: 1px solid var(--line); margin-top: 10px; padding-top: 8px; }
+.can-cu-ap-dung .katex { font-size: 1em; }
+.can-cu-ap-dung .katex-display { max-width: 100%; }
+@media print {
+  .can-cu-ap-dung > .noi-dung-can-cu { display: block !important; }
+}
+
 /* ---------- Hộp màu theo loại nội dung (nhất quán ở mọi nơi) ----------
    định nghĩa = xanh dương · định lý / bổ đề / hệ quả / tiên đề = xanh lá
    ví dụ = cam · ghi chú = xám · lỗi hay mắc = đỏ · ý tưởng / tóm tắt = màu nhấn */

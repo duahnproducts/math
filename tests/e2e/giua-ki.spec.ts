@@ -20,8 +20,11 @@ test('đi từ môn học, làm bài, khôi phục, kết thúc và xem lời gi
   await page.getByRole('button',{name:'Xem đáp án và tự chấm'}).click();
   await expect(page.locator('#noi-dung-dap-an')).toBeVisible();
   for (const answer of await page.locator('.loi-giai-thi').all()) {
-    await answer.locator('summary').click();
+    await answer.locator(':scope > summary').click();
     await expect(answer.getByRole('heading',{name:/Thang điểm câu/})).toBeVisible();
+    const canCu=answer.locator('[data-can-cu]').first();
+    await canCu.locator(':scope > summary').click();
+    await expect(canCu).toContainText('Điều kiện:');
   }
   await expect(page.locator('.katex-error')).toHaveCount(0);
   await page.getByRole('button',{name:'Làm lại đề',exact:true}).click();
@@ -40,7 +43,7 @@ test('hết giờ sau khi tải lại vẫn khóa bài; điện thoại không t
   await expect(page.locator('[data-bai-lam="0"]')).toBeDisabled();
   await expect(page.locator('[data-bai-lam="0"]')).toHaveValue('Bài đã lưu');
   await page.getByRole('button',{name:'Xem đáp án và tự chấm'}).click();
-  await page.locator('.loi-giai-thi').nth(4).locator('summary').click();
+  await page.locator('.loi-giai-thi').nth(4).locator(':scope > summary').click();
   expect(await page.evaluate(() => document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });
 

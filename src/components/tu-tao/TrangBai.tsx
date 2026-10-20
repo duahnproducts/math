@@ -26,7 +26,7 @@ export default function TrangBai() {
   const cacBai = chuong ? [...chuong.bai].sort((a, b) => a.so - b.so) : [];
   const viTri = cacBai.findIndex((b) => b.so === thamSo?.bai);
   const bai = viTri >= 0 ? cacBai[viTri] : undefined;
-  const html = useMemo(() => (bai ? baiGiangSangHtml(bai) : ''), [bai]);
+  const html = useMemo(() => (bai ? baiGiangSangHtml(bai, mon?.ten) : ''), [bai, mon?.ten]);
 
   useEffect(() => {
     if (bai && mon) document.title = `Bài ${bai.so}: ${bai.tieu_de} · ${mon.ten} · Hochanh`;
