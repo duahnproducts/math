@@ -1,5 +1,6 @@
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
+import { spawnSync } from 'node:child_process';
 import { compile, createProcessor } from '@mdx-js/mdx';
 import remarkMath from 'remark-math';
 import remarkRehype from 'remark-rehype';
@@ -118,6 +119,13 @@ test('dữ liệu không tin cậy vẫn được lọc trước khi thêm chú 
 test('cùng yêu cầu cho gia sư và bài tự tạo: từng lần, phát biểu, điều kiện và không bịa số hiệu',()=>{
   expect(LOI_NHAC_GIA_SU).toContain(YEU_CAU_CAN_CU);
   expect(LOI_NHAC_HE_THONG).toContain(YEU_CAU_CAN_CU);
+});
+
+test('máy chủ gia sư nạp được lời nhắc bằng Node trực tiếp như lệnh chat:serve',()=>{
+  const result=spawnSync(process.execPath,['--experimental-strip-types','--input-type=module','-e',
+    "import('./src/lib/gia-su.ts').then(m=>{if(!m.LOI_NHAC_GIA_SU.includes('NGAY TẠI BƯỚC ĐÓ'))process.exit(1);})"],
+    {encoding:'utf8',windowsHide:true});
+  expect(result.status,result.stderr||result.error?.message).toBe(0);
 });
 
 test('bốn trang thảo luận có đủ hai tầng gợi ý cho cả sáu câu, ngoài bản dịch Slide',()=>{

@@ -1,4 +1,4 @@
-import { YEU_CAU_CAN_CU } from './can-cu/loi-nhac';
+import { YEU_CAU_CAN_CU } from './can-cu/loi-nhac.ts';
 
 export interface TinNhan { role: 'user' | 'assistant'; content: string }
 export interface NguCanh { tieuDe: string; duongDan: string; noiDung: string; trichDan: string }
