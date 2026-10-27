@@ -127,11 +127,16 @@ export function nhanBaiTap(so: string, tuSoan = false): string {
 
 /** '1.2' → 1 */
 export function chuongCuaMuc(muc: string, mon?: string): number {
-  if (mon === 'giai-tich' && /^\d+$/.test(muc)) return Number(muc) <= 6 ? 1 : 2;
+  if (mon === 'giai-tich' && /^\d+$/.test(muc)) {
+    const so = Number(muc);
+    const bienChuong = [6, 16, 22, 27, 31, 36, 38];
+    const viTri = bienChuong.findIndex((cuoi) => so <= cuoi);
+    return viTri < 0 ? 0 : viTri + 1;
+  }
   return Number(muc.split('.')[0]);
 }
 
-/** Ross dùng §1–§6 ở chương 1, §7–§15 ở chương 2; các sách khác mã hóa chương trong số mục. */
+/** Ross đánh số § xuyên chương; các sách khác mã hóa chương trong số mục. */
 export function chuongCuaBaiTap(so: string, mon: string): number {
   return chuongCuaMuc(mucCuaSo(so), mon);
 }

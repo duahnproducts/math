@@ -1,0 +1,146 @@
+---
+mon: giai-tich
+chuong: 2
+bai: 5
+tieu_de: "§11. Dãy con và Bolzano-Weierstrass"
+y_tuong: "Một dãy có thể lên xuống mãi, nhưng ta vẫn có thể chọn một hàng con ổn định bằng cách giữ đúng thứ tự các số hạng."
+phu_muc: ["11"]
+---
+
+import HinhRossMoRong from '../../../../src/figures/HinhRossMoRong.astro';
+
+## Ý tưởng trong 1 câu
+
+> Một dãy có thể lên xuống mãi, nhưng ta vẫn có thể chọn một hàng con ổn định bằng cách giữ đúng thứ tự các số hạng.
+
+## Hình dung trực quan
+
+Bạn quay một đoạn phim dài. Chọn các khung hình số 2, 4, 6, 8,… tạo một đoạn phim ngắn hơn nhưng vẫn đúng trình tự. Chọn 8 rồi 2 không phải lấy dãy con theo thứ tự; phát đi phát lại khung hình số 2 cũng không tạo dãy con vô hạn.
+
+Với nhiệt độ aₙ=2+(−1)ⁿ, các ngày chẵn có nhiệt độ 3, ngày lẻ có nhiệt độ 1. Toàn bộ dãy không ổn định, nhưng mỗi nhóm chẵn/lẻ đều ổn định. Dãy con giúp nhìn những cách mà một dãy tiến gần các đích khác nhau.
+
+<HinhRossMoRong loai="subsequence" />
+
+*Hai dãy con chẵn và lẻ của 2+(−1)^n. Cả hai có giới hạn, nhưng giới hạn khác nhau.*
+
+## Kiến thức cần biết
+
+Ôn dãy và tập giá trị, hội tụ và đơn điệu. Chỉ số và giá trị là hai thứ khác nhau: nₖ là vị trí được chọn, còn aₙₖ là giá trị tại vị trí ấy. nₖ phải tăng nghiêm ngặt, nhưng aₙₖ không bắt buộc tăng.
+
+Từ n₁&lt;n₂&lt;… và nₖ nguyên dương, ta có nₖ≥k. Vì vậy khi k lớn, chỉ số gốc cũng lớn. Một dãy con của một dãy con vẫn là dãy con của dãy gốc: ghép hai quy tắc chọn chỉ số vẫn giữ thứ tự tăng.
+
+## Công thức / Định nghĩa
+
+**Dãy con:** $b_k=a_{n_k}$, với $n_1<n_2<\cdots$. k là số thứ tự trong dãy mới, nₖ là số thứ tự trong dãy cũ. Có thể chọn tất cả số hạng hoặc bỏ bớt vô hạn số hạng.
+
+**Kế thừa giới hạn:** nếu aₙ→L thì mọi dãy con aₙₖ→L, kể cả giới hạn ±∞. Cho ε&gt;0 và mốc N của dãy gốc; k&gt;N kéo theo nₖ&gt;N, nên sai số vẫn &lt;ε.
+
+**Giới hạn dãy con:** một giá trị L trong R hoặc ±∞ là giới hạn dãy con nếu có một dãy con tiến tới L. Với L hữu hạn, điều này tương đương: với mọi ε&gt;0, có vô hạn chỉ số n thỏa |aₙ−L|&lt;ε. “Vô hạn chỉ số” không nhất thiết là vô hạn giá trị khác nhau.
+
+**Cách xây dựng:** chọn n₁ có sai số &lt;1; chọn n₂&gt;n₁ có sai số &lt;1/2; tiếp tục chọn nₖ&gt;nₖ₋₁ có sai số &lt;1/k. Mỗi lựa chọn làm được vì chỉ có hữu hạn chỉ số bị cấm ở đầu, trong khi có vô hạn chỉ số phù hợp. Dãy vừa tạo tiến tới L. Có thể còn chọn nó đơn điệu: nếu L xuất hiện vô hạn lần, lấy dãy hằng; nếu không, một phía của L có vô hạn số hạng sát L tùy ý, rồi chọn ngày càng sát biên từ phía ấy.
+
+Nếu dãy không bị chặn trên, có dãy con tăng nghiêm ngặt tới +∞: sau mỗi chỉ số đã chọn, phần đuôi vẫn không bị chặn; chọn số hạng kế tiếp lớn hơn cả số hạng cũ và k. Không bị chặn dưới thì làm tương tự cho −∞.
+
+**Mọi dãy thực có dãy con đơn điệu.** Gọi một vị trí là “đỉnh” nếu giá trị của nó lớn hơn mọi giá trị phía sau. Nếu có vô hạn đỉnh, chọn chúng theo thứ tự được dãy con giảm. Nếu chỉ có hữu hạn đỉnh, bắt đầu sau đỉnh cuối: mỗi giá trị đều có một giá trị phía sau lớn hơn hoặc bằng nó, nên chọn được dãy con tăng.
+
+**Bolzano-Weierstrass:** mọi dãy thực bị chặn có một dãy con hội tụ hữu hạn. Chọn dãy con đơn điệu như trên; nó vẫn bị chặn; §10 bảo đảm hội tụ. Điều này không nói rằng cả dãy gốc hội tụ.
+
+Gọi S là tập tất cả giới hạn dãy con, kể cả ±∞. S không rỗng; liminf aₙ là phần tử nhỏ nhất S, limsup aₙ là phần tử lớn nhất S. Hai biên này đều đạt bởi một dãy con, và có thể đạt bởi dãy con đơn điệu. Dãy gốc có giới hạn mở rộng khi và chỉ khi S chỉ có một phần tử.
+
+**S giữ các điểm giới hạn của chính nó:** nếu Lⱼ∈S đều hữu hạn và Lⱼ→L, thì L∈S. Khi L hữu hạn, chọn nⱼ&gt;nⱼ₋₁ với |aₙⱼ−Lⱼ|&lt;1/j; tam giác cho |aₙⱼ−L|≤1/j+|Lⱼ−L|→0. Khi L=±∞, dãy gốc không bị chặn theo phía tương ứng, nên có dãy con tới biên ấy.
+
+## Ví dụ mẫu
+
+### Ví dụ A: Một dãy có hai đích
+
+**Bước 1:** aₙ=2+(−1)ⁿ+1/n. **Bước 2:** tìm giới hạn dãy con và quyết định hội tụ. **Bước 3:** tách chỉ số chẵn/lẻ vì dấu đổi theo tính chẵn lẻ.
+
+**Bước 4:** nₖ=2k cho $a_{2k}=3+1/(2k)\to3$. mₖ=2k−1 cho $a_{2k-1}=1+1/(2k-1)\to1$. Nếu một dãy con chứa vô hạn cả hai loại chỉ số thì nó có hai dãy con nhỏ hơn tiến tới hai đích khác nhau, nên không hội tụ. Nếu cuối cùng chỉ còn một loại, giới hạn là 1 hoặc 3. Vậy S=&#123;1,3&#125;; liminf=1, limsup=3, dãy gốc không hội tụ.
+
+**Bước 5:** dãy vẫn bị chặn, không trái Bolzano-Weierstrass vì có nhiều dãy con hội tụ. **Bước 6:** tách nhóm → tìm đích mỗi nhóm → loại khả năng có đích khác.
+
+### Ví dụ B: Chọn một dãy con tới vô cực
+
+**Bước 1:** bₙ=(−1)ⁿn². **Bước 2:** tạo dãy con tới +∞ và −∞. **Bước 3:** chọn chỉ số theo dấu. **Bước 4:** b₂ₖ=4k²→+∞; b₂ₖ₋₁=−(2k−1)²→−∞. **Bước 5:** các chỉ số đều tăng; dãy gốc không có một giới hạn mở rộng duy nhất. **Bước 6:** chọn dãy con để phơi bày hành vi từng phần đuôi.
+
+### Ví dụ C: Q đếm được nhưng dãy liệt kê có mọi đích thực
+
+**Bước 1:** một dãy liệt kê mọi số hữu tỉ, mỗi hữu tỉ xuất hiện ít nhất một lần. **Bước 2:** vì sao có dãy con tới bất kỳ L thực? **Bước 3:** dùng tính trù mật của Q và tiêu chuẩn vô hạn chỉ số gần L.
+
+**Bước 4:** mỗi khoảng (L−ε,L+ε) chứa vô hạn hữu tỉ khác nhau, nên dãy liệt kê có vô hạn chỉ số trong khoảng ấy. Chọn nₖ tăng với sai số &lt;1/k. **Bước 5:** một dãy có thể có vô số giới hạn dãy con; điều này không biến Q thành R. **Bước 6:** mật độ cho nhiều ứng viên; chọn chỉ số tăng để có dãy con thật.
+
+## Lỗi dễ mắc
+
+- **Một dãy con hội tụ nên cả dãy hội tụ:** sai với (−1)ⁿ. Muốn bác bỏ hội tụ, hai dãy con có hai đích khác nhau là đủ.
+- **Chọn lại cùng chỉ số mãi:** nₖ phải tăng nghiêm ngặt; giá trị có thể lặp, chỉ số không thể lặp.
+- **Bỏ điều kiện bị chặn của Bolzano-Weierstrass:** dãy n không có dãy con hội tụ hữu hạn.
+
+## Tóm tắt 30 giây
+
+> Dãy con giữ thứ tự nhưng được bỏ số hạng. Dãy gốc hội tụ thì mọi dãy con có cùng đích. Dãy bị chặn luôn có ít nhất một dãy con hội tụ.
+
+**HIỂU:** đích của từng nhánh có thể khác đích của toàn dãy. **NHỚ:** nₖ tăng; nₖ≥k; Bolzano-Weierstrass cần bị chặn. **LÀM:** chọn chẵn/lẻ hoặc chọn sai số &lt;1/k.
+
+## Bài tập
+
+### DỄ - Viết chỉ số chọn
+
+Với aₙ=5+(−1)ⁿ, viết tám số hạng đầu và hai dãy con hằng, nêu nₖ của mỗi dãy. **Gợi ý:** dùng nₖ=2k và nₖ=2k−1.
+
+<LoiGiai>
+
+**Bước 1.** $a_n=5+(-1)^n$.
+
+**Bước 2.** Viết tám số hạng và hai dãy con.
+
+**Bước 3.** Chỉ số chẵn/lẻ cho dấu $+1/-1$.
+
+**Bước 4.** Tám số đầu: $4,6,4,6,4,6,4,6$. Chọn $n_k=2k$ cho dãy hằng 6; $n_k=2k-1$ cho dãy hằng 4.
+
+**Bước 5.** Hai dãy chỉ số đều tăng nghiêm ngặt.
+
+**Bước 6.** Tách chỉ số, không đổi thứ tự số hạng.
+
+</LoiGiai>
+
+### VỪA - Có hội tụ không?
+
+Tìm S, limsup và liminf của bₙ=(−1)ⁿ+2/n. **Gợi ý:** tách chẵn/lẻ, rồi giải thích vì sao không có giới hạn dãy con khác hai giá trị tìm được.
+
+<LoiGiai>
+
+**Bước 1.** $b_n=(-1)^n+2/n$.
+
+**Bước 2.** Tìm tập giới hạn dãy con và hai biên.
+
+**Bước 3.** $2/n\to0$; nhánh chẵn và lẻ có hai đích.
+
+**Bước 4.** $b_{2k}\to1$, $b_{2k-1}\to-1$. Dãy con hội tụ không thể chứa vô hạn cả hai loại chỉ số, vì khi đó hai dãy con tiếp tục sẽ có hai đích khác nhau. Vì vậy $S=\{-1,1\}$, $\limsup b_n=1$, $\liminf b_n=-1$.
+
+**Bước 5.** Không có đích thứ ba từ các số hạng đầu.
+
+**Bước 6.** Xét các nhánh rồi loại trừ đích khác.
+
+</LoiGiai>
+
+### KHÓ - Một đích duy nhất của dãy bị chặn
+
+Cho (aₙ) bị chặn và mọi dãy con hội tụ đều có giới hạn L. Chứng minh aₙ→L. **Gợi ý:** nếu không, có ε₀&gt;0 và một dãy con luôn cách L ít nhất ε₀; áp dụng Bolzano-Weierstrass cho dãy con ấy.
+
+<LoiGiai>
+
+**Bước 1.** Dãy bị chặn, mọi dãy con hội tụ đều có giới hạn $L$.
+
+**Bước 2.** Chứng minh $a_n\to L$.
+
+**Bước 3.** Dùng phản chứng và Bolzano–Weierstrass.
+
+**Bước 4.** Nếu không hội tụ, có $\varepsilon_0>0$ và dãy con $a_{n_k}$ với $|a_{n_k}-L|\ge\varepsilon_0$. Vì bị chặn, nó có dãy con tiếp tục hội tụ. Giả thiết buộc đích là $L$, mâu thuẫn với khoảng cách luôn ít nhất $\varepsilon_0$.
+
+**Bước 5.** Tính bị chặn là điều kiện bảo đảm dãy con hội tụ.
+
+**Bước 6.** Phủ định giới hạn rồi lấy dãy con của dãy con.
+
+</LoiGiai>
+
+

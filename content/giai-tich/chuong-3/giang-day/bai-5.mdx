@@ -1,0 +1,102 @@
+---
+mon: giai-tich
+chuong: 3
+bai: 5
+tieu_de: "§21. Liên tục trong không gian metric và định lý Baire"
+y_tuong: "Thay khoảng cách trên trục số bằng một metric, ta vẫn giữ được cách kiểm soát sai số và sức mạnh của tính đầy đủ."
+phu_muc: ["21"]
+---
+
+import HinhRossMoRong from '../../../../src/figures/HinhRossMoRong.astro';
+
+## Ý tưởng trong 1 câu
+
+Liên tục nghĩa là khoảng cách đầu vào nhỏ làm khoảng cách đầu ra nhỏ; ý tưởng này vẫn đúng khi các điểm là vector hoặc hàm số.
+
+## Hình dung trực quan
+
+Vị trí trên bản đồ cần hai tọa độ. Hai vị trí gần nhau khi khoảng cách giữa chúng nhỏ, không cần ép chúng thành một số trên trục. Hàm nhiệt độ gán mỗi vị trí một số; liên tục nghĩa là dịch vị trí đủ ít thì nhiệt độ thay đổi ít.
+
+<HinhRossMoRong loai="metric" />
+
+## Kiến thức cần biết
+
+Ôn §13: metric $d(x,y)$ không âm, bằng 0 đúng khi hai điểm trùng, đối xứng và thỏa bất đẳng thức tam giác. Quả cầu mở $B_r(a)$ gồm các điểm cách $a$ ít hơn $r$. Một tập mở chứa một quả cầu nhỏ quanh mỗi điểm của nó. Không gian đầy đủ là không gian mà mọi dãy Cauchy đều hội tụ trong chính không gian ấy.
+
+Tập $D$ **trù mật** nếu mọi tập mở không rỗng đều gặp $D$. Tập $E$ **không trù mật ở đâu** nếu bao đóng $\overline E$ có phần trong rỗng. Hai khái niệm này khác nhau: $\mathbb Q$ trù mật trong $\mathbb R$ nên không phải là tập không trù mật ở đâu.
+
+## Công thức
+
+Cho $f:(S,d)\to(T,\rho)$. Liên tục tại $a$ nghĩa là
+
+$$\forall\varepsilon>0\ \exists\delta>0:\quad d(x,a)<\delta\Rightarrow\rho(f(x),f(a))<\varepsilon.$$
+
+$d$ đo đầu vào, $\rho$ đo đầu ra; không cần chúng là cùng một metric. Liên tục đều trên $E$ đòi một $\delta$ dùng chung cho mọi cặp điểm trong $E$.
+
+Các kết quả của Ross §21, diễn đạt lại:
+
+- $f$ liên tục trên $S$ khi và chỉ khi nghịch ảnh $f^{-1}(U)$ mở trong $S$ với mọi tập mở $U$ trong $T$. Nghịch ảnh là một tập hợp, không đòi $f$ có hàm ngược.
+- Ảnh liên tục của tập compact là compact. Hàm liên tục trên tập compact liên tục đều; nếu nhận giá trị thực thì đạt giá trị lớn nhất và nhỏ nhất.
+- **Baire:** trong không gian metric đầy đủ, giao đếm được của các tập mở trù mật vẫn trù mật. Tương đương, hợp đếm được các tập không trù mật ở đâu có phần bù trù mật. Không gian đầy đủ không rỗng không thể là hợp của đếm được các tập như vậy.
+
+**Vì sao tiêu chuẩn nghịch ảnh đúng?** Nếu $f(a)\in U$ mở, có quả cầu đầu ra quanh $f(a)$ nằm trong $U$. Liên tục cung cấp quả cầu đầu vào quanh $a$ nằm trong $f^{-1}(U)$. Chiều ngược lại áp dụng tính mở của nghịch ảnh cho quả cầu $B_\varepsilon(f(a))$.
+
+**Ý tưởng chứng minh Baire:** bắt đầu với tập mở không rỗng $V$. Lần lượt chọn các quả cầu đóng không rỗng lồng nhau, bán kính không quá $2^{-n}$, với quả cầu thứ $n$ nằm trong $U_n$ và trong quả cầu mở trước đó; bước đầu còn nằm trong $V$. Làm được vì $U_n$ mở và trù mật. Các tâm tạo dãy Cauchy; tính đầy đủ cho giới hạn. Các quả cầu đóng giữ giới hạn ấy, nên nó thuộc $V\cap\bigcap_n U_n$. Vì mọi $V$ đều gặp giao, giao trù mật.
+
+Một tập là **loại một** nếu là hợp đếm được của các tập không trù mật ở đâu; không như vậy thì là **loại hai**. Mỗi điểm đơn trong $\mathbb R$ không trù mật ở đâu. Do đó các tập đếm được là loại một, còn $\mathbb R$ là loại hai. Tập hoàn hảo không rỗng trong một không gian đầy đủ là tập đóng không có điểm cô lập; nó đầy đủ và không đếm được, vì từng điểm đơn không trù mật ở đâu trong chính tập đó. Baire còn dẫn đến kết quả Ross 21.11: một khoảng không suy biến không thể được phân hoạch thành hai hay nhiều khoảng đóng không suy biến; không được nhầm phát biểu này với hợp các khoảng có chồng lấn.
+
+## Ví dụ mẫu
+
+**Bước 1. Dữ kiện.** Cho $f:\mathbb R^2\to\mathbb R$, $f(p)=\|p\|$, với metric Euclid ở đầu vào và trị tuyệt đối ở đầu ra.
+
+**Bước 2. Mục tiêu.** Chứng minh liên tục đều.
+
+**Bước 3. Căn cứ.** Bất đẳng thức tam giác đảo cho $|\|p\|-\|q\||\le\|p-q\|$; nó trực tiếp nối hai sai số.
+
+**Bước 4. Thực hiện.** Cho $\varepsilon>0$, chọn $\delta=\varepsilon$. Nếu $\|p-q\|<\delta$ thì $|f(p)-f(q)|\le\|p-q\|<\varepsilon$.
+
+**Bước 5. Kiểm tra.** $\delta$ không phụ thuộc vị trí $p,q$, nên kết luận là liên tục đều trên toàn mặt phẳng.
+
+**Bước 6. Cách làm lại.** Tìm một bất đẳng thức chặn khoảng cách đầu ra bằng hằng số nhân khoảng cách đầu vào.
+
+## Lỗi dễ mắc
+
+- Nghịch ảnh của tập mở phải mở; ảnh của tập mở không nhất thiết mở. Hàm hằng là phản ví dụ.
+- Baire cần đầy đủ. Trong $\mathbb Q$, các điểm đơn là tập đóng không trù mật ở đâu nhưng hợp đếm được của chúng là cả $\mathbb Q$.
+- Tính không trù mật ở đâu phụ thuộc không gian đang xét. Một đường thẳng không có phần trong trong mặt phẳng, nhưng có phần trong khi coi chính nó là toàn không gian.
+
+## Tóm tắt 30 giây
+
+**HIỂU:** liên tục là kiểm soát khoảng cách, Baire là hệ quả của đầy đủ. **NHỚ:** nghịch ảnh tập mở; compact cho liên tục đều; giao đếm được mở trù mật. **LÀM:** chọn metric đúng, chặn sai số hoặc dùng nghịch ảnh; kiểm tra đầy đủ trước khi dùng Baire.
+
+## Bài tập
+
+### DỄ — Phép chiếu
+
+Chứng minh $p(x,y)=x$ liên tục đều trên $\mathbb R^2$. **Gợi ý:** so độ chênh tọa độ với khoảng cách Euclid.
+
+<LoiGiai>
+
+**Bước 1.** Hai điểm $u=(x,y)$ và $v=(s,t)$. **Bước 2.** Cần một $\delta$ chung. **Bước 3.** Dùng $|x-s|\le\sqrt{(x-s)^2+(y-t)^2}$. **Bước 4.** Chọn $\delta=\varepsilon$; $d(u,v)<\delta$ cho $|p(u)-p(v)|<\varepsilon$. **Bước 5.** Không phụ thuộc tọa độ. **Bước 6.** Chiếu tọa độ là ánh xạ Lipschitz với hằng số 1.
+
+</LoiGiai>
+
+### VỪA — Ảnh mở có bắt buộc không?
+
+Cho $f:\mathbb R\to\mathbb R$, $f(x)=0$. Xét ảnh và nghịch ảnh của tập mở. **Gợi ý:** ảnh của $\mathbb R$ là gì?
+
+<LoiGiai>
+
+**Bước 1.** Hàm hằng bằng 0. **Bước 2.** Kiểm tra tiêu chuẩn tập mở. **Bước 3.** Theo định nghĩa nghịch ảnh, chỉ cần biết $0$ có thuộc tập mở $U$ không. **Bước 4.** Nếu có thì $f^{-1}(U)=\mathbb R$; nếu không thì nghịch ảnh rỗng. Cả hai mở. Nhưng $f(\mathbb R)=\{0\}$ không mở trong $\mathbb R$. **Bước 5.** Hàm vẫn liên tục. **Bước 6.** Không đổi “nghịch ảnh” thành “ảnh” trong định lý.
+
+</LoiGiai>
+
+### KHÓ — Không thể liệt kê số thực
+
+Dùng Baire để chứng minh $\mathbb R$ không đếm được. **Gợi ý:** xét các điểm đơn của một danh sách giả định.
+
+<LoiGiai>
+
+**Bước 1.** Giả sử $\mathbb R=\{r_1,r_2,\ldots\}$. **Bước 2.** Tìm mâu thuẫn. **Bước 3.** $\mathbb R$ đầy đủ; mỗi $\{r_n\}$ đóng và có phần trong rỗng. **Bước 4.** Baire cấm không gian đầy đủ không rỗng là hợp đếm được các tập không trù mật ở đâu. Danh sách giả định lại biểu diễn đúng một hợp như vậy. **Bước 5.** Mâu thuẫn không dựa vào mật độ của hữu tỉ. **Bước 6.** Với bài toán đếm được, thử chuyển từng phần tử thành một tập nhỏ về mặt tôpô.
+
+</LoiGiai>

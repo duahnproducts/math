@@ -1,0 +1,156 @@
+---
+mon: giai-tich
+chuong: 2
+bai: 7
+tieu_de: "§13. Khoảng cách, tập mở/đóng và compact"
+y_tuong: "Khi biết cách đo khoảng cách, ta có thể nói về gần nhau, giới hạn và biên mà không cần mọi điểm nằm trên một đường thẳng."
+phu_muc: ["13"]
+---
+
+import HinhRossMoRong from '../../../../src/figures/HinhRossMoRong.astro';
+
+## Ý tưởng trong 1 câu
+
+> Khi biết cách đo khoảng cách, ta có thể nói về gần nhau, giới hạn và biên mà không cần mọi điểm nằm trên một đường thẳng.
+
+## Hình dung trực quan
+
+Một địa chỉ trên bản đồ có hai tọa độ. Hai điểm có thể đo theo đường thẳng hoặc theo quãng đường đi qua các phố vuông góc. Hai cách đo khác nhau nhưng đều đáp ứng những quy tắc cơ bản của khoảng cách.
+
+Tập mở cho phép mỗi điểm bên trong có một vùng nhỏ quanh nó vẫn nằm trong tập. Tập đóng giữ lại mọi điểm mà các điểm của nó có thể tiến tới. Compact nói rằng bất kỳ cách phủ bằng những vùng mở nào cũng có thể rút xuống hữu hạn vùng vẫn phủ hết.
+
+<HinhRossMoRong loai="cantor" />
+
+*Ba lần bỏ đoạn giữa của [0,1]. Các đoạn còn lại đóng và lồng nhau; giao của mọi bước tạo tập Cantor.*
+
+## Kiến thức cần biết
+
+Trong R², x=(x₁,x₂) là một điểm, không phải một dãy. Trong Rᵈ, có d tọa độ. Với một dãy điểm, viết x^(n) để n là chỉ số dãy, còn j là chỉ số tọa độ.
+
+Tập hợp **hợp** ∪ chứa những điểm nằm trong ít nhất một tập. **Giao** ∩ chứa những điểm nằm trong tất cả các tập. S\E là phần bù của E trong không gian S: các điểm S không thuộc E. Cùng một E có thể mở trong một không gian nhưng không mở trong không gian khác; luôn ghi rõ không gian nền.
+
+## Công thức / Định nghĩa
+
+**Metric** d(x,y) là hàm khoảng cách có ba quy tắc: không âm, bằng 0 đúng khi x=y; đối xứng d(x,y)=d(y,x); tam giác d(x,z)≤d(x,y)+d(y,z). **Không gian metric** là cặp (S,d), gồm tập điểm và cách đo đã chọn.
+
+Trong R, d(x,y)=|x−y|. Trong Rᵈ, khoảng cách Euclid là:
+
+$$d(x,y)=\sqrt{\sum_{j=1}^{d}(x_j-y_j)^2}.$$
+
+∑ nghĩa là cộng các số hạng với j=1,…,d. Các cách đo khác là maxⱼ|xⱼ−yⱼ| và ∑ⱼ|xⱼ−yⱼ|. Chúng cũng là metric; ở d hữu hạn chúng có cùng khái niệm hội tụ.
+
+**Hội tụ:** x^(n)→x nếu d(x^(n),x)→0. **Cauchy:** với mọi ε&gt;0 có N sao cho m,n&gt;N kéo theo d(x^(m),x^(n))&lt;ε. **Đầy đủ:** mọi dãy Cauchy trong S hội tụ đến một điểm của chính S. R và Rᵈ với metric Euclid đầy đủ; Q không đầy đủ vì có dãy hữu tỉ Cauchy tiến tới √2∉Q.
+
+**Từng tọa độ:** trong Rᵈ, hội tụ/Cauchy tương đương từng tọa độ hội tụ/Cauchy, vì $|x_j-y_j|\leq d(x,y)\leq\sqrt{d}\max_j|x_j-y_j|$. Chọn một mốc làm việc cho tất cả d tọa độ bằng max của các mốc. Từ đây suy ra Rᵈ đầy đủ. Dãy bị chặn trong Rᵈ có dãy con hội tụ: chọn dãy con cho tọa độ 1, tiếp tục chọn dãy con của nó cho tọa độ 2, …; vì d hữu hạn, sau d lượt mọi tọa độ đều hội tụ.
+
+**Quả cầu mở:** B(x,r)=&#123;y∈S:d(x,y)&lt;r&#125;, r&gt;0. **Điểm trong** của E là x có một quả cầu B(x,r)⊆E; tập các điểm trong ký hiệu E°. **Mở:** mọi điểm của E là điểm trong. S và tập rỗng mở; hợp tùy ý các tập mở mở; giao hữu hạn các tập mở mở. Giao vô hạn có thể không mở, như giao (−1/n,1/n) bằng &#123;0&#125;.
+
+**Đóng:** S\E mở. Tương đương, nếu các điểm xₙ∈E hội tụ tới x∈S thì x∈E. Giao tùy ý các tập đóng đóng; hợp hữu hạn các tập đóng đóng. **Bao đóng** $\overline{E}$ gồm E và mọi điểm có thể tiến tới từ E, tương đương giao của tất cả tập đóng chứa E. **Biên** $\partial E=\overline{E}\setminus E^\circ$; mỗi vùng nhỏ quanh điểm biên gặp cả E và phần bù.
+
+**Giao lồng nhau:** nếu F₁⊇F₂⊇… là các tập không rỗng, đóng và bị chặn trong Rᵈ, thì giao của chúng không rỗng. Chọn xₙ∈Fₙ; Bolzano-Weierstrass cho dãy con tiến tới x. Với mỗi k cố định, đuôi dãy con nằm trong Fₖ; Fₖ đóng nên x∈Fₖ. Vì k bất kỳ, x nằm trong giao.
+
+**Phủ mở** là một họ tập mở có hợp chứa E. **Phủ con hữu hạn** là hữu hạn tập lấy từ chính họ ấy mà vẫn phủ E. **Compact:** mọi phủ mở của E có phủ con hữu hạn. Tập phủ có thể chứa vô hạn điểm; “hữu hạn” nói về số tập dùng để phủ.
+
+**Heine-Borel trong Rᵈ:** compact tương đương đóng và bị chặn. Cũng tương đương mọi dãy trong E có dãy con hội tụ tới điểm thuộc E. Những tương đương này không được áp dụng tùy ý cho không gian metric bất kỳ.
+
+**Vì sao đoạn/hộp đóng compact?** Nếu một phủ không có phủ con hữu hạn, chia hộp thành các hộp nhỏ: có ít nhất một hộp con vẫn không được phủ hữu hạn. Tiếp tục chọn các hộp đóng lồng nhau có đường kính về 0. Định lý giao cho một điểm x. Một tập mở của phủ chứa quả cầu quanh x; hộp đủ nhỏ nằm hoàn toàn trong quả cầu ấy, nên được phủ chỉ bởi một tập, mâu thuẫn. Tập đóng bị chặn nằm trong một hộp compact; thêm phần bù của nó vào phủ để suy ra phủ con hữu hạn. Chiều ngược: compact bị chặn bằng phủ các quả cầu bán kính nguyên; compact đóng vì điểm ngoài nó có khoảng cách dương tới một vùng nhỏ không gặp tập, suy ra từ một phủ con hữu hạn.
+
+**Ví dụ Cantor:** bắt đầu [0,1], bỏ phần ba giữa, rồi bỏ phần ba giữa của mỗi đoạn còn lại. Các tập đóng lồng nhau cho giao không rỗng, compact. Điểm 0 và 1 luôn còn. Tổng độ dài sau n lần bỏ là (2/3)ⁿ→0 nhưng giao có vô hạn, thậm chí không đếm được điểm: mỗi lựa chọn trái/phải ở mọi bước tương ứng một chuỗi chữ số 0/2 trong cơ số 3; lập luận đường chéo cho thấy không thể liệt kê tất cả. Tập này không có điểm trong, nên bằng chính biên của nó.
+
+**Khoảng cách tới tập:** với E không rỗng, d(E,x)=inf&#123;d(y,x):y∈E&#125;. Tam giác cho |d(E,x)−d(E,z)|≤d(x,z). Nếu E compact nằm trong một tập mở U, có một δ&gt;0 để mọi điểm cách E ít hơn δ vẫn thuộc U: phủ E bằng các quả cầu nhỏ nằm trong U, rút xuống hữu hạn và lấy một bán kính nhỏ nhất thích hợp. Compact tạo một “vùng đệm” chung.
+
+## Ví dụ mẫu
+
+### Ví dụ A: Nửa đoạn
+
+**Bước 1:** E=[0,1) trong R. **Bước 2:** tìm phần trong, bao đóng, biên và compact. **Bước 3:** dùng định nghĩa quả cầu và dãy tiến tới biên.
+
+**Bước 4:** các x∈(0,1) có vùng nhỏ nằm trong E; 0 không có vì vùng quanh 0 chứa số âm. Vậy E°=(0,1). Các điểm E và điểm 1 đều nằm trong bao đóng; điểm ngoài [0,1] có vùng nhỏ tránh E. Vậy bao đóng=[0,1], biên=&#123;0,1&#125;. E không mở và không đóng, vì dãy 1−1/n với n≥2 thuộc E nhưng tiến tới 1∉E. E không compact.
+
+**Bước 5:** bị chặn chưa đủ compact; còn thiếu đóng. **Bước 6:** xét từng đầu mút, rồi dùng dãy để kiểm tra thiếu điểm giới hạn.
+
+### Ví dụ B: Khoảng cách của hai tọa độ
+
+**Bước 1:** x^(n)=(1/n,2/n). **Bước 2:** chứng minh tiến tới (0,0). **Bước 3:** tính metric Euclid. **Bước 4:** d(x^(n),(0,0))=√(1/n²+4/n²)=√5/n→0. Cho ε&gt;0 chọn N≥√5/ε. **Bước 5:** cả hai tọa độ đều →0. **Bước 6:** quy về một sai số số thực.
+
+### Ví dụ C: Vì sao (0,1) không compact?
+
+**Bước 1:** họ Uₙ=(1/n,1), n≥2. **Bước 2:** kiểm tra phủ nhưng không có phủ con hữu hạn. **Bước 3:** xét tập lớn nhất trong mỗi nhóm hữu hạn.
+
+**Bước 4:** với x∈(0,1), chọn n&gt;1/x thì x∈Uₙ, nên họ phủ (0,1). Hữu hạn chỉ số có giá trị lớn nhất N; hợp các tập được chọn bằng U_N. Điểm 1/(N+1) thuộc (0,1) nhưng không thuộc U_N. Vậy không có phủ con hữu hạn. **Bước 5:** thiếu điểm 0 ở biên chính là chỗ phủ không thể rút hữu hạn. **Bước 6:** tìm một phủ có vùng chưa phủ sát biên sau mỗi lựa chọn hữu hạn.
+
+## Lỗi dễ mắc
+
+- **Mở và đóng là hai lựa chọn loại trừ:** có tập vừa mở vừa đóng (R, rỗng) và tập không mở cũng không đóng ([0,1)).
+- **Đóng nghĩa là bị chặn:** R đóng trong R nhưng không bị chặn, nên không compact.
+- **Đóng + bị chặn luôn compact ở mọi metric:** Heine-Borel ở đây dành cho Rᵈ hữu hạn chiều.
+
+## Tóm tắt 30 giây
+
+> Metric mở rộng khoảng cách. Mở có vùng nhỏ quanh mỗi điểm; đóng giữ điểm giới hạn. Trong Rᵈ, compact chính là đóng và bị chặn, giúp chọn dãy con và rút phủ hữu hạn.
+
+**HIỂU:** mọi khái niệm phụ thuộc không gian nền. **NHỚ:** ba quy tắc metric; đóng qua dãy; Heine-Borel có phạm vi. **LÀM:** dùng quả cầu, dãy về biên và phủ mở cụ thể.
+
+## Bài tập
+
+### DỄ - Hai đầu mút
+
+Tìm phần trong, bao đóng, biên của (−2,3] trong R; quyết định mở, đóng và compact. **Gợi ý:** xét riêng −2 và 3.
+
+<LoiGiai>
+
+**Bước 1.** $E=[-2,3)\subset\mathbb R$.
+
+**Bước 2.** Tìm phần trong, bao đóng, biên; xét compact.
+
+**Bước 3.** Dùng quả cầu nhỏ và Heine–Borel trên trục số.
+
+**Bước 4.** Phần trong là $(-2,3)$, bao đóng $[-2,3]$, biên $\{-2,3\}$. E không mở vì chứa đầu $-2$, không đóng vì thiếu điểm giới hạn 3, nên không compact.
+
+**Bước 5.** Tập bị chặn nhưng chưa đóng.
+
+**Bước 6.** Kiểm tra riêng các đầu mút.
+
+</LoiGiai>
+
+### VỪA - Thêm điểm giới hạn
+
+Cho E=&#123;1/n:n≥1&#125;∪&#123;0&#125;. Chứng minh E đóng, bị chặn và compact; nếu bỏ 0 thì điều gì đổi? **Gợi ý:** ngoài 0, các điểm 1/n tách nhau; với mỗi x&gt;0 không thuộc E, chọn vùng nhỏ tránh hữu hạn điểm đầu và toàn đuôi gần 0.
+
+<LoiGiai>
+
+**Bước 1.** $E=\{0\}\cup\{1/n:n\ge1\}$.
+
+**Bước 2.** Xét compact và việc bỏ 0.
+
+**Bước 3.** Heine–Borel: đóng và bị chặn tương đương compact trong $\mathbb R$.
+
+**Bước 4.** E bị chặn. Nếu $x\notin E$, thì $x\ne0$; chọn vùng nhỏ quanh $x$ tránh 0 và tránh đuôi $1/n$, rồi thu nhỏ để tránh hữu hạn điểm còn lại. Vậy phần bù mở, E đóng và compact. Bỏ 0 thì dãy $1/n$ có đích ngoài tập nên không đóng, không compact.
+
+**Bước 5.** Điểm 0 giữ giới hạn của đuôi.
+
+**Bước 6.** Thêm điểm giới hạn để tạo tập đóng.
+
+</LoiGiai>
+
+### KHÓ - Giao lồng nhau cần điều kiện
+
+Cho Fₙ=[n,+∞). Chứng minh mỗi Fₙ không rỗng, đóng và lồng nhau nhưng giao rỗng. Điều kiện nào của định lý bị thiếu? **Gợi ý:** không có số thực x≥n cho mọi n.
+
+<LoiGiai>
+
+**Bước 1.** $F_n=[n,\infty)$.
+
+**Bước 2.** Giải thích vì sao giao lồng nhau có thể rỗng.
+
+**Bước 3.** Định lý giao compact lồng nhau cần compact, không chỉ đóng.
+
+**Bước 4.** $F_n$ đóng, không rỗng và lồng nhau nhưng không bị chặn. Nếu $x$ ở giao thì $x\ge n$ với mọi số tự nhiên, trái tính Archimedes. Vì vậy giao rỗng.
+
+**Bước 5.** Không vi phạm định lý compact vì thiếu giả thiết.
+
+**Bước 6.** Đối chiếu đủ điều kiện trước khi dùng định lý.
+
+</LoiGiai>
+
+

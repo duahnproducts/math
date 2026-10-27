@@ -1,0 +1,146 @@
+---
+mon: giai-tich
+chuong: 2
+bai: 9
+tieu_de: "§15. Chuỗi đan dấu và tiêu chuẩn tích phân"
+y_tuong: "Chuỗi có thể hội tụ nhờ các số hạng nhỏ đủ nhanh hoặc nhờ dấu đổi làm phần cộng và trừ bù nhau có kiểm soát."
+phu_muc: ["15"]
+---
+
+import HinhRossMoRong from '../../../../src/figures/HinhRossMoRong.astro';
+
+## Ý tưởng trong 1 câu
+
+> Chuỗi có thể hội tụ nhờ các số hạng nhỏ đủ nhanh hoặc nhờ dấu đổi làm phần cộng và trừ bù nhau có kiểm soát.
+
+## Hình dung trực quan
+
+Nếu lần thứ nhất bước về phía trước 1 m, lần hai lùi 1/2 m, lần ba tiến 1/3 m,…, vị trí dao động nhưng hai biên tiến lại gần nhau. Độ dài các bước phải giảm về 0; chỉ đổi dấu chưa đủ.
+
+Với chuỗi số hạng dương, mỗi số hạng có thể là diện tích một hình chữ nhật rộng 1. Đồ thị của một hàm giảm nằm giữa các dãy chữ nhật trên và dưới. Ta so tổng diện tích với diện tích dưới đường cong.
+
+<HinhRossMoRong loai="integral" />
+
+*Các hình chữ nhật f(n) với f(x)=1/x². Diện tích đuôi được chặn bằng những tích phân ở hai phía.*
+
+## Kiến thức cần biết
+
+**Tích phân** ∫ từ a đến b của f(x) dx, với f≥0, biểu thị diện tích dưới đồ thị trên [a,b]. Trong bài này dùng tính chất diện tích và các công thức cơ bản; định nghĩa nghiêm ngặt sẽ học ở chương tích phân. **Tích phân suy rộng** ∫ từ A đến ∞ là giới hạn của diện tích từ A đến T khi T→∞.
+
+ln x là logarithm tự nhiên, xác định khi x&gt;0. Công thức dùng: ∫1/x dx=ln x; ∫x⁻ᵖ dx=x^(1−p)/(1−p) nếu p≠1. Có thể đối chiếu bằng đạo hàm nếu đã biết; bài này không lấy các công thức ấy làm kết luận từ lý thuyết chuỗi.
+
+## Công thức / Định nghĩa
+
+**Tiêu chuẩn tích phân:** nếu f liên tục, không âm và giảm trên [A,+∞), A nguyên dương, aₙ=f(n), thì ∑ từ n=A của aₙ và ∫ từ A đến ∞ của f cùng hội tụ hoặc cùng phân kỳ. Điều kiện có thể chỉ đúng từ một mốc; hữu hạn số hạng đầu không đổi hội tụ.
+
+Với N≥A, các chữ nhật cho:
+
+$$\int_A^{N+1}f(x)\,dx\leq\sum_{n=A}^{N}f(n)\leq f(A)+\int_A^N f(x)\,dx.$$
+
+N là điểm kết thúc tổng riêng; A là điểm bắt đầu. Nếu tích phân không bị chặn, cận trái làm tổng riêng không bị chặn. Nếu tích phân hữu hạn, cận phải chặn trên tổng riêng tăng. Tiêu chuẩn chỉ nói cùng hội tụ, không nói tổng bằng tích phân.
+
+**Chuỗi p:** với p&gt;1, ∫₁^∞ x⁻ᵖ dx=1/(p−1), hữu hạn; với 0&lt;p≤1, tích phân phân kỳ, hoặc so 1/nᵖ≥1/n. Với p≤0, số hạng không →0. Vậy ∑1/nᵖ hội tụ chính xác khi p&gt;1.
+
+**Sai số đuôi dương:** nếu tổng S tồn tại, $R_N=S-S_N$ thỏa:
+
+$$\int_{N+1}^{\infty}f(x)\,dx\leq R_N\leq\int_N^{\infty}f(x)\,dx.$$
+
+**Đan dấu:** xét $\sum_{n=1}^{\infty}(-1)^{n+1}b_n$, với bₙ≥0, bₙ giảm và bₙ→0. Chuỗi hội tụ. Nếu S_N là tổng N số hạng thì $|S-S_N|\leq b_{N+1}$, nên cũng ≤b_N như cận trong phát biểu Ross. Đuôi có dấu của số hạng kế tiếp.
+
+**Vì sao hội tụ?** Tổng chẵn tăng vì S₂ₖ₊₂−S₂ₖ=b₂ₖ₊₁−b₂ₖ₊₂≥0. Tổng lẻ giảm vì S₂ₖ₊₃−S₂ₖ₊₁=−b₂ₖ₊₂+b₂ₖ₊₃≤0. Mọi tổng chẵn nằm dưới mọi tổng lẻ; cả hai có cận. Khoảng cách giữa hai tổng kế nhau bằng b₂ₖ₊₁→0, nên hai biên có cùng đích S. S nằm giữa S_N và S_(N+1); độ rộng khoảng là b_(N+1), cho cận sai số.
+
+**Có điều kiện hay tuyệt đối?** Với bₙ=1/n, đan dấu hội tụ; chuỗi trị tuyệt đối ∑1/n phân kỳ, nên hội tụ có điều kiện. Với bₙ=1/n², trị tuyệt đối đã hội tụ; chuỗi đan dấu hội tụ tuyệt đối.
+
+## Ví dụ mẫu
+
+### Ví dụ A: Muốn sai số nhỏ hơn 0,01
+
+**Bước 1:** S=1−1/2+1/3−1/4+…. **Bước 2:** chọn N để |S−S_N|&lt;0,01. **Bước 3:** dùng đan dấu vì 1/n dương, giảm, →0.
+
+**Bước 4:** |S−S_N|≤1/(N+1). Chọn N=100 cho sai số ≤1/101&lt;0,01. **Bước 5:** N=99 chỉ bảo đảm ≤0,01 theo cận này, chưa bảo đảm dấu &lt; bằng chính cận. **Bước 6:** viết bất đẳng thức sai số rồi chọn N đáp ứng đúng dấu yêu cầu.
+
+### Ví dụ B: Tích phân của chuỗi logarithm
+
+**Bước 1:** ∑ từ n=2 của 1/[n(ln n)²]. **Bước 2:** xét hội tụ. **Bước 3:** f(x)=1/[x(ln x)²] dương, liên tục và giảm khi x≥2; dùng tích phân.
+
+**Bước 4:** đặt u=ln x, du=dx/x. Diện tích từ 2 đến T bằng ∫ từ ln2 đến lnT của u⁻² du =1/ln2−1/lnT. Khi T→∞, giá trị tiến tới 1/ln2 hữu hạn. Vậy chuỗi hội tụ. **Bước 5:** bắt đầu ở 2 vì ln1=0 làm biểu thức không xác định. **Bước 6:** logarithm trong mẫu thường thử đổi biến u=ln x.
+
+### Ví dụ C: Sai số của chuỗi p
+
+**Bước 1:** S=∑1/n², S_N là tổng đầu. **Bước 2:** chặn đuôi. **Bước 3:** f(x)=1/x² giảm. **Bước 4:** $1/(N+1)\leq S-S_N\leq1/N$. Muốn cận trên &lt;0,01, chọn N=101. **Bước 5:** tích phân đuôi không phải tổng đuôi chính xác; nó cho hai cận. **Bước 6:** khi không biết tổng, vẫn có thể biết độ chính xác của xấp xỉ.
+
+## Lỗi dễ mắc
+
+- **Đổi dấu là đủ:** 1−1+1−1+… không hội tụ vì độ lớn số hạng không →0.
+- **Dùng tích phân cho số hạng có dấu tùy ý:** tiêu chuẩn ở đây cần hàm không âm và giảm; có thể xét trị tuyệt đối nếu phù hợp.
+- **Tích phân bằng tổng:** hai số chỉ được so sánh; ∑1/n² không bằng ∫₁^∞1/x² dx=1.
+
+## Tóm tắt 30 giây
+
+> Tích phân kiểm soát tổng các số hạng dương qua diện tích. Đan dấu hội tụ khi độ lớn giảm về 0; sai số không vượt bước kế tiếp. Luôn xét thêm hội tụ tuyệt đối.
+
+**HIỂU:** cộng trừ bù nhau có điều kiện. **NHỚ:** giảm, không âm, về 0; điều kiện tích phân; hai loại cận đuôi. **LÀM:** chọn N từ độ chính xác cần đạt.
+
+## Bài tập
+
+### DỄ - Phân loại tuyệt đối
+
+Xét ∑(−1)ⁿ⁺¹/n³: hội tụ có điều kiện hay tuyệt đối? **Gợi ý:** trước hết xét ∑1/n³.
+
+<LoiGiai>
+
+**Bước 1.** $\sum_{n=1}^{\infty}(-1)^{n+1}/n^3$.
+
+**Bước 2.** Phân loại hội tụ.
+
+**Bước 3.** Chuỗi trị tuyệt đối là chuỗi $p$ với $p=3>1$.
+
+**Bước 4.** $\sum|(-1)^{n+1}/n^3|=\sum1/n^3<\infty$, nên chuỗi hội tụ tuyệt đối.
+
+**Bước 5.** Không chỉ kết luận hội tụ có điều kiện từ dấu đan nhau.
+
+**Bước 6.** Thử trị tuyệt đối trước.
+
+</LoiGiai>
+
+### VỪA - Số bước để xấp xỉ
+
+Với S=∑(−1)ⁿ⁺¹/√n, tìm một N bảo đảm |S−S_N|&lt;0,05. **Gợi ý:** 1/√(N+1)&lt;0,05; chuỗi trị tuyệt đối là p=1/2.
+
+<LoiGiai>
+
+**Bước 1.** Chuỗi đan dấu có độ lớn số hạng $1/\sqrt n$.
+
+**Bước 2.** Chọn số hạng để sai số nhỏ hơn $0{,}05$.
+
+**Bước 3.** Chặn sai số đan dấu: $|R_N|\le1/\sqrt{N+1}$.
+
+**Bước 4.** Chọn $N=400$ cho $1/\sqrt{401}<0{,}05$. Chuỗi hội tụ có điều kiện vì trị tuyệt đối là chuỗi $p=1/2$ phân kỳ.
+
+**Bước 5.** Dùng số hạng bị bỏ đầu tiên, không phải số hạng cuối đã cộng.
+
+**Bước 6.** Giải bất đẳng thức sai số để chọn N.
+
+</LoiGiai>
+
+### KHÓ - Ngưỡng logarithm
+
+Với p thực, chứng minh ∑ từ n=2 của 1/[n(ln n)ᵖ] hội tụ khi và chỉ khi p&gt;1. **Gợi ý:** f cuối cùng giảm cho mọi p cố định; đổi u=ln x biến tích phân thành ∫u⁻ᵖ du.
+
+<LoiGiai>
+
+**Bước 1.** $\sum_{n=2}^{\infty}1/[n(\log n)^p]$, $p\in\mathbb R$.
+
+**Bước 2.** Tìm điều kiện hội tụ.
+
+**Bước 3.** Dùng tiêu chuẩn tích phân trên một đuôi dương, liên tục và giảm.
+
+**Bước 4.** Với $f(x)=1/[x(\log x)^p]$, đạo hàm mang dấu của $-(1+p/\log x)$ nên cuối cùng âm. Thay $u=\log x$ được tích phân đuôi $\int u^{-p}\,du$, hội tụ đúng khi $p>1$.
+
+**Bước 5.** Một đoạn đầu hữu hạn không ảnh hưởng hội tụ.
+
+**Bước 6.** Log ở mẫu thường gợi ý thay biến trong tích phân.
+
+</LoiGiai>
+
+

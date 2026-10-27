@@ -17,7 +17,7 @@ test('10 bài Ross đọc trực tiếp, đủ 8 mục, công thức và hình; 
   test.slow();
   await page.goto('giai-tich/');
   await expect(page.locator('.ghi-cong')).toContainText('Kenneth A. Ross');
-  await expect(page.locator('[aria-label="Các chương"] li')).toHaveCount(2);
+  await expect(page.locator('[aria-label="Các chương"] li')).toHaveCount(4);
   for(let section=1;section<=10;section++) {
     const chapter=section<=6?1:2, lesson=section<=6?section:section-6;
     await page.goto(`giai-tich/chuong-${chapter}/giang-day/bai-${lesson}/`);

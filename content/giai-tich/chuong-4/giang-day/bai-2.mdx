@@ -1,0 +1,100 @@
+---
+mon: giai-tich
+chuong: 4
+bai: 2
+tieu_de: "§24. Hội tụ từng điểm và hội tụ đều"
+y_tuong: "Hội tụ đều đòi một mốc N kiểm soát sai số trên toàn miền cùng lúc."
+phu_muc: ["24"]
+---
+
+import HinhRossMoRong from '../../../../src/figures/HinhRossMoRong.astro';
+
+## Ý tưởng trong 1 câu
+
+Từng điểm cho mỗi vị trí một lịch đến đích riêng; hội tụ đều đòi cả miền cùng đạt độ chính xác sau một mốc chung.
+
+## Hình dung trực quan
+
+Hãy coi $f_n(x)$ là nhiệt độ dự báo lần thứ $n$ tại vị trí $x$. Mỗi vị trí cuối cùng dự báo đúng chưa bảo đảm có một lần cập nhật đủ tốt cho toàn bản đồ. Hội tụ đều chính là bảo đảm đồng thời ấy.
+
+<HinhRossMoRong loai="uniform" />
+
+## Kiến thức cần biết
+
+$f_n$ là một hàm, $f_n(x)$ là một số khi đã cố định $x$. Muốn tìm giới hạn từng điểm, giữ $x$ cố định rồi cho $n\to\infty$. Miền xét rất quan trọng: cùng dãy hàm có thể hội tụ đều trên miền nhỏ nhưng không đều trên miền lớn.
+
+## Công thức
+
+Từng điểm trên $S$:
+
+$$\forall x\in S\ \forall\varepsilon>0\ \exists N=N(x,\varepsilon)\ \forall n>N:\ |f_n(x)-f(x)|<\varepsilon.$$
+
+Đều trên $S$:
+
+$$\forall\varepsilon>0\ \exists N=N(\varepsilon)\ \forall x\in S\ \forall n>N:\ |f_n(x)-f(x)|<\varepsilon.$$
+
+Đổi chỗ của “mọi $x$” và “tồn tại $N$” làm điều kiện mạnh hơn. Đặt $E_n=\sup_{x\in S}|f_n(x)-f(x)|$; hội tụ đều tương đương $E_n\to0$. Supremum không nhất thiết đạt tại một điểm.
+
+**Giới hạn đều bảo toàn liên tục:** nếu mỗi $f_n$ liên tục tại $a\in S$ và $f_n\to f$ đều trên $S$, thì $f$ liên tục tại $a$.
+
+**Chứng minh ba phần sai số:** cho $\varepsilon>0$, cố định một $n$ lớn để $|f_n(x)-f(x)|<\varepsilon/3$ với mọi $x\in S$. Tính liên tục của hàm $f_n$ đã cố định cho $\delta>0$ sao cho $|f_n(x)-f_n(a)|<\varepsilon/3$ nếu $x\in S$, $|x-a|<\delta$. Khi ấy
+
+$$|f(x)-f(a)|\le |f(x)-f_n(x)|+|f_n(x)-f_n(a)|+|f_n(a)-f(a)|<\varepsilon.$$
+
+Điều quan trọng là chọn $n$ trước rồi dùng liên tục của đúng hàm đó. Không cần mọi $f_n$ có chung một $\delta$.
+
+## Ví dụ mẫu
+
+**Bước 1. Dữ kiện.** $f_n(x)=x^n$ trên $[0,1]$.
+
+**Bước 2. Mục tiêu.** Tìm giới hạn và xét hội tụ đều.
+
+**Bước 3. Căn cứ.** Với $0\le x<1$, lũy thừa tiến về 0; tại $x=1$, nó luôn bằng 1.
+
+**Bước 4. Thực hiện.** Giới hạn $f$ bằng 0 trên $[0,1)$, bằng 1 tại 1. Mỗi $f_n$ liên tục nhưng $f$ không liên tục tại 1, nên hội tụ không đều. Có thể kiểm tra trực tiếp: $x_n=2^{-1/n}<1$, nhưng $|f_n(x_n)-f(x_n)|=1/2$ với mọi $n$. Trên miền nhỏ $[0,r]$, $0<r<1$, sai số tối đa bằng $r^n\to0$, nên hội tụ đều về 0.
+
+**Bước 5. Kiểm tra.** Trên $[0,1)$, giới hạn là hàm 0 liên tục nhưng vẫn không đều vì supremum của $x^n$ bằng 1. Vì vậy giới hạn liên tục chỉ là điều kiện cần trong định lý bảo toàn, không phải điều kiện đủ.
+
+**Bước 6. Cách làm lại.** Tìm giới hạn từng điểm, rồi tìm chặn chung về 0 hoặc chọn điểm xấu $x_n$ phụ thuộc $n$.
+
+## Lỗi dễ mắc
+
+- Chọn $N$ phụ thuộc $x$ rồi kết luận hội tụ đều.
+- Chỉ thử một vài điểm cố định; điểm xấu có thể chạy theo $n$.
+- Nghĩ giới hạn của các đạo hàm luôn là đạo hàm giới hạn. Ví dụ $f_n(x)=\sin(nx)/n$ hội tụ đều về 0, nhưng $f_n'(0)=1$ trong khi đạo hàm của giới hạn tại 0 bằng 0.
+
+## Tóm tắt 30 giây
+
+**HIỂU:** đều là kiểm soát cả miền cùng lúc. **NHỚ:** $\sup|f_n-f|\to0$; giới hạn đều của hàm liên tục là liên tục. **LÀM:** chặn chung hoặc dựng $x_n$ giữ sai số không nhỏ.
+
+## Bài tập
+
+### DỄ — Sai số cố định theo x
+
+Xét $f_n(x)=x+1/n$ trên $\mathbb R$. **Gợi ý:** tìm đúng sai số so với $f(x)=x$.
+
+<LoiGiai>
+
+**Bước 1.** Dãy hàm trên cả $\mathbb R$. **Bước 2.** Xét đều về $x$. **Bước 3.** Dùng sai số supremum. **Bước 4.** $|f_n(x)-x|=1/n$ với mọi $x$; supremum bằng $1/n\to0$. **Bước 5.** Miền không bị chặn không cản hội tụ đều trong ví dụ này. **Bước 6.** Chặn sai số, không chặn riêng giá trị của từng hàm.
+
+</LoiGiai>
+
+### VỪA — Thu nhỏ miền
+
+Chứng minh $x^n\to0$ đều trên $[0,3/4]$. **Gợi ý:** dùng $(3/4)^n$.
+
+<LoiGiai>
+
+**Bước 1.** $0\le x\le3/4$. **Bước 2.** Tìm $N$ chung. **Bước 3.** Lũy thừa hình học có công bội nhỏ hơn 1 tiến về 0. **Bước 4.** $0\le x^n\le(3/4)^n$. Chọn $N$ để $(3/4)^n<\varepsilon$ khi $n>N$. **Bước 5.** Chặn không phụ thuộc $x$. **Bước 6.** Tách miền khỏi đầu mút gây khó ở $x=1$.
+
+</LoiGiai>
+
+### KHÓ — Giới hạn liên tục vẫn không đủ
+
+Xét $f_n(x)=x/(n+x)$ trên $[0,\infty)$. **Gợi ý:** cố định $x$ để tìm giới hạn, rồi cho $x$ lớn khi tìm supremum.
+
+<LoiGiai>
+
+**Bước 1.** Mẫu $n+x$ dương. **Bước 2.** Xét từng điểm và đều. **Bước 3.** Phân biệt hai thứ tự chọn. **Bước 4.** Với $x$ cố định, $f_n(x)\to0$. Nhưng chọn $x_n=n$ cho $f_n(x_n)=1/2$, nên không đều về 0. Thực tế supremum bằng 1. **Bước 5.** Hàm giới hạn 0 liên tục, không mâu thuẫn định lý một chiều. **Bước 6.** Khi miền vô hạn, thử điểm xấu tăng theo chỉ số.
+
+</LoiGiai>

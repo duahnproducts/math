@@ -1,0 +1,170 @@
+---
+mon: giai-tich
+chuong: 3
+bai: 4
+tieu_de: "§20. Giới hạn của hàm số"
+y_tuong: "Giới hạn hỏi đầu ra tiến tới đâu khi đầu vào tới gần một vị trí; giá trị của hàm ngay tại vị trí đó là một câu hỏi riêng."
+phu_muc: ["20"]
+---
+
+import HinhRossMoRong from '../../../../src/figures/HinhRossMoRong.astro';
+
+## Ý tưởng trong 1 câu
+
+> Giới hạn hỏi đầu ra tiến tới đâu khi đầu vào tới gần một vị trí; giá trị của hàm ngay tại vị trí đó là một câu hỏi riêng.
+
+## Hình dung trực quan
+
+Một con đường tiến tới mép cầu. Độ cao bạn tiến gần ở hai phía có thể xác định dù cây cầu còn thiếu đúng một điểm. Điểm thiếu tượng trưng cho hàm chưa xác định tại a. Giới hạn chỉ xét các điểm gần a và khác a.
+
+Nếu hai phía tiến tới hai độ cao khác nhau, không có một giới hạn hai phía. Nếu cả hai phía cùng cao vô hạn, ta có thể nói giới hạn +∞ theo nghĩa vượt mọi mức hữu hạn, không phải một giá trị thực tại điểm ấy.
+
+<HinhRossMoRong loai="limits" />
+
+*Ba hành vi gần 0: lỗ có thể lấp, hai phía của 1/x khác nhau, và cả hai phía của 1/x² cùng tới +∞.*
+
+## Kiến thức cần biết
+
+Ôn ε-δ của liên tục. Khác biệt mới là $0<|x-a|$, loại đúng điểm a. Với giới hạn trái, chỉ x&lt;a; phải, chỉ x&gt;a. a⁺,a⁻ không phải hai số thực mới, chỉ là cách chỉ phía tiếp cận.
+
+Ôn phân tích nhân tử và liên hợp. Rút gọn (x−a) chỉ làm được khi x≠a; điều này phù hợp với giới hạn tại a, nhưng không tự động định nghĩa lại hàm tại a.
+
+Ross bắt đầu bằng **giới hạn dọc theo tập S**, rồi lấy các khoảng thích hợp để định nghĩa giới hạn hai phía, một phía và ở vô cực. Vì vậy ở bài này, giới hạn hai phía thông thường yêu cầu hàm xác định trên một khoảng mở quanh a, ngoại trừ có thể tại a. Một hàm có miền chỉ nằm bên phải a dùng giới hạn phải hoặc giới hạn dọc miền ấy.
+
+## Công thức / Định nghĩa
+
+**Dọc tập S:** chọn a∈R hoặc ±∞ là giới hạn của ít nhất một dãy trong S. Viết $\lim_{x\to a,\ x\in S}f(x)=L$ nếu mọi dãy xₙ∈S→a đều có f(xₙ)→L. L có thể hữu hạn hoặc ±∞. Nếu a∈S và không loại a, dãy hằng xₙ=a buộc L=f(a); đây là khái niệm liên tục dọc miền. Giới hạn thông thường dùng S không chứa a để tránh ràng buộc ấy.
+
+**Hai phía, L hữu hạn:**
+
+$$\forall\varepsilon>0,\ \exists\delta>0:\ 0<|x-a|<\delta\Rightarrow|f(x)-L|<\varepsilon.$$
+
+x là đầu vào; a là điểm tiến tới; L là đích đầu ra; ε là sai số đầu ra; δ là vùng gần a. Có thể giảm δ để vùng nằm trong khoảng miền đã có. f(a) không xuất hiện trong định nghĩa.
+
+**Năm kiểu tiếp cận đầu vào:**
+
+- x→a: 0&lt;|x−a|&lt;δ.
+- x→a⁺: a&lt;x&lt;a+δ.
+- x→a⁻: a−δ&lt;x&lt;a.
+- x→+∞: x&gt;A, với A là ngưỡng đủ lớn.
+- x→−∞: x&lt;A, với A là ngưỡng đủ âm.
+
+**Ba kiểu đích đầu ra:** L hữu hạn yêu cầu |f(x)−L|&lt;ε với ε&gt;0 tùy ý; +∞ yêu cầu f(x)&gt;M với M&gt;0 tùy ý; −∞ yêu cầu f(x)&lt;M với M&lt;0 tùy ý. Ghép 5 kiểu đầu vào với 3 kiểu đầu ra được 15 dạng giới hạn trong sách. Đối với a hữu hạn, chọn δ; đối với đầu vào vô cực, chọn ngưỡng A. M không phải giới hạn; nó là một mức kiểm tra hữu hạn.
+
+**Liên tục và giới hạn:** khi hàm xác định trên một khoảng quanh a và tại a, liên tục tại a ⇔ giới hạn hai phía tồn tại hữu hạn và bằng f(a). Nếu giới hạn hữu hạn L tồn tại nhưng f(a) khác L hoặc chưa có, đặt lại f(a)=L cho một mở rộng liên tục tại điểm ấy.
+
+**Ghép hai phía:** giới hạn hai phía tồn tại trong hệ mở rộng khi và chỉ khi giới hạn trái và phải cùng tồn tại và bằng nhau. Nếu đều bằng L hữu hạn, lấy δ là min của hai δ; mọi x đủ gần a thuộc một phía. Với hai đích +∞ hoặc hai đích −∞, làm tương tự bằng mức M. Một phía +∞ và phía kia −∞ không tạo giới hạn hai phía.
+
+**Quy tắc hữu hạn:** nếu f→A, g→B hữu hạn trên cùng tập tiếp cận, thì f+g→A+B, fg→AB và f/g→A/B khi B≠0, biểu thức thương có nghĩa về sau. Có thể chứng minh bằng dãy: với xₙ→a, áp dụng các định lý giới hạn dãy của §9 cho f(xₙ),g(xₙ).
+
+**Hàm hợp:** nếu f(x)→L hữu hạn và h liên tục tại L, với các giá trị f(x) thuộc miền h, thì h(f(x))→h(L). Chỉ biết lim khi t→L của h(t) tồn tại chưa đủ nếu h(L) khác giới hạn và f(x) có thể bằng L muộn tùy ý. Chẳng hạn f(x)=0 mọi x, h(t)=1 khi t≠0 và h(0)=0: f→0, lim h tại 0 bằng 1, nhưng h(f(x)) luôn 0.
+
+**Kẹp:** nếu u(x)≤f(x)≤v(x) ở vùng tiếp cận, u,v cùng →L hữu hạn, thì f→L. Không giả sử sẵn f có giới hạn; chính bất đẳng thức ε-δ chứng minh sự tồn tại. **Vô cực:** f→+∞ và g→B&gt;0 (kể cả +∞) cho fg→+∞; B&lt;0 cho fg→−∞. f→+∞ và g→B khác −∞ cho f+g→+∞. Nếu B=0 trong tích, hoặc một hiệu ∞−∞, phải xét biểu thức cụ thể.
+
+## Ví dụ mẫu
+
+### Ví dụ A: Khử một điểm thiếu
+
+**Bước 1:** f(x)=(x²−9)/(x−3), x≠3. **Bước 2:** tìm giới hạn tại 3 và cách lấp điểm. **Bước 3:** phân tích x²−9=(x−3)(x+3).
+
+**Bước 4:** khi x≠3, f(x)=x+3. Do đó sai số so với 6 là |f(x)−6|=|x−3|. Cho ε&gt;0 chọn δ=ε; 0&lt;|x−3|&lt;δ bảo đảm sai số &lt;ε. Giới hạn là 6. Muốn mở rộng liên tục, đặt f(3)=6. **Bước 5:** hàm ban đầu và x+3 không cùng miền, nhưng cùng giá trị ở vùng bỏ điểm. **Bước 6:** rút gọn trong vùng x≠a, rồi phân biệt giới hạn với giá trị thêm vào.
+
+### Ví dụ B: Căn thức dạng 0/0
+
+**Bước 1:** $f(x)=(\sqrt{1+2x}-1)/x$, x≥−1/2 và x≠0. **Bước 2:** tìm giới hạn khi x→0. **Bước 3:** liên hợp để bỏ hiệu căn.
+
+**Bước 4:** f(x)=2/[√(1+2x)+1] khi x≠0. Mẫu →2≠0, nên giới hạn bằng 1. **Bước 5:** 0/0 chỉ là dạng của phép thế trực tiếp chưa hợp lệ, không phải giá trị giới hạn. **Bước 6:** căn trừ căn hoặc căn trừ hằng → thử liên hợp.
+
+### Ví dụ C: Hai phía vô cực
+
+**Bước 1:** g(x)=1/x và h(x)=1/x², x≠0. **Bước 2:** xét gần 0. **Bước 3:** phân biệt dấu hai phía.
+
+**Bước 4:** với M&gt;0, chọn δ=1/M. Nếu 0&lt;x&lt;δ thì 1/x&gt;M, nên giới hạn phải của g là +∞. Với M&lt;0, đặt C=−M&gt;0, chọn δ=1/C; nếu −δ&lt;x&lt;0 thì 1/x&lt;−C=M, nên giới hạn trái −∞. Hai phía khác nên không có giới hạn hai phía. Với h, cho M&gt;0 chọn δ=1/√M; 0&lt;|x|&lt;δ cho 1/x²&gt;M ở cả hai phía. Vậy h→+∞.
+
+**Bước 5:** không viết 1/0=∞; cả hai hàm vẫn không xác định tại 0. **Bước 6:** chọn mức M, giải điều kiện về x và kiểm tra dấu.
+
+### Ví dụ D: Giới hạn ở vô cực
+
+**Bước 1:** $q(x)=(3x^2+1)/(2x^2+5)$. **Bước 2:** giới hạn khi x→±∞. **Bước 3:** chia tử/mẫu cho x² khi x≠0. **Bước 4:** q(x)=(3+1/x²)/(2+5/x²)→3/2 ở cả hai phía. Muốn kiểm tra sai số: |q−3/2|=13/[2(2x²+5)]≤13/(4x²); chọn |x|&gt;√(13/(4ε)). **Bước 5:** mức |x| lớn dùng cho cả +∞ và −∞. **Bước 6:** chuẩn hóa rồi kiểm tra mẫu giới hạn khác 0.
+
+### Ví dụ E: Dao động không có giới hạn
+
+**Bước 1:** r(x)=sin(1/x), x≠0. **Bước 2:** xét x→0⁺. **Bước 3:** chọn hai dãy đầu vào làm sin bằng hai giá trị khác nhau.
+
+**Bước 4:** xₙ=1/(2πn+π/2) và yₙ=1/(2πn+3π/2) đều dương, →0. Ảnh lần lượt bằng 1 và −1. Vì hai giới hạn ảnh khác nhau, giới hạn phải không tồn tại; giới hạn hai phía cũng không tồn tại. **Bước 5:** hàm bị chặn nhưng vẫn không có giới hạn. **Bước 6:** bị chặn không thay thế điều kiện hội tụ; tìm các đường tiếp cận xấu.
+
+## Lỗi dễ mắc
+
+- **Thế x=a là toàn bộ phương pháp:** điểm ấy có thể chưa có giá trị; rút gọn hoặc kẹp mới quyết định giới hạn.
+- **Chỉ xét phía phải rồi kết luận hai phía:** cần kiểm tra cả trái và phải trên miền phù hợp.
+- **Ghép hàm chỉ từ hai giới hạn:** hàm ngoài phải liên tục tại đích hoặc cần kiểm soát việc hàm trong đạt đúng điểm đặc biệt ấy.
+
+## Tóm tắt 30 giây
+
+> Giới hạn bỏ qua giá trị tại điểm đang xét. Hai phía phải cùng đích; vô cực dùng mức M. Quy tắc hữu hạn cần đúng điều kiện mẫu và hàm hợp.
+
+**HIỂU:** gần điểm khác tại điểm. **NHỚ:** 0&lt;|x−a|; ba loại đích; hai phía cùng nhau; mẫu giới hạn khác 0. **LÀM:** khử nhân tử, liên hợp, kẹp, chọn δ/A hoặc dãy phản ví dụ.
+
+## Bài tập
+
+### DỄ - Điểm thiếu
+
+Tìm giới hạn (x³−8)/(x−2) khi x→2, rồi cho giá trị cần thêm để hàm liên tục tại 2. **Gợi ý:** x³−8=(x−2)(x²+2x+4).
+
+<LoiGiai>
+
+**Bước 1.** $(x^3-8)/(x-2)$, $x\ne2$.
+
+**Bước 2.** Tìm giới hạn và giá trị lấp lỗ.
+
+**Bước 3.** Phân tích hiệu hai lập phương.
+
+**Bước 4.** Khi $x\ne2$, hàm bằng $x^2+2x+4$. Giới hạn tại 2 bằng 12; đặt giá trị tại 2 bằng 12 để liên tục.
+
+**Bước 5.** Chỉ rút gọn ngoài điểm bị loại.
+
+**Bước 6.** Phân biệt giới hạn với giá trị gán thêm.
+
+</LoiGiai>
+
+### VỪA - Giới hạn một phía
+
+Với f(x)=x/|x|, tìm giới hạn trái/phải tại 0, giới hạn hai phía tại 0, giới hạn ở +∞ và −∞. **Gợi ý:** f=1 ở x&gt;0, f=−1 ở x&lt;0.
+
+<LoiGiai>
+
+**Bước 1.** $f(x)=x/|x|$, $x\ne0$.
+
+**Bước 2.** Xét các giới hạn gần 0 và ở vô cực.
+
+**Bước 3.** Xét dấu của x.
+
+**Bước 4.** Khi $x>0$, f bằng 1; khi $x<0$, f bằng $-1$. Giới hạn phải tại 0 bằng 1, trái bằng $-1$, nên không có giới hạn hai phía. Ở $+\infty$ giới hạn bằng 1, ở $-\infty$ bằng $-1$.
+
+**Bước 5.** Hai phía cần cùng đích để ghép.
+
+**Bước 6.** Viết hàm từng phía trước khi lấy giới hạn.
+
+</LoiGiai>
+
+### KHÓ - Viết định nghĩa ở vô cực
+
+Chứng minh lim khi x→+∞ của 1/(x−1)=0 bằng ε và một ngưỡng A cụ thể. Sau đó chứng minh lim khi x→1⁺ của 1/(x−1)=+∞ bằng M và δ. **Gợi ý:** A=1+1/ε; δ=1/M. Cả hai yêu cầu x−1&gt;0 nhưng dùng hai kiểu kiểm soát khác nhau.
+
+<LoiGiai>
+
+**Bước 1.** $f(x)=1/(x-1)$, $x>1$.
+
+**Bước 2.** Chứng minh giới hạn 0 ở vô cực và $+\infty$ gần 1 từ phải.
+
+**Bước 3.** Dùng định nghĩa với đúng ngưỡng đầu vào.
+
+**Bước 4.** Cho $\varepsilon>0$, chọn $A=1+1/\varepsilon$. Khi $x>A$, $0<f(x)<\varepsilon$. Cho $M>0$, chọn $\delta=1/M$; nếu $1<x<1+\delta$ thì $f(x)>M$.
+
+**Bước 5.** A kiểm soát x lớn, delta kiểm soát x gần 1.
+
+**Bước 6.** Chọn mức đầu ra trước rồi giải điều kiện đầu vào.
+
+</LoiGiai>
+
+

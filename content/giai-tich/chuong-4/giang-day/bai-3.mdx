@@ -1,0 +1,102 @@
+---
+mon: giai-tich
+chuong: 4
+bai: 3
+tieu_de: "§25. Cauchy đều, tiêu chuẩn M và đổi giới hạn với tích phân"
+y_tuong: "Kiểm soát chung phần đuôi giúp chứng minh hội tụ đều mà chưa cần biết hàm tổng."
+phu_muc: ["25"]
+---
+
+import HinhRossMoRong from '../../../../src/figures/HinhRossMoRong.astro';
+
+## Ý tưởng trong 1 câu
+
+Muốn cộng vô hạn hàm hoặc đổi giới hạn với tích phân, ta cần kiểm soát sai số trên cả miền, không chỉ tại từng điểm.
+
+## Hình dung trực quan
+
+Nếu hai đồ thị cách nhau không quá $\eta$ trên đoạn dài $b-a$, diện tích giữa chúng không quá $(b-a)\eta$. Độ rộng của miền và sai số cao nhất quyết định sai số tích phân.
+
+<HinhRossMoRong loai="uniform" />
+
+## Kiến thức cần biết
+
+Ôn hội tụ đều ở §24 và chuỗi tổng riêng ở §14. Tích phân dùng ở đây là kiến thức ôn từ vi tích phân; định nghĩa Riemann được xây dựng đầy đủ ở Chương 6. Các kết quả dưới đây được dùng với giả thiết liên tục trên đoạn đóng để bảo đảm tích phân tồn tại.
+
+## Công thức
+
+Dãy $f_n$ **Cauchy đều** trên $S$ nếu
+
+$$\forall\varepsilon>0\ \exists N\ \forall m,n>N\ \forall x\in S:\ |f_n(x)-f_m(x)|<\varepsilon.$$
+
+Với hàm thực, Cauchy đều tương đương tồn tại hàm $f$ sao cho $f_n\to f$ đều. Thật vậy, tại mỗi $x$, tính đầy đủ của $\mathbb R$ cho giới hạn $f(x)$. Cố định $n>N$, cho $m\to\infty$ trong chặn $\varepsilon/2$ để được $|f_n(x)-f(x)|\le\varepsilon/2<\varepsilon$ chung cho mọi $x$.
+
+**Tiêu chuẩn M của Weierstrass:** nếu $|g_k(x)|\le M_k$ trên $S$, $M_k\ge0$ và $\sum M_k<\infty$, thì $\sum g_k$ hội tụ đều và hội tụ tuyệt đối tại mỗi điểm. Chặn đuôi là
+
+$$\sup_{x\in S}\left|\sum_{k=n+1}^{m}g_k(x)\right|\le\sum_{k=n+1}^{m}M_k.$$
+
+Nếu thêm mỗi $g_k$ liên tục, hàm tổng liên tục theo §24. Tiêu chuẩn M là điều kiện đủ; không tìm được chặn khả tổng không có nghĩa chuỗi chắc chắn không hội tụ đều.
+
+**Đổi giới hạn và tích phân:** nếu $f_n$ liên tục trên $[a,b]$ và $f_n\to f$ đều, thì $f$ liên tục và
+
+$$\lim_n\int_a^b f_n(x)\,dx=\int_a^b f(x)\,dx,$$
+
+vì sai số không quá $(b-a)\sup|f_n-f|\to0$. Áp dụng cho tổng riêng của chuỗi liên tục hội tụ đều cho phép tích phân từng số hạng.
+
+Từ đây cũng thấy $C(S)$ với metric supremum ở §22 là đầy đủ: dãy Cauchy đều có giới hạn đều; giới hạn ấy liên tục và bị chặn, vì so với một hàm $f_N$ bị chặn, phần sai số cuối cùng bị chặn bởi 1.
+
+## Ví dụ mẫu
+
+**Bước 1. Dữ kiện.** Xét $\sum_{k=1}^{\infty}\sin(kx)/k^2$ trên $\mathbb R$.
+
+**Bước 2. Mục tiêu.** Chứng minh hội tụ đều, liên tục của tổng và khả năng tích phân trên đoạn hữu hạn.
+
+**Bước 3. Căn cứ.** $|\sin(kx)|\le1$; chuỗi $\sum1/k^2$ hội tụ; dùng tiêu chuẩn M.
+
+**Bước 4. Thực hiện.** Lấy $M_k=1/k^2$, chặn đúng với mọi $x$. Chuỗi hội tụ đều trên $\mathbb R$. Từng số hạng liên tục, nên tổng $F$ liên tục. Trên $[a,b]$, được viết $\int_a^b F=\sum_{k=1}^{\infty}\int_a^b\sin(kx)/k^2\,dx$.
+
+**Bước 5. Kiểm tra.** Không suy ra được đạo hàm từng số hạng chỉ từ tiêu chuẩn M vừa dùng: chuỗi đạo hàm cần kiểm tra riêng.
+
+**Bước 6. Cách làm lại.** Tách phần phụ thuộc $x$, chặn bằng chuỗi số khả tổng, rồi kiểm tra giả thiết của phép toán muốn đổi.
+
+## Lỗi dễ mắc
+
+- Dùng $M_k$ còn phụ thuộc $x$; khi ấy chưa phải chặn chung.
+- Nghĩ $g_k\to0$ đều là đủ cho chuỗi hội tụ đều. Chuỗi hàm hằng $g_k=1/k$ bác bỏ điều đó.
+- Đổi giới hạn và tích phân từ hội tụ từng điểm. Trên $[0,1]$, $f_n(x)=nx(1-x^2)^n$ hội tụ từng điểm về 0, nhưng $\int_0^1 f_n=n/[2(n+1)]\to1/2$. Những đỉnh hẹp làm sai số diện tích không biến mất.
+
+## Tóm tắt 30 giây
+
+**HIỂU:** đuôi nhỏ chung quyết định hội tụ đều. **NHỚ:** Cauchy đều, tiêu chuẩn M, sai số tích phân bị chặn bởi chiều dài nhân sai số supremum. **LÀM:** kiểm soát đuôi rồi mới đổi tổng/giới hạn với tích phân.
+
+## Bài tập
+
+### DỄ — Chặn hình học
+
+Chứng minh $\sum_{k=1}^{\infty}\cos(kx)/2^k$ hội tụ đều trên $\mathbb R$. **Gợi ý:** $|\cos(kx)|\le1$.
+
+<LoiGiai>
+
+**Bước 1.** Số hạng là $g_k(x)=\cos(kx)/2^k$. **Bước 2.** Xét đều. **Bước 3.** Dùng tiêu chuẩn M. **Bước 4.** $|g_k(x)|\le2^{-k}$ và $\sum2^{-k}=1$. Chuỗi hội tụ đều trên toàn miền. **Bước 5.** Chặn không phụ thuộc $x$. **Bước 6.** Các hàm lượng giác bị chặn thường cho một chuỗi chặn đơn giản.
+
+</LoiGiai>
+
+### VỪA — Tính tích phân của tổng
+
+Với $F(x)=\sum_{k=1}^{\infty}x^k/2^k$ trên $[0,1]$, viết $\int_0^1F(x)\,dx$ thành chuỗi số. **Gợi ý:** kiểm tra hội tụ đều trước.
+
+<LoiGiai>
+
+**Bước 1.** $0\le x\le1$. **Bước 2.** Đổi tổng và tích phân hợp lệ. **Bước 3.** $|x^k/2^k|\le2^{-k}$ và các số hạng liên tục. **Bước 4.** Tiêu chuẩn M cho hội tụ đều; tích phân từng số hạng được $\sum_{k=1}^{\infty}1/[2^k(k+1)]$. **Bước 5.** Có thể đối chiếu $F=x/(2-x)$ bằng chuỗi hình học. **Bước 6.** Nêu giả thiết trước khi đổi hai phép toán.
+
+</LoiGiai>
+
+### KHÓ — Số hạng nhỏ nhưng tổng phân kỳ
+
+Cho $g_k(x)=1/k$ trên $[0,1]$. Kiểm tra hội tụ đều của $g_k$ và của chuỗi $\sum g_k$. **Gợi ý:** hai đối tượng khác nhau.
+
+<LoiGiai>
+
+**Bước 1.** Mỗi $g_k$ là hàm hằng. **Bước 2.** Phân biệt dãy số hạng và dãy tổng riêng. **Bước 3.** Tiêu chuẩn supremum áp dụng cho dãy; chuỗi điều hòa cho tổng. **Bước 4.** $\sup|g_k|=1/k\to0$, nên $g_k\to0$ đều. Nhưng tại mọi $x$, tổng riêng bằng $\sum_{k=1}^n1/k\to\infty$. **Bước 5.** Chuỗi thậm chí không hội tụ từng điểm. **Bước 6.** Điều kiện số hạng về 0 là cần, không đủ.
+
+</LoiGiai>

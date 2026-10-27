@@ -24,9 +24,9 @@ test('mọi trang bài tập hiện có đều có lời giải chia bước, kh
   }
 });
 
-test('30 bài Giải tích và 42 bài luyện Đại số có phần mở lời giải riêng, gợi ý còn nguyên',()=>{
+test('81 bài tự luyện Giải tích và 42 bài luyện Đại số có phần mở lời giải riêng, gợi ý còn nguyên',()=>{
   const calculus=files.filter(f=>f.includes('giai-tich')&&f.includes('giang-day'));
-  expect(calculus).toHaveLength(10);
+  expect(calculus).toHaveLength(27);
   for(const f of calculus){
     const text=readFileSync(f,'utf8').split('## Bài tập')[1];
     expect(solutions(text),f).toHaveLength(3);

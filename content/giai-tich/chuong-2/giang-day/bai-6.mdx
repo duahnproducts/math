@@ -1,0 +1,151 @@
+---
+mon: giai-tich
+chuong: 2
+bai: 6
+tieu_de: "§12. Làm việc với limsup và liminf"
+y_tuong: "limsup và liminf giữ lại hai biên lâu dài của dãy, ngay cả khi dãy không có một giới hạn duy nhất."
+phu_muc: ["12"]
+---
+
+import HinhRossMoRong from '../../../../src/figures/HinhRossMoRong.astro';
+import HinhRoss from '../../../../src/figures/HinhRoss.astro';
+
+## Ý tưởng trong 1 câu
+
+> limsup và liminf giữ lại hai biên lâu dài của dãy, ngay cả khi dãy không có một giới hạn duy nhất.
+
+## Hình dung trực quan
+
+Một cảm biến có thể nhảy giữa hai mức. Giá trị cao nhất từ lúc mới bật máy có thể là một lỗi khởi động rất lớn. Ta bỏ dữ liệu đầu rồi xét trần của phần còn lại; trần này tiến tới limsup. Làm với sàn được liminf.
+
+Biên lâu dài không phải hàng rào mà mọi giá trị đều phải nằm bên trong. Dãy (−1)ⁿ(1+1/n) có liminf=−1, limsup=1, nhưng mọi số hạng đều nằm ngoài [−1,1]. Chúng chỉ tiến sát biên từ phía ngoài.
+
+<HinhRoss loai="limsup" />
+
+## Kiến thức cần biết
+
+Ôn định nghĩa ở §10 và cách đọc qua dãy con ở §11. Với N lớn hơn, đuôi &#123;aₙ:n&gt;N&#125; nhỏ hơn; sup đuôi giảm, inf đuôi tăng. Thay hữu hạn số hạng không đổi limsup/liminf.
+
+Khi nhân một bất đẳng thức với số âm, trần biến thành sàn. Đây là lý do dấu của hệ số quan trọng. Trong bài này, các công thức tổng được phát biểu cho dãy bị chặn để tránh những tổng vô cực không có nghĩa.
+
+## Công thức / Định nghĩa
+
+$$\limsup a_n=\lim_{N\to\infty}\sup\{a_n:n>N\},\qquad \liminf a_n=\lim_{N\to\infty}\inf\{a_n:n>N\}.$$
+
+aₙ là số hạng; N là mốc bỏ đầu; sup/inf là trần/sàn của đuôi. Với U=limsup aₙ hữu hạn: với mọi ε&gt;0, cuối cùng aₙ&lt;U+ε; đồng thời có vô hạn chỉ số thỏa aₙ&gt;U−ε. Với V=liminf aₙ hữu hạn: cuối cùng aₙ&gt;V−ε; có vô hạn chỉ số thỏa aₙ&lt;V+ε. Dấu &lt;U hoặc &gt;V đúng tại biên không được bảo đảm.
+
+**Đảo dấu:** $\liminf a_n=-\limsup(-a_n)$. Với c&gt;0, limsup(caₙ)=c limsup aₙ và liminf(caₙ)=c liminf aₙ. Với c&lt;0, hai biên đổi vai: limsup(caₙ)=c liminf aₙ; liminf(caₙ)=c limsup aₙ. Với c=0 và dãy bị chặn, cả hai biên đều bằng 0.
+
+**So sánh:** nếu aₙ≤bₙ từ một mốc trở đi, thì limsup aₙ≤limsup bₙ và liminf aₙ≤liminf bₙ. Vì mỗi trần hoặc sàn của đuôi tuân theo thứ tự ấy, giới hạn cũng tuân theo.
+
+**Tổng của hai dãy bị chặn:**
+
+$$\limsup(a_n+b_n)\leq\limsup a_n+\limsup b_n.$$
+
+$$\liminf(a_n+b_n)\geq\liminf a_n+\liminf b_n.$$
+
+Các đỉnh của hai dãy có thể đến lệch lúc, nên thường chỉ có bất đẳng thức. Nếu bₙ→b hữu hạn, có đẳng thức limsup(aₙ+bₙ)=limsup aₙ+b, và tương tự liminf. Nếu aₙ→a&gt;0 còn bₙ bất kỳ, limsup(aₙbₙ)=a limsup bₙ; tương tự cho liminf. Trường hợp a=0 không được dùng công thức này với bₙ không bị chặn. Với hai dãy bị chặn không âm, limsup(aₙbₙ)≤(limsup aₙ)(limsup bₙ).
+
+**Căn và tỉ số:** với sₙ≠0, đặt $r_n=|s_{n+1}/s_n|$, $q_n=|s_n|^{1/n}$. Khi đó:
+
+$$\liminf r_n\leq\liminf q_n\leq\limsup q_n\leq\limsup r_n.$$
+
+rₙ đo tốc độ thay đổi của một bước; qₙ đo tốc độ trung bình trên n bước. Nếu rₙ→R trong [0,+∞], thì qₙ→R. Điều ngược lại không nhất thiết đúng.
+
+**Ý tưởng chặn căn:** chọn c&gt;limsup rₙ, c&gt;0. Cuối cùng rₙ&lt;c. Nhân các tỉ số từ N đến n−1 cho |sₙ|≤C cⁿ với C&gt;0 cố định. Lấy căn bậc n: qₙ≤c C^(1/n)→c. Do đó limsup qₙ≤c với mọi c lớn hơn biên; suy ra bất đẳng thức phải. Chặn dưới làm tương tự với 0&lt;c&lt;liminf rₙ; nếu biên dưới bằng 0 thì bất đẳng thức trái tự đúng.
+
+**Trung bình cộng:** với dãy bị chặn, $\sigma_n=(a_1+\cdots+a_n)/n$ thỏa liminf aₙ≤liminf σₙ≤limsup σₙ≤limsup aₙ. Nếu aₙ→L thì σₙ→L. Chia tổng thành hữu hạn đầu và phần đuôi: đầu/n→0, còn trung bình đuôi bị nhốt gần L. Trung bình có thể hội tụ dù dãy gốc không hội tụ.
+
+## Ví dụ mẫu
+
+### Ví dụ A: Đỉnh không xuất hiện cùng lúc
+
+**Bước 1:** aₙ=(−1)ⁿ và bₙ=−(−1)ⁿ. **Bước 2:** so limsup của tổng với tổng limsup. **Bước 3:** tính cả tổng riêng từng chỉ số.
+
+**Bước 4:** mỗi dãy có limsup=1, liminf=−1. Nhưng aₙ+bₙ=0 với mọi n. Vậy limsup tổng=0&lt;2, liminf tổng=0&gt;−2. **Bước 5:** công thức tổng phải có dấu ≤ hoặc ≥, không tự động là dấu bằng. **Bước 6:** tính tổng đồng thời; không ghép hai đỉnh ở hai thời điểm khác nhau.
+
+### Ví dụ B: Nhân âm đổi biên
+
+**Bước 1:** aₙ=3+(−1)ⁿ. **Bước 2:** tìm biên của −2aₙ. **Bước 3:** hệ số âm đảo thứ tự. **Bước 4:** aₙ có biên dưới 2, biên trên 4; −2aₙ có biên dưới −8 và biên trên −4. **Bước 5:** các giá trị thực tế luân phiên −4,−8. **Bước 6:** hệ số âm nhân biên đối diện.
+
+### Ví dụ C: Căn ổn định, tỉ số dao động
+
+**Bước 1:** $s_n=2^{-n}(2+(-1)^n)$, n≥1. **Bước 2:** tìm limsup căn và hai biên tỉ số. **Bước 3:** hệ số 2+(−1)ⁿ chỉ là 1 hoặc 3.
+
+**Bước 4:** $q_n=\frac{1}{2}(2+(-1)^n)^{1/n}\to1/2$. Nếu n chẵn, rₙ=(1/2)(1/3)=1/6; nếu n lẻ, rₙ=(1/2)(3/1)=3/2. Vậy liminf rₙ=1/6, limsup rₙ=3/2, còn hai biên qₙ đều 1/2. **Bước 5:** thứ tự 1/6≤1/2≤3/2 phù hợp định lý. **Bước 6:** căn bỏ ảnh hưởng của hệ số bị chặn xa 0, còn tỉ số nhìn từng bước.
+
+## Lỗi dễ mắc
+
+- **limsup là sup toàn dãy:** một số hạng đầu lớn có thể đổi sup nhưng không đổi limsup.
+- **Nhân âm vẫn giữ hai biên:** phải đổi trần và sàn.
+- **Giới hạn hệ số bằng 0 vẫn ghép tùy ý:** aₙ=1/n,bₙ=n cho tích=1; không được đọc thành 0·∞=0.
+
+## Tóm tắt 30 giây
+
+> Hai biên giúp tính toán với dãy dao động. Chúng giữ thứ tự, đổi vai khi nhân âm, và thường chỉ cho bất đẳng thức với tổng. Quan hệ căn-tỉ số sẽ dẫn tới các tiêu chuẩn chuỗi.
+
+**HIỂU:** biên lâu dài cần xét thời điểm. **NHỚ:** hai dấu của tổng; hệ số âm đổi biên; bốn biên căn-tỉ số. **LÀM:** tách chu kỳ và kiểm tra điều kiện bị chặn/dấu.
+
+## Bài tập
+
+### DỄ - Bỏ đầu hữu hạn
+
+Cho a₁=100, aₙ=(−1)ⁿ khi n≥2. Tìm sup, inf, limsup, liminf. **Gợi ý:** sup nhìn cả số 100; biên đuôi bỏ được nó.
+
+<LoiGiai>
+
+**Bước 1.** Một số hạng đầu bằng 100; đuôi luân phiên $-1,1$.
+
+**Bước 2.** So sánh sup/inf với limsup/liminf.
+
+**Bước 3.** Hai biên lâu dài bỏ qua mọi đoạn đầu hữu hạn.
+
+**Bước 4.** $\sup=100$, $\inf=-1$. Mọi đuôi đủ muộn vẫn chứa cả $-1$ và $1$, nên $\limsup=1$, $\liminf=-1$.
+
+**Bước 5.** Sup nhìn cả dãy, limsup nhìn các đuôi.
+
+**Bước 6.** Đừng lấy số hạng đầu làm biên lâu dài.
+
+</LoiGiai>
+
+### VỪA - Trung bình hội tụ
+
+Với aₙ=(−1)ⁿ, chứng minh σₙ=(a₁+…+aₙ)/n→0. **Gợi ý:** tổng là 0 khi n chẵn, −1 khi n lẻ.
+
+<LoiGiai>
+
+**Bước 1.** $\sigma_n=n^{-1}\sum_{k=1}^n(-1)^k$.
+
+**Bước 2.** Tìm giới hạn trung bình.
+
+**Bước 3.** Tổng luân phiên hữu hạn bằng 0 hoặc $-1$.
+
+**Bước 4.** $|\sigma_n|\le1/n\to0$. Theo định lý kẹp, $\sigma_n\to0$.
+
+**Bước 5.** Dãy gốc không hội tụ nhưng trung bình vẫn có thể hội tụ.
+
+**Bước 6.** Chặn tổng riêng trước khi chia cho $n$.
+
+</LoiGiai>
+
+### KHÓ - Hai biên của một tổng
+
+Với hai dãy bị chặn aₙ,bₙ, chứng minh limsup(aₙ+bₙ)≤limsup aₙ+limsup bₙ. **Gợi ý:** với ε&gt;0, về sau aₙ&lt;U+ε/2 và bₙ&lt;V+ε/2; suy ra biên tổng ≤U+V+ε.
+
+<LoiGiai>
+
+**Bước 1.** $U=\limsup a_n$, $V=\limsup b_n$ hữu hạn.
+
+**Bước 2.** Chứng minh $\limsup(a_n+b_n)\le U+V$.
+
+**Bước 3.** Theo định nghĩa limsup, mỗi dãy cuối cùng nhỏ hơn biên cộng sai số.
+
+**Bước 4.** Với $\varepsilon>0$, cuối cùng $a_n<U+\varepsilon/2$ và $b_n<V+\varepsilon/2$. Do đó tổng nhỏ hơn $U+V+\varepsilon$. Lấy limsup rồi cho $\varepsilon\downarrow0$ được kết luận.
+
+**Bước 5.** Giả thiết hữu hạn tránh phép cộng vô định.
+
+**Bước 6.** Dùng cùng một mốc đủ lớn cho hai chặn.
+
+</LoiGiai>
+
+

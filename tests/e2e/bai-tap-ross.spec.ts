@@ -43,7 +43,7 @@ test('10 bài giảng và bảng đối chiếu nối tới bài Ross đúng m�
     await expect(page.locator('[data-the-bai-tap]:visible')).toHaveCount(counts[section-1]);
   }
   await page.goto('giai-tich/chuong-2/');
-  await expect(page.locator('#doi-chieu + p + div tbody tr')).toHaveCount(9);
+  await expect(page.locator('#doi-chieu + p + div tbody tr')).toHaveCount(10);
   await expect(page.locator('a[href*="/sach/"]')).toHaveCount(0);
 });
 

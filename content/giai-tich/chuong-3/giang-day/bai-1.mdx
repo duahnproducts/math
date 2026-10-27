@@ -1,0 +1,148 @@
+---
+mon: giai-tich
+chuong: 3
+bai: 1
+tieu_de: "§17. Hàm liên tục"
+y_tuong: "Hàm liên tục tại một điểm khi đầu vào tiến gần điểm ấy thì đầu ra tiến gần đúng giá trị của hàm tại điểm ấy."
+phu_muc: ["17"]
+---
+
+import HinhRossMoRong from '../../../../src/figures/HinhRossMoRong.astro';
+
+## Ý tưởng trong 1 câu
+
+> Hàm liên tục tại một điểm khi đầu vào tiến gần điểm ấy thì đầu ra tiến gần đúng giá trị của hàm tại điểm ấy.
+
+## Hình dung trực quan
+
+Vặn núm chỉnh nhiệt độ một lượng rất nhỏ thường chỉ làm nhiệt độ mục tiêu thay đổi nhỏ. Nhưng một công tắc bật/tắt có thể đổi ngay từ 0 sang 1 dù nút chỉ đi qua một ngưỡng rất hẹp. Hàm liên tục mô tả kiểu thay đổi thứ nhất.
+
+“Vẽ không nhấc bút” là hình dung ban đầu, không phải định nghĩa. Hàm chỉ xác định ở một số điểm rời rạc vẫn có thể liên tục trên miền của nó; ta phải xét các đầu vào thật sự thuộc miền xác định.
+
+<HinhRossMoRong loai="continuity" />
+
+*Hàm x² liên tục: gần đầu vào a=1 thì đầu ra nằm trong vùng quanh f(a)=1 nếu chọn khoảng đầu vào đủ nhỏ.*
+
+## Kiến thức cần biết
+
+Một **hàm** f gán cho mỗi x thuộc miền D đúng một giá trị f(x). f là quy tắc; f(x) là một giá trị. D=dom(f) là miền xác định. Miền tự nhiên của 1/x là R&#123;0&#125;; miền tự nhiên của √(4−x²) là [−2,2]. Không nói liên tục tại a nếu hàm chưa xác định tại a.
+
+Ôn giới hạn dãy, tam giác và quy tắc thương. Chữ δ (delta) chỉ mức gần ở đầu vào; ε chỉ mức gần ở đầu ra. Chúng là số dương được chọn trong chứng minh, không là các “số vô cùng nhỏ” đặc biệt.
+
+## Công thức / Định nghĩa
+
+**Theo dãy:** f liên tục tại a∈D nếu với mọi dãy xₙ∈D tiến tới a, ta có f(xₙ)→f(a). Liên tục trên D nghĩa là liên tục tại từng điểm của D.
+
+**Theo ε-δ:**
+
+$$\forall\varepsilon>0,\ \exists\delta>0:\ x\in D,\ |x-a|<\delta\ \Rightarrow\ |f(x)-f(a)|<\varepsilon.$$
+
+a là điểm cố định; x là đầu vào đang thay đổi; ε là sai số đầu ra; δ là độ gần đầu vào. δ có thể phụ thuộc ε và a. Điều kiện bao gồm x=a, nhưng khi ấy sai số tự bằng 0. Ở đầu mút miền, chỉ xét phía còn thuộc D.
+
+**Hai định nghĩa tương đương.** Nếu ε-δ đúng, một dãy xₙ→a cuối cùng nằm trong δ nên ảnh nằm trong ε. Nếu ε-δ sai, có ε₀&gt;0 để với mỗi δ=1/n chọn được xₙ∈D có |xₙ−a|&lt;1/n nhưng |f(xₙ)−f(a)|≥ε₀. Dãy đầu vào →a còn ảnh không →f(a), trái định nghĩa theo dãy.
+
+**Chứng minh gián đoạn:** chỉ cần tìm một dãy xₙ∈D→a mà f(xₙ) không →f(a). Hai dãy có ảnh về hai đích khác nhau cũng bác bỏ liên tục.
+
+**Quy tắc:** tổng, tích, bội số và giá trị tuyệt đối của các hàm liên tục vẫn liên tục tại điểm chung. Thương f/g liên tục nếu g(a)≠0. Hàm hợp g∘f liên tục tại a nếu f liên tục tại a, g liên tục tại f(a), và các giá trị thuộc đúng miền của g. Nhớ g∘f(x)=g(f(x)), không phải f(g(x)).
+
+Đa thức liên tục trên R; phân thức đa thức liên tục ở mọi điểm mẫu khác 0. Các hàm sin, cos, exp và căn bậc nguyên dương được dùng với tính liên tục trên miền tương ứng. Max/min của hai hàm liên tục cũng liên tục, vì:
+
+$$\max(f,g)=\frac{f+g+|f-g|}{2},\qquad \min(f,g)=\frac{f+g-|f-g|}{2}.$$
+
+Không cần một hàm “trơn” mới liên tục: |x| liên tục tại 0 dù đồ thị có góc. Khái niệm đạo hàm sẽ học sau.
+
+## Ví dụ mẫu
+
+### Ví dụ A: x² tại một a bất kỳ
+
+**Bước 1:** f(x)=x², a∈R. **Bước 2:** chứng minh liên tục tại a bằng ε-δ. **Bước 3:** phân tích x²−a² để xuất hiện |x−a|.
+
+**Bước 4:** |x²−a²|=|x−a||x+a|. Nếu |x−a|&lt;1 thì |x+a|≤|x−a|+2|a|&lt;1+2|a|. Với ε&gt;0, chọn δ=min&#123;1,ε/(1+2|a|)&#125;. Khi |x−a|&lt;δ, sai số &lt;δ(1+2|a|)≤ε. **Bước 5:** không chia cho |a|, nên a=0 vẫn được xử lý. **Bước 6:** chặn một thừa số trong vùng cố định, dùng δ cho thừa số còn lại.
+
+### Ví dụ B: Dao động được ép nhỏ
+
+**Bước 1:** g(x)=x sin(1/x) khi x≠0, g(0)=0. **Bước 2:** xét liên tục tại 0. **Bước 3:** |sin t|≤1. **Bước 4:** |g(x)−g(0)|≤|x| cho mọi x. Chọn δ=ε; |x|&lt;δ cho sai số &lt;ε. **Bước 5:** sin(1/x) riêng lẻ không có đích khi x→0, nhưng hệ số x ép biên độ về 0. **Bước 6:** nhìn độ lớn của tích thay vì yêu cầu từng thừa số có giới hạn.
+
+### Ví dụ C: Một bước nhảy
+
+**Bước 1:** h(x)=0 với x≤0, h(x)=1 với x&gt;0. **Bước 2:** xét tại 0. **Bước 3:** một dãy phản ví dụ đủ. **Bước 4:** xₙ=1/n→0 nhưng h(xₙ)=1→1≠h(0)=0. Không liên tục tại 0. **Bước 5:** h liên tục tại mọi điểm khác 0 vì có vùng nhỏ chỉ ở một phía. **Bước 6:** khi hàm định nghĩa từng phần, kiểm tra riêng điểm nối.
+
+### Ví dụ D: Liên tục phụ thuộc miền
+
+**Bước 1:** f(x)=1/x trên D=R&#123;0&#125;. **Bước 2:** f có liên tục trên miền không? **Bước 3:** quy tắc thương; mẫu tại mọi a∈D khác 0. **Bước 4:** f liên tục tại mỗi a≠0, nên liên tục trên D. Không có câu hỏi liên tục tại 0 trong miền ấy. **Bước 5:** nếu muốn thêm 0 vào miền, phải xét có giá trị nào làm mở rộng liên tục được không; câu trả lời là không. **Bước 6:** ghi miền trước khi phát biểu tính chất.
+
+## Lỗi dễ mắc
+
+- **Có công thức quen thuộc nên liên tục mọi nơi:** 1/x không xác định tại 0; quy tắc thương có điều kiện.
+- **Một dãy ảnh tốt đủ chứng minh liên tục:** định nghĩa cần mọi dãy; chỉ một dãy xấu đủ bác bỏ.
+- **Hợp hàm không kiểm tra thứ tự và miền:** √(4−x²) cần |x|≤2, còn (√(4−x))² chỉ cần x≤4; chúng không cùng miền.
+
+## Tóm tắt 30 giây
+
+> Liên tục bảo toàn giới hạn của mọi dãy đầu vào tiến tới điểm trong miền. ε-δ diễn đạt cùng việc bằng mức sai số. Hàm hợp/thương cần đúng điều kiện.
+
+**HIỂU:** phải đến đúng f(a), không chỉ một đích nào đó. **NHỚ:** mọi dãy; δ có thể phụ thuộc a; mẫu khác 0. **LÀM:** phân tích sai số, kẹp hoặc chọn dãy phản ví dụ.
+
+## Bài tập
+
+### DỄ - Miền xác định
+
+Tìm miền tự nhiên và các điểm liên tục của f(x)=√(9−x²)/(x−1). **Gợi ý:** 9−x²≥0 và mẫu khác 0; tính liên tục ở ±3 xét trong miền.
+
+<LoiGiai>
+
+**Bước 1.** $f(x)=\sqrt{9-x^2}/(x-1)$.
+
+**Bước 2.** Tìm miền xác định và tính liên tục.
+
+**Bước 3.** Căn cần biểu thức không âm; thương cần mẫu khác 0.
+
+**Bước 4.** $D=[-3,3]\setminus\{1\}$. Căn liên tục trên miền của nó, đa thức liên tục và mẫu không bằng 0 trên D, nên f liên tục tại mọi điểm thuộc D.
+
+**Bước 5.** Tại hai đầu xét liên tục tương đối với miền.
+
+**Bước 6.** Xác định miền trước khi nói liên tục.
+
+</LoiGiai>
+
+### VỪA - Chứng minh bằng δ
+
+Chứng minh f(x)=3x+2 liên tục tại mọi a bằng ε-δ. **Gợi ý:** sai số =3|x−a|.
+
+<LoiGiai>
+
+**Bước 1.** $f(x)=3x+2$, $a\in\mathbb R$.
+
+**Bước 2.** Chứng minh liên tục bằng định nghĩa.
+
+**Bước 3.** Sai số của hàm affine bằng hệ số góc nhân sai số đầu vào.
+
+**Bước 4.** $|f(x)-f(a)|=3|x-a|$. Cho $\varepsilon>0$, chọn $\delta=\varepsilon/3$; $|x-a|<\delta$ cho sai số nhỏ hơn $\varepsilon$.
+
+**Bước 5.** Đúng với mọi a.
+
+**Bước 6.** Giải bất đẳng thức mục tiêu để chọn delta.
+
+</LoiGiai>
+
+### KHÓ - Liên tục đúng một điểm
+
+Đặt h(x)=x nếu x hữu tỉ, h(x)=0 nếu x vô tỉ. Chứng minh h liên tục tại 0 và gián đoạn tại mọi a≠0. **Gợi ý:** |h(x)|≤|x|; với a≠0, chọn dãy hữu tỉ và vô tỉ cùng tiến tới a, dùng tính trù mật của hai tập.
+
+<LoiGiai>
+
+**Bước 1.** $h(x)=x$ nếu x hữu tỉ, $h(x)=0$ nếu x vô tỉ.
+
+**Bước 2.** Tìm các điểm liên tục.
+
+**Bước 3.** Dùng chặn tại 0 và mật độ hai loại số ở điểm khác 0.
+
+**Bước 4.** $|h(x)|\le|x|$ cho liên tục tại 0. Với $a\ne0$, chọn một dãy hữu tỉ và một dãy vô tỉ cùng về a. Hai dãy ảnh có đích lần lượt a và 0, nên h không liên tục tại a.
+
+**Bước 5.** Giới hạn theo mọi dãy là điều bắt buộc.
+
+**Bước 6.** Chặn nơi biên độ về 0, dùng hai dãy nơi hai quy tắc khác nhau.
+
+</LoiGiai>
+
+

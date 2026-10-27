@@ -1,0 +1,142 @@
+---
+mon: giai-tich
+chuong: 3
+bai: 2
+tieu_de: "§18. Cực trị, giá trị trung gian và hàm ngược"
+y_tuong: "Một hàm liên tục trên đoạn đóng có giá trị lớn nhất và nhỏ nhất, còn trên một khoảng nó không bỏ qua các giá trị nằm giữa hai đầu ra."
+phu_muc: ["18"]
+---
+
+import HinhRossMoRong from '../../../../src/figures/HinhRossMoRong.astro';
+
+## Ý tưởng trong 1 câu
+
+> Một hàm liên tục trên đoạn đóng có giá trị lớn nhất và nhỏ nhất, còn trên một khoảng nó không bỏ qua các giá trị nằm giữa hai đầu ra.
+
+## Hình dung trực quan
+
+Đi liên tục từ độ cao 2 m lên 5 m, bạn phải đi qua 3 m. Đây là giá trị trung gian. Nếu toàn bộ đường đi nằm trong một đoạn hành trình có cả đầu và cuối, độ cao sẽ đạt một mức cao nhất và thấp nhất.
+
+Nếu bỏ điểm cuối nơi đường đi còn leo lên, có thể chỉ có một trần mà không đạt trần. Vì vậy điều kiện đoạn đóng là một phần của kết luận cực trị, không chỉ một chi tiết viết ngoặc.
+
+<HinhRossMoRong loai="continuity" />
+
+## Kiến thức cần biết
+
+Ôn liên tục, sup, compact và dãy con. **Ảnh** f(I)=&#123;f(x):x∈I&#125; là tập giá trị đầu ra. **Một-một** nghĩa là f(x₁)=f(x₂) kéo theo x₁=x₂. **Tăng nghiêm ngặt** nghĩa là x₁&lt;x₂ kéo theo f(x₁)&lt;f(x₂); giảm nghiêm ngặt đổi dấu chiều đầu ra.
+
+Nếu f một-một, hàm ngược f⁻¹ nhận đầu ra y=f(x) và trả lại x. f⁻¹ không phải 1/f. Khi nói hàm ngược liên tục, phải xét miền là ảnh của hàm ban đầu.
+
+## Công thức / Định nghĩa
+
+**Cực trị trên đoạn đóng:** nếu f liên tục trên [a,b], a,b hữu hạn, thì f bị chặn và có c,d∈[a,b] sao cho f(c)≤f(x)≤f(d) với mọi x∈[a,b]. Đây là giá trị nhỏ nhất/lớn nhất toàn đoạn, không chỉ là cực trị địa phương.
+
+**Vì sao bị chặn?** Nếu không, chọn xₙ∈[a,b] với |f(xₙ)|&gt;n. Bolzano-Weierstrass cho dãy con xₙₖ→x₀∈[a,b]. Liên tục cho f(xₙₖ)→f(x₀) hữu hạn, mâu thuẫn với độ lớn &gt;nₖ→∞.
+
+**Vì sao đạt sup?** M=sup f([a,b]) hữu hạn. Chọn yₙ với M−1/n&lt;f(yₙ)≤M. Lấy dãy con yₙₖ→d trong đoạn. Liên tục cho f(d)=lim f(yₙₖ)=M. Dùng −f để đạt min. Cũng đúng trên tập compact không rỗng; đoạn đóng là trường hợp quan trọng nhất.
+
+**Giá trị trung gian:** f liên tục trên khoảng I; a&lt;b thuộc I; y nằm giữa f(a),f(b). Có c∈(a,b) sao cho f(c)=y. Nếu cho phép y bằng một giá trị đầu, có thể lấy c ở đầu tương ứng. Định lý bảo đảm tồn tại, không bảo đảm duy nhất.
+
+**Ý tưởng chứng minh bằng sup:** giả sử f(a)&lt;y&lt;f(b), đặt E=&#123;x∈[a,b]:f(x)&lt;y&#125;, c=sup E. Liên tục tại a,b cho a&lt;c&lt;b: gần a còn có giá trị &lt;y, gần b có giá trị &gt;y. Chọn điểm trong E tiến tới c, suy ra f(c)≤y. Các điểm phía phải c không thuộc E, tiến tới c cho f(c)≥y. Vậy f(c)=y. Tính đầy đủ bảo đảm c tồn tại.
+
+**Ảnh khoảng:** f(I) cũng là khoảng hoặc một điểm. Giữa bất kỳ hai đầu ra, định lý trung gian cho mọi đầu ra ở giữa. Khoảng ảnh có thể mở, đóng, nửa mở hoặc không bị chặn; không khẳng định tự động cùng kiểu ngoặc với I.
+
+**Hàm ngược:** nếu f liên tục, tăng nghiêm ngặt trên khoảng I, thì f⁻¹ tồn tại trên J=f(I), tăng nghiêm ngặt và liên tục. Nếu f giảm nghiêm ngặt, hàm ngược giảm nghiêm ngặt và liên tục. Căn bậc m dương là hàm ngược của x↦xᵐ trên [0,+∞), nên tồn tại duy nhất và liên tục.
+
+**Tăng nghiêm ngặt + ảnh là khoảng ⇒ liên tục:** quanh giá trị f(a), chọn hai giá trị trong ảnh ở hai phía, lấy hai đầu vào tương ứng x₁&lt;a&lt;x₂. Với x giữa x₁,x₂, tính tăng giữ f(x) giữa hai đầu ra. Lấy δ=min&#123;a−x₁,x₂−a&#125; cho ε-δ. Ở đầu mút chỉ dùng phía có miền. Đây là một chiều đảo có thêm giả thiết, không phải mọi hàm có giá trị trung gian đều liên tục.
+
+**Liên tục + một-một trên khoảng ⇒ đơn điệu nghiêm ngặt:** nếu a&lt;b&lt;c mà f(b) cao hơn cả hai giá trị đầu, một mức ở giữa sẽ xuất hiện ở cả (a,b) và (b,c), trái một-một. Trường hợp thấp hơn tương tự. Do đó hàm không thể đổi hướng mà giữ một-một. Vì vậy mọi hàm liên tục một-một trên khoảng đều có hàm ngược liên tục.
+
+## Ví dụ mẫu
+
+### Ví dụ A: Một nghiệm không cần giải chính xác
+
+**Bước 1:** p(x)=x³+x−1. **Bước 2:** chứng minh có nghiệm trong (0,1). **Bước 3:** đa thức liên tục và hai đầu khác dấu.
+
+**Bước 4:** p(0)=−1, p(1)=1. Giá trị 0 nằm giữa, nên có c∈(0,1) với p(c)=0. Muốn duy nhất, xét x&lt;y: p(y)−p(x)=(y−x)(y²+xy+x²+1)&gt;0, vì y²+xy+x²≥0. p tăng nghiêm ngặt nên chỉ một nghiệm. **Bước 5:** tồn tại và duy nhất được chứng minh bằng hai lý do riêng. **Bước 6:** đổi dấu cho tồn tại; tăng nghiêm ngặt cho duy nhất.
+
+### Ví dụ B: Đạt biên không cần đạo hàm
+
+**Bước 1:** f(x)=x² trên [−2,3]. **Bước 2:** tìm min,max. **Bước 3:** bình phương không âm, |x|≤3. **Bước 4:** 0≤x²≤9; 0 đạt tại x=0, 9 đạt tại x=3. Min=0, max=9. **Bước 5:** trên (−2,3), sup vẫn 9 nhưng không đạt; max không tồn tại. **Bước 6:** cận chưa đủ; kiểm tra điểm đạt thuộc miền.
+
+### Ví dụ C: Điểm cố định
+
+**Bước 1:** f liên tục trên [0,1], f(x)∈[0,1]. **Bước 2:** chứng minh có c với f(c)=c. **Bước 3:** chuyển phương trình thành nghiệm của g(x)=f(x)−x.
+
+**Bước 4:** g liên tục, g(0)=f(0)≥0, g(1)=f(1)−1≤0. Nếu một đầu bằng 0, lấy đầu đó. Nếu hai dấu nghiêm, dùng giá trị trung gian để có c∈(0,1) với g(c)=0. **Bước 5:** không nói mọi f chỉ có một điểm cố định; f(x)=x có mọi điểm cố định. **Bước 6:** so hai hàm bằng cách lấy hiệu.
+
+## Lỗi dễ mắc
+
+- **Khoảng mở vẫn bảo đảm đạt max:** x trên (0,1) có sup 1 nhưng không có max.
+- **Giá trị trung gian bảo đảm một nghiệm duy nhất:** không có điều kiện đơn điệu thì có thể nhiều nghiệm.
+- **f⁻¹ là 1/f:** hàm ngược của x³ là căn bậc ba, không là 1/x³.
+
+## Tóm tắt 30 giây
+
+> Đoạn đóng + liên tục cho cực trị đạt được. Khoảng + liên tục cho giá trị trung gian. Một-một + liên tục trên khoảng cho đơn điệu và hàm ngược liên tục.
+
+**HIỂU:** điều kiện miền quyết định kết luận. **NHỚ:** tồn tại không là duy nhất; hàm ngược đổi vai đầu vào/đầu ra. **LÀM:** kiểm tra dấu đầu, cận và điểm đạt.
+
+## Bài tập
+
+### DỄ - Cực trị trên hai miền
+
+Tìm sup,min,max của f(x)=x trên [0,2] và trên [0,2). **Gợi ý:** bỏ 2 chỉ ảnh hưởng việc đạt biên trên.
+
+<LoiGiai>
+
+**Bước 1.** $f(x)=x$ trên $[0,2]$ và trên $[0,2)$.
+
+**Bước 2.** So sánh cực trị và cận trên.
+
+**Bước 3.** Định nghĩa max cần một điểm thật đạt giá trị.
+
+**Bước 4.** Trên $[0,2]$, max bằng 2 và min bằng 0. Trên $[0,2)$, sup bằng 2 nhưng không có max, còn min bằng 0.
+
+**Bước 5.** Đoạn nửa mở không compact.
+
+**Bước 6.** Phân biệt cận trên đúng với giá trị đạt được.
+
+</LoiGiai>
+
+### VỪA - Tìm nghiệm bằng tồn tại
+
+Chứng minh x³=2 có đúng một nghiệm dương trong (1,2). **Gợi ý:** xét x³−2 và tính tăng nghiêm ngặt trên số dương.
+
+<LoiGiai>
+
+**Bước 1.** $f(x)=x^3-2$.
+
+**Bước 2.** Chứng minh có đúng một nghiệm trong $(1,2)$.
+
+**Bước 3.** Liên tục cho tồn tại bằng trung gian, tăng nghiêm ngặt cho duy nhất.
+
+**Bước 4.** $f(1)=-1$, $f(2)=6$, nên có nghiệm giữa. Với $1<x<y<2$, $y^3-x^3=(y-x)(y^2+xy+x^2)>0$, nên có nhiều nhất một nghiệm.
+
+**Bước 5.** Trung gian một mình không chứng minh duy nhất.
+
+**Bước 6.** Tách tồn tại và duy nhất thành hai lập luận.
+
+</LoiGiai>
+
+### KHÓ - Hai hàm gặp nhau
+
+Cho f,g liên tục trên [a,b], f(a)≥g(a), f(b)≤g(b). Chứng minh có c∈[a,b] với f(c)=g(c). **Gợi ý:** dùng h=f−g, xử lý trường hợp một đầu bằng 0.
+
+<LoiGiai>
+
+**Bước 1.** f,g liên tục trên $[a,b]$, $f(a)\ge g(a)$, $f(b)\le g(b)$.
+
+**Bước 2.** Tìm điểm hai hàm bằng nhau.
+
+**Bước 3.** Áp dụng trung gian cho hiệu liên tục.
+
+**Bước 4.** Đặt $h=f-g$. Nếu $h(a)=0$ hoặc $h(b)=0$ thì lấy đầu mút ấy. Nếu không, $h(a)>0>h(b)$; trung gian cho $c\in(a,b)$ với $h(c)=0$.
+
+**Bước 5.** Kết quả cần một điểm trong đoạn, có thể là đầu mút.
+
+**Bước 6.** Đưa bài hai hàm về nghiệm của hiệu.
+
+</LoiGiai>
+
+

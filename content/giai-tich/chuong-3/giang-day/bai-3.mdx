@@ -1,0 +1,148 @@
+---
+mon: giai-tich
+chuong: 3
+bai: 3
+tieu_de: "§19. Liên tục đều"
+y_tuong: "Liên tục đều dùng cùng một độ gần đầu vào cho tất cả vị trí trong miền để bảo đảm cùng một mức sai số đầu ra."
+phu_muc: ["19"]
+---
+
+import HinhRossMoRong from '../../../../src/figures/HinhRossMoRong.astro';
+
+## Ý tưởng trong 1 câu
+
+> Liên tục đều dùng cùng một độ gần đầu vào cho tất cả vị trí trong miền để bảo đảm cùng một mức sai số đầu ra.
+
+## Hình dung trực quan
+
+Bạn muốn máy đo luôn có sai số đầu ra dưới 0,01. Liên tục tại từng điểm cho phép chỉnh mức chính xác đầu vào riêng theo vị trí đo. Liên tục đều cho một mức chung áp dụng khắp miền.
+
+Với x², ở x rất lớn, một dịch chuyển nhỏ có thể tạo thay đổi đầu ra lớn. Trên [0,3], x không lớn tùy ý nên có mức chung; trên cả R thì không. Cùng hàm, đổi miền có thể đổi kết luận.
+
+<HinhRossMoRong loai="continuity" />
+
+## Kiến thức cần biết
+
+Ôn ε-δ của §17 và compact của §13. Liên tục tại a: chọn δ sau khi biết cả a và ε. Liên tục đều trên E: chọn δ sau khi biết ε nhưng trước khi biết cặp x,y∈E.
+
+**Lipschitz** là điều kiện |f(x)−f(y)|≤M|x−y| với M hữu hạn cố định trên toàn miền. Nó bảo đảm liên tục đều: nếu M&gt;0, chọn δ=ε/M; nếu M=0, hàm hằng nên δ nào cũng được. Không cần đạo hàm để dùng điều kiện này.
+
+## Công thức / Định nghĩa
+
+$$\forall\varepsilon>0,\ \exists\delta>0,\ \forall x,y\in E:\ |x-y|<\delta\Rightarrow|f(x)-f(y)|<\varepsilon.$$
+
+E là miền đang xét; x,y là hai điểm bất kỳ; ε là sai số đầu ra; δ là cận khoảng cách đầu vào dùng chung. Liên tục đều là tính chất trên một tập, không nói “liên tục đều tại mỗi điểm”. Nó kéo theo liên tục tại mọi điểm của E theo miền E.
+
+**Không liên tục đều:** có ε₀&gt;0 để với mọi δ&gt;0, tìm được x,y∈E với |x−y|&lt;δ nhưng |f(x)−f(y)|≥ε₀. Tương đương có hai dãy xₙ,yₙ∈E với |xₙ−yₙ|→0 mà sai số đầu ra không →0; khi lấy dãy để bác bỏ, có thể chọn sai số luôn ≥ε₀.
+
+**Liên tục trên compact ⇒ liên tục đều.** Trong R, áp dụng đặc biệt cho đoạn đóng [a,b]. Phản chứng: nếu không đều, chọn xₙ,yₙ có khoảng cách &lt;1/n nhưng sai số ảnh ≥ε₀. Compact cho dãy con xₙₖ→a∈E; khoảng cách nhỏ kéo yₙₖ→a. Liên tục cho cả hai ảnh →f(a), nên khoảng cách ảnh →0, mâu thuẫn.
+
+**Bảo toàn Cauchy:** nếu f liên tục đều trên E và xₙ là Cauchy trong E, thì f(xₙ) Cauchy. Cho ε lấy δ chung; Cauchy đầu vào cho mọi cặp muộn cách nhau &lt;δ; ảnh cách nhau &lt;ε. Không cần đích của xₙ nằm trong E.
+
+**Trên khoảng hữu hạn (a,b):** f liên tục đều khi và chỉ khi có thể thêm hai giá trị đầu mút để mở rộng thành hàm liên tục trên [a,b]. Chiều mở rộng ⇒ đều theo compact. Chiều ngược: mọi dãy xₙ→a trong khoảng là Cauchy, nên ảnh có giới hạn hữu hạn. Hai dãy khác nhau tới a phải cho cùng đích: đan xen chúng thành một dãy Cauchy, ảnh đan xen hội tụ. Đặt giá trị tại a bằng đích ấy; làm tương tự tại b. Định nghĩa theo dãy cho liên tục ở hai đầu.
+
+**Liên tục đều trên tập bị chặn ⇒ ảnh bị chặn.** Nếu ảnh không bị chặn, chọn xₙ∈E với |f(xₙ)|&gt;n. Dãy đầu vào bị chặn có dãy con hội tụ trong R, nên dãy con ấy Cauchy. Ảnh phải Cauchy rồi bị chặn, trái |f(xₙₖ)|&gt;nₖ. Liên tục đều trên miền không bị chặn vẫn có thể có ảnh không bị chặn: f(x)=x trên R là ví dụ.
+
+**Đạo hàm bị chặn - công cụ học trước:** nếu f liên tục trên khoảng I, có đạo hàm ở phần trong và |f'|≤M hữu hạn, thì f liên tục đều. Đạo hàm đo tốc độ đổi; định lý giá trị trung bình cho f(y)−f(x)=f'(c)(y−x), với c giữa x,y, nên có cận Lipschitz. Nếu M=0, f hằng; nếu M&gt;0, chọn δ=ε/M. Đây là điều kiện đủ, không là điều kiện cần: √x liên tục đều trên [0,1] dù đạo hàm 1/(2√x) không bị chặn gần 0.
+
+**Vì sao liên tục đều giúp định nghĩa diện tích?** Chia [0,1] thành n đoạn dài 1/n. Trên đoạn i, gọi Mᵢ là max f, mᵢ là min f. Hai tổng chữ nhật là Uₙ=(1/n)∑Mᵢ và Lₙ=(1/n)∑mᵢ. Cho ε&gt;0, lấy δ chung; khi 1/n&lt;δ, mọi Mᵢ−mᵢ&lt;ε. Do đó 0≤Uₙ−Lₙ&lt;ε. Hai ước lượng trên/dưới ép tới cùng diện tích; đây là bước quan trọng khi học tích phân Riemann.
+
+## Ví dụ mẫu
+
+### Ví dụ A: x² trên [0,3]
+
+**Bước 1:** f(x)=x², x,y∈[0,3]. **Bước 2:** chứng minh liên tục đều trực tiếp. **Bước 3:** chặn |x+y| bằng hằng số chung. **Bước 4:** |x²−y²|=|x−y||x+y|≤6|x−y|. Cho ε&gt;0, chọn δ=ε/6; khoảng cách &lt;δ cho sai số &lt;ε. **Bước 5:** δ không chứa x,y, nên dùng được toàn miền. **Bước 6:** tìm một hệ số chặn chung.
+
+### Ví dụ B: x² trên R
+
+**Bước 1:** cùng công thức, miền R. **Bước 2:** bác bỏ liên tục đều. **Bước 3:** chọn hai điểm gần nhau ở vị trí rất lớn.
+
+**Bước 4:** xₙ=n, yₙ=n+1/n. Khoảng cách 1/n→0, nhưng |yₙ²−xₙ²|=2+1/n²≥2. Chọn ε₀=1: sau mọi độ gần yêu cầu vẫn có một cặp vi phạm. **Bước 5:** hàm vẫn liên tục tại từng a, không mâu thuẫn; các cặp di chuyển ra xa. **Bước 6:** tìm cặp gần nhau có ảnh không gần, không bắt buộc đầu vào về một điểm hữu hạn.
+
+### Ví dụ C: √x trên [0,+∞)
+
+**Bước 1:** f(x)=√x, x,y≥0. **Bước 2:** chứng minh liên tục đều dù miền không bị chặn. **Bước 3:** dùng cận không phụ thuộc x,y.
+
+**Bước 4:** giả sử x≥y. Từ (√x−√y)²≤(√x−√y)(√x+√y)=x−y, suy ra |√x−√y|≤√|x−y|. Chọn δ=ε². Nếu |x−y|&lt;δ thì sai số &lt;ε. Đổi vai khi y&gt;x. **Bước 5:** không chia cho √x+√y khi x=y=0; lập luận vẫn đúng. **Bước 6:** Lipschitz không bắt buộc; một cận dạng căn cũng đủ.
+
+### Ví dụ D: 1/x ở gần và xa 0
+
+**Bước 1:** f(x)=1/x. **Bước 2:** so (0,1) và [a,+∞), a&gt;0. **Bước 3:** gần 0 dùng cặp phản ví dụ; xa 0 chặn mẫu.
+
+**Bước 4:** trên (0,1), xₙ=1/(n+1), yₙ=1/(n+2) có khoảng cách →0 nhưng ảnh chênh 1, nên không đều. Trên [a,+∞), |1/x−1/y|=|x−y|/(xy)≤|x−y|/a²; chọn δ=εa². **Bước 5:** n≥1 bảo đảm cả hai điểm thật sự thuộc (0,1). **Bước 6:** vị trí của miền so với mẫu bằng 0 quyết định cận chung.
+
+## Lỗi dễ mắc
+
+- **Liên tục trên miền bất kỳ thì đều:** compact là điều kiện đủ quan trọng; x² trên R là phản ví dụ.
+- **Đạo hàm không bị chặn thì không đều:** √x bác bỏ chiều đảo; kiểm tra bằng định nghĩa.
+- **δ vẫn chứa điểm x:** nếu độ gần phụ thuộc từng vị trí, chưa chứng minh tính đều.
+
+## Tóm tắt 30 giây
+
+> Liên tục đều đổi thứ tự chọn: một δ cho mọi cặp điểm. Nó giữ dãy Cauchy, cho mở rộng lên hai đầu của khoảng hữu hạn và giúp kiểm soát diện tích đồng thời trên mọi ô nhỏ.
+
+**HIỂU:** một cam kết cho toàn miền. **NHỚ:** ∀ε → ∃δ → ∀x,y; compact; bảo toàn Cauchy. **LÀM:** tìm cận chung hoặc hai dãy phản ví dụ.
+
+## Bài tập
+
+### DỄ - Hàm affine
+
+Chứng minh 5x−7 liên tục đều trên R. **Gợi ý:** sai số đầu ra =5|x−y|.
+
+<LoiGiai>
+
+**Bước 1.** $f(x)=5x-7$ trên $\mathbb R$.
+
+**Bước 2.** Chứng minh liên tục đều.
+
+**Bước 3.** Sai số affine không phụ thuộc vị trí.
+
+**Bước 4.** $|f(x)-f(y)|=5|x-y|$. Với $\varepsilon>0$ chọn $\delta=\varepsilon/5$ dùng được cho mọi x,y.
+
+**Bước 5.** Không có phụ thuộc vào điểm.
+
+**Bước 6.** Chặn Lipschitz cho liên tục đều.
+
+</LoiGiai>
+
+### VỪA - Tập nào dùng được?
+
+Xét f(x)=1/(x−2) trên (2,3) và trên [3,+∞). Quyết định liên tục đều. **Gợi ý:** gần 2 chọn xₙ=2+1/(n+1), yₙ=2+1/(n+2); xa 2 dùng mẫu ≥1.
+
+<LoiGiai>
+
+**Bước 1.** $f(x)=1/(x-2)$ trên $(2,3)$ và $[3,\infty)$.
+
+**Bước 2.** Xét liên tục đều trên từng miền.
+
+**Bước 3.** Dùng cặp điểm xấu và chặn chung.
+
+**Bước 4.** Trên $(2,3)$, lấy $x_n=2+1/n$, $y_n=2+1/(n+1)$ với $n\ge2$. Khoảng cách đầu vào về 0 nhưng $|f(x_n)-f(y_n)|=1$, nên không đều. Trên $[3,\infty)$, $|f(x)-f(y)|=|x-y|/[(x-2)(y-2)]\le|x-y|$, nên đều.
+
+**Bước 5.** Mẫu cách 0 bởi một chặn chung chỉ trên miền thứ hai.
+
+**Bước 6.** Tìm chặn dưới mẫu số hoặc cho hai điểm chạy tới cực.
+
+</LoiGiai>
+
+### KHÓ - Mở rộng liên tục
+
+Với f(x)=x sin(1/x) trên (0,1), tìm mở rộng liên tục lên [0,1] và suy ra liên tục đều. So với g(x)=sin(1/x) trên cùng miền. **Gợi ý:** f thêm giá trị 0 tại 0; g có hai dãy tới 0 với ảnh 1 và −1 nên không có giá trị biên phù hợp.
+
+<LoiGiai>
+
+**Bước 1.** $h(x)=x\sin(1/x)$ và $g(x)=\sin(1/x)$ trên $(0,1)$.
+
+**Bước 2.** Xét mở rộng liên tục và liên tục đều.
+
+**Bước 3.** Hàm liên tục đều gửi dãy Cauchy thành dãy Cauchy, nên có giới hạn hữu hạn ở đầu mút; ngược lại mở rộng liên tục lên đoạn compact cho liên tục đều.
+
+**Bước 4.** Đặt $h(0)=0$, $h(1)=\sin1$. Chặn $|h(x)|\le x$ chứng minh liên tục tại 0, nên mở rộng liên tục trên $[0,1]$ và h đều. Với g, các dãy $1/(2\pi n+\pi/2)$ và $1/(2\pi n+3\pi/2)$ cùng về 0 nhưng ảnh bằng 1 và $-1$, nên không có mở rộng liên tục và không đều.
+
+**Bước 5.** Dao động bị nhân với x có biên độ mất dần.
+
+**Bước 6.** Kiểm tra giới hạn ở các đầu mút hữu hạn.
+
+</LoiGiai>
+
+

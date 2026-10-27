@@ -17,7 +17,7 @@ test('163 bài Ross liền số đúng từng §, không để lại bài Abbott
     const files=readdirSync(`content/giai-tich/chuong-${chapter}/bai-tap`).sort();
     expect(files).toEqual(inventory.filter(b=>b.chuong===chapter).map(b=>b.so.replaceAll('.','-')+'.mdx').sort());
   }
-  expect(mon.chuong.flatMap((c:{muc:{so:string}[]})=>c.muc.map(m=>m.so))).toEqual(counts.map((_,i)=>String(i+1)));
+  expect(mon.chuong.flatMap((c:{muc:{so:string}[]})=>c.muc.map(m=>m.so))).toEqual(Array.from({length:27},(_,i)=>String(i+1)));
 });
 
 test.each(inventory)('$so: đề, hai gợi ý, lời giải sáu bước, lỗi và công thức đầy đủ',({so,muc,chuong})=>{

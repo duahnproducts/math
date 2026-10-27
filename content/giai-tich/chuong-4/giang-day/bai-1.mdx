@@ -1,0 +1,98 @@
+---
+mon: giai-tich
+chuong: 4
+bai: 1
+tieu_de: "§23. Chuỗi lũy thừa và bán kính hội tụ"
+y_tuong: "Chuỗi lũy thừa giống đa thức vô hạn, nhưng chỉ tính được tổng trên miền hội tụ của nó."
+phu_muc: ["23"]
+---
+
+import HinhRossMoRong from '../../../../src/figures/HinhRossMoRong.astro';
+
+## Ý tưởng trong 1 câu
+
+Khi thay đổi $x$, một chuỗi lũy thừa chuyển từ hội tụ sang phân kỳ qua một bán kính xác định; hai đầu biên phải xét riêng.
+
+## Hình dung trực quan
+
+Đa thức hữu hạn như $1+x+x^2$ tính được với mọi số thực. Nếu cộng vô hạn số hạng $1+x+x^2+\cdots$, việc thay $x=1/2$ làm các số hạng nhỏ nhanh, còn $x=2$ làm chúng lớn dần. Vì vậy “vô hạn” thêm một câu hỏi mới: tổng có tồn tại không?
+
+<HinhRossMoRong loai="power" />
+
+## Kiến thức cần biết
+
+Ôn chuỗi là giới hạn của dãy tổng riêng, điều kiện cần số hạng về 0, tiêu chuẩn căn và tỉ số ở §14. Chỉ số $n$ chạy qua các số nguyên không âm; $a_n$ là hệ số cố định, $x$ là biến.
+
+Một dãy hàm $f_n$ cũng có thể được xét: cố định $x$ rồi tìm giới hạn của dãy số $f_n(x)$. Đó là hội tụ từng điểm, được phân biệt với hội tụ đều ở §24.
+
+## Công thức
+
+Chuỗi lũy thừa tâm $c$ có dạng
+
+$$\sum_{n=0}^{\infty}a_n(x-c)^n.$$
+
+Đặt $\beta=\limsup_{n\to\infty}|a_n|^{1/n}$ và
+
+$$R=1/\beta,\qquad 1/0=+\infty,\qquad 1/(+\infty)=0.$$
+
+Ở đây các quy ước chỉ cách diễn đạt bán kính, không phải phép chia số thực thông thường. Chuỗi hội tụ tuyệt đối khi $|x-c|<R$ và phân kỳ khi $|x-c|>R$. Khi $|x-c|=R$, công thức bán kính không quyết định được.
+
+**Lý do:** tại $x=c$, chuỗi chỉ còn số hạng $a_0$. Với $x\ne c$, tiêu chuẩn căn xét $\limsup |a_n(x-c)^n|^{1/n}=\beta|x-c|$. Nhỏ hơn 1 cho hội tụ tuyệt đối; lớn hơn 1 làm số hạng không tiến về 0. Trường hợp bằng 1 chưa kết luận. Nếu giới hạn tỉ số hệ số tồn tại và thích hợp, có thể tính $R=\lim|a_n/a_{n+1}|$; công thức limsup tổng quát hơn, kể cả khi có nhiều hệ số bằng 0.
+
+**Ví dụ ba khả năng:** $\sum n!x^n$ có $R=0$ vì với $x\ne0$ tỉ số độ lớn số hạng là $(n+1)|x|\to\infty$. Chuỗi $\sum x^n$ có $R=1$. Chuỗi $\sum x^n/n!$ có $R=\infty$ vì tỉ số là $|x|/(n+1)\to0$ với mọi $x$ cố định.
+
+## Ví dụ mẫu
+
+**Bước 1. Dữ kiện.** Xét $\sum_{n=1}^{\infty}(x-2)^n/(n3^n)$.
+
+**Bước 2. Mục tiêu.** Tìm tất cả $x$ mà chuỗi hội tụ.
+
+**Bước 3. Căn cứ.** Dùng tiêu chuẩn tỉ số ở bên trong, rồi xét chuỗi cụ thể tại hai đầu.
+
+**Bước 4. Thực hiện.** Tỉ số độ lớn hai số hạng liên tiếp tiến tới $|x-2|/3$. Do đó hội tụ tuyệt đối khi $|x-2|<3$, phân kỳ khi $|x-2|>3$. Tại $x=-1$, chuỗi thành $\sum(-1)^n/n$, hội tụ có điều kiện theo tiêu chuẩn đan dấu. Tại $x=5$, chuỗi thành $\sum1/n$, phân kỳ. Miền hội tụ là $[-1,5)$.
+
+**Bước 5. Kiểm tra.** Tâm là 2, bán kính là 3; hai đầu không có cùng kết quả. Tại tâm mọi số hạng bằng 0.
+
+**Bước 6. Cách làm lại.** Tìm tâm và bán kính, ghi khoảng mở trước, sau đó thay trực tiếp từng đầu mút.
+
+## Lỗi dễ mắc
+
+- Viết miền hội tụ chỉ bằng $|x-c|\le R$ mà không thử hai đầu.
+- Đồng nhất hội tụ với hội tụ tuyệt đối tại biên.
+- Dùng tỉ số khi mẫu hệ số bằng 0; tiêu chuẩn căn với limsup vẫn có thể dùng được.
+
+## Tóm tắt 30 giây
+
+**HIỂU:** mỗi $x$ cho một chuỗi số riêng. **NHỚ:** trong bán kính hội tụ tuyệt đối, ngoài bán kính phân kỳ, biên kiểm tra riêng. **LÀM:** chuẩn hóa $x-c$, dùng căn/tỉ số, xét hai đầu mút.
+
+## Bài tập
+
+### DỄ — Chuỗi hình học
+
+Tìm miền hội tụ và tổng của $\sum_{n=0}^{\infty}(x/2)^n$. **Gợi ý:** xem $x/2$ là công bội.
+
+<LoiGiai>
+
+**Bước 1.** Công bội $r=x/2$. **Bước 2.** Tìm miền và tổng. **Bước 3.** Chuỗi hình học hội tụ khi $|r|<1$. **Bước 4.** Với $|x|<2$, tổng là $1/(1-x/2)$. Tại $x=2$ số hạng bằng 1; tại $x=-2$ số hạng luân phiên $\pm1$, đều không về 0. **Bước 5.** Hai đầu đều phân kỳ. **Bước 6.** Kiểm tra điều kiện công bội trước khi dùng công thức tổng.
+
+</LoiGiai>
+
+### VỪA — Hội tụ cả hai đầu
+
+Tìm miền hội tụ của $\sum_{n=1}^{\infty}x^n/n^2$. **Gợi ý:** biên liên quan đến chuỗi $p$.
+
+<LoiGiai>
+
+**Bước 1.** Tâm 0, hệ số $1/n^2$. **Bước 2.** Tìm miền. **Bước 3.** Tiêu chuẩn tỉ số cho giới hạn $|x|$. **Bước 4.** Hội tụ tuyệt đối khi $|x|<1$, phân kỳ khi $|x|>1$. Với $x=\pm1$, tổng trị tuyệt đối là $\sum1/n^2$, hội tụ. **Bước 5.** Miền là $[-1,1]$. **Bước 6.** Tại biên, dùng một tiêu chuẩn chuỗi số phù hợp.
+
+</LoiGiai>
+
+### KHÓ — Hệ số xen số 0
+
+Tìm bán kính của $\sum_{k=0}^{\infty}x^{2k}/4^k$. **Gợi ý:** không chia hai hệ số liên tiếp; nhận ra chuỗi hình học theo $x^2/4$.
+
+<LoiGiai>
+
+**Bước 1.** Hệ số bậc lẻ bằng 0. **Bước 2.** Tìm bán kính và biên. **Bước 3.** Công bội theo chỉ số $k$ là $x^2/4$. **Bước 4.** Điều kiện hội tụ $x^2/4<1$ tương đương $|x|<2$. Tại $x=\pm2$, mọi số hạng đều bằng 1, nên phân kỳ. **Bước 5.** Bán kính 2, không phải 4. **Bước 6.** Chú ý số mũ khi chuyển tiêu chuẩn về biến gốc.
+
+</LoiGiai>

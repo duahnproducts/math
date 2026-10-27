@@ -1,0 +1,98 @@
+---
+mon: giai-tich
+chuong: 4
+bai: 4
+tieu_de: "§26. Đạo hàm và tích phân của chuỗi lũy thừa"
+y_tuong: "Bên trong bán kính hội tụ, chuỗi lũy thừa có thể được đạo hàm và tích phân như đa thức."
+phu_muc: ["26"]
+---
+
+import HinhRossMoRong from '../../../../src/figures/HinhRossMoRong.astro';
+
+## Ý tưởng trong 1 câu
+
+Chuỗi lũy thừa cho phép tính từng số hạng bên trong bán kính hội tụ, nhưng kết luận tại đầu mút cần giả thiết riêng.
+
+## Hình dung trực quan
+
+Tổng riêng là một đa thức, nên tính đạo hàm và tích phân dễ dàng. Điều cần chứng minh là các phép tính vẫn đúng khi số số hạng tăng vô hạn. Trên một đoạn nằm hẳn bên trong bán kính, đuôi chuỗi được chặn chung bằng hình học, nên phép lấy giới hạn được kiểm soát.
+
+<HinhRossMoRong loai="power" />
+
+## Kiến thức cần biết
+
+Ôn bán kính hội tụ, tiêu chuẩn M và tích phân giới hạn đều. Đạo hàm và tích phân trong bài này dùng kiến thức vi tích phân đã học; các nền tảng đầy đủ nằm ở Chương 5–6. Không áp dụng quy tắc đạo hàm cho mọi dãy hàm hội tụ đều: phản ví dụ ở §24 cho thấy điều đó sai.
+
+## Công thức
+
+Nếu $f(x)=\sum_{n=0}^{\infty}a_n(x-c)^n$ có bán kính $R>0$, thì với $|x-c|<R$:
+
+$$f'(x)=\sum_{n=1}^{\infty}n a_n(x-c)^{n-1},$$
+
+$$\int_c^x f(t)\,dt=\sum_{n=0}^{\infty}\frac{a_n}{n+1}(x-c)^{n+1}.$$
+
+Hai chuỗi mới có cùng bán kính $R$, nhưng không nhất thiết có cùng hành vi tại biên. $t$ là biến tích phân; $x$ là đầu mút thay đổi. Các hệ số $n$ và $1/(n+1)$ đến từ quy tắc lũy thừa.
+
+**Vì sao có hội tụ đều cục bộ?** Chọn $0\le r<\rho<R$. Chuỗi hội tụ tuyệt đối ở khoảng cách $\rho$ nên dãy $|a_n|\rho^n$ bị chặn bởi một số $M$. Với $|x-c|\le r$, có $|a_n(x-c)^n|\le M(r/\rho)^n$. Tiêu chuẩn M cho hội tụ đều trên $[c-r,c+r]$. Không kết luận hội tụ đều trên cả khoảng mở bán kính $R$.
+
+**Bán kính không đổi:** nhân hệ số với $n$ hay chia cho $n+1$ không thay đổi tốc độ tăng theo căn bậc $n$, vì $n^{1/n}\to1$. Sau khi dịch chỉ số thích hợp, công thức căn cho cùng bán kính.
+
+**Dàn ý chứng minh phép đạo hàm:** chuỗi ứng viên đạo hàm có cùng bán kính, nên liên tục và được tích phân từng số hạng trên đoạn trong bán kính. Tích phân ứng viên từ $c$ đến $x$ cho $f(x)-a_0$. Định lý cơ bản của giải tích suy ra ứng viên chính là $f'$. Lập luận này tránh áp dụng một quy tắc đổi đạo hàm–giới hạn chưa được chứng minh.
+
+**Định lý Abel ở đầu mút:** nếu $0<R<\infty$ và chuỗi hội tụ tại $x=c+R$, hàm tổng liên tục từ trái tại điểm ấy; tương tự tại $c-R$ từ phải. Chỉ nói từ phía bên trong miền hội tụ. Hội tụ tại đầu mút là giả thiết, không tự suy ra từ bán kính.
+
+## Ví dụ mẫu
+
+**Bước 1. Dữ kiện.** Với $|x|<1$, $1/(1-x)=\sum_{n=0}^{\infty}x^n$.
+
+**Bước 2. Mục tiêu.** Tìm tổng của $\sum_{n=1}^{\infty}n x^{n-1}$ và liên hệ với logarithm.
+
+**Bước 3. Căn cứ.** Chuỗi hình học có bán kính 1; trong bán kính được đạo hàm và tích phân từng số hạng.
+
+**Bước 4. Thực hiện.** Đạo hàm cho $\sum_{n=1}^{\infty}n x^{n-1}=1/(1-x)^2$. Tích phân từ 0 đến $x$ cho $\sum_{n=1}^{\infty}x^n/n=-\log(1-x)$. Thay $x=-t$ được $\log(1+t)=\sum_{n=1}^{\infty}(-1)^{n+1}t^n/n$ khi $|t|<1$. Tại $t=1$, chuỗi đan dấu hội tụ; Abel cho tổng bằng $\log2$.
+
+**Bước 5. Kiểm tra.** Không thay thẳng $x=1$ vào chuỗi hình học. Để đi ra biên của chuỗi logarithm, đã kiểm tra hội tụ rồi mới dùng Abel.
+
+**Bước 6. Cách làm lại.** Bắt đầu từ chuỗi đã biết, kiểm tra miền, đạo hàm/tích phân, sửa chỉ số, rồi xét riêng biên.
+
+## Lỗi dễ mắc
+
+- Quên số hạng hằng mất khi đạo hàm và quên hằng số khi tính nguyên hàm.
+- Cho rằng cùng bán kính nghĩa là cùng khoảng hội tụ có đầu mút.
+- Dùng hội tụ đều bất kỳ để đổi đạo hàm; ở đây cấu trúc lũy thừa và kiểm soát chuỗi đạo hàm mới bảo đảm kết quả.
+
+## Tóm tắt 30 giây
+
+**HIỂU:** trong bán kính có sự kiểm soát đều trên mọi đoạn nhỏ. **NHỚ:** đạo hàm/tích phân từng số hạng, bán kính giữ nguyên, biên kiểm tra lại, Abel cần hội tụ tại biên. **LÀM:** xuất phát từ chuỗi hình học và ghi miền ở mỗi bước.
+
+## Bài tập
+
+### DỄ — Nhân thêm x
+
+Tính $\sum_{n=1}^{\infty}n x^n$ khi $|x|<1$. **Gợi ý:** đạo hàm chuỗi hình học rồi nhân $x$.
+
+<LoiGiai>
+
+**Bước 1.** Chuỗi hình học bán kính 1. **Bước 2.** Tìm tổng chuỗi có hệ số $n$. **Bước 3.** Đạo hàm từng số hạng trong bán kính. **Bước 4.** $\sum n x^{n-1}=1/(1-x)^2$, nên $\sum n x^n=x/(1-x)^2$. **Bước 5.** Tại $x=0$ hai vế đều bằng 0. **Bước 6.** Hệ số $n$ gợi ý đạo hàm, bậc lũy thừa quyết định có cần nhân thêm $x$ không.
+
+</LoiGiai>
+
+### VỪA — Tích phân chuỗi chẵn
+
+Tìm một chuỗi cho $\arctan x$ khi $|x|<1$. **Gợi ý:** khai triển $1/(1+t^2)$ rồi tích phân từ 0.
+
+<LoiGiai>
+
+**Bước 1.** $1/(1+t^2)=\sum_{n=0}^{\infty}(-1)^nt^{2n}$ khi $|t|<1$. **Bước 2.** Tìm nguyên hàm bằng 0 tại 0. **Bước 3.** Tích phân từng số hạng trên đoạn trong bán kính. **Bước 4.** $\arctan x=\sum_{n=0}^{\infty}(-1)^nx^{2n+1}/(2n+1)$. **Bước 5.** Đạo hàm lại và giá trị tại 0 đều khớp. **Bước 6.** Tích phân có cận xác định giữ đúng hằng số.
+
+</LoiGiai>
+
+### KHÓ — Bán kính giống, biên khác
+
+So sánh chuỗi $\sum_{n=1}^{\infty}x^n/n^2$ với chuỗi đạo hàm của nó. **Gợi ý:** thử $x=1$.
+
+<LoiGiai>
+
+**Bước 1.** Chuỗi gốc có bán kính 1. **Bước 2.** Xét biên sau đạo hàm. **Bước 3.** Công thức đạo hàm cho $\sum x^{n-1}/n$ trong $(-1,1)$. **Bước 4.** Tại $x=1$, chuỗi gốc là $\sum1/n^2$ hội tụ, còn chuỗi đạo hàm là $\sum1/n$ phân kỳ. **Bước 5.** Cả hai vẫn có bán kính 1. **Bước 6.** Bán kính chỉ quyết định miền mở; tính lại từng đầu mút.
+
+</LoiGiai>

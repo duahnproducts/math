@@ -38,10 +38,7 @@ Trỏ sang chương khác: `<XemMuc muc="1.4" />`, `<XemMuc chuong={1} bai={4} /
 Phần chưa có thì **không tạo file rỗng** — web tự hiện “Chưa có”. Chạy `npm test` để
 kiểm tra liên kết chéo, số hiệu và ghi công trước khi commit.
 
-Nội dung hiện có: Giải tích theo Kenneth Ross §1–§10 (6 bài ở Chương 1, 4 bài
-ở Chương 2, PDF tổng hợp 37 trang; bài tập tự soạn nằm cuối mỗi bài). Bộ Abbott
-đã gỡ; có bản dịch Ross §1–§15 (PDF, 63 trang) tải ở cả hai chương, chưa chuyển
-thành các mục đọc trực tiếp. Đại số tuyến tính Chương 1–3 đọc trực
+Nội dung hiện có: Giải tích theo Kenneth Ross §1–§27, trọn Chương 1–4 (27 bài giảng, 81 bài tự luyện có lời giải). Có PDF bài giảng §1–§10 và §11–§20; bản dịch PDF §1–§15 tải ở hai chương đầu. Bộ bài tập trong sách hiện có 163 bài thuộc §1–§15; các mục Theo sách chưa chuyển lên web. Xem [phạm vi và nguồn](docs/giai-tich-chuong-1-4.md). Đại số tuyến tính Chương 1–3 đọc trực
 tiếp trên web, Chương 4–8 có bản dịch PDF tải về; bài giảng Chương 1–3.
 Chương 3 có thêm 24 bài luyện tự soạn, mỗi mục ba mức, hai tầng gợi ý và lời giải;
 nhãn tự soạn phân biệt với số bài trong sách. Bài tập sách Chương 1 và §2.1–§2.2

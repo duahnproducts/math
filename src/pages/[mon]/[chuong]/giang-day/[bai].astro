@@ -33,7 +33,8 @@ const mucCoTrang = new Set(du.sach.map((s) => s.data.muc));
 const baiTapPhu = du.baiTap.filter((b) => bai.data.phu_muc.includes(b.data.muc));
 const mucCoBaiTap = bai.data.phu_muc.filter((m) => baiTapPhu.some((b) => b.data.muc === m));
 const mucBaiLuyen = headings.find((h) => h.depth === 2 && h.text.startsWith('Bài tập'));
-const pdf = du.chuong.tai_ve.find((t) => t.tep.includes('bai-giang'));
+const pdf = du.chuong.tai_ve.find((t) => t.tep.includes('bai-giang') &&
+  (!t.phu_muc || bai.data.phu_muc.every((m) => t.phu_muc!.includes(m))));
 const tieuDe = `Bài ${bai.data.bai}: ${bai.data.tieu_de}`;
 const href = d.baiGiang(mon, so, bai.data.bai);
 ---

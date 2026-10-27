@@ -366,3 +366,6 @@ Trang đọc: JSON → Markdown → HTML đã lọc sạch → KaTeX → cùng l
   Nhập khoá → chọn PDF → đọc mục lục → lưu môn → tạo một chương → đọc bài 8 mục, công
   thức KaTeX, mã độc bị lọc → tải lại vẫn còn → tải `.json` → xoá → nhập lại. Thêm: khoá
   sai, tự nhập chương, file hỏng, môn không có trên máy. Test không gọi mạng, không tốn tiền.
+
+
+Cập nhật 27/10/2026: Giải tích có đủ 27 bài §1–§27, trọn Chương 1–4, gồm cả mục mở rộng. Cách chia chương, nguồn, phạm vi bài tập và kiểm thử trong `docs/giai-tich-chuong-1-4.md`. `phu_muc` giữ số § để nối bộ lọc bài tập; không tạo trang Theo sách khi chưa có nội dung.

@@ -1,0 +1,104 @@
+---
+mon: giai-tich
+chuong: 3
+bai: 6
+tieu_de: "§22. Liên thông và liên thông đường"
+y_tuong: "Một ánh xạ liên tục không thể xé một tập liền mạch thành hai phần tách rời."
+phu_muc: ["22"]
+---
+
+import HinhRossMoRong from '../../../../src/figures/HinhRossMoRong.astro';
+
+## Ý tưởng trong 1 câu
+
+Liên thông là không thể chia tập thành hai phần không rỗng tách nhau theo nghĩa tôpô; liên tục bảo toàn tính chất này.
+
+## Hình dung trực quan
+
+Một sợi dây còn nguyên có thể uốn nhưng không tự tách thành hai sợi nếu không cắt. Hình dung này giúp nhớ định lý về ảnh liên tục, nhưng định nghĩa không đòi mọi tập đều giống một sợi dây.
+
+<HinhRossMoRong loai="connected" />
+
+## Kiến thức cần biết
+
+Ôn tập mở, bao đóng, nghịch ảnh và tính liên tục ở §21. Với $E\subset S$, một tập mở tương đối trong $E$ là $E\cap U$, trong đó $U$ mở trong $S$. “Mở tương đối” không đồng nghĩa “mở trong toàn không gian”: $[0,1/2)$ mở tương đối trong $[0,1]$.
+
+Một đường đi là hàm liên tục $\gamma:[0,1]\to E$. Tham số $t$ biểu thị quá trình di chuyển, không phải thêm một tọa độ của $E$.
+
+## Công thức
+
+Tập $E$ không liên thông nếu tồn tại hai tập mở tương đối $A,B$ thỏa
+
+$$E=A\cup B,\qquad A\cap B=\varnothing,\qquad A\ne\varnothing,\quad B\ne\varnothing.$$
+
+Không có cách chia như vậy thì $E$ liên thông. Tương đương, hai phần của một sự tách không chứa điểm thuộc bao đóng của phần kia.
+
+- Tập con của $\mathbb R$ liên thông đúng khi nó là một khoảng, kể cả khoảng một điểm; tập rỗng cũng liên thông theo định nghĩa.
+- Nếu $f$ liên tục và $E$ liên thông thì $f(E)$ liên thông. Đặc biệt, hàm thực liên tục trên tập liên thông có tính chất giá trị trung gian.
+- $E$ liên thông đường nếu mọi hai điểm nối được bằng một đường đi trong $E$. Liên thông đường suy ra liên thông, nhưng chiều ngược lại sai trong các không gian metric tổng quát.
+
+**Chứng minh ảnh liên tục:** giả sử $f(E)$ bị tách bởi hai phần mở tương đối không rỗng. Lấy nghịch ảnh trong $E$; tính liên tục làm chúng mở tương đối, còn tính phủ và rời nhau được giữ. Ta thu được sự tách của $E$, mâu thuẫn.
+
+**Vì sao liên thông đường đủ?** Nếu $E=A\cup B$ là một sự tách, chọn điểm đầu trong $A$, điểm cuối trong $B$. Nghịch ảnh hai phần qua đường đi sẽ tách $[0,1]$, trái tính liên thông của khoảng.
+
+**Không gian của các hàm:** với $S\subset\mathbb R$, Ross còn xét $C(S)$ là các hàm thực liên tục **bị chặn**, với
+
+$$d(f,g)=\sup_{x\in S}|f(x)-g(x)|.$$
+
+Điều kiện bị chặn giữ khoảng cách hữu hạn. Hội tụ theo metric này chính là hội tụ đều; không gian này đầy đủ, kết quả được giải thích tiếp ở §24–§25.
+
+## Ví dụ mẫu
+
+**Bước 1. Dữ kiện.** Có thể có một hàm liên tục từ $[0,1]$ lên toàn bộ $[0,1]\cup[2,3]$ không?
+
+**Bước 2. Mục tiêu.** Chứng minh không tồn tại.
+
+**Bước 3. Căn cứ.** Ảnh liên tục của một khoảng phải liên thông; trên trục thực, liên thông nghĩa là không bỏ sót điểm giữa.
+
+**Bước 4. Thực hiện.** Nếu là toàn ánh, có $a,b\in[0,1]$ sao cho $f(a)=1$, $f(b)=2$. Định lý giá trị trung gian trên đoạn nối $a,b$ buộc hàm nhận $3/2$, nhưng $3/2$ không thuộc miền giá trị đã cho. Mâu thuẫn.
+
+**Bước 5. Kiểm tra.** Ta dùng cả liên tục và toàn ánh; hàm hằng bằng 0 vẫn là hàm liên tục nhận giá trị trong tập đích, nhưng không phủ cả tập đích.
+
+**Bước 6. Cách làm lại.** Khi đề hỏi có một ánh xạ liên tục phủ toàn bộ tập không, kiểm tra tính liên thông của nguồn và đích.
+
+## Lỗi dễ mắc
+
+- Tập đóng không nhất thiết liên thông: $[0,1]\cup[2,3]$ là tập đóng nhưng bị tách.
+- Tập mở có thể liên thông: một khoảng mở là ví dụ.
+- Không mặc nhiên coi liên thông là liên thông đường. Tập gồm đồ thị $\sin(1/x)$ với $0<x\le1$ và đoạn thẳng đứng $\{0\}\times[-1,1]$ là phản ví dụ kinh điển: nó là bao đóng của một tập liên thông, nhưng các dao động ngăn đường đi từ đoạn đứng sang đồ thị. Đây là ví dụ mở rộng, không phải điều cần giả định trong chứng minh chính.
+
+## Tóm tắt 30 giây
+
+**HIỂU:** liên tục không xé tập liên thông. **NHỚ:** trên $\mathbb R$, tập liên thông là khoảng; liên thông đường mạnh hơn liên thông. **LÀM:** dùng nghịch ảnh để phản chứng hoặc tham số hóa đường đi.
+
+## Bài tập
+
+### DỄ — Hai đoạn rời
+
+Chứng minh $E=[-2,-1]\cup[1,2]$ không liên thông. **Gợi ý:** cắt bằng hai nửa trục mở.
+
+<LoiGiai>
+
+**Bước 1.** Tập gồm hai đoạn rời. **Bước 2.** Tìm sự tách. **Bước 3.** Dùng định nghĩa mở tương đối. **Bước 4.** Đặt $A=E\cap(-\infty,0)$, $B=E\cap(0,\infty)$. Hai tập mở tương đối, không rỗng, rời nhau và phủ $E$. **Bước 5.** Điểm 0 không thuộc $E$, nên không bị sót khi phủ. **Bước 6.** Một khe hở cho cách tạo hai phần mở tương đối.
+
+</LoiGiai>
+
+### VỪA — Đường tròn
+
+Chứng minh đường tròn đơn vị liên thông đường. **Gợi ý:** tham số hóa bằng góc.
+
+<LoiGiai>
+
+**Bước 1.** Hai điểm có dạng $(\cos\alpha,\sin\alpha)$ và $(\cos\beta,\sin\beta)$. **Bước 2.** Nối bằng đường đi trong đường tròn. **Bước 3.** Sin và cos liên tục. **Bước 4.** Đặt $\theta(t)=(1-t)\alpha+t\beta$, $\gamma(t)=(\cos\theta(t),\sin\theta(t))$. **Bước 5.** Tổng bình phương hai tọa độ bằng 1 và hai đầu đúng điểm cho trước. **Bước 6.** Tham số hóa một chuyển động liên tục để chứng minh liên thông đường.
+
+</LoiGiai>
+
+### KHÓ — Bao đóng
+
+Chứng minh bao đóng của một tập liên thông vẫn liên thông. **Gợi ý:** mọi tập mở không rỗng tương đối trong bao đóng đều gặp tập ban đầu.
+
+<LoiGiai>
+
+**Bước 1.** $E$ liên thông. **Bước 2.** Xét $\overline E$. **Bước 3.** Dùng phản chứng và tính trù mật của $E$ trong bao đóng. **Bước 4.** Nếu $\overline E=A\cup B$ là sự tách, mỗi phần mở tương đối không rỗng gặp $E$. Khi đó $A\cap E$ và $B\cap E$ mở tương đối trong $E$, không rỗng, rời nhau và phủ $E$, mâu thuẫn. **Bước 5.** Nếu $E$ rỗng thì bao đóng rỗng, kết luận vẫn đúng. **Bước 6.** Kéo một sự tách giả định xuống tập trù mật ban đầu.
+
+</LoiGiai>

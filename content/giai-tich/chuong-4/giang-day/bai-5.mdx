@@ -1,0 +1,104 @@
+---
+mon: giai-tich
+chuong: 4
+bai: 5
+tieu_de: "§27. Xấp xỉ Weierstrass và đa thức Bernstein"
+y_tuong: "Mọi hàm liên tục trên đoạn đóng đều có thể được xấp xỉ đều tùy ý chính xác bằng đa thức."
+phu_muc: ["27"]
+---
+
+import HinhRossMoRong from '../../../../src/figures/HinhRossMoRong.astro';
+
+## Ý tưởng trong 1 câu
+
+Đa thức không chỉ mô tả những hàm có công thức đẹp: chúng xấp xỉ đều được mọi hàm liên tục trên một đoạn đóng.
+
+## Hình dung trực quan
+
+Ta lấy mẫu hàm ở các điểm $0,1/n,\ldots,1$, rồi trộn các giá trị ấy bằng trọng số không âm. Ở gần vị trí $x$, các mẫu gần $x$ nhận phần lớn trọng số. Khi lưới mịn hơn, sai số giảm đồng thời trên cả đoạn.
+
+<HinhRossMoRong loai="bernstein" />
+
+## Kiến thức cần biết
+
+Ôn liên tục đều trên đoạn compact ở §19, hội tụ đều ở §24, nhị thức Newton và hệ số $\binom nk=n!/[k!(n-k)!]$. Với $n\ge1$, đa thức Bernstein của $f$ trên $[0,1]$ là
+
+$$B_nf(x)=\sum_{k=0}^{n}f(k/n)\binom nk x^k(1-x)^{n-k}.$$
+
+$k/n$ là vị trí lấy mẫu, $f(k/n)$ là số cố định đối với biến $x$. Quy ước lũy thừa bậc 0 bằng 1 trong biểu thức đa thức cho phép đánh giá ở đầu mút mà không gây mơ hồ.
+
+## Công thức
+
+Đặt $w_{n,k}(x)=\binom nkx^k(1-x)^{n-k}$ trên $[0,1]$. Khi đó
+
+$$w_{n,k}(x)\ge0,\qquad\sum_{k=0}^{n}w_{n,k}(x)=1,$$
+
+$$\sum_{k=0}^{n}(k/n-x)^2w_{n,k}(x)=\frac{x(1-x)}n\le\frac1{4n}.$$
+
+Đẳng thức đầu đến từ nhị thức Newton. Đẳng thức bình phương đến từ hai tổng moment $\sum k w_{n,k}=nx$ và $\sum k(k-1)w_{n,k}=n(n-1)x^2$, thu được bằng đạo hàm đa thức nhị thức.
+
+**Định lý Bernstein:** nếu $f$ liên tục trên $[0,1]$, thì $B_nf\to f$ đều. Vì mỗi $B_nf$ là đa thức, suy ra định lý xấp xỉ Weierstrass: với mỗi hàm liên tục $f$ trên $[a,b]$ và mỗi $\varepsilon>0$, tồn tại đa thức $p$ sao cho $\sup_{[a,b]}|p-f|<\varepsilon$.
+
+**Chứng minh chặn sai số:** đặt $M=\sup|f|<\infty$. Liên tục đều cho $\delta>0$ để $|u-v|<\delta$ kéo theo $|f(u)-f(v)|<\varepsilon/2$. Tách tổng sai số thành mẫu gần và xa $x$. Phần gần không quá $\varepsilon/2$ vì tổng trọng số bằng 1. Với mẫu xa, $|k/n-x|\ge\delta$, nên
+
+$$\sum_{|k/n-x|\ge\delta}w_{n,k}(x)\le\frac1{\delta^2}\sum_{k=0}^{n}(k/n-x)^2w_{n,k}(x)\le\frac1{4n\delta^2}.$$
+
+Mỗi chênh lệch giá trị hàm không quá $2M$, nên phần xa không quá $M/(2n\delta^2)$. Chọn $n$ đủ lớn làm phần này nhỏ hơn $\varepsilon/2$; khi $M=0$ sai số đã bằng 0. Chặn độc lập với $x$, nên hội tụ đều.
+
+Trên $[a,b]$, $a<b$, chuyển biến $t=(x-a)/(b-a)$ rồi áp dụng Bernstein cho $g(t)=f(a+(b-a)t)$. Các đa thức thu được còn giữ đúng $p_n(a)=f(a)$ và $p_n(b)=f(b)$. Đoạn một điểm được xử lý bằng đa thức hằng.
+
+## Ví dụ mẫu
+
+**Bước 1. Dữ kiện.** $f(x)=x^2$ trên $[0,1]$.
+
+**Bước 2. Mục tiêu.** Tìm $B_nf$ và một chặn sai số cụ thể.
+
+**Bước 3. Căn cứ.** Từ hai đẳng thức moment, $\sum k^2w_{n,k}=n(n-1)x^2+nx$.
+
+**Bước 4. Thực hiện.** Chia cho $n^2$ được $B_nf(x)=x^2+x(1-x)/n$. Do $0\le x(1-x)\le1/4$, có $\sup|B_nf-f|=1/(4n)$. Muốn sai số nhỏ hơn $0{,}01$, lấy $n>25$, chẳng hạn $n=26$.
+
+**Bước 5. Kiểm tra.** Hai đầu $x=0,1$ có sai số 0, sai số lớn nhất tại $1/2$. Với $n=2$, chặn là $1/8$ như hình.
+
+**Bước 6. Cách làm lại.** Với hàm đa thức đơn giản, dùng tổng moment để tính đúng sai số, thay vì chỉ viện dẫn tồn tại.
+
+## Lỗi dễ mắc
+
+- Xấp xỉ đều bằng đa thức không đồng nghĩa có một chuỗi Taylor hội tụ về hàm. Hàm $|x|$ liên tục trên $[-1,1]$ nhưng không có đạo hàm tại 0.
+- Nội suy qua nhiều điểm bất kỳ không tự bảo đảm hội tụ đều. Bernstein dùng một hệ trọng số có kiểm soát.
+- Chỉ kiểm tra sai số ở các nút lấy mẫu; định lý cần kiểm soát mọi điểm của đoạn.
+
+## Tóm tắt 30 giây
+
+**HIỂU:** trọng số Bernstein tập trung quanh điểm đang xét. **NHỚ:** tổng trọng số bằng 1, moment bình phương không quá $1/(4n)$, liên tục đều kiểm soát phần gần. **LÀM:** chia gần/xa hoặc tính moment, rồi chuyển biến nếu đoạn không phải $[0,1]$.
+
+## Bài tập
+
+### DỄ — Hàm hằng
+
+Tính $B_nf$ khi $f(x)=c$. **Gợi ý:** tổng trọng số bằng 1.
+
+<LoiGiai>
+
+**Bước 1.** Mọi giá trị lấy mẫu bằng $c$. **Bước 2.** Tính đa thức. **Bước 3.** Dùng nhị thức Newton. **Bước 4.** $B_nf=c\sum w_{n,k}=c$. **Bước 5.** Sai số bằng 0 với mọi $n$. **Bước 6.** Tách hệ số hằng khỏi tổng trọng số.
+
+</LoiGiai>
+
+### VỪA — Hàm affine
+
+Chứng minh Bernstein giữ nguyên $f(x)=2x+3$. **Gợi ý:** dùng tổng moment bậc một.
+
+<LoiGiai>
+
+**Bước 1.** $f(k/n)=2k/n+3$. **Bước 2.** So $B_nf$ với $f$. **Bước 3.** $\sum w=1$ và $\sum kw=nx$. **Bước 4.** $B_nf=(2/n)nx+3=2x+3$. **Bước 5.** Đúng trên toàn đoạn, không chỉ hai đầu. **Bước 6.** Tính tuyến tính và moment xử lý hàm affine.
+
+</LoiGiai>
+
+### KHÓ — Đoạn khác
+
+Dùng Weierstrass để chứng minh $|x|$ được xấp xỉ đều bởi đa thức trên $[-2,2]$, nhưng không suy ra $|x|$ khả vi tại 0. **Gợi ý:** chuyển về $[0,1]$.
+
+<LoiGiai>
+
+**Bước 1.** $f(x)=|x|$ liên tục trên $[-2,2]$. **Bước 2.** Tạo dãy đa thức xấp xỉ. **Bước 3.** Đặt $g(t)=|4t-2|$, liên tục trên $[0,1]$. **Bước 4.** $B_ng\to g$ đều. Đặt $p_n(x)=B_ng((x+2)/4)$; đây là đa thức và sai số supremum trên $[-2,2]$ bằng sai số trên $[0,1]$, nên về 0. **Bước 5.** Đạo hàm trái của $|x|$ tại 0 bằng $-1$, phải bằng 1, nên không khả vi. **Bước 6.** Hội tụ đều giữ liên tục, không tự giữ khả vi.
+
+</LoiGiai>

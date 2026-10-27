@@ -1,0 +1,154 @@
+---
+mon: giai-tich
+chuong: 2
+bai: 8
+tieu_de: "§14. Chuỗi số và các tiêu chuẩn hội tụ"
+y_tuong: "Một tổng vô hạn có nghĩa khi các tổng hữu hạn ban đầu tiến tới một số thực xác định."
+phu_muc: ["14"]
+---
+
+import HinhRossMoRong from '../../../../src/figures/HinhRossMoRong.astro';
+
+## Ý tưởng trong 1 câu
+
+> Một tổng vô hạn có nghĩa khi các tổng hữu hạn ban đầu tiến tới một số thực xác định.
+
+## Hình dung trực quan
+
+Bạn gửi tiền từng ngày. Khoản gửi ngày n là aₙ; tổng đã gửi đến ngày N là S_N. “Khoản gửi mỗi ngày nhỏ dần” chưa đủ để tổng tiền không tăng mãi: gửi 1/n mỗi ngày vẫn làm tổng không bị chặn.
+
+Dãy là danh sách các khoản. Chuỗi là câu hỏi về tổng tích lũy của danh sách ấy. Đích của aₙ và đích của S_N không phải một khái niệm.
+
+<HinhRossMoRong loai="power" />
+
+## Kiến thức cần biết
+
+$\sum_{k=m}^{n}a_k$ nghĩa là a_m+a_(m+1)+…+a_n; k là chỉ số chạy, m là điểm bắt đầu, n là điểm kết thúc. Với k=1,…,N, đặt $S_N=\sum_{k=1}^{N}a_k$ là tổng riêng.
+
+Ôn dãy Cauchy và các giới hạn n^(1/n), c^(1/n). Giai thừa $n!=1\cdot2\cdots n$, 0!=1, và (n+1)!=(n+1)n!. Bỏ hoặc sửa hữu hạn số hạng không đổi tính hội tụ của chuỗi, nhưng có thể đổi tổng đúng bằng lượng đã sửa.
+
+## Công thức / Định nghĩa
+
+**Chuỗi hội tụ:** $\sum_{n=1}^{\infty}a_n=S$ khi S_N→S∈R. Nếu tổng riêng →+∞ hoặc −∞, ta nói phân kỳ về phía ấy. Nếu tổng riêng dao động không có giới hạn, không gán cho chuỗi một giá trị tùy ý.
+
+**Điều kiện cần:** chuỗi hội tụ ⇒ aₙ→0, vì aₙ=Sₙ−Sₙ₋₁ và cả hai tổng riêng →S. Chiều ngược sai với chuỗi điều hòa ∑1/n. Với aₙ≥0, tổng riêng tăng; chuỗi hội tụ khi và chỉ khi tổng riêng bị chặn trên.
+
+**Tiêu chuẩn Cauchy cho chuỗi:** với mọi ε&gt;0, có N sao cho mọi n≥m&gt;N đều thỏa:
+
+$$\left|\sum_{k=m}^{n}a_k\right|<\varepsilon.$$
+
+Không chỉ một số hạng đuôi nhỏ mà mọi tổng khối đuôi đều nhỏ. Đây là Cauchy của dãy tổng riêng; tính đầy đủ của R biến Cauchy thành hội tụ.
+
+**Tuyệt đối:** ∑|aₙ| hội tụ. Hội tụ tuyệt đối kéo theo ∑aₙ hội tụ, vì |∑ khối aₖ|≤∑ khối |aₖ|. **Hội tụ có điều kiện:** ∑aₙ hội tụ nhưng ∑|aₙ| phân kỳ. Ta sẽ gặp ở §15.
+
+**Chuỗi hình học:** với |r|&lt;1,
+
+$$\sum_{n=0}^{\infty}ar^n=\frac{a}{1-r}.$$
+
+a là số hạng đầu, r là công bội. Tổng riêng đến N bằng a(1−r^(N+1))/(1−r); r^(N+1)→0. Nếu a≠0 và |r|≥1, số hạng không về 0, nên chuỗi phân kỳ. a=0 là ngoại lệ cho chuỗi toàn 0.
+
+**Chuỗi p:** ∑1/nᵖ hội tụ khi p&gt;1 và phân kỳ khi p≤1. Với p&gt;0, chứng minh sẽ ở §15; p≤0 thì số hạng không về 0. Có thể biết chuỗi hội tụ mà không biết công thức tổng.
+
+**So sánh:** nếu 0≤aₙ≤bₙ từ một mốc và ∑bₙ hội tụ, thì ∑aₙ hội tụ. Nếu 0≤bₙ≤aₙ và ∑bₙ phân kỳ đến +∞, thì ∑aₙ phân kỳ đến +∞. Nếu |aₙ|≤bₙ, bₙ≥0 và ∑bₙ hội tụ, thì ∑aₙ hội tụ tuyệt đối. Hãy dùng chiều “nhỏ hơn một tổng hữu hạn” hoặc “lớn hơn một tổng vô hạn”.
+
+**Tỉ số**, cần aₙ≠0 về sau: đặt rₙ=|aₙ₊₁/aₙ|. Nếu limsup rₙ&lt;1, chuỗi hội tụ tuyệt đối; nếu liminf rₙ&gt;1, chuỗi phân kỳ; các trường hợp còn lại không kết luận bằng tiêu chuẩn này. Nếu rₙ có giới hạn R, chỉ cần so R với 1; R=1 chưa nói được gì.
+
+**Căn:** đặt $\rho=\limsup |a_n|^{1/n}$. Nếu ρ&lt;1, hội tụ tuyệt đối; nếu ρ&gt;1, phân kỳ; ρ=1 không kết luận. Vì ρ&lt;r&lt;1 cho |aₙ|&lt;rⁿ về sau, so sánh với hình học bảo đảm hội tụ. Nếu ρ&gt;1, có vô hạn số hạng |aₙ|&gt;1, nên không thể aₙ→0. Quan hệ căn-tỉ số ở §12 suy ra hai kết luận của tiêu chuẩn tỉ số. Căn vẫn dùng được khi aₙ bằng 0 ở nhiều vị trí.
+
+**Ghép chuỗi:** nếu ∑aₙ=A và ∑bₙ=B đều hữu hạn, thì ∑(aₙ+bₙ)=A+B và ∑caₙ=cA. Không có quy tắc ∑aₙbₙ=AB. Tích hai tổng có các tích chéo, không chỉ những tích cùng chỉ số.
+
+## Ví dụ mẫu
+
+### Ví dụ A: Một tổng rút gọn
+
+**Bước 1:** ∑ từ n=1 của 1/[n(n+1)]. **Bước 2:** chứng minh hội tụ và tính tổng. **Bước 3:** tách 1/[n(n+1)]=1/n−1/(n+1) để khử liên tiếp.
+
+**Bước 4:** S_N=(1−1/2)+(1/2−1/3)+…+(1/N−1/(N+1))=1−1/(N+1)→1. Vậy chuỗi bằng 1. **Bước 5:** S₁=1/2 và S₂=2/3, đều nhỏ hơn 1. **Bước 6:** khử trong tổng hữu hạn trước, lấy giới hạn sau.
+
+### Ví dụ B: Giai thừa gợi ý tỉ số
+
+**Bước 1:** aₙ=3ⁿ/n!, n≥1. **Bước 2:** xét ∑aₙ. **Bước 3:** dùng tỉ số vì giai thừa khử gọn. **Bước 4:** rₙ=[3^(n+1)/(n+1)!]/[3ⁿ/n!]=3/(n+1)→0&lt;1. Chuỗi hội tụ tuyệt đối. **Bước 5:** không cần tính tổng để kết luận tồn tại tổng. **Bước 6:** lũy thừa/giai thừa thường thử tỉ số.
+
+### Ví dụ C: Tỉ số không kết luận thì so sánh
+
+**Bước 1:** aₙ=n/(n²+1). **Bước 2:** xét ∑aₙ. **Bước 3:** so với 1/n vì mẫu bậc 2, tử bậc 1. **Bước 4:** n²+1≤2n² với n≥1, nên aₙ≥1/(2n). Chuỗi ∑1/(2n) phân kỳ; aₙ≥0, nên ∑aₙ→+∞. **Bước 5:** aₙ→0 vẫn không đủ hội tụ. **Bước 6:** đo bậc để đoán chuỗi chuẩn, rồi viết bất đẳng thức đúng chiều.
+
+### Ví dụ D: Căn hiệu quả hơn tỉ số
+
+**Bước 1:** aₙ=2⁻ⁿ(2+(−1)ⁿ) ở §12. **Bước 2:** xét chuỗi. **Bước 3:** tỉ số có biên 1/6 và 3/2, không đạt điều kiện; căn có giới hạn 1/2. **Bước 4:** ρ=1/2&lt;1 nên hội tụ tuyệt đối. Cũng có aₙ≤3·2⁻ⁿ, cho một cách so sánh độc lập. **Bước 5:** không kết luận “phân kỳ” chỉ vì vài tỉ số &gt;1. **Bước 6:** nếu hệ số đổi qua lại, thử căn hoặc cận hình học.
+
+## Lỗi dễ mắc
+
+- **aₙ→0 nên ∑aₙ hội tụ:** chỉ là điều kiện cần.
+- **Tỉ số bằng 1 nghĩa là phân kỳ:** ∑1/n và ∑1/n² đều có tỉ số →1 nhưng hành vi khác nhau.
+- **Nhầm chiều so sánh:** nhỏ hơn một chuỗi phân kỳ không cho thông tin; lớn hơn một chuỗi hội tụ cũng không đủ.
+
+## Tóm tắt 30 giây
+
+> Chuỗi là giới hạn tổng riêng. Kiểm tra số hạng về 0 trước; sau đó nhận hình học, khử liên tiếp hoặc dùng so sánh/tỉ số/căn. “Không kết luận” khác “phân kỳ”.
+
+**HIỂU:** khoản nhỏ vẫn có thể tích lũy vô hạn. **NHỚ:** Cauchy của khối đuôi; tuyệt đối ⇒ hội tụ; ngưỡng 1 của hai tiêu chuẩn. **LÀM:** chọn tiêu chuẩn theo dạng số hạng.
+
+## Bài tập
+
+### DỄ - Hình học bắt đầu ở 1
+
+Tính ∑ từ n=1 của (−1/4)ⁿ. **Gợi ý:** số hạng đầu −1/4, công bội −1/4; không lấy số hạng đầu là 1.
+
+<LoiGiai>
+
+**Bước 1.** $\sum_{n=1}^{\infty}(-1/4)^n$.
+
+**Bước 2.** Tính tổng.
+
+**Bước 3.** Chuỗi hình học bắt đầu ở 1 có tổng $r/(1-r)$ khi $|r|<1$.
+
+**Bước 4.** $r=-1/4$, nên tổng là $(-1/4)/(1+1/4)=-1/5$.
+
+**Bước 5.** Số hạng đầu âm và độ lớn nhỏ dần.
+
+**Bước 6.** Kiểm tra chỉ số đầu để không lệch một số hạng.
+
+</LoiGiai>
+
+### VỪA - Tỉ số
+
+Chứng minh ∑ từ n=1 của n²/3ⁿ hội tụ tuyệt đối. **Gợi ý:** rₙ=(n+1)²/(3n²)→1/3.
+
+<LoiGiai>
+
+**Bước 1.** $\sum_{n=1}^{\infty}n^2/3^n$.
+
+**Bước 2.** Xét hội tụ.
+
+**Bước 3.** Tiêu chuẩn tỉ số cho chuỗi số dương.
+
+**Bước 4.** Tỉ số $[(n+1)^2/3^{n+1}]/[n^2/3^n]=(1+1/n)^2/3\to1/3<1$. Chuỗi hội tụ tuyệt đối.
+
+**Bước 5.** Không cần biết tổng để kết luận.
+
+**Bước 6.** Đa thức chia cho hàm mũ thường phù hợp với tỉ số.
+
+</LoiGiai>
+
+### KHÓ - Có số hạng bằng 0
+
+Đặt aₙ=0 khi n lẻ, aₙ=3⁻ⁿ khi n chẵn. Chứng minh chuỗi hội tụ bằng tiêu chuẩn căn và tính tổng. **Gợi ý:** căn có hai giá trị 0 và 1/3; viết n=2k để tổng thành ∑(1/9)ᵏ.
+
+<LoiGiai>
+
+**Bước 1.** $a_n=0$ khi n lẻ, $a_n=3^{-n}$ khi n chẵn.
+
+**Bước 2.** Xét hội tụ và tính tổng.
+
+**Bước 3.** Dùng căn với limsup hoặc gom các số hạng khác 0.
+
+**Bước 4.** $\limsup |a_n|^{1/n}=1/3<1$, nên hội tụ tuyệt đối. Tổng là $\sum_{k=1}^{\infty}(1/9)^k=1/8$.
+
+**Bước 5.** Tỉ số liên tiếp không xác định ở các mẫu bằng 0.
+
+**Bước 6.** Căn hoặc nhận dạng hình học tránh chia cho 0.
+
+</LoiGiai>
+
+

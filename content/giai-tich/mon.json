@@ -37,12 +37,24 @@
           "ten": "Lát cắt Dedekind"
         }
       ],
-      "ghi_chu": "6 bài giảng theo Ross §1–§6. Có 56 bài tập trong sách, đề diễn đạt lại, hai tầng gợi ý và lời giải sáu bước. Bài tự luyện cuối bài giảng được giữ riêng. Phần Theo sách chưa có trên web.",
+      "ghi_chu": "6 bài giảng theo Ross §1–§6, kèm bài tự luyện có lời giải. Có 56 bài tập trong sách đã diễn đạt lại và hướng dẫn riêng. Phần Theo sách chưa có trên web.",
       "tai_ve": [
         {
           "ten": "Bài giảng Ross §1–§10 (PDF, 37 trang)",
           "tep": "giai-tich-ross-bai-giang-1-10.pdf",
-          "mo_ta": "10 bài giảng viết bằng lời riêng, 31 ví dụ và 30 bài tập tự soạn; gồm §1–§6 của Chương 1 và §7–§10 của Chương 2."
+          "mo_ta": "10 bài giảng viết bằng lời riêng, 31 ví dụ và 30 bài tập tự soạn; gồm §1–§6 của Chương 1 và §7–§10 của Chương 2.",
+          "phu_muc": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+          ]
         },
         {
           "ten": "Bản dịch Ross §1–§15 (PDF, 63 trang)",
@@ -53,7 +65,7 @@
     },
     {
       "so": 2,
-      "ten": "Dãy số và chuỗi (§7–§15)",
+      "ten": "Dãy số và chuỗi (§7–§16)",
       "ten_en": "Sequences and Series",
       "muc": [
         {
@@ -91,21 +103,134 @@
         {
           "so": "15",
           "ten": "Chuỗi đan dấu và tiêu chuẩn tích phân"
+        },
+        {
+          "so": "16",
+          "ten": "Thập phân, tuần hoàn và số vô tỉ"
         }
       ],
-      "ghi_chu": "4 bài giảng theo Ross §7–§10; bài tập đã phủ §7–§15. Có 107 bài tập trong sách, đề diễn đạt lại, hai tầng gợi ý và lời giải sáu bước. Bài tự luyện cuối bài giảng được giữ riêng. Phần Theo sách chưa có trên web.",
+      "ghi_chu": "10 bài giảng theo Ross §7–§16, gồm cả mục mở rộng, kèm bài tự luyện có lời giải. Có 107 bài tập trong sách thuộc §7–§15; §16 chưa có bộ bài tập trong sách riêng trên web. Phần Theo sách chưa có trên web.",
       "tai_ve": [
         {
           "ten": "Bài giảng Ross §1–§10 (PDF, 37 trang)",
           "tep": "giai-tich-ross-bai-giang-1-10.pdf",
-          "mo_ta": "PDF tổng hợp cả hai chương; §7–§10 ở trang 22–34, phần ôn tập và gợi ý ở trang 35–37."
+          "mo_ta": "PDF tổng hợp cả hai chương; §7–§10 ở trang 22–34, phần ôn tập và gợi ý ở trang 35–37.",
+          "phu_muc": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+          ]
         },
         {
           "ten": "Bản dịch Ross §1–§15 (PDF, 63 trang)",
           "tep": "giai-tich-ross-ban-dich-1-15.pdf",
           "mo_ta": "Bản dịch tiếng Việt từ Elementary Analysis: The Theory of Calculus, Kenneth A. Ross, ấn bản thứ hai (Springer, 2013), §1–§15, gồm lý thuyết và bài tập. Bản dịch phục vụ học tập, không chính thức. Chương 2 tương ứng §7–§15."
+        },
+        {
+          "ten": "Bài giảng Ross §11–§20 (PDF, 39 trang)",
+          "tep": "giai-tich-ross-bai-giang-11-20.pdf",
+          "mo_ta": "Bài giảng viết bằng lời riêng, bao gồm §11–§16 của Chương 2 và §17–§20 của Chương 3. Các mục §21–§27 đọc trực tiếp trên web.",
+          "phu_muc": [
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20"
+          ]
         }
       ]
+    },
+    {
+      "so": 3,
+      "ten": "Liên tục (§17–§22)",
+      "ten_en": "Continuity",
+      "muc": [
+        {
+          "so": "17",
+          "ten": "Hàm liên tục"
+        },
+        {
+          "so": "18",
+          "ten": "Cực trị, giá trị trung gian và hàm ngược"
+        },
+        {
+          "so": "19",
+          "ten": "Liên tục đều"
+        },
+        {
+          "so": "20",
+          "ten": "Giới hạn hàm"
+        },
+        {
+          "so": "21",
+          "ten": "Liên tục trong không gian metric và Baire"
+        },
+        {
+          "so": "22",
+          "ten": "Liên thông và liên thông đường"
+        }
+      ],
+      "ghi_chu": "6 bài giảng theo Ross §17–§22, gồm cả các mục mở rộng; mỗi bài có ba bài tự luyện kèm lời giải. Bộ bài tập trong sách và phần Theo sách chưa có trên web.",
+      "tai_ve": [
+        {
+          "ten": "Bài giảng Ross §11–§20 (PDF, 39 trang)",
+          "tep": "giai-tich-ross-bai-giang-11-20.pdf",
+          "mo_ta": "Bài giảng viết bằng lời riêng, bao gồm §11–§16 của Chương 2 và §17–§20 của Chương 3. Các mục §21–§27 đọc trực tiếp trên web.",
+          "phu_muc": [
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20"
+          ]
+        }
+      ]
+    },
+    {
+      "so": 4,
+      "ten": "Dãy hàm và chuỗi hàm (§23–§27)",
+      "ten_en": "Sequences and Series of Functions",
+      "muc": [
+        {
+          "so": "23",
+          "ten": "Chuỗi lũy thừa"
+        },
+        {
+          "so": "24",
+          "ten": "Hội tụ đều"
+        },
+        {
+          "so": "25",
+          "ten": "Cauchy đều, tiêu chuẩn M và tích phân"
+        },
+        {
+          "so": "26",
+          "ten": "Đạo hàm và tích phân chuỗi lũy thừa"
+        },
+        {
+          "so": "27",
+          "ten": "Xấp xỉ Weierstrass và Bernstein"
+        }
+      ],
+      "ghi_chu": "5 bài giảng theo Ross §23–§27, gồm cả các mục mở rộng; mỗi bài có ba bài tự luyện kèm lời giải. Bộ bài tập trong sách và phần Theo sách chưa có trên web.",
+      "tai_ve": []
     }
   ]
 }

@@ -151,17 +151,8 @@ Xét các giả thiết và ký hiệu trong đề; $n$ chạy qua các số ngu
         path.write_text(body, encoding='utf-8')
         manifest.append({'so': number, 'muc': str(section), 'chuong': chapter})
     (ROOT/'content/giai-tich/bai-tap-goc.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
-    metadata_path = ROOT/'content/giai-tich/mon.json'
-    metadata = json.loads(metadata_path.read_text(encoding='utf-8'))
-    metadata['chuong'][1]['ten'] = 'Dãy số và chuỗi (§7–§15)'
-    metadata['chuong'][1]['ten_en'] = 'Sequences and Series'
-    for chapter in metadata['chuong']:
-        sections = range(1, 7) if chapter['so'] == 1 else range(7, 16)
-        chapter['muc'] = [{'so': str(s), 'ten': TITLES[s-1]} for s in sections]
-        count = sum(COUNTS[s-1] for s in sections)
-        chapter['ghi_chu'] = (('6 bài giảng theo Ross §1–§6.' if chapter['so'] == 1 else '4 bài giảng theo Ross §7–§10; bài tập đã phủ §7–§15.')
-                              + f' Có {count} bài tập trong sách, đề diễn đạt lại, hai tầng gợi ý và lời giải sáu bước. Bài tự luyện cuối bài giảng được giữ riêng. Phần Theo sách chưa có trên web.')
-    metadata_path.write_text(json.dumps(metadata, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+    # Bộ bài tập §1–§15 không sở hữu danh mục chương/bài giảng §1–§27.
+    # Giữ nguyên mon.json khi tái dựng để không xóa §16 hoặc chương 3–4.
     for section in range(1, 11):
         chapter, lesson = (1, section) if section <= 6 else (2, section-6)
         path = ROOT/f'content/giai-tich/chuong-{chapter}/giang-day/bai-{lesson}.mdx'

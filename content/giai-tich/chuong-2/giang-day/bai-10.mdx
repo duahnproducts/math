@@ -1,0 +1,150 @@
+---
+mon: giai-tich
+chuong: 2
+bai: 10
+tieu_de: "§16. Thập phân, tuần hoàn và số vô tỉ"
+y_tuong: "Một số thập phân vô hạn là giới hạn của các số cắt ngắn, còn sự lặp của chữ số phản ánh việc số ấy có phải phân số hay không."
+phu_muc: ["16"]
+---
+
+import HinhRossMoRong from '../../../../src/figures/HinhRossMoRong.astro';
+
+## Ý tưởng trong 1 câu
+
+> Một số thập phân vô hạn là giới hạn của các số cắt ngắn, còn sự lặp của chữ số phản ánh việc số ấy có phải phân số hay không.
+
+## Hình dung trực quan
+
+Đo chiều dài lần lượt tới mét, phần mười mét, phần trăm mét,… tạo các số 1; 1,4; 1,41; 1,414;…. Mỗi lần thêm một chữ số là thêm một phần nhỏ hơn. Tổng những phần nhỏ xác định một số thực.
+
+Khi chia dài một phân số, mỗi bước chỉ nhớ số dư. Nếu một số dư xuất hiện lại, máy chia quay về trạng thái cũ và từ đó các chữ số sẽ lặp. Sự tuần hoàn là kết quả của việc chỉ có hữu hạn số dư.
+
+<HinhRossMoRong loai="cantor" />
+
+## Kiến thức cần biết
+
+Ôn chuỗi hình học ở §14; giai thừa n!; số hữu tỉ/vô tỉ. Dấu phẩy trong 0,125 là dấu thập phân. Trong công thức dùng 10⁻ⁿ=1/10ⁿ. “Tuần hoàn” ở đây cho phép một đoạn đầu không lặp rồi một khối lặp mãi; số hữu hạn được xem là lặp chữ số 0 về sau.
+
+$\lfloor y\rfloor$ là số nguyên lớn nhất không vượt y, gọi là phần nguyên dưới. Ví dụ floor(2,7)=2 và floor(−0,3)=−1. Phần mở rộng về π ở cuối mục 4 cần đạo hàm, tích phân và tích phân từng phần; nếu chưa học, đọc kết cấu phản chứng trước, giữ công thức để quay lại sau.
+
+## Công thức / Định nghĩa
+
+Với K nguyên không âm và dⱼ là chữ số 0,…,9, biểu diễn thập phân là:
+
+$$x=K+\sum_{j=1}^{\infty}d_j10^{-j}.$$
+
+K là phần nguyên; dⱼ là chữ số vị trí j; ∑ cộng mọi đóng góp. Tổng cắt S_n tăng và bị chặn bởi K+1, nên hội tụ. Với x&lt;0, biểu diễn |x| rồi thêm dấu âm.
+
+**Mỗi số thực không âm có thập phân.** Với 0≤x&lt;1, đặt x₀=x, dₙ=floor(10xₙ₋₁), xₙ=10xₙ₋₁−dₙ∈[0,1). Quy nạp cho $x=\sum_{j=1}^{n}d_j10^{-j}+10^{-n}x_n$. Phần dư nằm trong [0,10⁻ⁿ), nên →0. Số có phần nguyên K thì áp dụng cho x−K.
+
+**Chia dài a/b, 0≤a&lt;b:** r₀=a; mỗi bước chia 10rₙ₋₁ cho b được chữ số dₙ và dư rₙ, tức 10rₙ₋₁=bdₙ+rₙ, 0≤rₙ&lt;b. Khi đó a/b bằng tổng cắt cộng rₙ/(b10ⁿ). Dư chia cho b luôn &lt;1, nên sai số &lt;10⁻ⁿ. Các rₙ chỉ có b khả năng 0,…,b−1. Dư 0 cho đuôi 0; dư lặp cho đuôi chữ số lặp. Đây là nguyên lý “nhiều bước hơn số trạng thái thì phải lặp”.
+
+**Không duy nhất đúng một kiểu:** 0,999…=∑9·10⁻ʲ=1. Tương tự 2,75000…=2,74999…. Nếu hai biểu diễn khác nhau, ở chữ số đầu khác nhau độ chênh ít nhất 10⁻ᵐ; toàn bộ đuôi chỉ có thể bù tối đa 10⁻ᵐ. Muốn bù đúng, chữ số khác nhau phải chênh 1 và hai đuôi phải toàn 0/toàn 9. Ngoài kiểu ấy, biểu diễn duy nhất. Số 0 chỉ có biểu diễn không âm toàn 0.
+
+**Hữu tỉ ⇔ thập phân tuần hoàn.** Chiều hữu tỉ dùng số dư hữu hạn như trên. Chiều tuần hoàn: một khối B có r chữ số lặp ngay sau dấu phẩy cho $0,\overline{B}=B/(10^r-1)$; nếu có m chữ số đầu thì thêm phần hữu hạn và nhân khối lặp với 10⁻ᵐ. Tất cả đều là phân số. B ở đây là số nguyên ghép từ r chữ số, không phải tích của chúng.
+
+**Chứng minh e vô tỉ - phần mở rộng:** định nghĩa e=∑ từ k=0 của 1/k!, chuỗi hội tụ theo tỉ số. Giả sử e=a/b, a,b nguyên dương. Đặt N=b+1. Cả N!e và $N!\sum_{k=0}^{N}1/k!$ là số nguyên, nên đuôi T=N!∑ từ k=N+1 của 1/k! là số nguyên dương. Nhưng số hạng đuôi bằng 1/[(N+1)…(N+j)]≤(N+1)⁻ʲ; từ j=2 là dấu &lt;. Do đó $0<T<\sum_{j=1}^{\infty}(N+1)^{-j}=1/N<1$, mâu thuẫn. Ý chính: tạo một số nguyên nằm giữa 0 và 1.
+
+**π² vô tỉ, từ đó π vô tỉ - phần mở rộng có tích phân:** đặt $P_n(x)=[x(\pi-x)]^n/n!$ và $I_n=\int_0^{\pi}P_n(x)\sin x\,dx$. Trên (0,π), các thừa số dương nên Iₙ&gt;0. I₀=2, I₁=4. Với n≥1, tích phân từng phần hai lần cho $I_n=-\int_0^{\pi}P_n''(x)\sin x\,dx$; các hạng biên bằng 0 vì Pₙ(0)=Pₙ(π)=0 và sin0=sinπ=0.
+
+Để kiểm tra bước tính, đặt h=x(π−x). Ta có h'=π−2x, h''=−2 và (h')²=π²−4h. Với n≥2, Pₙ'=Pₙ₋₁h', nên Pₙ''=Pₙ₋₂(h')²−2Pₙ₋₁=π²Pₙ₋₂−(4n−2)Pₙ₋₁. Thay vào tích phân được $I_n=(4n-2)I_{n-1}-\pi^2I_{n-2}$. Quy nạp cho Iₙ=Qₙ(π²), Qₙ là đa thức hệ số nguyên bậc không vượt n.
+
+Nếu π²=a/b với a,b nguyên dương, thì bⁿIₙ=bⁿQₙ(a/b) là số nguyên dương. Nhưng 0≤x(π−x)≤π²/4, nên:
+
+$$0<b^nI_n\leq\pi\frac{(b\pi^2/4)^n}{n!}\longrightarrow0.$$
+
+Vế phải →0 vì với C=bπ²/4 cố định, tỉ số của Cⁿ/n! là C/(n+1)→0, nên chính dãy này →0. Cuối cùng số nguyên bⁿIₙ nằm giữa 0 và 1, mâu thuẫn. Nếu π hữu tỉ thì π² hữu tỉ, nên π cũng vô tỉ. Chứng minh này không chứng minh π hay e siêu việt; đó là kết quả mạnh hơn, ngoài phạm vi bài.
+
+**Một hiệu ∞−∞ vẫn có thể có giới hạn:** Hₙ=1+1/2+…+1/n, γₙ=Hₙ−ln n. Vì ∫ₙ^(n+1)1/x dx≥1/(n+1), γₙ₊₁≤γₙ. So chữ nhật cho 0&lt;γₙ≤1. Do đó γₙ hội tụ tới một số γ, gọi là hằng số Euler-Mascheroni. Đừng nhầm γ với e. Kết luận ở đây là tồn tại giới hạn, không là một phép trừ hai ký hiệu vô cực.
+
+## Ví dụ mẫu
+
+### Ví dụ A: Chuyển tuần hoàn thành phân số
+
+**Bước 1:** x=0,272727…. **Bước 2:** viết x thành phân số. **Bước 3:** nhân 100 để khối 27 quay lại cùng vị trí. **Bước 4:** 100x=27,272727…; trừ x được 99x=27; x=27/99=3/11. Phép trừ hợp lệ vì các thập phân là các số thực đã được định nghĩa qua giới hạn. **Bước 5:** 3÷11 cho 0,272727…. **Bước 6:** khối r chữ số → nhân 10ʳ → trừ đuôi lặp.
+
+### Ví dụ B: Một đoạn đầu trước khối lặp
+
+**Bước 1:** x=0,133333…. **Bước 2:** tìm phân số. **Bước 3:** đưa đuôi về cùng vị trí bằng hai phép nhân. **Bước 4:** 10x=1,3333… và 100x=13,3333…. Lấy hiệu: 90x=12, x=2/15. **Bước 5:** phần 0,1 không lặp; chỉ chữ số 3 lặp. **Bước 6:** tách đoạn đầu trước khi xử lý chu kỳ.
+
+### Ví dụ C: Tạo một số vô tỉ bằng chữ số
+
+**Bước 1:** x=0,101001000100001…, giữa hai chữ số 1 liên tiếp lần lượt có 1,2,3,4,… chữ số 0. **Bước 2:** chứng minh x vô tỉ. **Bước 3:** hữu tỉ tương đương tuần hoàn về sau.
+
+**Bước 4:** nếu từ một lúc nào đó chu kỳ dài r lặp, chu kỳ phải chứa một chữ số 1 vì còn vô hạn số 1. Mọi r chữ số liên tiếp đủ muộn sẽ gặp một chữ số 1. Nhưng cấu trúc có các khối 0 dài hơn r muộn tùy ý. Mâu thuẫn, nên không tuần hoàn và x vô tỉ. **Bước 5:** còn vô hạn số 1, nên không phải thập phân hữu hạn. **Bước 6:** tạo khối trống dài tùy ý nhưng không dừng các chữ số khác 0.
+
+## Lỗi dễ mắc
+
+- **0,999… chỉ gần 1:** mỗi số cắt ngắn &lt;1, nhưng số vô hạn được định nghĩa là giới hạn, bằng 1.
+- **Một số có vẻ chưa lặp thì vô tỉ:** nhìn hữu hạn chữ số không chứng minh được “không lặp mãi về sau”.
+- **Vô tỉ đồng nghĩa siêu việt:** √2 vô tỉ nhưng đại số; chứng minh e,π vô tỉ ở đây chưa đủ cho siêu việt.
+
+## Tóm tắt 30 giây
+
+> Thập phân là một chuỗi hội tụ. Phân số cho số dư lặp nên chữ số tuần hoàn; tuần hoàn lại cho phân số. Hai đuôi 0 và 9 có thể biểu diễn cùng số.
+
+**HIỂU:** vô hạn chữ số mang nghĩa giới hạn. **NHỚ:** hữu tỉ ⇔ tuần hoàn về sau; sai số cắt &lt;10⁻ⁿ với cách chọn chữ số chuẩn. **LÀM:** chia dài, nhân-trừ hoặc chứng minh không thể có chu kỳ.
+
+## Bài tập
+
+### DỄ - Hai cách viết
+
+Chứng minh 0,4999…=0,5 bằng tổng hình học. **Gợi ý:** 0,4 cộng ∑ từ j=2 của 9·10⁻ʲ.
+
+<LoiGiai>
+
+**Bước 1.** Số thập phân $0{,}4999\ldots$.
+
+**Bước 2.** Tìm giá trị thực.
+
+**Bước 3.** Biểu diễn đuôi bằng chuỗi hình học.
+
+**Bước 4.** $0{,}4999\ldots=0{,}4+\sum_{j=2}^{\infty}9\cdot10^{-j}=0{,}4+0{,}1=0{,}5$.
+
+**Bước 5.** Đây là đẳng thức chính xác của hai giới hạn.
+
+**Bước 6.** Đuôi toàn 9 tạo một cách viết khác cùng số.
+
+</LoiGiai>
+
+### VỪA - Đoạn đầu và chu kỳ
+
+Viết 1,266666… thành phân số tối giản. **Gợi ý:** 100x−10x làm hai đuôi 6 khử nhau.
+
+<LoiGiai>
+
+**Bước 1.** $x=1{,}2666\ldots$.
+
+**Bước 2.** Đổi thành phân số.
+
+**Bước 3.** Nhân lũy thừa 10 để hai đuôi tuần hoàn trùng nhau.
+
+**Bước 4.** $100x=126{,}666\ldots$, $10x=12{,}666\ldots$. Trừ được $90x=114$, nên $x=19/15$.
+
+**Bước 5.** Phần không tuần hoàn chỉ có một chữ số sau dấu phẩy.
+
+**Bước 6.** Dịch cả phần đầu và một chu kỳ rồi trừ.
+
+</LoiGiai>
+
+### KHÓ - Không thể liệt kê hết (0,1)
+
+Giả sử đã liệt kê mọi số của (0,1) thành x₁,x₂,…. Gọi dₙ là chữ số thập phân thứ n của xₙ, chọn một biểu diễn cho mỗi số. Đặt eₙ=6 nếu dₙ≠6, và eₙ=7 nếu dₙ=6. Chứng minh y=0,e₁e₂… khác mọi xₙ. **Gợi ý:** khác tại chữ số thứ n; y không có đuôi toàn 0 hay 9, nên không có ngoại lệ hai cách viết.
+
+<LoiGiai>
+
+**Bước 1.** Giả sử có danh sách tất cả các số trong $(0,1)$.
+
+**Bước 2.** Tạo số không nằm trong danh sách.
+
+**Bước 3.** Dùng đường chéo và tránh hai biểu diễn thập phân 0/9.
+
+**Bước 4.** Gọi chữ số thứ n của số thứ n là $d_n$. Chọn $e_n=6$ nếu $d_n\ne6$, và $e_n=7$ nếu $d_n=6$. Số $y=0{,}e_1e_2\ldots$ nằm trong $(0,1)$ và khác số thứ n ở chữ số n. Nó không có đuôi toàn 0 hoặc 9 nên không có ngoại lệ biểu diễn. Mâu thuẫn.
+
+**Bước 5.** Mỗi số trong danh sách có ít nhất một chữ số bị đổi.
+
+**Bước 6.** Đổi đường chéo bằng hai chữ số an toàn.
+
+</LoiGiai>
+
+

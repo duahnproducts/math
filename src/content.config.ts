@@ -32,7 +32,7 @@ const monHoc = defineCollection({
         ghi_chu: z.string().optional(),
         /** Tài liệu tự soạn cho tải về — không bao giờ là sách gốc */
         tai_ve: z
-          .array(z.object({ ten: z.string(), tep: z.string().regex(/\.pdf$/), mo_ta: z.string() }))
+          .array(z.object({ ten: z.string(), tep: z.string().regex(/\.pdf$/), mo_ta: z.string(), phu_muc: z.array(soMuc).optional() }))
           .default([]),
       }),
     ),

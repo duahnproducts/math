@@ -2,17 +2,17 @@ import { readdirSync, readFileSync } from 'node:fs';
 import { expect, test } from 'vitest';
 import { chuyenSangRoss, docTienDo, ghiTienDo, tienDoRong } from '../src/lib/tien-do';
 
-test('Ross §1–§10 chia đúng hai chương, có bài giảng và bản dịch PDF, không khôi phục Abbott', () => {
+test('Ross §1–§27 chia đúng bốn chương, giữ PDF và không khôi phục Abbott', () => {
   const mon = JSON.parse(readFileSync('content/giai-tich/mon.json', 'utf8'));
   expect(mon.giao_trinh).toContain('Kenneth A. Ross');
-  expect(mon.chuong.map((c: {so:number})=>c.so)).toEqual([1,2]);
-  for (const [chapter,count] of [[1,6],[2,4]]) {
+  expect(mon.chuong.map((c: {so:number})=>c.so)).toEqual([1,2,3,4]);
+  for (const [chapter,count] of [[1,6],[2,10],[3,6],[4,5]]) {
     expect(readdirSync(`content/giai-tich/chuong-${chapter}/giang-day`)).toHaveLength(count);
   }
   expect(readdirSync('public/tai-ve').filter(f=>f.startsWith('giai-tich-')).sort()).toEqual([
-    'giai-tich-ross-bai-giang-1-10.pdf', 'giai-tich-ross-ban-dich-1-15.pdf',
+    'giai-tich-ross-bai-giang-1-10.pdf', 'giai-tich-ross-bai-giang-11-20.pdf', 'giai-tich-ross-ban-dich-1-15.pdf',
   ]);
-  for (const c of mon.chuong) {
+  for (const c of mon.chuong.slice(0,2)) {
     const translation=c.tai_ve.find((t:{tep:string})=>t.tep==='giai-tich-ross-ban-dich-1-15.pdf');
     expect(translation.ten).toContain('63 trang');
     expect(translation.mo_ta).toContain('Kenneth A. Ross');
